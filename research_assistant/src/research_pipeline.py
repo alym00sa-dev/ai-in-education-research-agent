@@ -327,9 +327,20 @@ class ResearchPipeline:
             final_state = None
             for line in response.text.strip().split('\n'):
                 if line.startswith('data: '):
-                    data = json.loads(line[6:])
-                    if data:
-                        final_state = data
+                    data_str = line[6:]  # Remove "data: " prefix
+
+                    # Skip [DONE] signal
+                    if data_str == "[DONE]":
+                        continue
+
+                    # Parse JSON
+                    try:
+                        data = json.loads(data_str)
+                        if data:
+                            final_state = data
+                    except json.JSONDecodeError:
+                        # Skip invalid JSON lines
+                        continue
 
             if not final_state:
                 raise Exception("No response from LangGraph server")
