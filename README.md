@@ -44,7 +44,7 @@ LangChain-Agent/
 ### Step 1: Clone the Repository
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/alym00sa-dev/ai-in-education-research-agent.git
 cd LangChain-Agent
 ```
 
