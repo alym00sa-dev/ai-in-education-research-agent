@@ -31,10 +31,11 @@ htmlcov/
 .git/
 .gitignore
 
-# Docs and examples
-*.md
+# Docs and examples (keep README.md for build)
 examples/
-tests/
+docs/
+*.md
+!README.md
 
 # Lock files (using pyproject.toml instead)
 uv.lock
