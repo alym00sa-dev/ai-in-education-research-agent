@@ -8,9 +8,13 @@ from pydantic import BaseModel
 from typing import Dict, Any, Optional, List
 import os
 import json
+import uuid
 from src.open_deep_research.deep_researcher import deep_researcher
 
 app = FastAPI(title="LangGraph Deep Researcher API")
+
+# In-memory thread storage (for stateless deployment)
+threads = {}
 
 class ResearchRequest(BaseModel):
     """Request model for research queries."""
@@ -37,6 +41,78 @@ async def root():
         "status": "running",
         "version": "1.0.0"
     }
+
+@app.post("/threads")
+async def create_thread(request: Optional[Dict[str, Any]] = None):
+    """
+    Create a new thread for conversation tracking.
+    Compatible with LangGraph API format.
+    """
+    thread_id = str(uuid.uuid4())
+    threads[thread_id] = {
+        "thread_id": thread_id,
+        "created_at": None,
+        "metadata": request or {}
+    }
+    return {
+        "thread_id": thread_id,
+        "created_at": None,
+        "metadata": {}
+    }
+
+@app.post("/threads/{thread_id}/runs/stream")
+async def run_thread_stream(thread_id: str, request: Dict[str, Any]):
+    """
+    Stream research results for a thread.
+    Compatible with LangGraph API format.
+    """
+    try:
+        # Extract query from messages
+        messages = request.get("input", {}).get("messages", [])
+        if not messages:
+            raise HTTPException(status_code=400, detail="No messages provided")
+
+        query = messages[0].get("content", "")
+        if not query:
+            raise HTTPException(status_code=400, detail="Empty query")
+
+        # Get config
+        config = request.get("config", {})
+        configurable = config.get("configurable", {})
+
+        # Create state input
+        state_input = {"messages": [{"role": "user", "content": query}]}
+
+        # Stream results
+        async def generate():
+            try:
+                for chunk in deep_researcher.stream(
+                    state_input,
+                    config={"configurable": configurable}
+                ):
+                    # Format as server-sent events
+                    event_data = {
+                        "event": "values",
+                        "data": chunk
+                    }
+                    yield f"data: {json.dumps(event_data)}\n\n"
+
+                # Send end signal
+                yield "data: [DONE]\n\n"
+            except Exception as e:
+                error_event = {
+                    "event": "error",
+                    "data": {"error": str(e)}
+                }
+                yield f"data: {json.dumps(error_event)}\n\n"
+
+        return StreamingResponse(
+            generate(),
+            media_type="text/event-stream"
+        )
+
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
 @app.post("/runs/stream")
 async def run_research_stream(request: ResearchRequest):
