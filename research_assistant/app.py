@@ -810,7 +810,7 @@ if st.button("Start Research", type="primary", use_container_width=True):
 
                 st.session_state.research_results = results
                 st.session_state.current_session_id = results['session']['session_id']
-                st.success("Research complete!")
+                st.session_state.just_completed = True
                 st.rerun()
 
             except Exception as e:
@@ -821,6 +821,10 @@ st.divider()
 # Display results
 if st.session_state.research_results:
     results = st.session_state.research_results
+
+    # Show success message if research just completed
+    if st.session_state.get('just_completed', False):
+        st.session_state.just_completed = False
 
     # Research Summary
     st.subheader("Research Summary")
