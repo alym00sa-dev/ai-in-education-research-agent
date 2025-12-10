@@ -598,14 +598,12 @@ if 'session_manager' not in st.session_state:
 
 # Preset queries (from your HTML frontend)
 PRESET_QUERIES = {
-    "ITS Effectiveness": "What is the effectiveness of Intelligent Tutoring Systems (ITS) on student learning outcomes? Include meta-analyses, effect sizes, and comparisons with traditional tutoring methods. Focus on concepts like adaptive difficulty, immediate feedback, and scaffolding.",
+    "ITS Effectiveness": "What is the effectiveness of Intelligent Tutoring Systems (ITS) on student learning outcomes like mathematics, reading comprehension, and writing ability?",
     "Adaptive Feedback": "What does research show about the effectiveness of immediate feedback versus delayed feedback in tutoring? How does adaptive feedback timing impact student learning gains, retention, and problem-solving ability?",
-    "Math Tutoring": "What are the most effective tutoring methods and concepts for mathematics instruction? Include research on cognitive tutors, worked examples, step-by-step problem solving, and error correction strategies in math tutoring.",
     "Scaffolding Techniques": "How effective are scaffolding techniques in tutoring? Research on step-by-step problem solving, graduated guidance, hint systems, and fading support. What are the optimal levels of scaffolding for different student populations?",
     "Metacognitive Strategies": "What is the evidence for teaching metacognitive strategies in tutoring? How do self-explanation prompts, reflection activities, and thinking-about-thinking approaches impact learning outcomes, self-efficacy, and transfer?",
-    "One-on-One Tutoring": "How does one-on-one human tutoring compare to computer-based tutoring systems? What are the unique benefits of each approach? Include effect sizes and research on hybrid human-AI tutoring models.",
+    "One-on-One Tutoring": "How does one-on-one human tutoring compare to computer-based tutoring systems? What are the unique benefits of each approach? ",
     "Peer Tutoring": "What does the research say about peer tutoring effectiveness? How does student-to-student tutoring impact both the tutor and tutee? Include outcomes on learning gains, engagement, and social-emotional benefits.",
-    "Cognitive Tutor": "What is the effectiveness of Cognitive Tutor systems based on cognitive models of problem-solving? Include research on their impact on learning gains, problem-solving ability, and knowledge transfer. Compare with other ITS approaches."
 }
 
 # Sidebar
@@ -613,9 +611,9 @@ with st.sidebar:
     # Custom CSS for minimal text-only buttons
     st.markdown("""
     <style>
-    /* Make sidebar static */
+    /* Enable scrollbar in sidebar */
     [data-testid="stSidebar"] > div:first-child {
-        overflow-y: hidden;
+        overflow-y: auto;
     }
 
     /* Style primary button (New Research Chat) - softer white/light grey background, black text */
