@@ -14,6 +14,7 @@ COPY README.md ./
 
 # Copy source code
 COPY src/ ./src/
+COPY server.py ./
 
 # Create empty directories required by pyproject.toml
 RUN mkdir -p tests legacy
@@ -21,11 +22,11 @@ RUN mkdir -p tests legacy
 # Install dependencies using UV
 RUN uv pip install --system -e .
 
-# Install langgraph-cli with inmem support
-RUN uv pip install --system "langgraph-cli[inmem]"
+# Install FastAPI and uvicorn for the server
+RUN uv pip install --system fastapi uvicorn[standard]
 
-# Expose port 8000 (LangGraph server default)
+# Expose port 8000
 EXPOSE 8000
 
-# Start LangGraph server in production mode
-CMD ["langgraph", "start", "--host", "0.0.0.0", "--port", "8000"]
+# Start custom FastAPI server
+CMD ["python", "server.py"]

@@ -1,0 +1,129 @@
+"""
+Simple FastAPI server to host the LangGraph Deep Researcher.
+For use in production without LangGraph Cloud.
+"""
+from fastapi import FastAPI, HTTPException
+from fastapi.responses import StreamingResponse
+from pydantic import BaseModel
+from typing import Dict, Any, Optional, List
+import os
+import json
+from src.open_deep_research.deep_researcher import deep_researcher
+
+app = FastAPI(title="LangGraph Deep Researcher API")
+
+class ResearchRequest(BaseModel):
+    """Request model for research queries."""
+    assistant_id: str = "Deep Researcher"
+    input: Dict[str, Any]
+    config: Optional[Dict[str, Any]] = None
+    stream_mode: str = "values"
+
+class Message(BaseModel):
+    """Message model."""
+    role: str
+    content: str
+
+@app.get("/ok")
+async def health_check():
+    """Health check endpoint."""
+    return {"status": "ok"}
+
+@app.get("/")
+async def root():
+    """Root endpoint."""
+    return {
+        "service": "LangGraph Deep Researcher API",
+        "status": "running",
+        "version": "1.0.0"
+    }
+
+@app.post("/runs/stream")
+async def run_research_stream(request: ResearchRequest):
+    """
+    Stream research results.
+    Compatible with LangGraph API format.
+    """
+    try:
+        # Extract query from messages
+        messages = request.input.get("messages", [])
+        if not messages:
+            raise HTTPException(status_code=400, detail="No messages provided")
+
+        query = messages[0].get("content", "")
+        if not query:
+            raise HTTPException(status_code=400, detail="Empty query")
+
+        # Get config
+        config = request.config or {}
+        configurable = config.get("configurable", {})
+
+        # Create state input
+        state_input = {"messages": [{"role": "user", "content": query}]}
+
+        # Stream results
+        async def generate():
+            try:
+                for chunk in deep_researcher.stream(
+                    state_input,
+                    config={"configurable": configurable}
+                ):
+                    yield f"data: {json.dumps(chunk)}\n\n"
+                yield "data: [DONE]\n\n"
+            except Exception as e:
+                error_data = {"error": str(e)}
+                yield f"data: {json.dumps(error_data)}\n\n"
+
+        return StreamingResponse(
+            generate(),
+            media_type="text/event-stream"
+        )
+
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.post("/assistants/{assistant_id}/invoke")
+async def invoke_research(assistant_id: str, request: Dict[str, Any]):
+    """
+    Invoke research synchronously.
+    Returns complete result.
+    """
+    try:
+        # Extract query
+        messages = request.get("input", {}).get("messages", [])
+        if not messages:
+            raise HTTPException(status_code=400, detail="No messages provided")
+
+        query = messages[0].get("content", "")
+        config = request.get("config", {})
+        configurable = config.get("configurable", {})
+
+        # Run research
+        state_input = {"messages": [{"role": "user", "content": query}]}
+        result = deep_researcher.invoke(
+            state_input,
+            config={"configurable": configurable}
+        )
+
+        return {"result": result}
+
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.get("/assistants/search")
+async def list_assistants():
+    """List available assistants."""
+    return {
+        "assistants": [
+            {
+                "assistant_id": "Deep Researcher",
+                "name": "Deep Researcher",
+                "description": "Autonomous research agent for comprehensive analysis"
+            }
+        ]
+    }
+
+if __name__ == "__main__":
+    import uvicorn
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run(app, host="0.0.0.0", port=port)
