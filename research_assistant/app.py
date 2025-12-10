@@ -730,7 +730,7 @@ with st.sidebar:
 # Main content
 st.title("📚 AI in Education Research Agent")
 st.caption("Powered by Open Deep Research & Neo4j")
-
+st.info("ℹ️ This is an MVP of the deep research agent, synthesizing literature across credible and publication sources. If your query has no results, try reframing your question(s).")
 
 st.divider()
 
@@ -775,6 +775,9 @@ selected_preset = st.selectbox(
 
 if selected_preset != "Custom Query":
     st.session_state.query_text = PRESET_QUERIES[selected_preset]
+else:
+    # Clear the text when switching back to Custom Query
+    st.session_state.query_text = ""
 
 # Query input
 if 'query_text' not in st.session_state:
