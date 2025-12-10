@@ -346,7 +346,14 @@ class ResearchPipeline:
                 raise Exception("No response from LangGraph server")
 
             # Extract final report and sources
-            final_report = final_state.get('final_report', '')
+            # The final_report is nested inside 'final_report_generation'
+            final_report_node = final_state.get('final_report_generation', {})
+            final_report = final_report_node.get('final_report', '')
+
+            # If not found in nested structure, try top level (backwards compatibility)
+            if not final_report:
+                final_report = final_state.get('final_report', '')
+
             sources = self._extract_sources_from_report(final_report, final_state)
 
             return {
@@ -367,7 +374,13 @@ class ResearchPipeline:
         sources = []
 
         # Try to extract from raw_notes in state (this contains search results)
-        raw_notes = state.get('raw_notes', [])
+        # raw_notes is nested inside 'research_supervisor'
+        research_supervisor_node = state.get('research_supervisor', {})
+        raw_notes = research_supervisor_node.get('raw_notes', [])
+
+        # If not found in nested structure, try top level (backwards compatibility)
+        if not raw_notes:
+            raw_notes = state.get('raw_notes', [])
         for note in raw_notes:
             if isinstance(note, str):
                 # Look for URLs in notes
