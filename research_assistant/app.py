@@ -731,7 +731,7 @@ with st.sidebar:
 
 # Main content
 st.title("📚 AI in Education Research Agent")
-st.caption("Powered by Open Deep Research & Neo4j Knowledge Graph")
+st.caption("Powered by Open Deep Research & Neo4j")
 
 
 st.divider()
