@@ -10,6 +10,22 @@ import os
 import json
 import uuid
 from src.open_deep_research.deep_researcher import deep_researcher
+from langchain_core.messages import BaseMessage
+
+def serialize_value(obj):
+    """Convert LangChain objects to JSON-serializable format."""
+    if isinstance(obj, BaseMessage):
+        return {
+            "type": obj.__class__.__name__,
+            "content": obj.content,
+            "additional_kwargs": obj.additional_kwargs,
+        }
+    elif isinstance(obj, dict):
+        return {k: serialize_value(v) for k, v in obj.items()}
+    elif isinstance(obj, list):
+        return [serialize_value(item) for item in obj]
+    else:
+        return obj
 
 app = FastAPI(title="LangGraph Deep Researcher API")
 
@@ -90,10 +106,13 @@ async def run_thread_stream(thread_id: str, request: Dict[str, Any]):
                     state_input,
                     config={"configurable": configurable}
                 ):
+                    # Serialize LangChain objects to JSON
+                    serialized_chunk = serialize_value(chunk)
+
                     # Format as server-sent events
                     event_data = {
                         "event": "values",
-                        "data": chunk
+                        "data": serialized_chunk
                     }
                     yield f"data: {json.dumps(event_data)}\n\n"
 
@@ -144,7 +163,9 @@ async def run_research_stream(request: ResearchRequest):
                     state_input,
                     config={"configurable": configurable}
                 ):
-                    yield f"data: {json.dumps(chunk)}\n\n"
+                    # Serialize LangChain objects to JSON
+                    serialized_chunk = serialize_value(chunk)
+                    yield f"data: {json.dumps(serialized_chunk)}\n\n"
                 yield "data: [DONE]\n\n"
             except Exception as e:
                 error_data = {"error": str(e)}
@@ -181,7 +202,9 @@ async def invoke_research(assistant_id: str, request: Dict[str, Any]):
             config={"configurable": configurable}
         )
 
-        return {"result": result}
+        # Serialize result
+        serialized_result = serialize_value(result)
+        return {"result": serialized_result}
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
