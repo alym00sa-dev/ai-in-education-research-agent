@@ -733,26 +733,18 @@ st.caption("Powered by Open Deep Research & Neo4j Knowledge Graph")
 st.divider()
 
 # Control dropdowns - smaller size
+# Model fixed to ChatGPT 4.1
+model_provider = "gpt-4.1"
+
 col1, col2 = st.columns([2, 3])
 
-# Model mapping: Display name -> API alias
-MODEL_MAPPING = {
-    "ChatGPT o3": "o3-deep-research-2025-06-26",
-    "ChatGPT 5.1": "gpt-5.1-2025-11-13",
-    "ChatGPT 4.1": "gpt-4.1",
-    "ChatGPT 5-mini": "gpt-5-mini-2025-08-07",
-    "Claude Opus 4.5": "claude-opus-4-5",
-    "Claude Sonnet 4.5": "claude-sonnet-4-5"
-}
-
 with col1:
-    model_display = st.selectbox(
+    st.selectbox(
         "Model",
-        options=list(MODEL_MAPPING.keys()),
-        index=2  # Default to ChatGPT 4.1
+        options=["ChatGPT 4.1"],
+        index=0,
+        disabled=True
     )
-    # Convert display name to API alias
-    model_provider = MODEL_MAPPING[model_display]
 
 with col2:
     search_depth = st.selectbox(
