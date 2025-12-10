@@ -78,7 +78,7 @@ uv pip install -e .
 
 **Research Assistant (Streamlit Frontend) -- In Another Terminal:**
 ```bash
-cd ../research_assistant
+cd ./research_assistant
 pip install -r requirements.txt  # Or create one if missing
 pip install streamlit neo4j python-dotenv httpx
 ```
@@ -116,19 +116,17 @@ NEO4J_PASSWORD=your-password
 NEO4J_DATABASE=neo4j
 ```
 
-### Step 5: Initialize Neo4j Database
+### Step 5: Initialize Neo4j Database In the Frontend Terminal
 
 ```bash
-cd research_assistant
 python -c "from src.neo4j_config import initialize_database; initialize_database()"
 ```
 
 This creates the controlled vocabulary nodes (Population, UserType, StudyDesign, etc.)
 
-### Step 6: Start LangGraph Server
+### Step 6: Start LangGraph Server In the Backedn Terminal
 
 ```bash
-cd ../open_deep_research
 uvx --refresh --from "langgraph-cli[inmem]" --with-editable . --python 3.11 langgraph dev --allow-blocking
 ```
 
@@ -146,7 +144,6 @@ Leave this terminal running.
 **In a new terminal:**
 
 ```bash
-cd research_assistant
 streamlit run app.py
 ```
 
