@@ -1,12 +1,12 @@
 """
 Test script to verify LangGraph backend deployment.
-Run this after deploying to Railway to test the API.
+Run this after deploying to Render to test the API.
 """
 import httpx
 import json
 
-# Replace with your Railway URL after deployment
-BACKEND_URL = "https://your-app.railway.app"
+# Replace with your Render URL after deployment
+BACKEND_URL = "https://langgraph-backend.onrender.com"
 
 def test_health_check():
     """Test the health check endpoint."""
@@ -59,9 +59,10 @@ if __name__ == "__main__":
     print("=" * 50)
 
     # Update the URL first
-    if "your-app" in BACKEND_URL:
-        print("\n⚠️  Please update BACKEND_URL with your Railway deployment URL first!")
-        print("Find it in Railway dashboard after deployment.")
+    if "your-app" in BACKEND_URL or "langgraph-backend.onrender.com" not in BACKEND_URL:
+        print("\n⚠️  Please update BACKEND_URL with your Render deployment URL first!")
+        print("Find it in Render dashboard after deployment.")
+        print("Format: https://your-service-name.onrender.com")
         exit(1)
 
     # Run tests
