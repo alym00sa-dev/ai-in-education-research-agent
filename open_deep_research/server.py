@@ -99,18 +99,27 @@ async def run_thread_stream(thread_id: str, request: Dict[str, Any]):
         # Create state input
         state_input = {"messages": [{"role": "user", "content": query}]}
 
-        # Stream results
+        # Stream results and accumulate final state
         async def generate():
             try:
+                final_state = {}
+
+                # Stream updates and accumulate state
                 async for chunk in deep_researcher.astream(
                     state_input,
                     config={"configurable": configurable}
                 ):
-                    # Serialize LangChain objects to JSON
-                    serialized_chunk = serialize_value(chunk)
+                    # Accumulate state from each chunk
+                    if isinstance(chunk, dict):
+                        final_state.update(chunk)
 
-                    # Send the chunk directly (frontend expects raw state data)
+                    # Serialize and send progress update
+                    serialized_chunk = serialize_value(chunk)
                     yield f"data: {json.dumps(serialized_chunk)}\n\n"
+
+                # Send final accumulated state
+                serialized_final = serialize_value(final_state)
+                yield f"data: {json.dumps(serialized_final)}\n\n"
 
                 # Send end signal
                 yield "data: [DONE]\n\n"
