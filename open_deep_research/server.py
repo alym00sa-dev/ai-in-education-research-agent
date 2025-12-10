@@ -109,21 +109,15 @@ async def run_thread_stream(thread_id: str, request: Dict[str, Any]):
                     # Serialize LangChain objects to JSON
                     serialized_chunk = serialize_value(chunk)
 
-                    # Format as server-sent events
-                    event_data = {
-                        "event": "values",
-                        "data": serialized_chunk
-                    }
-                    yield f"data: {json.dumps(event_data)}\n\n"
+                    # Send the chunk directly (frontend expects raw state data)
+                    yield f"data: {json.dumps(serialized_chunk)}\n\n"
 
                 # Send end signal
                 yield "data: [DONE]\n\n"
             except Exception as e:
-                error_event = {
-                    "event": "error",
-                    "data": {"error": str(e)}
-                }
-                yield f"data: {json.dumps(error_event)}\n\n"
+                # Send error as plain JSON
+                error_data = {"error": str(e)}
+                yield f"data: {json.dumps(error_data)}\n\n"
 
         return StreamingResponse(
             generate(),
