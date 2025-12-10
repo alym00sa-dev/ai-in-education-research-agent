@@ -6,6 +6,10 @@ from dotenv import load_dotenv
 from src.research_pipeline import SyncResearchPipeline
 load_dotenv()
 
+# Load Streamlit secrets to environment variables for Streamlit Cloud compatibility
+from src.env_config import load_env_config
+load_env_config()
+
 from src.session_manager import SessionManager
 from src.neo4j_config import initialize_database
 
