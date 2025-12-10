@@ -28,4 +28,4 @@ RUN uv pip install --system "langgraph-cli[inmem]"
 EXPOSE 8000
 
 # Start LangGraph server
-CMD ["langgraph", "up", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["langgraph", "up", "--port", "8000"]
