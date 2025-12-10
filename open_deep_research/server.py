@@ -86,7 +86,7 @@ async def run_thread_stream(thread_id: str, request: Dict[str, Any]):
         # Stream results
         async def generate():
             try:
-                for chunk in deep_researcher.stream(
+                async for chunk in deep_researcher.astream(
                     state_input,
                     config={"configurable": configurable}
                 ):
@@ -140,7 +140,7 @@ async def run_research_stream(request: ResearchRequest):
         # Stream results
         async def generate():
             try:
-                for chunk in deep_researcher.stream(
+                async for chunk in deep_researcher.astream(
                     state_input,
                     config={"configurable": configurable}
                 ):
@@ -176,7 +176,7 @@ async def invoke_research(assistant_id: str, request: Dict[str, Any]):
 
         # Run research
         state_input = {"messages": [{"role": "user", "content": query}]}
-        result = deep_researcher.invoke(
+        result = await deep_researcher.ainvoke(
             state_input,
             config={"configurable": configurable}
         )
