@@ -729,7 +729,7 @@ with st.sidebar:
 
 # Main content
 st.title("📚 AI in Education Research Agent")
-st.caption("Powered by Open Deep Research & Neo4j")
+st.caption("Powered by Open Deep Research & Neo4j | Quality, Impact, and Body of Evidence Maturity scores calculated using the K-12 Rubric for Evaluating Evidence")
 st.info("ℹ️ This is an MVP of the deep research agent, synthesizing literature across credible and publication sources. If your query has no results, try reframing your question(s).")
 
 st.divider()
