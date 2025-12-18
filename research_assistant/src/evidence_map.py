@@ -1,4 +1,5 @@
 """Evidence gap map visualization for research papers."""
+
 from typing import List, Dict, Any, Optional
 import pandas as pd
 import os
