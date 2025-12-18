@@ -989,7 +989,7 @@ with tab2:
         io_short_names = {
             "Intelligent Tutoring and Instruction": "INTELLIGENT TUTORING AND INSTRUCTION",
             "AI-Enable Personalized Advising": "AI-ENABLED PERSONALIZED ADVISING",
-            "Institutional Decision-making": "INSTITUTIONAL DECISION-MAKING",
+            "Institutional Decision-Making": "INSTITUTIONAL DECISION-MAKING",
             "AI-Enabled Learner Mobility": "AI-ENABLED LEARNER MOBILITY"
         }
 
@@ -1023,7 +1023,12 @@ with tab2:
         # Create a lookup dictionary for counts
         count_dict = {}
         for _, row in df.iterrows():
-            key = (row['io_short'], row['outcome_clean'])
+            io_short = row['io_short']
+            outcome_clean = row['outcome_clean']
+            # Skip rows with NaN values (NaN != NaN, so this check works)
+            if io_short != io_short or outcome_clean != outcome_clean:
+                continue
+            key = (io_short, outcome_clean)
             count_dict[key] = int(row['count'])
 
         # Import OUTCOMES for mapping
@@ -1039,6 +1044,10 @@ with tab2:
 
         for (io_display, outcome), count in count_dict.items():
             if count > 0:
+                # Skip if io_display or outcome is invalid (NaN, None, or not in lists)
+                if io_display not in io_short_names.values() or outcome not in [o for _, o in outcomes_with_categories]:
+                    continue
+
                 # Get database values
                 io_db = list(io_short_names.keys())[list(io_short_names.values()).index(io_display)]
                 outcome_db = None
@@ -1267,7 +1276,7 @@ with tab2:
 
         # Pre-fetch data if modal should be shown but data not loaded
         if st.session_state.get('show_modal') and st.session_state.get('selected_io') and st.session_state.get('selected_outcome'):
-            from src.evidence_map import get_paper_details_for_cell, synthesize_papers_for_cell
+            from src.evidence_map import get_paper_details_for_cell, synthesize_papers_for_cell, get_cached_synthesis
 
             io = st.session_state.selected_io
             outcome = st.session_state.selected_outcome
@@ -1275,7 +1284,12 @@ with tab2:
             # Fetch papers if not already loaded
             if 'modal_papers' not in st.session_state:
                 st.session_state.modal_papers = get_paper_details_for_cell(io, outcome)
-                st.rerun()
+
+            # Check for cached synthesis if not in session
+            if 'modal_synthesis' not in st.session_state:
+                cached = get_cached_synthesis(io, outcome)
+                if cached:
+                    st.session_state.modal_synthesis = cached
 
             @st.dialog(f"Paper Analysis - {io} × {outcome}", width="large")
             def show_cell_modal():
@@ -1396,10 +1410,20 @@ with tab2:
                         else:
                             st.caption("Note: Paper numbers (e.g., Paper 1, Paper 2) refer to papers listed in the left panel")
                             st.markdown("")
+
+                            # Show overview content
                             st.markdown(synthesis['overview'])
 
                             st.markdown("#### Evidence Gaps")
                             st.markdown(synthesis['gaps'])
+
+                            # Show regenerate button AFTER overview and gaps, left-aligned
+                            st.markdown("")
+                            if st.button("Regenerate", key="regen_overview", help="Generate a new synthesis", type="secondary"):
+                                with st.spinner("Regenerating overview..."):
+                                    synthesis = synthesize_papers_for_cell(io, outcome, papers, force_regenerate=True)
+                                    st.session_state.modal_synthesis = synthesis
+                                    st.rerun()
                     else:
                         # Show selected paper details
                         paper = papers[st.session_state.selected_paper_idx]

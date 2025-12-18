@@ -1,7 +1,8 @@
 """Evidence gap map visualization for research papers."""
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Optional
 import pandas as pd
 import os
+from datetime import datetime
 from dotenv import load_dotenv
 from anthropic import Anthropic
 from src.neo4j_config import get_neo4j_connection, IMPLEMENTATION_OBJECTIVES, OUTCOMES
@@ -36,6 +37,63 @@ def get_evidence_map_data() -> pd.DataFrame:
         df = pd.DataFrame(columns=['implementation_objective', 'outcome', 'count'])
 
     return df
+
+
+def get_cached_synthesis(implementation_objective: str, outcome: str) -> Optional[Dict[str, str]]:
+    """Get cached synthesis from Neo4j if it exists.
+
+    Args:
+        implementation_objective: The implementation objective
+        outcome: The outcome focus area
+
+    Returns:
+        Dict with 'overview' and 'gaps' keys if cached, None otherwise
+    """
+    conn = get_neo4j_connection()
+
+    query = """
+    MATCH (io:ImplementationObjective {id: $io})-[r:HAS_SYNTHESIS]->(o:Outcome {id: $outcome})
+    RETURN r.overview as overview, r.gaps as gaps, r.generated_at as generated_at
+    """
+
+    results = conn.execute_query(query, {'io': implementation_objective, 'outcome': outcome})
+
+    if results and len(results) > 0:
+        return {
+            'overview': results[0].get('overview', ''),
+            'gaps': results[0].get('gaps', ''),
+            'generated_at': results[0].get('generated_at', '')
+        }
+
+    return None
+
+
+def save_synthesis_to_cache(implementation_objective: str, outcome: str, synthesis: Dict[str, str]):
+    """Save synthesis to Neo4j for persistent caching.
+
+    Args:
+        implementation_objective: The implementation objective
+        outcome: The outcome focus area
+        synthesis: Dict with 'overview' and 'gaps' keys
+    """
+    conn = get_neo4j_connection()
+
+    query = """
+    MATCH (io:ImplementationObjective {id: $io})
+    MATCH (o:Outcome {id: $outcome})
+    MERGE (io)-[r:HAS_SYNTHESIS]->(o)
+    SET r.overview = $overview,
+        r.gaps = $gaps,
+        r.generated_at = $generated_at
+    """
+
+    conn.execute_query(query, {
+        'io': implementation_objective,
+        'outcome': outcome,
+        'overview': synthesis['overview'],
+        'gaps': synthesis['gaps'],
+        'generated_at': datetime.now().isoformat()
+    })
 
 
 def get_paper_details_for_cell(implementation_objective: str, outcome: str) -> List[Dict[str, Any]]:
@@ -123,13 +181,15 @@ def create_full_matrix() -> pd.DataFrame:
     return full_df
 
 
-def synthesize_papers_for_cell(implementation_objective: str, outcome: str, papers: List[Dict[str, Any]]) -> Dict[str, str]:
+def synthesize_papers_for_cell(implementation_objective: str, outcome: str, papers: List[Dict[str, Any]], force_regenerate: bool = False) -> Dict[str, str]:
     """Generate an AI synthesis of papers in a cell, identifying overview and gaps.
+    Checks cache first unless force_regenerate is True.
 
     Args:
         implementation_objective: The implementation objective
         outcome: The outcome focus area
         papers: List of paper dictionaries with findings
+        force_regenerate: If True, regenerate even if cached version exists
 
     Returns:
         Dict with 'overview' and 'gaps' keys containing the synthesis
@@ -139,6 +199,12 @@ def synthesize_papers_for_cell(implementation_objective: str, outcome: str, pape
             'overview': 'No papers available for this cell.',
             'gaps': 'Unable to identify gaps without research papers.'
         }
+
+    # Check cache first unless force regenerate
+    if not force_regenerate:
+        cached = get_cached_synthesis(implementation_objective, outcome)
+        if cached:
+            return cached
 
     # Build context from papers
     papers_context = []
@@ -199,7 +265,7 @@ etc. (3-5 maximum)"""
 
         response = anthropic_client.messages.create(
             model="claude-sonnet-4-5",
-            max_tokens=3000,
+            max_tokens=2500,
             messages=[{
                 "role": "user",
                 "content": prompt
@@ -221,10 +287,15 @@ etc. (3-5 maximum)"""
             overview = synthesis_text
             gaps = "Unable to parse evidence gaps from synthesis."
 
-        return {
+        synthesis = {
             'overview': overview,
             'gaps': gaps
         }
+
+        # Save to cache for future use
+        save_synthesis_to_cache(implementation_objective, outcome, synthesis)
+
+        return synthesis
 
     except Exception as e:
         return {
