@@ -92,6 +92,29 @@ class Neo4jConnection:
             result = session.run(query, parameters or {})
             return [record.data() for record in result]
 
+    def create_indexes(self):
+        """Create indexes for faster query performance."""
+        print("Creating database indexes...")
+
+        with self.driver.session(database=self.database) as session:
+            # Create indexes for faster lookups
+            indexes = [
+                "CREATE INDEX IF NOT EXISTS FOR (p:Paper) ON (p.title)",
+                "CREATE INDEX IF NOT EXISTS FOR (io:ImplementationObjective) ON (io.id)",
+                "CREATE INDEX IF NOT EXISTS FOR (o:Outcome) ON (o.id)",
+                "CREATE INDEX IF NOT EXISTS FOR (pop:Population) ON (pop.id)",
+                "CREATE INDEX IF NOT EXISTS FOR (ut:UserType) ON (ut.id)",
+                "CREATE INDEX IF NOT EXISTS FOR (sd:StudyDesign) ON (sd.id)"
+            ]
+
+            for index_query in indexes:
+                try:
+                    session.run(index_query)
+                except Exception as e:
+                    print(f"  Index creation warning: {e}")
+
+        print("✅ Indexes created!")
+
     def initialize_taxonomies(self):
         """Create all taxonomy nodes if they don't exist."""
         print("Initializing taxonomy nodes...")
@@ -175,8 +198,9 @@ def get_neo4j_connection() -> Neo4jConnection:
 
 
 def initialize_database():
-    """Initialize database with taxonomies (safe to run multiple times)."""
+    """Initialize database with taxonomies and indexes (safe to run multiple times)."""
     conn = get_neo4j_connection()
+    conn.create_indexes()
     conn.initialize_taxonomies()
     print("\n📊 Current node counts:")
     for label, count in conn.get_node_counts().items():
