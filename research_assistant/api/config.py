@@ -21,11 +21,7 @@ class Settings:
     API_TITLE: str = "AI Education Research API"
     API_DESCRIPTION: str = "REST API for Evidence Map and Research Data"
 
-    # CORS
-    ALLOWED_ORIGINS: list = [
-        "http://localhost:3000",          # Local development
-        "https://*.vercel.app",           # Vercel production
-        "https://vercel.app",             # Vercel preview
-    ]
+    # CORS - Allow all origins (you can restrict this later to your specific Vercel domain)
+    ALLOWED_ORIGINS: list = ["*"]  # Allows all origins - replace with your specific Vercel URL for production
 
 settings = Settings()

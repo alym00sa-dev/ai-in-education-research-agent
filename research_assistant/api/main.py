@@ -24,7 +24,7 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware,
     allow_origins=settings.ALLOWED_ORIGINS,
-    allow_credentials=True,
+    allow_credentials=False,  # Changed to False to allow wildcard origins
     allow_methods=["GET", "POST", "PUT", "DELETE"],
     allow_headers=["*"],
 )
