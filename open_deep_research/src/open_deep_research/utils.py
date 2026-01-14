@@ -1,10 +1,12 @@
 """Utility functions and helpers for the Deep Research agent."""
 
 import asyncio
+import json
 import logging
 import os
 import warnings
 from datetime import datetime, timedelta, timezone
+from pathlib import Path
 from typing import Annotated, Any, Dict, List, Literal, Optional
 
 import aiohttp
@@ -36,6 +38,40 @@ from open_deep_research.state import ResearchComplete, Summary
 ##########################
 # Tavily Search Tool Utils
 ##########################
+def create_audit_log_file(query: str, audit_data: Dict[str, Any]) -> str:
+    """Create an audit log file for Tavily search tracking.
+
+    Args:
+        query: The original research query
+        audit_data: Dictionary containing all audit trail information
+
+    Returns:
+        Path to the created audit log file
+    """
+    # Create audit_logs directory if it doesn't exist
+    audit_dir = Path("audit_logs")
+    audit_dir.mkdir(exist_ok=True)
+
+    # Create filename with timestamp
+    timestamp = datetime.now().strftime("%Y-%m-%d_%H%M%S")
+    filename = f"audit_{timestamp}.json"
+    filepath = audit_dir / filename
+
+    # Structure the audit log with query as first entry
+    audit_log = {
+        "timestamp": datetime.now().isoformat(),
+        "query": query,
+        "audit_trail": audit_data
+    }
+
+    # Write to JSON file
+    with open(filepath, 'w', encoding='utf-8') as f:
+        json.dump(audit_log, f, indent=2, ensure_ascii=False)
+
+    logging.info(f"[TAVILY AUDIT] Audit log saved to: {filepath}")
+    return str(filepath)
+
+
 TAVILY_SEARCH_DESCRIPTION = (
     "A search engine optimized for comprehensive, accurate, and trusted results. "
     "Useful for when you need to answer questions about current events."
@@ -58,6 +94,22 @@ async def tavily_search(
     Returns:
         Formatted string containing summarized search results
     """
+    # Initialize audit data collection
+    audit_data = {
+        "queries": queries,
+        "max_results_per_query": max_results,
+        "topic": topic,
+        "tavily_raw_results": [],
+        "deduplication": {},
+        "summarization": {},
+        "final_sources": []
+    }
+
+    # AUDIT LOG: Log the search queries being executed
+    logging.info(f"[TAVILY AUDIT] Starting Tavily search with {len(queries)} queries")
+    logging.info(f"[TAVILY AUDIT] Queries: {queries}")
+    logging.info(f"[TAVILY AUDIT] Max results per query: {max_results}, Topic: {topic}")
+
     # Step 1: Execute search queries asynchronously
     search_results = await tavily_search_async(
         queries,
@@ -66,14 +118,60 @@ async def tavily_search(
         include_raw_content=True,
         config=config
     )
-    
+
+    # AUDIT LOG: Log what Tavily returned
+    total_results = sum(len(response.get('results', [])) for response in search_results)
+    logging.info(f"[TAVILY AUDIT] Tavily returned {total_results} total results across all queries")
+
+    # Save raw Tavily results to audit data
+    for response in search_results:
+        query_results = {
+            "query": response.get('query', 'unknown'),
+            "results": [
+                {
+                    "title": r.get('title', 'No title'),
+                    "url": r['url'],
+                    "score": r.get('score', None),
+                    "content_preview": r.get('content', '')[:200]
+                }
+                for r in response.get('results', [])
+            ]
+        }
+        audit_data["tavily_raw_results"].append(query_results)
+
     # Step 2: Deduplicate results by URL to avoid processing the same content multiple times
     unique_results = {}
+    duplicate_count = 0
+    duplicates = []
+
     for response in search_results:
-        for result in response['results']:
+        query = response.get('query', 'unknown')
+        logging.info(f"[TAVILY AUDIT] Processing results for query: '{query}'")
+
+        for i, result in enumerate(response['results'], 1):
             url = result['url']
+            title = result.get('title', 'No title')
+            score = result.get('score', 'N/A')  # Tavily provides relevance scores
+
             if url not in unique_results:
                 unique_results[url] = {**result, "query": response['query']}
+                logging.info(f"[TAVILY AUDIT]   Source {i}: {title}")
+                logging.info(f"[TAVILY AUDIT]   URL: {url}")
+                logging.info(f"[TAVILY AUDIT]   Relevance Score: {score}")
+            else:
+                duplicate_count += 1
+                duplicates.append({"url": url, "title": title})
+                logging.info(f"[TAVILY AUDIT]   DUPLICATE SKIPPED: {url}")
+
+    # Save deduplication info to audit data
+    audit_data["deduplication"] = {
+        "total_before": total_results,
+        "unique_after": len(unique_results),
+        "duplicates_removed": duplicate_count,
+        "duplicate_urls": duplicates
+    }
+
+    logging.info(f"[TAVILY AUDIT] After deduplication: {len(unique_results)} unique sources ({duplicate_count} duplicates removed)")
     
     # Step 3: Set up the summarization model with configuration
     configurable = Configuration.from_runnable_config(config)
@@ -96,18 +194,36 @@ async def tavily_search(
     async def noop():
         """No-op function for results without raw content."""
         return None
-    
+
+    # AUDIT LOG: Track summarization setup
+    logging.info(f"[TAVILY AUDIT] Starting summarization with model: {configurable.summarization_model}")
+    logging.info(f"[TAVILY AUDIT] Max content length per source: {max_char_to_include} characters")
+
     summarization_tasks = [
-        noop() if not result.get("raw_content") 
+        noop() if not result.get("raw_content")
         else summarize_webpage(
-            summarization_model, 
+            summarization_model,
             result['raw_content'][:max_char_to_include]
         )
         for result in unique_results.values()
     ]
-    
+
     # Step 5: Execute all summarization tasks in parallel
     summaries = await asyncio.gather(*summarization_tasks)
+
+    # AUDIT LOG: Log summarization results
+    successful_summaries = sum(1 for s in summaries if s is not None)
+    failed_summaries = len(summaries) - successful_summaries
+    logging.info(f"[TAVILY AUDIT] Summarization complete: {successful_summaries} successful, {failed_summaries} skipped/failed")
+
+    # Save summarization info to audit data
+    audit_data["summarization"] = {
+        "model": configurable.summarization_model,
+        "max_content_length": max_char_to_include,
+        "successful": successful_summaries,
+        "failed": failed_summaries,
+        "total_attempted": len(summaries)
+    }
     
     # Step 6: Combine results with their summaries
     summarized_results = {
@@ -124,15 +240,45 @@ async def tavily_search(
     
     # Step 7: Format the final output
     if not summarized_results:
+        logging.warning("[TAVILY AUDIT] No valid search results found")
         return "No valid search results found. Please try different search queries or use a different search API."
-    
+
+    # AUDIT LOG: Final summary of sources being returned
+    logging.info(f"[TAVILY AUDIT] ========== FINAL SOURCE LIST ==========")
+    for i, (url, result) in enumerate(summarized_results.items(), 1):
+        logging.info(f"[TAVILY AUDIT] Final Source {i}: {result['title']}")
+        logging.info(f"[TAVILY AUDIT]   URL: {url}")
+        summary_preview = result['content'][:100] if isinstance(result['content'], str) else str(result['content'])[:100]
+        logging.info(f"[TAVILY AUDIT]   Summary preview: {summary_preview}...")
+
+        # Save to audit data
+        audit_data["final_sources"].append({
+            "source_number": i,
+            "title": result['title'],
+            "url": url,
+            "summary_preview": summary_preview,
+            "summary_full": result['content'] if isinstance(result['content'], str) else str(result['content'])
+        })
+
+    logging.info(f"[TAVILY AUDIT] ========================================")
+    logging.info(f"[TAVILY AUDIT] Total sources included in research: {len(summarized_results)}")
+
+    # Create audit log file with collected data
+    # Use first query as the main query for the filename
+    main_query = queries[0] if queries else "unknown_query"
+    try:
+        audit_filepath = create_audit_log_file(main_query, audit_data)
+        logging.info(f"[TAVILY AUDIT] Audit trail saved successfully to {audit_filepath}")
+    except Exception as e:
+        logging.error(f"[TAVILY AUDIT] Failed to save audit log: {e}")
+
     formatted_output = "Search results: \n\n"
     for i, (url, result) in enumerate(summarized_results.items()):
         formatted_output += f"\n\n--- SOURCE {i+1}: {result['title']} ---\n"
         formatted_output += f"URL: {url}\n\n"
         formatted_output += f"SUMMARY:\n{result['content']}\n\n"
         formatted_output += "\n\n" + "-" * 80 + "\n"
-    
+
     return formatted_output
 
 async def tavily_search_async(

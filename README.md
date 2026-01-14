@@ -1,7 +1,62 @@
 # AI Education Research Assistant
 
-An intelligent research assistant that combines [Open Deep Research](https://github.com/langchain-ai/open-deep-research) with source quality checks and paper KG visualizations to conduct comprehensive literature reviews on AI in education.
+An intelligent research assistant that combines [Open Deep Research](https://github.com/langchain-ai/open-deep-research) with structured knowledge extraction to conduct comprehensive literature reviews on AI in education, with a focus on problem burden analysis and evidence-based decision making.
 
+## 🏗️ System Architecture
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    User Interface Layer                     │
+├─────────────────────────────────────────────────────────────┤
+│  Streamlit App (research_assistant/app.py)                  │
+│  • Research query interface                                 │
+│  • Session history sidebar                                  │
+│  • Results display (summary, graph, papers)                 │
+│  • Writes research data to Neo4j                            │
+└───────────────────────┬─────────────────────────────────────┘
+                        │
+                        ↓
+┌─────────────────────────────────────────────────────────────┐
+│              Research Engine (LangGraph)                    │
+├─────────────────────────────────────────────────────────────┤
+│  Open Deep Research (open_deep_research/)                   │
+│  • Multi-agent parallel research                            │
+│  • Web search (Tavily, OpenAI, Anthropic)                   │
+│  • Evidence quality assessment                              │
+│  • Report generation with citations                         │
+└───────────────────────┬─────────────────────────────────────┘
+                        │
+                        ↓
+┌─────────────────────────────────────────────────────────────┐
+│          Knowledge Graph Database (Neo4j)                   │
+├─────────────────────────────────────────────────────────────┤
+│  • Papers, Sessions, EmpiricalFindings                      │
+│  • Taxonomy nodes (Population, Outcome, etc.)               │
+│  • Relationships & metadata                                 │
+│  • Problem burden metrics (NEW)                             │
+└───────────────────────┬─────────────────────────────────────┘
+                        │
+                        ↑
+┌───────────────────────┴─────────────────────────────────────┐
+│              Data API Layer (FastAPI)                       │
+├─────────────────────────────────────────────────────────────┤
+│  REST API (research_assistant/api/)                         │
+│  • Evidence map endpoints                                   │
+│  • Session management                                       │
+│  • Visualization data (3 levels)                            │
+│  • CORS enabled for external frontends                      │
+└───────────────────────┬─────────────────────────────────────┘
+                        │
+                        ↑ HTTP/REST
+┌───────────────────────┴─────────────────────────────────────┐
+│        Advanced Visualizations (Vercel - Future)            │
+├─────────────────────────────────────────────────────────────┤
+│  React App with D3.js/Plotly                                │
+│  • Level 1: Problem Burden Map                              │
+│  • Level 2: Intervention Evidence Map                       │
+│  • Level 3: Access & Delivery Reality Map                   │
+└─────────────────────────────────────────────────────────────┘
+```
 
 ## 📁 Project Structure
 
@@ -18,16 +73,32 @@ LangChain-Agent/
 │   ├── langgraph.json               # LangGraph deployment config
 │   └── pyproject.toml               # Dependencies
 │
-├── research_assistant/          # Streamlit frontend + backend
+├── research_assistant/          # Streamlit frontend + FastAPI backend
 │   ├── app.py                   # Main Streamlit UI
+│   ├── api/                     # FastAPI REST API (NEW)
+│   │   ├── main.py              # FastAPI app with CORS
+│   │   ├── config.py            # API configuration
+│   │   ├── requirements.txt     # API dependencies
+│   │   ├── models/              # Pydantic response models
+│   │   │   ├── evidence_map.py
+│   │   │   └── session.py
+│   │   ├── services/            # Business logic wrappers
+│   │   │   ├── evidence_map_service.py
+│   │   │   └── session_service.py
+│   │   └── routers/             # API endpoints
+│   │       ├── evidence_map.py  # Evidence map routes
+│   │       ├── sessions.py      # Session routes
+│   │       └── taxonomy.py      # Taxonomy routes
 │   ├── src/
 │   │   ├── research_pipeline.py     # Research orchestration
 │   │   ├── kg_extractor.py          # Knowledge graph extraction
 │   │   ├── session_manager.py       # Session persistence
+│   │   ├── evidence_map.py          # Evidence map queries
 │   │   └── neo4j_config.py          # Database config
 │   └── files/                   # Research outputs
 │
 ├── K12_Evidence_Guide_Summary.txt   # Evidence evaluation framework
+└── README.md                    # This file
 ```
 
 ## 🚀 Local Development Setup

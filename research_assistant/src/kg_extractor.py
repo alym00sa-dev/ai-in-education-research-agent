@@ -15,6 +15,7 @@ from src.neo4j_config import (
     POPULATIONS, USER_TYPES, STUDY_DESIGNS,
     IMPLEMENTATION_OBJECTIVES, OUTCOMES, FINDING_DIRECTIONS
 )
+from src.enhanced_extraction_prompt import build_enhanced_extraction_prompt
 
 load_dotenv()
 
@@ -86,94 +87,8 @@ class KGExtractor:
 
         self.anthropic_client = Anthropic(api_key=anthropic_api_key)
 
-        # LLM extraction prompt (from build_kg_csvs.py)
-        self.extraction_prompt = self._build_extraction_prompt()
-
-    def _build_extraction_prompt(self) -> str:
-        """Build the system prompt for LLM extraction."""
-        return f"""
-You are an expert research assistant extracting structured metadata from
-academic papers about Artificial Intelligence in Education.
-Your task is to produce a STRICT JSON object that captures the paper's details
-using ONLY the controlled vocabulary provided below.
-
-IMPORTANT RULES:
-1. You MUST select exactly ONE value for each category (no lists).
-2. You MUST use the exact category strings provided (no synonyms, no paraphrases).
-3. If the information is missing, return null or an empty string.
-4. All output MUST be valid JSON. No commentary.
-
------------------------------------------
-FIXED CONTROLLED VOCABULARY (USE EXACT STRINGS)
------------------------------------------
-
-STUDY POPULATION (MUST choose ONE):
-{chr(10).join(f'- "{p}"' for p in POPULATIONS)}
-
-USER TYPE (MUST choose ONE):
-{chr(10).join(f'- "{u}"' for u in USER_TYPES)}
-
-STUDY DESIGN (MUST choose ONE):
-{chr(10).join(f'- "{s}"' for s in STUDY_DESIGNS)}
-
-IMPLEMENTATION OBJECTIVE (MUST choose ONE):
-{chr(10).join(f'- "{i}"' for i in IMPLEMENTATION_OBJECTIVES)}
-
-DEFINITIONS TO HELP CLASSIFICATION:
-• "Intelligent Tutoring and Instruction" includes real-time feedback,
-  instructional planning, lesson adjustment, teacher coaching, automated grading.
-
-• "AI-Enable Personalized Advising" includes college application support,
-  financial aid guidance, and mental health support.
-
-• "Institutional Decision-making" includes resource allocation, predictive analytics,
-  administrative decisions, and policy-level AI tools.
-
-• "AI-Enabled Learner Mobility" includes career navigation, skill identification,
-  program/credential selection, and academic placement tools.
-
-OUTCOME (MUST choose ONE):
-{chr(10).join(f'- "{o}"' for o in OUTCOMES)}
-
-DEFINITIONS TO HELP CLASSIFICATION:
-• "Affective - motivation": internal/external factors driving engagement decisions.
-• "Affective - engagement": attention, curiosity, and interest during an activity.
-• "Affective - persistence": sustained engagement over time, especially through challenges.
-
-EMPIRICAL FINDING DIRECTION (MUST choose ONE):
-{chr(10).join(f'- "{f}"' for f in FINDING_DIRECTIONS)}
-
------------------------------------------
-STRICT OUTPUT JSON SCHEMA
------------------------------------------
-
-You MUST return JSON in this exact structure:
-
-{{
-  "title": "",
-  "year": 2023 or null,
-  "venue": "",
-
-  "population": "",
-  "user_type": "",
-  "study_design": "",
-  "implementation_objective": "",
-  "outcome": "",
-
-  "empirical_finding": {{
-      "direction": "",
-      "results_summary": "2-3 sentences summarizing the main empirical finding.",
-      "measure": "this sub-category is asking what the authors used to compare result (test scores, assignment completion, reading comprehension)",
-      "study_size": integer or null,
-      "effect_size": number or null
-  }}
-}}
-
-NOTES:
-• All fields MUST contain exactly ONE value.
-• If information cannot be determined, return null but DO NOT invent values.
-• Do not output anything outside the JSON object.
-"""
+        # LLM extraction prompt (enhanced with new fields)
+        self.extraction_prompt = build_enhanced_extraction_prompt()
 
     def extract_papers_from_sources(self, sources: List[Dict[str, str]]) -> List[PaperDocument]:
         """Extract paper documents from research sources.
@@ -313,7 +228,7 @@ NOTES:
                     messages=[
                         {
                             "role": "user",
-                            "content": f"Extract structured information from this research paper:\n\n{paper.text[:120000]}"
+                            "content": f"Extract structured information from this research paper:\n\n{paper.text[:500000]}"
                         }
                     ]
                 )
@@ -438,6 +353,7 @@ NOTES:
                     print(f"  Adding paper: {paper.title[:60]}...")
 
                     # MERGE Paper node (avoid duplicates by title)
+                    # NEW SCHEMA: population, user_type, study_design are now properties
                     db_session.run(
                         """
                         MERGE (p:Paper {title: $title})
@@ -447,9 +363,15 @@ NOTES:
                             p.venue = $venue,
                             p.url = $url,
                             p.session_id = $session_id,
-                            p.added_date = $added_date
+                            p.added_date = $added_date,
+                            p.population = $population,
+                            p.user_type = $user_type,
+                            p.study_design = $study_design
                         ON MATCH SET
-                            p.session_id = $session_id
+                            p.session_id = $session_id,
+                            p.population = $population,
+                            p.user_type = $user_type,
+                            p.study_design = $study_design
                         """,
                         paper_id=paper_id,
                         title=paper.title,
@@ -457,18 +379,19 @@ NOTES:
                         venue=paper.venue or "",
                         url=paper.url,
                         session_id=session_id,
-                        added_date=added_date
+                        added_date=added_date,
+                        population=paper.population or "",
+                        user_type=paper.user_type or "",
+                        study_design=paper.study_design or ""
                     )
 
-                    # CREATE EmpiricalFinding node - ensure finding_data is always a dict
+                    # CREATE EmpiricalFinding node with ALL enhanced fields
                     finding_data = paper.empirical_finding if isinstance(paper.empirical_finding, dict) else {}
 
-                    # Safely extract values with defaults
-                    direction = finding_data.get("direction") if finding_data else ""
-                    results_summary = finding_data.get("results_summary") if finding_data else ""
-                    measure = finding_data.get("measure") if finding_data else ""
-                    study_size = finding_data.get("study_size") if finding_data else None
-                    effect_size = finding_data.get("effect_size") if finding_data else None
+                    # Helper function to safely get values with "not_reported" default
+                    def get_field(key, default="not_reported"):
+                        value = finding_data.get(key)
+                        return value if value is not None and value != "" else default
 
                     db_session.run(
                         """
@@ -479,51 +402,68 @@ NOTES:
                             f.results_summary = $results_summary,
                             f.measure = $measure,
                             f.study_size = $study_size,
-                            f.effect_size = $effect_size
+                            f.effect_size = $effect_size,
+
+                            f.student_racial_makeup = $student_racial_makeup,
+                            f.student_socioeconomic_makeup = $student_socioeconomic_makeup,
+                            f.student_gender_makeup = $student_gender_makeup,
+                            f.student_age_distribution = $student_age_distribution,
+
+                            f.school_type = $school_type,
+                            f.public_private_status = $public_private_status,
+                            f.title_i_status = $title_i_status,
+                            f.ses_indicator = $ses_indicator,
+                            f.ses_numeric = $ses_numeric,
+                            f.special_education_services = $special_education_services,
+                            f.urban_type = $urban_type,
+                            f.governance_type = $governance_type,
+
+                            f.institutional_level = $institutional_level,
+                            f.postsecondary_type = $postsecondary_type,
+
+                            f.region = $region,
+
+                            f.system_impact_levels = $system_impact_levels,
+                            f.decision_making_complexity = $decision_making_complexity,
+                            f.evidence_type_strength = $evidence_type_strength,
+                            f.evaluation_burden_cost = $evaluation_burden_cost
                         MERGE (p)-[:REPORTS_FINDING]->(f)
                         """,
                         title=paper.title,
                         finding_id=finding_id,
-                        direction=direction or "",
-                        results_summary=results_summary or "",
-                        measure=measure or "",
-                        study_size=study_size,
-                        effect_size=effect_size
+                        direction=get_field("direction", ""),
+                        results_summary=get_field("results_summary", ""),
+                        measure=get_field("measure", ""),
+                        study_size=get_field("study_size", "not_reported"),
+                        effect_size=get_field("effect_size", "not_reported"),
+
+                        student_racial_makeup=get_field("student_racial_makeup"),
+                        student_socioeconomic_makeup=get_field("student_socioeconomic_makeup"),
+                        student_gender_makeup=get_field("student_gender_makeup"),
+                        student_age_distribution=get_field("student_age_distribution"),
+
+                        school_type=get_field("school_type"),
+                        public_private_status=get_field("public_private_status"),
+                        title_i_status=get_field("title_i_status"),
+                        ses_indicator=get_field("ses_indicator"),
+                        ses_numeric=get_field("ses_numeric"),
+                        special_education_services=get_field("special_education_services"),
+                        urban_type=get_field("urban_type"),
+                        governance_type=get_field("governance_type"),
+
+                        institutional_level=get_field("institutional_level"),
+                        postsecondary_type=get_field("postsecondary_type"),
+
+                        region=get_field("region"),
+
+                        system_impact_levels=get_field("system_impact_levels", -1),
+                        decision_making_complexity=get_field("decision_making_complexity", -1),
+                        evidence_type_strength=get_field("evidence_type_strength", -1),
+                        evaluation_burden_cost=get_field("evaluation_burden_cost", -1)
                     )
 
                     # Create taxonomy relationships
-                    if paper.population in POPULATIONS:
-                        db_session.run(
-                            """
-                            MATCH (p:Paper {title: $title})
-                            MATCH (pop:Population {id: $population})
-                            MERGE (p)-[:TARGETS_POPULATION]->(pop)
-                            """,
-                            title=paper.title,
-                            population=paper.population
-                        )
-
-                    if paper.user_type in USER_TYPES:
-                        db_session.run(
-                            """
-                            MATCH (p:Paper {title: $title})
-                            MATCH (ut:UserType {id: $user_type})
-                            MERGE (p)-[:TARGETS_USER_TYPE]->(ut)
-                            """,
-                            title=paper.title,
-                            user_type=paper.user_type
-                        )
-
-                    if paper.study_design in STUDY_DESIGNS:
-                        db_session.run(
-                            """
-                            MATCH (p:Paper {title: $title})
-                            MATCH (sd:StudyDesign {id: $study_design})
-                            MERGE (p)-[:USES_STUDY_DESIGN]->(sd)
-                            """,
-                            title=paper.title,
-                            study_design=paper.study_design
-                        )
+                    # NOTE: population, user_type, study_design are now stored as Paper properties (no relationships needed)
 
                     if paper.implementation_objective in IMPLEMENTATION_OBJECTIVES:
                         db_session.run(

@@ -1,0 +1,14 @@
+Architecture Overview:
+
+  User Query → Streamlit Frontend → FastAPI Backend → LangGraph Researcher
+                                           ↓
+                      [Tavily Search + OpenAI GPT-4.1]
+                                           ↓
+                      Research Report + Raw Sources
+                                           ↓
+                      Knowledge Graph Extractor (GPT-4.1)
+                                           ↓
+                      Neo4j Database (Structured Storage)
+                                           ↓
+                      Visualization + Session Management
+                      
