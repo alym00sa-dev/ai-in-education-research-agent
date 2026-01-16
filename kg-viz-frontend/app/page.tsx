@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { Eye, EyeOff } from 'lucide-react';
 import BubbleChart from '@/components/BubbleChart';
+import InfoTooltip from '@/components/InfoTooltip';
 import { fetchLevel1Data, fetchLevel2Data } from '@/lib/api';
 import { BubbleData, VisualizationResponse } from '@/lib/types';
 
@@ -544,17 +545,30 @@ export default function Home() {
 
                   {/* Components */}
                   <div className="grid grid-cols-2 gap-3">
-                    {Object.entries(selectedBubble.breakdown.evidence_maturity.components).map(([key, component]) => (
-                      <div key={key} className="bg-white p-3 rounded-lg border border-slate-200 shadow-sm">
-                        <p className="text-xs font-bold text-slate-700 uppercase mb-1.5 tracking-wide">
-                          {key.replace(/_/g, ' ')}
-                        </p>
-                        <p className="text-lg font-bold text-slate-900">
-                          {component.score.toFixed(1)} <span className="text-sm text-slate-600">/ {component.max}</span>
-                        </p>
-                        <p className="text-xs text-slate-600 mt-2 leading-relaxed">{component.description}</p>
-                      </div>
-                    ))}
+                    {Object.entries(selectedBubble.breakdown.evidence_maturity.components).map(([key, component]) => {
+                      // Define detailed tooltip content for each component
+                      const tooltipContent: { [key: string]: string } = {
+                        'design_strength': 'Design Strength measures the rigor of study methodologies. Scores are based on a hierarchy: Randomized Controlled Trials (RCT) = 25 points, Meta-analysis = 22 points, Quasi-experimental = 18 points, Pre-post comparison = 15 points, Case study = 10 points, Literature review = 8 points, Commentary/Opinion = 5 points. Higher scores indicate more robust experimental designs with better causal inference.',
+                        'consistency': 'Consistency evaluates the stability of findings across multiple studies. We measure directional agreement: if all studies in this cell show the same direction (e.g., all positive outcomes), consistency = 25 points. Mixed results receive proportionally lower scores. This helps identify how reliable and replicable the evidence is across different research contexts.',
+                        'external_validity': 'External Validity assesses the generalizability of findings across diverse contexts. We measure diversity across three dimensions: (1) Settings: classroom, after-school, online, etc. (2) Geographic regions: North America, Europe, Asia, etc. (3) Student populations: K-12, higher ed, special needs, etc. More diversity = higher score (max 25 points), indicating findings apply broadly.',
+                        'quality': 'Quality reflects the risk of bias in studies, measured by evidence_type_strength (0 = strongest evidence, 4 = weakest). This is inverted to a 0-25 point scale where lower risk of bias = higher score. Factors include: peer review status, methodology transparency, sample size adequacy, conflict of interest disclosures, and replication potential.'
+                      };
+
+                      return (
+                        <div key={key} className="bg-white p-3 rounded-lg border border-slate-200 shadow-sm">
+                          <div className="flex items-center gap-1.5 mb-1.5">
+                            <p className="text-xs font-bold text-slate-700 uppercase tracking-wide">
+                              {key.replace(/_/g, ' ')}
+                            </p>
+                            <InfoTooltip content={tooltipContent[key] || component.description} />
+                          </div>
+                          <p className="text-lg font-bold text-slate-900">
+                            {component.score.toFixed(1)} <span className="text-sm text-slate-600">/ {component.max}</span>
+                          </p>
+                          <p className="text-xs text-slate-600 mt-2 leading-relaxed">{component.description}</p>
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
 
