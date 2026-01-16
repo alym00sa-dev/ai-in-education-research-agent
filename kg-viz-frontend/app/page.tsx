@@ -548,10 +548,10 @@ export default function Home() {
                     {Object.entries(selectedBubble.breakdown.evidence_maturity.components).map(([key, component]) => {
                       // Define detailed tooltip content for each component
                       const tooltipContent: { [key: string]: string } = {
-                        'design_strength': 'Design Strength measures the rigor of study methodologies. Scores are based on a hierarchy: Randomized Controlled Trials (RCT) = 25 points, Meta-analysis = 22 points, Quasi-experimental = 18 points, Pre-post comparison = 15 points, Case study = 10 points, Literature review = 8 points, Commentary/Opinion = 5 points. Higher scores indicate more robust experimental designs with better causal inference.',
-                        'consistency': 'Consistency evaluates the stability of findings across multiple studies. We measure directional agreement: if all studies in this cell show the same direction (e.g., all positive outcomes), consistency = 25 points. Mixed results receive proportionally lower scores. This helps identify how reliable and replicable the evidence is across different research contexts.',
-                        'external_validity': 'External Validity assesses the generalizability of findings across diverse contexts. We measure diversity across three dimensions: (1) Settings: classroom, after-school, online, etc. (2) Geographic regions: North America, Europe, Asia, etc. (3) Student populations: K-12, higher ed, special needs, etc. More diversity = higher score (max 25 points), indicating findings apply broadly.',
-                        'quality': 'Quality reflects the risk of bias in studies, measured by evidence_type_strength (0 = strongest evidence, 4 = weakest). This is inverted to a 0-25 point scale where lower risk of bias = higher score. Factors include: peer review status, methodology transparency, sample size adequacy, conflict of interest disclosures, and replication potential.'
+                        'design_strength': 'CALCULATION: For each paper, assign points based on study_design field: RCT=25pts, Meta-analysis=22pts, Quasi-experimental=18pts, Pre-post=15pts, Case study=10pts, Literature review=8pts, Commentary=5pts. Final score = average across all papers in this cell. CONTEXT: Higher scores indicate more rigorous experimental designs with stronger causal inference. RCTs and meta-analyses provide the most reliable evidence for intervention effectiveness.',
+                        'consistency': 'CALCULATION: Count papers by finding_direction (Positive, Negative, Mixed, Neutral). Calculate directional stability = (count of most common direction / total papers) × 25. Example: If 8 of 10 papers show Positive results, score = (8/10) × 25 = 20 points. CONTEXT: Higher scores mean findings consistently point in the same direction across studies, indicating reliable and replicable effects. Low scores suggest conflicting evidence requiring further investigation.',
+                        'external_validity': 'CALCULATION: Count unique values across three diversity dimensions for all papers: (1) unique settings (classroom, online, after-school, etc.), (2) unique geographic regions (North America, Europe, Asia, etc.), (3) unique populations (K-12, higher ed, adult learners, etc.). Score = (total unique contexts / theoretical maximum) × 25. CONTEXT: Higher scores indicate findings generalize across diverse educational contexts, suggesting broader applicability and real-world relevance.',
+                        'quality': 'CALCULATION: For each paper, use evidence_type_strength field (0=best, 4=worst quality). Invert scale: Quality score = 25 - (avg evidence_type_strength × 6.25). Lower evidence_type_strength = higher quality score. CONTEXT: Measures risk of bias based on peer review status, methodology transparency, sample size, conflict of interest, and replication potential. Higher scores indicate more trustworthy, rigorous research.'
                       };
 
                       return (
@@ -579,6 +579,7 @@ export default function Home() {
                       <h3 className="text-lg font-bold text-slate-900 uppercase tracking-wide">
                         Problem Burden Scale
                       </h3>
+                      <InfoTooltip content="CALCULATION: Extract user_type field from each paper in this cell. Count unique user types (e.g., 'K-12 students', 'Teachers', 'Higher Ed students', 'Adult learners', 'Administrators'). Score = total count of unique user types. Example: If papers mention Teachers, K-12 students, and Administrators, score = 3. CONTEXT: Higher scores indicate the problem affects a broader range of educational stakeholders across different roles and contexts, suggesting wider systemic impact and greater urgency for scalable solutions." />
                     </div>
                     <p className="text-sm text-slate-600 mb-3 leading-relaxed">{selectedBubble.breakdown.problem_scale.description}</p>
                     <div className="bg-slate-100 p-4 rounded-lg mb-4 border border-slate-300">
@@ -608,6 +609,7 @@ export default function Home() {
                       <h3 className="text-lg font-bold text-slate-900 uppercase tracking-wide">
                         Potential Impact
                       </h3>
+                      <InfoTooltip content="CALCULATION: For each paper in this cell, identify all outcomes it targets via FOCUSES_ON_OUTCOME relationships (e.g., 'Cognitive - Mathematical numeracy', 'Behavioral - Engagement', 'Affective - Self-efficacy'). Count unique outcome categories across all papers. Score = total count of unique outcomes. Example: If papers target Math, Reading, Engagement, and Self-efficacy, score = 4. CONTEXT: Higher scores indicate interventions with multi-dimensional learning benefits across cognitive, behavioral, and affective domains, suggesting broader transformative potential and holistic educational impact." />
                     </div>
                     <p className="text-sm text-slate-600 mb-3 leading-relaxed">{selectedBubble.breakdown.potential_impact.description}</p>
                     <div className="bg-slate-100 p-4 rounded-lg mb-4 border border-slate-300">
@@ -649,6 +651,7 @@ export default function Home() {
                       <h3 className="text-lg font-bold text-slate-900 uppercase tracking-wide">
                         Effort Required
                       </h3>
+                      <InfoTooltip content="CALCULATION: Two components averaged together: (1) System Impact = Count of system coordination indicators per paper (curriculum_alignment_needed, pd_training_needed, infrastructure_changes_needed, policy_changes_needed, assessment_changes_needed), averaged across all papers. (2) Decision Complexity = For each paper: (count of stakeholder_groups × avg_decisions_per_stakeholder), then averaged across papers. Final score = (System Impact + Decision Complexity) / 2. CONTEXT: Higher scores indicate more complex implementations requiring extensive coordination, stakeholder buy-in, and organizational change management." />
                     </div>
                     <p className="text-sm text-slate-600 mb-3 leading-relaxed">{selectedBubble.breakdown.effort_required.description}</p>
                     <div className="bg-slate-100 p-4 rounded-lg mb-4 border border-slate-300">
@@ -691,6 +694,7 @@ export default function Home() {
                       <h3 className="text-lg font-bold text-slate-900 uppercase tracking-wide">
                         R&D Investment Required
                       </h3>
+                      <InfoTooltip content="CALCULATION: Two components averaged together: (1) Evidence Maturity Gap = 100 - Evidence Maturity score (max 100 pts). Example: If Evidence Maturity = 65, gap = 35 points. (2) Evaluation Burden = For each paper: (count unique outcomes via FOCUSES_ON_OUTCOME relationships × count unique population values), then averaged across papers. Final score = (Evidence Maturity Gap + Evaluation Burden) / 2. CONTEXT: Higher scores indicate areas needing more research investment. Large maturity gaps require foundational studies. High evaluation burden means complex multi-outcome, multi-population research designs needed to generate robust, generalizable evidence." />
                     </div>
                     <p className="text-sm text-slate-600 mb-3 leading-relaxed">{selectedBubble.breakdown.r_and_d_required.description}</p>
                     <div className="bg-slate-100 p-4 rounded-lg mb-4 border border-slate-300">
