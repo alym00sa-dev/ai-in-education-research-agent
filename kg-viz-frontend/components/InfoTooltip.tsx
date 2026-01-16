@@ -17,12 +17,27 @@ export default function InfoTooltip({ content, className = '' }: InfoTooltipProp
     if (isVisible && buttonRef.current) {
       const rect = buttonRef.current.getBoundingClientRect();
       const viewportWidth = window.innerWidth;
+      const viewportHeight = window.innerHeight;
       const tooltipWidth = 320; // 80 * 4 (w-80)
+
+      // Estimate tooltip height based on content length (rough approximation)
+      // Average ~40 characters per line, ~20px per line, plus padding
+      const estimatedHeight = Math.ceil(content.length / 40) * 20 + 32;
 
       // Calculate position
       const newPosition: { left?: number; right?: number; top: number } = {
         top: rect.top
       };
+
+      // Check if tooltip would overflow bottom of viewport
+      if (rect.top + estimatedHeight + 16 > viewportHeight) {
+        // Position above the icon
+        newPosition.top = rect.top - estimatedHeight - 8;
+        // Ensure it doesn't go off the top
+        if (newPosition.top < 8) {
+          newPosition.top = 8;
+        }
+      }
 
       // If tooltip would go off right side of screen, show on left
       if (rect.right + tooltipWidth + 24 > viewportWidth) {
@@ -33,7 +48,7 @@ export default function InfoTooltip({ content, className = '' }: InfoTooltipProp
 
       setPosition(newPosition);
     }
-  }, [isVisible]);
+  }, [isVisible, content]);
 
   return (
     <div className={`relative inline-block ${className}`}>
