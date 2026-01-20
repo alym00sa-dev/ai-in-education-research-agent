@@ -18,6 +18,17 @@ export const metadata: Metadata = {
   icons: {
     icon: '/brain-icon.svg',
   },
+  openGraph: {
+    title: "AI in Education Evidence Dashboard",
+    description: "Strategic framework for navigating research evidence and investment priorities across AI-enabled educational interventions",
+    type: "website",
+    siteName: "AI in Education Evidence Dashboard",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AI in Education Evidence Dashboard",
+    description: "Strategic framework for navigating research evidence and investment priorities across AI-enabled educational interventions",
+  },
 };
 
 export default function RootLayout({
