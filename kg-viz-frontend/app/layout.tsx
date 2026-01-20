@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "AI in Education Evidence Dashboard",
   description: "Strategic framework for navigating research evidence and investment priorities across AI-enabled educational interventions",
+  icons: {
+    icon: '/brain-icon.svg',
+  },
 };
 
 export default function RootLayout({
