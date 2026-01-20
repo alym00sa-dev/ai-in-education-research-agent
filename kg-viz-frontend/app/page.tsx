@@ -144,7 +144,7 @@ export default function Home() {
       <header className="border-b border-slate-300 bg-gradient-to-r from-slate-800 to-slate-700 px-8 py-4 shadow-lg">
         <div className="flex items-center justify-between">
           <h1 className="text-xl font-semibold text-white tracking-tight">
-            AI in Education Research Evidence Map
+            AI in Education Research Evidence Dashboard
           </h1>
 
           {/* View Selector Dropdown */}
@@ -179,7 +179,7 @@ export default function Home() {
             {/* Header Section */}
             <div className="mb-16">
               <h2 className="text-4xl font-light text-slate-900 mb-4 tracking-tight">
-                AI in Education Research Evidence Map
+                AI in Education Research Evidence Dashboard
               </h2>
               <p className="text-lg text-slate-600 leading-relaxed max-w-3xl">
                 A strategic framework for navigating research evidence and investment priorities across AI-enabled educational interventions.
