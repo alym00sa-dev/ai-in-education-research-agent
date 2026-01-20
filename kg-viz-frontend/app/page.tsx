@@ -609,7 +609,7 @@ export default function Home() {
                       <h3 className="text-lg font-bold text-slate-900 uppercase tracking-wide">
                         Potential Impact
                       </h3>
-                      <InfoTooltip content="CALCULATION: For each paper in this cell, identify all outcomes it targets via FOCUSES_ON_OUTCOME relationships (e.g., 'Cognitive - Mathematical numeracy', 'Behavioral - Engagement', 'Affective - Self-efficacy'). Count unique outcome categories across all papers. Score = total count of unique outcomes. Example: If papers target Math, Reading, Engagement, and Self-efficacy, score = 4. CONTEXT: Higher scores indicate interventions with multi-dimensional learning benefits across cognitive, behavioral, and affective domains, suggesting broader transformative potential and holistic educational impact." />
+                      <InfoTooltip content="CALCULATION: For each unique outcome this intervention targets, get the Problem Burden Scale (Y-axis) value from Level 1, then sum all those values. Example: If targeting 6 outcomes with Level 1 burden scales of 2.1, 1.8, 2.4, 1.7, 2.2, and 2.2, the score = 12.4. CONTEXT: Higher scores indicate interventions addressing multiple high-burden educational problems from Level 1, suggesting broader systemic impact and transformative potential across urgent educational challenges." />
                     </div>
                     <p className="text-sm text-slate-600 mb-3 leading-relaxed">{selectedBubble.breakdown.potential_impact.description}</p>
                     <div className="bg-slate-100 p-4 rounded-lg mb-4 border border-slate-300">
