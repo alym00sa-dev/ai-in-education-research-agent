@@ -422,6 +422,301 @@ class VisualizationService:
 
         return avg_evidence + avg_burden
 
+    # ========== LEVEL 3: EVIDENCE-BASED INTERVENTIONS MAP (WWC DATA) ==========
+
+    def get_level3_data(self) -> Dict[str, Any]:
+        """
+        Get data for Level 3: Evidence-Based Interventions Map (WWC data).
+        Returns bubbles for each broadened Implementation Objective with WWC evidence.
+        """
+        # Broadened IOs for Level 3 (tech-compatible, not just AI)
+        BROADENED_IOS = [
+            "Adaptive Instruction & Tutoring Systems",
+            "Personalized Learning & Advising Systems",
+            "Data-Driven Decision Support",
+            "Learning Pathways & Mobility Support"
+        ]
+
+        bubbles = []
+
+        for io in BROADENED_IOS:
+            bubble = self._compute_io_bubble_level3(io)
+            bubbles.append(bubble)
+
+        # Calculate median external validity for priority classification
+        validity_values = [b['y'] for b in bubbles if b['y'] > 0]
+        median_validity = self._calculate_median(validity_values) if validity_values else 0
+
+        # Update each bubble with priority tag
+        for bubble in bubbles:
+            bubble['priority'] = self._calculate_priority_level3(
+                bubble['x'],
+                bubble['y'],
+                median_validity
+            )
+
+        metadata = {
+            "x_axis": {
+                "label": "Evidence Base Quality",
+                "description": "Rigor and consistency of RCT evidence (0-100)",
+                "computation": "4-component composite: Study Design Quality (WWC ratings), Replication Strength (number of studies), Sample Adequacy (total students), and Effect Consistency (stability across findings)"
+            },
+            "y_axis": {
+                "label": "External Validity Score",
+                "description": "Generalizability across diverse contexts",
+                "computation": "Diversity across geographic regions, school types, demographics (ELL, FRPL, race), grade levels, and urbanicity. Higher score indicates findings replicate across more contexts.",
+                "median": median_validity
+            },
+            "bubble_size": {
+                "label": "Students Impacted",
+                "description": "Scale of evidence (studies × sample size)",
+                "computation": "Number of rigorous studies meeting WWC standards multiplied by average sample size. Represents total students already impacted by this intervention."
+            }
+        }
+
+        return {"bubbles": bubbles, "metadata": metadata}
+
+    def _compute_io_bubble_level3(self, io: str) -> Dict[str, Any]:
+        """Compute single bubble for an Implementation Objective using WWC data."""
+
+        # Get all WWC papers with this IO
+        with self.driver.session() as session:
+            result = session.run("""
+                MATCH (p:Paper {source: 'WWC'})-[:HAS_IMPLEMENTATION_OBJECTIVE]->(io:ImplementationObjective)
+                WHERE io.type = $io OR io.name = $io
+                MATCH (p)-[:REPORTS_FINDING]->(f:EmpiricalFinding {source: 'WWC'})
+                RETURN
+                    p.title as title,
+                    p.study_design as study_design,
+                    p.year as year,
+                    p.population as population,
+                    p.user_type as user_type,
+                    p.url as url,
+                    p.wwc_study_rating as wwc_study_rating,
+                    f.direction as direction,
+                    f.evidence_type_strength as evidence_type_strength,
+                    f.study_size as study_size,
+                    f.effect_size as effect_size,
+                    f.region as region,
+                    f.school_type as school_type,
+                    f.wwc_is_significant as wwc_is_significant
+            """, io=io)
+
+            papers = [dict(record) for record in result]
+
+        if not papers:
+            # No WWC papers for this IO
+            return {
+                "id": io,
+                "label": io,
+                "x": 0,
+                "y": 0,
+                "size": 0,
+                "paper_count": 0,
+                "breakdown": {}
+            }
+
+        # X-axis: Evidence Base Quality (0-100)
+        evidence_quality = self._compute_evidence_quality_wwc(papers)
+
+        # Y-axis: External Validity Score
+        external_validity = self._compute_external_validity_wwc(papers)
+
+        # Bubble Size: Studies × Average Sample Size
+        bubble_size = self._compute_bubble_size_level3(papers)
+
+        # Breakdown for click interaction
+        breakdown = self._calculate_breakdown_level3(io, papers)
+
+        # Priority will be calculated in get_level3_data after median is computed
+        return {
+            "id": io,
+            "label": io,
+            "x": evidence_quality,
+            "y": external_validity,
+            "size": bubble_size,
+            "paper_count": len(set(p['title'] for p in papers)),
+            "priority": "research_gap",  # Temporary, will be updated
+            "breakdown": breakdown
+        }
+
+    def _compute_evidence_quality_wwc(self, papers: List[Dict]) -> float:
+        """
+        Compute Evidence Base Quality for WWC data (0-100).
+
+        Components:
+        1. Study Design Quality (25 pts) - WWC ratings
+        2. Replication Strength (25 pts) - Number of unique studies
+        3. Sample Adequacy (25 pts) - Total sample sizes
+        4. Effect Consistency (25 pts) - Consistency of effects
+        """
+        if not papers:
+            return 0.0
+
+        # 1. Study Design Quality (25 pts) based on WWC ratings
+        rating_scores = {
+            'Meets WWC standards without reservations': 25,
+            'Meets WWC standards with reservations': 15,
+            'Does not meet WWC standards': 5,
+            'Ineligible for review': 0
+        }
+
+        ratings = [rating_scores.get(p.get('wwc_study_rating', ''), 10) for p in papers]
+        design_quality = self._safe_avg(ratings)
+
+        # 2. Replication Strength (25 pts) - based on number of unique studies
+        unique_studies = len(set(p['title'] for p in papers))
+        if unique_studies >= 10:
+            replication_score = 25
+        elif unique_studies >= 7:
+            replication_score = 22
+        elif unique_studies >= 5:
+            replication_score = 20
+        elif unique_studies >= 3:
+            replication_score = 15
+        elif unique_studies >= 2:
+            replication_score = 10
+        else:
+            replication_score = 5
+
+        # 3. Sample Adequacy (25 pts)
+        total_sample = sum(p.get('study_size', 0) for p in papers if p.get('study_size'))
+        # Normalize: 1000+ students = 25 pts
+        sample_score = min(25, (total_sample / 1000) * 25) if total_sample else 0
+
+        # 4. Effect Consistency (25 pts)
+        effect_sizes = [p.get('effect_size') for p in papers
+                       if p.get('effect_size') is not None]
+
+        if len(effect_sizes) > 1:
+            import statistics
+            std_dev = statistics.stdev(effect_sizes)
+            # Lower std dev = more consistent = higher score
+            # Std dev of 0.3 or less = full 25 pts
+            consistency_score = max(0, 25 - (std_dev * 83))  # 1/0.012 ≈ 83
+        elif len(effect_sizes) == 1:
+            consistency_score = 15
+        else:
+            consistency_score = 0
+
+        total = design_quality + replication_score + sample_score + consistency_score
+        return round(total, 2)
+
+    def _compute_external_validity_wwc(self, papers: List[Dict]) -> float:
+        """
+        Compute External Validity Score for WWC data.
+
+        Measures diversity across:
+        - Geographic regions
+        - School types
+        - Grade levels (population)
+        - Urbanicity (inferred from school_type)
+        """
+        if not papers:
+            return 0.0
+
+        # Collect unique values
+        unique_regions = len(set(p.get('region', '') for p in papers
+                                if p.get('region') and p.get('region') != 'not_reported'))
+        unique_school_types = len(set(p.get('school_type', '') for p in papers
+                                     if p.get('school_type') and p.get('school_type') != 'not_reported'))
+        unique_populations = len(set(p.get('population', '') for p in papers
+                                    if p.get('population') and p.get('population') != 'not_reported'))
+
+        # Calculate score components (out of 50 total)
+        region_score = min(20, unique_regions * 2)  # Max 20 pts (10 regions)
+        school_type_score = min(15, unique_school_types * 5)  # Max 15 pts (3 types)
+        population_score = min(15, unique_populations * 3)  # Max 15 pts (5 pops)
+
+        total = region_score + school_type_score + population_score
+        return round(total, 2)
+
+    def _compute_bubble_size_level3(self, papers: List[Dict]) -> float:
+        """
+        Compute bubble size for Level 3: Studies × Average Sample Size.
+        """
+        unique_studies = len(set(p['title'] for p in papers))
+        total_sample = sum(p.get('study_size', 0) for p in papers if p.get('study_size'))
+        avg_sample = total_sample / len(papers) if papers else 0
+
+        size = unique_studies * avg_sample
+        return round(size, 2)
+
+    def _calculate_breakdown_level3(self, io: str, papers: List[Dict]) -> Dict[str, Any]:
+        """Calculate detailed breakdown data for Level 3 popup."""
+
+        # Effect sizes
+        effect_sizes = [p.get('effect_size') for p in papers
+                       if p.get('effect_size') is not None]
+        avg_effect = sum(effect_sizes) / len(effect_sizes) if effect_sizes else 0
+
+        # Unique studies
+        unique_studies = len(set(p['title'] for p in papers))
+
+        # Total sample
+        total_sample = sum(p.get('study_size', 0) for p in papers if p.get('study_size'))
+
+        # Statistical significance rate
+        sig_findings = sum(1 for p in papers if p.get('wwc_is_significant'))
+        sig_rate = (sig_findings / len(papers) * 100) if papers else 0
+
+        # Study ratings distribution
+        ratings = {}
+        for p in papers:
+            rating = p.get('wwc_study_rating', 'not_reported')
+            ratings[rating] = ratings.get(rating, 0) + 1
+
+        # Regions covered
+        regions = list(set(p.get('region', '') for p in papers
+                          if p.get('region') and p.get('region') != 'not_reported'))
+
+        return {
+            "evidence_quality": {
+                "score": self._compute_evidence_quality_wwc(papers),
+                "max": 100,
+                "description": "Rigor and replication of RCT evidence from What Works Clearinghouse"
+            },
+            "external_validity": {
+                "score": self._compute_external_validity_wwc(papers),
+                "max": 50,
+                "description": "Generalizability across regions, school types, and grade levels"
+            },
+            "students_impacted": {
+                "total": total_sample,
+                "studies": unique_studies,
+                "avg_per_study": round(total_sample / unique_studies) if unique_studies else 0,
+                "description": "Total students studied across all RCTs"
+            },
+            "effect_summary": {
+                "average_effect_size": round(avg_effect, 3),
+                "num_findings": len(papers),
+                "significant_rate": round(sig_rate, 1),
+                "description": "Average effect size from WWC meta-analysis"
+            },
+            "wwc_ratings": ratings,
+            "regions_covered": regions,
+            "study_design_distribution": self._get_study_design_distribution(papers)
+        }
+
+    def _calculate_priority_level3(self, evidence_quality: float, external_validity: float,
+                                   median_validity: float) -> str:
+        """
+        Calculate priority tag for Level 3 bubbles.
+
+        Logic:
+        - High Priority: x > 70 AND y > median (strong evidence + highly generalizable)
+        - On Watch: x > 70 AND y <= median (strong evidence but limited contexts)
+        - Research Gap: x <= 70 (needs more rigorous replication)
+        """
+        EVIDENCE_THRESHOLD = 70
+
+        if evidence_quality > EVIDENCE_THRESHOLD and external_validity > median_validity:
+            return "high_priority"
+        elif evidence_quality > EVIDENCE_THRESHOLD and external_validity <= median_validity:
+            return "on_watch"
+        else:
+            return "research_gap"
+
     # ========== EVIDENCE MATURITY CALCULATION (SHARED) ==========
 
     def _compute_evidence_maturity(self, papers: List[Dict], entity_name: str) -> float:

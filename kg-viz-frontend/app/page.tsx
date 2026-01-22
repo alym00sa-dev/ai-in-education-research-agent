@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { Eye, EyeOff } from 'lucide-react';
 import BubbleChart from '@/components/BubbleChart';
 import InfoTooltip from '@/components/InfoTooltip';
-import { fetchLevel1Data, fetchLevel2Data } from '@/lib/api';
+import { fetchLevel1Data, fetchLevel2Data, fetchLevel3Data } from '@/lib/api';
 import { BubbleData, VisualizationResponse } from '@/lib/types';
 
 // Helper to capitalize labels properly
@@ -40,11 +40,12 @@ function capitalizeLabel(label: string): string {
     .join(' - ');
 }
 
-type ViewType = 'intro' | 'level1' | 'level2';
+type ViewType = 'intro' | 'level1' | 'level2' | 'level3';
 
 export default function Home() {
   const [level1Data, setLevel1Data] = useState<VisualizationResponse | null>(null);
   const [level2Data, setLevel2Data] = useState<VisualizationResponse | null>(null);
+  const [level3Data, setLevel3Data] = useState<VisualizationResponse | null>(null);
   const [selectedBubble, setSelectedBubble] = useState<BubbleData | null>(null);
   const [activeView, setActiveView] = useState<ViewType>('intro');
   const [hiddenBubbles, setHiddenBubbles] = useState<Set<string>>(new Set());
@@ -57,12 +58,14 @@ export default function Home() {
     async function loadData() {
       try {
         setLoading(true);
-        const [l1, l2] = await Promise.all([
+        const [l1, l2, l3] = await Promise.all([
           fetchLevel1Data(),
-          fetchLevel2Data()
+          fetchLevel2Data(),
+          fetchLevel3Data()
         ]);
         setLevel1Data(l1);
         setLevel2Data(l2);
+        setLevel3Data(l3);
       } catch (err) {
         setError(err instanceof Error ? err.message : 'Failed to load data');
       } finally {
@@ -123,7 +126,7 @@ export default function Home() {
     );
   }
 
-  const currentData = activeView === 'level1' ? level1Data : activeView === 'level2' ? level2Data : null;
+  const currentData = activeView === 'level1' ? level1Data : activeView === 'level2' ? level2Data : activeView === 'level3' ? level3Data : null;
   const visibleBubbles = currentData?.bubbles.filter(b =>
     !hiddenBubbles.has(b.id) && !hiddenPriorities.has(b.priority)
   ) || [];
@@ -161,6 +164,7 @@ export default function Home() {
               <option value="intro">Introduction</option>
               <option value="level1">Level 1: Problem Burden Map</option>
               <option value="level2">Level 2: Intervention Evidence Map</option>
+              <option value="level3">Level 3: Evidence-Based Interventions (RCT)</option>
             </select>
             <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-slate-700">
               <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -484,9 +488,13 @@ export default function Home() {
                   <p className="text-sm text-slate-700 leading-relaxed">
                     <strong className="text-slate-900">Strategic Insight:</strong> This map helps us prioritize where to invest by combining problem burden with evidence readiness—so we focus on high-impact learning challenges that are both important and actionable.
                   </p>
-                ) : (
+                ) : activeView === 'level2' ? (
                   <p className="text-sm text-slate-700 leading-relaxed">
                     <strong className="text-slate-900">Strategic Insight:</strong> This map evaluates intervention readiness by showing which AI-enabled approaches have both strong evidence and clear alignment to urgent educational problems as outlined in Level 1.
+                  </p>
+                ) : (
+                  <p className="text-sm text-slate-700 leading-relaxed">
+                    <strong className="text-slate-900">Strategic Insight:</strong> This map showcases proven interventions from rigorous RCTs (What Works Clearinghouse), highlighting which tech-compatible approaches have strong evidence AND generalize across diverse contexts—representing millions of students already impacted.
                   </p>
                 )}
               </div>

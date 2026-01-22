@@ -32,3 +32,16 @@ async def get_level2_visualization():
         return data
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+
+@router.get("/level3", response_model=Level2Response)
+async def get_level3_visualization():
+    """
+    Get data for Level 3: Evidence-Based Interventions Map (WWC).
+    Returns 4 bubbles (one per Implementation Objective) with RCT evidence.
+    """
+    try:
+        data = service.get_level3_data()
+        return data
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
