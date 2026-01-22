@@ -437,23 +437,21 @@ class VisualizationService:
             "Learning Pathways & Mobility Support"
         ]
 
+        # Unique colors for each bubble (no semantic meaning)
+        BUBBLE_COLORS = [
+            "#3b82f6",  # Blue
+            "#10b981",  # Green
+            "#f59e0b",  # Amber
+            "#8b5cf6"   # Purple
+        ]
+
         bubbles = []
 
-        for io in BROADENED_IOS:
+        for i, io in enumerate(BROADENED_IOS):
             bubble = self._compute_io_bubble_level3(io)
+            bubble['color'] = BUBBLE_COLORS[i]
+            bubble['priority'] = 'neutral'  # No priority classification for Level 3
             bubbles.append(bubble)
-
-        # Calculate median external validity for priority classification
-        validity_values = [b['y'] for b in bubbles if b['y'] > 0]
-        median_validity = self._calculate_median(validity_values) if validity_values else 0
-
-        # Update each bubble with priority tag
-        for bubble in bubbles:
-            bubble['priority'] = self._calculate_priority_level3(
-                bubble['x'],
-                bubble['y'],
-                median_validity
-            )
 
         metadata = {
             "x_axis": {
@@ -464,8 +462,7 @@ class VisualizationService:
             "y_axis": {
                 "label": "External Validity Score",
                 "description": "Generalizability across diverse contexts",
-                "computation": "Diversity across geographic regions, school types, demographics (ELL, FRPL, race), grade levels, and urbanicity. Higher score indicates findings replicate across more contexts.",
-                "median": median_validity
+                "computation": "Diversity across geographic regions, school types, demographics (ELL, FRPL, race), grade levels, and urbanicity. Higher score indicates findings replicate across more contexts."
             },
             "bubble_size": {
                 "label": "Students Impacted",
@@ -670,31 +667,99 @@ class VisualizationService:
         regions = list(set(p.get('region', '') for p in papers
                           if p.get('region') and p.get('region') != 'not_reported'))
 
+        # Calculate component scores for evidence quality breakdown
+        # 1. Study Design Quality
+        rating_scores = {
+            'Meets WWC standards without reservations': 25,
+            'Meets WWC standards with reservations': 15,
+            'Does not meet WWC standards': 5,
+            'Ineligible for review': 0
+        }
+        ratings_list = [rating_scores.get(p.get('wwc_study_rating', ''), 10) for p in papers]
+        design_quality = self._safe_avg(ratings_list)
+
+        # 2. Replication Strength
+        if unique_studies >= 10:
+            replication_score = 25
+        elif unique_studies >= 7:
+            replication_score = 22
+        elif unique_studies >= 5:
+            replication_score = 20
+        elif unique_studies >= 3:
+            replication_score = 15
+        elif unique_studies >= 2:
+            replication_score = 10
+        else:
+            replication_score = 5
+
+        # 3. Sample Adequacy
+        sample_score = min(25, (total_sample / 1000) * 25) if total_sample else 0
+
+        # 4. Effect Consistency
+        if len(effect_sizes) > 1:
+            import statistics
+            std_dev = statistics.stdev(effect_sizes)
+            consistency_score = max(0, 25 - (std_dev * 83))
+        elif len(effect_sizes) == 1:
+            consistency_score = 15
+        else:
+            consistency_score = 0
+
         return {
-            "evidence_quality": {
+            "evidence_maturity": {
                 "score": self._compute_evidence_quality_wwc(papers),
                 "max": 100,
-                "description": "Rigor and replication of RCT evidence from What Works Clearinghouse"
+                "description": "Rigor and replication of RCT evidence from What Works Clearinghouse",
+                "components": {
+                    "study_design_quality": {
+                        "score": round(design_quality, 2),
+                        "max": 25,
+                        "description": "WWC study ratings (Meets standards without/with reservations)"
+                    },
+                    "replication_strength": {
+                        "score": round(replication_score, 2),
+                        "max": 25,
+                        "description": f"Number of independent RCT replications ({unique_studies} studies)"
+                    },
+                    "sample_adequacy": {
+                        "score": round(sample_score, 2),
+                        "max": 25,
+                        "description": f"Total students studied ({total_sample:,} across all RCTs)"
+                    },
+                    "effect_consistency": {
+                        "score": round(consistency_score, 2),
+                        "max": 25,
+                        "description": "Stability of effect sizes across studies (lower variance = higher score)"
+                    }
+                }
             },
             "external_validity": {
                 "score": self._compute_external_validity_wwc(papers),
                 "max": 50,
-                "description": "Generalizability across regions, school types, and grade levels"
+                "description": "Generalizability across diverse contexts",
+                "regions_covered": regions
             },
             "students_impacted": {
-                "total": total_sample,
-                "studies": unique_studies,
-                "avg_per_study": round(total_sample / unique_studies) if unique_studies else 0,
-                "description": "Total students studied across all RCTs"
+                "score": total_sample,
+                "description": "Total students studied across all RCTs",
+                "components": {
+                    "total_students": {
+                        "score": total_sample,
+                        "description": f"{total_sample:,} students across {unique_studies} studies"
+                    },
+                    "avg_per_study": {
+                        "score": round(total_sample / unique_studies) if unique_studies else 0,
+                        "description": "Average sample size per study"
+                    }
+                }
             },
             "effect_summary": {
                 "average_effect_size": round(avg_effect, 3),
                 "num_findings": len(papers),
                 "significant_rate": round(sig_rate, 1),
-                "description": "Average effect size from WWC meta-analysis"
+                "description": "Average effect size from WWC studies (Cohen's d)"
             },
             "wwc_ratings": ratings,
-            "regions_covered": regions,
             "study_design_distribution": self._get_study_design_distribution(papers)
         }
 

@@ -477,7 +477,7 @@ export default function Home() {
                   onBubbleClick={handleBubbleClick}
                   selectedBubbleId={selectedBubble?.id || null}
                   xDomain={xDomain}
-                  yMedian={currentData.metadata.y_axis.median}
+                  yMedian={activeView !== 'level3' ? currentData.metadata.y_axis.median : undefined}
                 />
               )}
             </div>
@@ -539,35 +539,37 @@ export default function Home() {
                   )}
                 </div>
 
-                {/* Implication Panel */}
-                <div className="bg-slate-900 text-white p-5 rounded-lg">
-                  <div className="flex items-center gap-2 mb-3">
-                    <div className={`w-3 h-3 rounded-full flex-shrink-0 ${
-                      selectedBubble.priority === 'high_priority' ? 'bg-green-500' :
-                      selectedBubble.priority === 'on_watch' ? 'bg-yellow-500' :
-                      'bg-pink-500'
-                    }`}></div>
-                    <p className="text-xs font-semibold uppercase tracking-wider text-slate-300">
-                      {selectedBubble.priority === 'high_priority' ? 'High Priority' :
-                       selectedBubble.priority === 'on_watch' ? 'On Watch' :
-                       'Research Gap'}
+                {/* Implication Panel - Only for Level 1 & 2 */}
+                {(activeView === 'level1' || activeView === 'level2') && (
+                  <div className="bg-slate-900 text-white p-5 rounded-lg">
+                    <div className="flex items-center gap-2 mb-3">
+                      <div className={`w-3 h-3 rounded-full flex-shrink-0 ${
+                        selectedBubble.priority === 'high_priority' ? 'bg-green-500' :
+                        selectedBubble.priority === 'on_watch' ? 'bg-yellow-500' :
+                        'bg-pink-500'
+                      }`}></div>
+                      <p className="text-xs font-semibold uppercase tracking-wider text-slate-300">
+                        {selectedBubble.priority === 'high_priority' ? 'High Priority' :
+                         selectedBubble.priority === 'on_watch' ? 'On Watch' :
+                         'Research Gap'}
+                      </p>
+                    </div>
+                    <p className="text-sm leading-relaxed mb-4">
+                      {selectedBubble.priority === 'high_priority' ? (
+                        <><strong>Ready for scaled action.</strong> High evidence maturity with {activeView === 'level1' ? 'high systemic burden' : 'strong alignment to urgent problems'}.</>
+                      ) : selectedBubble.priority === 'on_watch' ? (
+                        <><strong>Proceed with caution.</strong> {activeView === 'level1' ? 'Either high-burden problems lacking evidence or well-understood problems with lower systemic impact.' : 'High potential impact but needs additional validation before deployment.'}</>
+                      ) : (
+                        <><strong>Requires foundational research.</strong> Below median threshold—{activeView === 'level1' ? 'lower systemic priority or insufficient evidence base' : 'narrow scope or limited evidence of effectiveness'}.</>
+                      )}
                     </p>
+                    <div className="pt-3 border-t border-slate-700">
+                      <p className="text-xs text-slate-400 leading-relaxed">
+                        <strong>How it's calculated:</strong> {activeView === 'level1' ? 'Position based on Evidence Maturity (X-axis) > 65 and Problem Burden Scale (Y-axis) > median. High Priority = both conditions met. On Watch = one condition met (either high burden with low evidence OR high evidence with low burden). Research Gap = neither condition met.' : 'Position based on Evidence Maturity (X-axis) > 65 and Potential Impact (Y-axis) > median. Interventions with strong evidence AND high alignment to urgent problems are prioritized.'}
+                      </p>
+                    </div>
                   </div>
-                  <p className="text-sm leading-relaxed mb-4">
-                    {selectedBubble.priority === 'high_priority' ? (
-                      <><strong>Ready for scaled action.</strong> High evidence maturity with {activeView === 'level1' ? 'high systemic burden' : 'strong alignment to urgent problems'}.</>
-                    ) : selectedBubble.priority === 'on_watch' ? (
-                      <><strong>Proceed with caution.</strong> {activeView === 'level1' ? 'Either high-burden problems lacking evidence or well-understood problems with lower systemic impact.' : 'High potential impact but needs additional validation before deployment.'}</>
-                    ) : (
-                      <><strong>Requires foundational research.</strong> Below median threshold—{activeView === 'level1' ? 'lower systemic priority or insufficient evidence base' : 'narrow scope or limited evidence of effectiveness'}.</>
-                    )}
-                  </p>
-                  <div className="pt-3 border-t border-slate-700">
-                    <p className="text-xs text-slate-400 leading-relaxed">
-                      <strong>How it's calculated:</strong> {activeView === 'level1' ? 'Position based on Evidence Maturity (X-axis) > 65 and Problem Burden Scale (Y-axis) > median. High Priority = both conditions met. On Watch = one condition met (either high burden with low evidence OR high evidence with low burden). Research Gap = neither condition met.' : 'Position based on Evidence Maturity (X-axis) > 65 and Potential Impact (Y-axis) > median. Interventions with strong evidence AND high alignment to urgent problems are prioritized.'}
-                    </p>
-                  </div>
-                </div>
+                )}
 
                 {/* Evidence Maturity */}
                 <div className="border-l-4 border-slate-700 pl-5">
@@ -766,6 +768,134 @@ export default function Home() {
                         <p className="text-xs text-slate-600 mt-2 leading-relaxed">
                           {selectedBubble.breakdown.r_and_d_required.components.evaluation_burden.description}
                         </p>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* Level 3 Specific Sections */}
+                {activeView === 'level3' && selectedBubble.breakdown.evidence_maturity && (
+                  <div className="border-l-4 border-slate-700 pl-5">
+                    <div className="flex items-center gap-2 mb-3">
+                      <h3 className="text-lg font-bold text-slate-900 uppercase tracking-wide">
+                        Evidence Base Quality
+                      </h3>
+                    </div>
+                    <p className="text-sm text-slate-600 mb-3 leading-relaxed">{selectedBubble.breakdown.evidence_maturity.description}</p>
+                    <div className="bg-slate-100 p-4 rounded-lg mb-4 border border-slate-300">
+                      <p className="text-3xl font-bold text-slate-900">
+                        {selectedBubble.breakdown.evidence_maturity.score.toFixed(1)} <span className="text-lg text-slate-600">/ {selectedBubble.breakdown.evidence_maturity.max}</span>
+                      </p>
+                    </div>
+
+                    {/* Components */}
+                    <div className="grid grid-cols-2 gap-3">
+                      {Object.entries(selectedBubble.breakdown.evidence_maturity.components).map(([key, component]) => (
+                        <div key={key} className="bg-white p-3 rounded-lg border border-slate-200 shadow-sm">
+                          <p className="text-xs font-bold text-slate-700 uppercase mb-1.5 tracking-wide">
+                            {key.replace(/_/g, ' ')}
+                          </p>
+                          <p className="text-lg font-bold text-slate-900">
+                            {component.score.toFixed(1)} <span className="text-sm text-slate-600">/ {component.max}</span>
+                          </p>
+                          <p className="text-xs text-slate-600 mt-2 leading-relaxed">{component.description}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {activeView === 'level3' && selectedBubble.breakdown.external_validity && (
+                  <div className="border-l-4 border-slate-700 pl-5">
+                    <div className="flex items-center gap-2 mb-3">
+                      <h3 className="text-lg font-bold text-slate-900 uppercase tracking-wide">
+                        External Validity Score
+                      </h3>
+                    </div>
+                    <p className="text-sm text-slate-600 mb-3 leading-relaxed">{selectedBubble.breakdown.external_validity.description}</p>
+                    <div className="bg-slate-100 p-4 rounded-lg mb-4 border border-slate-300">
+                      <p className="text-3xl font-bold text-slate-900">
+                        {selectedBubble.breakdown.external_validity.score.toFixed(1)} <span className="text-lg text-slate-600">/ {selectedBubble.breakdown.external_validity.max}</span>
+                      </p>
+                    </div>
+
+                    {/* Regions Covered */}
+                    {selectedBubble.breakdown.external_validity.regions_covered && selectedBubble.breakdown.external_validity.regions_covered.length > 0 && (
+                      <div className="bg-white p-4 rounded-lg border border-slate-200 shadow-sm">
+                        <p className="text-xs font-bold text-slate-700 mb-3 uppercase tracking-wide">
+                          Regions/States Tested ({selectedBubble.breakdown.external_validity.regions_covered.length})
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          {selectedBubble.breakdown.external_validity.regions_covered.map((region, idx) => (
+                            <span key={idx} className="text-xs bg-slate-100 px-2 py-1 rounded border border-slate-300 text-slate-700">
+                              {region}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                )}
+
+                {activeView === 'level3' && selectedBubble.breakdown.students_impacted && (
+                  <div className="border-l-4 border-slate-700 pl-5">
+                    <div className="flex items-center gap-2 mb-3">
+                      <h3 className="text-lg font-bold text-slate-900 uppercase tracking-wide">
+                        Students Impacted
+                      </h3>
+                    </div>
+                    <p className="text-sm text-slate-600 mb-3 leading-relaxed">{selectedBubble.breakdown.students_impacted.description}</p>
+                    <div className="bg-slate-100 p-4 rounded-lg mb-4 border border-slate-300">
+                      <p className="text-3xl font-bold text-slate-900">
+                        {selectedBubble.breakdown.students_impacted.score.toLocaleString()}
+                      </p>
+                      <p className="text-sm text-slate-600 mt-1">students studied across RCTs</p>
+                    </div>
+
+                    {/* Components */}
+                    <div className="grid grid-cols-2 gap-3">
+                      {Object.entries(selectedBubble.breakdown.students_impacted.components).map(([key, component]) => (
+                        <div key={key} className="bg-white p-3 rounded-lg border border-slate-200 shadow-sm">
+                          <p className="text-xs font-bold text-slate-700 uppercase mb-1.5 tracking-wide">
+                            {key.replace(/_/g, ' ')}
+                          </p>
+                          <p className="text-lg font-bold text-slate-900">
+                            {component.score.toLocaleString()}
+                          </p>
+                          <p className="text-xs text-slate-600 mt-2 leading-relaxed">{component.description}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {activeView === 'level3' && selectedBubble.breakdown.effect_summary && (
+                  <div className="border-l-4 border-slate-700 pl-5">
+                    <div className="flex items-center gap-2 mb-3">
+                      <h3 className="text-lg font-bold text-slate-900 uppercase tracking-wide">
+                        Effect Size Summary
+                      </h3>
+                    </div>
+                    <p className="text-sm text-slate-600 mb-3 leading-relaxed">{selectedBubble.breakdown.effect_summary.description}</p>
+
+                    <div className="grid grid-cols-2 gap-3">
+                      <div className="bg-white p-3 rounded-lg border border-slate-200 shadow-sm">
+                        <p className="text-xs font-bold text-slate-700 uppercase mb-1.5 tracking-wide">
+                          Average Effect Size
+                        </p>
+                        <p className="text-2xl font-bold text-slate-900">
+                          {selectedBubble.breakdown.effect_summary.average_effect_size}
+                        </p>
+                        <p className="text-xs text-slate-600 mt-1">Cohen's d</p>
+                      </div>
+                      <div className="bg-white p-3 rounded-lg border border-slate-200 shadow-sm">
+                        <p className="text-xs font-bold text-slate-700 uppercase mb-1.5 tracking-wide">
+                          Significant Findings
+                        </p>
+                        <p className="text-2xl font-bold text-slate-900">
+                          {selectedBubble.breakdown.effect_summary.significant_rate}%
+                        </p>
+                        <p className="text-xs text-slate-600 mt-1">of {selectedBubble.breakdown.effect_summary.num_findings} findings</p>
                       </div>
                     </div>
                   </div>

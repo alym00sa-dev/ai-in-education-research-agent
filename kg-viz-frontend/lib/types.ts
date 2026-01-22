@@ -22,6 +22,11 @@ export interface BreakdownData {
   potential_impact?: PotentialImpactBreakdown;
   r_and_d_required?: RAndDBreakdown;
   study_design_distribution?: Record<string, number>;
+  // Level 3 specific
+  external_validity?: ExternalValidityBreakdown;
+  students_impacted?: StudentsImpactedBreakdown;
+  effect_summary?: EffectSummaryBreakdown;
+  wwc_ratings?: Record<string, number>;
 }
 
 export interface EvidenceMaturityBreakdown {
@@ -90,6 +95,35 @@ export interface RAndDBreakdown {
       description: string;
     };
   };
+}
+
+export interface ExternalValidityBreakdown {
+  score: number;
+  max: number;
+  description: string;
+  regions_covered?: string[];
+}
+
+export interface StudentsImpactedBreakdown {
+  score: number;
+  description: string;
+  components: {
+    total_students: {
+      score: number;
+      description: string;
+    };
+    avg_per_study: {
+      score: number;
+      description: string;
+    };
+  };
+}
+
+export interface EffectSummaryBreakdown {
+  average_effect_size: number;
+  num_findings: number;
+  significant_rate: number;
+  description: string;
 }
 
 export interface VisualizationResponse {
