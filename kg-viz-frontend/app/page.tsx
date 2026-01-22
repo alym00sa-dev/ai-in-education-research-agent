@@ -510,10 +510,25 @@ export default function Home() {
               </h2>
 
               <div className="space-y-6">
-                {/* Paper Count */}
+                {/* Paper Count with Study Design Breakdown */}
                 <div className="bg-slate-100 p-5 rounded-lg border border-slate-300">
                   <p className="text-xs text-slate-600 font-semibold uppercase tracking-wide">Studies Analyzed</p>
                   <p className="text-4xl font-bold text-slate-900 mt-2">{selectedBubble.paper_count}</p>
+
+                  {/* Study Design Breakdown */}
+                  {selectedBubble.breakdown.study_design_distribution && Object.keys(selectedBubble.breakdown.study_design_distribution).length > 0 && (
+                    <div className="mt-4 pt-4 border-t border-slate-300">
+                      <p className="text-xs font-bold text-slate-700 uppercase mb-3 tracking-wide">Study Design Breakdown</p>
+                      <div className="space-y-2">
+                        {Object.entries(selectedBubble.breakdown.study_design_distribution).map(([design, count]) => (
+                          <div key={design} className="flex justify-between text-sm items-center bg-white p-2 rounded border border-slate-200">
+                            <span className="text-slate-700">{design}</span>
+                            <span className="font-semibold text-slate-900 bg-slate-100 px-2 py-1 rounded">{count}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
 
                 {/* Implication Panel */}
