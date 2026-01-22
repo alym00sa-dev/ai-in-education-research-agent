@@ -1028,7 +1028,8 @@ class VisualizationService:
                     "cumulative_students": cumulative_students,
                     "num_contexts": len(cumulative_contexts),
                     "avg_effect_size": 0,
-                    "num_studies": 0
+                    "num_studies": 0,
+                    "new_students_this_period": 0
                 })
                 continue
 
