@@ -21,6 +21,7 @@ export interface BreakdownData {
   investment?: InvestmentBreakdown;
   potential_impact?: PotentialImpactBreakdown;
   r_and_d_required?: RAndDBreakdown;
+  study_design_distribution?: Record<string, number>;
 }
 
 export interface EvidenceMaturityBreakdown {

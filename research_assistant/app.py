@@ -4,6 +4,8 @@ from datetime import datetime
 import streamlit.components.v1 as components
 import math
 import plotly.graph_objects as go
+import base64
+from pathlib import Path
 from dotenv import load_dotenv
 from src.research_pipeline import SyncResearchPipeline
 load_dotenv()
@@ -14,6 +16,16 @@ load_env_config()
 
 from src.session_manager import SessionManager
 from src.neo4j_config import initialize_database
+
+
+def get_base64_image(image_path):
+    """Convert image to base64 string."""
+    try:
+        with open(image_path, "rb") as img_file:
+            return base64.b64encode(img_file.read()).decode()
+    except Exception as e:
+        print(f"Error loading image: {e}")
+        return ""
 
 
 def create_d3_visualization(graph_data):
@@ -582,7 +594,7 @@ def create_d3_visualization(graph_data):
 
 # Page configuration
 st.set_page_config(
-    page_title="AI in Education Research Agent",
+    page_title="EDU Deep Research Agent",
     page_icon="📚",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -597,6 +609,10 @@ if 'pipeline' not in st.session_state:
     st.session_state.pipeline = SyncResearchPipeline()
 if 'session_manager' not in st.session_state:
     st.session_state.session_manager = SessionManager()
+if 'active_tab' not in st.session_state:
+    st.session_state.active_tab = "research"
+if 'sessions_expanded' not in st.session_state:
+    st.session_state.sessions_expanded = True
 
 # Preset queries (from your HTML frontend)
 PRESET_QUERIES = {
@@ -610,7 +626,7 @@ PRESET_QUERIES = {
 
 # Sidebar
 with st.sidebar:
-    # Custom CSS for minimal text-only buttons and proper scrolling
+    # Custom CSS for redesigned sidebar
     st.markdown("""
     <style>
     /* Enable scrollbar in sidebar with proper overflow */
@@ -621,24 +637,160 @@ with st.sidebar:
     [data-testid="stSidebar"] > div:first-child {
         overflow-y: auto !important;
         max-height: 100vh !important;
-        padding-top: 0.5rem !important;
+        padding-top: 0 !important;
     }
 
-    /* Reduce space at top of sidebar content */
+    /* Remove ALL space at top of sidebar */
     [data-testid="stSidebar"] .block-container {
         padding-top: 0 !important;
         margin-top: 0 !important;
     }
 
-    /* Remove extra spacing from sidebar elements */
-    [data-testid="stSidebar"] .element-container {
+    [data-testid="stSidebar"] [data-testid="stVerticalBlock"] {
+        gap: 0 !important;
+        padding-top: 0 !important;
+    }
+
+    [data-testid="stSidebar"] > div > div {
+        padding-top: 0 !important;
+    }
+
+    [data-testid="stSidebar"] [data-testid="stVerticalBlock"] > div:first-child {
+        padding-top: 0 !important;
         margin-top: 0 !important;
     }
 
-    /* Reduce margin on the heading */
-    [data-testid="stSidebar"] h2 {
+    /* Push first element to top */
+    [data-testid="stSidebar"] .element-container:first-child {
         margin-top: 0 !important;
-        margin-bottom: 1rem !important;
+        padding-top: 0 !important;
+    }
+
+    /* Logo container styling */
+    .logo-container {
+        text-align: center;
+        padding: 0 0 0.75rem 0;
+        border-bottom: 1px solid #e5e7eb;
+        margin: 0 0 1rem 0;
+    }
+
+    .logo-container img {
+        max-width: 85%;
+        height: auto;
+    }
+
+    /* Tab navigation styling - soft rounded style */
+    .tab-container {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-bottom: 1.25rem;
+        padding: 0;
+    }
+
+    .tab-button {
+        padding: 12px 18px;
+        text-align: left;
+        background: transparent;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: #64748b;
+        transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        white-space: nowrap;
+        user-select: none;
+        width: 100%;
+        letter-spacing: 0.01em;
+    }
+
+    .tab-button:hover {
+        color: #334155;
+        background: #f1f5f9;
+    }
+
+    .tab-button.active {
+        color: #1e293b;
+        background: #e2e8f0;
+        font-weight: 600;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+    }
+
+    /* Make links inherit tab button styling */
+    .tab-container a {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+    }
+
+    .tab-container a:hover .tab-button {
+        color: #334155;
+        background: #f1f5f9;
+    }
+
+    /* Session card styling - clean like ChatGPT/Claude */
+    .session-card {
+        padding: 0.875rem;
+        margin-bottom: 0.5rem;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.15s ease;
+        background: transparent;
+        border: 1px solid transparent;
+    }
+
+    .session-card:hover {
+        background: #f9fafb;
+        border-color: #e5e7eb;
+    }
+
+    .session-card.active {
+        background: #eff6ff;
+        border-color: #3b82f6;
+    }
+
+    .session-card-title {
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: #111827;
+        margin-bottom: 0.375rem;
+        line-height: 1.3;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .session-card-meta {
+        font-size: 0.75rem;
+        color: #6b7280;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .session-delete-btn {
+        position: absolute;
+        right: 0.5rem;
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 0;
+        transition: opacity 0.15s ease;
+        background: transparent;
+        border: none;
+        color: #9ca3af;
+        cursor: pointer;
+        padding: 0.25rem;
+        font-size: 1rem;
+    }
+
+    .session-card:hover .session-delete-btn {
+        opacity: 1;
+    }
+
+    .session-delete-btn:hover {
+        color: #ef4444;
     }
 
     /* Make session buttons minimal - no background */
@@ -661,43 +813,92 @@ with st.sidebar:
         opacity: 1;
     }
 
-    /* Remove background from delete button */
-    [data-testid="stSidebar"] button[kind="secondary"]:has([data-testid]) {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: transparent !important;
+    /* Sessions toggle button - make it look like a header */
+    [data-testid="stSidebar"] button[key="sessions_toggle"] {
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0.5rem !important;
+        text-align: left !important;
+        font-size: 0.75rem !important;
+        font-weight: 600 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.05em !important;
+        color: #6b7280 !important;
+        height: auto !important;
+        min-height: auto !important;
+    }
+
+    [data-testid="stSidebar"] button[key="sessions_toggle"]:hover {
+        background: #f9fafb !important;
+        color: #6b7280 !important;
     }
     </style>
     """, unsafe_allow_html=True)
 
-    # Session History header
-    st.markdown("<h2 style='text-align: center; margin-top: 0; font-size: 1.5rem;'>Research Sessions</h2>", unsafe_allow_html=True)
+    # Gates Foundation Logo
+    logo_base64 = get_base64_image("/Users/alymoosa/Documents/A-Moosa-Dev/AI-EDU-Dev/GF PRIMARY WEATHERED SLATE LOGO.png")
+    if logo_base64:
+        st.markdown(f"""
+        <div class="logo-container">
+            <img src="data:image/png;base64,{logo_base64}" alt="Gates Foundation">
+        </div>
+        """, unsafe_allow_html=True)
+
+    # Tab Navigation - Stacked vertically
+    st.markdown("""
+    <div class="tab-container">
+        <div class="tab-button active" style="pointer-events: none;">
+            EDU Deep Research Agent
+        </div>
+        <a href="https://aie-visualization-dashboard.vercel.app/" target="_blank">
+            <div class="tab-button">
+                Visualization Dashboard
+            </div>
+        </a>
+    </div>
+    """, unsafe_allow_html=True)
+
+    st.divider()
+
+    # Session History header with toggle - simple and aligned
+    caret_icon = "▼" if st.session_state.sessions_expanded else "▶"
+
+    if st.button(f"{caret_icon}  RESEARCH SESSIONS", key="sessions_toggle", use_container_width=True, type="secondary"):
+        st.session_state.sessions_expanded = not st.session_state.sessions_expanded
+        st.rerun()
 
     sessions = st.session_state.session_manager.list_sessions(limit=20)
 
-    if sessions:
+    if st.session_state.sessions_expanded and sessions:
         for session in sessions:
-            created_date = datetime.fromisoformat(session.created_at).strftime('%m/%d %I:%M %p')
+            created_date = datetime.fromisoformat(session.created_at).strftime('%b %d, %I:%M %p')
 
-            # Truncate query to 80 characters for display
-            display_query = session.query if len(session.query) <= 80 else session.query[:80] + "..."
+            # Truncate query to 70 characters for display
+            display_query = session.query if len(session.query) <= 70 else session.query[:70] + "..."
 
             # Check if this is the active session
             is_active = st.session_state.current_session_id == session.session_id
+            active_class = "active" if is_active else ""
 
-            # Bold the text if it's the active session
-            if is_active:
-                button_text = f"**{display_query}**  \n{created_date} • {session.paper_count} papers"
-            else:
-                button_text = f"{display_query}  \n{created_date} • {session.paper_count} papers"
+            # Create a clean session card
+            session_html = f"""
+            <div class="session-card {active_class}" style="position: relative; margin-bottom: 0.5rem;">
+                <div class="session-card-title">{display_query}</div>
+                <div class="session-card-meta">
+                    <span>{created_date}</span>
+                    <span>•</span>
+                    <span>{session.paper_count} papers</span>
+                </div>
+            </div>
+            """
 
-            # Create columns with better spacing to prevent overlap
-            col1, col2 = st.columns([8.5, 1.5])
+            # Create columns for button and delete
+            col1, col2 = st.columns([9, 1])
 
             with col1:
                 if st.button(
-                    button_text,
+                    display_query,
                     key=f"load_{session.session_id}",
                     use_container_width=True,
                     type="secondary"
@@ -738,44 +939,95 @@ with st.sidebar:
                     st.rerun()
 
             with col2:
-                if st.button("✕", key=f"delete_{session.session_id}", help="Delete", use_container_width=True):
+                if st.button("×", key=f"delete_{session.session_id}", help="Delete session", use_container_width=True):
                     st.session_state.session_manager.delete_session(session.session_id)
                     if st.session_state.current_session_id == session.session_id:
                         st.session_state.current_session_id = None
                         st.session_state.research_results = None
                     st.rerun()
-    else:
-        st.caption("No sessions yet. Start your first research!")
+    elif st.session_state.sessions_expanded and not sessions:
+        st.markdown('<p style="text-align: center; color: #6b7280; font-size: 0.875rem; padding: 2rem 0;">No sessions yet. Start your first research!</p>', unsafe_allow_html=True)
 
 # Main content area (Evidence Map removed - now hosted on Vercel)
-st.caption("Powered by Open Deep Research & Neo4j | Quality, Impact, and Body of Evidence Maturity scores calculated using the K-12 Rubric for Evaluating Evidence")
+st.title("📚 EDU Deep Research Agent")
 st.info("ℹ️ This is an MVP of the deep research agent, synthesizing literature across credible and publication sources. If your query has no results, try reframing your question(s).")
 
 st.divider()
 
-# Control dropdowns - smaller size
-# Model fixed to ChatGPT 4.1
-model_provider = "gpt-4.1"
+# Model Configuration
+AVAILABLE_MODELS = {
+    "Claude Sonnet 4.5": "anthropic:claude-sonnet-4-5",
+    "Claude Opus 4.5": "anthropic:claude-opus-4-5",
+    "GPT 4o": "openai:gpt-4o",
+    "GPT 4.1": "openai:gpt-4.1",
+    "GPT 5.2": "openai:gpt-5.2-2025-12-11",
+    "GPT 5 Mini": "openai:gpt-5-mini-2025-08-07",
+}
+
+# Modern styling for controls
+st.markdown("""
+<style>
+/* Modern gradient buttons */
+button[kind="primary"] {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    border: none !important;
+    border-radius: 12px !important;
+    padding: 0.75rem 1.5rem !important;
+    font-weight: 600 !important;
+    font-size: 1rem !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 15px 0 rgba(102, 126, 234, 0.4) !important;
+}
+
+button[kind="primary"]:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px 0 rgba(102, 126, 234, 0.6) !important;
+}
+
+button[kind="primary"]:active {
+    transform: translateY(0px) !important;
+}
+
+/* Modern select boxes */
+div[data-baseweb="select"] {
+    border-radius: 10px !important;
+}
+
+/* Clean input styling */
+textarea {
+    border-radius: 10px !important;
+    border: 2px solid #e5e7eb !important;
+    transition: border-color 0.2s ease !important;
+}
+
+textarea:focus {
+    border-color: #667eea !important;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1) !important;
+}
+</style>
+""", unsafe_allow_html=True)
 
 col1, col2 = st.columns([2, 3])
 
 with col1:
-    st.selectbox(
-        "Model",
-        options=["ChatGPT 4.1"],
-        index=0,
-        disabled=True
+    selected_model = st.selectbox(
+        "🤖 Model",
+        options=list(AVAILABLE_MODELS.keys()),
+        index=3,  # Default to GPT 4.1
+        help="Select the AI model for research"
     )
+    model_provider = AVAILABLE_MODELS[selected_model]
 
 with col2:
     search_depth = st.selectbox(
-        "Search Depth",
+        "🔍 Search Depth",
         options=[
             "standard (~3-5 min)",
             "deep (~5-7 min)",
             "comprehensive (~7-10 min)"
         ],
-        index=0
+        index=0,
+        help="Control the depth and thoroughness of research"
     )
     # Extract just the depth value
     search_depth = search_depth.split()[0]
@@ -787,9 +1039,10 @@ st.divider()
 
 # Preset queries dropdown
 selected_preset = st.selectbox(
-    "Select a preset query or enter your own below:",
+    "💡 Select a preset query or enter your own below:",
     options=["Custom Query"] + list(PRESET_QUERIES.keys()),
-    key="preset_selector"
+    key="preset_selector",
+    help="Choose a preset research question or write your own"
 )
 
 if selected_preset != "Custom Query":
@@ -803,34 +1056,37 @@ if 'query_text' not in st.session_state:
     st.session_state.query_text = ""
 
 query = st.text_area(
-    "Enter your research question:",
+    "✍️ Enter your research question:",
     value=st.session_state.query_text,
-    height=100,
-    placeholder="e.g., What is the effectiveness of intelligent tutoring systems on student learning outcomes in mathematics?"
+    height=120,
+    placeholder="e.g., What is the effectiveness of intelligent tutoring systems on student learning outcomes in mathematics?",
+    help="Ask any research question about AI in education"
 )
 
-# Start Research button
-if st.button("Start Research", type="primary", use_container_width=True):
-    if not query.strip():
-        st.error("Please enter a research question")
-    else:
-        with st.spinner("Conducting research... This may take 3-7 minutes..."):
-            try:
-                # Run research pipeline
-                results = st.session_state.pipeline.conduct_research(
-                    query=query,
-                    model_provider=model_provider,
-                    search_depth=search_depth,
-                    focus_area=focus_area
-                )
+# Start Research button with modern styling
+col_btn1, col_btn2, col_btn3 = st.columns([1, 2, 1])
+with col_btn2:
+    if st.button("🚀 Start Research", type="primary", use_container_width=True):
+        if not query.strip():
+            st.error("⚠️ Please enter a research question")
+        else:
+            with st.spinner(f"🔬 Conducting research with {selected_model}... This may take 3-7 minutes..."):
+                try:
+                    # Run research pipeline
+                    results = st.session_state.pipeline.conduct_research(
+                        query=query,
+                        model_provider=model_provider,
+                        search_depth=search_depth,
+                        focus_area=focus_area
+                    )
 
-                st.session_state.research_results = results
-                st.session_state.current_session_id = results['session']['session_id']
-                st.session_state.just_completed = True
-                st.rerun()
+                    st.session_state.research_results = results
+                    st.session_state.current_session_id = results['session']['session_id']
+                    st.session_state.just_completed = True
+                    st.rerun()
 
-            except Exception as e:
-                st.error(f"Error: {str(e)}")
+                except Exception as e:
+                    st.error(f"❌ Error: {str(e)}")
 
 st.divider()
 

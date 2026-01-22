@@ -17,6 +17,9 @@ export default function BubbleDialog({ bubble, isOpen, onClose, level }: BubbleD
 
   const { breakdown } = bubble;
 
+  // Debug: Log study design distribution
+  console.log('BubbleDialog - study_design_distribution:', breakdown?.study_design_distribution);
+
   return (
     <Dialog.Root open={isOpen} onOpenChange={onClose}>
       <Dialog.Portal>
@@ -34,10 +37,25 @@ export default function BubbleDialog({ bubble, isOpen, onClose, level }: BubbleD
           </div>
 
           <div className="space-y-6">
-            {/* Paper Count */}
+            {/* Paper Count with Study Design Breakdown */}
             <div className="bg-blue-50 p-4 rounded-lg">
-              <p className="text-sm text-gray-600">Papers Analyzed</p>
-              <p className="text-3xl font-bold text-blue-600">{bubble.paper_count}</p>
+              <p className="text-sm text-gray-600 mb-1">Papers Analyzed</p>
+              <p className="text-3xl font-bold text-blue-600 mb-3">{bubble.paper_count}</p>
+
+              {/* Study Design Breakdown */}
+              {breakdown.study_design_distribution && Object.keys(breakdown.study_design_distribution).length > 0 && (
+                <div className="mt-3 pt-3 border-t border-blue-200">
+                  <p className="text-xs font-semibold text-gray-700 uppercase mb-2">Study Design Breakdown</p>
+                  <div className="grid grid-cols-2 gap-2">
+                    {Object.entries(breakdown.study_design_distribution).map(([design, count]) => (
+                      <div key={design} className="flex justify-between text-sm bg-white px-2 py-1 rounded">
+                        <span className="text-gray-600">{design}</span>
+                        <span className="font-semibold text-blue-600">{count}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* Level 2 Investment (if applicable) */}

@@ -60,6 +60,7 @@ An intelligent research assistant that combines [Open Deep Research](https://git
 
 ## 📁 Project Structure
 
+
 ```
 LangChain-Agent/
 ├── open_deep_research/          # Core research agent (LangGraph)

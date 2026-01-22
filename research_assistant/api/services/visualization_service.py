@@ -141,7 +141,8 @@ class VisualizationService:
                         "description": "Number of decision-makers involved (0 = one actor to 4 = >10 actors)"
                     }
                 }
-            }
+            },
+            "study_design_distribution": self._get_study_design_distribution(papers)
         }
 
         # Priority will be calculated in get_level1_data after median is computed
@@ -209,6 +210,15 @@ class VisualizationService:
         for paper in papers:
             user_type = paper.get('user_type', 'not_reported')
             distribution[user_type] = distribution.get(user_type, 0) + 1
+        return distribution
+
+    def _get_study_design_distribution(self, papers: List[Dict]) -> Dict[str, int]:
+        """Get count of papers by study_design."""
+        distribution = {}
+        for paper in papers:
+            study_design = paper.get('study_design', 'not_reported')
+            if study_design:
+                distribution[study_design] = distribution.get(study_design, 0) + 1
         return distribution
 
     # ========== LEVEL 2: INTERVENTION EVIDENCE MAP ==========
@@ -350,7 +360,8 @@ class VisualizationService:
                         "description": "Cost to rigorously evaluate (0 = short-term/simple, 4 = long-term/complex)"
                     }
                 }
-            }
+            },
+            "study_design_distribution": self._get_study_design_distribution(papers)
         }
 
         # Priority will be calculated in get_level2_data after median is computed
