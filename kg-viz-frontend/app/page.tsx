@@ -3,9 +3,10 @@
 import { useState, useEffect } from 'react';
 import { Eye, EyeOff } from 'lucide-react';
 import BubbleChart from '@/components/BubbleChart';
-import LineChart from '@/components/LineChart';
+// import LineChart from '@/components/LineChart';
 import InfoTooltip from '@/components/InfoTooltip';
-import { fetchLevel1Data, fetchLevel2Data, fetchLevel3Data, fetchLevel4Data, fetchLevel5Data } from '@/lib/api';
+import { fetchLevel1Data, fetchLevel2Data, fetchLevel3Data } from '@/lib/api';
+// import { fetchLevel1Data, fetchLevel2Data, fetchLevel3Data, fetchLevel4Data, fetchLevel5Data } from '@/lib/api';
 import { BubbleData, VisualizationResponse } from '@/lib/types';
 
 // Helper to capitalize labels properly
@@ -41,14 +42,14 @@ function capitalizeLabel(label: string): string {
     .join(' - ');
 }
 
-type ViewType = 'intro' | 'level1' | 'level2' | 'level3' | 'level4' | 'level5';
+type ViewType = 'intro' | 'level1' | 'level2' | 'level3'; // | 'level4' | 'level5';
 
 export default function Home() {
   const [level1Data, setLevel1Data] = useState<VisualizationResponse | null>(null);
   const [level2Data, setLevel2Data] = useState<VisualizationResponse | null>(null);
   const [level3Data, setLevel3Data] = useState<VisualizationResponse | null>(null);
-  const [level4Data, setLevel4Data] = useState<VisualizationResponse | null>(null);
-  const [level5Data, setLevel5Data] = useState<any>(null);
+  // const [level4Data, setLevel4Data] = useState<VisualizationResponse | null>(null);
+  // const [level5Data, setLevel5Data] = useState<any>(null);
   const [selectedBubble, setSelectedBubble] = useState<BubbleData | null>(null);
   const [activeView, setActiveView] = useState<ViewType>('intro');
   const [hiddenBubbles, setHiddenBubbles] = useState<Set<string>>(new Set());
@@ -61,18 +62,18 @@ export default function Home() {
     async function loadData() {
       try {
         setLoading(true);
-        const [l1, l2, l3, l4, l5] = await Promise.all([
+        const [l1, l2, l3] = await Promise.all([
           fetchLevel1Data(),
           fetchLevel2Data(),
-          fetchLevel3Data(),
-          fetchLevel4Data(),
-          fetchLevel5Data()
+          fetchLevel3Data()
+          // fetchLevel4Data(),
+          // fetchLevel5Data()
         ]);
         setLevel1Data(l1);
         setLevel2Data(l2);
         setLevel3Data(l3);
-        setLevel4Data(l4);
-        setLevel5Data(l5);
+        // setLevel4Data(l4);
+        // setLevel5Data(l5);
       } catch (err) {
         setError(err instanceof Error ? err.message : 'Failed to load data');
       } finally {
@@ -133,7 +134,7 @@ export default function Home() {
     );
   }
 
-  const currentData = activeView === 'level1' ? level1Data : activeView === 'level2' ? level2Data : activeView === 'level3' ? level3Data : activeView === 'level4' ? level4Data : null;
+  const currentData = activeView === 'level1' ? level1Data : activeView === 'level2' ? level2Data : activeView === 'level3' ? level3Data : null;
   const visibleBubbles = currentData?.bubbles.filter(b =>
     !hiddenBubbles.has(b.id) && !hiddenPriorities.has(b.priority)
   ) || [];
@@ -172,8 +173,8 @@ export default function Home() {
               <option value="level1">Level 1: Problem Burden Map</option>
               <option value="level2">Level 2: Intervention Evidence Map</option>
               <option value="level3">Level 3: Evidence-Based Interventions (RCT)</option>
-              <option value="level4">Level 4: Individual Interventions</option>
-              <option value="level5">Level 5: Evidence Evolution Over Time</option>
+              {/* <option value="level4">Level 4: Individual Interventions</option>
+              <option value="level5">Level 5: Evidence Evolution Over Time</option> */}
             </select>
             <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-slate-700">
               <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -336,7 +337,7 @@ export default function Home() {
               <h3 className="text-sm font-bold text-slate-900 mb-4 uppercase tracking-wide">Visualization Guide</h3>
 
             <div className="space-y-4 text-sm">
-              {activeView === 'level5' && level5Data ? (
+              {/* {activeView === 'level5' && level5Data ? (
                 <>
                   <div className="flex items-start">
                     <div className="flex-1">
@@ -373,8 +374,7 @@ export default function Home() {
                     </div>
                   </div>
                 </>
-              ) : (
-                <>
+              ) : ( */}
                   <div className="flex items-start">
                     <div className="flex-1">
                       <p className="font-semibold text-slate-800">X-Axis: {currentData?.metadata.x_axis.label}</p>
@@ -420,7 +420,17 @@ export default function Home() {
                     </div>
                   )}
 
-                  {(activeView === 'level3' || activeView === 'level4') && (
+                  {activeView === 'level3' && (
+                    <div className="flex items-start">
+                      <div className="flex-1">
+                        <p className="font-semibold text-slate-800">Bubble Color: Unique per Objective</p>
+                        <p className="text-slate-600 text-xs mt-1 leading-relaxed">
+                          Each bubble has a distinct color for easy identification
+                        </p>
+                      </div>
+                    </div>
+                  )}
+                  {/* {(activeView === 'level3' || activeView === 'level4') && (
                     <div className="flex items-start">
                       <div className="flex-1">
                         <p className="font-semibold text-slate-800">Bubble Color: {activeView === 'level3' ? 'Unique per Objective' : 'Implementation Objective'}</p>
@@ -429,9 +439,7 @@ export default function Home() {
                         </p>
                       </div>
                     </div>
-                  )}
-                </>
-              )}
+                  )} */}
             </div>
           </div>
 
@@ -497,8 +505,8 @@ export default function Home() {
             </div>
           )}
 
-          {/* Bubble Visibility Controls - Not for Level 5 */}
-          {activeView !== 'level5' && (
+          {/* Bubble Visibility Controls */}
+          {/* {activeView !== 'level5' && ( */}
             <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
               <h3 className="text-sm font-bold text-slate-900 mb-4 uppercase tracking-wide">Categories</h3>
               <div className="space-y-1 max-h-96 overflow-y-auto pr-2">
@@ -528,18 +536,19 @@ export default function Home() {
                 ))}
               </div>
             </div>
-          )}
+          {/* )} */}
         </aside>
 
         {/* Center - Bubble Chart or Line Chart */}
         <main className="flex-1 p-8 overflow-hidden bg-slate-50 relative z-10">
           <div className="h-full bg-white border border-slate-200 rounded-xl shadow-md flex flex-col">
             <div className="flex-1 min-h-0">
-              {activeView === 'level5' && level5Data ? (
+              {/* {activeView === 'level5' && level5Data ? (
                 <LineChart
                   timeSeries={level5Data.time_series}
                 />
-              ) : currentData && (
+              ) : */}
+              {currentData && (
                 <BubbleChart
                   data={visibleBubbles}
                   allData={currentData.bubbles}
@@ -553,7 +562,7 @@ export default function Home() {
               )}
             </div>
             {/* So-What Blurb */}
-            {(currentData || level5Data) && (
+            {currentData && (
               <div className="border-t border-slate-200 px-6 py-4 bg-slate-50">
                 {activeView === 'level1' ? (
                   <p className="text-sm text-slate-700 leading-relaxed">
@@ -567,7 +576,8 @@ export default function Home() {
                   <p className="text-sm text-slate-700 leading-relaxed">
                     <strong className="text-slate-900">Strategic Insight:</strong> This map showcases proven interventions from rigorous RCTs (What Works Clearinghouse), highlighting which tech-compatible approaches have strong evidence AND generalize across diverse contexts—representing millions of students already impacted.
                   </p>
-                ) : activeView === 'level4' ? (
+                ) : null}
+                {/* : activeView === 'level4' ? (
                   <p className="text-sm text-slate-700 leading-relaxed">
                     <strong className="text-slate-900">Strategic Insight:</strong> This granular view maps all 67 individual tech-compatible interventions from WWC, revealing the specific programs and approaches that have been rigorously tested and validated through RCTs—each representing a proven solution ready for adaptation and scaling.
                   </p>
@@ -575,7 +585,7 @@ export default function Home() {
                   <p className="text-sm text-slate-700 leading-relaxed">
                     <strong className="text-slate-900">Strategic Insight:</strong> This temporal evolution shows how evidence-based interventions scaled from 1995-2025, measuring Implementation Reach (students × contexts) over time. Larger bubbles indicate interventions that maintained strong effect sizes while scaling—a critical predictor for how AI-based interventions may evolve.
                   </p>
-                ) : null}
+                ) : null} */}
               </div>
             )}
           </div>
