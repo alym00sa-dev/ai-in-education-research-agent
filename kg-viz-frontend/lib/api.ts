@@ -35,3 +35,23 @@ export async function fetchLevel3Data(): Promise<VisualizationResponse> {
 
   return response.json();
 }
+
+export async function fetchLevel4Data(): Promise<VisualizationResponse> {
+  const response = await fetch(`${API_BASE_URL}/api/v1/visualizations/level4`);
+
+  if (!response.ok) {
+    throw new Error(`Failed to fetch Level 4 data: ${response.statusText}`);
+  }
+
+  return response.json();
+}
+
+export async function fetchLevel5Data(): Promise<any> {
+  const response = await fetch(`${API_BASE_URL}/api/v1/visualizations/level5`);
+
+  if (!response.ok) {
+    throw new Error(`Failed to fetch Level 5 data: ${response.statusText}`);
+  }
+
+  return response.json();
+}

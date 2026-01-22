@@ -1,7 +1,7 @@
 """API routes for visualization data."""
 
 from fastapi import APIRouter, HTTPException
-from api.models.visualization import Level1Response, Level2Response
+from api.models.visualization import Level1Response, Level2Response, Level5Response
 from api.services.visualization_service import VisualizationService
 
 router = APIRouter()
@@ -42,6 +42,32 @@ async def get_level3_visualization():
     """
     try:
         data = service.get_level3_data()
+        return data
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@router.get("/level4", response_model=Level2Response)
+async def get_level4_visualization():
+    """
+    Get data for Level 4: Individual Interventions (WWC).
+    Returns 67 bubbles (one per tech-compatible intervention).
+    """
+    try:
+        data = service.get_level4_data()
+        return data
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@router.get("/level5", response_model=Level5Response)
+async def get_level5_visualization():
+    """
+    Get data for Level 5: Evidence Evolution Over Time (WWC).
+    Returns time series showing how interventions scaled from 1995-2025.
+    """
+    try:
+        data = service.get_level5_data()
         return data
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))

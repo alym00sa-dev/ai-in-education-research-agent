@@ -782,6 +782,295 @@ class VisualizationService:
         else:
             return "research_gap"
 
+    # ========== LEVEL 4: INDIVIDUAL INTERVENTIONS (67 BUBBLES) ==========
+
+    def get_level4_data(self) -> Dict[str, Any]:
+        """
+        Get data for Level 4: Individual Interventions (WWC data).
+        Returns 67 bubbles (one per tech-compatible intervention).
+        """
+        bubbles = []
+
+        # Colors by IO (to show groupings)
+        IO_COLORS = {
+            "Adaptive Instruction & Tutoring Systems": "#3b82f6",  # Blue
+            "Personalized Learning & Advising Systems": "#10b981",  # Green
+            "Data-Driven Decision Support": "#f59e0b",  # Amber
+            "Learning Pathways & Mobility Support": "#8b5cf6"  # Purple
+        }
+
+        # Get all WWC papers with their interventions
+        with self.driver.session() as session:
+            result = session.run("""
+                MATCH (p:Paper {source: 'WWC'})-[:HAS_IMPLEMENTATION_OBJECTIVE]->(io:ImplementationObjective)
+                MATCH (p)-[:REPORTS_FINDING]->(f:EmpiricalFinding {source: 'WWC'})
+                RETURN DISTINCT
+                    p.title as title,
+                    p.wwc_study_id as study_id,
+                    io.type as io_type
+            """)
+
+            papers_data = [dict(record) for record in result]
+
+        # Group by intervention name (extracted from paper titles or use study metadata)
+        # For now, we'll use a mapping from our processed data
+        import json
+        with open('wwc_level3_mapped.json', 'r') as f:
+            mapped_interventions = json.load(f)
+
+        for intervention in mapped_interventions:
+            bubble = self._compute_intervention_bubble_level4(intervention, IO_COLORS)
+            if bubble['paper_count'] > 0:  # Only include interventions with data
+                bubbles.append(bubble)
+
+        metadata = {
+            "x_axis": {
+                "label": "Evidence Base Quality",
+                "description": "Rigor and consistency of RCT evidence (0-100)",
+                "computation": "4-component composite: Study Design Quality, Replication Strength, Sample Adequacy, and Effect Consistency"
+            },
+            "y_axis": {
+                "label": "External Validity Score",
+                "description": "Generalizability across diverse contexts",
+                "computation": "Diversity across geographic regions, school types, grade levels, and demographics"
+            },
+            "bubble_size": {
+                "label": "Students Impacted",
+                "description": "Total students studied across all RCTs for this intervention",
+                "computation": "Number of studies multiplied by average sample size"
+            }
+        }
+
+        return {"bubbles": bubbles, "metadata": metadata}
+
+    def _compute_intervention_bubble_level4(self, intervention: Dict, io_colors: Dict) -> Dict[str, Any]:
+        """Compute single bubble for an individual intervention."""
+
+        intervention_id = intervention['intervention_id']
+        intervention_name = intervention['intervention_name']
+        io = intervention['implementation_objective']
+
+        # Get papers for this specific intervention from Neo4j
+        # We need to match by intervention name since that's how we can identify them
+        with self.driver.session() as session:
+            # Get study IDs from CSV mapping
+            import csv
+            csv_path = '../kg-viz-frontend/level-3/Interventions_Studies_And_Findings.csv'
+
+            with open(csv_path, 'r', encoding='utf-8') as f:
+                reader = csv.DictReader(f)
+                study_ids = [row['s_StudyID'] for row in reader
+                           if row['i_InterventionID'] == intervention_id and row['s_StudyID']]
+
+            if not study_ids:
+                return {
+                    "id": intervention_name,
+                    "label": intervention_name,
+                    "x": 0,
+                    "y": 0,
+                    "size": 0,
+                    "paper_count": 0,
+                    "color": io_colors.get(io, "#94a3b8"),
+                    "priority": "neutral",
+                    "breakdown": {}
+                }
+
+            # Get papers for these study IDs
+            result = session.run("""
+                MATCH (p:Paper {source: 'WWC'})-[:REPORTS_FINDING]->(f:EmpiricalFinding {source: 'WWC'})
+                WHERE p.wwc_study_id IN $study_ids
+                RETURN
+                    p.title as title,
+                    p.study_design as study_design,
+                    p.year as year,
+                    p.population as population,
+                    p.wwc_study_rating as wwc_study_rating,
+                    f.direction as direction,
+                    f.evidence_type_strength as evidence_type_strength,
+                    f.study_size as study_size,
+                    f.effect_size as effect_size,
+                    f.region as region,
+                    f.school_type as school_type,
+                    f.wwc_is_significant as wwc_is_significant
+            """, study_ids=study_ids)
+
+            papers = [dict(record) for record in result]
+
+        if not papers:
+            return {
+                "id": intervention_name,
+                "label": intervention_name,
+                "x": 0,
+                "y": 0,
+                "size": 0,
+                "paper_count": 0,
+                "color": io_colors.get(io, "#94a3b8"),
+                "priority": "neutral",
+                "breakdown": {}
+            }
+
+        # Calculate metrics (same as Level 3)
+        evidence_quality = self._compute_evidence_quality_wwc(papers)
+        external_validity = self._compute_external_validity_wwc(papers)
+        bubble_size = self._compute_bubble_size_level3(papers)
+        breakdown = self._calculate_breakdown_level3(io, papers)
+
+        return {
+            "id": intervention_name,
+            "label": intervention_name,
+            "x": evidence_quality,
+            "y": external_validity,
+            "size": bubble_size,
+            "paper_count": len(set(p['title'] for p in papers)),
+            "color": io_colors.get(io, "#94a3b8"),
+            "priority": "neutral",
+            "breakdown": {
+                **breakdown,
+                "implementation_objective": io
+            }
+        }
+
+    # ========== LEVEL 5: EVIDENCE EVOLUTION OVER TIME ==========
+
+    def get_level5_data(self) -> Dict[str, Any]:
+        """
+        Get data for Level 5: Evidence Evolution Over Time.
+        Returns time series data for each IO showing scaling patterns.
+        """
+        # Broadened IOs for Level 3/4/5
+        BROADENED_IOS = [
+            "Adaptive Instruction & Tutoring Systems",
+            "Personalized Learning & Advising Systems",
+            "Data-Driven Decision Support",
+            "Learning Pathways & Mobility Support"
+        ]
+
+        # Colors for each IO line
+        IO_COLORS = {
+            "Adaptive Instruction & Tutoring Systems": "#3b82f6",
+            "Personalized Learning & Advising Systems": "#10b981",
+            "Data-Driven Decision Support": "#f59e0b",
+            "Learning Pathways & Mobility Support": "#8b5cf6"
+        }
+
+        time_series = []
+
+        for io in BROADENED_IOS:
+            series = self._compute_time_series_for_io(io, IO_COLORS[io])
+            time_series.append(series)
+
+        metadata = {
+            "x_axis": {
+                "label": "Time Period",
+                "description": "5-year periods from 1995 to 2025",
+                "computation": "Studies grouped by publication year into 5-year bins"
+            },
+            "y_axis": {
+                "label": "Implementation Reach",
+                "description": "Scale and breadth of implementation (students × contexts)",
+                "computation": "Cumulative students impacted multiplied by number of unique contexts (regions + school types + grade levels). Measures both scale (how many) and breadth (how diverse)."
+            },
+            "bubble_size": {
+                "label": "Effect Size",
+                "description": "Average effect size in that period",
+                "computation": "Average Cohen's d across all studies in the period. Larger bubble = maintained effectiveness at scale."
+            }
+        }
+
+        return {"time_series": time_series, "metadata": metadata}
+
+    def _compute_time_series_for_io(self, io: str, color: str) -> Dict[str, Any]:
+        """Compute time series data for a single IO."""
+
+        # Define 5-year periods
+        periods = [
+            (1995, 1999),
+            (2000, 2004),
+            (2005, 2009),
+            (2010, 2014),
+            (2015, 2019),
+            (2020, 2025)
+        ]
+
+        # Get all papers for this IO
+        with self.driver.session() as session:
+            result = session.run("""
+                MATCH (p:Paper {source: 'WWC'})-[:HAS_IMPLEMENTATION_OBJECTIVE]->(io:ImplementationObjective)
+                WHERE io.type = $io
+                MATCH (p)-[:REPORTS_FINDING]->(f:EmpiricalFinding {source: 'WWC'})
+                RETURN
+                    p.year as year,
+                    p.population as population,
+                    f.study_size as study_size,
+                    f.effect_size as effect_size,
+                    f.region as region,
+                    f.school_type as school_type
+            """, io=io)
+
+            all_papers = [dict(record) for record in result]
+
+        # Group papers by period and calculate cumulative metrics
+        data_points = []
+        cumulative_students = 0
+        cumulative_contexts = set()
+
+        for start_year, end_year in periods:
+            # Papers published in this period
+            period_papers = [p for p in all_papers
+                           if p.get('year') and start_year <= p['year'] <= end_year]
+
+            if not period_papers:
+                # No data for this period, but keep cumulative values
+                data_points.append({
+                    "period": f"{start_year}-{end_year}",
+                    "year_midpoint": (start_year + end_year) / 2,
+                    "implementation_reach": cumulative_students * len(cumulative_contexts) if cumulative_contexts else 0,
+                    "cumulative_students": cumulative_students,
+                    "num_contexts": len(cumulative_contexts),
+                    "avg_effect_size": 0,
+                    "num_studies": 0
+                })
+                continue
+
+            # Add to cumulative students
+            period_students = sum(p.get('study_size', 0) for p in period_papers if p.get('study_size'))
+            cumulative_students += period_students
+
+            # Add to cumulative contexts
+            for p in period_papers:
+                if p.get('region') and p.get('region') != 'not_reported':
+                    cumulative_contexts.add(('region', p['region']))
+                if p.get('school_type') and p.get('school_type') != 'not_reported':
+                    cumulative_contexts.add(('school_type', p['school_type']))
+                if p.get('population') and p.get('population') != 'not_reported':
+                    cumulative_contexts.add(('population', p['population']))
+
+            # Calculate implementation reach
+            implementation_reach = cumulative_students * len(cumulative_contexts)
+
+            # Average effect size for THIS period (not cumulative)
+            effect_sizes = [p.get('effect_size') for p in period_papers
+                          if p.get('effect_size') is not None]
+            avg_effect_size = sum(effect_sizes) / len(effect_sizes) if effect_sizes else 0
+
+            data_points.append({
+                "period": f"{start_year}-{end_year}",
+                "year_midpoint": (start_year + end_year) / 2,
+                "implementation_reach": implementation_reach,
+                "cumulative_students": cumulative_students,
+                "num_contexts": len(cumulative_contexts),
+                "avg_effect_size": abs(avg_effect_size),  # Use absolute value for bubble size
+                "num_studies": len(set(p.get('year') for p in period_papers)),  # Approximate unique studies
+                "new_students_this_period": period_students
+            })
+
+        return {
+            "id": io,
+            "label": io,
+            "color": color,
+            "data_points": data_points
+        }
+
     # ========== EVIDENCE MATURITY CALCULATION (SHARED) ==========
 
     def _compute_evidence_maturity(self, papers: List[Dict], entity_name: str) -> float:

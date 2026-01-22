@@ -3,8 +3,9 @@
 import { useState, useEffect } from 'react';
 import { Eye, EyeOff } from 'lucide-react';
 import BubbleChart from '@/components/BubbleChart';
+import LineChart from '@/components/LineChart';
 import InfoTooltip from '@/components/InfoTooltip';
-import { fetchLevel1Data, fetchLevel2Data, fetchLevel3Data } from '@/lib/api';
+import { fetchLevel1Data, fetchLevel2Data, fetchLevel3Data, fetchLevel4Data, fetchLevel5Data } from '@/lib/api';
 import { BubbleData, VisualizationResponse } from '@/lib/types';
 
 // Helper to capitalize labels properly
@@ -40,12 +41,14 @@ function capitalizeLabel(label: string): string {
     .join(' - ');
 }
 
-type ViewType = 'intro' | 'level1' | 'level2' | 'level3';
+type ViewType = 'intro' | 'level1' | 'level2' | 'level3' | 'level4' | 'level5';
 
 export default function Home() {
   const [level1Data, setLevel1Data] = useState<VisualizationResponse | null>(null);
   const [level2Data, setLevel2Data] = useState<VisualizationResponse | null>(null);
   const [level3Data, setLevel3Data] = useState<VisualizationResponse | null>(null);
+  const [level4Data, setLevel4Data] = useState<VisualizationResponse | null>(null);
+  const [level5Data, setLevel5Data] = useState<any>(null);
   const [selectedBubble, setSelectedBubble] = useState<BubbleData | null>(null);
   const [activeView, setActiveView] = useState<ViewType>('intro');
   const [hiddenBubbles, setHiddenBubbles] = useState<Set<string>>(new Set());
@@ -58,14 +61,18 @@ export default function Home() {
     async function loadData() {
       try {
         setLoading(true);
-        const [l1, l2, l3] = await Promise.all([
+        const [l1, l2, l3, l4, l5] = await Promise.all([
           fetchLevel1Data(),
           fetchLevel2Data(),
-          fetchLevel3Data()
+          fetchLevel3Data(),
+          fetchLevel4Data(),
+          fetchLevel5Data()
         ]);
         setLevel1Data(l1);
         setLevel2Data(l2);
         setLevel3Data(l3);
+        setLevel4Data(l4);
+        setLevel5Data(l5);
       } catch (err) {
         setError(err instanceof Error ? err.message : 'Failed to load data');
       } finally {
@@ -126,7 +133,7 @@ export default function Home() {
     );
   }
 
-  const currentData = activeView === 'level1' ? level1Data : activeView === 'level2' ? level2Data : activeView === 'level3' ? level3Data : null;
+  const currentData = activeView === 'level1' ? level1Data : activeView === 'level2' ? level2Data : activeView === 'level3' ? level3Data : activeView === 'level4' ? level4Data : null;
   const visibleBubbles = currentData?.bubbles.filter(b =>
     !hiddenBubbles.has(b.id) && !hiddenPriorities.has(b.priority)
   ) || [];
@@ -165,6 +172,8 @@ export default function Home() {
               <option value="level1">Level 1: Problem Burden Map</option>
               <option value="level2">Level 2: Intervention Evidence Map</option>
               <option value="level3">Level 3: Evidence-Based Interventions (RCT)</option>
+              <option value="level4">Level 4: Individual Interventions</option>
+              <option value="level5">Level 5: Evidence Evolution Over Time</option>
             </select>
             <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-slate-700">
               <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -327,148 +336,210 @@ export default function Home() {
               <h3 className="text-sm font-bold text-slate-900 mb-4 uppercase tracking-wide">Visualization Guide</h3>
 
             <div className="space-y-4 text-sm">
-              <div className="flex items-start">
-                <div className="flex-1">
-                  <p className="font-semibold text-slate-800">X-Axis: {currentData?.metadata.x_axis.label}</p>
-                  <p className="text-slate-600 text-xs mt-1 leading-relaxed">{currentData?.metadata.x_axis.description}</p>
-                </div>
-              </div>
-
-              <div className="flex items-start">
-                <div className="flex-1">
-                  <p className="font-semibold text-slate-800">Y-Axis: {currentData?.metadata.y_axis.label}</p>
-                  <p className="text-slate-600 text-xs mt-1 leading-relaxed">{currentData?.metadata.y_axis.description}</p>
-                </div>
-              </div>
-
-              <div className="flex items-start">
-                <div className="flex-1">
-                  <p className="font-semibold text-slate-800">Bubble Size: {currentData?.metadata.bubble_size.label}</p>
-                  <p className="text-slate-600 text-xs mt-1 leading-relaxed">{currentData?.metadata.bubble_size.description}</p>
-                </div>
-              </div>
-
-              <div className="flex items-start">
-                <div className="flex-1">
-                  <p className="font-semibold text-slate-800">Bubble Color: Priority Tag</p>
-                  <div className="space-y-2 mt-2">
-                    <div className="flex items-center gap-2">
-                      <div className="w-3 h-3 rounded-full bg-green-500 flex-shrink-0"></div>
-                      <p className="text-xs text-slate-600"><strong>High Priority:</strong> High evidence & high burden/impact</p>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <div className="w-3 h-3 rounded-full bg-yellow-500 flex-shrink-0"></div>
-                      <p className="text-xs text-slate-600">
-                        <strong>On Watch:</strong> {activeView === 'level1' ? 'Either high burden with low evidence OR high evidence with low burden' : 'High burden/impact, low evidence'}
-                      </p>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <div className="w-3 h-3 rounded-full bg-pink-500 flex-shrink-0"></div>
-                      <p className="text-xs text-slate-600"><strong>Research Gap:</strong> Below median threshold</p>
+              {activeView === 'level5' && level5Data ? (
+                <>
+                  <div className="flex items-start">
+                    <div className="flex-1">
+                      <p className="font-semibold text-slate-800">X-Axis: Time Period</p>
+                      <p className="text-slate-600 text-xs mt-1 leading-relaxed">5-year intervals from 1995-2025 showing evidence evolution</p>
                     </div>
                   </div>
-                </div>
-              </div>
+
+                  <div className="flex items-start">
+                    <div className="flex-1">
+                      <p className="font-semibold text-slate-800">Y-Axis: Implementation Reach</p>
+                      <p className="text-slate-600 text-xs mt-1 leading-relaxed">Cumulative students × contexts (regions + school types + grade levels)</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start">
+                    <div className="flex-1">
+                      <p className="font-semibold text-slate-800">Bubble Size: Average Effect Size</p>
+                      <p className="text-slate-600 text-xs mt-1 leading-relaxed">Cohen's d showing effectiveness maintained at scale</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start">
+                    <div className="flex-1">
+                      <p className="font-semibold text-slate-800">Line Color: Implementation Objective</p>
+                      <div className="space-y-2 mt-2">
+                        {level5Data.time_series.map((series: any) => (
+                          <div key={series.id} className="flex items-center gap-2">
+                            <div className="w-3 h-3 rounded-full flex-shrink-0" style={{ backgroundColor: series.color }}></div>
+                            <p className="text-xs text-slate-600">{series.label}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className="flex items-start">
+                    <div className="flex-1">
+                      <p className="font-semibold text-slate-800">X-Axis: {currentData?.metadata.x_axis.label}</p>
+                      <p className="text-slate-600 text-xs mt-1 leading-relaxed">{currentData?.metadata.x_axis.description}</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start">
+                    <div className="flex-1">
+                      <p className="font-semibold text-slate-800">Y-Axis: {currentData?.metadata.y_axis.label}</p>
+                      <p className="text-slate-600 text-xs mt-1 leading-relaxed">{currentData?.metadata.y_axis.description}</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start">
+                    <div className="flex-1">
+                      <p className="font-semibold text-slate-800">Bubble Size: {currentData?.metadata.bubble_size.label}</p>
+                      <p className="text-slate-600 text-xs mt-1 leading-relaxed">{currentData?.metadata.bubble_size.description}</p>
+                    </div>
+                  </div>
+
+                  {(activeView === 'level1' || activeView === 'level2') && (
+                    <div className="flex items-start">
+                      <div className="flex-1">
+                        <p className="font-semibold text-slate-800">Bubble Color: Priority Tag</p>
+                        <div className="space-y-2 mt-2">
+                          <div className="flex items-center gap-2">
+                            <div className="w-3 h-3 rounded-full bg-green-500 flex-shrink-0"></div>
+                            <p className="text-xs text-slate-600"><strong>High Priority:</strong> High evidence & high burden/impact</p>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <div className="w-3 h-3 rounded-full bg-yellow-500 flex-shrink-0"></div>
+                            <p className="text-xs text-slate-600">
+                              <strong>On Watch:</strong> {activeView === 'level1' ? 'Either high burden with low evidence OR high evidence with low burden' : 'High burden/impact, low evidence'}
+                            </p>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <div className="w-3 h-3 rounded-full bg-pink-500 flex-shrink-0"></div>
+                            <p className="text-xs text-slate-600"><strong>Research Gap:</strong> Below median threshold</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                  {(activeView === 'level3' || activeView === 'level4') && (
+                    <div className="flex items-start">
+                      <div className="flex-1">
+                        <p className="font-semibold text-slate-800">Bubble Color: {activeView === 'level3' ? 'Unique per Objective' : 'Implementation Objective'}</p>
+                        <p className="text-slate-600 text-xs mt-1 leading-relaxed">
+                          {activeView === 'level3' ? 'Each bubble has a distinct color for easy identification' : 'Color-coded by the four Implementation Objectives'}
+                        </p>
+                      </div>
+                    </div>
+                  )}
+                </>
+              )}
             </div>
           </div>
 
-          {/* Priority Filter */}
-          <div className="mb-7 bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
-            <h3 className="text-sm font-bold text-slate-900 mb-4 uppercase tracking-wide">Filter by Priority</h3>
-            <div className="space-y-2">
-              <div className="flex items-center justify-between p-2 rounded-lg hover:bg-slate-50 transition-all group">
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                  <span className="text-sm text-slate-700 font-medium">High Priority</span>
-                </div>
-                <button
-                  onClick={() => togglePriorityVisibility('high_priority')}
-                  className="text-slate-500 hover:text-slate-900 transition-colors p-1"
-                  title={hiddenPriorities.has('high_priority') ? 'Show bubbles' : 'Hide bubbles'}
-                >
-                  {hiddenPriorities.has('high_priority') ? (
-                    <EyeOff className="w-4 h-4" />
-                  ) : (
-                    <Eye className="w-4 h-4" />
-                  )}
-                </button>
-              </div>
-
-              <div className="flex items-center justify-between p-2 rounded-lg hover:bg-slate-50 transition-all group">
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                  <span className="text-sm text-slate-700 font-medium">On Watch</span>
-                </div>
-                <button
-                  onClick={() => togglePriorityVisibility('on_watch')}
-                  className="text-slate-500 hover:text-slate-900 transition-colors p-1"
-                  title={hiddenPriorities.has('on_watch') ? 'Show bubbles' : 'Hide bubbles'}
-                >
-                  {hiddenPriorities.has('on_watch') ? (
-                    <EyeOff className="w-4 h-4" />
-                  ) : (
-                    <Eye className="w-4 h-4" />
-                  )}
-                </button>
-              </div>
-
-              <div className="flex items-center justify-between p-2 rounded-lg hover:bg-slate-50 transition-all group">
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full bg-pink-500"></div>
-                  <span className="text-sm text-slate-700 font-medium">Research Gap</span>
-                </div>
-                <button
-                  onClick={() => togglePriorityVisibility('research_gap')}
-                  className="text-slate-500 hover:text-slate-900 transition-colors p-1"
-                  title={hiddenPriorities.has('research_gap') ? 'Show bubbles' : 'Hide bubbles'}
-                >
-                  {hiddenPriorities.has('research_gap') ? (
-                    <EyeOff className="w-4 h-4" />
-                  ) : (
-                    <Eye className="w-4 h-4" />
-                  )}
-                </button>
-              </div>
-            </div>
-          </div>
-
-          {/* Bubble Visibility Controls */}
-          <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
-            <h3 className="text-sm font-bold text-slate-900 mb-4 uppercase tracking-wide">Categories</h3>
-            <div className="space-y-1 max-h-96 overflow-y-auto pr-2">
-              {currentData?.bubbles.map((bubble) => (
-                <div
-                  key={bubble.id}
-                  className="flex items-center justify-between p-2 rounded-lg hover:bg-slate-50 transition-all group"
-                >
+          {/* Priority Filter - Only for Level 1 & 2 */}
+          {(activeView === 'level1' || activeView === 'level2') && (
+            <div className="mb-7 bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+              <h3 className="text-sm font-bold text-slate-900 mb-4 uppercase tracking-wide">Filter by Priority</h3>
+              <div className="space-y-2">
+                <div className="flex items-center justify-between p-2 rounded-lg hover:bg-slate-50 transition-all group">
+                  <div className="flex items-center gap-2">
+                    <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                    <span className="text-sm text-slate-700 font-medium">High Priority</span>
+                  </div>
                   <button
-                    onClick={() => setSelectedBubble(bubble)}
-                    className="flex-1 text-left text-sm text-slate-700 hover:text-slate-900 font-medium"
-                  >
-                    {capitalizeLabel(bubble.label)}
-                  </button>
-                  <button
-                    onClick={() => toggleBubbleVisibility(bubble.id)}
+                    onClick={() => togglePriorityVisibility('high_priority')}
                     className="text-slate-500 hover:text-slate-900 transition-colors p-1"
-                    title={hiddenBubbles.has(bubble.id) ? 'Show bubble' : 'Hide bubble'}
+                    title={hiddenPriorities.has('high_priority') ? 'Show bubbles' : 'Hide bubbles'}
                   >
-                    {hiddenBubbles.has(bubble.id) ? (
+                    {hiddenPriorities.has('high_priority') ? (
                       <EyeOff className="w-4 h-4" />
                     ) : (
                       <Eye className="w-4 h-4" />
                     )}
                   </button>
                 </div>
-              ))}
+
+                <div className="flex items-center justify-between p-2 rounded-lg hover:bg-slate-50 transition-all group">
+                  <div className="flex items-center gap-2">
+                    <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                    <span className="text-sm text-slate-700 font-medium">On Watch</span>
+                  </div>
+                  <button
+                    onClick={() => togglePriorityVisibility('on_watch')}
+                    className="text-slate-500 hover:text-slate-900 transition-colors p-1"
+                    title={hiddenPriorities.has('on_watch') ? 'Show bubbles' : 'Hide bubbles'}
+                  >
+                    {hiddenPriorities.has('on_watch') ? (
+                      <EyeOff className="w-4 h-4" />
+                    ) : (
+                      <Eye className="w-4 h-4" />
+                    )}
+                  </button>
+                </div>
+
+                <div className="flex items-center justify-between p-2 rounded-lg hover:bg-slate-50 transition-all group">
+                  <div className="flex items-center gap-2">
+                    <div className="w-3 h-3 rounded-full bg-pink-500"></div>
+                    <span className="text-sm text-slate-700 font-medium">Research Gap</span>
+                  </div>
+                  <button
+                    onClick={() => togglePriorityVisibility('research_gap')}
+                    className="text-slate-500 hover:text-slate-900 transition-colors p-1"
+                    title={hiddenPriorities.has('research_gap') ? 'Show bubbles' : 'Hide bubbles'}
+                  >
+                    {hiddenPriorities.has('research_gap') ? (
+                      <EyeOff className="w-4 h-4" />
+                    ) : (
+                      <Eye className="w-4 h-4" />
+                    )}
+                  </button>
+                </div>
+              </div>
             </div>
-          </div>
+          )}
+
+          {/* Bubble Visibility Controls - Not for Level 5 */}
+          {activeView !== 'level5' && (
+            <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+              <h3 className="text-sm font-bold text-slate-900 mb-4 uppercase tracking-wide">Categories</h3>
+              <div className="space-y-1 max-h-96 overflow-y-auto pr-2">
+                {currentData?.bubbles.map((bubble) => (
+                  <div
+                    key={bubble.id}
+                    className="flex items-center justify-between p-2 rounded-lg hover:bg-slate-50 transition-all group"
+                  >
+                    <button
+                      onClick={() => setSelectedBubble(bubble)}
+                      className="flex-1 text-left text-sm text-slate-700 hover:text-slate-900 font-medium"
+                    >
+                      {capitalizeLabel(bubble.label)}
+                    </button>
+                    <button
+                      onClick={() => toggleBubbleVisibility(bubble.id)}
+                      className="text-slate-500 hover:text-slate-900 transition-colors p-1"
+                      title={hiddenBubbles.has(bubble.id) ? 'Show bubble' : 'Hide bubble'}
+                    >
+                      {hiddenBubbles.has(bubble.id) ? (
+                        <EyeOff className="w-4 h-4" />
+                      ) : (
+                        <Eye className="w-4 h-4" />
+                      )}
+                    </button>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </aside>
 
-        {/* Center - Bubble Chart */}
+        {/* Center - Bubble Chart or Line Chart */}
         <main className="flex-1 p-8 overflow-hidden bg-slate-50 relative z-10">
           <div className="h-full bg-white border border-slate-200 rounded-xl shadow-md flex flex-col">
             <div className="flex-1 min-h-0">
-              {currentData && (
+              {activeView === 'level5' && level5Data ? (
+                <LineChart
+                  timeSeries={level5Data.time_series}
+                />
+              ) : currentData && (
                 <BubbleChart
                   data={visibleBubbles}
                   allData={currentData.bubbles}
@@ -482,7 +553,7 @@ export default function Home() {
               )}
             </div>
             {/* So-What Blurb */}
-            {currentData && (
+            {(currentData || level5Data) && (
               <div className="border-t border-slate-200 px-6 py-4 bg-slate-50">
                 {activeView === 'level1' ? (
                   <p className="text-sm text-slate-700 leading-relaxed">
@@ -492,11 +563,19 @@ export default function Home() {
                   <p className="text-sm text-slate-700 leading-relaxed">
                     <strong className="text-slate-900">Strategic Insight:</strong> This map evaluates intervention readiness by showing which AI-enabled approaches have both strong evidence and clear alignment to urgent educational problems as outlined in Level 1.
                   </p>
-                ) : (
+                ) : activeView === 'level3' ? (
                   <p className="text-sm text-slate-700 leading-relaxed">
                     <strong className="text-slate-900">Strategic Insight:</strong> This map showcases proven interventions from rigorous RCTs (What Works Clearinghouse), highlighting which tech-compatible approaches have strong evidence AND generalize across diverse contexts—representing millions of students already impacted.
                   </p>
-                )}
+                ) : activeView === 'level4' ? (
+                  <p className="text-sm text-slate-700 leading-relaxed">
+                    <strong className="text-slate-900">Strategic Insight:</strong> This granular view maps all 67 individual tech-compatible interventions from WWC, revealing the specific programs and approaches that have been rigorously tested and validated through RCTs—each representing a proven solution ready for adaptation and scaling.
+                  </p>
+                ) : activeView === 'level5' ? (
+                  <p className="text-sm text-slate-700 leading-relaxed">
+                    <strong className="text-slate-900">Strategic Insight:</strong> This temporal evolution shows how evidence-based interventions scaled from 1995-2025, measuring Implementation Reach (students × contexts) over time. Larger bubbles indicate interventions that maintained strong effect sizes while scaling—a critical predictor for how AI-based interventions may evolve.
+                  </p>
+                ) : null}
               </div>
             )}
           </div>
@@ -523,8 +602,8 @@ export default function Home() {
                   <p className="text-xs text-slate-600 font-semibold uppercase tracking-wide">Studies Analyzed</p>
                   <p className="text-4xl font-bold text-slate-900 mt-2">{selectedBubble.paper_count}</p>
 
-                  {/* Study Design Breakdown */}
-                  {selectedBubble.breakdown.study_design_distribution && Object.keys(selectedBubble.breakdown.study_design_distribution).length > 0 && (
+                  {/* Study Design Breakdown - Only for Level 1 & 2 */}
+                  {(activeView === 'level1' || activeView === 'level2') && selectedBubble.breakdown.study_design_distribution && Object.keys(selectedBubble.breakdown.study_design_distribution).length > 0 && (
                     <div className="mt-4 pt-4 border-t border-slate-300">
                       <p className="text-xs font-bold text-slate-700 uppercase mb-3 tracking-wide">Study Design Breakdown</p>
                       <div className="space-y-2">
@@ -571,48 +650,50 @@ export default function Home() {
                   </div>
                 )}
 
-                {/* Evidence Maturity */}
-                <div className="border-l-4 border-slate-700 pl-5">
-                  <div className="flex items-center gap-2 mb-3">
-                    <h3 className="text-lg font-bold text-slate-900 uppercase tracking-wide">
-                      Evidence Maturity
-                    </h3>
-                  </div>
-                  <p className="text-sm text-slate-600 mb-3 leading-relaxed">{selectedBubble.breakdown.evidence_maturity.description}</p>
-                  <div className="bg-slate-100 p-4 rounded-lg mb-4 border border-slate-300">
-                    <p className="text-3xl font-bold text-slate-900">
-                      {selectedBubble.breakdown.evidence_maturity.score.toFixed(1)} <span className="text-lg text-slate-600">/ {selectedBubble.breakdown.evidence_maturity.max}</span>
-                    </p>
-                  </div>
+                {/* Evidence Maturity - Only for Level 1 & 2 */}
+                {(activeView === 'level1' || activeView === 'level2') && (
+                  <div className="border-l-4 border-slate-700 pl-5">
+                    <div className="flex items-center gap-2 mb-3">
+                      <h3 className="text-lg font-bold text-slate-900 uppercase tracking-wide">
+                        Evidence Maturity
+                      </h3>
+                    </div>
+                    <p className="text-sm text-slate-600 mb-3 leading-relaxed">{selectedBubble.breakdown.evidence_maturity.description}</p>
+                    <div className="bg-slate-100 p-4 rounded-lg mb-4 border border-slate-300">
+                      <p className="text-3xl font-bold text-slate-900">
+                        {selectedBubble.breakdown.evidence_maturity.score.toFixed(1)} <span className="text-lg text-slate-600">/ {selectedBubble.breakdown.evidence_maturity.max}</span>
+                      </p>
+                    </div>
 
-                  {/* Components */}
-                  <div className="grid grid-cols-2 gap-3">
-                    {Object.entries(selectedBubble.breakdown.evidence_maturity.components).map(([key, component]) => {
-                      // Define detailed tooltip content for each component
-                      const tooltipContent: { [key: string]: string } = {
-                        'design_strength': 'CALCULATION: For each paper, assign points based on study_design field: RCT=25pts, Meta-analysis=22pts, Quasi-experimental=18pts, Pre-post=15pts, Case study=10pts, Literature review=8pts, Commentary=5pts. Final score = average across all papers in this cell. CONTEXT: Higher scores indicate more rigorous experimental designs with stronger causal inference. RCTs and meta-analyses provide the most reliable evidence for intervention effectiveness.',
-                        'consistency': 'CALCULATION: Count papers by finding_direction (Positive, Negative, Mixed, Neutral). Calculate directional stability = (count of most common direction / total papers) × 25. Example: If 8 of 10 papers show Positive results, score = (8/10) × 25 = 20 points. CONTEXT: Higher scores mean findings consistently point in the same direction across studies, indicating reliable and replicable effects. Low scores suggest conflicting evidence requiring further investigation.',
-                        'external_validity': 'CALCULATION: Count unique values across three diversity dimensions for all papers: (1) unique settings (classroom, online, after-school, etc.), (2) unique geographic regions (North America, Europe, Asia, etc.), (3) unique populations (K-12, higher ed, adult learners, etc.). Score = (total unique contexts / theoretical maximum) × 25. CONTEXT: Higher scores indicate findings generalize across diverse educational contexts, suggesting broader applicability and real-world relevance.',
-                        'quality': 'CALCULATION: For each paper, use evidence_type_strength field (0=best, 4=worst quality). Invert scale: Quality score = 25 - (avg evidence_type_strength × 6.25). Lower evidence_type_strength = higher quality score. CONTEXT: Measures risk of bias based on peer review status, methodology transparency, sample size, conflict of interest, and replication potential. Higher scores indicate more trustworthy, rigorous research.'
-                      };
+                    {/* Components */}
+                    <div className="grid grid-cols-2 gap-3">
+                      {Object.entries(selectedBubble.breakdown.evidence_maturity.components).map(([key, component]) => {
+                        // Define detailed tooltip content for each component
+                        const tooltipContent: { [key: string]: string } = {
+                          'design_strength': 'CALCULATION: For each paper, assign points based on study_design field: RCT=25pts, Meta-analysis=22pts, Quasi-experimental=18pts, Pre-post=15pts, Case study=10pts, Literature review=8pts, Commentary=5pts. Final score = average across all papers in this cell. CONTEXT: Higher scores indicate more rigorous experimental designs with stronger causal inference. RCTs and meta-analyses provide the most reliable evidence for intervention effectiveness.',
+                          'consistency': 'CALCULATION: Count papers by finding_direction (Positive, Negative, Mixed, Neutral). Calculate directional stability = (count of most common direction / total papers) × 25. Example: If 8 of 10 papers show Positive results, score = (8/10) × 25 = 20 points. CONTEXT: Higher scores mean findings consistently point in the same direction across studies, indicating reliable and replicable effects. Low scores suggest conflicting evidence requiring further investigation.',
+                          'external_validity': 'CALCULATION: Count unique values across three diversity dimensions for all papers: (1) unique settings (classroom, online, after-school, etc.), (2) unique geographic regions (North America, Europe, Asia, etc.), (3) unique populations (K-12, higher ed, adult learners, etc.). Score = (total unique contexts / theoretical maximum) × 25. CONTEXT: Higher scores indicate findings generalize across diverse educational contexts, suggesting broader applicability and real-world relevance.',
+                          'quality': 'CALCULATION: For each paper, use evidence_type_strength field (0=best, 4=worst quality). Invert scale: Quality score = 25 - (avg evidence_type_strength × 6.25). Lower evidence_type_strength = higher quality score. CONTEXT: Measures risk of bias based on peer review status, methodology transparency, sample size, conflict of interest, and replication potential. Higher scores indicate more trustworthy, rigorous research.'
+                        };
 
-                      return (
-                        <div key={key} className="bg-white p-3 rounded-lg border border-slate-200 shadow-sm">
-                          <div className="flex items-center gap-1.5 mb-1.5">
-                            <p className="text-xs font-bold text-slate-700 uppercase tracking-wide">
-                              {key.replace(/_/g, ' ')}
+                        return (
+                          <div key={key} className="bg-white p-3 rounded-lg border border-slate-200 shadow-sm">
+                            <div className="flex items-center gap-1.5 mb-1.5">
+                              <p className="text-xs font-bold text-slate-700 uppercase tracking-wide">
+                                {key.replace(/_/g, ' ')}
+                              </p>
+                              <InfoTooltip content={tooltipContent[key] || component.description} />
+                            </div>
+                            <p className="text-lg font-bold text-slate-900">
+                              {component.score.toFixed(1)} <span className="text-sm text-slate-600">/ {component.max}</span>
                             </p>
-                            <InfoTooltip content={tooltipContent[key] || component.description} />
+                            <p className="text-xs text-slate-600 mt-2 leading-relaxed">{component.description}</p>
                           </div>
-                          <p className="text-lg font-bold text-slate-900">
-                            {component.score.toFixed(1)} <span className="text-sm text-slate-600">/ {component.max}</span>
-                          </p>
-                          <p className="text-xs text-slate-600 mt-2 leading-relaxed">{component.description}</p>
-                        </div>
-                      );
-                    })}
+                        );
+                      })}
+                    </div>
                   </div>
-                </div>
+                )}
 
                 {/* Y-Axis: Problem Scale (Level 1) OR Potential Impact (Level 2) */}
                 {activeView === 'level1' && selectedBubble.breakdown.problem_scale && (

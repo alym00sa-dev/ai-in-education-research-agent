@@ -29,3 +29,29 @@ class Level2Response(BaseModel):
     """Response for Level 2: Intervention Evidence Map."""
     bubbles: List[BubbleData]
     metadata: Dict  # Legend info, axis descriptions, investment amounts
+
+
+class TimeSeriesDataPoint(BaseModel):
+    """Single data point in a time series."""
+    period: str
+    year_midpoint: float
+    implementation_reach: float
+    cumulative_students: int
+    num_contexts: int
+    avg_effect_size: float
+    num_studies: int
+    new_students_this_period: int
+
+
+class TimeSeriesData(BaseModel):
+    """Time series for one Implementation Objective."""
+    id: str
+    label: str
+    color: str
+    data_points: List[TimeSeriesDataPoint]
+
+
+class Level5Response(BaseModel):
+    """Response for Level 5: Evidence Evolution Over Time."""
+    time_series: List[TimeSeriesData]
+    metadata: Dict  # Axis descriptions
