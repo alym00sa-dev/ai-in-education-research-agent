@@ -3,11 +3,10 @@
 import { useState, useEffect } from 'react';
 import { Eye, EyeOff } from 'lucide-react';
 import BubbleChart from '@/components/BubbleChart';
-// import LineChart from '@/components/LineChart';
+import LineChart from '@/components/LineChart';
 import InfoTooltip from '@/components/InfoTooltip';
-import { fetchLevel1Data, fetchLevel2Data, fetchLevel3Data } from '@/lib/api';
-// import { fetchLevel1Data, fetchLevel2Data, fetchLevel3Data, fetchLevel4Data, fetchLevel5Data } from '@/lib/api';
-import { BubbleData, VisualizationResponse } from '@/lib/types';
+import { fetchLevel1Data, fetchLevel2Data, fetchLevel3Data, fetchLevel5Data } from '@/lib/api';
+import { BubbleData, VisualizationResponse, Level5Response, TimeSeriesData, TimeSeriesDataPoint } from '@/lib/types';
 
 // Helper to capitalize labels properly
 function capitalizeLabel(label: string): string {
@@ -42,15 +41,17 @@ function capitalizeLabel(label: string): string {
     .join(' - ');
 }
 
-type ViewType = 'intro' | 'level1' | 'level2' | 'level3'; // | 'level4' | 'level5';
+type ViewType = 'intro' | 'level1' | 'level2' | 'level3' | 'level5';
+type Level5ViewType = 'all' | 'adaptive' | 'personalized' | 'data-driven' | 'pathways';
 
 export default function Home() {
   const [level1Data, setLevel1Data] = useState<VisualizationResponse | null>(null);
   const [level2Data, setLevel2Data] = useState<VisualizationResponse | null>(null);
   const [level3Data, setLevel3Data] = useState<VisualizationResponse | null>(null);
-  // const [level4Data, setLevel4Data] = useState<VisualizationResponse | null>(null);
-  // const [level5Data, setLevel5Data] = useState<any>(null);
+  const [level5Data, setLevel5Data] = useState<Level5Response | null>(null);
+  const [level5View, setLevel5View] = useState<Level5ViewType>('all');
   const [selectedBubble, setSelectedBubble] = useState<BubbleData | null>(null);
+  const [selectedTimePoint, setSelectedTimePoint] = useState<{series: TimeSeriesData, point: TimeSeriesDataPoint} | null>(null);
   const [activeView, setActiveView] = useState<ViewType>('intro');
   const [hiddenBubbles, setHiddenBubbles] = useState<Set<string>>(new Set());
   const [hiddenPriorities, setHiddenPriorities] = useState<Set<string>>(new Set());
@@ -62,18 +63,16 @@ export default function Home() {
     async function loadData() {
       try {
         setLoading(true);
-        const [l1, l2, l3] = await Promise.all([
+        const [l1, l2, l3, l5] = await Promise.all([
           fetchLevel1Data(),
           fetchLevel2Data(),
-          fetchLevel3Data()
-          // fetchLevel4Data(),
-          // fetchLevel5Data()
+          fetchLevel3Data(),
+          fetchLevel5Data()
         ]);
         setLevel1Data(l1);
         setLevel2Data(l2);
         setLevel3Data(l3);
-        // setLevel4Data(l4);
-        // setLevel5Data(l5);
+        setLevel5Data(l5);
       } catch (err) {
         setError(err instanceof Error ? err.message : 'Failed to load data');
       } finally {
@@ -165,6 +164,7 @@ export default function Home() {
               onChange={(e) => {
                 setActiveView(e.target.value as ViewType);
                 setSelectedBubble(null);
+                setSelectedTimePoint(null);
                 setShowOutcomesTargeted(false);
               }}
               className="appearance-none bg-white text-slate-900 px-6 py-2 pr-10 rounded-lg font-medium shadow-md border-2 border-slate-200 focus:outline-none focus:ring-2 focus:ring-slate-400 cursor-pointer"
@@ -173,8 +173,7 @@ export default function Home() {
               <option value="level1">Level 1: Problem Burden Map</option>
               <option value="level2">Level 2: Intervention Evidence Map</option>
               <option value="level3">Level 3: Evidence-Based Interventions (RCT)</option>
-              {/* <option value="level4">Level 4: Individual Interventions</option>
-              <option value="level5">Level 5: Evidence Evolution Over Time</option> */}
+              <option value="level5">Level 5: Evidence Evolution Over Time</option>
             </select>
             <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-slate-700">
               <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -337,44 +336,38 @@ export default function Home() {
               <h3 className="text-sm font-bold text-slate-900 mb-4 uppercase tracking-wide">Visualization Guide</h3>
 
             <div className="space-y-4 text-sm">
-              {/* {activeView === 'level5' && level5Data ? (
+              {activeView === 'level5' && level5Data ? (
                 <>
                   <div className="flex items-start">
                     <div className="flex-1">
-                      <p className="font-semibold text-slate-800">X-Axis: Time Period</p>
-                      <p className="text-slate-600 text-xs mt-1 leading-relaxed">5-year intervals from 1995-2025 showing evidence evolution</p>
+                      <p className="font-semibold text-slate-800">X-Axis: {level5Data.metadata.x_axis.label}</p>
+                      <p className="text-slate-600 text-xs mt-1 leading-relaxed">{level5Data.metadata.x_axis.description}</p>
                     </div>
                   </div>
 
                   <div className="flex items-start">
                     <div className="flex-1">
-                      <p className="font-semibold text-slate-800">Y-Axis: Implementation Reach</p>
-                      <p className="text-slate-600 text-xs mt-1 leading-relaxed">Cumulative students × contexts (regions + school types + grade levels)</p>
+                      <p className="font-semibold text-slate-800">Y-Axis: {level5Data.metadata.y_axis.label}</p>
+                      <p className="text-slate-600 text-xs mt-1 leading-relaxed">{level5Data.metadata.y_axis.description}</p>
                     </div>
                   </div>
 
                   <div className="flex items-start">
                     <div className="flex-1">
-                      <p className="font-semibold text-slate-800">Bubble Size: Average Effect Size</p>
-                      <p className="text-slate-600 text-xs mt-1 leading-relaxed">Cohen's d showing effectiveness maintained at scale</p>
+                      <p className="font-semibold text-slate-800">Bubble Size: {level5Data.metadata.bubble_size.label}</p>
+                      <p className="text-slate-600 text-xs mt-1 leading-relaxed">{level5Data.metadata.bubble_size.description}</p>
                     </div>
                   </div>
 
                   <div className="flex items-start">
                     <div className="flex-1">
                       <p className="font-semibold text-slate-800">Line Color: Implementation Objective</p>
-                      <div className="space-y-2 mt-2">
-                        {level5Data.time_series.map((series: any) => (
-                          <div key={series.id} className="flex items-center gap-2">
-                            <div className="w-3 h-3 rounded-full flex-shrink-0" style={{ backgroundColor: series.color }}></div>
-                            <p className="text-xs text-slate-600">{series.label}</p>
-                          </div>
-                        ))}
-                      </div>
+                      <p className="text-slate-600 text-xs mt-1 leading-relaxed">Each line represents one of the four tech-compatible implementation objectives</p>
                     </div>
                   </div>
                 </>
-              ) : ( */}
+              ) : (
+                  <>
                   <div className="flex items-start">
                     <div className="flex-1">
                       <p className="font-semibold text-slate-800">X-Axis: {currentData?.metadata.x_axis.label}</p>
@@ -441,8 +434,59 @@ export default function Home() {
                       </div>
                     </div>
                   )} */}
+                  </>
+              )}
             </div>
           </div>
+
+          {/* Level 5 View Switcher */}
+          {activeView === 'level5' && level5Data && (
+            <div className="mb-7 bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+              <h3 className="text-sm font-bold text-slate-900 mb-4 uppercase tracking-wide">View Selector</h3>
+              <div className="space-y-2">
+                <button
+                  onClick={() => setLevel5View('all')}
+                  className={`w-full text-left p-2 rounded-lg transition-all ${
+                    level5View === 'all' ? 'bg-slate-900 text-white' : 'bg-slate-50 text-slate-700 hover:bg-slate-100'
+                  }`}
+                >
+                  <span className="text-sm font-medium">All Four Pillars</span>
+                </button>
+                <button
+                  onClick={() => setLevel5View('adaptive')}
+                  className={`w-full text-left p-2 rounded-lg transition-all ${
+                    level5View === 'adaptive' ? 'bg-slate-900 text-white' : 'bg-slate-50 text-slate-700 hover:bg-slate-100'
+                  }`}
+                >
+                  <span className="text-sm font-medium">Adaptive Instruction</span>
+                </button>
+                <button
+                  onClick={() => setLevel5View('personalized')}
+                  className={`w-full text-left p-2 rounded-lg transition-all ${
+                    level5View === 'personalized' ? 'bg-slate-900 text-white' : 'bg-slate-50 text-slate-700 hover:bg-slate-100'
+                  }`}
+                >
+                  <span className="text-sm font-medium">Personalized Learning</span>
+                </button>
+                <button
+                  onClick={() => setLevel5View('data-driven')}
+                  className={`w-full text-left p-2 rounded-lg transition-all ${
+                    level5View === 'data-driven' ? 'bg-slate-900 text-white' : 'bg-slate-50 text-slate-700 hover:bg-slate-100'
+                  }`}
+                >
+                  <span className="text-sm font-medium">Data-Driven Decision</span>
+                </button>
+                <button
+                  onClick={() => setLevel5View('pathways')}
+                  className={`w-full text-left p-2 rounded-lg transition-all ${
+                    level5View === 'pathways' ? 'bg-slate-900 text-white' : 'bg-slate-50 text-slate-700 hover:bg-slate-100'
+                  }`}
+                >
+                  <span className="text-sm font-medium">Learning Pathways</span>
+                </button>
+              </div>
+            </div>
+          )}
 
           {/* Priority Filter - Only for Level 1 & 2 */}
           {(activeView === 'level1' || activeView === 'level2') && (
@@ -507,7 +551,7 @@ export default function Home() {
           )}
 
           {/* Bubble Visibility Controls */}
-          {/* {activeView !== 'level5' && ( */}
+          {activeView !== 'level5' && (
             <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
               <h3 className="text-sm font-bold text-slate-900 mb-4 uppercase tracking-wide">Categories</h3>
               <div className="space-y-1 max-h-96 overflow-y-auto pr-2">
@@ -537,19 +581,58 @@ export default function Home() {
                 ))}
               </div>
             </div>
-          {/* )} */}
+          )}
         </aside>
 
         {/* Center - Bubble Chart or Line Chart */}
         <main className="flex-1 p-8 overflow-hidden bg-slate-50 relative z-10">
           <div className="h-full bg-white border border-slate-200 rounded-xl shadow-md flex flex-col">
             <div className="flex-1 min-h-0">
-              {/* {activeView === 'level5' && level5Data ? (
-                <LineChart
-                  timeSeries={level5Data.time_series}
-                />
-              ) : */}
-              {currentData && (
+              {activeView === 'level5' && level5Data ? (
+                (() => {
+                  let displayData;
+
+                  if (level5View === 'all') {
+                    displayData = level5Data.time_series;
+                  } else {
+                    const ioMap: Record<string, string> = {
+                      'adaptive': 'Adaptive Instruction & Tutoring Systems',
+                      'personalized': 'Personalized Learning & Advising Systems',
+                      'data-driven': 'Data-Driven Decision Support',
+                      'pathways': 'Learning Pathways & Mobility Support'
+                    };
+
+                    const ioKey = ioMap[level5View];
+                    console.log('Level5 View:', level5View, 'IO Key:', ioKey);
+                    console.log('Available keys:', Object.keys(level5Data.individual_interventions || {}));
+
+                    const interventions = level5Data.individual_interventions?.[ioKey];
+                    console.log('Interventions data:', interventions);
+
+                    // Use interventions if available, otherwise show the aggregate line
+                    if (interventions && Array.isArray(interventions) && interventions.length > 0) {
+                      console.log('Using interventions:', interventions.length, 'series');
+                      displayData = interventions;
+                    } else {
+                      console.log('Fallback to time_series for:', ioKey);
+                      displayData = level5Data.time_series.filter(s => s.label === ioKey);
+                    }
+                  }
+
+                  console.log('Final displayData:', displayData?.length, 'series');
+
+                  return displayData && displayData.length > 0 ? (
+                    <LineChart
+                      timeSeries={displayData}
+                      onPointClick={(series, point) => setSelectedTimePoint({series, point})}
+                    />
+                  ) : (
+                    <div className="flex items-center justify-center h-full">
+                      <p className="text-slate-500">No data available for this view</p>
+                    </div>
+                  );
+                })()
+              ) : currentData && (
                 <BubbleChart
                   data={visibleBubbles}
                   allData={currentData.bubbles}
@@ -563,7 +646,7 @@ export default function Home() {
               )}
             </div>
             {/* So-What Blurb */}
-            {currentData && (
+            {(currentData || level5Data) && (
               <div className="border-t border-slate-200 px-6 py-4 bg-slate-50">
                 {activeView === 'level1' ? (
                   <p className="text-sm text-slate-700 leading-relaxed">
@@ -576,6 +659,10 @@ export default function Home() {
                 ) : activeView === 'level3' ? (
                   <p className="text-sm text-slate-700 leading-relaxed">
                     <strong className="text-slate-900">Strategic Insight:</strong> This map showcases proven interventions from rigorous RCTs (What Works Clearinghouse), highlighting which tech-compatible approaches have strong evidence AND generalize across diverse contexts—representing millions of students already impacted.
+                  </p>
+                ) : activeView === 'level5' ? (
+                  <p className="text-sm text-slate-700 leading-relaxed">
+                    <strong className="text-slate-900">Strategic Insight:</strong> This temporal view shows how evidence matured from 1984-2025, tracking generalizability (how many diverse contexts were tested) over time. Upward trends indicate interventions becoming more widely validated across different regions, school types, and populations—key indicators for scalability.
                   </p>
                 ) : null}
                 {/* : activeView === 'level4' ? (
@@ -594,7 +681,94 @@ export default function Home() {
 
         {/* Right Sidebar - Detail Panel */}
         <aside className="w-96 border-l border-slate-200 bg-white overflow-y-auto relative z-20">
-          {selectedBubble ? (
+          {activeView === 'level5' && selectedTimePoint ? (
+            <div className="p-7">
+              <button
+                onClick={() => setSelectedTimePoint(null)}
+                className="text-slate-600 hover:text-slate-900 mb-5 text-sm font-medium transition-colors"
+              >
+                ← Return to Overview
+              </button>
+
+              <h2 className="text-2xl font-medium text-slate-900 mb-4 leading-tight">
+                {selectedTimePoint.series.label}
+              </h2>
+              <p className="text-lg text-slate-600 mb-6">{selectedTimePoint.point.period}</p>
+
+              <div className="space-y-6">
+                {/* Students Impacted */}
+                <div className="bg-slate-100 p-5 rounded-lg border border-slate-300">
+                  <p className="text-xs text-slate-600 font-semibold uppercase tracking-wide">New Students This Period</p>
+                  <p className="text-4xl font-bold text-slate-900 mt-2">
+                    {selectedTimePoint.point.new_students_this_period.toLocaleString()}
+                  </p>
+                </div>
+
+                <div className="bg-slate-100 p-5 rounded-lg border border-slate-300">
+                  <p className="text-xs text-slate-600 font-semibold uppercase tracking-wide">Cumulative Students</p>
+                  <p className="text-4xl font-bold text-slate-900 mt-2">
+                    {selectedTimePoint.point.cumulative_students.toLocaleString()}
+                  </p>
+                </div>
+
+                {/* Generalizability Score */}
+                <div className="border-l-4 border-slate-700 pl-5">
+                  <h3 className="text-lg font-bold text-slate-900 uppercase tracking-wide mb-3">
+                    Generalizability Score
+                  </h3>
+                  <div className="bg-slate-100 p-4 rounded-lg border border-slate-300">
+                    <p className="text-3xl font-bold text-slate-900">
+                      {selectedTimePoint.point.generalizability_score.toFixed(1)}
+                      <span className="text-lg text-slate-600"> / 100</span>
+                    </p>
+                  </div>
+                  <p className="text-sm text-slate-600 mt-3 leading-relaxed">
+                    <strong>Cumulative context diversity</strong> across all studies up to this period:
+                  </p>
+                  <div className="mt-3 space-y-2 text-sm">
+                    <div className="flex justify-between items-center">
+                      <span className="text-slate-600">Geographic regions:</span>
+                      <span className="font-semibold text-slate-900">{selectedTimePoint.point.contexts.regions.length}</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-slate-600">School types:</span>
+                      <span className="font-semibold text-slate-900">{selectedTimePoint.point.contexts.school_types.length}</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-slate-600">Grade levels/populations:</span>
+                      <span className="font-semibold text-slate-900">{selectedTimePoint.point.contexts.populations.length}</span>
+                    </div>
+                  </div>
+                  <div className="mt-4 pt-4 border-t border-slate-200">
+                    <p className="text-xs text-slate-500 leading-relaxed">
+                      <strong>Calculation:</strong> Weighted score based on cumulative diversity.
+                      Geographic regions (max 40 pts: 2 pts × unique regions),
+                      school types (max 30 pts: 10 pts × type),
+                      grade levels (max 30 pts: 5 pts × level).
+                      Higher scores indicate interventions tested across more varied educational contexts.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Effect Size */}
+                <div className="border-l-4 border-slate-700 pl-5">
+                  <h3 className="text-lg font-bold text-slate-900 uppercase tracking-wide mb-3">
+                    Average Effect Size
+                  </h3>
+                  <div className="bg-slate-100 p-4 rounded-lg border border-slate-300">
+                    <p className="text-3xl font-bold text-slate-900">
+                      {selectedTimePoint.point.avg_effect_size.toFixed(3)}
+                    </p>
+                    <p className="text-sm text-slate-600 mt-1">Cohen's d</p>
+                  </div>
+                  <p className="text-sm text-slate-600 mt-3 leading-relaxed">
+                    Based on {selectedTimePoint.point.num_studies} {selectedTimePoint.point.num_studies === 1 ? 'study' : 'studies'} in this period
+                  </p>
+                </div>
+
+              </div>
+            </div>
+          ) : selectedBubble ? (
             <div className="p-7">
               <button
                 onClick={() => setSelectedBubble(null)}
@@ -924,21 +1098,6 @@ export default function Home() {
                       </p>
                     </div>
 
-                    {/* Regions Covered */}
-                    {selectedBubble.breakdown.external_validity.regions_covered && selectedBubble.breakdown.external_validity.regions_covered.length > 0 && (
-                      <div className="bg-white p-4 rounded-lg border border-slate-200 shadow-sm">
-                        <p className="text-xs font-bold text-slate-700 mb-3 uppercase tracking-wide">
-                          Regions/States Tested ({selectedBubble.breakdown.external_validity.regions_covered.length})
-                        </p>
-                        <div className="flex flex-wrap gap-2">
-                          {selectedBubble.breakdown.external_validity.regions_covered.map((region, idx) => (
-                            <span key={idx} className="text-xs bg-slate-100 px-2 py-1 rounded border border-slate-300 text-slate-700">
-                              {region}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    )}
                   </div>
                 )}
 
@@ -964,31 +1123,17 @@ export default function Home() {
                   <div className="border-l-4 border-slate-700 pl-5">
                     <div className="flex items-center gap-2 mb-3">
                       <h3 className="text-lg font-bold text-slate-900 uppercase tracking-wide">
-                        Effect Size Summary
+                        Average Effect Size
                       </h3>
-                      <InfoTooltip content="CALCULATION: (1) Average Effect Size - Mean of all Cohen's d values across findings. (2) Significant Findings - Percentage of findings with statistically significant results (p < 0.05). CONTEXT: Summarizes intervention effectiveness. Cohen's d interpretation: 0.2 = small, 0.5 = medium, 0.8 = large effect. Higher significance rates indicate more consistent positive outcomes, though effect size magnitude matters more than significance." />
+                      <InfoTooltip content="CALCULATION: Mean of all Cohen's d values across findings. CONTEXT: Summarizes intervention effectiveness. Cohen's d interpretation: 0.2 = small, 0.5 = medium, 0.8 = large effect." />
                     </div>
                     <p className="text-sm text-slate-600 mb-3 leading-relaxed">{selectedBubble.breakdown.effect_summary.description}</p>
 
-                    <div className="grid grid-cols-2 gap-3">
-                      <div className="bg-white p-3 rounded-lg border border-slate-200 shadow-sm">
-                        <p className="text-xs font-bold text-slate-700 uppercase mb-1.5 tracking-wide">
-                          Average Effect Size
-                        </p>
-                        <p className="text-2xl font-bold text-slate-900">
-                          {selectedBubble.breakdown.effect_summary.average_effect_size}
-                        </p>
-                        <p className="text-xs text-slate-600 mt-1">Cohen's d</p>
-                      </div>
-                      <div className="bg-white p-3 rounded-lg border border-slate-200 shadow-sm">
-                        <p className="text-xs font-bold text-slate-700 uppercase mb-1.5 tracking-wide">
-                          Significant Findings
-                        </p>
-                        <p className="text-2xl font-bold text-slate-900">
-                          {selectedBubble.breakdown.effect_summary.significant_rate}%
-                        </p>
-                        <p className="text-xs text-slate-600 mt-1">of {selectedBubble.breakdown.effect_summary.num_findings} findings</p>
-                      </div>
+                    <div className="bg-slate-100 p-4 rounded-lg border border-slate-300">
+                      <p className="text-3xl font-bold text-slate-900">
+                        {selectedBubble.breakdown.effect_summary.average_effect_size}
+                      </p>
+                      <p className="text-sm text-slate-600 mt-1">Cohen's d across {selectedBubble.breakdown.effect_summary.num_findings} findings</p>
                     </div>
                   </div>
                 )}

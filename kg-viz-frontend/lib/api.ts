@@ -46,7 +46,7 @@ export async function fetchLevel4Data(): Promise<VisualizationResponse> {
   return response.json();
 }
 
-export async function fetchLevel5Data(): Promise<any> {
+export async function fetchLevel5Data() {
   const response = await fetch(`${API_BASE_URL}/api/v1/visualizations/level5`);
 
   if (!response.ok) {

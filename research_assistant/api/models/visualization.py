@@ -31,16 +31,23 @@ class Level2Response(BaseModel):
     metadata: Dict  # Legend info, axis descriptions, investment amounts
 
 
+class ContextsData(BaseModel):
+    """Context diversity data for a time period."""
+    regions: List[str]
+    school_types: List[str]
+    populations: List[str]
+
+
 class TimeSeriesDataPoint(BaseModel):
     """Single data point in a time series."""
     period: str
     year_midpoint: float
-    implementation_reach: float
+    generalizability_score: float
     cumulative_students: int
-    num_contexts: int
+    new_students_this_period: int
     avg_effect_size: float
     num_studies: int
-    new_students_this_period: int
+    contexts: ContextsData
 
 
 class TimeSeriesData(BaseModel):
@@ -49,9 +56,11 @@ class TimeSeriesData(BaseModel):
     label: str
     color: str
     data_points: List[TimeSeriesDataPoint]
+    first_year: Optional[int] = None
 
 
 class Level5Response(BaseModel):
     """Response for Level 5: Evidence Evolution Over Time."""
     time_series: List[TimeSeriesData]
+    individual_interventions: Dict[str, List[TimeSeriesData]]
     metadata: Dict  # Axis descriptions

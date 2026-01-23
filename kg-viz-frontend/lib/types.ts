@@ -148,3 +148,39 @@ export interface BubbleSizeMetadata {
   description: string;
   computation: string;
 }
+
+// Level 5: Time Series Types
+export interface TimeSeriesDataPoint {
+  period: string;
+  year_midpoint: number;
+  generalizability_score: number;
+  cumulative_students: number;
+  new_students_this_period: number;
+  avg_effect_size: number;
+  num_studies: number;
+  contexts: {
+    regions: string[];
+    school_types: string[];
+    populations: string[];
+  };
+}
+
+export interface TimeSeriesData {
+  id: string;
+  label: string;
+  color: string;
+  data_points: TimeSeriesDataPoint[];
+  first_year?: number;
+}
+
+export interface Level5Response {
+  time_series: TimeSeriesData[];
+  individual_interventions: {
+    [io: string]: TimeSeriesData[];
+  };
+  metadata: {
+    x_axis: AxisMetadata;
+    y_axis: AxisMetadata;
+    bubble_size: BubbleSizeMetadata;
+  };
+}

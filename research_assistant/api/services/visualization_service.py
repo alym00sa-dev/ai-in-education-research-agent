@@ -714,8 +714,8 @@ class VisualizationService:
         if len(effect_sizes) > 1:
             import statistics
             std_dev = statistics.stdev(effect_sizes)
-            # Linear scale: std_dev 0.0 = 25 pts, std_dev 0.6+ = 0 pts
-            consistency_score = max(0, 25 * (1 - std_dev / 0.6))
+            # Linear scale: std_dev 0.0 = 25 pts, std_dev 0.75+ = 0 pts
+            consistency_score = max(0, 25 * (1 - std_dev / 0.75))
         elif len(effect_sizes) == 1:
             consistency_score = 15
         else:
@@ -950,8 +950,15 @@ class VisualizationService:
 
     def get_level5_data(self) -> Dict[str, Any]:
         """
-        Get data for Level 5: Evidence Evolution Over Time.
-        Returns time series data for each IO showing scaling patterns.
+        Get data for Level 5: Temporal Evidence Evolution.
+        Returns time series data showing how evidence scope/generalizability evolved over time.
+
+        FILTERS:
+        - Only technology-relevant studies (would need to be tagged in Neo4j)
+        - Only "Meets WWC standards without reservations" (highest quality)
+        - 3-year buckets
+
+        Y-AXIS: Generalizability/Scope Expansion (not implementation reach)
         """
         # Broadened IOs for Level 3/4/5
         BROADENED_IOS = [
@@ -969,52 +976,61 @@ class VisualizationService:
             "Learning Pathways & Mobility Support": "#8b5cf6"
         }
 
+        # Create time series for each IO (aggregated view)
         time_series = []
-
         for io in BROADENED_IOS:
             series = self._compute_time_series_for_io(io, IO_COLORS[io])
             time_series.append(series)
 
+        # Also get individual intervention data for drill-down views
+        individual_interventions = {}
+        for io in BROADENED_IOS:
+            individual_interventions[io] = self._get_individual_interventions_for_io(io, IO_COLORS[io])
+
         metadata = {
             "x_axis": {
-                "label": "Time Period",
-                "description": "5-year periods from 1995 to 2025",
-                "computation": "Studies grouped by publication year into 5-year bins"
+                "label": "Year",
+                "description": "Publication year (3-year buckets)",
+                "computation": "Studies grouped by publication year into 3-year bins (2000-2002, 2003-2005, etc.)"
             },
             "y_axis": {
-                "label": "Implementation Reach",
-                "description": "Scale and breadth of implementation (students × contexts)",
-                "computation": "Cumulative students impacted multiplied by number of unique contexts (regions + school types + grade levels). Measures both scale (how many) and breadth (how diverse)."
+                "label": "Generalizability Score",
+                "description": "Scope expansion across diverse contexts (0-100)",
+                "computation": "Cumulative diversity score based on: geographic regions tested, school types, grade levels, demographics. Higher score = intervention tested in MORE varied contexts over time."
             },
             "bubble_size": {
-                "label": "Effect Size",
-                "description": "Average effect size in that period",
-                "computation": "Average Cohen's d across all studies in the period. Larger bubble = maintained effectiveness at scale."
+                "label": "Cumulative Students Impacted",
+                "description": "Total students studied up to that point in time",
+                "computation": "Cumulative sum of unique students across all studies up to each time point. Represents total evidence base."
             }
         }
 
-        return {"time_series": time_series, "metadata": metadata}
+        return {
+            "time_series": time_series,
+            "individual_interventions": individual_interventions,
+            "metadata": metadata
+        }
 
     def _compute_time_series_for_io(self, io: str, color: str) -> Dict[str, Any]:
-        """Compute time series data for a single IO."""
+        """Compute time series data for a single IO using 3-year buckets."""
 
-        # Define 5-year periods
-        periods = [
-            (1995, 1999),
-            (2000, 2004),
-            (2005, 2009),
-            (2010, 2014),
-            (2015, 2019),
-            (2020, 2025)
-        ]
+        # Define 3-year periods from 1984 to 2025 (covers full WWC data range)
+        periods = []
+        for start_year in range(1984, 2026, 3):
+            end_year = min(start_year + 2, 2025)
+            periods.append((start_year, end_year))
 
-        # Get all papers for this IO
+        # Get all WWC papers for this IO - ONLY highest quality RCTs
+        # Filter: "Meets WWC standards without reservations" + RCT design
         with self.driver.session() as session:
             result = session.run("""
                 MATCH (p:Paper {source: 'WWC'})-[:HAS_IMPLEMENTATION_OBJECTIVE]->(io:ImplementationObjective)
-                WHERE io.type = $io
+                WHERE (io.type = $io OR io.name = $io)
+                  AND p.wwc_study_rating = 'Meets WWC standards without reservations'
+                  AND p.study_design =~ '(?i).*randomized.*'
                 MATCH (p)-[:REPORTS_FINDING]->(f:EmpiricalFinding {source: 'WWC'})
                 RETURN
+                    p.title as title,
                     p.year as year,
                     p.population as population,
                     f.study_size as study_size,
@@ -1023,67 +1039,368 @@ class VisualizationService:
                     f.school_type as school_type
             """, io=io)
 
-            all_papers = [dict(record) for record in result]
+            all_findings = [dict(record) for record in result]
 
-        # Group papers by period and calculate cumulative metrics
+        # Group by unique studies and track cumulative metrics
         data_points = []
-        cumulative_students = 0
-        cumulative_contexts = set()
+        cumulative_contexts = {'regions': set(), 'school_types': set(), 'populations': set()}
+        cumulative_students_by_study = {}  # Track unique studies to avoid double-counting
 
         for start_year, end_year in periods:
-            # Papers published in this period
-            period_papers = [p for p in all_papers
-                           if p.get('year') and start_year <= p['year'] <= end_year]
+            # Findings published in this period
+            period_findings = [f for f in all_findings
+                             if f.get('year') and start_year <= f['year'] <= end_year]
 
-            if not period_papers:
-                # No data for this period, but keep cumulative values
-                data_points.append({
-                    "period": f"{start_year}-{end_year}",
-                    "year_midpoint": (start_year + end_year) / 2,
-                    "implementation_reach": cumulative_students * len(cumulative_contexts) if cumulative_contexts else 0,
-                    "cumulative_students": cumulative_students,
-                    "num_contexts": len(cumulative_contexts),
-                    "avg_effect_size": 0,
-                    "num_studies": 0,
-                    "new_students_this_period": 0
-                })
-                continue
+            # Update cumulative students (group by study to avoid double-counting)
+            for finding in period_findings:
+                title = finding.get('title')
+                size = finding.get('study_size', 0)
+                if title and size:
+                    if title not in cumulative_students_by_study or size > cumulative_students_by_study[title]:
+                        cumulative_students_by_study[title] = size
 
-            # Add to cumulative students
-            period_students = sum(p.get('study_size', 0) for p in period_papers if p.get('study_size'))
-            cumulative_students += period_students
+            # Update cumulative contexts
+            for f in period_findings:
+                if f.get('region') and f.get('region') != 'not_reported':
+                    cumulative_contexts['regions'].add(f['region'])
+                if f.get('school_type') and f.get('school_type') != 'not_reported':
+                    cumulative_contexts['school_types'].add(f['school_type'])
+                if f.get('population') and f.get('population') != 'not_reported':
+                    cumulative_contexts['populations'].add(f['population'])
 
-            # Add to cumulative contexts
-            for p in period_papers:
-                if p.get('region') and p.get('region') != 'not_reported':
-                    cumulative_contexts.add(('region', p['region']))
-                if p.get('school_type') and p.get('school_type') != 'not_reported':
-                    cumulative_contexts.add(('school_type', p['school_type']))
-                if p.get('population') and p.get('population') != 'not_reported':
-                    cumulative_contexts.add(('population', p['population']))
+            # Calculate generalizability score (0-100)
+            generalizability = self._calculate_generalizability_score(cumulative_contexts)
 
-            # Calculate implementation reach
-            implementation_reach = cumulative_students * len(cumulative_contexts)
+            # Cumulative students
+            cumulative_students = sum(cumulative_students_by_study.values())
 
-            # Average effect size for THIS period (not cumulative)
-            effect_sizes = [p.get('effect_size') for p in period_papers
-                          if p.get('effect_size') is not None]
+            # Period-specific students
+            period_students_by_study = {}
+            for finding in period_findings:
+                title = finding.get('title')
+                size = finding.get('study_size', 0)
+                if title and size:
+                    if title not in period_students_by_study or size > period_students_by_study[title]:
+                        period_students_by_study[title] = size
+            new_students_this_period = sum(period_students_by_study.values())
+
+            # Average effect size for THIS period
+            effect_sizes = [f.get('effect_size') for f in period_findings
+                          if f.get('effect_size') is not None]
             avg_effect_size = sum(effect_sizes) / len(effect_sizes) if effect_sizes else 0
+
+            # Get unique studies in this period
+            period_studies = set(f.get('title') for f in period_findings if f.get('title'))
 
             data_points.append({
                 "period": f"{start_year}-{end_year}",
                 "year_midpoint": (start_year + end_year) / 2,
-                "implementation_reach": implementation_reach,
+                "generalizability_score": generalizability,
                 "cumulative_students": cumulative_students,
-                "num_contexts": len(cumulative_contexts),
-                "avg_effect_size": abs(avg_effect_size),  # Use absolute value for bubble size
-                "num_studies": len(set(p.get('year') for p in period_papers)),  # Approximate unique studies
-                "new_students_this_period": period_students
+                "new_students_this_period": new_students_this_period,
+                "avg_effect_size": round(abs(avg_effect_size), 3) if avg_effect_size else 0,
+                "num_studies": len(period_studies),
+                "contexts": {
+                    "regions": list(cumulative_contexts['regions']),
+                    "school_types": list(cumulative_contexts['school_types']),
+                    "populations": list(cumulative_contexts['populations'])
+                }
             })
 
         return {
             "id": io,
             "label": io,
+            "color": color,
+            "data_points": data_points
+        }
+
+    def _calculate_generalizability_score(self, cumulative_contexts: Dict) -> float:
+        """
+        Calculate generalizability/scope expansion score (0-100).
+        Based on cumulative diversity across regions, school types, populations.
+        """
+        # Weight different context types
+        region_score = min(40, len(cumulative_contexts['regions']) * 2)  # Max 40 pts (20 regions)
+        school_type_score = min(30, len(cumulative_contexts['school_types']) * 10)  # Max 30 pts (3 types)
+        population_score = min(30, len(cumulative_contexts['populations']) * 5)  # Max 30 pts (6 pops)
+
+        total = region_score + school_type_score + population_score
+        return round(total, 2)
+
+    def _get_individual_interventions_for_io(self, io: str, base_color: str) -> List[Dict[str, Any]]:
+        """
+        Get time series data for individual interventions within an IO.
+        Used for drill-down views (Views 2-5).
+        """
+        import csv
+        import os
+
+        # Build mapping from study_id to intervention_name from CSV
+        csv_path = os.path.join(os.path.dirname(__file__), '../../../kg-viz-frontend/WWC Analysis/Interventions_Studies_And_Findings.csv')
+
+        study_to_intervention = {}
+        intervention_names = set()
+
+        try:
+            with open(csv_path, 'r', encoding='utf-8') as f:
+                reader = csv.DictReader(f)
+                for row in reader:
+                    study_id = row.get('s_StudyID', '').strip()
+                    intervention_name = row.get('i_Intervention_Name', '').strip()
+                    if study_id and intervention_name:
+                        study_to_intervention[study_id] = intervention_name
+                        intervention_names.add(intervention_name)
+        except FileNotFoundError:
+            print(f"Warning: CSV file not found at {csv_path}, falling back to study titles")
+            # Fallback to old behavior if CSV not found
+            with self.driver.session() as session:
+                result = session.run("""
+                    MATCH (p:Paper {source: 'WWC'})-[:HAS_IMPLEMENTATION_OBJECTIVE]->(io:ImplementationObjective)
+                    WHERE (io.type = $io OR io.name = $io)
+                      AND p.wwc_study_rating = 'Meets WWC standards without reservations'
+                      AND p.study_design =~ '(?i).*randomized.*'
+                    RETURN DISTINCT p.title as intervention_name
+                    LIMIT 10
+                """, io=io)
+                intervention_names = {record['intervention_name'] for record in result}
+
+        # Get all studies for this IO and map them to interventions
+        with self.driver.session() as session:
+            result = session.run("""
+                MATCH (p:Paper {source: 'WWC'})-[:HAS_IMPLEMENTATION_OBJECTIVE]->(io:ImplementationObjective)
+                WHERE (io.type = $io OR io.name = $io)
+                  AND p.wwc_study_rating = 'Meets WWC standards without reservations'
+                  AND p.study_design =~ '(?i).*randomized.*'
+                RETURN DISTINCT p.wwc_study_id as study_id, p.year as year
+            """, io=io)
+
+            studies = [dict(record) for record in result]
+
+        # Group studies by intervention
+        intervention_studies = {}
+        for study in studies:
+            study_id = str(study.get('study_id', ''))
+            intervention_name = study_to_intervention.get(study_id)
+
+            if intervention_name:
+                if intervention_name not in intervention_studies:
+                    intervention_studies[intervention_name] = []
+                intervention_studies[intervention_name].append(study)
+
+        # Sort by number of studies and take top 10
+        sorted_interventions = sorted(
+            intervention_studies.items(),
+            key=lambda x: len(x[1]),
+            reverse=True
+        )[:10]
+
+        # Generate unique colors for each intervention
+        colors = [
+            "#3b82f6", "#10b981", "#f59e0b", "#8b5cf6", "#ef4444",
+            "#06b6d4", "#ec4899", "#14b8a6", "#f97316", "#84cc16"
+        ]
+
+        # For each intervention, compute its time series
+        intervention_series = []
+        for idx, (intervention_name, studies_list) in enumerate(sorted_interventions):
+            years = [s['year'] for s in studies_list if s.get('year')]
+
+            # Use unique color for each intervention
+            intervention_color = colors[idx % len(colors)]
+
+            # Compute time series for this intervention
+            series = self._compute_time_series_for_intervention_by_name(intervention_name, intervention_color, io, study_to_intervention)
+            series['first_year'] = min(years) if years else None
+            intervention_series.append(series)
+
+        return intervention_series
+
+    def _compute_time_series_for_intervention_by_name(self, intervention_name: str, color: str, io: str, study_to_intervention: dict) -> Dict[str, Any]:
+        """Compute time series for a specific intervention by name (from CSV mapping)."""
+
+        # Get study IDs that belong to this intervention
+        study_ids_for_intervention = [
+            study_id for study_id, int_name in study_to_intervention.items()
+            if int_name == intervention_name
+        ]
+
+        if not study_ids_for_intervention:
+            return {
+                "id": intervention_name,
+                "label": intervention_name,
+                "color": color,
+                "data_points": []
+            }
+
+        # Define 3-year periods
+        periods = []
+        for start_year in range(1984, 2026, 3):
+            end_year = min(start_year + 2, 2025)
+            periods.append((start_year, end_year))
+
+        # Get findings for all studies in this intervention
+        with self.driver.session() as session:
+            result = session.run("""
+                MATCH (p:Paper {source: 'WWC'})-[:HAS_IMPLEMENTATION_OBJECTIVE]->(io:ImplementationObjective)
+                WHERE (io.type = $io OR io.name = $io)
+                  AND p.wwc_study_id IN $study_ids
+                  AND p.wwc_study_rating = 'Meets WWC standards without reservations'
+                  AND p.study_design =~ '(?i).*randomized.*'
+                MATCH (p)-[:REPORTS_FINDING]->(f:EmpiricalFinding {source: 'WWC'})
+                RETURN
+                    p.year as year,
+                    p.title as study_title,
+                    f.study_size as study_size,
+                    f.effect_size as effect_size,
+                    f.region as region,
+                    f.school_type as school_type,
+                    p.population as population
+            """, io=io, study_ids=study_ids_for_intervention)
+
+            findings = [dict(record) for record in result]
+
+        # Process similar to aggregated view
+        data_points = []
+        cumulative_contexts = {'regions': set(), 'school_types': set(), 'populations': set()}
+        cumulative_students_by_study = {}
+
+        for start_year, end_year in periods:
+            period_findings = [f for f in findings
+                             if f.get('year') and start_year <= f['year'] <= end_year]
+
+            # Update cumulative students (group by study to avoid double-counting)
+            for finding in period_findings:
+                title = finding.get('study_title')
+                size = finding.get('study_size', 0)
+                if title and size:
+                    if title not in cumulative_students_by_study or size > cumulative_students_by_study[title]:
+                        cumulative_students_by_study[title] = size
+
+            # Update contexts
+            for f in period_findings:
+                if f.get('region') and f.get('region') != 'not_reported':
+                    cumulative_contexts['regions'].add(f['region'])
+                if f.get('school_type') and f.get('school_type') != 'not_reported':
+                    cumulative_contexts['school_types'].add(f['school_type'])
+                if f.get('population') and f.get('population') != 'not_reported':
+                    cumulative_contexts['populations'].add(f['population'])
+
+            generalizability = self._calculate_generalizability_score(cumulative_contexts)
+            cumulative_students = sum(cumulative_students_by_study.values())
+
+            # Period-specific students
+            period_students_by_study = {}
+            for finding in period_findings:
+                title = finding.get('study_title')
+                size = finding.get('study_size', 0)
+                if title and size:
+                    if title not in period_students_by_study or size > period_students_by_study[title]:
+                        period_students_by_study[title] = size
+            new_students_this_period = sum(period_students_by_study.values())
+
+            # Effect sizes
+            effect_sizes = [f.get('effect_size') for f in period_findings if f.get('effect_size') is not None]
+            avg_effect = sum(effect_sizes) / len(effect_sizes) if effect_sizes else 0
+
+            # Get unique studies in this period
+            period_studies = set(f.get('study_title') for f in period_findings if f.get('study_title'))
+
+            data_points.append({
+                "period": f"{start_year}-{end_year}",
+                "year_midpoint": (start_year + end_year) / 2,
+                "generalizability_score": generalizability,
+                "cumulative_students": cumulative_students,
+                "new_students_this_period": new_students_this_period,
+                "avg_effect_size": round(abs(avg_effect), 3) if avg_effect else 0,
+                "num_studies": len(period_studies),
+                "contexts": {
+                    "regions": list(cumulative_contexts['regions']),
+                    "school_types": list(cumulative_contexts['school_types']),
+                    "populations": list(cumulative_contexts['populations'])
+                }
+            })
+
+        return {
+            "id": intervention_name,
+            "label": intervention_name,
+            "color": color,
+            "data_points": data_points
+        }
+
+    def _compute_time_series_for_intervention(self, intervention_name: str, color: str, io: str) -> Dict[str, Any]:
+        """Compute time series for a specific intervention (legacy method using study title)."""
+
+        # Define 3-year periods
+        periods = []
+        for start_year in range(1984, 2026, 3):
+            end_year = min(start_year + 2, 2025)
+            periods.append((start_year, end_year))
+
+        # Get findings for this specific intervention
+        with self.driver.session() as session:
+            result = session.run("""
+                MATCH (p:Paper {source: 'WWC', title: $intervention_name})-[:HAS_IMPLEMENTATION_OBJECTIVE]->(io:ImplementationObjective)
+                WHERE (io.type = $io OR io.name = $io)
+                  AND p.wwc_study_rating = 'Meets WWC standards without reservations'
+                  AND p.study_design =~ '(?i).*randomized.*'
+                MATCH (p)-[:REPORTS_FINDING]->(f:EmpiricalFinding {source: 'WWC'})
+                RETURN
+                    p.year as year,
+                    f.study_size as study_size,
+                    f.effect_size as effect_size,
+                    f.region as region,
+                    f.school_type as school_type,
+                    p.population as population
+            """, intervention_name=intervention_name, io=io)
+
+            findings = [dict(record) for record in result]
+
+        # Process similar to aggregated view
+        data_points = []
+        cumulative_contexts = {'regions': set(), 'school_types': set(), 'populations': set()}
+        cumulative_students = 0
+
+        for start_year, end_year in periods:
+            period_findings = [f for f in findings
+                             if f.get('year') and start_year <= f['year'] <= end_year]
+
+            # Update cumulative students
+            period_students = sum(f.get('study_size', 0) for f in period_findings if f.get('study_size'))
+            cumulative_students += period_students
+
+            # Update contexts
+            for f in period_findings:
+                if f.get('region') and f.get('region') != 'not_reported':
+                    cumulative_contexts['regions'].add(f['region'])
+                if f.get('school_type') and f.get('school_type') != 'not_reported':
+                    cumulative_contexts['school_types'].add(f['school_type'])
+                if f.get('population') and f.get('population') != 'not_reported':
+                    cumulative_contexts['populations'].add(f['population'])
+
+            generalizability = self._calculate_generalizability_score(cumulative_contexts)
+
+            # Effect sizes
+            effect_sizes = [f.get('effect_size') for f in period_findings if f.get('effect_size') is not None]
+            avg_effect = sum(effect_sizes) / len(effect_sizes) if effect_sizes else 0
+
+            data_points.append({
+                "period": f"{start_year}-{end_year}",
+                "year_midpoint": (start_year + end_year) / 2,
+                "generalizability_score": generalizability,
+                "cumulative_students": cumulative_students,
+                "new_students_this_period": period_students,
+                "avg_effect_size": round(abs(avg_effect), 3) if avg_effect else 0,
+                "num_studies": len(period_findings),
+                "contexts": {
+                    "regions": list(cumulative_contexts['regions']),
+                    "school_types": list(cumulative_contexts['school_types']),
+                    "populations": list(cumulative_contexts['populations'])
+                }
+            })
+
+        return {
+            "id": intervention_name,
+            "label": intervention_name,
             "color": color,
             "data_points": data_points
         }
