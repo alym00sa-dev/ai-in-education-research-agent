@@ -458,8 +458,8 @@ class VisualizationService:
         metadata = {
             "x_axis": {
                 "label": "Evidence Base Quality",
-                "description": "Rigor and consistency of RCT evidence (0-100)",
-                "computation": "4-component composite: Study Design Quality (WWC ratings), Replication Strength (number of studies), Sample Adequacy (total students), and Effect Consistency (stability across findings)"
+                "description": "Rigor and consistency of RCT evidence (0-100, RCTs only)",
+                "computation": "4-component composite: Study Design Quality (WWC ratings), Replication Strength (number of RCT studies), Sample Adequacy (total students in RCTs), and Effect Consistency (stability across findings). Only includes randomized controlled trials, not quasi-experimental designs."
             },
             "y_axis": {
                 "label": "External Validity Score",
@@ -468,8 +468,8 @@ class VisualizationService:
             },
             "bubble_size": {
                 "label": "Students Impacted",
-                "description": "Total unique students studied across all RCTs",
-                "computation": "Sum of unique students across all RCT studies. For each study, we use the maximum sample size to avoid double-counting students across multiple outcome measures. Represents actual scale of evidence testing."
+                "description": "Total unique students studied across all randomized controlled trials",
+                "computation": "Sum of unique students across all RCT studies only (excludes quasi-experimental designs). For each study, we use the maximum sample size to avoid double-counting students across multiple outcome measures. Represents actual scale of rigorous experimental testing."
             }
         }
 
@@ -478,11 +478,12 @@ class VisualizationService:
     def _compute_io_bubble_level3(self, io: str) -> Dict[str, Any]:
         """Compute single bubble for an Implementation Objective using WWC data."""
 
-        # Get all WWC papers with this IO
+        # Get all WWC papers with this IO - ONLY RCTs (exclude quasi-experimental designs)
         with self.driver.session() as session:
             result = session.run("""
                 MATCH (p:Paper {source: 'WWC'})-[:HAS_IMPLEMENTATION_OBJECTIVE]->(io:ImplementationObjective)
-                WHERE io.type = $io OR io.name = $io
+                WHERE (io.type = $io OR io.name = $io)
+                  AND p.study_design =~ '(?i).*randomized.*'
                 MATCH (p)-[:REPORTS_FINDING]->(f:EmpiricalFinding {source: 'WWC'})
                 RETURN
                     p.title as title,

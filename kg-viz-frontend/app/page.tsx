@@ -951,26 +951,11 @@ export default function Home() {
                       <InfoTooltip content="CALCULATION: Sum of unique study sample sizes. For each study, we take the maximum sample size reported across all outcome findings to avoid double-counting students. Example: Study with 3 findings of sizes 1,000, 950, 1,050 counts as 1,050 students. CONTEXT: Represents actual scale of evidence - total number of unique students who participated in RCTs for this intervention. Higher numbers indicate more extensive real-world testing." />
                     </div>
                     <p className="text-sm text-slate-600 mb-3 leading-relaxed">{selectedBubble.breakdown.students_impacted.description}</p>
-                    <div className="bg-slate-100 p-4 rounded-lg mb-4 border border-slate-300">
+                    <div className="bg-slate-100 p-4 rounded-lg border border-slate-300">
                       <p className="text-3xl font-bold text-slate-900">
                         {selectedBubble.breakdown.students_impacted.score.toLocaleString()}
                       </p>
                       <p className="text-sm text-slate-600 mt-1">students studied across RCTs</p>
-                    </div>
-
-                    {/* Components */}
-                    <div className="grid grid-cols-2 gap-3">
-                      {Object.entries(selectedBubble.breakdown.students_impacted.components).map(([key, component]) => (
-                        <div key={key} className="bg-white p-3 rounded-lg border border-slate-200 shadow-sm">
-                          <p className="text-xs font-bold text-slate-700 uppercase mb-1.5 tracking-wide">
-                            {key.replace(/_/g, ' ')}
-                          </p>
-                          <p className="text-lg font-bold text-slate-900">
-                            {component.score.toLocaleString()}
-                          </p>
-                          <p className="text-xs text-slate-600 mt-2 leading-relaxed">{component.description}</p>
-                        </div>
-                      ))}
                     </div>
                   </div>
                 )}
