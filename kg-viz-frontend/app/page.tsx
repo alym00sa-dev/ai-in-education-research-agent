@@ -139,10 +139,10 @@ export default function Home() {
     !hiddenBubbles.has(b.id) && !hiddenPriorities.has(b.priority)
   ) || [];
 
-  // Calculate x-axis domain from Level 1 data and use for both levels
-  const level1XValues = level1Data?.bubbles.map(b => b.x) || [];
-  const xMin = level1XValues.length > 0 ? Math.min(...level1XValues) : 0;
-  const xMax = level1XValues.length > 0 ? Math.max(...level1XValues) : 100;
+  // Calculate x-axis domain from current level's data
+  const currentXValues = currentData?.bubbles.map(b => b.x) || [];
+  const xMin = currentXValues.length > 0 ? Math.min(...currentXValues) : 0;
+  const xMax = currentXValues.length > 0 ? Math.max(...currentXValues) : 100;
   const xPadding = (xMax - xMin) * 0.15;
   const xDomain: [number, number] = [
     Math.max(0, xMin - xPadding),
