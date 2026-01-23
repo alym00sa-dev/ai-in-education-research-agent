@@ -872,6 +872,7 @@ export default function Home() {
                       <h3 className="text-lg font-bold text-slate-900 uppercase tracking-wide">
                         Evidence Base Quality
                       </h3>
+                      <InfoTooltip content="CALCULATION: 4-component composite score (25 points each): (1) Study Design Quality - WWC ratings (Meets standards without/with reservations), (2) Replication Strength - Number of independent RCT studies, (3) Sample Adequacy - Total students studied (1,000+ = 25 pts), (4) Effect Consistency - Standard deviation of effect sizes (0.0 = 25 pts, 0.6+ = 0 pts). CONTEXT: Measures rigor and replication of RCT evidence from What Works Clearinghouse. Higher scores indicate more reliable, well-replicated interventions." />
                     </div>
                     <p className="text-sm text-slate-600 mb-3 leading-relaxed">{selectedBubble.breakdown.evidence_maturity.description}</p>
                     <div className="bg-slate-100 p-4 rounded-lg mb-4 border border-slate-300">
@@ -882,17 +883,28 @@ export default function Home() {
 
                     {/* Components */}
                     <div className="grid grid-cols-2 gap-3">
-                      {Object.entries(selectedBubble.breakdown.evidence_maturity.components).map(([key, component]) => (
-                        <div key={key} className="bg-white p-3 rounded-lg border border-slate-200 shadow-sm">
-                          <p className="text-xs font-bold text-slate-700 uppercase mb-1.5 tracking-wide">
-                            {key.replace(/_/g, ' ')}
-                          </p>
-                          <p className="text-lg font-bold text-slate-900">
-                            {component.score.toFixed(1)} <span className="text-sm text-slate-600">/ {component.max}</span>
-                          </p>
-                          <p className="text-xs text-slate-600 mt-2 leading-relaxed">{component.description}</p>
-                        </div>
-                      ))}
+                      {Object.entries(selectedBubble.breakdown.evidence_maturity.components).map(([key, component]) => {
+                        const tooltipContent: { [key: string]: string } = {
+                          'study_design_quality': 'CALCULATION: Average score across all studies based on WWC ratings - Meets standards without reservations = 25 pts, Meets with reservations = 15 pts, Does not meet = 5 pts. CONTEXT: Higher scores indicate more rigorous experimental designs meeting What Works Clearinghouse standards for causal inference.',
+                          'replication_strength': 'CALCULATION: Based on number of independent RCT studies - 10+ studies = 25 pts, 7-9 studies = 22 pts, 5-6 studies = 20 pts, 3-4 studies = 15 pts, 2 studies = 10 pts, 1 study = 5 pts. CONTEXT: More replications provide stronger evidence that effects are reliable and not due to chance.',
+                          'sample_adequacy': 'CALCULATION: Linear scale based on total students - 1,000+ students = 25 pts, proportionally less for fewer students. CONTEXT: Larger samples provide more statistical power and precision, reducing risk of false positives/negatives.',
+                          'effect_consistency': 'CALCULATION: Based on standard deviation of effect sizes - 0.0 std dev = 25 pts, 0.6+ std dev = 0 pts, linear scale between. CONTEXT: Lower variance indicates effects are stable across studies/contexts. High variance suggests intervention effectiveness may depend on implementation conditions.'
+                        };
+                        return (
+                          <div key={key} className="bg-white p-3 rounded-lg border border-slate-200 shadow-sm">
+                            <div className="flex items-center gap-1.5 mb-1.5">
+                              <p className="text-xs font-bold text-slate-700 uppercase tracking-wide">
+                                {key.replace(/_/g, ' ')}
+                              </p>
+                              <InfoTooltip content={tooltipContent[key] || component.description} />
+                            </div>
+                            <p className="text-lg font-bold text-slate-900">
+                              {component.score.toFixed(1)} <span className="text-sm text-slate-600">/ {component.max}</span>
+                            </p>
+                            <p className="text-xs text-slate-600 mt-2 leading-relaxed">{component.description}</p>
+                          </div>
+                        );
+                      })}
                     </div>
                   </div>
                 )}
@@ -903,6 +915,7 @@ export default function Home() {
                       <h3 className="text-lg font-bold text-slate-900 uppercase tracking-wide">
                         External Validity Score
                       </h3>
+                      <InfoTooltip content="CALCULATION: Diversity across contexts (out of 50 total): (1) Geographic regions - 2 points per unique state/region (max 20 pts for 10+ regions), (2) School types - 5 points per type: Public/Private/Charter (max 15 pts), (3) Grade levels/populations - 3 points per level: Elementary/Middle/High School/Undergraduate (max 15 pts). CONTEXT: Measures generalizability across diverse educational contexts. Higher scores indicate findings replicate across many settings, suggesting broader real-world applicability." />
                     </div>
                     <p className="text-sm text-slate-600 mb-3 leading-relaxed">{selectedBubble.breakdown.external_validity.description}</p>
                     <div className="bg-slate-100 p-4 rounded-lg mb-4 border border-slate-300">
@@ -935,6 +948,7 @@ export default function Home() {
                       <h3 className="text-lg font-bold text-slate-900 uppercase tracking-wide">
                         Students Impacted
                       </h3>
+                      <InfoTooltip content="CALCULATION: Sum of unique study sample sizes. For each study, we take the maximum sample size reported across all outcome findings to avoid double-counting students. Example: Study with 3 findings of sizes 1,000, 950, 1,050 counts as 1,050 students. CONTEXT: Represents actual scale of evidence - total number of unique students who participated in RCTs for this intervention. Higher numbers indicate more extensive real-world testing." />
                     </div>
                     <p className="text-sm text-slate-600 mb-3 leading-relaxed">{selectedBubble.breakdown.students_impacted.description}</p>
                     <div className="bg-slate-100 p-4 rounded-lg mb-4 border border-slate-300">
@@ -967,6 +981,7 @@ export default function Home() {
                       <h3 className="text-lg font-bold text-slate-900 uppercase tracking-wide">
                         Effect Size Summary
                       </h3>
+                      <InfoTooltip content="CALCULATION: (1) Average Effect Size - Mean of all Cohen's d values across findings. (2) Significant Findings - Percentage of findings with statistically significant results (p < 0.05). CONTEXT: Summarizes intervention effectiveness. Cohen's d interpretation: 0.2 = small, 0.5 = medium, 0.8 = large effect. Higher significance rates indicate more consistent positive outcomes, though effect size magnitude matters more than significance." />
                     </div>
                     <p className="text-sm text-slate-600 mb-3 leading-relaxed">{selectedBubble.breakdown.effect_summary.description}</p>
 

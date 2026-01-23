@@ -591,8 +591,8 @@ class VisualizationService:
             import statistics
             std_dev = statistics.stdev(effect_sizes)
             # Lower std dev = more consistent = higher score
-            # Std dev of 0.3 or less = full 25 pts
-            consistency_score = max(0, 25 - (std_dev * 83))  # 1/0.012 ≈ 83
+            # Linear scale: std_dev 0.0 = 25 pts, std_dev 0.6+ = 0 pts
+            consistency_score = max(0, 25 * (1 - std_dev / 0.6))
         elif len(effect_sizes) == 1:
             consistency_score = 15
         else:
@@ -632,14 +632,19 @@ class VisualizationService:
 
     def _compute_bubble_size_level3(self, papers: List[Dict]) -> float:
         """
-        Compute bubble size for Level 3: Studies × Average Sample Size.
+        Compute bubble size for Level 3: Total students across unique studies.
         """
-        unique_studies = len(set(p['title'] for p in papers))
-        total_sample = sum(p.get('study_size', 0) for p in papers if p.get('study_size'))
-        avg_sample = total_sample / len(papers) if papers else 0
+        # Group by study and take max study_size per study
+        study_samples = {}
+        for p in papers:
+            title = p.get('title')
+            size = p.get('study_size', 0)
+            if title and size:
+                if title not in study_samples or size > study_samples[title]:
+                    study_samples[title] = size
 
-        size = unique_studies * avg_sample
-        return round(size, 2)
+        total_sample = sum(study_samples.values())
+        return round(total_sample, 2)
 
     def _calculate_breakdown_level3(self, io: str, papers: List[Dict]) -> Dict[str, Any]:
         """Calculate detailed breakdown data for Level 3 popup."""
@@ -652,8 +657,15 @@ class VisualizationService:
         # Unique studies
         unique_studies = len(set(p['title'] for p in papers))
 
-        # Total sample
-        total_sample = sum(p.get('study_size', 0) for p in papers if p.get('study_size'))
+        # Total sample - group by study and take max study_size per study
+        study_samples = {}
+        for p in papers:
+            title = p.get('title')
+            size = p.get('study_size', 0)
+            if title and size:
+                if title not in study_samples or size > study_samples[title]:
+                    study_samples[title] = size
+        total_sample = sum(study_samples.values())
 
         # Statistical significance rate
         sig_findings = sum(1 for p in papers if p.get('wwc_is_significant'))
@@ -701,7 +713,8 @@ class VisualizationService:
         if len(effect_sizes) > 1:
             import statistics
             std_dev = statistics.stdev(effect_sizes)
-            consistency_score = max(0, 25 - (std_dev * 83))
+            # Linear scale: std_dev 0.0 = 25 pts, std_dev 0.6+ = 0 pts
+            consistency_score = max(0, 25 * (1 - std_dev / 0.6))
         elif len(effect_sizes) == 1:
             consistency_score = 15
         else:
