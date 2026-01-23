@@ -207,7 +207,7 @@ export default function BubbleChart({ data, allData, xLabel, yLabel, onBubbleCli
     // Circles
     bubbleGroups.append('circle')
       .attr('r', d => sizeScale(d.size))
-      .attr('fill', d => getColorByPriority(d.priority))
+      .attr('fill', d => d.color || getColorByPriority(d.priority))
       .attr('opacity', d => {
         if (!selectedBubbleId) return 0.75;
         return d.id === selectedBubbleId ? 0.95 : 0.2;

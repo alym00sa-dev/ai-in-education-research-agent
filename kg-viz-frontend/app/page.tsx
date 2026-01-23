@@ -420,7 +420,8 @@ export default function Home() {
                     </div>
                   )}
 
-                  {activeView === 'level3' && (
+                  {/* Remove bubble color legend for Level 3 */}
+                  {/* {activeView === 'level3' && (
                     <div className="flex items-start">
                       <div className="flex-1">
                         <p className="font-semibold text-slate-800">Bubble Color: Unique per Objective</p>
@@ -429,7 +430,7 @@ export default function Home() {
                         </p>
                       </div>
                     </div>
-                  )}
+                  )} */}
                   {/* {(activeView === 'level3' || activeView === 'level4') && (
                     <div className="flex items-start">
                       <div className="flex-1">
