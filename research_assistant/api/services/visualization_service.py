@@ -66,11 +66,12 @@ class VisualizationService:
     def _compute_outcome_bubble(self, outcome: str) -> Dict[str, Any]:
         """Compute single bubble for an outcome."""
 
-        # Get all papers targeting this outcome
+        # Get all papers targeting this outcome (excluding WWC papers)
         with self.driver.session() as session:
             result = session.run("""
                 MATCH (p:Paper)-[:FOCUSES_ON_OUTCOME]->(out:Outcome)
-                WHERE out.name = $outcome OR out.type = $outcome
+                WHERE (out.name = $outcome OR out.type = $outcome)
+                  AND (p.source IS NULL OR p.source <> 'WWC')
                 MATCH (p)-[:REPORTS_FINDING]->(f:EmpiricalFinding)
                 RETURN
                     p.title as title,
@@ -279,11 +280,12 @@ class VisualizationService:
     def _compute_io_bubble(self, io: str, investment: int) -> Dict[str, Any]:
         """Compute single bubble for an Implementation Objective."""
 
-        # Get all papers with this IO
+        # Get all papers with this IO (excluding WWC papers)
         with self.driver.session() as session:
             result = session.run("""
                 MATCH (p:Paper)-[:HAS_IMPLEMENTATION_OBJECTIVE]->(io:ImplementationObjective)
-                WHERE io.type = $io OR io.name = $io
+                WHERE (io.type = $io OR io.name = $io)
+                  AND (p.source IS NULL OR p.source <> 'WWC')
                 MATCH (p)-[:REPORTS_FINDING]->(f:EmpiricalFinding)
                 MATCH (p)-[:FOCUSES_ON_OUTCOME]->(out:Outcome)
                 RETURN
