@@ -468,8 +468,8 @@ class VisualizationService:
             },
             "bubble_size": {
                 "label": "Students Impacted",
-                "description": "Scale of evidence (studies × sample size)",
-                "computation": "Number of rigorous studies meeting WWC standards multiplied by average sample size. Represents total students already impacted by this intervention."
+                "description": "Total unique students studied across all RCTs",
+                "computation": "Sum of unique students across all RCT studies. For each study, we use the maximum sample size to avoid double-counting students across multiple outcome measures. Represents actual scale of evidence testing."
             }
         }
 
