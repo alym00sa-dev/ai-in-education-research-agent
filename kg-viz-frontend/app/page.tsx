@@ -42,14 +42,12 @@ function capitalizeLabel(label: string): string {
 }
 
 type ViewType = 'intro' | 'level1' | 'level2' | 'level3' | 'level5';
-type Level5ViewType = 'all' | 'adaptive' | 'personalized' | 'data-driven' | 'pathways';
 
 export default function Home() {
   const [level1Data, setLevel1Data] = useState<VisualizationResponse | null>(null);
   const [level2Data, setLevel2Data] = useState<VisualizationResponse | null>(null);
   const [level3Data, setLevel3Data] = useState<VisualizationResponse | null>(null);
   const [level5Data, setLevel5Data] = useState<Level5Response | null>(null);
-  const [level5View, setLevel5View] = useState<Level5ViewType>('all');
   const [selectedBubble, setSelectedBubble] = useState<BubbleData | null>(null);
   const [selectedTimePoint, setSelectedTimePoint] = useState<{series: TimeSeriesData, point: TimeSeriesDataPoint} | null>(null);
   const [activeView, setActiveView] = useState<ViewType>('intro');
@@ -170,10 +168,14 @@ export default function Home() {
               className="appearance-none bg-white text-slate-900 px-6 py-2 pr-10 rounded-lg font-medium shadow-md border-2 border-slate-200 focus:outline-none focus:ring-2 focus:ring-slate-400 cursor-pointer"
             >
               <option value="intro">Introduction</option>
-              <option value="level1">Level 1: Problem Burden Map</option>
-              <option value="level2">Level 2: Intervention Evidence Map</option>
-              <option value="level3">Level 3: Evidence-Based Interventions (RCT)</option>
-              <option value="level5">Level 5: Evidence Evolution Over Time</option>
+              <optgroup label="WWC Retrospective">
+                <option value="level5">Evidence Evolution Over Time</option>
+                <option value="level3">Implementation Priority</option>
+              </optgroup>
+              <optgroup label="Current Landscape">
+                <option value="level1">Problem Burden Map</option>
+                <option value="level2">Intervention Evidence Map</option>
+              </optgroup>
             </select>
             <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-slate-700">
               <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -198,119 +200,85 @@ export default function Home() {
                 A strategic framework for navigating research evidence and investment priorities across AI-enabled educational interventions.
               </p>
 
-              {/* Database Status Note */}
-              <div className="mt-6 bg-blue-50 border-l-4 border-blue-500 p-4">
+              {/* Current Status Notice */}
+              <div className="mt-6 bg-amber-50 border-l-4 border-amber-500 p-4">
                 <div className="flex items-start">
-                  <svg className="w-5 h-5 text-blue-600 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-5 h-5 text-amber-600 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
                   </svg>
                   <div>
-                    <p className="text-sm font-medium text-blue-900">
-                      Pilot Version - Living Database
+                    <p className="text-sm font-medium text-amber-900 mb-1">
+                      Current Data Availability
                     </p>
-                    <p className="text-sm text-blue-800 mt-1">
-                      This is a pilot version of the dashboard based on a limited initial dataset. The visualizations reflect data from our actively expanding research database. New studies and evidence are continuously being added to provide the most current view of the field.
+                    <p className="text-sm text-amber-800">
+                      The current visualizations reflect evidence currently available in our research database. <strong>P1 (Core Instruction & Tutoring) and P5 (Delivery)</strong> will be the first pillars to be added as we continue expanding the database.
                     </p>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Two-Level Framework */}
-            <div className="grid grid-cols-2 gap-8 mb-16">
-              {/* Level 1 */}
-              <div className="border-l-4 border-slate-900 pl-6">
-                <div className="mb-4">
-                  <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Level 1</span>
-                  <h3 className="text-2xl font-semibold text-slate-900 mt-1">Problem Burden Map</h3>
-                </div>
-                <p className="text-slate-600 mb-6 leading-relaxed">
-                  Identifies which educational challenges have sufficient evidence to inform action and which require further research investment.
-                </p>
-                <div className="space-y-3 text-sm">
-                  <div className="flex items-start gap-3">
-                    <div className="w-1 h-1 bg-slate-400 rounded-full mt-2"></div>
-                    <div>
-                      <p className="font-medium text-slate-900">Evidence Maturity</p>
-                      <p className="text-slate-500">Composite score of study design, consistency, and external validity</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <div className="w-1 h-1 bg-slate-400 rounded-full mt-2"></div>
-                    <div>
-                      <p className="font-medium text-slate-900">Problem Burden Scale</p>
-                      <p className="text-slate-500">Scope of systemic impact from classroom to policy level</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <div className="w-1 h-1 bg-slate-400 rounded-full mt-2"></div>
-                    <div>
-                      <p className="font-medium text-slate-900">Effort Required</p>
-                      <p className="text-slate-500">Coordination complexity and system-level changes needed</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            {/* Five Pillars Framework */}
+            <div className="mb-12">
+              <h3 className="text-2xl font-semibold text-slate-900 mb-4">Five Strategic Pillars</h3>
+              <p className="text-slate-600 mb-8 leading-relaxed">
+                This dashboard will eventually showcase evidence across five strategic priorities for AI in education. Each pillar will be evaluated through three distinct layers of evidence, providing a comprehensive view of what we know, what we're learning, and what we need to discover.
+              </p>
 
-              {/* Level 2 */}
-              <div className="border-l-4 border-slate-900 pl-6">
-                <div className="mb-4">
-                  <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Level 2</span>
-                  <h3 className="text-2xl font-semibold text-slate-900 mt-1">Intervention Evidence Map</h3>
+              <div className="grid grid-cols-1 gap-4 mb-12">
+                <div className="border-l-4 border-blue-500 pl-6 py-3">
+                  <h4 className="font-semibold text-slate-900">P1: Core Instruction & Tutoring</h4>
+                  <p className="text-sm text-slate-600">Enhancing direct learning experiences through AI-supported instruction and personalized tutoring</p>
                 </div>
-                <p className="text-slate-600 mb-6 leading-relaxed">
-                  Evaluates intervention readiness by mapping evidence maturity against alignment to high-burden educational challenges.
-                </p>
-                <div className="space-y-3 text-sm">
-                  <div className="flex items-start gap-3">
-                    <div className="w-1 h-1 bg-slate-400 rounded-full mt-2"></div>
-                    <div>
-                      <p className="font-medium text-slate-900">Evidence Maturity</p>
-                      <p className="text-slate-500">Same composite scoring as Level 1 for consistency</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <div className="w-1 h-1 bg-slate-400 rounded-full mt-2"></div>
-                    <div>
-                      <p className="font-medium text-slate-900">Potential Impact</p>
-                      <p className="text-slate-500">Cumulative burden of problems addressed by intervention</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <div className="w-1 h-1 bg-slate-400 rounded-full mt-2"></div>
-                    <div>
-                      <p className="font-medium text-slate-900">R&D Investment</p>
-                      <p className="text-slate-500">Gap to field readiness and evaluation requirements</p>
-                    </div>
-                  </div>
+                <div className="border-l-4 border-purple-500 pl-6 py-3">
+                  <h4 className="font-semibold text-slate-900">P2: Gateway Math</h4>
+                  <p className="text-sm text-slate-600">Addressing critical barriers in mathematics education that impact student progression</p>
+                </div>
+                <div className="border-l-4 border-green-500 pl-6 py-3">
+                  <h4 className="font-semibold text-slate-900">P3: Personalized Advising</h4>
+                  <p className="text-sm text-slate-600">Supporting student decision-making and pathways through intelligent guidance systems</p>
+                </div>
+                <div className="border-l-4 border-orange-500 pl-6 py-3">
+                  <h4 className="font-semibold text-slate-900">P4: Credit Mobility</h4>
+                  <p className="text-sm text-slate-600">Facilitating transfer and recognition of learning across institutions and contexts</p>
+                </div>
+                <div className="border-l-4 border-red-500 pl-6 py-3">
+                  <h4 className="font-semibold text-slate-900">P5: Delivery</h4>
+                  <p className="text-sm text-slate-600">Optimizing infrastructure and systems for effective educational delivery at scale</p>
                 </div>
               </div>
             </div>
 
-            {/* Priority Classification */}
-            <div className="bg-slate-50 border border-slate-200 p-8 mb-16">
-              <h4 className="text-sm font-semibold text-slate-900 uppercase tracking-wider mb-6">Priority Classification</h4>
-              <div className="grid grid-cols-3 gap-6">
-                <div className="flex items-start gap-3">
-                  <div className="w-3 h-3 rounded-full bg-green-500 mt-1 flex-shrink-0"></div>
-                  <div>
-                    <p className="font-semibold text-slate-900 mb-1">High Priority</p>
-                    <p className="text-sm text-slate-600">High evidence maturity and high burden/impact. Ready for scaled action.</p>
-                  </div>
+            {/* Three Evidence Layers */}
+            <div className="mb-12">
+              <h3 className="text-2xl font-semibold text-slate-900 mb-4">Three Layers of Evidence</h3>
+              <p className="text-slate-600 mb-8 leading-relaxed">
+                Each pillar is examined through three complementary evidence layers that span historical insights, current developments, and forward-looking indicators.
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="bg-gradient-to-br from-slate-50 to-white border border-slate-200 p-6 rounded-lg">
+                  <h4 className="font-semibold text-slate-900 mb-2">WWC Retrospective</h4>
+                  <p className="text-sm text-slate-600 mb-3">
+                    Historical evidence from rigorous randomized controlled trials, providing foundational insights from past research.
+                  </p>
+                  <div className="text-xs text-slate-500 font-medium">Historical Context</div>
                 </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-3 h-3 rounded-full bg-yellow-500 mt-1 flex-shrink-0"></div>
-                  <div>
-                    <p className="font-semibold text-slate-900 mb-1">On Watch</p>
-                    <p className="text-sm text-slate-600">Either high burden/impact with insufficient evidence, or high evidence with lower burden. Proceed with caution.</p>
-                  </div>
+
+                <div className="bg-gradient-to-br from-blue-50 to-white border border-blue-200 p-6 rounded-lg">
+                  <h4 className="font-semibold text-slate-900 mb-2">Current Landscape</h4>
+                  <p className="text-sm text-slate-600 mb-3">
+                    Ongoing and recent evidence from diverse study designs, capturing the present state of research and practice.
+                  </p>
+                  <div className="text-xs text-blue-600 font-medium">Present Evidence</div>
                 </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-3 h-3 rounded-full bg-pink-500 mt-1 flex-shrink-0"></div>
-                  <div>
-                    <p className="font-semibold text-slate-900 mb-1">Research Gap</p>
-                    <p className="text-sm text-slate-600">Below median threshold. Requires foundational research investment.</p>
-                  </div>
+
+                <div className="bg-gradient-to-br from-purple-50 to-white border border-purple-200 p-6 rounded-lg">
+                  <h4 className="font-semibold text-slate-900 mb-2">Prophetic Layer</h4>
+                  <p className="text-sm text-slate-600 mb-3">
+                    Forward-looking indicators and emerging patterns that signal future developments and research needs.
+                  </p>
+                  <div className="text-xs text-purple-600 font-medium">Future Signals</div>
                 </div>
               </div>
             </div>
@@ -329,44 +297,15 @@ export default function Home() {
       ) : (
         /* Visualization Dashboard */
         <div className="flex-1 flex overflow-hidden">
-          {/* Left Sidebar - Legend & Controls */}
-          <aside className="w-80 border-r border-slate-200 bg-gradient-to-b from-slate-50 to-white p-6 overflow-y-auto relative z-20">
+          {/* Left Sidebar - Legend & Controls (Hidden for Level 5) */}
+          {activeView !== 'level5' && (
+            <aside className="w-80 border-r border-slate-200 bg-gradient-to-b from-slate-50 to-white p-6 overflow-y-auto relative z-20">
             {/* Legend */}
             <div className="mb-7 bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
               <h3 className="text-sm font-bold text-slate-900 mb-4 uppercase tracking-wide">Visualization Guide</h3>
 
-            <div className="space-y-4 text-sm">
-              {activeView === 'level5' && level5Data ? (
-                <>
-                  <div className="flex items-start">
-                    <div className="flex-1">
-                      <p className="font-semibold text-slate-800">X-Axis: {level5Data.metadata.x_axis.label}</p>
-                      <p className="text-slate-600 text-xs mt-1 leading-relaxed">{level5Data.metadata.x_axis.description}</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start">
-                    <div className="flex-1">
-                      <p className="font-semibold text-slate-800">Y-Axis: {level5Data.metadata.y_axis.label}</p>
-                      <p className="text-slate-600 text-xs mt-1 leading-relaxed">{level5Data.metadata.y_axis.description}</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start">
-                    <div className="flex-1">
-                      <p className="font-semibold text-slate-800">Bubble Size: {level5Data.metadata.bubble_size.label}</p>
-                      <p className="text-slate-600 text-xs mt-1 leading-relaxed">{level5Data.metadata.bubble_size.description}</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start">
-                    <div className="flex-1">
-                      <p className="font-semibold text-slate-800">Line Color: Implementation Objective</p>
-                      <p className="text-slate-600 text-xs mt-1 leading-relaxed">Each line represents one of the four tech-compatible implementation objectives</p>
-                    </div>
-                  </div>
-                </>
-              ) : (
+              <div className="space-y-4 text-sm">
+                {currentData && (
                   <>
                   <div className="flex items-start">
                     <div className="flex-1">
@@ -435,58 +374,9 @@ export default function Home() {
                     </div>
                   )} */}
                   </>
-              )}
-            </div>
-          </div>
-
-          {/* Level 5 View Switcher */}
-          {activeView === 'level5' && level5Data && (
-            <div className="mb-7 bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
-              <h3 className="text-sm font-bold text-slate-900 mb-4 uppercase tracking-wide">View Selector</h3>
-              <div className="space-y-2">
-                <button
-                  onClick={() => setLevel5View('all')}
-                  className={`w-full text-left p-2 rounded-lg transition-all ${
-                    level5View === 'all' ? 'bg-slate-900 text-white' : 'bg-slate-50 text-slate-700 hover:bg-slate-100'
-                  }`}
-                >
-                  <span className="text-sm font-medium">All Four Pillars</span>
-                </button>
-                <button
-                  onClick={() => setLevel5View('adaptive')}
-                  className={`w-full text-left p-2 rounded-lg transition-all ${
-                    level5View === 'adaptive' ? 'bg-slate-900 text-white' : 'bg-slate-50 text-slate-700 hover:bg-slate-100'
-                  }`}
-                >
-                  <span className="text-sm font-medium">Adaptive Instruction</span>
-                </button>
-                <button
-                  onClick={() => setLevel5View('personalized')}
-                  className={`w-full text-left p-2 rounded-lg transition-all ${
-                    level5View === 'personalized' ? 'bg-slate-900 text-white' : 'bg-slate-50 text-slate-700 hover:bg-slate-100'
-                  }`}
-                >
-                  <span className="text-sm font-medium">Personalized Learning</span>
-                </button>
-                <button
-                  onClick={() => setLevel5View('data-driven')}
-                  className={`w-full text-left p-2 rounded-lg transition-all ${
-                    level5View === 'data-driven' ? 'bg-slate-900 text-white' : 'bg-slate-50 text-slate-700 hover:bg-slate-100'
-                  }`}
-                >
-                  <span className="text-sm font-medium">Data-Driven Decision</span>
-                </button>
-                <button
-                  onClick={() => setLevel5View('pathways')}
-                  className={`w-full text-left p-2 rounded-lg transition-all ${
-                    level5View === 'pathways' ? 'bg-slate-900 text-white' : 'bg-slate-50 text-slate-700 hover:bg-slate-100'
-                  }`}
-                >
-                  <span className="text-sm font-medium">Learning Pathways</span>
-                </button>
+                )}
               </div>
             </div>
-          )}
 
           {/* Priority Filter - Only for Level 1 & 2 */}
           {(activeView === 'level1' || activeView === 'level2') && (
@@ -551,9 +441,8 @@ export default function Home() {
           )}
 
           {/* Bubble Visibility Controls */}
-          {activeView !== 'level5' && (
-            <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
-              <h3 className="text-sm font-bold text-slate-900 mb-4 uppercase tracking-wide">Categories</h3>
+          <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+            <h3 className="text-sm font-bold text-slate-900 mb-4 uppercase tracking-wide">Categories</h3>
               <div className="space-y-1 max-h-96 overflow-y-auto pr-2">
                 {currentData?.bubbles.map((bubble) => (
                   <div
@@ -581,57 +470,41 @@ export default function Home() {
                 ))}
               </div>
             </div>
-          )}
         </aside>
+          )}
 
         {/* Center - Bubble Chart or Line Chart */}
         <main className="flex-1 p-8 overflow-hidden bg-slate-50 relative z-10">
           <div className="h-full bg-white border border-slate-200 rounded-xl shadow-md flex flex-col">
+            {/* Level 5 Horizontal Metadata Guide */}
+            {activeView === 'level5' && level5Data && (
+              <div className="border-b border-slate-200 bg-slate-50 px-6 py-4">
+                <div className="grid grid-cols-4 gap-6 text-sm items-start">
+                  <div className="flex flex-col">
+                    <p className="font-semibold text-slate-800 mb-1.5">X-Axis: {level5Data.metadata.x_axis.label}</p>
+                    <p className="text-slate-600 text-xs leading-relaxed">Publication year (5-year buckets)</p>
+                  </div>
+                  <div className="flex flex-col">
+                    <p className="font-semibold text-slate-800 mb-1.5">Y-Axis: {level5Data.metadata.y_axis.label}</p>
+                    <p className="text-slate-600 text-xs leading-relaxed">{level5Data.metadata.y_axis.description}</p>
+                  </div>
+                  <div className="flex flex-col">
+                    <p className="font-semibold text-slate-800 mb-1.5">Bubble Size: {level5Data.metadata.bubble_size.label}</p>
+                    <p className="text-slate-600 text-xs leading-relaxed">{level5Data.metadata.bubble_size.description}</p>
+                  </div>
+                  <div className="flex flex-col">
+                    <p className="font-semibold text-slate-800 mb-1.5">Line Color: Implementation Objective</p>
+                    <p className="text-slate-600 text-xs leading-relaxed">Each line represents one of the four tech-compatible implementation objectives</p>
+                  </div>
+                </div>
+              </div>
+            )}
             <div className="flex-1 min-h-0">
               {activeView === 'level5' && level5Data ? (
-                (() => {
-                  let displayData;
-
-                  if (level5View === 'all') {
-                    displayData = level5Data.time_series;
-                  } else {
-                    const ioMap: Record<string, string> = {
-                      'adaptive': 'Adaptive Instruction & Tutoring Systems',
-                      'personalized': 'Personalized Learning & Advising Systems',
-                      'data-driven': 'Data-Driven Decision Support',
-                      'pathways': 'Learning Pathways & Mobility Support'
-                    };
-
-                    const ioKey = ioMap[level5View];
-                    console.log('Level5 View:', level5View, 'IO Key:', ioKey);
-                    console.log('Available keys:', Object.keys(level5Data.individual_interventions || {}));
-
-                    const interventions = level5Data.individual_interventions?.[ioKey];
-                    console.log('Interventions data:', interventions);
-
-                    // Use interventions if available, otherwise show the aggregate line
-                    if (interventions && Array.isArray(interventions) && interventions.length > 0) {
-                      console.log('Using interventions:', interventions.length, 'series');
-                      displayData = interventions;
-                    } else {
-                      console.log('Fallback to time_series for:', ioKey);
-                      displayData = level5Data.time_series.filter(s => s.label === ioKey);
-                    }
-                  }
-
-                  console.log('Final displayData:', displayData?.length, 'series');
-
-                  return displayData && displayData.length > 0 ? (
-                    <LineChart
-                      timeSeries={displayData}
-                      onPointClick={(series, point) => setSelectedTimePoint({series, point})}
-                    />
-                  ) : (
-                    <div className="flex items-center justify-center h-full">
-                      <p className="text-slate-500">No data available for this view</p>
-                    </div>
-                  );
-                })()
+                <LineChart
+                  timeSeries={level5Data.time_series}
+                  onPointClick={(series, point) => setSelectedTimePoint({series, point})}
+                />
               ) : currentData && (
                 <BubbleChart
                   data={visibleBubbles}
@@ -645,8 +518,8 @@ export default function Home() {
                 />
               )}
             </div>
-            {/* So-What Blurb */}
-            {(currentData || level5Data) && (
+            {/* So-What Blurb - Not shown for Level 5 */}
+            {(currentData || level5Data) && activeView !== 'level5' && (
               <div className="border-t border-slate-200 px-6 py-4 bg-slate-50">
                 {activeView === 'level1' ? (
                   <p className="text-sm text-slate-700 leading-relaxed">
@@ -660,20 +533,7 @@ export default function Home() {
                   <p className="text-sm text-slate-700 leading-relaxed">
                     <strong className="text-slate-900">Strategic Insight:</strong> This map showcases proven interventions from rigorous RCTs (What Works Clearinghouse), highlighting which tech-compatible approaches have strong evidence AND generalize across diverse contexts—representing millions of students already impacted.
                   </p>
-                ) : activeView === 'level5' ? (
-                  <p className="text-sm text-slate-700 leading-relaxed">
-                    <strong className="text-slate-900">Strategic Insight:</strong> This temporal view shows how evidence matured from 1984-2025, tracking generalizability (how many diverse contexts were tested) over time. Upward trends indicate interventions becoming more widely validated across different regions, school types, and populations—key indicators for scalability.
-                  </p>
                 ) : null}
-                {/* : activeView === 'level4' ? (
-                  <p className="text-sm text-slate-700 leading-relaxed">
-                    <strong className="text-slate-900">Strategic Insight:</strong> This granular view maps all 67 individual tech-compatible interventions from WWC, revealing the specific programs and approaches that have been rigorously tested and validated through RCTs—each representing a proven solution ready for adaptation and scaling.
-                  </p>
-                ) : activeView === 'level5' ? (
-                  <p className="text-sm text-slate-700 leading-relaxed">
-                    <strong className="text-slate-900">Strategic Insight:</strong> This temporal evolution shows how evidence-based interventions scaled from 1995-2025, measuring Implementation Reach (students × contexts) over time. Larger bubbles indicate interventions that maintained strong effect sizes while scaling—a critical predictor for how AI-based interventions may evolve.
-                  </p>
-                ) : null} */}
               </div>
             )}
           </div>
@@ -1137,6 +997,29 @@ export default function Home() {
                     </div>
                   </div>
                 )}
+              </div>
+            </div>
+          ) : activeView === 'level5' ? (
+            <div className="p-7">
+              <h2 className="text-2xl font-semibold text-slate-900 mb-6">Strategic Insights</h2>
+              <div className="space-y-6">
+                <div className="bg-slate-50 p-5 rounded-lg border border-slate-200">
+                  <h3 className="text-sm font-bold text-slate-900 mb-3">Early 2000s shift</h3>
+                  <p className="text-sm text-slate-700 leading-relaxed">
+                    From roughly 2000–2010, evidence appears to become more generalizable, with interventions tested across a wider range of student populations, school contexts, and settings.
+                  </p>
+                </div>
+                <div className="bg-slate-50 p-5 rounded-lg border border-slate-200">
+                  <h3 className="text-sm font-bold text-slate-900 mb-3">Scale outpaces learning</h3>
+                  <p className="text-sm text-slate-700 leading-relaxed">
+                    Between about 2005–2015, areas like tutoring and adaptive instruction reach many more students, while newer areas (e.g., personalization and data-driven decision-making) begin to emerge but with a thinner evidence base.
+                  </p>
+                </div>
+                <div className="mt-6 pt-6 border-t border-slate-200">
+                  <p className="text-xs text-slate-500 leading-relaxed">
+                    <strong>Tip:</strong> Click on any data point in the visualization to view detailed period analysis
+                  </p>
+                </div>
               </div>
             </div>
           ) : (

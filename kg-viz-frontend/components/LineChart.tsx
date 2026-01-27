@@ -47,7 +47,7 @@ export default function LineChart({ timeSeries, onPointClick }: LineChartProps) 
     }
 
     const { width, height } = dimensions;
-    const margin = { top: 40, right: 200, bottom: 80, left: 80 };
+    const margin = { top: 40, right: 280, bottom: 80, left: 80 };
     const innerWidth = width - margin.left - margin.right;
     const innerHeight = height - margin.top - margin.bottom;
 
@@ -268,7 +268,7 @@ export default function LineChart({ timeSeries, onPointClick }: LineChartProps) 
         .attr('y', 4)
         .style('font-size', '11px')
         .style('fill', '#334155')
-        .text(series.label.length > 25 ? series.label.substring(0, 25) + '...' : series.label);
+        .text(series.label.length > 40 ? series.label.substring(0, 40) + '...' : series.label);
     });
 
   }, [timeSeries, onPointClick, dimensions]);
