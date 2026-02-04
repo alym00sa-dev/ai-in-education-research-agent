@@ -1,0 +1,76 @@
+{
+  "timestamp": "2025-12-11T14:30:25.123456",
+  "query": "What are effective AI-powered interventions for improving reading comprehension in K-12?",
+  "audit_trail": {
+    "queries": [
+      "What are effective AI-powered interventions for improving reading comprehension in K-12?",
+      "AI reading comprehension tools educational outcomes",
+      "Intelligent tutoring systems literacy intervention"
+    ],
+    "max_results_per_query": 5,
+    "topic": "general",
+    "tavily_raw_results": [
+      {
+        "query": "What are effective AI-powered interventions for improving reading comprehension in K-12?",
+        "results": [
+          {
+            "title": "AI-Powered Reading Interventions Show Promise in Elementary Schools",
+            "url": "https://example.com/ai-reading-study",
+            "score": 0.95,
+            "content_preview": "A recent study examining the effectiveness of AI-powered reading interventions in elementary schools found significant improvements in reading comprehension scores. The study involved 500 students..."
+          },
+          {
+            "title": "Intelligent Tutoring Systems for Literacy Development",
+            "url": "https://example.edu/its-literacy",
+            "score": 0.89,
+            "content_preview": "Research on intelligent tutoring systems (ITS) designed for literacy development shows that personalized, adaptive instruction can significantly improve reading outcomes for struggling readers..."
+          },
+          {
+            "title": "Meta-Analysis: AI Tools in K-12 Reading Education",
+            "url": "https://example.org/meta-analysis-ai-reading",
+            "score": 0.87,
+            "content_preview": "This meta-analysis synthesizes findings from 45 studies examining AI tools in K-12 reading education. Effect sizes ranged from d=0.23 to d=0.65, with larger effects observed..."
+          }
+        ]
+      }
+    ],
+    "deduplication": {
+      "total_before": 15,
+      "unique_after": 12,
+      "duplicates_removed": 3,
+      "duplicate_urls": [
+        {
+          "url": "https://example.com/ai-reading-study",
+          "title": "AI-Powered Reading Interventions Show Promise in Elementary Schools"
+        },
+        {
+          "url": "https://example.edu/its-literacy",
+          "title": "Intelligent Tutoring Systems for Literacy Development"
+        }
+      ]
+    },
+    "summarization": {
+      "model": "openai:gpt-4.1-mini",
+      "max_content_length": 50000,
+      "successful": 12,
+      "failed": 0,
+      "total_attempted": 12
+    },
+    "final_sources": [
+      {
+        "source_number": 1,
+        "title": "AI-Powered Reading Interventions Show Promise in Elementary Schools",
+        "url": "https://example.com/ai-reading-study",
+        "summary_preview": "A recent study examining the effectiveness of AI-powered reading interventions in elementary schools...",
+        "summary_full": "A recent study examining the effectiveness of AI-powered reading interventions in elementary schools found significant improvements in reading comprehension scores. The study involved 500 students across 10 schools using an AI-powered reading platform for 12 weeks. Results showed:\n\n- 15-point average improvement in standardized reading comprehension scores\n- Largest gains observed in students reading below grade level (d=0.58)\n- High student engagement with adaptive difficulty levels\n- Teachers reported time savings of 3-5 hours per week on assessment and progress monitoring\n\nKey findings:\n1. Personalized instruction adapted to individual student needs in real-time\n2. Immediate feedback helped students correct misconceptions\n3. Data dashboards helped teachers identify struggling students early\n4. Implementation fidelity was high (87% daily usage)\n\nLimitations: Study focused on grades 3-5, suburban schools with adequate technology infrastructure. Generalizability to other contexts requires further research."
+      },
+      {
+        "source_number": 2,
+        "title": "Meta-Analysis: AI Tools in K-12 Reading Education",
+        "url": "https://example.org/meta-analysis-ai-reading",
+        "summary_preview": "This meta-analysis synthesizes findings from 45 studies examining AI tools in K-12 reading education...",
+        "summary_full": "This meta-analysis synthesizes findings from 45 studies examining AI tools in K-12 reading education. Overall effect size: d=0.42 (95% CI: 0.31-0.53), indicating moderate positive effects.\n\nFindings by intervention type:\n- Intelligent tutoring systems: d=0.51 (strongest effects)\n- Automated feedback tools: d=0.38\n- AI-powered assessment: d=0.29\n- Adaptive reading platforms: d=0.45\n\nModerator analysis revealed:\n- Implementation duration matters: Studies >8 weeks showed larger effects (d=0.52) vs shorter duration (d=0.28)\n- Grade level differences: Stronger effects in elementary (d=0.48) vs middle/high school (d=0.35)\n- Effect sizes comparable to human tutoring (d=0.45) when implementation fidelity is high\n\nConclusions: AI tools show promise but effectiveness depends on proper implementation, teacher training, and sustained use."
+      }
+    ]
+  }
+}
