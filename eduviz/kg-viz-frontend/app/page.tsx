@@ -5,12 +5,12 @@ import { Eye, EyeOff } from 'lucide-react';
 import BubbleChart from '@/components/BubbleChart';
 import LineChart from '@/components/LineChart';
 import InfoTooltip from '@/components/InfoTooltip';
-import { fetchLevel1Data, fetchLevel2Data, fetchLevel3Data, fetchLevel5Data, fetchP5Data, fetchP1Data, fetchGatesInvestmentData, fetchP1CurrentData, fetchP1CurrentByCaseData } from '@/lib/api';
-import { BubbleData, VisualizationResponse, Level5Response, P5Response, P1Response, P1Series, P1DataPoint, TimeSeriesData, TimeSeriesDataPoint, GatesInvestmentResponse, P1CurrentResponse, P1CurrentRung, P1CurrentByCaseResponse, P1CurrentUseCaseLadder } from '@/lib/types';
+import { fetchLevel1Data, fetchLevel2Data, fetchLevel3Data, fetchLevel5Data, fetchP5Data, fetchP1Data, /* fetchGatesInvestmentData, */ fetchP1CurrentData, fetchP1CurrentByCaseData } from '@/lib/api';
+import { BubbleData, VisualizationResponse, Level5Response, P5Response, P1Response, P1Series, P1DataPoint, TimeSeriesData, TimeSeriesDataPoint, /* GatesInvestmentResponse, */ P1CurrentResponse, P1CurrentRung, P1CurrentByCaseResponse, P1CurrentUseCaseLadder } from '@/lib/types';
 import GeographicDistribution from '@/components/GeographicDistribution';
 import LearnerInstitutionDistribution from '@/components/LearnerInstitutionDistribution';
 import P1EffectSizeEvolution from '@/components/P1EffectSizeEvolution';
-import GatesInvestmentMap from '@/components/GatesInvestmentMap';
+// import GatesInvestmentMap from '@/components/GatesInvestmentMap';
 import P1CurrentEvidenceLadder from '@/components/P1CurrentEvidenceLadder';
 import P1CurrentByUseCase from '@/components/P1CurrentByUseCase';
 
@@ -47,7 +47,7 @@ function capitalizeLabel(label: string): string {
     .join(' - ');
 }
 
-type ViewType = 'intro' | 'level1' | 'level2' | 'level3' | 'level5' | 'p1' | 'p1-current' | 'p5-geographic' | 'p5-learner' | 'gates-investment';
+type ViewType = 'intro' | 'level1' | 'level2' | 'level3' | 'level5' | 'p1' | 'p1-current' | 'p5-geographic' | 'p5-learner'; // | 'gates-investment';
 
 export default function Home() {
   const [level1Data, setLevel1Data] = useState<VisualizationResponse | null>(null);
@@ -58,7 +58,7 @@ export default function Home() {
   const [p1CurrentData, setP1CurrentData] = useState<P1CurrentResponse | null>(null);
   const [p1CurrentByCaseData, setP1CurrentByCaseData] = useState<P1CurrentByCaseResponse | null>(null);
   const [p5Data, setP5Data] = useState<P5Response | null>(null);
-  const [gatesInvestmentData, setGatesInvestmentData] = useState<GatesInvestmentResponse | null>(null);
+  // const [gatesInvestmentData, setGatesInvestmentData] = useState<GatesInvestmentResponse | null>(null);
   const [p5InterventionColors, setP5InterventionColors] = useState<Map<string, string>>(new Map());
   const [selectedBubble, setSelectedBubble] = useState<BubbleData | null>(null);
   const [selectedTimePoint, setSelectedTimePoint] = useState<{series: TimeSeriesData, point: TimeSeriesDataPoint} | null>(null);
@@ -332,8 +332,8 @@ export default function Home() {
       ) : (
         /* Visualization Dashboard */
         <div className="flex-1 flex overflow-hidden">
-          {/* Left Sidebar - Legend & Controls (Hidden for Level 5, P1, P1Current, P5, and Gates Investment) */}
-          {activeView !== 'level5' && activeView !== 'p1' && activeView !== 'p1-current' && !activeView.startsWith('p5-') && activeView !== 'gates-investment' && (
+          {/* Left Sidebar - Legend & Controls (Hidden for Level 5, P1, P1Current, and P5) */}
+          {activeView !== 'level5' && activeView !== 'p1' && activeView !== 'p1-current' && !activeView.startsWith('p5-') && (
             <aside className="w-80 border-r border-slate-200 bg-gradient-to-b from-slate-50 to-white p-6 overflow-y-auto relative z-20">
             {/* Legend */}
             <div className="mb-7 bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
@@ -680,8 +680,7 @@ export default function Home() {
           </div>
         </main>
 
-        {/* Right Sidebar - Detail Panel (Hidden for Gates Investment) */}
-        {activeView !== 'gates-investment' && (
+        {/* Right Sidebar - Detail Panel */}
         <aside className="w-96 border-l border-slate-200 bg-white overflow-y-auto relative z-20">
           {activeView === 'level5' && selectedTimePoint ? (
             <div className="p-7">
@@ -1641,7 +1640,6 @@ export default function Home() {
             </div>
           )}
         </aside>
-        )}
         </div>
       )}
     </div>
