@@ -78,7 +78,7 @@ export default function Home() {
     async function loadData() {
       try {
         setLoading(true);
-        const [l1, l2, l3, l5, p1, p1Current, p1CurrentByCase, p5, gatesInv] = await Promise.all([
+        const [l1, l2, l3, l5, p1, p1Current, p1CurrentByCase, p5] = await Promise.all([
           fetchLevel1Data(),
           fetchLevel2Data(),
           fetchLevel3Data(),
@@ -87,7 +87,7 @@ export default function Home() {
           fetchP1CurrentData('Intelligent Tutoring and Instruction'),
           fetchP1CurrentByCaseData('Intelligent Tutoring and Instruction'),
           fetchP5Data(),
-          fetchGatesInvestmentData()
+          // fetchGatesInvestmentData()
         ]);
         setLevel1Data(l1);
         setLevel2Data(l2);
@@ -97,7 +97,7 @@ export default function Home() {
         setP1CurrentData(p1Current);
         setP1CurrentByCaseData(p1CurrentByCase);
         setP5Data(p5);
-        setGatesInvestmentData(gatesInv);
+        // setGatesInvestmentData(gatesInv);
       } catch (err) {
         setError(err instanceof Error ? err.message : 'Failed to load data');
       } finally {
@@ -642,11 +642,11 @@ export default function Home() {
                   timeSlices={p5Data.time_slices}
                   allYears={p5Data.all_years}
                 />
-              ) : activeView === 'gates-investment' && gatesInvestmentData ? (
+              ) : /* activeView === 'gates-investment' && gatesInvestmentData ? (
                 <GatesInvestmentMap
                   data={gatesInvestmentData}
                 />
-              ) : currentData && (
+              ) : */ currentData && (
                 <BubbleChart
                   data={visibleBubbles}
                   allData={currentData.bubbles}
