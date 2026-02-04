@@ -1,4 +1,4 @@
-m"""Streamlit UI for AI Education Research Assistant."""
+"""Streamlit UI for AI Education Research Assistant."""
 import streamlit as st
 from datetime import datetime
 import streamlit.components.v1 as components
