@@ -1,36 +1,59 @@
 # EDU Agent Refactoring Plan - Phase 2 (Deep Cleanup)
 
-**Date:** March 3, 2026
+**Date:** March 3, 2026 (Updated: March 4, 2026)
 **Based on:** Comprehensive code usage analysis (CLEANUP_INVENTORY.md)
-**Timeline:** 4 sessions (10-15 hours total)
+**Timeline:** 4 sessions (12-17 hours total)
+
+---
+
+## 🛡️ Safety First
+
+Before starting any refactoring work:
+
+```bash
+# Create main backup branch
+git checkout -b refactor-phase2-backup
+git push -u origin refactor-phase2-backup
+git checkout main
+
+# Create session-specific branch
+git checkout -b refactor-phase2-session0
+```
+
+**Branch Strategy:**
+- Each session gets its own branch: `refactor-phase2-session0`, `refactor-phase2-session1`, etc.
+- Sessions can be reviewed independently
+- Easy to rollback individual sessions if needed
 
 ---
 
 ## 📊 Analysis Results Summary
 
 **Good News:**
-- ✅ **No dead code found** - All 36 Python files serve a purpose
 - ✅ Well-structured architecture with clear separation
 - ✅ Good test coverage in both projects
 - ✅ Active documentation
 
-**Areas for Improvement:**
+**Issues Found:**
 - 🗑️ **2 duplicate docs** to delete
-- 🔍 **3 files** need review (potentially unused)
+- ⚠️ **1 dead code file** - `evidence_map.py` (not imported AND broken schema)
+- 🔍 **2 files** need review (potentially unused)
 - 🚨 **4 large files** need breaking up (>500 lines each)
-- ⚠️ **36 files** need manual human review (even if being used)
+- 🐛 **4 concrete bugs** found in active code
+- ⚠️ **~20 files** need manual human review (product/technical decisions)
 
-**Critical Insight:**
-Just because a file is **imported/used** doesn't mean it **should exist**. Session 0 provides human judgment on:
-- Is this feature still wanted?
-- Is this the right technical approach?
-- Should this be deleted/moved/consolidated?
+**Critical Insights:**
+1. Just because a file is **imported/used** doesn't mean it **should exist**
+2. Dead code = not imported OR imported but broken/obsolete
+3. `evidence_map.py` is BOTH not imported AND broken (references non-existent schema relationships)
 
 ---
 
 ## 🎯 Four-Session Plan
 
 ### SESSION 0: Manual Review (2-3 hours)
+
+**Branch:** `refactor-phase2-session0`
 
 **IMPORTANT:** Even if a file is being imported/used, it might still need to be deleted, moved, or consolidated. This session reviews each file to make human judgment calls about whether it should exist at all.
 
@@ -45,11 +68,28 @@ For each file, ask:
 4. **Is this in the right location?** (Organizational)
 5. **Is this technical debt?** (Should be replaced/removed)
 
-**Review all 36 Python files and make decisions:**
+**Pre-Decided Items (no review needed):**
+
+These decisions are obvious from code analysis:
+
+**ARCHIVE (move to scripts/):**
+- `database/enrichment/enrich_existing_papers.py` (414 lines) - One-time DB maintenance script
+- `database/enrichment/retry_failed_papers.py` (174 lines) - One-time DB maintenance script
+- `database/enrichment/smart_section_retry.py` (239 lines) - One-time DB maintenance script
+  - *Rationale: Not called from active code, mutual imports between them only*
+
+**DELETE:**
+- `evidence_map.py` (305 lines) - NOT imported AND broken
+  - *Rationale: References non-existent Neo4j relationships (`TARGETS_POPULATION`, `TARGETS_USER_TYPE`, `USES_STUDY_DESIGN`). Active schema stores these as Paper node properties, not relationships. Would require complete rewrite to integrate.*
+
+**KEEP (no review needed):**
+- `init_database.py` (7 lines) - Simple, clearly useful utility
+
+**Result:** Session 0 reduced from 36 files to ~20 files requiring human judgment.
 
 ---
 
-#### 0.1 Open Deep Research Files (15 files)
+#### 0.1 Open Deep Research Files (~10 files requiring review)
 
 **Entry Points:**
 - [ ] `server.py` (231 lines) - **Decision:** KEEP / DELETE / MOVE / CONSOLIDATE
@@ -76,7 +116,7 @@ For each file, ask:
 
 ---
 
-#### 0.2 Research Assistant Agent Files (21 files)
+#### 0.2 Research Assistant Agent Files (~10 files requiring review)
 
 **Entry Point:**
 - [ ] `app.py` (1163 lines) - **Decision:** KEEP / DELETE / MOVE / CONSOLIDATE
@@ -88,8 +128,6 @@ For each file, ask:
 - [ ] `src/session_manager.py` (279 lines) - **Decision:** KEEP / DELETE / MOVE / CONSOLIDATE
 - [ ] `src/enhanced_extraction_prompt.py` (298 lines) - **Decision:** KEEP / DELETE / MOVE / CONSOLIDATE
 - [ ] `src/env_config.py` (80 lines) - **Decision:** KEEP / DELETE / MOVE / CONSOLIDATE
-- [ ] `src/evidence_map.py` (305 lines) - **Decision:** KEEP / DELETE / MOVE / CONSOLIDATE
-  - *Note: Not imported anywhere - is this feature wanted?*
 
 **WWC Data Processing Scripts:**
 - [ ] `import_wwc_to_neo4j.py` (514 lines) - **Decision:** KEEP / DELETE / ARCHIVE
@@ -97,13 +135,7 @@ For each file, ask:
 - [ ] `map_wwc_to_ios.py` (254 lines) - **Decision:** KEEP / DELETE / ARCHIVE
 - [ ] `migrate_schema.py` (187 lines) - **Decision:** KEEP / DELETE / ARCHIVE
 
-**Database Enrichment Scripts:**
-- [ ] `database/enrichment/enrich_existing_papers.py` (414 lines) - **Decision:** KEEP / DELETE / ARCHIVE
-- [ ] `database/enrichment/retry_failed_papers.py` (174 lines) - **Decision:** KEEP / DELETE / ARCHIVE
-- [ ] `database/enrichment/smart_section_retry.py` (239 lines) - **Decision:** KEEP / DELETE / ARCHIVE
-
 **Utility Scripts:**
-- [ ] `init_database.py` (7 lines) - **Decision:** KEEP / DELETE / ARCHIVE
 - [ ] `test_neo4j.py` (37 lines) - **Decision:** KEEP / DELETE / ARCHIVE
 
 **Tests:**
@@ -146,38 +178,80 @@ For each file, ask:
 
 #### 0.4 Document Decisions
 
-Create `MANUAL_REVIEW_DECISIONS.md` with:
+**Option A (Recommended):** Update checkboxes inline in this plan document (Section 0.1 and 0.2) with decisions.
 
-```markdown
-# Manual Review Decisions
+**Option B:** Use inline checkboxes in this plan with brief rationale notes.
 
-## Files to DELETE (even though used)
-- `filename.py` - Reason: [why it should be deleted]
+**Option C:** Create `MANUAL_REVIEW_DECISIONS.md` but **DELETE IT after Session 1** to avoid documentation debt.
 
-## Files to MOVE
-- `filename.py` - Move from: X, Move to: Y, Reason: [why]
-
-## Files to CONSOLIDATE
-- `filename1.py` + `filename2.py` → `new_filename.py` - Reason: [why]
-
-## Files to ARCHIVE
-- `filename.py` - Reason: [not active but keep for reference]
-
-## Files to KEEP
-- All other files (list if needed)
-```
+**Do NOT create permanent documentation files** - decisions should be captured in git commits and this plan only.
 
 **Output:** Clear action plan based on human judgment, not just automated import analysis.
 
 ---
 
-### SESSION 1: Quick Wins (2 hours)
+### SESSION 1: Quick Wins + Bug Fixes (2-3 hours)
 
-Low-risk cleanup - delete duplicates and execute decisions from manual review.
+**Branch:** `refactor-phase2-session1`
+
+Low-risk cleanup - delete duplicates, fix concrete bugs, and execute decisions from manual review.
 
 ---
 
-#### Step 1: Delete Duplicate Documentation (5 min)
+#### Step 1: Fix Concrete Bugs (30-45 min)
+
+**Bug fixes found during code review:**
+
+**A. Fix `session_manager.py` line 249 - AttributeError bug**
+```python
+# CURRENT (BROKEN):
+StructuredPaper(
+    text_content="",  # StructuredPaper has no text_content field!
+    ...
+)
+
+# FIX: Remove text_content field or check StructuredPaper schema
+```
+**Risk:** HIGH - This is a latent `AttributeError` that fires if session graph rebuild fallback executes.
+
+**B. Remove unused import from `kg_extractor.py` line 3**
+```python
+# REMOVE:
+import re  # Never used in this file
+```
+
+**C. Remove debug print statements from `kg_extractor.py` lines 69-86**
+```python
+# DELETE these debug prints:
+print(f"ANTHROPIC_API_KEY is {'set' if os.getenv('ANTHROPIC_API_KEY') else 'not set'}")
+# ... (all debug logging about environment variables)
+```
+**Risk:** MEDIUM - Debug statements should not be in production code.
+
+**D. Move import to module top in `research_pipeline.py`**
+```python
+# CURRENT: import re inside functions
+# FIX: Move to top of file with other imports
+```
+
+**Testing:**
+- [ ] Run app.py and verify no AttributeError
+- [ ] Check kg_extractor.py has no debug output
+- [ ] All imports at module level
+
+**Commands:**
+```bash
+# After fixes:
+git add src/session_manager.py src/kg_extractor.py src/research_pipeline.py
+git commit -m "Fix bugs: session_manager AttributeError, remove unused imports, remove debug prints"
+```
+
+**Risk:** Low-Medium - These are targeted fixes
+**Files affected:** 3 files
+
+---
+
+#### Step 2: Delete Duplicate Documentation (5 min)
 
 **What's being deleted:**
 - `open_deep_research/EDUAGENT_OVERVIEW.md` (duplicate)
@@ -199,60 +273,109 @@ git commit -m "Remove duplicate EDUAGENT_OVERVIEW.md files"
 
 ---
 
-#### Step 2: Review Potentially Unused Files (1-2 hours)
+#### Step 3: Execute Pre-Decided Deletions/Archives (15 min)
+
+**A. DELETE `evidence_map.py` (BROKEN + NOT IMPORTED)**
+```bash
+rm research_assistant_agent/src/evidence_map.py
+git add research_assistant_agent/src/evidence_map.py
+git commit -m "Delete evidence_map.py: not imported and broken schema
+
+References non-existent Neo4j relationships (TARGETS_POPULATION,
+TARGETS_USER_TYPE, USES_STUDY_DESIGN). Active schema stores these as
+Paper node properties, not relationships. Would require complete rewrite
+to integrate."
+```
+
+**B. ARCHIVE database enrichment scripts**
+```bash
+# Move to scripts/ folder
+mkdir -p scripts/database_maintenance
+mv database/enrichment/enrich_existing_papers.py scripts/database_maintenance/
+mv database/enrichment/retry_failed_papers.py scripts/database_maintenance/
+mv database/enrichment/smart_section_retry.py scripts/database_maintenance/
+
+git add database/enrichment/ scripts/
+git commit -m "Archive database enrichment scripts to scripts/database_maintenance
+
+These are one-time maintenance scripts not called from active code."
+```
+
+**Risk:** Low - not imported by active code
+**Files affected:** 4 files moved/deleted
+
+---
+
+#### Step 4: Review Remaining Potentially Unused Files (30-45 min)
 
 **Files to investigate:**
 
-**A. `research_assistant_agent/src/evidence_map.py` (305 lines)**
-- **Status:** NOT imported anywhere
-- **Contains:** Evidence gap map visualization queries
-- **Decision needed:**
-  - **Option 1:** Is this feature planned? → Integrate into app.py
-  - **Option 2:** Feature abandoned? → Delete
-  - **Option 3:** Might use later? → Move to archive/
-
-**Investigation:**
-```bash
-# Check if referenced in docs or comments
-grep -r "evidence_map" --include="*.py" --include="*.md" eduagent/
-```
-
-**B. `open_deep_research/tests/extract_langsmith_data.py` (82 lines)**
+**A. `open_deep_research/tests/extract_langsmith_data.py` (82 lines)**
 - **Status:** Utility for extracting LangSmith evaluation data
 - **Decision needed:** Still used for evals? Or archive?
 
-**C. `research_assistant_agent/SEPARATION_README.md`**
+**B. `research_assistant_agent/SEPARATION_README.md`**
 - **Status:** Documentation about code separation
 - **Decision needed:** Is separation complete? Archive if outdated.
 
 **Actions:**
 ```bash
 # If deleting:
-rm research_assistant_agent/src/evidence_map.py
 rm open_deep_research/tests/extract_langsmith_data.py
 rm research_assistant_agent/SEPARATION_README.md
 
 # If archiving:
-mkdir -p archive/2026-03-03
-mv research_assistant_agent/src/evidence_map.py archive/2026-03-03/
-mv open_deep_research/tests/extract_langsmith_data.py archive/2026-03-03/
-mv research_assistant_agent/SEPARATION_README.md archive/2026-03-03/
+mkdir -p archive/2026-03-04
+mv open_deep_research/tests/extract_langsmith_data.py archive/2026-03-04/
+mv research_assistant_agent/SEPARATION_README.md archive/2026-03-04/
 ```
 
 **Risk:** Low - not imported by active code
-**Files affected:** 0-3 files (depending on decisions)
+**Files affected:** 0-2 files (depending on decisions)
 
 ---
 
-### SESSION 2: Critical Refactoring - Part 1 (4-5 hours)
+### SESSION 2: Critical Refactoring - Part 1 (6-8 hours)
 
-Break up the two largest files.
+**Branch:** `refactor-phase2-session2`
+
+Break up the largest file - app.py. This is complex due to Streamlit's execution model.
 
 ---
 
-#### Step 3: Refactor `app.py` (1,163 lines → ~300 lines) [4-5 hours]
+#### Step 5: Refactor `app.py` (1,163 lines → ~200 lines) [6-8 hours]
 
 **Current problem:** Monolithic Streamlit app - everything in one file
+
+**CRITICAL: Streamlit re-runs the entire script from top to bottom on every user interaction.**
+- If module A initializes a session key and module B reads it before A has run → `KeyError`
+- Session state sharing is the primary risk when splitting files
+
+**PREP STEP (REQUIRED BEFORE ANY EXTRACTION):**
+
+**5a. Enumerate all `st.session_state` keys (1 hour)**
+
+Before writing ANY extracted code, create a session state inventory:
+
+```markdown
+## Session State Inventory
+
+| Key | Owner Module | Initialized Where | Read By | Type |
+|-----|--------------|-------------------|---------|------|
+| `research_state` | chat.py | chat.py L45 | chat.py, results.py | ResearchState |
+| `selected_node` | visualization.py | visualization.py L102 | visualization.py, results.py | str or None |
+| ... | ... | ... | ... | ... |
+```
+
+**Questions to answer for each key:**
+1. Which module owns this state?
+2. Where is it initialized?
+3. Which modules read it?
+4. What happens if it's read before initialization?
+
+**This prevents session state bugs that are annoying to trace.**
+
+---
 
 **Proposed structure:**
 ```
@@ -267,6 +390,13 @@ research_assistant_agent/
     └── components.py (~150 lines) - Reusable UI components
 ```
 
+**What stays in `app.py` (~200 lines):**
+- Page config (`st.set_page_config()`)
+- Top-level routing between tabs
+- Imports from `ui/` modules
+- Session state initialization (if centralized)
+- Main entry point logic
+
 **Benefits:**
 - Each component is self-contained and testable
 - Easier to modify individual features
@@ -274,34 +404,41 @@ research_assistant_agent/
 - Better for new developers
 
 **Approach:**
-1. Create `ui/` folder structure
-2. Extract sidebar logic → `ui/sidebar.py`
-3. Extract visualization → `ui/visualization.py`
-4. Extract chat interface → `ui/chat.py`
-5. Extract results display → `ui/results.py`
-6. Update `app.py` to import from ui modules
-7. Test thoroughly after each extraction
+1. **FIRST:** Complete session state inventory (Step 5a above)
+2. Create `ui/` folder structure
+3. Extract sidebar logic → `ui/sidebar.py`
+4. Extract visualization → `ui/visualization.py`
+5. Extract chat interface → `ui/chat.py`
+6. Extract results display → `ui/results.py`
+7. Update `app.py` to import from ui modules
+8. Test thoroughly after each extraction
 
 **Testing checklist:**
+- [ ] Session state inventory complete and accurate
 - [ ] App loads without errors
+- [ ] No `KeyError` exceptions from session state
 - [ ] Sidebar configuration works
 - [ ] Graph visualization renders
 - [ ] Chat interface functional
 - [ ] Results display correctly
 - [ ] All tabs navigate properly
+- [ ] State persists correctly across re-runs
 
-**Risk:** Medium - requires thorough testing
+**Risk:** Medium-High - Streamlit state management is tricky
+**Estimated time:** 6-8 hours (includes session state enumeration)
 **Files affected:** 1 file split into 6 files
 
 ---
 
 ### SESSION 3: Critical Refactoring - Part 2 (2-3 hours)
 
+**Branch:** `refactor-phase2-session3`
+
 Break up utils.py and optionally other large files.
 
 ---
 
-#### Step 4: Refactor `utils.py` (1,071 lines → ~300 lines) [2-3 hours]
+#### Step 6: Refactor `utils.py` (1,071 lines → ~300 lines) [2-3 hours]
 
 **File:** `open_deep_research/src/open_deep_research/utils.py`
 
@@ -310,7 +447,6 @@ Break up utils.py and optionally other large files.
 **Proposed structure:**
 ```
 open_deep_research/src/open_deep_research/
-├── utils.py (backward compatibility shim, ~50 lines)
 └── utils/
     ├── __init__.py (export all)
     ├── search.py (~300 lines) - Tavily, DuckDuckGo, Exa search
@@ -319,18 +455,21 @@ open_deep_research/src/open_deep_research/
     └── mcp.py (~150 lines) - MCP server utilities
 ```
 
+**NO backward compatibility shim** - this is an internal codebase where the only caller is `deep_researcher.py`. Just update the imports directly.
+
 **Benefits:**
 - Much easier to navigate
 - Clear separation by function
 - Easier to test individual components
 - Better dependency management
+- No unnecessary indirection layer
 
 **Approach:**
 1. Create `utils/` folder
 2. Split functions by category into new files
 3. Create `utils/__init__.py` that exports everything
-4. Update `utils.py` to import from `utils/` (backward compatibility)
-5. Update imports in `deep_researcher.py`
+4. **Update imports in `deep_researcher.py` to point to new submodules** (no shim)
+5. Delete old `utils.py` file
 6. Test all search and web scraping functionality
 
 **Testing checklist:**
@@ -340,12 +479,12 @@ open_deep_research/src/open_deep_research/
 - [ ] MCP servers work
 - [ ] All tests pass
 
-**Risk:** Medium - many imports to update
-**Files affected:** 1 file split into 5 files
+**Risk:** Low-Medium - straightforward import updates
+**Files affected:** 1 file deleted, 4 new files created
 
 ---
 
-#### Step 5 (OPTIONAL): Refactor `deep_researcher.py` (718 lines → ~250 lines) [If time]
+#### Step 7 (OPTIONAL): Refactor `deep_researcher.py` (718 lines → ~250 lines) [If time]
 
 **File:** `open_deep_research/src/open_deep_research/deep_researcher.py`
 
@@ -374,22 +513,29 @@ open_deep_research/src/open_deep_research/
 ## ✅ Success Criteria
 
 ### After Session 0:
-- ✅ Every file reviewed with human judgment
-- ✅ Clear decisions documented in MANUAL_REVIEW_DECISIONS.md
+- ✅ ~20 files reviewed with human judgment
+- ✅ Clear decisions documented (inline or in temporary doc)
 - ✅ Action plan for deletions, moves, consolidations
+- ✅ Pre-decided items verified
 
 ### After Session 1:
+- ✅ 4 concrete bugs fixed (session_manager, kg_extractor, research_pipeline)
 - ✅ No duplicate documentation
-- ✅ Clear decisions on potentially unused files
-- ✅ Archive folder created (if needed)
+- ✅ evidence_map.py deleted (broken + not imported)
+- ✅ database/enrichment scripts archived
+- ✅ Clear decisions on remaining potentially unused files
+- ✅ Archive/scripts folders created as needed
 
 ### After Session 2:
-- ✅ `app.py` is manageable size (<300 lines)
+- ✅ Session state inventory complete and accurate
+- ✅ `app.py` is manageable size (~200 lines: page config, routing, imports only)
 - ✅ UI components are in separate files
 - ✅ All app features still work
+- ✅ No session state KeyErrors
 
 ### After Session 3:
-- ✅ `utils.py` is split into focused modules
+- ✅ `utils.py` deleted, split into focused modules (utils/search.py, web.py, llm.py, mcp.py)
+- ✅ Imports in deep_researcher.py updated directly (no shim)
 - ✅ All search and web functionality works
 - ✅ (Optional) `deep_researcher.py` has clear node separation
 
@@ -398,45 +544,59 @@ open_deep_research/src/open_deep_research/
 ## 📋 Session Checklists
 
 ### SESSION 0: Manual Review
-- [ ] Review all 15 open_deep_research Python files
-- [ ] Review all 21 research_assistant_agent Python files
+- [ ] Review pre-decided items (verify Archive/Delete decisions)
+- [ ] Review ~10 open_deep_research Python files requiring judgment
+- [ ] Review ~10 research_assistant_agent Python files requiring judgment
 - [ ] For each file, decide: KEEP / DELETE / MOVE / CONSOLIDATE / ARCHIVE
-- [ ] Document all decisions in MANUAL_REVIEW_DECISIONS.md
-- [ ] Create action plan based on decisions
+- [ ] Document decisions (inline in plan OR temporary MANUAL_REVIEW_DECISIONS.md)
 - [ ] Get user/product approval on deletions
+- [ ] Create branch: `refactor-phase2-session0`
 
 **Estimated time:** 2-3 hours
 
-### SESSION 1: Quick Wins
+### SESSION 1: Quick Wins + Bug Fixes
+- [ ] Create branch: `refactor-phase2-session1`
+- [ ] **FIX:** session_manager.py line 249 - StructuredPaper AttributeError
+- [ ] **FIX:** Remove unused `import re` from kg_extractor.py line 3
+- [ ] **FIX:** Remove debug prints from kg_extractor.py lines 69-86
+- [ ] **FIX:** Move `import re` to module top in research_pipeline.py
 - [ ] Delete 2 duplicate EDUAGENT_OVERVIEW.md files
-- [ ] Review evidence_map.py - decide: integrate/delete/archive
+- [ ] **DELETE:** evidence_map.py (broken schema + not imported)
+- [ ] **ARCHIVE:** database/enrichment/*.py to scripts/database_maintenance/
 - [ ] Review extract_langsmith_data.py - decide: keep/archive
 - [ ] Review SEPARATION_README.md - decide: keep/archive
-- [ ] Create archive/ folder if archiving files
+- [ ] Create archive/ or scripts/ folders as needed
 - [ ] Commit all changes
+- [ ] **DELETE MANUAL_REVIEW_DECISIONS.md if created**
 
-**Estimated time:** 2 hours
+**Estimated time:** 2-3 hours
 
 ### SESSION 2: Refactor app.py
+- [ ] Create branch: `refactor-phase2-session2`
+- [ ] **PREP:** Enumerate all st.session_state keys (create inventory)
+- [ ] **PREP:** Document which module owns each key
+- [ ] **PREP:** Document initialization order and dependencies
 - [ ] Create ui/ folder structure
 - [ ] Extract sidebar → ui/sidebar.py
 - [ ] Extract visualization → ui/visualization.py
 - [ ] Extract chat → ui/chat.py
 - [ ] Extract results → ui/results.py
-- [ ] Update app.py imports
-- [ ] Test all features work
+- [ ] Update app.py to import from ui/ (page config, routing, imports only)
+- [ ] Test all features work (especially session state)
 - [ ] Commit after each extraction
 
-**Estimated time:** 4-5 hours
+**Estimated time:** 6-8 hours (includes session state enumeration)
 
 ### SESSION 3: Refactor utils.py
+- [ ] Create branch: `refactor-phase2-session3`
 - [ ] Create utils/ folder
 - [ ] Split search functions → utils/search.py
 - [ ] Split web functions → utils/web.py
 - [ ] Split LLM functions → utils/llm.py
 - [ ] Split MCP functions → utils/mcp.py
-- [ ] Update utils.py for backward compatibility
-- [ ] Update imports in deep_researcher.py
+- [ ] Create utils/__init__.py that exports all
+- [ ] **Update imports in deep_researcher.py directly** (no backward compat shim)
+- [ ] **Delete old utils.py file**
 - [ ] Test all functionality
 - [ ] (Optional) Refactor deep_researcher.py
 - [ ] Commit all changes
@@ -449,16 +609,21 @@ open_deep_research/src/open_deep_research/
 
 ### Before Phase 2:
 - **Duplicate docs:** 2 files
-- **Potentially unused:** 3 files
+- **Dead code:** 1 file (evidence_map.py - not imported AND broken)
+- **Concrete bugs:** 4 bugs in active code
+- **Potentially unused:** 2-3 files
 - **Very large files (>1000 lines):** 2 files (app.py, utils.py)
 - **Large files (500-1000 lines):** 2 files (deep_researcher.py, kg_extractor.py)
 
 ### After Phase 2:
 - **Duplicate docs:** 0 files
+- **Dead code:** 0 files (deleted)
+- **Concrete bugs:** 0 bugs (all fixed in Session 1)
 - **Potentially unused:** 0 files (all reviewed)
 - **Very large files (>1000 lines):** 0 files
 - **Large files (500-1000 lines):** 1-2 files (depending on optional refactoring)
 - **New structure:** Clean component-based organization
+- **Database scripts:** Clearly organized in scripts/database_maintenance/
 
 ### Code Quality Improvements:
 - ✅ Better maintainability
@@ -471,22 +636,30 @@ open_deep_research/src/open_deep_research/
 
 ## ⚠️ Risks & Mitigation
 
-### Medium Risk: app.py Refactoring
-**Risk:** Streamlit state management might break
+### Medium-High Risk: app.py Refactoring
+**Risk:** Streamlit state management might break - script re-runs from top on every interaction
 **Mitigation:**
+- **REQUIRED:** Enumerate all st.session_state keys BEFORE any extraction
+- Document ownership, initialization order, and dependencies
 - Test after each extraction
-- Keep backup branch
+- Session-specific branches for easy rollback
 - Commit incrementally
 
-### Medium Risk: utils.py Refactoring
-**Risk:** Many imports to update, might miss some
+### Low-Medium Risk: utils.py Refactoring
+**Risk:** Import updates in deep_researcher.py
 **Mitigation:**
-- Create backward compatibility shim
+- Direct import updates (no shim complexity)
 - Run all tests after changes
 - Use IDE refactoring tools if available
 
+### Low Risk: Bug Fixes
+**Risk:** session_manager.py AttributeError fix might reveal other issues
+**Mitigation:**
+- Test session graph rebuild functionality
+- Standard git backup
+
 ### Low Risk: Everything Else
-**Mitigation:** Standard git backup and testing
+**Mitigation:** Standard git backup and testing with session-specific branches
 
 ---
 
@@ -501,9 +674,22 @@ These are reasonable sizes and well-structured:
 
 ### Why These Priorities?
 1. **Session 0** - Human judgment on what should exist (critical first step)
-2. **Session 1** - Quick wins, execute decisions from manual review
-3. **Session 2** - Biggest pain point (app.py), highest impact
-4. **Session 3** - Second biggest pain point (utils.py), high impact
+2. **Session 1** - Quick wins: fix bugs, execute decisions from manual review
+3. **Session 2** - Biggest pain point (app.py), highest impact, highest risk
+4. **Session 3** - Second biggest pain point (utils.py), high impact, lower risk
+
+### Session-Specific Branches
+Each session gets its own branch for independent review:
+- `refactor-phase2-session0` - Manual review decisions
+- `refactor-phase2-session1` - Bug fixes and deletions
+- `refactor-phase2-session2` - app.py refactoring
+- `refactor-phase2-session3` - utils.py refactoring
+
+**Benefits:**
+- Sessions can be reviewed independently
+- Easy to rollback individual sessions
+- Clear git history
+- Can merge sessions individually after review
 
 ---
 
@@ -512,16 +698,55 @@ These are reasonable sizes and well-structured:
 **Prerequisites:**
 1. Complete Phase 1 cleanup (already done!)
 2. Review this plan
-3. Get staff engineer approval
-4. Schedule 3 focused sessions
+3. Get staff engineer approval (COMPLETED - feedback addressed)
+4. Schedule 4 focused sessions
 
 **When ready:**
-```bash
-# Create new working branch
-git checkout -b refactor-phase2-session1
-```
+See "Safety First" section at top of document for branch creation.
 
 ---
 
-**Last Updated:** March 3, 2026
-**Status:** Ready for staff engineer review
+## 💬 Staff Engineer Review - ADDRESSED
+
+**Reviewer:** Staff Engineer
+**Review Date:** March 4, 2026
+**Status:** ✅ ALL FEEDBACK ADDRESSED (March 4, 2026)
+
+---
+
+### Summary of Changes Made
+
+**BLOCKER FIXES:**
+- ✅ Corrected Analysis Results: evidence_map.py identified as dead code (not imported AND broken schema)
+- ✅ Documented that evidence_map.py references non-existent Neo4j relationships
+- ✅ Changed from "might integrate" to explicit **DELETE** decision
+
+**HIGH PRIORITY FIXES:**
+- ✅ Added Session 2 prep step: "Enumerate all st.session_state keys before extraction"
+- ✅ Created session state inventory template with ownership/initialization tracking
+- ✅ Updated Session 2 estimate from 4-5 hours to 6-8 hours
+- ✅ Added 4 concrete bug fixes to Session 1:
+  - session_manager.py line 249: StructuredPaper text_content AttributeError
+  - kg_extractor.py line 3: Remove unused `import re`
+  - kg_extractor.py lines 69-86: Remove debug print statements
+  - research_pipeline.py: Move `import re` to module top
+
+**MEDIUM PRIORITY FIXES:**
+- ✅ Removed backward compatibility shim from utils.py plan
+- ✅ Changed to direct import updates in deep_researcher.py
+- ✅ Updated MANUAL_REVIEW_DECISIONS.md approach: inline checkboxes OR delete after Session 1
+- ✅ Pre-decided obvious Session 0 items:
+  - database/enrichment/*.py → ARCHIVE (move to scripts/)
+  - evidence_map.py → DELETE (broken schema)
+  - init_database.py → KEEP (no review needed)
+- ✅ Reduced Session 0 from 36 files to ~20 files needing judgment
+
+**LOW PRIORITY FIXES:**
+- ✅ Added explicit description of what stays in app.py (~200 lines: page config, routing, imports)
+- ✅ Moved backup branch creation to top (Safety First section)
+- ✅ Each session gets its own branch (refactor-phase2-session0, session1, session2, session3)
+
+---
+
+**Last Updated:** March 4, 2026
+**Status:** Ready for execution
