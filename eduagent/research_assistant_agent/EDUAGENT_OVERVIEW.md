@@ -319,7 +319,7 @@ Core knowledge management and data processing.
 
 **Key Directories:**
 - `src/` - Core agent logic
-- `database enrichement/` - Data enrichment scripts
+- `database/enrichment/` - Data enrichment scripts
 - `.streamlit/` - Streamlit configuration
 
 **Key Files:**
