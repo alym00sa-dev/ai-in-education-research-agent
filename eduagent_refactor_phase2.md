@@ -2,7 +2,7 @@
 
 **Date:** March 3, 2026
 **Based on:** Comprehensive code usage analysis (CLEANUP_INVENTORY.md)
-**Timeline:** 3 sessions (8-12 hours total)
+**Timeline:** 4 sessions (10-15 hours total)
 
 ---
 
@@ -18,14 +18,162 @@
 - 🗑️ **2 duplicate docs** to delete
 - 🔍 **3 files** need review (potentially unused)
 - 🚨 **4 large files** need breaking up (>500 lines each)
+- ⚠️ **36 files** need manual human review (even if being used)
+
+**Critical Insight:**
+Just because a file is **imported/used** doesn't mean it **should exist**. Session 0 provides human judgment on:
+- Is this feature still wanted?
+- Is this the right technical approach?
+- Should this be deleted/moved/consolidated?
 
 ---
 
-## 🎯 Three-Session Plan
+## 🎯 Four-Session Plan
+
+### SESSION 0: Manual Review (2-3 hours)
+
+**IMPORTANT:** Even if a file is being imported/used, it might still need to be deleted, moved, or consolidated. This session reviews each file to make human judgment calls about whether it should exist at all.
+
+---
+
+#### Manual Review Checklist
+
+For each file, ask:
+1. **Should this feature exist?** (Product decision)
+2. **Is this the right approach?** (Technical decision)
+3. **Is this duplicating functionality?** (Could be consolidated)
+4. **Is this in the right location?** (Organizational)
+5. **Is this technical debt?** (Should be replaced/removed)
+
+**Review all 36 Python files and make decisions:**
+
+---
+
+#### 0.1 Open Deep Research Files (15 files)
+
+**Entry Points:**
+- [ ] `server.py` (231 lines) - **Decision:** KEEP / DELETE / MOVE / CONSOLIDATE
+- [ ] `bridge_server.py` (257 lines) - **Decision:** KEEP / DELETE / MOVE / CONSOLIDATE
+
+**Core Active Files:**
+- [ ] `src/open_deep_research/deep_researcher.py` (718 lines) - **Decision:** KEEP / DELETE / MOVE / CONSOLIDATE
+- [ ] `src/open_deep_research/utils.py` (1071 lines) - **Decision:** KEEP / DELETE / MOVE / CONSOLIDATE
+- [ ] `src/open_deep_research/prompts.py` (427 lines) - **Decision:** KEEP / DELETE / MOVE / CONSOLIDATE
+- [ ] `src/open_deep_research/configuration.py` (251 lines) - **Decision:** KEEP / DELETE / MOVE / CONSOLIDATE
+- [ ] `src/open_deep_research/state.py` (95 lines) - **Decision:** KEEP / DELETE / MOVE / CONSOLIDATE
+
+**Utility Scripts:**
+- [ ] `test_deployment.py` (76 lines) - **Decision:** KEEP / DELETE / ARCHIVE
+- [ ] `src/security/auth.py` (155 lines) - **Decision:** KEEP / DELETE / MOVE
+
+**Tests:**
+- [ ] `tests/run_evaluate.py` (89 lines) - **Decision:** KEEP / DELETE / ARCHIVE
+- [ ] `tests/evaluators.py` (173 lines) - **Decision:** KEEP / DELETE / ARCHIVE
+- [ ] `tests/prompts.py` (256 lines) - **Decision:** KEEP / DELETE / ARCHIVE
+- [ ] `tests/pairwise_evaluation.py` (127 lines) - **Decision:** KEEP / DELETE / ARCHIVE
+- [ ] `tests/supervisor_parallel_evaluation.py` (60 lines) - **Decision:** KEEP / DELETE / ARCHIVE
+- [ ] `tests/extract_langsmith_data.py` (82 lines) - **Decision:** KEEP / DELETE / ARCHIVE
+
+---
+
+#### 0.2 Research Assistant Agent Files (21 files)
+
+**Entry Point:**
+- [ ] `app.py` (1163 lines) - **Decision:** KEEP / DELETE / MOVE / CONSOLIDATE
+
+**Core Active Files:**
+- [ ] `src/neo4j_config.py` (207 lines) - **Decision:** KEEP / DELETE / MOVE / CONSOLIDATE
+- [ ] `src/kg_extractor.py` (527 lines) - **Decision:** KEEP / DELETE / MOVE / CONSOLIDATE
+- [ ] `src/research_pipeline.py` (458 lines) - **Decision:** KEEP / DELETE / MOVE / CONSOLIDATE
+- [ ] `src/session_manager.py` (279 lines) - **Decision:** KEEP / DELETE / MOVE / CONSOLIDATE
+- [ ] `src/enhanced_extraction_prompt.py` (298 lines) - **Decision:** KEEP / DELETE / MOVE / CONSOLIDATE
+- [ ] `src/env_config.py` (80 lines) - **Decision:** KEEP / DELETE / MOVE / CONSOLIDATE
+- [ ] `src/evidence_map.py` (305 lines) - **Decision:** KEEP / DELETE / MOVE / CONSOLIDATE
+  - *Note: Not imported anywhere - is this feature wanted?*
+
+**WWC Data Processing Scripts:**
+- [ ] `import_wwc_to_neo4j.py` (514 lines) - **Decision:** KEEP / DELETE / ARCHIVE
+- [ ] `process_wwc_data.py` (425 lines) - **Decision:** KEEP / DELETE / ARCHIVE
+- [ ] `map_wwc_to_ios.py` (254 lines) - **Decision:** KEEP / DELETE / ARCHIVE
+- [ ] `migrate_schema.py` (187 lines) - **Decision:** KEEP / DELETE / ARCHIVE
+
+**Database Enrichment Scripts:**
+- [ ] `database/enrichment/enrich_existing_papers.py` (414 lines) - **Decision:** KEEP / DELETE / ARCHIVE
+- [ ] `database/enrichment/retry_failed_papers.py` (174 lines) - **Decision:** KEEP / DELETE / ARCHIVE
+- [ ] `database/enrichment/smart_section_retry.py` (239 lines) - **Decision:** KEEP / DELETE / ARCHIVE
+
+**Utility Scripts:**
+- [ ] `init_database.py` (7 lines) - **Decision:** KEEP / DELETE / ARCHIVE
+- [ ] `test_neo4j.py` (37 lines) - **Decision:** KEEP / DELETE / ARCHIVE
+
+**Tests:**
+- [ ] `tests/integration/test_extraction.py` (113 lines) - **Decision:** KEEP / DELETE / ARCHIVE
+- [ ] `tests/integration/test_full_pipeline.py` (181 lines) - **Decision:** KEEP / DELETE / ARCHIVE
+- [ ] `tests/integration/test_streaming_detail.py` (73 lines) - **Decision:** KEEP / DELETE / ARCHIVE
+
+---
+
+#### 0.3 Common Questions to Ask During Review
+
+**For each file, consider:**
+
+**Product/Feature Questions:**
+- Is this feature actually being used by users?
+- Does this feature align with current product direction?
+- Should this feature be deprecated?
+- Is there a better way to achieve this goal?
+
+**Technical Questions:**
+- Is this the right technical approach?
+- Is this duplicating functionality elsewhere?
+- Could this be consolidated with another file?
+- Is this technical debt from an old implementation?
+- Is this a workaround that should be fixed properly?
+
+**Organizational Questions:**
+- Is this file in the right project? (research_assistant vs open_deep_research)
+- Is this in the right folder?
+- Should this be a standalone tool vs. integrated feature?
+
+**Examples of files that might be used but should be deleted:**
+- Old implementation that's been replaced but code still references it
+- Feature that was never finished and shouldn't be completed
+- Workaround that should be properly fixed instead
+- Duplicate functionality that should be consolidated
+- Test utilities for features that no longer exist
+
+---
+
+#### 0.4 Document Decisions
+
+Create `MANUAL_REVIEW_DECISIONS.md` with:
+
+```markdown
+# Manual Review Decisions
+
+## Files to DELETE (even though used)
+- `filename.py` - Reason: [why it should be deleted]
+
+## Files to MOVE
+- `filename.py` - Move from: X, Move to: Y, Reason: [why]
+
+## Files to CONSOLIDATE
+- `filename1.py` + `filename2.py` → `new_filename.py` - Reason: [why]
+
+## Files to ARCHIVE
+- `filename.py` - Reason: [not active but keep for reference]
+
+## Files to KEEP
+- All other files (list if needed)
+```
+
+**Output:** Clear action plan based on human judgment, not just automated import analysis.
+
+---
 
 ### SESSION 1: Quick Wins (2 hours)
 
-Low-risk cleanup - delete duplicates and review potentially unused files.
+Low-risk cleanup - delete duplicates and execute decisions from manual review.
 
 ---
 
@@ -225,6 +373,11 @@ open_deep_research/src/open_deep_research/
 
 ## ✅ Success Criteria
 
+### After Session 0:
+- ✅ Every file reviewed with human judgment
+- ✅ Clear decisions documented in MANUAL_REVIEW_DECISIONS.md
+- ✅ Action plan for deletions, moves, consolidations
+
 ### After Session 1:
 - ✅ No duplicate documentation
 - ✅ Clear decisions on potentially unused files
@@ -243,6 +396,16 @@ open_deep_research/src/open_deep_research/
 ---
 
 ## 📋 Session Checklists
+
+### SESSION 0: Manual Review
+- [ ] Review all 15 open_deep_research Python files
+- [ ] Review all 21 research_assistant_agent Python files
+- [ ] For each file, decide: KEEP / DELETE / MOVE / CONSOLIDATE / ARCHIVE
+- [ ] Document all decisions in MANUAL_REVIEW_DECISIONS.md
+- [ ] Create action plan based on decisions
+- [ ] Get user/product approval on deletions
+
+**Estimated time:** 2-3 hours
 
 ### SESSION 1: Quick Wins
 - [ ] Delete 2 duplicate EDUAGENT_OVERVIEW.md files
@@ -337,9 +500,10 @@ These are reasonable sizes and well-structured:
 - All other files (<400 lines)
 
 ### Why These Priorities?
-1. **Session 1** - Quick wins, low risk, immediate clarity
-2. **Session 2** - Biggest pain point (app.py), highest impact
-3. **Session 3** - Second biggest pain point (utils.py), high impact
+1. **Session 0** - Human judgment on what should exist (critical first step)
+2. **Session 1** - Quick wins, execute decisions from manual review
+3. **Session 2** - Biggest pain point (app.py), highest impact
+4. **Session 3** - Second biggest pain point (utils.py), high impact
 
 ---
 
