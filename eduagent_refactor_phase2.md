@@ -210,7 +210,9 @@ StructuredPaper(
     ...
 )
 
-# FIX: Remove text_content field or check StructuredPaper schema
+# FIX: Remove the text_content="" argument from the StructuredPaper() constructor call.
+# Do NOT add text_content to the StructuredPaper dataclass — it has no meaning there.
+# The fallback code is creating a minimal StructuredPaper for display only.
 ```
 **Risk:** HIGH - This is a latent `AttributeError` that fires if session graph rebuild fallback executes.
 
@@ -241,6 +243,9 @@ print(f"ANTHROPIC_API_KEY is {'set' if os.getenv('ANTHROPIC_API_KEY') else 'not 
 
 **Commands:**
 ```bash
+# Navigate to working directory
+cd eduagent/research_assistant_agent
+
 # After fixes:
 git add src/session_manager.py src/kg_extractor.py src/research_pipeline.py
 git commit -m "Fix bugs: session_manager AttributeError, remove unused imports, remove debug prints"
@@ -295,6 +300,13 @@ mv database/enrichment/enrich_existing_papers.py scripts/database_maintenance/
 mv database/enrichment/retry_failed_papers.py scripts/database_maintenance/
 mv database/enrichment/smart_section_retry.py scripts/database_maintenance/
 
+# Also handle the log files left behind:
+mv database/enrichment/*.json scripts/database_maintenance/
+# (Moves enrichment_log.json, retry_log.json, smart_section_log.json)
+
+# Remove the now-empty folder
+rmdir database/enrichment
+
 git add database/enrichment/ scripts/
 git commit -m "Archive database enrichment scripts to scripts/database_maintenance
 
@@ -325,6 +337,7 @@ rm open_deep_research/tests/extract_langsmith_data.py
 rm research_assistant_agent/SEPARATION_README.md
 
 # If archiving:
+cd eduagent
 mkdir -p archive/2026-03-04
 mv open_deep_research/tests/extract_langsmith_data.py archive/2026-03-04/
 mv research_assistant_agent/SEPARATION_README.md archive/2026-03-04/
@@ -467,8 +480,8 @@ open_deep_research/src/open_deep_research/
 **Approach:**
 1. Create `utils/` folder
 2. Split functions by category into new files
-3. Create `utils/__init__.py` that exports everything
-4. **Update imports in `deep_researcher.py` to point to new submodules** (no shim)
+3. Create `utils/__init__.py` as package marker (empty or with version string only - NOT a re-export shim)
+4. **Update imports in `deep_researcher.py` to point to specific submodules** (e.g., `from utils.search import search_tavily`)
 5. Delete old `utils.py` file
 6. Test all search and web scraping functionality
 
@@ -745,6 +758,75 @@ See "Safety First" section at top of document for branch creation.
 - ✅ Added explicit description of what stays in app.py (~200 lines: page config, routing, imports)
 - ✅ Moved backup branch creation to top (Safety First section)
 - ✅ Each session gets its own branch (refactor-phase2-session0, session1, session2, session3)
+
+---
+
+## 💬 Staff Engineer Follow-Up Review — Round 2
+
+**Reviewer:** Staff Engineer
+**Review Date:** March 4, 2026
+
+Strong revision — all previous blockers and high-priority items resolved. Four remaining issues, all medium or low.
+
+---
+
+**1. MEDIUM: Bug fix A needs a specific action, not two options**
+
+Step 1A says: `# FIX: Remove text_content field or check StructuredPaper schema`. The word "or" leaves the engineer guessing. These are different fixes with different implications — one changes a caller, the other changes a data model shared across the codebase.
+
+The correct fix is to **remove `text_content=""` from the constructor call in `session_manager.py`**. The fallback code at line 249 is creating a minimal `StructuredPaper` for display purposes only. It doesn't need `text_content` — the field simply shouldn't be passed. Adding `text_content` to the dataclass would be the wrong fix because the field has no meaning in the rest of the codebase.
+
+Update the fix description to be explicit:
+```python
+# FIX: Remove the text_content="" argument from the StructuredPaper() constructor call.
+# Do NOT add text_content to the StructuredPaper dataclass — it has no meaning there.
+```
+
+---
+
+**2. MEDIUM: database/enrichment/ has orphaned log files after Step 3B**
+
+Step 3B moves the three Python scripts out of `database/enrichment/` into `scripts/database_maintenance/`, but the folder also contains three log files: `enrichment_log.json`, `retry_log.json`, `smart_section_log.json`. After the move, these files remain in `database/enrichment/` with their parent scripts gone. The plan needs to address them — either move them alongside the scripts, add them to `.gitignore`, or delete them. Add a line to Step 3B:
+
+```bash
+# Also handle the log files left behind:
+mv database/enrichment/*.json scripts/database_maintenance/
+# OR: rm database/enrichment/*.json  (if logs are no longer needed)
+rmdir database/enrichment  # Remove the now-empty folder
+```
+
+---
+
+**3. MEDIUM: `utils/__init__.py` "exports all" contradicts "no shim" approach**
+
+Session 3 Step 6 says: "Create `utils/__init__.py` that exports everything" — and also says "Update imports in `deep_researcher.py` directly (no backward compat shim)." These two instructions are contradictory. An `__init__.py` that re-exports everything from submodules IS the shim pattern, just placed in `__init__.py` instead of a separate file.
+
+Pick one approach and drop the other:
+
+- **Option A (recommended — clean):** `__init__.py` exists only as a package marker (empty or with a version string). Update `deep_researcher.py` to import from the specific submodule: `from utils.search import search_tavily`. This is consistent with "no shim."
+- **Option B:** `__init__.py` re-exports everything so `deep_researcher.py` doesn't need to change. But this is a shim.
+
+The Session 3 checklist already says "Update imports in deep_researcher.py directly" which implies Option A. Update the step description and `__init__.py` note to match: `__init__.py` is a package marker, not a full re-export.
+
+---
+
+**4. LOW: Working directory context missing from Step 1 and Step 4 commands**
+
+Step 1 (bug fixes) ends with:
+```bash
+git add src/session_manager.py src/kg_extractor.py src/research_pipeline.py
+```
+This assumes the engineer is in `research_assistant_agent/`. Add `cd eduagent/research_assistant_agent` before the git add.
+
+Step 4 (archive unused files) uses:
+```bash
+mkdir -p archive/2026-03-04
+```
+Without a working directory, the archive folder could land anywhere. Specify `cd eduagent` before this command so it creates `eduagent/archive/2026-03-04/` consistently.
+
+---
+
+**Summary:** Four targeted fixes needed. Once addressed, plan is ready to execute.
 
 ---
 
