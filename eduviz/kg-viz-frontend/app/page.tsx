@@ -318,6 +318,7 @@ export default function Home() {
               </div>
             </div>
 
+
             {/* CTA */}
             <div className="flex justify-center pt-8 border-t border-slate-200">
               <button
@@ -509,8 +510,8 @@ export default function Home() {
           )}
 
         {/* Center - Bubble Chart or Line Chart */}
-        <main className="flex-1 p-8 overflow-hidden bg-slate-50 relative z-10">
-          <div className="h-full bg-white border border-slate-200 rounded-xl shadow-md flex flex-col">
+        <main className={`flex-1 overflow-hidden bg-slate-50 relative z-10 ${activeView.startsWith('market-') ? 'p-0' : 'p-8'}`}>
+          <div className={`h-full bg-white flex flex-col ${activeView.startsWith('market-') ? '' : 'border border-slate-200 rounded-xl shadow-md'}`}>
             {/* Level 5 Horizontal Metadata Guide */}
             {activeView === 'level5' && level5Data && (
               <div className="border-b border-slate-200 bg-slate-50 px-6 py-4">
