@@ -9,7 +9,7 @@ from typing import Dict, Any, Optional, List
 import os
 import json
 import uuid
-from src.open_deep_research.deep_researcher import deep_researcher
+from eduagent.open_deep_research.src.deep_researcher import deep_researcher
 from langchain_core.messages import BaseMessage
 
 def serialize_value(obj):
