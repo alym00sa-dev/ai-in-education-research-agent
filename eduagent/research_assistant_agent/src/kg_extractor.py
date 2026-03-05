@@ -1,6 +1,5 @@
 """Knowledge graph extraction from research papers."""
 import os
-import re
 import json
 from typing import List, Dict, Any, Optional
 from dataclasses import dataclass
@@ -65,11 +64,7 @@ class KGExtractor:
         # Use Anthropic Claude for better structured extraction
         from anthropic import Anthropic
 
-        # Get API key with debugging
         anthropic_api_key = os.getenv("ANTHROPIC_API_KEY")
-        print(f"DEBUG: ANTHROPIC_API_KEY found: {bool(anthropic_api_key)}")
-        print(f"DEBUG: .env file path: {env_file}")
-        print(f"DEBUG: .env file exists: {os.path.exists(env_file)}")
 
         if not anthropic_api_key:
             # Try one more time with explicit read

@@ -246,7 +246,6 @@ class SessionManager:
                         url=p.get("url", ""),
                         year=None,
                         venue=None,
-                        text_content="",
                         population=None,
                         user_type=None,
                         study_design=None,

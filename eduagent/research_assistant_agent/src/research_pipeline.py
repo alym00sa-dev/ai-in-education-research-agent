@@ -1,5 +1,6 @@
 """Research pipeline integrating Open Deep Research with Knowledge Graph extraction."""
 import os
+import re
 import json
 import httpx
 from typing import Dict, Any, List
@@ -384,7 +385,6 @@ class ResearchPipeline:
         for note in raw_notes:
             if isinstance(note, str):
                 # Look for URLs in notes
-                import re
                 urls = re.findall(r'https?://[^\s\)"\]>]+', note)
                 for url in urls:
                     sources.append({
@@ -393,7 +393,6 @@ class ResearchPipeline:
                     })
 
         # Also extract URLs directly from report
-        import re
         urls = re.findall(r'https?://[^\s\)"\]>]+', report)
         for url in urls:
             if not any(s['url'] == url for s in sources):
