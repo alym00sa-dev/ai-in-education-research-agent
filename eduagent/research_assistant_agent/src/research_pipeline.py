@@ -2,6 +2,7 @@
 import os
 import re
 import json
+import asyncio
 import httpx
 from typing import Dict, Any, List
 from dotenv import load_dotenv
@@ -438,8 +439,6 @@ class SyncResearchPipeline:
         Returns:
             Dictionary with research results and graph data
         """
-        import asyncio
-
         # Run async function in event loop
         try:
             loop = asyncio.get_event_loop()

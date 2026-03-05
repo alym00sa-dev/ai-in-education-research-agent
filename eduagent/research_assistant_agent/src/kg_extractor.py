@@ -1,6 +1,7 @@
 """Knowledge graph extraction from research papers."""
 import os
 import json
+import traceback
 from typing import List, Dict, Any, Optional
 from dataclasses import dataclass
 from datetime import datetime
@@ -52,7 +53,6 @@ class KGExtractor:
         load_dotenv()
 
         # Also try loading from parent directory
-        import os.path
         current_dir = os.path.dirname(os.path.abspath(__file__))
         parent_dir = os.path.dirname(current_dir)
         env_file = os.path.join(parent_dir, '.env')
@@ -512,7 +512,6 @@ class KGExtractor:
                     print(f"  ✅ Added to Neo4j: {paper.title[:60]}")
 
                 except Exception as e:
-                    import traceback
                     print(f"  ❌ Failed to add {paper.title[:60]}: {e}")
                     print(f"     Error type: {type(e).__name__}")
                     print(f"     Traceback: {traceback.format_exc()}")

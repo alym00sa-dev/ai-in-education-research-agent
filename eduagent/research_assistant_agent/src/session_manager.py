@@ -1,5 +1,6 @@
 """Session management for research chats."""
 import uuid
+import json
 from datetime import datetime
 from typing import List, Dict, Optional, Any
 from dataclasses import dataclass, asdict
@@ -151,7 +152,6 @@ class SessionManager:
 
     def update_session_graph_data(self, session_id: str, graph_data: Dict[str, Any]):
         """Update the graph visualization data for a session."""
-        import json
         graph_data_json = json.dumps(graph_data)
         with self.conn.driver.session(database=self.conn.database) as db_session:
             db_session.run(
@@ -213,7 +213,6 @@ class SessionManager:
 
     def get_session_graph(self, session_id: str) -> Dict[str, Any]:
         """Get the complete knowledge graph for a session from stored graph_data."""
-        import json
         with self.conn.driver.session(database=self.conn.database) as db_session:
             # Retrieve the stored graph_data_json from the Session node
             result = db_session.run(
