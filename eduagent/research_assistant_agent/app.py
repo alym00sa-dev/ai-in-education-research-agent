@@ -56,5 +56,6 @@ if st.session_state.db_initialized is None:
 # Navigation
 page = st.navigation([
     st.Page("pages/research_agent.py", title="EDU Research Agent", icon="📚"),
+    st.Page("pages/placeholder.py", title="Extra Page - Ignore", icon="🚧"),
 ])
 page.run()
