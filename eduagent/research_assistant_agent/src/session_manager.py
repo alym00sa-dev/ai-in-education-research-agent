@@ -233,7 +233,7 @@ class SessionManager:
                     return {"nodes": [], "edges": []}
 
                 # Import the builder function
-                from src.research_pipeline import build_graph_data_from_papers
+                from src.pipeline.orchestrator import _build_graph_data as build_graph_data_from_papers
                 from src.kg_extractor import StructuredPaper
 
                 # Convert paper dicts to StructuredPaper objects
