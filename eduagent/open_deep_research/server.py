@@ -7,8 +7,13 @@ from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
 from typing import Dict, Any, Optional, List
 import os
+import sys
 import json
 import uuid
+
+# Add src/ to path so bare imports (from configuration import ...) resolve correctly
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "src"))
+
 from src.deep_researcher import deep_researcher
 from langchain_core.messages import BaseMessage
 
