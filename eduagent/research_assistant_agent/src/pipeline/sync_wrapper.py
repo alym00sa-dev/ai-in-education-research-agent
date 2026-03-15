@@ -63,6 +63,7 @@ class SyncResearchPipeline:
         search_depth: str = "standard",
         clarification_answer: Optional[str] = None,
         skip_clarification: bool = False,
+        max_sources: int = 20,
     ) -> Generator[StreamEvent, None, None]:
         """Synchronous generator that yields StreamEvent dicts in real time.
 
@@ -86,6 +87,7 @@ class SyncResearchPipeline:
                         langgraph_url=langgraph_url,
                         clarification_answer=clarification_answer,
                         skip_clarification=skip_clarification,
+                        max_sources=max_sources,
                     ):
                         event_queue.put(event)
                 except Exception as exc:
@@ -113,12 +115,14 @@ class SyncResearchPipeline:
         session,
         research_summary: str,
         sources: List[Dict],
+        audit_data: Optional[Dict] = None,
     ) -> Dict[str, Any]:
         """Run post-processing (extract, persist, return) after streaming completes."""
         return self._run(self.pipeline.finalize_streamed_research(
             session=session,
             research_summary=research_summary,
             sources=sources,
+            audit_data=audit_data,
         ))
 
     def create_session(self, query: str, model_provider: str, search_depth: str, focus_area: str = "all"):

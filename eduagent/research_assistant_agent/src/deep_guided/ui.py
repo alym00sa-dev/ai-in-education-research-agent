@@ -9,7 +9,7 @@ from src.deep_guided.pdf_ingester import extract_text_from_bytes
 
 _agent = GoalAgent()
 
-_DG_STEPS = ["Goals", "Config", "Codebook", "Sources", "Review", "Research", "Results"]
+_DG_STEPS = ["Vision", "Config", "Codebook", "Sources", "Review", "Research", "Results"]
 
 _MODEL_OPTIONS = {
     "Claude Sonnet 4.5": "anthropic:claude-sonnet-4-5",
@@ -45,6 +45,7 @@ _DOMAIN_OPTIONS = [
 def _init_dg_state():
     defaults = {
         "dg_step": 1,
+        "dg_vision_text": "",
         "dg_chat_history": [],
         "dg_proposed_goals": [],
         "dg_goals": [],
@@ -82,77 +83,38 @@ def render_dg_progress(step: int):
     )
 
 
-# ── Step 1: Goal Discovery Chat ────────────────────────────────────────────────
+# ── Step 1: Vision ─────────────────────────────────────────────────────────────
 
 def _step1_goal_chat():
+    selected = st.selectbox(
+        "Model",
+        list(_MODEL_OPTIONS.keys()),
+        index=list(_MODEL_OPTIONS.keys()).index("GPT 4.1"),
+        key="dg_model_selector",
+    )
+    st.session_state.dg_model = _MODEL_OPTIONS[selected]
 
-    # Render chat history
-    for msg in st.session_state.dg_chat_history:
-        with st.chat_message(msg["role"]):
-            st.markdown(msg["content"])
+    vision = st.text_area(
+        "Describe your research vision",
+        value=st.session_state.dg_vision_text,
+        height=280,
+        placeholder=(
+            "Describe your broad research intent — what are you trying to understand, "
+            "decide, or build toward? Be as specific or open-ended as you like."
+        ),
+        label_visibility="collapsed",
+    )
 
-    # If goals have been proposed, show the accept/edit UI
-    if st.session_state.dg_proposed_goals:
-        st.markdown("---")
-        st.markdown("**Proposed Research Goals**")
-        st.caption("Edit any goal below, then accept to proceed.")
-
-        edited_goals = []
-        for i, goal in enumerate(st.session_state.dg_proposed_goals):
-            edited = st.text_input(f"Goal {i + 1}", value=goal, key=f"dg_goal_edit_{i}")
-            edited_goals.append(edited)
-
-        col1, col2 = st.columns(2)
-        with col1:
-            if st.button("↩ Keep chatting", use_container_width=True):
-                st.session_state.dg_proposed_goals = []
-                st.rerun()
-        with col2:
-            if st.button("Accept Goals →", type="primary", use_container_width=True):
-                st.session_state.dg_goals = [
-                    ResearchGoal.new(g.strip()) for g in edited_goals if g.strip()
-                ]
+    _, col_btn = st.columns([3, 1])
+    with col_btn:
+        if st.button("Continue →", type="primary", use_container_width=True, key="dg_vision_next"):
+            if vision.strip():
+                st.session_state.dg_vision_text = vision.strip()
+                st.session_state.dg_goals = [ResearchGoal.new(vision.strip())]
                 st.session_state.dg_step = 2
                 st.rerun()
-        return
-
-    # Spacer: fills remaining viewport when no messages, pushing selector to bottom
-    if not st.session_state.dg_chat_history and not st.session_state.dg_proposed_goals:
-        st.markdown(
-            "<div style='height:calc(100vh - 620px)'></div>",
-            unsafe_allow_html=True,
-        )
-
-    # Model selector — tight row just above the chat input
-    col_model, _ = st.columns([2, 5])
-    with col_model:
-        selected = st.selectbox(
-            "Model", list(_MODEL_OPTIONS.keys()), index=0,
-            key="dg_model_selector", label_visibility="collapsed",
-        )
-        st.session_state.dg_model = _MODEL_OPTIONS[selected]
-
-    # Chat input
-    if prompt := st.chat_input("Describe your research intent..."):
-        with st.chat_message("user"):
-            st.markdown(prompt)
-
-        with st.chat_message("assistant"):
-            with st.spinner("Thinking..."):
-                response = _agent.chat_turn(
-                    history=st.session_state.dg_chat_history,
-                    user_message=prompt,
-                    model_provider=st.session_state.dg_model,
-                )
-            st.markdown(response)
-
-        st.session_state.dg_chat_history.append({"role": "user", "content": prompt})
-        st.session_state.dg_chat_history.append({"role": "assistant", "content": response})
-
-        proposed = _agent.parse_proposed_goals(response)
-        if proposed:
-            st.session_state.dg_proposed_goals = proposed
-            st.rerun()
+            else:
+                st.error("Please describe your research vision before continuing.")
 
 
 # ── Step 2: Tech Config ────────────────────────────────────────────────────────

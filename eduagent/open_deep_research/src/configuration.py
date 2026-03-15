@@ -117,6 +117,19 @@ class Configuration(BaseModel):
             }
         }
     )
+    max_sources: int = Field(
+        default=30,
+        metadata={
+            "x_oap_ui_config": {
+                "type": "slider",
+                "default": 30,
+                "min": 20,
+                "max": 50,
+                "step": 1,
+                "description": "Maximum number of sources to extract and surface in the final report."
+            }
+        }
+    )
     # Model Configuration
     summarization_model: str = Field(
         default="openai:gpt-4.1-mini",

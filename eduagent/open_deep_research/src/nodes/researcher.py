@@ -1,17 +1,22 @@
 """Researcher nodes — individual researcher subgraph for conducting focused research."""
 
 import asyncio
+import json
+import os
 from typing import Literal
 
+from langchain.chat_models import init_chat_model
 from langchain_core.messages import HumanMessage, SystemMessage, ToolMessage, filter_messages
 from langchain_core.runnables import RunnableConfig
 from langgraph.graph import END, START, StateGraph
 from langgraph.types import Command
+from pydantic import BaseModel
 
 from configuration import Configuration
 from prompts import (
     compress_research_simple_human_message,
     compress_research_system_prompt,
+    critique_agent_prompt,
     research_system_prompt,
 )
 from state import ResearchComplete, ResearcherOutputState, ResearcherState
@@ -25,6 +30,13 @@ from utils.llm import (
     remove_up_to_last_ai_message,
 )
 from utils.search import get_all_tools
+
+
+class CritiqueDecision(BaseModel):
+    decision: Literal["PASS", "NEEDS_WORK"]
+    evidence_rungs_found: list
+    gap_summary: str
+    search_directive: str
 
 
 async def researcher(
@@ -53,11 +65,18 @@ async def researcher(
             "search API or add MCP tools to your configuration."
         )
 
+    research_topic = state.get("research_topic", "")
+    researcher_tag = f"researcher_topic:{research_topic}" if research_topic else ""
+
+    researcher_tags = ["langsmith:nostream"]
+    if researcher_tag:
+        researcher_tags.append(researcher_tag)
+
     research_model_config = {
         "model": configurable.research_model,
         "max_tokens": configurable.research_model_max_tokens,
         "api_key": get_api_key_for_model(configurable.research_model, config),
-        "tags": ["langsmith:nostream"]
+        "tags": researcher_tags,
     }
 
     researcher_prompt = research_system_prompt.format(
@@ -128,10 +147,16 @@ async def researcher_tools(
     }
 
     tool_calls = most_recent_message.tool_calls
-    tool_execution_tasks = [
-        execute_tool_safely(tools_by_name[tool_call["name"]], tool_call["args"], config)
-        for tool_call in tool_calls
-    ]
+    tool_execution_tasks = []
+    for tool_call in tool_calls:
+        args = dict(tool_call["args"])
+        # Inject max_results for Tavily (InjectedToolArg default=5 is never set otherwise).
+        # Scale per-query results off max_sources: floor(max_sources/3), capped at Tavily's max of 10.
+        if tool_call["name"] == "tavily_search":
+            args["max_results"] = max(5, min(10, configurable.max_sources // 3))
+        tool_execution_tasks.append(
+            execute_tool_safely(tools_by_name[tool_call["name"]], args, config)
+        )
     observations = await asyncio.gather(*tool_execution_tasks)
 
     tool_outputs = [
@@ -151,13 +176,89 @@ async def researcher_tools(
 
     if exceeded_iterations or research_complete_called:
         return Command(
-            goto="compress_research",
+            goto="critique_agent",
             update={"researcher_messages": tool_outputs}
         )
 
     return Command(
         goto="researcher",
         update={"researcher_messages": tool_outputs}
+    )
+
+
+async def critique_agent(
+    state: ResearcherState,
+    config: RunnableConfig,
+) -> Command[Literal["researcher", "compress_research"]]:
+    """Critique the sub-researcher's findings and decide whether to request a targeted follow-up.
+
+    Uses Claude Haiku (always, regardless of main model choice) to evaluate evidence quality
+    against the Evidence Ladder. Returns PASS → compress_research or NEEDS_WORK → researcher
+    with a specific gap-fill instruction. Hard cap of 2 critique cycles.
+
+    Args:
+        state: Current researcher state with accumulated messages and critique cycle count
+        config: Runtime configuration
+
+    Returns:
+        Command to compress_research (pass) or researcher (needs_work, cycles < 2)
+    """
+    critique_cycles = state.get("critique_cycles", 0)
+
+    # Hard cap — never loop more than twice
+    if critique_cycles >= 2:
+        return Command(goto="compress_research", update={})
+
+    researcher_messages = state.get("researcher_messages", [])
+    research_topic = state.get("research_topic", "")
+
+    # Build a findings summary from tool outputs (ToolMessages) — cap at 12k chars
+    tool_outputs = [
+        msg.content for msg in researcher_messages
+        if hasattr(msg, "type") and msg.type == "tool"
+    ]
+    findings_summary = "\n\n".join(str(t) for t in tool_outputs)
+    if len(findings_summary) > 12000:
+        findings_summary = findings_summary[:12000] + "\n[truncated for brevity]"
+
+    if not findings_summary.strip():
+        return Command(goto="compress_research", update={})
+
+    prompt = critique_agent_prompt.format(
+        research_topic=research_topic,
+        findings_summary=findings_summary,
+    )
+
+    try:
+        critique_model = init_chat_model(
+            model="anthropic:claude-haiku-4-5-20251001",
+            max_tokens=512,
+            api_key=os.getenv("ANTHROPIC_API_KEY"),
+            tags=["langsmith:nostream"],
+        ).with_structured_output(CritiqueDecision)
+
+        decision: CritiqueDecision = await critique_model.ainvoke([
+            HumanMessage(content=prompt)
+        ])
+    except Exception:
+        # If critique fails for any reason, proceed to compression rather than block research
+        return Command(goto="compress_research", update={})
+
+    if decision.decision == "PASS":
+        return Command(goto="compress_research", update={})
+
+    # NEEDS_WORK — send a targeted gap-fill instruction back to the researcher
+    gap_message = HumanMessage(content=(
+        f"CRITIQUE FEEDBACK (cycle {critique_cycles + 1}/2): {decision.gap_summary}\n\n"
+        f"Please run the following targeted search to fill this gap:\n{decision.search_directive}"
+    ))
+    return Command(
+        goto="researcher",
+        update={
+            "researcher_messages": [gap_message],
+            "critique_cycles": critique_cycles + 1,
+            "tool_call_iterations": 0,  # Reset tool call counter for the follow-up round
+        },
     )
 
 
@@ -234,6 +335,7 @@ researcher_builder = StateGraph(
 
 researcher_builder.add_node("researcher", researcher)
 researcher_builder.add_node("researcher_tools", researcher_tools)
+researcher_builder.add_node("critique_agent", critique_agent)
 researcher_builder.add_node("compress_research", compress_research)
 
 researcher_builder.add_edge(START, "researcher")

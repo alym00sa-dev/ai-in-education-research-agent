@@ -21,7 +21,7 @@ from src.neo4j_config import initialize_database
 
 # Page configuration
 st.set_page_config(
-    page_title="EDU Deep Research Agent",
+    page_title="EduAgent",
     page_icon="📚",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -44,16 +44,6 @@ if 'just_completed' not in st.session_state:
     st.session_state.just_completed = False
 if 'selected_mode' not in st.session_state:
     st.session_state.selected_mode = "Default"
-if 'clarification_screen' not in st.session_state:
-    st.session_state.clarification_screen = None  # None | "loading" | "showing"
-if 'clarification_who' not in st.session_state:
-    st.session_state.clarification_who = ""
-if 'clarification_what' not in st.session_state:
-    st.session_state.clarification_what = ""
-if 'clarification_where' not in st.session_state:
-    st.session_state.clarification_where = ""
-if 'clarification_when' not in st.session_state:
-    st.session_state.clarification_when = ""
 if 'pending_query' not in st.session_state:
     st.session_state.pending_query = ""
 if 'pending_model' not in st.session_state:
@@ -68,6 +58,8 @@ if 'report_outline' not in st.session_state:
     st.session_state.report_outline = ""
 if 'selected_columns' not in st.session_state:
     st.session_state.selected_columns = None
+if 'pending_custom_columns' not in st.session_state:
+    st.session_state.pending_custom_columns = []
 if 'db_initialized' not in st.session_state:
     st.session_state.db_initialized = None  # None = not yet attempted
 
@@ -81,7 +73,7 @@ if st.session_state.db_initialized is None:
 
 # Navigation
 page = st.navigation([
-    st.Page("pages/research_agent.py", title="EDU Research Agent", icon="📚"),
+    st.Page("pages/research_agent.py", title="EduAgent", icon="📚"),
     st.Page("pages/placeholder.py", title="Extra Page - Ignore", icon="🚧"),
 ])
 page.run()

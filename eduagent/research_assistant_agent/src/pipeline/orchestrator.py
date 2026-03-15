@@ -12,6 +12,7 @@ from src.pipeline.prompts import OUTLINE_PROMPT, CLARIFY_PROMPT
 from src.pipeline.langgraph_client import call_open_deep_research
 from src.session_manager import SessionManager
 from src.kg_extractor import KGExtractor, StructuredPaper
+from src.audit_writer import write_session_audit
 
 
 def _build_graph_data(structured_papers: List[StructuredPaper]) -> Dict[str, Any]:
@@ -136,11 +137,22 @@ class ResearchPipeline:
         session,
         research_summary: str,
         sources: List[Dict],
+        audit_data: Optional[Dict[str, Any]] = None,
     ) -> Dict[str, Any]:
         """Post-processing after streaming completes (extract, persist, return)."""
-        return await self._finalize(session, research_summary, sources)
+        return await self._finalize(session, research_summary, sources, audit_data=audit_data)
 
-    async def _finalize(self, session, research_summary: str, sources: List[Dict]) -> Dict[str, Any]:
+    async def _finalize(
+        self,
+        session,
+        research_summary: str,
+        sources: List[Dict],
+        audit_data: Optional[Dict[str, Any]] = None,
+    ) -> Dict[str, Any]:
+        # Always save the report text first so sidebar reloads work even if paper extraction fails.
+        if research_summary:
+            self.session_manager.update_session_report(session_id=session.session_id, research_report=research_summary)
+
         papers = self.kg_extractor.extract_papers_from_sources(sources)
         if not papers:
             return self._empty_result(session, research_summary)
@@ -151,35 +163,59 @@ class ResearchPipeline:
 
         added_count = self.kg_extractor.add_to_neo4j(papers=structured_papers, session_id=session.session_id)
         self.session_manager.update_session_paper_count(session_id=session.session_id, count=added_count)
-        self.session_manager.update_session_report(session_id=session.session_id, research_report=research_summary)
 
         graph_data = _build_graph_data(structured_papers)
         self.session_manager.update_session_graph_data(session_id=session.session_id, graph_data=graph_data)
 
+        structured_papers_dicts = [
+            {
+                "title": p.title,
+                "url": p.url,
+                "year": p.year,
+                "venue": p.venue,
+                "population": p.population,
+                "user_type": p.user_type,
+                "study_design": p.study_design,
+                "objective": p.implementation_objective,
+                "outcome": p.outcome,
+                "finding_direction": (p.empirical_finding or {}).get("direction", ""),
+                "finding_summary": (p.empirical_finding or {}).get("results_summary", ""),
+                "measure": (p.empirical_finding or {}).get("measure", ""),
+                "study_size": (p.empirical_finding or {}).get("study_size"),
+                "effect_size": (p.empirical_finding or {}).get("effect_size"),
+                "confidence_interval": (p.empirical_finding or {}).get("confidence_interval", ""),
+                "std_deviation": (p.empirical_finding or {}).get("std_deviation", ""),
+            }
+            for p in structured_papers
+        ]
+
+        # Write session audit JSON
+        try:
+            query = getattr(session, "query", "") or (session.to_dict() or {}).get("query", "")
+            write_session_audit(
+                session_id=session.session_id,
+                query=query,
+                research_summary=research_summary,
+                sources=sources,
+                structured_papers=structured_papers_dicts,
+                audit_data=audit_data,
+            )
+        except Exception:
+            pass  # Audit write failure must never block the main result
+
+        _ad = audit_data or {}
         return {
             "session": session.to_dict(),
             "research_summary": research_summary,
             "papers_added": added_count,
-            "structured_papers": [
-                {
-                    "title": p.title,
-                    "url": p.url,
-                    "year": p.year,
-                    "venue": p.venue,
-                    "population": p.population,
-                    "user_type": p.user_type,
-                    "study_design": p.study_design,
-                    "objective": p.implementation_objective,
-                    "outcome": p.outcome,
-                    "finding_direction": (p.empirical_finding or {}).get("direction", ""),
-                    "finding_summary": (p.empirical_finding or {}).get("results_summary", ""),
-                    "measure": (p.empirical_finding or {}).get("measure", ""),
-                    "study_size": (p.empirical_finding or {}).get("study_size"),
-                    "effect_size": (p.empirical_finding or {}).get("effect_size"),
-                }
-                for p in structured_papers
-            ],
+            "structured_papers": structured_papers_dicts,
             "graph_data": graph_data,
+            # Quality assessment fields from LangGraph nodes
+            "qa_assessment": _ad.get("qa_assessment"),
+            "extraction_table": _ad.get("extraction_table"),
+            "swanson_hypotheses": _ad.get("swanson_hypotheses"),
+            "causality_diagram": _ad.get("causality_diagram"),
+            "sub_researcher_notes": _ad.get("notes", []),
         }
 
     def _empty_result(self, session, research_summary: str) -> Dict[str, Any]:

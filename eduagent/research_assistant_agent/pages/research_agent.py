@@ -3,9 +3,10 @@ import base64
 from datetime import datetime
 
 import streamlit as st
+import streamlit.components.v1 as _components
 
-from src.exports import export_audit_log_as_json, export_report_as_docx
-from src.deep_guided.ui import render_deep_guided, render_dg_progress
+from src.exports import export_report_as_docx, export_session_as_json
+from src.audit_writer import load_session_audit
 
 # ── Constants ─────────────────────────────────────────────────────────────────
 
@@ -19,38 +20,46 @@ PRESET_QUERIES = {
 }
 
 AVAILABLE_MODELS = {
+    "Claude Sonnet 4.6": "anthropic:claude-sonnet-4-6",
+    "Claude Opus 4.6": "anthropic:claude-opus-4-6",
+    "Claude Haiku 4.5": "anthropic:claude-haiku-4-5-20251001",
     "Claude Sonnet 4.5": "anthropic:claude-sonnet-4-5",
     "Claude Opus 4.5": "anthropic:claude-opus-4-5",
     "GPT 4o": "openai:gpt-4o",
     "GPT 4.1": "openai:gpt-4.1",
+    "GPT 5.4": "openai:gpt-5.4-2026-03-05",
     "GPT 5.2": "openai:gpt-5.2-2025-12-11",
     "GPT 5 Mini": "openai:gpt-5-mini-2025-08-07",
 }
 
 ALL_COLUMNS = [
-    {"key": "title",             "label": "Title"},
-    {"key": "year",              "label": "Year"},
-    {"key": "study_design",      "label": "Study Design"},
-    {"key": "population",        "label": "Population"},
-    {"key": "outcome",           "label": "Outcome"},
-    {"key": "measure",           "label": "Study Measure"},
-    {"key": "finding_direction", "label": "Finding Direction"},
-    {"key": "effect_size",       "label": "Effect Size"},
-    {"key": "study_size",        "label": "Study Size"},
+    {"key": "title",               "label": "Title"},
+    {"key": "year",                "label": "Year"},
+    {"key": "study_design",        "label": "Study Design"},
+    {"key": "population",          "label": "Population"},
+    {"key": "outcome",             "label": "Outcome"},
+    {"key": "measure",             "label": "Study Measure"},
+    {"key": "finding_direction",   "label": "Finding Direction"},
+    {"key": "effect_size",         "label": "Effect Size"},
+    {"key": "confidence_interval", "label": "Confidence Interval"},
+    {"key": "std_deviation",       "label": "Std. Deviation"},
+    {"key": "study_size",          "label": "Study Size"},
 ]
 DEFAULT_COLUMN_LABELS = [c["label"] for c in ALL_COLUMNS]
 
 # Maps column key → lambda that extracts the value from a paper dict
 _COL_EXTRACTORS = {
-    "title":             lambda p: p.get("title", ""),
-    "year":              lambda p: p.get("year", ""),
-    "study_design":      lambda p: p.get("study_design", ""),
-    "population":        lambda p: p.get("population", ""),
-    "outcome":           lambda p: p.get("outcome", ""),
-    "measure":           lambda p: p.get("measure", ""),
-    "finding_direction": lambda p: p.get("finding_direction", ""),
-    "effect_size":       lambda p: p.get("effect_size", ""),
-    "study_size":        lambda p: p.get("study_size", ""),
+    "title":               lambda p: p.get("title", ""),
+    "year":                lambda p: p.get("year", ""),
+    "study_design":        lambda p: p.get("study_design", ""),
+    "population":          lambda p: p.get("population", ""),
+    "outcome":             lambda p: p.get("outcome", ""),
+    "measure":             lambda p: p.get("measure", ""),
+    "finding_direction":   lambda p: p.get("finding_direction", ""),
+    "effect_size":         lambda p: p.get("effect_size", ""),
+    "confidence_interval": lambda p: p.get("confidence_interval", ""),
+    "std_deviation":       lambda p: p.get("std_deviation", ""),
+    "study_size":          lambda p: p.get("study_size", ""),
 }
 
 
@@ -65,8 +74,8 @@ def _get_base64_image(path: str) -> str:
 
 
 def render_progress_tracker(step: int):
-    """Render a 4-step inline progress tracker. step = 1..4."""
-    labels = ["Query", "Clarification", "Report Construction", "Final View"]
+    """Render a 3-step inline progress tracker. step = 1..3."""
+    labels = ["Query", "Report Construction", "Final View"]
     parts = []
     for i, label in enumerate(labels):
         n = i + 1
@@ -128,7 +137,7 @@ def render_sidebar():
                 unsafe_allow_html=True,
             )
 
-        if not st.session_state.db_initialized:
+        if not st.session_state.get("db_initialized"):
             st.warning("Could not connect to Neo4j database. Research features will be limited.")
 
         if st.button("+ New Chat", use_container_width=True, type="primary"):
@@ -136,7 +145,6 @@ def render_sidebar():
             st.session_state.research_results = None
             st.session_state.query_text = ""
             st.session_state.just_completed = False
-            st.session_state.clarification_screen = None
             st.session_state.construction_screen = None
             st.session_state.selected_columns = None
             st.session_state.report_outline = ""
@@ -144,14 +152,6 @@ def render_sidebar():
             st.rerun()
 
         st.write("\n\n&nbsp;\n\n", unsafe_allow_html=True)
-
-        st.session_state.selected_mode = st.selectbox(
-            "Mode",
-            options=["Default", "Deep Guided (BETA)", "Strategic Canvas (BETA)"],
-            index=["Default", "Deep Guided (BETA)", "Strategic Canvas (BETA)"].index(
-                st.session_state.selected_mode
-            ),
-        )
 
         st.info(
             "🔧 This tool is actively under development and tuning. "
@@ -190,30 +190,42 @@ def render_sidebar():
                             if full_session and full_session.research_report
                             else f"## Session: {session.query}\n\nLoaded {session.paper_count} papers."
                         )
+                        # Try to restore QA fields from local audit file
+                        audit = load_session_audit(session.session_id)
+
                         st.session_state.current_session_id = session.session_id
                         st.session_state.research_results = {
                             "session": session.to_dict(),
                             "research_summary": research_summary,
                             "papers_added": session.paper_count,
-                            "structured_papers": [
-                                {
-                                    "title": p.get("title", ""), "url": p.get("url", ""),
-                                    "year": p.get("year"), "venue": p.get("venue", ""),
-                                    "population": p.get("population", ""),
-                                    "user_type": p.get("user_type", ""),
-                                    "study_design": p.get("study_design", ""),
-                                    "objective": p.get("objective", ""), "outcome": p.get("outcome", ""),
-                                    "finding_direction": p.get("finding_direction", ""),
-                                    "finding_summary": p.get("finding_summary", ""),
-                                    "measure": p.get("measure", ""),
-                                    "study_size": p.get("study_size"),
-                                    "effect_size": p.get("effect_size"),
-                                }
-                                for p in papers
-                            ],
+                            "structured_papers": (
+                                audit.get("structured_papers")
+                                or [
+                                    {
+                                        "title": p.get("title", ""), "url": p.get("url", ""),
+                                        "year": p.get("year"), "venue": p.get("venue", ""),
+                                        "population": p.get("population", ""),
+                                        "user_type": p.get("user_type", ""),
+                                        "study_design": p.get("study_design", ""),
+                                        "objective": p.get("objective", ""), "outcome": p.get("outcome", ""),
+                                        "finding_direction": p.get("finding_direction", ""),
+                                        "finding_summary": p.get("finding_summary", ""),
+                                        "measure": p.get("measure", ""),
+                                        "study_size": p.get("study_size"),
+                                        "effect_size": p.get("effect_size"),
+                                    }
+                                    for p in papers
+                                ]
+                            ),
                             "graph_data": graph_data,
+                            # Quality Assessment fields — present for sessions that have audit files
+                            "qa_assessment": audit.get("qa_assessment"),
+                            "extraction_table": audit.get("extraction_table"),
+                            "swanson_hypotheses": audit.get("swanson_hypotheses"),
+                            "causality_diagram": audit.get("causality_diagram"),
+                            "sub_researcher_notes": audit.get("sub_researcher_notes") or [],
                         }
-                        st.session_state.stream_event_log = []
+                        st.session_state.stream_event_log = audit.get("event_log", [])
                         st.rerun()
                 with col2:
                     if st.button("×", key=f"delete_{session.session_id}",
@@ -236,9 +248,9 @@ def render_sidebar():
 
 def render_query_screen():
 
-    col1, col2 = st.columns([2, 3])
+    col1, col2, col3 = st.columns([2, 2, 2])
     with col1:
-        selected_model = st.selectbox("Model", options=list(AVAILABLE_MODELS.keys()), index=3)
+        selected_model = st.selectbox("Model", options=list(AVAILABLE_MODELS.keys()), index=8)
         model_provider = AVAILABLE_MODELS[selected_model]
     with col2:
         search_depth_label = st.selectbox(
@@ -247,6 +259,9 @@ def render_query_screen():
             index=0,
         )
         search_depth = search_depth_label.split()[0]
+    with col3:
+        max_sources = st.slider("Citation Cap", min_value=20, max_value=50, value=30, step=1)
+        st.caption("Upper limit — cite what the evidence warrants, not a target.")
 
     st.divider()
 
@@ -267,6 +282,11 @@ def render_query_screen():
         placeholder="e.g., What is the effectiveness of intelligent tutoring systems on student learning outcomes in mathematics?",
     )
 
+    keywords = st.text_input(
+        "Keywords *(separate by comma)*",
+        placeholder="e.g., intelligent tutoring, formative assessment, randomized controlled trial",
+    )
+
     _, col_btn2, __ = st.columns([1, 2, 1])
     with col_btn2:
         if st.button("Start Research", type="primary", use_container_width=True):
@@ -276,77 +296,15 @@ def render_query_screen():
                 st.session_state.pending_query = query
                 st.session_state.pending_model = model_provider
                 st.session_state.pending_search_depth = search_depth
-                st.session_state.clarification_screen = "loading"
+                st.session_state.pending_max_sources = max_sources
+                st.session_state.pending_clarification_context = (
+                    f"Keywords to search: {keywords}" if keywords.strip() else ""
+                )
+                st.session_state.construction_screen = "loading"
                 st.rerun()
 
     st.divider()
 
-
-
-# ── Screen: clarification loading ─────────────────────────────────────────────
-
-def run_clarification_loading():
-    with st.spinner("Analyzing your research question..."):
-        result = st.session_state.pipeline.get_clarification(
-            query=st.session_state.pending_query,
-            model_provider=st.session_state.pending_model,
-        )
-    st.session_state.clarification_who   = result.get("who", "")
-    st.session_state.clarification_what  = result.get("what", "")
-    st.session_state.clarification_where = result.get("where", "")
-    st.session_state.clarification_when  = result.get("when", "")
-    st.session_state.clarification_screen = "showing"
-    st.rerun()
-
-
-# ── Screen: clarification showing ─────────────────────────────────────────────
-
-def render_clarification_screen():
-    st.caption("Fill in any details to sharpen your research. Leave fields blank to keep them open-ended.")
-    st.divider()
-
-    st.markdown("**Your research question:**")
-    st.info(st.session_state.pending_query)
-    st.markdown("---")
-
-    col_a, col_b = st.columns(2)
-    with col_a:
-        who = st.text_input("Who", value=st.session_state.clarification_who,
-                            placeholder="e.g. K-12 students, classroom teachers")
-        where = st.text_input("Where", value=st.session_state.clarification_where,
-                              placeholder="e.g. U.S. public schools, rural districts")
-    with col_b:
-        what = st.text_input("What", value=st.session_state.clarification_what,
-                             placeholder="e.g. ITS effectiveness on math outcomes")
-        when = st.text_input("When", value=st.session_state.clarification_when,
-                             placeholder="e.g. last 10 years, 2015–2025")
-
-    st.markdown("---")
-    keywords = st.text_input(
-        "Keywords *(separate by comma)*",
-        placeholder="e.g. intelligent tutoring, formative assessment, randomized controlled trial",
-    )
-    st.markdown("---")
-
-    col1, col2 = st.columns(2)
-    with col1:
-        if st.button("Skip & Start Research", use_container_width=True, type="secondary"):
-            st.session_state.pending_clarification_context = ""
-            st.session_state.construction_screen = "loading"
-            st.session_state.clarification_screen = None
-            st.rerun()
-    with col2:
-        if st.button("Continue →", use_container_width=True, type="primary"):
-            parts = []
-            if who:      parts.append(f"Population/Who: {who}")
-            if what:     parts.append(f"Focus/What: {what}")
-            if where:    parts.append(f"Context/Where: {where}")
-            if when:     parts.append(f"Time period/When: {when}")
-            if keywords: parts.append(f"Keywords to search: {keywords}")
-            st.session_state.pending_clarification_context = "\n".join(parts)
-            st.session_state.clarification_screen = None
-            st.session_state.construction_screen = "loading"
-            st.rerun()
 
 
 # ── Screen: construction loading ──────────────────────────────────────────────
@@ -366,9 +324,6 @@ def run_construction_loading():
 # ── Screen: construction showing ──────────────────────────────────────────────
 
 def render_construction_screen():
-    st.caption("Review and edit the suggested report outline, then choose which data to extract.")
-    st.divider()
-
     st.markdown("**Report Outline**")
     st.caption("Edit the structure below to guide how your final report is organized.")
     outline = st.text_area("outline", value=st.session_state.report_outline,
@@ -382,9 +337,42 @@ def render_construction_screen():
         default=DEFAULT_COLUMN_LABELS, label_visibility="collapsed",
     )
 
+    st.markdown("**Custom Columns** *(optional)*")
+    st.caption("Add a column the standard set doesn't cover. Be specific in the extraction instruction so the model knows what to look for.")
+
+    # Render existing custom columns with remove buttons
+    for idx, col in enumerate(st.session_state.pending_custom_columns):
+        c1, c2, c3 = st.columns([3, 5, 1])
+        with c1:
+            st.markdown(f"**{col['label']}**")
+        with c2:
+            st.caption(col["instruction"])
+        with c3:
+            if st.button("✕", key=f"rm_col_{idx}"):
+                st.session_state.pending_custom_columns.pop(idx)
+                st.rerun()
+
+    with st.expander("+ Add custom column"):
+        ca, cb = st.columns([2, 4])
+        with ca:
+            new_col_label = st.text_input("Column name", placeholder="e.g. Implementation Cost", key="new_col_label")
+        with cb:
+            new_col_instruction = st.text_input(
+                "Extraction instruction",
+                placeholder="e.g. What does the paper say about cost or resource requirements?",
+                key="new_col_instruction",
+            )
+        if st.button("+ Add", key="add_custom_col"):
+            if new_col_label.strip() and new_col_instruction.strip():
+                st.session_state.pending_custom_columns.append({
+                    "label": new_col_label.strip(),
+                    "instruction": new_col_instruction.strip(),
+                })
+                st.rerun()
+
     st.markdown("---")
-    _, col2 = st.columns(2)
-    with col2:
+    col_l, col_btn, col_r = st.columns([1, 2, 1])
+    with col_btn:
         if st.button("Start Research →", use_container_width=True, type="primary"):
             st.session_state.report_outline = outline
             st.session_state.selected_columns = [c for c in ALL_COLUMNS if c["label"] in selected_labels]
@@ -396,6 +384,14 @@ def render_construction_screen():
                     if clarification_answer
                     else "Report outline:\n" + outline.strip()
                 )
+
+            # Append custom column instructions so the pipeline knows what to extract
+            if st.session_state.pending_custom_columns:
+                custom_block = "\n\nCustom data extraction columns:\n" + "\n".join(
+                    f"- {c['label']}: {c['instruction']}"
+                    for c in st.session_state.pending_custom_columns
+                )
+                clarification_answer = (clarification_answer or "") + custom_block
 
             # Create session up front so we can reference it during streaming
             session = st.session_state.pipeline.create_session(
@@ -424,10 +420,13 @@ def render_streaming_screen():
     system_setup: list = []
     system_done: bool = False
 
-    # sub_researchers: [{topic, thoughts, done}]
-    # thoughts = first-person reflections from think_tool during research
+    # sub_researchers: [{topic, done}]  — thoughts are in the flat log, not per-researcher
     sub_researchers: list = []
     done_researcher_count: int = 0  # tracks compress_research ends
+
+    # flat_thoughts: unified log across all researchers
+    # each entry: {"label": str, "content": str, "is_critique": bool}
+    flat_thoughts: list = []
 
     # final report
     final_tokens: str = ""
@@ -471,27 +470,63 @@ def render_streaming_screen():
                 if not system_done:
                     st.caption("Planning research strategy...")
 
-            # ── Sub-researchers ───────────────────────────────────────────
-            for i, r in enumerate(sub_researchers):
-                is_active = not r["done"]
-                icon = "⏳" if is_active else "✅"
-                short_topic = r["topic"][:80] + "..." if len(r["topic"]) > 80 else r["topic"]
-                with st.expander(f"{icon} Deep Research: {short_topic}", expanded=is_active):
+            # ── Sub-researchers — topic pills only, no individual thought lists ──
+            if sub_researchers:
+                for i, r in enumerate(sub_researchers):
+                    is_active = not r["done"]
+                    icon = "⏳" if is_active else "✅"
+                    status_text = "Searching and synthesizing..." if is_active else "Research complete"
                     st.markdown(
-                        _thought_block(f"I'm investigating: <em>{r['topic']}</em>"),
+                        f"<div style='display:flex;align-items:flex-start;gap:0.5rem;"
+                        f"padding:0.5rem 0.75rem;margin-bottom:0.4rem;"
+                        f"border-radius:6px;background:{'#f0fdf4' if not is_active else '#f0f4ff'};"
+                        f"border:1px solid {'#bbf7d0' if not is_active else '#bfdbfe'}'>"
+                        f"<span style='font-size:0.85rem;margin-top:0.05rem'>{icon}</span>"
+                        f"<div style='flex:1'>"
+                        f"<div style='font-size:0.8rem;font-weight:600;color:#111827;"
+                        f"white-space:normal;word-break:break-word'>{r['topic']}</div>"
+                        f"<div style='font-size:0.7rem;color:#6b7280'>{status_text}</div>"
+                        f"</div></div>",
                         unsafe_allow_html=True,
                     )
-                    for t in r["thoughts"]:
-                        st.markdown(_thought_block(t), unsafe_allow_html=True)
-                    if is_active:
-                        st.caption("Searching and synthesizing sources...")
-                    else:
-                        st.caption("✓ Research complete.")
+
+            # ── Flat research thought log ─────────────────────────────────
+            if flat_thoughts or sub_researchers:
+                thoughts_label = "⏳ Research Thoughts" if any(not r["done"] for r in sub_researchers) else "✅ Research Thoughts"
+                with st.expander(thoughts_label, expanded=True):
+                    if not flat_thoughts:
+                        st.caption("Thoughts will appear here as researchers work...")
+                    for entry in flat_thoughts:
+                        if entry.get("is_critique"):
+                            st.markdown(
+                                f"<div style='color:#7c3aed;font-style:italic;font-size:0.82rem;"
+                                f"border-left:2px solid #a78bfa;padding-left:0.75rem;"
+                                f"margin-bottom:0.4rem'>"
+                                f"<strong>Critique [{entry['label']}]:</strong> {entry['content']}</div>",
+                                unsafe_allow_html=True,
+                            )
+                        else:
+                            label_html = (
+                                f"<span style='font-size:0.7rem;font-weight:600;color:#6b7280;"
+                                f"text-transform:uppercase;letter-spacing:0.04em'>{entry['label']}</span><br>"
+                                if entry.get("label") else ""
+                            )
+                            st.markdown(
+                                f"<div style='color:#374151;font-style:italic;font-size:0.82rem;"
+                                f"border-left:2px solid #d1d5db;padding-left:0.75rem;"
+                                f"margin-bottom:0.4rem'>{label_html}{entry['content']}</div>",
+                                unsafe_allow_html=True,
+                            )
 
             # ── Final report ──────────────────────────────────────────────
             if current_section == "final" or final_tokens or final_status:
-                fin_label = "✅ Report Complete" if final_done else "⏳ Writing Final Report"
-                with st.expander(fin_label, expanded=not final_done):
+                if final_status:
+                    fin_label = "⏳ Saving to database..."
+                elif final_done:
+                    fin_label = "⏳ Finalizing..."
+                else:
+                    fin_label = "⏳ Writing Final Report"
+                with st.expander(fin_label, expanded=True):
                     st.markdown(
                         _thought_block("I'm synthesizing all findings into a comprehensive report."),
                         unsafe_allow_html=True,
@@ -512,6 +547,7 @@ def render_streaming_screen():
         search_depth=st.session_state.pending_search_depth,
         clarification_answer=st.session_state.pending_clarification_answer,
         skip_clarification=True,
+        max_sources=st.session_state.get("pending_max_sources", 20),
     ):
         event_log.append(event)
         etype = event["type"]
@@ -529,21 +565,30 @@ def render_streaming_screen():
             _redraw()
 
         elif etype == "thought":
-            # Route to system_setup or to the last active sub-researcher
-            active = next((r for r in reversed(sub_researchers) if not r["done"]), None)
-            if active is not None:
-                active["thoughts"].append(event["content"])
+            research_topic = (event.get("metadata") or {}).get("research_topic", "")
+            # Determine label: researcher topic if known, else "Supervisor"
+            if research_topic:
+                short = research_topic[:60] + "..." if len(research_topic) > 60 else research_topic
+                label = short
+            elif sub_researchers:
+                label = "Supervisor"
             else:
+                label = "Supervisor"
                 system_setup.append(event["content"])
+            flat_thoughts.append({"label": label, "content": event["content"], "is_critique": False})
+            _redraw()
+
+        elif etype == "critique":
+            research_topic = (event.get("metadata") or {}).get("research_topic", "")
+            short = research_topic[:60] + "..." if len(research_topic) > 60 else research_topic
+            flat_thoughts.append({"label": short or "Researcher", "content": event["content"], "is_critique": True})
             _redraw()
 
         elif etype == "sub_researcher_start":
             system_done = True
-            sub_researchers.append({
-                "topic": event["content"],
-                "thoughts": [],
-                "done": False,
-            })
+            topic = event["content"]
+            if not any(r["topic"] == topic for r in sub_researchers):
+                sub_researchers.append({"topic": topic, "done": False})
             _redraw()
 
         elif etype == "sub_researcher_done":
@@ -581,6 +626,7 @@ def render_streaming_screen():
             session=st.session_state.pending_session,
             research_summary=final_result_metadata.get("summary", accumulated_report),
             sources=final_result_metadata.get("sources", []),
+            audit_data=final_result_metadata,
         )
         if accumulated_report:
             results["research_summary"] = accumulated_report
@@ -596,25 +642,223 @@ def render_streaming_screen():
         st.session_state.research_screen = None
 
 
+# ── Quality Assessment helpers ────────────────────────────────────────────────
+
+def _confidence_badge(confidence: str) -> str:
+    color = {"Strong": "#16a34a", "Moderate": "#d97706", "Speculative": "#6b7280"}.get(confidence, "#6b7280")
+    return (
+        f"<span style='background:{color};color:#fff;font-size:0.7rem;font-weight:600;"
+        f"padding:2px 8px;border-radius:999px;letter-spacing:0.05em'>{confidence}</span>"
+    )
+
+
+def _render_hypothesis_card(h: dict, index: int):
+    confidence = h.get("confidence", "Speculative")
+    badge = _confidence_badge(confidence)
+    a, b, c = h.get("A", ""), h.get("B", ""), h.get("C", "")
+    # Handle both naming conventions the LLM might output
+    mech_ab = h.get("mechanism_AB") or h.get("A_to_B_mechanism") or ""
+    mech_bc = h.get("mechanism_BC") or h.get("B_to_C_mechanism") or ""
+    cites_ab = h.get("citations_AB") or h.get("A_to_B_citations") or []
+    cites_bc = h.get("citations_BC") or h.get("B_to_C_citations") or []
+    rationale = h.get("rationale", "")
+
+    cite_ab_str = "; ".join(str(c) for c in cites_ab) if cites_ab else "—"
+    cite_bc_str = "; ".join(str(c) for c in cites_bc) if cites_bc else "—"
+
+    chain_html = f"<strong>{a}</strong> → <strong>{b}</strong> → <strong>{c}</strong>"
+    legs_html = ""
+    if mech_ab or mech_bc:
+        legs_html = (
+            f"<div style='font-size:0.8rem;color:#6b7280;margin-top:0.4rem'>"
+            f"<em>A→B:</em> {mech_ab} <span style='color:#9ca3af'>({cite_ab_str})</span><br>"
+            f"<em>B→C:</em> {mech_bc} <span style='color:#9ca3af'>({cite_bc_str})</span>"
+            f"</div>"
+        )
+    else:
+        legs_html = (
+            f"<div style='font-size:0.8rem;color:#6b7280;margin-top:0.4rem'>"
+            f"<em>A→B citations:</em> {cite_ab_str}<br>"
+            f"<em>B→C citations:</em> {cite_bc_str}"
+            f"</div>"
+        )
+    rationale_html = (
+        f"<div style='font-size:0.78rem;color:#9ca3af;margin-top:0.4rem;font-style:italic'>{rationale}</div>"
+        if rationale else ""
+    )
+
+    st.markdown(
+        f"<div style='border:1px solid #e5e7eb;border-radius:8px;padding:1rem;"
+        f"margin-bottom:0.75rem;background:#fafafa'>"
+        f"<div style='display:flex;align-items:center;gap:0.5rem;margin-bottom:0.5rem'>"
+        f"<span style='font-weight:600;color:#111827'>Hypothesis {index + 1}</span>"
+        f"{badge}</div>"
+        f"<div style='font-size:0.9rem;color:#374151;margin-bottom:0.25rem'>{chain_html}</div>"
+        f"{legs_html}{rationale_html}"
+        f"</div>",
+        unsafe_allow_html=True,
+    )
+
+
+def _parse_note_section(note: str, header: str, stop_headers: list) -> str:
+    """Extract the content of a named section from a structured note string."""
+    if header not in note:
+        return ""
+    after = note.split(header, 1)[1]
+    for stop in stop_headers:
+        if stop in after:
+            after = after.split(stop, 1)[0]
+    return after.strip()
+
+
+def _render_source_log(notes: list):
+    if not notes:
+        st.info("No source log available — this session predates the structured note format.")
+        return
+
+    included_all = []
+    excluded_all = []
+
+    for note in notes:
+        inc = _parse_note_section(note, "### SOURCES USED", ["### SOURCES EXCLUDED", "### MECHANISMS"])
+        exc = _parse_note_section(note, "### SOURCES EXCLUDED", ["### MECHANISMS"])
+        if inc:
+            included_all.append(inc)
+        if exc:
+            excluded_all.append(exc)
+
+    st.markdown(
+        "<div style='font-weight:600;color:#16a34a;margin-bottom:0.5rem'>"
+        "✓ Included Sources</div>",
+        unsafe_allow_html=True,
+    )
+    if included_all:
+        for block in included_all:
+            st.markdown(block)
+    else:
+        st.caption("No inclusion data available.")
+
+    st.markdown("---")
+
+    st.markdown(
+        "<div style='font-weight:600;color:#dc2626;margin-bottom:0.5rem'>"
+        "✗ Excluded Sources</div>",
+        unsafe_allow_html=True,
+    )
+    if excluded_all:
+        for block in excluded_all:
+            st.markdown(block)
+    else:
+        st.caption("No exclusion data available.")
+
+
+def _render_quality_assessment_tab(results: dict):
+    qa_assessment = results.get("qa_assessment")
+    notes = results.get("sub_researcher_notes") or []
+
+    # ── Coverage Assessment ───────────────────────────────────────────────
+    st.markdown("### Coverage Assessment")
+    if qa_assessment:
+        st.markdown(qa_assessment)
+    else:
+        st.info("No coverage assessment available for this session.")
+
+    st.divider()
+
+    # ── Source Inclusion / Exclusion Log ─────────────────────────────────
+    st.markdown("### Source Inclusion Log")
+    st.caption("Compiled from sub-researcher structured outputs. Included = passed relevance and quality gates. Excluded = filtered out with reason.")
+    _render_source_log(notes)
+
+
 # ── Results view (Final View) ─────────────────────────────────────────────────
 
+def _render_report_section2(results: dict):
+    """Render Section 2 as side-by-side hypothesis cards + interactive Mermaid diagram."""
+    swanson_hypotheses = results.get("swanson_hypotheses") or []
+    causality_diagram = results.get("causality_diagram") or ""
+
+    col_hyp, col_diag = st.columns([1, 1])
+
+    with col_hyp:
+        st.markdown("### Novel Hypotheses")
+        st.caption("Surfaced via Swanson ABC chaining — novel A→C connections not explicitly stated in any single source.")
+        if swanson_hypotheses:
+            for idx, h in enumerate(swanson_hypotheses):
+                _render_hypothesis_card(h, idx)
+        else:
+            st.info("No novel hypotheses were identified for this session.")
+
+    with col_diag:
+        st.markdown("### Causality Diagram")
+        st.caption("Copy the block below and paste into [mermaid.live](https://mermaid.live) to render interactively.")
+        if causality_diagram and "graph" in causality_diagram:
+            raw = causality_diagram
+            if "```mermaid" in raw:
+                raw = raw.split("```mermaid", 1)[1].rsplit("```", 1)[0].strip()
+            # Fix single-% comment lines → %% (LLM sometimes outputs invalid syntax)
+            fixed_lines = []
+            for line in raw.splitlines():
+                stripped = line.lstrip()
+                if stripped.startswith("%") and not stripped.startswith("%%"):
+                    line = line.replace("%", "%%", 1)
+                fixed_lines.append(line)
+            raw = "\n".join(fixed_lines)
+            mermaid_html = f"""
+<div style="background:#fff;padding:1rem;border-radius:8px;border:1px solid #e5e7eb;overflow:auto">
+  <div class="mermaid">{raw}</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({{startOnLoad:true,theme:'default',securityLevel:'loose'}});</script>
+"""
+            _components.html(mermaid_html, height=480, scrolling=True)
+        else:
+            st.info("No causality diagram was generated for this session.")
+
+
 def _render_results(results: dict):
-    tab_report, tab_thoughts = st.tabs(["Report", "Thought Log"])
+    import re as _re
+
+    tab_report, tab_qa = st.tabs(["Report", "Quality Assessment"])
 
     with tab_report:
-        st.markdown(results["research_summary"])
+        report_text = results["research_summary"]
 
-        # ── Summary table ────────────────────────────────────────────────
+        query_title = results.get("session", {}).get("query", "")
+        if query_title:
+            st.markdown(f"# {query_title}")
+
+        # Split report at Section 2 so we can replace the raw Mermaid block
+        # with the interactive hypothesis cards + rendered diagram
+        sec2_match = _re.search(r"##\s*Section\s*2", report_text)
+        sec3_match = _re.search(r"##\s*Section\s*3", report_text)
+
+        if sec2_match and sec3_match:
+            st.markdown(report_text[: sec2_match.start()])
+            st.markdown("## Section 2 — Causality Diagram")
+            _render_report_section2(results)
+            st.markdown(report_text[sec3_match.start() :])
+            st.markdown("""
+<div style='background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:1rem 1.25rem;margin-top:1rem;font-size:0.82rem;color:#374151'>
+<strong>Source scoring uses the K-12 Evidence Framework</strong><br><br>
+<strong>Quality</strong> — evaluates research design, credibility, and relevance to U.S. K-12 contexts:<br>
+🔵 <strong>Blue</strong> — Highest quality: meta-analysis or well-designed RCT, peer-reviewed, disaggregated by race/income, representative of priority populations (Black, Latino, poverty)<br>
+🟢 <strong>Green</strong> — Moderate to strong: quasi-experimental or correlational, credible source, somewhat relevant population<br>
+🟡 <strong>Yellow</strong> — Limited or weaker: opinion/descriptive/case study, limited peer review, general or non-representative population<br>
+🔴 <strong>Red</strong> — Low or unacceptable: no credible evidence, anecdotal, conflicts of interest<br><br>
+<strong>Impact</strong> — evaluates effect size and reach for priority populations:<br>
+🔵 <strong>Blue</strong> — Medium or large impact on priority populations (Black, Latino, students in poverty)<br>
+🟢 <strong>Green</strong> — Modest impact on priority populations OR medium/large impact on general population<br>
+🟡 <strong>Yellow</strong> — Modest impact on general population, not priority populations<br>
+🔴 <strong>Red</strong> — No impact or negative impact<br><br>
+<strong>Body of Evidence Maturity:</strong>
+🔵 Mature — 🟢 Limited — 🟡 Emerging — 🔴 Early
+</div>
+""", unsafe_allow_html=True)
+        else:
+            st.markdown(report_text)
+
         papers = results.get("structured_papers", [])
-        if papers:
-            st.markdown("---")
-            st.markdown("### Summary Table")
-            columns = st.session_state.selected_columns or ALL_COLUMNS
-            rows = [
-                {c["label"]: _COL_EXTRACTORS.get(c["key"], lambda _p: "")(_p) for c in columns}
-                for _p in papers
-            ]
-            st.dataframe(rows, use_container_width=True)
 
         # ── Download buttons ─────────────────────────────────────────────
         st.markdown("---")
@@ -624,6 +868,8 @@ def _render_results(results: dict):
             research_summary=results["research_summary"],
             session_query=results.get("session", {}).get("query", "Research Report"),
             structured_papers=papers or None,
+            selected_columns=st.session_state.get("selected_columns") or None,
+            results=results,
         )
         with col_dl1:
             st.download_button(
@@ -635,73 +881,18 @@ def _render_results(results: dict):
             )
 
         event_log = st.session_state.get("stream_event_log", [])
-        audit_json = export_audit_log_as_json(event_log)
+        session_json = export_session_as_json(results=results, event_log=event_log)
         with col_dl2:
             st.download_button(
-                "⬇ Audit Trail (.json)",
-                data=audit_json,
-                file_name="audit_trail.json",
+                "⬇ Session Export (.json)",
+                data=session_json,
+                file_name="research_session.json",
                 mime="application/json",
                 use_container_width=True,
             )
 
-    with tab_thoughts:
-        event_log = st.session_state.get("stream_event_log", [])
-        if not event_log:
-            st.info("No thought log available for sessions loaded from history.")
-        else:
-            def _tblock(text):
-                return (
-                    f"<div style='color:#374151;font-style:italic;"
-                    f"border-left:2px solid #d1d5db;padding-left:0.75rem;"
-                    f"margin-bottom:0.5rem'>{text}</div>"
-                )
-
-            # Rebuild sections from event log
-            system_thoughts = []
-            researchers = []   # [{topic, thoughts}]
-            final_tokens_replay = ""
-
-            for e in event_log:
-                if e["type"] == "sub_researcher_start":
-                    researchers.append({"topic": e["content"], "thoughts": []})
-                elif e["type"] == "thought":
-                    # Assign to last undone researcher, or system if none started
-                    if researchers:
-                        researchers[-1]["thoughts"].append(e["content"])
-                    else:
-                        system_thoughts.append(e["content"])
-                elif e["type"] == "token":
-                    final_tokens_replay += e["content"]
-
-            # ── System Setup ──────────────────────────────────────────────
-            with st.expander("✅ System Setup", expanded=True):
-                st.markdown(
-                    _tblock("I analyzed your research question and prepared the research framework."),
-                    unsafe_allow_html=True,
-                )
-                for t in system_thoughts:
-                    st.markdown(_tblock(t), unsafe_allow_html=True)
-
-            # ── Deep Research sections ────────────────────────────────────
-            for i, r in enumerate(researchers):
-                short = r["topic"][:80] + "..." if len(r["topic"]) > 80 else r["topic"]
-                with st.expander(f"✅ Deep Research: {short}", expanded=False):
-                    st.markdown(
-                        _tblock(f"I investigated: <em>{r['topic']}</em>"),
-                        unsafe_allow_html=True,
-                    )
-                    for t in r["thoughts"]:
-                        st.markdown(_tblock(t), unsafe_allow_html=True)
-
-            # ── Final Report ──────────────────────────────────────────────
-            if final_tokens_replay:
-                with st.expander("✅ Final Report Written", expanded=False):
-                    st.markdown(
-                        _tblock("I synthesized all findings into a comprehensive report."),
-                        unsafe_allow_html=True,
-                    )
-                    st.markdown(final_tokens_replay)
+    with tab_qa:
+        _render_quality_assessment_tab(results)
 
 
 # ── Global styles ─────────────────────────────────────────────────────────────
@@ -732,67 +923,30 @@ if "pending_session" not in st.session_state:
 
 render_sidebar()
 
-mode = st.session_state.get("selected_mode", "Default")
+st.title("📚 EduAgent")
 
-# ── Shared header (always visible) ────────────────────────────────────────────
+st.info(
+    "Enter your research question below. Parallel sub-researchers will mine academic databases "
+    "and peer-reviewed literature, then synthesize findings into an evidence-graded report."
+)
 
-st.title("📚 EDU Deep Research Agent")
-
-_main_callouts = {
-    "Default": (
-        "Enter your research question below. The agent will clarify your scope, build a report "
-        "outline, then synthesize evidence from academic and credible sources into a structured report."
-    ),
-    "Deep Guided (BETA)": (
-        "Start by describing your broad research intent in the chat below. The advisor will ask "
-        "clarifying questions and help you develop a precise set of research goals — no research "
-        "begins until your goals are confirmed and configured."
-    ),
-    "Strategic Canvas (BETA)": (
-        "Describe a strategic challenge or goal. The agent will help you identify the research "
-        "questions that need answering and map the evidence landscape — built for discovery, "
-        "not just answers."
-    ),
-}
-st.info(_main_callouts.get(mode, ""))
-
-# Mode-appropriate progress tracker
-if mode == "Deep Guided (BETA)":
-    render_dg_progress(st.session_state.get("dg_step", 1))
-elif mode == "Strategic Canvas (BETA)":
-    pass  # tracker TBD
+if st.session_state.get("construction_screen") in ("loading", "showing"):
+    _cur_step = 2
+elif st.session_state.get("research_screen") == "streaming" or st.session_state.get("research_results"):
+    _cur_step = 3
 else:
-    if st.session_state.get("clarification_screen") in ("loading", "showing"):
-        _cur_step = 2
-    elif st.session_state.get("construction_screen") in ("loading", "showing"):
-        _cur_step = 3
-    elif st.session_state.get("research_screen") == "streaming" or st.session_state.get("research_results"):
-        _cur_step = 4
-    else:
-        _cur_step = 1
-    render_progress_tracker(_cur_step)
+    _cur_step = 1
+render_progress_tracker(_cur_step)
 
 st.divider()
 
-# ── Mode content ───────────────────────────────────────────────────────────────
-
-if mode == "Deep Guided (BETA)":
-    render_deep_guided()
-elif mode == "Strategic Canvas (BETA)":
-    st.info("Strategic Canvas mode is coming soon.")
+if st.session_state.construction_screen == "loading":
+    run_construction_loading()
+elif st.session_state.construction_screen == "showing":
+    render_construction_screen()
+elif st.session_state.research_screen == "streaming":
+    render_streaming_screen()
+elif st.session_state.research_results:
+    _render_results(st.session_state.research_results)
 else:
-    # Default mode
-    if st.session_state.clarification_screen == "loading":
-        run_clarification_loading()
-    elif st.session_state.clarification_screen == "showing":
-        render_clarification_screen()
-    elif st.session_state.construction_screen == "loading":
-        run_construction_loading()
-    elif st.session_state.construction_screen == "showing":
-        render_construction_screen()
-    elif st.session_state.research_screen == "streaming":
-        render_streaming_screen()
-    elif st.session_state.research_results:
-        _render_results(st.session_state.research_results)
-    else:
-        render_query_screen()
+    render_query_screen()

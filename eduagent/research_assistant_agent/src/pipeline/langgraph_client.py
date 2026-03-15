@@ -32,7 +32,8 @@ _IGNORED_NODES = {"__start__", "__end__", "LangGraph"}
 
 
 def _iterations_for_depth(search_depth: str) -> int:
-    return {"standard": 4, "deep": 6, "comprehensive": 8}.get(search_depth, 4)
+    # These count only ConductResearch calls (think_tool excluded from budget per supervisor prompt)
+    return {"standard": 5, "deep": 9, "comprehensive": 14}.get(search_depth, 5)
 
 
 def _build_payload(
@@ -42,6 +43,7 @@ def _build_payload(
     clarification_answer: Optional[str],
     skip_clarification: bool,
     stream_mode,
+    max_sources: int = 20,
 ) -> tuple[str, dict]:
     """Return (content_str, payload_dict)."""
     content = (
@@ -52,6 +54,7 @@ def _build_payload(
     configurable: Dict[str, Any] = {
         "research_model": model_provider,
         "max_researcher_iterations": _iterations_for_depth(search_depth),
+        "max_sources": max_sources,
     }
     if skip_clarification or clarification_answer:
         configurable["allow_clarification"] = False
@@ -74,12 +77,14 @@ async def call_open_deep_research(
     langgraph_url: str,
     clarification_answer: Optional[str] = None,
     skip_clarification: bool = False,
+    max_sources: int = 20,
 ) -> Dict[str, Any]:
     """Run the LangGraph deep-research graph and return the final result dict."""
     _, payload = _build_payload(
         query, model_provider, search_depth,
         clarification_answer, skip_clarification,
         stream_mode="values",
+        max_sources=max_sources,
     )
 
     async with httpx.AsyncClient(timeout=600.0) as client:
@@ -109,7 +114,7 @@ async def call_open_deep_research(
     if not final_state:
         raise RuntimeError("No response from LangGraph server")
 
-    return _parse_final_state(final_state)
+    return _parse_final_state(final_state, max_sources=max_sources)
 
 
 # ── Streaming call (yields StreamEvents for live UI) ──────────────────────────
@@ -121,6 +126,7 @@ async def stream_open_deep_research(
     langgraph_url: str,
     clarification_answer: Optional[str] = None,
     skip_clarification: bool = False,
+    max_sources: int = 20,
 ) -> AsyncGenerator[StreamEvent, None]:
     """Stream LangGraph events as StreamEvent dicts.
 
@@ -131,6 +137,7 @@ async def stream_open_deep_research(
         query, model_provider, search_depth,
         clarification_answer, skip_clarification,
         stream_mode=["values", "events"],
+        max_sources=max_sources,
     )
 
     async with httpx.AsyncClient(timeout=600.0) as client:
@@ -215,12 +222,58 @@ async def stream_open_deep_research(
                     elif node_name == "compress_research":
                         # A sub-researcher has finished
                         yield StreamEvent(type="sub_researcher_done", node="compress_research", content="", metadata={})
+                    elif node_name == "critique_agent":
+                        # Surface critique decision in the thought log
+                        try:
+                            output = data.get("data", {}).get("output") or {}
+                            # output is the state update dict from the Command
+                            new_msgs = output.get("researcher_messages", [])
+                            # Find the gap_message injected on NEEDS_WORK
+                            critique_msg = next(
+                                (m for m in new_msgs
+                                 if isinstance(m, dict) and "CRITIQUE FEEDBACK" in str(m.get("content", ""))),
+                                None,
+                            )
+                            research_topic = ""
+                            for tag in tags:
+                                if isinstance(tag, str) and tag.startswith("researcher_topic:"):
+                                    research_topic = tag[len("researcher_topic:"):]
+                                    break
+                            if critique_msg:
+                                content = str(critique_msg.get("content", ""))
+                                yield StreamEvent(
+                                    type="critique",
+                                    node="critique_agent",
+                                    content=content,
+                                    metadata={"research_topic": research_topic},
+                                )
+                            else:
+                                # PASS — no gap message added
+                                yield StreamEvent(
+                                    type="critique",
+                                    node="critique_agent",
+                                    content="Evidence quality check passed.",
+                                    metadata={"research_topic": research_topic},
+                                )
+                        except Exception:
+                            pass
 
                 # ── Thoughts from think_tool (supervisor + researchers) ─────
                 elif event_name == "on_tool_start" and node_name == "think_tool":
                     reflection = (data.get("data", {}).get("input") or {}).get("reflection", "")
                     if reflection:
-                        yield StreamEvent(type="thought", node="think_tool", content=reflection, metadata={})
+                        # Extract researcher_topic tag injected by researcher.py
+                        research_topic = ""
+                        for tag in tags:
+                            if isinstance(tag, str) and tag.startswith("researcher_topic:"):
+                                research_topic = tag[len("researcher_topic:"):]
+                                break
+                        yield StreamEvent(
+                            type="thought",
+                            node="think_tool",
+                            content=reflection,
+                            metadata={"research_topic": research_topic},
+                        )
 
                 # ── Token streaming (respects langsmith:nostream tag) ───────
                 elif event_name == "on_chat_model_stream" and "langsmith:nostream" not in tags:
@@ -242,15 +295,15 @@ async def stream_open_deep_research(
         yield StreamEvent(type="error", node="", content="No response from LangGraph server", metadata={})
         return
 
-    result = _parse_final_state(final_state)
+    result = _parse_final_state(final_state, max_sources=max_sources)
     yield StreamEvent(type="result", node="", content="", metadata=result)
     yield StreamEvent(type="done", node="", content="", metadata={})
 
 
 # ── Shared state parsing ───────────────────────────────────────────────────────
 
-def _parse_final_state(state: dict) -> Dict[str, Any]:
-    """Extract final report + sources from a LangGraph values-stream state snapshot."""
+def _parse_final_state(state: dict, max_sources: int = 20) -> Dict[str, Any]:
+    """Extract final report + sources + audit fields from a LangGraph values-stream state snapshot."""
     final_report = state.get("final_report_generation", {}).get("final_report", "")
     if not final_report:
         final_report = state.get("final_report", "")
@@ -269,11 +322,26 @@ def _parse_final_state(state: dict) -> Dict[str, Any]:
                     final_report = content
                 break
 
-    sources = _extract_sources(final_report, state)
-    return {"summary": final_report, "sources": sources}
+    sources = _extract_sources(final_report, state, max_sources)
+
+    # Extract audit fields written by qa_review and swanson_abc nodes
+    notes = state.get("notes", []) or []
+    supervisor_node = state.get("research_supervisor", {})
+    if not notes and supervisor_node:
+        notes = supervisor_node.get("notes", []) or []
+
+    return {
+        "summary": final_report,
+        "sources": sources,
+        "qa_assessment": state.get("qa_assessment"),
+        "extraction_table": state.get("extraction_table"),
+        "swanson_hypotheses": state.get("swanson_hypotheses"),
+        "causality_diagram": state.get("causality_diagram"),
+        "notes": notes,
+    }
 
 
-def _extract_sources(report: str, state: dict) -> List[Dict[str, str]]:
+def _extract_sources(report: str, state: dict, max_sources: int = 20) -> List[Dict[str, str]]:
     sources = []
 
     supervisor_node = state.get("research_supervisor", {})
@@ -294,4 +362,4 @@ def _extract_sources(report: str, state: dict) -> List[Dict[str, str]]:
         if s["url"] not in seen:
             seen.add(s["url"])
             unique.append(s)
-    return unique[:18]
+    return unique[:max_sources]

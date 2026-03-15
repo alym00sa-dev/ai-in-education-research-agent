@@ -2,6 +2,7 @@
 import os
 import json
 import traceback
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import List, Dict, Any, Optional
 from dataclasses import dataclass
 from datetime import datetime
@@ -34,6 +35,7 @@ class StructuredPaper:
     """Represents a paper with extracted structured information."""
     url: str
     title: str
+    doi: Optional[str]
     year: Optional[int]
     venue: Optional[str]
     population: str
@@ -199,130 +201,99 @@ class KGExtractor:
 
         return soup.get_text(strip=True, separator='\n')
 
-    def extract_structured_info(self, papers: List[PaperDocument]) -> List[StructuredPaper]:
-        """Extract structured information from papers using LLM.
+    def _extract_one(self, paper: PaperDocument, index: int, total: int) -> Optional["StructuredPaper"]:
+        """Extract structured info from a single paper. Runs in a thread."""
+        print(f"\n🤖 Extracting paper {index}/{total}: {paper.title[:60]}...")
+        try:
+            response = self.anthropic_client.messages.create(
+                model="claude-opus-4-6",
+                max_tokens=4000,
+                temperature=0,
+                system=self.extraction_prompt,
+                messages=[{
+                    "role": "user",
+                    "content": f"Extract structured information from this research paper:\n\n{paper.text[:500000]}",
+                }],
+            )
 
-        Args:
-            papers: List of PaperDocument objects
+            content = response.content[0].text.strip()
+            if content.startswith("```"):
+                content = content.strip("`")
+                if content.startswith("json"):
+                    content = content[4:].strip()
 
-        Returns:
-            List of StructuredPaper objects
-        """
-        structured_papers = []
+            data = json.loads(content)
 
-        for i, paper in enumerate(papers, 1):
-            print(f"\n🤖 Extracting info from paper {i}/{len(papers)}: {paper.title[:60]}...")
+            population = data.get("population")
+            user_type = data.get("user_type")
+            study_design = data.get("study_design")
+            implementation_objective = data.get("implementation_objective")
+            outcome = data.get("outcome")
 
-            try:
-                # Call Claude for extraction (using Opus 4.5 for better strict instruction following)
-                response = self.anthropic_client.messages.create(
-                    model="claude-opus-4-5",
-                    max_tokens=4000,
-                    temperature=0,
-                    system=self.extraction_prompt,
-                    messages=[
-                        {
-                            "role": "user",
-                            "content": f"Extract structured information from this research paper:\n\n{paper.text[:500000]}"
-                        }
-                    ]
-                )
+            if population not in POPULATIONS:
+                population = ""
+            if user_type not in USER_TYPES:
+                user_type = ""
+            if study_design not in STUDY_DESIGNS:
+                study_design = ""
+            if implementation_objective not in IMPLEMENTATION_OBJECTIVES:
+                implementation_objective = ""
+            if outcome not in OUTCOMES:
+                outcome = ""
 
-                content = response.content[0].text.strip()
+            if not any([population, user_type, study_design, implementation_objective, outcome]):
+                print(f"  ⚠️  Skipping paper {index} — all taxonomy fields empty")
+                return None
 
-                # Handle code fences
-                if content.startswith("```"):
-                    content = content.strip("`")
-                    if content.startswith("json"):
-                        content = content[4:].strip()
+            empirical_finding = data.get("empirical_finding", {}) or {}
+            direction = empirical_finding.get("direction")
+            if direction not in FINDING_DIRECTIONS:
+                direction = ""
+            empirical_finding["direction"] = direction
+            empirical_finding["results_summary"] = empirical_finding.get("results_summary") or ""
+            empirical_finding["measure"] = empirical_finding.get("measure") or ""
 
-                data = json.loads(content)
+            # Normalize DOI: strip whitespace, treat "not_reported" as None
+            raw_doi = (data.get("doi") or "").strip()
+            doi = raw_doi if raw_doi and raw_doi.lower() != "not_reported" else None
 
-                # Validate and create StructuredPaper
-                # Match build_kg_csvs.py pattern: validate THEN set to empty if invalid
+            structured = StructuredPaper(
+                url=paper.url,
+                title=data.get("title", paper.title),
+                doi=doi,
+                year=data.get("year"),
+                venue=data.get("venue"),
+                population=population,
+                user_type=user_type,
+                study_design=study_design,
+                implementation_objective=implementation_objective,
+                outcome=outcome,
+                empirical_finding=empirical_finding,
+            )
 
-                # Get raw values
-                population = data.get("population")
-                user_type = data.get("user_type")
-                study_design = data.get("study_design")
-                implementation_objective = data.get("implementation_objective")
-                outcome = data.get("outcome")
+            print(f"  ✅ Paper {index}: pop={population or '—'} design={study_design or '—'} outcome={outcome or '—'} doi={doi or '—'}")
+            return structured
 
-                # Validate against controlled vocabulary - if not in list, set to empty
-                if population not in POPULATIONS:
-                    population = ""
-                if user_type not in USER_TYPES:
-                    user_type = ""
-                if study_design not in STUDY_DESIGNS:
-                    study_design = ""
-                if implementation_objective not in IMPLEMENTATION_OBJECTIVES:
-                    implementation_objective = ""
-                if outcome not in OUTCOMES:
-                    outcome = ""
+        except Exception as e:
+            print(f"  ❌ Paper {index} extraction failed: {e}")
+            return None
 
-                # Skip papers where all key taxonomy fields are empty
-                if not any([population, user_type, study_design, implementation_objective, outcome]):
-                    print(f"  ⚠️  Skipping paper - all taxonomy fields are null/empty")
-                    continue
+    def extract_structured_info(self, papers: List[PaperDocument]) -> List["StructuredPaper"]:
+        """Extract structured information from papers in parallel using LLM."""
+        total = len(papers)
+        structured_papers: List[StructuredPaper] = []
 
-                # Clean up empirical_finding - match build_kg_csvs.py pattern
-                empirical_finding = data.get("empirical_finding", {}) or {}
+        with ThreadPoolExecutor(max_workers=5) as executor:
+            futures = {
+                executor.submit(self._extract_one, paper, i + 1, total): i
+                for i, paper in enumerate(papers)
+            }
+            for future in as_completed(futures):
+                result = future.result()
+                if result is not None:
+                    structured_papers.append(result)
 
-                # Validate direction
-                direction = empirical_finding.get("direction")
-                if direction not in FINDING_DIRECTIONS:
-                    direction = ""
-                empirical_finding['direction'] = direction
-
-                # Clean up other finding fields
-                empirical_finding['results_summary'] = empirical_finding.get('results_summary') or ""
-                empirical_finding['measure'] = empirical_finding.get('measure') or ""
-
-                structured_paper = StructuredPaper(
-                    url=paper.url,
-                    title=data.get("title", paper.title),
-                    year=data.get("year"),
-                    venue=data.get("venue"),
-                    population=population,
-                    user_type=user_type,
-                    study_design=study_design,
-                    implementation_objective=implementation_objective,
-                    outcome=outcome,
-                    empirical_finding=empirical_finding
-                )
-
-                structured_papers.append(structured_paper)
-
-                # Debug output with validation
-                print(f"  ✅ Extracted:")
-                print(f"     Population: '{structured_paper.population}' {'✓' if structured_paper.population in POPULATIONS else '✗ MISMATCH' if structured_paper.population else '(empty)'}")
-                print(f"     UserType: '{structured_paper.user_type}' {'✓' if structured_paper.user_type in USER_TYPES else '✗ MISMATCH' if structured_paper.user_type else '(empty)'}")
-                print(f"     StudyDesign: '{structured_paper.study_design}' {'✓' if structured_paper.study_design in STUDY_DESIGNS else '✗ MISMATCH' if structured_paper.study_design else '(empty)'}")
-                print(f"     Objective: '{structured_paper.implementation_objective}' {'✓' if structured_paper.implementation_objective in IMPLEMENTATION_OBJECTIVES else '✗ MISMATCH' if structured_paper.implementation_objective else '(empty)'}")
-                print(f"     Outcome: '{structured_paper.outcome}' {'✓' if structured_paper.outcome in OUTCOMES else '✗ MISMATCH' if structured_paper.outcome else '(empty)'}")
-
-                # Safely handle empirical_finding
-                finding = structured_paper.empirical_finding
-                if finding and isinstance(finding, dict):
-                    direction = finding.get('direction') or ''
-                    summary = finding.get('results_summary') or ''
-                    measure = finding.get('measure') or ''
-                    study_size = finding.get('study_size')
-                    effect_size = finding.get('effect_size')
-
-                    print(f"     Finding Direction: '{direction}' {'✓' if direction in FINDING_DIRECTIONS else '✗ MISMATCH' if direction else '(empty)'}")
-                    print(f"     Finding Summary: {len(summary)} chars" if summary else "     Finding Summary: 0 chars")
-                    print(f"     Measure: '{measure}'")
-                    print(f"     Study Size: {study_size}")
-                    print(f"     Effect Size: {effect_size}")
-                else:
-                    print(f"     Finding: No empirical finding data")
-
-            except Exception as e:
-                print(f"  ❌ Extraction failed: {e}")
-                continue
-
-        print(f"\n📊 Successfully extracted info from {len(structured_papers)} papers")
+        print(f"\n📊 Successfully extracted info from {len(structured_papers)}/{total} papers")
         return structured_papers
 
     def add_to_neo4j(self, papers: List[StructuredPaper], session_id: str) -> int:
@@ -347,38 +318,73 @@ class KGExtractor:
 
                     print(f"  Adding paper: {paper.title[:60]}...")
 
-                    # MERGE Paper node (avoid duplicates by title)
+                    # MERGE Paper node — DOI-first dedup, fall back to title
                     # NEW SCHEMA: population, user_type, study_design are now properties
-                    db_session.run(
-                        """
-                        MERGE (p:Paper {title: $title})
-                        ON CREATE SET
-                            p.paper_id = $paper_id,
-                            p.year = $year,
-                            p.venue = $venue,
-                            p.url = $url,
-                            p.session_id = $session_id,
-                            p.added_date = $added_date,
-                            p.population = $population,
-                            p.user_type = $user_type,
-                            p.study_design = $study_design
-                        ON MATCH SET
-                            p.session_id = $session_id,
-                            p.population = $population,
-                            p.user_type = $user_type,
-                            p.study_design = $study_design
-                        """,
-                        paper_id=paper_id,
-                        title=paper.title,
-                        year=paper.year,
-                        venue=paper.venue or "",
-                        url=paper.url,
-                        session_id=session_id,
-                        added_date=added_date,
-                        population=paper.population or "",
-                        user_type=paper.user_type or "",
-                        study_design=paper.study_design or ""
-                    )
+                    if paper.doi:
+                        db_session.run(
+                            """
+                            MERGE (p:Paper {doi: $doi})
+                            ON CREATE SET
+                                p.paper_id = $paper_id,
+                                p.title = $title,
+                                p.year = $year,
+                                p.venue = $venue,
+                                p.url = $url,
+                                p.session_id = $session_id,
+                                p.added_date = $added_date,
+                                p.population = $population,
+                                p.user_type = $user_type,
+                                p.study_design = $study_design
+                            ON MATCH SET
+                                p.title = $title,
+                                p.session_id = $session_id,
+                                p.population = $population,
+                                p.user_type = $user_type,
+                                p.study_design = $study_design
+                            """,
+                            paper_id=paper_id,
+                            doi=paper.doi,
+                            title=paper.title,
+                            year=paper.year,
+                            venue=paper.venue or "",
+                            url=paper.url,
+                            session_id=session_id,
+                            added_date=added_date,
+                            population=paper.population or "",
+                            user_type=paper.user_type or "",
+                            study_design=paper.study_design or "",
+                        )
+                    else:
+                        db_session.run(
+                            """
+                            MERGE (p:Paper {title: $title})
+                            ON CREATE SET
+                                p.paper_id = $paper_id,
+                                p.year = $year,
+                                p.venue = $venue,
+                                p.url = $url,
+                                p.session_id = $session_id,
+                                p.added_date = $added_date,
+                                p.population = $population,
+                                p.user_type = $user_type,
+                                p.study_design = $study_design
+                            ON MATCH SET
+                                p.session_id = $session_id,
+                                p.population = $population,
+                                p.user_type = $user_type,
+                                p.study_design = $study_design
+                            """,
+                            paper_id=paper_id,
+                            title=paper.title,
+                            year=paper.year,
+                            venue=paper.venue or "",
+                            url=paper.url,
+                            session_id=session_id,
+                            added_date=added_date,
+                            population=paper.population or "",
+                            user_type=paper.user_type or "",
+                            study_design=paper.study_design or "",
+                        )
 
                     # CREATE EmpiricalFinding node with ALL enhanced fields
                     finding_data = paper.empirical_finding if isinstance(paper.empirical_finding, dict) else {}
@@ -421,7 +427,10 @@ class KGExtractor:
                             f.system_impact_levels = $system_impact_levels,
                             f.decision_making_complexity = $decision_making_complexity,
                             f.evidence_type_strength = $evidence_type_strength,
-                            f.evaluation_burden_cost = $evaluation_burden_cost
+                            f.evaluation_burden_cost = $evaluation_burden_cost,
+
+                            f.confidence_interval = $confidence_interval,
+                            f.std_deviation = $std_deviation
                         MERGE (p)-[:REPORTS_FINDING]->(f)
                         """,
                         title=paper.title,
@@ -454,7 +463,9 @@ class KGExtractor:
                         system_impact_levels=get_field("system_impact_levels", -1),
                         decision_making_complexity=get_field("decision_making_complexity", -1),
                         evidence_type_strength=get_field("evidence_type_strength", -1),
-                        evaluation_burden_cost=get_field("evaluation_burden_cost", -1)
+                        evaluation_burden_cost=get_field("evaluation_burden_cost", -1),
+                        confidence_interval=get_field("confidence_interval"),
+                        std_deviation=get_field("std_deviation"),
                     )
 
                     # Create taxonomy relationships

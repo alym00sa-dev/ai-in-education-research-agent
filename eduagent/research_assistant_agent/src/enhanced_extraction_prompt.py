@@ -123,6 +123,14 @@ EFFECT SIZE:
 • If paper reports effect size > 1 (e.g., Cohen's d = 1.5), convert to 0-1 scale or set to "not_reported"
 • If no effect size reported, set to "not_reported"
 
+CONFIDENCE INTERVAL:
+• Report as a string, e.g. "95% CI: 0.12–0.49" or "90% CI: 0.05–0.38"
+• If not reported, set to "not_reported"
+
+STANDARD DEVIATION:
+• Report as a string, e.g. "SD = 0.18" or "SD = 12.4 points"
+• If not reported, set to "not_reported"
+
 -----------------------------------------
 PART 3: STUDENT/PARTICIPANT COMPOSITION
 -----------------------------------------
@@ -248,6 +256,7 @@ You MUST return JSON in this exact structure:
 
 {{
   "title": "",
+  "doi": "10.xxxx/xxxxx or not_reported",
   "year": 2023 or "not_reported",
   "venue": "",
 
@@ -263,6 +272,8 @@ You MUST return JSON in this exact structure:
       "measure": "",
       "study_size": integer or "not_reported",
       "effect_size": number between 0-1 or "not_reported",
+      "confidence_interval": "95% CI: x–y or not_reported",
+      "std_deviation": "SD = x or not_reported",
 
       "student_racial_makeup": "",
       "student_socioeconomic_makeup": "",

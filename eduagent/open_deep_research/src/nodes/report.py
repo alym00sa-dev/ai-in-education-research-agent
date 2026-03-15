@@ -29,7 +29,7 @@ async def final_report_generation(state: AgentState, config: RunnableConfig):
         Dictionary containing the final report and cleared state
     """
     notes = state.get("notes", [])
-    cleared_state = {"notes": {"type": "override", "value": []}}
+    cleared_state = {}  # Notes preserved for audit trail and source log
     findings = "\n".join(notes)
 
     configurable = Configuration.from_runnable_config(config)
@@ -46,11 +46,18 @@ async def final_report_generation(state: AgentState, config: RunnableConfig):
 
     while current_retry <= max_retries:
         try:
+            qa_assessment = state.get("qa_assessment") or "No QA assessment available."
+            extraction_table = state.get("extraction_table") or "_Data extraction table could not be generated._"
+            causality_diagram = state.get("causality_diagram") or "_Causality diagram could not be generated._"
+
             final_report_prompt = final_report_generation_prompt.format(
                 research_brief=state.get("research_brief", ""),
                 messages=get_buffer_string(state.get("messages", [])),
                 findings=findings,
-                date=get_today_str()
+                date=get_today_str(),
+                qa_assessment=qa_assessment,
+                extraction_table=extraction_table,
+                causality_diagram=causality_diagram,
             )
 
             final_report = await configurable_model.with_config(writer_model_config).ainvoke([
