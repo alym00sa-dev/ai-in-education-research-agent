@@ -15,7 +15,7 @@ COPY src/ ./src/
 COPY server.py ./
 
 # Create empty directories required by pyproject.toml
-RUN mkdir -p tests legacy
+RUN mkdir -p tests
 
 # Install dependencies using UV
 RUN uv pip install --system -e .

@@ -5,8 +5,7 @@ description = "Planning, research, and report generation."
 authors = [
     { name = "Lance Martin" }
 ]
-readme = "README.md"
-license = { text = "MIT" }
+license = "MIT"
 requires-python = ">=3.10"
 dependencies = [
     "langgraph>=0.5.4",
@@ -54,11 +53,10 @@ requires = ["setuptools>=73.0.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
-packages = ["open_deep_research", "legacy", "tests"]
+packages = ["src", "tests"]
 
 [tool.setuptools.package-dir]
-"open_deep_research" = "src/open_deep_research"
-"legacy" = "src/legacy"
+"src" = "src"
 "tests" = "tests"
 
 [tool.setuptools.package-data]
