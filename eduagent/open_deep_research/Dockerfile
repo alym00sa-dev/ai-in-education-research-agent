@@ -10,8 +10,6 @@ COPY --from=ghcr.io/astral-sh/uv:latest /uv /usr/local/bin/uv
 # Copy dependency files
 COPY pyproject.toml ./
 COPY langgraph.json ./
-COPY README.md ./
-
 # Copy source code
 COPY src/ ./src/
 COPY server.py ./
