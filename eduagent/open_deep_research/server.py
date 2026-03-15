@@ -86,6 +86,15 @@ async def run_thread_stream(thread_id: str, request: Dict[str, Any]):
     """
     Stream research results for a thread.
     Compatible with LangGraph API format.
+
+    Emits two SSE event types so the Streamlit client receives both live
+    events (thoughts, tokens, node transitions) and the final state snapshot:
+
+      event: events
+      data: <LangGraph event object JSON>
+
+      event: values
+      data: <full graph state snapshot JSON>
     """
     try:
         # Extract query from messages
@@ -104,32 +113,34 @@ async def run_thread_stream(thread_id: str, request: Dict[str, Any]):
         # Create state input
         state_input = {"messages": [{"role": "user", "content": query}]}
 
-        # Stream results and accumulate final state
         async def generate():
             try:
-                final_state = {}
-
-                # Stream updates and accumulate state
-                async for chunk in deep_researcher.astream(
+                async for mode, chunk in deep_researcher.astream(
                     state_input,
-                    config={"configurable": configurable}
+                    config={"configurable": configurable},
+                    stream_mode=["values", "events"],
                 ):
-                    # Accumulate state from each chunk
-                    if isinstance(chunk, dict):
-                        final_state.update(chunk)
-
-                    # Serialize and send progress update
-                    serialized_chunk = serialize_value(chunk)
-                    yield f"data: {json.dumps(serialized_chunk)}\n\n"
-
-                # Send final accumulated state
-                serialized_final = serialize_value(final_state)
-                yield f"data: {json.dumps(serialized_final)}\n\n"
+                    if mode == "values":
+                        # Full state snapshot after each node — emit as SSE values event
+                        try:
+                            serialized = serialize_value(chunk)
+                            yield f"event: values\ndata: {json.dumps(serialized)}\n\n"
+                        except Exception:
+                            pass
+                    elif mode == "events":
+                        # LangGraph event object (on_chain_start, on_tool_start, etc.)
+                        try:
+                            yield f"event: events\ndata: {json.dumps(chunk)}\n\n"
+                        except (TypeError, ValueError):
+                            # Fallback: serialize LangChain objects and retry
+                            try:
+                                yield f"event: events\ndata: {json.dumps(serialize_value(chunk))}\n\n"
+                            except Exception:
+                                pass
 
                 # Send end signal
                 yield "data: [DONE]\n\n"
             except Exception as e:
-                # Send error as plain JSON
                 error_data = {"error": str(e)}
                 yield f"data: {json.dumps(error_data)}\n\n"
 
@@ -164,16 +175,27 @@ async def run_research_stream(request: ResearchRequest):
         # Create state input
         state_input = {"messages": [{"role": "user", "content": query}]}
 
-        # Stream results
         async def generate():
             try:
-                async for chunk in deep_researcher.astream(
+                async for mode, chunk in deep_researcher.astream(
                     state_input,
-                    config={"configurable": configurable}
+                    config={"configurable": configurable},
+                    stream_mode=["values", "events"],
                 ):
-                    # Serialize LangChain objects to JSON
-                    serialized_chunk = serialize_value(chunk)
-                    yield f"data: {json.dumps(serialized_chunk)}\n\n"
+                    if mode == "values":
+                        try:
+                            serialized = serialize_value(chunk)
+                            yield f"event: values\ndata: {json.dumps(serialized)}\n\n"
+                        except Exception:
+                            pass
+                    elif mode == "events":
+                        try:
+                            yield f"event: events\ndata: {json.dumps(chunk)}\n\n"
+                        except (TypeError, ValueError):
+                            try:
+                                yield f"event: events\ndata: {json.dumps(serialize_value(chunk))}\n\n"
+                            except Exception:
+                                pass
                 yield "data: [DONE]\n\n"
             except Exception as e:
                 error_data = {"error": str(e)}
