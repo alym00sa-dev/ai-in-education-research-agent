@@ -389,9 +389,9 @@ async def get_all_tools(config: RunnableConfig):
     search_tools = await get_search_tool(search_api)
     tools.extend(search_tools)
 
-    # Academic database tools — always available, no API key required
-    from utils.academic_search import eric_search, openalex_search
-    tools.extend([eric_search, openalex_search])
+    # Academic database tools
+    from utils.academic_search import eric_search, openalex_search, arxiv_search, elsevier_search, scholar_search
+    tools.extend([eric_search, openalex_search, arxiv_search, elsevier_search, scholar_search])
     # semantic_scholar_search commented out — API key pending activation
 
     existing_tool_names = {

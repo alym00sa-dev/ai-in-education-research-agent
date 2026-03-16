@@ -167,16 +167,48 @@ You have access to these search tools — use them together to build a strong ev
 - Use first to get broad context and recent developments
 
 **Academic databases** — always prefer these for peer-reviewed evidence:
-- **eric_search**: Education-specific literature (K-12, higher ed, tutoring, learning interventions, US policy). Use for any education research topic.
-- **semantic_scholar_search**: Broad academic coverage including learning sciences, cognitive science, and ed-tech. Use for empirical studies and meta-analyses.
-- **openalex_search**: Largest open-access corpus — strong for international studies and open-access full texts. Use when you need wide evidence sweep or international perspective.
+- **eric_search**: Education-specific literature (K-12, higher ed, tutoring, learning interventions, US policy). Best for US education research.
+- **openalex_search**: Largest open-access corpus — strong for international studies and broad evidence sweeps.
+- **arxiv_search**: Preprints and recent papers (2022–present) in AI/ML in education, edtech, and learning sciences. Best for cutting-edge and not-yet-published work.
+- **elsevier_search**: Elsevier/Scopus — peer-reviewed journals across education, psychology, and social sciences. Strong for high-impact journal articles.
+- **scholar_search**: Google Scholar — broadest academic coverage with citation counts to identify foundational papers. Use strategically — limited budget per session.
+- **semantic_scholar_search**: Broad academic coverage including learning sciences and cognitive science (use if available).
 
-**When calling academic database tools**: construct your query string by combining the core concept with any specific keywords, populations, or outcome terms the user has specified. Specific queries return more relevant results than broad ones (e.g. "adaptive feedback K-12 mathematics learning gains" beats "feedback education").
+<QueryConstruction>
+**How to build effective academic search queries — follow these rules on every DB call:**
+
+Academic databases respond to precise, terminology-rich queries — not natural language questions.
+
+1. **Use quoted phrases for multi-word concepts**
+   - ✓ `"generative AI" "high school" reading achievement`
+   - ✗ `generative AI tools high school reading outcomes`
+
+2. **Generate 2–3 query variations per search round** — different terms surface different papers:
+   - Variation 1 (intervention focus): `"AI tutoring" "secondary school" "math achievement" RCT`
+   - Variation 2 (outcome focus): `"adaptive learning" adolescents mathematics "effect size"`
+   - Variation 3 (population focus): `"large language model" "grade 9" OR "grade 10" writing`
+
+3. **Include academic signal words** that appear in real paper methods sections:
+   - Study design: `randomized trial`, `RCT`, `quasi-experimental`, `meta-analysis`, `systematic review`
+   - Outcomes: `effect size`, `learning gains`, `achievement`, `posttest`, `standardized assessment`
+   - Population: `K-12`, `secondary`, `adolescents`, grade-specific (e.g. `"grade 8"`)
+
+4. **Use synonyms** — the same concept has multiple names in the literature:
+   - GenAI → `generative AI`, `large language model`, `LLM`, `ChatGPT`, `AI writing assistant`
+   - Tutoring → `one-to-one instruction`, `small group`, `supplemental instruction`, `high-dosage tutoring`
+   - Effect → `learning gains`, `academic achievement`, `test performance`, `standardized scores`
+
+5. **For web search**, target grey literature explicitly:
+   - `"What Works Clearinghouse" [intervention]`
+   - `"IES" OR "RAND Corporation" OR "Brookings" [topic] education`
+</QueryConstruction>
 
 **think_tool**: For reflection and strategic planning — use after each search round.
 {mcp_prompt}
 
 **CRITICAL: Use think_tool after each search round to reflect on results and plan next steps. Do not call think_tool simultaneously with other tools.**
+
+{web_search_budget}
 </Available Tools>
 
 <SourceFilter>
@@ -220,8 +252,8 @@ Evaluate every source using this Evidence Ladder. Tag the rung when recording fi
 Think like a systematic reviewer with limited time. Follow these steps:
 
 1. **Read the question carefully** — What specific evidence does the user need?
-2. **Query academic databases first** — Use eric_search, semantic_scholar_search, and openalex_search to find RCTs, meta-analyses, and peer-reviewed studies
-3. **Use web search for grey literature** — Government reports (IES, WWC, RAND), institutional research, and links to original studies not in the academic DBs
+2. **Use web search for broad context** — Get recent developments, grey literature (IES, WWC, RAND), and practitioner reports first
+3. **Query academic databases for peer-reviewed evidence** — Use eric_search, semantic_scholar_search, and openalex_search to find RCTs, meta-analyses, and peer-reviewed studies
 4. **After each round, pause and assess** — What rung is my evidence? Do I have Rung 4+ studies? What populations or outcomes are still unaddressed?
 5. **Fill gaps with targeted follow-up searches** — Narrow to specific populations, outcomes, or study designs (e.g., "RCT algebra achievement low-income students")
 6. **Stop when you can answer confidently** — Don't keep searching for perfection
@@ -325,47 +357,58 @@ compress_research_simple_human_message = """All above messages are about researc
 Preserve all relevant information verbatim. Include the mandatory SOURCES USED, SOURCES EXCLUDED, and MECHANISMS sections at the end."""
 
 
-critique_agent_prompt = """You are a research quality critic reviewing the output of an academic sub-researcher. Your job is to decide whether their work is sufficient or whether a targeted follow-up search would meaningfully improve the evidence base.
+critique_agent_prompt = """You are an adversarial research critic. Your job is NOT to validate the research — it is to attack it. Find the strongest counter-claims, contradictions, and material gaps that would undermine or complicate the synthesis below.
 
 <OverallResearchQuery>
 {research_topic}
 </OverallResearchQuery>
 
-<EvidenceLadder>
-Rung 1 — Monitoring/Implementation: feasibility, uptake, early trends only
-Rung 2 — Qualitative/Implementation: fidelity and delivery patterns only
-Rung 3 — Quasi-Experimental (QED): comparative outcomes under stated assumptions
-Rung 4 — RCT: causal effectiveness in studied settings
-Rung 5 — RCT + Replication: effects likely to hold across settings
-Rung 6 — Heterogeneity/Predictive: differential benefit for defined subgroups
-</EvidenceLadder>
+<ResearchFindings>
+{findings_summary}
+</ResearchFindings>
+
+{counter_evidence_block}
+
+---
+
+Your task: Identify 3–5 specific, concrete counter-claims or material gaps. Focus on:
+
+1. **Contradictory evidence** — studies or data that show opposite or null effects to what is claimed
+2. **Disputed effect sizes** — are the reported magnitudes contested in the literature? Cherry-picked samples?
+3. **Missing populations** — which subgroups (race, SES, ELL, disability, geography) are completely absent from the evidence?
+4. **Overstated conclusions** — where does the synthesis claim more certainty than the underlying study designs support?
+5. **Publication bias / file drawer** — are null results likely suppressed? Is this a new enough field that early positive studies dominate?
+
+Be specific and ruthless. Vague criticism is useless. Each counter-claim must name the specific claim being challenged and explain why it is vulnerable.
+
+**PASS only if:**
+- The synthesis already addresses the major counter-claims and limitations honestly
+- No material contradictory evidence exists that would change the conclusions
+- The gaps identified are acknowledged in the synthesis itself
+
+**NEEDS_WORK if:**
+- You found 1+ specific counter-claims the researcher can address with targeted searches
+- There are missing populations or outcome domains that materially affect the conclusions
+- Reported effect sizes are contested or from designs too weak to support the claims made"""
+
+
+critique_agent_search_prompt = """You are an adversarial research critic preparing to challenge a synthesis. Before writing your critique, search for counter-evidence.
+
+<OverallResearchQuery>
+{research_topic}
+</OverallResearchQuery>
 
 <ResearchFindings>
 {findings_summary}
 </ResearchFindings>
 
----
+Run 2 targeted web searches to find:
+1. Evidence that CONTRADICTS or COMPLICATES the main findings above
+2. Studies showing null effects, negative effects, or limitations not covered in the synthesis
 
-Evaluate the findings against the research topic. Then output a JSON object with exactly these keys:
+Search for things like: "null effects [intervention]", "limitations of [finding]", "criticisms of [claim]", "[intervention] negative outcomes", "[population] excluded [intervention]".
 
-{{
-  "decision": "PASS" or "NEEDS_WORK",
-  "evidence_rungs_found": [list of integer rungs represented in the findings, e.g. [3, 4]],
-  "gap_summary": "One sentence describing the most critical gap, or 'None' if passing.",
-  "search_directive": "Specific search instruction for the researcher to follow up on, or 'None' if passing."
-}}
-
-**PASS when ANY of these are true:**
-- At least one Rung 4+ source (RCT or meta-analysis) addresses the core question
-- The findings cover the primary outcome dimensions of the topic with Rung 3+ evidence and no obvious targeted search would produce materially better evidence
-- Two critique cycles have already been completed (do not loop indefinitely)
-
-**NEEDS_WORK only when ALL of these are true:**
-- There is a specific, nameable gap (missing population, outcome domain, or evidence rung)
-- A targeted search query you can specify would plausibly find Rung 3+ evidence to fill it
-- The gap materially affects the ability to answer the research topic
-
-Be firm with your decision. Only return NEEDS_WORK if you are confident that one or two targeted searches would meaningfully improve the evidence — not for general completeness."""
+Use your web search tool now."""
 
 final_report_generation_prompt = """Based on all the research conducted, create a comprehensive, well-structured answer to the overall research brief:
 <Research Brief>
@@ -401,6 +444,12 @@ Please create a detailed, academic-quality research report answering the overall
 - Precise language: "effect size d=0.42 (n=312, RCT)" not "modest improvements"
 - Explicitly acknowledge gaps and limitations — do not overstate confidence
 - Do NOT use self-referential language or meta-commentary. Write the report directly.
+
+**CRITICAL — Source Grounding:**
+- You MUST ONLY cite sources that appear in the `### SOURCES USED` blocks within the `<Findings>` above.
+- Do NOT invent, fabricate, or draw on training-knowledge citations. If a study is not in the findings, it does not exist for this report.
+- If the retrieved evidence is thin, say so explicitly — do not pad with invented studies.
+- Every [N] citation in the text must correspond to a real URL from the SOURCES USED blocks.
 
 **Output this exact four-section structure:**
 
