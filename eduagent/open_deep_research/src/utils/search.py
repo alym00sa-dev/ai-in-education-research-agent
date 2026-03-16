@@ -339,6 +339,76 @@ async def tavily_search_async(
     return await asyncio.gather(*search_tasks)
 
 
+@tool(description=(
+    "Search the web using Anthropic's native web search (Claude-powered). "
+    "Use for deep targeted dives — specific gaps, recent 2024-2025 work not yet indexed "
+    "in academic DBs, named studies you found referenced but couldn't retrieve, or "
+    "specific policy/grey literature documents. Use precise targeted queries only. "
+    "Requires ANTHROPIC_API_KEY."
+))
+async def anthropic_web_search(query: str) -> str:
+    """Web search via Anthropic native search (claude-haiku-4-5-20251001)."""
+    import os
+    api_key = os.getenv("ANTHROPIC_API_KEY", "")
+    if not api_key:
+        return "Anthropic web search: ANTHROPIC_API_KEY not configured."
+    try:
+        model = init_chat_model(
+            model="anthropic:claude-haiku-4-5-20251001",
+            max_tokens=2048,
+            api_key=api_key,
+            tags=["langsmith:nostream"],
+        ).bind_tools([{"type": "web_search_20250305"}])
+        response = await model.ainvoke([HumanMessage(content=query)])
+        if isinstance(response.content, str):
+            return response.content
+        elif isinstance(response.content, list):
+            text_parts = [
+                block.get("text", "")
+                for block in response.content
+                if isinstance(block, dict) and block.get("type") == "text"
+            ]
+            return "\n".join(p for p in text_parts if p) or "No results returned."
+        return "No results returned."
+    except Exception as e:
+        return f"Anthropic web search error: {e}"
+
+
+@tool(description=(
+    "Search the web using OpenAI's native web search (GPT-powered). "
+    "Use for deep targeted dives — specific gaps, recent 2024-2025 work not yet indexed "
+    "in academic DBs, named studies you found referenced but couldn't retrieve, or "
+    "specific policy/grey literature documents. Use precise targeted queries only. "
+    "Requires OPENAI_API_KEY."
+))
+async def openai_web_search(query: str) -> str:
+    """Web search via OpenAI native search (gpt-4.1-mini)."""
+    import os
+    api_key = os.getenv("OPENAI_API_KEY", "")
+    if not api_key:
+        return "OpenAI web search: OPENAI_API_KEY not configured."
+    try:
+        model = init_chat_model(
+            model="openai:gpt-4.1-mini",
+            max_tokens=2048,
+            api_key=api_key,
+            tags=["langsmith:nostream"],
+        ).bind_tools([{"type": "web_search_preview"}])
+        response = await model.ainvoke([HumanMessage(content=query)])
+        if isinstance(response.content, str):
+            return response.content
+        elif isinstance(response.content, list):
+            text_parts = [
+                block.get("text", "")
+                for block in response.content
+                if isinstance(block, dict) and block.get("type") == "text"
+            ]
+            return "\n".join(p for p in text_parts if p) or "No results returned."
+        return "No results returned."
+    except Exception as e:
+        return f"OpenAI web search error: {e}"
+
+
 async def get_search_tool(search_api: SearchAPI):
     """Configure and return search tools based on the specified API provider.
 
@@ -393,6 +463,9 @@ async def get_all_tools(config: RunnableConfig):
     from utils.academic_search import eric_search, openalex_search, arxiv_search, elsevier_search, scholar_search
     tools.extend([eric_search, openalex_search, arxiv_search, elsevier_search, scholar_search])
     # semantic_scholar_search commented out — API key pending activation
+
+    # Native web search wrappers (always available regardless of search_api setting)
+    tools.extend([anthropic_web_search, openai_web_search])
 
     existing_tool_names = {
         t.name if hasattr(t, "name") else t.get("name", "web_search")

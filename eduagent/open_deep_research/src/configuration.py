@@ -76,16 +76,16 @@ class Configuration(BaseModel):
     )
     # Research Configuration
     search_api: SearchAPI = Field(
-        default=SearchAPI.TAVILY,
+        default=SearchAPI.OPENAI,
         metadata={
             "x_oap_ui_config": {
                 "type": "select",
-                "default": "tavily",
-                "description": "Search API to use for research. NOTE: Make sure your Researcher Model supports the selected search API.",
+                "default": "openai",
+                "description": "Native web search to use as the basis for researchers. Match to your research model — OpenAI for GPT models, Anthropic for Claude models. Tavily is unlocked by the supervisor after iteration 1 for deep targeted dives.",
                 "options": [
-                    {"label": "Tavily", "value": SearchAPI.TAVILY.value},
                     {"label": "OpenAI Native Web Search", "value": SearchAPI.OPENAI.value},
                     {"label": "Anthropic Native Web Search", "value": SearchAPI.ANTHROPIC.value},
+                    {"label": "Tavily", "value": SearchAPI.TAVILY.value},
                     {"label": "None", "value": SearchAPI.NONE.value}
                 ]
             }
@@ -105,15 +105,39 @@ class Configuration(BaseModel):
         }
     )
     max_react_tool_calls: int = Field(
-        default=10,
+        default=25,
         metadata={
             "x_oap_ui_config": {
                 "type": "slider",
-                "default": 10,
+                "default": 25,
                 "min": 1,
-                "max": 30,
+                "max": 50,
                 "step": 1,
                 "description": "Maximum number of tool calling iterations to make in a single researcher step."
+            }
+        }
+    )
+    max_web_searches: Optional[int] = Field(
+        default=None,
+        metadata={
+            "x_oap_ui_config": {
+                "type": "number",
+                "default": None,
+                "description": "Maximum number of web search (Tavily) calls allowed per sub-researcher. None = unlimited. 0 = academic DBs only."
+            }
+        }
+    )
+    web_search_mode: str = Field(
+        default="unrestricted",
+        metadata={
+            "x_oap_ui_config": {
+                "type": "select",
+                "default": "unrestricted",
+                "description": "Controls how web search calls are used. 'unrestricted' = agent decides freely. 'strategic' = web search reserved for deliberate gap-filling after academic DBs are exhausted.",
+                "options": [
+                    {"label": "Unrestricted", "value": "unrestricted"},
+                    {"label": "Strategic", "value": "strategic"},
+                ]
             }
         }
     )
