@@ -37,6 +37,8 @@ Only these fully comprehensive cleaned findings are going to be returned to the 
 6. It's really important not to lose any sources. A later LLM will be used to merge this report with others, so having all of the sources is critical.
 7. Include study design labels where reported (RCT, meta-analysis, quasi-experimental, observational, report).
 8. Preserve effect sizes, sample sizes, and confidence intervals verbatim — do not round or paraphrase statistics.
+9. CRITICAL — Statistics: If a specific number (sample size, effect size, p-value, F-statistic, mean, percentage, duration) is NOT explicitly present in the raw tool output, write "not reported" — do NOT infer, estimate, calculate, or invent it. A plausible-sounding statistic that is not in the source is worse than writing "not reported."
+10. CRITICAL — Study design: Do not upgrade a study's design label. If the tool output calls it "observational" or "survey," do not label it "quasi-experimental" or "RCT." Copy the design label exactly as stated, or write "design not reported."
 </Guidelines>
 
 <Output Format>

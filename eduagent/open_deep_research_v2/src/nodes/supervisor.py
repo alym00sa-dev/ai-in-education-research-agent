@@ -45,11 +45,16 @@ async def supervisor_tools_node(
     configurable = Configuration.from_runnable_config(config)
     messages = state.get("supervisor_messages", [])
 
-    # Find the last AI message with tool calls
+    # Find the most recent AI message and check if it has tool calls
     last_ai = None
     for msg in reversed(messages):
-        if isinstance(msg, AIMessage) and msg.tool_calls:
-            last_ai = msg
+        if isinstance(msg, AIMessage):
+            # Only process tool calls from the MOST RECENT AIMessage.
+            # If it has no tool_calls, bail — do not look further back,
+            # as adding ToolMessages after a plain AIMessage would create
+            # an orphaned-tool-role error in the OpenAI API.
+            if msg.tool_calls:
+                last_ai = msg
             break
 
     if not last_ai:
@@ -195,10 +200,12 @@ def route_after_tools(state: SupervisorState) -> Literal["supervisor_node", "__e
     if iterations >= _MAX_SUPERVISOR_LOOPS:
         return "__end__"
 
-    # Check if last AI message had ResearchComplete
+    # Check if last AI message had ResearchComplete or no tool_calls (plain text)
     for msg in reversed(messages):
         if isinstance(msg, AIMessage):
-            tool_names = {tc["name"] for tc in (msg.tool_calls or [])}
+            if not msg.tool_calls:
+                return "__end__"
+            tool_names = {tc["name"] for tc in msg.tool_calls}
             if "ResearchComplete" in tool_names:
                 return "__end__"
             break

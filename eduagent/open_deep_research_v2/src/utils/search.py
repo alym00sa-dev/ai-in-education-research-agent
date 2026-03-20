@@ -142,6 +142,12 @@ async def get_all_tools(config: RunnableConfig = None) -> list:
         semantic_scholar_search,
     ]
 
+    # Load Asta (Allen AI) tools if key is available
+    asta_tools = await load_asta_tools()
+    if asta_tools:
+        tools.extend(asta_tools)
+        logging.info(f"[search] Added {len(asta_tools)} Asta tools")
+
     return tools
 
 

@@ -11,6 +11,7 @@ from prompts.researcher import (
 from prompts.synthesis import compress_findings_prompt, draft_report_prompt
 from prompts.critique import critique_prompt
 from prompts.report import final_report_prompt
+from prompts.qa import qa_audit_prompt
 
 __all__ = [
     "research_brief_prompt",
@@ -23,4 +24,5 @@ __all__ = [
     "draft_report_prompt",
     "critique_prompt",
     "final_report_prompt",
+    "qa_audit_prompt",
 ]

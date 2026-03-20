@@ -23,6 +23,14 @@ Produce a structured EVIDENCE SUMMARY:
 5. List all cited sources with study design labels (RCT, meta-analysis, quasi-experimental, observational, report)
 
 This evidence summary will be used to write a draft report and will be reviewed by a critique agent. Be thorough and precise.
+
+<StatisticGuard>
+CRITICAL — before writing any number:
+- Only include a statistic (sample size, effect size, p-value, F-statistic, mean gain, percentage, duration) if it is explicitly present in the researcher findings above.
+- If a statistic is not in the findings, write "not reported" — never estimate, interpolate, or infer.
+- Do not upgrade study design labels. Copy labels exactly as reported or write "design not reported."
+- Do not blend statistics from different studies.
+</StatisticGuard>
 """
 
 draft_report_prompt = """You are an education research analyst. Date: {date}
@@ -32,6 +40,14 @@ This is iteration {iteration} of {total_iterations}.
 
 Evidence summary:
 {compress_findings}
+
+<StatisticGuard>
+CRITICAL — before writing any number:
+- Only include a statistic (sample size, effect size, p-value, F-statistic, mean gain, percentage, duration) if it appears VERBATIM in the evidence summary above.
+- If a statistic is not explicitly in the evidence summary, write "not reported" — never estimate, interpolate, or infer.
+- Do not upgrade study design labels. If the evidence summary says "observational," do not write "quasi-experimental" or "RCT."
+- Do not blend statistics across studies (e.g., do not attach Study A's sample size to Study B's effect size).
+</StatisticGuard>
 
 Write a structured draft report:
 

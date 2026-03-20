@@ -14,12 +14,16 @@ load_dotenv()
 from langchain_core.messages import HumanMessage
 
 from graph import graph
+from utils.budget import reset_budget
 
 
-QUERY = (
+_DEFAULT_QUERY = (
     "What is the impact of medical treatment of ADHD on scholastic achievement "
     "during K-5 (kindergarten through 5th grade)?"
 )
+
+# Accept query from CLI: python run_pipeline.py "your query here"
+QUERY = " ".join(sys.argv[1:]) if len(sys.argv) > 1 else _DEFAULT_QUERY
 
 CONFIG = {
     "configurable": {
@@ -28,6 +32,7 @@ CONFIG = {
         "max_concurrent_researchers": 5,
         "max_sweep_cycles": 2,
         "tavily_budget": 10,
+        "serp_budget": 3,
         "enable_pdf_extraction": True,
         "max_sources": 30,
     },
@@ -45,6 +50,11 @@ async def main():
     print("Deep Research v2 — Test Run")
     print(f"Query: {QUERY[:80]}...")
     print(f"{'='*60}\n")
+
+    # Reset tool budgets for this run
+    tavily_limit = CONFIG["configurable"].get("tavily_budget", 10)
+    serp_limit = CONFIG["configurable"].get("serp_budget", 3)
+    reset_budget(tavily_limit=tavily_limit, serp_limit=serp_limit)
 
     input_state = {"messages": [HumanMessage(content=QUERY)]}
 
@@ -117,6 +127,12 @@ async def main():
             stage_times["final"] = time.time()
             print(f"[{t}] [final_report] Final report generated.")
 
+        # qa audit
+        if chunk.get("qa_report") and not seen.get("qa_report"):
+            seen["qa_report"] = True
+            stage_times["qa"] = time.time()
+            print(f"[{t}] [qa_audit] QA audit complete.")
+
     if not final_state:
         print("ERROR: No state returned.")
         return
@@ -136,9 +152,24 @@ async def main():
     report = final_state.get("final_report", "")
     if report:
         report_path = os.path.join(out_dir, f"final_report_{run_id}.md")
+        run_number = run_id  # slug_YYYYMMDD_HHMMSS
+        run_datetime = time.strftime("%Y-%m-%d %H:%M:%S")
+        header = (
+            f"# Research Run: {run_number}\n\n"
+            f"**Query:** {QUERY}\n\n"
+            f"**Date/Time:** {run_datetime}\n\n"
+            "---\n\n"
+        )
         with open(report_path, "w") as f:
-            f.write(report)
+            f.write(header + report)
         print(f"\nFinal report saved to: {report_path}")
+
+    qa = final_state.get("qa_report", "")
+    if qa:
+        qa_path = os.path.join(out_dir, f"qa_report_{run_id}.md")
+        with open(qa_path, "w") as f:
+            f.write(qa)
+        print(f"QA audit saved to: {qa_path}")
 
     def _serialize(obj):
         if hasattr(obj, "model_dump"):
@@ -169,7 +200,7 @@ async def main():
     print(f"\n{'='*60}")
     print(f"Total time           : {total:.1f}s")
     print(f"Iterations completed : {final_state.get('iteration', 0) + 1}")
-    print(f"Notes collected      : {len(final_state.get('notes', []))}")
+    print(f"Notes collected      : {len(final_state.get('all_notes', []))}")
     print(f"Paper profiles       : {len(final_state.get('paper_profiles', []))}")
     print(f"Source counts        : {final_state.get('source_counts', {})}")
 

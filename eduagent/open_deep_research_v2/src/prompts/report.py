@@ -46,13 +46,28 @@ CRITICAL — read before writing a single word:
 - No special formatting (no bold, no bullet lists) unless it is a header or a table — write in plain prose paragraphs
 - Explicitly acknowledge gaps — do not overstate confidence
 - Do NOT use self-referential language or meta-commentary. Write the report directly.
+- Do NOT write any internal reasoning, uncertainty checks, or self-correction inside the report (e.g., never write "Wait:", "not in pre-scored?", "evidence not retrieved — skipping", or similar). If a source is unavailable, simply omit the claim or write "evidence not retrieved" inline without explanation.
+
+**CRITICAL — How to present individual studies:**
+- Every RCT and QED must be described in its own dedicated prose passage: name the study, describe the intervention, state the sample (n=X, population, setting), and report the outcome with the exact statistic.
+- Do NOT stack multiple citations at the end of a single sentence (e.g., "improved outcomes [1][2][3][4]"). Each citation must appear where that specific study's finding is actually described.
+- Do NOT group studies together under a shared summary sentence unless they are part of a formal meta-analysis. Write "One RCT (Author, Year, n=X) found..." then a new sentence for the next study.
+- Observational studies may be briefly grouped only when they share the exact same finding and population, but still cite each individually.
 
 **CRITICAL — Evidence type distinctions:**
 - RCT: Direct causal evidence. Label as (RCT, n=X). Can claim causation.
 - Meta-Analysis / Systematic Review: Synthesis of multiple studies. Label as (meta-analysis, N studies). Can claim "pooled evidence shows" — NOT direct causation.
 - Quasi-Experimental: Comparison group but no randomisation. Label as (QED, n=X).
 - Observational / Survey: Correlation only. Label as (observational, n=X) or (survey, n=X).
+- Qualitative / Design / Prototype: Cannot support causal or effectiveness claims. Use only for mechanism, perception, or feasibility claims.
+- Validation / Scoring study: Demonstrates measurement capability only. Do NOT use to claim instructional impact or student learning gains.
 Always state the evidence type before the finding. "One RCT (Smith et al., 2023, n=400) found..." NOT "Research shows..."
+
+**CRITICAL — Do NOT conflate evidence types:**
+- A study that validates AI scoring of student work is NOT evidence that AI instruction improves learning.
+- A teacher perception or feasibility study is NOT evidence of student outcomes.
+- A design or prototype paper is NOT evidence of effectiveness.
+- If the only available evidence is indirect (scoring, perception, design), explicitly say so and do not imply causal impact.
 
 **Source budget: include at most {max_sources} citations in the Bibliography.** Prioritise RCTs and meta-analyses first, then quasi-experimental, then observational. Never fabricate sources to fill the budget.
 
@@ -64,14 +79,22 @@ Output this exact structure. Do not add any text outside these sections.
 
 ## Executive Summary
 
-Write one exhaustive, focused, substantive paragraph that states the central thesis and main argument of the report. Directly answer the research brief, cite the strongest supporting evidence inline [N], state the overall confidence level, and flag the single most important caveat. A decision-maker should be able to read only this section and walk away with an accurate picture.
+Write 3–5 substantial prose paragraphs covering:
+1. The central thesis: directly answer the research brief with the overall direction of evidence.
+2. The strongest experimental findings: for every RCT and meta-analysis retrieved, state the study, the intervention, the outcome, and the exact effect size or statistic. Do not summarise — name the studies and report their numbers.
+3. The strongest quasi-experimental and observational findings that corroborate or complicate the experimental evidence.
+4. How the evidence answers each of the tiered sub-questions of inquiry (from the Research Questions table below). Be explicit — for each sub-question tier, state whether the evidence answers it fully, partially, or leaves it unresolved, and cite the key sources.
+5. Overall confidence level and the single most important caveat or gap.
 
-Then insert this table immediately after the paragraph:
+A decision-maker should be able to read only this section and walk away with a precise, data-grounded picture of both the overall answer and how each line of inquiry was resolved. Do not use thematic headings, bullet lists, or section labels inside the Executive Summary — write in flowing prose paragraphs with inline citations [N] throughout.
+
+Then insert this table immediately after the paragraphs:
 
 | Claim | Supporting Sources | Confidence |
 |-------|--------------------|------------|
 
-List the 7-10a most important findings as specific, cited claims. Confidence: High / Moderate / Low.
+List the 7-10
+ most important findings as specific, cited claims with exact statistics where available. Confidence: High / Moderate / Low.
 
 ---
 
@@ -102,7 +125,9 @@ Methodological weaknesses across the full evidence base: small samples, short du
 
 CRITICAL RULE: Every source in this table MUST be cited at least once inline in the text above using [N]. Do not list any source in the bibliography that does not have a corresponding [N] reference somewhere in the report body. If a source is not cited inline, drop it from the bibliography entirely. No padding, no orphan entries.
 
-List every cited source, numbered sequentially to match the inline [N] references.
+CRITICAL — NUMBERING: Use the ORIGINAL [N] number from the PreScoredTiers list as the # column. Do NOT renumber entries 1, 2, 3... If you cited [53] and [105] inline, those rows must appear as # 53 and # 105 in the table. The # column must match the inline citation numbers exactly — this is how readers look up sources.
+
+For the Citation column: copy the URL from the PreScoredTiers entry for that number. Do NOT write "not_available" if the PreScoredTiers entry has a URL — copy it exactly.
 
 **K-12 Evidence Framework rubric (for sources not pre-scored in PreScoredTiers above):**
 

@@ -12,6 +12,7 @@ from nodes.supervisor import supervisor_subgraph
 from nodes.synthesis import compress_findings, draft_report
 from nodes.critique import critique
 from nodes.report import final_report
+from nodes.qa import qa_audit
 from state import AgentInputState, AgentState, SupervisorState
 
 
@@ -38,10 +39,13 @@ async def research_supervisor(state: AgentState, config: RunnableConfig) -> dict
 
     updates: dict = {}
 
-    if result.get("notes"):
-        updates["notes"] = result["notes"]
-    if result.get("raw_notes"):
-        updates["raw_notes"] = result["raw_notes"]
+    new_notes = result.get("notes") or []
+    if new_notes:
+        updates["notes"] = new_notes
+        updates["all_notes"] = new_notes  # operator.add — accumulates across iterations
+    new_raw = result.get("raw_notes") or []
+    if new_raw:
+        updates["raw_notes"] = new_raw
     if result.get("source_counts"):
         updates["source_counts"] = result["source_counts"]
     if result.get("paper_profiles"):
@@ -80,6 +84,7 @@ builder.add_node("compress_findings", compress_findings)
 builder.add_node("draft_report", draft_report)
 builder.add_node("critique", critique)
 builder.add_node("final_report_generation", final_report)
+builder.add_node("qa_audit", qa_audit)
 
 builder.add_edge(START, "education_discovery")
 # education_discovery uses Command(goto="research_supervisor") so no explicit edge needed
@@ -95,6 +100,7 @@ builder.add_conditional_edges(
 )
 # After critique → back to supervisor for the next iteration
 builder.add_edge("critique", "research_supervisor")
-builder.add_edge("final_report_generation", END)
+builder.add_edge("final_report_generation", "qa_audit")
+builder.add_edge("qa_audit", END)
 
 graph = builder.compile()

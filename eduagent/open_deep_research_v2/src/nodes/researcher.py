@@ -16,10 +16,21 @@ from prompts import (
     researcher_reflect_prompt,
 )
 from state import KeywordSet, ReflectionDecision, ResearcherState
+from utils.asta_enricher import enrich_from_web_output
+from utils.budget import get_budget
 from utils.llm import get_model, get_today_str
 from utils.paper_filter import relevance_filter, FILTERABLE_TOOLS
 from utils.pdf_extractor import enrich_tool_output, PDF_EXTRACTABLE_TOOLS
 from utils.search import get_all_tools, get_tools_by_name
+
+# When a budgeted tool is exhausted, fall back to this tool instead
+_BUDGET_FALLBACK = {
+    "tavily_search": "openai_web_search",
+}
+
+# After these tools return, try to enrich results with Asta get_paper metadata
+# snippet_search returns ~500-word excerpts that often embed DOIs/arXiv IDs
+_WEB_ENRICHABLE_TOOLS = {"openai_web_search", "tavily_search", "snippet_search"}
 
 logger = logging.getLogger(__name__)
 
@@ -31,11 +42,19 @@ logger = logging.getLogger(__name__)
 SWEEP_BY_TIER: dict[str, list[tuple[str, str]]] = {
     "tier1": [
         ("semantic_scholar_search", "primary"),
+        ("search_papers_by_relevance", "primary"),
+        ("search_papers_by_relevance", "variation"),
+        ("snippet_search", "primary"),
+        ("snippet_search", "variation"),
         ("openai_web_search", "web"),
     ],
     "tier2": [
         ("semantic_scholar_search", "primary"),
         ("semantic_scholar_search", "variation"),
+        ("search_papers_by_relevance", "primary"),
+        ("search_papers_by_relevance", "variation"),
+        ("snippet_search", "primary"),
+        ("snippet_search", "variation"),
         ("openalex_search", "primary"),
         ("scholar_search", "variation"),
         ("openai_web_search", "web"),
@@ -43,6 +62,10 @@ SWEEP_BY_TIER: dict[str, list[tuple[str, str]]] = {
     "tier3": [
         ("semantic_scholar_search", "primary"),
         ("semantic_scholar_search", "variation"),
+        ("search_papers_by_relevance", "primary"),
+        ("search_papers_by_relevance", "variation"),
+        ("snippet_search", "primary"),
+        ("snippet_search", "variation"),
         ("openalex_search", "primary"),
         ("scholar_search", "variation"),
         ("openai_web_search", "web"),
@@ -50,6 +73,10 @@ SWEEP_BY_TIER: dict[str, list[tuple[str, str]]] = {
     "tier4": [
         ("semantic_scholar_search", "primary"),
         ("semantic_scholar_search", "variation"),
+        ("search_papers_by_relevance", "primary"),
+        ("search_papers_by_relevance", "variation"),
+        ("snippet_search", "primary"),
+        ("snippet_search", "variation"),
         ("eric_search", "primary"),
         ("eric_search", "variation"),
         ("openalex_search", "primary"),
@@ -103,9 +130,22 @@ async def researcher(state: ResearcherState, config: RunnableConfig) -> dict:
 
     # Build async tasks for each (tool, query_field) pair
     async def run_sweep_entry(tool_name: str, query_field: str):
-        tool = tools_by_name.get(tool_name)
+        budget = get_budget()
+
+        # Check budget — fall back to alternate tool if exhausted
+        effective_tool_name = tool_name
+        if not await budget.acquire(tool_name):
+            fallback = _BUDGET_FALLBACK.get(tool_name)
+            if fallback:
+                logger.info(f"[researcher] {tool_name} budget exhausted — falling back to {fallback}")
+                effective_tool_name = fallback
+            else:
+                logger.info(f"[researcher] {tool_name} budget exhausted — skipping")
+                return tool_name, query_field, None
+
+        tool = tools_by_name.get(effective_tool_name)
         if tool is None:
-            logger.debug(f"[researcher] Tool '{tool_name}' not available — skipping.")
+            logger.debug(f"[researcher] Tool '{effective_tool_name}' not available — skipping.")
             return tool_name, query_field, None
 
         attr = _QUERY_FIELD_MAP.get(query_field, "primary_query")
@@ -113,18 +153,31 @@ async def researcher(state: ResearcherState, config: RunnableConfig) -> dict:
         if not query:
             return tool_name, query_field, None
 
+        # Asta tools don't support wildcard syntax — strip * and truncate boolean operators
+        if effective_tool_name in {"search_papers_by_relevance", "snippet_search"}:
+            query = query.replace("*", "").replace(" AND ", " ").replace(" OR ", " ").strip()
+
         try:
-            # Each tool has its own required argument name
-            if tool_name == "tavily_search":
+            if effective_tool_name == "tavily_search":
                 result = await tool.ainvoke({"queries": [query], "config": config})
+            elif effective_tool_name == "search_papers_by_relevance":
+                result = await tool.ainvoke({"keyword": query})
             else:
                 result = await tool.ainvoke({"query": query})
 
             if isinstance(result, list):
                 result = "\n".join(str(r) for r in result)
-            return tool_name, query_field, str(result)
+            result_str = str(result)
+
+            # Enrich web results with Asta get_paper metadata
+            if effective_tool_name in _WEB_ENRICHABLE_TOOLS:
+                enrichment = await enrich_from_web_output(result_str, tools_by_name)
+                if enrichment:
+                    result_str = result_str + enrichment
+
+            return effective_tool_name, query_field, result_str
         except Exception as e:
-            logger.warning(f"[researcher] Tool '{tool_name}' failed: {e}")
+            logger.warning(f"[researcher] Tool '{effective_tool_name}' failed: {e}")
             return tool_name, query_field, None
 
     tasks = [run_sweep_entry(tn, qf) for tn, qf in sweep_plan]

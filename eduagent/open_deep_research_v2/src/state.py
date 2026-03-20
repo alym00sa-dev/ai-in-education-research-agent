@@ -196,7 +196,9 @@ class AgentState(MessagesState):
     critique_history: Annotated[list[str], operator.add] = []
     notes: Annotated[list[str], override_reducer] = []
     raw_notes: Annotated[list[str], override_reducer] = []
+    all_notes: Annotated[list[str], operator.add] = []  # accumulates across all iterations
     final_report: str = ""
+    qa_report: str = ""
     paper_profiles: Annotated[list[PaperProfile], operator.add] = []
     source_counts: Annotated[dict, merge_source_counts] = {}
     thought_log: Annotated[list[dict], operator.add] = []
