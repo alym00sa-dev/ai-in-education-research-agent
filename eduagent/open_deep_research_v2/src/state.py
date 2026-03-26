@@ -191,14 +191,14 @@ class AgentState(MessagesState):
     tiered_question_map: Optional[dict] = None
     supervisor_messages: Annotated[list, override_reducer] = []
     iteration: int = 0
-    compress_findings_history: Annotated[list[str], operator.add] = []
-    draft_report_history: Annotated[list[str], operator.add] = []
+    executive_summary_history: Annotated[list[str], operator.add] = []
     critique_history: Annotated[list[str], operator.add] = []
     notes: Annotated[list[str], override_reducer] = []
     raw_notes: Annotated[list[str], override_reducer] = []
     all_notes: Annotated[list[str], operator.add] = []  # accumulates across all iterations
     final_report: str = ""
     qa_report: str = ""
+    qa_score: int = 0
     paper_profiles: Annotated[list[PaperProfile], operator.add] = []
     source_counts: Annotated[dict, merge_source_counts] = {}
     thought_log: Annotated[list[dict], operator.add] = []
@@ -294,6 +294,19 @@ class ReflectionDecision(BaseModel):
 
 class CritiqueOutput(BaseModel):
     evidence_gaps: list[str]
-    reasoning_errors: list[str]
+    thesis_gaps: list[str]
     missing_angles: list[str]
     next_iteration_brief: str
+
+
+class QAScores(BaseModel):
+    """Structured scores-only output from the QA audit — kept small for reliable tool use."""
+    citation_score: int = Field(ge=0, le=20, description="Citation-bibliography linkage score (0-20)")
+    statistic_score: int = Field(ge=0, le=25, description="Statistic provenance score (0-25)")
+    study_design_score: int = Field(ge=0, le=15, description="Study design accuracy score (0-15)")
+    coverage_score: int = Field(ge=0, le=20, description="Sub-question coverage score (0-20)")
+    url_score: int = Field(ge=0, le=20, description="URL integrity score (0-20)")
+
+    @property
+    def overall_score(self) -> int:
+        return self.citation_score + self.statistic_score + self.study_design_score + self.coverage_score + self.url_score

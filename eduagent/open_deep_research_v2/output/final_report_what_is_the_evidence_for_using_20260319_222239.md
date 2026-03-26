@@ -1,0 +1,165 @@
+## Executive Summary
+
+The retrieved evidence indicates that generative AI tools are promising but still not established as a reliable way to improve K-12 mathematics achievement at scale. The strongest directly relevant studies are one exploratory RCT in UK secondary classrooms, one quasi-experimental middle-school hybrid tutoring investigation, and several benchmark/evaluation studies. Together, they suggest that pedagogically constrained, teacher- or tutor-mediated generative AI can support math learning, but the broader evidence base remains thin, heterogeneous, and often indirect. The most consistent pattern is that generative AI is more credible as a scaffold for explanations, hints, and feedback than as an autonomous solver or replacement for established instruction [19][25][96][178].
+
+One exploratory RCT in UK classrooms found that a pedagogically tuned generative AI tutor could support mathematics learning safely and effectively relative to standard platform hints and human tutoring. The study reports that students guided by LearnLM performed at least as well as those tutored by humans alone on measured outcomes, with a 5.5 percentage point advantage on novel problems on subsequent topics, and tutors approved 76.4% of drafted messages with zero or minimal edits [19]. A separate quasi-experimental investigation of hybrid human-AI tutoring in middle schools reported positive effects on proficiency and usage, with especially promising results for lower-achieving students, but the full outcome statistics were not retrieved in the evidence summary [25]. Meta-analytic evidence also points in a generally positive direction, though with important caveats. The living meta-analysis on generative AI and mathematics concludes that effects are exploratory and highly context-dependent [178]. The broader ChatGPT/meta-analytic literature likewise suggests positive average learning effects, but those syntheses are not all specific to K-12 math or to generative AI in the narrow sense [141][177].
+
+The cautionary evidence is substantial. Several benchmark and evaluation studies show that LLMs can answer some grade-school and high-school math questions, but their performance is unstable on word problems, complex reasoning, and misleading or linguistically varied items [39][62][124][167]. In primary and middle-school settings, models still struggle with robust mathematical reasoning, and some evaluations show weaknesses when irrelevant information is added or when tasks require misconception diagnosis rather than final answers [30][105][137][150]. Studies focused on tutoring and feedback also suggest that answer quality and pedagogical quality are not the same: chatbots may generate fluent but shallow or incorrect support, and some studies explicitly warn that unguided use can reduce learning or encourage overreliance [18][49][168]. Thus, the evidence supports a narrow claim: generative AI may improve some K-12 math outcomes under structured, supervised conditions, but it is not yet proven to outperform established tutoring or adaptive software across typical classroom use [77][112][184][95].
+
+The tiered research questions are only partially resolved. Tier 1 is answered moderately well at the definitional level: the literature converges on generative AI as a system for explanations, hints, feedback, dialogue, task generation, and error diagnosis, but most studies focus on perceptions, benchmarks, or design rather than direct student outcomes [3][9][97][178]. Tier 2 is answered more fully for baseline approaches: established comparators remain teacher explanation, worked examples, human tutoring, adaptive practice, and intelligent tutoring systems, which already have a stronger evidence base than generative AI in math [77][112][152][184]. Tier 3 is partially answered: the literature is clear that teacher mediation, prompt quality, curriculum alignment, and guardrails matter, but it is much less clear which implementation features reliably produce learning gains in K-12 math [18][25][63][100][128]. Tier 4 remains only partially resolved: the best evidence suggests some benefit in structured tutoring-like settings, but the comparative advantage over non-AI supports, durability of gains, equity effects, and resistance to homework-answer-copying artifacts remain uncertain [19][25][96][168].
+
+Overall confidence is low to moderate. The single most important caveat is that the evidence base is still too small and too benchmark-heavy to justify strong claims about durable K-12 math achievement gains; the strongest positive results come from highly structured systems with human oversight, not from unrestricted student use [19][25][178].
+
+| Claim | Supporting Sources | Confidence |
+|-------|--------------------|------------|
+| A pedagogically tuned generative AI tutor in UK secondary classrooms produced at least comparable learning to human tutoring, with a 5.5 percentage point advantage on novel subsequent-topic problems and 76.4% tutor approval of drafted messages with zero/minimal edits. | [19] | High |
+| Hybrid human-AI tutoring in middle school showed positive effects on proficiency and usage, especially for lower-achieving students. | [25] | Moderate |
+| The living meta-analysis concludes that evidence on generative AI and mathematics remains exploratory and context-dependent. | [178] | Moderate |
+| Broader meta-analytic evidence on ChatGPT-based learning is positive on average, but not all syntheses are specific to K-12 math or generative AI interventions. | [141][177] | Moderate |
+| LLMs can solve some K-12 math tasks but remain unreliable on word problems, complex reasoning, and benchmark-variant formulations. | [39][62][167] | High |
+| Unguided or answer-giving generative AI can be harmful or promote overreliance, making guardrails essential. | [18][49][168] | High |
+| Teacher mediation, prompt quality, and curriculum alignment are repeatedly identified as important implementation conditions. | [63][95][100][128] | Moderate |
+| Evidence for durability, transfer, and standardized achievement gains in K-12 math is limited. | [19][25][96][178] | High |
+| Evidence on subgroup effects, especially for multilingual learners, students with disabilities, and elementary grades, is sparse. | [23][30][126][149] | High |
+| The strongest comparative case for generative AI is as a scaffold inside structured tutoring systems, not as a standalone replacement for instruction. | [19][25][95][184] | Moderate |
+
+## Research Report
+
+### Research Questions Investigated
+
+| Tier | Sub-question |
+|------|-------------|
+| Tier 1 | How are generative AI tools in K-12 math education defined in the literature, and what distinct functions do they serve for students in elementary, middle, or high school? |
+| Tier 1 | What math outcome constructs are most commonly studied for K-12 students using generative AI tools, and how are achievement, conceptual understanding, procedural fluency, and problem-solving operationalized? |
+| Tier 1 | Which K-12 student populations and instructional contexts are most relevant for studying generative AI in math? |
+| Tier 2 | How are the same K-12 math skills and outcomes typically developed without generative AI, and what counterfactual conditions represent standard practice? |
+| Tier 2 | What baseline instructional approaches are commonly used for comparable K-12 math populations and contexts when generative AI is not present? |
+| Tier 2 | How do non-generative AI technologies for math learning serve as prior or alternative approaches to improving K-12 math outcomes? |
+| Tier 3 | How are generative AI tools typically integrated into K-12 math instruction or practice, and what tasks do students perform with them? |
+| Tier 3 | What pedagogical mechanisms are proposed for generative AI in K-12 math learning? |
+| Tier 3 | What implementation features and constraints are reported in K-12 settings? |
+| Tier 4 | What is the comparative evidence that generative AI tools improve K-12 math achievement or related outcomes relative to standard instruction, tutoring, or non-AI digital supports? |
+| Tier 4 | Do effects vary by grade level, student subgroup, topic area, dosage, or implementation model? |
+| Tier 4 | What limitations or risks are identified in studies of generative AI for K-12 math? |
+| Tier 4 | Where direct K-12 evidence is limited, what do adjacent studies suggest about likely benefits and boundary conditions? |
+
+## Foundational framing: what counts as generative AI in K-12 math
+
+The literature characterizes generative AI as systems that produce novel text or multimodal outputs in response to prompts, with educational uses that include explanation, feedback, tutoring dialogue, content generation, assessment support, and teacher planning [3][9][71][178]. In the K-12 mathematics context, the most common functions are stepwise explanation, hinting, worked-solution generation, adaptive questioning, and error diagnosis [18][19][89][99][105][128]. These tools are sometimes deployed as tutors, sometimes as peer-like collaborators, and sometimes as teacher-facing productivity aids [25][63][126][183].
+
+The literature also makes clear that “generative AI” is not a single intervention. Some studies focus on student-facing chatbots or copilots [19][25][97], while others focus on lesson generation, feedback drafting, or tutor support [86][89][95][107][128]. This distinction matters because educational effects depend on whether the model is used to generate full solutions, offer hints, scaffold reasoning, diagnose errors, or simply provide answer completion [18][49][94][99][137]. Several studies explicitly warn that benchmark performance on math questions should not be confused with learning value, since a system can produce the right answer while still providing poor tutoring [49][94][105].
+
+Outcome measurement is also uneven. The retrieved studies most often operationalize outcomes as math achievement, task correctness, benchmark accuracy, homework performance, or tutor approval of drafted feedback [19][25][39][62][141][177]. Much less often do they measure conceptual understanding, procedural fluency, transfer, or durable retention directly [19][25][96][167]. The evidence therefore speaks most clearly to immediate task performance and least clearly to durable mathematical learning.
+
+## Baseline instruction and non-generative alternatives
+
+Without generative AI, K-12 math learning is typically supported through teacher explanation, worked examples, practice, peer discussion, small-group tutoring, homework, and conventional digital platforms [77][112][152][184]. The strongest established non-generative technology baselines are intelligent tutoring systems, adaptive practice systems, and structured feedback environments [77][112][152]. These systems already have a longer and stronger evidence base than generative AI in mathematics, and they remain the most relevant comparison class for judging incremental value [77][112][184].
+
+The retrieved literature also frames human tutoring as an important comparator, especially for high-dosage or individualized support [19][25][184]. In this literature, generative AI is often positioned as a way to scale some of the functions of tutoring, not as a replacement for the instructional relationship itself [19][95][184]. That is why hybrid human-AI models recur as the most promising alternative: they preserve teacher judgment and add scalable prompt-based support [25][95][184].
+
+A separate but important baseline concern is that established instructional methods already manage misconceptions, pacing, and productive struggle through teacher judgment and curricular sequencing [63][100][120][150]. Generative AI must therefore be judged against strong teaching, not against absence of support. The evidence does not yet show that it reliably improves on those established practices [19][25][77][152].
+
+## Mechanisms and implementation: how generative AI is used in practice
+
+The clearest implementation pattern is that generative AI is most often used to provide explanation, hinting, feedback, or tutoring dialogue during problem solving [18][19][89][96][99]. In some settings, students interact directly with a chatbot or tutor during homework or classroom practice [19][23][97][137]. In others, AI generates tasks, lesson materials, or feedback that are then reviewed or filtered by teachers or tutors [86][95][107][128]. There are also collaborative uses, including AI peers for small-group problem solving and AI-powered teachable agents in middle-school classes [126][127].
+
+Several mechanism hypotheses recur across the literature. First, immediate feedback is viewed as useful because it reduces the delay between student action and correction [26][107]. Second, step-by-step scaffolding and guided dialogue may support reasoning more effectively than direct answer giving [18][95][100][128]. Third, AI can help generate variations of problems or explanations, which may increase practice opportunities and reduce teacher workload [89][93][108][128]. Fourth, AI can support metacognitive prompting and error diagnosis, especially in systems designed around tutoring best practices or tutor-move support [95][98][100][150].
+
+The implementation literature also repeatedly identifies constraints. Teacher mediation appears important in classroom and homework contexts [25][63][184]. Prompt quality and curriculum alignment matter because generic prompts often produce shallow or off-target output [63][89][96][128]. Guardrails are essential because unguided systems can provide incorrect or overly direct answers, and some studies explicitly warn that such use can harm learning [18][49][168]. Age appropriateness is another concern, especially in elementary and middle-school settings where students may not reliably detect incorrect AI output [137][149][160]. Finally, access, trust, and classroom governance are likely to shape uptake, but these are rarely measured as outcomes [23][118][187].
+
+## Comparative evidence: does generative AI improve K-12 math outcomes?
+
+The strongest directly relevant experimental evidence is the exploratory RCT of LearnLM in UK classrooms [19]. That study reports that the generative AI tutor supported mathematics learning safely and effectively relative to standard platform hints and human tutoring. The reported results include at least comparable performance to human tutoring on measured outcomes, a 5.5 percentage point advantage on novel problems in subsequent topics, and 76.4% tutor approval of drafted messages with zero or minimal edits [19]. This is the clearest direct indication that a pedagogically tuned generative AI system can contribute to math learning under controlled conditions.
+
+The strongest quasi-experimental evidence is the three-study middle-school investigation of hybrid human-AI tutoring [25]. That study reports positive effects on proficiency and usage, with hints that lower-achieving students may benefit more. Because the retrieved summary does not provide exact effect sizes or sample counts, the result should be interpreted as promising but not definitive [25]. Its importance lies in the implementation model: AI worked as part of a hybrid system rather than as a standalone chatbot [25].
+
+A second line of comparative evidence concerns AI-generated help versus human-authored help. One RCT found that ChatGPT-generated help produced learning gains equivalent to human tutor-authored help on mathematics skills, but the study is adult-based in the pre-scored record and therefore only indirectly informative for K-12 [84]. A related RCT on algebra hints likewise compared ChatGPT-generated hints with human tutor-generated hints and is again primarily adult-based in the retrieved scoring record [140]. These studies matter because they suggest that, when tightly constrained and pedagogically specified, AI-generated help can sometimes match human-authored support on short-term learning tasks [84][140]. However, their external validity to K-12 math is limited.
+
+Meta-analytic evidence is mixed but somewhat optimistic. The living meta-analysis on generative AI and mathematics concludes that the evidence base remains exploratory, but it points toward potential benefits that depend on context and instructional design [178]. A separate ChatGPT learning meta-analysis reports positive average effects across educational outcomes, but it is not limited to K-12 mathematics and includes broader grades and subjects [141]. An ITS-focused meta-analysis also finds positive K-12 effects for intelligent tutoring systems, which is relevant as a baseline comparison but not generative-AI-specific [77]. Together, these syntheses suggest that AI can help learning, but they do not establish a broad, durable generative-AI advantage in K-12 math [77][141][178].
+
+The cautionary evidence is especially strong on complex reasoning and unguided use. Several benchmark studies show that LLMs can answer some elementary and high-school math questions but are brittle when word problems are lengthened, linguistically perturbed, or seeded with irrelevant information [30][39][62][163][165][166][167]. Other evaluations show weak performance on high-school math competitions, word-problem reasoning, and misconception-based tasks [49][88][105][121]. These patterns matter for education because students need support for reasoning, not merely final answers [49][94][105][150]. In short, the more the task resembles classroom learning rather than benchmark computation, the more the evidence favors caution.
+
+## Implementation moderators: where effects may differ
+
+Evidence on moderators is limited but suggestive. Grade level appears important: elementary, middle, and high school studies all exist, but the strongest direct intervention evidence is in middle and secondary settings [19][25][96]. Elementary evidence is thinner and often limited to design or qualitative work on creative writing, word problems, or teacher perceptions [23][89][96][137]. That suggests a weaker evidentiary base for younger students, especially where independent error detection is required.
+
+Topic area also matters. Word problems, proof, geometry, misconceptions, and complex reasoning appear to be harder for current models than routine computation or direct explanation [26][49][96][105][107][128]. This means the likely benefit of generative AI is not uniform across mathematics. It may be more useful for guided practice in algebra or word-problem support than for open-ended proof or high-variance problem solving [94][99][105][150].
+
+Student differences are only lightly studied, but lower-achieving students may benefit more in hybrid tutoring models [25]. Self-efficacy may also matter: students with lower confidence may either need more structure or become more vulnerable to dependency, depending on how the system is designed [118][126][137]. Studies of teacher acceptance and teacher perceptions suggest that educator beliefs, readiness, and trust may shape whether generative AI is used well at all [4][5][97][118].
+
+Dosage and duration remain weakly reported. Some studies are short classroom trials or pilots [19][23][96], while benchmark papers tell us nothing about sustained exposure. This means the field cannot yet answer whether benefits persist over a semester or school year, or whether novelty effects explain some positive findings [19][25][168].
+
+## Risks, limitations, and failure modes
+
+The most prominent risk is inaccurate or hallucinated output. Many benchmark studies show that LLMs can produce fluent but wrong solutions, especially on geometry, word problems, or tasks involving irrelevant information and linguistic variation [18][30][39][49][62][167]. In educational settings, that risk is amplified because students may not recognize errors [137][149][150]. Several studies also point to sycophancy or overly agreeable tutoring behavior, where the system validates incorrect reasoning rather than challenging it [100][105].
+
+A second risk is overreliance. The evidence includes a randomized study showing that short AI literacy interventions do not necessarily reduce overreliance on incorrect ChatGPT recommendations [168]. Other studies similarly warn that students may use generative AI to shortcut reasoning rather than to support it [49][94][194]. This is especially relevant for homework, where answer completion can masquerade as achievement.
+
+A third risk is alignment failure. Generic LLMs are not automatically aligned to curriculum goals, age-appropriate language, or local assessment standards [63][89][96][108]. Several studies emphasize that teacher involvement and task design are needed to keep AI use pedagogically productive [25][95][184]. Without those constraints, the intervention becomes more like an answer engine than a learning tool [18][49][94].
+
+Finally, the literature highlights access and equity concerns. Evidence on multilingual learners, students with disabilities, and low-resource schools is minimal, and the strongest positive studies may reflect environments with better infrastructure or stronger implementation capacity [23][126][149][187]. That means broad rollout could widen rather than narrow gaps if support, connectivity, or teacher training are uneven [5][63][118].
+
+## Synthesis and Implications
+
+Taken as a whole, the evidence suggests that generative AI is best understood as a potentially useful supplement to math instruction, not as a proven replacement for teachers, tutors, or established digital supports [19][25][95][184]. The strongest positive results come from systems that constrain AI to tutoring-like roles, integrate human oversight, and keep the system aligned with pedagogy and curriculum [19][25][95][100]. By contrast, unrestricted use of general-purpose chatbots is much less convincing and may be harmful when students receive incorrect answers or bypass reasoning [18][49][168].
+
+For practitioners, the practical implication is to use generative AI only where it can be tightly supervised and its outputs can be checked. The best near-term use cases appear to be guided hints, worked-example support, feedback drafting, and teacher-mediated tutoring enhancements [19][25][96][107][128]. Use cases that demand exactness and robust reasoning, such as proof, geometry, and misconception correction, require much more caution [49][94][105][137]. Schools should also treat academic integrity, curriculum alignment, and teacher training as central implementation issues rather than side concerns [5][17][63][118].
+
+From a research perspective, the evidence base is at an early to emerging stage rather than mature. It contains encouraging signals, but the direct K-12 math outcome literature remains too sparse to support strong claims about large-scale achievement improvement [19][25][178]. The best current policy stance is therefore conditional optimism: generative AI may help when carefully designed and supervised, but schools should not assume that general-use chatbots will improve math learning on their own [19][25][168].
+
+## Limitations and Research Gaps
+
+The weakest evidence remains in direct K-12 causal research. Only a small number of clearly relevant experimental or quasi-experimental studies were retrieved, and even those often lacked the full reporting needed for synthesis, including exact sample sizes, dosage, and complete outcome statistics in the evidence summary [19][25][96]. Much of the rest of the literature is benchmark, design, survey, or conceptual work, which is informative but indirect [3][9][18][39][62][97][178].
+
+The biggest gap concerns durability and transfer. Very few studies report delayed posttests, long-term retention, or far transfer to new mathematics topics [19][25][167]. A related gap concerns actual classroom achievement versus task completion: some evidence suggests homework or immediate task benefits, but this does not establish deeper understanding or independent competence [19][49][96]. A third gap concerns subgroup effects. Evidence on elementary students, multilingual learners, students with disabilities, and low-income populations is sparse, even though these groups are central to K-12 policy [23][30][126][149][187].
+
+Implementation science is also underdeveloped. The field still lacks clear evidence on dosage, teacher training, prompt protocols, guardrails, and cost-effectiveness [25][63][95][128]. Comparator quality is another weakness: many studies do not directly benchmark generative AI against strong non-AI digital tools or high-quality tutoring [77][112][152][184]. Finally, the evidence on harms is real but not yet quantified well; hallucination, overreliance, and answer-copying are repeatedly flagged, but the prevalence and magnitude of these risks remain uncertain [18][49][168][194].
+
+## Bibliography
+
+| # | Citation | Study Design | Quality | Impact |
+|---|----------|--------------|---------|--------|
+| 3 | ChatGPT for Good? On Opportunities and Challenges of Large Language Models for Education. [URL](not available). | Qualitative | Red | Red |
+| 4 | Teachers’ Beliefs and Practices About the Potential of ChatGPT in Teaching Mathematics in Secondary Schools. [URL](https://doi.org/10.1007/s40751-024-00168-3). | Mixed-Methods | Yellow | Yellow |
+| 5 | Awareness, acceptance, and adoption of Gen-AI by K-12 mathematics teachers: an empirical study integrating TAM and TPB. [URL](https://doi.org/10.1186/s40359-025-02781-2). | Observational | Yellow | Yellow |
+| 9 | Promises and challenges of generative artificial intelligence for human learning. [URL](https://www.researchgate.net/publication/385146312). | Qualitative | Red | Yellow |
+| 18 | Retrieval-augmented Generation to Improve Math Question-Answering: Trade-offs Between Groundedness and Human Preference. [URL](https://arxiv.org/abs/2310.03184). | Mixed-Methods | Yellow | Yellow |
+| 19 | AI tutoring can safely and effectively support students: An exploratory RCT in UK classrooms. [URL](goo.gle/LearnLM-Nov25). | RCT | Green | Green |
+| 23 | Elementary School Students’ and Teachers’ Perceptions Towards Creative Mathematical Writing with Generative AI. [URL](http://arxiv.org/abs/2409.06723v1). | Qualitative | Yellow | Yellow |
+| 25 | Improving Student Learning with Hybrid Human-AI Tutoring: A Three-Study Quasi-Experimental Investigation. [URL](https://doi.org/10.1145/3636555.3636896). | QED | Green | Green |
+| 26 | Automated Feedback in Math Education: A Comparative Analysis of LLMs for Open-Ended Responses. [URL](https://arxiv.org/abs/2411.08910). | Observational | Yellow | Yellow |
+| 30 | Enhancing Robustness in Large Language Models: Prompting for Mitigating the Impact of Irrelevant Information. [URL](https://arxiv.org/abs/2408.10615v2). | Observational | Red | Red |
+| 39 | CMATH: Can Your Language Model Pass Chinese Elementary School Math Test? [URL](https://arxiv.org/abs/2306.16636). | Observational | Yellow | Yellow |
+| 49 | Large Language Models and Mathematical Reasoning Failures. [URL](https://arxiv.org/abs/2502.11574). | Observational | Red | Red |
+| 62 | CMATH: Can Your Language Model Pass Chinese Elementary School Math Test? [URL](https://arxiv.org/abs/2306.16636). | Observational | Yellow | Yellow |
+| 63 | Should There be a Teacher In-the-Loop? A Study of Generative AI Personalized Tasks Middle School. [URL](not available). | Mixed-Methods | Yellow | Yellow |
+| 77 | Do intelligent tutoring systems benefit K-12 students? A meta-analysis and evaluation of heterogeneity of treatment effects in the U.S. [URL](http://arxiv.org/abs/2511.04997v1). | Meta-Analysis | Blue | Blue |
+| 84 | ChatGPT-generated help produces learning gains equivalent to human tutor-authored help on mathematics skills. [URL](https://doi.org/10.1371/journal.pone.0304013). | RCT | Blue | Blue |
+| 89 | Elementary Math Word Problem Generation using Large Language Models. [URL](https://arxiv.org/abs/2506.05950v1). | Observational | Yellow | Yellow |
+| 95 | Tutor CoPilot: A Human-AI Approach for Scaling Real-Time Expertise. [URL](https://doi.org/10.21203/rs.3.rs-5363154/v1). | RCT | Blue | Green |
+| 96 | Design and evaluation of ChatGPT-MWPS: an AI-enhanced learning system for improving primary students’ mathematical word problem solving. [URL](https://doi.org/10.1186/s40561-025-00419-9). | QED | Yellow | Yellow |
+| 97 | ChatGPT: A revolutionary tool for teaching and learning mathematics. [URL](https://doi.org/10.29333/ejmste/13272). | Qualitative | Yellow | Yellow |
+| 99 | Automatic Generation of Question Hints for Mathematics Problems using Large Language Models in Educational Technology. [URL](https://arxiv.org/abs/2411.03495v1). | Observational | Yellow | Yellow |
+| 100 | Hierarchical Pedagogical Oversight: A Multi-Agent Adversarial Framework for Reliable AI Tutoring. [URL](https://arxiv.org/abs/2512.22496). | Observational | Yellow | Yellow |
+| 105 | Novice Learner and Expert Tutor: Evaluating Math Reasoning Abilities of Large Language Models with Misconceptions. [URL](https://arxiv.org/abs/2310.02439). | Observational | Yellow | Yellow |
+| 107 | Personalized Auto-Grading and Feedback System for Constructive Geometry Tasks Using Large Language Models on an Online Math Platform. [URL](http://arxiv.org/abs/2509.25529v1). | Observational | Yellow | Yellow |
+| 112 | A Multimedia Adaptive Tutoring System for Mathematics that Addresses Cognition, Metacognition and Affect. [URL](https://doi.org/10.1007/s40593-014-0023-y). | Mixed-Methods | Yellow | Green |
+| 118 | The Use of Generative Artificial Intelligence for Upper Secondary Mathematics Education Through the Lens of Technology Acceptance. [URL](https://doi.org/10.1145/3672608.3707817). | Observational | Yellow | Yellow |
+| 126 | Designing AI Peers for Collaborative Mathematical Problem Solving with Middle School Students: A Participatory Design Study. [URL](https://doi.org/10.1145/3772318.3791138). | Mixed-Methods | Yellow | Green |
+| 127 | Students' Perceived Roles, Opportunities, and Challenges of a Generative AI-powered Teachable Agent: A Case of Middle School Math Class. [URL](http://arxiv.org/abs/2409.06721v1). | Qualitative | Yellow | Yellow |
+| 128 | Automatic Generation of Question Hints for Mathematics Problems using Large Language Models in Educational Technology. [URL](https://proceedings.mlr.press/). | Observational | Yellow | Yellow |
+| 137 | When the robotic Maths tutor is wrong - can children identify mistakes generated by ChatGPT? [URL](not available). | Observational | Yellow | Yellow |
+| 140 | Learning gain differences between ChatGPT and human tutor generated algebra hints. [URL](https://arxiv.org/abs/2302.06871). | RCT | Yellow | Yellow |
+| 141 | The effect of ChatGPT on students’ learning performance, learning perception, and higher-order thinking: insights from a meta-analysis. [URL](https://doi.org/10.1057/s41599-025-04787-y). | Meta-Analysis | Blue | Blue |
+| 149 | E-EVAL: A Comprehensive Chinese K-12 Education Evaluation Benchmark for Large Language Models. [URL](https://arxiv.org/abs/2401.15927). | Observational | Yellow | Yellow |
+| 150 | Using Large Language Models to Assess Tutors’ Performance in Reacting to Students Making Math Errors. [URL](https://arxiv.org/abs/2401.03238). | Observational | Yellow | Yellow |
+| 152 | Advancing Education through Tutoring Systems: A Systematic Literature Review. [URL](https://arxiv.org/abs/2503.09748). | Meta-Analysis | Yellow | Yellow |
+| 163 | A Careful Examination of Large Language Model Performance on Grade School Arithmetic. [URL](https://arxiv.org/abs/2405.00332v4). | Observational | Yellow | Yellow |
+| 167 | Can LLMs Solve Longer Math Word Problems Better? [URL](https://arxiv.org/abs/2405.14804v4). | Observational | Yellow | Yellow |
+| 168 | Short-term AI literacy intervention does not reduce over-reliance on incorrect ChatGPT recommendations. [URL](http://arxiv.org/abs/2503.10556v1). | RCT | Green | Red |
+| 177 | MathOdyssey: Benchmarking Mathematical Problem-Solving Skills in Large Language Models Using Odyssey Math Data. [URL](https://arxiv.org/abs/2406.18321). | Observational | Red | Red |
+| 178 | A Scoping Survey of ChatGPT in Mathematics Education. [URL](https://doi.org/10.1007/s40751-025-00172-1). | Meta-Analysis | Yellow | Yellow |
+| 184 | Designing for human–AI complementarity in K-12 education. [URL](not available). | RCT | Green | Green |
+
+### Body of Evidence Maturity: EARLY
+Justification: The evidence base includes a small number of strong direct studies, but most retrieved sources are benchmarks, surveys, design papers, or conceptual reviews rather than rigorous K-12 outcome trials. Coverage is uneven across grade bands, math topics, and student subgroups, and the literature provides limited evidence on durability, transfer, and equity.

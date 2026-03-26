@@ -13,13 +13,10 @@ from dataclasses import dataclass, field
 from langchain.chat_models import init_chat_model
 from langchain_core.messages import HumanMessage, SystemMessage
 
-from src.neo4j_config import (
-    IMPLEMENTATION_OBJECTIVES, OUTCOMES, POPULATIONS,
-)
+from src.neo4j_config import OUTCOMES, POPULATIONS
 from src.kg_agent.queries import (
     get_papers_by_taxonomy,
     get_outcome_coverage,
-    get_objective_coverage,
     get_total_paper_count,
 )
 
@@ -28,7 +25,6 @@ from src.kg_agent.queries import (
 
 @dataclass
 class TaxonomyMapping:
-    objectives: List[str] = field(default_factory=list)
     outcomes: List[str] = field(default_factory=list)
     populations: List[str] = field(default_factory=list)
     reasoning: str = ""
@@ -39,8 +35,6 @@ class KGCoverage:
     total_papers: int = 0
     relevant_papers: List[Dict[str, Any]] = field(default_factory=list)
     outcome_counts: Dict[str, int] = field(default_factory=dict)
-    objective_counts: Dict[str, int] = field(default_factory=dict)
-    matched_objectives: List[str] = field(default_factory=list)
     matched_outcomes: List[str] = field(default_factory=list)
     matched_populations: List[str] = field(default_factory=list)
 
@@ -54,10 +48,6 @@ class KGCoverage:
             lines.append("\nOutcome coverage (papers per outcome):")
             for outcome, count in sorted(self.outcome_counts.items(), key=lambda x: -x[1]):
                 lines.append(f"  - {outcome}: {count} paper(s)")
-        if self.objective_counts:
-            lines.append("\nImplementation objective coverage:")
-            for obj, count in sorted(self.objective_counts.items(), key=lambda x: -x[1]):
-                lines.append(f"  - {obj}: {count} paper(s)")
         if self.relevant_papers:
             lines.append("\nSample relevant papers:")
             for p in self.relevant_papers[:8]:
@@ -88,9 +78,6 @@ _TAXONOMY_MAPPING_PROMPT = f"""You are mapping a strategic education challenge t
 
 Available taxonomy terms:
 
-IMPLEMENTATION_OBJECTIVES (choose any that apply):
-{chr(10).join(f'  - {o}' for o in IMPLEMENTATION_OBJECTIVES)}
-
 OUTCOMES (choose any that apply):
 {chr(10).join(f'  - {o}' for o in OUTCOMES)}
 
@@ -99,7 +86,6 @@ POPULATIONS (choose any that apply):
 
 Return valid JSON only — no markdown, no explanation:
 {{
-  "objectives": ["exact strings from IMPLEMENTATION_OBJECTIVES"],
   "outcomes": ["exact strings from OUTCOMES"],
   "populations": ["exact strings from POPULATIONS"],
   "reasoning": "one sentence explaining the mapping"
@@ -168,7 +154,6 @@ class KGAgent:
             content = "\n".join(l for l in lines if not l.strip().startswith("```")).strip()
         data = json.loads(content)
         return TaxonomyMapping(
-            objectives=data.get("objectives", []),
             outcomes=data.get("outcomes", []),
             populations=data.get("populations", []),
             reasoning=data.get("reasoning", ""),
@@ -188,7 +173,6 @@ class KGAgent:
 
         try:
             relevant = get_papers_by_taxonomy(
-                objectives=mapping.objectives,
                 outcomes=mapping.outcomes,
                 populations=mapping.populations,
             )
@@ -202,12 +186,6 @@ class KGAgent:
             outcome_counts = {}
 
         try:
-            obj_rows = get_objective_coverage()
-            objective_counts = {r["objective"]: r["paper_count"] for r in obj_rows if r["objective"]}
-        except Exception:
-            objective_counts = {}
-
-        try:
             total = get_total_paper_count()
         except Exception:
             total = 0
@@ -216,8 +194,6 @@ class KGAgent:
             total_papers=total,
             relevant_papers=relevant,
             outcome_counts=outcome_counts,
-            objective_counts=objective_counts,
-            matched_objectives=mapping.objectives,
             matched_outcomes=mapping.outcomes,
             matched_populations=mapping.populations,
         )

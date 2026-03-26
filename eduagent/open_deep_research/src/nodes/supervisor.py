@@ -20,6 +20,16 @@ from utils.llm import (
 from nodes.researcher import researcher_subgraph
 
 
+def _build_researcher_brief(args: dict) -> str:
+    """Compose the HumanMessage content sent to each researcher."""
+    topic = args.get("research_topic", "")
+    keywords = args.get("keywords", [])
+    if keywords:
+        kw_str = ", ".join(f'"{k}"' if " " in k else k for k in keywords)
+        return f"{topic}\n\nSuggested search keywords: {kw_str}"
+    return topic
+
+
 async def supervisor(
     state: SupervisorState,
     config: RunnableConfig,
@@ -101,7 +111,8 @@ async def supervisor_tools(
             goto=END,
             update={
                 "notes": get_notes_from_tool_calls(supervisor_messages),
-                "research_brief": state.get("research_brief", "")
+                "research_brief": state.get("research_brief", ""),
+                "paper_profiles": state.get("paper_profiles", []),
             }
         )
 
@@ -136,7 +147,7 @@ async def supervisor_tools(
             research_tasks = [
                 researcher_subgraph.ainvoke({
                     "researcher_messages": [
-                        HumanMessage(content=tool_call["args"]["research_topic"])
+                        HumanMessage(content=_build_researcher_brief(tool_call["args"]))
                     ],
                     "research_topic": tool_call["args"]["research_topic"]
                 }, config)
@@ -174,15 +185,41 @@ async def supervisor_tools(
             if raw_notes_concat:
                 update_payload["raw_notes"] = [raw_notes_concat]
 
+            # Aggregate thought logs from all sub-researchers
+            all_thoughts = []
+            for observation in tool_results:
+                all_thoughts.extend(observation.get("thought_log", []))
+            if all_thoughts:
+                update_payload["thought_log"] = all_thoughts
+
+            # Aggregate source counts across all sub-researchers
+            agg_source_counts: dict = {}
+            for observation in tool_results:
+                for k, v in observation.get("source_counts", {}).items():
+                    agg_source_counts[k] = agg_source_counts.get(k, 0) + v
+            if agg_source_counts:
+                update_payload["source_counts"] = agg_source_counts
+
+            # Aggregate paper profiles across all sub-researchers
+            all_profiles = []
+            for observation in tool_results:
+                all_profiles.extend(observation.get("paper_profiles", []))
+            if all_profiles:
+                update_payload["paper_profiles"] = all_profiles
+
         except Exception as e:
-            if is_token_limit_exceeded(e, configurable.research_model) or True:
+            import logging, traceback
+            logging.error(f"[supervisor_tools] exception: {type(e).__name__}: {e}\n{traceback.format_exc()}")
+            if is_token_limit_exceeded(e, configurable.research_model):
                 return Command(
                     goto=END,
                     update={
                         "notes": get_notes_from_tool_calls(supervisor_messages),
-                        "research_brief": state.get("research_brief", "")
+                        "research_brief": state.get("research_brief", ""),
+                        "paper_profiles": state.get("paper_profiles", []),
                     }
                 )
+            raise
 
     update_payload["supervisor_messages"] = all_tool_messages
     return Command(goto="supervisor", update=update_payload)

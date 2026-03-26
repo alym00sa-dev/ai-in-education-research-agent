@@ -1,0 +1,95 @@
+# Research Run: how_does_generative_ai_tutoring_impact_20260323_184310
+
+**Query:** How does generative AI tutoring impact math learning outcomes in K-12?
+
+**Date/Time:** 2026-03-23 18:43:10
+
+---
+
+## Executive Summary
+
+The evidence base for generative AI tutoring in K-12 mathematics is promising but still incomplete: the strongest studies suggest that carefully supervised, curriculum-aligned systems can improve some math outcomes, especially transfer, homework performance, engagement, and topic mastery, while unguided or weakly constrained use can produce null, shallow, or even harmful effects on durable learning [168][147][153]. The overall direction is cautiously positive, but it is not yet justified to claim that generative AI tutoring is broadly superior to standard instruction, peer tutoring, or established non-generative adaptive software across K-12 mathematics. The strongest evidence is concentrated in secondary and middle school, with much thinner direct causal evidence in elementary mathematics and almost no directly reported subgroup effects for students with disabilities, multilingual learners, or intervention-service populations.
+
+The most credible experimental findings come from three studies. In LearnLM Team [168], an exploratory RCT in five UK secondary schools with n=165 students compared static hints and interactive tutoring, and within tutoring compared human tutors with LearnLM, a pedagogy-fine-tuned generative AI system supervised by humans; LearnLM was at least as effective as human tutors on measured learning outcomes and produced a 5.5 percentage point gain on novel-problem transfer, with 66.2% success versus 60.7% for human tutoring alone, while supervisors approved 76.4% of drafted messages with zero or minimal edits. In [271], a quasi-experimental study of an AI conversational math tutor delivered via WhatsApp to approximately n≈1,000 students in grades 3–9 across 11 Ghanaian schools reported math growth higher for treatment students by effect size d=0.37 (p<0.001) after two 30-minute sessions per week for eight months. In [147], a large-scale high-school field experiment found that AI-based tutoring improved performance during practice, but students underperformed when AI access was removed, indicating reduced skill acquisition; the study also reports that teacher-designed hints rather than answer-giving mitigated these negative effects, though the exact effect size for the harm/mitigation contrast was not reported.
+
+The strongest quasi-experimental and corroborating evidence suggests that generative AI works best as a scaffolded supplement to human instruction rather than a replacement. [158] conducted a three-study quasi-experimental investigation of hybrid human-AI tutoring in middle schools and found positive effects on proficiency and usage, with lower-achieving students benefiting more than higher-achieving students; the paper did not report a single pooled effect size in the retrieved excerpt, but it directly supports heterogeneity by prior achievement. In Tutor CoPilot, [183] ran a randomized trial of human tutors receiving real-time LLM-generated guidance and found students were 4 percentage points more likely to master topics overall and 9 percentage points more likely when tutored by lower-rated tutors. In [186], an online randomized study with n=274 learners comparing human tutor hints, ChatGPT hints, and no-hint conditions found positive gains in all conditions, but only human-authored hints produced statistically significant gains; in [199], with n=77 across elementary and intermediate algebra, human tutor hints again outperformed ChatGPT hints. Together, these studies do not show that generative AI always beats human support; instead, they show that its value depends on guardrails, sequencing, and the degree to which it preserves productive struggle.
+
+Tier 1 is only partially answered because the field still lacks a crisp empirical boundary between generative AI tutoring, conversational agents, and older intelligent tutoring systems, although reviews consistently define generative AI as open-ended natural-language systems capable of generating explanations, hints, and adaptive feedback [142][171]. Tier 2 remains only partially answered because direct head-to-head comparisons with standard classroom instruction, peer tutoring, and non-generative adaptive software are rare; the best direct comparators are human tutor hints, static hints, and hybrid human-AI tutoring rather than conventional classroom baselines [168][186][158]. Tier 3 is also only partially answered: the literature strongly suggests mechanisms such as Socratic prompting, teacher supervision, grounded hints, and restriction against answer-giving matter, but very few studies isolate these mechanisms causally [147][170]. Tier 4 is unresolved in important ways because subgroup evidence for special education, multilingual learners, and intervention-service students is sparse, and the evidence on low prior achievement is indirect but suggestive rather than definitive [158][376][285].
+
+Overall confidence is moderate for the claim that carefully designed, human-supervised generative AI tutoring can improve some K-12 mathematics outcomes, and low for any claim of broad effectiveness across grades, subgroups, and settings. The single most important caveat is that the best outcomes come from tightly scaffolded, instructionally constrained systems; without those constraints, the same technology can give away answers, weaken transfer, or fail to support durable learning [168][147][153].
+
+| Claim | Supporting Sources | Confidence |
+|-------|--------------------|------------|
+| LearnLM in UK secondary math RCT outperformed or matched human tutors on measured outcomes and improved transfer by 5.5 percentage points (66.2% vs 60.7%; n=165). | LearnLM Team Google et al., 2025 | High |
+| Supervisors approved 76.4% of LearnLM drafted messages with zero or minimal edits in the same RCT. | LearnLM Team Google et al., 2025 | High |
+| Ghana AI math tutor study reported stronger math growth for treatment students with effect size d=0.37, p<0.001 (approximately n≈1,000; grades 3–9). | Henkel et al., 2024 | High |
+| High-school field experiment found practice gains but reduced skill acquisition when AI access was removed; teacher-designed hints mitigated harm. | Bastani et al., 2025 | Moderate |
+| Hybrid human-AI tutoring in middle schools benefited lower-achieving students more than higher-achieving students. | Thomas et al., 2023 | Moderate |
+| Tutor CoPilot increased topic mastery by 4 percentage points overall and 9 percentage points for lower-rated tutors’ students in a randomized trial. | Wang et al., 2024 | High |
+| ChatGPT vs human tutor hint study with n=274 found positive gains in all conditions, but only human tutor hints produced statistically significant gains. | Pardos and Bhandari, 2024 | High |
+| Algebra hint study with n=77 found human tutor-generated hints produced substantially and statistically significantly higher gains than ChatGPT hints. | Pardos and Bhandari, 2023 | High |
+| LLM-Tutor proof study with n=148 improved homework performance but not exam performance or time spent. | Chen et al., 2025 | High |
+| Living meta-analysis found effects of generative AI on math learning remain exploratory and inconclusive, with a small positive average effect reported in the broader synthesis. | Strohmaier et al., 2026 | Moderate |
+
+## Research Report
+
+### Research Questions Investigated
+
+| Tier | Sub-question |
+|------|-------------|
+| 1 | What counts as generative AI tutoring in K-12 math, and how does it differ from non-generative ITS, adaptive practice, and human tutoring? |
+| 1 | Which mathematics outcomes are most relevant for K-12 students in studies of generative AI tutoring? |
+| 1 | How do grade span, prior achievement, language status, and special education status shape the populations studied? |
+| 2 | How are the same K-12 math skills and outcomes typically supported without generative AI? |
+| 2 | What baseline instructional models are used when generative AI tutoring is not available? |
+| 2 | Which comparison conditions are most appropriate for evaluating generative AI math tutoring in K-12 settings? |
+| 3 | In K-12 math settings, how is generative AI tutoring typically integrated into instruction? |
+| 3 | What types of AI-generated support are most commonly provided to K-12 math learners? |
+| 3 | What implementation features are reported, including teacher mediation, guardrails, usage frequency, and curriculum alignment? |
+| 4 | Compared with standard instruction or non-AI tutoring, what is the impact of generative AI tutoring on K-12 math achievement, conceptual understanding, and problem-solving? |
+| 4 | For which K-12 subgroups or contexts does generative AI math tutoring appear more or less effective? |
+| 4 | How do effects vary by implementation model, dosage, and teacher oversight? |
+| 4 | What tradeoffs, risks, or limitations are reported, including incorrect feedback, overreliance, reduced productive struggle, academic integrity concerns, or unequal access? |
+
+## Synthesis and Implications
+
+The retrieved literature supports a narrow but meaningful conclusion: generative AI can function as an effective math tutor-like support when it is instructionally constrained, supervised, and embedded in a coherent tutoring architecture, but its benefits are not robust enough to generalize to all K-12 math contexts or all students [168][271][147]. The most convincing studies do not treat generative AI as a standalone chatbot; they use it to draft Socratic prompts, generate feedback, or assist human tutors, with explicit guardrails to prevent answer-giving and to preserve learning processes [168][183][170]. This matters because the main practical policy implication is not “deploy chatbots everywhere,” but rather “use generative AI selectively as a supervised support for tutoring, feedback, and explanation.”
+
+The evidence also indicates that generative AI is most likely to help where the instructional goal is immediate support for problem solving, homework completion, short-term mastery, or next-topic transfer, and less likely to deliver reliable durable learning when used without strong pedagogical design [186][153][147]. Across studies, the highest-value instructional functions are stepwise hints, Socratic questioning, real-time feedback, and human-AI complementarity, not free-form answer generation [168][158][183]. For schools, that means generative AI should be positioned as a tutoring amplifier or teacher-assist tool, not as a replacement for curriculum, classroom instruction, or human judgment.
+
+Equity and subgroup findings are suggestive but not yet definitive. Lower-achieving students appear to benefit more in hybrid tutoring and human-AI tutoring settings, which is promising for intervention blocks and high-need contexts [158][183]. At the same time, the literature offers very little direct causal evidence for students with learning disabilities, multilingual learners, English learners, or students receiving formal intervention services in K-12 mathematics, even though reviews of AI in education repeatedly flag those groups as potential beneficiaries or priority populations [285][368][363]. The research base therefore supports cautious piloting rather than broad rollout for equity claims.
+
+Implementation design is the clearest lever for improvement. Teacher supervision, curriculum alignment, grounded hinting, retrieval support, and guardrails against answer-giving consistently appear as the conditions under which generative AI is most effective and least risky [147][168][170]. In contrast, studies that expose students to weakly constrained or generic chatbot use report weaker learning, less transfer, or no durable benefit beyond short-term task completion [199][153]. Schools adopting these tools should therefore evaluate not just whether they “work,” but whether they preserve productive struggle, support misconception correction, and fit within existing instructional routines.
+
+### Limitations and Research Gaps
+
+The evidence base is still small, fast-moving, and heavily concentrated in a few highly visible systems and settings. The strongest direct studies are secondary or middle school, while elementary math tutoring evidence is much thinner and often limited to perceptions, design studies, or adjacent AI tools rather than direct generative AI efficacy trials [168][167][166]. Many papers retrieved are benchmark, feasibility, review, or perception studies, which are valuable for understanding mechanisms but cannot establish causal student learning effects.
+
+Comparator coverage is also incomplete. The field has some direct comparisons against human tutors, human-authored hints, static hints, and control/no-access conditions, but very little clean head-to-head evidence against peer tutoring, classroom instruction, or non-generative adaptive software in K-12 math under matched conditions [186][158][376]. This makes it difficult to conclude that generative AI adds unique value beyond established tutoring software or well-designed human support. Likewise, many studies do not report effect sizes in the retrieved excerpt, and several of the strongest findings are from context-specific implementations that may not generalize to unsupervised home use or broad district adoption.
+
+Subgroup evidence remains the biggest gap. Although lower prior achievement and low self-efficacy show up as potentially important moderators, there are almost no directly reported treatment effects for students with learning disabilities, multilingual learners, English learners, or intervention-service students in generative AI math tutoring trials [158][153][285]. The same is true for equity-related outcomes such as access, differential uptake, and implementation across resource levels. Future studies need preregistered multi-site RCTs, longer follow-up periods, and explicit moderator analyses by grade band, language status, special education status, and prior achievement.
+
+## Bibliography
+
+| # | Citation | Study Design | Quality | Impact |
+|---|----------|--------------|---------|--------|
+| 142 | Anselm R. Strohmaier, Samira Bödefeld, Frank Reinhold (2026). [LLAMA LIMA: A Living Meta-Analysis on the Effects of Generative AI on Learning Mathematics](https://arxiv.org/abs/2601.18685). | not_reported | N/a | N/a |
+| 147 | Hamsa Bastani, O. Bastani, Alp Sungu, Haosen Ge, Özge Kabakcı, Rei Mariman (2025). [Generative AI without guardrails can harm learning: Evidence from high school mathematics](https://pmc.ncbi.nlm.nih.gov/articles/PMC12232635). | not_reported | N/a | N/a |
+| 153 | Eason Chen, Sophia Judicke, Kayla Beigh, Xinyi Tang, Zimo Xiao, Chuangji Li, Shizhuo Li, Reed Luttmer, Shreya Singh, M. Yampolsky, N. Parikh, Yi Zhao, (2025). [Generative AI alone may not be enough: Evaluating AI Support for Learning Mathematical Proof](https://arxiv.org/abs/2509.16778). | not_reported | N/a | N/a |
+| 158 | Danielle R. Thomas, Jionghao Lin, Erin Gatz, Ashish Gurung, Shivang Gupta, Kole A. Norberg, Stephen E. Fancsali, Vincent Aleven, Lee G. Branstetter, E (2023). [Improving Student Learning with Hybrid Human-AI Tutoring: A Three-Study Quasi-Experimental Investigation](https://arxiv.org/abs/2312.11274). | not_reported | N/a | N/a |
+| 166 | Yukyeong Song, Jinhee Kim, Wanli Xing, Zifeng Liu, Chenglu Li, Hyunju Oh (2024). [Elementary School Students' and Teachers' Perceptions Towards Creative Mathematical Writing with Generative AI](https://arxiv.org/abs/2409.06723). | not_reported | N/a | N/a |
+| 167 | Wenhan Lyu, Yimeng Wang, Murong Yue, Yifan Sun, Jennifer Suh, Meredith W. Kier, Ziyu Yao, Yixuan Zhang (2026). [Designing AI Peers for Collaborative Mathematical Problem Solving with Middle School Students: A Participatory Design Study](https://arxiv.org/abs/2601.17962). | not_reported | N/a | N/a |
+| 168 | LearnLM Team Google, Albert Wang, Aliya Rysbek, Andrea Huber, Anjali Nambiar, Anna Kenolty, Ben Caulfield, Beth Lilley-Draper, Bibi Groot, Brian Vepre (2025). [AI tutoring can safely and effectively support students: An exploratory RCT in UK classrooms](https://arxiv.org/abs/2512.23633). | not_reported | N/a | N/a |
+| 170 | Kirk Vanacore, Ryan S. Baker, A. Closser, Jeremy Roschelle (2026). [The Path to Conversational AI Tutors: Integrating Tutoring Best Practices and Targeted Technologies to Produce Scalable AI Agents](https://arxiv.org/abs/2602.19303). | not_reported | N/a | N/a |
+| 171 | B. Pepin, Nils Buchholtz, Ulises Salinas-Hernández (2025). [A Scoping Survey of ChatGPT in Mathematics Education](https://doi.org/10.1007/s40751-025-00172-1). | not_reported | N/a | N/a |
+| 183 | Eason Chen, Dan Wang, Luyi Xu, Chen Cao, Xiao Fang, Jionghao Lin (2024). [A Systematic Review on Prompt Engineering in Large Language Models for K-12 STEM Education](https://arxiv.org/abs/2410.11123). | not_reported | N/a | N/a |
+| 186 | Z. Pardos, Shreya Bhandari (2024). [ChatGPT-generated help produces learning gains equivalent to human tutor-authored help on mathematics skills](https://pmc.ncbi.nlm.nih.gov/articles/PMC11125466). | not_reported | N/a | N/a |
+| 199 | Z. Pardos, Shreya Bhandari (2023). [Learning gain differences between ChatGPT and human tutor generated algebra hints](https://arxiv.org/abs/2302.06871). | not_reported | N/a | N/a |
+| 271 | Henkel, Horne-Robinson, Kozhakhmetova, Lee (2024). [Effective and Scalable Math Support: Evidence on the Impact of an AI- Tutor on Math Achievement in Ghana](https://arxiv.org/abs/2402.09809). | not_reported | N/a | N/a |
+| 285 | Paglialunga, Melogno (2025). [The Effectiveness of Artificial Intelligence-Based Interventions for Students with Learning Disabilities: A Systematic Review](https://pmc.ncbi.nlm.nih.gov/articles/PMC12385150). | not_reported | N/a | N/a |
+| 363 | Pawar & Khose (2024). [Exploring the Role of Artificial Intelligence in Enhancing Equity and Inclusion in Education](https://www.semanticscholar.org/paper/9406fed4c75693fe0696ff00e775f7fff7082711). | not_reported | N/a | N/a |
+| 368 | Evmenova, Borup, & Shin (2024). [Harnessing the Power of Generative AI to Support ALL Learners](https://www.semanticscholar.org/paper/7306673752ca7b3f97bf50de9c7724f0249515b4). | not_reported | N/a | N/a |
+| 376 | Cook & Ross (2023). [Impact Evaluation of Intervene K-12 Tutoring on Grade 9 Mathematics Achievement in Hartford Public Schools](https://eric.ed.gov/?id=ED659897). | not_reported | N/a | N/a |
+
+## Body of Evidence Maturity: EMERGING
+Justification: The field now includes a small number of credible RCTs and quasi-experimental studies, but the direct K-12 mathematics evidence is still concentrated in a few systems, a few settings, and a few outcome types. Coverage of elementary grades, special education, multilingual learners, and durable learning outcomes remains thin, and much of the broader literature is still design, benchmark, or review work rather than definitive causal evidence.

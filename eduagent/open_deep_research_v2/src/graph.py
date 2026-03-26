@@ -1,4 +1,4 @@
-"""Main research pipeline graph — multi-iteration supervisor → synthesis → critique loop."""
+"""Main research pipeline graph — multi-iteration supervisor → executive_summary → critique loop."""
 
 from typing import Literal
 
@@ -9,7 +9,7 @@ from langgraph.graph import END, START, StateGraph
 from configuration import Configuration
 from nodes.education_discovery import education_discovery
 from nodes.supervisor import supervisor_subgraph
-from nodes.synthesis import compress_findings, draft_report
+from nodes.executive_summary import executive_summary
 from nodes.critique import critique
 from nodes.report import final_report
 from nodes.qa import qa_audit
@@ -62,8 +62,10 @@ async def research_supervisor(state: AgentState, config: RunnableConfig) -> dict
 # Iteration routing
 # ---------------------------------------------------------------------------
 
-def route_after_draft(state: AgentState, config: RunnableConfig) -> Literal["critique", "final_report_generation"]:
-    """After drafting, go to critique if more iterations remain; else finalize."""
+def route_after_executive_summary(
+    state: AgentState, config: RunnableConfig
+) -> Literal["critique", "final_report_generation"]:
+    """After executive summary, go to critique if more iterations remain; else finalize."""
     configurable = Configuration.from_runnable_config(config)
     iteration = state.get("iteration", 0)
     # iterations=1 → no critique; iterations=N → N-1 critique cycles
@@ -80,19 +82,17 @@ builder = StateGraph(AgentState, input=AgentInputState, config_schema=Configurat
 
 builder.add_node("education_discovery", education_discovery)
 builder.add_node("research_supervisor", research_supervisor)
-builder.add_node("compress_findings", compress_findings)
-builder.add_node("draft_report", draft_report)
+builder.add_node("executive_summary", executive_summary)
 builder.add_node("critique", critique)
 builder.add_node("final_report_generation", final_report)
 builder.add_node("qa_audit", qa_audit)
 
 builder.add_edge(START, "education_discovery")
 # education_discovery uses Command(goto="research_supervisor") so no explicit edge needed
-builder.add_edge("research_supervisor", "compress_findings")
-builder.add_edge("compress_findings", "draft_report")
+builder.add_edge("research_supervisor", "executive_summary")
 builder.add_conditional_edges(
-    "draft_report",
-    route_after_draft,
+    "executive_summary",
+    route_after_executive_summary,
     {
         "critique": "critique",
         "final_report_generation": "final_report_generation",

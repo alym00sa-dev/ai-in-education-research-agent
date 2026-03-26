@@ -1,0 +1,130 @@
+# Benchmark: author_first_v1 — genai_math
+
+**Query:** What is the evidence that generative AI tools improve math outcomes in K-8 students?
+
+**Date/Time:** 2026-03-26 09:46:59
+
+**QA Score:** 55/100
+
+---
+
+## Executive Summary
+
+The direct evidence base on generative AI tools and K–8 math outcomes is still early and thin, but it is not empty. The strongest causal signal comes from one K–8 RCT in Ghana: an AI math tutor, Rori, produced substantially larger math growth over 8 months than control, with treatment students outperforming controls by 3.01 points on the growth-score comparison, corresponding to d=0.36 (n=477, grades 3–8) ((2023)). Beyond that, the best available evidence in the exact K–8/middle-school space is a quasi-experimental study of hybrid human-AI tutoring rather than pure student-facing GenAI. Across three middle-school quasi-experiments, adding remote human tutoring to AI-driven math software improved learning-process outcomes relative to software-only or earlier lower-intensity conditions; in Site 1, tutor support was associated with β=0.202 for time spent and 0.36 additional workspaces/hour, and the report describes a descriptive increase in practice time from 24 to 33 minutes/week (QED, n=125; n=385; n=75) ((2024)). Taken together, the current evidence suggests that AI-supported math help can improve some K–8 outcomes under conditions of structured use, but the comparative case for broad, unmonitored generative AI use in elementary and middle school mathematics remains unproven.
+
+The experimental literature outside K–8 largely reinforces a cautiously positive but highly conditional interpretation. In an adult RCT, ChatGPT-generated mathematics tutoring help yielded a statistically significant overall pre-to-post learning gain of 17.00% (pre-test 43.51%, post-test 60.52%; p<0.001) across 274 adults on four math topics, though gains were not uniform across all topics (RCT, n=274) ((2024)). In a second adult randomized experiment, ChatGPT improved math and data analysis performance on average by 1.65 points on a 10-point scale and reduced completion time by 0.99 minutes, but 42% of participants did not improve, indicating substantial heterogeneity in who benefits from generative AI assistance (RCT, n=121) ((2024)). A related randomized comparison of ChatGPT and human tutor-authored algebra hints found positive pre-to-post learning gains in both conditions, but the study did not report a statistically significant advantage for ChatGPT over human-authored hints; it also reported a 30% rejection rate after manual quality checks for ChatGPT-generated hints, underscoring the need for human screening (RCT, n=77) ((2023)). These studies are not K–8, but they are relevant because they show that generative AI can support math learning in controlled settings while also producing uneven effects and content-quality burdens.
+
+The surrounding review literature is also informative, though it remains indirect for the focal K–8 question. A meta-analysis of ChatGPT studies found overall positive effects on learning performance, learning perception, and higher-order thinking across 51 quasi-experimental or experimental studies, but the source pool does not provide K–8-only pooled estimates here, so the inference for elementary and middle school math must remain cautious ((2025)). Reviews of ChatGPT in mathematics teaching and learning and of elementary STEM AI applications indicate a rapidly expanding but fragmented literature, with benefits often claimed for explanation, practice, and engagement and risks repeatedly noted around hallucination, shallow responses, and teacher workload, yet these reviews do not supply a robust K–8-specific causal estimate ((2024); (2025)). On balance, Tier 1 is only partially answered because the field has not cleanly distinguished student-facing generative AI from older tutoring and adaptive systems across most studies; Tier 2 is partially answered because comparators are identified but not consistently tested; Tier 3 is partially answered because implementation features like teacher mediation and dosage are described but rarely isolated causally; and Tier 4 is only weakly answered because direct K–8 causal evidence is scarce and concentrated in grades 3–8 rather than K–2. Overall confidence is low to moderate. The single most important caveat is that the evidence base for true student-facing generative AI in K–8 mathematics is still too small to support strong general claims about comparative effectiveness, subgroup differences, or long-term transfer.
+
+| Claim | Supporting Sources | Confidence |
+|-------|--------------------|------------|
+| An AI math tutor in Ghana improved grades 3–8 math growth over 8 months by 3.01 points, d=0.36, n=477. | (2023) | High |
+| Hybrid human-AI tutoring improved middle-school math learning-process outcomes; Site 1 showed β=0.202 for time spent and 0.36 additional workspaces/hour. | (2024) | High |
+| ChatGPT-generated math help produced a 17.00% pre-to-post gain in an adult RCT (43.51% to 60.52%; p<0.001). | (2024) | Moderate |
+| ChatGPT improved adult math/data analysis scores by 1.65 points on a 10-point scale and reduced completion time by 0.99 minutes, but 42% did not improve. | (2024) | Moderate |
+| ChatGPT hints and human tutor-authored hints both produced positive algebra learning gains, but ChatGPT required 30% manual rejection after quality checks. | (2023) | Moderate |
+| A meta-analysis of 51 studies found overall positive effects of ChatGPT on learning performance, learning perception, and higher-order thinking, but K–8 math-specific pooled effects were not provided. | (2025) | Moderate |
+| Reviews of ChatGPT in mathematics and elementary STEM describe promise for explanation and practice but emphasize hallucination, shallow output, and implementation limits. | (2024); (2025) | Moderate |
+| The strongest direct K–8 evidence is limited to grades 3–8, leaving K–2 largely unresolved. | (2023); (2025) | High |
+| Evidence on multilingual learners, disability status, SES, gender, and long-term retention is minimal or not reported in the retrieved K–8 studies. | (2023); (2024); (2025) | High |
+| Teacher mediation and hybrid models appear important, but causal moderator evidence is still weak. | (2024); (2019); (2022) | Moderate |
+
+## Research Report
+
+### Research Questions Investigated
+
+| Tier | Sub-question |
+|------|-------------|
+| Tier 1 | What counts as a generative AI tool in K–8 mathematics education, and how do researchers distinguish it from other digital tutoring, adaptive practice, or calculator-like tools? |
+| Tier 1 | Which math outcomes are most relevant for K–8 students when evaluating generative AI tools: procedural fluency, conceptual understanding, problem-solving, transfer, error correction, or affective outcomes such as confidence and engagement? |
+| Tier 1 | In which K–8 populations and contexts has generative AI for math been studied: grade bands, prior achievement levels, multilingual learners, special education students, classroom use, tutoring, or home learning? |
+| Tier 2 | How are the targeted math skills and outcomes typically developed in K–8 settings without generative AI, such as teacher-led instruction, worked examples, guided practice, peer collaboration, or traditional digital practice platforms? |
+| Tier 2 | What are the usual baseline or counterfactual conditions in studies of K–8 math learning that can serve as comparators for generative AI tools, including standard classroom instruction, human tutoring, or non-AI software? |
+| Tier 2 | What prior or adjacent instructional approaches have aimed to improve K–8 math outcomes through individualized feedback, hints, explanation generation, or step-by-step support before generative AI became available? |
+| Tier 3 | How are generative AI tools actually used in K–8 mathematics instruction or support settings: as a tutor, problem generator, explanation provider, feedback system, homework helper, or teacher-planning aid? |
+| Tier 3 | What implementation features of generative AI use in K–8 math have been described in the literature, such as prompt design, guardrails, teacher mediation, timing within lessons, dosage, and integration with curriculum? |
+| Tier 3 | What learning mechanisms are proposed for generative AI in K–8 math, such as immediate feedback, adaptive explanations, hints, metacognitive prompting, or increased practice opportunities? |
+| Tier 4 | What is the direct evidence that generative AI tools improve K–8 math outcomes compared with standard instruction or non-AI alternatives, and for which outcomes is evidence strongest or weakest? |
+| Tier 4 | How do effects of generative AI tools in K–8 math vary by grade level, prior achievement, learner needs, language background, or instructional setting? |
+| Tier 4 | What tradeoffs, risks, or unintended consequences have been reported when K–8 students use generative AI for math, including overreliance, reduced productive struggle, inaccurate outputs, or inequitable access? |
+| Tier 4 | When direct K–8 evidence is limited, what does adjacent evidence from older students, adult learners, intelligent tutoring systems, or AI-assisted writing/problem-solving suggest about the likely impact of generative AI on math learning? |
+
+## Direct Experimental Evidence
+
+### The clearest K–8 randomized evidence comes from an AI tutor in Ghana
+The strongest direct study in the source pool is the 2023 RCT of Rori, an AI-powered math tutor used in Rising Academies schools in Ghana. This study evaluated grades 3–8 students over 8 months and found that students assigned to access Rori showed substantially larger math growth than controls; on the growth-score comparison, treatment students outperformed control students by 3.01 points, with d=0.36 and n=477 ((2023)). This is the most policy-relevant causal result in the retrieved corpus because it directly studies K–8 students, directly studies an AI math tutor, and directly reports a math achievement outcome. Even so, the intervention is best understood as structured AI tutoring in a low-resource school system, not as unconstrained chatbot use, which limits generalization to broader GenAI deployments.
+
+### Middle-school hybrid tutoring suggests the value of human mediation
+The 2024 quasi-experimental study of hybrid human-AI tutoring in middle school examined whether adding remote human tutors to AI-driven math software improved learning and engagement. Across three middle-school quasi-experiments, the hybrid model improved math learning-process outcomes relative to software-only or earlier lower-intensity conditions; in Site 1, tutor support was associated with β=0.202 for time spent and 0.36 additional workspaces/hour, and the paper also reports a descriptive increase in practice time from 24 to 33 minutes/week (QED, n=125; n=385; n=75) ((2024)). This is not pure student-facing generative AI, but it matters because it implies that AI alone may not be enough: embedding AI in a human-supported workflow appears to strengthen engagement and practice. The result also aligns with broader design-oriented work on teacher–AI complementarity, which argues that classroom orchestration tools are needed so human instruction and AI support work together rather than compete (2019).
+
+### Adult experimental evidence shows math gains, but also heterogeneity
+The 2024 randomized experiment on ChatGPT and productivity found that ChatGPT improved math and data analysis performance on average. In the math/data task condition, mean score increased by 1.65 points on a 10-point scale and completion time fell by 0.99 minutes; however, 42% of participants did not improve, showing that average gains conceal substantial variation in benefit (RCT, n=121) ((2024)). The study is not K–8, so it cannot establish child learning effects, but it does strengthen the claim that generative AI can improve mathematical task performance under some conditions while failing for a large minority of users.
+
+A second adult RCT tested whether ChatGPT-generated mathematics tutoring help could produce learning gains relative to human tutor-authored hints. Across 274 adults on four math topics, ChatGPT hints produced a statistically significant overall pre-to-post gain of 17.00%, from 43.51% to 60.52% (p<0.001), though the study does not show that ChatGPT uniformly outperformed human-authored help (RCT, n=274) ((2024)). This study is useful mainly as feasibility evidence: generative AI can generate hints that are at least capable of supporting short-term learning, but the educational value depends on content quality and task fit.
+
+A third adult study compared ChatGPT-generated algebra hints with human tutor-generated hints. Both conditions showed positive pre-to-post learning gains, but the study did not report a clear statistical advantage for ChatGPT over human hints; it did, however, report a 30% rejection rate after manual quality checks, implying substantial human screening requirements for safe deployment ((2023)). This finding is especially relevant to K–8 math because younger students are unlikely to detect subtle mathematical errors reliably, making guardrails and review procedures central to implementation.
+
+### Meta-analytic evidence is positive but not K–8-specific
+A 2025 meta-analysis of ChatGPT research synthesized 51 quasi-experimental or experimental studies and concluded that ChatGPT improved student learning performance, learning perception, and higher-order thinking overall ((2025)). The source pool does not provide K–8-only pooled effect sizes or grade-band moderator estimates, so the meta-analytic evidence cannot be treated as definitive for elementary and middle school mathematics. Nevertheless, it supports a general conclusion that generative AI has measurable educational effects, while also confirming that most of the literature is still spread across mixed populations and outcomes.
+
+### Reviews in mathematics and STEM point to promise, but also to instability in the evidence
+A 2024 systematic review of ChatGPT in mathematics teaching and learning synthesized early empirical and review literature across K–12 and higher education and described both opportunities and concerns around learning support, engagement, and classroom use ((2024)). The review does not provide a K–8 causal estimate, but it shows that the field is already converging on a similar interpretation: generative AI may help by generating explanations, feedback, and practice opportunities, yet it can also produce incorrect or shallow responses that require teacher oversight.
+
+A 2025 systematic review of artificial intelligence in elementary STEM education mapped 258 studies from 2020–2025 and found a fragmented literature with varied AI uses and outcomes ((2025)). Although not limited to generative AI or mathematics, it reinforces the conclusion that elementary AI research is broad but uneven, with many studies focused on design, implementation, or perceptions rather than hard achievement outcomes.
+
+## Baselines, Comparators, and What the Counterfactual Looks Like
+
+### Standard instruction, practice software, and human tutoring remain the main comparators
+Across the retrieved studies, the meaningful counterfactuals are standard classroom instruction, software-only practice, human tutoring, or hybrid arrangements. The Ghana RCT compares AI tutoring against control conditions in school-based mathematics learning, making it the clearest direct comparison against business-as-usual support ((2023)). The middle-school quasi-experiments compare hybrid human-AI tutoring against software-only or earlier lower-intensity conditions, indicating that a pure AI platform may not be the strongest version of the intervention ((2024)). The adult hint studies compare ChatGPT-generated help against human tutor-authored help, which is an important proxy comparator because the same educational function can be delivered by either a machine or a person ((2023); (2024)).
+
+### Earlier instructional approaches inform the likely mechanism of benefit
+Before generative AI, individualized feedback and hint systems were already thought to matter for math learning. The retrieved literature on scaffolding in teacher–student interaction emphasizes that effective support is contingent on timing, responsiveness, and degree of assistance rather than mere presence of help (2010). In addition, teacher-facing AI and orchestration research suggests that complementarity, not replacement, is the more plausible instructional model in school settings (2019)(2022). This matters for interpretation: if generative AI helps K–8 math, it may do so because it delivers timely hints, explanation, and practice, but only when embedded in pedagogically coherent routines.
+
+## Implementation Features and Mechanisms
+
+### Generative AI appears most useful as an explanation and practice engine
+The retrieved studies and reviews cluster around a few recurring functions: tutor, hint generator, explanation provider, feedback system, and practice facilitator. In the Rori RCT, the intervention is explicitly an AI math tutor used over months in grades 3–8 ((2023)). In the adult hint studies, ChatGPT is used as a generator of hints for math learning tasks, showing that one plausible mechanism is stepwise, on-demand explanation rather than full solution delivery ((2023); (2024)). In the middle-school hybrid tutoring study, AI software is paired with human tutoring so that the system can increase practice volume and engagement rather than simply deliver content ((2024)).
+
+### Teacher mediation and guardrails look important, but are not yet well isolated causally
+The evidence repeatedly suggests that the presence of a human mediator improves the chances that AI support will be educationally useful. The hybrid tutoring study shows positive learning-process effects when human tutors are added to AI software ((2024)). The classroom orchestration paper similarly argues that tools are needed to help teachers manage AI-enhanced classrooms and preserve teacher–AI complementarity (2019). The review literature also points to the need for role clarity, alignment with curriculum, and oversight to avoid inaccurate or overly generic outputs ((2024); (2025)). However, none of the retrieved K–8 sources experimentally isolates prompt design, teacher oversight, dosage, or guardrails as independent causal moderators, so these remain strong hypotheses rather than established effects.
+
+### Productive use likely depends on task type and student self-regulation
+The current evidence suggests that generative AI may help most when the task requires explanation, incremental hints, or extra practice, and less when success depends on unaided transfer or deep conceptual restructuring. The adult productivity experiment showed that not everyone benefits, with 42% failing to improve on the math/data task despite average gains ((2024)). The hint-generation study’s 30% rejection rate also implies that output quality is variable and that students need either screening or the ability to detect errors themselves ((2023)). In K–8 mathematics, where metacognitive and language demands are high and students may be less able to evaluate AI output, this variability is likely to be even more consequential.
+
+## Population, Setting, and Outcome Coverage
+
+### Grades 3–8 are represented; K–2 is largely missing
+The direct student-outcome evidence in the source pool is concentrated in grades 3–8, especially middle school and upper elementary. The Ghana RCT covers grades 3–8, and the hybrid tutoring study focuses on grades 6–8 ((2023); (2024)). The elementary STEM review is broader, but it does not give a K–2-specific causal answer for math learning ((2025)). As a result, the evidence cannot currently support strong claims about kindergarten through grade 2, where reading level, autonomy, and conceptual foundations differ substantially from middle school.
+
+### Most outcomes are achievement and process, not deep conceptual learning or durability
+The most concrete outcome evidence concerns math achievement or task performance, followed by process outcomes such as time spent, workspaces/hour, and engagement. The Ghana RCT reports a growth-score advantage of 3.01 points, d=0.36, on math growth ((2023)). The middle-school hybrid study reports increased time on task and workspaces/hour ((2024)). The adult productivity and hint studies report score gains and faster completion ((2024); (2023)). By contrast, the retrieved corpus offers very little on delayed retention, far transfer, or persistent conceptual understanding. That means the field can say more about immediate performance than about durable learning.
+
+### Equity and subgroup evidence remain strikingly thin
+The source pool does not provide robust subgroup analyses for multilingual learners, students with disabilities, gender, race/ethnicity, or SES in the K–8 math GenAI literature. The Ghana RCT is the most promising equity-relevant study because it is conducted in a low-resource context, but the provided summary does not report subgroup interactions ((2023)). The broader review literature repeatedly notes access, bias, and implementation concerns, but it does not yet quantify who benefits most or least in K–8 math ((2024); (2025)). This is a major unresolved issue because educational effectiveness and equity may diverge.
+
+## Risks, Tradeoffs, and Negative Evidence
+
+### Output quality and overreliance are central concerns
+The strongest practical risk in the retrieved evidence is not a measured harm to achievement, but rather unstable output quality and the need for human checking. The ChatGPT algebra hint study reported a 30% rejection rate after manual quality checks, showing that generated math help may be too error-prone to deploy without screening ((2023)). Reviews of ChatGPT in mathematics and elementary STEM similarly emphasize hallucination, shallow responses, and alignment problems as recurring concerns ((2024); (2025)). In K–8 settings, these risks are amplified because young learners may accept incorrect explanations too readily.
+
+### Heterogeneous effects mean averages can hide nonbeneficiaries
+The adult productivity study is especially informative here because 42% of participants did not improve despite an average gain in math/data analysis performance ((2024)). That pattern warns against assuming uniform benefit from generative AI. For K–8 mathematics, the practical implication is that the intervention may help students who already have enough mathematical and linguistic knowledge to use it well, while others may need stronger scaffolding or teacher mediation. However, the source pool does not yet contain enough direct K–8 evidence to confirm that hypothesis.
+
+## Synthesis and Implications
+
+The evidence base supports a restrained conclusion: generative AI can improve some math-related outcomes, but the best direct K–8 evidence comes from a structured AI tutor in a low-resource school system rather than from free-form chatbot use. The most plausible benefit channels are timely explanation, adaptive hints, and additional practice opportunities, especially when the tool is embedded in teacher- or tutor-mediated routines ((2023); (2024); (2019)). Schools should therefore treat generative AI as a supplement to instruction, not a substitute for teacher-led explanation or human checking.
+
+For practice, the safest near-term uses are likely those with curriculum alignment, narrow task scope, and visible guardrails. That includes targeted tutoring, homework support with oversight, and hybrid models that preserve human review of outputs and prompt responses ((2024); (2023)). The evidence does not yet justify broad claims that generative AI will raise K–8 math achievement on its own, and it especially does not justify unmonitored use for younger students. If adopted, implementation should prioritize teacher mediation, explicit training in checking AI output, and careful selection of tasks where step-by-step support is more important than open-ended generation.
+
+## Limitations and Research Gaps
+
+The methodological weaknesses are substantial. The direct K–8 evidence consists of one strong RCT and one relevant quasi-experimental middle-school study, with much of the rest of the corpus drawn from adults, mixed-age reviews, teacher-facing work, or design studies ((2023); (2024); (2025)). Samples are often modest or context-specific, durations are short or medium-term rather than longitudinal, and subgroup analyses for multilingual learners, students with disabilities, SES, and gender are largely absent. Publication bias is a real concern because the field is young and heavily skewed toward positive or exploratory findings.
+
+The biggest gap is causal evidence on true student-facing generative AI in K–8 mathematics. The literature still does not cleanly separate generative AI from older intelligent tutoring systems, adaptive practice software, or teacher-facing orchestration tools, and it rarely tests implementation features such as prompt design, dosage, or teacher mediation as experimental moderators (2019)(2022)(2024). There is also almost no rigorous evidence on harms, delayed retention, transfer, or overreliance in K–8 math, even though those are the most important policy questions. As a result, the field is best described as promising but not yet established for comparative effectiveness in K–8 mathematics.
+
+## Bibliography
+
+No sources cited.
+
+## Body of Evidence Maturity: EARLY
+Justification: The corpus contains one strong K–8 RCT and one relevant middle-school quasi-experimental study, but most of the remaining evidence is indirect, mixed-age, or non-causal. Coverage is limited on grades K–2, subgroup effects, long-term outcomes, and harm, so the evidence base is not yet mature enough for firm comparative claims.

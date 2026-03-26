@@ -19,6 +19,22 @@ def get_model(config: RunnableConfig = None):
     )
 
 
+_JUDGE_MODEL = "anthropic:claude-opus-4-6"
+_JUDGE_MAX_TOKENS = 4096
+
+
+def get_judge_model():
+    """Return the independent judge model (Claude claude-opus-4-6) used for QA scoring.
+
+    Always uses a different provider than the pipeline model to avoid
+    self-evaluation bias.
+    """
+    return init_chat_model(
+        model=_JUDGE_MODEL,
+        max_tokens=_JUDGE_MAX_TOKENS,
+    )
+
+
 def get_today_str() -> str:
     now = datetime.now()
     return f"{now:%a} {now:%b} {now.day}, {now:%Y}"

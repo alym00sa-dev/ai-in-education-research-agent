@@ -49,7 +49,7 @@ def _build_graph_data(structured_papers: List[StructuredPaper]) -> Dict[str, Any
                 fid = f"finding_{idx}"
                 nodes.append({"id": fid, "label": "EmpiricalFinding", "properties": {
                     "id": direction, "direction": direction,
-                    "summary": p.empirical_finding.get("results_summary", ""),
+                    "summary": p.empirical_finding.get("finding_summary", ""),
                     "measure": p.empirical_finding.get("measure", ""),
                     "study_size": p.empirical_finding.get("study_size", ""),
                     "effect_size": p.empirical_finding.get("effect_size", ""),
@@ -176,10 +176,9 @@ class ResearchPipeline:
                 "population": p.population,
                 "user_type": p.user_type,
                 "study_design": p.study_design,
-                "objective": p.implementation_objective,
                 "outcome": p.outcome,
                 "finding_direction": (p.empirical_finding or {}).get("direction", ""),
-                "finding_summary": (p.empirical_finding or {}).get("results_summary", ""),
+                "finding_summary": (p.empirical_finding or {}).get("finding_summary", ""),
                 "measure": (p.empirical_finding or {}).get("measure", ""),
                 "study_size": (p.empirical_finding or {}).get("study_size"),
                 "effect_size": (p.empirical_finding or {}).get("effect_size"),

@@ -92,8 +92,23 @@ async def supervisor_tools_node(
                 tool_call_id=tc["id"],
             ))
 
-    # Handle ConductResearch — cap at max_concurrent_researchers
-    active_calls = conduct_calls[:configurable.max_concurrent_researchers]
+    # Handle ConductResearch — enforce max_concurrent_researchers
+    # If supervisor dispatches too many, reject ALL and send feedback so it re-dispatches correctly
+    max_researchers = configurable.max_concurrent_researchers
+    if len(conduct_calls) > max_researchers:
+        for tc in conduct_calls:
+            tool_messages.append(ToolMessage(
+                content=(
+                    f"Too many research threads dispatched ({len(conduct_calls)}). "
+                    f"Maximum allowed is {max_researchers}. "
+                    f"Please re-dispatch with at most {max_researchers} threads."
+                ),
+                name="ConductResearch",
+                tool_call_id=tc["id"],
+            ))
+        return {"supervisor_messages": tool_messages}
+
+    active_calls = conduct_calls
 
     if active_calls:
         async def invoke_researcher(tc: dict):

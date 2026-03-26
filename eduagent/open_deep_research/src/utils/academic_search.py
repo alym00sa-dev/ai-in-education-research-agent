@@ -3,16 +3,17 @@
 Each tool is a LangChain @tool-decorated async function that sub-researchers
 can call alongside web search. All tools:
   - Accept a plain query string
-  - Apply a relevance filter (keyword overlap against title + abstract)
-  - Return a uniform formatted block per result, including PDF links where available
+  - Return up to 20 results with a uniform formatted block per result
+  - Include PDF links where available
   - Handle HTTP errors gracefully (return an error note rather than raising)
+
+Relevance filtering is handled downstream by the ensemble LLM filter (paper_filter.py).
 """
 
 import asyncio
 import os
 import re
 import xml.etree.ElementTree as ET
-from typing import List
 
 import httpx
 from langchain_core.tools import tool
@@ -20,65 +21,9 @@ from langchain_core.tools import tool
 
 # ── Shared utilities ──────────────────────────────────────────────────────────
 
-_STOPWORDS = {
-    "a", "an", "the", "and", "or", "of", "in", "to", "for", "with", "on",
-    "at", "from", "by", "about", "as", "is", "are", "was", "were", "be",
-    "been", "being", "have", "has", "had", "do", "does", "did", "will",
-    "would", "could", "should", "may", "might", "that", "this", "these",
-    "those", "its", "it", "i", "we", "they", "their", "our", "how", "what",
-    "which", "when", "where", "who", "not", "no", "if", "but", "so", "than",
-}
-
 _TIMEOUT = httpx.Timeout(30.0)
 _ERIC_TIMEOUT = httpx.Timeout(45.0)  # ERIC API is slow
 _HEADERS = {"User-Agent": "EduResearchAgent/1.0 (academic research tool; contact research@edu-tool)"}
-
-
-def _relevance_score(query: str, title: str, abstract: str) -> int:
-    """Count how many non-trivial query tokens appear in title + abstract."""
-    tokens = {
-        w.lower() for w in re.findall(r"\w+", query)
-        if w.lower() not in _STOPWORDS and len(w) > 2
-    }
-    if not tokens:
-        return 1  # nothing to filter on — keep everything
-    haystack = (title + " " + abstract).lower()
-    return sum(1 for t in tokens if t in haystack)
-
-
-def _filter_and_rank(results: List[dict], query: str, top_n: int = 10) -> List[dict]:
-    """Drop low-relevance results and return top_n sorted by descending score.
-
-    Two-gate filter:
-      1. Title gate — at least 1 query keyword must appear in the title.
-         This eliminates off-domain papers (e.g. medical journals) that only
-         match on generic words like "learning" or "outcomes" in their abstracts.
-      2. Score gate — combined title+abstract score must meet a minimum that
-         scales with query length (≥2 for long queries, ≥1 for short ones).
-    """
-    tokens = {
-        w.lower() for w in re.findall(r"\w+", query)
-        if w.lower() not in _STOPWORDS and len(w) > 2
-    }
-    if not tokens:
-        return results[:top_n]
-
-    min_score = 2 if len(tokens) >= 4 else 1
-
-    def title_matches(title: str) -> bool:
-        t = title.lower()
-        return any(tok in t for tok in tokens)
-
-    scored = [
-        (r, _relevance_score(query, r.get("title", ""), r.get("abstract", "")))
-        for r in results
-    ]
-    relevant = [
-        (r, s) for r, s in scored
-        if s >= min_score and title_matches(r.get("title", ""))
-    ]
-    relevant.sort(key=lambda x: x[1], reverse=True)
-    return [r for r, _ in relevant[:top_n]]
 
 
 def _format_result(idx: int, title: str, authors: str, year: str,
@@ -149,19 +94,16 @@ async def eric_search(query: str) -> str:
             "source_id": f"ERIC / {d.get('id', '')}",
         })
 
-    filtered = _filter_and_rank(raw, query)
-    if not filtered:
-        return "ERIC: No sufficiently relevant results found for this query."
-
+    results = raw[:20]
     blocks = [
         _format_result(
             i + 1,
             r["title"], r["authors"], r["year"],
             r["source_id"], r["abstract"], r["url"], r["pdf_url"],
         )
-        for i, r in enumerate(filtered)
+        for i, r in enumerate(results)
     ]
-    return f"ERIC Search Results ({len(filtered)} relevant):\n\n" + "\n\n".join(blocks)
+    return f"ERIC Search Results ({len(results)}):\n\n" + "\n\n".join(blocks)
 
 
 # ── Semantic Scholar ──────────────────────────────────────────────────────────
@@ -225,19 +167,16 @@ async def semantic_scholar_search(query: str) -> str:
             "source_id": f"Semantic Scholar / DOI:{doi}" if doi else "Semantic Scholar",
         })
 
-    filtered = _filter_and_rank(raw, query)
-    if not filtered:
-        return "Semantic Scholar: No sufficiently relevant results found for this query."
-
+    results = raw[:20]
     blocks = [
         _format_result(
             i + 1,
             r["title"], r["authors"], r["year"],
             r["source_id"], r["abstract"], r["url"], r["pdf_url"],
         )
-        for i, r in enumerate(filtered)
+        for i, r in enumerate(results)
     ]
-    return f"Semantic Scholar Results ({len(filtered)} relevant):\n\n" + "\n\n".join(blocks)
+    return f"Semantic Scholar Results ({len(results)}):\n\n" + "\n\n".join(blocks)
 
 
 # ── OpenAlex ──────────────────────────────────────────────────────────────────
@@ -312,19 +251,16 @@ async def openalex_search(query: str) -> str:
             "source_id": f"OpenAlex / DOI:{doi}" if doi else "OpenAlex",
         })
 
-    filtered = _filter_and_rank(raw, query)
-    if not filtered:
-        return "OpenAlex: No sufficiently relevant results found for this query."
-
+    results = raw[:20]
     blocks = [
         _format_result(
             i + 1,
             r["title"], r["authors"], r["year"],
             r["source_id"], r["abstract"], r["url"], r["pdf_url"],
         )
-        for i, r in enumerate(filtered)
+        for i, r in enumerate(results)
     ]
-    return f"OpenAlex Results ({len(filtered)} relevant):\n\n" + "\n\n".join(blocks)
+    return f"OpenAlex Results ({len(results)}):\n\n" + "\n\n".join(blocks)
 
 
 # ── arXiv ──────────────────────────────────────────────────────────────────────
@@ -401,19 +337,16 @@ async def arxiv_search(query: str) -> str:
             "source_id": source_id,
         })
 
-    filtered = _filter_and_rank(raw, query)
-    if not filtered:
-        return "arXiv: No sufficiently relevant results found for this query."
-
+    results = raw[:20]
     blocks = [
         _format_result(
             i + 1,
             r["title"], r["authors"], r["year"],
             r["source_id"], r["abstract"], r["url"], r["pdf_url"],
         )
-        for i, r in enumerate(filtered)
+        for i, r in enumerate(results)
     ]
-    return f"arXiv Results ({len(filtered)} relevant):\n\n" + "\n\n".join(blocks)
+    return f"arXiv Results ({len(results)}):\n\n" + "\n\n".join(blocks)
 
 
 # ── Elsevier / Scopus ──────────────────────────────────────────────────────────
@@ -503,19 +436,16 @@ async def elsevier_search(query: str) -> str:
             "source_id": source_id,
         })
 
-    filtered = _filter_and_rank(raw, query)
-    if not filtered:
-        return "Elsevier/Scopus: No sufficiently relevant results found for this query."
-
+    results = raw[:20]
     blocks = [
         _format_result(
             i + 1,
             r["title"], r["authors"], r["year"],
             r["source_id"], r["abstract"], r["url"], r["pdf_url"],
         )
-        for i, r in enumerate(filtered)
+        for i, r in enumerate(results)
     ]
-    return f"Elsevier/Scopus Results ({len(filtered)} relevant):\n\n" + "\n\n".join(blocks)
+    return f"Elsevier/Scopus Results ({len(results)}):\n\n" + "\n\n".join(blocks)
 
 
 # ── Google Scholar (SerpAPI) ───────────────────────────────────────────────────
@@ -600,12 +530,9 @@ async def scholar_search(query: str) -> str:
             "citations": citations,
         })
 
-    filtered = _filter_and_rank(raw, query)
-    if not filtered:
-        return "Google Scholar: No sufficiently relevant results found for this query."
-
+    results = raw[:20]
     blocks = []
-    for i, r in enumerate(filtered):
+    for i, r in enumerate(results):
         block = _format_result(
             i + 1,
             r["title"], r["authors"], r["year"],
@@ -615,4 +542,4 @@ async def scholar_search(query: str) -> str:
             block += f"\n    Citations: {r['citations']}"
         blocks.append(block)
 
-    return f"Google Scholar Results ({len(filtered)} relevant):\n\n" + "\n\n".join(blocks)
+    return f"Google Scholar Results ({len(results)}):\n\n" + "\n\n".join(blocks)

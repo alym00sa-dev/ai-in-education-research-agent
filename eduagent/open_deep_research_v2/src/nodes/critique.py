@@ -1,4 +1,4 @@
-"""Critique node — evaluates evidence summary + draft report and directs next iteration."""
+"""Critique node — evaluates current evidence and directs next iteration."""
 
 from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_core.runnables import RunnableConfig
@@ -7,35 +7,39 @@ from configuration import Configuration
 from prompts import critique_prompt, lead_researcher_prompt
 from state import AgentState, CritiqueOutput
 from utils.llm import get_model, get_today_str
+from nodes.report import _build_paper_tier_reference, _build_tiered_questions
 
 
 async def critique(state: AgentState, config: RunnableConfig) -> dict:
-    """Evaluate the current iteration's evidence summary and draft report.
+    """Evaluate the current evidence base and produce a directed brief for the next iteration.
 
-    Produces:
-    - critique_history entry: identified gaps, errors, missing angles
-    - Updated supervisor_messages for next iteration (targeted brief)
-    - Incremented iteration counter
-    - Cleared notes (ready for next iteration's researchers)
+    Reads directly from paper_profiles (structured) + all_notes (supplemental) +
+    the latest executive summary — no lossy compress/draft intermediate.
     """
     configurable = Configuration.from_runnable_config(config)
     model = get_model(config).with_structured_output(CritiqueOutput)
 
     iteration = state.get("iteration", 0)
-    compress_history = state.get("compress_findings_history", [])
-    draft_history = state.get("draft_report_history", [])
+    paper_profiles = state.get("paper_profiles", [])
+    all_notes = state.get("all_notes", [])
+    exec_history = state.get("executive_summary_history", [])
     tqm = state.get("tiered_question_map", {})
 
-    current_compress = compress_history[-1] if compress_history else ""
-    current_draft = draft_history[-1] if draft_history else ""
+    paper_tier_reference, _ = _build_paper_tier_reference(paper_profiles)
+    tiered_questions = _build_tiered_questions(tqm)
+
+    current_exec = exec_history[-1] if exec_history else "No executive summary yet."
+    notes_text = "\n\n---\n\n".join(all_notes[-10:]) if all_notes else "No supplemental notes yet."
 
     prompt = critique_prompt.format(
         date=get_today_str(),
         research_brief=state.get("research_brief", ""),
         iteration=iteration + 1,
         total_iterations=configurable.research_iterations,
-        compress_findings=current_compress,
-        draft_report=current_draft,
+        paper_tier_reference=paper_tier_reference,
+        research_notes=notes_text,
+        executive_summary=current_exec,
+        tiered_questions=tiered_questions,
     )
 
     result: CritiqueOutput = await model.ainvoke([HumanMessage(content=prompt)])
@@ -44,8 +48,8 @@ async def critique(state: AgentState, config: RunnableConfig) -> dict:
         f"## Critique — Iteration {iteration + 1}\n\n"
         f"**Evidence Gaps:**\n" +
         "\n".join(f"- {g}" for g in result.evidence_gaps) +
-        f"\n\n**Reasoning Errors:**\n" +
-        "\n".join(f"- {e}" for e in result.reasoning_errors) +
+        f"\n\n**Thesis Gaps:**\n" +
+        "\n".join(f"- {g}" for g in result.thesis_gaps) +
         f"\n\n**Missing Angles:**\n" +
         "\n".join(f"- {a}" for a in result.missing_angles) +
         f"\n\n**Next Iteration Brief:**\n{result.next_iteration_brief}"
@@ -63,7 +67,8 @@ async def critique(state: AgentState, config: RunnableConfig) -> dict:
         max_concurrent_researchers=configurable.max_concurrent_researchers,
         iteration_context=(
             f"\n## Context from Iteration {iteration + 1}\n"
-            f"A draft report was produced. DO NOT re-investigate questions already covered adequately.\n\n"
+            f"Research has been conducted and an executive summary produced. "
+            f"DO NOT re-investigate questions already adequately covered.\n\n"
             f"**Critique identified these gaps to address:**\n{critique_text}\n\n"
             f"**Your focus for this iteration:** {result.next_iteration_brief}\n"
         ),

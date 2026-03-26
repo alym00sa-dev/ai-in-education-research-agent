@@ -40,24 +40,35 @@ async def final_report_generation(state: AgentState, config: RunnableConfig):
         "tags": ["langsmith:nostream"]
     }
 
+    # Build pre-scored tier lookup from paper_profiles extracted during research
+    TIER_EMOJI = {"blue": "🔵", "green": "🟢", "yellow": "🟡", "red": "🔴"}
+    profiles = state.get("paper_profiles", [])
+    tier_lines = []
+    for p in profiles:
+        url = getattr(p, "url", None) or (p.get("url") if isinstance(p, dict) else None)
+        quality = getattr(p, "quality_tier", None) or (p.get("quality_tier") if isinstance(p, dict) else None)
+        impact = getattr(p, "impact_tier", None) or (p.get("impact_tier") if isinstance(p, dict) else None)
+        title = getattr(p, "title", None) or (p.get("title") if isinstance(p, dict) else None)
+        if url and quality and impact:
+            q_emoji = TIER_EMOJI.get(str(quality).lower(), "🟡")
+            i_emoji = TIER_EMOJI.get(str(impact).lower(), "🟡")
+            label = f'"{title}" ' if title else ""
+            tier_lines.append(f"- {label}{url} → Quality: {q_emoji} {quality} | Impact: {i_emoji} {impact}")
+    paper_tier_reference = "\n".join(tier_lines) if tier_lines else "(No pre-scored profiles available — derive tiers from the rubric below.)"
+
     max_retries = 3
     current_retry = 0
     findings_token_limit = None
 
     while current_retry <= max_retries:
         try:
-            qa_assessment = state.get("qa_assessment") or "No QA assessment available."
-            extraction_table = state.get("extraction_table") or "_Data extraction table could not be generated._"
-            causality_diagram = state.get("causality_diagram") or "_Causality diagram could not be generated._"
-
             final_report_prompt = final_report_generation_prompt.format(
                 research_brief=state.get("research_brief", ""),
                 messages=get_buffer_string(state.get("messages", [])),
                 findings=findings,
                 date=get_today_str(),
-                qa_assessment=qa_assessment,
-                extraction_table=extraction_table,
-                causality_diagram=causality_diagram,
+                paper_tier_reference=paper_tier_reference,
+                max_sources=configurable.max_sources,
             )
 
             final_report = await configurable_model.with_config(writer_model_config).ainvoke([

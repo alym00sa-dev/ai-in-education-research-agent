@@ -15,7 +15,7 @@ from utils.llm import configurable_model, get_api_key_for_model, get_today_str
 async def write_research_brief(
     state: AgentState,
     config: RunnableConfig,
-) -> Command[Literal["research_supervisor"]]:
+) -> Command[Literal["education_discovery"]]:
     """Transform user messages into a structured research brief and initialize supervisor.
 
     Analyzes the user's messages, generates a focused research brief, and sets up
@@ -56,7 +56,7 @@ async def write_research_brief(
     )
 
     return Command(
-        goto="research_supervisor",
+        goto="education_discovery",
         update={
             "research_brief": response.research_brief,
             "supervisor_messages": {

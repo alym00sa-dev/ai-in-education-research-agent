@@ -131,7 +131,8 @@ async def main():
         if chunk.get("qa_report") and not seen.get("qa_report"):
             seen["qa_report"] = True
             stage_times["qa"] = time.time()
-            print(f"[{t}] [qa_audit] QA audit complete.")
+            score = chunk.get("qa_score", 0)
+            print(f"[{t}] [qa_audit] QA audit complete. Score: {score}/100")
 
     if not final_state:
         print("ERROR: No state returned.")
@@ -202,6 +203,7 @@ async def main():
     print(f"Iterations completed : {final_state.get('iteration', 0) + 1}")
     print(f"Notes collected      : {len(final_state.get('all_notes', []))}")
     print(f"Paper profiles       : {len(final_state.get('paper_profiles', []))}")
+    print(f"QA score             : {final_state.get('qa_score', 0)}/100")
     print(f"Source counts        : {final_state.get('source_counts', {})}")
 
     if filter_log:

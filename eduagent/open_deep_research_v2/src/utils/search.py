@@ -112,11 +112,15 @@ async def load_asta_tools() -> list:
                 "url": "https://asta-tools.allen.ai/mcp/v1",
                 "headers": {"x-api-key": api_key},
                 "transport": "streamable_http",
+                "timeout": 20,
             }
         })
-        tools = await client.get_tools()
+        tools = await asyncio.wait_for(client.get_tools(), timeout=30)
         logging.info(f"[ASTA] Loaded {len(tools)} tools: {[t.name for t in tools]}")
         return tools
+    except asyncio.TimeoutError:
+        logging.warning("[ASTA] Tool loading timed out — skipping ASTA tools")
+        return []
     except Exception as e:
         logging.warning(f"[ASTA] Could not load tools: {e}")
         return []

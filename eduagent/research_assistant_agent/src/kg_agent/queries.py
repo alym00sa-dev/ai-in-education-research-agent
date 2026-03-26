@@ -4,25 +4,22 @@ from src.neo4j_config import get_neo4j_connection
 
 
 def get_papers_by_taxonomy(
-    objectives: List[str],
     outcomes: List[str],
     populations: List[str],
+    objectives: List[str] = None,  # kept for backwards compatibility, ignored
 ) -> List[Dict[str, Any]]:
     """Fetch papers matching any of the given taxonomy terms."""
     conn = get_neo4j_connection()
     params: Dict[str, Any] = {
-        "objectives": objectives,
         "outcomes": outcomes,
         "populations": populations,
     }
     query = """
     MATCH (p:Paper)
-    OPTIONAL MATCH (p)-[:HAS_IMPLEMENTATION_OBJECTIVE]->(io:ImplementationObjective)
     OPTIONAL MATCH (p)-[:FOCUSES_ON_OUTCOME]->(out:Outcome)
     OPTIONAL MATCH (p)-[:REPORTS_FINDING]->(f:EmpiricalFinding)
     WHERE
-        (size($objectives) = 0 OR io.id IN $objectives)
-        OR (size($outcomes) = 0 OR out.id IN $outcomes)
+        (size($outcomes) = 0 OR out.name IN $outcomes)
         OR (size($populations) = 0 OR p.population IN $populations)
     RETURN DISTINCT
         p.title          AS title,
@@ -30,10 +27,9 @@ def get_papers_by_taxonomy(
         p.url            AS url,
         p.population     AS population,
         p.study_design   AS study_design,
-        io.id            AS objective,
-        out.id           AS outcome,
+        out.name         AS outcome,
         f.direction      AS finding_direction,
-        f.results_summary AS finding_summary,
+        f.finding_summary AS finding_summary,
         f.effect_size    AS effect_size,
         f.study_size     AS study_size
     ORDER BY p.year DESC
@@ -47,18 +43,7 @@ def get_outcome_coverage() -> List[Dict[str, Any]]:
     conn = get_neo4j_connection()
     query = """
     MATCH (p:Paper)-[:FOCUSES_ON_OUTCOME]->(out:Outcome)
-    RETURN out.id AS outcome, count(p) AS paper_count
-    ORDER BY paper_count DESC
-    """
-    return conn.execute_query(query)
-
-
-def get_objective_coverage() -> List[Dict[str, Any]]:
-    """Return paper counts per implementation objective node."""
-    conn = get_neo4j_connection()
-    query = """
-    MATCH (p:Paper)-[:HAS_IMPLEMENTATION_OBJECTIVE]->(io:ImplementationObjective)
-    RETURN io.id AS objective, count(p) AS paper_count
+    RETURN out.name AS outcome, count(p) AS paper_count
     ORDER BY paper_count DESC
     """
     return conn.execute_query(query)
@@ -90,22 +75,20 @@ def query_by_empirical_findings(
     where_clause = "WHERE " + " OR ".join(conditions)
     query = f"""
     MATCH (p:Paper)
-    OPTIONAL MATCH (p)-[:HAS_IMPLEMENTATION_OBJECTIVE]->(io:ImplementationObjective)
     OPTIONAL MATCH (p)-[:FOCUSES_ON_OUTCOME]->(out:Outcome)
     OPTIONAL MATCH (p)-[:REPORTS_FINDING]->(f:EmpiricalFinding)
     {where_clause}
     RETURN DISTINCT
-        p.title          AS title,
-        p.year           AS year,
-        p.url            AS url,
-        p.population     AS population,
-        p.study_design   AS study_design,
-        io.id            AS objective,
-        out.id           AS outcome,
-        f.direction      AS finding_direction,
-        f.results_summary AS finding_summary,
-        f.effect_size    AS effect_size,
-        f.study_size     AS study_size
+        p.title           AS title,
+        p.year            AS year,
+        p.url             AS url,
+        p.population      AS population,
+        p.study_design    AS study_design,
+        out.name          AS outcome,
+        f.direction       AS finding_direction,
+        f.finding_summary AS finding_summary,
+        f.effect_size     AS effect_size,
+        f.study_size      AS study_size
     ORDER BY p.year DESC
     LIMIT 60
     """

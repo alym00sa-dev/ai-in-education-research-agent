@@ -14,7 +14,7 @@ from dataclasses import dataclass, field
 
 import anthropic
 
-from src.neo4j_config import IMPLEMENTATION_OBJECTIVES, OUTCOMES, POPULATIONS, STUDY_DESIGNS
+from src.neo4j_config import OUTCOMES, POPULATIONS, STUDY_DESIGNS
 from src.kg_agent.queries import (
     get_papers_by_taxonomy,
     query_by_empirical_findings,
@@ -163,7 +163,6 @@ class QuestionExplorer:
         try:
             if name == "get_available_taxonomy":
                 return json.dumps({
-                    "objectives": IMPLEMENTATION_OBJECTIVES,
                     "outcomes": OUTCOMES,
                     "populations": POPULATIONS,
                     "study_designs": STUDY_DESIGNS,
@@ -175,9 +174,8 @@ class QuestionExplorer:
                     objectives=[], outcomes=inputs.get("outcomes", []), populations=[]
                 )
             elif name == "query_by_objectives":
-                papers = get_papers_by_taxonomy(
-                    objectives=inputs.get("objectives", []), outcomes=[], populations=[]
-                )
+                # objectives removed from schema — treat as empty query
+                papers = []
             elif name == "query_by_population":
                 papers = get_papers_by_taxonomy(
                     objectives=[], outcomes=[], populations=inputs.get("populations", [])

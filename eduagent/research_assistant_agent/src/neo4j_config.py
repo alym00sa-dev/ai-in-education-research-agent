@@ -34,26 +34,16 @@ STUDY_DESIGNS = [
     "Qualitative Study"
 ]
 
-IMPLEMENTATION_OBJECTIVES = [
-    "Intelligent Tutoring and Instruction",
-    "AI-Enable Personalized Advising",
-    "Institutional Decision-making",
-    "AI-Enabled Learner Mobility"
-]
-
 OUTCOMES = [
-    "Cognitive - Critical Thinking/Metacognitive skills",
-    "Cognitive - Reading and writing literacy",
-    "Cognitive - speaking, listening, and language fluency",
-    "Cognitive - Mathematical numeracy",
-    "Cognitive - Scientific Reasoning",
-    "Behavioral - task and assignment efficiency",
-    "Behavioral - study habits, concentration",
-    "Behavioral - participation and social engagement",
-    "Behavioral - productivity",
-    "Affective - motivation",
-    "Affective - engagement",
-    "Affective - persistence"
+    "Academic — Literacy",
+    "Academic — Language Fluency",
+    "Academic — Mathematical Numeracy",
+    "Academic — Scientific Reasoning",
+    "Academic — Other",
+    "Social-Emotional Skills",
+    "Durable Skills",
+    "Operational Efficiency",
+    "Systemic / Institutional Impact",
 ]
 
 FINDING_DIRECTIONS = ["Positive", "Negative", "No Effect", "Mixed"]
@@ -100,8 +90,8 @@ class Neo4jConnection:
             # Create indexes for faster lookups
             indexes = [
                 "CREATE INDEX IF NOT EXISTS FOR (p:Paper) ON (p.title)",
-                "CREATE INDEX IF NOT EXISTS FOR (io:ImplementationObjective) ON (io.id)",
-                "CREATE INDEX IF NOT EXISTS FOR (o:Outcome) ON (o.id)",
+                "CREATE INDEX IF NOT EXISTS FOR (p:Paper) ON (p.doi)",
+                "CREATE INDEX IF NOT EXISTS FOR (o:Outcome) ON (o.name)",
                 "CREATE INDEX IF NOT EXISTS FOR (pop:Population) ON (pop.id)",
                 "CREATE INDEX IF NOT EXISTS FOR (ut:UserType) ON (ut.id)",
                 "CREATE INDEX IF NOT EXISTS FOR (sd:StudyDesign) ON (sd.id)"
@@ -147,22 +137,13 @@ class Neo4jConnection:
                     id=sd, type=sd
                 )
 
-            # ImplementationObjective nodes
-            for io in IMPLEMENTATION_OBJECTIVES:
-                session.run(
-                    """
-                    MERGE (i:ImplementationObjective {id: $id, type: $type})
-                    """,
-                    id=io, type=io
-                )
-
             # Outcome nodes
             for outcome in OUTCOMES:
                 session.run(
                     """
-                    MERGE (o:Outcome {id: $id, name: $name})
+                    MERGE (o:Outcome {name: $name}) ON CREATE SET o.id = $name
                     """,
-                    id=outcome, name=outcome
+                    name=outcome
                 )
 
         print("✅ Taxonomy nodes initialized!")

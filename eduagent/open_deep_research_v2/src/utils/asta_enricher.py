@@ -115,11 +115,17 @@ async def enrich_from_web_output(
 
     async def _fetch(paper_id: str):
         try:
-            result = await get_paper_tool.ainvoke({
-                "paper_id": paper_id,
-                "fields": _ENRICHMENT_FIELDS,
-            })
+            result = await asyncio.wait_for(
+                get_paper_tool.ainvoke({
+                    "paper_id": paper_id,
+                    "fields": _ENRICHMENT_FIELDS,
+                }),
+                timeout=15,
+            )
             return result
+        except asyncio.TimeoutError:
+            logger.debug(f"[asta_enricher] get_paper({paper_id}) timed out — skipping")
+            return None
         except Exception as e:
             logger.debug(f"[asta_enricher] get_paper({paper_id}) failed: {e}")
             return None

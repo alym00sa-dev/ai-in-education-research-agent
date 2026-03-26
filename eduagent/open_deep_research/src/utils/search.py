@@ -111,8 +111,10 @@ def get_tavily_api_key(config: RunnableConfig):
 
 
 TAVILY_SEARCH_DESCRIPTION = (
-    "A search engine optimized for comprehensive, accurate, and trusted results. "
-    "Useful for when you need to answer questions about current events."
+    "Targeted web retrieval for specific known documents. Use ONLY when you have a specific "
+    "named study, paper, or policy document (IES, WWC, RAND, Brookings, ed.gov) that you know "
+    "exists and need to retrieve. Not for general topic sweeps — use anthropic_web_search or "
+    "openai_web_search for broad coverage instead. Check your remaining budget before calling."
 )
 
 
@@ -341,9 +343,9 @@ async def tavily_search_async(
 
 @tool(description=(
     "Search the web using Anthropic's native web search (Claude-powered). "
-    "Use for deep targeted dives — specific gaps, recent 2024-2025 work not yet indexed "
-    "in academic DBs, named studies you found referenced but couldn't retrieve, or "
-    "specific policy/grey literature documents. Use precise targeted queries only. "
+    "Use for broad academic coverage alongside the academic DBs — finding studies, evidence, "
+    "and literature on the topic even without a specific paper in mind. Surfaces grey literature, "
+    "policy reports, practitioner work, and web-indexed studies that DBs may miss. "
     "Requires ANTHROPIC_API_KEY."
 ))
 async def anthropic_web_search(query: str) -> str:
@@ -358,7 +360,7 @@ async def anthropic_web_search(query: str) -> str:
             max_tokens=2048,
             api_key=api_key,
             tags=["langsmith:nostream"],
-        ).bind_tools([{"type": "web_search_20250305"}])
+        ).bind_tools([{"type": "web_search_20250305", "name": "web_search"}])
         response = await model.ainvoke([HumanMessage(content=query)])
         if isinstance(response.content, str):
             return response.content
@@ -376,9 +378,9 @@ async def anthropic_web_search(query: str) -> str:
 
 @tool(description=(
     "Search the web using OpenAI's native web search (GPT-powered). "
-    "Use for deep targeted dives — specific gaps, recent 2024-2025 work not yet indexed "
-    "in academic DBs, named studies you found referenced but couldn't retrieve, or "
-    "specific policy/grey literature documents. Use precise targeted queries only. "
+    "Use for broad academic coverage alongside the academic DBs — finding studies, evidence, "
+    "and literature on the topic even without a specific paper in mind. Surfaces grey literature, "
+    "policy reports, practitioner work, and web-indexed studies that DBs may miss. "
     "Requires OPENAI_API_KEY."
 ))
 async def openai_web_search(query: str) -> str:
@@ -439,6 +441,37 @@ async def get_search_tool(search_api: SearchAPI):
     return []
 
 
+async def load_asta_tools() -> list:
+    """Load all available Asta tools via MCP using the ASTA_TOOL_KEY.
+
+    Connects to https://asta-tools.allen.ai/mcp/v1 and returns all tools
+    Allen AI exposes (search_papers_by_relevance, snippet_search, get_paper,
+    get_citations, search_paper_by_title, search_authors_by_name, get_author_papers).
+
+    Returns empty list if key is missing or connection fails — never raises.
+    """
+    import os
+    api_key = os.getenv("ASTA_TOOL_KEY", "")
+    if not api_key:
+        return []
+
+    try:
+        from langchain_mcp_adapters.client import MultiServerMCPClient
+        client = MultiServerMCPClient({
+            "asta": {
+                "url": "https://asta-tools.allen.ai/mcp/v1",
+                "headers": {"x-api-key": api_key},
+                "transport": "streamable_http",
+            }
+        })
+        tools = await client.get_tools()
+        logging.info(f"[ASTA] Loaded {len(tools)} tools: {[t.name for t in tools]}")
+        return tools
+    except Exception as e:
+        logging.warning(f"[ASTA] Could not load tools: {e}")
+        return []
+
+
 async def get_all_tools(config: RunnableConfig):
     """Assemble complete toolkit including research, search, and MCP tools.
 
@@ -466,6 +499,10 @@ async def get_all_tools(config: RunnableConfig):
 
     # Native web search wrappers (always available regardless of search_api setting)
     tools.extend([anthropic_web_search, openai_web_search])
+
+    # Asta scientific corpus tools (Allen AI) — loaded via MCP if ASTA_TOOL_KEY is set
+    asta_tools = await load_asta_tools()
+    tools.extend(asta_tools)
 
     existing_tool_names = {
         t.name if hasattr(t, "name") else t.get("name", "web_search")

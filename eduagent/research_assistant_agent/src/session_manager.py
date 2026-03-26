@@ -183,12 +183,11 @@ class SessionManager:
             result = db_session.run(
                 """
                 MATCH (p:Paper {session_id: $session_id})
-                OPTIONAL MATCH (p)-[:HAS_IMPLEMENTATION_OBJECTIVE]->(io:ImplementationObjective)
                 OPTIONAL MATCH (p)-[:FOCUSES_ON_OUTCOME]->(out:Outcome)
                 OPTIONAL MATCH (p)-[:REPORTS_FINDING]->(f:EmpiricalFinding)
-                RETURN p, io.id as objective, out.id as outcome,
+                RETURN p, out.name as outcome,
                        f.direction as finding_direction,
-                       f.results_summary as finding_summary,
+                       f.finding_summary as finding_summary,
                        f.measure as measure,
                        f.study_size as study_size,
                        f.effect_size as effect_size
@@ -200,7 +199,6 @@ class SessionManager:
             papers = []
             for record in result:
                 paper_dict = dict(record["p"])
-                paper_dict["objective"] = record["objective"] or ""
                 paper_dict["outcome"] = record["outcome"] or ""
                 paper_dict["finding_direction"] = record["finding_direction"] or ""
                 paper_dict["finding_summary"] = record["finding_summary"] or ""

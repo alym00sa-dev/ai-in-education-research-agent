@@ -141,16 +141,65 @@ class Configuration(BaseModel):
             }
         }
     )
+    research_iterations: int = Field(
+        default=2,
+        metadata={
+            "x_oap_ui_config": {
+                "type": "slider",
+                "default": 2,
+                "min": 1,
+                "max": 5,
+                "step": 1,
+                "description": "Number of full supervisor dispatch rounds per query. Critiques = iterations - 1. Higher values use more Tavily and SerpAPI credits."
+            }
+        }
+    )
+    tavily_budget: int = Field(
+        default=10,
+        metadata={
+            "x_oap_ui_config": {
+                "type": "slider",
+                "default": 10,
+                "min": 0,
+                "max": 30,
+                "step": 1,
+                "description": "Total Tavily search calls allowed per query, shared across all researchers and all iterations."
+            }
+        }
+    )
+    serpapi_budget: int = Field(
+        default=3,
+        metadata={
+            "x_oap_ui_config": {
+                "type": "slider",
+                "default": 3,
+                "min": 0,
+                "max": 10,
+                "step": 1,
+                "description": "Total SerpAPI (Google Scholar) calls allowed per query, shared across all researchers and all iterations."
+            }
+        }
+    )
     max_sources: int = Field(
         default=30,
         metadata={
             "x_oap_ui_config": {
                 "type": "slider",
                 "default": 30,
-                "min": 20,
-                "max": 50,
-                "step": 1,
-                "description": "Maximum number of sources to extract and surface in the final report."
+                "min": 10,
+                "max": 80,
+                "step": 5,
+                "description": "Top-k sources to include in the final report bibliography. Sources are ranked by evidence quality (RCTs first, then meta-analyses, then observational). Higher values = broader coverage; lower values = tighter, highest-quality-only bibliography."
+            }
+        }
+    )
+    enable_pdf_extraction: bool = Field(
+        default=True,
+        metadata={
+            "x_oap_ui_config": {
+                "type": "boolean",
+                "default": True,
+                "description": "Fetch and extract full PDF text for academic papers. Produces KG-aligned PaperProfiles with quality/impact tiers."
             }
         }
     )

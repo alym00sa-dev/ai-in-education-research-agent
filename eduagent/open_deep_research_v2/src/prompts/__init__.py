@@ -8,9 +8,9 @@ from prompts.researcher import (
     compress_research_human,
     researcher_reflect_prompt,
 )
-from prompts.synthesis import compress_findings_prompt, draft_report_prompt
+from prompts.executive_summary import executive_summary_prompt
 from prompts.critique import critique_prompt
-from prompts.report import final_report_prompt
+from prompts.report import final_report_prompt, citation_normalize_prompt
 from prompts.qa import qa_audit_prompt
 
 __all__ = [
@@ -20,9 +20,9 @@ __all__ = [
     "compress_research_prompt",
     "compress_research_human",
     "researcher_reflect_prompt",
-    "compress_findings_prompt",
-    "draft_report_prompt",
+    "executive_summary_prompt",
     "critique_prompt",
     "final_report_prompt",
+    "citation_normalize_prompt",
     "qa_audit_prompt",
 ]

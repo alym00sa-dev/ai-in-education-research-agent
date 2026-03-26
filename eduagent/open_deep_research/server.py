@@ -4,15 +4,22 @@ For use in production without LangGraph Cloud.
 """
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import StreamingResponse
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import Dict, Any, Optional, List
 import os
 import sys
 import json
 import uuid
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Add src/ to path so bare imports (from configuration import ...) resolve correctly
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "src"))
+
+from utils.tracing import setup_tracing
+setup_tracing()
 
 from src.deep_researcher import deep_researcher
 from langchain_core.messages import BaseMessage
@@ -24,6 +31,7 @@ def serialize_value(obj):
             "type": obj.__class__.__name__,
             "content": obj.content,
             "additional_kwargs": obj.additional_kwargs,
+            "tool_calls": getattr(obj, "tool_calls", []),
         }
     elif isinstance(obj, dict):
         return {k: serialize_value(v) for k, v in obj.items()}
@@ -34,8 +42,30 @@ def serialize_value(obj):
 
 app = FastAPI(title="LangGraph Deep Researcher API")
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["https://*.vercel.app", "http://localhost:3000"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 # In-memory thread storage (for stateless deployment)
 threads = {}
+
+
+# ── Neo4j sessions helper ──────────────────────────────────────────────────────
+
+def _get_neo4j_driver():
+    """Lazy-load Neo4j driver using env vars."""
+    try:
+        from neo4j import GraphDatabase
+        uri = os.environ["NEO4J_URI"]
+        user = os.environ.get("NEO4J_USER", "neo4j")
+        password = os.environ["NEO4J_PASSWORD"]
+        return GraphDatabase.driver(uri, auth=(user, password))
+    except Exception as e:
+        raise RuntimeError(f"Neo4j connection failed: {e}")
 
 class ResearchRequest(BaseModel):
     """Request model for research queries."""
@@ -117,7 +147,7 @@ async def run_thread_stream(thread_id: str, request: Dict[str, Any]):
             try:
                 async for mode, chunk in deep_researcher.astream(
                     state_input,
-                    config={"configurable": configurable},
+                    config={"configurable": configurable, "recursion_limit": 200},
                     stream_mode=["values", "events"],
                 ):
                     if mode == "values":
@@ -179,7 +209,7 @@ async def run_research_stream(request: ResearchRequest):
             try:
                 async for mode, chunk in deep_researcher.astream(
                     state_input,
-                    config={"configurable": configurable},
+                    config={"configurable": configurable, "recursion_limit": 200},
                     stream_mode=["values", "events"],
                 ):
                     if mode == "values":
@@ -251,6 +281,39 @@ async def list_assistants():
             }
         ]
     }
+
+@app.get("/sessions")
+async def list_sessions(limit: int = 50):
+    """
+    Return past research sessions from Neo4j.
+    Compatible with the EduAgent Next.js frontend.
+    """
+    try:
+        driver = _get_neo4j_driver()
+        database = os.environ.get("NEO4J_DATABASE", "neo4j")
+        with driver.session(database=database) as db_session:
+            result = db_session.run(
+                """
+                MATCH (s:Session)
+                RETURN s.session_id   AS session_id,
+                       s.query        AS query,
+                       s.created_at   AS created_at,
+                       s.model_provider AS model_provider,
+                       s.search_depth AS search_depth,
+                       s.paper_count  AS paper_count,
+                       s.status       AS status,
+                       s.research_report AS research_report
+                ORDER BY s.created_at DESC
+                LIMIT $limit
+                """,
+                limit=limit,
+            )
+            sessions = [dict(r) for r in result]
+        driver.close()
+        return {"sessions": sessions}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
 
 if __name__ == "__main__":
     import uvicorn

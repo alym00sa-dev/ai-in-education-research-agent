@@ -1,25 +1,29 @@
-"""Final report node — reconciles all iteration drafts into the definitive report."""
+"""Final report node — writes definitive report directly from paper profiles."""
 
 import re
+import logging
 from langchain_core.messages import AIMessage, HumanMessage
 from langchain_core.runnables import RunnableConfig
 
 from configuration import Configuration
-from prompts import final_report_prompt
+from prompts import final_report_prompt, citation_normalize_prompt
 from state import AgentState, PaperProfile
 from utils.llm import get_model, get_today_str
+from utils.citations import inject_citations as _inject_citations, build_notes_index
+from utils.ranking import rank_profiles
+
+logger = logging.getLogger(__name__)
 
 
-def _build_paper_tier_reference(profiles: list[PaperProfile]) -> tuple[str, dict[int, dict]]:
+def _build_paper_tier_reference(profiles: list[PaperProfile], numbered: bool = False) -> tuple[str, dict[int, dict]]:
     """
-    Format PaperProfiles into a pre-numbered source list for the final report prompt.
+    Format PaperProfiles into a source list for report prompts.
     Returns (formatted_block, index_map) where index_map maps [N] → profile dict.
+    When numbered=True, each entry is prefixed with [N] for Pass 2 citation resolution.
     """
     if not profiles:
         return "No pre-scored profiles available.", {}
 
-    # Deduplicate: check DOI, URL, and title independently so a paper with
-    # doi=None but the same URL/title as an already-seen entry is still dropped.
     seen_dois: set[str] = set()
     seen_urls: set[str] = set()
     seen_titles: set[str] = set()
@@ -34,7 +38,6 @@ def _build_paper_tier_reference(profiles: list[PaperProfile]) -> tuple[str, dict
             url = (getattr(p, "url", None) or "").strip().lower()
             title = (getattr(p, "title", None) or "").strip().lower()
 
-        # Skip if any non-empty identifier has already been seen
         if doi and doi in seen_dois:
             continue
         if url and url in seen_urls:
@@ -85,7 +88,6 @@ def _build_paper_tier_reference(profiles: list[PaperProfile]) -> tuple[str, dict
             "quality": quality, "impact": impact,
         }
 
-        # For RCTs and QEDs, append empirical findings with statistics
         _CAUSAL_DESIGNS = {"Randomized Controlled Trial (RCT)", "RCT",
                            "Quasi-Experimental Design (QED)", "QED",
                            "Meta-Analysis", "Systematic Review"}
@@ -111,15 +113,15 @@ def _build_paper_tier_reference(profiles: list[PaperProfile]) -> tuple[str, dict
                     if effect != "not_reported":
                         stat_str += f" | effect={effect}"
                     if n != "not_reported":
-                        # strip leading "n=" from study_size if already present
                         n_clean = n.lstrip("n=").lstrip("N=") if n.lower().startswith("n=") else n
                         stat_str += f" | n={n_clean}"
                     if ci != "not_reported":
                         stat_str += f" | CI={ci}"
                     stats_lines.append(stat_str)
 
+        prefix = f"[{i}] " if numbered else ""
         entry = (
-            f"[{i}] {title} ({year}). {authors}\n"
+            f"{prefix}{authors} ({year}). {title}\n"
             f"    URL: {url}\n"
             f"    Design: {study_design} | Population: {population}\n"
             f"    Quality: {quality} | Impact: {impact}\n"
@@ -130,11 +132,6 @@ def _build_paper_tier_reference(profiles: list[PaperProfile]) -> tuple[str, dict
         lines.append(entry)
 
     return "\n\n".join(lines), index_map
-
-
-def _strip_inline_citations(text: str) -> str:
-    """Remove [N] citation markers from iteration history to prevent numbering collision."""
-    return re.sub(r'\[\d+\]', '', text)
 
 
 def _build_tiered_questions(tqm: dict) -> str:
@@ -160,45 +157,150 @@ def _build_tiered_questions(tqm: dict) -> str:
     return "\n".join(lines) if lines else "No tiered questions available."
 
 
+def _build_bibliography(cited_ns: list[int], index_map: dict[int, dict]) -> str:
+    """Programmatically build the bibliography table from injected [N] numbers."""
+    if not cited_ns:
+        return "No sources cited.\n"
+
+    rows = []
+    for n in sorted(cited_ns):
+        profile = index_map.get(n)
+        if not profile:
+            continue
+        title = profile.get("title", "Unknown")
+        authors = profile.get("authors") or ""
+        year = profile.get("year") or "n.d."
+        url = profile.get("url") or ""
+        design = profile.get("study_design", "not_reported")
+        quality = (profile.get("quality") or "yellow").capitalize()
+        impact = (profile.get("impact") or "yellow").capitalize()
+
+        if url and url != "not available":
+            citation = f"{authors} ({year}). [{title}]({url})."
+        else:
+            citation = f"{authors} ({year}). {title}."
+
+        rows.append(f"| {n} | {citation} | {design} | {quality} | {impact} |")
+
+    if not rows:
+        return "No sources cited.\n"
+
+    header = (
+        "| # | Citation | Study Design | Quality | Impact |\n"
+        "|---|----------|--------------|---------|--------|\n"
+    )
+    return header + "\n".join(rows) + "\n"
+
+
+def _post_process_report(raw: str, index_map: dict[int, dict]) -> str:
+    """
+    Post-process the LLM-generated report:
+    1. Inject [N] citations from (Author, Year) patterns
+    2. Split off the Bibliography section (if present) and rebuild it programmatically
+    3. Preserve the Body of Evidence Maturity section
+    """
+    # Split into body / bibliography / maturity
+    bib_pattern = re.compile(r'^## Bibliography', re.MULTILINE)
+    maturity_pattern = re.compile(r'^## Body of Evidence Maturity', re.MULTILINE)
+
+    bib_match = bib_pattern.search(raw)
+    maturity_match = maturity_pattern.search(raw)
+
+    if bib_match:
+        body = raw[:bib_match.start()]
+        rest = raw[bib_match.start():]
+    elif maturity_match:
+        body = raw[:maturity_match.start()]
+        rest = raw[maturity_match.start():]
+    else:
+        body = raw
+        rest = ""
+
+    # Preserve maturity section from rest
+    if maturity_match and bib_match:
+        # maturity is after bibliography
+        maturity_start = maturity_pattern.search(rest)
+        maturity_section = rest[maturity_start.start():] if maturity_start else ""
+    elif maturity_match and not bib_match:
+        maturity_section = rest
+    else:
+        maturity_section = ""
+
+    # Strip any unresolved <<...>> tags left by Pass 2 (convert to plain text)
+    body = re.sub(r'<<([^>]+)>>', r'(\1)', body)
+
+    # Inject [N] into body (catches any remaining (Author, Year) refs)
+    annotated_body = _inject_citations(body, index_map)
+
+    # Collect all cited [N]
+    cited_ns = list(set(int(m.group(1)) for m in re.finditer(r'\[(\d+)\]', annotated_body)))
+
+    injected = len(cited_ns)
+    logger.info(f"[final_report] {injected} unique [N] citations injected programmatically")
+
+    # Build bibliography
+    bibliography = "## Bibliography\n\n" + _build_bibliography(cited_ns, index_map)
+
+    # Reassemble
+    parts = [annotated_body.rstrip(), "", bibliography]
+    if maturity_section:
+        parts.append(maturity_section.strip())
+
+    return "\n".join(parts)
+
+
 async def final_report(state: AgentState, config: RunnableConfig) -> dict:
-    """Write the final report from all iteration evidence, drafts, critiques, and paper profiles."""
+    """Write the final report directly from paper profiles and executive summaries."""
     configurable = Configuration.from_runnable_config(config)
     model = get_model(config)
 
-    compress_history = state.get("compress_findings_history", [])
-    draft_history = state.get("draft_report_history", [])
-    critique_history = state.get("critique_history", [])
     paper_profiles = state.get("paper_profiles", [])
+    critique_history = state.get("critique_history", [])
+    all_notes = state.get("all_notes", [])
     tqm = state.get("tiered_question_map") or {}
 
-    # Build iteration history block — strip [N] markers to prevent citation number collision
-    history_parts = []
-    for i, (cf, dr) in enumerate(zip(compress_history, draft_history)):
-        history_parts.append(f"### Iteration {i + 1} — Evidence Summary\n{_strip_inline_citations(cf)}")
-        history_parts.append(f"### Iteration {i + 1} — Draft Report\n{_strip_inline_citations(dr)}")
-        if i < len(critique_history):
-            history_parts.append(f"### Critique after Iteration {i + 1}\n{_strip_inline_citations(critique_history[i])}")
+    ranked_profiles = rank_profiles(paper_profiles, state.get("research_brief", ""), tqm)
+    pool_size = configurable.max_sources * 2
+    top_profiles = ranked_profiles[:pool_size]
+    logger.info(f"[final_report] Source pool: {len(top_profiles)} of {len(ranked_profiles)} ranked profiles (max_sources={configurable.max_sources})")
 
-    iteration_history = "\n\n---\n\n".join(history_parts) if history_parts else "No iteration history available."
-
-    # Build paper tier reference from extracted profiles (pre-numbered [1]-[N])
-    paper_tier_reference, _source_index = _build_paper_tier_reference(paper_profiles)
-
-    # Build tiered questions block
+    # Pass 1 pool: unlabelled (no [N]) so LLM writes <<Author, Year>> naturally
+    paper_tier_reference, index_map = _build_paper_tier_reference(top_profiles, numbered=False)
+    # Pass 2 pool: numbered with [N] so resolver can map <<...>> → [N] directly
+    numbered_tier_reference, _ = _build_paper_tier_reference(top_profiles, numbered=True)
     tiered_questions = _build_tiered_questions(tqm)
+
+    critique_summaries = "\n\n---\n\n".join(critique_history) if critique_history else "No critiques conducted."
 
     prompt = final_report_prompt.format(
         date=get_today_str(),
         research_brief=state.get("research_brief", ""),
-        n_iterations=len(draft_history),
-        iteration_history=iteration_history,
         paper_tier_reference=paper_tier_reference,
+        critique_summaries=critique_summaries,
         tiered_questions=tiered_questions,
         max_sources=configurable.max_sources,
     )
 
+    # Pass 1 — content generation (LLM uses <<Author, Year>> tags)
     response = await model.ainvoke([HumanMessage(content=prompt)])
-    content = str(response.content)
+    raw_content = str(response.content)
+    logger.info("[final_report] Pass 1 complete — resolving <<...>> citation tags")
+
+    # Pass 2 — resolve <<...>> tags → [N] using numbered source pool
+    normalize_prompt = citation_normalize_prompt.format(
+        paper_tier_reference=numbered_tier_reference,
+        report=raw_content,
+    )
+    norm_response = await model.ainvoke([HumanMessage(content=normalize_prompt)])
+    normalized_content = str(norm_response.content)
+    logger.info("[final_report] Pass 2 complete — citation tags resolved")
+
+    # Augment index_map with notes-sourced papers
+    notes_index = build_notes_index(all_notes, [], index_map)
+    full_index_map = {**index_map, **notes_index}
+
+    # Post-process: inject any remaining (Author, Year) refs and rebuild bibliography
+    content = _post_process_report(normalized_content, full_index_map)
 
     return {
         "final_report": content,

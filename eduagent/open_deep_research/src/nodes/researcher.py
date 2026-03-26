@@ -1,10 +1,20 @@
-"""Researcher nodes — individual researcher subgraph for conducting focused research."""
+"""Researcher nodes — keyword-set-driven parallel sweep across all academic DBs.
+
+Architecture:
+    researcher → researcher_reflect → (loop or compress_research) → END
+
+Each researcher receives a sub-question from the supervisor, generates a KeywordSet
+via one Haiku LLM call, then programmatically sweeps ALL configured academic DBs in
+parallel (asyncio.gather). No LLM decides which tools to call — coverage is guaranteed.
+
+researcher_reflect audits gaps and, if needed, generates a new KeywordSet for a
+targeted follow-up sweep (max 2 sweeps total).
+"""
 
 import asyncio
-import json
 import os
 from datetime import datetime, timezone
-from typing import Literal
+from typing import Literal, Optional
 
 from langchain.chat_models import init_chat_model
 from langchain_core.messages import HumanMessage, SystemMessage, ToolMessage, filter_messages
@@ -17,152 +27,70 @@ from configuration import Configuration
 from prompts import (
     compress_research_simple_human_message,
     compress_research_system_prompt,
-    critique_agent_prompt,
-    critique_agent_search_prompt,
-    research_system_prompt,
+    keyword_generation_prompt,
+    researcher_reflect_prompt,
 )
-from state import ResearchComplete, ResearcherOutputState, ResearcherState
+from state import ResearcherOutputState, ResearcherState
 from utils.llm import (
-    anthropic_websearch_called,
     configurable_model,
     get_api_key_for_model,
     get_today_str,
     is_token_limit_exceeded,
-    openai_websearch_called,
     remove_up_to_last_ai_message,
 )
 from utils.search import get_all_tools
+from utils.paper_filter import ensemble_filter, FILTERABLE_TOOLS
+from utils.pdf_extractor import enrich_tool_output, PDF_EXTRACTABLE_TOOLS
 
-_ACADEMIC_DB_TOOLS = {"eric_search", "openalex_search", "semantic_scholar_search", "arxiv_search", "elsevier_search", "scholar_search"}
+# ── Sweep plan ─────────────────────────────────────────────────────────────────
+# Each entry: (tool_name, query_field)
+# query_field is one of "primary" | "variation" | "web"
+# Tools absent from tools_by_name (not configured) are skipped silently.
+_SWEEP_PLAN = [
+    ("eric_search",                 "primary"),
+    ("eric_search",                 "variation"),
+    ("openalex_search",             "primary"),
+    ("openalex_search",             "variation"),
+    ("arxiv_search",                "primary"),
+    ("elsevier_search",             "primary"),
+    ("scholar_search",              "variation"),
+    ("search_papers_by_relevance",  "primary"),
+    ("search_papers_by_relevance",  "variation"),
+    ("tavily_search",               "web"),
+]
+
+_ACADEMIC_DB_TOOLS = {
+    "eric_search", "openalex_search", "semantic_scholar_search",
+    "arxiv_search", "elsevier_search", "scholar_search",
+    "search_papers_by_relevance", "snippet_search", "get_paper",
+    "get_citations", "search_paper_by_title", "search_authors_by_name", "get_author_papers",
+}
 
 
-class CritiqueDecision(BaseModel):
+# ── Pydantic models ────────────────────────────────────────────────────────────
+
+class KeywordSet(BaseModel):
+    """Keyword set generated from a sub-question for DB sweeping."""
+    primary_query: str = Field(
+        description="Primary query for formal academic DBs — quoted phrases + academic signal words"
+    )
+    variation_query: str = Field(
+        description="Variation using synonyms and different terminology"
+    )
+    web_query: str = Field(
+        description="Natural language query for web/grey literature search"
+    )
+
+
+class ReflectionDecision(BaseModel):
     decision: Literal["PASS", "NEEDS_WORK"]
-    counter_claims: list[str] = Field(default_factory=list, description="3-5 specific counter-claims or contradictions found")
-    gaps: list[str] = Field(default_factory=list, description="3-5 missing populations, outcomes, or methodological weaknesses")
-    search_directive: str = Field(default="", description="Specific searches the researcher must run to address these counter-claims")
+    gaps: list[str] = Field(default_factory=list, description="2-3 specific coverage gaps identified")
+    new_primary_query: str = Field(default="", description="Follow-up academic DB query targeting the gaps")
+    new_variation_query: str = Field(default="", description="Follow-up synonym/variation query")
+    new_web_query: str = Field(default="", description="Follow-up web/grey literature query")
 
 
-async def researcher(
-    state: ResearcherState,
-    config: RunnableConfig,
-) -> Command[Literal["researcher_tools"]]:
-    """Individual researcher that conducts focused research on a specific topic.
-
-    Given a specific research topic by the supervisor, uses available tools
-    (search, think_tool, MCP tools) to gather comprehensive information.
-
-    Args:
-        state: Current researcher state with messages and topic context
-        config: Runtime configuration with model settings and tool availability
-
-    Returns:
-        Command to proceed to researcher_tools for tool execution
-    """
-    configurable = Configuration.from_runnable_config(config)
-    researcher_messages = state.get("researcher_messages", [])
-
-    tools = await get_all_tools(config)
-    if len(tools) == 0:
-        raise ValueError(
-            "No tools found to conduct research: Please configure either your "
-            "search API or add MCP tools to your configuration."
-        )
-
-    # Enforce web search budget: drop tavily_search when limit is reached
-    web_search_calls = state.get("web_search_calls", 0)
-    max_web_searches = configurable.max_web_searches
-    if max_web_searches is not None and web_search_calls >= max_web_searches:
-        tools = [t for t in tools if (t.name if hasattr(t, "name") else t.get("name")) != "tavily_search"]
-
-    research_topic = state.get("research_topic", "")
-    researcher_tag = f"researcher_topic:{research_topic}" if research_topic else ""
-
-    researcher_tags = ["langsmith:nostream"]
-    if researcher_tag:
-        researcher_tags.append(researcher_tag)
-
-    research_model_config = {
-        "model": configurable.research_model,
-        "max_tokens": configurable.research_model_max_tokens,
-        "api_key": get_api_key_for_model(configurable.research_model, config),
-        "tags": researcher_tags,
-    }
-
-    # Build web search budget message for the prompt
-    web_search_mode = configurable.web_search_mode
-    if max_web_searches == 0:
-        web_search_budget = (
-            "**Web search unavailable** — use only academic databases "
-            "(eric_search, openalex_search, semantic_scholar_search). Do not call tavily_search."
-        )
-    elif max_web_searches is None:
-        web_search_budget = ""
-    else:
-        remaining = max(0, max_web_searches - web_search_calls)
-        if remaining == 0:
-            web_search_budget = (
-                "**Web search budget: EXHAUSTED** — tavily_search is no longer available. "
-                "Use only academic databases (eric_search, openalex_search, semantic_scholar_search)."
-            )
-        elif web_search_mode == "strategic":
-            web_search_budget = (
-                f"**Web search budget: {remaining} call(s) remaining** (used {web_search_calls} of {max_web_searches}). "
-                "STRATEGIC USE ONLY — first exhaust academic databases (ERIC, OpenAlex, Semantic Scholar). "
-                "Then assess what is genuinely missing and allocate remaining calls deliberately to: "
-                "(1) academic literature not indexed in the DBs (preprints, conference papers, practitioner journals), "
-                "(2) policy/grey literature (IES, What Works Clearinghouse, RAND, Brookings, College Board, ed.gov), "
-                "or (3) very recent evidence (2024–2025) not yet indexed. "
-                "Do not use a web search call unless you have identified a specific gap the academic DBs cannot fill."
-            )
-        else:
-            web_search_budget = (
-                f"**Web search budget: {remaining} call(s) remaining** (used {web_search_calls} of {max_web_searches})."
-            )
-
-    researcher_prompt = research_system_prompt.format(
-        mcp_prompt=configurable.mcp_prompt or "",
-        date=get_today_str(),
-        web_search_budget=web_search_budget,
-    )
-
-    research_model = (
-        configurable_model
-        .bind_tools(tools)
-        .with_retry(stop_after_attempt=configurable.max_structured_output_retries)
-        .with_config(research_model_config)
-    )
-
-    messages = [SystemMessage(content=researcher_prompt)] + researcher_messages
-    response = await research_model.ainvoke(messages)
-
-    # Capture agent reasoning for thought log
-    text_content = ""
-    if isinstance(response.content, str):
-        text_content = response.content
-    elif isinstance(response.content, list):
-        text_content = " ".join(
-            block.get("text", "") for block in response.content
-            if isinstance(block, dict) and block.get("type") == "text"
-        )
-    tool_calls_made = [tc["name"] for tc in (response.tool_calls or [])]
-    thought_entry = {
-        "topic": research_topic,
-        "iteration": state.get("tool_call_iterations", 0),
-        "reasoning": text_content.strip(),
-        "tools_called": tool_calls_made,
-        "timestamp": datetime.now(timezone.utc).isoformat(),
-    }
-
-    return Command(
-        goto="researcher_tools",
-        update={
-            "researcher_messages": [response],
-            "tool_call_iterations": state.get("tool_call_iterations", 0) + 1,
-            "thought_log": [thought_entry],
-        }
-    )
-
+# ── Helpers ────────────────────────────────────────────────────────────────────
 
 async def execute_tool_safely(tool, args, config):
     """Safely execute a tool with error handling."""
@@ -172,128 +100,226 @@ async def execute_tool_safely(tool, args, config):
         return f"Error executing tool: {str(e)}"
 
 
-async def researcher_tools(
+async def _run_filter_and_extraction(
+    call_specs: list[tuple[str, str]],
+    raw_outputs: list[str],
+    research_topic: str,
+    configurable: Configuration,
+    config: RunnableConfig,
+) -> tuple[list[str], list[dict], list]:
+    """Run ensemble filter then PDF extraction on sweep results.
+
+    Returns: (final_outputs, filter_log, paper_profiles)
+    """
+    # Ensemble filter on academic DB results
+    filter_tasks = [
+        ensemble_filter(tool_name, output, research_topic)
+        if tool_name in FILTERABLE_TOOLS and isinstance(output, str) and not output.startswith("Error:")
+        else None
+        for (tool_name, _), output in zip(call_specs, raw_outputs)
+    ]
+    filter_results_raw = await asyncio.gather(*[t for t in filter_tasks if t is not None])
+    filter_iter = iter(filter_results_raw)
+    filtered_outputs = []
+    all_filter_log: list[dict] = []
+    for i, task in enumerate(filter_tasks):
+        if task is not None:
+            filtered_output, log = next(filter_iter)
+            filtered_outputs.append(filtered_output)
+            all_filter_log.extend(log)
+        else:
+            filtered_outputs.append(raw_outputs[i])
+
+    # PDF extraction
+    all_paper_profiles = []
+    if configurable.enable_pdf_extraction:
+        extraction_tasks = [
+            enrich_tool_output(tool_name, output, research_topic)
+            if tool_name in PDF_EXTRACTABLE_TOOLS and isinstance(output, str) and not output.startswith("Error:")
+            else None
+            for (tool_name, _), output in zip(call_specs, filtered_outputs)
+        ]
+        extraction_results_raw = await asyncio.gather(
+            *[t for t in extraction_tasks if t is not None],
+            return_exceptions=True,
+        )
+        extraction_iter = iter(extraction_results_raw)
+        final_outputs = []
+        for i, task in enumerate(extraction_tasks):
+            if task is not None:
+                result = next(extraction_iter)
+                if not isinstance(result, Exception):
+                    enriched, profiles = result
+                    final_outputs.append(enriched)
+                    all_paper_profiles.extend(profiles)
+                else:
+                    final_outputs.append(filtered_outputs[i])
+            else:
+                final_outputs.append(filtered_outputs[i])
+    else:
+        final_outputs = filtered_outputs
+
+    return final_outputs, all_filter_log, all_paper_profiles
+
+
+# ── Researcher node ────────────────────────────────────────────────────────────
+
+async def researcher(
     state: ResearcherState,
     config: RunnableConfig,
-) -> Command[Literal["researcher", "compress_research"]]:
-    """Execute tools called by the researcher.
-
-    Handles think_tool (strategic reflection), search tools, MCP tools,
-    and ResearchComplete (signals end of research task).
-
-    Args:
-        state: Current researcher state with messages and iteration count
-        config: Runtime configuration with research limits and tool settings
-
-    Returns:
-        Command to either continue research loop or proceed to compression
-    """
+) -> Command[Literal["researcher_reflect"]]:
+    """Generate keyword set from sub-question, then sweep all DBs in parallel."""
     configurable = Configuration.from_runnable_config(config)
-    researcher_messages = state.get("researcher_messages", [])
-    most_recent_message = researcher_messages[-1]
+    research_topic = state.get("research_topic", "")
+    sweep_cycles = state.get("sweep_cycles", 0)
 
-    has_tool_calls = bool(most_recent_message.tool_calls)
-    has_native_search = (
-        openai_websearch_called(most_recent_message) or
-        anthropic_websearch_called(most_recent_message)
-    )
+    # ── Step 1: Get or generate keyword set ────────────────────────────────────
+    current_keyword_set = state.get("current_keyword_set")
+    if current_keyword_set:
+        keyword_set = KeywordSet(**current_keyword_set)
+    else:
+        # Extract suggested keywords from the supervisor's HumanMessage brief
+        messages = state.get("researcher_messages", [])
+        raw_brief = ""
+        if messages:
+            first_msg = messages[0]
+            raw_brief = first_msg.content if hasattr(first_msg, "content") else str(first_msg)
 
-    if not has_tool_calls and not has_native_search:
-        return Command(goto="compress_research")
+        anthropic_api_key = os.getenv("ANTHROPIC_API_KEY")
+        try:
+            keyword_model = init_chat_model(
+                model="anthropic:claude-haiku-4-5-20251001",
+                max_tokens=256,
+                api_key=anthropic_api_key,
+                tags=["langsmith:nostream"],
+            ).with_structured_output(KeywordSet)
 
+            kw_prompt = keyword_generation_prompt.format(
+                sub_question=research_topic,
+                suggested_keywords=raw_brief[:500],
+                date=get_today_str(),
+            )
+            keyword_set = await keyword_model.ainvoke([HumanMessage(content=kw_prompt)])
+        except Exception:
+            # Fallback: use research_topic verbatim for all three queries
+            keyword_set = KeywordSet(
+                primary_query=research_topic,
+                variation_query=research_topic,
+                web_query=research_topic,
+            )
+        current_keyword_set = keyword_set.model_dump()
+
+    # ── Step 2: Build sweep task list ──────────────────────────────────────────
     tools = await get_all_tools(config)
     tools_by_name = {
-        tool.name if hasattr(tool, "name") else tool.get("name", "web_search"): tool
-        for tool in tools
+        (t.name if hasattr(t, "name") else t.get("name", "")): t
+        for t in tools
     }
 
-    tool_calls = most_recent_message.tool_calls
-    tool_execution_tasks = []
-    for tool_call in tool_calls:
-        args = dict(tool_call["args"])
-        # Inject max_results for Tavily (InjectedToolArg default=5 is never set otherwise).
-        # Scale per-query results off max_sources: floor(max_sources/3), capped at Tavily's max of 10.
-        if tool_call["name"] == "tavily_search":
-            args["max_results"] = max(5, min(10, configurable.max_sources // 3))
-        tool_execution_tasks.append(
-            execute_tool_safely(tools_by_name[tool_call["name"]], args, config)
-        )
-    observations = await asyncio.gather(*tool_execution_tasks)
+    web_search_calls = state.get("web_search_calls", 0)
+    max_web_searches = configurable.max_web_searches
 
-    tool_outputs = [
-        ToolMessage(
-            content=observation,
-            name=tool_call["name"],
-            tool_call_id=tool_call["id"]
-        )
-        for observation, tool_call in zip(observations, tool_calls)
-    ]
+    query_map = {
+        "primary":   keyword_set.primary_query,
+        "variation": keyword_set.variation_query,
+        "web":       keyword_set.web_query,
+    }
 
-    # Count calls per tool for source provenance tracking
-    new_web_searches = 0
-    new_source_counts: dict = {}
-    for tc in tool_calls:
-        name = tc["name"]
-        if name == "tavily_search":
-            new_web_searches += 1
-            new_source_counts["tavily"] = new_source_counts.get("tavily", 0) + 1
-        elif name in _ACADEMIC_DB_TOOLS:
-            new_source_counts[name] = new_source_counts.get(name, 0) + 1
+    call_specs: list[tuple[str, str]] = []  # (tool_name, query)
+    coros = []
 
-    updated_web_search_calls = state.get("web_search_calls", 0) + new_web_searches
+    for tool_name, query_field in _SWEEP_PLAN:
+        if tool_name not in tools_by_name:
+            continue
+        if tool_name == "tavily_search":
+            if max_web_searches is not None and web_search_calls >= max_web_searches:
+                continue
+            args = {"queries": [query_map["web"]], "max_results": 10}
+        else:
+            args = {"query": query_map[query_field]}
 
-    exceeded_iterations = state.get("tool_call_iterations", 0) >= configurable.max_react_tool_calls
-    research_complete_called = any(
-        tool_call["name"] == "ResearchComplete"
-        for tool_call in most_recent_message.tool_calls
+        call_specs.append((tool_name, query_map[query_field]))
+        coros.append(execute_tool_safely(tools_by_name[tool_name], args, config))
+
+    # ── Step 3: Fire all DB calls in parallel ──────────────────────────────────
+    raw_outputs = [str(r) for r in await asyncio.gather(*coros)]
+
+    # ── Step 4: Filter + extract ───────────────────────────────────────────────
+    final_outputs, all_filter_log, all_paper_profiles = await _run_filter_and_extraction(
+        call_specs, raw_outputs, research_topic, configurable, config
     )
 
-    if exceeded_iterations or research_complete_called:
-        return Command(
-            goto="critique_agent",
-            update={
-                "researcher_messages": tool_outputs,
-                "web_search_calls": updated_web_search_calls,
-                "source_counts": new_source_counts,
-            }
-        )
+    # ── Step 5: Build ToolMessages for compress_research ──────────────────────
+    tool_messages = []
+    new_source_counts: dict = {}
+    new_web_searches = 0
+
+    for i, ((tool_name, query), output) in enumerate(zip(call_specs, final_outputs)):
+        tool_messages.append(ToolMessage(
+            content=f"[{tool_name} | query: {query}]\n{output}",
+            name=tool_name,
+            tool_call_id=f"sweep_{sweep_cycles}_{tool_name}_{i}",
+        ))
+        if tool_name == "tavily_search":
+            new_web_searches += 1
+            new_source_counts["tavily"] = new_source_counts.get("tavily", 0) + 1
+        elif tool_name in _ACADEMIC_DB_TOOLS:
+            new_source_counts[tool_name] = new_source_counts.get(tool_name, 0) + 1
+
+    thought_entry = {
+        "topic": research_topic,
+        "iteration": sweep_cycles,
+        "reasoning": (
+            f"Sweep {sweep_cycles + 1} — "
+            f"primary: '{keyword_set.primary_query}' | "
+            f"variation: '{keyword_set.variation_query}' | "
+            f"web: '{keyword_set.web_query}' | "
+            f"tools fired: {[s[0] for s in call_specs]}"
+        ),
+        "tools_called": [s[0] for s in call_specs],
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+    }
 
     return Command(
-        goto="researcher",
+        goto="researcher_reflect",
         update={
-            "researcher_messages": tool_outputs,
-            "web_search_calls": updated_web_search_calls,
+            "researcher_messages": tool_messages,
+            "sweep_cycles": sweep_cycles + 1,
+            "web_search_calls": web_search_calls + new_web_searches,
             "source_counts": new_source_counts,
+            "filtered_papers_log": all_filter_log,
+            "paper_profiles": all_paper_profiles,
+            "thought_log": [thought_entry],
+            "keyword_history": [current_keyword_set],
+            "current_keyword_set": None,  # consumed; reflect sets it again if NEEDS_WORK
         }
     )
 
 
-async def critique_agent(
+# ── Reflect node ───────────────────────────────────────────────────────────────
+
+async def researcher_reflect(
     state: ResearcherState,
     config: RunnableConfig,
 ) -> Command[Literal["researcher", "compress_research"]]:
-    """Adversarial critique agent that searches for counter-claims and material gaps.
+    """Gap audit — review sweep results, generate new keyword set if coverage insufficient.
 
-    Phase 1: Claude Sonnet with native Anthropic web search finds contradictory evidence.
-    Phase 2: Claude Sonnet produces a structured CritiqueDecision with counter_claims/gaps.
-    Hard cap of 2 critique cycles.
+    Hard cap: 2 sweeps total (sweep_cycles >= 2 → straight to compress_research).
     """
-    critique_cycles = state.get("critique_cycles", 0)
-
-    if critique_cycles >= 2:
+    sweep_cycles = state.get("sweep_cycles", 0)
+    if sweep_cycles >= 2:
         return Command(goto="compress_research", update={})
 
     researcher_messages = state.get("researcher_messages", [])
     research_topic = state.get("research_topic", "")
 
-    # Build findings summary from tool outputs — cap at 12k chars
     tool_outputs = [
         msg.content for msg in researcher_messages
         if hasattr(msg, "type") and msg.type == "tool"
     ]
     findings_summary = "\n\n".join(str(t) for t in tool_outputs)
-    if len(findings_summary) > 12000:
-        findings_summary = findings_summary[:12000] + "\n[truncated for brevity]"
+    if len(findings_summary) > 8000:
+        findings_summary = findings_summary[:8000] + "\n[truncated]"
 
     if not findings_summary.strip():
         return Command(goto="compress_research", update={})
@@ -301,91 +327,42 @@ async def critique_agent(
     anthropic_api_key = os.getenv("ANTHROPIC_API_KEY")
 
     try:
-        # ── Phase 1: adversarial web search for counter-evidence ──────────────
-        # Claude Sonnet handles web search server-side — one call, results baked into response
-        search_prompt = critique_agent_search_prompt.format(
+        reflect_model = init_chat_model(
+            model="anthropic:claude-haiku-4-5-20251001",
+            max_tokens=512,
+            api_key=anthropic_api_key,
+            tags=["langsmith:nostream"],
+        ).with_structured_output(ReflectionDecision)
+
+        reflect_prompt = researcher_reflect_prompt.format(
             research_topic=research_topic,
             findings_summary=findings_summary,
         )
-        search_model = init_chat_model(
-            model="anthropic:claude-sonnet-4-6",
-            max_tokens=2048,
-            api_key=anthropic_api_key,
-            tags=["langsmith:nostream"],
-        ).bind_tools([{"type": "web_search_20250305"}])
-
-        search_response = await search_model.ainvoke([HumanMessage(content=search_prompt)])
-
-        # Extract text — Anthropic embeds search results directly in the response content
-        counter_evidence = ""
-        if isinstance(search_response.content, str):
-            counter_evidence = search_response.content
-        elif isinstance(search_response.content, list):
-            counter_evidence = " ".join(
-                block.get("text", "") for block in search_response.content
-                if isinstance(block, dict) and block.get("type") == "text"
-            )
-
-        # ── Phase 2: structured adversarial critique decision ─────────────────
-        counter_evidence_block = (
-            f"<CounterEvidence>\n{counter_evidence.strip()}\n</CounterEvidence>"
-            if counter_evidence.strip()
-            else ""
-        )
-        decision_prompt = critique_agent_prompt.format(
-            research_topic=research_topic,
-            findings_summary=findings_summary,
-            counter_evidence_block=counter_evidence_block,
-        )
-        decision_model = init_chat_model(
-            model="anthropic:claude-sonnet-4-6",
-            max_tokens=1024,
-            api_key=anthropic_api_key,
-            tags=["langsmith:nostream"],
-        ).with_structured_output(CritiqueDecision)
-
-        decision: CritiqueDecision = await decision_model.ainvoke([
-            HumanMessage(content=decision_prompt)
+        decision: ReflectionDecision = await reflect_model.ainvoke([
+            HumanMessage(content=reflect_prompt)
         ])
-
     except Exception:
         return Command(goto="compress_research", update={})
 
-    if decision.decision == "PASS":
+    if decision.decision == "PASS" or not decision.new_primary_query:
         return Command(goto="compress_research", update={})
 
-    # NEEDS_WORK — inject counter-claims so the researcher addresses them directly
-    counter_claims_text = "\n".join(f"- {c}" for c in decision.counter_claims) or "None identified"
-    gaps_text = "\n".join(f"- {g}" for g in decision.gaps) or "None identified"
-    gap_message = HumanMessage(content=(
-        f"ADVERSARIAL CRITIQUE (cycle {critique_cycles + 1}/2)\n\n"
-        f"**Counter-claims you must address:**\n{counter_claims_text}\n\n"
-        f"**Material gaps in the synthesis:**\n{gaps_text}\n\n"
-        f"**Required follow-up searches:**\n{decision.search_directive}"
-    ))
+    # NEEDS_WORK — inject new keyword set for a targeted follow-up sweep
+    new_keyword_set = {
+        "primary_query":   decision.new_primary_query,
+        "variation_query": decision.new_variation_query or decision.new_primary_query,
+        "web_query":       decision.new_web_query or decision.new_primary_query,
+    }
     return Command(
         goto="researcher",
-        update={
-            "researcher_messages": [gap_message],
-            "critique_cycles": critique_cycles + 1,
-            "tool_call_iterations": 0,
-        },
+        update={"current_keyword_set": new_keyword_set},
     )
 
 
+# ── Compress node ──────────────────────────────────────────────────────────────
+
 async def compress_research(state: ResearcherState, config: RunnableConfig):
-    """Compress and synthesize research findings into a concise, structured summary.
-
-    Takes all research findings, tool outputs, and AI messages and distills them
-    into a clean, comprehensive summary while preserving all important information.
-
-    Args:
-        state: Current researcher state with accumulated research messages
-        config: Runtime configuration with compression model settings
-
-    Returns:
-        Dictionary containing compressed research summary and raw notes
-    """
+    """Compress and synthesize all sweep findings into a structured research note."""
     configurable = Configuration.from_runnable_config(config)
     synthesizer_model = configurable_model.with_config({
         "model": configurable.compression_model,
@@ -395,7 +372,6 @@ async def compress_research(state: ResearcherState, config: RunnableConfig):
     })
 
     researcher_messages = state.get("researcher_messages", [])
-    researcher_messages.append(HumanMessage(content=compress_research_simple_human_message))
 
     synthesis_attempts = 0
     max_attempts = 3
@@ -403,7 +379,32 @@ async def compress_research(state: ResearcherState, config: RunnableConfig):
     while synthesis_attempts < max_attempts:
         try:
             compression_prompt = compress_research_system_prompt.format(date=get_today_str())
-            messages = [SystemMessage(content=compression_prompt)] + researcher_messages
+
+            def _msg_to_text(msg) -> str:
+                content = msg.content
+                if isinstance(content, list):
+                    parts = []
+                    for block in content:
+                        if isinstance(block, str):
+                            parts.append(block)
+                        elif isinstance(block, dict):
+                            if block.get("type") == "text":
+                                parts.append(block.get("text", ""))
+                            elif block.get("type") in ("function_call", "tool_use"):
+                                name = block.get("name", "tool")
+                                args = block.get("arguments") or block.get("input", "")
+                                parts.append(f"[called {name}: {str(args)[:300]}]")
+                    content = "\n".join(parts)
+                return str(content)
+
+            context_text = "\n\n".join(
+                f"[{msg.__class__.__name__}]: {_msg_to_text(msg)}"
+                for msg in researcher_messages
+            )
+            messages = [
+                SystemMessage(content=compression_prompt),
+                HumanMessage(content=f"{context_text}\n\n---\n\n{compress_research_simple_human_message}"),
+            ]
 
             response = await synthesizer_model.ainvoke(messages)
 
@@ -417,15 +418,18 @@ async def compress_research(state: ResearcherState, config: RunnableConfig):
                 "raw_notes": [raw_notes_content],
                 "thought_log": state.get("thought_log", []),
                 "source_counts": state.get("source_counts", {}),
+                "filtered_papers_log": state.get("filtered_papers_log", []),
+                "paper_profiles": state.get("paper_profiles", []),
             }
 
         except Exception as e:
             synthesis_attempts += 1
+            import logging as _logging
+            _logging.error(f"[compress_research] attempt {synthesis_attempts} failed: {type(e).__name__}: {e}")
 
-            if is_token_limit_exceeded(e, configurable.research_model):
+            if is_token_limit_exceeded(e, configurable.compression_model):
                 researcher_messages = remove_up_to_last_ai_message(researcher_messages)
                 continue
-
             continue
 
     raw_notes_content = "\n".join([
@@ -438,10 +442,13 @@ async def compress_research(state: ResearcherState, config: RunnableConfig):
         "raw_notes": [raw_notes_content],
         "thought_log": state.get("thought_log", []),
         "source_counts": state.get("source_counts", {}),
+        "filtered_papers_log": state.get("filtered_papers_log", []),
+        "paper_profiles": state.get("paper_profiles", []),
     }
 
 
-# Researcher Subgraph
+# ── Researcher subgraph ────────────────────────────────────────────────────────
+
 researcher_builder = StateGraph(
     ResearcherState,
     output=ResearcherOutputState,
@@ -449,8 +456,7 @@ researcher_builder = StateGraph(
 )
 
 researcher_builder.add_node("researcher", researcher)
-researcher_builder.add_node("researcher_tools", researcher_tools)
-researcher_builder.add_node("critique_agent", critique_agent)
+researcher_builder.add_node("researcher_reflect", researcher_reflect)
 researcher_builder.add_node("compress_research", compress_research)
 
 researcher_builder.add_edge(START, "researcher")
