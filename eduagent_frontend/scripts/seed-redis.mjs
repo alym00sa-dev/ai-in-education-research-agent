@@ -24,6 +24,11 @@ const DISK_ROOT = path.join(
 
 const SCAN_DIRS = [DISK_ROOT, path.join(DISK_ROOT, "final-test")];
 
+const GRAPH_DISK_DIR = path.join(
+  os.homedir(),
+  "Documents/A-Moosa-Dev/AI-EDU-Dev/eduagent/eduagent_backend/graph-traversal-output"
+);
+
 // ── Helpers (mirrors api/runs/route.ts) ──────────────────────────────────────
 
 function extractQuery(reportText) {
@@ -96,6 +101,17 @@ function loadDiskRuns() {
   return runs;
 }
 
+function loadDiskGraphSessions() {
+  if (!fs.existsSync(GRAPH_DISK_DIR)) return [];
+  return fs.readdirSync(GRAPH_DISK_DIR)
+    .filter(f => f.endsWith(".json"))
+    .map(f => {
+      try { return JSON.parse(fs.readFileSync(path.join(GRAPH_DISK_DIR, f), "utf-8")); }
+      catch { return null; }
+    })
+    .filter(Boolean);
+}
+
 // ── Main ─────────────────────────────────────────────────────────────────────
 
 const REDIS_URL = process.env.REDIS_URL;
@@ -107,38 +123,57 @@ if (!REDIS_URL) {
 
 const redis = new Redis(REDIS_URL, { maxRetriesPerRequest: 3, connectTimeout: 10000 });
 
+// ── Migrate deep research runs ────────────────────────────────────────────────
+
 const runs = loadDiskRuns();
-if (runs.length === 0) {
-  console.log("No local disk sessions found — nothing to migrate.");
-  await redis.quit();
-  process.exit(0);
-}
+console.log(`\nDeep Research: found ${runs.length} local session(s).`);
 
-console.log(`Found ${runs.length} local session(s). Migrating to Redis...`);
-
-// Read existing index so we don't clobber runs already in Redis
-const existingRaw = await redis.get("runs_index");
-const existingIds = new Set(existingRaw ? JSON.parse(existingRaw) : []);
+const existingRunsRaw = await redis.get("runs_index");
+const existingRunIds = new Set(existingRunsRaw ? JSON.parse(existingRunsRaw) : []);
 
 let migrated = 0;
 let skipped = 0;
 
 for (const run of runs) {
-  if (existingIds.has(run.id)) {
+  if (existingRunIds.has(run.id)) {
     console.log(`  skip  ${run.id} (already in Redis)`);
     skipped++;
     continue;
   }
-
   await redis.set(`run:${run.id}`, JSON.stringify(run));
-  existingIds.add(run.id);
+  existingRunIds.add(run.id);
   console.log(`  wrote ${run.id} — "${run.query.slice(0, 60)}"`);
   migrated++;
 }
 
-// Write updated index (newest first)
-const allIds = Array.from(existingIds);
-await redis.set("runs_index", JSON.stringify(allIds));
+await redis.set("runs_index", JSON.stringify(Array.from(existingRunIds)));
+console.log(`Deep Research done. Migrated: ${migrated}, Skipped: ${skipped}`);
 
-console.log(`\nDone. Migrated: ${migrated}, Skipped: ${skipped}`);
+// ── Migrate graph traversal sessions ─────────────────────────────────────────
+
+const graphSessions = loadDiskGraphSessions();
+console.log(`\nGraph Traversal: found ${graphSessions.length} local session(s).`);
+
+const existingGraphRaw = await redis.get("graph_sessions_index");
+const existingGraphIds = new Set(existingGraphRaw ? JSON.parse(existingGraphRaw) : []);
+
+let gMigrated = 0;
+let gSkipped = 0;
+
+for (const session of graphSessions) {
+  if (!session.id) continue;
+  if (existingGraphIds.has(session.id)) {
+    console.log(`  skip  ${session.id} (already in Redis)`);
+    gSkipped++;
+    continue;
+  }
+  await redis.set(`graph:session:${session.id}`, JSON.stringify(session));
+  existingGraphIds.add(session.id);
+  console.log(`  wrote ${session.id} — "${String(session.firstQuery ?? "").slice(0, 60)}"`);
+  gMigrated++;
+}
+
+await redis.set("graph_sessions_index", JSON.stringify(Array.from(existingGraphIds)));
+console.log(`Graph Traversal done. Migrated: ${gMigrated}, Skipped: ${gSkipped}`);
+
 await redis.quit();
