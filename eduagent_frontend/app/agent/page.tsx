@@ -1,5 +1,5 @@
 "use client";
-import { useState, useCallback, useMemo, useEffect, useRef } from "react";
+import { useState, useCallback, useMemo, useEffect, useRef, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { v4 as uuidv4 } from "uuid";
 import { Job, ResearchConfig, GraphSession } from "@/lib/types";
@@ -15,6 +15,14 @@ import ReportDrawer from "@/components/agent/ReportDrawer";
 type AgentTab = "deep-research" | "graph-traversal";
 
 export default function AgentPage() {
+  return (
+    <Suspense fallback={null}>
+      <AgentPageInner />
+    </Suspense>
+  );
+}
+
+function AgentPageInner() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const initialTab = searchParams.get("tab") === "graph-traversal" ? "graph-traversal" : "deep-research";
