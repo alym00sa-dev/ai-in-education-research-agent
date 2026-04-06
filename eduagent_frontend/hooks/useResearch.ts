@@ -219,13 +219,30 @@ export function useResearch(onUpdate: (id: string, patch: Partial<Job>) => void)
               const qaReport = (data.qa_report ?? "") as string;
               if (qaReport && !seenQAReport) {
                 seenQAReport = true;
+                const completedAt = Date.now();
                 pushStatus("[qa_audit] QA audit complete.", "done");
                 onUpdate(jobId, {
                   qaReport,
                   status: "complete",
-                  completedAt: Date.now(),
+                  completedAt,
                   statusLog: [...statusLog],
                 });
+                // Persist completed run to Redis via API (enables cross-device session history)
+                fetch("/api/runs", {
+                  method: "POST",
+                  headers: { "Content-Type": "application/json" },
+                  body: JSON.stringify({
+                    id: jobId,
+                    query,
+                    report: reportBuffer,
+                    qaReport,
+                    paperCount: (data.paper_profiles as unknown[] ?? []).length,
+                    createdAt: jobStart,
+                    completedAt,
+                    status: "complete",
+                    config,
+                  }),
+                }).catch(() => {});
               }
             }
           } catch {}

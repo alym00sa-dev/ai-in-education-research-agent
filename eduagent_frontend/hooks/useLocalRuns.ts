@@ -45,7 +45,7 @@ export function useLocalRuns() {
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const refresh = () =>
-    fetch("/api/local-runs")
+    fetch("/api/runs")
       .then((r) => r.json())
       .then((data) => setLocalRuns(parseRuns(data)))
       .catch(() => {})
