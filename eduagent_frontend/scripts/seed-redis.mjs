@@ -77,9 +77,22 @@ function loadDiskRuns() {
         } catch {}
       }
 
-      // Use folder mtime as createdAt
-      const stat = fs.statSync(folderPath);
-      const createdAt = stat.mtimeMs;
+      // Use folder birthtime as createdAt (actual run start time)
+      const folderStat = fs.statSync(folderPath);
+      const createdAt = folderStat.birthtimeMs || folderStat.mtimeMs;
+
+      // Estimate elapsed from folder birth → report file mtime
+      let elapsed;
+      try {
+        const reportStat = fs.statSync(path.join(folderPath, reportFile));
+        const ms = reportStat.mtimeMs - createdAt;
+        if (ms > 0) {
+          const totalSec = Math.round(ms / 1000);
+          const m = Math.floor(totalSec / 60);
+          const s = totalSec % 60;
+          elapsed = m > 0 ? `${m}m ${s}s` : `${s}s`;
+        }
+      } catch {}
 
       seen.add(folder);
       runs.push({
@@ -92,6 +105,7 @@ function loadDiskRuns() {
         paperCount,
         qaScore,
         createdAt,
+        elapsed,
         status: "complete",
         config: { taskType: "research-basic", model, depth: "standard", maxSources },
       });
@@ -135,14 +149,14 @@ let migrated = 0;
 let skipped = 0;
 
 for (const run of runs) {
-  if (existingRunIds.has(run.id)) {
-    console.log(`  skip  ${run.id} (already in Redis)`);
-    skipped++;
-    continue;
-  }
+  const alreadyExists = existingRunIds.has(run.id);
   await redis.set(`run:${run.id}`, JSON.stringify(run));
   existingRunIds.add(run.id);
-  console.log(`  wrote ${run.id} — "${run.query.slice(0, 60)}"`);
+  if (alreadyExists) {
+    console.log(`  update ${run.id} — "${run.query.slice(0, 60)}"`);
+  } else {
+    console.log(`  wrote  ${run.id} — "${run.query.slice(0, 60)}"`);
+  }
   migrated++;
 }
 
