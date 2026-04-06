@@ -4,7 +4,7 @@ import path from "path";
 
 const BACKEND_ROOT = path.join(
   process.env.HOME || "",
-  "Documents/A-Moosa-Dev/AI-EDU-Dev/eduagent/eduagent_backend/output"
+  "Documents/A-Moosa-Dev/AI-EDU-Dev/eduagent/eduagent_backend/deep-research-output"
 );
 
 const OUTPUT_DIRS = [
@@ -30,9 +30,9 @@ function findFile(folderPath: string, prefix: string, ext: string): string | nul
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
-  const { id } = params;
+  const { id } = await params;
   const file = request.nextUrl.searchParams.get("file");
 
   if (!id || !file) {
