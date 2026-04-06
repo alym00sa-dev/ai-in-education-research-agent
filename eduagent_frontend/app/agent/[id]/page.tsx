@@ -96,8 +96,8 @@ export default function SessionPage() {
           setLoading(false);
           return;
         }
-        // 3. Fall back to local pipeline runs
-        return fetch("/api/local-runs")
+        // 3. Fall back to runs API (Redis on Vercel, disk locally)
+        return fetch("/api/runs")
           .then((r) => r.json())
           .then((lr) => {
             const run = (lr.runs ?? []).find((r: { id: string }) => r.id === id);
