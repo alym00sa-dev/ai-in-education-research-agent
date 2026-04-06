@@ -65,14 +65,13 @@ function loadDiskRuns() {
       const qaFile = files.find((f) => f.startsWith("qa_report_") && f.endsWith(".md"));
       const snapFile = files.find((f) => f.startsWith("state_snapshot_") && f.endsWith(".json"));
 
-      let paperCount, qaScore, model = "gpt-4.1", maxSources = 30;
+      let paperCount, qaScore, model = "", maxSources = 30;
       if (snapFile) {
         try {
           const snap = JSON.parse(fs.readFileSync(path.join(folderPath, snapFile), "utf-8"));
           paperCount = snap.paper_profiles?.length;
           qaScore = snap.qa_score;
           const rc = snap.run_config ?? {};
-          if (rc.model) model = rc.model.includes(":") ? rc.model.split(":")[1] : rc.model;
           if (rc.max_sources) maxSources = rc.max_sources;
         } catch {}
       }
