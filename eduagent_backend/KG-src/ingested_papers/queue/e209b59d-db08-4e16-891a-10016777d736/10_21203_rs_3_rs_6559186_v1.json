@@ -1,0 +1,73 @@
+{
+  "title": "Adaptive Artificial Intelligence for Students with Specific Learning Disabilities in Reading Science Content",
+  "doi": "10.21203/rs.3.rs-6559186/v1",
+  "year": 2025,
+  "venue": "not_reported",
+  "url": "https://doi.org/10.21203/rs.3.rs-6559186/v1",
+  "source_db": "openalex_search",
+  "populations": [
+    "Elementary (PreK-5th)"
+  ],
+  "user_types": [
+    "Student",
+    "Parent"
+  ],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper examines the challenges that students with reading-related learning disabilities, especially dyslexia, face when using mainstream generative AI tools for science learning. The authors argue that current text-based large language models are insufficiently adaptive, lack multimodal supports, and do not provide the real-time individualized scaffolding needed by neurodiverse learners. The paper frames these limitations as a barrier to accessible science instruction and learning.\n\nTo address this problem, the paper proposes an adaptive AI approach that uses functional near-infrared spectroscopy (fNIRS) signals and a convolutional neural network (CNN) to classify cognitive demand while students read science texts. The system then adjusts text complexity, reading level, and lexical density in near real time. Although the paper presents laboratory data with 100 students, including 50 students diagnosed with dyslexia and 50 neurotypical students, the main contribution is a proposed neuroadaptive model rather than a classroom intervention focused on teacher-facing planning or feedback tools.\n\nThe study context is a controlled laboratory setting with elementary-aged students from schools in a county in the southeastern United States. The authors report that the CNN achieved 0.86 accuracy in classifying cognitive demand and that adaptive text adjustments were associated with improved reading comprehension and test performance, especially for students with dyslexia. The paper concludes that brain-computer-interface-informed adaptive AI could improve accessibility in science learning, but it also acknowledges the need for multimodal supports, longer-term evaluation, and broader implementation research.",
+  "limitations": [
+    "short_duration",
+    "single_site",
+    "no_long_term_followup",
+    "implementation_fidelity_not_reported",
+    "non_representative_population"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "lab",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "tutoring_instruction",
+        "content_generation"
+      ],
+      "description": "A generic large language model / generative AI chatbot that produces text-based explanations and can be used to generate or adapt educational content.",
+      "use_case": "The paper discusses generic LLM-based tools such as ChatGPT and describes generating science texts with a public-access LLM for adaptive reading tasks; the study itself evaluates an fNIRS-driven text-adaptation pipeline rather than a specific commercial tutoring product.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0002 Literacy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In the adaptive text condition, students with dyslexia showed improved reading comprehension, with average scores increasing from 55% to 75%. The paper reports that adaptive text adjustments based on fNIRS-classified cognitive demand significantly improved reading comprehension, F(1,48)=35.67, p<.001.",
+          "measure": "Reading comprehension / content assessment scores",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=100 (50 dyslexic, 50 neurotypical); ANOVA df=1,48"
+        },
+        {
+          "outcome_category": "Academic \u0002 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Adaptive text adjustments also improved test performance for students with dyslexia, with average scores increasing from 60% to 78%. The paper reports a significant effect of adaptive text adjustments on test performance, F(1,48)=29.45, p<.001.",
+          "measure": "Content test performance",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=100 (50 dyslexic, 50 neurotypical); ANOVA df=1,48"
+        }
+      ]
+    }
+  ],
+  "verdict": "genai_general",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a theoretical / method-development paper with an internally described experimental procedure, but the reporting is not sufficient for a clear, well-validated causal study in the usual evidence-framework sense. The text contains strong claims and methodological ambiguities, so the overall evidence quality is low.",
+  "impact_tier": "green",
+  "impact_tier_rationale": "The paper reports relatively large pre-post percentage gains for dyslexic students in comprehension and test performance, which would indicate medium-to-large impact if valid. However, because the design and reporting are not robustly established, the impact tier should be interpreted cautiously.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

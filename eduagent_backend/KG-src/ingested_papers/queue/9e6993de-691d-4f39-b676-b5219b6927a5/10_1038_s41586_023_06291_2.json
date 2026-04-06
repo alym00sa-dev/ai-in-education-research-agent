@@ -1,0 +1,36 @@
+{
+  "title": "Large language models encode clinical knowledge",
+  "doi": "10.1038/s41586-023-06291-2",
+  "year": 2023,
+  "venue": "Nature",
+  "url": "https://doi.org/10.1038/s41586-023-06291-2",
+  "source_db": "openalex_search",
+  "populations": [
+    "Graduate / Doctoral",
+    "Adult (non-academic)"
+  ],
+  "user_types": [],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper examines whether large language models (LLMs) encode clinically useful medical knowledge and how well they can answer medical questions. The authors argue that standard benchmark evaluations are insufficient for safety-critical clinical use because they focus mainly on multiple-choice accuracy or automated text metrics and do not adequately assess factuality, reasoning, potential harm, bias, or helpfulness.\n\nTo address this, the paper introduces MultiMedQA, a benchmark that combines seven medical question-answering datasets spanning medical licensing and entrance exams, biomedical research questions, and consumer health questions. The study evaluates PaLM and instruction-tuned Flan-PaLM on these datasets and introduces Med-PaLM, a medically aligned version of Flan-PaLM created through instruction prompt tuning. The evaluation combines quantitative benchmark testing on multiple-choice datasets with human ratings of long-form answers on dimensions such as scientific consensus, comprehension, retrieval, reasoning, completeness, harm, bias, relevance, and helpfulness.\n\nThe contexts represented are medical education and consumer health information rather than K-12 schooling. Populations include medical exam takers or medical learners represented in benchmark datasets, consumer health question users, lay raters, and clinician evaluators located across the USA, UK, and India. The study is not an education intervention trial; instead, it is a benchmark and human-evaluation study of model performance in medicine.\n\nThe main conclusions are that scaling and instruction tuning substantially improve medical question-answering performance, with Flan-PaLM reaching state-of-the-art results on several medical multiple-choice benchmarks, while Med-PaLM improves long-form answer quality, scientific alignment, and estimated safety relative to Flan-PaLM. However, the authors emphasize that even these improved systems remain inferior to clinicians on important dimensions and that substantial limitations around safety, bias, evaluation validity, and real-world deployment remain.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a peer-reviewed benchmark and human-evaluation paper in the medical domain, but it is not a K-12 education study and does not evaluate an educational intervention or learner outcomes relevant to the requested reading/literacy topic. Under the K-12 evidence framework for educational interventions, it provides no directly usable causal or quasi-experimental evidence.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper shows strong model performance improvements in medical question answering and human-rated answer quality, but these impacts are outside K-12 education and not tied to student literacy outcomes. Therefore, impact for the requested education knowledge graph is unclear/non-transferable rather than demonstrably positive.",
+  "interventions": [],
+  "outcome_assignments": [],
+  "limitations": [
+    "no_control_group",
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

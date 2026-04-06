@@ -1,0 +1,88 @@
+{
+  "title": "A Systematic Assessment of OpenAI o1-Preview for Higher Order Thinking in Education",
+  "doi": null,
+  "year": 2024,
+  "venue": "arXiv",
+  "url": "https://doi.org/10.48550/arxiv.2410.21287",
+  "source_db": "openalex_search",
+  "populations": [
+    "Middle School (6th-8th)",
+    "Undergraduate",
+    "Graduate / Doctoral"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Meta-Analysis / Systematic Review",
+  "extended_summary": "This paper examines whether OpenAI o1-preview can perform higher-order cognitive tasks relevant to education, with a particular emphasis on reasoning skills that are commonly taught and assessed in academic settings. The authors review prior literature on higher-order thinking and then benchmark o1-preview against human performance across 14 dimensions, including critical thinking, systems thinking, computational thinking, design thinking, metacognition, data literacy, creative thinking, abstract reasoning, spatial reasoning, quantitative reasoning, logical reasoning, analogical reasoning, and scientific reasoning.\n\nThe approach is not a student intervention study, but a broad evaluation of an AI model using established human assessment instruments. The paper adapts or reuses tests such as the Ennis-Weir Critical Thinking Essay Test, the Biological Systems Thinking Test, the Village of Abeesee, the Lake Urmia vignette, Bebras-style computational thinking tasks, and others. The tested populations used as human benchmarks include middle school students, undergraduates, graduate students, and in some cited comparisons, psychology and other university students.\n\nOverall, the paper concludes that o1-preview often matches or exceeds human performance on several higher-order thinking tasks, especially in systems thinking, computational thinking, creative thinking, and some forms of scientific reasoning, but it is weaker on abstract reasoning and some quantitative tasks. The authors argue that human oversight remains important and that education should increasingly emphasize complementary human skills such as abstraction, creativity, and critical thinking. No middle-school student use of ChatGPT in mathematics learning is studied here; the paper instead evaluates an OpenAI reasoning model as an educational benchmark.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a benchmark-style assessment paper based on custom prompting and secondary comparisons to prior human studies, not a controlled educational evaluation. It is useful as exploratory evidence, but it does not meet RCT/QED standards and includes substantial methodological limitations and self-described need for expert interrater validation.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper suggests potentially meaningful effects on higher-order reasoning performance, but these are model-benchmark results rather than demonstrated learner outcomes. The impact on actual educational populations is therefore unclear and likely modest until validated in classroom studies.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "Systematic benchmarking of OpenAI o1-preview as a text-based AI reasoning/tutoring tool on higher-order thinking tasks, using educational prompts and assessment instruments across critical thinking, systems thinking, computational thinking, and related domains."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.98,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The paper finds that o1-preview performs strongly on several durable-skills subdomains, especially critical thinking, systems thinking, computational thinking, creative thinking, and scientific reasoning. However, performance is uneven: it slightly underperforms humans on logical, critical, and quantitative reasoning in some comparisons, and it lags human psychology students on abstract reasoning.",
+        "measure": "Educational higher-order thinking assessments including the Ennis-Weir Critical Thinking Essay Test, Biological Systems Thinking Test, Village of Abeesee, Lake Urmia Vignette, Bebras Challenge, Algorithmic Thinking Test, creative thinking tasks, Raven\u2019s Progressive Matrices, and quantitative reasoning datasets",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "0.43"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    },
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 0.72,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "For quantitative reasoning, o1-preview performed above general crowd baselines but below expert benchmarks, with the paper describing performance as about 15\u201320% lower than human experts on the FINAQ dataset. The paper frames this as a limitation in expert-level mathematical reasoning despite strong overall reasoning ability.",
+        "measure": "Quantitative reasoning performance on the FINAQ dataset and related quantitative reasoning tasks",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    },
+    {
+      "outcome": "Academic \u2014 Scientific Reasoning",
+      "confidence": 0.74,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper reports that o1-preview outperformed humans on scientific reasoning tasks, including scientific reasoning and abstract reasoning-related scientific problem solving, with the abstract noting roughly 150% relative outperformance in some higher-order reasoning categories. The results are presented as evidence that the model can handle complex scientific reasoning tasks at or above human performance on selected benchmarks.",
+        "measure": "Scientific reasoning assessments included in the study\u2019s higher-order thinking battery",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    }
+  ],
+  "limitations": [
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup",
+    "non_representative_population"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

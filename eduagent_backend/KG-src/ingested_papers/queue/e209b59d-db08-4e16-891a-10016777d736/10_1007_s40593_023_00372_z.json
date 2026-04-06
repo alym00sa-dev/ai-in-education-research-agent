@@ -1,0 +1,63 @@
+{
+  "title": "Can ChatGPT Pass High School Exams on English Language Comprehension?",
+  "doi": "10.1007/s40593-023-00372-z",
+  "year": 2024,
+  "venue": "International Journal of Artificial Intelligence in Education",
+  "url": "https://doi.org/10.1007/s40593-023-00372-z",
+  "source_db": "elsevier_search",
+  "populations": [
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper asks whether generative AI systems can answer high-stakes high school reading comprehension questions at a level comparable to students. Rather than testing an instructional intervention, the study benchmarks ChatGPT against Dutch national English reading comprehension exams to evaluate the model\u2019s raw performance on educational assessment items.\n\nThe paper evaluates GPT-3.5 through the ChatGPT web interface and GPT-4 through the OpenAI API on three Dutch VWO English exams from 2022. These exams are mandatory for students in the Preparatory Scientific Education track in the Netherlands, which is the most academically rigorous high-school pathway and is intended for university-bound students. The tasks included multiple-choice, open short-answer, and multi-part reading comprehension questions covering identifying main ideas, inference, vocabulary in context, and related subskills.\n\nResults showed that GPT-3.5 performed about at the average student level, while GPT-4 outperformed the average student on the exam grading scale. GPT-4 was strongest on multiple-choice items and more consistent under automated prompting, though it still made some errors and showed instability on a subset of questions. The author concludes that large language models already pose risks for exam integrity in online assessment contexts while also suggesting potential educational uses such as feedback, summarization, and support for comprehension.",
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_control_group",
+    "non_representative_population",
+    "no_long_term_followup",
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Netherlands",
+  "study_region": "Europe",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "content_generation"
+      ],
+      "description": "OpenAI's large language model chatbot, accessed via web interface or API, capable of generating and evaluating text responses.",
+      "use_case": "Used to answer Dutch VWO English reading comprehension exam questions (GPT-3.5 via web interface; GPT-4 via API) to assess performance on high school English reading comprehension tasks.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0014 Literacy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "ChatGPT (GPT-3.5) achieved an overall mean grade of 7.3/10 on three Dutch VWO English reading comprehension exams, compared with the mean student grade of 6.99 on Exam 1. Without re-prompting, its mean grade was 6.5/10. GPT-4-0314 and GPT-4-0613 scored higher overall (8.3 and 8.1/10, respectively), but this paper evaluated exam performance rather than instructional impact on learners.",
+          "measure": "Performance on Dutch national high school English reading comprehension exams (grades converted from points); comparison to student exam performance on Exam 1",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=124 exam questions; student comparison n=35,698 for Exam 1 only"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a single benchmark study of an AI model's exam performance, not an educational intervention study. It does not provide direct causal evidence that the tool improves K-12 reading outcomes for learners.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper shows strong performance on a reading comprehension assessment, with GPT-4 exceeding average student scores, but this is model capability on test items rather than impact on student learning. No learner effect size or instructional outcome is reported.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": "via unpaywall"
+}

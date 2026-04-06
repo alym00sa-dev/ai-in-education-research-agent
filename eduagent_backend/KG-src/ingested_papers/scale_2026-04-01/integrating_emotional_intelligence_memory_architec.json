@@ -1,0 +1,348 @@
+{
+  "title": "Integrating emotional intelligence, memory architecture, and gestures to achieve empathetic humanoid robot interaction in an educational setting",
+  "doi": null,
+  "year": 2025,
+  "venue": null,
+  "url": "https://arxiv.org/abs/2505.19803",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper examines whether an AI-powered humanoid robot tutor becomes more effective in education when multiple human-like traits are integrated into a single system. The core research problem is that prior educational human-robot interaction work has often studied emotional intelligence, memory-based personalization, or gestures separately, rather than synchronizing them into one empathetic tutoring framework. The authors ask whether combining these traits can improve student engagement, satisfaction, and learning outcomes, and they introduce an Engagement Vector Model to measure cognitive, emotional, and behavioral engagement together.\n\nThe intervention is a humanoid robot tutor powered by a multimodal AI-agent framework built around LLaMA 3.2 and deployed with modules for emotion recognition, memory-driven personalization, and gesture control. The robot teaches a history lesson on the Apology of Socrates, answers student questions, and provides feedback during a quiz. The study compares three conditions: verbal-only interaction; verbal plus gestures; and verbal plus gestures plus memory-based personalization. An additional comparison contrasts gesture-enabled interaction with personalization-enabled verbal interaction. Outcomes include quiz completion time, quiz success rate, facial-expression-based emotion measures, eye-tracking indicators, interaction logs, video analysis, and post-session self-report questionnaires.\n\nThe population studied was college students aged roughly 18-26, with 15 students in each of the three main trial groups and 15 in an additional test group. The work appears to have been conducted within a university context associated with the University of Liverpool and Xi\u2019an Jiaotong-Liverpool University, using a controlled experimental setup with a robot, laptop-based course app, and sensing tools such as eye tracking and facial recognition. No teachers appear to have delivered the intervention; the robot itself served as tutor.\n\nThe main conclusion is that progressively adding empathetic capabilities improved outcomes. Compared with verbal-only interaction, adding gestures improved attention, behavioral participation, and satisfaction, while adding memory-based personalization on top of gestures produced the strongest results overall, including the best quiz performance, highest engagement scores, and highest satisfaction. The authors conclude that multimodal, adaptive, empathetic robot tutors can create more supportive and effective learning experiences, while also noting a trade-off in the additional comparison: personalization appeared somewhat stronger for cognitive engagement, whereas gestures were especially beneficial for behavioral engagement.",
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "lab",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "identified_tools": [
+    {
+      "name": "LLaMA",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "personalization_adaptation"
+      ],
+      "description": "Meta's LLaMA family large language model used as the intelligent core of a multimodal AI-agent system.",
+      "use_case": "In this paper, LLaMA (specifically Llama 3.2 via Ollama) powered an embodied robot tutor that integrated emotional intelligence, memory-based personalization, and gesture coordination to teach a history lesson and respond to student questions adaptively.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Compared with a verbal-only robot condition, the LLaMA-powered robot tutor with verbal, gestural, and memory-based personalization achieved higher quiz success rates (78% vs. 50%) and faster quiz completion times (6.3 minutes vs. 8.3 minutes). The study reports 15 college students in Trial 3 and 15 in Trial 1.",
+          "measure": "Quiz success rate and quiz completion time during history lesson assessment",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=15 (Trial 3), n=15 (Trial 1)"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The condition using LLaMA with verbal, gestural, and memory-based personalization produced the highest overall engagement and interaction indicators reported in the study: emotional engagement 0.75/1, behavioral engagement 11 interactions per session, and satisfaction 0.75/1, compared with 0.4/1, 8 interactions, and 0.3/1 in the verbal-only condition. Pairwise Mann-Whitney U tests showed significant differences for emotional and behavioral engagement between Trial 3 and Trial 1 (p=6.15e-06 and p=1.94e-05, respectively).",
+          "measure": "Engagement Vector components, interaction frequency, satisfaction questionnaire, and Mann-Whitney U comparisons",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=15 (Trial 3), n=15 (Trial 1)"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "In an additional comparison between gestural and memory-personalized interaction modes, the personalization-enabled condition showed slightly higher cognitive engagement than the gesture-enabled condition (0.75 vs. 0.69), while the gesture-enabled condition showed higher behavioral engagement (0.61 vs. 0.50). Emotional engagement was similar but slightly lower for personalization (0.41 vs. 0.43).",
+          "measure": "Cognitive, emotional, and behavioral engagement scores under gesture-enabled vs personalization-enabled conditions",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=15 additional test group for each compared condition (as stated same number of students)"
+        }
+      ]
+    },
+    {
+      "name": "DeepFace",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "prediction_analytics",
+        "language_speech"
+      ],
+      "description": "A pre-trained facial analysis model/framework used to detect emotions and expressions from faces.",
+      "use_case": "DeepFace was used to detect positive and frustrated facial expressions as part of the paper's emotional engagement measurement pipeline for evaluating the robot tutor conditions.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "DeepFace-based facial analysis indicated that the robot condition with verbal, gestural, and memory-based personalization had the highest positive expressions and the lowest frustration among the three trials, while the verbal-only condition showed higher frustration and fewer positive expressions. These facial-expression outputs contributed to emotional engagement scores rising from 0.4/1 in Trial 1 to 0.75/1 in Trial 3.",
+          "measure": "Detected positive and frustrated facial expressions used in emotional engagement scoring",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=15 per trial"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical comparative study with quantitative and qualitative measures, but it uses small non-K-12 samples (15 per condition), limited reporting, and no randomized controlled design details sufficient for a higher tier. Statistical tests are reported, but effect sizes and confidence intervals are absent.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "Results consistently favor the more empathetic LLaMA-powered robot condition on quiz performance, engagement, and satisfaction, but impact magnitude is unclear because no standardized effect sizes are reported. The positive direction is evident, yet the small sample and limited reporting keep impact uncertain.",
+  "citations": [
+    {
+      "title": "Ai and human-robot interaction: A review of recent advances and challenges",
+      "doi": null,
+      "year": 2024,
+      "venue": "GSC Advanced Research and Reviews",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The relationship between empathetic classroom climate and students\u2019 success",
+      "doi": null,
+      "year": 2010,
+      "venue": "Procedia-Social and Behavioral Sciences",
+      "citation_level": 2,
+      "citation_context": "supports empathy\u2013student success framing"
+    },
+    {
+      "title": "Artificial intelligence-based robots in education: A systematic review of selected ssci publications",
+      "doi": null,
+      "year": 2022,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Socially intelligent robots: dimensions of human\u2013robot interaction",
+      "doi": null,
+      "year": 2007,
+      "venue": "Philosophical Transactions of the Royal Society B: Biological Sciences",
+      "citation_level": 2,
+      "citation_context": "defines social HRI dimensions framing robot traits"
+    },
+    {
+      "title": "Discovering emotion in classroom motivation research",
+      "doi": null,
+      "year": 2002,
+      "venue": "Educational Psychologist",
+      "citation_level": 2,
+      "citation_context": "grounds role of emotion in learning engagement"
+    },
+    {
+      "title": "Emotional intelligence in the educational field: A meta-analysis",
+      "doi": null,
+      "year": 2020,
+      "venue": "Anales de Psicolog\u00eda",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Teachers\u2019 gestures facilitate students\u2019 learning: A lesson in symmetry",
+      "doi": null,
+      "year": 2003,
+      "venue": "Contemporary Educational Psychology",
+      "citation_level": 2,
+      "citation_context": "supports gesture benefits for student learning"
+    },
+    {
+      "title": "Cognitive load theory: A broader view on the role of memory in learning and education",
+      "doi": null,
+      "year": 2014,
+      "venue": "Educational Psychology Review",
+      "citation_level": 2,
+      "citation_context": "motivates memory\u2019s role in learning design"
+    },
+    {
+      "title": "Introductory chapter: Human-robot interaction\u2013advances and applications",
+      "doi": null,
+      "year": 2023,
+      "venue": "Human-Robot Interaction-Perspectives and Applications",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Reflections on investigating emotion in educational activity settings",
+      "doi": null,
+      "year": 2006,
+      "venue": "Educational Psychology Review",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Emotion interaction system for a service robot",
+      "doi": null,
+      "year": 2007,
+      "venue": "RO-MAN 2007-The 16th IEEE International Symposium on Robot and Human Interactive Communication",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Facial emotion expressions in human\u2013robot interaction: A survey",
+      "doi": null,
+      "year": 2022,
+      "venue": "International Journal of Social Robotics",
+      "citation_level": 2,
+      "citation_context": "frames use of facial emotion in HRI"
+    },
+    {
+      "title": "Empathy in human\u2013robot interaction: Designing for social robots",
+      "doi": null,
+      "year": 2022,
+      "venue": "International Journal of Environmental Research and Public Health",
+      "citation_level": 2,
+      "citation_context": "frames empathetic robot design argument"
+    },
+    {
+      "title": "Robots in education: An introduction to high-tech social agents, intelligent tutors, and curricular tools",
+      "doi": null,
+      "year": 2021,
+      "venue": "Routledge",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The positive effects of verbal encouragement in mathematics education using a social robot",
+      "doi": null,
+      "year": 2014,
+      "venue": "2014 IEEE Integrated STEM Education Conference",
+      "citation_level": 2,
+      "citation_context": "supports verbal encouragement condition rationale"
+    },
+    {
+      "title": "Memory-based personalization for fostering a long-term child-robot relationship",
+      "doi": null,
+      "year": 2022,
+      "venue": "2022 17th ACM/IEEE International Conference on Human-Robot Interaction (HRI)",
+      "citation_level": 3,
+      "citation_context": "basis for memory-based personalization condition"
+    },
+    {
+      "title": "Personalized education to increase interest",
+      "doi": null,
+      "year": 2018,
+      "venue": "Current Directions in Psychological Science",
+      "citation_level": 2,
+      "citation_context": "supports personalization increasing learner interest"
+    },
+    {
+      "title": "The effect of personalization in longer-term robot tutoring",
+      "doi": null,
+      "year": 2018,
+      "venue": "ACM Transactions on Human-Robot Interaction (THRI)",
+      "citation_level": 2,
+      "citation_context": "supports personalization effects in robot tutoring"
+    },
+    {
+      "title": "Personalization in hri: A longitudinal field experiment",
+      "doi": null,
+      "year": 2012,
+      "venue": "Proceedings of the Seventh Annual ACM/IEEE International Conference on Human-Robot Interaction",
+      "citation_level": 2,
+      "citation_context": "supports personalization in HRI framing"
+    },
+    {
+      "title": "Creating large language model applications utilizing langchain: A primer on developing llm apps fast",
+      "doi": null,
+      "year": 2023,
+      "venue": "International Conference on Applied Engineering and Natural Sciences",
+      "citation_level": 3,
+      "citation_context": "used to build LangChain-based LLM application"
+    },
+    {
+      "title": "Using ollama",
+      "doi": null,
+      "year": 2025,
+      "venue": "Natural Language Analytics with Generative Large-Language Models: A Practical Approach with Ollama and Open-Source LLMs",
+      "citation_level": 3,
+      "citation_context": "used for Ollama-based local LLM deployment"
+    },
+    {
+      "title": "Social eye gaze in human-robot interaction: a review",
+      "doi": null,
+      "year": 2017,
+      "venue": "Journal of Human-Robot Interaction",
+      "citation_level": 2,
+      "citation_context": "supports eye gaze as engagement indicator"
+    },
+    {
+      "title": "A bellboy robot: Study of the effects of robot behaviour on user engagement and comfort",
+      "doi": null,
+      "year": 2015,
+      "venue": "International Journal of Human-Computer Studies",
+      "citation_level": 2,
+      "citation_context": "supports robot behavior effects on engagement"
+    },
+    {
+      "title": "Toward understanding social cues and signals in human\u2013robot interaction: effects of robot gaze and proxemic behavior",
+      "doi": null,
+      "year": 2013,
+      "venue": "Frontiers in Psychology",
+      "citation_level": 2,
+      "citation_context": "supports social cues affecting HRI engagement"
+    },
+    {
+      "title": "Explorations in engagement for humans and robots",
+      "doi": null,
+      "year": 2005,
+      "venue": "Artificial Intelligence",
+      "citation_level": 2,
+      "citation_context": "conceptual basis for engagement in HRI"
+    },
+    {
+      "title": "The impact of robot tutor nonverbal social behavior on child learning",
+      "doi": null,
+      "year": 2017,
+      "venue": "Frontiers in ICT",
+      "citation_level": 2,
+      "citation_context": "supports nonverbal tutor behavior improving learning"
+    },
+    {
+      "title": "Llama 3.2: Advancing ai for edge and mobile devices",
+      "doi": null,
+      "year": 2024,
+      "venue": "Meta AI blog",
+      "citation_level": 3,
+      "citation_context": "LLM model used in robot tutor system"
+    },
+    {
+      "title": "Teachers, take care of the essential. the rest is story: Using llm and social robots for content approaching by storytelling",
+      "doi": null,
+      "year": 2024,
+      "venue": "2024 33rd IEEE International Conference on Robot and Human Interactive Communication (RO-MAN)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Chatgpt for good? on opportunities and challenges of large language models for education",
+      "doi": null,
+      "year": 2023,
+      "venue": "Learning and Individual Differences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Chatgpt and large language models in academia: opportunities and challenges",
+      "doi": null,
+      "year": 2023,
+      "venue": "BioData Mining",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

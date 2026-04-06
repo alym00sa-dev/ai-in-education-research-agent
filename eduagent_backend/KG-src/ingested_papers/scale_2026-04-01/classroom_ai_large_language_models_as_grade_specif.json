@@ -1,0 +1,535 @@
+{
+  "title": "Classroom AI: Large Language Models as Grade-Specific Teachers",
+  "doi": null,
+  "year": 2026,
+  "venue": "npj Artificial Intelligence",
+  "url": "https://arxiv.org/abs/2601.06225",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Elementary (PreK-5th)",
+    "Middle School (6th-8th)",
+    "High School (9th-12th)",
+    "Undergraduate",
+    "Graduate / Doctoral"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses a key challenge in applying large language models to education: although LLMs can generate educational explanations, they often fail to match the reading and comprehension level of students at different grade levels. The authors frame this as an important barrier to using AI to address global teacher shortages and educational inequity, especially when students interact directly with AI systems. The core research question is whether LLMs can be systematically adapted to produce grade-appropriate open-ended explanations without losing factual accuracy.\n\nThe intervention is a framework for creating grade-specific LLMs through supervised fine-tuning. The authors generate a large synthetic question-answer dataset spanning 54 subjects across 8 educational fields, classify answers into six grade bands using an integrated method based on seven readability metrics, and then fine-tune six versions of GPT-4o-mini for lower elementary through adult levels. They evaluate the resulting models on multiple datasets including ScienceQA, ELI5_Category, Natural Questions, and a synthetic GPT-4o dataset. Performance is assessed quantitatively through readability/compatibility metrics, ARI, accuracy on ScienceQA, perplexity, and diversity, and qualitatively through human surveys and GPT-4o-as-judge evaluation.\n\nThe population studied includes educational levels from elementary school through adult/college. Human evaluation involved 208 English-speaking participants, all of whom had completed high school, with most being undergraduate or graduate students; these participants judged whether model outputs matched intended grade levels, were comprehensible, and were accurate. The study context was online evaluation rather than classroom implementation, and the target end users discussed throughout the paper are students receiving age-appropriate AI explanations.\n\nThe main conclusion is that fine-tuned grade-specific LLMs substantially outperform prompt-only approaches in generating grade-aligned educational explanations, improving target grade-level success by an average of 35.64 percentage points while largely preserving factual accuracy. Human evaluations showed strong agreement between intended and perceived difficulty levels, supporting the validity of the framework. At the same time, the authors note that simplifying text readability does not fully solve conceptual difficulty, meaning some topics may remain hard for younger learners even when written in simpler language.",
+  "limitations": [
+    "no_control_group",
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Republic of Korea; United States; England",
+  "study_region": "not_reported",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "personalization_adaptation"
+      ],
+      "description": "OpenAI large language model family used for question generation, survey evaluation, and as the base model family for the finetuned grade-specific instructional system in this study.",
+      "use_case": "The paper fine-tuned GPT4o-mini via the OpenAI API into six grade-specific teacher models that generate age-appropriate explanations across six educational levels; ChatGPT was also used to generate sample questions and GPT4o was used as an LLM evaluator in survey-style validation.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The finetuned GPT4o-mini grade-specific models substantially improved grade-level compatibility relative to prompt-based baselines. Across multiple datasets, the paper reports an average improvement of 35.64 percentage points in target success rate over prompt-based methods while maintaining alignment on a held-out Automated Readability Index (ARI).",
+          "measure": "Grade-level alignment / compatibility using an integrated readability measure and held-out ARI across DGP_T, DSQ2, DELI, and DNQ",
+          "effect_size": "35.64 percentage point increase",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=208 human participants for validation; dataset sizes include DSQ n=10,876, DSQ2 n=10,427, DELI n=12,000, DNQ n=24,000, DGP_T n=740"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "On the DSQ multiple-choice accuracy benchmark, finetuned models achieved performance comparable to the base model, indicating minimal degradation in correctness after finetuning. The paper states that fine-tuning usually reduces accuracy somewhat, but here the reduction was minimal.",
+          "measure": "Answer accuracy on ScienceQA (DSQ) multiple-choice dataset",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=10,876"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Human evaluation of grade ordering showed strong agreement between intended and perceived difficulty for the finetuned outputs. For Type 1 survey questions, Kendall's tau was 0.76 across 108 participants, and L1 distances between participant rankings and the ground-truth order were [0.293, 0.398, 0.659, 0.693, 0.676, 0.578], all below 1.",
+          "measure": "Human-perceived grade-level ranking agreement for model outputs",
+          "effect_size": "Kendall's \u03c4=0.76",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=108"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In survey-based validation, participants judged the finetuned answers to remain comprehensible and accurate across grade levels, with especially improved comprehensibility when questions were themselves grade-specific. The full human evaluation involved 208 participants across two surveys, and the paper reports high Q3 accuracy ratings across all grade levels.",
+          "measure": "Human ratings of question difficulty, answer comprehensibility, and answer accuracy (Q1/Q2/Q3)",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=208"
+        }
+      ]
+    },
+    {
+      "name": "LLaMA",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "personalization_adaptation"
+      ],
+      "description": "Meta's LLaMA family of large language models, including base and finetuned variants for text generation.",
+      "use_case": "LLaMA models were used to generate training questions and answers, to produce exemplar grade-specific responses, and to analyze internal model behavior; the paper specifically discusses grade-specific LLaMA models and compares LLaMA baselines to the finetuned GPT4o-mini system.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Base LLaMA models tended to generate content above lower-grade readability levels, supporting the paper's claim that current LLMs struggle with age-appropriate responses. For example, LLaMA 3.1:70B on DNQ produced only 0.15% lower-elementary and 0.86% middle-elementary outputs, with most outputs concentrated in middle to adult bands and ARI=4.98.",
+          "measure": "Output grade-level distribution / readability alignment for base LLaMA models",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "DNQ n=24,000; DSQ2 n=10,427; DELI n=12,000; DGP_T n=740"
+        }
+      ]
+    },
+    {
+      "name": "Gemini",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation"
+      ],
+      "description": "Google large language model family used for text generation.",
+      "use_case": "Gemini was used as one of the state-of-the-art LLMs to generate questions for constructing the grade-specific educational dataset.",
+      "findings": []
+    },
+    {
+      "name": "Mistral",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation"
+      ],
+      "description": "Mistral AI large language model family, including Mixtral variants, used for text generation.",
+      "use_case": "Mistral/Mixtral was used as one of the state-of-the-art LLMs to generate questions for the training corpus; base Mixtral results were also compared in compatibility tables.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "Base Mixtral also showed weak alignment to low-grade readability targets, with outputs skewing toward middle and high grade levels. For example, on DELI, Mixtral 8x7B produced 0.01% lower-elementary, 0.16% middle-elementary, 4.60% high-elementary, 31.31% middle, 44.97% high, and 18.95% adult outputs, with ARI=5.24.",
+          "measure": "Output grade-level distribution / readability alignment for base Mixtral model",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "DELI n=12,000"
+        }
+      ]
+    },
+    {
+      "name": "Qwen",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation"
+      ],
+      "description": "Alibaba's Qwen family of large language models used for text generation and comparison.",
+      "use_case": "Qwen was included as a baseline LLM in compatibility comparisons of grade-level readability alignment.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "Base Qwen models also concentrated outputs in higher readability bands rather than lower-grade targets. On DNQ, Qwen 2.5:72B produced 0.01% lower-elementary, 0.27% middle-elementary, 5.76% high-elementary, 33.67% middle, 44.16% high, and 16.13% adult outputs, with ARI=5.07.",
+          "measure": "Output grade-level distribution / readability alignment for base Qwen model",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "DNQ n=24,000"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical evaluation paper with multiple benchmarks and human-participant validation, but it is not an RCT or quasi-experimental study of student learning outcomes in authentic classrooms. Most outcomes are technical alignment and human judgment measures rather than causal estimates of educational impact.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports strong improvements in grade-level alignment (35.64 percentage points), but effects are primarily on readability compatibility rather than direct student achievement. Because learning impact on students is not directly estimated with standardized educational outcomes, practical impact remains promising but unclear.",
+  "citations": [
+    {
+      "title": "Public school leaders reports suggest no overall change in the number of teaching positions since last school year",
+      "doi": null,
+      "year": 2024,
+      "venue": "National Center for Education Statistics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The teacher shortage is real, large and growing, and worse than we thought. The first report in \"The Perfect Storm in the Teacher Labor Market\" series",
+      "doi": null,
+      "year": 2019,
+      "venue": "Economic Policy Institute",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Pakistan education statistics 2016-17",
+      "doi": null,
+      "year": 2018,
+      "venue": "National Education Management Information System (NEMIS), Academy of Educational Planning and Management (AEPAM)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Child education in the time of pandemic: Learning loss and dropout",
+      "doi": null,
+      "year": 2021,
+      "venue": "Children and Youth Services Review",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "World teachers\u2019 day: The teachers we need for the education we want: The global imperative to reverse the teacher shortage",
+      "doi": null,
+      "year": 2024,
+      "venue": "SAGE Publishing",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Know your audience: Do LLMs adapt to different age and education levels?",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_level": 2,
+      "citation_context": "LLMs default to college+ readability levels"
+    },
+    {
+      "title": "Flesch or fumble? Evaluating readability standard alignment of instruction-tuned language models",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the Third Workshop on Natural Language Generation, Evaluation, and Metrics (GEM)",
+      "citation_level": 2,
+      "citation_context": "prompts alone fail to ensure grade alignment"
+    },
+    {
+      "title": "Do LLMs implicitly determine the suitable text difficulty for users?",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_level": 2,
+      "citation_context": "LLMs fail to output grade-appropriate answers"
+    },
+    {
+      "title": "Free-text rationale generation under readability level control",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_level": 2,
+      "citation_context": "models default to high school readability"
+    },
+    {
+      "title": "Generative information systems are great if you can read",
+      "doi": "10.1145/3627508.3638345",
+      "year": 2024,
+      "venue": "Proceedings of the 2024 Conference on Human Information Interaction and Retrieval",
+      "citation_level": 2,
+      "citation_context": "training data bias toward college-level language"
+    },
+    {
+      "title": "From tarzan to Tolkien: Controlling the language proficiency level of LLMs for content generation",
+      "doi": null,
+      "year": 2024,
+      "venue": "Findings of the Association for Computational Linguistics: ACL 2024",
+      "citation_level": 2,
+      "citation_context": "prior fine-tuning limited to simplification tasks"
+    },
+    {
+      "title": "Readctrl: Personalizing text generation with readability-controlled instruction learning",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_level": 2,
+      "citation_context": "prior methods perform poorly for lower grades"
+    },
+    {
+      "title": "Generating summaries with controllable readability levels",
+      "doi": null,
+      "year": 2023,
+      "venue": "The 2023 Conference on Empirical Methods in Natural Language Processing",
+      "citation_level": 2,
+      "citation_context": "summarization-based readability control baseline"
+    },
+    {
+      "title": "Stages of reading development",
+      "doi": null,
+      "year": 1983,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Teaching children to read: An evidence-based assessment of the scientific research literature on reading and its implications for reading instruction: Reports of the subgroups",
+      "doi": null,
+      "year": 2000,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A theory of appropriateness with applications to generative artificial intelligence",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A new readability yardstick",
+      "doi": null,
+      "year": 1948,
+      "venue": "Journal of Applied Psychology",
+      "citation_level": 3,
+      "citation_context": "defines Flesch Reading Ease metric used"
+    },
+    {
+      "title": "Derivation of new readability formulas (automated readability index, fog count and flesch reading ease formula) for navy enlisted personnel",
+      "doi": null,
+      "year": 1975,
+      "venue": "Chief of Naval Technical Training",
+      "citation_level": 3,
+      "citation_context": "defines Flesch-Kincaid grade level metric"
+    },
+    {
+      "title": "A computer readability formula designed for machine scoring",
+      "doi": null,
+      "year": 1975,
+      "venue": "Journal of Applied Psychology",
+      "citation_level": 3,
+      "citation_context": "defines Coleman-Liau readability metric"
+    },
+    {
+      "title": "Gobbledygook has gotta go",
+      "doi": null,
+      "year": 1966,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "defines Linsear Write readability metric"
+    },
+    {
+      "title": "The technique of clear writing",
+      "doi": null,
+      "year": 1952,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "defines Gunning-Fog readability metric"
+    },
+    {
+      "title": "Readability revisited: The new Dale-Chall readability formula",
+      "doi": null,
+      "year": 1995,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "defines Dale-Chall readability metric"
+    },
+    {
+      "title": "A new readability formula for primary-grade reading materials",
+      "doi": null,
+      "year": 1953,
+      "venue": "The Elementary School Journal",
+      "citation_level": 3,
+      "citation_context": "defines Spache readability metric"
+    },
+    {
+      "title": "Synthetic data generation with large language models for text classification: Potential and limitations",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "On LLMs-driven synthetic data generation, curation, and evaluation: A survey",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Instruction tuning with GPT-4",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Self-play fine-tuning converts weak language models to strong language models",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Stanford Alpaca: An instruction-following LLaMA model",
+      "doi": null,
+      "year": 2023,
+      "venue": "GitHub",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Orca-Math: Unlocking the potential of SLMs in grade school math",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Mixtral of experts",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Automated readability index",
+      "doi": null,
+      "year": 1967,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "defines Automated Readability Index metric"
+    },
+    {
+      "title": "Submodularity in machine learning and artificial intelligence",
+      "doi": null,
+      "year": 2022,
+      "venue": "arXiv",
+      "citation_level": 3,
+      "citation_context": "source for diversity gain metric"
+    },
+    {
+      "title": "Two-stage LLM fine-tuning with less specialization and more generalization",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Fine-tuning pretrained language models: Weight initializations, data orders, and early stopping",
+      "doi": null,
+      "year": 2020,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "An empirical study of catastrophic forgetting in large language models during continual fine-tuning",
+      "doi": null,
+      "year": 2025,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Judging LLM-as-a-judge with MT-Bench and Chatbot Arena",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Leveraging large language models for NLG evaluation: Advances and challenges",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Eliciting latent predictions from transformers with the tuned lens",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Language models are few-shot learners",
+      "doi": null,
+      "year": 2020,
+      "venue": "Advances in Neural Information Processing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Learn to explain: Multimodal reasoning via thought chains for science question answering",
+      "doi": null,
+      "year": 2022,
+      "venue": "The 36th Conference on Neural Information Processing Systems (NeurIPS)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ELI5-Category: a categorized open-domain QA dataset",
+      "doi": null,
+      "year": 2021,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Natural questions: A benchmark for question answering research",
+      "doi": null,
+      "year": 2019,
+      "venue": "Transactions of the Association of Computational Linguistics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Sentences are key: Helping school-age children and adolescents build sentence skills needed for real language",
+      "doi": null,
+      "year": 2024,
+      "venue": "American Journal of Speech-Language Pathology",
+      "citation_level": 2,
+      "citation_context": "supports shorter sentences for younger learners"
+    },
+    {
+      "title": "The psycho-biology of language: An introduction to dynamic philology",
+      "doi": null,
+      "year": 2013,
+      "venue": "Routledge",
+      "citation_level": 2,
+      "citation_context": "used for Zipfian distribution analysis"
+    },
+    {
+      "title": "Okapi at TREC-3",
+      "doi": null,
+      "year": 1995,
+      "venue": "NIST Special Publication",
+      "citation_level": 2,
+      "citation_context": "BM25 used to highlight distinctive terms"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

@@ -1,0 +1,86 @@
+{
+  "title": "ActiveAI: Enabling K-12 AI Literacy Education & Analytics at Scale",
+  "doi": null,
+  "year": 2025,
+  "venue": "Companion Proceedings 15th International Conference on Learning Analytics & Knowledge (LAK25)",
+  "url": "http://arxiv.org/abs/2412.14200v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "High School (9th-12th)",
+    "K-12 (unspecified grade)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper addresses the need for larger-scale, more replicable evidence in K-12 AI literacy education. The authors note that prior work has produced promising learning materials and summer programs, but that large-scale learning data remain scarce. To address this gap, they developed ActiveAI, an online learning platform designed to deliver AI literacy modules, assessments, and standardized logging for secondary analysis.\n\nThe platform includes a survey, pre-test, interactive learning module with an AI agent, and post-test. It was deployed across 12 secondary schools and used by over 1,000 learners, with 426 completing all components across four implemented modules. The system was built to support students, teachers, and researchers, and to make de-identified data downloadable for tools such as DataShop and LearnSphere. The study does not test a randomized intervention; instead, it reports preliminary analysis of collected usage and assessment data.\n\nThe main findings are that some AI literacy objectives showed significant pre/post gains, and that these gains were associated with more interactive activities rather than passive reading. The paper also reports gender differences in one module: non-male students scored higher on both pre- and post-tests than male students and showed slightly higher gains. The authors emphasize that the dataset and platform are intended to support future secondary analyses and improvements to AI literacy instruction across diverse educational contexts.",
+  "limitations": [
+    "short_duration",
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "tutoring_instruction",
+        "content_generation"
+      ],
+      "description": "A generic generative AI / LLM-based online learning platform with AI Literacy modules, interactive AI-agent activities, assessments, and data logging; built using OpenAI APIs but not a specific named product in the paper.",
+      "use_case": "Used to deliver K-12 AI literacy learning modules, pre/post tests, and interactive activities such as identifying LLM hallucinations in simulated scenarios; the platform also supported teacher/researcher data access and analytics.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Across 7 learning objectives in 4 modules, the paper reports significant learning gains in 4 objectives based on Wilcoxon tests on pre- and post-test scores. The paper does not provide effect sizes for these gains; it states that objectives with significant gains involved interactive activities, while those with smaller gains were linked to passive reading.",
+          "measure": "Pre-test vs post-test scores on AI literacy learning objectives",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=426 completed all components (over 1,000 unique learners used the platform)"
+        }
+      ]
+    },
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "tutoring_instruction",
+        "feedback_evaluation"
+      ],
+      "description": "A generative AI-supported K-12 AI literacy learning environment that includes interactive activities and assessment data for analysis.",
+      "use_case": "Studied for subgroup patterns in assessment performance, including gender differences in the latest experiment (module 4: Identify LLM Hallucinations).",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "In module 4, non-male students achieved significantly higher pre-test scores (f=6.97, p<0.01, one-way ANOVA) and post-test scores (f=6.80, p=0.01, one-way ANOVA) than male students, with slightly higher learning gains. The paper reports this as a gender difference, but it is not a literacy-subgroup analysis for emergent readers, multilingual learners, or students with disabilities.",
+          "measure": "Pre-test and post-test assessment scores by gender",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    }
+  ],
+  "verdict": "genai_general",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical mixed-data study of a K-12 AI literacy platform, but the evidence reported here is preliminary, correlational/subgroup-based, and lacks effect sizes or full experimental controls. The paper includes quantitative pre/post testing and ANOVA, but not a rigorous design focused on literacy subgroup effects.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The reported learning gains are statistically significant for some objectives, but no effect sizes are given and subgroup findings are limited to gender differences. For the literacy-subgroup question posed, the paper provides no direct evidence of differential effects for emergent readers, multilingual learners, or students with disabilities.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

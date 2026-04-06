@@ -1,0 +1,500 @@
+{
+  "title": "Mentigo: An Intelligent Agent for Mentoring Students in the Creative Problem Solving Process",
+  "doi": null,
+  "year": 2025,
+  "venue": "CHI Conference on Human Factors in Computing Systems (CHI '25)",
+  "url": "https://arxiv.org/abs/2409.14228",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Middle School (6th-8th)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses how large language model (LLM)-based agents can be used not just as task assistants but as mentoring agents to support middle school students during creative problem solving (CPS). The authors argue that CPS is valuable for fostering creativity, engagement, and critical thinking, but is difficult to implement well because students need sustained, personalized, and emotionally supportive guidance, which schools often lack the staff resources to provide. The study therefore asks whether an AI mentor agent can scaffold students through the CPS process more effectively than a simpler baseline system.\n\nThe intervention is Mentigo, an interactive AI mentoring system built around a six-stage CPS process: problem discovery, information collection, problem definition, solution ideation, solution evaluation, and solution implementation. The system uses a controller agent to track task stage, infer student state, and select guidance strategies, and a mentor agent to generate empathetic, context-sensitive feedback. Its design is grounded in a dataset constructed from authentic classroom interactions collected during two CPS workshops with 57 middle school students and 12 human mentors. The system was then evaluated through a comparative user study with 12 middle school students using a randomized within-subject design, alongside expert review from five experienced educators.\n\nThe study took place with middle school students in China and focused on CPS tasks such as smart home innovation and low-carbon campus design. Participants completed both a Mentigo condition and a baseline condition, with questionnaires, learning reports, interaction logs, screen recordings, and post-task interviews used for evaluation. The paper also included formative interviews with teachers and mentors to derive design goals, emphasizing structured task support, diverse guidance strategies, personalized feedback, deeper cognitive engagement, and emotional support.\n\nThe main conclusion is that Mentigo improved student engagement and creative outcomes compared with the baseline system. The authors report that the system promoted deeper reflection, better task alignment, and more personalized support through adaptive feedback and mentoring strategies. They position Mentigo as evidence that AI mentor agents can support CPS learning in middle school settings, while also offering design implications for future educational uses of generative AI.",
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "China",
+  "study_region": "East Asia & Pacific",
+  "identified_tools": [
+    {
+      "name": "Mentigo",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "personalization_adaptation"
+      ],
+      "description": "An interactive LLM-based mentor agent system for guiding middle school students through a six-stage creative problem solving (CPS) process using structured task management, student-state detection, adaptive strategy selection, personalized feedback, and empathetic interaction.",
+      "use_case": "Studied as an AI mentor for middle school students completing CPS tasks (e.g., smart home and low-carbon campus projects), compared against a simplified baseline agent in a within-subject user study.",
+      "findings": [
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In a comparative within-subject experiment with 12 middle school students, the paper reports that Mentigo significantly enhanced student engagement and promoted deeper cognitive processes such as analysis and creativity relative to a baseline system. Qualitative participant feedback indicated that Mentigo\u2019s structured guidance and adaptive feedback improved students\u2019 understanding and application of CPS skills, but no effect sizes or inferential statistics are reported in the provided text.",
+          "measure": "Student engagement; deeper cognitive processes in CPS including analysis and creativity; perceived understanding and application of CPS skills",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=12"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The abstract states that Mentigo demonstrated significant improvements in creative outcomes in the comparative experiment. The provided text does not report the exact creative outcome metric, statistical test values, or effect sizes.",
+          "measure": "Creative outcomes in CPS tasks",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=12"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical comparative user study with a within-subject design, but the provided text reports only a very small sample (n=12) and does not provide sufficient statistical details or outcome reporting to support a stronger causal evidence tier.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper claims significant improvements in engagement and creative outcomes, suggesting positive impact, but effect sizes and detailed quantitative results are not reported in the provided text, so magnitude remains unclear.",
+  "citations": [
+    {
+      "title": "Large Language Models in Medical Education: Opportunities, Challenges, and Future Directions",
+      "doi": null,
+      "year": 2023,
+      "venue": "JMIR Medical Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Escape! bot: Social robots as creative problem-solving partners",
+      "doi": null,
+      "year": 2022,
+      "venue": "Proceedings of the 14th Conference on Creativity and Cognition",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The emergent role of artificial intelligence, natural learning processing, and large language models in higher education and research",
+      "doi": null,
+      "year": 2023,
+      "venue": "Research in Social and Administrative Pharmacy",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Mentor agent: an intelligent virtual teacher for personalized learning environments",
+      "doi": null,
+      "year": 2007,
+      "venue": "Proceedings of the 7th WSEAS International Conference on Distance Learning and Web Engineering",
+      "citation_level": 2,
+      "citation_context": "personalized mentor-agent framing for adaptive feedback"
+    },
+    {
+      "title": "Is ChatGPT leading generative AI? What is beyond expectations?",
+      "doi": null,
+      "year": 2023,
+      "venue": "What is beyond expectations",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Transforming education: A comprehensive review of generative artificial intelligence in educational settings through bibliometric and content analysis",
+      "doi": null,
+      "year": 2023,
+      "venue": "Sustainability",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Identifying individual differences in creative problem solving style",
+      "doi": null,
+      "year": 1990,
+      "venue": "The Journal of Creative Behavior",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Developing human capital: Training and mentoring for principals",
+      "doi": null,
+      "year": 1999,
+      "venue": "Compare: A Journal of Comparative and International Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Creativity Support in the Age of Large Language Models: An Empirical Study Involving Emerging Writers",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv preprint arXiv:2309.12570",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Agent-based middleware framework using distributed CPS for improving resource utilization in smart city",
+      "doi": null,
+      "year": 2020,
+      "venue": "Future Generation Computer Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "CPS for Kids: A Resource Book for Teaching Creative Problem-Solving to Children (Grades 2-8)",
+      "doi": null,
+      "year": 2021,
+      "venue": "Routledge",
+      "citation_level": 2,
+      "citation_context": "structured CPS stages and task breakdown framing"
+    },
+    {
+      "title": "Human and computational approaches for design problem-solving",
+      "doi": null,
+      "year": 2016,
+      "venue": "Experimental Design Research: Approaches, Perspectives, Applications",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Mapping the Landscape of Creativity Support Tools in HCI",
+      "doi": "10.1145/3290605.3300619",
+      "year": 2019,
+      "venue": "Proceedings of the 2019 CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Creative problem solving in artificially intelligent agents: A survey and framework",
+      "doi": null,
+      "year": 2022,
+      "venue": "Journal of Artificial Intelligence Research",
+      "citation_level": 2,
+      "citation_context": "AI creative problem-solving framework and prompt diversity rationale"
+    },
+    {
+      "title": "A Survey on Large Language Models: Applications, Challenges, Limitations, and Practical Usage",
+      "doi": null,
+      "year": 2023,
+      "venue": "TechRxiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The principalship: how significant is mentoring?",
+      "doi": null,
+      "year": 2006,
+      "venue": "Journal of educational administration",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Development of NASA-TLX (Task Load Index): Results of empirical and theoretical research",
+      "doi": null,
+      "year": 1988,
+      "venue": "Human mental workload/Elsevier",
+      "citation_level": 3,
+      "citation_context": "NASA-TLX used for workload measurement"
+    },
+    {
+      "title": "Mentoring as professional development:\u2018growth for both\u2019mentor and mentee",
+      "doi": null,
+      "year": 2013,
+      "venue": "Professional development in education",
+      "citation_level": 2,
+      "citation_context": "mentoring theory supporting adaptive learning environment"
+    },
+    {
+      "title": "IdeaBot: investigating social facilitation in human-machine team creativity",
+      "doi": null,
+      "year": 2021,
+      "venue": "Proceedings of the 2021 CHI conference on human factors in computing systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Exploring the potential of generative artificial intelligence in education: applications, challenges, and future research directions",
+      "doi": null,
+      "year": 2023,
+      "venue": "Journal of Educational Technology & Society",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Becoming a tutor: exploring the learning experiences and needs of novice tutors in a PBL programme",
+      "doi": null,
+      "year": 2005,
+      "venue": "Medical Teacher",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT for good? On opportunities and challenges of large language models for education",
+      "doi": null,
+      "year": 2023,
+      "venue": "Learning and individual differences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Learning Outcomes of Global Project-Based Learning: Insights From Teaching Assistants",
+      "doi": null,
+      "year": 2020,
+      "venue": "Journal of JSEE",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Creative process mentoring: Teaching the \u201cmaking\u201d in dance-making",
+      "doi": null,
+      "year": 2006,
+      "venue": "Journal of Dance Education",
+      "citation_level": 2,
+      "citation_context": "creative process mentoring supports mentoring approach"
+    },
+    {
+      "title": "Artificial Intelligence in Schools: Towards a Democratic Future",
+      "doi": null,
+      "year": 2020,
+      "venue": "London Review of Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Student mentoring in higher education: Hong Kong Baptist University",
+      "doi": null,
+      "year": 2003,
+      "venue": "Mentoring & Tutoring",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Development of instructional design strategies for integrating an online support system for creative problem solving into a University course",
+      "doi": null,
+      "year": 2020,
+      "venue": "Asia Pacific Education Review",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "What is the impact of ChatGPT on education? A rapid review of the literature",
+      "doi": null,
+      "year": 2023,
+      "venue": "Education Sciences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Efficient implementation of task automation to support multidisciplinary engineering of cps",
+      "doi": null,
+      "year": 2018,
+      "venue": "2018 IEEE 14th International Conference on Automation Science and Engineering (CASE)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Problem-based design thinking tasks: Engaging student empathy in STEM",
+      "doi": null,
+      "year": 2020,
+      "venue": "The electronic journal for research in science & mathematics education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Developing and supporting creative problem solving teams: part 2\u2013facilitator competencies",
+      "doi": null,
+      "year": 2002,
+      "venue": "Management decision",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Intelligent Mentoring Bots in Learning Management Systems: Concepts, Realizations and Evaluations",
+      "doi": null,
+      "year": 2020,
+      "venue": "International Symposium on Emerging Technologies for Education",
+      "citation_level": 2,
+      "citation_context": "intelligent mentoring bots motivate mentoring-system design"
+    },
+    {
+      "title": "Ethical principles for artificial intelligence in education",
+      "doi": null,
+      "year": 2023,
+      "venue": "Education and Information Technologies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Experimental evidence on the productivity effects of generative artificial intelligence",
+      "doi": null,
+      "year": 2023,
+      "venue": "Available at SSRN 4375283",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The development of assessment tools to measure scientific creative problem solving ability for middle school students",
+      "doi": null,
+      "year": 2012,
+      "venue": "Journal of the Korean Association for Science Education",
+      "citation_level": 3,
+      "citation_context": "basis for assessing middle-school CPS ability"
+    },
+    {
+      "title": "Academic Integrity considerations of AI Large Language Models in the post-pandemic era: ChatGPT and beyond",
+      "doi": null,
+      "year": 2023,
+      "venue": "Journal of University Teaching & Learning Practice",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Defining creativity: How far have we come since Plucker, Beghetto, and Dow?",
+      "doi": null,
+      "year": 2020,
+      "venue": "Creativity Research Journal",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT: Bullshit spewer or the end of traditional assessments in higher education?",
+      "doi": null,
+      "year": 2023,
+      "venue": "Journal of Applied Learning and Teaching",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Artificial intelligence and learning analytics in teacher education: A systematic review",
+      "doi": null,
+      "year": 2022,
+      "venue": "Education Sciences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Fostering student engagement: Creative problem-solving in small group facilitations",
+      "doi": null,
+      "year": 2015,
+      "venue": "Collected essays on learning and teaching",
+      "citation_level": 2,
+      "citation_context": "supports CPS-engagement framing and discussion claims"
+    },
+    {
+      "title": "Spirituality and Creativity: Meeting Learners\u2019 Spiritual and Cognitive Needs Through Creative Problem Solving",
+      "doi": null,
+      "year": 2023,
+      "venue": "Supporting Children and Youth Through Spiritual Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Brainstorm, then Select: a Generative Language Model Improves Its Creativity Score",
+      "doi": null,
+      "year": 2023,
+      "venue": "The AAAI-23 Workshop on Creative AI Across Modalities",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT: The end of online exam integrity?",
+      "doi": null,
+      "year": 2022,
+      "venue": "arXiv preprint arXiv:2212.09292",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Towards Applying Powerful Large AI Models in Classroom Teaching: Opportunities, Challenges and Prospects",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv preprint arXiv:2305.03433",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Developing personalized education: A dynamic framework",
+      "doi": null,
+      "year": 2021,
+      "venue": "Educational Psychology Review",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Creative problem solving: Overview and educational implications",
+      "doi": null,
+      "year": 1995,
+      "venue": "Educational psychology review",
+      "citation_level": 2,
+      "citation_context": "core CPS theory underlying study framing"
+    },
+    {
+      "title": "Creative Problem Solving (CPS): Powerful tools for managing change and developing talent",
+      "doi": null,
+      "year": 2007,
+      "venue": "Gifted and Talented International",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Creative problem solving (CPS Version 6.1 TM) a contemporary framework for managing change",
+      "doi": null,
+      "year": 2003,
+      "venue": "Center for Creative Learning, Inc and Creative Problem Solving Group, Inc",
+      "citation_level": 2,
+      "citation_context": "contemporary CPS framework shaping task structure"
+    },
+    {
+      "title": "ChatGPT improves creative problem-solving performance in university students: An experimental study",
+      "doi": null,
+      "year": 2024,
+      "venue": "Computers & Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT: The Brightest Student in the Class",
+      "doi": null,
+      "year": 2023,
+      "venue": "Thinking Skills and Creativity",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Understanding the Adoption, Perception, and Learning Impact of ChatGPT in Higher Education: A qualitative exploratory case study analyzing students\u2019 perspectives and experiences with the AI-based large language model",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Tree of thoughts: Deliberate problem solving with large language models",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv preprint arXiv:2305.10601",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A mentoring approach for developing creativity in teaching",
+      "doi": null,
+      "year": 2017,
+      "venue": "Malaysian Journal of ELT Research",
+      "citation_level": 2,
+      "citation_context": "mentoring approach linked to creativity development"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

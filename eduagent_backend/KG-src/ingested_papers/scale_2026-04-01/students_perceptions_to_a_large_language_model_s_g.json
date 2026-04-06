@@ -1,0 +1,523 @@
+{
+  "title": "Students\u2019 Perceptions to a Large Language Model\u2019s Generated Feedback and Scores of Argumentation Essays",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "https://arxiv.org/abs/2508.14759",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper examines whether large language model (LLM)-generated feedback on students\u2019 written scientific argumentation in physics is perceived as useful and accurate, and whether LLM-assigned essay scores align with students\u2019 performance on related physics multiple-choice questions. The motivating problem is that in large-enrollment introductory STEM courses, giving timely, individualized feedback on open-ended student reasoning is difficult, even though such feedback is important for developing problem-solving and metacognitive skills.\n\nThe study used OpenAI\u2019s GPT-4o to generate delayed feedback and rubric-based scores for students\u2019 written scientific arguments on two online quiz questions in an introductory calculus-based physics course. Students had been trained across the semester in claim-evidence-reasoning (CER) scientific argumentation through progressively reduced scaffolding in recitation. After students completed quiz bonus questions requiring a 50-word written scientific argument about their solution process, their responses were processed through the GPT-4o API with a prompt directing the model to give concise physics-focused feedback and a score out of 5 based on a rubric. Students later viewed the feedback and completed a post-survey rating its usefulness and accuracy, with additional open-ended comments collected for future analysis.\n\nThe population consisted of undergraduate students, primarily future engineers, enrolled at a large Midwestern U.S. land-grant university. The intervention occurred in the context of a first-semester calculus-based physics course, with argumentation tasks embedded in online quizzes during the last five weeks of the semester. Reported quantitative data included 730 students for Quiz 08 and 565 students for Quiz 09. The study was conducted at a single institution in the United States.\n\nThe authors conclude that LLM-generated feedback appears viable for supporting written scientific argumentation in large-enrollment physics courses. Students generally rated the feedback as mostly useful and mostly accurate, regardless of whether they answered the associated multiple-choice item correctly. LLM-assigned essay scores also differed in expected ways between students who answered harder or easier quiz items correctly versus incorrectly, suggesting the scoring was sensible. However, the study is exploratory and limited by delayed feedback delivery, lack of comparison to human feedback in the current analysis, and absence of evidence about actual learning gains from the feedback.",
+  "limitations": [
+    "single_site",
+    "no_control_group",
+    "self_reported_measures",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "5",
+  "setting": "online",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "tutoring_instruction"
+      ],
+      "description": "OpenAI's GPT-family large language model used here to generate scores and written feedback on student essays.",
+      "use_case": "ChatGPT (via GPT-4o API) was prompted with the physics problem, an ideal answer, and a rubric to score students' written scientific argumentation essays out of 5 and provide up to 100 words of delayed feedback focused on physics concepts in an introductory physics course.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Scientific Reasoning",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "For Quiz 08, ChatGPT-generated argumentation scores were higher for students who answered the related multiple-choice physics question correctly than incorrectly: correct M=2.14 (SD=1.24) vs incorrect M=1.12 (SD=1.11), with p<<0.001 and Cohen's d=0.87. The full quiz sample was N=730, and the overall ChatGPT score average was 1.69/5 (SD=1.29).",
+          "measure": "LLM-generated rubric scores on written scientific arguments, compared by correctness on related multiple-choice physics item (Quiz 08)",
+          "effect_size": "Cohen's d=0.87",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=730"
+        },
+        {
+          "outcome_category": "Academic \u2014 Scientific Reasoning",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "For Quiz 09, ChatGPT-generated argumentation scores were also higher for students who answered the related multiple-choice item correctly: correct M=2.77 (SD=1.08) vs incorrect M=2.53 (SD=1.04), with p=0.015 and Cohen's d=0.22. The full quiz sample was N=565, and the overall ChatGPT score average was 2.72/5 (SD=1.08).",
+          "measure": "LLM-generated rubric scores on written scientific arguments, compared by correctness on related multiple-choice physics item (Quiz 09)",
+          "effect_size": "Cohen's d=0.22",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=565"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Across both quizzes, the majority of students rated ChatGPT feedback as 'mostly useful' and 'mostly accurate' on post-survey Likert scales. The paper reports no significant difference in perceived usefulness or accuracy between students who got the multiple-choice question correct versus incorrect, but does not report exact counts, test statistics, or survey sample size.",
+          "measure": "Student perceptions of usefulness and accuracy of LLM-generated feedback via Likert-scale post-survey",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an exploratory primary study using descriptive statistics, group comparisons, and student perception surveys rather than a randomized or strong quasi-experimental design. It provides empirical evidence, but outcomes are largely perceptual and correlational.",
+  "impact_tier": "blue",
+  "impact_tier_rationale": "The paper reports one large observed difference in AI-generated scores between correct and incorrect students on Quiz 08 (Cohen's d=0.87) and a small positive difference on Quiz 09 (d=0.22). Because at least one reported effect is medium-to-large, the impact tier is blue.",
+  "citations": [
+    {
+      "title": "Next Generation Science Standards: For States, By States",
+      "doi": null,
+      "year": 2013,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "frames problem solving and argumentation as key science practices"
+    },
+    {
+      "title": "Using qualitative problem-solving strategies to highlight the role of conceptual knowledge in solving problems",
+      "doi": null,
+      "year": 1996,
+      "venue": "American Journal of Physics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "An overview of physics education research on problem solving",
+      "doi": null,
+      "year": 2011,
+      "venue": "Getting started in PER",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Solving physics problems with multiple representations",
+      "doi": null,
+      "year": 1997,
+      "venue": "Physics Teacher",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Elements of a cognitive model of physics problem solving: Epistemic games",
+      "doi": null,
+      "year": 2007,
+      "venue": "Phys. Rev. ST Phys. Educ. Res.",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Using a hybrid of argumentation and problem solving prompts to facilitate undergraduates\u2019 problem solving performance and confidence",
+      "doi": null,
+      "year": 2019,
+      "venue": "The 13th Conference of the European Science Education Research Association (ESERA)",
+      "citation_level": 2,
+      "citation_context": "supports using scientific argumentation in undergraduate physics"
+    },
+    {
+      "title": "What initiates evidence-based reasoning?: Situations that prompt students to support their design ideas and decisions",
+      "doi": null,
+      "year": 2021,
+      "venue": "Journal of Engineering Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Grading assistance for a handwritten thermodynamics exam using artificial intelligence: An exploratory study",
+      "doi": null,
+      "year": 2024,
+      "venue": "Phys. Rev. Phys. Educ. Res.",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Can large language models make the grade? an empirical study evaluating llms ability to mark short answer questions in k-12 education",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Achieving human level partial credit grading of written responses to physics conceptual question using gpt-3.5 with only prompt engineering",
+      "doi": null,
+      "year": 2024,
+      "venue": "Physics Education Research Conference 2024",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Making sense of argumentation and explanation",
+      "doi": null,
+      "year": 2009,
+      "venue": "Science education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Science as argument: Implications for teaching and learning scientific thinking",
+      "doi": null,
+      "year": 1993,
+      "venue": "Science education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A learning progression for scientific argumentation: Understanding student work and designing supportive instructional contexts",
+      "doi": null,
+      "year": 2010,
+      "venue": "Science Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Teaching and learning science as argument",
+      "doi": null,
+      "year": 2010,
+      "venue": "Science Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "\u201cyou\u2019re going to want to find out which and prove it\u201d: Collective argumentation in a mathematics classroom",
+      "doi": null,
+      "year": 1998,
+      "venue": "Learning and instruction",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "\u201cdoing the lesson\u201d or \u201cdoing science\u201d: Argument in high school genetics",
+      "doi": null,
+      "year": 2000,
+      "venue": "Science education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Arguing to learn and learning to argue: Design justifications and guidelines",
+      "doi": null,
+      "year": 2010,
+      "venue": "Educational Technology Research and Development",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A conceptual framework for scaffolding iii-structured problem-solving processes using question prompts and peer interactions",
+      "doi": null,
+      "year": 2004,
+      "venue": "Educational technology research and development",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The effects of argumentation scaffolds on argumentation and problem solving",
+      "doi": null,
+      "year": 2002,
+      "venue": "Educational Technology Research and Development",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The science classroom as a site of epistemic talk: A case study of a teacher\u2019s attempts to teach science based on argument",
+      "doi": null,
+      "year": 2014,
+      "venue": "Journal of Research in Science Teaching",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Scientific discourse in three urban classrooms: The role of the teacher in engaging high school students in argumentation",
+      "doi": null,
+      "year": 2010,
+      "venue": "Science Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Learning argumentation skills through the use of prompts for self-explaining examples.",
+      "doi": null,
+      "year": 2007,
+      "venue": "Journal of Educational Psychology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The relationship between students\u2019 problem solving frames and epistemological beliefs",
+      "doi": null,
+      "year": 2013,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Scaffolding evidence-based reasoning in a technology supported engineering design activity",
+      "doi": null,
+      "year": 2019,
+      "venue": "The 13th Conference of the European Science Education Research Association (ESERA)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Supporting grade 5-8 students in constructing explanations in science: The claim, evidence, and reasoning framework for talk and writing.",
+      "doi": null,
+      "year": 2011,
+      "venue": "Pearson",
+      "citation_level": 2,
+      "citation_context": "provides CER framework central to argumentation framing"
+    },
+    {
+      "title": "The uses of argument",
+      "doi": null,
+      "year": 2003,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "source of argumentation protocol adapted into CER"
+    },
+    {
+      "title": "Inquiry and scientific explanations: Helping students use evidence and reasoning",
+      "doi": null,
+      "year": 2008,
+      "venue": "Science as inquiry in the secondary setting",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Scrutinising the positions of students and teacher engaged in argumentation in a high school physics classroom",
+      "doi": null,
+      "year": 2020,
+      "venue": "International Journal of Science Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The power of feedback",
+      "doi": null,
+      "year": 2007,
+      "venue": "Review of Educational Research",
+      "citation_level": 2,
+      "citation_context": "defines feedback levels and underpins feedback framing"
+    },
+    {
+      "title": "Feedback in the clinical setting",
+      "doi": null,
+      "year": 2020,
+      "venue": "BMC Medical Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The usefulness of feedback",
+      "doi": null,
+      "year": 2021,
+      "venue": "Active Learning in Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Formative assessment and self-regulated learning: A model and seven principles of good feedback practice",
+      "doi": null,
+      "year": 2006,
+      "venue": "Studies in Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Beyond feedback: Developing student capability in complex appraisal",
+      "doi": null,
+      "year": 2010,
+      "venue": "Assessment & Evaluation in Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The role of assessment in a learning culture",
+      "doi": null,
+      "year": 2000,
+      "venue": "Educational Researcher",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Receiving feedback from peers: medical students\u2019 perceptions",
+      "doi": null,
+      "year": 2015,
+      "venue": "Clinical Teacher",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The power of feedback revisited: A meta-analysis of educational feedback research",
+      "doi": null,
+      "year": 2020,
+      "venue": "Frontiers in Psychology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The effects of feedback interventions on performance: A historical review, a meta-analysis, and a preliminary feedback intervention theory",
+      "doi": null,
+      "year": 1996,
+      "venue": "Psychological Bulletin",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Visible Learning: Feedback",
+      "doi": null,
+      "year": 2018,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A matrix of feedback for learning",
+      "doi": null,
+      "year": 2019,
+      "venue": "Australian Journal of Teacher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Feedback and reflection: Teaching methods for clinical settings",
+      "doi": null,
+      "year": 2002,
+      "venue": "Academic Medicine",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The influence of teacher commentary on student revision",
+      "doi": null,
+      "year": 1997,
+      "venue": "TESOL Quarterly",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Feedback: all that effort, but what is the effect?",
+      "doi": null,
+      "year": 2010,
+      "venue": "Assessment & Evaluation in Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Understanding how students process and use feedback to support their learning",
+      "doi": null,
+      "year": 2014,
+      "venue": "Practitioner Research in Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Supporting learners\u2019 agentic engagement with feedback: A systematic review and a taxonomy of recipience processes",
+      "doi": null,
+      "year": 2017,
+      "venue": "Educational Psychologist",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Feedback modes matter: Comparing student perceptions of digital and non-digital feedback modes in higher education",
+      "doi": null,
+      "year": 2019,
+      "venue": "British Journal of Educational Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Feedback in Higher and Professional Education: Understanding it and doing it well",
+      "doi": null,
+      "year": 2013,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Tutor feedback on draft essays: Developing students\u2019 academic writing and subject knowledge",
+      "doi": null,
+      "year": 2014,
+      "venue": "Journal of Further and Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "\u2018now that\u2019s the feedback i want!\u2019 students\u2019 reactions to feedback on graded work and what they do with it",
+      "doi": null,
+      "year": 2017,
+      "venue": "Assessment & Evaluation in Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "How to effectively assess online learning",
+      "doi": null,
+      "year": 2011,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "E-feedback: An exploratory study of using email to provide feedback to students",
+      "doi": null,
+      "year": 2008,
+      "venue": "Journal of Writing Assessment",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Adult beginner distance language learner perceptions and use of assignment feedback",
+      "doi": null,
+      "year": 2009,
+      "venue": "Distance Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "College students\u2019perceptions of quality in distance education the importance of communication.",
+      "doi": null,
+      "year": 2005,
+      "venue": "Quarterly Review of Distance Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Claims, evidence, and reasoning",
+      "doi": null,
+      "year": 2011,
+      "venue": "Science and Children",
+      "citation_level": 3,
+      "citation_context": "CER explicitly taught as scaffold for student argument writing"
+    },
+    {
+      "title": "Assessing physics students\u2019 scientific argumentation using natural language processing",
+      "doi": null,
+      "year": 2025,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "details the semester-long scaffolding process used here"
+    },
+    {
+      "title": "Gpt-4o",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "LLM model used to generate scores and feedback"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

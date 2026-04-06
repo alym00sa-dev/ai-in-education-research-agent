@@ -1,0 +1,53 @@
+{
+  "title": "Guardrails for avoiding harmful medical product recommendations and off-label promotion in generative AI models",
+  "doi": null,
+  "year": 2024,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2406.16455v1",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses the risk that general-purpose generative AI models may recommend medical products for unapproved or otherwise potentially harmful uses. The authors argue that because large language models are trained on broad internet-scale data with limited human oversight, they can learn off-label product-indication associations and surface them in responses, creating public-health and regulatory concerns.\n\nTo address this, the paper proposes a post-hoc detection method for identifying off-label promotion in multimodal large language model outputs. The method standardizes the user query, applies biomedical named entity recognition to the model response, matches detected products and indications to FDA labeling data, and then uses a zero-shot T5 model to decide whether an identified product-indication association constitutes a recommendation and thus off-label promotion.\n\nThe approach is demonstrated on Anthropic Claude 3 Sonnet in a shopping-style question-answering setting where a user uploads a product label image and asks about it. The authors generated 14,300 synthetic queries across 35 pharmaceuticals with known off-label uses, finding that 15.4% of responses contained off-label indications. They conclude that guardrails can be used to filter or modify responses so that generative AI systems adhere to approved labeling when discussing medical products, though the work is framed as a proof of concept rather than a comprehensive prevalence study.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed empirical paper with a clear evaluation pipeline, but it is a proof-of-concept on synthetic queries rather than a field study or randomized design. Evidence is therefore informative but limited in causal relevance to educational deployment contexts.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper does not test educational outcomes directly; its main contribution is identifying a safety/regulatory failure mode and a detection method. The practical impact is important for governance, but effect on learner outcomes is indirect and unclear.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.88,
+      "role": "primary",
+      "use_case": "evaluating a multimodal generative AI model (Claude 3 Sonnet) in a medical product question-answering / recommendation setting where users ask about product labels and the model may recommend uses"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Systemic / Institutional Impact",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Negative",
+        "finding_summary": "The paper finds that a multimodal GenAI model can produce potentially harmful off-label medical product recommendations, with 15.4% of 14,300 synthetic customer queries yielding off-label indications. In a random sample of 2,000 responses, the proposed detector achieved precision 85.75%, recall 80.47%, and F1 83.02% for identifying off-label promotion, suggesting the issue is measurable and nontrivial.",
+        "measure": "Rate of off-label indications in model responses; detection performance against human annotations (precision, recall, F1)",
+        "study_size": "n=14300 synthetic queries; n=2000 annotated sample",
+        "effect_size": "15.4% off-label responses; precision=85.75%, recall=80.47%, F1=83.02%",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    }
+  ],
+  "limitations": [
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

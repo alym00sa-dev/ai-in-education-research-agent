@@ -1,0 +1,124 @@
+{
+  "title": "CelloAI: Leveraging Large Language Models for HPC Software Development in High Energy Physics",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2508.16713v1",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses the problem of using large language models (LLMs) to assist with software development in high-performance computing (HPC) environments for high energy physics (HEP). The authors argue that generic coding assistants are inadequate for scientific codebases because of privacy constraints, large repositories, sparse documentation, reproducibility requirements, and the need to understand complex dependencies and performance-portability issues.\n\nTo address this, they introduce CelloAI, a locally hosted coding assistant that combines retrieval-augmented generation with separate code/text vector collections, syntax-aware Tree-sitter chunking, pattern matching, and callgraph-based prompt enhancement. The system is designed for documentation generation, code comprehension, code generation, and code translation across HEP applications.\n\nThe evaluation uses real HEP software from ATLAS, CMS, and DUNE, including FastCaloSim, P2R, Patatrack, and WireCell. The results show that retrieval and callgraph augmentation improve kernel recall, documentation quality, and porting coverage for several open-weight models, although harder porting tasks still fail mainly because of memory-mapping and directive-selection errors. The paper concludes that transparent, on-premise, retrieval-centered LLM workflows can improve productivity for scientific programming, but robust correctness for complex GPU porting remains an open challenge.",
+  "limitations": [
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "Gemini",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "content_generation",
+        "feedback_evaluation"
+      ],
+      "description": "Google Gemini is a family of large language models and AI assistants for general-purpose text generation, code assistance, and multimodal reasoning.",
+      "use_case": "Used as one of the commercial AI assistants compared against CelloAI for identifying GPU kernels in scientific code repositories; also referenced as Gemini-cli / Gemini-2.5-Pro in the comparison.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "In the kernel-identification prompt, Gemini-cli sometimes exceeded the token limit by attempting to read and concatenate the entire repository. The paper reports that Gemini-cli either looped through files or concatenated the whole codebase before collecting patterns, causing a token-count error on large repositories such as Patatrack.",
+          "measure": "Number of GPU kernels recalled / retrieval behavior under a fixed prompt",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Across repositories, Gemini-2.5-Pro showed uneven recall for kernel enumeration; the paper reports 8/8 on FastCaloSim CUDA, 0/169 on Patatrack Kokkos, and 0/25 on Patatrack OpenMP, but better performance on some smaller tasks. Overall, the authors conclude that none of the commercial tools sustained high recall once the search space exceeded a few hundred symbols.",
+          "measure": "Kernel recall / completeness of retrieved GPU kernels",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    },
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "content_generation",
+        "feedback_evaluation"
+      ],
+      "description": "OpenAI\u2019s ChatGPT/GPT family is a general-purpose large language model assistant for chat, code generation, and reasoning.",
+      "use_case": "Compared as a commercial AI assistant for GPU-kernel enumeration and later for OpenMP porting of FastCaloSim kernels.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "For kernel enumeration, ChatGPT o3 found 1267/1490 CUDA kernels in Patatrack and 77/169 Kokkos kernels in Patatrack, but performance dropped on other repositories and paradigms (e.g., 16/76 Kokkos kernels in WireCell). The authors state that commercial tools, including ChatGPT, could not sustain high recall once the search space exceeded a few hundred symbols.",
+          "measure": "Kernel recall / completeness of retrieved GPU kernels",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "In the OpenMP porting evaluation for FastCaloSim kernels, ChatGPT-o3 achieved 8/8 coverage with base retrieval and received a human instruction-adherence score of 3/10 in the blinded study. However, the paper notes that ChatGPT-5 later failed to correctly implement even straightforward kernels, indicating variability across GPT-family models.",
+          "measure": "Coverage of ported kernels; instruction-adherence rating",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=8 kernels"
+        }
+      ]
+    },
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "content_generation",
+        "tutoring_instruction"
+      ],
+      "description": "Generic large language model chatbot / AI assistant with no single named product specified.",
+      "use_case": "The paper discusses generic LLM-based coding assistants and compares several commercial and open-weight models, but the main empirical focus is on the CelloAI system rather than a generic unnamed chatbot.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "The paper argues that generic commercial coding assistants are limited in scientific-HPC contexts because they struggle with long-context codebases, dependency awareness, privacy constraints, and reproducibility. This is supported by the comparative kernel-recall and porting tasks where baseline tools often missed many kernels or produced compilationally incorrect code.",
+          "measure": "Comparative performance on kernel retrieval and code porting tasks",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is not an education-study RCT or meta-analysis; it is an applied systems paper in scientific computing. Evidence is based on benchmark-style comparisons and qualitative interpretation rather than controlled K-12 instructional research.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "The reported outcomes concern HPC code retrieval and porting, not student learning, literacy instruction, or educational impact. No K-12 academic effect size is reported.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

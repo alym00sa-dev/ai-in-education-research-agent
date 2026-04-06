@@ -1,0 +1,85 @@
+{
+  "title": "LitLinker: Supporting the Ideation of Interdisciplinary Contexts with Large Language Models for Teaching Literature in Elementary Schools",
+  "doi": "10.1145/3706598.3714111",
+  "year": 2025,
+  "venue": "CHI Conference on Human Factors in Computing Systems (CHI \u201925)",
+  "url": "http://arxiv.org/abs/2502.16097v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Elementary (PreK-5th)",
+    "Undergraduate",
+    "Graduate / Doctoral"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses the challenge elementary school Chinese-language teachers face when designing interdisciplinary contexts for literature instruction. The authors argue that effective interdisciplinary lesson planning requires teachers to explore many candidate topics, connect them to reading materials, and then turn those connections into usable lesson plans and classroom activities, which is time-consuming and cognitively demanding.\n\nTo support this work, the paper introduces LitLinker, a human-AI collaborative web application powered by a large language model (GLM-4). LitLinker uses a multi-agent workflow to recommend interdisciplinary contexts, analyze relationships between contexts and texts at multiple levels, let users refine and question the generated content, and finally produce structured lesson plans with introductions and activities. The design was informed by three interview sessions with an experienced elementary literature teacher and her team, plus prototype feedback from additional teachers.\n\nThe evaluation includes a within-subjects experiment with 16 novices of literature teaching and qualitative expert interviews with 10 elementary Chinese-language teachers with varying experience, all in mainland China. The system was compared against a baseline LLM web app. Results suggest LitLinker produced deeper subject integration, reduced workload, and was viewed as more satisfying and efficient than the baseline. Expert teachers also valued its support for interdisciplinary ideation, while expressing concerns about the reliability of purely generated content and the need for grounded subject databases and editable outputs.",
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_long_term_followup",
+    "implementation_fidelity_not_reported",
+    "non_representative_population"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "lab",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "China",
+  "study_region": "East Asia & Pacific",
+  "identified_tools": [
+    {
+      "name": "Qwen",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "content_generation",
+        "tutoring_instruction"
+      ],
+      "description": "An LLM-based interactive system for teachers to ideate interdisciplinary contexts for teaching literature in elementary schools, analyze reading materials, and generate lesson plans and related classroom activities.",
+      "use_case": "The paper introduces and evaluates LitLinker, a human-AI collaborative system powered by the GLM-4 LLM family, used by elementary Chinese language teachers to explore interdisciplinary contexts, connect them to texts, and generate course plans and activities.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0013 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Compared with a baseline LLM web app, LitLinker improved the quality of outcome lesson plans for interdisciplinary literature instruction in a within-subjects study (n=16). The paper reports that LitLinker led to deeper integration of different subjects, was rated more satisfying and efficient, and reduced workload, but the excerpt does not provide the exact effect sizes for these outcomes.",
+          "measure": "Quality ratings of outcome lesson plans; integration depth; satisfaction; efficiency; workload (NASA-TLX)",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=16"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In the within-subjects study (n=16), LitLinker significantly reduced perceived task workload during interdisciplinary lesson planning relative to the baseline system. Workload was measured with NASA-TLX, but the excerpt does not report the exact statistics or effect sizes.",
+          "measure": "NASA-TLX workload during lesson-planning task",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=16"
+        },
+        {
+          "outcome_category": "Systemic / Institutional Impact",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In qualitative expert interviews and iterative design sessions with elementary Chinese language teachers, participants reported high satisfaction with LitLinker and strong appreciation for its usefulness in supporting interdisciplinary course design. The study is qualitative/mixed-methods and reports no numeric effect size for these perceptions.",
+          "measure": "Expert interview feedback on usability, usefulness, and creative support",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=10 interviewees; 17 teachers involved in design/evaluation overall"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical mixed-methods HCI study with a within-subjects comparison and qualitative interviews, but it is not a randomized controlled trial and the excerpt does not report full statistics for the main outcomes. The evidence is useful but not high-certainty in the K-12 evidence hierarchy.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports positive, practically meaningful improvements in lesson-plan integration and reduced workload, but the excerpt does not provide effect sizes for the key outcomes. Impact therefore appears promising but remains somewhat unclear from the reported statistics.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

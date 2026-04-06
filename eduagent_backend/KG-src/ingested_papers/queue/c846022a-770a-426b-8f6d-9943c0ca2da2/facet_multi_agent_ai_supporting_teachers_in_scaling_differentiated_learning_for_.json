@@ -1,0 +1,89 @@
+{
+  "title": "FACET: Multi-Agent AI Supporting Teachers in Scaling Differentiated Learning for Diverse Students",
+  "doi": null,
+  "year": 2026,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2601.22788v3",
+  "source_db": "arxiv_search",
+  "populations": [
+    "K-12 (unspecified grade)",
+    "Middle School (6th-8th)"
+  ],
+  "user_types": [
+    "Educator",
+    "Administrator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses the challenge of helping teachers create differentiated instructional materials for heterogeneous classrooms, where learners vary in prior knowledge, motivation, language proficiency, and learning differences such as dyslexia and ADHD. The authors argue that existing AI educational tools are mostly student-facing and tend to optimize only for performance, leaving teachers without support for inclusive, curriculum-aligned differentiation.\n\nTo address this, the paper presents FACET, a teacher-facing multi-agent framework with four agents: learner simulation, diagnostic assessment, material generation, and evaluation. FACET is designed for teacher-in-the-loop use, allowing educators to define learner profiles, upload or select tasks, and review AI-generated worksheets before use. The system embeds curriculum alignment, didactic guidance, and accessibility-oriented formatting intended to support diverse learners.\n\nThe evaluation combines exploratory workshops with German school principals and an online survey of 70 in-service K\u201312 teachers from the United Kingdom, United States, Canada, and Australia. The workshops identified strong practitioner demand for differentiation support, curriculum fit, accessibility, and teacher control. Survey results showed that teachers generally rated the generated worksheets positively, especially for didactic structure and clarity, while also indicating weaker performance for enrichment materials and some dyslexia-specific typography. Overall, the paper concludes that multi-agent AI can meaningfully support teacher-facing differentiation, but further refinement is needed for advanced learners and accessibility details.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a mixed-methods design with exploratory workshops and a descriptive teacher survey, not a controlled causal study. It provides useful formative evidence about feasibility and perceived quality, but it does not measure student learning outcomes or estimate intervention effects.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper suggests practical promise for teacher workflow support and differentiated material generation, but the evidence is limited to perceptions and descriptive ratings. Impact on learning or adoption at scale remains unclear, so the demonstrated impact is modest and preliminary.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.86,
+      "role": "primary",
+      "use_case": "Teacher-facing multi-agent generative AI for differentiated worksheet generation, using simulated learner personas, diagnostic reasoning, and evaluator feedback to create curriculum-aligned lesson materials for heterogeneous K\u201312 classrooms."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "FACET was designed and evaluated as a workflow-support tool for teachers, with principals and in-service teachers reporting that it could reduce the burden of creating differentiated materials. In the workshops (n=30 principals), participants emphasized that differentiation is currently difficult to sustain due to workload and teacher shortages, and the system\u2019s teacher-in-the-loop design was seen as supporting practical classroom use. No formal effect size was reported.",
+        "measure": "Perceived usefulness, workflow integration, and teacher workload reduction in workshops and survey ratings",
+        "study_size": "n=30 principals; n=70 in-service teachers",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.74,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The paper evaluated motivational support and learner engagement indirectly through teacher ratings of generated worksheets for low- and high-motivation learner profiles. Teachers rated scaffolding-oriented worksheets for low-motivation learners relatively highly (didactic structure M=4.41-4.50; clarity M=4.23-4.46 on a 6-point scale), but worksheets for high-motivation learners received lower ratings across dimensions (e.g., structure M=3.87, clarity M=3.57), suggesting uneven support for motivation-related needs. No effect size was reported.",
+        "measure": "Teacher ratings of worksheet quality for learner profiles differing in motivation",
+        "study_size": "n=70",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "SDs reported by worksheet dimension ranged roughly 1.02-1.46, with specific values in Table 2; not a single effect size"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 0.88,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The survey used a grade 7 mathematics task (area calculation) to assess the quality of FACET-generated worksheets for mathematical instruction. Teachers rated the math worksheets favorably overall for didactic structure and clarity, especially for low-performance/low-motivation and high-performance/low-motivation profiles (e.g., didactic structure M=4.41-4.50; clarity M=4.23-4.46), but the high-performance/high-motivation worksheet was weaker (structure M=3.87; clarity M=3.57). No direct student learning outcomes or effect sizes were reported.",
+        "measure": "Teacher ratings of generated grade-7 mathematics worksheets",
+        "study_size": "n=70",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "Worksheet-level SDs ranged about 1.02-1.46 across criteria"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "self_reported_measures",
+    "non_representative_population",
+    "no_long_term_followup",
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Germany",
+  "study_region": "Europe",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

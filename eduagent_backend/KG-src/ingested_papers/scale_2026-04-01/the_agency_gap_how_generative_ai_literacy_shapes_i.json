@@ -1,0 +1,373 @@
+{
+  "title": "The Agency Gap: How Generative AI Literacy Shapes Independent Writing after AI Support",
+  "doi": null,
+  "year": 2025,
+  "venue": null,
+  "url": "https://arxiv.org/abs/2507.04398",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate",
+    "Graduate / Doctoral"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Randomized Controlled Trial (RCT)",
+  "extended_summary": "This paper investigates whether students\u2019 generative AI (GenAI) literacy affects how well they can write independently after AI support is removed. The authors focus on what they call the \u201cagency gap,\u201d meaning the extent to which students\u2019 GenAI literacy matters more when they must independently decide how to use AI support rather than being guided through it. The study asks whether GenAI literacy predicts writing performance during AI-supported work and after AI removal, whether this depends on chatbot interaction style, and whether the relationship persists after accounting for domain-specific visualisation literacy.\n\nThe intervention compared two AI support conditions for multimodal academic writing: a reactive chatbot that only answered student-initiated questions, and a proactive chatbot that actively scaffolded students through structured prompts and feedback. Participants first completed an AI-supported writing task using one of these chatbot types, then completed a parallel writing task without AI support. Writing was assessed with an objective rubric across insightfulness, visual data integration, organisation and coherence, linguistic quality, and critical thinking. The study also measured GenAI literacy using the GLAT and visualisation literacy using the mini-VLAT.\n\nThe population was 79 participants recruited via Prolific who were current students or graduates from medical or nursing programs. The context was higher education and involved online multimodal academic writing tasks based on healthcare simulation visualisations. Participants were randomly assigned to either the reactive or proactive chatbot condition. Although the participants came from multiple world regions, the paper does not report a single study country for the sample; the institutional affiliations are in Australia and China.\n\nThe main conclusion is that GenAI literacy predicted stronger independent writing performance only in the reactive chatbot condition, especially after AI support was removed. In the proactive condition, proactive scaffolding appeared to reduce differences between students with lower and higher GenAI literacy. Mediation analyses showed that the effect was not explained by better AI-supported performance transferring forward; instead, GenAI literacy functioned as a more direct, task-general competence. The authors argue that educators should both build students\u2019 GenAI literacy and design proactive AI scaffolds to reduce inequities when learners cannot be assumed to use AI strategically on their own.",
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "feedback_evaluation"
+      ],
+      "description": "OpenAI's GPT-family conversational generative AI system used here as the underlying multimodal LLM for chatbot-based support.",
+      "use_case": "The study implemented two custom academic-writing support chatbots (reactive and proactive) powered by the multimodal GPT-4o model to assist students with multimodal academic writing based on visual data, followed by a parallel writing task without AI support.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Literacy",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "In the reactive chatbot condition, GenAI literacy was positively associated with independent writing performance after AI removal across insightfulness (rs=.41, p=.010), visual data integration (rs=.40, p=.013), organisation and coherence (rs=.44, p=.005), linguistic quality (rs=.32, p=.045), critical thinking (rs=.37, p=.019), and composite score (rs=.44, p=.005). No significant correlations were observed in the proactive condition, indicating that proactive scaffolding equalised outcomes across GenAI literacy levels.",
+          "measure": "Academic writing rubric scores after AI removal: insightfulness, visual data integration, organisation and coherence, linguistic quality, critical thinking, composite score",
+          "effect_size": "rs=.32 to .44 (reactive condition only)",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=79"
+        },
+        {
+          "outcome_category": "Academic \u2014 Literacy",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Mann-Whitney tests showed that in the reactive condition, high-GenAI-literacy students outperformed low-literacy students at AI-removal on insightfulness (U=99.00, p=.021, rrb=.34), visual data integration (U=87.50, p=.012, rrb=.36), organisation and coherence (U=67.50, p=.002, rrb=.46), and composite score (U=83.50, p=.009, rrb=.41). In the proactive condition, no significant differences between low- and high-GenAI-literacy groups were found on any rubric metric at either time point.",
+          "measure": "Group differences in rubric scores by GenAI literacy level at AI-support and AI-removal stages",
+          "effect_size": "rrb=.28 to .46 for significant reactive-condition contrasts",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=79"
+        },
+        {
+          "outcome_category": "Academic \u2014 Literacy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Ordinal logistic regression showed that higher GenAI literacy significantly predicted stronger post-AI-removal writing performance for visual data integration (b=0.13, SE=0.06, z=2.07, p=.039, OR=1.14), critical thinking (b=0.14, SE=0.07, z=2.18, p=.029, OR=1.15), and composite writing score (b=0.10, SE=0.05, z=2.15, p=.032, OR=1.11), controlling for domain knowledge, chatbot type, and AI-supported performance. Domain knowledge and chatbot type were not significant predictors in these models.",
+          "measure": "Ordinal logistic regression predicting AI-removal writing scores",
+          "effect_size": "OR=1.11 to 1.15",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=79"
+        },
+        {
+          "outcome_category": "Academic \u2014 Literacy",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "Bootstrap mediation analyses found no significant indirect effect of GenAI literacy on independent writing performance through AI-supported writing performance in either condition. In the reactive condition, the indirect effect was 0.032 with 95% CI [-0.022, 0.108]; in the proactive condition, the indirect effect was 0.022 with 95% CI [-0.055, 0.102].",
+          "measure": "Indirect effect of GenAI literacy on AI-removal writing via AI-support performance",
+          "effect_size": "Indirect effect=0.032 (reactive); 0.022 (proactive)",
+          "confidence_interval": "Reactive: [-0.022, 0.108]; Proactive: [-0.055, 0.102]",
+          "sample_size": "n=79"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical experimental study with random assignment to reactive versus proactive chatbot conditions, but the main reported effects are correlational/associational with a relatively small sample (n=79), rather than a clean causal estimate of the tool's impact on achievement versus a non-AI control. Accordingly, it fits a yellow tier under the framework provided.",
+  "impact_tier": "green",
+  "impact_tier_rationale": "Reported associations and group differences are modest to moderate in size, especially in the reactive condition (e.g., rs up to .44, rank-biserial correlations up to .46, OR up to 1.15). Effects are not uniformly present across conditions, so impact is better characterized as modest rather than consistently large.",
+  "citations": [
+    {
+      "title": "What is AI literacy? competencies and design considerations",
+      "doi": null,
+      "year": 2020,
+      "venue": "Proceedings of the 2020 CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 2,
+      "citation_context": "AI literacy competencies inform generative AI literacy framing"
+    },
+    {
+      "title": "Personalization capabilities of current technology chatbots in a learning environment: An analysis of student-tutor bot interactions",
+      "doi": "10.1007/s10639-025-13369-z",
+      "year": 2025,
+      "venue": "Education and Information Technologies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Evaluating the effectiveness of LLMs in introductory computer science education: A semester-long field study",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the Eleventh ACM Conference on Learning @ Scale",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Demonstration of InsightPilot: An LLM-empowered automated data exploration system",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv preprint arXiv:2304.00477",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Critical Thinking: An Exploration of Theory and Practice",
+      "doi": null,
+      "year": 2007,
+      "venue": "Routledge",
+      "citation_level": 2,
+      "citation_context": "supports critical thinking construct in writing assessment"
+    },
+    {
+      "title": "Conceptualizing AI literacy: An exploratory review",
+      "doi": "10.1016/j.caeai.2021.100041",
+      "year": 2021,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 2,
+      "citation_context": "AI literacy conceptualization underpins generative AI literacy construct"
+    },
+    {
+      "title": "Empowering student self-regulated learning and science education through ChatGPT: A pioneering pilot study",
+      "doi": "10.1111/bjet.13454",
+      "year": 2024,
+      "venue": "British Journal of Educational Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Human-AI collaboration patterns in AI-assisted academic writing",
+      "doi": null,
+      "year": 2024,
+      "venue": "Studies in Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Introduction to Academic Writing",
+      "doi": null,
+      "year": 2007,
+      "venue": "Pearson Education",
+      "citation_level": 2,
+      "citation_context": "grounds academic writing expectations for assessment task"
+    },
+    {
+      "title": "Academic writing",
+      "doi": null,
+      "year": 2004,
+      "venue": "Language Teaching",
+      "citation_level": 2,
+      "citation_context": "supports framing of academic writing construct"
+    },
+    {
+      "title": "Effects of genai-empowered interactive support on university efl students\u2019 self-regulated strategy use and engagement in reading",
+      "doi": "10.1016/j.iheduc.2024.100991",
+      "year": 2025,
+      "venue": "The Internet and Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Mini-VLAT: A short and effective measure of visualization literacy",
+      "doi": null,
+      "year": 2023,
+      "venue": "Computer Graphics Forum",
+      "citation_level": 3,
+      "citation_context": "source of Mini-VLAT visualization literacy measure"
+    },
+    {
+      "title": "Generative agents: Interactive simulacra of human behavior",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 36th Annual ACM Symposium on User Interface Software and Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Scaffolding in teacher\u2013student interaction: A decade of research",
+      "doi": null,
+      "year": 2010,
+      "venue": "Educational Psychology Review",
+      "citation_level": 2,
+      "citation_context": "theoretical basis for scaffolding intervention"
+    },
+    {
+      "title": "Scaffolding in technology-enhanced learning environments",
+      "doi": null,
+      "year": 2007,
+      "venue": "Interactive Learning Environments",
+      "citation_level": 2,
+      "citation_context": "frames technology-mediated scaffolding design"
+    },
+    {
+      "title": "Visual representation of co-authorship with GPT-3: Studying human-machine interaction for effective writing",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 16th International Conference on Educational Data Mining",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Interactions with generative ai chatbots: unveiling dialogic dynamics, students\u2019 perceptions, and practical competencies in creative problem-solving",
+      "doi": "10.1186/s41239-025-00508-2",
+      "year": 2025,
+      "venue": "International Journal of Educational Technology in Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Artificial intelligence literacy for technology education",
+      "doi": "10.1016/j.caeo.2024.100159",
+      "year": 2024,
+      "venue": "Computers and Education Open",
+      "citation_level": 2,
+      "citation_context": "supports AI literacy framing in educational context"
+    },
+    {
+      "title": "User interface design and evaluation",
+      "doi": null,
+      "year": 2005,
+      "venue": "Elsevier",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Academic Writing for Graduate Students: Essential Tasks and Skills",
+      "doi": null,
+      "year": 1994,
+      "venue": "University of Michigan Press",
+      "citation_level": 2,
+      "citation_context": "informs academic writing criteria and task expectations"
+    },
+    {
+      "title": "Measurement and evaluation in psychology and education",
+      "doi": null,
+      "year": 1991,
+      "venue": "Macmillan Publishing Co, Inc",
+      "citation_level": 2,
+      "citation_context": "supports assessment and evaluation principles"
+    },
+    {
+      "title": "Domain-specific knowledge and why teaching generic skills does not work",
+      "doi": null,
+      "year": 2014,
+      "venue": "Educational Psychology Review",
+      "citation_level": 2,
+      "citation_context": "argues literacy skills must be domain-specific"
+    },
+    {
+      "title": "Mind in society: Development of higher psychological processes",
+      "doi": null,
+      "year": 1978,
+      "venue": "Harvard University Press",
+      "citation_level": 2,
+      "citation_context": "foundational theory for scaffolding and learning support"
+    },
+    {
+      "title": "Exploring students\u2019 generative AI-assisted writing processes: Perceptions and experiences from native and nonnative english speakers",
+      "doi": null,
+      "year": 2025,
+      "venue": "Technology, Knowledge and Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "\u2018Argument!\u2019 helping students understand what essay writing is about",
+      "doi": null,
+      "year": 2012,
+      "venue": "Journal of English for Academic Purposes",
+      "citation_level": 2,
+      "citation_context": "supports conceptualization of argumentative essay writing"
+    },
+    {
+      "title": "When genai chatbots meet self-determination: unpacking chinese efl learners\u2019 engagement in chatbot-assisted language learning",
+      "doi": "10.1080/10494820.2025.2538756",
+      "year": 2025,
+      "venue": "Interactive Learning Environments",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Can interaction with generative artificial intelligence enhance learning autonomy? a longitudinal study from comparative perspectives of virtual companionship and knowledge acquisition preferences",
+      "doi": null,
+      "year": 2024,
+      "venue": "Journal of Computer Assisted Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A conceptual framework for scaffolding III-structured problem-solving processes using question prompts and peer interactions",
+      "doi": null,
+      "year": 2004,
+      "venue": "Educational Technology Research and Development",
+      "citation_level": 2,
+      "citation_context": "guides question-prompt scaffolding approach"
+    },
+    {
+      "title": "Impact of chatgpt on learners in a l2 writing practicum: An exploratory investigation",
+      "doi": null,
+      "year": 2023,
+      "venue": "Education and Information Technologies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Promises and challenges of generative artificial intelligence for human learning",
+      "doi": null,
+      "year": 2024,
+      "venue": "Nature Human Behaviour",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The effects of generative ai agents and scaffolding on enhancing students\u2019 comprehension of visual learning analytics",
+      "doi": "10.1016/j.compedu.2025.105322",
+      "year": 2025,
+      "venue": "Computers & Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "VizChat: Enhancing learning analytics dashboards with contextualised explanations using multimodal generative AI chatbots",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 25th International Conference on Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Modifying AI, enhancing essays: How active engagement with generative ai boosts writing quality",
+      "doi": null,
+      "year": 2025,
+      "venue": "Proceedings of the 15th International Learning Analytics and Knowledge Conference",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Artificial intelligence education for young children: Why, what, and how in curriculum design and implementation",
+      "doi": "10.1016/j.caeai.2022.100061",
+      "year": 2022,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 2,
+      "citation_context": "background framing for AI education and literacy"
+    },
+    {
+      "title": "ChatGPT and the digitisation of writing",
+      "doi": null,
+      "year": 2024,
+      "venue": "Humanities and Social Sciences Communications",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

@@ -1,0 +1,228 @@
+{
+  "title": "Transforming Higher Education with AI-Powered Video Lectures",
+  "doi": null,
+  "year": null,
+  "venue": null,
+  "url": "https://arxiv.org/abs/2511.20660",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate",
+    "Graduate / Doctoral"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper examines whether AI-assisted production of instructional video lectures can serve as an efficient alternative to traditional human-recorded instructional videos in higher education. The author argues that conventional lecture video creation is time-consuming and difficult to scale, while fully automated text-to-video systems often lack pedagogical control, script-slide synchronization, and expressive delivery. The study asks whether a semi-automated workflow can preserve instructional quality while reducing instructor workload.\n\nThe intervention is a hybrid AI video lecture production process combining Google Gemini for script generation, Amazon Polly for text-to-speech narration, and Microsoft PowerPoint for synchronizing audio with lecture slides and exporting narrated slide shows or recorded videos. The paper also includes several illustrative case studies showing how Gemini generated scripts for visually rich academic slides and how Amazon Polly was used with SSML to control pacing and pauses. The author estimates that this AI-generated instructional video workflow is three to four times faster than producing human instructional videos.\n\nThe empirical component is a two-course pilot study conducted in higher education. One course was a postgraduate course in Leadership in IT Project Management with 37 students, and the other was an undergraduate course in IT Professionalism with 134 students. AI-generated instructional videos were used for two weeks, and both qualitative and quantitative evidence were collected. Qualitative data came from a student survey with 56 responses about clarity, cognitive load, examples, alignment, coherence, usability, and preferences. Quantitative data came from comparing quiz results from the AI-video semester to results from the previous semester taught by the same lecturer using the same materials except for the video format.\n\nThe main conclusion is that AI-generated instructional videos were comparable to human instructional videos in student learning outcomes, with no statistically significant differences in quiz performance across the tested comparisons. Students also reported high levels of clarity, coherence, and usability. However, participants noted limitations in the robotic quality of the synthetic voice and the lack of a human face or avatar. The paper concludes that AI-powered video lecture creation is a promising, scalable approach for higher education, especially if future improvements are made to audio naturalness and avatar integration.",
+  "limitations": [
+    "short_duration",
+    "single_site",
+    "self_reported_measures",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "2",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Australia",
+  "study_region": "East Asia & Pacific",
+  "identified_tools": [
+    {
+      "name": "Gemini",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation"
+      ],
+      "description": "Google's multimodal generative AI model used for generating text scripts from lecture topics and PowerPoint slides.",
+      "use_case": "Used to generate editable voiceover scripts for slide-based academic video lectures, including interpretation of visually rich slides and varying levels of script detail.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Case studies reported that Gemini generated accurate, context-sensitive scripts aligned to complex visual slide content, and the overall AI-assisted workflow was estimated to make instructional video production 3-4 times faster than human instructional video production. The paper does not report a separate controlled quantitative efficiency estimate for Gemini alone.",
+          "measure": "Script generation quality in case studies; reported production time comparison for AI-assisted versus human video creation",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    },
+    {
+      "name": "Amazon Polly",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "language_speech"
+      ],
+      "description": "Amazon's text-to-speech service for synthesizing natural-sounding speech from text, with controllable voice, pace, and SSML-based prosody settings.",
+      "use_case": "Used to convert Gemini-generated lecture scripts into voiceovers for PowerPoint-based instructional videos, with adjustable pacing and pauses.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The paper reports that Polly provided natural-sounding narration with controllable pacing and fast audio generation, supporting the semi-automated video lecture workflow. Student comments also noted clarity of sound, but the study additionally identifies limitations in audio quality and robotic delivery.",
+          "measure": "Perceived narration quality and usability within AI-generated instructional videos",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=56"
+        }
+      ]
+    },
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "content_generation",
+        "language_speech"
+      ],
+      "description": "A general AI-assisted instructional video creation workflow combining generative script creation, synthetic voice generation, and slide-based video assembly.",
+      "use_case": "Studied as AI-generated instructional videos (AIIV) compared with human instructional videos (HIV) across two higher-education courses over two weeks.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "Across two courses, quiz performance showed no statistically significant differences between AI-generated instructional videos and human instructional videos. Reported p-values for Welch t-tests were 0.43 and 0.07 for Course A quizzes, and 0.80 and 0.19 for Course B quizzes; all exceeded \u03b1=0.05.",
+          "measure": "Quiz scores from first two quizzes in two courses across semesters",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "Course A: n=67 vs n=37; Course B: n=35 vs n=134"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The study concludes that AI-generated instructional videos were 3-4 times faster to produce than human instructional videos when using the same PowerPoint slides. This estimate reflects reduced rehearsal and post-production time for the AI-assisted workflow.",
+          "measure": "Video production time comparison between AIIV and HIV",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Survey responses were highly positive regarding usability and instructional design. Yes-response rates were 100% for conceptual clarity, 96.4% for cognitive load balance, 100% for use of examples/analogies, 100% for alignment with learning objectives, 98.2% for narrative coherence, 96.4% for ease of use, 91% for preference over alternatives, and 92.8% for preference of slideshow over recording.",
+          "measure": "Binary student survey on perceived clarity, coherence, usability, and format preference",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=56"
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Student comments indicated that while AI videos were clear and easy to follow, some learners preferred a more human experience and noted the robotic nature of the voice and lack of visual human presence. The paper identifies audio naturalness and avatar absence as key limitations affecting learner experience.",
+          "measure": "Open-ended student feedback on learner experience and preference",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=56"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "The paper includes a two-course pilot with mixed qualitative and quasi-experimental semester comparisons, but it is not a randomized trial and relies partly on survey perceptions and non-equivalent historical comparison groups.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "Findings suggest comparable academic performance and improved production efficiency, but no effect sizes are reported and the learning-outcome results are null rather than showing measurable gains.",
+  "citations": [
+    {
+      "title": "Comparing Human-Made and AI-Generated Teaching Videos: An Experimental Study on Learning Effects",
+      "doi": "10.1016/j.compedu.2024.105164",
+      "year": 2025,
+      "venue": "Computers & Education",
+      "citation_level": 2,
+      "citation_context": "supports claimed AIIV\u2013HIV efficiency findings"
+    },
+    {
+      "title": "From recorded to AI-generated instructional videos: A comparison of learning performance and experience",
+      "doi": "10.1111/bjet.13530",
+      "year": 2024,
+      "venue": "British Journal of Educational Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Generative AI for Learning: Investigating the Potential of Synthetic Learning Videos",
+      "doi": "10.1007/978-3-031-36336-8_81",
+      "year": 2023,
+      "venue": "Proceedings of International Conference of Artificial Intelligence in Education 2023",
+      "citation_level": 2,
+      "citation_context": "supports claimed AIIV production speed advantage"
+    },
+    {
+      "title": "The Impact of AI-Generated Instructional Videos on Problem-Based Learning in Science Teacher Education",
+      "doi": "10.3390/educsci15010102",
+      "year": 2025,
+      "venue": "Education Sciences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Video Lectures With AI-Generated Instructors: Low Video Engagement, Same Performance as Human Instructors",
+      "doi": "10.19173/irrodl.v25i3.7815",
+      "year": 2024,
+      "venue": "The International Review of Research in Open and Distributed Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Impact of Using Virtual Avatars in Educational Videos on User Experience",
+      "doi": "10.1038/s41598-024-56716-9",
+      "year": 2024,
+      "venue": "Scientific Reports",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "AI Versus Human-Generated Voices and Avatars: Rethinking User Engagement and Cognitive Load",
+      "doi": "10.1007/s10639-025-13654-x",
+      "year": 2025,
+      "venue": "Education and Information Technologies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Voice Effect in Multimedia Instruction Revisited: Does It Still Exist?",
+      "doi": "10.33902/JPR.202214591",
+      "year": 2022,
+      "venue": "Journal of Pedagogical Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Leveraging GenAI to Transform a Traditional Instructional Video into Engaging Short Video Lectures",
+      "doi": null,
+      "year": 2025,
+      "venue": "EDUCAUSE Review",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "How to Create Educational Videos with AI: A Step-by-Step Guide",
+      "doi": null,
+      "year": 2025,
+      "venue": "HeyGen",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "AutoLV: Automatic Lecture Video Generator",
+      "doi": "10.48550/arXiv.2209.08795",
+      "year": 2022,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

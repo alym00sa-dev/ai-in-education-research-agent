@@ -1,0 +1,100 @@
+{
+  "title": "Unlocking potential in underachieving learners: self-regulation development through AI-supported e-mentoring among socioeconomically disadvantaged students",
+  "doi": "10.3389/fpsyg.2026.1805629",
+  "year": 2026,
+  "venue": "Frontiers in Psychology",
+  "url": "https://doi.org/10.3389/fpsyg.2026.1805629",
+  "source_db": "openalex_search",
+  "populations": [
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator",
+    "School"
+  ],
+  "study_design": "Randomized Controlled Trial (RCT)",
+  "extended_summary": "This paper addresses whether an AI-supported e-mentoring intervention can improve self-regulated learning (SRL) and related academic outcomes among socioeconomically disadvantaged students who are underachieving in school. The authors argue that these students often struggle not only with content knowledge, but also with goal setting, planning, monitoring, and reflection, and that traditional human mentoring is difficult to scale.\n\nThe intervention was a three-tiered AI-supported mentoring system delivered through a conversational AI mentor using GPT-4o. It combined structured SRL training with goal clarification, micro-strategy prompting, reflective coaching, adaptive challenge modules, reminders, and safety guardrails. The platform used fixed prompts, limited response length, no browsing or external tools, and a human-supervised governance system that included teacher or supervisor oversight for risk alerts. The study ran for 8 weeks of intervention with a 4-week follow-up, for a total of 12 weeks.\n\nThe trial involved 168 students in grades 10 and 11 from socioeconomically disadvantaged backgrounds in school settings in China, randomized at the class level to intervention or control conditions. The intervention group showed stronger gains than controls in self-reported SRL, behavioral SRL markers, academic performance, learning engagement, and persistence, with effects largely maintained at follow-up though somewhat attenuated. The results suggest that AI-supported e-mentoring, when structured and supervised, can help disadvantaged adolescents develop stronger self-regulation and improve learning outcomes.",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is a cluster randomized controlled trial with baseline equivalence, follow-up, mixed-effects modeling, and intention-to-treat analysis, which supports strong causal inference. Some concerns remain because the paper reports many outcomes and the excerpt does not provide all model details/effect sizes, so it is not assigned blue.",
+  "impact_tier": "blue",
+  "impact_tier_rationale": "The study reports large, statistically significant improvements in SRL-related behavioral outcomes and clear gains in core SRL scales for a priority population of socioeconomically disadvantaged underachieving students. Several reported effects are well above the 0.20 threshold, indicating medium to large practical impact.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.98,
+      "role": "primary",
+      "use_case": "AI-supported e-mentoring via GPT-4o conversational prompts for middle/high school students, delivering goal clarification, micro-strategy prompting, reflective coaching, task decomposition, reminder scheduling, and safety-guardrailed learning support for self-regulated learning."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.98,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "In a cluster randomized controlled trial with 168 students (n=84 intervention, n=84 control), the AI-supported e-mentoring condition produced significant gains in self-regulated learning (SRL). Adjusted between-group differences favored the intervention at post-test and follow-up for SRL total and all subdimensions; for SRL total, \u03b2=0.41 at T1 and \u03b2=0.36 at T2, both p<0.001. The paper also reports improvements in academic self-efficacy, school belonging, learning engagement, and persistence as related psychosocial outcomes.",
+        "measure": "Self-regulated learning scale total and subdimensions; platform-based SRL behaviors; academic self-efficacy; engagement/persistence indicators",
+        "study_size": "n=168",
+        "effect_size": "beta=0.41 at T1; beta=0.36 at T2",
+        "confidence_interval": "T1 95% CI [0.28, 0.54]; T2 95% CI [0.22, 0.49]",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The intervention substantially improved behavioral markers of self-regulation, including weekly structured check-ins, on-time plan submission, weekly goal attainment, micro-task completion, and review submission. Adjusted group differences at T1 were large across all co-primary behavioral SRL outcomes, such as weekly check-ins (5.84), on-time plan submission (50.92 percentage points), and micro-tasks completed (15.76), all p<0.001.",
+        "measure": "Behavioral SRL markers from platform logs and school proxies (check-ins, plan submission, goal attainment, micro-task completion, review continuity)",
+        "study_size": "n=168",
+        "effect_size": "5.84 to 50.92 across behavioral outcomes",
+        "confidence_interval": "Multiple 95% CIs reported, e.g. weekly check-ins [5.34, 6.34]; plan submission [45.11, 56.73]",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.92,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Secondary analyses found that the AI-supported mentoring group showed larger improvements in academic performance than controls. The paper reports significant gains in composite grade average and in both mathematics and language arts scores at post-intervention, though the excerpt does not provide the exact effect sizes for these academic outcomes. The direction of effects remained favorable and aligned with improved SRL and engagement.",
+        "measure": "Composite grade average; mathematics scores; language arts scores",
+        "study_size": "n=168",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.9,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The intervention improved learning engagement and persistence in addition to SRL. The paper reports significantly higher homework submission rates, teacher-rated engagement, attendance, persistence scores, and consistent engagement across the 8-week period for the intervention group relative to controls, with effects maintained but slightly attenuated at follow-up.",
+        "measure": "Homework submission rate; teacher-rated engagement; attendance; persistence; consistent engagement",
+        "study_size": "n=168",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "single_site",
+    "non_representative_population"
+  ],
+  "duration_weeks": "8",
+  "setting": "blended",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "high",
+  "study_country": "China",
+  "study_region": "East Asia & Pacific",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

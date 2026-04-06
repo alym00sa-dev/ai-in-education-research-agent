@@ -1,0 +1,259 @@
+{
+  "title": "AI Conversational Tutors in Foreign Language Learning: A Mixed-Methods Evaluation Study",
+  "doi": null,
+  "year": 2025,
+  "venue": "Proceedings 14th Panhellenic Conference iCT in Education",
+  "url": "https://arxiv.org/abs/2508.05156",
+  "source_db": "scale_stanford",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper investigates how state-of-the-art AI conversational tutors support foreign language learning, with a particular focus on conversational interaction quality, user experience, and how such systems can be systematically evaluated. The author frames the study around three questions: identifying common design patterns in AI language tutors, comparing specialized language tutors with general-purpose AI systems, and developing a framework for evaluating tutor quality from chat transcripts.\n\nThe study examines four specialized AI language-learning applications (Talkio, Talkpal, Univerbal, and Langua) and compares them with two general-purpose AI systems used in voice mode (ChatGPT and Gemini). The empirical work has three phases: expert-based user experience evaluation of the specialized tutors, comparison with general-purpose AI tools acting as language tutors, and transcript-based quality evaluation using a 10-dimensional framework. That framework covers dimensions such as value for learning, supportive style, quality of communication, coherence, initiative, richness of vocabulary, and quality of feedback. Five large language models were recruited as \"artificial experts\" to rate anonymized tutor transcripts, and inter-rater reliability was calculated.\n\nThe paper does not report a student participant sample; instead, the evaluation appears to be based on simulated use by the author/expert using a standardized learner profile of a Spanish learner at B1/B2 level. The context is use of mobile and voice-enabled conversational language-learning apps and general-purpose AI chat systems in an online environment. The author is based in Greece, and the paper was presented at a Greek education technology conference, but no participant location is explicitly reported for a human sample.\n\nThe main conclusions are that AI conversational tutors share recurring design patterns such as free chat, contextual hints, corrective suggestions, and feedback summaries, but differ substantially in naturalness, responsiveness, handling of communication breakdowns, and quality of feedback. T1 and T4 performed best on several dimensions, while ChatGPT also scored highly on feedback and vocabulary despite being a general-purpose model. The paper argues that key design priorities for future AI language tutors include contextual corrective scaffolding, coherent dialogue, supportive style, rich vocabulary, and better handling of learner data privacy. It also proposes that the transcript-based evaluation framework may support future research and assessment of conversational AI tutors.",
+  "limitations": [
+    "small_sample",
+    "no_control_group",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "feedback_evaluation"
+      ],
+      "description": "A general-purpose conversational AI assistant from OpenAI used here in voice mode for foreign-language conversation practice and correction.",
+      "use_case": "Used as a Spanish conversation partner/tutor in voice mode with a prompt asking it to role-play, correct learner mistakes, and keep a record of the discussion for a B1/B2 learner.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Language Fluency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In the transcript-based quality evaluation, ChatGPT (T5) scored very highly on feedback, vocabulary, and supportive style, and was judged to produce a high-quality, rich conversational experience. In the user-experience comparison, ChatGPT followed the instruction to provide feedback on learner mistakes and was more verbose than Gemini, with average tutor turn length of 130 words and learner turn length of 61 words during a 10.45-minute voice interaction.",
+          "measure": "Transcript-based quality ratings on the study's 10-dimensional framework; descriptive interaction measures including average words per turn and total interaction time",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    },
+    {
+      "name": "Gemini",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "feedback_evaluation"
+      ],
+      "description": "A general-purpose conversational AI assistant from Google used here in voice mode as a foreign-language conversation partner.",
+      "use_case": "Used as a Spanish voice-mode role-play conversation partner on evolving technology, with instructions to correct learner mistakes and keep a record of the discussion for a B1/B2 learner.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Language Fluency",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Gemini (T6) supported fluid voice interaction with very few misunderstandings or communication breakdowns, but it did not follow the instruction to provide feedback on learner mistakes. In the transcript-based evaluation, the paper concludes that T6 lacked clarity and timely feedback; descriptively, Gemini averaged 32 words per tutor turn, 13 words per learner turn, and the interaction lasted 6.47 minutes.",
+          "measure": "Transcript-based quality ratings on the study's 10-dimensional framework; descriptive interaction measures including average words per turn and total interaction time",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    },
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "tutoring_instruction",
+        "feedback_evaluation"
+      ],
+      "description": "AI conversational language tutors and language-learning chat applications, including specialized LLM-based tutors without knowledge-graph canonical product nodes.",
+      "use_case": "Four specialized AI language tutor apps were evaluated comparatively for Spanish conversation practice: Talkio (T1), Talkpal (T2), Univerbal (T3), and Langua (T4), focusing on user experience, dialogue design patterns, and transcript-based quality.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Language Fluency",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Among the four specialized tutors, T1 and T4 achieved the highest overall scores on most transcript-based quality metrics, especially learning value, coherence, and interaction for T1, and supportive style for T4. T3 offered rich culture-specific vocabulary but minimal explicit error correction, while its low control over topic/length and failure to acknowledge communication breakdowns made conversation feel less natural.",
+          "measure": "Transcript-based quality ratings on a 10-dimensional framework and qualitative user-experience comparison",
+          "effect_size": "not_reported",
+          "confidence_interval": "95% confidence intervals reported as narrow for most tutors, exact values not reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Across the six tutors evaluated by five LLM-based artificial experts, inter-rater reliability for the 10 evaluation metrics was reported as good, with Cronbach's alpha ranging approximately from 0.75 to 0.91. Value for Learning (\u03b1 \u2248 0.897) and Value of Feedback Provided (\u03b1 \u2248 0.911) showed the highest consistency, while Quality of Communication had the lowest but still acceptable reliability (\u03b1 \u2248 0.754).",
+          "measure": "Inter-rater reliability of automated transcript evaluation using Cronbach's alpha across 10 dimensions",
+          "effect_size": "\u03b1 \u2248 0.754\u20130.911",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=5 artificial experts; 6 tutors"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a mixed-methods evaluation with descriptive comparative use, transcript analysis, and LLM-based ratings, but no randomized or quasi-experimental design and no learner outcome effect estimates. The study is empirical but primarily qualitative/descriptive.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports comparative quality judgments and descriptive interaction differences rather than causal effects on student learning outcomes, with no standardized effect sizes. Impact is therefore suggestive but unclear.",
+  "citations": [
+    {
+      "title": "Using artificial intelligence in English as a foreign language classrooms: Ethical concerns and future prospects",
+      "doi": null,
+      "year": 2024,
+      "venue": "Arab World English Journal",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "An LLM-based hybrid approach for enhanced automated essay scoring",
+      "doi": null,
+      "year": 2025,
+      "venue": "Scientific Reports",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Common European Framework of Reference for Languages: Learning, teaching, assessment",
+      "doi": null,
+      "year": 2020,
+      "venue": "CoE Publishing",
+      "citation_level": 3,
+      "citation_context": "benchmark and rubric source for lexical evaluation"
+    },
+    {
+      "title": "Survey on evaluation methods for dialogue systems",
+      "doi": null,
+      "year": 2021,
+      "venue": "Artificial Intelligence Review",
+      "citation_level": 2,
+      "citation_context": "inspired dialogue-system evaluation dimensions"
+    },
+    {
+      "title": "Transforming language education: A systematic review of AI-powered chatbots for English as a foreign language speaking practice",
+      "doi": null,
+      "year": 2024,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Generative AI, Pragmatics, and Authenticity in Second Language Learning",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Role of AI chatbots in education: Systematic literature review",
+      "doi": null,
+      "year": 2023,
+      "venue": "International Journal of Educational Technology in Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Reimagining language learning: AI-driven innovations for engagement and growth",
+      "doi": null,
+      "year": 2025,
+      "venue": "Technology in Language Teaching & Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "How not to evaluate your dialogue system: An empirical study of unsupervised evaluation metrics for dialogue response generation",
+      "doi": null,
+      "year": 2016,
+      "venue": "arXiv",
+      "citation_level": 2,
+      "citation_context": "prior dialogue evaluation criteria informed framework"
+    },
+    {
+      "title": "EFL students' and teachers' perceptions of the ethical uses of AI tools",
+      "doi": null,
+      "year": 2024,
+      "venue": "Technology in Language Teaching & Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Ethical and Privacy Considerations in AI-Driven Language Learning",
+      "doi": null,
+      "year": 2025,
+      "venue": "LatIA",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Generative AI as a Virtual Conversation Partner in Language Learning",
+      "doi": null,
+      "year": 2024,
+      "venue": "International Journal of Advanced Culture Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Gamification in mobile-assisted language learning: A systematic review of Duolingo literature from public release of 2012 to early 2020",
+      "doi": null,
+      "year": 2023,
+      "venue": "Computer Assisted Language Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Exploring the Impact of Avatar Representations in AI Chatbot Tutors on Learning Experiences",
+      "doi": null,
+      "year": 2025,
+      "venue": "Proceedings of the 2025 CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Introducing Duolingo Max, a learning experience powered by GPT-4",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Position: LLMs Can be Good Tutors in Foreign Language Education",
+      "doi": null,
+      "year": 2025,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Pedagogical AI conversational agents in higher education: a conceptual framework and survey of the state of the art",
+      "doi": null,
+      "year": 2025,
+      "venue": "Educational Technology Research and Development",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Personalization of large language models: A survey",
+      "doi": null,
+      "year": 2024,
+      "venue": "Transactions on Machine Learning Research (TMLR)",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

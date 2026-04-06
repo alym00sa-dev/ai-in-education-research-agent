@@ -1,0 +1,79 @@
+{
+  "title": "AI-based chatbots in customer service and their effects on user compliance",
+  "doi": "https://doi.org/10.1007/s12525-020-00414-7",
+  "year": 2020,
+  "venue": "Electronic Markets",
+  "url": "https://doi.org/10.1007/s12525-020-00414-7",
+  "source_db": "openalex_search",
+  "populations": [
+    "Adult (non-academic)"
+  ],
+  "user_types": [],
+  "study_design": "Randomized Controlled Trial (RCT)",
+  "extended_summary": "This paper examines whether AI-based chatbots can influence user compliance in customer-service interactions, and whether anthropomorphic verbal design cues strengthen that effect. The authors frame the problem in terms of how conversational agents can successfully elicit cooperation from users, especially when the agent is the requester rather than a human employee.\n\nThe intervention is an AI-enabled chatbot designed for an online banking customer-service scenario. In a 2 x 2 randomized online experiment, the authors manipulate two factors: verbal anthropomorphic design cues (low vs. high, using identity, small talk, and empathy) and the foot-in-the-door technique (initial small request present vs. absent). Participants first interact with the chatbot to ask a banking question, and then, depending on condition, may be asked for a small feedback request before receiving the main request to complete a longer questionnaire.\n\nThe study uses adult German participants recruited online via Facebook groups. Results show that both higher anthropomorphic cues and the foot-in-the-door sequence increase compliance with the chatbot\u2019s request. Social presence mediates the effect of anthropomorphic cues on compliance, but it does not significantly moderate the foot-in-the-door effect. The authors conclude that disembodied AI chatbots can function as persuasive social actors in customer service, and that dialog design matters for user behavior.",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is a peer-reviewed randomized online experiment with a 2x2 factorial design and clear causal identification, but it is not a K-12 education study and does not directly examine learning outcomes. There are also relevance limitations for the requested education topic because the context is customer service rather than classroom or instructional use.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper shows a sizable effect on compliance behavior in a chatbot setting, but the setting is outside education and the outcome is not an academic learning measure. For K-12 education, the practical impact is therefore indirect and unclear, since it mainly informs conversational design rather than student learning gains.",
+  "interventions": [
+    {
+      "intervention": "Other",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "AI-based customer-service chatbot for online banking, using natural language dialogue, anthropomorphic verbal cues, and compliance-oriented request prompting"
+    },
+    {
+      "intervention": "Other",
+      "confidence": 0.7,
+      "role": "secondary",
+      "use_case": "IBM Watson Assistant cloud service used as the conversational AI/NLP backend enabling natural language understanding and dialogue management"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.88,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper evaluates whether chatbot design increases user compliance with a service-feedback request, which is an operational goal for customer-service systems. In a randomized online experiment (n=153 analyzed), anthropomorphic design cues increased compliance substantially (b=1.380, OR=3.975, p<0.01), and the foot-in-the-door technique also increased compliance (b=0.916, OR=2.499, p<0.05).",
+        "measure": "Binary user compliance with the chatbot\u2019s request for service feedback (Yes/No)",
+        "study_size": "n=153",
+        "effect_size": "OR=3.975 for anthropomorphic design cues; OR=2.499 for foot-in-the-door",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Other"
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.74,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The study directly measured social presence as a mediator of compliance in chatbot interaction. Anthropomorphic design cues significantly increased social presence and indirectly increased compliance; the mediated indirect effect was 0.6485 with a 95% bias-corrected CI [0.1552, 1.2887], while the direct effect became non-significant after adding the mediator.",
+        "measure": "Social Presence scale and mediation effect on user compliance",
+        "study_size": "n=153",
+        "effect_size": "indirect effect=0.6485",
+        "confidence_interval": "[0.1552, 1.2887]",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Other"
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "self_reported_measures",
+    "non_representative_population",
+    "no_long_term_followup",
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Germany",
+  "study_region": "Europe",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

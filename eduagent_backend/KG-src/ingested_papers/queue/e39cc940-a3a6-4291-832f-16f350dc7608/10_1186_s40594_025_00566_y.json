@@ -1,0 +1,138 @@
+{
+  "title": "A meta-analysis of AI-enabled personalized STEM education in schools",
+  "doi": "10.1186/s40594-025-00566-y",
+  "year": 2025,
+  "venue": "International Journal of STEM Education",
+  "url": "https://doi.org/10.1186/s40594-025-00566-y",
+  "source_db": "openalex_search",
+  "populations": [
+    "Elementary (PreK-5th)",
+    "Middle School (6th-8th)",
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Meta-Analysis / Systematic Review",
+  "extended_summary": "This paper addresses a gap in the literature on whether AI-enabled personalized learning improves STEM outcomes for K-12 students, and which conditions or design features explain variation in effects. The authors note that prior work on AI in STEM education has often been descriptive or qualitative, with limited quantitative synthesis and limited attention to moderators such as school level, subject, and type of AI tool.\n\nTo answer these questions, the authors conducted a meta-analysis of randomized controlled trials published between January 2012 and October 2024. They synthesized 99 effect sizes from 32 journal articles focused on AI-enabled personalized STEM education in schools. The included interventions covered several AI application types, including intelligent tutoring systems, personalized educational games, augmented/virtual reality tools, and other AI technologies, and were coded by school level, subject, personalized learning model, observed outcome type, and generative-AI usage.\n\nThe analysis found an overall positive effect of AI-enabled personalized STEM education on student outcomes, with a small but statistically significant average effect. Moderator analyses suggested that effects were stronger in junior and senior high school than in kindergarten, were especially large for AR/VR-based interventions, and varied by personalized learning model and subject. The authors also found no significant difference between GAI-related and GAI-unrelated tools. Overall, they conclude that AI can support personalized STEM learning in K-12 settings, but its effectiveness depends heavily on pedagogical alignment and implementation context.",
+  "quality_tier": "blue",
+  "quality_tier_rationale": "This is a meta-analysis synthesizing 99 effect sizes from 32 randomized controlled trials, with explicit effect-size computation, moderator analyses, and publication-bias checks. The design and evidence base are strong, though heterogeneity is high and some subgroup estimates are based on small numbers of studies.",
+  "impact_tier": "blue",
+  "impact_tier_rationale": "The overall effect is statistically significant and above the medium-impact threshold, g=0.455, indicating meaningful positive effects on K-12 STEM learning. Several subgroups are also positive, including a very large effect for comprehensive courses and a moderate effect for knowledge/skills.",
+  "interventions": [
+    {
+      "intervention": "Intelligent Tutoring System (ITS)",
+      "confidence": 0.95,
+      "role": "primary",
+      "use_case": "AI-enabled personalized STEM tutoring systems in K-12 schools, including classical intelligent tutoring systems that adapt instruction and feedback to student performance"
+    },
+    {
+      "intervention": "Educational Game / Simulation",
+      "confidence": 0.86,
+      "role": "primary",
+      "use_case": "AI-enabled personalized educational games used for STEM learning with adaptive tutoring and feedback"
+    },
+    {
+      "intervention": "Adaptive Learning Platform",
+      "confidence": 0.84,
+      "role": "primary",
+      "use_case": "AI-enabled personalized learning platforms delivering adaptive content and pacing in K-12 STEM classrooms, including classroom-integrated and more automated models"
+    },
+    {
+      "intervention": "Robot / Embodied Tutor",
+      "confidence": 0.63,
+      "role": "secondary",
+      "use_case": "AI-powered AR/VR or immersive embodied learning environments used for STEM instruction and practice"
+    },
+    {
+      "intervention": "Other",
+      "confidence": 0.62,
+      "role": "primary",
+      "use_case": "AI technologies in personalized STEM education that do not cleanly fit ITS, games, or AR/VR, such as other ICT or AI-supported classroom tools"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 0.9,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Across 99 independent datasets from 32 RCT articles, AI-enabled personalized STEM education showed a small but significant positive overall effect on learning outcomes, g=0.455, 95% CI [0.327, 0.583]. For mathematics specifically, the subgroup effect size was g=0.398 (p<0.001), indicating a small positive impact on math learning in K-12 settings.",
+        "measure": "Mathematics/STEM learning outcomes and achievement measures reported in RCTs",
+        "study_size": "n=99 datasets (from 32 articles)",
+        "effect_size": "g=0.398",
+        "confidence_interval": "[0.268, 0.528]",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Academic \u2014 Scientific Reasoning",
+      "confidence": 0.83,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The meta-analysis found a significant positive effect for science-related outcomes, though smaller than for math, with g=0.219 (p=0.002). This suggests AI-enabled personalized STEM tools modestly improved science learning and understanding in the included K-12 studies.",
+        "measure": "Science learning outcomes/achievement",
+        "study_size": "n=27 studies",
+        "effect_size": "g=0.219",
+        "confidence_interval": "[0.084, 0.355]",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.88,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "For comprehensive cross-disciplinary courses, AI-enabled personalized STEM education produced the largest subject-level effect, g=2.161 (p=0.004). This indicates a very large positive impact in integrated STEM or multi-subject courses, although only 5 studies contributed to this subgroup.",
+        "measure": "Comprehensive course learning outcomes",
+        "study_size": "n=5 studies",
+        "effect_size": "g=2.161",
+        "confidence_interval": "[0.696, 3.626]",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.85,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The review found small but significant improvements in affective outcomes when AI-enabled personalized STEM education measured perceptions/attitudes (g=0.264) and engagement (g=0.386). These results suggest the interventions modestly improved students\u2019 interest, motivation, or engagement, but the effect was not as strong as for knowledge/skills outcomes.",
+        "measure": "Perceptions/attitudes; engagement surveys or similar affective measures",
+        "study_size": "n=24 studies for perceptions/attitudes; n=25 studies for engagement",
+        "effect_size": "g=0.264; g=0.386",
+        "confidence_interval": "[0.141, 0.388]; [0.207, 0.566]",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.76,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Knowledge/skills outcomes, which in this paper include competence-oriented learning results, showed a significant medium positive effect of g=0.603 (p<0.001). The paper also reports a non-significant comprehensive-ability subgroup (g=0.381, 95% CI [-0.065, 0.826]) based on only one study, so the evidence for higher-order durable skills is limited but generally favorable.",
+        "measure": "Knowledge/skills; comprehensive ability",
+        "study_size": "n=49 studies for knowledge/skills; n=1 study for comprehensive ability",
+        "effect_size": "g=0.603; g=0.381",
+        "confidence_interval": "[0.364, 0.842]; [-0.065, 0.826]",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "classroom",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

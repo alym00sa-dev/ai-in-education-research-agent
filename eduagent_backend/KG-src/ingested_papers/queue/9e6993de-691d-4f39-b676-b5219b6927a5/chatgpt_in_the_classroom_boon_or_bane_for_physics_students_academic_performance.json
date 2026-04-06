@@ -1,0 +1,87 @@
+{
+  "title": "ChatGPT in the Classroom: Boon or Bane for Physics Students\u2019 Academic Performance?",
+  "doi": null,
+  "year": 2023,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2312.02422v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper examines whether integrating ChatGPT into a university physics course affects student academic performance. The authors frame the study around a broader debate about whether generative AI tools help or harm learning, noting the lack of empirical evidence on how tools like ChatGPT influence student achievement. For the targeted retrieval topic, this is not a direct K-12 foundational reading study; it is a higher-education physics study and therefore a near-miss rather than relevant causal evidence on reading outcomes.\n\nThe intervention compared two cohorts in a second-semester engineering physics course. A prior cohort served as a control group and received traditional instruction with ChatGPT prohibited, while a later cohort received similar instruction but was introduced to ChatGPT 3.5, taught how to use it, and encouraged to use it throughout the semester for questions, theory review, and problem-related support. The study also included a student survey to capture perceptions of ChatGPT\u2019s usefulness, accuracy, and influence on motivation, understanding, and independent thinking.\n\nParticipants were undergraduate engineering students aged 17 to 20 at Universidad de Ibagu\u00e9 in Colombia. The control group included 40 students and the ChatGPT group included 36 students; an additional survey involved 41 students enrolled in Physics I, II, and III with the same instructor. The context was an in-person course setting taught by the same lecturer across cohorts, covering oscillations, fluids, and thermodynamics.\n\nThe main findings indicate that the ChatGPT cohort performed worse than the control cohort on all reported assessments, with lower average grades and negative Hake factors. A two-sample t-test suggested statistically significant differences between groups. At the same time, survey responses were more positive: many students reported that ChatGPT was useful for answering questions, clarifying doubts, and supporting understanding, even though some also expressed concern that it could reduce critical thinking or independent learning. The authors conclude that ChatGPT may be a useful supplementary tool but should be used cautiously and not as a substitute for teachers or traditional instruction.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an experimental cohort comparison with some causal intent, but it is not K-12, not randomized, and compares students across different semesters, leaving important threats to internal validity. It reports quantitative outcomes and statistical tests, but only partially meets credibility criteria.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "The main measured academic outcome is negative: the ChatGPT cohort performed significantly worse than the control cohort, with lower grades and negative Hake factors. Any positive findings are limited to self-reported perceptions rather than demonstrated learning gains.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "ChatGPT 3.5 was introduced as a course support tool in a university engineering physics class; students were trained and encouraged to use it throughout the semester to ask questions, generate theoretical questions/problems, and seek clarification on course topics."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Scientific Reasoning",
+      "confidence": 0.79,
+      "finding": {
+        "direction": "Negative",
+        "finding_summary": "In a two-cohort comparison in a second-semester engineering physics course, the ChatGPT-exposed cohort (n=36) had lower final course grades than the prior control cohort taught by the same instructor without ChatGPT (n=40): mean 3.35 vs 3.79, a difference of 0.44 points. The reported two-sample t-test found this difference statistically significant (t=2.88, p=0.00518 assuming equal variances; Welch t=2.84, p=0.00613), and Hake factors were negative across all three evaluations (-0.31, -0.15, -0.58), indicating lower conceptual gain in the ChatGPT cohort.",
+        "measure": "Physics course grades across three evaluations, final course grade, and Hake factor for conceptual gain",
+        "study_size": "n=76 total (control n=40; ChatGPT n=36)",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "Control SD=0.56522; ChatGPT SD=0.77111"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.63,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "Student survey responses (n=41) suggested generally positive perceptions of ChatGPT for motivation and support, despite the negative achievement results. For example, 53.7% reported positive or very positive effects on motivation/active participation, 68.3% rated response availability/timeliness as good or excellent, and 80.4% said they would recommend ChatGPT as a support tool; however, substantial neutral responses remained and these are self-reports rather than causal outcome measures.",
+        "measure": "Student perception survey on motivation, participation, satisfaction, and recommendation",
+        "study_size": "n=41",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.56,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "Survey evidence indicates tension between perceived conceptual support and concerns about independent thinking. While 61.0% of surveyed students said ChatGPT helped deepen their understanding of physics concepts and 60.9% said it helped them explore new perspectives, 9.7% reported that it led them to stop thinking and rely on provided answers to some or a large extent, and 26.8% were neutral on this concern.",
+        "measure": "Student perception survey on critical thinking, independent learning, and perceived deepened understanding",
+        "study_size": "n=41",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "classroom",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "high",
+  "study_country": "Colombia",
+  "study_region": "Latin America & Caribbean",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

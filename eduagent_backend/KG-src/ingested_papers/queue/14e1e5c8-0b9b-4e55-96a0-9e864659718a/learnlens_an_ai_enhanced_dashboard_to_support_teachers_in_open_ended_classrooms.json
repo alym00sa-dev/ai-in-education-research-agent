@@ -1,0 +1,62 @@
+{
+  "title": "LearnLens: An AI-Enhanced Dashboard to Support Teachers in Open-Ended Classrooms",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2509.10582v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Middle School (6th-8th)"
+  ],
+  "user_types": [
+    "Educator"
+  ],
+  "study_design": "Qualitative",
+  "extended_summary": "This paper addresses the challenge of helping teachers interpret open-ended student responses in exploratory learning environments, where much of students\u2019 thinking is difficult to see in real time. The authors argue that existing classroom tools often organize data but do not provide actionable summaries or feedback, making it hard for teachers to quickly identify misconceptions and adjust instruction.\n\nTo address this problem, the paper presents LearnLens, a generative AI-enhanced teacher-facing dashboard. LearnLens ingests digital assessment responses such as check-ins, exit tickets, and formative assessments, then provides tables of student responses, filtering, sample response viewing, word clouds, bar charts, and AI-generated summaries of class understanding and common misconceptions. The GenAI component was developed with iterative prompt engineering and human validation, using GPT-4o, and refined using real classroom data from a middle school Earth science curriculum.\n\nThe study was conducted with two 6th-grade science teachers from one urban public school in the United States. Teachers were co-design participants in prior professional development sessions and were shown the dashboard through guided, semi-structured interviews rather than using it independently in class. The teachers valued the visualizations and the AI-generated insights for sense-making and planning future instruction, but they were cautious about AI suggestions that went beyond the evidence in the student data. Overall, the paper concludes that AI-supported dashboards can improve teachers\u2019 ability to interpret open-ended responses and support instructional adaptation, while noting that more longitudinal and broader evaluation is needed.",
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_control_group",
+    "self_reported_measures",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "classroom",
+  "teacher_training": "yes",
+  "implementation_fidelity": "medium",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "feedback_evaluation"
+      ],
+      "description": "OpenAI GPT-family large language model used to generate summaries and identify misconceptions from student open-ended responses in a teacher-facing dashboard.",
+      "use_case": "Powered the LearnLens AI-generated insights feature via GPT-4o to summarize collective student understanding and detect common misconceptions or gaps for teacher review.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In semi-structured interviews, two middle-school science teachers reported that the GPT-4o-based insights were useful for quickly identifying gaps and misconceptions in students\u2019 open-ended responses. Teachers valued the summaries as data-grounded support for instructional decision-making, but remained cautious about prescriptive recommendations that went beyond the data.",
+          "measure": "Teacher interview perceptions of usefulness/trust in AI-generated summaries and misconception identification",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=2 teachers"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a qualitative, interview-based study with two teachers and no experimental comparison, so it does not meet high-causality evidence standards. The methodology is structured and directly examines teacher perceptions of the AI feature, supporting a moderate qualitative evidence tier.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports positive perceived usefulness for teacher sense-making, but no quantitative effect size or demonstrated change in student outcomes. Because impact is suggestive rather than measured, the impact tier is yellow.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

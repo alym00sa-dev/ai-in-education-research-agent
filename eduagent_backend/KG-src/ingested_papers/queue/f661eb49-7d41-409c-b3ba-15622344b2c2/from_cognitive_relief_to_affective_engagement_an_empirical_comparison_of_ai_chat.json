@@ -1,0 +1,114 @@
+{
+  "title": "From Cognitive Relief to Affective Engagement: An Empirical Comparison of AI Chatbots and Instructional Scaffolding in Physics Education",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2508.06254v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Quasi-Experimental Design (QED)",
+  "extended_summary": "This paper asks whether a custom-configured AI chatbot can provide cognitive and affective support for physics problem solving that is comparable to, or better than, established non-AI instructional supports. The authors focus on a direct comparison between three support conditions: a generative AI chatbot, tiered instructional hints, and a static textbook-style explanation page.\n\nThe study was conducted as a quasi-experimental field study in ninth-grade physics classrooms in Germany. A total of 273 students solved the same buoyancy problem individually during a single lesson-like session. Classes were cluster-randomized to one of the three conditions. The intervention lasted 20 minutes for problem solving plus 5 minutes to review a sample solution. Outcomes were measured using pre- and post-questionnaires covering intrinsic and extraneous cognitive load, situational interest, self-efficacy, and achievement emotions (enjoyment, hope, hopelessness), all via self-report scales.\n\nResults showed that both the AI chatbot and tiered hints reduced cognitive load relative to the textual baseline. The AI chatbot produced the broadest affective benefits, outperforming the textbook condition on enjoyment, hope, self-efficacy, and situational interest. However, the chatbot did not significantly outperform tiered hints on affective outcomes, suggesting that structured scaffolding and AI-based conversational support both help reduce cognitive burden, while the chatbot's additional social/interactivity advantages were not strong enough in this short task to yield statistically significant gains over tiered support. The authors conclude that AI chatbots are promising as scalable learning supports, but their advantage over well-designed human-authored scaffolds may be more affective than cognitive, and not always robust in short single-session implementations.",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is a quasi-experimental classroom field study with cluster randomization at the class level and a clearly specified comparative design, but it is not a fully randomized individual-level RCT and includes some measurement reliability concerns (e.g., brief cognitive-load scales with \u03b1<0.70). The direct comparison across three conditions and pre/post measurement strengthen credibility, but the design still leaves some risk of confounding.",
+  "impact_tier": "green",
+  "impact_tier_rationale": "The intervention effects are modest to medium in size for cognitive load and several affective outcomes, with some pairwise effects reaching d\u22480.44-0.72 but not uniformly across comparisons. The study suggests meaningful benefits for a priority population (ninth-grade physics students), yet the intervention was brief and single-session, limiting evidence for durable impact.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.98,
+      "role": "primary",
+      "use_case": "custom-configured OpenAI o3-mini chatbot, prompt-engineered to provide Socratic, stepwise guidance and feedback for ninth-grade physics buoyancy problem solving"
+    },
+    {
+      "intervention": "Computer-Assisted Instruction (CAI)",
+      "confidence": 0.86,
+      "role": "secondary",
+      "use_case": "static digital textbook-style explanation page used as the non-AI baseline for solving the buoyancy task"
+    },
+    {
+      "intervention": "Other",
+      "confidence": 0.72,
+      "role": "secondary",
+      "use_case": "digital tiered support / structured hint system with sequentially revealable scaffolds for individual physics problem solving"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Scientific Reasoning",
+      "confidence": 0.86,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The study found that both the AI chatbot and tiered support reduced perceived cognitive burden during a buoyancy problem, with the strongest cognitive-load differences favoring the interactive supports over the textual baseline. For intrinsic cognitive load, the chatbot group scored lower than the textbook group (M=3.18 vs 3.74), and for extraneous load of the exercise it scored lower as well (M=2.92 vs 3.42); both comparisons were significant in the omnibus ANOVA context (e.g., ECLA F(2,271)=16.52, p<0.001, \u03b7p\u00b2=0.11).",
+        "measure": "Perceived intrinsic and extraneous cognitive load during physics problem solving (buoyancy task)",
+        "study_size": "n=273",
+        "effect_size": "\u03b7p\u00b2=0.10 to 0.11 for cognitive-load outcomes; pairwise d reported as 0.72 for intrinsic cognitive load (chatbot vs textbook)",
+        "confidence_interval": "not_reported",
+        "std_deviation": "SDs reported by group (e.g., ICL chatbot SD=0.82; textbook SD=0.77)"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    },
+    {
+      "outcome": "Academic \u2014 Scientific Reasoning",
+      "confidence": 0.86,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Tiered support also outperformed the textual baseline on cognitive load, with significant reductions in both intrinsic and extraneous load. The post-test group means show lower load for tiered support than textbook for intrinsic load (M=3.27 vs 3.74) and extraneous exercise load (M=2.84 vs 3.42), with all cognitive-load ANOVAs significant and the strongest effect for extraneous exercise load (F(2,271)=16.52, p<0.001, \u03b7p\u00b2=0.11).",
+        "measure": "Perceived intrinsic and extraneous cognitive load during physics problem solving (buoyancy task)",
+        "study_size": "n=273",
+        "effect_size": "\u03b7p\u00b2=0.08 to 0.11 for cognitive-load outcomes; pairwise d not fully enumerated in text for all load measures",
+        "confidence_interval": "not_reported",
+        "std_deviation": "SDs reported by group (e.g., ICL tiered SD=0.75; textbook SD=0.77)"
+      },
+      "intervention": "Other"
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.92,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The AI chatbot produced the broadest affective benefits relative to the textual baseline, with significant improvements in enjoyment, hope, self-efficacy, and situational interest. The paper reports significant omnibus effects for enjoyment (F(2,271)=6.52, p=0.002, \u03b7p\u00b2=0.05), hope (F=8.13, p<0.001, \u03b7p\u00b2=0.06), situational interest (F=5.30, p=0.006, \u03b7p\u00b2=0.04), and self-efficacy (F=5.06, p=0.007, \u03b7p\u00b2=0.04), and pairwise chatbot-vs-textbook effects ranging from d=0.44 to 0.72.",
+        "measure": "Enjoyment, hope, hopelessness, situational interest, and self-efficacy questionnaires after the intervention",
+        "study_size": "n=273",
+        "effect_size": "\u03b7p\u00b2=0.04 to 0.06 for most affective outcomes; d=0.44 to 0.72 for chatbot vs textbook comparisons",
+        "confidence_interval": "not_reported",
+        "std_deviation": "SDs reported by group for each affective scale (e.g., enjoyment chatbot SD=0.93; textbook SD=0.89)"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.83,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "Tiered support improved cognitive load relative to the textbook baseline, but its affective gains were not statistically significant. Mean affective scores trended better than textbook on enjoyment, hope, self-efficacy, and hopelessness, yet the authors report no significant differences for these affective variables, with hope only approaching significance (p=0.070; d=0.35).",
+        "measure": "Enjoyment, hope, hopelessness, situational interest, and self-efficacy questionnaires after the intervention",
+        "study_size": "n=273",
+        "effect_size": "pairwise d around 0.35 for hope vs textbook; other affective differences not significant",
+        "confidence_interval": "not_reported",
+        "std_deviation": "SDs reported by group for each affective scale (e.g., hope tiered SD=0.87; textbook SD=0.84)"
+      },
+      "intervention": "Other"
+    }
+  ],
+  "limitations": [
+    "short_duration",
+    "single_site",
+    "self_reported_measures",
+    "non_representative_population",
+    "no_long_term_followup",
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "classroom",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "medium",
+  "study_country": "Germany",
+  "study_region": "Europe",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

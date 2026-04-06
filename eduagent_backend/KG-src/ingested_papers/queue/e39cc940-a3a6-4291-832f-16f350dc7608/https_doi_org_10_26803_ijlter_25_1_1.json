@@ -1,0 +1,110 @@
+{
+  "title": "Teaching with AI: A Systematic Review of Chatbots, Generative Tools, and Tutoring Systems in Programming Education",
+  "doi": "https://doi.org/10.26803/ijlter.25.1.1",
+  "year": 2026,
+  "venue": "International Journal of Learning, Teaching and Educational Research",
+  "url": "http://arxiv.org/abs/2510.03884v2",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Meta-Analysis / Systematic Review",
+  "extended_summary": "This paper asks how artificial intelligence agents are being used in programming education, what benefits they provide, and what implementation risks and tradeoffs are reported in the literature. The motivation is that programming instruction often suffers from limited individualized feedback, student frustration, high cognitive load, and uneven access to support, while AI tools may help address these problems.\n\nThe authors conducted a systematic literature review following PRISMA 2020. They screened 514 records and included 58 peer-reviewed studies published from 2020 to 2025. The review grouped AI agents into three broad categories: chatbots, generative AI tools, and intelligent tutoring systems/specialized agents. Across the included studies, the dominant tools were ChatGPT-like chatbots and code-generation systems such as GitHub Copilot, while fewer studies focused on ITS or custom tutoring systems.\n\nThe evidence in the review suggests that AI is mainly used to support programming tasks such as debugging, code generation, explanation, and personalized feedback. Reported benefits include time savings, improved learning outcomes, more immediate and tailored feedback, 24/7 availability, and some motivational gains such as reduced anxiety. However, the paper emphasizes important tradeoffs: over-reliance and superficial learning were common concerns, alongside hallucinations/inaccurate outputs, academic integrity risks, and barriers to implementation such as curriculum redesign, assessment changes, costs, and the need for teacher training and supervision. The review concludes that prompt engineering, instructor oversight, and more structured pedagogical frameworks are necessary for responsible adoption.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a systematic review with transparent search, screening, and appraisal procedures, but it synthesizes heterogeneous primary studies rather than reporting a controlled causal design. The evidence base is largely qualitative/descriptive across programming education contexts, so internal validity for effect estimation is limited.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The review suggests potentially meaningful benefits in programming support, motivation, and efficiency, but most findings are not pooled effect sizes and many concerns about over-reliance, hallucinations, and implementation barriers temper the likely net impact. Overall impact appears plausible but still modest/uncertain at the population level.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "Systematic review of chatbots and generative AI tools such as ChatGPT, Gemini, GPT-3/3.5/4, and custom AI assistants used as programming tutors for code generation, debugging, step-by-step explanations, Q&A, and 24/7 student support in programming education."
+    },
+    {
+      "intervention": "Intelligent Tutoring System (ITS)",
+      "confidence": 0.87,
+      "role": "secondary",
+      "use_case": "Review of structured tutoring systems and specialized agents such as Blackbox and teachable-agent approaches used to provide more pedagogically constrained support, personalized instruction, and guided programming practice."
+    },
+    {
+      "intervention": "Automated Feedback System",
+      "confidence": 0.8,
+      "role": "secondary",
+      "use_case": "Review of AI systems that generate automated coding feedback and grading support, including tools for debugging help, code assessment, and instructor feedback automation (e.g., Code Llama-based grading, automated mentoring, and AI-assisted assessment)."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.92,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The review consistently reports gains in problem-solving support and debugging performance, but also substantial risks to deeper learning. Across the included studies, AI tools were linked to improved debugging skills (e.g., a reported 57% improvement in one framework) and better comprehension, yet 65.52% of studies warned of over-reliance, shallow learning, and weaker critical thinking when students copied AI-generated code.",
+        "measure": "Programming debugging performance, comprehension, and critical thinking / surface-learning risks reported across included studies",
+        "study_size": "n=58 studies reviewed",
+        "effect_size": "reported as 57% improvement in debugging skills; other study-level effect sizes not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.8,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Many included studies reported reduced programming anxiety, frustration, and improved motivation/self-efficacy when students used AI tools. Examples cited in the review include AI-assisted pair programming reducing anxiety significantly, and one study finding 56% of students reported increased motivation; however, these results are synthesis-level reports rather than a single pooled estimate.",
+        "measure": "Programming anxiety, frustration, motivation, self-efficacy, and engagement surveys/interviews",
+        "study_size": "n=58 studies reviewed; cited primary studies vary",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The review finds consistent efficiency benefits for both learners and instructors. Reported examples include 11% less manual coding time with Copilot, 24% grading-time savings with an AI-assisted grading tool, and broader reductions in repetitive coding, debugging, and administrative workload across the reviewed literature.",
+        "measure": "Time-on-task, grading time, and instructor workload reports",
+        "study_size": "n=58 studies reviewed",
+        "effect_size": "reported values include 11% time reduction and 24% grading-time savings; other effects not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Automated Feedback System"
+    },
+    {
+      "outcome": "Systemic / Institutional Impact",
+      "confidence": 0.87,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The review emphasizes substantial implementation barriers at the institutional level, with 93.10% of studies noting needs for curriculum redesign, assessment changes, teacher training, supervision, and technical/cost support. While AI is framed as a driver of instructional transformation, the evidence also highlights governance and adoption challenges that limit scalable impact.",
+        "measure": "Reported implementation barriers, curriculum redesign needs, and assessment/institutional change requirements",
+        "study_size": "n=58 studies reviewed",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "no_control_group",
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

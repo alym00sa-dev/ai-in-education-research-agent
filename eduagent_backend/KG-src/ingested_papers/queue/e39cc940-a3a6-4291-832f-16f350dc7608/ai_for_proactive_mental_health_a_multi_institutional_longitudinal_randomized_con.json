@@ -1,0 +1,71 @@
+{
+  "title": "AI for Proactive Mental Health: A Multi-Institutional, Longitudinal, Randomized Controlled Trial",
+  "doi": null,
+  "year": 2025,
+  "venue": "not_reported",
+  "url": "http://arxiv.org/abs/2601.11530v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Randomized Controlled Trial (RCT)",
+  "extended_summary": "This paper examines whether a generative AI-powered mobile app can proactively improve young adults\u2019 well-being, rather than waiting to treat mental health problems after they emerge. The authors frame the work as a strengths-based alternative to deficit-oriented mental health tools, aiming to boost positive affect, resilience, belonging, mindfulness, and flourishing while buffering against declines in well-being.\n\nThe intervention was the Flourish app, an iOS/Android mobile application featuring an AI chatbot (\u201cSunnie\u201d), brief check-ins, personalized recommendations for science-based well-being activities, and weekly summaries. The system used large language models to adapt its tone, content, and suggestions in real time, and included safety and escalation protocols for high-risk language. The study ran for six weeks in Fall 2024 across three U.S. institutions: Chapman University, the University of Washington, and Foothill College.\n\nA total of 486 undergraduate students were randomly assigned to app access or a waitlist control. Outcomes were measured with repeated self-report surveys across four waves. The treatment group showed significant improvements in positive affect, calm, social well-being indicators such as loneliness and belonging, and overall well-being measures including resilience, mindfulness, and flourishing. Effects on negative affect, depression, anxiety, stress, and academic self-efficacy were not significant. The authors conclude that a purpose-built generative AI system can deliver scalable, preventive well-being support, though future studies should test active controls and longer-term effects.",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is a preregistered, multi-site randomized controlled trial with longitudinal follow-up and validated measures, which is strong causal evidence. Some concerns remain because the control was waitlist rather than active, and engagement/back-end usage data were self-reported rather than directly logged.",
+  "impact_tier": "green",
+  "impact_tier_rationale": "The reported effects are statistically significant but modest in magnitude (e.g., positive affect d\u22480.23 to 0.33; beta values around 0.03-0.05). The intervention shows promise for a college mental health population, but the impacts are small and focused on well-being rather than academic or clinical outcomes.",
+  "interventions": [
+    {
+      "intervention": "Mobile / Microlearning App",
+      "confidence": 0.99,
+      "role": "primary",
+      "use_case": "generative AI-powered mobile well-being app delivering brief check-ins, chatbot conversations, and science-based micro-activities with personalized recommendations and weekly insights"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.98,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "In a 6-week multi-institutional RCT (n=486 undergraduates), access to the Flourish app improved several well-being indicators versus waitlist control. The strongest effects were on positive affect (Condition \u00d7 Time b=0.22, p=.020; Week 6 d=0.33), resilience (b=0.11, p=.047), mindfulness (b=0.19, p=.045), and flourishing (b=0.19, p=.032), while negative affect showed no effect.",
+        "measure": "Positive affect, negative affect, resilience, mindfulness, and flourishing scales",
+        "study_size": "n=486",
+        "effect_size": "reported as d=0.23 at Week 4 and d=0.33 at Week 6 for positive affect; otherwise not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.9,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The intervention also improved social well-being in the same RCT (n=486). Loneliness decreased more steeply in the treatment group than control (b=-0.05, p=.038), and belonging improved (b=0.06, p=.030), with a marginal increase in closeness to the university (b=0.04, p=.070).",
+        "measure": "UCLA 3-item loneliness, campus belonging, and closeness-to-school measures",
+        "study_size": "n=486",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "self_reported_measures",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "6",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "medium",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

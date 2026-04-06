@@ -1,0 +1,74 @@
+{
+  "title": "New Kid in the Classroom: Exploring Student Perceptions of AI Coding Assistants",
+  "doi": null,
+  "year": 2025,
+  "venue": "not_reported",
+  "url": "http://arxiv.org/abs/2507.22900v4",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This exploratory paper asks how undergraduate novice programmers perceive AI coding assistants when using them in an authentic programming assessment. The central concern is whether AI support helps students learn and solve problems or instead encourages overreliance and weak transfer when support is removed.\n\nThe study examined a two-part exam in an introductory object-oriented programming course. In the first part, 20 undergraduate students at the District University of Bogota could use AI code assistants such as ChatGPT, Perplexity, Grok, or DeepSeek while completing a Java programming task. In the second part, one week later, they had to extend their solution without any AI assistance. Afterward, students completed an anonymous survey with Likert-scale and open-ended questions, and the author analyzed the responses descriptively and thematically.\n\nResults show that students generally viewed AI as useful for speed, debugging, and initial conceptual support, but their confidence and performance dropped when they had to work unaided. Qualitative responses suggested that many students could understand or adapt AI-generated code only partially, and some acknowledged dependence on the tool. The paper concludes that AI assistants can support programming education, but they should be integrated as scaffolds rather than substitutes for independent problem solving, because overreliance may hinder knowledge transfer and deeper learning.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a small exploratory qualitative/mixed-methods case study with n=20 and no randomization or causal identification. It provides useful descriptive evidence, but credibility is limited by self-report, single-course context, and lack of objective learning outcome measures.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper suggests meaningful but unclear impact: students perceived speed/efficiency gains, yet also reported overreliance and weak knowledge transfer. Because the evidence is descriptive and effect sizes are not tied to learning gains, the overall educational impact is modest and uncertain.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.83,
+      "role": "primary",
+      "use_case": "student use of AI coding assistants (e.g., ChatGPT, Perplexity, Grok, DeepSeek) to generate, explain, debug, and adapt Java code during an introductory programming exam"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "This exploratory case study found that AI assistants were perceived as helpful for grasping code concepts and boosting confidence during the first programming task, but many students struggled when asked to work without AI in the second task, suggesting limited transfer and possible overreliance. In the open-ended responses, students frequently reported partial understanding, difficulty with syntax/debugging, and concern that AI reduced independent problem-solving, although some said it supported conceptual scaffolding and code adaptation. No experimental effect size was reported; the study reported descriptive means such as perceived faster solving (M=3.65/5) and moderate overall AI use (M=3.15/5), plus a Spearman correlation between perceived AI use and faster solving (\u03c1=0.64, p=0.002).",
+        "measure": "Student perceptions of understanding, confidence, transfer to unaided problem-solving, and reported difficulty with independent coding tasks after AI use",
+        "study_size": "n=20",
+        "effect_size": "\u03c1=0.64 (perceived AI usage vs perceived faster solving)",
+        "confidence_interval": "not_reported",
+        "std_deviation": "\u03c3=0.88 (overall AI usage), \u03c3=1.12 (perceived conceptual understanding)"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.86,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Students strongly perceived AI as improving programming efficiency, especially by speeding up problem solving and debugging. The quantitative survey showed the highest rating for faster solving (M=3.65/5), and a Spearman correlation indicated that heavier AI use was associated with stronger perceived speed gains (\u03c1=0.64, p=0.002). However, this efficiency benefit coexisted with concerns about shallow understanding and later dependence when AI was removed.",
+        "measure": "Likert-scale perceptions of faster solving, AI usage, and open-ended comments about speed/debugging",
+        "study_size": "n=20",
+        "effect_size": "\u03c1=0.64",
+        "confidence_interval": "not_reported",
+        "std_deviation": "\u03c3=0.88 (overall AI usage); M=3.65/5 for perceived speed gains"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "no_long_term_followup",
+    "self_reported_measures",
+    "non_representative_population"
+  ],
+  "duration_weeks": "3",
+  "setting": "classroom",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Colombia",
+  "study_region": "Latin America & Caribbean",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

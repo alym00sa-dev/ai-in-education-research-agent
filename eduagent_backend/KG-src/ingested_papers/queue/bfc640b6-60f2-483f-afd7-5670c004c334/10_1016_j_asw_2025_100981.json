@@ -1,0 +1,77 @@
+{
+  "title": "Can generative AI figure out figurative language? The influence of idioms on essay scoring by ChatGPT, Gemini, and Deepseek",
+  "doi": "10.1016/j.asw.2025.100981",
+  "year": 2025,
+  "venue": "Assessing Writing",
+  "url": "http://arxiv.org/abs/2510.15009v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Middle School (6th-8th)",
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper investigates whether generative AI models can score student essays reliably, especially when the essays contain idiomatic or figurative language. The core problem is whether large language models used for automated essay scoring are sensitive to idioms in ways that might reduce fairness or agreement with human raters. Rather than studying feedback on drafts or revision support, the paper focuses on essay scoring accuracy and consistency relative to human scoring.\n\nThe study used 348 argumentative essays drawn from the PERSUADE 2.0 corpus. From this corpus, the author constructed two matched sets: 174 essays containing multiple idioms and 174 essays with no idioms, matched on human-assigned score and approximately on word count. Three generative AI models\u2014ChatGPT (gpt-4o), Gemini 1.5 Pro, and DeepSeek V3\u2014were asked to score all essays three times using the same holistic rubric originally used by trained human raters. Analyses examined within-model consistency across repeated scoring rounds, inter-rater reliability with human raters, and whether normalized idiom count and idiom repetition affected divergence from human scores.\n\nThe population consisted of native English-speaking U.S. students in grades 6 through 12 who had written argumentative essays in the source corpus, so the sample spans middle and high school rather than focusing solely on grades 9\u201312. The context is corpus-based essay evaluation rather than a live classroom intervention. No formative feedback, draft revision process, or comparison of feedback conditions was implemented.\n\nThe main conclusion is that all three AI models showed high internal consistency, but Gemini had the strongest agreement with human raters and best tracked human scoring patterns when idioms were present. ChatGPT and DeepSeek also showed acceptable agreement, but all AI systems tended to assign lower scores than humans overall, and idiom-heavy essays created more difficulty\u2014especially for ChatGPT and DeepSeek. The author argues that generative AI, particularly Gemini, shows promise for hybrid essay-scoring workflows with human raters, but the study does not provide evidence about AI-generated formative feedback on student drafts.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical comparative pre-print with a clear methodology and quantitative analyses, but it is not an RCT or quasi-experiment on student learning outcomes; it is primarily a reliability/validity study of automated essay scoring against human raters. It meets limited credibility criteria for the K-12 intervention evidence framework.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The study suggests potentially useful but mixed/unclear practical impact: AI scoring was consistent and moderately aligned with human raters, especially Gemini, but no student learning or revision outcomes were measured and no standardized effect sizes on educational attainment were reported. Relevance to the retrieval target is limited because this is essay scoring, not formative feedback on draft revision.",
+  "interventions": [
+    {
+      "intervention": "Automated Feedback System",
+      "confidence": 0.95,
+      "role": "primary",
+      "use_case": "Generative AI models (ChatGPT/gpt-4o, Gemini 1.5 Pro, DeepSeek V3) used for automated rubric-based essay scoring of student argumentative essays, compared against human raters, with a focus on whether idioms affect scoring reliability."
+    },
+    {
+      "intervention": "AI Writing / Language Tool",
+      "confidence": 0.68,
+      "role": "secondary",
+      "use_case": "LLM language-processing applied to evaluate figurative language handling in student essays, specifically idiom-sensitive essay assessment rather than tutoring or revision feedback."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Literacy",
+      "confidence": 0.9,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "Across 348 student argumentative essays scored three times by each model (3480 observations in long format), all three generative AI systems showed excellent intra-rater consistency for essay scoring: DeepSeek ICC=0.807, Gemini ICC=0.796, and ChatGPT ICC=0.753. Inter-rater agreement with human raters was lower but still acceptable/good, with Gemini performing best (ICC=0.735), followed by DeepSeek (ICC=0.695) and ChatGPT (ICC=0.673); all models also systematically assigned lower scores than human raters, and idioms reduced alignment for some models.",
+        "measure": "Rubric-based essay scores on argumentative writing; intra-rater and inter-rater reliability via ICC(3,1); score differences between AI and human raters; GAM analyses of idiom effects",
+        "study_size": "n=348 essays (from grades 6-12 corpus); 3480 scored observations in long-format analyses",
+        "effect_size": "ICC=0.807 (DeepSeek intra-rater), 0.796 (Gemini intra-rater), 0.753 (ChatGPT intra-rater); ICC=0.735 (Gemini vs human), 0.695 (DeepSeek vs human), 0.673 (ChatGPT vs human)",
+        "confidence_interval": "95% CI for GAM coefficients reported only for fixed terms: intercept 0.21-0.43; word count -0.00 to -0.00; ai_deep -0.85 to -0.68; ai_gem -0.81 to -0.64; ai_gpt -0.77 to -0.59; ICC CIs not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.58,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper presents generative AI essay scoring as a potentially efficient alternative or complement to human rating because models can score large numbers of essays consistently and may support a hybrid scoring workflow. However, no direct time-on-task, cost, or workload reduction metrics were empirically measured in this study; claims about efficiency are inferred from scoring capability rather than tested experimentally.",
+        "measure": "Indirect operational efficiency inference from automated scoring capacity and consistency; no direct workload or time measure",
+        "study_size": "n=348 essays",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

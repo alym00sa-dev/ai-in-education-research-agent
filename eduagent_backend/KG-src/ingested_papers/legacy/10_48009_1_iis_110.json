@@ -1,0 +1,109 @@
+{
+  "title": "Student success in intelligent tutoring systems: An assessment of key factors",
+  "doi": "10.48009/1_iis_110",
+  "year": 2025,
+  "venue": "Issues in Information Systems",
+  "url": "https://iacis.org/iis/2025/1_iis_2025_126-140.pdf",
+  "source_db": "backfill_v3",
+  "populations": [
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Quasi-Experimental Design (QED)",
+  "extended_summary": "This study investigates which factors are associated with improved performance on the ALEKS College Mathematics Placement Exam among high school students using an AI-based intelligent tutoring system. The core research question asks whether module time, module mastery, teacher, and exam-taking time positively influence gains from pretest to posttest on the placement exam.\n\nThe intervention studied was the Assessment and Learning in Knowledge Spaces (ALEKS) Placement, Preparation, and Learning system, specifically its Pre-Calculus learning modules used as a supplement to traditional mathematics instruction. Students completed ALEKS-supported work during the school year and took the ALEKS mathematics placement exam at the beginning of the year (October) and end of the year (May). The study analyzed exam score growth using multiple linear regression with predictors including change in exam time, change in module mastery, cumulative module login time, and teacher assignment.\n\nParticipants were 73 U.S. high school seniors ages 16-18 enrolled in six sections of College Prep Mathematics across three high schools. The context was traditional high school math classes supplemented with ALEKS throughout the academic year, with students accessing modules at school and at home. The study describes this as a quasi-experimental design using pretest-posttest data, though it did not include a separate comparison group.\n\nThe main findings were that increased exam-taking time and greater module mastery significantly predicted higher growth on the ALEKS placement exam, while cumulative time logged into modules and teacher assignment were not significant predictors in the regression model. The authors conclude that schools may improve college math readiness by emphasizing meaningful module completion and encouraging students to take sufficient time on placement assessments, though the study also notes limitations related to sample size, measurement of engagement, and generalizability.",
+  "limitations": [
+    "small_sample",
+    "no_control_group",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "blended",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "ALEKS",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "personalization_adaptation",
+        "feedback_evaluation"
+      ],
+      "description": "An adaptive web-based intelligent tutoring system for mathematics that assesses learner knowledge, identifies readiness by topic, personalizes practice and learning paths, and provides ongoing knowledge checks and feedback.",
+      "use_case": "Used with Pre-Calculus learning modules in senior-year College Prep Mathematics across 3 U.S. high schools. Students ages 16-18 (n=73) used ALEKS during the academic year and took the ALEKS mathematics placement exam in October and May; analyses examined predictors of score change among participating students.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Among participating students, ALEKS mathematics placement exam scores were higher in May than in October for most students; 12.3% (n=9) showed decreases. By teacher subgroup, mean score gains were 18.769 (Teacher A, n=26), 15.125 (Teacher B, n=8), 16.200 (Teacher C, n=10), and 7.517 (Teacher D, n=29).",
+          "measure": "ALEKS mathematics placement exam score change (May minus October)",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=73",
+          "study_count": null
+        },
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Change in module mastery was a significant positive predictor of growth on the ALEKS mathematics placement exam in the multiple regression. The paper reports b=0.49, t=3.83, p<.001; the bivariate correlation between exam score change and module mastery change was r(71)=.564, p<.01, accounting for about 31.8% of variance.",
+          "measure": "Association of change in percentage of topics mastered with ALEKS mathematics placement exam score change",
+          "effect_size": "b=0.49",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=73",
+          "study_count": null
+        },
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Change in exam time was a significant positive predictor of exam score growth in the multiple regression. The paper reports b=0.22, t=2.54, p=.013; the bivariate correlation between exam score change and exam time change was r(71)=.246, p<.05, accounting for 6.1% of variance.",
+          "measure": "Association of change in time spent taking the placement exam with ALEKS mathematics placement exam score change",
+          "effect_size": "b=0.22",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=73",
+          "study_count": null
+        },
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "Time logged into ALEKS modules was not a significant predictor of exam score growth in the multiple regression, despite a positive bivariate correlation. The paper reports b<0.01, t=0.52, p=.603; correlation with exam score change was r(71)=.331, p<.01.",
+          "measure": "Association of cumulative module login time with ALEKS mathematics placement exam score change",
+          "effect_size": "b<0.01",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=73",
+          "study_count": null
+        },
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "The full regression model explained 39.1% of variation in exam score change, F(6,66)=7.05, p<.001. Teacher indicators were not significant relative to Teacher C: Teacher A b=9.10, t=1.67, p=.101; Teacher B b=5.62, t=0.88, p=.382; Teacher D b=5.98, t=0.95, p=.34.",
+          "measure": "Multiple regression model predicting ALEKS mathematics placement exam score change from exam time change, module mastery change, module login time, and teacher",
+          "effect_size": "R\u00b2=0.391",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=73",
+          "study_count": null
+        }
+      ]
+    }
+  ],
+  "verdict": "",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is a peer-reviewed quasi-experimental pretest-posttest study with clear quantitative methods and regression analysis, but it lacks a separate control group and uses a relatively small sample from three schools, which creates credibility concerns.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The study reports statistically significant positive predictors of exam growth, but it does not provide a standardized effect size for the intervention itself and the overall impact magnitude is therefore unclear.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": "Converted from kg_curator_v4 legacy extraction",
+  "_legacy_source": "/Users/alymoosa/Documents/A-Moosa-Dev/AI-EDU-Dev/eduagent/open_deep_research_v2/scripts/extraction_profiles_v3/student_success_in_intelligent_tutoring_systems_an_assessment_of_key_factors.json"
+}

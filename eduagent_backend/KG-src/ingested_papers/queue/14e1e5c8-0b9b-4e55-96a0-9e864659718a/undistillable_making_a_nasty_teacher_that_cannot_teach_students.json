@@ -1,0 +1,68 @@
+{
+  "title": "Undistillable: Making a Nasty Teacher That Cannot Teach Students",
+  "doi": null,
+  "year": 2021,
+  "venue": "ICLR 2021",
+  "url": "http://arxiv.org/abs/2105.07381v1",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses a machine learning security problem: how to prevent knowledge distillation from being used to clone or steal the functionality of a released model. The authors argue that standard and data-free knowledge distillation can enable intellectual property leakage because a black-box teacher model can still be imitated from its input-output behavior, and they propose a defensive alternative called a \u201cNasty Teacher.\u201d\n\nThe proposed intervention is self-undermining knowledge distillation, an adversarial training method that trains a teacher network to preserve its own accuracy while maximizing divergence from an auxiliary network\u2019s outputs. In effect, the teacher remains a strong predictor on its own data but becomes difficult or harmful to distill from. The paper evaluates this idea on image classification benchmarks including CIFAR-10, CIFAR-100, and Tiny-ImageNet using various ResNet-family teachers and lighter student architectures, as well as on data-free distillation methods such as DAFL and DeepInversion.\n\nThe main conclusion is that nasty teachers can match the accuracy of normally trained teachers with only small drops, while substantially degrading student performance under both standard KD and data-free KD. The authors also show that the approach can distort reverse-engineered images, suggesting potential protection against unauthorized model cloning and data reconstruction. Because this is a model-security paper rather than an education study, it contains no educational population, user-type, or classroom implementation information.",
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "identified_tools": [
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "other"
+      ],
+      "description": "A generic knowledge distillation / teacher-student neural network setup used to transfer model behavior; not a generative AI coaching or lesson-planning product.",
+      "use_case": "The paper proposes and evaluates a 'Nasty Teacher' or 'undistillable' teacher network that preserves its own task performance while degrading student models trained by knowledge distillation, including standard KD and data-free KD settings.",
+      "findings": [
+        {
+          "outcome_category": "Systemic / Institutional Impact",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "Across CIFAR-10, CIFAR-100, and Tiny-ImageNet, the nasty teacher largely prevented successful model stealing via KD. The paper reports that teacher accuracy stayed within about 0% to 2% of the normal teacher, while student accuracy dropped by 1.72% to 67.57% depending on dataset and student architecture.",
+          "measure": "Student accuracy after knowledge distillation; teacher accuracy preservation",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Systemic / Institutional Impact",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "In data-free KD experiments using DAFL and DeepInversion, the nasty teacher reduced student performance relative to a normal teacher. The paper reports student accuracy declines of 6.34% on CIFAR-10 and 5.39% on CIFAR-100 under DAFL, and qualitatively shows distorted or noisy reconstructions under DeepInversion.",
+          "measure": "Student accuracy under data-free knowledge distillation; quality of inverted/reconstructed images",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    }
+  ],
+  "verdict": "genai_general",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is an empirical machine learning security paper about knowledge distillation, not an education intervention study. It does not evaluate a teacher-facing coaching or lesson-planning AI tool in an educational setting.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "The paper has no reported educational outcome measures such as planning quality or instructional practice, and its findings are about model protection and model-stealing resistance rather than classroom impact.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

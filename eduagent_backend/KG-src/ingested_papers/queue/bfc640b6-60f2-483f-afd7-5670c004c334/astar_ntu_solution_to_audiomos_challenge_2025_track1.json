@@ -1,0 +1,31 @@
+{
+  "title": "ASTAR-NTU solution to AudioMOS Challenge 2025 Track1",
+  "doi": null,
+  "year": 2025,
+  "venue": "AudioMOS Challenge 2025",
+  "url": "http://arxiv.org/abs/2507.09904v1",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper is not the targeted education study on AI-assisted writing feedback for secondary students. Instead, it describes the ASTAR-NTU team's winning system for AudioMOS Challenge 2025 Track 1, a benchmark on automatic evaluation of text-to-music generation systems. The problem addressed is how to predict expert-rated mean opinion scores (MOS) for generated music without relying on costly and slow human expert assessment. Specifically, the task is to estimate both Music Impression (MI), reflecting intrinsic musical quality, and Text Alignment (TA), reflecting how well generated music matches a text prompt.\n\nThe authors propose DORA-MOS, a dual-branch model using frozen pre-trained encoders: MuQ for audio and RoBERTa for text. One branch predicts MI from audio alone, while the other predicts TA through cross-attention between text and audio representations. A central methodological contribution is reframing MOS prediction as an ordinal classification problem over 20 bins rather than scalar regression. To preserve the ordered nature of MOS ratings, the model uses Gaussian-softened labels instead of one-hot labels, which improved rank-based metrics such as Spearman's rank correlation. The paper also reports ablations comparing loss functions, temporal modeling architectures, pooling strategies, and ensemble methods.\n\nThe empirical context is the MusicEval dataset, which contains outputs from 31 text-to-music systems on 384 fixed prompts, each rated by five experts for MI and TA. This is a machine learning benchmark setting rather than a human-participant education study; no students, teachers, or schools are involved. The authors use stratified train/dev splits and official challenge test data to evaluate in-domain generalization.\n\nThe main conclusion is that explicit audio-text cross-attention and ordinal-aware Gaussian-softened classification substantially improve automatic MOS prediction. Their best single model achieved system-level SRCC of 0.991 for MI and 0.952 for TA on the official test set, outperforming challenge baselines, and their submitted ensemble ranked first overall in the competition. For the user's retrieval goal, this paper should be treated as a clear mismatch and strong evidence that the sought 2025 secondary-writing-feedback study was not found in the supplied text.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "The provided paper is not an education study and does not evaluate any AI or technology intervention in a teaching or learning context. It is an arXiv challenge-system paper on automatic music evaluation, so within the K-12 education evidence framework it has no applicable educational study design or learner-outcome methodology.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "No educational intervention or student outcome is studied, so there is no evidence of impact on K-12 learning, operational efficiency in schools, or institutional educational outcomes.",
+  "interventions": [],
+  "outcome_assignments": [],
+  "limitations": [
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

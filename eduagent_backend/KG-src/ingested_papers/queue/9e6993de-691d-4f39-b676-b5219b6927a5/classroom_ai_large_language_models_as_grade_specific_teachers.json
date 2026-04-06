@@ -1,0 +1,63 @@
+{
+  "title": "Classroom AI: Large Language Models as Grade-Specific Teachers",
+  "doi": null,
+  "year": 2026,
+  "venue": "npj Artificial Intelligence",
+  "url": "http://arxiv.org/abs/2601.06225v2",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Elementary (PreK-5th)",
+    "Middle School (6th-8th)",
+    "High School (9th-12th)",
+    "Undergraduate",
+    "Graduate / Doctoral"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses a core limitation of large language models in education: although LLMs are increasingly proposed as teaching aids, they often fail to produce explanations that match students\u2019 grade-level comprehension. The authors frame this as an educational equity problem, especially relevant in the context of global teacher shortages, and ask whether LLMs can be systematically adapted to generate age-appropriate instructional responses across grade bands from early elementary through adult education.\n\nThe intervention is a framework for fine-tuning LLMs to produce grade-specific educational content for open-ended questions. The approach combines synthetic data generation, seven readability metrics, and supervised fine-tuning of GPT-4o-mini into six separate models corresponding to lower elementary, middle elementary, upper elementary, middle school, high school, and adult levels. The study evaluates these models on several datasets of educational and general explanatory questions and includes human evaluation with 208 participants, plus GPT-4o-as-judge analyses, to test whether outputs are perceived as aligned with intended grade levels while maintaining factual correctness.\n\nThe population is indirect rather than a classroom intervention sample: the models are designed for students across K-12 and adult levels, while the human evaluators were English-speaking participants who had completed high school, most of whom were undergraduate or graduate students. The work is situated in an AI-assisted learning and tutoring context rather than a school-based implementation measuring student learning outcomes. Although the paper discusses K-12 curricular fields and educational use cases, it does not report an actual causal study in K-12 classrooms or school-supported reading settings.\n\nThe main conclusion is that the fine-tuned models substantially improve grade-level alignment relative to prompt-only approaches, with an average 35.64 percentage point increase in target success rate, while preserving answer accuracy. Human judgments showed strong agreement with intended difficulty rankings, suggesting the framework can generate text perceived as age-appropriate. However, the paper explicitly notes that readability adaptation does not fully solve conceptual difficulty, and it does not provide direct evidence of improved student learning, reading outcomes, or causal impacts on foundational literacy skills.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical evaluation of model outputs with human raters, but it is not a K-12 causal study and does not measure student learning outcomes in classroom or school-supported settings. It provides only indirect evidence about readability and perceived comprehensibility of LLM-generated text.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper shows clear positive effects on proximal output-quality measures, especially grade-level alignment, but impact on actual student foundational reading outcomes is untested and therefore unclear. For the targeted verification question, this is a near-miss rather than direct causal evidence.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.95,
+      "role": "primary",
+      "use_case": "Fine-tuning large language models to generate grade-specific educational explanations for open-ended student questions across K-12 and adult levels, emphasizing age-appropriate readability rather than measured classroom learning gains."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Literacy",
+      "confidence": 0.9,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The study reports that finetuned grade-specific LLMs substantially improved readability alignment of generated educational text versus prompt-based baselines, with an average 35.64 percentage point increase in target grade-level success across datasets. Human evaluation with 208 participants showed strong agreement between intended and perceived difficulty (Kendall\u2019s \u03c4=0.76), indicating better age-appropriate text comprehensibility; however, no K-12 student reading outcomes such as phonemic awareness, phonics, decoding, oral reading fluency, vocabulary growth, or reading comprehension were measured.",
+        "measure": "Readability/grade-level compatibility metrics (7 integrated readability metrics plus ARI), human judgments of answer comprehensibility and perceived grade alignment",
+        "study_size": "n=208 human participants",
+        "effect_size": "35.64 percentage point improvement; Kendall's tau=0.76",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "no_control_group",
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Republic of Korea; United States; England",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

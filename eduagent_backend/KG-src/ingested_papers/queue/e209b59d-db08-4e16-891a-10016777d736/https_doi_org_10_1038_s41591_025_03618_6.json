@@ -1,0 +1,123 @@
+{
+  "title": "A vaccine chatbot intervention for parents to improve HPV vaccination uptake among middle school girls: a cluster randomized trial",
+  "doi": "https://doi.org/10.1038/s41591-025-03618-6",
+  "year": 2025,
+  "venue": "Nature Medicine",
+  "url": "https://doi.org/10.1038/s41591-025-03618-6",
+  "source_db": "openalex_search",
+  "populations": [
+    "Middle School (6th-8th)",
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Parent",
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Randomized Controlled Trial (RCT)",
+  "extended_summary": "This paper evaluates whether a conversational AI chatbot can improve HPV vaccination uptake among parents of adolescent girls. The study asks whether providing parents with an AI-powered, vaccine-focused consultation tool can increase vaccine initiation and improve vaccine-related knowledge, confidence, and willingness compared with usual care.\n\nThe intervention was a bespoke chatbot built with GPT-4 plus retrieval-augmented generation and prompt engineering, drawing on verified public-health information from Chinese health authorities. It offered two interaction styles, an expert persona and a nurse persona, and was delivered through WeChat and web browsers. Parents in the intervention arm were reminded to use the chatbot over a two-week period, while control participants received usual local HPV vaccination promotion without the chatbot.\n\nThe trial took place in ten middle schools across Shanghai and Anhui Province, China, and enrolled parents of female middle school students in grades 6\u20139, typically aged 12\u201315 years. Participants were clustered by class and randomly assigned to chatbot or usual-care conditions. The main outcome was whether daughters received or scheduled HPV vaccination within two weeks; secondary outcomes included consultation with health professionals and changes in HPV literacy, knowledge, rumor discernment, willingness, and vaccine confidence.\n\nThe study found that the chatbot group had substantially higher HPV vaccination initiation than usual care, along with more consultations with health professionals and improved HPV-related literacy, knowledge, and rumor screening. The intervention did not significantly change willingness or vaccine confidence over the short study window. The authors conclude that AI chatbots may be a promising scalable tool for improving vaccine communication and uptake, especially where cost and misinformation are barriers.",
+  "limitations": [
+    "short_duration",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "2",
+  "setting": "blended",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "medium",
+  "study_country": "China",
+  "study_region": "East Asia & Pacific",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "language_speech"
+      ],
+      "description": "An OpenAI GPT-family large language model chatbot used for conversational question answering and information retrieval via a tailored, retrieval-augmented setup.",
+      "use_case": "The paper studied a bespoke AI-powered vaccine chatbot for parents of middle school girls in China; it used GPT-4 with retrieval-augmented generation and prompt engineering, delivered via WeChat and web browser, with expert and nurse personas.",
+      "findings": [
+        {
+          "outcome_category": "Systemic / Institutional Impact",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In a school-based cluster randomized trial (n=2,671 parents; 180 classes), the chatbot increased HPV vaccine receipt or scheduled appointment for daughters over 2 weeks: 7.1% (92/1,294) in the chatbot group versus 1.8% (25/1,377) in usual care. The adjusted relative risk was 3.85 (95% CI 2.48\u20135.97; P<0.001).",
+          "measure": "Receipt of or scheduled appointment for HPV vaccine among female middle school students over a two-week intervention period",
+          "effect_size": "adjusted RR=3.85",
+          "confidence_interval": "95% CI 2.48\u20135.97",
+          "sample_size": "n=2,671"
+        },
+        {
+          "outcome_category": "Systemic / Institutional Impact",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The chatbot also increased HPV vaccination-specific consultations with health professionals: 49.1% (635/1,294) in the chatbot group versus 17.6% (242/1,377) in usual care. The adjusted relative risk was 2.73 (95% CI 2.41\u20133.09; P<0.001).",
+          "measure": "HPV vaccination-specific consultation with health professionals",
+          "effect_size": "adjusted RR=2.73",
+          "confidence_interval": "95% CI 2.41\u20133.09",
+          "sample_size": "n=2,671"
+        },
+        {
+          "outcome_category": "Academic \u00014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Parental willingness to vaccinate their daughter declined slightly in both groups and the between-group difference was not statistically significant. Post\u2013pre change was -3.4 percentage points in the chatbot group and -4.1 percentage points in usual care; adjusted RR was 1.02 (95% CI 0.98\u20131.07; P=0.325).",
+          "measure": "Parental willingness to vaccinate their daughter against HPV",
+          "effect_size": "adjusted RR=1.02",
+          "confidence_interval": "95% CI 0.98\u20131.07",
+          "sample_size": "n=2,671"
+        },
+        {
+          "outcome_category": "Academic \u00014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "High vaccine confidence increased slightly in both groups, but the between-group difference was not statistically significant. Post\u2013pre change was 5.1 percentage points in the chatbot group and 2.5 percentage points in usual care; adjusted RR was 1.02 (95% CI 0.97\u20131.08; P=0.375).",
+          "measure": "High HPV vaccine confidence",
+          "effect_size": "adjusted RR=1.02",
+          "confidence_interval": "95% CI 0.97\u20131.08",
+          "sample_size": "n=2,671"
+        },
+        {
+          "outcome_category": "Academic \u00014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "HPV-related literacy improved in the chatbot group relative to usual care. Mean literacy scores increased from 6.3 to 7.1 in the chatbot group versus 6.1 to 6.2 in usual care, with an adjusted between-group coefficient of 0.70 (95% CI 0.52\u20130.88; P<0.001).",
+          "measure": "HPV-related literacy score",
+          "effect_size": "coefficient=0.70",
+          "confidence_interval": "95% CI 0.52\u20130.88",
+          "sample_size": "n=2,671"
+        },
+        {
+          "outcome_category": "Academic \u00014 Literacy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "HPV-related knowledge improved significantly. Scores rose from 3.9 to 4.3 out of 6 in the chatbot group compared with 3.7 to 3.8 in usual care; the reported adjusted coefficient was 0.38 (95% CI 0.26\u20130.50; P<0.001).",
+          "measure": "HPV-related knowledge score",
+          "effect_size": "coefficient=0.38",
+          "confidence_interval": "95% CI 0.26\u20130.50",
+          "sample_size": "n=2,671"
+        },
+        {
+          "outcome_category": "Academic \u00014 Literacy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Rumor screening/identification improved significantly. Scores increased from 2.5 to 2.7 out of 4 in the chatbot group versus 2.4 to 2.4 in usual care; the reported adjusted coefficient was 0.32 (95% CI 0.21\u20130.43; P<0.001).",
+          "measure": "HPV-related rumor screening / rumor identification score",
+          "effect_size": "coefficient=0.32",
+          "confidence_interval": "95% CI 0.21\u20130.43",
+          "sample_size": "n=2,671"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "blue",
+  "quality_tier_rationale": "This is a cluster randomized trial with a non-AI comparator, clear allocation by class, intention-to-treat analysis, and reported adjusted effects with confidence intervals. The design and reporting support high causal credibility, though it is a single study and the intervention is short-term.",
+  "impact_tier": "blue",
+  "impact_tier_rationale": "The primary behavioral outcome shows a large effect (adjusted RR=3.85) and the consultation outcome is also sizable (adjusted RR=2.73). The literacy outcomes are also statistically significant with moderate coefficients, indicating meaningful practical impact.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

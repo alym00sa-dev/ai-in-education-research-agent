@@ -1,0 +1,89 @@
+{
+  "title": "Maximizing Diver Score by Examining Discrepancies in Diver Competency and Judges\u2019 Marks",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2501.09171v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Graduate / Doctoral"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper examines whether different versions of ChatGPT available through free and paid access tiers differ meaningfully in performance on statistics exam questions, with a broader concern about equity in educational access to generative AI. The authors argue that if students rely on generative AI as a tutor, unequal access to stronger paid models could widen rather than reduce educational inequality. Their research question is therefore not about K-12 literacy outcomes, but about comparative accuracy and textual characteristics of GPT-3.5, GPT-4, and GPT-4o-mini on statistics assessment tasks.\n\nThe study used a 16-question first-year graduate statistics exam and entered each question verbatim, one by one, into the three ChatGPT versions in a zero-shot format. The authors compared exam scores and also analyzed the generated responses using text analytics, including reading-level measures, token and sentence counts, word frequencies, and topic modeling with latent Dirichlet allocation. The emphasis was on differences in answer accuracy, complexity, and thematic focus across models rather than on an instructional intervention implemented with learners over time.\n\nThe population and context were first-year graduate students in statistics/biostatistics at Southern Methodist University, with the exam originally taken by seven students in October 2022 before widespread AI availability. The AI systems themselves were compared against this graduate-level course assessment context. The study appears to be situated in the United States and conducted at a single institution, using one graduate exam as the primary empirical basis.\n\nThe main conclusion is that GPT-4 substantially outperformed GPT-3.5, while GPT-4o-mini performed between the two and closer to GPT-4 on some dimensions. GPT-3.5 failed the exam, GPT-4 scored well above the student mean, and GPT-4o-mini was intermediate. Topic modeling and descriptive text analyses suggested GPT-4 and GPT-4o-mini produced more statistically relevant and thematically coherent responses than GPT-3.5. The authors conclude that free versus paid model differences have important equity implications for educational use of generative AI, though they acknowledge the evidence is limited to one small, graduate-level exam context.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is an arXiv preprint with no K-12 learner sample, no direct educational intervention study, and no causal design evaluating student outcomes. The methods are clear for model benchmarking, but for the requested education-evidence framework it does not provide credible evidence on student learning effects.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper shows meaningful performance differences between ChatGPT versions on statistics tasks, but impacts on actual learners are indirect and unclear. Because no student learning or literacy effect sizes are estimated, educational impact remains uncertain rather than demonstrably positive or negative.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "Comparison of ChatGPT versions (GPT-3.5, GPT-4, GPT-4o-mini) as potential statistics-course tutoring/help tools by answering a 16-question graduate statistics exam and analyzing answer accuracy, readability, and topical content."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "On a 16-question first-year graduate statistics exam, GPT-3.5 scored 41, GPT-4o-mini scored 72, and GPT-4 scored 82; the mean human student score was 69.4 (median 72.0) from a class of seven students. Earlier results summarized in the paper for standardized statistics exams also showed GPT-3.5 underperforming GPT-4 (e.g., ACTM 64% vs 100%, AP 50% vs 81%, CAOS 48% vs 70%), with McNemar's chi-square=19.9 and p=.000012 across nationally normed exams, indicating GPT-4 was more often correct than GPT-3.5. However, this is not a learner-outcome study and effect sizes versus student learning were not reported.",
+        "measure": "Accuracy/score on statistics exam questions; percentage correct on standardized statistics exams; comparative correctness across ChatGPT versions",
+        "study_size": "n=16 exam questions; n=7 students for the referenced class exam; broader standardized-exam question counts summarized as ACTM n=25, AP n=22, CAOS n=40",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.62,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The paper suggests ChatGPT could function as a low-cost on-demand help tool, but empirical evidence here concerns model output characteristics rather than productivity gains. GPT-4 tended to provide shorter responses (mean 99.6 tokens; 4.31 sentences) than GPT-3.5 (153 tokens; 7.06 sentences), while GPT-4o-mini produced much longer explanations (593 tokens; 20.8 sentences), implying possible tradeoffs between concision and effort required to interpret outputs; no direct time-on-task or workload outcomes were measured.",
+        "measure": "Response length characteristics (tokens, sentences) as proxies for usability/efficiency",
+        "study_size": "n=16 exam responses per model",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Systemic / Institutional Impact",
+      "confidence": 0.71,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The paper's central institutional implication is an equity gap between paid and free access tiers: GPT-4 (paid) outperformed free-tier models, suggesting students who cannot pay may receive lower-quality AI support. This is argued from comparative model-performance results rather than direct institutional-outcome measurement; no policy intervention, adoption outcome, or quantitative institutional effect size is reported.",
+        "measure": "Cross-model performance differences interpreted as implications for access equity and institutional policy",
+        "study_size": "n=16 exam questions plus summarized standardized-exam comparisons",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "no_control_group",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

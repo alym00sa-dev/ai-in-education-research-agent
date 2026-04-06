@@ -1,0 +1,116 @@
+{
+  "title": "A meta-analysis of generative AI effects on language proficiency and affective\u2013cognitive outcomes in language learning",
+  "doi": "10.1007/s10791-026-10015-1",
+  "year": 2026,
+  "venue": "Discover Computing",
+  "url": "https://doi.org/10.1007/s10791-026-10015-1",
+  "source_db": "openalex_search",
+  "populations": [
+    "Elementary (PreK-5th)",
+    "High School (9th-12th)",
+    "Undergraduate",
+    "Adult (non-academic)",
+    "K-12 (unspecified grade)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Meta-Analysis / Systematic Review",
+  "extended_summary": "This paper addresses the broad question of how generative AI (GenAI) tools such as ChatGPT affect second- and foreign-language learning outcomes. The authors argue that individual studies published after the release of ChatGPT show promising but inconsistent findings because they vary widely in design, populations, target skills, settings, and outcomes. To address that inconsistency, the paper synthesizes experimental evidence across studies and examines moderators such as instructional setting, study design, intervention duration, educational level, language skill, and type of GenAI use.\n\nThe approach is a meta-analysis of 51 primary studies published between 2023 and 2025, yielding 175 independent effect sizes. Included studies had to involve GenAI in an L2 learning context, use a comparison condition, report quantitative learner outcomes, and provide enough statistics to estimate standardized effects. Outcomes were grouped into language achievement and affective/cognitive variables such as motivation, anxiety, and self-efficacy. The paper reports pooled effects using Hedges' g under a random-effects model and also conducts moderator analyses and publication-bias checks.\n\nThe primary-study populations span multiple educational levels and contexts, including primary, secondary, tertiary, and adult education, across countries concentrated in Asia but also including Europe, Africa, and the Middle East. The meta-analysis is not limited to high school or writing; it covers writing, speaking, reading, listening, and multiple-skill interventions in both formal classroom and informal/self-directed settings. The article itself does not present one original 25+25-student secondary-school ChatGPT writing experiment; instead, it summarizes many studies and notes substantial heterogeneity in their effects and methods.\n\nThe main conclusion is that GenAI interventions show large positive pooled effects on both language achievement and affective/cognitive outcomes, though heterogeneity is extremely high. Moderator analyses suggest larger effects for longer interventions, informal settings, feedback-generating tools, advanced learners, and some specific language skills. However, because this is a review article rather than a primary trial, it cannot verify whether any specific included study was truly randomized or whether any extreme single-study effect size on motivation was credible. For the user's verification purpose, this paper is useful only as a source that such a study may have been included in a synthesis; it should not itself be treated as the underlying high-school ChatGPT writing feedback experiment.",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is a peer-reviewed meta-analysis, which would normally support a high tier, but the paper reports extreme heterogeneity (I2 up to 98.4%), includes many quasi-experiments and pre-post studies, and appears to contain implausibly large effects and inconsistent pooled estimates, creating substantial credibility concerns.",
+  "impact_tier": "blue",
+  "impact_tier_rationale": "The reported pooled effects are large across academic and affective outcomes (g about 1.03 to 1.11), far exceeding the 0.20 threshold. However, these impact estimates should be treated cautiously because the underlying evidence base likely includes non-credible outliers.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.99,
+      "role": "primary",
+      "use_case": "Meta-analysis of generative AI tools such as ChatGPT, Gemini, GPT-based chatbots, AI tutors, and conversational partners used for second/foreign language learning across formal and informal settings."
+    },
+    {
+      "intervention": "AI Writing / Language Tool",
+      "confidence": 0.93,
+      "role": "secondary",
+      "use_case": "Subgrouped GenAI uses in language learning including writing assistants, feedback generators, translation aids, and speaking/listening partners for language proficiency development."
+    },
+    {
+      "intervention": "Automated Feedback System",
+      "confidence": 0.78,
+      "role": "secondary",
+      "use_case": "Feedback-generating GenAI tools providing individualized language feedback, especially in writing-intensive tasks, treated as an intervention-type moderator within the meta-analysis."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Literacy",
+      "confidence": 0.94,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Across 71 language-achievement effect sizes, the meta-analysis reported a large pooled effect favoring GenAI interventions (Hedges' g=1.111, 95% CI [0.566, 1.656]). The literacy-relevant outcomes included writing and reading performance, though the paper does not report a writing-only pooled estimate for the specific suspected high-school ChatGPT study in the excerpt provided.",
+        "measure": "Language achievement outcomes including writing, reading, vocabulary, and related proficiency measures",
+        "study_size": "175 effect sizes from 51 studies overall; 71 effect sizes in language-achievement synthesis",
+        "effect_size": "g=1.111",
+        "confidence_interval": "95% CI [0.566, 1.656]",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Academic \u2014 Language Fluency",
+      "confidence": 0.9,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The language-achievement synthesis also covered speaking and listening outcomes and found a large overall pooled effect of GenAI on language proficiency (g=1.111, 95% CI [0.566, 1.656]). Moderator results reported especially large subgroup estimates for listening (g=1.050) and speaking (g=0.686), though these were not tied here to the alleged 25+25 writing-motivation trial.",
+        "measure": "Speaking, listening, and broader language proficiency outcomes",
+        "study_size": "175 effect sizes from 51 studies overall; 71 effect sizes in language-achievement synthesis",
+        "effect_size": "g=1.111; subgroup examples listening g=1.050, speaking g=0.686",
+        "confidence_interval": "95% CI [0.566, 1.656] for overall language achievement; subgroup CIs not reported in provided excerpt",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.97,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Across 104 affective/cognitive effect sizes, the pooled effect favored GenAI with Hedges' g=1.029 (95% CI [0.490, 1.567]). The paper specifically includes motivation, self-efficacy, anxiety reduction, engagement, and related constructs; however, it does not provide the original motivation means/SDs for the alleged high-school ChatGPT writing study in the supplied text, so the claimed d\u224819 cannot be verified from this review alone.",
+        "measure": "Motivation, engagement, self-efficacy, anxiety reduction, self-regulation, and related affective/cognitive measures",
+        "study_size": "175 effect sizes from 51 studies overall; 104 effect sizes in affective/cognitive synthesis",
+        "effect_size": "g=1.029",
+        "confidence_interval": "95% CI [0.490, 1.567]",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.65,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The review states that affective/cognitive outcomes included metacognitive awareness and cognitive strategy use, and overall affective/cognitive outcomes were strongly positive (g=1.029, 95% CI [0.490, 1.567]). Because the paper aggregates these constructs rather than isolating a durable-skills-only pooled effect, evidence for this category is indirect but substantive.",
+        "measure": "Metacognitive awareness, cognitive strategy use, and related higher-order learning process variables",
+        "study_size": "175 effect sizes from 51 studies overall",
+        "effect_size": "g=1.029 for pooled affective/cognitive outcomes",
+        "confidence_interval": "95% CI [0.490, 1.567]",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

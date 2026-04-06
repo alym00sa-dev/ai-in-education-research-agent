@@ -1,0 +1,112 @@
+{
+  "title": "Software Engineering Educational Experience in Building an Intelligent Tutoring System",
+  "doi": null,
+  "year": 2024,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2310.05472v3",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses the challenge of providing timely, individualized feedback and grading support in introductory programming and related computing courses, while also creating a sustainable software engineering course project with real educational impact. The authors argue that CS instructors face heavy workloads, especially in large-enrollment courses, and that software engineering students often work on short-lived projects that do not persist beyond a single semester.\n\nTo address these problems, the authors designed and incrementally built an Intelligent Tutoring System (ITS) for programming assignments as a multi-year software engineering project. The system combines automated program repair, program analysis, and large language models: it first localizes errors and generates candidate patches, then uses an LLM to turn those patches into conceptual feedback for students, and also produces grading reports for tutors. The ITS was developed through short-running student projects in an advanced SE course over three years, with undergraduate SE students contributing to parser, alignment, localization, repair, feedback, and testing components.\n\nThe paper reports two controlled experiments and a shadow deployment. In a pilot study with 15 novice students in a first-year programming course, the ITS group showed better rectification rates and faster correction times than the comparison group. In a shadow deployment with 571 first-year students, the system generated semantically correct patches for most incorrect submissions and produced feedback judged semantically equivalent to tutors\u2019 feedback in many sampled cases. A second controlled experiment with 30 data-structures students suggested promising but not statistically significant improvements. Overall, the authors conclude that the approach can reduce tutor workload and support student learning, while also serving as a meaningful long-running SE project; they also note limitations in helping students who cannot yet start a task and the ongoing effort required to maintain the evolving system.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed empirical/system paper with controlled student studies plus a shadow deployment, but it is not a randomized controlled trial with strong causal identification and several results are descriptive or qualitative. The evidence is useful but limited by small pilot samples, non-significant differences in one experiment, and reliance on comparisons to tutor feedback rather than direct learning gains for some outcomes.",
+  "impact_tier": "green",
+  "impact_tier_rationale": "The reported effects are practically meaningful for programming support, especially the 95.8% patch success rate and the reduction in failed attempts and correction time in the pilot study. However, the direct learning impact is modest/uncertain in places, so overall impact is better characterized as green rather than blue.",
+  "interventions": [
+    {
+      "intervention": "Intelligent Tutoring System (ITS)",
+      "confidence": 0.98,
+      "role": "primary",
+      "use_case": "multicomponent programming tutor that combines program parsing, program alignment, error localization, automated repair, LLM-generated conceptual feedback, and conceptual auto-grading for introductory and data structures assignments"
+    },
+    {
+      "intervention": "Automated Feedback System",
+      "confidence": 0.97,
+      "role": "secondary",
+      "use_case": "automated feedback generation for incorrect programming submissions using repair candidates and LLM-based explanations for novice programmers"
+    },
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.72,
+      "role": "secondary",
+      "use_case": "LLM-based explanation layer that turns low-level code patches into conceptual programming feedback for students"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.91,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper reports controlled experiments and deployment evidence that the ITS helped novice programming and data structures students solve tasks more effectively. In the pilot with 15 novice students, the ITS group had fewer failed attempts on average (2.7 vs 3.7), a higher rectification rate (21/23 vs 10/17), and faster correction time (6.7 vs 8.9 minutes). In a 571-student shadow deployment, the repair engine produced correct patches for 1,758/1,835 incorrect submissions (95.8%), and 136/176 sampled feedback instances (77.2%) were semantically equivalent to tutor feedback.",
+        "measure": "Programming task success, failed attempts, rectification rate, rectification time, patch correctness, semantic equivalence of feedback to tutors",
+        "study_size": "n=15 pilot; n=571 shadow deployment; n=30 data-structures experiment",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Intelligent Tutoring System (ITS)"
+    },
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.84,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The ITS-generated feedback appeared to support learning on more advanced data structures and algorithms tasks, though differences were not statistically significant. In the 30-student controlled experiment, Group A (with ITS feedback on earlier related tasks) improved from 30% correct on Tasks 1 and 3 to 60% correct on Tasks 2 and 4, compared with 40% correct for Group B on Tasks 2 and 4.",
+        "measure": "Correct submission rate on tree and graph programming tasks",
+        "study_size": "n=30",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Intelligent Tutoring System (ITS)"
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.9,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper indicates substantial potential to reduce teacher workload through automated repair and feedback generation. In shadow deployment across 30 programming tasks, the system generated semantically correct patches for 1,758 of 1,835 incorrect submissions (95.8%), and 77.2% of sampled automated feedback matched tutor feedback semantically, suggesting meaningful tutor-assistance capability.",
+        "measure": "Patch generation success rate; semantic equivalence between ITS feedback and tutor feedback",
+        "study_size": "n=1,835 incorrect submissions; n=176 sampled feedback items",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Automated Feedback System"
+    },
+    {
+      "outcome": "Systemic / Institutional Impact",
+      "confidence": 0.88,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Beyond student outcomes, the paper argues that the long-running ITS project created an institutional model linking software engineering education with programming support. The system was deployed in multiple university courses, involved around 125 undergraduate SE students over three years, and was exported to Monash University, indicating broader institutional transferability.",
+        "measure": "Deployment/adoption across courses and institutions; course continuity over multiple years",
+        "study_size": "around 125 SE students over 3 years; deployment in 571-student course",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Intelligent Tutoring System (ITS)"
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "classroom",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "medium",
+  "study_country": "Singapore",
+  "study_region": "East Asia & Pacific",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

@@ -1,0 +1,74 @@
+{
+  "title": "Can AI Understand Cultures? Evaluating Cross-Cultural Miscommunication through Generative AI",
+  "doi": null,
+  "year": 2025,
+  "venue": "Digital Maadili 14 - 18 July 2025 \u2014 DIGHUM",
+  "url": "http://arxiv.org/abs/2601.08870v1",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Qualitative",
+  "extended_summary": "This paper asks whether leading multimodal generative AI systems can understand and reproduce culturally grounded greeting practices across different societies. The authors focus on a specific cultural task: generating and interpreting traditional greetings, including norm-compliant and norm-violating scenarios, to see whether models can capture social cues such as hierarchy, gender norms, bodily etiquette, and culturally appropriate language.\n\nThe study evaluates GPT-4o, Gemini, and Grok using prompts designed for five cultural contexts: Baganda (Uganda), Luo (Kenya), Hausa (Nigeria), Chinese, and Brazilian. The outputs were analyzed through human-in-the-loop review by native cultural experts and assessed using cultural fidelity, norm-violation detection, and demographic accuracy. The work is situated in a cross-cultural, non-educational context and is based on expert judgment of generated text and images rather than learner outcomes.\n\nThe authors conclude that the models can reproduce superficial surface forms of greetings but do not reliably understand deeper cultural meaning. Across cultures, they observed Western-centric defaults, mistranslations, stereotyped imagery, and weak handling of gendered and context-specific norms. The paper argues for community-anchored dataset design, culturally informed evaluation, and more inclusive AI development that treats culture as a core dimension of intelligence rather than a decorative feature.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed qualitative comparative study using a clearly described mixed-methods evaluation and expert review, but it is not an RCT or quasi-experimental impact study. Evidence credibility is limited by the absence of quantitative causal estimation and by subjective cultural judgments across a small set of prompts.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper suggests important implications for culturally sensitive AI deployment, but it reports no effect sizes and does not test educational outcomes in K-12 settings. Its impact is therefore conceptual and institutional rather than demonstrated as measurable learner improvement.",
+  "interventions": [
+    {
+      "intervention": "Other",
+      "confidence": 0.95,
+      "role": "primary",
+      "use_case": "cross-cultural evaluation of multimodal generative AI models (GPT-4o, Gemini, Grok) for interpreting and generating culturally appropriate greeting practices in Baganda, Luo, Hausa, Chinese, and Brazilian contexts"
+    },
+    {
+      "intervention": "Other",
+      "confidence": 0.9,
+      "role": "secondary",
+      "use_case": "human-in-the-loop cultural expert review used to judge model outputs for cultural fidelity, norm violation detection, and demographic accuracy"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Systemic / Institutional Impact",
+      "confidence": 0.9,
+      "finding": {
+        "direction": "Negative",
+        "finding_summary": "The paper finds that current multimodal generative AI systems do not reliably understand or preserve culturally grounded social norms, instead producing Western-centric defaults, mistranslations, and stereotyped images across five cultural settings. Across GPT-4o, Gemini, and Grok, performance was only partially culturally fluent, with repeated failures in gesture, gender, and linguistic representation; no effect sizes were reported because this was a qualitative comparative evaluation.",
+        "measure": "cultural fidelity, norm violation detection, and demographic accuracy ratings from native cultural experts reviewing model text and image outputs",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Other"
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.7,
+      "finding": {
+        "direction": "Negative",
+        "finding_summary": "The study shows that the AI systems\u2019 outputs frequently failed to model the contextual reasoning needed for culturally appropriate communication, including hierarchy, etiquette, and relational norms. The authors describe this as an inability to capture deep cultural semantics rather than a simple language error, but they do not report quantitative effect sizes or sample-based estimates.",
+        "measure": "expert qualitative assessment of contextual appropriateness in greeting scenarios",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Other"
+    }
+  ],
+  "limitations": [
+    "non_representative_population",
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Uganda",
+  "study_region": "Sub-Saharan Africa",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

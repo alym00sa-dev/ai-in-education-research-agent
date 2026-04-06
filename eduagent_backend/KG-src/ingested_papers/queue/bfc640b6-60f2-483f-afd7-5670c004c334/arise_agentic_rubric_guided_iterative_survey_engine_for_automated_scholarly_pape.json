@@ -1,0 +1,68 @@
+{
+  "title": "ARISE: Agentic Rubric-Guided Iterative Survey Engine for Automated Scholarly Paper Generation",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2511.17689v1",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses the problem of automatically generating high-quality academic survey papers in the face of rapidly expanding scholarly literature. The authors argue that existing large-language-model survey-writing systems are limited by weak quality control, poor formatting, heavy reliance on preprints, and insufficient support for iterative revision. The paper is not about secondary students, ChatGPT-generated feedback on student-authored drafts, or writing instruction in grades 9\u201312; therefore, no evidence relevant to the retrieval topic on high-school draft feedback is present.\n\nThe authors propose ARISE, an agentic system for end-to-end scholarly survey generation. ARISE decomposes the survey-writing workflow into many specialized LLM agents responsible for topic expansion, citation retrieval and validation, knowledge-base construction, outline generation, section drafting, editing, citation completion, formatting, and rubric-guided iterative refinement. A central feature is a multi-agent review loop in which reviewer agents score drafts using a structured rubric and generate feedback, which is then synthesized into targeted revision plans. The system is evaluated against prior automated survey-generation systems and a set of human-written survey papers using rubric-based scoring, human expert review, ablation analyses, and citation traceability audits.\n\nThe paper does not study students, teachers, or schools as participants in an educational intervention. Its human evaluation involves four academic experts reviewing generated survey papers, and its broader intended users are described generally as researchers, educators, and academic writers, but these are not treated as participant populations in an education study. No subgroup or moderator analyses are reported for baseline writing proficiency, English learner status, disability, grade level, gender, school achievement level, subject area in school settings, or writing genre in student-authored drafts. No follow-up or delayed posttest evidence is reported on unaided writing, independent revision skill, self-efficacy, confidence, metacognition, authorial voice, plagiarism, or overreliance in secondary students.\n\nThe main conclusion is that ARISE produces higher-quality automated survey papers than the compared baseline systems and the selected human-written baselines on the authors\u2019 rubric-based evaluation framework. The authors also report strong citation traceability and improvements through iterative refinement. However, they acknowledge important limitations, including reliance on LLM judges rather than human reviewers for the main evaluation, dependence on commercial APIs, and broader risks of over-reliance on automated writing tools.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is not a K-12 education impact study and does not evaluate ChatGPT-generated feedback on secondary students' drafts. Although it contains benchmarking and human evaluation of an automated academic writing system, it is an arXiv paper with no relevant student-outcome causal design for the requested evidence framework.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper shows positive workflow and document-quality impacts for automated scholarly survey generation, but impact is outside the target domain of grades 9-12 student writing feedback and effect sizes are mostly not reported. Relevance to K-12 instructional impact is therefore unclear.",
+  "interventions": [
+    {
+      "intervention": "Other",
+      "confidence": 0.99,
+      "role": "primary",
+      "use_case": "Agentic LLM system for automated scholarly survey paper generation with rubric-guided iterative reviewer feedback and manuscript refinement; not an education intervention and not a K-12 student draft-feedback system."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.89,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper reports that ARISE outperformed prior automated survey-generation systems and recent human-written survey baselines on a rubric-based quality evaluation, with a tri-judge average score of 92.48 versus 87.68 for SurveyForge, 86.15 for human baselines, 82.46 for AutoSurvey, and 81.65 for SurveyX. Human expert ratings also improved after iterative refinement from 70.2 to 83.7 out of 100 across five generated survey topics, indicating better document-production quality and workflow efficiency for scholarly writing; however, these are not K-12 student outcomes.",
+        "measure": "Rubric-based manuscript quality scores from LLM judges; human expert rubric ratings before vs after refinement; generation cost/time estimates",
+        "study_size": "10 human-written baselines; 10 SurveyForge papers; 10 SurveyX papers; 3 AutoSurvey papers; human evaluation on 5 generated survey papers with N=4 experts per paper",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Systemic / Institutional Impact",
+      "confidence": 0.58,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper presents evidence that ARISE produces highly traceable references, reporting a mean expanded Citation Traceability Rate (eCTR) of 1.00 and hallucination rate of 0.00 across evaluated outputs. The authors argue this supports more transparent and reproducible academic writing workflows, though no school, classroom, or institutional adoption outcomes are directly studied.",
+        "measure": "Expanded Citation Traceability Rate (eCTR); hallucination rate for extracted references",
+        "study_size": "not_reported",
+        "effect_size": "eCTR=1.00; hallucination rate=0.00",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "no_control_group",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

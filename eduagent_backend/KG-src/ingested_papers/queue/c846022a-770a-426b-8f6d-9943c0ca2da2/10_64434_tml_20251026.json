@@ -1,0 +1,30 @@
+{
+  "title": "Learning beyond Teacher: Generalized On-Policy Distillation with Reward Extrapolation",
+  "doi": "10.64434/tml.20251026",
+  "year": 2026,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2602.12125v2",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper studies on-policy distillation (OPD) for large language models, asking how the standard objective can be generalized to better control distillation behavior. The authors first show theoretically that OPD can be viewed as a special case of dense KL-constrained reinforcement learning, then introduce a Generalized On-Policy Distillation (G-OPD) framework with two added degrees of freedom: a flexible reference model and a reward-scaling factor.\n\nThe proposed method is evaluated in math reasoning and code generation tasks using Qwen3 models. In same-size teacher-student settings, the paper examines reward interpolation and reward extrapolation; in the latter regime (ExOPD), the student can outperform the teacher and, in multi-teacher settings, merge multiple domain-specific RL teachers into a single student that surpasses all domain teachers. In strong-to-weak distillation, ExOPD also improves over standard OPD, and an optional reward-correction variant further boosts performance when the teacher\u2019s pre-RL model is available.\n\nThe study is entirely about model distillation for LLMs, not classroom-based educational use. It uses math and code benchmarks and focuses on the behavior of student and teacher language models under different distillation objectives. The main conclusion is that reward extrapolation and reference-model choice materially improve OPD performance, but they can increase computation and, in some cases, response length.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a methodological/theoretical machine learning paper on generalized on-policy distillation, not a study of teacher-facing generative AI in education. It does not evaluate an educational intervention, teacher population, or school context.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "No educational outcomes, teacher outcomes, or school-level impacts are measured. The paper has no direct relevance to the requested K-12 evidence framework for teacher-facing generative AI coaching or lesson-plan feedback.",
+  "interventions": [],
+  "outcome_assignments": [],
+  "limitations": [
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

@@ -1,0 +1,75 @@
+{
+  "title": "Expos\u00eda: Academic Writing Assessment of Expos\u00e9s and Peer Feedback",
+  "doi": null,
+  "year": 2026,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2601.06536v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper introduces Expos\u00eda, a new public dataset for research on academic writing, feedback, and revision in higher education. The paper does not evaluate ChatGPT- or LLM-generated formative feedback on student drafts in a comparative intervention study. Instead, it addresses the problem of how to capture the full draft-feedback-revision workflow in an educational setting and how to support automated scoring of student writing and peer feedback using large language models. The authors aim to fill a gap in existing resources by linking student draft expos\u00e9s, peer and instructor feedback, revised final versions, and fine-grained human assessment scores.\n\nThe approach centers on collecting and analyzing a corpus from a real university course, \"Introduction to Scientific Work,\" in which undergraduate computer science students wrote research project proposals, received peer and instructor feedback, and submitted revised versions. The dataset includes draft and final expos\u00e9s, inline comments, free-text reviews, and instructor-assigned rubric scores for both writing quality and feedback quality. The authors then benchmark several open-source LLMs on automated scoring tasks: predicting criterion-based scores for expos\u00e9s and student reviews. The study also analyzes revision patterns from draft to final submission and inter-annotator agreement among human raters.\n\nThe population consists of undergraduate students and instructional staff in a Bachelor-level computer science course at Technical University of Darmstadt in Germany. The released dataset includes materials from 55 student expos\u00e9s and 306 reviews, drawn from a larger course enrollment of 193 students, of whom 159 completed all requirements and about 30% consented to public data release. The instructional context is a university classroom course with peer review and instructor feedback embedded in normal coursework.\n\nThe main conclusions are that Expos\u00eda provides a novel and pedagogically grounded resource for studying writing, feedback, and revision together; student expos\u00e9s improved from draft to final version, especially on content-related rubrics; and open-source LLMs can approximate human scoring reasonably well on lower-expertise criteria but perform worse on criteria requiring more domain knowledge. The authors stress that these findings support decision-support uses of LLMs for assessment rather than fully automated grading. For the user's retrieval topic, this paper is a near miss and should be excluded because it does not test LLM-generated feedback given to students for revision, does not include grades 9-12, and lacks any treatment-control comparison of feedback sources.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is not an eligible grades 9-12 comparative study of LLM-generated formative feedback on student-authored drafts. It is a higher-education dataset and benchmarking paper on LLM-based scoring, not a randomized or quasi-experimental evaluation of feedback-only revision effects versus teacher, peer, or no-feedback comparators.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper shows promising but indirect evidence that LLMs can approximate human scoring and may improve efficiency, yet it does not estimate student learning or writing gains from an AI feedback intervention. Impact on the target K-12 feedback-use case is therefore unclear.",
+  "interventions": [
+    {
+      "intervention": "Automated Feedback System",
+      "confidence": 0.82,
+      "role": "primary",
+      "use_case": "LLM-based automated scoring of student academic writing (research project expos\u00e9s) and peer feedback reviews using fine-grained rubric criteria in a university course dataset."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Literacy",
+      "confidence": 0.77,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The paper reports that final expos\u00e9s improved relative to drafts after receiving human peer and instructor feedback, with the largest gains in rubric areas such as Approach, Motivation, Language/Quality, and Methodology. However, this is not a comparative evaluation of LLM-generated formative feedback; the LLM component is limited to automated scoring benchmarks, where the strongest open-source models achieved human-LLM agreement around QWA=0.75-0.76 for expos\u00e9 scoring and 0.82-0.84 for review scoring, with weaker performance on content-heavy criteria requiring domain knowledge. No causal effect sizes for student writing improvement attributable to AI feedback are reported.",
+        "measure": "Instructor rubric scores on draft vs final expos\u00e9s; quadratic weighted agreement (QWA), Krippendorff alpha, and Pearson r for LLM-vs-human scoring on writing and review assessment criteria",
+        "study_size": "55 expos\u00e9s; 110 student reviews; course enrollment 193, 159 completed requirements",
+        "effect_size": "not_reported",
+        "confidence_interval": "95% bootstrap CI reported only graphically for draft-to-final rubric changes; exact values not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.72,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The study finds that combined prompting for LLM scoring is both more effective and more computationally efficient than scoring one criterion at a time across most tested models and both tasks. This supports potential classroom deployment for decision-support in grading workflows, but the paper explicitly cautions against fully automated grading and does not report time-saved estimates or workload reduction effect sizes.",
+        "measure": "Quadratic weighted agreement (QWA) under combined vs single-criterion prompting; qualitative discussion of computational efficiency/scalability",
+        "study_size": "55 expos\u00e9s; 110 student reviews",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_control_group",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "classroom",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Germany",
+  "study_region": "Europe",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

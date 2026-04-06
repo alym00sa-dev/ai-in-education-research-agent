@@ -1,0 +1,115 @@
+{
+  "title": "GenAI Integration into Engineering Education: A Case Study of an Introductory Undergraduate Engineering Course",
+  "doi": null,
+  "year": null,
+  "venue": null,
+  "url": "",
+  "source_db": "openalex_search",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper examines how an engineering instructor and teaching assistants initially integrated generative AI into an introductory undergraduate computer systems course, and what effects this had on students\u2019 formative exercise performance. The authors were interested in a practical, early-stage case of GenAI adoption in engineering education, especially because little was known about how instructors and teaching staff discover and adapt to these tools when using them for the first time.\n\nThe intervention used Copilot powered by GPT-4, which was introduced early in the semester and then used during lectures and exercise sessions. Students were allowed to use Copilot individually and in teams while solving coding and conceptual problems, with the instructor and TAs also discussing and modeling its use. The study used an embedded single-case design with both quantitative and qualitative data: pre/post formative exercise scores across the semester and multiple semi-structured interviews with the instructor and teaching assistants.\n\nThe participants were one undergraduate software/computer systems course at a single institution, involving a faculty instructor and seven TAs; the student outcomes were based on exercise submissions from the course. Quantitatively, most exercises showed statistically significant gains from pre- to post-test, with several large effect sizes, though one exercise showed no significant change. Qualitatively, the instructor and TAs described GenAI as useful for efficiency, tutoring, and coding support, but also raised concerns about hallucinations, privacy, overreliance, and whether students were truly learning. Overall, the paper concludes that early experimental GenAI integration can be informative and may improve short-term formative performance, but it mostly supported replacement or amplification rather than transformative learning.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a single embedded descriptive case study with interview data and pre/post exercise comparisons, so it is methodologically informative but not a controlled causal design. It provides some quantitative outcome data, but credibility is limited by the lack of a comparison group and the largely qualitative interpretation.",
+  "impact_tier": "green",
+  "impact_tier_rationale": "The reported pre-post gains on formative exercises are substantial, with several large effects and statistically significant improvements across most exercises. However, the evidence is from a single undergraduate engineering course rather than a K-12 Khanmigo evaluation, so the broader impact claim is modest and indirect.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.96,
+      "role": "primary",
+      "use_case": "Copilot powered by GPT-4 was integrated into an introductory undergraduate computer systems course as a programming assistant/tutor that students used individually and in teams during lectures and exercise sessions to solve coding and conceptual problems, explain code, and support Python programming."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.92,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Students\u2019 formative practice exercise performance improved after GenAI/Copilot integration across most exercises in the semester-long case study. Gains were statistically significant for 8 of 9 exercises, with large effects for Exercises 1, 2, 4, 6, 7, and 8; medium for Exercise 3; small for Exercise 5; and no significant change for Exercise 9. Sample sizes varied by exercise from n=39 to n=114; reported effect sizes included d=0.93, d=1.03, r=0.40, r=0.59, d=0.33, r=0.50, r=0.55, r=0.53, and d=0.18.",
+        "measure": "Pre-post formative practice exercise scores on 9 course exercises",
+        "study_size": "n=39 to n=114 depending on exercise",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.67,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Interview data indicated students were excited and surprised to be allowed to use GenAI in class, and the instructor described increased engagement when students used Copilot to get help with coding and conceptual questions. This was qualitative evidence rather than a standardized affect measure, and no effect size was reported.",
+        "measure": "Interview themes on student excitement, surprise, engagement, and willingness to use GenAI",
+        "study_size": "n=1 instructor, n=7 teaching assistants; student comments reported indirectly",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.88,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The paper suggests possible gains in problem solving, collaboration, and reflection, but also recurring concerns about overreliance, reduced effort, and weaker independent coding practice. Quantitatively, the main durable-skill-related evidence is indirect: improved exercise performance (large effects on most exercises), while qualitative interviews emphasized that students should use AI as a partner, double-check outputs, and still learn by doing.",
+        "measure": "Interview themes on critical use, reflection, teamwork, and independent problem solving; indirect link via exercise performance",
+        "study_size": "n=1 instructor, n=7 teaching assistants",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.93,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Across interviews, the instructor and TAs repeatedly described GenAI as a time saver that accelerated information search, coding, boilerplate generation, and explanation of code. No formal workload metric was reported, but the qualitative evidence consistently framed Copilot as improving efficiency rather than transforming pedagogy.",
+        "measure": "Interview themes on time-saving, faster information retrieval, faster coding, and boilerplate generation",
+        "study_size": "n=1 instructor, n=7 teaching assistants",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Systemic / Institutional Impact",
+      "confidence": 0.78,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The study suggests institutions may want to encourage exploratory GenAI adoption because the case yielded context-specific instructional insights, but it also raised concerns about privacy, hallucination, policy inconsistency, and academic integrity. This was a qualitative single-case analysis, so no effect size was reported.",
+        "measure": "Interview themes on policy, privacy/security, integrity, and institutional guidance",
+        "study_size": "n=1 instructor, n=7 teaching assistants",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_control_group",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "12",
+  "setting": "classroom",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

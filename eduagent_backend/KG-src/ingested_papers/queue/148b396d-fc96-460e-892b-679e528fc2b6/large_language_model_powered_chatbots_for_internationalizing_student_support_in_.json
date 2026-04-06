@@ -1,0 +1,74 @@
+{
+  "title": "Large Language Model-Powered Chatbots for Internationalizing Student Support in Higher Education",
+  "doi": null,
+  "year": null,
+  "venue": null,
+  "url": "http://arxiv.org/abs/2403.14702v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper addresses how large language model (LLM)-powered chatbots can improve student support and internationalization in higher education. The authors focus on the challenge of providing timely, accurate, and engaging information to international and exchange students, especially for questions involving academic regulations, campus life, and culturally nuanced support needs. They argue that traditional support channels are often less accessible and less responsive than an AI assistant.\n\nThe intervention is a chatbot built with Python, GPT-3.5 Turbo, GPT-4 Turbo, LangChain, OpenAI embeddings, and Chroma vector store. The system uses a retrieval-augmented workflow: university website content is manually collected, embedded, and retrieved for answering user queries. A two-stage prompt pipeline is used, with GPT-3.5 generating an initial answer and GPT-4 acting as a verifier to reduce hallucinations and preserve language alignment. The chatbot is designed to behave like an assistant in AUI\u2019s international department and includes summary memory for multi-turn conversations.\n\nThe study was conducted with students at Al Akhawayn University in Ifrane, Morocco, using an anonymous survey evaluation of chatbot responses. Twelve participants contributed evaluations, and the final dataset included 10 Moroccan evaluators and 1 international evaluator, with 79 ratings per metric. The paper reports positive performance on quality, relevance, correctness, formality, and human-likeness, and also notes that the chatbot generally handled provocation and translation well in internal tests. The authors conclude that LLM chatbots can be a cost-effective way to enhance student support and internationalization services, while recommending larger-scale evaluation and broader datasets in future work.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a small survey-based evaluation of a single chatbot system with internally designed metrics and no control group or randomized comparison. The paper is empirical, but credibility and causal inference are limited by the small sample, bespoke measures, and reliance on developer-described testing.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The reported ratings are high, but they are perceptions of chatbot quality rather than measured learning gains, and there is no K-12 student outcome data. The practical impact is plausible for institutional support services, but the evidence does not establish meaningful educational impact for the target K-12 science-learning topic.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.98,
+      "role": "primary",
+      "use_case": "GPT-3.5/GPT-4 Turbo chatbot for international and Moroccan student support at a university, using retrieval-augmented responses from a Chroma vector store and a fact-checking verifier prompt to answer information and advising queries in multiple languages."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.92,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The chatbot improved information access and support efficiency for student queries, with survey respondents rating its general performance highly. In the general capabilities test set, bootstrapped 95% CIs were Quality [4.06\u20134.43], Relevance [4.02\u20134.41], Correctness [4.24\u20134.54], Formality [4.18\u20134.47], and Human-Like [3.87\u20134.32] on a 5-point scale (n=79 evaluations).",
+        "measure": "Likert ratings of chatbot response quality, relevance, correctness, formality, and human-likeness; bootstrapped 95% confidence intervals",
+        "study_size": "n=79 evaluations",
+        "effect_size": "not_reported",
+        "confidence_interval": "[4.06\u20134.43] quality; [4.02\u20134.41] relevance; [4.24\u20134.54] correctness; [4.18\u20134.47] formality; [3.87\u20134.32] human-like",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    },
+    {
+      "outcome": "Systemic / Institutional Impact",
+      "confidence": 0.75,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper argues the chatbot can help universities internationalize student support by providing scalable, lower-cost, multilingual assistance. This conclusion is based on a small survey evaluation and internal testing rather than institutional outcome data, so the evidence is suggestive rather than definitive.",
+        "measure": "Student survey ratings plus internal testing of translation, provocation handling, and information retrieval",
+        "study_size": "n=79 evaluations; 12 participants initially, 11 retained in final evaluation set",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Morocco",
+  "study_region": "Middle East & North Africa",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

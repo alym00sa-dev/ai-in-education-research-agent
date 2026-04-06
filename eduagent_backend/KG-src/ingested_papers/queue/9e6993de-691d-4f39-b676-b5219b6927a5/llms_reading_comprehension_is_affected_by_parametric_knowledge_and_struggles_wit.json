@@ -1,0 +1,31 @@
+{
+  "title": "LLMs\u2019 Reading Comprehension Is Affected by Parametric Knowledge and Struggles with Hypothetical Statements",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2404.06283v2",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper investigates how to evaluate large language models\u2019 reading comprehension more validly when their built-in parametric knowledge can interfere with answers. The authors argue that standard reading-comprehension or question-answering evaluations can be misleading: models may answer correctly from prior world knowledge rather than from the provided text, or may answer incorrectly when the text conflicts with that prior knowledge. The paper therefore focuses on disentangling genuine text understanding from knowledge-conflict effects, with special attention to non-affirmative and hypothetical language such as negation, modality, and conditionals.\n\nTo address this, the authors propose evaluating models on \u201cimaginary\u201d reading-comprehension instances built from fictitious entities and facts that neither align with nor contradict model world knowledge. They test several LLMs, including GPT-3.5, GPT-4, LLaMA 2, and Mixtral, in zero-shot extractive QA settings. Using these controlled benchmarks, they compare performance on affirmative statements versus non-affirmative variants such as negated statements, negative non-factives, modal statements, and unreal conditionals. They also compare imaginary data with supported and contradicting contexts to assess context-faithfulness and susceptibility to knowledge conflicts.\n\nThe paper is not a human-subjects education study and does not involve K-12 learners, teachers, or classroom implementation. The empirical context is model benchmarking in a zero-shot QA setup using constructed test instances inspired by existing NLP datasets such as WebQuestions, SQuAD2.0, and manually reviewed synthetic variants. The work is best understood as an NLP evaluation study about model behavior under different semantic and epistemic conditions rather than an intervention study.\n\nThe main conclusions are that imaginary data is a better basis for evaluating reading comprehension because it neutralizes parametric-knowledge interference, and that current LLMs struggle substantially with hypothetical constructions, especially modals and conditionals. The models often fail to abstain when the text does not support an answer and can revert to parametric knowledge when handling semantically more complex contexts. Prompting strategies can improve accuracy somewhat, but they do not eliminate these underlying weaknesses. Overall, the paper argues that apparent context-faithfulness on simple affirmative texts does not generalize to more complex semantic environments.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a benchmarking/NLP evaluation paper on LLM reading-comprehension behavior, not a K-12 education intervention study. It provides no direct student sample, no classroom implementation, and no literacy outcome measurement in school-age learners.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "No direct educational impact is estimated for K-12 learners. The paper reports model performance on synthetic reading-comprehension benchmarks, so it cannot support claims about literacy gains, motivation, engagement, or transfer in K-12 settings.",
+  "interventions": [],
+  "outcome_assignments": [],
+  "limitations": [
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "lab",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

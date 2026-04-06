@@ -1,0 +1,29 @@
+{
+  "title": "C-EVAL: A Multi-Level Multi-Discipline Chinese Evaluation Suite for Foundation Models",
+  "doi": null,
+  "year": 2023,
+  "venue": "NeurIPS 2023 Track on Datasets and Benchmarks",
+  "url": "https://doi.org/10.48550/arxiv.2305.08322",
+  "source_db": "openalex_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses the need for a comprehensive benchmark to evaluate large language models (LLMs) in Chinese, particularly on advanced knowledge and reasoning tasks. The authors argue that most prominent benchmarks are English-centric and do not adequately capture knowledge domains relevant to Chinese users, such as Chinese history, law, politics, and school curricula. To address this gap, they introduce C-EVAL, a Chinese evaluation suite intended to measure foundation models' performance across a wide range of subjects and difficulty levels.\n\nThe approach is the construction and validation of a benchmark rather than an educational intervention study. C-EVAL contains 13,948 multiple-choice questions spanning 52 disciplines across four levels: middle school, high school, college, and professional exams. The authors also introduce C-EVAL HARD, a subset focused on especially difficult reasoning-heavy subjects such as advanced mathematics, chemistry, and physics. They evaluate 11 existing LLMs, including GPT-4, ChatGPT, Claude, GLM-130B, and others, under zero-shot, few-shot, and chain-of-thought prompting settings.\n\nThere are no human learner participants in the study. The context is benchmark development and model evaluation using exam-style questions drawn from mock exams, local exams, university exams, and other publicly available Chinese assessment materials. Although the benchmark includes middle- and high-school subject matter, the paper does not study K-12 students, teachers, or classrooms.\n\nThe main conclusion is that current LLMs still have substantial room for improvement on advanced Chinese knowledge and reasoning tasks. GPT-4 is the only evaluated model to exceed 60% average accuracy on C-EVAL, and even it performs only modestly on the harder subset. The authors conclude that C-EVAL can serve as a useful diagnostic tool for analyzing strengths and weaknesses of foundation models in Chinese, especially beyond casual conversation and into more demanding reasoning contexts.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This paper is a benchmark and model-evaluation dataset paper, not a K-12 educational intervention study. It evaluates foundation models on exam-style Chinese multiple-choice items and does not report any learner-facing implementation, instructional comparator, or student outcome methodology.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "There is no direct evidence of impact on K-12 students, teachers, literacy instruction, or educational outcomes. Reported results are model benchmark accuracies only, so no educational intervention effect can be inferred.",
+  "interventions": [],
+  "outcome_assignments": [],
+  "limitations": [
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "China",
+  "study_region": "East Asia & Pacific",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

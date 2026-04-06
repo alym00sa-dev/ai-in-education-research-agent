@@ -1,0 +1,89 @@
+{
+  "title": "FACET: Teacher-Centred LLM-Based Multi-Agent Systems\u2014Towards Personalized Educational Worksheets",
+  "doi": null,
+  "year": 2026,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2508.11401v4",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Middle School (6th-8th)",
+    "K-12 (unspecified grade)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses the problem of how to support teachers in personalizing mathematics instruction for heterogeneous classrooms using large language models (LLMs). The authors argue that existing AI personalization tools are often narrowly focused on performance and do not adequately account for motivational or emotional differences, nor do they directly support teachers in classroom decision-making. To address this gap, they propose FACET, a teacher-facing multi-agent LLM framework for generating individualized classroom worksheets.\n\nFACET uses three specialized agents: learner agents that simulate student profiles, a teacher agent that adapts instructional content using didactical principles and Bloom\u2019s taxonomy, and an evaluator agent that checks output quality. The paper tests the framework on authentic grade 8 mathematics curriculum content from German secondary education. Learner profiles vary along two dimensions only: mathematical proficiency and intrinsic motivation. The system generates one-page personalized worksheets with tasks, scaffolds, hints, and motivational comments tailored to each profile.\n\nThe evaluation is preliminary and feasibility-focused rather than an achievement study. The authors report automated agent-based ratings over ten iterations per profile and exploratory feedback from five K\u201312 in-service teachers. Results suggest that FACET produces stable, well-structured, and generally suitable worksheets, especially for matching task difficulty to learner needs. Teachers valued the structure and differentiation potential, but also asked for stronger scaffolding, more explicit worked examples, more everyday-life relevance, and richer motivational personalization. The paper concludes that multi-agent LLMs may be promising for scalable teacher support, but it does not provide direct evidence that ChatGPT or similar tools improve student mathematics achievement, conceptual understanding, or transfer.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a prototype/facibility paper with exploratory teacher feedback and internal agent-based scoring, not a peer-reviewed causal study of student outcomes. There is no experimental comparison on learners, no randomization, and no direct achievement measurement.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper suggests practical promise for teacher workload reduction and personalized worksheet generation, but the observed effects are indirect and based on perceptions rather than student performance. Any impact on learning is currently unclear and modest at best.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.95,
+      "role": "primary",
+      "use_case": "teacher-facing multi-agent LLM system that generates individualized mathematics worksheets using learner agents, a teacher agent, and an evaluator agent; personalization is based on mathematical proficiency and intrinsic motivation rather than direct student chat tutoring"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.86,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper reports that the FACET framework reduces prompting overhead for teachers and supports semi-automated generation of personalized worksheets. In exploratory feedback from five K-12 in-service teachers, participants valued the ability to create differentiated materials more efficiently and to keep a whole class on the same topic while varying difficulty.",
+        "measure": "Teacher feedback on perceived usability/value; exploratory qualitative comments and 1-6 ratings of worksheet quality",
+        "study_size": "n=5 teachers; 4 learner profiles; 10 internal iterations per worksheet",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.7,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The framework is designed to support mathematical reasoning progression via Bloom-aligned tasks, including reproduction, making connections, and generalizing/reflection, which are closer to metacognitive and higher-order thinking supports than direct content delivery. However, no student learning outcome was measured; the evidence is limited to worksheet quality ratings and teacher perceptions of suitability.",
+        "measure": "Worksheet alignment with Bloom\u2019s taxonomy and pedagogical structure ratings",
+        "study_size": "n=5 teachers; 10 internal evaluations per worksheet",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.72,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The system explicitly incorporates motivational adaptation, aiming to tailor worksheets to high/low intrinsic motivation and to include motivational comments and everyday-life relevance. Teachers noted that reduced task load for low-motivation learners and added narrative relevance could help engagement, but this was only exploratory feedback rather than a measured change in motivation.",
+        "measure": "Teacher ratings and qualitative feedback on motivational suitability/engagement potential",
+        "study_size": "n=5 teachers; 4 learner profiles",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Germany",
+  "study_region": "Europe",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

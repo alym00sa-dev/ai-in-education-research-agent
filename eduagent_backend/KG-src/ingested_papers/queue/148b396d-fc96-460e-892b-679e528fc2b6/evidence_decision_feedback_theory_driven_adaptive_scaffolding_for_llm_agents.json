@@ -1,0 +1,101 @@
+{
+  "title": "Evidence-Decision-Feedback: Theory-Driven Adaptive Scaffolding for LLM Agents",
+  "doi": null,
+  "year": 2026,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2602.01415v4",
+  "source_db": "arxiv_search",
+  "populations": [
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses a core problem in LLM-based educational agents: how to make tutoring and scaffolding adaptive, pedagogically grounded, interpretable, and less likely to encourage overreliance. The authors argue that many LLM agents are still one-size-fits-all and may not support durable learning if they provide answers without attending to learner evidence or learning theory. To address this, they propose Evidence-Decision-Feedback (EDF), a theory-driven framework that structures agent behavior into three linked stages: extracting evidence from student actions and dialogue, making pedagogical decisions based on that evidence, and generating feedback aligned to the decision and to learning theory.\n\nThe paper instantiates EDF in Copa, a collaborative peer LLM agent for STEM+ problem solving in the C2STEM environment. Copa uses a multi-agent architecture to process student log data and chat turns, infer student state, select dialogue policies such as probing understanding or suggesting actions, and then generate feedback. The framework is designed to support adaptive scaffolding in open-ended, inquiry-based tasks while remaining traceable to student inputs and theoretical principles such as Evidence-Centered Design, Stealth Assessment, Social Cognitive Theory, and Social Constructivism.\n\nThe empirical evaluation took place in a high school science classroom in Nashville, USA, with 33 sophomore dyads working on kinematics tasks over six weeks. The authors analyzed environment logs, conversation turns, screen recordings, and exit survey responses, and also solicited feedback from participating educators. Results suggest that Copa\u2019s scaffolding became more directive as mastery increased, students\u2019 verbalized understanding aligned with their task mastery, and students relied less on the agent as they became more proficient. Interpretability analyses showed that Copa\u2019s decisions and feedback were meaningfully grounded in student evidence. The authors conclude that EDF can support personalized, interpretable scaffolding without fostering overreliance, while noting that students sometimes preferred immediate answers and found the agent less useful than intended when it withheld them.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed classroom study, but the core analyses are correlational/observational rather than randomized, and the paper explicitly notes the absence of an RCT. Credibility is moderate because the evaluation uses real classroom data and multiple triangulated measures, but causal inference remains limited.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The reported associations are positive and sometimes moderate in size (e.g., \u03c1=0.42, \u03c1=0.40), but they come from a small single-site dyad sample and measure within-system behaviors rather than direct learning gains on standardized outcomes. Impact on the broader K-12 population is therefore promising but still unclear.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "A multi-agent LLM pedagogical agent (Copa) providing adaptive scaffolding, probing questions, suggestions, and challenge-pushing feedback during open-ended high school STEM+C problem solving in C2STEM."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "In an authentic high school science classroom study with n=33 dyads, Copa\u2019s support became more pedagogically advanced as task mastery increased: PROBE_UNDERSTANDING decreased (Spearman\u2019s \u03c1=-0.34, p=0.034) while SUGGEST_ACTION (\u03c1=0.33, p=0.039) and PUSH_LIMIT (\u03c1=0.42, p=0.007) increased. The authors interpret this as scaffold fading and ZPD-aligned adaptation, indicating support for students\u2019 metacognitive/problem-solving development rather than fixed-response tutoring.",
+        "measure": "Dialogue policy shift across mastery quintiles; Spearman correlation between policy frequency and task mastery",
+        "study_size": "n=33 dyads",
+        "effect_size": "\u03c1=-0.34; \u03c1=0.33; \u03c1=0.42",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.92,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Students\u2019 verbalized understanding aligned with task mastery: response success rate after a probe increased with mastery deciles (Spearman\u2019s \u03c1=0.40). This suggests students were better able to explain their code as they improved, consistent with active knowledge construction rather than merely gaming task completion.",
+        "measure": "Success rate of correctly explaining code after PROBE_UNDERSTANDING prompts",
+        "study_size": "n=33 dyads",
+        "effect_size": "\u03c1=0.40",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.86,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Student reliance on Copa declined as mastery increased: requests for agent support were highest early, with about 59% of support occurring when mastery was low (<40%), and then decreased significantly with mastery (Spearman\u2019s \u03c1=-0.26). The authors interpret this as growing autonomy, self-regulation, and self-efficacy rather than overreliance on the agent.",
+        "measure": "Percentage of agent support/interactions across mastery deciles",
+        "study_size": "n=33 dyads",
+        "effect_size": "\u03c1=-0.26",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.74,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper reports that the EDF framework produced interpretable feedback traces with non-random structure across three links: Grounding keyword recall was 0.43 vs 0.21 random, Alignment SBERT similarity was 0.64 vs 0.39, and Faithfulness similarity was 0.48 vs 0.24, all p<0.001. While not a direct teacher-workload measure, this indicates the system can expose decision rationales and learner evidence in a way that may reduce burden for stakeholder review and debugging.",
+        "measure": "Interpretability of internal reasoning chain (Grounding, Alignment, Faithfulness)",
+        "study_size": "n=33 dyads",
+        "effect_size": "Grounding 0.43 vs 0.21; Alignment 0.64 vs 0.39; Faithfulness 0.48 vs 0.24",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_long_term_followup",
+    "self_reported_measures"
+  ],
+  "duration_weeks": "6",
+  "setting": "classroom",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "high",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

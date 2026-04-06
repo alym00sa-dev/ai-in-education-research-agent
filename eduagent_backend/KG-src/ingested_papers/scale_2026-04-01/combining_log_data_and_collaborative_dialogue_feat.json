@@ -1,0 +1,565 @@
+{
+  "title": "Combining Log Data and Collaborative Dialogue Features to Predict Project Quality in Middle School AI Education",
+  "doi": null,
+  "year": 2025,
+  "venue": "CSEDM\u201925: 9th Educational Data Mining in Computer Science Education (CSEDM) Workshop",
+  "url": "https://arxiv.org/abs/2506.11326",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Middle School (6th-8th)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper investigates how to predict the quality of students\u2019 project work during collaborative, project-based AI education. The core problem is that open-ended project-based learning makes it difficult for teachers and researchers to monitor progress and assess emerging project quality before the final product is completed. The authors ask whether two naturally occurring data sources\u2014students\u2019 collaborative dialogue and their interaction logs in a chatbot-building system\u2014can predict process-level indicators of project quality, and whether combining those modalities improves prediction.\n\nThe approach centers on multimodal learning analytics rather than testing an instructional treatment against a control group. Students worked in pairs to build science-topic chatbots in the AMBY environment, which logged their actions while audio/video recordings captured their collaboration. The authors synchronized dialogue transcripts with system logs and used features from both sources to predict three outcomes at the intent-submission level: training phrase count (productivity), lexical density (content richness), and lexical variation (diversity of wording). Feedforward neural network regression models were trained and evaluated using log-only, dialogue-only, and combined feature sets.\n\nThe study was conducted in spring 2024 in one public middle school science class in the southeastern United States. The broader study included 128 students, with 100 consenting and 94 middle school students (47 pairs) contributing the collaborative sessions analyzed here. Students completed a 10-hour AI literacy module aligned with K-12 AI learning goals, then collaborated across three 40-minute class sessions to develop chatbots on science topics such as climate and living organisms.\n\nThe main conclusion is that the usefulness of data modality depends on the outcome being predicted. Log data predicted training phrase count best, dialogue data predicted lexical density best, and both modalities were only modest for lexical variation. Early multimodal fusion improved prediction for training phrase count and slightly for lexical variation, but not for lexical density. The authors conclude that behavioral logs and collaborative dialogue provide complementary but outcome-specific signals about student learning processes in open-ended AI education, and that such models may eventually support teacher analytics or adaptive scaffolding, though the current models are not yet deployment-ready.",
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "no_control_group",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "classroom",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "AMBY",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "prediction_analytics"
+      ],
+      "description": "A graphical development environment for middle school students to create and test conversational agents/chatbots, define intents, add training phrases and responses, and retrain the chatbot\u2019s intent classification model.",
+      "use_case": "Students worked in pairs in a 10-hour middle school AI literacy module to build science-topic chatbots in AMBY. The study used AMBY interaction logs plus collaborative dialogue transcripts to predict project-quality proxies during chatbot development.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "For predicting training phrase count, log-only features from AMBY outperformed dialogue-only features on the holdout set (AUC = 0.8053, 95% CI [0.7470, 0.8604] vs. 0.5971, 95% CI [0.5250, 0.6671]). Early multimodal fusion further improved prediction to AUC = 0.8301, 95% CI [0.7732, 0.8822]. An ablation removing phrase-add/delete and add-response dependent features reduced AUCs to 0.6865 (log only) and 0.6759 (combined).",
+          "measure": "Holdout AUC for predicting training phrase count (productivity/completeness proxy) from AMBY logs, dialogue, and combined features",
+          "effect_size": "AUC=0.8053; AUC=0.5971; AUC=0.8301; ablation AUC=0.6865 and 0.6759",
+          "confidence_interval": "[0.7470, 0.8604]; [0.5250, 0.6671]; [0.7732, 0.8822]",
+          "sample_size": "n=94"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "For predicting lexical density of chatbot training phrases, dialogue-only features performed better than AMBY log-only features on the holdout set (AUC = 0.6551, 95% CI [0.5920, 0.7168] vs. 0.5112, 95% CI [0.4556, 0.5655]). The combined model underperformed the dialogue-only model, with AUC = 0.5700, 95% CI [0.5042, 0.6352].",
+          "measure": "Holdout AUC for predicting lexical density of training phrases (content richness proxy)",
+          "effect_size": "AUC=0.6551; AUC=0.5112; AUC=0.5700",
+          "confidence_interval": "[0.5920, 0.7168]; [0.4556, 0.5655]; [0.5042, 0.6352]",
+          "sample_size": "n=94"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "For predicting lexical variation of chatbot training phrases, both AMBY log-only and dialogue-only models performed modestly on the holdout set (AUC = 0.6016, 95% CI [0.5418, 0.6615] and 0.5260, 95% CI [0.4579, 0.5933], respectively). Multimodal fusion yielded only a slight improvement to AUC = 0.6089, 95% CI [0.5438, 0.6727], which the authors note is likely not significant based on overlapping confidence intervals.",
+          "measure": "Holdout AUC for predicting lexical variation of training phrases (word diversity proxy)",
+          "effect_size": "AUC=0.6016; AUC=0.5260; AUC=0.6089",
+          "confidence_interval": "[0.5418, 0.6615]; [0.4579, 0.5933]; [0.5438, 0.6727]",
+          "sample_size": "n=94"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical primary study with 94 middle school students, but it is correlational/predictive learning analytics research rather than an intervention evaluation with randomization or a quasi-experimental comparison on student outcomes.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports predictive performance (AUCs) for project-quality proxies rather than causal treatment effects on learning outcomes. Results are modest to mixed and do not establish clear educational impact magnitude.",
+  "citations": [
+    {
+      "title": "Project based learning in computer science\u2013a review of more than 500 projects",
+      "doi": null,
+      "year": 2011,
+      "venue": "Procedia-Social and Behavioral Sciences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Project-based learning: A review of the literature",
+      "doi": null,
+      "year": 2016,
+      "venue": "Improving Schools",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Project-based learning and student knowledge construction during asynchronous online discussion",
+      "doi": null,
+      "year": 2010,
+      "venue": "The Internet and Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A review of project-based learning in higher education: Student outcomes and measures",
+      "doi": null,
+      "year": 2020,
+      "venue": "International Journal of Educational Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Implementation of project-based learning (pjbl) assisted by e-learning through lesson study activities to improve the quality of learning in physics learning planning courses",
+      "doi": null,
+      "year": 2020,
+      "venue": "International Journal of Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Construction, categorization, and consensus: Student generated computational artifacts as a context for disciplinary reflection",
+      "doi": null,
+      "year": 2014,
+      "venue": "Educational Technology Research and Development",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Written and multimodal representations as predictors of expertise and problem-solving success in mathematics",
+      "doi": null,
+      "year": 2013,
+      "venue": "Proceedings of the 15th ACM on International Conference on Multimodal Interaction",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Can online discussion participation predict group project performance? investigating the roles of linguistic features and participation patterns",
+      "doi": null,
+      "year": 2014,
+      "venue": "International Journal of Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Examining llm prompting strategies for automatic evaluation of learner-created computational artifacts",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the International Conference on Educational Data Mining (EDM)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Cultural diversity in team conversations: A deep dive into its effects on cohesion and team performance",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the International Conference on Educational Data Mining (EDM)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Multimodal modeling of collaborative problem-solving facets in triads",
+      "doi": null,
+      "year": 2021,
+      "venue": "User Modeling and User-Adapted Interaction",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Multimodal learning analytics for predicting student collaboration satisfaction in collaborative game-based learning",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Investigating linguistic alignment in collaborative dialogue: A study of syntactic and lexical patterns in middle school students",
+      "doi": null,
+      "year": 2024,
+      "venue": "Language and Speech",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Automatically recognizing facial expression: Predicting engagement and frustration",
+      "doi": null,
+      "year": 2013,
+      "venue": "Proceedings of International Conference on Educational Data Mining (EDM)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Progression trajectory-based student modeling for novice block-based programming",
+      "doi": null,
+      "year": 2021,
+      "venue": "Proceedings of the 29th ACM Conference on User Modeling, Adaptation and Personalization",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "An evaluation of the impact of automated programming hints on performance and learning",
+      "doi": null,
+      "year": 2019,
+      "venue": "Proceedings of the 2019 ACM Conference on International Computing Education Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Predicting early and often: Predictive student modeling for block-based programming environments",
+      "doi": null,
+      "year": 2019,
+      "venue": "Proceedings of International Conference on Educational Data Mining (EDM)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Using think-aloud data to understand relations between self-regulation cycle characteristics and student performance in intelligent tutoring systems",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 14th Learning Analytics and Knowledge Conference",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Combining dialog acts and skill modeling: What chat interactions enhance learning rates during ai-supported peer tutoring?",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the International Conference on Educational Data Mining (EDM)",
+      "citation_level": 2,
+      "citation_context": "chat activity motivates engagement and dialogue feature framing"
+    },
+    {
+      "title": "Using large language models to detect self-regulated learning in think-aloud protocols",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the International Conference on Educational Data Mining (EDM)",
+      "citation_level": 3,
+      "citation_context": "feedforward neural network and SBERT-based EDM modeling approach"
+    },
+    {
+      "title": "Using multimodal learning analytics to identify aspects of collaboration in project-based learning",
+      "doi": null,
+      "year": 2017,
+      "venue": "CSCL'17: The 12th International Conference on Computer Supported Collaborative Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Evidence-based multimodal learning analytics for feedback and reflection in collaborative learning",
+      "doi": null,
+      "year": 2024,
+      "venue": "British Journal of Educational Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Temporal analysis of multimodal data to predict collaborative learning outcomes",
+      "doi": null,
+      "year": 2020,
+      "venue": "British Journal of Educational Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Multimodal data capabilities for learning: What can multimodal data tell us about learning?",
+      "doi": null,
+      "year": 2020,
+      "venue": "British Journal of Educational Technology",
+      "citation_level": 2,
+      "citation_context": "early fusion and multimodal learning analytics framing"
+    },
+    {
+      "title": "A spatiotemporal analysis of teacher practices in supporting student learning and engagement in an ai-enabled classroom",
+      "doi": null,
+      "year": 2023,
+      "venue": "International Conference on Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A review on data fusion in multimodal learning analytics and educational data mining",
+      "doi": null,
+      "year": 2022,
+      "venue": "Wiley Interdisciplinary Reviews: Data Mining and Knowledge Discovery",
+      "citation_level": 2,
+      "citation_context": "multimodal data fusion framing for the study"
+    },
+    {
+      "title": "Exploring knowledge tracing in tutor-student dialogues",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv preprint arXiv:2409.16490",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Adaptive intelligent support to improve peer tutoring in algebra",
+      "doi": null,
+      "year": 2014,
+      "venue": "International Journal of Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "How system functionality improves the effectiveness of collaborative learning",
+      "doi": null,
+      "year": 2022,
+      "venue": "Interactive Learning Environments",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The construction of shared knowledge in collaborative problem solving",
+      "doi": null,
+      "year": 1995,
+      "venue": "Computer supported collaborative learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Teamslides: a multimodal teamwork analytics dashboard for teacher-guided reflection in a physical learning space",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 14th Learning Analytics and Knowledge Conference",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Detecting non-verbal speech and gaze behaviours with multimodal data and computer vision to interpret effective collaborative learning interactions",
+      "doi": null,
+      "year": 2024,
+      "venue": "Education and Information Technologies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Aligning tutor discourse supporting rigorous thinking with tutee content mastery for predicting math achievement",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 25th International Conference on Artificial Intelligence in Education (AIED'24)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Oscar: An intelligent conversational agent tutor to estimate learning styles",
+      "doi": null,
+      "year": 2010,
+      "venue": "International conference on fuzzy systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Learning by teaching simstudent\u2013an initial classroom baseline study comparing with cognitive tutor",
+      "doi": null,
+      "year": 2011,
+      "venue": "International Conference on Artificial Intelligence in Education (AIED 2011)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Understanding rapport over multiple sessions with a social, teachable robot",
+      "doi": null,
+      "year": 2020,
+      "venue": "International Conference on Artificial Intelligence in Education (AIED 2020)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Evaluating the effectiveness of adaptive tutorial dialogues in database design",
+      "doi": null,
+      "year": 2010,
+      "venue": "Proceedings of the 18th International Conference on Computers in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Gaze tutor: A gaze-reactive intelligent tutoring system",
+      "doi": null,
+      "year": 2012,
+      "venue": "International Journal of Human-Computer Studies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Ai made by youth: A conversational ai curriculum for middle school summer camps",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the Thirty-Seventh AAAI Conference on Artificial Intelligence and Thirty-Fifth Innovative Applications of Artificial Intelligence Conference and Thirteenth AAAI Symposium on Educational Advances in Artificial Intelligence",
+      "citation_level": 2,
+      "citation_context": "AI learning objectives for chatbot phrase quality metrics"
+    },
+    {
+      "title": "Envisioning ai for k-12: What should every child know about ai?",
+      "doi": null,
+      "year": 2019,
+      "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+      "citation_level": 2,
+      "citation_context": "AI learning objectives grounding outcome selection"
+    },
+    {
+      "title": "Amby: A development environment for youth to create conversational agents",
+      "doi": null,
+      "year": 2023,
+      "venue": "International Journal of Child-Computer Interaction",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Pair programming in education: A literature review",
+      "doi": null,
+      "year": 2011,
+      "venue": "Computer Science Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Predicting l2 writing proficiency using linguistic complexity measures: A corpus-based study",
+      "doi": null,
+      "year": 2014,
+      "venue": "English Teaching",
+      "citation_level": 2,
+      "citation_context": "lexical density and variation outcome definitions"
+    },
+    {
+      "title": "The relationship of lexical richness to the quality of esl learners\u2019 oral narratives",
+      "doi": null,
+      "year": 2012,
+      "venue": "The Modern Language Journal",
+      "citation_level": 2,
+      "citation_context": "lexical density and variation outcome definitions"
+    },
+    {
+      "title": "Implementing artificial intelligence education for middle school technology education in republic of korea",
+      "doi": "10.1007/s10798-023-09812-2",
+      "year": 2023,
+      "venue": "International Journal of Technology and Design Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Allure: a multi-modal guided environment for helping children learn to solve a rubik\u2019s cube with automatic solving and interactive explanations",
+      "doi": "10.1609/aaai.v36i11.21722",
+      "year": 2022,
+      "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Lexical diversity in writing and speaking task performances",
+      "doi": null,
+      "year": 2010,
+      "venue": "Applied Linguistics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Effects of lexical density and lexical variety in language performance and proficiency",
+      "doi": null,
+      "year": 2015,
+      "venue": "International Journal of IT, Engineering and Applied Sciences Research (IJIEASR)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Learning curve analysis for programming: Which concepts do students struggle with?",
+      "doi": null,
+      "year": 2016,
+      "venue": "Proceedings of 2016 ACM Conference on International Computing Education Research",
+      "citation_level": 2,
+      "citation_context": "learning curve validation of outcome measures"
+    },
+    {
+      "title": "Instructional factors analysis: A cognitive model for multiple instructional interventions",
+      "doi": null,
+      "year": 2011,
+      "venue": "Proceedings of the 4th International Conference on Educational Data Mining (EDM)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Is it a good move? mining effective tutoring strategies from human\u2013human tutorial dialogues",
+      "doi": null,
+      "year": 2022,
+      "venue": "Future Generation Computer Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Sentence-bert: Sentence embeddings using siamese bert-networks",
+      "doi": null,
+      "year": 2019,
+      "venue": "arXiv preprint arXiv:1908.10084",
+      "citation_level": 3,
+      "citation_context": "SBERT embeddings used for dialogue feature extraction"
+    },
+    {
+      "title": "Improving text embeddings with large language models",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv preprint arXiv:2401.00368",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Computational thinking in k\u201312: A review of the state of the field",
+      "doi": null,
+      "year": 2013,
+      "venue": "Educational Researcher",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Explainable automatic grading with neural additive models",
+      "doi": null,
+      "year": 2024,
+      "venue": "International Conference on Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Does my multimodal model learn cross-modal interactions? it\u2019s harder to tell than you might think!",
+      "doi": "10.18653/v1/2020.emnlp-main.62",
+      "year": 2020,
+      "venue": "Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Leveraging multimodal classroom data for teacher reflection: Teachers\u2019 preferences, practices, and privacy considerations",
+      "doi": null,
+      "year": 2024,
+      "venue": "European Conference on Technology Enhanced Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Multimodal Modeling of Collaborative Learning with Adaptive Data Fusion",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Multimodal methods for analyzing learning and training environments: A systematic literature review",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv preprint arXiv:2408.14491",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Wtf? detecting students who are conducting inquiry without thinking fastidiously",
+      "doi": null,
+      "year": 2012,
+      "venue": "User Modeling, Adaptation, and Personalization: 20th International Conference, UMAP 2012, Montreal, Canada, July 16-20, 2012. Proceedings 20",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

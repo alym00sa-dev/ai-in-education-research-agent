@@ -1,0 +1,31 @@
+{
+  "title": "Can External Validation Tools Improve Annotation Quality for LLM-as-a-Judge?",
+  "doi": null,
+  "year": 2025,
+  "venue": null,
+  "url": "http://arxiv.org/abs/2507.17015v1",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper examines whether large language model (LLM) evaluators used as judges for pairwise response comparison can be improved by giving them access to external validation tools. The authors focus on a known problem in LLM-as-a-Judge systems: standard judges may rely on superficial features such as style, length, or presentation rather than correctly assessing factual accuracy, mathematical correctness, or code functionality. The central research question is whether tool-augmented AI annotators can produce judgments that better align with ground-truth preferences, especially in challenging domains like long-form factual writing, math, and programming.\n\nThe proposed approach is an agentic evaluation framework that augments baseline AI annotators with external tools, including web search for fact-checking and code execution for validating code and mathematical reasoning. The system first assesses whether a response falls into a domain where a tool is likely to help, then selectively runs the relevant tools, and finally makes a preference decision using both the original responses and tool outputs. If no tool is deemed useful, the framework reverts to the baseline annotator. The paper evaluates this framework against existing AI annotators such as AlpacaEval 2.0 and ArenaHard across several benchmarks, including RewardBench and newly created pairwise datasets for long-form factuality, difficult math, and advanced coding.\n\nThe study does not involve educational populations, students, teachers, or schools. Instead, the \"subjects\" are model-generated response pairs and AI/human annotations used to benchmark annotation agreement. Human annotators appear only as non-expert labelers for parts of the evaluation datasets, not as an educational population. The experiments are conducted in an AI benchmarking context rather than a classroom, lab study with human learners, or school implementation.\n\nThe main conclusion is that external validation tools can often improve AI annotator performance, particularly for long-form factual responses and advanced coding tasks, while results for difficult math are more mixed. The authors also find that evaluator performance is highly sensitive to prompt design and annotation configuration, and that gains from tool use come with added complexity and cost. They note some out-of-domain regressions and argue that tool-augmented judging should complement rather than replace human judgment.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This paper is not an education intervention study and does not evaluate any AI or technology intervention with learners, teachers, or schools. It is a technical NLP/LLM evaluation paper about improving LLM-as-a-judge annotation quality, so it does not meet K-12 causal evidence standards for educational effectiveness.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports technical performance gains for AI annotation systems, but these are not educational learner outcomes or school implementation impacts. Any relevance to education is indirect and adjacent, so impact for the target KG should be treated as unclear rather than demonstrated.",
+  "interventions": [],
+  "outcome_assignments": [],
+  "limitations": [
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

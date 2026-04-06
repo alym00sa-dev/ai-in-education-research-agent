@@ -1,0 +1,404 @@
+{
+  "title": "From Recall to Reasoning: Automated Question Generation for Deeper Math Learning through Large Language Models",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "https://arxiv.org/abs/2505.11899",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper investigates how large language models can be used to generate higher-quality mathematics practice questions that support deeper learning rather than simple recall. The authors focus on two research questions: whether providing more contextual information improves the quality and cognitive depth of AI-generated questions, and how an LLM-based system can be designed to generate math questions at different levels of cognitive complexity. The broader motivation is to help educators use generative AI effectively for content creation while addressing concerns about relevance, quality, and pedagogical alignment.\n\nThe paper reports two connected empirical studies. In Study 1, the authors tested Gemini-1.5-Pro in a mathematical logic course by prompting it to generate five comprehension questions under three context conditions: minimal, moderate, and comprehensive. Outputs were evaluated by a logic-knowledgeable math student on relevance, Bloom's Taxonomy depth, and answer correctness. In Study 2, the authors developed QG-DOK, a framework that combines retrieval-augmented generation (RAG) with Webb's Depth of Knowledge (DOK) levels. They embedded mathematical materials in a vector database and used retrieved examples plus DOK-level prompting to guide generation. They then compared DOK-only prompting against DOK+RAG across GPT-4o, DeepSeek-V3, and Gemini-1.5-Pro using automated metrics for relevance, DOK alignment, appropriateness, and lexical diversity.\n\nThe context is advanced mathematics in higher education, specifically a mathematical logic course at McGill University in Canada. The work is framed around supporting educator workflows and improving student learning materials rather than testing student learning outcomes directly. Users discussed in the paper include educators creating questions and students who would use the resulting practice problems; evaluation was conducted primarily on generated content rather than on classroom performance.\n\nThe main conclusions are that LLMs can generate relevant and sometimes high-quality math questions with minimal support, but simply adding more raw context does not reliably improve relevance and may introduce hallucinated content. The proposed DOK+RAG framework improved relevance and appropriateness over DOK-only prompting, especially for higher-order questions, suggesting that grounding generation in retrieved instructional materials is useful for producing deeper and more context-aware math questions. However, the paper also notes continuing challenges with mid-level cognitive depth alignment, mathematical notation handling, limited evaluation data, and the preliminary nature of the findings.",
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_control_group",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Canada",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "Gemini",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation"
+      ],
+      "description": "Google family large language model used for generative text production.",
+      "use_case": "Used in Study 1 as the sole LLM (Gemini-1.5-Pro) to generate five advanced math comprehension questions and answers under three prompt-context conditions: minimal, moderate, and comprehensive course context.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "In Study 1, Gemini-generated question relevance was perfect under minimal and moderate context but declined under comprehensive context, while answer correctness improved with more context. Mean relevance was 1.00 \u00b1 0.00 (minimal), 1.00 \u00b1 0.00 (moderate), and 0.80 \u00b1 0.45 (comprehensive); mean correctness was 0.60 \u00b1 0.55, 0.80 \u00b1 0.45, and 1.00 \u00b1 0.00 respectively. Depth remained relatively constant across conditions at 2.60 \u00b1 1.14, 2.60 \u00b1 1.82, and 2.40 \u00b1 2.07.",
+          "measure": "Human-evaluated relevance (binary), cognitive depth (0-6 Bloom's Taxonomy score), and correctness (binary) of generated math questions/answers across three context scenarios",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "In Study 2, Gemini performed better with DOK+RAG than with DOK-only on average for relevance, DOK alignment, and appropriateness in math question generation, though gains varied by level. Average scores were relevance 0.73 to 0.75, DOK alignment 0.56 to 0.70, and appropriateness 0.82 to 0.91; at Level 4, relevance improved from 0.63 to 0.73 while DOK alignment increased from 0.46 to 0.58.",
+          "measure": "G-Eval scores for relevance, DOK alignment, and appropriateness; PINC lexical diversity for generated math questions",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    },
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation"
+      ],
+      "description": "OpenAI GPT-family large language model used for generative text production.",
+      "use_case": "Used in Study 2 as GPT-4o within the QG-DOK comparison to generate math questions under DOK-only prompting versus DOK+RAG prompting.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "For GPT-4o, DOK+RAG matched or exceeded DOK-only on most metrics, with notable gains in higher-order question generation and appropriateness. Average scores were relevance 0.81 vs 0.81, DOK alignment 0.48 vs 0.71, and appropriateness 0.90 vs 0.92; at Level 4, DOK alignment improved from 0.29 to 0.61 and appropriateness from 0.82 to 0.90.",
+          "measure": "G-Eval scores for relevance, DOK alignment, and appropriateness; PINC lexical diversity for generated math questions",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    },
+    {
+      "name": "DeepSeek",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation"
+      ],
+      "description": "DeepSeek family large language model used for generative text production.",
+      "use_case": "Used in Study 2 as DeepSeek-V3 within the QG-DOK comparison to generate math questions under DOK-only prompting versus DOK+RAG prompting.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "For DeepSeek-V3, DOK+RAG generally improved math question generation quality over DOK-only, especially on relevance and higher-level depth alignment. Average scores were relevance 0.77 to 0.79, DOK alignment 0.64 to 0.69, and appropriateness 0.86 to 0.92; at Level 4, relevance increased from 0.66 to 0.71 and DOK alignment from 0.39 to 0.59.",
+          "measure": "G-Eval scores for relevance, DOK alignment, and appropriateness; PINC lexical diversity for generated math questions",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    },
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "content_generation"
+      ],
+      "description": "Generic generative AI / LLM-based automated question generation system for producing math practice problems.",
+      "use_case": "Studied broadly as an automated math question-generation approach, including the proposed QG-DOK framework that combines retrieval-augmented generation with Webb's Depth of Knowledge to generate context-aware questions at varying cognitive levels.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Across the paper's two studies, the authors report that generative AI can create math problems of varying quality with minimal support, and that providing examples plus relevant content improves output quality. The proposed DOK+RAG framework consistently outperformed DOK-only prompting across tested LLMs, particularly for higher-order thinking levels (DOK 3 and 4), while average PINC scores around 0.92 suggested strong lexical diversity.",
+          "measure": "Human evaluation and G-Eval of generated question relevance, correctness, cognitive depth/DOK alignment, appropriateness, and PINC lexical diversity",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an exploratory empirical paper with two small-scope evaluation studies, relying on prompt comparisons, automated scoring, and a single human evaluator rather than an RCT or strong quasi-experimental design. Sample sizes and inferential statistics are not reported.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports improvements in evaluation metrics for question-generation quality, especially with DOK+RAG, but no standardized effect sizes or student learning outcome impacts are provided. Impact is promising but unclear and operational rather than directly causal on learner achievement.",
+  "citations": [
+    {
+      "title": "A taxonomy for learning, teaching, and assessing: A revision of Bloom\u2019s taxonomy of educational objectives: complete edition",
+      "doi": null,
+      "year": 2001,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "initial framework for scoring question cognitive depth"
+    },
+    {
+      "title": "Using llm (large language model) to improve efficiency in literature review for undergraduate research",
+      "doi": null,
+      "year": 2023,
+      "venue": "LLM@ AIED",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Educational data mining to predict students\u2019 academic performance: A survey study",
+      "doi": null,
+      "year": 2023,
+      "venue": "Education and Information Technologies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Towards automatically generating questions under discussion to link information and discourse structure",
+      "doi": null,
+      "year": 2020,
+      "venue": "Proceedings of the 28th International Conference on Computational Linguistics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Deepseek-v3 technical report",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "one of three evaluated LLMs in Study 2"
+    },
+    {
+      "title": "Computing education in the era of generative ai",
+      "doi": null,
+      "year": 2024,
+      "venue": "Communications of the ACM",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "How teachers can use large language models and bloom\u2019s taxonomy to create educational quizzes",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Collective learning: Applying distributed cognition for collective intelligence",
+      "doi": null,
+      "year": 2009,
+      "venue": "International Journal of Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Mathematical capabilities of chatgpt",
+      "doi": null,
+      "year": 2024,
+      "venue": "Advances in neural information processing systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Retrieval-augmented generation for large language models: A survey",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "naive RAG framework basis for QG-DOK"
+    },
+    {
+      "title": "Gemini 1.5: Unlocking multimodal understanding across millions of tokens of context",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "evaluated LLM and context-window capability source"
+    },
+    {
+      "title": "A survey on neural question generation: Methods, applications, and prospects",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Investigating in-service teachers\u2019 views on chatgpt integration",
+      "doi": null,
+      "year": 2024,
+      "venue": "Interactive Technology and Smart Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Taxonomies in education: Overview, comparison, and future directions",
+      "doi": null,
+      "year": 2021,
+      "venue": "Journal of Education and Development",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A systematic review of automatic question generation for educational purposes",
+      "doi": null,
+      "year": 2020,
+      "venue": "International Journal of Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Retrieval-augmented generation for knowledge-intensive nlp tasks",
+      "doi": null,
+      "year": 2020,
+      "venue": "Advances in Neural Information Processing Systems",
+      "citation_level": 2,
+      "citation_context": "motivates RAG grounding to reduce hallucinations"
+    },
+    {
+      "title": "Bringing generative ai to adaptive learning in education",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "G-eval: Nlg evaluation using gpt-4 with better human alignment",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "evaluation protocol for relevance and appropriateness"
+    },
+    {
+      "title": "What is the impact of chatgpt on education? a rapid review of the literature",
+      "doi": null,
+      "year": 2023,
+      "venue": "Education Sciences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Artificial intelligence, logic, and formalising common sense",
+      "doi": null,
+      "year": 2022,
+      "venue": "Machine Learning and the City: Applications in Architecture and Urban Design",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Gpt-4o system card",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "one of three evaluated LLMs in Study 2"
+    },
+    {
+      "title": "Gemini 1.5: Unlocking multimodal understanding across millions of tokens of context",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "Gemini-1.5-Pro used in Study 1 and 2"
+    },
+    {
+      "title": "Automated educational question generation at different bloom\u2019s skill levels using large language models: Strategies and evaluation",
+      "doi": null,
+      "year": 2024,
+      "venue": "International Conference on Artificial Intelligence in Education",
+      "citation_level": 3,
+      "citation_context": "source for PINC lexical diversity metric"
+    },
+    {
+      "title": "19. intelligent tutoring systems: Past, present, and future",
+      "doi": null,
+      "year": 1994,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Artificial intelligence in classroom discourse: A systematic review of the past decade",
+      "doi": "10.1016/j.ijer.2023.102275",
+      "year": 2024,
+      "venue": "International Journal of Educational Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Ai education for k-12: Connecting ai concepts to high school math curriculum",
+      "doi": null,
+      "year": null,
+      "venue": "Workshop on Education in Artificial Intelligence K-12, 28th International Joint Conference on Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Searching for best practices in retrieval-augmented generation",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing",
+      "citation_level": 3,
+      "citation_context": "sliding-window chunking implementation guidance"
+    },
+    {
+      "title": "Towards process-oriented, modular, and versatile question generation that meets educational needs",
+      "doi": null,
+      "year": 2022,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Qg-net: a data-driven question generation model for educational content",
+      "doi": null,
+      "year": 2018,
+      "venue": "Proceedings of the fifth annual ACM conference on learning at scale",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Depth-of-knowledge levels for four content areas",
+      "doi": null,
+      "year": 2002,
+      "venue": "Language Arts",
+      "citation_level": 2,
+      "citation_context": "core framework for four-level question difficulty design"
+    },
+    {
+      "title": "Conic10k: a challenging math problem understanding and reasoning dataset",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A review of data mining in personalized education: Current trends and future prospects",
+      "doi": null,
+      "year": 2024,
+      "venue": "Frontiers of Digital Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Hot or cold? adaptive temperature sampling for code generation with large language models",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+      "citation_level": 3,
+      "citation_context": "justifies temperature setting for Study 1 generation"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

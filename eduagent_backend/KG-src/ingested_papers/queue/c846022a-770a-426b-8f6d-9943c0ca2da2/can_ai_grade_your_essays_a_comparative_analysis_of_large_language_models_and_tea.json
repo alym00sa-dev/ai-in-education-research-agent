@@ -1,0 +1,66 @@
+{
+  "title": "Can AI grade your essays? A comparative analysis of large language models and teacher ratings in multidimensional essay scoring",
+  "doi": null,
+  "year": 2024,
+  "venue": "Proceedings of the 15th International Conference on Learning Analytics and Knowledge (LAK \u201925)",
+  "url": "http://arxiv.org/abs/2411.16337v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Middle School (6th-8th)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper examines whether large language models (LLMs) can serve as reliable alternatives or supports for teacher essay scoring. The central question is how well several LLMs align with real teacher judgments when assessing student writing across multiple predefined criteria, rather than only producing a single holistic score.\n\nThe study compares five models \u2014 GPT-3.5, GPT-4, o1, LLaMA 3-70B, and Mixtral 8x7B \u2014 against ratings from 37 German teachers. The texts were 20 authentic narrative essays written by Year 7 and Year 8 students in two German secondary schools. Teachers rated each essay on ten criteria covering content and language aspects, using a six-point Likert scale; the average teacher score served as ground truth. Each LLM evaluated each essay ten times under a standardized zero-shot prompt, enabling analysis of both reliability across repeated runs and agreement with human ratings.\n\nResults show that the closed-source GPT models, especially o1, were substantially more reliable and more closely aligned with teachers than the open-source models. Alignment was strongest for language-related criteria such as spelling, expression, and use of literal speech, but weaker for content-related criteria such as introduction, main part, and plot logic. The authors conclude that LLMs, particularly o1, may be useful for assisting teachers with essay evaluation, but they still need refinement to better assess deeper content quality and to avoid over-weighting surface linguistic features.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed comparative correlational study in an authentic K-12 setting, but it is not an RCT or QED and relies on a very small corpus of 20 essays. The design is rigorous for model benchmarking, yet it does not establish causal effects on student outcomes or teacher productivity.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The practical impact is promising but indirect: the paper reports strong agreement for one model (o1) and potential workload reduction, but no measured downstream efficiency gains or learning effects. Evidence suggests useful support for teachers, but the overall impact remains modest and context-limited.",
+  "interventions": [
+    {
+      "intervention": "Automated Feedback System",
+      "confidence": 0.98,
+      "role": "primary",
+      "use_case": "automated essay scoring of real German K-8 student narratives using large language models to assign multidimensional rubric-based ratings on content and language criteria"
+    },
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.5,
+      "role": "secondary",
+      "use_case": "general-purpose large language models used in a teacher-like prompting setup to evaluate student writing and generate ratings, though the paper does not study interactive tutoring"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.94,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper argues that LLM-based essay scoring could reduce teacher workload by supporting the evaluation of student essays. The strongest-performing model, o1, achieved Spearman\u2019s r=.74 with teacher judgments on the overall score and ICC=.80 across repeated runs, suggesting potential utility for streamlining assessment, though the study does not measure time saved directly.",
+        "measure": "agreement with teacher ratings on multidimensional essay scoring; inter-rater reliability across repeated model runs",
+        "study_size": "n=20 essays; 37 teachers; 5 LLMs",
+        "effect_size": "r=.74; ICC=.80",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Automated Feedback System"
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Germany",
+  "study_region": "Europe",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

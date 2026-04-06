@@ -1,0 +1,58 @@
+{
+  "title": "Examining the Effect of Assessment Construct Characteristics on Machine Learning Scoring of Scientific Argumentation",
+  "doi": "https://doi.org/10.1007/s40593-023-00385-8",
+  "year": 2024,
+  "venue": "International Journal of Artificial Intelligence in Education",
+  "url": "https://doi.org/10.1007/s40593-023-00385-8",
+  "source_db": "openalex_search",
+  "populations": [
+    "Middle School (6th-8th)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper examines whether internal characteristics of science assessment items are associated with the performance of machine-learning (ML) scoring models for scientific argumentation. The authors focus on three construct features: Complexity, Diversity, and Structure, and ask how these features relate to human-machine agreement when scoring student written responses. The motivation is practical: automated scoring is increasingly used to support large-scale science assessment and feedback, but it is unclear which kinds of argumentation tasks are easier or harder for ML systems to score reliably.\n\nThe study used deidentified short written responses from middle school students in grades 5\u20138 in two school districts in California. Students had previously received a lesson in scientific argumentation and then completed 19 constructed-response argumentation items, of which 17 were used for ML model development after dropping two items with a different format. The items covered three science contexts: sugar dissolving in water, kinetic motion of gases, and bacterial growth. Human coders scored responses using item-specific rubrics, and the authors trained one supervised ML text-classification model per item using the same procedures and a fixed training size so performance could be compared across items.\n\nResults showed that the ML models achieved generally good performance overall, but accuracy varied by item. Models performed best on lower-complexity, less diverse, and lower-structure items, and performance declined as tasks became more cognitively demanding and more multidimensional. The authors conclude that construct characteristics matter for automated scoring of scientific argumentation, especially for higher-level tasks that require critique, coordination of multiple ideas, or integration across science dimensions. They argue that future ML scoring systems may need more advanced modeling approaches or larger training sets to handle more complex science assessment items.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed empirical correlational study, but it does not evaluate a causal educational intervention or student outcomes. It primarily examines associations between assessment construct features and machine-scoring performance, so it meets only limited credibility criteria for intervention evidence.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper shows meaningful evidence about the feasibility and limits of automated scoring for scientific argumentation, but it does not demonstrate direct student learning impact. The observed model-performance patterns are important for design, yet the educational impact on learners is indirect and unmeasured.",
+  "interventions": [
+    {
+      "intervention": "Automated Feedback System",
+      "confidence": 0.85,
+      "role": "primary",
+      "use_case": "machine-learning automated scoring of middle school scientific argumentation responses to support assessment and potential formative feedback in science classrooms"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Scientific Reasoning",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "This study did not test student learning gains; it evaluated how well ML systems could score middle school scientific argumentation responses across 17 science assessment items (n=361 responses per model). Human-machine agreement was substantial on average (mean Cohen\u2019s kappa=0.60, SD=0.15; mean accuracy=0.79), but performance declined as item Complexity, Diversity, and Structure increased (Spearman\u2019s rho=-0.752, -0.718, and -0.764, respectively).",
+        "measure": "Human-machine scoring agreement on scientific argumentation item responses (Cohen\u2019s kappa, accuracy, Spearman\u2019s rho)",
+        "study_size": "n=361 responses per model; 17 items; 932 students total",
+        "effect_size": "rho=-0.752; rho=-0.718; rho=-0.764; mean k=0.60",
+        "confidence_interval": "not_reported",
+        "std_deviation": "SD=0.15 (for Cohen\u2019s kappa across models)"
+      },
+      "intervention": "Automated Feedback System"
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "classroom",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

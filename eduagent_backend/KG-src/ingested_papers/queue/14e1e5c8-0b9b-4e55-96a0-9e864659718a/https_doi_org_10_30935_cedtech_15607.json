@@ -1,0 +1,83 @@
+{
+  "title": "Enhancing university level English proficiency with generative AI: Empirical insights into automated feedback and learning outcomes",
+  "doi": "https://doi.org/10.30935/cedtech/15607",
+  "year": 2024,
+  "venue": "Contemporary Educational Technology",
+  "url": "https://eric.ed.gov/?id=EJ1449367",
+  "source_db": "eric_search",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Randomized Controlled Trial (RCT)",
+  "extended_summary": "This paper examines whether generative AI can improve university students\u2019 writing outcomes when used as automated feedback during essay revision. The authors focus on large language model (LLM)-based feedback and ask whether such feedback improves the quality of revised work and how students experience the process emotionally and motivationally.\n\nThe intervention used GPT-3.5-turbo to generate feedback on an argumentative essay written by first-year English-language students at a university in Hong Kong. In a two-hour lab session, 918 students wrote an essay, then were randomly assigned to either receive AI-generated feedback or receive no feedback before revising their work. Both the original and revised essays were instructor-marked. The study also collected questionnaire data on students\u2019 emotions, motivation, and engagement during revision, and interviewed 16 students in the feedback group about their experiences.\n\nResults showed that students who received AI feedback improved more on their revised essays than those in the control group, with statistically significant gains, although the effect size was weak. Motivation and engagement were also slightly higher in the feedback group and were strongly associated with revision improvement, while positive emotion showed a weaker and statistically non-significant difference. Interview data suggested that students generally found the feedback useful and task-relevant, but emotional responses were mixed and some students compared AI feedback unfavorably with human feedback. The paper concludes that LLM-based feedback can modestly improve revised writing, likely by increasing motivation and engagement rather than by uniformly improving emotional experience.",
+  "limitations": [
+    "short_duration",
+    "single_site",
+    "self_reported_measures",
+    "non_representative_population",
+    "no_long_term_followup",
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "lab",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Hong Kong",
+  "study_region": "East Asia & Pacific",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "content_generation"
+      ],
+      "description": "OpenAI GPT-based large language model chatbot / generative AI system used to generate written feedback.",
+      "use_case": "Used to generate automated essay feedback for university students\u2019 revision of an argumentative essay; the feedback was produced by submitting student papers plus task instructions and learning objectives to GPT 3.5.",
+      "findings": [
+        {
+          "outcome_category": "Academic \b\bOther",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In a randomized controlled trial with first-year university language students, the group receiving GPT-generated feedback improved more from original to revised essays than the no-feedback control group. The feedback group\u2019s mean improvement was 7.588 versus 4.474 for controls, with a between-group mean difference of 3.113 and p=0.00360; the point-biserial correlation between receiving AI feedback and score improvement was r=0.208.",
+          "measure": "Difference between original and revised essay scores / essay revision score improvement",
+          "effect_size": "r=0.208",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=918"
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Students who received GPT-generated feedback reported higher motivation and engagement during revision than the control group, while positive emotion differences were not statistically significant. Motivation differed by 1.701 points (p=0.00004) and engagement by 0.979 points (p=0.0346); positive emotion differed by 0.794 points but was not significant (p=0.0611).",
+          "measure": "Self-reported motivation, engagement, and positive emotion during revision",
+          "effect_size": "motivation: r=0.29; engagement: r=0.152; emotion: r=0.135",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=918"
+        },
+        {
+          "outcome_category": "Academic \b\bOther",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Correlational analyses suggested that motivation and engagement were strongly associated with revision score gains across both groups, but the study could not isolate whether the AI feedback itself or the associated motivational/engagement changes drove the improvements. The authors explicitly note that the design does not allow evaluation of the accuracy, relevance, or helpfulness of the AI guidance itself, separate from changes in student practice.",
+          "measure": "Association between revision score gains and motivation/engagement; interpretation of AI feedback mechanism",
+          "effect_size": "motivation r=0.882; engagement r=0.883",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=918"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a randomized controlled trial, but it includes mixed methods and the reported outcomes are primarily post-intervention revision scores and self-reports rather than a full blinded efficacy design. The study also notes limitations in attributing effects specifically to the feedback content versus motivation/engagement changes.",
+  "impact_tier": "green",
+  "impact_tier_rationale": "The main academic outcome shows a statistically significant but small effect (r=0.208) on essay revision improvement, which falls in the modest-impact range. The behavioral/self-report outcomes are statistically significant for motivation and engagement but weaker in magnitude.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": "via semantic scholar"
+}

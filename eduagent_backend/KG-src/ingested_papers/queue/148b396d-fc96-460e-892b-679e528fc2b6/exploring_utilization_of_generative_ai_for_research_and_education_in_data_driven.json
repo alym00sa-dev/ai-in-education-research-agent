@@ -1,0 +1,94 @@
+{
+  "title": "Exploring utilization of generative AI for research and education in data-driven materials science",
+  "doi": null,
+  "year": 2025,
+  "venue": "not_reported",
+  "url": "http://arxiv.org/abs/2504.08817v2",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Graduate / Doctoral",
+    "Adult (non-academic)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Qualitative",
+  "extended_summary": "This paper examines how generative AI can be used to support research and education in data-driven materials science. The authors organized AIMHack2024, a hackathon in July 2024, to explore practical uses of generative AI for software trials, tutor creation, and GUI development. The work is framed as an early record of how tools like ChatGPT can assist domain experts in learning software, generating tutorials, and automating documentation and application development.\n\nThe intervention consisted of collaborative hackathon activities involving roughly 30 participants from materials science, computational science, bioinformatics, condensed matter physics, and related fields. Participants included students and industry researchers. The paper reports three main demonstrations: using ChatGPT to guide ImageJ-based image analysis, building an AI tutor for PHYSBO using MyGPT and official documentation, and creating a Windows GUI executable for PHYSBO using ChatGPT-generated code modifications.\n\nThe paper concludes that generative AI can reduce workload and speed up software learning and documentation, but its outputs are not always correct and require human verification. It highlights that URLs alone were not sufficient for accurate MyGPT responses, whereas providing structured PDF documentation improved accuracy substantially. Overall, the authors argue that generative AI is promising for educational and research workflows in materials science, especially when paired with domain-specific reference materials and manual checking.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed, descriptive hackathon report with hands-on demonstrations, but it is not a controlled study and provides no formal experimental design, comparison group, or statistical testing. Evidence credibility is limited to qualitative/illustrative observations and worked examples.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper suggests potentially useful applications of generative AI for software learning and documentation, but it reports no measured effect sizes and only anecdotal/qualitative outcomes. Impact on educational outcomes appears promising but unclear and unquantified.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.98,
+      "role": "primary",
+      "use_case": "Using ChatGPT/MyGPT as a conversational tutor to generate step-by-step software tutorials, answer questions about PHYSBO/Bayesian optimization, and provide GUI and manual-writing assistance for scientific software use."
+    },
+    {
+      "intervention": "Computer-Assisted Instruction (CAI)",
+      "confidence": 0.72,
+      "role": "secondary",
+      "use_case": "AI-assisted guided software trials for learning ImageJ features (e.g., counting circles and using watershed segmentation) as a low-stakes instructional workflow for participants."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.96,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper reports that generative AI reduced the effort required to learn unfamiliar software, generate tutorials/manuals, and convert scripts into executables and GUIs. In the PHYSBO tutorial-generation workflow, MyGPT produced a functionally correct executable tutorial when provided with structured documentation, and the authors describe the resulting development and documentation tasks as largely automatable; no formal effect size or sample size was reported.",
+        "measure": "Task completion / productivity in software learning, tutorial generation, GUI development, and documentation creation",
+        "study_size": "approximately n=30 hackathon participants; no formal experimental sample for the software-building demonstrations",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.86,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "A central claim is that participants improved their ability to critically evaluate AI-generated content by verifying outputs against literature and running the software themselves. The paper frames this as enhanced critical thinking and reliability checking in AI-assisted workflows, but provides no quantitative measure, effect size, or inferential statistics.",
+        "measure": "Critical evaluation / verification of AI-generated explanations and code",
+        "study_size": "approximately n=30 hackathon participants; no formal experimental sample for the verification activity",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    },
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.76,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "In the materials-science/software-learning context, ChatGPT successfully generated instructions for using ImageJ to count non-overlapping circles and to separate overlapping circles via watershed segmentation, and the authors state the resulting demonstrations were accurate when executed. This is presented as evidence that generative AI can support scientific software learning and use, but the paper does not report a controlled comparison or quantitative effect size.",
+        "measure": "Accuracy/functionality of AI-generated software-use instructions for ImageJ and PHYSBO",
+        "study_size": "2 tutorial demonstrations plus approximately n=30 hackathon participants exposed to the workflow",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "blended",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Japan",
+  "study_region": "East Asia & Pacific",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

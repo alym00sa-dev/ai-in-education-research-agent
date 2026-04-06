@@ -1,0 +1,325 @@
+{
+  "title": "Understanding Student Interaction with AI-Powered Next-Step Hints: Strategies and Challenges",
+  "doi": "10.1145/3770762.3772544",
+  "year": 2026,
+  "venue": "Proceedings of the 57th ACM Technical Symposium on Computer Science Education V.1 (SIGCSE TS 2026)",
+  "url": "https://arxiv.org/abs/2511.06362",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper investigates how students interact with an AI-powered next-step hint system for programming tasks, with a particular focus on two questions: what behavioral patterns appear in student hint use, and what strategies students use when hints are unhelpful. The authors argue that while prior work has evaluated automated feedback quality, less is known about how learners actually engage with such hints during problem solving, especially in in-IDE learning environments.\n\nThe intervention studied is an AI-based next-step hint system integrated into the JetBrains Academy plugin for learning Kotlin inside a professional IDE. The system provides two levels of support: a textual hint that suggests one actionable next step, and a code hint that shows a code fragment to move the solution forward. The study combines quantitative log analysis and qualitative interviews. Using detailed KOALA logs, the authors analyzed hint-request sessions from students' task-solving processes and applied process mining to identify 16 common interaction scenarios. They also conducted semi-structured interviews to better understand how students responded to ambiguous or unhelpful hints.\n\nThe population consisted of 34 first- and second-year computer science Bachelor's students with prior programming experience in languages other than Kotlin but no prior Kotlin experience. Students completed three Kotlin programming projects from a JetBrains Academy onboarding course in an in-IDE environment; 20 completed all three projects, and 6 of those students participated in 30-minute interviews. The context was programming education using JetBrains IDEs and an AI hint tool, with an expected total task completion time of up to six hours.\n\nThe main findings are that student interactions with the hint system were varied: 28.48% of scenarios were positive, 40.00% were neutral, and 27.05% were negative, with most negative cases caused by system errors rather than explicit rejection. Interviews and log inspection showed that students often used hints strategically rather than passively. They selectively adapted only parts of code hints, or requested multiple hints and combined partial suggestions to build a working solution. The authors conclude that students can engage with AI hints in flexible and sometimes unexpected ways, and that hint systems should better support these behaviors, for example by improving robustness and potentially offering multiple hint variations.",
+  "limitations": [
+    "small_sample",
+    "no_control_group",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "lab",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "identified_tools": [
+    {
+      "name": "JetBrains Academy plugin",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "tutoring_instruction"
+      ],
+      "description": "An in-IDE learning plugin for JetBrains IDEs that integrates programming tasks and AI-based next-step hints, including textual and code hints generated using LLMs combined with static analysis.",
+      "use_case": "Studied as the environment hosting an AI-powered next-step hint system for students solving Kotlin programming tasks; the paper analyzed log data and interviews to understand how students interacted with textual and code hints and how they handled unhelpful hints.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Across hint-request scenarios from 34 students solving Kotlin tasks, 28.48% of interactions were positive (299 scenarios), 40.00% were neutral (420 scenarios), and 27.05% were negative (284 scenarios). Most negative scenarios were due to internal system errors rather than explicit rejection, and the authors note that students often continued using the system after encountering such errors.",
+          "measure": "Distribution of hint interaction scenarios (positive, neutral, negative) derived from log data",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=34"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "The log dataset included 960 textual hint requests and 453 code hint requests, and process mining identified 16 common interaction scenarios. Positive and neutral scenarios together accounted for 68.48% of all scenarios, suggesting students frequently engaged with the hint system without explicitly rejecting hints.",
+          "measure": "Hint request counts and process-mined interaction scenario frequencies",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=34"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Semi-structured interviews with 6 students identified strategies for handling unhelpful hints, including selective use of hints and combining partial solutions from multiple hints. Manual analysis showed some students adapted only parts of code hints, generated multiple hint variants by changing code, and combined these variants into working solutions.",
+          "measure": "Student problem-solving and hint-use strategies from interviews and follow-up log analysis",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=6"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Most negative hint interactions were attributable to system errors: 266 out of 284 negative scenarios resulted from internet connection problems or internal issues involving LLM providers and access tokens. Process mining also showed ERR \u2192 HBC was relatively common, accounting for an average of 9.8% of all transitions, indicating students often returned to request hints after errors.",
+          "measure": "System error frequency and transition behavior after errors",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=34"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical mixed-methods study with detailed log analysis and interviews, but it does not use an RCT or quasi-experimental design and focuses on interaction patterns rather than causal learning effects.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper provides useful evidence on student interaction patterns and system usability, but it does not report standardized effect sizes or direct achievement gains, so impact on learning outcomes remains unclear.",
+  "citations": [
+    {
+      "title": "Kotlin Onboarding: Introduction",
+      "doi": null,
+      "year": 2025,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "source of programming tasks used in study"
+    },
+    {
+      "title": "Integrating ChatGPT in a Computer Science Course: Students Perceptions and Suggestions",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv preprint arXiv:2402.01640",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Process Mining Techniques for Analysing Patterns and Strategies in Students\u2019 Self-Regulated Learning",
+      "doi": null,
+      "year": 2014,
+      "venue": "Metacognition and Learning",
+      "citation_level": 2,
+      "citation_context": "supports process mining approach for behavior analysis"
+    },
+    {
+      "title": "One Step at a Time: Combining LLMs and Static Analysis to Generate Next-Step Hints for Programming Tasks",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 24th Koli Calling International Conference on Computing Education Research",
+      "citation_level": 3,
+      "citation_context": "original hint system and study replicated here"
+    },
+    {
+      "title": "Supplementary materials",
+      "doi": null,
+      "year": 2025,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "source of dataset and interview script"
+    },
+    {
+      "title": "Bridging Education and Development: IDEs as Interactive Learning Platforms",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 1st ACM/IEEE Workshop on Integrated Development Environments",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Hyperstyle: A Tool for Assessing the Code Quality of Solutions to Programming Assignments",
+      "doi": null,
+      "year": 2022,
+      "venue": "Proceedings of the 53rd ACM Technical Symposium on Computer Science Education-Volume 1",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A Survey on Educational Process Mining",
+      "doi": null,
+      "year": 2018,
+      "venue": "Wiley Interdisciplinary Reviews: Data Mining and Knowledge Discovery",
+      "citation_level": 2,
+      "citation_context": "supports process mining approach for behavior analysis"
+    },
+    {
+      "title": "Discovery and Temporal Analysis of Latent Study Patterns in MOOC Interaction Sequences",
+      "doi": null,
+      "year": 2018,
+      "venue": "Proceedings of the 8th International Conference on Learning Analytics and Knowledge",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Do Hints Enhance Learning in Programming Exercises? Exploring Students\u2019 Problem-Solving and Interactions",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 55th ACM Technical Symposium on Computer Science Education V. 2",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Ask-Elle: An Adaptable Programming Tutor for Haskell Giving Automated Feedback",
+      "doi": null,
+      "year": 2017,
+      "venue": "International Journal of Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Educational Process Mining: A Systematic Literature Review",
+      "doi": null,
+      "year": 2017,
+      "venue": "2017 European Conference on Electrical Engineering and Computer Science (EECS)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "GradeStyle: GitHub-Integrated and Automated Assessment of Java Code Style",
+      "doi": null,
+      "year": 2023,
+      "venue": "2023 IEEE/ACM 45th International Conference on Software Engineering: Software Engineering Education and Training (ICSE-SEET)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Towards Giving Timely Formative Feedback and Hints to Novice Programmers",
+      "doi": null,
+      "year": 2022,
+      "venue": "Proceedings of the 2022 Working Group Reports on Innovation and Technology in Computer Science Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "KOALA: a Configurable Tool for Collecting IDE Data When Solving Programming Tasks",
+      "doi": null,
+      "year": 2025,
+      "venue": "Proceedings of the ACM Global on Computing Education Conference 2025 Vol 1",
+      "citation_level": 3,
+      "citation_context": "data collection tool used for task-solving logs"
+    },
+    {
+      "title": "A Tutoring System to Learn Code Refactoring",
+      "doi": null,
+      "year": 2021,
+      "venue": "Proceedings of the 52nd ACM Technical Symposium on Computer Science Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A Systematic Literature Review of Automated Feedback Generation for Programming Exercises",
+      "doi": null,
+      "year": 2018,
+      "venue": "ACM Transactions on Computing Education (TOCE)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Using large language models to enhance programming error messages",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 54th ACM Technical Symposium on Computer Science Education V. 1",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "CodeHelp: Using Large Language Models with Guardrails for Scalable Support in Programming Classes",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 23rd Koli Calling International Conference on Computing Education Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Teaching CS50 with AI: Leveraging Generative Artificial Intelligence in Computer Science Education",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 55th ACM Technical Symposium on Computer Science Education V. 1",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Adaptive Immediate Feedback Can Improve Novice Programming Engagement and Intention to Persist in Computer Science",
+      "doi": null,
+      "year": 2020,
+      "venue": "Proceedings of the 2020 ACM Conference on International Computing Education Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Automated Assessment in Computer Science Education: A State-of-the-Art Review",
+      "doi": null,
+      "year": 2022,
+      "venue": "ACM Transactions on Computing Education (TOCE)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Generating High-Precision Feedback for Programming Syntax Errors using Large Language Models",
+      "doi": null,
+      "year": 2023,
+      "venue": "16th International Conference on Educational Data Mining",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "iSnap: Towards Intelligent Tutoring in Novice Programming Environments",
+      "doi": null,
+      "year": 2017,
+      "venue": "Proceedings of the 2017 ACM SIGCSE Technical Symposium on Computer Science Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Automatic Generation of Programming Feedback: A Data-Driven Approach",
+      "doi": null,
+      "year": 2013,
+      "venue": "The First Workshop on AI-supported Education for Computer Science (AIEDCS 2013)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Next-Step Hint Generation for Introductory Programming Using Large Language Models",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 26th Australasian Computing Education Conference",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Relative Effectiveness of Human Tutoring, Intelligent Tutoring Systems, and Other Tutoring Systems",
+      "doi": null,
+      "year": 2011,
+      "venue": "Educational Psychologist",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Exploring Novice Programmers\u2019 Hint Requests in an Intelligent Block-Based Coding Environment",
+      "doi": null,
+      "year": 2021,
+      "venue": "Proceedings of the 52nd ACM Technical Symposium on Computer Science Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Exploring How Multiple Levels of GPT-Generated Programming Hints Support or Disappoint Novices",
+      "doi": null,
+      "year": 2024,
+      "venue": "Extended Abstracts of the CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

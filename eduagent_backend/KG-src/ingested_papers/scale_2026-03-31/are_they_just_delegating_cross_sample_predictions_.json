@@ -1,0 +1,274 @@
+{
+  "title": "Are they just delegating? Cross-Sample Predictions on University Students' & Teachers' Use of AI.",
+  "doi": null,
+  "year": 2025,
+  "venue": null,
+  "url": "https://arxiv.org/abs/2601.21490",
+  "source_db": "scale_stanford",
+  "population": "Undergraduate",
+  "user_type": "Mixed",
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper examines how university students and university teachers in higher education use generative AI for academic tasks, and how accurately each group predicts the other group\u2019s AI use. The core problem is not only whether AI is being used, but whether mismatched beliefs about that use may undermine trust between students and teachers. The study focuses on two dimensions of AI use: frequency of use and degree of delegation to AI across common academic tasks.\n\nThe authors conducted two online surveys with participants from German universities: one with university teachers and one with university students. Participants reported their own AI use and delegation across academic tasks, and also made incentivized predictions about the other group\u2019s AI use. Analyses focused on six overlapping tasks shared by both groups: information research, literature research, writing, coding, translating, and visualizing. The study used self-report scales and linear mixed-effects regressions to compare groups and assess prediction accuracy.\n\nThe population consisted of higher education participants in Germany, specifically university teachers (N=113 in the analyzed sample as reported in results) and university students (N=123 in the analyzed sample as reported in results), although the methods section contains reversed sample counts in places. Student recruitment partly relied on Prolific after university-channel recruitment fell short, which the authors acknowledge as a potential representativeness issue. The study was conducted online over an eight-week recruitment period rather than as a classroom intervention.\n\nThe main findings are that students reported using AI more frequently and delegating more of their academic work to AI than teachers did, with the exception that teachers reported more AI use for translation tasks. Both groups substantially overestimated the other group\u2019s AI use and AI delegation. Contrary to the authors\u2019 expectations, teachers were not more accurate than students in predicting the other group\u2019s behavior. The paper concludes that there is a meaningful perception gap between teachers and students regarding AI use in higher education, and that open dialogue and transparent policies around AI use are needed to support trust and equitable integration of AI tools.",
+  "limitations": [
+    "no_control_group",
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "8",
+  "setting": "online",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Germany",
+  "study_region": "Europe",
+  "identified_tools": [
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "other"
+      ],
+      "description": "Generative AI tools used for academic tasks in higher education, discussed collectively rather than as a specific named product.",
+      "use_case": "Surveyed university teachers' and students' self-reported frequency of use and degree of delegation to generative AI across six academic tasks (information research, literature research, writing, coding, translating, visualizing), plus cross-sample predictions of the other group's AI use.",
+      "findings": [
+        {
+          "outcome_category": "Systemic / Institutional Impact",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Students reported higher frequency of AI use for academic tasks than teachers overall, with a significant main effect of group (b = -0.35, SE = 0.09, p < .001, d = 0.36). The largest group differences favored higher student use for information research (b = -0.73, SE = 0.15, p < .001, d = 0.75), programming (b = -0.61, SE = 0.15, p < .001, d = 0.63), literature research (b = -0.50, SE = 0.15, p = .001, d = 0.51), and text work (b = -0.48, SE = 0.15, p = .0009, d = 0.50), while translation showed the reverse pattern with teachers reporting higher use (b = 0.36, SE = 0.15, p = .013, d = 0.37).",
+          "measure": "Self-reported frequency of AI use across six academic tasks on a 5-point scale",
+          "effect_size": "d = 0.36 overall; task-specific ds = 0.75, 0.63, 0.51, 0.50, 0.14, 0.37",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=236"
+        },
+        {
+          "outcome_category": "Systemic / Institutional Impact",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Students reported delegating academic tasks to AI to a greater extent than teachers overall, by 15.72 points on a 100-point delegation scale (b = -15.72, SE = 2.46, p < .001, d = 0.66). The largest differences were for information research (b = -24.09, SE = 3.74, p < .001, d = 1.02), literature research (b = -18.06, SE = 3.75, p < .001, d = 0.76), programming (b = -17.78, SE = 3.80, p < .001, d = 0.75), and writing (b = -19.25, SE = 3.74, p < .001, d = 0.81); translating was not significant (b = -5.04, SE = 3.75, p = .180, d = 0.21).",
+          "measure": "Self-reported degree of AI delegation across six academic tasks on a 100-point scale",
+          "effect_size": "d = 0.66 overall; task-specific ds = 1.02, 0.76, 0.75, 0.81, 0.43, 0.21",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=236"
+        },
+        {
+          "outcome_category": "Systemic / Institutional Impact",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "Both teachers and students substantially overestimated the other group's frequency of AI use by 1.02 points on the 5-point scale, indicating large prediction inaccuracies (b = 1.02, SE = 0.02, p < .001, d = 1.75). Students were slightly more accurate than teachers in one analysis (b = -0.093, SE = 0.05, t(234) = -2.05, p = .042, d = 0.16), but this effect disappeared with the alternative student sample.",
+          "measure": "Prediction accuracy for the other group's frequency of AI use (absolute difference between prediction and group mean self-report)",
+          "effect_size": "d = 1.75; between-group difference d = 0.16",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=236"
+        },
+        {
+          "outcome_category": "Systemic / Institutional Impact",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "Both teachers and students substantially overestimated the other group's degree of AI delegation by 25.89 points, indicating very large prediction inaccuracies (b = 25.89, SE = 0.69, p < .001, d = 2.08). There was no significant difference between groups in prediction accuracy for delegation (b = -2.43, SE = 1.38, t(233.98) = -1.76, p = .079, d = 0.20).",
+          "measure": "Prediction accuracy for the other group's degree of AI delegation (absolute difference between prediction and group mean self-report)",
+          "effect_size": "d = 2.08; between-group difference d = 0.20",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=236"
+        }
+      ]
+    }
+  ],
+  "verdict": "genai_general",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical primary study using preregistered online surveys and mixed-effects analyses, but it relies on self-reported behavior and cross-sample predictions rather than an intervention, randomized design, or causal evaluation of an educational AI tool.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports medium to very large group differences and prediction errors, but these are descriptive/systemic findings about AI use perceptions rather than demonstrated impacts of a tool on learning outcomes.",
+  "citations": [
+    {
+      "title": "AI in STEM education: The relationship between teacher perceptions and ChatGPT use",
+      "doi": "10.1016/j.chbr.2024.100494",
+      "year": 2024,
+      "venue": "Computers in Human Behavior Reports"
+    },
+    {
+      "title": "Artificial Intelligence in Education",
+      "doi": "10.1007/978-3-030-52237-7",
+      "year": 2020,
+      "venue": "Springer International Publishing"
+    },
+    {
+      "title": "Trust, distrust and their impact on assessment reform",
+      "doi": "10.1080/02602930801895786",
+      "year": 2009,
+      "venue": "Assessment & Evaluation in Higher Education"
+    },
+    {
+      "title": "Trust, Growth Mindset, and Student Commitment to Active Learning in a College Science Course",
+      "doi": "10.1187/cbe.17-06-0107",
+      "year": 2018,
+      "venue": "CBE\u2014Life Sciences Education"
+    },
+    {
+      "title": "The AI generation gap: Are Gen Z students more interested in adopting generative AI such as ChatGPT in teaching and learning than their Gen X and millennial generation teachers?",
+      "doi": "10.1186/s40561-023-00269-3",
+      "year": 2023,
+      "venue": "Smart Learning Environments"
+    },
+    {
+      "title": "The ICAP Framework: Linking Cognitive Engagement to Active Learning Outcomes",
+      "doi": "10.1080/00461520.2014.965823",
+      "year": 2014,
+      "venue": "Educational Psychologist"
+    },
+    {
+      "title": "The interplay of learning, analytics and artificial intelligence in education: A vision for hybrid intelligence",
+      "doi": "10.1111/bjet.13514",
+      "year": 2025,
+      "venue": "British Journal of Educational Technology"
+    },
+    {
+      "title": "Artificial intelligence for teaching and learning in schools: The need for pedagogical intelligence",
+      "doi": "10.1016/j.compedu.2024.105071",
+      "year": 2024,
+      "venue": "Computers & Education"
+    },
+    {
+      "title": "Going back to the source: Why do people trust each other?",
+      "doi": "10.1080/21515581.2011.603514",
+      "year": 2011,
+      "venue": "Journal of Trust Research"
+    },
+    {
+      "title": "International perspectives on artificial intelligence in higher education: An explorative study of students\u2019 intention to use ChatGPT across the Nordic countries and the USA",
+      "doi": "10.1007/s10639-025-13492-x",
+      "year": 2025,
+      "venue": "Education and Information Technologies"
+    },
+    {
+      "title": "Building Trust in the Classroom: A Conceptual Model for Teachers, Scholars, and Academic Developers in Higher Education",
+      "doi": "10.20343/teachlearninqu.11.20",
+      "year": 2023,
+      "venue": "Teaching and Learning Inquiry"
+    },
+    {
+      "title": "The promise and challenges of generative AI in education",
+      "doi": "10.1080/0144929X.2024.2394886",
+      "year": 2025,
+      "venue": "Behaviour & Information Technology"
+    },
+    {
+      "title": "The weirdest people in the world?",
+      "doi": "10.1017/S0140525X0999152X",
+      "year": 2010,
+      "venue": "Behavioral and Brain Sciences"
+    },
+    {
+      "title": "The Professors Are Using ChatGPT, and Some Students Aren\u2019t Happy About It",
+      "doi": null,
+      "year": 2025,
+      "venue": "The New York Times"
+    },
+    {
+      "title": "A multinational assessment of AI literacy among university students in Germany, the UK, and the US",
+      "doi": "10.1016/j.chbah.2025.100132",
+      "year": 2025,
+      "venue": "Computers in Human Behavior: Artificial Humans"
+    },
+    {
+      "title": "Measuring undergraduate students\u2019 reliance on Generative AI during problem-solving: Scale development and validation",
+      "doi": "10.1016/j.compedu.2025.105329",
+      "year": 2025,
+      "venue": "Computers & Education"
+    },
+    {
+      "title": "Effects of artificial Intelligence\u2013Enabled personalized recommendations on learners\u2019 learning engagement, motivation, and outcomes in a flipped classroom",
+      "doi": "10.1016/j.compedu.2022.104684",
+      "year": 2023,
+      "venue": "Computers & Education"
+    },
+    {
+      "title": "Analyzing the role of ChatGPT as a writing assistant at higher education level: A systematic review of the literature",
+      "doi": "10.30935/cedtech/13605",
+      "year": 2023,
+      "venue": "Contemporary Educational Technology"
+    },
+    {
+      "title": "ChatGPT\u2014A Challenging Tool for the University Professors in Their Teaching Practice",
+      "doi": "10.3390/educsci13101056",
+      "year": 2023,
+      "venue": "Education Sciences"
+    },
+    {
+      "title": "AI amplifies the tough question: What is higher education really for?",
+      "doi": "10.1080/13562517.2023.2263839",
+      "year": 2023,
+      "venue": "Teaching in Higher Education"
+    },
+    {
+      "title": "From \u201cBan It Till We Understand It\u201d to \u201cResistance is Futile\u201d: How University Programming Instructors Plan to Adapt as More Students Use AI Code Generation and Explanation Tools such as ChatGPT and GitHub Copilot",
+      "doi": "10.1145/3568813.3600138",
+      "year": 2023,
+      "venue": "Proceedings of the 2023 ACM Conference on International Computing Education Research V.1"
+    },
+    {
+      "title": "How does GenAI affect trust in teacher-student relationships? Insights from students\u2019 assessment experiences",
+      "doi": "10.1080/13562517.2024.2341005",
+      "year": 2025,
+      "venue": "Teaching in Higher Education"
+    },
+    {
+      "title": "The Distrust of Students as Learners: Myths and Realities",
+      "doi": "10.1007/978-3-030-87037-9_6",
+      "year": 2021,
+      "venue": "Trusting in Higher Education"
+    },
+    {
+      "title": "21st century evidence that higher education works",
+      "doi": null,
+      "year": 2016,
+      "venue": "Jossey-Bass"
+    },
+    {
+      "title": "Is generative AI reshaping academic practices worldwide? A survey of adoption, benefits, and concerns",
+      "doi": "10.1016/j.ipm.2025.104350",
+      "year": 2026,
+      "venue": "Information Processing & Management"
+    },
+    {
+      "title": "Student (Mis)Use of Generative AI Tools for University-Related Tasks",
+      "doi": "10.1080/10447318.2025.2462083",
+      "year": 2025,
+      "venue": "International Journal of Human\u2013Computer Interaction"
+    },
+    {
+      "title": "Surveillance, (dis)trust and teaching with plagiarism detection technology",
+      "doi": "10.54337/nlc.v11.8760",
+      "year": 2018,
+      "venue": "Proceedings of the International Conference on Networked Learning"
+    },
+    {
+      "title": "Distrust: A critical review exploring a universal distrust sequence",
+      "doi": "10.1080/21515581.2023.2184376",
+      "year": 2023,
+      "venue": "Journal of Trust Research"
+    },
+    {
+      "title": "Perceptions and usage of AI chatbots among students in higher education across genders, academic levels and fields of study",
+      "doi": "10.1016/j.caeai.2024.100259",
+      "year": 2024,
+      "venue": "Computers and Education: Artificial Intelligence"
+    },
+    {
+      "title": "Artificial Intelligence in studies\u2014Use of ChatGPT and AI-based tools among students in Germany",
+      "doi": "10.1057/s41599-023-02304-7",
+      "year": 2023,
+      "venue": "Humanities and Social Sciences Communications"
+    },
+    {
+      "title": "Incentives in experimental economics",
+      "doi": "10.1016/j.socec.2021.101706",
+      "year": 2021,
+      "venue": "Journal of Behavioral and Experimental Economics"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

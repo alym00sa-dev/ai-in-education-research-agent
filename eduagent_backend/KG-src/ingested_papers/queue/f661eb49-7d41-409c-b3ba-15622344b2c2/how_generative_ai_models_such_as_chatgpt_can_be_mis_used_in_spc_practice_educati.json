@@ -1,0 +1,58 @@
+{
+  "title": "How Generative AI Models Such as ChatGPT Can Be (Mis)Used in SPC Practice, Education, and Research? An Exploratory Study",
+  "doi": null,
+  "year": 2023,
+  "venue": "arXiv preprint",
+  "url": "http://arxiv.org/abs/2302.10916v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This exploratory preprint examines whether ChatGPT-like generative AI models can be useful for statistical process control (SPC) practice, learning, and research. The authors frame the paper around a practical question: what can large language models currently do well, and where do they fail, when asked to generate code, explain SPC concepts, or create educational/research materials? Rather than evaluating a learning intervention with human participants, the paper evaluates ChatGPT itself through a series of structured prompts.\n\nThe intervention studied is the use of ChatGPT (GPT-3.5) to assist with SPC-related coding, conceptual explanation, and knowledge generation. The authors test prompts in three domains\u2014practice, learning/training, and research\u2014covering tasks such as writing R/Python code for control charts, explaining phase 1 vs phase 2 control charts and ARL, and generating a course syllabus or research ideas. Responses are compared against SPC textbooks and established literature, and the authors manually debug code outputs where necessary.\n\nThe context is SPC education and research, with an explicit undergraduate teaching example in the syllabus-generation task, but no real student sample or classroom implementation is reported. The main conclusion is mixed: ChatGPT performs reasonably well on structured, well-known tasks and can generate useful pedagogical materials, but it often produces incorrect, misleading, or fabricated details on nuanced SPC tasks. The authors conclude that generative AI should be validated carefully and used alongside other methods rather than trusted as a standalone source.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is an exploratory, non-experimental preprint with no randomized comparison, no control group, and no quantitative causal design. The paper is qualitative and descriptive, so it does not meet credibility criteria for strong causal evidence.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper suggests potential productivity benefits, but provides no quantified effect sizes or validated outcomes. Any impact is therefore modest and uncertain, based on illustrative examples rather than measured gains.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "Exploratory evaluation of ChatGPT/GPT-3.5 for SPC practice, learning, and research tasks, including code generation, concept explanation, and knowledge generation such as drafting syllabi and frameworks."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper argues that ChatGPT can improve practitioner efficiency by helping generate code, explain SPC concepts, and draft reusable knowledge assets such as frameworks and syllabi. However, this is based on qualitative inspection of outputs rather than controlled comparison, and the authors note that some results were misleading or wrong.",
+        "measure": "Qualitative assessment of task completion quality and usefulness across structured prompts",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    }
+  ],
+  "limitations": [
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

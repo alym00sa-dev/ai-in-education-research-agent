@@ -1,0 +1,62 @@
+{
+  "title": "Benchmarking Large Language Models for Persian: A Preliminary Study Focusing on ChatGPT",
+  "doi": null,
+  "year": 2024,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2404.02403v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Elementary (PreK-5th)",
+    "Middle School (6th-8th)",
+    "High School (9th-12th)"
+  ],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper benchmarks large language models for Persian across a set of NLP tasks, asking how GPT-3.5-turbo, GPT-4, and OpenChat-3.5 perform on classic, reasoning, and knowledge-based language tasks in a low-resource language setting. The authors are motivated by the lack of comprehensive Persian evaluation and by the question of whether instruction prompting, few-shot examples, and translation into English improve model performance.\n\nThe evaluated tasks include sentiment analysis, emotion recognition, named entity recognition, reading comprehension, machine translation, textual entailment, multiple-choice QA, elementary-school math questions, and mathematical problems. The study compares LLMs against task-specific fine-tuned SOTA models on subsets of 200 examples for several tasks, and also tests prompt language (Persian vs English), zero/one/three-shot settings, and translated examples. The educationally relevant portions are the newly created elementary school and 7th/10th grade math question benchmarks, but these are used as language/reasoning benchmarks rather than an instructional intervention study.\n\nOverall, GPT-4 performs best among the tested LLMs and often improves with more shots, while GPT-3.5 is less consistent and sometimes degrades with additional demonstrations. In classic tasks, task-specific fine-tuned models remain stronger for NER, emotion recognition, and reading comprehension; in some reasoning tasks, GPT-4 approaches or exceeds SOTA. Translating prompts/examples into English generally improves GPT-3.5, suggesting strong language sensitivity. This paper does not evaluate K-12 reading or literacy instruction interventions, nor does it provide comparative evidence on generative AI used in classrooms.",
+  "limitations": [
+    "small_sample",
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Iran",
+  "study_region": "Middle East & North Africa",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "language_speech",
+        "content_generation",
+        "feedback_evaluation"
+      ],
+      "description": "OpenAI generative large language model chatbot based on GPT-family models used for instruction-following, question answering, translation, and text generation.",
+      "use_case": "Evaluated as GPT-3.5-turbo-0613 and GPT-4 on Persian NLP benchmarks, including reading comprehension, with comparisons against task-specific SOTA models and across Persian vs. English prompts and few-shot settings.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u00198\u0000?",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "On the reading comprehension task (ParsiNLU), ChatGPT models scored below the task-specific SOTA model. GPT-3.5 achieved F1=.535/.643/.642 in Persian prompts (0/1/3-shot) and .588/.644/.644 in English prompts; GPT-4 achieved .564/.646/.659 in Persian and .603/.673/.687 in English, compared with SOTA F1=.691. The paper reports that one-shot results improved over zero-shot by large margins, but even the best ChatGPT result remained below SOTA.",
+          "measure": "Reading comprehension F1 on ParsiNLU",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=200 test subset"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical benchmark study, but not a randomized or quasi-experimental K-12 literacy intervention study. It provides direct comparative evidence on a reading comprehension benchmark, yet the work is primarily NLP evaluation rather than educational impact evaluation.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "No educational effect size is reported, and the paper does not evaluate classroom literacy outcomes or instructional impact. The closest relevant result is a benchmark F1 comparison showing ChatGPT below SOTA on reading comprehension.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

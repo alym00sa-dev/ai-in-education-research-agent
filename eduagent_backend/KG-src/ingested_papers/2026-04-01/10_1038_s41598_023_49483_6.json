@@ -1,0 +1,612 @@
+{
+  "title": "Harnessing ChatGPT and GPT-4 for evaluating the rheumatology questions of the Spanish access exam to specialized medical training",
+  "doi": "10.1038/s41598-023-49483-6",
+  "year": 2023,
+  "venue": "Scientific Reports",
+  "url": "https://doi.org/10.1038/s41598-023-49483-6",
+  "source_db": "openalex_search",
+  "population": "Adult",
+  "user_type": "Student",
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper examines whether large language models, specifically ChatGPT and GPT-4, can accurately answer rheumatology questions from Spain\u2019s official medical residency entrance exam (MIR) and whether their accompanying clinical reasoning is sound. The broader motivation is to understand whether these tools could be useful in medical education, particularly for exam preparation and learning in rheumatology, while also identifying risks such as misleading but plausible explanations.\n\nThe researchers created the RheumaMIR dataset from rheumatology-related MIR exam questions spanning 2009\u20132010 through 2022\u20132023. After exclusions, 143 text-based multiple-choice questions were used. Each question was entered into ChatGPT and GPT-4 in Spanish with the added prompt \u201cJustify your answer.\u201d Six rheumatologists independently rated the models\u2019 clinical reasoning on a 1\u20135 scale, and the study also examined whether performance varied by year, disease category, question type, and patient gender.\n\nThe context is specialized medical training in Spain, with the practical target users being medical students or residency applicants preparing for high-stakes exams. This was not a classroom intervention with enrolled learners; rather, it was an evaluation of AI performance on authentic assessment materials used in medical education. The study took place using publicly available exam items and expert evaluations, not with student participants interacting directly with the tools.\n\nThe main findings were that GPT-4 substantially outperformed ChatGPT. GPT-4 achieved 93.71% accuracy versus 66.43% for ChatGPT, and it also received slightly higher clinical reasoning scores. The authors conclude that LLMs may be valuable aids for rheumatology education and for creating learning materials, but they warn that confident, plausible-sounding incorrect reasoning may mislead learners. They recommend expert supervision and caution against uncritical use, especially in clinical practice.",
+  "limitations": [
+    "single_site",
+    "no_control_group",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Spain",
+  "study_region": "Europe",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "tutoring_instruction"
+      ],
+      "description": "OpenAI large language model chatbot used for generating natural-language answers and explanations.",
+      "use_case": "Used to answer 143 Spanish rheumatology multiple-choice questions from the MIR access exam and justify each answer; rheumatologists evaluated answer accuracy and clinical reasoning.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "On 143 rheumatology MIR exam questions, ChatGPT answered 95 correctly, for an accuracy of 66.43%. Its performance was significantly lower than GPT-4 (McNemar\u2019s test p-value = 1.17 \u00d7 10^-09).",
+          "measure": "Accuracy on rheumatology MIR multiple-choice exam questions",
+          "effect_size": "66.43% correct (95/143)",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=143"
+        },
+        {
+          "outcome_category": "Academic \u2014 Scientific Reasoning",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Six rheumatologists rated ChatGPT\u2019s clinical reasoning on a 1\u20135 scale. The median (Q1\u2013Q3) average clinical reasoning score was 4.5 (2.33\u20134.67), and ChatGPT\u2019s reasoning scores were significantly lower than GPT-4 after majority vote (Wilcoxon signed rank test p-value = 4.47 \u00d7 10^-09).",
+          "measure": "Expert-rated clinical reasoning score on 1\u20135 Likert scale",
+          "effect_size": "median 4.5 (Q1\u2013Q3 2.33\u20134.67)",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=143"
+        }
+      ]
+    },
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "tutoring_instruction"
+      ],
+      "description": "OpenAI large language model chatbot used for generating natural-language answers and explanations.",
+      "use_case": "Represents GPT-4 in this paper under the required family normalization; used to answer the same 143 rheumatology MIR questions and provide justifications evaluated by experts.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "GPT-4 answered 134 of 143 rheumatology MIR questions correctly, yielding an accuracy of 93.71%. GPT-4 significantly outperformed ChatGPT on exam accuracy (McNemar\u2019s test p-value = 1.17 \u00d7 10^-09).",
+          "measure": "Accuracy on rheumatology MIR multiple-choice exam questions",
+          "effect_size": "93.71% correct (134/143)",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=143"
+        },
+        {
+          "outcome_category": "Academic \u2014 Scientific Reasoning",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "GPT-4\u2019s clinical reasoning was rated by six rheumatologists on a 1\u20135 scale, with a median (Q1\u2013Q3) average score of 4.67 (4.5\u20134.83). Differences in clinical reasoning scores between GPT-4 and ChatGPT were statistically significant after majority vote (Wilcoxon signed rank test p-value = 4.47 \u00d7 10^-09).",
+          "measure": "Expert-rated clinical reasoning score on 1\u20135 Likert scale",
+          "effect_size": "median 4.67 (Q1\u2013Q3 4.5\u20134.83)",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=143"
+        }
+      ]
+    },
+    {
+      "name": "Gemini",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "tutoring_instruction"
+      ],
+      "description": "Google large language model family; Bard is normalized to Gemini.",
+      "use_case": "Bard was included only in supplementary comparison analyses to compare accuracy against ChatGPT/GPT-4 on the same rheumatology exam questions.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In supplementary analyses, Bard achieved 60.84% accuracy on the rheumatology question set. The paper reports this as a comparison point against ChatGPT/GPT-4, without further detailed reasoning analyses in the main results.",
+          "measure": "Accuracy on rheumatology MIR question set (supplementary comparison)",
+          "effect_size": "60.84% correct",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    },
+    {
+      "name": "Claude",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "tutoring_instruction"
+      ],
+      "description": "Anthropic large language model family; Claude 2 is normalized to Claude.",
+      "use_case": "Claude 2 was included only in supplementary comparison analyses to compare accuracy against ChatGPT/GPT-4 on the same rheumatology exam questions.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In supplementary analyses, Claude 2 achieved 79.72% accuracy on the rheumatology question set. The paper presents this as an additional benchmark relative to ChatGPT and GPT-4.",
+          "measure": "Accuracy on rheumatology MIR question set (supplementary comparison)",
+          "effect_size": "79.72% correct",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical benchmark study of named LLM tools using exam questions and expert ratings, but it is not an RCT or quasi-experimental study of student learning outcomes. The design is observational/performance-evaluation focused.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports strong tool performance on exam-answering and reasoning tasks, especially for GPT-4, but does not measure direct effects on learners or educational attainment. Educational impact is therefore promising but indirect and unclear.",
+  "citations": [
+    {
+      "title": "Let\u2019s Chat About ChatGPT",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT and the future of medical writing",
+      "doi": null,
+      "year": 2023,
+      "venue": "Radiology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The potential impact of ChatGPT in clinical and translational medicine",
+      "doi": null,
+      "year": 2023,
+      "venue": "Clin. Transl. Med.",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT: First glance from a perspective of clinical pharmacology",
+      "doi": null,
+      "year": 2023,
+      "venue": "Basic Clin. Pharmacol. Toxicol.",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The role of ChatGPT in scientific communication: Writing better scientific review articles",
+      "doi": null,
+      "year": 2023,
+      "venue": "Am. J. Cancer Res.",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Passing is great: Can ChatGPT conduct USMLE exams?",
+      "doi": null,
+      "year": 2023,
+      "venue": "Ann. Biomed. Eng.",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Evaluating large language models on medical evidence summarization",
+      "doi": null,
+      "year": 2023,
+      "venue": "NPJ Digit. Med.",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT answers common patient questions about colonoscopy",
+      "doi": null,
+      "year": 2023,
+      "venue": "Gastroenterology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Can ChatGPT/GPT-4 assist surgeons in confronting patients with Mpox and handling future epidemics?",
+      "doi": null,
+      "year": 2023,
+      "venue": "Int. J. Surg.",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Is institutional review board approval required for studies involving ChatGPT?",
+      "doi": null,
+      "year": 2023,
+      "venue": "Am. J. Obstet. Gynecol. MFM",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT and the future of health policy analysis: Potential and pitfalls of using ChatGPT in policymaking",
+      "doi": null,
+      "year": 2023,
+      "venue": "Ann. Biomed. Eng.",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "When ChatGPT meets plastic surgeons",
+      "doi": null,
+      "year": 2023,
+      "venue": "Aesthetic Plast. Surg.",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT in colorectal surgery: A promising tool or a passing fad?",
+      "doi": null,
+      "year": 2023,
+      "venue": "Ann. Biomed. Eng.",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The capability of ChatGPT in predicting and explaining common drug\u2013drug interactions",
+      "doi": "10.7759/cureus.36272",
+      "year": 2023,
+      "venue": "Cureus",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Understanding the role and adoption of artificial intelligence techniques in rheumatology research: An in-depth review of the literature",
+      "doi": null,
+      "year": 2023,
+      "venue": "Semin. Arthritis Rheum.",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT: When artificial intelligence replaces the rheumatologist in medical writing",
+      "doi": null,
+      "year": 2023,
+      "venue": "Ann. Rheum. Dis.",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Artificial intelligence, authorship, and medical publishing",
+      "doi": null,
+      "year": 2023,
+      "venue": "Arthritis Rheumatol.",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Tools such as ChatGPT threaten transparent science; here are our ground rules for their use",
+      "doi": null,
+      "year": 2023,
+      "venue": "Nature",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The wide range of opportunities for large language models such as ChatGPT in rheumatology",
+      "doi": null,
+      "year": 2023,
+      "venue": "RMD Open",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Treatment of periorbital edema in a patient with systemic lupus erythematosus during pregnancy: A case report written with the assistance of ChatGPT",
+      "doi": "10.7759/cureus.36302",
+      "year": 2023,
+      "venue": "Cureus",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Diagnostic accuracy of a large language model in rheumatology: Comparison of physician and ChatGPT-4",
+      "doi": "10.1007/s00296-023-05464-6",
+      "year": 2023,
+      "venue": "Rheumatol. Int.",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT in medical education: A paradigm shift or a dangerous tool?",
+      "doi": null,
+      "year": 2023,
+      "venue": "Acad. Psychiatry",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Finding the place of ChatGPT in medical education",
+      "doi": null,
+      "year": 2023,
+      "venue": "Acad. Med.",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT: A helpful tool for resident physicians?",
+      "doi": null,
+      "year": 2023,
+      "venue": "Acad. Med.",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT and the future of medical education",
+      "doi": null,
+      "year": 2023,
+      "venue": "Acad. Med.",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Revolutionizing medical education: Can ChatGPT boost subjective learning and expression?",
+      "doi": null,
+      "year": 2023,
+      "venue": "J. Med. Syst.",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Performance of ChatGPT on USMLE: Potential for AI-assisted medical education using large language models",
+      "doi": null,
+      "year": 2023,
+      "venue": "PLoS Digital Health",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "GPT-4",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "source model defining GPT-4 evaluated in this study"
+    },
+    {
+      "title": "ChatGPT\u2014Release notes",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "source model defining ChatGPT evaluated in this study"
+    },
+    {
+      "title": "BOE-A-2022-14414. II. Autoridades y personal B. Oposiciones y concursos",
+      "doi": null,
+      "year": 2022,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "official source for MIR exam questions used"
+    },
+    {
+      "title": "Mistakes and how to avoid mistakes in using intercoder reliability indices",
+      "doi": null,
+      "year": 2015,
+      "venue": "Methodology",
+      "citation_level": 3,
+      "citation_context": "interpreting reliability coefficients and kappa paradoxes"
+    },
+    {
+      "title": "Computing inter-rater reliability and its variance in the presence of high agreement",
+      "doi": null,
+      "year": 2008,
+      "venue": "Br. J. Math. Stat. Psychol.",
+      "citation_level": 3,
+      "citation_context": "basis for Gwet AC2 inter-rater agreement"
+    },
+    {
+      "title": "RheumaMIR",
+      "doi": "10.5281/zenodo.8153291",
+      "year": 2023,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "dataset of rheumatology MIR questions analyzed"
+    },
+    {
+      "title": "GeneGPT: Augmenting large language models with domain tools for improved access to biomedical information",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "PMC-LLaMA: Further finetuning LLaMA on medical papers",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "\u00bfEs capaz \u201cChatGPT\u201d de aprobar el examen MIR de 2022? Implicaciones de la inteligencia artificial en la educaci\u00f3n m\u00e9dica en Espa\u00f1a",
+      "doi": null,
+      "year": 2023,
+      "venue": "Rev. Esp. Educ. M\u00e9d.",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Evaluating ChatGPT\u2019s ability to solve higher-order questions on the competency-based medical education curriculum in medical biochemistry",
+      "doi": "10.7759/cureus.37023",
+      "year": 2023,
+      "venue": "Cureus",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Assessing the capability of ChatGPT in answering first- and second-order knowledge questions on microbiology as per competency-based medical education curriculum",
+      "doi": "10.7759/cureus.36034",
+      "year": 2023,
+      "venue": "Cureus",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT is equivalent to first-year plastic surgery residents: Evaluation of ChatGPT on the plastic surgery in-service examination",
+      "doi": null,
+      "year": 2023,
+      "venue": "Aesthet. Surg. J.",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT outscored human candidates in a virtual objective structured clinical examination in obstetrics and gynecology",
+      "doi": null,
+      "year": 2023,
+      "venue": "Am. J. Obstet. Gynecol.",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT\u2019s response to the diabetes knowledge questionnaire: Implications for diabetes education",
+      "doi": null,
+      "year": 2023,
+      "venue": "Diabetes Technol. Ther.",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Performance of ChatGPT on free-response, clinical reasoning exams",
+      "doi": "10.1101/2023.03.24.23287731",
+      "year": 2023,
+      "venue": "MedRxiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Evaluating the performance of ChatGPT in medical physiology university examination of phase I MBBS",
+      "doi": null,
+      "year": 2023,
+      "venue": "Adv. Physiol. Educ.",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Assessing the performance of ChatGPT in answering questions regarding cirrhosis and hepatocellular carcinoma",
+      "doi": null,
+      "year": 2023,
+      "venue": "Clin. Mol. Hepatol.",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Aye, AI! ChatGPT passes multiple-choice family medicine exam",
+      "doi": null,
+      "year": 2023,
+      "venue": "Med. Teach.",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Performance of ChatGPT on UK standardized admission tests: Insights from the BMAT, TMUA, LNAT, and TSA examinations",
+      "doi": null,
+      "year": 2023,
+      "venue": "JMIR Med. Educ.",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Consulting ChatGPT: Ethical dilemmas in language model artificial intelligence",
+      "doi": "10.1016/j.jaad.2023.02.052",
+      "year": 2023,
+      "venue": "J. Am. Acad. Dermatol.",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Ethical considerations of using ChatGPT in health care",
+      "doi": null,
+      "year": 2023,
+      "venue": "J. Med. Internet Res.",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Should ChatGPT be biased? Challenges and risks of bias in large language models",
+      "doi": "10.5210/fm.v28i11.13346",
+      "year": 2023,
+      "venue": "First Monday",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "AI chatbots not yet ready for clinical use",
+      "doi": null,
+      "year": 2023,
+      "venue": "Front. Digit. Health",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Accuracy and usability of a diagnostic decision support system in the diagnosis of three representative rheumatic diseases: A randomized controlled trial among medical students",
+      "doi": null,
+      "year": 2021,
+      "venue": "Arthritis Res. Ther.",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT: A comprehensive review on background, applications, key challenges, bias, ethics, limitations and future scope",
+      "doi": null,
+      "year": 2023,
+      "venue": "Internet Things Cyber Phys. Syst.",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Proposal for a regulation of the European Parliament and of the Council on harmonised rules on Artificial Intelligence (Artificial Intelligence Act) and amending certain Union Legislative Acts",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "\u201cDr ChatGPT\u201d: Is it a reliable and useful source for common rheumatic diseases?",
+      "doi": null,
+      "year": 2023,
+      "venue": "Int. J. Rheum. Dis.",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "High agreement but low Kappa: I. The problems of two paradoxes",
+      "doi": null,
+      "year": 1990,
+      "venue": "J. Clin. Epidemiol.",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "High agreement but low kappa: II. Resolving the paradoxes",
+      "doi": null,
+      "year": 1990,
+      "venue": "J. Clin. Epidemiol.",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "How robust are multirater interrater reliability indices to changes in frequency distribution?",
+      "doi": null,
+      "year": 2016,
+      "venue": "Am. Stat.",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT: Not all languages are equal",
+      "doi": null,
+      "year": 2023,
+      "venue": "Nature",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

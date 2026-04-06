@@ -1,0 +1,64 @@
+{
+  "title": "Robust Estimation of Heterogeneous Treatment Effects in Randomized Trials Leveraging External Data",
+  "doi": null,
+  "year": 2026,
+  "venue": "Proceedings of the 29th International Conference on Artificial Intelligence and Statistics (AISTATS)",
+  "url": "http://arxiv.org/abs/2507.03681v3",
+  "source_db": "arxiv_search",
+  "populations": [
+    "K-12 (unspecified grade)"
+  ],
+  "user_types": [
+    "Student",
+    "School"
+  ],
+  "study_design": "Randomized Controlled Trial (RCT)",
+  "extended_summary": "This paper addresses the problem of estimating heterogeneous treatment effects in randomized trials when the trial sample is too small to reliably detect subgroup differences. The specific focus is on conditional average treatment effects (CATEs), which are used to understand how treatment effects vary across covariates and support personalized or subgroup-specific decision-making. The authors argue that trial-only estimators often have high variance and limited power for detecting heterogeneity, motivating the use of external data from other trials or observational studies.\n\nThe paper proposes the QR-learner, a model-agnostic method that uses external data to improve the first-stage estimation of nuisance functions while preserving robustness to mismatch between the external and trial populations. It also introduces a combined learner that stacks the QR-learner with a trial-only doubly robust learner, aiming to achieve performance at least as good as either method alone. The methods are evaluated in simulations and in a case study using the Tennessee STAR project, where rural and urban schools form two populations and transportability is intentionally violated by omitting school location from the covariates.\n\nAcross simulations and the STAR application, the proposed approaches generally improve CATE estimation accuracy and, in some settings, increase statistical power to detect treatment effect heterogeneity. The main conclusion is that external data can be leveraged safely and effectively for subgroup effect estimation in randomized trials, even when the external data are imperfectly aligned with the trial population. The combined learner is particularly attractive because it retains robustness while often matching or improving on the best component learner.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a theoretical/methods paper with simulation studies and a real-world case study, not a peer-reviewed education intervention trial. It does not evaluate a classroom or student-facing AI intervention in the K-12 sense, so it does not meet evidence criteria for educational impact.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper has potentially important downstream implications for how heterogeneous effects are estimated in education research, but it reports methodological gains rather than direct student outcome effects. Any practical impact on education is indirect and currently unclear.",
+  "interventions": [],
+  "outcome_assignments": [
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.98,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "This paper is a methodological/statistical learning contribution rather than an educational intervention study. It proposes the QR-learner and a combined learner for estimating heterogeneous treatment effects, showing improved CATE prediction mean squared error and greater power to detect treatment effect heterogeneity in simulations and in the STAR case study. Reported results include RMSE improvements such as 0.23 vs 0.28 for the DR-learner in one aligned external-data scenario (n1=250) and higher interaction-test power by about 10-20 percentage points in the simulation study, but these are methodological performance metrics rather than learner outcomes.",
+        "measure": "CATE prediction RMSE; statistical power to detect interaction effects; model-selection risk",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Systemic / Institutional Impact",
+      "confidence": 0.84,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper argues that augmenting randomized trials with external data can improve the detection of treatment effect heterogeneity and the precision of subgroup estimation, which has implications for trial design and personalized decision-making. In simulations, the proposed method maintained nominal type I error and increased power by roughly 10-20 percentage points for detecting effect modification, while the STAR case study showed lower held-out RMSE than trial-only baselines in smaller-sample settings.",
+        "measure": "Type I error; power for interaction tests; held-out RMSE in STAR case study",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

@@ -1,0 +1,89 @@
+{
+  "title": "Investigating Students\u2019 Preferences for AI Roles in Mathematical Modelling: Evidence from a Randomized Controlled Trial",
+  "doi": null,
+  "year": 2025,
+  "venue": "not_reported",
+  "url": "https://doi.org/10.48550/arxiv.2510.06617",
+  "source_db": "openalex_search",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Randomized Controlled Trial (RCT)",
+  "extended_summary": "This paper investigates how students perceive different AI roles during mathematical modelling and whether those preferences vary by learner characteristics. The authors focus on a gap in the literature: while AI and large language models are increasingly used in mathematics education, there is limited evidence about which kinds of AI support are most useful for the iterative, open-ended process of modelling.\n\nThe study compares five AI personas: Tutor, Teaching Assistant, Peer Student, Struggling Student, and Excellent Student. Each role was implemented with GPT-based models and role-specific system prompts that constrained responses to short outputs. The experiment used a within-subjects, counterbalanced randomized controlled design in which participants completed a baseline modelling task without AI and then five short modelling tasks online with each AI role. Before the tasks, participants completed surveys measuring design thinking, computational thinking, and mathematical modelling self-efficacy; after each task they rated their experience and at the end they ranked the roles.\n\nThe participants were 26 university students in Hong Kong SAR and China who had not taken university-level mathematics courses, so their mathematical background was comparable to typical high school graduates. The tasks were simplified to a high-school level and framed around the modelling cycle, with explanations of situation model, real model, and mathematical model provided at the start. The authors found that students strongly preferred competent, supportive roles over the Struggling Student role. Tutor was generally most preferred, followed by Excellent Student, Peer, and TA, though differences among these four constructive roles were not significant. The Struggling Student role was consistently rated lowest for preference, confidence, helpfulness, and ease of interaction.\n\nThe study also found that design thinking and computational thinking were positively associated with mathematical modelling self-efficacy, especially design thinking. However, these baseline competencies largely did not predict AI role preferences, except that students with higher design thinking slightly preferred the TA role more than those with lower design thinking. The main conclusion is that students value competent, process-supportive AI personas in modelling tasks, and that AI scaffolding should emphasize guidance, clarity, and encouragement rather than low-quality or misleading peer-like support.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a randomized, counterbalanced within-subjects study, but the main analyses are preference and perception outcomes rather than direct learning gains, and the sample is very small (n=26). It provides useful formative evidence on AI role design, but not high-credibility causal evidence of achievement impact.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The study shows clear learner preference and experience differences across AI roles, but it does not demonstrate achievement gains or quantify educational impact with a learning effect size. The practical implication is useful for design, yet the observed impact on learning outcomes remains unclear.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.95,
+      "role": "primary",
+      "use_case": "GPT-based role-playing AI used in mathematical modelling tasks as a tutor, teaching assistant, peer student, struggling student, or excellent student; responses were constrained to 100-150 characters and delivered through chat during stepwise modelling problems."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The paper does not measure learning gains directly; instead, it evaluates how students prefer different AI roles during mathematical modelling. Across n=26, students preferred the Tutor role most (mean rank=2.35) and the Struggling Student role least (mean rank=4.42), with a significant Friedman test effect, \u03c72(4, N=26)=28.83, p<.001. This indicates that competent, process-oriented AI support is favored in mathematics modelling contexts, but the study provides no direct achievement effect size.",
+        "measure": "AI role preference rankings during mathematical modelling tasks; task confidence and perceived helpfulness/ease of interaction",
+        "study_size": "n=26",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.86,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "AI role significantly affected task confidence, perceived helpfulness, and ease of interaction, all with n=26 and Friedman tests p<.001. The Struggling Student role was consistently worst (task confidence M=1.88, helpfulness M=1.92, ease of interaction M=1.81), while competent roles were rated similarly and more positively, suggesting that emotionally supportive and clear AI personas improve learner experience even though no standardized effect size was reported.",
+        "measure": "Task confidence, perceived AI helpfulness, and ease of interaction ratings",
+        "study_size": "n=26",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.9,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Baseline design thinking and computational thinking were positively associated with mathematical modelling self-efficacy, supporting the paper\u2019s argument that these durable skills matter for modelling. PLS-SEM showed DT strongly predicted MMSE (\u03b2=0.730, p<.001) and CT also predicted MMSE (\u03b2=0.300, p<.001), with R2=0.808 for the model.",
+        "measure": "Correlations and PLS-SEM paths among design thinking, computational thinking, and mathematical modelling self-efficacy",
+        "study_size": "n=26",
+        "effect_size": "\u03b2=0.730 (DT\u2192MMSE); \u03b2=0.300 (CT\u2192MMSE); R2=0.808",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "self_reported_measures",
+    "non_representative_population",
+    "no_long_term_followup",
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "medium",
+  "study_country": "China",
+  "study_region": "East Asia & Pacific",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

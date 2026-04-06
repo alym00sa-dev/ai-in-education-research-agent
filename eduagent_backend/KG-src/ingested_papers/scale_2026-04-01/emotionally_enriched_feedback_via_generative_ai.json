@@ -1,0 +1,647 @@
+{
+  "title": "EMOTIONALLY ENRICHED FEEDBACK VIA GENERATIVE AI",
+  "doi": null,
+  "year": 2024,
+  "venue": null,
+  "url": "https://arxiv.org/abs/2410.15077",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate",
+    "Graduate / Doctoral"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper examines whether adding emotional and motivational elements to generative AI feedback improves students\u2019 experiences and outcomes in higher education. The authors focus on a key challenge in digital learning environments: feedback can become transactional and emotionally flat, even though students\u2019 emotional reactions to feedback are important for motivation, engagement, and learning. Grounded in Control-Value Theory of Achievement Emotions, the study asks whether emotionally enriched AI feedback changes students\u2019 engagement with feedback, their perceptions of its usefulness, their emotional responses, and the quality of their work.\n\nThe intervention was implemented in RiPPLE, an adaptive learnersourcing platform used in a first-year university web design course. Students were randomly assigned to receive either neutral AI feedback (control) or emotionally enriched AI feedback (experimental). The enriched feedback used praise, encouragement, supportive phrasing, and emojis while keeping the core constructive content similar. Large language models provided instant feedback on students\u2019 authored learning resources and on peer feedback they wrote. The study combined platform log data, quality ratings of student-created resources, star ratings of feedback usefulness, a 41-item emotion survey, and qualitative comments analyzed thematically.\n\nThe population consisted of 425 students at the University of Queensland in Australia, with analysis using 381 consenting students\u2019 platform data and 103 survey respondents. The sample included mostly undergraduates, plus a small number of graduate students, in an introductory higher education course where RiPPLE activities counted toward assessment. The intervention occurred over an initial four-week period for survey administration, within a course structure involving four rounds of resource creation, peer review, and drill-and-practice tasks.\n\nThe main findings were that emotionally enriched AI feedback was rated as more useful and was associated with lower negative emotion, especially anger, toward feedback. However, it did not improve overall engagement with feedback in a meaningful way and did not improve the quality of student work. Qualitative data suggested that many students found the feedback motivating and helpful, though some reported problems with length, redundancy, timing, and occasional inaccuracy. Overall, the paper concludes that emotionally enriched AI feedback can support student perceptions and emotional well-being without harming performance, but it does not by itself increase behavioral engagement or objective work quality.",
+  "limitations": [
+    "single_site",
+    "self_reported_measures",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "4",
+  "setting": "blended",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Australia",
+  "study_region": "East Asia & Pacific",
+  "identified_tools": [
+    {
+      "name": "RiPPLE",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "tutoring_instruction"
+      ],
+      "description": "An adaptive educational system that uses learnersourcing, peer review, drill-and-practice, and integrated AI-generated feedback to support student learning activities.",
+      "use_case": "RiPPLE delivered instant LLM-based feedback on students' authored resources and peer feedback in a first-year engineering/web design course. The experiment compared neutral AI feedback versus emotionally enriched AI feedback with praise, encouragement, and emojis.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "Emotionally enriched AI feedback did not improve engagement with feedback overall. In the creation task, the control group showed slightly longer median engagement time than the experimental group (76.545s vs. 70.6865s; p=0.026; |r|=0.059; N=707 vs. 696), while moderation-task engagement showed no difference (3.450s vs. 3.464s; p=0.920; |r|=0.00138; N=2709 vs. 2670). Survey-based engagement also showed no significant difference (Mdn=3.29 vs. 3.25; p=0.823; N=50 vs. 51).",
+          "measure": "Time spent engaging with AI feedback during creation/moderation tasks; survey engagement ratings",
+          "effect_size": "|r|=0.059 (creation), |r|=0.00138 (moderation)",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=381 platform data; survey n=101"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Students rated emotionally enriched AI feedback as more useful than neutral AI feedback. For moderation tasks, ratings were higher in the experimental group (Mrank=190.74, N=103) than the control group (Mrank=139.79, N=91), p<0.001, r=0.289; for creation tasks, the experimental group also rated feedback higher (Mrank=54.43, N=42) than the control group (Mrank=43.89, N=54), p=0.040, r=0.206.",
+          "measure": "Student 1-5 star ratings of AI feedback usefulness/effectiveness",
+          "effect_size": "r=0.289 (moderation), r=0.206 (creation)",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=194 moderation ratings; n=96 creation ratings"
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Emotionally enriched AI feedback significantly reduced anger toward receiving feedback. Median anger was lower in the experimental group than the control group (1.89 vs. 2.61; p=0.013; |r|=0.246), and the motivational anger item 'I get annoyed about having to address AI suggestions for improvements on my task' also favored the experimental condition (median 2.582 vs. 3.223; p=0.005; |r|=0.279).",
+          "measure": "Achievement emotions survey (anger overall and anger-motivation dimension)",
+          "effect_size": "|r|=0.246 overall anger; |r|=0.279 for motivational anger item",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=103 survey participants"
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "Emotionally enriched AI feedback did not significantly affect enjoyment, hope, pride, anxiety, shame, hopelessness, or boredom. Reported medians were: enjoyment 3.31 vs. 3.12 (p=0.984), hope 3.38 vs. 3.29 (p=0.773), pride 3.42 vs. 3.31 (p=0.854), anxiety 1.82 vs. 1.62 (p=0.235), shame 1.71 vs. 1.46 (p=0.179), hopelessness 1.73 vs. 1.51 (p=0.452), and boredom 2.81 vs. 2.47 (p=0.212).",
+          "measure": "Achievement emotions survey across seven non-anger emotion constructs",
+          "effect_size": "|r|=0.002 to 0.134 as reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=103 survey participants"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "Emotionally enriched AI feedback did not improve the quality of student work. Resource quality scores were equivalent across groups, with both groups showing a median of 4.10; means were 4.107 (control, N=744) and 4.076 (experimental, N=751), with no statistically significant difference (p=0.470).",
+          "measure": "RiPPLE resource quality score (0-5) for created learning resources",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=1495 resources"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is a randomized controlled field experiment with a sizable sample (425 initially; 381 consenting for platform data), but it is a preprint and several outcomes rely on nonparametric comparisons and mixed measures with some attrition, so there are some credibility concerns short of blue tier.",
+  "impact_tier": "green",
+  "impact_tier_rationale": "The intervention showed modest positive effects on perceived usefulness (r=0.206 to 0.289) and anger reduction (r=0.246 to 0.279), but no effect on work quality and mostly null effects on engagement and other emotions.",
+  "citations": [
+    {
+      "title": "Feedback in higher education: aligning academic intent and student sensemaking",
+      "doi": "10.1080/13562517.2022.2029394",
+      "year": 2024,
+      "venue": "Teaching in Higher Education",
+      "citation_level": 2,
+      "citation_context": "feedback encounters framed as student sensemaking"
+    },
+    {
+      "title": "Feedback encounters: towards a framework for analysing and understanding feedback processes",
+      "doi": "10.1080/02602938.2022.2059446",
+      "year": 2023,
+      "venue": "Assessment & Evaluation in Higher Education",
+      "citation_level": 2,
+      "citation_context": "conceptualizes feedback encounters studied here"
+    },
+    {
+      "title": "Rethinking models of feedback for learning: the challenge of design",
+      "doi": "10.1080/02602938.2012.691462",
+      "year": 2013,
+      "venue": "Assessment & Evaluation in Higher Education",
+      "citation_level": 2,
+      "citation_context": "design-oriented feedback model informs framing"
+    },
+    {
+      "title": "\u201cfeedback to the future\u201d: Advancing motivational and emotional perspectives in feedback research",
+      "doi": "10.1080/00461520.2022.2134135",
+      "year": 2023,
+      "venue": "Educational Psychologist",
+      "citation_level": 2,
+      "citation_context": "motivational and emotional feedback framing"
+    },
+    {
+      "title": "The control-value theory of achievement emotions: An integrative approach to emotions in education",
+      "doi": null,
+      "year": 2007,
+      "venue": "Emotion in education",
+      "citation_level": 2,
+      "citation_context": "achievement emotions theory underpins emotion framing"
+    },
+    {
+      "title": "Supporting learners\u2019 agentic engagement with feedback: A systematic review and a taxonomy of recipience processes",
+      "doi": null,
+      "year": 2017,
+      "venue": "Educational psychologist",
+      "citation_level": 2,
+      "citation_context": "agentic engagement with feedback framing"
+    },
+    {
+      "title": "Student perceptions of classroom feedback",
+      "doi": null,
+      "year": 2013,
+      "venue": "Assessment in Education: Principles, policy & practice",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "When emotions enhance students\u2019 engagement in e-learning processes",
+      "doi": null,
+      "year": 2016,
+      "venue": "Journal of e-Learning and Knowledge Society",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The impact of positive feedback on student outcomes and perceptions",
+      "doi": "10.1080/02602938.2021.1910140",
+      "year": 2021,
+      "venue": "Assessment & Evaluation in Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Artificial intelligence in education",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Artificial intelligence in education: A review",
+      "doi": null,
+      "year": 2020,
+      "venue": "IEEE Access",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Systematic review of research on artificial intelligence applications in higher education\u2013where are the educators?",
+      "doi": null,
+      "year": 2019,
+      "venue": "International Journal of Educational Technology in Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Evolution and revolution in artificial intelligence in education",
+      "doi": null,
+      "year": 2016,
+      "venue": "International Journal of Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Generative ai for programming education: Benchmarking chatgpt, gpt-4, and human tutors",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 2023 ACM Conference on International Computing Education Research-Volume 2",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Towards social generative ai for education: theory, practices and ethics",
+      "doi": null,
+      "year": 2023,
+      "venue": "Learning: Research and Practice",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Educator and student perspectives on the impact of generative ai on assessments in higher education",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the tenth ACM conference on Learning@ Scale",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Impact of ai assistance on student agency",
+      "doi": null,
+      "year": 2024,
+      "venue": "Computers & Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A review of the trends and challenges in adopting natural language processing methods for education feedback analysis",
+      "doi": null,
+      "year": 2022,
+      "venue": "IEEE Access",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The effects of feedback interventions on performance: a historical review, a meta-analysis, and a preliminary feedback intervention theory",
+      "doi": null,
+      "year": 1996,
+      "venue": "Psychological bulletin",
+      "citation_level": 2,
+      "citation_context": "general feedback intervention theory background"
+    },
+    {
+      "title": "Formative assessment and the design of instructional systems",
+      "doi": null,
+      "year": 1989,
+      "venue": "Instructional science",
+      "citation_level": 2,
+      "citation_context": "foundational formative feedback framing"
+    },
+    {
+      "title": "Focus on formative feedback",
+      "doi": null,
+      "year": 2008,
+      "venue": "Review of educational research",
+      "citation_level": 2,
+      "citation_context": "defines formative feedback characteristics"
+    },
+    {
+      "title": "Exploring generative ai assisted feedback writing for students\u2019 written responses to a physics conceptual question with prompt engineering and few-shot learning",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv preprint arXiv:2311.06180",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Informative feedback and explainable ai-based recommendations to support students\u2019 self-regulation",
+      "doi": null,
+      "year": 2023,
+      "venue": "Technology, Knowledge and Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Exploring efl students\u2019 writing performance and their acceptance of ai-based automated writing feedback",
+      "doi": null,
+      "year": 2021,
+      "venue": "Proceedings of the 2021 2nd International Conference on Education Development and Studies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The control-value theory of achievement emotions: Assumptions, corollaries, and implications for educational research and practice",
+      "doi": null,
+      "year": 2006,
+      "venue": "Educational psychology review",
+      "citation_level": 2,
+      "citation_context": "theoretical basis for student emotions"
+    },
+    {
+      "title": "Academic emotions in students\u2019 self-regulated learning and achievement: A program of qualitative and quantitative research",
+      "doi": null,
+      "year": 2002,
+      "venue": "Educational psychologist",
+      "citation_level": 2,
+      "citation_context": "links academic emotions to learning processes"
+    },
+    {
+      "title": "Beyond test anxiety: Development and validation of the test emotions questionnaire (teq)",
+      "doi": null,
+      "year": 2004,
+      "venue": "Anxiety, Stress & Coping",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Exploring the emotional power of teacher feedback by examining the relationships between students\u2019 feedback orientations and positive emotions in learning",
+      "doi": null,
+      "year": 2019,
+      "venue": "The 6th World Congress on Positive Psychology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Understanding the influence of emotions and reflection upon multi-source feedback acceptance and use",
+      "doi": null,
+      "year": 2008,
+      "venue": "Advances in Health Sciences Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "\u201cinside out\u201d: Appraisals for achievement emotions from constructive, positive, and negative feedback on writing",
+      "doi": null,
+      "year": 2018,
+      "venue": "Motivation and emotion",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Feedback orientation and learning-related academic emotions: An exploratory study in filipino university students",
+      "doi": null,
+      "year": 2023,
+      "venue": "Positive psychology and positive education in Asia: Understanding and fostering well-being in schools",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The role of positive emotions in positive psychology: The broaden-and-build theory of positive emotions",
+      "doi": null,
+      "year": 2001,
+      "venue": "American psychologist",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Unpacking the complexities of emotional responses to external feedback, internal feedback orientation and emotion regulation in higher education: a qualitative exploration",
+      "doi": null,
+      "year": 2023,
+      "venue": "Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Learnersourcing in the age of ai: Student, educator and machine partnerships for content creation",
+      "doi": null,
+      "year": 2023,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 2,
+      "citation_context": "learnersourcing framing for content creation tasks"
+    },
+    {
+      "title": "Constructivism and Learning",
+      "doi": "https://doi.org/10.1016/B978-0-08-044894-7.00467-X",
+      "year": 2010,
+      "venue": "International Encyclopedia of Education",
+      "citation_level": 2,
+      "citation_context": "constructivist learning perspective informs design"
+    },
+    {
+      "title": "Mind in Society: Development of Higher Psychological Processes",
+      "doi": "10.2307/j.ctvjf9vz4",
+      "year": 1978,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "Vygotskian basis for scaffolding and learning"
+    },
+    {
+      "title": "Exploring a Vygotskian Theory of Education and Its Evolutionary Foundations",
+      "doi": "10.1111/edth.12485",
+      "year": 2021,
+      "venue": "Educational Theory",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Social Cognitive Theory: An Agentic Perspective",
+      "doi": "10.1111/1467-839X.00024",
+      "year": 1999,
+      "venue": "Asian Journal of Social Psychology",
+      "citation_level": 2,
+      "citation_context": "agentic perspective supports student agency framing"
+    },
+    {
+      "title": "Social Cognitive Theory and Self-Regulated Learning",
+      "doi": "10.1007/978-1-4612-3618-4_4",
+      "year": 1989,
+      "venue": "Self-Regulated Learning and Academic Achievement: Theory, Research, and Practice",
+      "citation_level": 2,
+      "citation_context": "self-regulated learning framework for engagement"
+    },
+    {
+      "title": "2.27 - Retrieval-Based Learning: A Decade of Progress",
+      "doi": "https://doi.org/10.1016/B978-0-12-809324-5.21055-9",
+      "year": 2017,
+      "venue": "Learning and Memory: A Comprehensive Reference (Second Edition)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Effects of Technological Interventions for Self-regulation: A Control Experiment in Learnersourcing",
+      "doi": "10.1145/3506860.3506911",
+      "year": 2022,
+      "venue": "LAK22: 12th International Learning Analytics and Knowledge Conference",
+      "citation_level": 3,
+      "citation_context": "randomized learnersourcing experiment design precedent"
+    },
+    {
+      "title": "The effects of rubrics on evaluative judgement: a randomised controlled experiment",
+      "doi": "10.1080/02602938.2021.1887081",
+      "year": 2022,
+      "venue": "Assessment & Evaluation in Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Incorporating ai and learning analytics to build trustworthy peer assessment systems",
+      "doi": null,
+      "year": 2022,
+      "venue": "British Journal of Educational Technology",
+      "citation_level": 3,
+      "citation_context": "RiPPLE peer assessment system methodology background"
+    },
+    {
+      "title": "Impact of AI assistance on student agency",
+      "doi": "10.1016/j.compedu.2023.104967",
+      "year": 2024,
+      "venue": "Computers & Education",
+      "citation_level": 3,
+      "citation_context": "direct comparison study for AI assistance condition"
+    },
+    {
+      "title": "Development and Adoption of an Adaptive Learning System: Reflections and Lessons Learned",
+      "doi": "10.1145/3328778.3366900",
+      "year": 2020,
+      "venue": "Proceedings of the 51st ACM Technical Symposium on Computer Science Education",
+      "citation_level": 3,
+      "citation_context": "RiPPLE platform development and adoption source"
+    },
+    {
+      "title": "Emojis as social information in digital communication",
+      "doi": "10.1037/emo0000992",
+      "year": 2021,
+      "venue": "Emotion",
+      "citation_level": 2,
+      "citation_context": "supports emoji use as emotional social cue"
+    },
+    {
+      "title": "A systematic review of emoji: Current research and future perspectives",
+      "doi": "10.3389/fpsyg.2019.02221",
+      "year": 2019,
+      "venue": "Frontiers in Psychology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "23 ways to nudge: A review of technology-mediated nudging in human-computer interaction",
+      "doi": null,
+      "year": 2019,
+      "venue": "Proceedings of the 2019 CHI conference on human factors in computing systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Evaluating learning, design, and engagement in web-based learning tools (wblts): The wblt evaluation scale",
+      "doi": null,
+      "year": 2011,
+      "venue": "Computers in Human Behavior",
+      "citation_level": 3,
+      "citation_context": "engagement evaluation instrument basis"
+    },
+    {
+      "title": "The aeq-s: A short version of the achievement emotions questionnaire",
+      "doi": null,
+      "year": 2021,
+      "venue": "Contemporary Educational Psychology",
+      "citation_level": 3,
+      "citation_context": "emotion measurement instrument used"
+    },
+    {
+      "title": "Employing peer review to evaluate the quality of student generated content at scale: A trust propagation approach",
+      "doi": null,
+      "year": 2021,
+      "venue": "Proceedings of the eighth ACM conference on learning@ scale",
+      "citation_level": 3,
+      "citation_context": "quality rating method provided by RiPPLE"
+    },
+    {
+      "title": "Doing Reflexive Thematic Analysis",
+      "doi": "10.1007/978-3-031-13942-0_2",
+      "year": 2022,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "qualitative analysis approach followed"
+    },
+    {
+      "title": "Lessons Learned and Future Directions of MetaTutor: Leveraging Multichannel Data to Scaffold Self-Regulated Learning With an Intelligent Tutoring System",
+      "doi": null,
+      "year": 2022,
+      "venue": "Frontiers in Psychology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Research on Scaffolding in the Learning Sciences: A Methodological Perspective",
+      "doi": null,
+      "year": 2018,
+      "venue": "International Handbook of the Learning Sciences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Effects of student engagement in peer feedback on writing performance in higher education",
+      "doi": "10.1080/10494820.2022.2081209",
+      "year": 2022,
+      "venue": "Interactive Learning Environments",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Exploring students\u2019 emotional responses and participation in an online peer assessment activity: a case study",
+      "doi": "10.1080/10494820.2011.649766",
+      "year": 2014,
+      "venue": "Interactive Learning Environments",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Negative emotional dynamics shape cognition and performance with metatutor: Toward building affect-aware systems",
+      "doi": "10.1109/ACII52823.2021.9597462",
+      "year": 2021,
+      "venue": "2021 9th International Conference on Affective Computing and Intelligent Interaction (ACII)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Praise affects the \u201cpraiser\u201d: Effects of ability-focused vs. effort-focused praise on motivation",
+      "doi": null,
+      "year": 2022,
+      "venue": "The Journal of Experimental Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT for good? On opportunities and challenges of large language models for education",
+      "doi": "10.1016/j.lindif.2023.102274",
+      "year": 2023,
+      "venue": "Learning and Individual Differences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Does perception mean learning? Insights from an online peer feedback setting",
+      "doi": "10.1080/02602938.2024.2345669",
+      "year": 2024,
+      "venue": "Assessment & Evaluation in Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Generative ai: Implications and applications for education",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "AI-generated feedback on writing: insights into efficacy and ENL student preference",
+      "doi": "10.1186/s41239-023-00425-2",
+      "year": 2023,
+      "venue": "Int J Educ Technol High Educ",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Teacher Praise: A Functional Analysis",
+      "doi": "10.3102/00346543051001005",
+      "year": 1981,
+      "venue": "Review of Educational Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "What is user engagement? A conceptual framework for defining user engagement with technology",
+      "doi": "10.1002/asi.20801",
+      "year": 2008,
+      "venue": "Journal of the American Society for Information Science and Technology",
+      "citation_level": 2,
+      "citation_context": "defines user engagement construct"
+    },
+    {
+      "title": "Chapter 14 - The Role of Goal Orientation in Self-Regulated Learning",
+      "doi": "https://doi.org/10.1016/B978-012109890-2/50043-3",
+      "year": 2000,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "attribution perspective for emotional reactions"
+    },
+    {
+      "title": "Assessing the Quality of Student-Generated Short Answer Questions Using GPT-3",
+      "doi": "10.1007/978-3-031-16290-9_18",
+      "year": 2022,
+      "venue": "Educating for a New Future: Making Sense of Technology-Enhanced Learning Adoption",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The development of student feedback literacy: enabling uptake of feedback",
+      "doi": "10.1080/02602938.2018.1463354",
+      "year": 2018,
+      "venue": "Assessment & Evaluation in Higher Education",
+      "citation_level": 2,
+      "citation_context": "feedback literacy concept for uptake"
+    },
+    {
+      "title": "Self-Regulated Learning: The Educational Legacy of Paul R. Pintrich",
+      "doi": "10.1207/s15326985ep4002_3",
+      "year": 2005,
+      "venue": "Educational Psychologist",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

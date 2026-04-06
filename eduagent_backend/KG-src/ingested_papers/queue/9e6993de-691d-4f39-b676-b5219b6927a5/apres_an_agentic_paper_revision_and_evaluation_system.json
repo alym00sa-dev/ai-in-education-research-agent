@@ -1,0 +1,33 @@
+{
+  "title": "APRES: An Agentic Paper Revision and Evaluation System",
+  "doi": null,
+  "year": 2026,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2603.03142v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Graduate / Doctoral"
+  ],
+  "user_types": [],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses whether large language models can be used to review and revise scientific papers in a way that improves their clarity, readability, and predicted scholarly impact. The authors argue that human peer review is strained, inconsistent, and difficult to scale, and they investigate whether an LLM-based system can discover useful evaluation criteria and then use those criteria to revise papers without changing their core scientific content.\n\nThe intervention is APRES, a two-stage agentic framework. In the first stage, the system searches for a review rubric whose LLM-generated scores best predict future citation counts using negative binomial regression. In the second stage, the discovered rubric is used as an objective function in a closed-loop revision process, where a reviewer agent critiques a paper and a rewriter agent iteratively edits it using diff-based local search/replace changes. The approach is evaluated quantitatively through citation-prediction accuracy and score improvements, and qualitatively through a blinded human preference study comparing original and AI-revised papers.\n\nThe population and context are not K-12 learners; instead, the study uses a corpus of 26,707 publicly available machine learning conference papers from ICLR 2024-2025 and NeurIPS 2023-2024, plus human evaluators with PhDs or doctoral-level training in machine learning who judged revised papers. The instructional context is not an educational intervention setting but scientific writing and peer review in research publishing.\n\nThe main conclusions are that APRES discovers rubrics more predictive of future citations than human reviewer scores or embedding-based baselines, improving citation prediction MAE by 19.6% over the next best baseline. In paper revision, revised papers were preferred over originals by human expert evaluators in 79% of cases, and the system appeared most effective for improving presentation and clarity rather than fixing fundamental scientific weaknesses. The authors position APRES as a human-augmenting tool for manuscript stress-testing rather than a replacement for expert review.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is not a K-12 education study and does not evaluate an educational intervention or learner outcomes. It is a research-paper revision system for scientific manuscripts, presented as an AI systems paper with human preference evaluation outside the K-12 evidence scope.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports positive effects on scientific paper revision and reviewer preference, but these impacts are outside the target K-12 educational outcome framework. Therefore its educational impact is unclear/non-transferable for the retrieval question.",
+  "interventions": [],
+  "outcome_assignments": [],
+  "limitations": [
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

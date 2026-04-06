@@ -1,0 +1,592 @@
+{
+  "title": "Enhancing Python Programming Education with an AI-Powered Code Helper: Design, Implementation, and Impact",
+  "doi": null,
+  "year": null,
+  "venue": null,
+  "url": "https://arxiv.org/abs/2509.20518",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate",
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses the challenge novice Python learners face in moving from abstract programming concepts to practical debugging and implementation. The authors argue that traditional IDEs and static analysis tools provide limited pedagogical support, while generative AI tools such as GitHub Copilot emphasize code completion rather than conceptual understanding. The study therefore asks whether an AI-powered code helper chatbot can better support programming learning by providing contextualized, explanatory, and safe feedback.\n\nThe intervention is a hybrid AI chatbot for Python education that combines static code analysis, dynamic execution tracing, and large language model interaction. Its architecture includes a React/CLI front end, a backend using AST parsing and Docker-based sandboxed execution, and an AI module using CodeLlama for code embeddings and GPT-4 for pedagogical dialogue. The system is designed to identify syntax, runtime, and logic errors, provide student-friendly explanations, use Socratic questioning, and enforce safety controls such as code sanitization and resource limits.\n\nThe study is presented as a mixed-methods evaluation. Quantitatively, the chatbot was tested on 1,500 student submissions and also evaluated with pre/post assessments and a control condition using traditional IDEs. Qualitatively, student feedback was collected through Likert-scale surveys, open-ended responses, testimonials, and focus group-style thematic analysis. The text reports involvement of undergraduate students in preliminary trials and repeatedly references introductory Python learners; because the authors are based at a Bangladeshi residential college/school, the paper also suggests a high-school institutional context, though the empirical participant descriptions are centered most clearly on students learning introductory Python.\n\nThe main conclusions are that the chatbot outperformed standalone tools such as pylint and GPT-4 on error resolution, achieved an 85% success rate across submitted programs, reduced debugging time substantially, and was associated with improved post-test coding performance, especially in recursion and exception handling. Students generally viewed the system as clear, accessible, and confidence-building. At the same time, the authors note concerns about over-reliance on AI, occasional latency, restrictive code sanitization, and difficulty handling ambiguous queries. Overall, the paper concludes that AI can be designed to augment instruction in programming education when it prioritizes scaffolded feedback, safety, and conceptual learning rather than direct code generation.",
+  "limitations": [
+    "single_site",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "4",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Bangladesh",
+  "study_region": "South Asia",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "feedback_evaluation"
+      ],
+      "description": "OpenAI GPT-family large language model used for natural-language interaction and explanation generation.",
+      "use_case": "Used as the GPT-4 component inside the proposed AI-powered Python code helper chatbot for query classification, pedagogical dialogue, error explanation, Socratic questioning, and comparison baseline against the hybrid chatbot.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "As a standalone comparison tool, GPT-4 achieved a 73% overall error resolution success rate versus 85% for the hybrid chatbot across 1,500 student submissions. By error type, GPT-4 reached 78% on syntax errors, 66% on logic errors, and 70% on runtime errors; chatbot vs. GPT-4 differences were reported as statistically significant (p < 0.01).",
+          "measure": "Error resolution success rate across student Python submissions",
+          "effect_size": "73% overall; syntax 78%; logic 66%; runtime 70%",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=1500"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In the paper's earlier accuracy comparison on a gold-standard dataset of 500 Python scripts, GPT-4 achieved 72% syntax-error accuracy and 70% logic-error accuracy. The proposed chatbot outperformed GPT-4 on syntax errors (89% vs. 72%) and modestly on logic errors (76% vs. 70%).",
+          "measure": "Error detection accuracy on manually validated Python scripts",
+          "effect_size": "Syntax 72%; Logic 70%",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=500"
+        }
+      ]
+    },
+    {
+      "name": "LLaMA",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "other"
+      ],
+      "description": "Meta's LLaMA family large language model, here represented by CodeLlama, used for code-focused embeddings and error-pattern analysis.",
+      "use_case": "Used as CodeLlama within the chatbot pipeline to generate code embeddings and support code analysis/fine-tuned recognition of common student programming errors.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The paper reports that fine-tuned CodeLlama achieved 92% error detection accuracy in validation tests for recognizing common student errors such as off-by-one loop indices. This result is reported for the model component within the system rather than as a separate student-outcome evaluation.",
+          "measure": "Validation accuracy for common student error detection",
+          "effect_size": "92%",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    },
+    {
+      "name": "Adaptive Feedback System (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "tutoring_instruction",
+        "feedback_evaluation"
+      ],
+      "description": "A custom AI-powered Python code helper chatbot that combines static code analysis, dynamic execution tracing, and LLM-based pedagogical feedback for debugging and concept support.",
+      "use_case": "Studied as a Python programming support chatbot for novice learners, providing contextual error diagnosis, Socratic hints, conceptual explanations, and secure sandboxed execution during debugging and coding practice.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Across 1,500 student submissions, the chatbot achieved an 85% overall error resolution success rate, outperforming standalone GPT-4 (73%) and pylint (62%). By error type, performance was 92% for syntax errors, 78% for logic errors, and 85% for runtime errors; differences versus GPT-4 were reported as p < 0.01 and versus pylint as p < 0.001.",
+          "measure": "Error resolution success rate across student Python submissions",
+          "effect_size": "85% overall; syntax 92%; logic 78%; runtime 85%",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=1500"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Students using the chatbot reduced average debugging time from 24.1 minutes pre-test to 9.8 minutes post-test, a 59.3% improvement. The control group using traditional IDEs improved from 22.5 minutes to 19.4 minutes, a 14% reduction.",
+          "measure": "Average debugging time",
+          "effect_size": "59.3% reduction",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In a cohort of 120 students after four weeks of chatbot use, pre- and post-test coding assessments showed a 34% improvement overall. Reported gains were strongest in recursion (\u0394 = +43%) and exception handling (\u0394 = +39%).",
+          "measure": "Pre/post coding assessment performance",
+          "effect_size": "34% overall improvement; recursion +43%; exception handling +39%",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=120"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "A controlled pre/post comparison reported experimental-group mean scores increasing from 52.3% (\u00b18.2) to 67.1% (\u00b17.5), a gain of +28.3%, while the traditional-IDE control group increased from 50.8% (\u00b17.9) to 55.4% (\u00b18.1), a gain of +9.1%. The experimental-group gain was statistically significant (p < 0.05), whereas the control-group change was not significant (p = 0.12).",
+          "measure": "Pre/post coding test scores compared with control",
+          "effect_size": "+28.3% experimental vs. +9.1% control",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Qualitative feedback from 120 students indicated strong perceived usability and learning support, with positive themes including clarity of explanations (85% agreement), accessibility (79%), and confidence building (73%). Reported drawbacks included overly restrictive code sanitization (27%) and occasional latency (21%).",
+          "measure": "Student satisfaction and perceived confidence/usability survey themes",
+          "effect_size": "Clarity 85%; accessibility 79%; confidence 73%; negative themes: sanitization 27%, latency 21%",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=120"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Student testimonials and focus-group feedback (n = 150) emphasized improved understanding of error messages, easier debugging through side-by-side comparisons, and confidence gains from practice exercises. These findings are qualitative and support the chatbot's reported confidence-building and explanatory value.",
+          "measure": "Qualitative student testimonials and focus-group perceptions",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=150"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "The paper reports a mixed-methods quasi-experimental evaluation with pre/post tests, control comparisons, and qualitative feedback, but details needed for stronger causal credibility are limited and some reporting is inconsistent. This fits a yellow tier rather than a well-established RCT/QED standard.",
+  "impact_tier": "blue",
+  "impact_tier_rationale": "Reported gains are large in magnitude, including a 59.3% reduction in debugging time and a 34% improvement in coding assessments, with statistically significant differences on some measures. Although effect sizes like Cohen's d are not provided, the reported changes indicate substantial impact.",
+  "citations": [
+    {
+      "title": "SOC 2 reporting criteria",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "AWS CodeWhisperer: AI-powered code companion",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Educational data mining and learning analytics",
+      "doi": "10.1007/978-1-4614-3305-7_4",
+      "year": 2014,
+      "venue": "Learning analytics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Twenty years of primary and secondary computing education research: A thematic analysis of the literature",
+      "doi": "10.1145/3277565",
+      "year": 2019,
+      "venue": "ACM Transactions on Computing Education (TOCE)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Assessment and classroom learning",
+      "doi": "10.1080/0969595980050102",
+      "year": 1998,
+      "venue": "Assessment in Education: Principles, Policy & Practice",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Gender shades: Intersectional accuracy disparities in commercial gender classification",
+      "doi": null,
+      "year": 2018,
+      "venue": "Proceedings of Machine Learning Research",
+      "citation_level": 2,
+      "citation_context": "bias audit benchmark for gendered outputs"
+    },
+    {
+      "title": "Evaluating large language models trained on code",
+      "doi": null,
+      "year": 2021,
+      "venue": "arXiv preprint arXiv:2107.03374",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Dual coding theory and education",
+      "doi": "10.1007/BF01320076",
+      "year": 1991,
+      "venue": "Educational Psychology Review",
+      "citation_level": 2,
+      "citation_context": "theoretical basis for visual plus textual feedback"
+    },
+    {
+      "title": "Learn Python",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Python practice problems",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Computing education in the era of generative AI",
+      "doi": "10.1145/3597063",
+      "year": 2023,
+      "venue": "Communications of the ACM",
+      "citation_level": 2,
+      "citation_context": "used to compare Copilot and chatbot pedagogy"
+    },
+    {
+      "title": "BERT: Pre-training of deep bidirectional transformers for language understanding",
+      "doi": "10.48550/arXiv.1810.04805",
+      "year": 2019,
+      "venue": "Proceedings of NAACL",
+      "citation_level": 3,
+      "citation_context": "BERT-based classifier filters biased language outputs"
+    },
+    {
+      "title": "Secure code execution in educational environments: A Docker-based approach",
+      "doi": null,
+      "year": 2023,
+      "venue": "Journal of Cybersecurity Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Solving parsons problems versus fixing and writing code",
+      "doi": "10.1145/3341525.3387377",
+      "year": 2020,
+      "venue": "Proceedings of the ITiCSE Conference",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Personalized learning: What it really is and why it really matters",
+      "doi": null,
+      "year": 2016,
+      "venue": "EDUCAUSE Review",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "1.4 million student records exposed in coding platform breach",
+      "doi": null,
+      "year": 2022,
+      "venue": "Ars Technica",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "AutoTutor: A tutor with dialogue in natural language",
+      "doi": "10.3758/BRM.40.4.904",
+      "year": 2008,
+      "venue": "Behavior Research Methods",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Python is now the most taught language in top U.S. universities",
+      "doi": "10.1145/3580785",
+      "year": 2023,
+      "venue": "Communications of the ACM",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Design science in information systems research",
+      "doi": "10.2307/25148625",
+      "year": 2004,
+      "venue": "MIS Quarterly",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "LoRA: Low-rank adaptation of large language models",
+      "doi": null,
+      "year": 2021,
+      "venue": "arXiv preprint arXiv:2106.09685",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The knowledge-learning-instruction framework: Bridging the science-practice chasm",
+      "doi": "10.1080/00461520.2012.662800",
+      "year": 2012,
+      "venue": "Educational Psychologist",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Python crash course: A hands-on, project-based introduction to programming",
+      "doi": null,
+      "year": 2019,
+      "venue": "No Starch Press",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Docker: Lightweight Linux containers for consistent development and deployment",
+      "doi": null,
+      "year": 2014,
+      "venue": "Linux Journal",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Threshold concepts and troublesome knowledge: Linkages to ways of thinking and practising within the disciplines",
+      "doi": null,
+      "year": 2003,
+      "venue": "Improving Student Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Monaco Editor",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Introduction to Computer Science and Programming in Python",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Usability engineering",
+      "doi": null,
+      "year": 1993,
+      "venue": "Morgan Kaufmann",
+      "citation_level": 2,
+      "citation_context": "response-time usability threshold reference"
+    },
+    {
+      "title": "Advanced Encryption Standard (AES)",
+      "doi": "10.6028/NIST.FIPS.197",
+      "year": 2023,
+      "venue": "FIPS Publication 197",
+      "citation_level": 2,
+      "citation_context": "privacy architecture uses AES-256 encryption"
+    },
+    {
+      "title": "GPT-4 technical report",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Training language models to follow instructions with human feedback",
+      "doi": null,
+      "year": 2022,
+      "venue": "arXiv preprint arXiv:2203.02155",
+      "citation_level": 2,
+      "citation_context": "RLHF fairness mitigation strategy"
+    },
+    {
+      "title": "Cognitive-load theory: Methods to manage working memory load in the learning of complex tasks",
+      "doi": "10.1177/0963721420969371",
+      "year": 2020,
+      "venue": "Current Directions in Psychological Science",
+      "citation_level": 2,
+      "citation_context": "cognitive load theory for feedback design"
+    },
+    {
+      "title": "Asleep at the keyboard? Assessing the security of GitHub Copilot\u2019s code contributions",
+      "doi": "10.1109/SP40001.2021.00020",
+      "year": 2021,
+      "venue": "IEEE Symposium on Security and Privacy",
+      "citation_level": 2,
+      "citation_context": "evidence that Copilot suggestions introduce vulnerabilities"
+    },
+    {
+      "title": "Code in Place: A case study in scaling Python education with AI",
+      "doi": "10.1145/3478431.3499291",
+      "year": 2022,
+      "venue": "Proceedings of the SIGCSE Conference",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The prompt generation gap: Reimagining AI support for novice programmers",
+      "doi": "10.1145/3478431.3499292",
+      "year": 2023,
+      "venue": "Proceedings of the SIGCSE Conference",
+      "citation_level": 2,
+      "citation_context": "supports concern about novice dependency on AI"
+    },
+    {
+      "title": "Replit AI: Your pair programmer",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Code Llama: Open foundation models for code",
+      "doi": null,
+      "year": 2023,
+      "venue": "Meta AI",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Aiding collaborative reuse of computational notebooks with annotation-aware search",
+      "doi": "10.1145/3290605.3300500",
+      "year": 2019,
+      "venue": "Proceedings of the CHI Conference",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Auditing GitHub Copilot for algorithmic bias in code generation",
+      "doi": "10.1145/3531146.3533117",
+      "year": 2023,
+      "venue": "Proceedings of the FAccT Conference",
+      "citation_level": 2,
+      "citation_context": "evidence for algorithmic bias in generated code"
+    },
+    {
+      "title": "Overview of problem-based learning: Definitions and distinctions",
+      "doi": "10.7771/1541-5015.1002",
+      "year": 2006,
+      "venue": "Interdisciplinary Journal of Problem-Based Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A trainable spaced repetition model for language learning",
+      "doi": "10.18653/v1/P16-1174",
+      "year": 2016,
+      "venue": "Proceedings of the ACL Conference",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Debugging difficulties in introductory Python courses: A longitudinal study",
+      "doi": "10.1080/08993408.2022.2041234",
+      "year": 2022,
+      "venue": "Journal of Computer Science Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A review of generic program visualization systems for introductory programming education",
+      "doi": "10.1145/2490822",
+      "year": 2013,
+      "venue": "ACM Transactions on Computing Education (TOCE)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Automate the boring stuff with Python (2nd ed.)",
+      "doi": null,
+      "year": 2020,
+      "venue": "No Starch Press",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "AI-powered code completion",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "AI and education: Guidance for policy-makers",
+      "doi": null,
+      "year": 2021,
+      "venue": "UNESCO Publishing",
+      "citation_level": 2,
+      "citation_context": "inclusive digital education and access framing"
+    },
+    {
+      "title": "Sustainable Development Goal 4: Quality education",
+      "doi": null,
+      "year": 2015,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "equity and quality education policy framing"
+    },
+    {
+      "title": "Python AST module documentation",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The relative effectiveness of human tutoring, intelligent tutoring systems, and other tutoring systems",
+      "doi": "10.1080/00461520.2011.611369",
+      "year": 2011,
+      "venue": "Educational Psychologist",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Mind in society: The development of higher psychological processes",
+      "doi": null,
+      "year": 1978,
+      "venue": "Harvard University Press",
+      "citation_level": 2,
+      "citation_context": "zone of proximal development scaffolding framework"
+    },
+    {
+      "title": "Web Content Accessibility Guidelines (WCAG) 2.1",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "accessibility standard for screen reader compatibility"
+    },
+    {
+      "title": "The role of tutoring in problem solving",
+      "doi": "10.1111/j.1469-7610.1976.tb00381.x",
+      "year": 1976,
+      "venue": "Journal of Child Psychology and Psychiatry",
+      "citation_level": 2,
+      "citation_context": "human tutoring progression model for scaffolded feedback"
+    },
+    {
+      "title": "The future of jobs report 2023",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "GitHub Copilot and the rise of AI pair programmers",
+      "doi": "10.1109/MS.2022.3202091",
+      "year": 2022,
+      "venue": "IEEE Software",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

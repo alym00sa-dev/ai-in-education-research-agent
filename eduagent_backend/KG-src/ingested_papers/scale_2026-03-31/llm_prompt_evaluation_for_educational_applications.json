@@ -1,0 +1,370 @@
+{
+  "title": "LLM Prompt Evaluation for Educational Applications",
+  "doi": null,
+  "year": 2025,
+  "venue": "EDM-AIED 2025 Workshop on Epistemics and Decision-Making in AI-Supported Education (co-located with AIED 2025)",
+  "url": "https://arxiv.org/abs/2601.16134",
+  "source_db": "scale_stanford",
+  "population": "Adult",
+  "user_type": "Student",
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses the problem of how to systematically design and evaluate large language model (LLM) prompts for educational applications, rather than relying on ad-hoc prompt engineering. The authors focus on a structured dialogue activity used in an intelligent text web application and ask what a tournament-style prompt evaluation process can reveal about the performance of different prompting strategies for generating pedagogically appropriate follow-up questions.\n\nThe intervention studied is a prompt evaluation framework rather than a student learning intervention in the traditional sense. The authors created six prompt templates for Llama 3, including one baseline and five theory-informed alternatives based on prompt design patterns such as Persona, Context Manager, Cognitive Verifier, and Alternative Approaches. These prompts were used to generate follow-up questions after students answered self-explanation reading training questions. Eight trained judges then compared pairs of generated questions using a comparative judgment tournament implemented in Prodigy and ranked with the Glicko2 rating system across criteria of format, dialogue support, and appropriateness for adult learners.\n\nThe population consisted of adult learners whose authentic interactions were drawn from three intelligent text deployments: 93 interactions from Prolific crowd workers reading economics, 17 from university students reading psychology, and 9 from college students reading programming. The educational context was an online intelligent text framework called STAIRS that supports reading comprehension and summary revision. The study itself centered on expert judging of LLM outputs generated from these learner interactions rather than direct measurement of student learning gains.\n\nThe main conclusion is that systematic prompt evaluation is feasible and useful for educational technology research. The Strategic Reading Coach template performed best, with estimated win probabilities from 81% to 100% against competing prompts, suggesting that combining Persona and Context Manager patterns was especially effective in this reading comprehension dialogue context. The paper argues that prompt engineering for education should move toward evidence-based, replicable evaluation methods, while noting that findings may not generalize beyond this task and that only one LLM was tested.",
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "no_control_group",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "2",
+  "setting": "online",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "Llama 3",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "tutoring_instruction"
+      ],
+      "description": "A named large language model used to generate educational dialogue content.",
+      "use_case": "Used within the STAIRS reading-comprehension dialogue system to generate follow-up questions after learners answered an initial SERT question; six prompt templates for Llama 3 were compared in a tournament-style evaluation.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Literacy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In a tournament-style comparative judgment evaluation of Llama 3 outputs, the Strategic Reading Coach prompt template was the strongest performer for generating reading-comprehension follow-up questions. It showed estimated pairwise win probabilities ranging from 81% against the Scaffolding Expert to 100% against the Baseline and Comprehension Monitor, based on 213 total preference decisions from eight judges using 120 authentic user interactions across three deployments.",
+          "measure": "Judge preference for LLM-generated follow-up questions on format, dialogue support, and appropriateness for adult learners",
+          "effect_size": "win probabilities 0.81 to 1.00",
+          "confidence_interval": "not_reported",
+          "sample_size": "213 preference decisions; 8 judges; 120 user interactions"
+        },
+        {
+          "outcome_category": "Academic \u2014 Literacy",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Prompt design materially affected the quality of Llama 3-generated follow-up questions. The Scaffolding Expert ranked second and showed strong pairwise performance (1.00 vs Baseline, 0.96 vs Socratic Guide, 0.91 vs Connection Builder), while Comprehension Monitor and Connection Builder performed relatively poorly, indicating that some prompt-pattern combinations were less effective in this reading dialogue context.",
+          "measure": "Pairwise comparative judgment rankings of prompt templates for LLM-generated follow-up questions",
+          "effect_size": "SE win probabilities: 1.00 vs Baseline; 0.96 vs SG; 0.91 vs CB",
+          "confidence_interval": "not_reported",
+          "sample_size": "213 preference decisions; 8 judges; 120 user interactions"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical evaluation with authentic interactions and structured human judging, but it is not an RCT or QED on student learning outcomes. The main outcomes are annotator preferences about prompt quality rather than direct causal evidence on learner achievement.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports clear comparative improvements in judged output quality, but impact on students' academic outcomes is not directly measured. As a result, educational impact is promising but unclear.",
+  "citations": [
+    {
+      "title": "Longformer: the long-document transformer",
+      "doi": "10.48550/ARXIV.2004.05150",
+      "year": 2020,
+      "venue": null
+    },
+    {
+      "title": "An Empirical Analysis of BERT Embedding for Automated Essay Scoring",
+      "doi": "10.14569/IJACSA.2020.0111027",
+      "year": 2020,
+      "venue": "International Journal of Advanced Computer Science and Applications"
+    },
+    {
+      "title": "Combining Dialog Acts and Skill Modeling: What Chat Interactions Enhance Learning Rates During AI-Supported Peer Tutoring?",
+      "doi": null,
+      "year": 2024,
+      "venue": null
+    },
+    {
+      "title": "On the resemblance and containment of documents",
+      "doi": null,
+      "year": 1998,
+      "venue": "Proceedings. Compression and Complexity of SEQUENCES 1997"
+    },
+    {
+      "title": "Language Models are Few-Shot Learners",
+      "doi": null,
+      "year": 2020,
+      "venue": "arXiv"
+    },
+    {
+      "title": "Examining the Influence of Varied Levels of Domain Knowledge Base Inclusion in GPT-based Intelligent Tutors",
+      "doi": null,
+      "year": 2024,
+      "venue": null
+    },
+    {
+      "title": "Learning styles and pedagogy in post-16 learning : a systematic and critical review",
+      "doi": null,
+      "year": 2004,
+      "venue": "Learning and Skills Research Centre"
+    },
+    {
+      "title": "Conversing with Copilot: Exploring Prompt Engineering for Solving CS1 Problems Using Natural Language",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 54th ACM Technical Symposium on Computer Science Education V. 1"
+    },
+    {
+      "title": "The Llama 3 Herd of Models",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv"
+    },
+    {
+      "title": "Design Patterns: Elements of Reusable Object-Oriented Software",
+      "doi": null,
+      "year": 1994,
+      "venue": "Pearson Education"
+    },
+    {
+      "title": "The Right connections: Acknowledging epistemic progression in talk",
+      "doi": "10.1017/S0047404507070169",
+      "year": 2007,
+      "venue": "Language in Society"
+    },
+    {
+      "title": "Prompt Engineering with ChatGPT: A Guide for Academic Writers",
+      "doi": "10.1007/s10439-023-03272-4",
+      "year": 2023,
+      "venue": "Annals of Biomedical Engineering"
+    },
+    {
+      "title": "A stochastic rank ordered logit model for rating multi-competitor games and sports",
+      "doi": "10.1515/jqas-2015-0012",
+      "year": 2015,
+      "venue": "Journal of Quantitative Analysis in Sports"
+    },
+    {
+      "title": "Learning to Learn: A Key-Competence for All Adults?!",
+      "doi": null,
+      "year": 2008,
+      "venue": "Convergence"
+    },
+    {
+      "title": "spaCy: Industrial-strength Natural Language Processing in Python",
+      "doi": null,
+      "year": 2020,
+      "venue": "Explosion AI"
+    },
+    {
+      "title": "Teaching Plan Generation and Evaluation With GPT-4: Unleashing the Potential of LLM in Instructional Design",
+      "doi": "10.1109/TLT.2024.3384765",
+      "year": 2024,
+      "venue": "IEEE Transactions on Learning Technologies"
+    },
+    {
+      "title": "Learning to Learn in Adulthood",
+      "doi": "10.1093/geronj/29.3.302",
+      "year": 1974,
+      "venue": "Journal of Gerontology"
+    },
+    {
+      "title": "PromptMaker: Prompt-based Prototyping with Large Language Models",
+      "doi": null,
+      "year": 2022,
+      "venue": "Extended Abstracts of the 2022 CHI Conference on Human Factors in Computing Systems"
+    },
+    {
+      "title": "Comparative judgement in education research",
+      "doi": "10.1080/1743727X.2023.2242273",
+      "year": 2024,
+      "venue": "International Journal of Research & Method in Education"
+    },
+    {
+      "title": "Andragogy: Adult Learning Theory in Perspective",
+      "doi": "10.1177/009155217800500302",
+      "year": 1978,
+      "venue": "Community College Review"
+    },
+    {
+      "title": "Efficient Memory Management for Large Language Model Serving with PagedAttention",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv"
+    },
+    {
+      "title": "How Can I Improve? Using GPT to Highlight the Desired and Undesired Parts of Open-ended Responses",
+      "doi": null,
+      "year": 2024,
+      "venue": null
+    },
+    {
+      "title": "Generative AI for Peer Assessment Helpfulness Evaluation",
+      "doi": null,
+      "year": 2024,
+      "venue": null
+    },
+    {
+      "title": "Pre-train, Prompt, and Predict: A Systematic Survey of Prompting Methods in Natural Language Processing",
+      "doi": null,
+      "year": 2021,
+      "venue": "arXiv"
+    },
+    {
+      "title": "Should You Fine-Tune BERT for Automated Essay Scoring?",
+      "doi": null,
+      "year": 2020,
+      "venue": "Proceedings of the Fifteenth Workshop on Innovative Use of NLP for Building Educational Applications"
+    },
+    {
+      "title": "SERT: Self-Explanation Reading Training",
+      "doi": "10.1207/s15326950dp3801_1",
+      "year": 2004,
+      "venue": "Discourse Processes"
+    },
+    {
+      "title": "State of What Art? A Call for Multi-Prompt LLM Evaluation",
+      "doi": "10.1162/tacl_a_00681",
+      "year": 2024,
+      "venue": "Transactions of the Association for Computational Linguistics"
+    },
+    {
+      "title": "Exploring the potential of using an AI language model for automated essay scoring",
+      "doi": "10.1016/j.rmal.2023.100050",
+      "year": 2023,
+      "venue": "Research Methods in Applied Linguistics"
+    },
+    {
+      "title": "Prodigy: A modern and scriptable annotation tool for creating training data for machine learning models",
+      "doi": null,
+      "year": null,
+      "venue": "Prodigy"
+    },
+    {
+      "title": "Using Large Language Models to Provide Formative Feedback in Intelligent Textbooks: 24th International Conference on Artificial Intelligence in Education , AIED 2023",
+      "doi": "10.1007/978-3-031-36336-8_75",
+      "year": 2023,
+      "venue": "Artificial Intelligence in Education. Posters and Late Breaking Results, Workshops and Tutorials, Industry and Innovation Tracks, Practitioners, Doctoral Consortium and Blue Sky - 24th International Conference, AIED 2023, Proceedings"
+    },
+    {
+      "title": "ConstitutionMaker: Interactively Critiquing Large Language Models by Converting Feedback into Principles",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 29th International Conference on Intelligent User Interfaces"
+    },
+    {
+      "title": "Social Constructivism\u2014Jerome Bruner",
+      "doi": null,
+      "year": 2020,
+      "venue": "Science Education in Theory and Practice"
+    },
+    {
+      "title": "Sentence-BERT: sentence embeddings using Siamese BERT-networks",
+      "doi": null,
+      "year": 2019,
+      "venue": "arXiv"
+    },
+    {
+      "title": "Freedom to Learn",
+      "doi": null,
+      "year": 1994,
+      "venue": "Pearson College Div."
+    },
+    {
+      "title": "Process-BERT: A Framework for Representation Learning on Educational Process Data",
+      "doi": null,
+      "year": 2022,
+      "venue": "arXiv"
+    },
+    {
+      "title": "The Prompt Report: A Systematic Survey of Prompting Techniques",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv"
+    },
+    {
+      "title": "AutoPrompt: Eliciting Knowledge from Language Models with Automatically Generated Prompts",
+      "doi": null,
+      "year": 2020,
+      "venue": "Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP)"
+    },
+    {
+      "title": "De-Identifying Student Personally Identifying Information with GPT-4",
+      "doi": null,
+      "year": 2024,
+      "venue": null
+    },
+    {
+      "title": "Learning How to Learn: Applied Theory for Adults",
+      "doi": null,
+      "year": 1982,
+      "venue": "Pearson Prentice Hall"
+    },
+    {
+      "title": "Beyond the Imitation Game: Quantifying and extrapolating the capabilities of language models",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv"
+    },
+    {
+      "title": "Jill Watson: A Virtual Teaching Assistant Powered by ChatGPT",
+      "doi": null,
+      "year": 2024,
+      "venue": "Artificial Intelligence in Education: 25th International Conference, AIED 2024, Recife, Brazil, July 8\u201312, 2024, Proceedings, Part I"
+    },
+    {
+      "title": "Mind in Society: Development of Higher Psychological Processes",
+      "doi": null,
+      "year": 1978,
+      "venue": "Harvard University Press"
+    },
+    {
+      "title": "A Prompt Pattern Catalog to Enhance Prompt Engineering with ChatGPT",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv"
+    },
+    {
+      "title": "The role of tutoring inproblem solving",
+      "doi": "10.1111/j.1469-7610.1976.tb00381.x",
+      "year": 1976,
+      "venue": "Journal of Child Psychology and Psychiatry"
+    },
+    {
+      "title": "An Explanation of In-context Learning as Implicit Bayesian Inference",
+      "doi": null,
+      "year": 2021,
+      "venue": null
+    },
+    {
+      "title": "Using BERT-Based Textual Analysis to Design a Smarter Classroom Mode for Computer Teaching in Higher Education Institutions",
+      "doi": "10.3991/ijet.v18i19.42483",
+      "year": 2023,
+      "venue": "International Journal of Emerging Technologies in Learning (iJET)"
+    },
+    {
+      "title": "Why Johnny Can\u2019t Prompt: How Non-AI Experts Try (and Fail) to Design LLM Prompts",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems"
+    },
+    {
+      "title": "Judging LLM-as-a-judge with MT-bench and Chatbot Arena",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 37th International Conference on Neural Information Processing Systems"
+    },
+    {
+      "title": "Least-to-Most Prompting Enables Complex Reasoning in Large Language Models",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv"
+    },
+    {
+      "title": "Self-Regulated Learning and Academic Achievement: Theoretical Perspectives",
+      "doi": null,
+      "year": 2013,
+      "venue": "Routledge"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

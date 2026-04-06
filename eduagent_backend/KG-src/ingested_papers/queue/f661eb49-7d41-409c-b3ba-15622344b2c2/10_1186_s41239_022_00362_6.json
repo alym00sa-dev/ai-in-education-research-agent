@@ -1,0 +1,87 @@
+{
+  "title": "The impact of a virtual teaching assistant (chatbot) on students\u2019 learning in Ghanaian higher education",
+  "doi": "10.1186/s41239-022-00362-6",
+  "year": 2022,
+  "venue": "International Journal of Educational Technology in Higher Education",
+  "url": "https://doi.org/10.1186/s41239-022-00362-6",
+  "source_db": "openalex_search",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper examines whether a virtual teaching assistant chatbot can improve student learning in a Ghanaian higher education course, motivated by limited student-instructor interaction and delayed feedback in large classes. The authors ask whether a chatbot can serve as an intermediary between students and instructors and whether it can improve academic achievement compared with traditional instructor-mediated interaction.\n\nThe intervention was KNUSTbot, a zero-coding chatbot built with WhatsApp and FlowXO. It was trained on HTML/CSS learning queries and integrated into a final-year multimedia programming course at Kwame Nkrumah University of Science and Technology. Students in the experimental group could ask content questions to the chatbot at any time, while the control group used the same WhatsApp channel without the chatbot and interacted with the instructor instead. The study used a pretest-posttest quasi-experimental design with random allocation into experimental and control cohorts, alongside focus groups for qualitative feedback.\n\nParticipants were 68 undergraduate students (34 per group) in a 16-week course. Quantitative outcomes were achievement test scores; qualitative outcomes were focus group perceptions. The experimental group improved substantially more than the control group, with a very large interaction effect reported (partial eta squared = 0.57 for cohort, and 0.740 for time*cohort in the repeated-measures analysis). Students reported that the chatbot was easy to use and provided immediate feedback, but they also noted limitations such as repetitive or outdated responses and a lack of deep, detailed explanations. Overall, the authors conclude that chatbot-supported learning can improve academic performance and student satisfaction in settings with high student-instructor ratios, while noting that the approach may need stronger content coverage and human support for deeper learning tasks.",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is a quasi-experimental pretest-posttest comparison with random allocation to experimental/control cohorts and appropriate inferential analysis, plus qualitative follow-up. It is not a full RCT in the strictest sense and has one course/single-institution scope, but the design and reporting are stronger than a simple observational study.",
+  "impact_tier": "blue",
+  "impact_tier_rationale": "The study reports a large positive academic effect on a priority higher-education population, with partial eta squared=0.57 and a large posttest gap favoring the chatbot group. Despite limitations in generalizability, the magnitude of the reported learning gain is high.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.98,
+      "role": "primary",
+      "use_case": "Zero-code WhatsApp-based teaching assistant chatbot (KNUSTbot) for undergraduate multimedia programming, answering student questions about HTML/CSS and providing links/resources via natural-language dialogue."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.98,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Students in the experimental group who used the chatbot showed substantially higher course achievement than the control group that interacted with the course instructor. Posttest scores were 81.1 (SD=3.19) for the chatbot group versus 65.2 (SD=3.73) for control (n=34 per group), with a significant time-by-group interaction, F(1,66)=87.5, p<0.05, partial eta squared=0.57.",
+        "measure": "End-of-semester course achievement test covering objective items and a practical HTML/CSS examination",
+        "study_size": "n=68",
+        "effect_size": "\u03b7p\u00b2=0.57",
+        "confidence_interval": "not_reported",
+        "std_deviation": "Experimental posttest SD=3.19; control posttest SD=3.73"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.7,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Focus group data from the experimental cohort indicated strong satisfaction, confidence, and motivation to continue using the chatbot. Most students reported that the chatbot was easy to use and gave immediate feedback, with 79.4% recommending it for more courses; however, these are qualitative and descriptive findings rather than a validated scale-based effect estimate.",
+        "measure": "Focus group themes and student preference/satisfaction responses",
+        "study_size": "n=34",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.66,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "Students reported that the chatbot helped them search for and evaluate information and supported self-belief to learn more effectively, suggesting some gains in metacognitive and self-regulated learning. At the same time, many students complained of a lack of in-depth interaction and inability to think deeply with the bot, so the durable-skills impact was not uniformly positive.",
+        "measure": "Focus group themes on information seeking, self-belief, and depth of interaction",
+        "study_size": "n=34",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "non_representative_population",
+    "no_long_term_followup",
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "16",
+  "setting": "blended",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Ghana",
+  "study_region": "Sub-Saharan Africa",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

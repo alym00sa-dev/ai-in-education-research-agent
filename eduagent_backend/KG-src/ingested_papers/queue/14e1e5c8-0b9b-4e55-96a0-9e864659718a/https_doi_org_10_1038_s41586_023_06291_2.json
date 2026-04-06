@@ -1,0 +1,68 @@
+{
+  "title": "Large language models encode clinical knowledge",
+  "doi": "https://doi.org/10.1038/s41586-023-06291-2",
+  "year": 2023,
+  "venue": "Nature",
+  "url": "https://doi.org/10.1038/s41586-023-06291-2",
+  "source_db": "openalex_search",
+  "populations": [
+    "Adult (non-academic)"
+  ],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper asks whether large language models (LLMs) can encode and apply clinical knowledge well enough to support medical question answering, and how such systems should be evaluated for safety, factuality, bias, and usefulness. The authors argue that existing benchmark-style evaluations are too narrow for safety-critical medical use, especially for open-ended consumer health questions and real-world clinical workflows.\n\nTo address this, they introduce MultiMedQA, a benchmark combining six existing medical question-answering datasets with a new consumer-health dataset, HealthSearchQA. They also propose a human evaluation framework in which clinicians and lay users rate long-form answers along multiple axes, including scientific consensus, correctness, omission of important content, possible harm, and bias. They evaluate PaLM, Flan-PaLM, and an instruction prompt-tuned version called Med-PaLM on these tasks.\n\nThe evaluated populations are adult users only: consumer medical questions from real-world adult search behavior, plus clinician and lay rater assessments. The study is not a school-based educational intervention; rather, it is a domain benchmark and model-evaluation paper in a medical context. The main conclusion is that scaling and instruction tuning improve performance substantially, and Med-PaLM narrows the gap with clinicians on several safety and quality dimensions, but the models remain below clinician level and require stronger grounding, uncertainty handling, bias mitigation, and safeguards before real-world deployment.",
+  "limitations": [
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "Gemini",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "feedback_evaluation"
+      ],
+      "description": "Google PaLM/Flan-PaLM/Med-PaLM family of large language models for medical question answering and instruction tuning.",
+      "use_case": "The paper evaluated PaLM and Flan-PaLM on MultiMedQA and developed Med-PaLM via instruction prompt tuning to improve long-form medical question answering and alignment.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0001 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "On MedQA (USMLE-style questions), Flan-PaLM 540B achieved 67.6% accuracy, exceeding the previous state of the art by more than 17%. The paper also reports 57.6% on MedMCQA and 79.0% on PubMedQA.",
+          "measure": "multiple-choice accuracy on medical QA benchmarks",
+          "effect_size": "more than 17% above prior SOTA on MedQA",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Academic \u0001 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In human evaluation of long-form consumer medical questions, clinicians judged 92.6% of Med-PaLM answers to be aligned with scientific consensus versus 61.9% for Flan-PaLM and 92.9% for clinician answers. Med-PaLM also reduced the share of answers rated as potentially leading to harm from 29.7% to 5.9%.",
+          "measure": "clinician ratings of scientific consensus alignment and potential harm on long-form answers",
+          "effect_size": "29.7% to 5.9% for potential harm; 61.9% to 92.6% for scientific consensus alignment",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=140 questions total in human evaluation"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a single empirical study with substantial human evaluation, but it is not a school-based education study and does not use a randomized or educational implementation design. The evidence is therefore indirect for the requested school coaching context.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The reported gains are large within the medical QA setting, but the paper does not evaluate instructional coaching, lesson-plan feedback, or school implementation. Because the target educational use case is absent, impact for this topic is unclear.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

@@ -1,0 +1,112 @@
+{
+  "title": "Tailoring Education with GenAI: A New Horizon in Lesson Planning",
+  "doi": null,
+  "year": 2024,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2403.12071v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Undergraduate",
+    "Elementary (PreK-5th)",
+    "Middle School (6th-8th)",
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper examines how generative AI can be used to support educators in creating customized lesson plans and learning scenarios. The authors argue that traditional, one-size-fits-all lesson planning often fails to address differences in students\u2019 abilities, interests, and learning needs, and they propose an interactive GenAI-based assistant intended to make lesson design more adaptive and efficient.\n\nThe intervention is a \u201cLearning Scenario Assistant\u201d built around iterative prompt engineering. The system first positions the model in the lesson-planning domain, then uses an interactive prompt to gather structured information from the educator (target audience, topic, goal, format, duration, examples, and optional additional questions), followed by user feedback and human-led refinement. The paper reports an example use case in a university Digital Humanities course and describes testing the assistant across preschool, secondary school, and university levels in both English and Greek, using ChatGPT, Llama 2, and Google Bard.\n\nEvaluation combined quantitative ratings from experts, qualitative feedback from teachers and educational experts, and linguistic analysis of generated outputs. The authors conclude that GenAI can substantially reduce lesson-planning time while producing tailored outputs that educators judge as useful and adaptable. They also emphasize that human oversight remains essential, and they call for continued evaluation, ethical governance, and broader testing, including stronger evidence through randomized trials in future work.",
+  "limitations": [
+    "single_site",
+    "no_control_group",
+    "self_reported_measures",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "low",
+  "study_country": "Greece",
+  "study_region": "Europe",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "personalization_adaptation"
+      ],
+      "description": "OpenAI GPT-based conversational AI system for generating and refining text through interactive prompts.",
+      "use_case": "Used as one of the evaluated large language models for generating tailored lesson plans and learning scenarios; also explicitly tested in the prompt workflow for lesson planning.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "ChatGPT 4 (09/2023) and ChatGPT 3.5 (09/2023) were evaluated on lesson-plan generation quality across English and Greek scenarios. The paper reports that ChatGPT 4 generally scored highest across most quantitative and qualitative categories, including relevance, accuracy, creativity, engagement, personalization, and coherence, and was also described as effective in producing detailed and operationally practical outputs.",
+          "measure": "Expert ratings of generated lesson plans on Likert-scale criteria; linguistic analysis (tokens, LDA topics)",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    },
+    {
+      "name": "LLaMA",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "personalization_adaptation"
+      ],
+      "description": "Meta family of large language models used for conversational text generation and prompt-based completion.",
+      "use_case": "Evaluated alongside ChatGPT and Google Bard for generating lesson plans and learning scenarios in English and Greek.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Llama 2 70B generally scored highly across several English and Greek evaluation categories and was noted for strong creativity, personalization, and detailed outputs, but the paper also reports accuracy problems, including material that was not existent (for example, non-existent links for additional resources). Llama 2 13B was noted to excel in creativity and response time.",
+          "measure": "Expert ratings of generated lesson plans on Likert-scale criteria; linguistic analysis (tokens, LDA topics)",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    },
+    {
+      "name": "Gemini",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "personalization_adaptation"
+      ],
+      "description": "Google\u2019s conversational large language model family, formerly Bard, used for text generation and assistance.",
+      "use_case": "Evaluated as Google Bard in the paper for generating lesson plans and learning scenarios in English and Greek.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Google Bard was competitive in the lesson-plan generation task but generally scored lower than ChatGPT 4 and Llama 2 70B in several categories, particularly coherence, engagement, creativity, and personalization. The paper notes it tended to perform better in response time than in content quality.",
+          "measure": "Expert ratings of generated lesson plans on Likert-scale criteria; linguistic analysis (tokens, LDA topics)",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a mixed-methods comparative evaluation of LLM outputs rather than a controlled educational intervention. The paper provides structured human ratings and linguistic analysis, but no experimental student outcome data or effect sizes.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper suggests practical utility for lesson planning efficiency and personalization, but the impact is based on qualitative and rating-based assessments without quantified educational effect sizes. Overall impact appears promising but remains unclear for actual learner outcomes.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

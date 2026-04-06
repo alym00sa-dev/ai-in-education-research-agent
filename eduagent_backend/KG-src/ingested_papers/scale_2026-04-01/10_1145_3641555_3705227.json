@@ -1,0 +1,86 @@
+{
+  "title": "Personalized Parsons Puzzles as Scaffolding Enhance Practice Engagement Over Just Showing LLM-Powered Solutions",
+  "doi": "10.1145/3641555.3705227",
+  "year": 2025,
+  "venue": "Proceedings of the 56th ACM Technical Symposium on Computer Science Education V. 2 (SIGCSE TS 2025)",
+  "url": "https://arxiv.org/abs/2501.09210",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Randomized Controlled Trial (RCT)",
+  "extended_summary": "This paper examines a key concern in AI-supported programming education: when students can easily obtain full LLM-generated code solutions, they may complete tasks without meaningfully engaging in learning. The study asks whether providing a more active form of AI-assisted support\u2014personalized Parsons puzzles\u2014can keep students engaged in programming practice better than simply showing a complete solution.\n\nThe intervention compared two help conditions during Python write-code practice. In the puzzle-scaffolding condition, students who clicked for help received LLM-powered personalized Parsons puzzles tailored to their current code, with immediate feedback and the option to copy the completed solution. In the control condition, students instead received a complete personalized correct code solution, representing a more typical generative AI output. Both conditions used the same practice problems and same underlying solution-level personalization, and the system used institution-protected GPT-4.\n\nThe study took place in a real undergraduate programming classroom at a large public research university in the northern United States during an 80-minute lecture session in week six of the winter 2024 semester. Students practiced four Python problems on nested dictionaries and were randomly assigned to condition. The analyzed sample included 118 students who completed all four questions without technical difficulties.\n\nThe main finding was that students receiving personalized Parsons puzzle scaffolding spent significantly longer engaged in practice than students who received complete solutions (about 22.7 vs. 15.8 minutes on average). The authors interpret this as evidence that active-learning-oriented AI scaffolding can promote greater practice engagement than passive answer delivery. However, the study could not evaluate posttest learning outcomes because the longer engagement in the puzzle condition left insufficient time for the planned posttest, and some students experienced technical difficulties. The paper concludes that AI support designed as scaffolded activity rather than direct answer provision may better sustain meaningful engagement in programming learning.",
+  "limitations": [
+    "short_duration",
+    "single_site",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "classroom",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "personalization_adaptation"
+      ],
+      "description": "OpenAI GPT-family large language model used here to generate personalized programming support.",
+      "use_case": "The paper used an institution-protected GPT-4 to provide help on Python write-code tasks. In the treatment condition, it generated personalized Parsons puzzles as scaffolding; in the control condition, it generated complete personalized correct code solutions.",
+      "findings": [
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In an 80-minute randomized between-subjects classroom study, students receiving GPT-4-powered personalized Parsons puzzles (PC) spent significantly more time engaged in practice than students receiving complete GPT-4-generated solutions (CC). Practice time was 22.7 minutes (SD=10.1, Median=22.8) in PC versus 15.8 minutes (SD=12.7, Median=11.7) in CC, with Mann\u2013Whitney U=2368.0, p<.001, CLES=.69; n=118 total (51 PC, 67 CC).",
+          "measure": "Practice engagement duration measured as total practice time in minutes across four programming questions",
+          "effect_size": "CLES=.69",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=118"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is a randomized between-subjects classroom experiment with comparable groups at baseline, which strengthens causal inference. However, it is a short single-session study and the intended posttest could not be analyzed, limiting outcome breadth and rigor.",
+  "impact_tier": "blue",
+  "impact_tier_rationale": "The reported effect on engagement was substantial, with CLES=.69 and about 7 additional minutes of practice time on average in the scaffolded condition. Although the outcome is engagement rather than posttest achievement, the observed difference is meaningfully large.",
+  "citations": [
+    {
+      "title": "Using Adaptive Parsons Problems to Scaffold Write-Code Problems",
+      "doi": null,
+      "year": 2022,
+      "venue": "Proceedings of the 2022 ACM Conference on International Computing Education Research-Volume 1",
+      "citation_level": 2,
+      "citation_context": "prior adaptive Parsons personalization approach"
+    },
+    {
+      "title": "CodeTailor: LLM-Powered Personalized Parsons Puzzles for Engaging Support While Learning Programming",
+      "doi": "10.1145/3657604.3662032",
+      "year": 2024,
+      "venue": "Proceedings of the Eleventh ACM Conference on Learning @ Scale",
+      "citation_level": 3,
+      "citation_context": "method and personalization design built upon this system"
+    },
+    {
+      "title": "How Novices Use LLM-Based Code Generators to Solve CS1 Coding Tasks in a Self-Paced Learning Environment",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv preprint",
+      "citation_level": 2,
+      "citation_context": "motivates concern about novices bypassing practice with LLMs"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

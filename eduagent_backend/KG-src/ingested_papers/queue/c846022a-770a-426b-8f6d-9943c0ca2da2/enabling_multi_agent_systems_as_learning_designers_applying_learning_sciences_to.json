@@ -1,0 +1,87 @@
+{
+  "title": "Enabling Multi-Agent Systems as Learning Designers: Applying Learning Sciences to AI Instructional Design",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2508.16659v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper examines whether multi-agent large language model (LLM) systems, when guided by a learning-sciences framework, can generate higher-quality K\u201312 instructional materials than a simple single-agent prompting baseline. The authors focus on the common challenge that teachers use LLMs for lesson and activity planning but often lack the time or expertise to craft prompts that reliably produce pedagogically strong outputs.\n\nTo address this, the study embeds the Knowledge\u2013Learning\u2013Instruction (KLI) framework into three generation systems: a single-agent baseline representing typical teacher prompting, a sequential role-based multi-agent system, and a collaborative multi-agent system using a conquer-and-merge discussion process. The systems generated secondary math and science learning activities from 10 curriculum-aligned objectives taken from the Oak Ridge Institute for Science and Education lesson library. Outputs were evaluated by practicing teachers using the Quality Matters K\u201312 rubric, and also by an LLM-as-a-judge using both the QM rubric and a custom learning-sciences rubric.\n\nThe population consisted of 20 U.S.-based secondary math and science teachers who rated the generated activities, making the context clearly K\u201312 and specifically grades 7\u201312. Quantitative rubric results showed only small and often non-significant differences among systems, but the qualitative teacher feedback consistently favored the collaborative multi-agent system, MAS-CMD, for creativity, contextual relevance, completeness, and classroom readiness. The authors conclude that embedding pedagogical theory directly into AI architectures can improve the usefulness of generated instructional materials, though this comes with higher computational cost and rubric-based quantitative measures may miss important qualities valued by teachers.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a mixed-methods comparative study with practicing teachers, repeated-measures ANOVAs, and qualitative thematic analysis, but it is not an RCT and relies on a small sample (n=20) with low inter-rater reliability. The evidence is useful and theory-informed, but credibility is limited by the absence of classroom implementation and by mostly non-significant quantitative effects.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper suggests a modest practical benefit for teacher planning quality, especially for collaborative MAS-CMD outputs, but the measurable effects are small or inconsistent and do not demonstrate student learning gains. Because the study evaluates generated materials rather than classroom outcomes, the broader educational impact remains unclear.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.9,
+      "role": "primary",
+      "use_case": "Comparing multi-agent LLM systems for generating K-12 secondary math and science learning activities and instructional plans, including a baseline single-agent prompt, a role-based sequential multi-agent pipeline, and a collaborative conquer-and-merge multi-agent design guided by the KLI framework."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.88,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The study found a clear quality\u2013efficiency trade-off across LLM-based activity-generation systems. SAS was fastest and lightest (25\u00b116 sec; ~3,376\u00b11,601 tokens; 1 request), MAS-Roles required about 3\u00d7 the time and ~7\u00d7 the tokens, and MAS-CMD took the longest and most compute-intensive route (272\u00b1168 sec; ~71,638\u00b125,222 tokens; 13 requests).",
+        "measure": "Generation time, tokens used, and number of requests per generated learning activity",
+        "study_size": "n=30 human-evaluated activities plus n=120 LLM-evaluated activities; efficiency stats reported across 10 objectives per system/model",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "SAS 25\u00b116 sec; MAS-Roles 77\u00b145 sec; MAS-CMD 272\u00b1168 sec; tokens and requests also reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    },
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 0.74,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "For secondary math activities, teachers rated MAS-CMD highest overall, but most quantitative differences across systems were not statistically significant except on QM criterion 5.2 (active learning). On the human-rated total score, MAS-CMD averaged 10.05 versus 9.55 for SAS and 9.05 for MAS-Roles, but the omnibus ANOVA was not significant (F(2,38)=2.66, p=.083); only criterion 5.2 showed a significant system effect, F(2,38)=4.75, p=.014, \u03b7p\u00b2=.20, with MAS-CMD rated higher than MAS-Roles (p=.050).",
+        "measure": "Teacher ratings of math learning activity quality using QM rubric criteria and total score",
+        "study_size": "n=20 teachers (11 math, 9 science), with 10 math/science objectives total",
+        "effect_size": "\u03b7p\u00b2=.20 for QM criterion 5.2; total-score ANOVA not significant",
+        "confidence_interval": "Total score means: MAS-CMD 10.05 [9.42,10.68], SAS 9.55 [8.92,10.18], MAS-Roles 9.05 [8.28,9.82]",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    },
+    {
+      "outcome": "Academic \u2014 Scientific Reasoning",
+      "confidence": 0.74,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "For secondary science learning activities, the same pattern held: experts qualitatively preferred the collaborative MAS-CMD outputs, but rubric-based quantitative differences were mostly small and often non-significant. The only statistically significant human-rater finding was again on active learning (QM 5.2), F(2,38)=4.75, p=.014, \u03b7p\u00b2=.20, while the overall total score difference did not reach conventional significance.",
+        "measure": "Teacher ratings of science learning activity quality using QM rubric criteria and total score",
+        "study_size": "n=20 teachers (11 math, 9 science), with 10 math/science objectives total",
+        "effect_size": "\u03b7p\u00b2=.20 for QM criterion 5.2; total-score ANOVA not significant",
+        "confidence_interval": "Total score means: MAS-CMD 10.05 [9.42,10.68], SAS 9.55 [8.92,10.18], MAS-Roles 9.05 [8.28,9.82]",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "no_long_term_followup",
+    "implementation_fidelity_not_reported",
+    "non_representative_population"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

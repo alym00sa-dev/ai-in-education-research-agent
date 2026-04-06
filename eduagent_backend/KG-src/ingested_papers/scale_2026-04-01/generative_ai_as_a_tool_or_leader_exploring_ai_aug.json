@@ -1,0 +1,551 @@
+{
+  "title": "Generative AI as a Tool or Leader? Exploring AI-Augmented Thinking in Student Programming Tasks",
+  "doi": null,
+  "year": 2024,
+  "venue": "not_reported",
+  "url": "https://arxiv.org/abs/2411.19490",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate",
+    "Graduate / Doctoral"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper investigates how generative AI (GAI) shapes students\u2019 thinking processes during programming tasks, with a particular focus on learner agency: whether students use AI as a tool to support their thinking or allow AI to lead the problem-solving process. The authors note that while prior work has examined the benefits and risks of tools like ChatGPT in programming education, little research has empirically analyzed how students actually think and act while programming with GAI. The study addresses three questions: how to categorize AI-augmented thinking in programming, how human-led and AI-led students differ, and how factors such as attitudes toward AI, critical thinking, and programming self-efficacy relate to these thinking processes.\n\nThe study develops and applies an AI-augmented thinking framework based on screen-recording analysis of students completing programming tasks with access to GAI tools such as ChatGPT. The framework includes four stages: Question Formulation, Solution Development, Solution Analysis and Evaluation, and Solution Refinement. Students were grouped as human-led or AI-led according to the ratio of time spent generating their own code versus copying code from AI. The researchers combined qualitative coding of 2,297 events from screen recordings with quantitative analyses including t-tests, sequential pattern mining, and Pearson correlations, making the study both descriptive and correlational.\n\nParticipants were 20 students from a single university in Singapore: 10 undergraduates in an engineering computation course and 10 master\u2019s students in a learning analytics course. All had limited prior programming experience. The study took place out of class in an individual one-hour programming session supported by GAI, preceded by a survey on attitudes toward AI, critical thinking, and programming self-efficacy, and followed by reflection reports from most participants. Undergraduate students completed Python programming tasks; graduate students completed an R-based data analysis assignment.\n\nThe main findings are that human-led students spent significantly more time on solution development and solution refinement than AI-led students, and their interaction patterns showed more critical engagement with AI outputs. Human-led students commonly checked outcomes, read AI responses, and then manually refined code, whereas AI-led students more often copied AI-generated code and immediately ran it. Positive attitudes toward AI, critical thinking, and programming self-efficacy were positively associated with question formulation, while critical thinking was also positively related to solution refinement. The authors conclude that student agency is central in AI-supported programming: GAI is most beneficial when used as a support for human thinking rather than a substitute for it.",
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "no_control_group",
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "lab",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Singapore",
+  "study_region": "East Asia & Pacific",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "feedback_evaluation"
+      ],
+      "description": "OpenAI's conversational generative AI system used for natural-language interaction, including generating programming code, explanations, debugging help, and feedback.",
+      "use_case": "University students used ChatGPT and similar generative AI tools during one-hour programming tasks to ask for source code, explanations, debugging help, and to support problem solving; the paper particularly discusses ChatGPT as the exemplar tool in programming education.",
+      "findings": [
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "In a mixed-methods observational study of 20 university students, students classified as human-led spent significantly more time than AI-led students on Solution Development (t=2.12, p=0.05) and Solution Refinement (t=2.48, p=0.03) while using ChatGPT/GAI during programming. Sequential patterns suggested human-led students more often checked outcomes, read AI answers, and manually refined code, whereas AI-led students more often copied AI-generated code and ran it directly.",
+          "measure": "Time spent in coded AI-augmented thinking dimensions and frequent sequential behavior patterns from screen recordings",
+          "effect_size": "t=2.12 (Solution Development); t=2.48 (Solution Refinement)",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=20"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Positive attitudes toward AI, critical thinking, and programming self-efficacy were positively correlated with Question Formulation during ChatGPT/GAI-supported programming (r=0.32, r=0.33, and r=0.39, respectively). Critical thinking was also positively related to Solution Refinement (r=0.47).",
+          "measure": "Pearson correlations between learner characteristics and coded AI-augmented thinking dimensions",
+          "effect_size": "r=0.32; r=0.33; r=0.39; r=0.47",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=20"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "Programming self-efficacy was strongly negatively correlated with Solution Analysis and Evaluation in ChatGPT/GAI-supported programming (r=-0.54). The authors interpret this as more confident programmers spending less time analysing and evaluating AI answers.",
+          "measure": "Pearson correlation between programming self-efficacy and Solution Analysis and Evaluation",
+          "effect_size": "r=-0.54",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=20"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a small-sample mixed-methods observational study with t-tests, sequential pattern mining, and correlations, not an RCT or strong quasi-experiment. Findings are informative but causal claims about effectiveness are limited.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports significant behavioral/process differences and moderate-to-strong correlations, but no direct learning-performance effect size for programming outcomes. Overall impact on student outcomes is promising but unclear.",
+  "citations": [
+    {
+      "title": "A Systematic Review of Computational Thinking Approach for Programming Education in Higher Education Institutions",
+      "doi": "10.1145/3364510.3364521",
+      "year": 2019,
+      "venue": "Proceedings of the 19th Koli Calling International Conference on Computing Education Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Impact of ChatGPT on Learning Motivation: Teachers and Students\u2019 Voices",
+      "doi": "10.56540/jesaf.v2i1.51",
+      "year": 2023,
+      "venue": "Journal of English Studies in Arabia Felix",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Failure rates in introductory programming: 12 years later",
+      "doi": "10.1145/3324888",
+      "year": 2019,
+      "venue": "ACM Inroads",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Testing the significance of a correlation with nonnormal data: Comparison of Pearson, Spearman, transformation, and resampling approaches",
+      "doi": "10.1037/a0028087",
+      "year": 2012,
+      "venue": "Psychological Methods",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A simplified guide to determination of sample size requirements for estimating the value of intraclass correlation coefficient: A review",
+      "doi": null,
+      "year": 2017,
+      "venue": "The Journal of the School of Dental Sciences, USM",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Exploring differences in self-regulated learning strategy use between high- and low-performing students in introductory programming: An analysis of eye-tracking and retrospective think-aloud data from program comprehension",
+      "doi": "10.1016/j.compedu.2023.104948",
+      "year": 2024,
+      "venue": "Computers & Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The interplay of learning, analytics and artificial intelligence in education: A vision for hybrid intelligence",
+      "doi": "10.1111/bjet.13514",
+      "year": 2024,
+      "venue": "British Journal of Educational Technology",
+      "citation_level": 2,
+      "citation_context": "hybrid intelligence framing for human-AI synergy"
+    },
+    {
+      "title": "AI Should Augment Human Intelligence, Not Replace It",
+      "doi": null,
+      "year": 2021,
+      "venue": "Harvard Business Review",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Hybrid Intelligence",
+      "doi": "10.1007/s12599-019-00595-2",
+      "year": 2019,
+      "venue": "Business & Information Systems Engineering",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Opinion Paper: \u201cSo what if ChatGPT wrote it?\u201d Multidisciplinary perspectives on opportunities, challenges and implications of generative conversational AI for research, practice and policy",
+      "doi": "10.1016/j.ijinfomgt.2023.102642",
+      "year": 2023,
+      "venue": "International Journal of Information Management",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Improving student learning in an introductory programming course using flipped classroom and competency framework",
+      "doi": "10.1109/EDUCON.2017.7942823",
+      "year": 2017,
+      "venue": "2017 IEEE Global Engineering Education Conference (EDUCON)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Mindset matters: How mindset affects the ability of staff to anticipate and adapt to Artificial Intelligence (AI) future scenarios in organisational settings",
+      "doi": "10.1007/s00146-020-01101-z",
+      "year": 2021,
+      "venue": "AI & SOCIETY",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Determining the human to AI workforce ratio \u2013 Exploring future organisational scenarios and the implications for anticipatory workforce planning",
+      "doi": "10.1016/j.techsoc.2022.101879",
+      "year": 2022,
+      "venue": "Technology in Society",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Cambridge Handbook of Computing Education Research",
+      "doi": null,
+      "year": 2019,
+      "venue": "Cambridge University Press",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Shaping the Future of Education: Exploring the Potential and Consequences of AI and ChatGPT in Educational Settings",
+      "doi": "10.3390/educsci13070692",
+      "year": 2023,
+      "venue": "Education Sciences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Computational Thinking in K\u201312: A Review of the State of the Field",
+      "doi": "10.3102/0013189X12463051",
+      "year": 2013,
+      "venue": "Educational Researcher",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Educing AI-Thinking in Science, Technology, Engineering, Arts, and Mathematics (STEAM) Education",
+      "doi": "10.3390/educsci9030184",
+      "year": 2019,
+      "venue": "Education Sciences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Underestimation of Pearson\u2019s product moment correlation statistic",
+      "doi": "10.1007/s00442-018-4233-0",
+      "year": 2019,
+      "venue": "Oecologia",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Artificial intelligence, human intelligence and hybrid intelligence based on mutual augmentation",
+      "doi": "10.1177/20539517221142824",
+      "year": 2022,
+      "venue": "Big Data & Society",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Algorithmic management in a work context",
+      "doi": "10.1177/20539517211020332",
+      "year": 2021,
+      "venue": "Big Data & Society",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A Conversation with ChatGPT about Digital Leadership and Technology Integration: Comparative Analysis Based on Human\u2013AI Collaboration",
+      "doi": "10.3390/admsci13070157",
+      "year": 2023,
+      "venue": "Administrative Sciences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Augmented Intelligence: Enhancing Human Decision Making",
+      "doi": "10.1007/978-3-030-84729-6_10",
+      "year": 2022,
+      "venue": "In Bridging Human Intelligence and Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Using Large Language Models to Enhance Programming Error Messages",
+      "doi": "10.1145/3545945.3569770",
+      "year": 2023,
+      "venue": "Proceedings of the 54th ACM Technical Symposium on Computer Science Education V. 1",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "What Is the Impact of ChatGPT on Education? A Rapid Review of the Literature",
+      "doi": "10.3390/educsci13040410",
+      "year": 2023,
+      "venue": "Education Sciences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A Systematic Literature Review on Teaching and Learning Introductory Programming in Higher Education",
+      "doi": "10.1109/TE.2018.2864133",
+      "year": 2019,
+      "venue": "IEEE Transactions on Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Examining Opportunities to Learn Literacy: The Role of Critical Sociocultural Literacy Research",
+      "doi": null,
+      "year": 2007,
+      "venue": "In Reframing Sociocultural Research on Literacy",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Heading toward Artificial Intelligence 2.0",
+      "doi": "10.1016/J.ENG.2016.04.018",
+      "year": 2016,
+      "venue": "Engineering",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Adaptive intelligent tutoring systems for e-learning systems",
+      "doi": "10.1016/j.sbspro.2010.03.641",
+      "year": 2010,
+      "venue": "Procedia - Social and Behavioral Sciences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Psychology of Intelligence",
+      "doi": null,
+      "year": 1950,
+      "venue": "Routledge & Paul",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT for Education and Research: Opportunities, Threats, and Strategies",
+      "doi": "10.3390/app13095783",
+      "year": 2023,
+      "venue": "Applied Sciences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Development and Validation of Scores on a Computer Programming Self-Efficacy Scale and Group Analyses of Novice Programmer Self-Efficacy",
+      "doi": "10.2190/C670-Y3C8-LTJ1-CT3P",
+      "year": 1998,
+      "venue": "Journal of Educational Computing Research",
+      "citation_level": 3,
+      "citation_context": "programming self-efficacy measure source"
+    },
+    {
+      "title": "Learning From Crowds",
+      "doi": null,
+      "year": 2010,
+      "venue": "Journal of Machine Learning Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Bridging the Programming Skill Gap with ChatGPT: A Machine Learning Project with Business Students",
+      "doi": "10.1007/978-3-031-50485-3_42",
+      "year": 2024,
+      "venue": "In Artificial Intelligence. ECAI 2023 International Workshops",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Augmented Intelligence",
+      "doi": "10.1007/978-3-030-77584-1_15",
+      "year": 2021,
+      "venue": "In A Primer on Multiple Intelligences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Automatic Generation of Programming Exercises and Code Explanations Using Large Language Models",
+      "doi": "10.1145/3501385.3543957",
+      "year": 2022,
+      "venue": "Proceedings of the 2022 ACM Conference on International Computing Education Research - Volume 1",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Initial validation of the general attitudes towards Artificial Intelligence Scale",
+      "doi": "10.1016/j.chbr.2020.100014",
+      "year": 2020,
+      "venue": "Computers in Human Behavior Reports",
+      "citation_level": 3,
+      "citation_context": "attitudes toward AI scale source"
+    },
+    {
+      "title": "Augmented Intelligence: A Way for Helping Universities to Make Smarter Decisions",
+      "doi": "10.1007/978-981-13-2285-3_11",
+      "year": 2019,
+      "venue": "In Emerging Trends in Expert Applications and Security",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A Study on the Framework Design of Artificial Intelligence Thinking for Artificial Intelligence Education",
+      "doi": "10.18178/ijiet.2021.11.9.1540",
+      "year": 2021,
+      "venue": "International Journal of Information and Education Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Demystifying computational thinking",
+      "doi": "10.1016/j.edurev.2017.09.003",
+      "year": 2017,
+      "venue": "Educational Research Review",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The development and psychometric validation of a Critical Thinking Disposition Scale",
+      "doi": "10.1016/j.tsc.2012.09.002",
+      "year": 2013,
+      "venue": "Thinking Skills and Creativity",
+      "citation_level": 3,
+      "citation_context": "critical thinking disposition scale source"
+    },
+    {
+      "title": "Debugging in Computational Thinking: A Meta-analysis on the Effects of Interventions on Debugging Skills",
+      "doi": "10.1177/07356331241227793",
+      "year": 2024,
+      "venue": "Journal of Educational Computing Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Investigating students\u2019 programming behaviors, interaction qualities and perceptions through prompt-based learning in ChatGPT",
+      "doi": "10.1057/s41599-024-03991-6",
+      "year": 2024,
+      "venue": "Humanities and Social Sciences Communications",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A smart eye-tracking feedback scaffolding approach to improving students\u2019 learning self-efficacy and performance in a C programming course",
+      "doi": "10.1016/j.chb.2019.01.036",
+      "year": 2019,
+      "venue": "Computers in Human Behavior",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Computing machinery and intelligence",
+      "doi": null,
+      "year": 1950,
+      "venue": "Mind",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Mind in society: The development of higher psychological processes",
+      "doi": null,
+      "year": 1981,
+      "venue": "Harvard Univ. Press",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Enhancing Students\u2019 Computer Programming Performances, Critical Thinking Awareness and Attitudes towards Programming: An Online Peer-Assessment Attempt",
+      "doi": null,
+      "year": 2017,
+      "venue": "Journal of Educational Technology & Society",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Investigating the Role of ChatGPT in Supporting Text-Based Programming Education for Students and Teachers",
+      "doi": "10.1007/978-3-031-44900-0_4",
+      "year": 2023,
+      "venue": "In Informatics in Schools. Beyond Bits and Bytes: Nurturing Informatics Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Computational thinking",
+      "doi": "10.1145/1118178.1118215",
+      "year": 2006,
+      "venue": "Communications of the ACM",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Generative Artificial Intelligence in Learning Analytics: Contextualising Opportunities and Challenges through the Learning Analytics Cycle",
+      "doi": "10.1145/3636555.3636856",
+      "year": 2024,
+      "venue": "Proceedings of the 14th Learning Analytics and Knowledge Conference",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Practical and ethical challenges of large language models in education: A systematic scoping review",
+      "doi": "10.1111/bjet.13370",
+      "year": 2024,
+      "venue": "British Journal of Educational Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Augmented intelligence in programming learning: Examining student views on the use of ChatGPT for programming learning",
+      "doi": "10.1016/j.chbah.2023.100005",
+      "year": 2023,
+      "venue": "Computers in Human Behavior: Artificial Humans",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The effect of generative artificial intelligence (AI)-based tool use on students\u2019 computational thinking skills, programming self-efficacy and motivation",
+      "doi": "10.1016/j.caeai.2023.100147",
+      "year": 2023,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The application and challenges of ChatGPT in educational transformation: New demands for teachers\u2019 roles",
+      "doi": "10.1016/j.heliyon.2024.e24289",
+      "year": 2024,
+      "venue": "Heliyon",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "An investigation of the effects of programming with Scratch on the preservice IT teachers\u2019 self-efficacy perceptions and attitudes towards computer programming",
+      "doi": "10.1111/bjet.12453",
+      "year": 2017,
+      "venue": "British Journal of Educational Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "From Computational Thinking to AI Thinking [A letter from the editor]",
+      "doi": "10.1109/MIS.2013.141",
+      "year": 2013,
+      "venue": "IEEE Intelligent Systems",
+      "citation_level": 2,
+      "citation_context": "basis for revising AI thinking conceptualization"
+    },
+    {
+      "title": "Hybrid-augmented intelligence: Collaboration and cognition",
+      "doi": "10.1631/FITEE.1700053",
+      "year": 2017,
+      "venue": "Frontiers of Information Technology & Electronic Engineering",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Embrace Opportunities and Face Challenges: Using ChatGPT in Undergraduate Students\u2019 Collaborative Interdisciplinary Learning",
+      "doi": "10.48550/arXiv.2305.18616",
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Human-Generative AI Collaborative Problem Solving Who Leads and How Students Perceive the Interactions",
+      "doi": "10.48550/arXiv.2405.13048",
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

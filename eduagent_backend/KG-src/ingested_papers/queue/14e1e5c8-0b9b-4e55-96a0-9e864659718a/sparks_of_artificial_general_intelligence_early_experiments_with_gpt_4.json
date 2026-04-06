@@ -1,0 +1,45 @@
+{
+  "title": "Sparks of Artificial General Intelligence: Early experiments with GPT-4",
+  "doi": null,
+  "year": 2023,
+  "venue": "arXiv",
+  "url": "https://doi.org/10.48550/arxiv.2303.12712",
+  "source_db": "openalex_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper presents an exploratory assessment of an early, text-only version of GPT-4, arguing that it displays many signs of broad, general intelligence. Rather than using conventional benchmark evaluation alone, the authors adopt a human-curiosity-driven approach: they create novel prompts and tasks intended to probe whether the model can generalize across domains, combine skills, and handle tasks that are difficult to solve by memorization.\n\nThe paper examines GPT-4\u2019s behavior across several areas, including interdisciplinary composition, coding, mathematics, tool use, interaction with humans, and discrimination/hallucination checks. Examples include generating code for graphics, writing poetry-style mathematical proofs, solving math problems, comparing generated outputs, and handling common-sense reasoning tasks. The model is shown to perform strongly on many of these demonstrations, often outperforming ChatGPT and producing outputs the authors judge to be close to human quality.\n\nThe paper\u2019s broader conclusion is that GPT-4 represents a significant step toward AGI, while still showing important limitations such as hallucinations, arithmetic errors, weak planning, and bias. The work is not an educational intervention study and does not examine teachers, students, or school settings; it is a position/exploratory paper about model capabilities and limitations.",
+  "limitations": [
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "feedback_evaluation"
+      ],
+      "description": "OpenAI's GPT-family conversational language model used for text generation, question answering, and evaluation.",
+      "use_case": "The paper uses early GPT-4, normalized here to ChatGPT per the provided LLM family rules, as the focal model in informal demonstrations of broad language, coding, reasoning, and comparison tasks. It is compared against ChatGPT-style outputs across several prompts, including teaching-style evaluations of generated text.",
+      "findings": []
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a demonstration/opinion-style paper rather than a controlled empirical study, meta-analysis, or systematic review. It does not evaluate a K\u201312 coaching or lesson-feedback intervention.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "No K\u201312 educational outcome is measured, and there are no reported effect sizes or outcome data relevant to teacher coaching or lesson-plan feedback.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

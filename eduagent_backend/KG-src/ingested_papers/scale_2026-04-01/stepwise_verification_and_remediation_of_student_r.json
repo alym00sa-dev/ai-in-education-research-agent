@@ -1,0 +1,112 @@
+{
+  "title": "Stepwise Verification and Remediation of Student Reasoning Errors with Large Language Model Tutors",
+  "doi": null,
+  "year": 2024,
+  "venue": "arXiv",
+  "url": "https://arxiv.org/abs/2407.09136",
+  "source_db": "scale_stanford",
+  "populations": [
+    "K-12 (unspecified grade)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper investigates a key weakness of large language model (LLM) tutors in education: although they can often solve math problems themselves, they frequently fail to accurately detect where a student\u2019s reasoning first goes wrong and therefore produce untargeted or factually incorrect feedback. The authors focus on dialog tutoring for multi-step math word problems and ask whether separating error verification from tutor-response generation can improve the quality of AI tutoring responses.\n\nThe proposed intervention is a modular \"verify-then-generate\" tutoring architecture. Instead of having one model directly generate the next teacher utterance from the dialogue history, the system first verifies the student\u2019s stepwise solution, identifying whether the solution is correct and, if not, the first erroneous step. The authors develop and compare multiple verification strategies, including overall correctness classification, stepwise verification, free-form error descriptions, and step alignment between student and reference solutions using a modified Needleman-Wunsch alignment algorithm. They also collect a new dataset of 1,002 stepwise math reasoning chains annotated by teachers for the first error step, extending the MathDial tutoring corpus.\n\nThe study context is K-12 math word-problem tutoring in English, using teacher annotators and model-generated student reasoning chains and tutoring dialogues grounded in GSM8K-style multi-step problems. Teachers from the US, Canada, and the UK were recruited to annotate student errors, and human evaluation of generated tutor responses was also conducted with expert teacher annotators. The work therefore examines both technical verification performance and educationally relevant qualities of generated feedback, such as whether responses are targeted, correct, and actionable.\n\nThe main conclusion is that explicit verification before response generation improves LLM tutoring quality. In both automatic and teacher-based human evaluation, verification-grounded systems produced responses that were more targeted to student errors, more factually correct, and less prone to hallucination than direct-generation baselines. Richer verification outputs, especially free-form error descriptions, were more effective than coarse error categories. However, the paper also shows that stepwise verification remains difficult for current models, especially on more complex multi-step problems, and that improvements depend strongly on the correctness of the verification stage.",
+  "limitations": [
+    "no_control_group",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States; Canada; United Kingdom",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "tutoring_instruction",
+        "feedback_evaluation"
+      ],
+      "description": "A large-language-model-based dialog tutor architecture for stepwise verification of student math reasoning errors and generation of targeted tutoring responses.",
+      "use_case": "The paper studies LLM tutors for K-12 math word-problem dialogue tutoring, comparing direct response generation against a modular verify-then-generate approach using overall verification, stepwise verification, error description, and step alignment.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "On automatic evaluation of tutor responses, adding verification improved prompted GPT-3.5 tutoring over the direct baseline. With Error Description, scores increased from sBLEU=2.0 to 2.8, KF1=27.0 to 30.3, and BF1=51.2 to 52.6; Step Alignment also improved KF1 to 29.8 and BF1 to 53.3. These results indicate more targeted and faithful math-tutoring responses under the verify-then-generate setup.",
+          "measure": "Automatic response-generation metrics for math tutoring: sacreBLEU, Knowledge F1, and BERTScore F1",
+          "effect_size": "sBLEU +0.8; KF1 +3.3; BF1 +1.4 for Error Description vs baseline",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "LLM-judge evaluation showed stronger tutoring quality for verification-grounded responses than direct generation. For GPT-3.5, Error Description improved targetedness from 29% to 62%, correctness from 37% to 66%, and actionability from 27% to 45%; Step Alignment improved targetedness to 42% and correctness to 61%.",
+          "measure": "LLM-judge ratings of targetedness, correctness, and actionability of tutor responses",
+          "effect_size": "Targetedness +33 pp; Correctness +29 pp; Actionability +18 pp for Error Description vs baseline",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Human evaluation by teachers on 40 conversations found that verification before generation improved tutor responses. For GPT-3.5, Error Description increased targeted responses from 30.0% to 57.5%, correctness from 37.5% to 62.5%, and actionability from 30.0% to 45.0%; Step Alignment produced 57.5% targeted and 60.0% correct responses but lower actionability (27.5%).",
+          "measure": "Teacher ratings of targetedness, factual correctness, and actionability of tutor responses",
+          "effect_size": "Targetedness +27.5 pp; Correctness +25.0 pp; Actionability +15.0 pp for Error Description vs baseline",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=40 conversations"
+        },
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "For finetuned tutoring models, adding Error Description to Flan-T5-3B improved response quality in both automatic and human evaluation. Automatic metrics changed from sBLEU=2.6 to 3.0, BF1 remained 56.0, and LLM-judge correctness/actionability increased from 89% to 92% and 76% to 84%; human evaluation increased targetedness from 7.5% to 20.0%, correctness from 20.0% to 35.0%, and actionability from 25.0% to 35.0%.",
+          "measure": "Automatic metrics and teacher/LLM-judge ratings of tutor response quality",
+          "effect_size": "Human eval: targetedness +12.5 pp; correctness +15.0 pp; actionability +10.0 pp",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=40 conversations for human evaluation"
+        },
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Verification itself remained challenging for current models. In Table 1, prompted models without a reference solution had modest performance (e.g., GPT-3.5 Overall Verification F1=0.59; Llama3-70B F1=0.66), while providing a reference solution substantially improved results (GPT-3.5 F1=0.97; Llama3-70B F1=0.89), but Stepwise Verification still reached only micro F1=0.70 at best. Human evaluation of Error Description correctness found GPT-3.5 at 70.6% and Llama3-70B at 82.4%.",
+          "measure": "Verification performance: Overall Verification F1, Stepwise Verification micro F1, and human-rated correctness of error descriptions",
+          "effect_size": "Best reported Stepwise Verification micro F1=0.70; human-rated Error Description correctness=82.4% for Llama3-70B",
+          "confidence_interval": "not_reported",
+          "sample_size": "Dataset of 1,002 human-produced verification outputs; human eval sample size not fully reported for verifier-only assessment"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The paper reports that fine-tuning on the new 1,002-example dataset enabled smaller models to outperform larger prompted ones on some verification tasks. For example, finetuned Llama2-7B achieved Overall Verification F1=0.78 without a reference solution versus GPT-3.5 at 0.59 and Llama2-70B at 0.54; with a solution, Llama2-7B reached F1=0.80.",
+          "measure": "Model verification efficiency/performance comparison across prompted vs finetuned models",
+          "effect_size": "Overall Verification F1=0.78 for finetuned Llama2-7B without solution",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=1,002 dataset items"
+        }
+      ]
+    }
+  ],
+  "verdict": "genai_general",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical AI evaluation paper with automatic metrics and human teacher ratings, but it is not a randomized controlled trial or quasi-experimental study of student learning outcomes. Most evidence concerns model performance and tutor-response quality rather than direct causal effects on learners.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper shows clear improvements in tutoring-response targetedness and correctness, but impact on actual student learning is not directly measured and effect sizes are mostly reported as metric differences or percentage-point gains rather than standardized learning effects.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

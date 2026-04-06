@@ -1,0 +1,45 @@
+{
+  "title": "Active Teacher Selection for Reinforcement Learning from Human Feedback",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2310.15288v2",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses a core limitation in reinforcement learning from human feedback (RLHF): standard approaches assume feedback comes from a single teacher, even though real systems often draw on multiple annotators or experts who differ in rationality, expertise, and cost. The authors argue that these differences matter for learning accurate reward models and for deciding when feedback is worth requesting.\n\nTo model this setting, the paper introduces the Hidden Utility Bandit (HUB) framework, which treats learning as a partially observable sequential decision problem with hidden item utilities, multiple arms, and multiple teachers. It then proposes Active Teacher Selection (ATS), an algorithm that maintains a belief over hidden utilities and actively decides both when to query a teacher and, in the specific-selection variant, which teacher to query. The framework is solved approximately via POMDP methods, specifically POMCPOW with custom rollout policies.\n\nThe paper evaluates the framework in two non-education domains: a paper recommendation task and a COVID-19 vaccine testing proof-of-concept. In the paper recommendation domain, the \u201cteachers\u201d are professors with different rationality levels, and in the vaccine domain the \u201cteachers\u201d are COVID-19 test types with different accuracies and costs. Across these experiments, ATS generally outperforms naive and random baselines, especially when it can choose specific teachers rather than relying on general/random teacher selection.\n\nThe main conclusion is that explicitly modeling teacher heterogeneity and actively selecting feedback sources can improve both reward learning and decision quality. The paper does not study K\u201312 education, teacher coaching, lesson-plan feedback, instructional coaches, or any school-based setting; it is a theoretical and algorithmic RLHF paper with simulation-based evaluations.",
+  "limitations": [
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "identified_tools": [
+    {
+      "name": "ITS (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "tutoring_instruction",
+        "feedback_evaluation"
+      ],
+      "description": "A general intelligent tutoring or feedback system that learns from human teacher feedback; in this paper, the focus is on a reward-learning / teacher-selection framework rather than a specific commercial product.",
+      "use_case": "The paper proposes and evaluates the Hidden Utility Bandit (HUB) framework and Active Teacher Selection (ATS) as a general method for learning from multiple teachers with different rationality and costs, illustrated with paper recommendation and COVID-19 testing domains.",
+      "findings": []
+    }
+  ],
+  "verdict": "framework_only",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a theoretical/methods paper introducing a framework and algorithm, not an empirical study of a K\u201312 coaching or lesson-feedback tool. There is no student-, teacher-, or school-based education intervention outcome reported.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper has conceptual relevance for teacher-feedback systems, but it does not report education outcome effects or K\u201312 implementation results. Its impact for the requested topic is therefore unclear and indirect.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

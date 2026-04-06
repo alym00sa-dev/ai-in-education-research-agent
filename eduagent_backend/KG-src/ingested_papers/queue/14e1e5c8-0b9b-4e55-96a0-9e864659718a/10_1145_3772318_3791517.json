@@ -1,0 +1,103 @@
+{
+  "title": "When Scaffolding Breaks: Investigating Student Interaction with LLM-Based Writing Support in Real-Time K-12 EFL Classrooms",
+  "doi": "10.1145/3772318.3791517",
+  "year": 2026,
+  "venue": "Proceedings of the 2026 CHI Conference on Human Factors in Computing Systems (CHI \u201926)",
+  "url": "http://arxiv.org/abs/2512.05506v3",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Middle School (6th-8th)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper examines how large language models can function as real-time writing support in K\u201312 English as a Foreign Language (EFL) classrooms, with a focus on the tradeoffs of step-by-step AI scaffolding. The authors investigate a tension common in classroom AI: while such systems can provide immediate, individualized feedback at scale, they may also create dependency, frustration, or uneven participation when used under time pressure and with students of different proficiency levels.\n\nTo study this, the authors developed WriteAid, a chat-based LLM writing support tool, and deployed it in a South Korean public middle school English class. The deployment lasted six weeks and involved 157 eighth-grade students across six classes; 133 consented to data analysis. The system supported sentence construction, vocabulary/grammar explanations, and grammar checking. The study combined log analysis of 14,863 student-LLM messages, qualitative coding of a sampled subset of interactions, written assessment results, and naturalistic classroom observations across three sessions, plus a follow-up teacher interview.\n\nThe findings show that higher-proficiency students tended to use the LLM for lower-level support such as vocabulary translation and validation, whereas lower-proficiency students more often outsourced full sentence generation and revision. Although WriteAid improved grammatical accuracy during class, step-by-step scaffolding sometimes demotivated lower-proficiency students and increased reliance on the system, especially under time constraints. Classroom observations also showed that the LLM changed student-teacher dynamics: some students asked the teacher less often, a few extroverted students still dominated teacher attention, and the teacher had more difficulty identifying common student difficulties. The paper concludes that classroom LLMs should be proficiency-aware, syntax-aware, and designed to support teachers\u2019 awareness and equity, rather than simply withholding answers.",
+  "limitations": [
+    "single_site",
+    "no_control_group",
+    "no_long_term_followup",
+    "non_representative_population"
+  ],
+  "duration_weeks": "6",
+  "setting": "classroom",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "medium",
+  "study_country": "South Korea",
+  "study_region": "East Asia & Pacific",
+  "identified_tools": [
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "tutoring_instruction",
+        "content_generation",
+        "feedback_evaluation"
+      ],
+      "description": "An unnamed large language model (LLM)-based writing support chatbot providing step-by-step scaffolding, sentence construction, vocabulary/grammar explanations, and grammar checking in a chat interface.",
+      "use_case": "Deployed as 'WriteAid' in real-time K-12 EFL classrooms to support eighth-grade students' English writing during two classroom writing tasks over six weeks.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0014?",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The paper reports that LLM-assisted sentence construction improved students' grammatical accuracy during in-class writing. Across the fall semester, students constructed 632 sentences with LLM assistance, and 309 (48.9%) were incorporated verbatim into final essays; 82.3% of those incorporated sentences were grammatically correct. The authors state that the tool improved grammatical accuracy, but no experimental effect size or confidence interval is reported.",
+          "measure": "Grammatical correctness of LLM-constructed sentences incorporated into final essays",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=632 sentences"
+        },
+        {
+          "outcome_category": "Academic \u0014?",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Effects varied by proficiency level: high-performing students correctly incorporated 65.8% of LLM-constructed sentences into their final written assessments, compared with 37.8% for middle-performing students and 14.0% for low-performing students. The paper interprets this as evidence that the tool supported grammatical accuracy overall, but retention and transfer were much weaker for lower-performing students.",
+          "measure": "Correct incorporation of LLM-constructed sentences into final written assessment by proficiency group",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "Lower-proficiency students were reported to become demotivated and more reliant on the system when step-by-step scaffolding required many exchanges. The paper also reports more frequent confusion/annoyance among middle- and low-performing students (12.2 and 11.4 affective behaviors per session, respectively) than among high-performing students (3.8 per session).",
+          "measure": "Observed negative affective behaviors and reported demotivation during LLM interaction",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=133 consented students; qualitative subset n=15"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Teachers could redirect repetitive low-level questions to the LLM, which freed teacher time for other classroom tasks. In the follow-up interview, the teacher said they had more time to walk around the classroom and check students' progress because they no longer needed to respond to every simple question.",
+          "measure": "Teacher-reported classroom workload/time freed from answering simple questions",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Systemic / Institutional Impact",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "The LLM changed classroom dynamics in both helpful and problematic ways. It reduced some barriers for lower-proficiency students and helped more students complete tasks, but it also made it harder for teachers to identify struggling students, reduced some peer interaction, and concentrated teacher attention on a few extroverted students.",
+          "measure": "Classroom equity, teacher-student interaction, and peer-learning dynamics from observation and interview",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "3 observed class sessions; 157 students in deployment"
+        }
+      ]
+    }
+  ],
+  "verdict": "genai_general",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a qualitative/mixed-methods deployment study in a single middle school classroom, not a controlled trial or meta-analysis. It provides rich observational evidence but limited causal identification.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports meaningful classroom-level benefits and harms, but no numerical causal effect sizes are given for learning outcomes. Impacts appear practical and mixed rather than clearly large or medium by the framework.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

@@ -1,0 +1,282 @@
+{
+  "title": "Teaching with AI: A Systematic Review of Chatbots, Generative Tools, and Tutoring Systems in Programming Education",
+  "doi": "10.26803/ijlter.25.1.1",
+  "year": 2026,
+  "venue": "International Journal of Learning, Teaching and Educational Research",
+  "url": "https://arxiv.org/abs/2510.03884",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Meta-Analysis / Systematic Review",
+  "extended_summary": "This paper addresses how AI agents are being used in programming education and what is currently known about their educational purposes, benefits, and risks. The authors note that programming courses often suffer from high attrition, cognitive overload, insufficient feedback, and limited personalized support, and they position AI as a possible response to these longstanding instructional problems. The review is guided by three questions: what types of AI agents are used in programming education, what instructional objectives and pedagogical benefits are reported, and what implementation challenges and risks appear in the literature.\n\nThe study uses a systematic literature review following PRISMA 2020 guidelines. Searches were conducted across Google Scholar, IEEE, Springer, ACM Digital Library, and Scopus, focusing on peer-reviewed studies from 2020 to 2025, with 58 studies ultimately included. The review classifies AI agents into three broad categories: chatbots, generative AI tools, and intelligent tutoring systems/specialized agents. Across the included literature, generative AI was the dominant category, especially tools such as ChatGPT, GitHub Copilot, Codex, Code Llama, and GPT variants. The review also synthesizes reported instructional purposes, including programming support, motivational and affective benefits, educator efficiency, and new pedagogical approaches such as prompt engineering.\n\nThe context of the reviewed literature is programming and computer science education, with the clearest repeatedly mentioned learner group being undergraduate students, although some studies also concern instructors and course design. The review discusses uses such as debugging assistance, code generation, personalized feedback, automated grading, and always-available support. It also highlights the emergence of prompt engineering as a core instructional skill in AI-augmented programming environments, arguing that students increasingly need to learn how to formulate prompts, evaluate AI outputs, and work with AI critically rather than passively.\n\nThe main conclusions are that AI tools offer meaningful benefits in programming education, especially personalized feedback, learning support, efficiency gains, and reduced frustration, but they also bring serious risks. The most common challenges reported across the studies are institutional barriers to implementation, over-reliance leading to superficial learning, inaccuracies and hallucinations, and academic integrity concerns. The authors argue that effective adoption requires structured instructional frameworks, explicit teaching of prompt engineering, curriculum redesign, and sustained human oversight so that AI supports rather than undermines deep learning and critical thinking.",
+  "limitations": [
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "identified_tools": [
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "tutoring_instruction",
+        "feedback_evaluation"
+      ],
+      "description": "Generative AI tools used in programming education, including chatbots, code generators, and related assistants, considered at an aggregate category level rather than as a single evaluated product.",
+      "use_case": "This systematic review synthesized 58 studies on AI agents in programming education, with category-level findings on generative AI, chatbots, and tutoring systems rather than a single per-tool quantitative breakdown.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "review_synthesis",
+          "direction": "positive",
+          "finding_summary": "Across the 58 reviewed studies, programming support was the most common instructional objective, reported in 94.83% of studies. Benefits synthesized at the category level included personalized feedback (44.83%, 26/58), learning gains (32.76%, 19/58), time efficiency (29.31%, 17/58), debugging support (20.69%, 12/58), and 24/7 availability (15.52%, 9/58).",
+          "measure": "Reported pedagogical benefits and instructional objectives across included studies",
+          "effect_size": "94.83%; 44.83% (26/58); 32.76% (19/58); 29.31% (17/58); 20.69% (12/58); 15.52% (9/58)",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=58 studies"
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "review_synthesis",
+          "direction": "positive",
+          "finding_summary": "Motivational and affective gains were reported in 18.96% of reviewed studies. The review summarizes evidence that AI tools can reduce anxiety and frustration, increase engagement and motivation, and improve self-efficacy, with one cited study noting 56% of students reported increased motivation.",
+          "measure": "Reported motivation, anxiety, engagement, and self-efficacy outcomes across included studies",
+          "effect_size": "18.96%; 56% increased motivation (as cited in one included study)",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=58 studies"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "review_synthesis",
+          "direction": "positive",
+          "finding_summary": "Enhancing efficiency and productivity for educators appeared in 6.90% of studies. The review reports AI-supported grading and feedback automation, including one cited example where an AI-assisted grading tool saved 24% of grading time and improved consistency.",
+          "measure": "Reported educator workload reduction, grading automation, and productivity gains across included studies",
+          "effect_size": "6.90%; 24% grading time saved (as cited in one included study)",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=58 studies"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "review_synthesis",
+          "direction": "negative",
+          "finding_summary": "The review identifies substantial implementation risks and learning drawbacks. Over-reliance and surface learning were reported in 65.52% of studies, inaccuracy and hallucinations in 32.76%, academic integrity risks in 15.52%, and barriers to implementation in 93.10% of studies.",
+          "measure": "Reported implementation challenges and risks across included studies",
+          "effect_size": "65.52%; 32.76%; 15.52%; 93.10%",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=58 studies"
+        }
+      ]
+    },
+    {
+      "name": "ITS (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "tutoring_instruction",
+        "personalization_adaptation"
+      ],
+      "description": "Intelligent tutoring systems and specialized pedagogical agents for programming education, discussed as a category in the review.",
+      "use_case": "The review identifies ITS and specialized agents as one of three broad categories of AI agents in programming education and summarizes category-level uses such as structured pedagogical support, teachable agents, and adaptive tutoring.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "review_synthesis",
+          "direction": "positive",
+          "finding_summary": "ITS and specialized agents appeared in 6 of the 58 reviewed studies (10.34%). The review describes these systems as supporting structured pedagogical guidance, improving programming skills and comprehension, and in some cited studies reducing anxiety, but it does not provide pooled effect sizes for ITS as a category.",
+          "measure": "Prevalence and summarized educational roles of ITS/specialized agents across included studies",
+          "effect_size": "10.34% (6/58)",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=58 studies"
+        }
+      ]
+    }
+  ],
+  "verdict": "archetype_only",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is a systematic review using PRISMA procedures across 58 peer-reviewed studies with explicit inclusion criteria and quality appraisal (MMAT/SANRA), which supports relatively strong evidence. However, it is not a formal meta-analysis and mostly reports descriptive synthesis rather than pooled causal effect estimates.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The review reports broadly positive patterns but mainly as percentages of studies mentioning benefits or challenges, not standardized pooled effects. Because impact magnitude on student outcomes is not quantified consistently, overall impact is promising but unclear.",
+  "citations": [
+    {
+      "title": "Unfolding programming: How to use AI tools in introductory computing courses",
+      "doi": "10.1145/3686852.3687073",
+      "year": 2024,
+      "venue": "Proceedings of the 25th Annual Conference on Information Technology Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The effects of GitHub Copilot on computing students\u2019 programming effectiveness, efficiency, and processes in brownfield programming tasks",
+      "doi": "10.1145/3702652.3744219",
+      "year": 2025,
+      "venue": "ArXiv Preprint ArXiv:2506.10051",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT: Challenges and benefits in software programming for higher education",
+      "doi": "10.3390/su16031245",
+      "year": 2024,
+      "venue": "Sustainability",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Pair programming in programming courses in the era of generative AI: Students\u2019 perspective",
+      "doi": "10.1109/APSEC65559.2024.00069",
+      "year": 2024,
+      "venue": "2024 31st Asia-Pacific Software Engineering Conference (APSEC)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Exploring the research gap: Generative AI and learning of python programming among post-primary students",
+      "doi": "10.1145/3633083.3633099",
+      "year": 2023,
+      "venue": "Proceedings of the 2023 Conference on Human Centered Artificial Intelligence: Education and Practice",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Exploring human-centered approaches in generative AI and introductory programming research: A scoping review",
+      "doi": "10.1145/3689535.3689553",
+      "year": 2024,
+      "venue": "Proceedings of the 2024 Conference on United Kingdom & Ireland Computing Education Research",
+      "citation_level": 2,
+      "citation_context": "human-centered research gap framing"
+    },
+    {
+      "title": "Generative AI and developer workflows: How GitHub Copilot and ChatGPT influence solo and pair programming",
+      "doi": "10.24251/hicss.2025.883",
+      "year": 2025,
+      "venue": "Proceedings of the 58th Hawaii International Conference on System Sciences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Would ChatGPT-facilitated programming mode impact college students\u2019 programming behaviors, performances, and perceptions? An empirical study",
+      "doi": "10.1186/s41239-024-00446-5",
+      "year": 2024,
+      "venue": "International Journal of Educational Technology in Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Students\u2019 perspectives on AI code completion: Benefits and challenges",
+      "doi": "10.1109/compsac61105.2024.00252",
+      "year": 2024,
+      "venue": "2024 IEEE 48th Annual Computers, Software, and Applications Conference (COMPSAC)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Improving student learning with hybrid human-AI tutoring: A three-study quasi-experimental investigation",
+      "doi": "10.1145/3636555.3636896",
+      "year": 2024,
+      "venue": "ACM International Conference Proceeding Series",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "PRISMA 2020",
+      "doi": "10.1016/j.jclinepi.2021.04.008",
+      "year": 2021,
+      "venue": "Journal of Clinical Epidemiology",
+      "citation_level": 3,
+      "citation_context": "systematic review reporting guideline"
+    },
+    {
+      "title": "Impact of AI-agent-supported collaborative learning on the learning outcomes of University programming courses",
+      "doi": "10.1007/s10639-025-13487-8",
+      "year": 2025,
+      "venue": "Education and Information Technologies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Failure rates in introductory programming revisited",
+      "doi": "10.1145/2591708.2591749",
+      "year": 2014,
+      "venue": "Proceedings of the 2014 Conference on Innovation & Technology in Computer Science Education",
+      "citation_level": 2,
+      "citation_context": "establishes introductory programming difficulty context"
+    },
+    {
+      "title": "Using GitHub Copilot to solve simple programming problems",
+      "doi": "10.1145/3545945.3569830",
+      "year": 2023,
+      "venue": "Proceedings of the 54th ACM Technical Symposium on Computer Science Education V. 1",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Challenges and solutions in teaching programming: an exploration of global and local perspectives",
+      "doi": null,
+      "year": 2025,
+      "venue": "International Journal of Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Improving introductory java programming education through ChatGPT",
+      "doi": "10.5555/3722479.3722526",
+      "year": 2024,
+      "venue": "Journal of Computing Sciences in Colleges",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Benefits and challenges of collaboration between students and conversational generative artificial intelligence in programming learning: An empirical case study",
+      "doi": "10.3390/educsci14040433",
+      "year": 2024,
+      "venue": "Education Sciences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Improving students\u2019 programming performance: an integrated mind mapping and generative AI chatbot learning approach",
+      "doi": "10.1057/s41599-025-04846-4",
+      "year": 2025,
+      "venue": "Humanities and Social Sciences Communications",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "AI-enhanced learning: Comparing outcomes in introductory and advanced programming courses",
+      "doi": "10.1145/3672608.3707909",
+      "year": 2025,
+      "venue": "Proceedings of the 40th ACM/SIGAPP Symposium on Applied Computing",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT for next generation science learning",
+      "doi": "10.1145/3589649",
+      "year": 2023,
+      "venue": "XRDS: Crossroads, The ACM Magazine for Students",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The good and bad of AI tools in novice programming education",
+      "doi": "10.3390/educsci14101089",
+      "year": 2024,
+      "venue": "Education Sciences",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

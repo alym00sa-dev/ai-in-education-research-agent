@@ -1,0 +1,82 @@
+{
+  "title": "Solving LLM Repetition Problem in Production: A Comprehensive Study of Multiple Solutions",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2512.04419v1",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper investigates the repetition problem in large language models used in production batch code-interpretation workflows. The authors describe a recurring failure mode in which an LLM enters repetitive generation loops and continues outputting similar content until reaching the maximum token limit, causing severe processing delays. The paper analyzes three specific repetition patterns observed in a financial software setting: repetition in business rule generation, method call relationship extraction, and PlantUML diagram generation.\n\nThe study evaluates three practical mitigation approaches: Beam Search decoding, presence_penalty adjustment, and Direct Preference Optimization (DPO) fine-tuning. The authors argue theoretically, using a Markov-style account of self-reinforcing repetition under greedy decoding, that greedy search can become trapped in repetitive loops. They report that Beam Search with early_stopping=True functions as a universal inference-time fix across all three bad-case types, while presence_penalty helps only for one task type, and DPO provides a more fundamental model-level solution across all cases.\n\nThe context is not educational and does not involve students, teachers, schools, or reading outcomes. Instead, the work is situated in a production deployment for financial transaction-system code analysis at Shenzhen Sunline Tech Co., Ltd. The experiments concern model behavior, decoding configurations, and engineering performance in real-world software-processing pipelines rather than human learning outcomes or classroom implementation.\n\nThe main conclusion is that repetition problems in production LLM systems can be substantially reduced or eliminated through appropriate decoding and fine-tuning choices, with early_stopping=True identified as the critical parameter for Beam Search effectiveness. For the user\u2019s retrieval purpose, this paper is a clear negative finding / non-relevant near-miss: it provides no K-12 causal evidence, no reading intervention, and no generative-AI evaluation on foundational literacy outcomes. It is best treated as adjacent technical LLM infrastructure research rather than evidence about generative AI in education.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is an arXiv production-systems paper, not an education study, and it does not use a K-12 causal design such as an RCT or strong quasi-experiment. Although it reports experiments and significance tests, it is not relevant causal evidence for educational outcomes and functions as non-education grey literature for this review question.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports clear positive operational gains in a software-production setting, but these effects are not measured in K-12 learning contexts or on foundational reading outcomes. For the targeted review question on generative AI and K-12 reading, this is best treated as adjacent/unclear impact rather than direct educational impact.",
+  "interventions": [
+    {
+      "intervention": "Other",
+      "confidence": 0.99,
+      "role": "primary",
+      "use_case": "Large language model deployment for batch code interpretation, business rule extraction, method-call analysis, and PlantUML diagram generation in financial software production systems; the paper studies decoding and fine-tuning methods to reduce repetitive generation loops."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "In a production batch code-interpretation workflow, Beam Search with early_stopping=True reduced repetition rate from 77.3% at baseline to 0% and restored processing time from 91.9 \u00b1 48.3 minutes to 27.8 \u00b1 1.8 minutes across runs (baseline n=22; beam+early stopping n=20). Beam Search with early_stopping=False performed worse, with 60.0% repetition and 73.5 \u00b1 35.2 minutes (n=10), indicating the early_stopping parameter was critical; reported significance was p<0.001 for repetition and time comparisons.",
+        "measure": "Batch processing time in minutes; repetition rate; success rate in code interpretation tasks",
+        "study_size": "baseline n=22; beam_search_early_stop_false n=10; beam_search_early_stop_true n=20",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "baseline SD=48.3 min; beam_search_early_stop_false SD=35.2 min; beam_search_early_stop_true SD=1.8 min"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.86,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "For one repetition subtype (business rule generation), adding presence_penalty=1.2 reduced repetition from 13.3% and 30.0% in prior 30-case runs without the penalty to 0% in a 30-case run with the penalty. The paper reports Fisher's exact test p<0.001, but no standardized effect size or confidence interval is provided.",
+        "measure": "Repetition cases and repetition rate in business-rule generation outputs",
+        "study_size": "n=30 with presence_penalty=1.2; comparison runs n=30 and n=30 without penalty",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.9,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "DPO fine-tuning reduced repetition rates across all three production bad-case types: BadCase 1 from 13-30% to 0% (n=30), BadCase 2 from 60% to 2% (n=25), and BadCase 3 from 45% to 0% (n=28), all reported as p<0.001. Training required 15.2-18.0 GPU-hours per bad-case type on 4\u00d7A100 GPUs, indicating improved output reliability at the cost of substantial compute.",
+        "measure": "Repetition rate before vs. after DPO fine-tuning across three code-generation task types",
+        "study_size": "BC1 n=30; BC2 n=25; BC3 n=28",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "no_control_group",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "China",
+  "study_region": "East Asia & Pacific",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

@@ -1,0 +1,71 @@
+{
+  "title": "Comparing individual vs. collaborative processing of ChatGPT-generated feedback: Effects on L2 writing task improvement and learning",
+  "doi": null,
+  "year": 2024,
+  "venue": "Language Learning & Technology",
+  "url": "https://doi.org/10.64152/10125/73597",
+  "source_db": "openalex_search",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Randomized Controlled Trial (RCT)",
+  "extended_summary": "This study asks whether students\u2019 processing of ChatGPT-generated feedback on L2 writing works better when done individually or with support from teachers and/or peers. It is motivated by the shift from viewing feedback as something merely delivered to viewing it as something learners actively process within a sociocultural context. The paper also responds to concerns that AI feedback may be used too passively or uncritically, and that teacher mediation may be important for effective and ethical use.\n\nThe intervention was a seven-week experiment conducted with 117 sophomore EFL learners at a Chinese university and six teachers. Students completed three during-intervention writing tasks and one delayed new writing task. All students used ChatGPT (GPT-3.5) to obtain automated feedback using a uniform prompt pattern: feedback requirement + rating criteria + essay, with iterative multi-turn prompting encouraged. Participants were randomly assigned to individual processing, teacher-scaffolded processing, peer-scaffolded processing, or teacher-peer-scaffolded processing. Teachers received training on using ChatGPT for feedback and on scaffolding students\u2019 use of it; peer groups discussed feedback through collaborative writing tools and chat platforms.\n\nResults showed that students who processed ChatGPT feedback individually had the largest immediate task improvements, while groups with collaborative processing showed smaller gains during the intervention but stronger longer-term learning on subsequent draft scores. Teacher-involved groups, especially teacher-scaffolded and teacher-peer-scaffolded conditions, showed the strongest learning progression during the intervention. The authors conclude that collaboration can make AI feedback use more careful and developmentally beneficial, and that teacher presence remains important for helping learners interpret, validate, and apply ChatGPT feedback. They also caution that individual use of ChatGPT may produce unrealistically large revisions and raise concerns about academic integrity and overreliance on AI.",
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "non_representative_population"
+  ],
+  "duration_weeks": "7",
+  "setting": "lab",
+  "teacher_training": "yes",
+  "implementation_fidelity": "high",
+  "study_country": "China",
+  "study_region": "East Asia & Pacific",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "content_generation"
+      ],
+      "description": "OpenAI\u2019s chatbot powered by the GPT family of large language models, used for interactive, iterative text generation and feedback provision.",
+      "use_case": "Used as the automated feedback source for L2 writing drafts in a seven-week experiment. Students prompted ChatGPT using a uniform pattern ('feedback requirement + rating criteria + essay') and were trained to use multi-turn, trial-and-error prompting; feedback was then processed individually or collaboratively with teacher/peer scaffolding.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "On L2 writing task improvement (gain scores from draft to final products across T1-T3; n=117), the individual-processing control group outperformed the teacher-, peer-, and teacher-peer-scaffolded groups overall. The group main effect was significant, F(3,113)=44.61, p<.001, \u03b72p=.542, and the interaction was significant, F(6,226)=2.78, p=.013, \u03b72p=.069; pairwise comparisons showed the control group had significantly larger improvements than experimental groups on T1-T3.",
+          "measure": "L2 writing task improvement (final score minus draft score)",
+          "effect_size": "\u03b72p=.542; \u03b72p=.069; pairwise d=0.71 (IP vs TS on T3)",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=117"
+        },
+        {
+          "outcome_category": "Academic \u0014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "On L2 writing learning measured by draft scores across T1-T3 and the delayed new task NT (n=117), the collaborative groups with teacher involvement (TS and TPS) showed stronger learning progression than the individual-processing group. The group main effect was significant, F(3,113)=37.75, p<.001, \u03b72p=.501, and the interaction was significant, F(9,339)=3.91, p<.001, \u03b72p=.094; the study reports small pairwise effects for teacher-involved groups on draft scores (e.g., TPS vs IP on NT, d=0.66).",
+          "measure": "L2 writing learning (draft score progression across tasks, including delayed new task)",
+          "effect_size": "\u03b72p=.501; \u03b72p=.094; pairwise d=0.66 (TPS vs IP on NT)",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=117"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is a primary experimental study with random assignment to four conditions, clear measures, and reported inferential statistics. However, it is not blue because it is a single-site educational study with design and generalizability limitations noted by the authors.",
+  "impact_tier": "blue",
+  "impact_tier_rationale": "The reported effects are large for the main group outcomes (\u03b72p=.542 and .501), indicating substantial impact on both immediate task improvement and learning progression. Although findings are mixed across outcomes, the magnitude on the primary analyses is clearly medium-to-large.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

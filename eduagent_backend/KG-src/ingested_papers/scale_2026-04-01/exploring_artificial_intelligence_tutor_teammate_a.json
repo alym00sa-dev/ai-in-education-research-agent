@@ -1,0 +1,209 @@
+{
+  "title": "Exploring Artificial Intelligence Tutor Teammate Adaptability to Harness Discovery Curiosity and Promote Learning in the Context of Interactive Molecular Dynamics",
+  "doi": null,
+  "year": null,
+  "venue": null,
+  "url": "https://arxiv.org/abs/2506.22520",
+  "source_db": "scale_stanford",
+  "populations": [
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper investigates whether an AI tutor teammate can stimulate students\u2019 discovery curiosity, engagement, and learning effectiveness during complex STEM tasks. The central problem is how to design AI not just as a tool that answers questions, but as a collaborative teammate that adaptively triggers and sustains curiosity while supporting learning in challenging scientific environments. The study focuses on human-AI teaming in the context of Interactive Molecular Dynamics (IMD), asking how AI curiosity-triggering and curiosity-response behaviors influence student engagement, question complexity, coordination, and task performance.\n\nThe intervention involved an AI tutor teammate embedded in Visual Molecular Dynamics (VMD) tasks about Cytochrome c. Using a Wizard-of-Oz setup, a human experimenter simulated the AI through text chat on Zoom and dynamically adjusted support with ChatGPT-4o. The AI used a proposed \u201cpush-pull\u201d strategy: curiosity triggers posed provocative questions or facts to spark exploration, while curiosity responses provided explanations and guidance to help students progress. Students completed four increasingly complex IMD tasks in a single 60-minute session: solvation/visualization, water molecule calculation, solvent accessible surface area analysis, and dipole moment calculation. The study combined quantitative and qualitative measures, including pre/post curiosity surveys, coding of student question complexity, task performance ratings, and Cross Recurrence Quantification Analysis (CRQA) of student-AI communication flow.\n\nParticipants were 11 high school students, mainly from Arizona high schools, recruited through the BioSense.Network summer workshop affiliated with Arizona State University in the United States. Students had received about two weeks of foundational summer training in biology and VMD before the study session. The learning context was a guided online text-chat interaction during an experimental session rather than a regular classroom lesson, centered on advanced molecular visualization and coding tasks.\n\nThe main findings are proof-of-concept in nature. High-performing student-AI dyads showed stronger task completion, deeper conceptual understanding, and greater engagement than low-performing dyads. More advanced student questions were associated with AI curiosity-triggering behaviors, suggesting that adaptive prompting may elevate cognitive engagement and curiosity. CRQA metrics indicated structured synchronization between students and the AI teammate, supporting the idea that adaptive coordination matters for productive human-AI teaming. The authors conclude that AI can serve a dual role as teammate and educator by providing adaptive, curiosity-supportive feedback, but they also note that the system requires refinement, especially to reduce confusion and improve support for lower-performing students.",
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "no_control_group",
+    "self_reported_measures",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "no",
+  "implementation_fidelity": "medium",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "feedback_evaluation"
+      ],
+      "description": "An OpenAI large language model chatbot used for interactive dialogue, explanations, and guidance.",
+      "use_case": "Used within a Wizard-of-Oz AI tutor teammate setup to provide text-based guidance, curiosity-triggering prompts, clarifying explanations, alternative strategies, and adaptive feedback while students completed interactive molecular dynamics tasks in VMD.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Scientific Reasoning",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In this mixed-methods proof-of-concept study, high-performing student-AI dyads outperformed low-performing dyads on total task performance during VMD-based molecular dynamics tasks (high-performing M=27.8, SD=1.73; low-performing M=20.5, SD=3.12). The between-group difference was statistically significant, t(10)=4.90, p=.001, with a very large effect size (Cohen's d=2.97), although the paper does not report a causal comparison against a non-AI control condition.",
+          "measure": "Task performance score combining task completion, understanding of concepts, and engagement/interaction",
+          "effect_size": "Cohen's d=2.97",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=11"
+        },
+        {
+          "outcome_category": "Academic \u2014 Scientific Reasoning",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "High-performing dyads scored higher than low-performing dyads on all rubric dimensions: task completion (M=9.60, SD=0.70 vs. 6.20, SD=1.99), understanding of concepts (M=9.40, SD=1.14 vs. 7.00, SD=0.89), and engagement (M=9.80, SD=0.35 vs. 7.30, SD=1.10). The authors interpret these patterns as evidence that the AI tutor teammate supported deeper understanding and more effective completion of increasingly complex molecular tasks.",
+          "measure": "Rubric subscores for task completion, understanding of concepts, and engagement/interaction",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=11"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Advanced student questions were associated with the AI tutor teammate's curiosity-triggering behavior, and high-performing teams showed increased engagement and more complex questioning during interaction. The study reports that these communication patterns reflected heightened cognitive complexity and curiosity-driven engagement, but no numeric effect size was reported for this association.",
+          "measure": "Frequency and complexity of student-initiated questions during student-AI communication",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=11"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "CRQA metrics indicated dynamic synchronization and structured coordination in student-AI interactions, which the authors link to adaptive engagement and curiosity support. However, the paper also reports that some lower-performing dyads experienced confusing or misleading guidance and insufficient scripting support, suggesting that coordination quality varied substantially across teams.",
+          "measure": "CRQA-based dyadic coordination metrics and observed communication flow",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=11"
+        },
+        {
+          "outcome_category": "Academic \u2014 Scientific Reasoning",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "While the AI tutor teammate was associated with stronger task completion and understanding in higher-performing dyads, low-performing teams sometimes struggled because of unclear or misleading AI guidance ('hallucinations'), confusion during solvation, and insufficient scripting support. These issues impeded progress on complex tasks and indicate that the intervention could both support and hinder learning depending on interaction quality.",
+          "measure": "Observed task progress, task completion, and qualitative performance feedback",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=11"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical mixed-methods proof-of-concept study with n=11 using a Wizard-of-Oz design, observational comparisons, and coordination analyses, but it lacks a control group and randomized causal design. The methodology is clear, yet the small sample and exploratory nature limit internal validity.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports strong positive patterns, including a large between-group difference in performance among higher- vs lower-performing dyads (d=2.97), but impact is unclear because there is no non-AI comparison condition and several findings are qualitative or correlational. Overall effects are promising but not yet robustly established.",
+  "citations": [
+    {
+      "title": "Analysis of observed chaotic data",
+      "doi": null,
+      "year": 1996,
+      "venue": "Springer",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Innovative analyses of human movement",
+      "doi": null,
+      "year": 2016,
+      "venue": "Human Kinetics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Cross-recurrence quantification analysis of categorical and continuous time series: an R package",
+      "doi": null,
+      "year": 2014,
+      "venue": "Frontiers in Psychology",
+      "citation_level": 3,
+      "citation_context": "source for CRQA metric definitions/adaptation"
+    },
+    {
+      "title": "Reading minds and messages: reciprocal dynamics in dynamic social systems",
+      "doi": null,
+      "year": 2011,
+      "venue": "Topics in Cognitive Science",
+      "citation_level": 3,
+      "citation_context": "source for CRQA metric definitions/adaptation"
+    },
+    {
+      "title": "Recurrence plots for the analysis of complex systems",
+      "doi": null,
+      "year": 2007,
+      "venue": "Physics Reports",
+      "citation_level": 3,
+      "citation_context": "source for CRQA metric definitions/adaptation"
+    },
+    {
+      "title": "Dynamical assessment of physiological systems and states using recurrence plot strategies",
+      "doi": null,
+      "year": 1994,
+      "venue": "Journal of Applied Physiology",
+      "citation_level": 3,
+      "citation_context": "source for CRQA metric definitions/adaptation"
+    },
+    {
+      "title": "Information theory and psychophysics",
+      "doi": null,
+      "year": 1960,
+      "venue": "Academic Press",
+      "citation_level": 2,
+      "citation_context": "information-gap basis for curiosity triggers"
+    },
+    {
+      "title": "The psychology of curiosity: a review and reinterpretation",
+      "doi": null,
+      "year": 1994,
+      "venue": "Psychological Bulletin",
+      "citation_level": 2,
+      "citation_context": "arousal theory framing AI challenge-support balance"
+    },
+    {
+      "title": "Team communication patterns in human-autonomy teaming",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Shared mental models in expert team performance",
+      "doi": null,
+      "year": 1999,
+      "venue": "Team Performance Assessment and Measurement",
+      "citation_level": 2,
+      "citation_context": "team cognition via shared mental models"
+    },
+    {
+      "title": "Planning, shared mental models, and coordinated performance: an empirical link is established",
+      "doi": null,
+      "year": 1999,
+      "venue": "Human Factors",
+      "citation_level": 2,
+      "citation_context": "team cognition and coordinated performance framing"
+    },
+    {
+      "title": "Collective intelligence in human teams: leveraging team interaction dynamics to predict team performance",
+      "doi": null,
+      "year": 2014,
+      "venue": "Human Factors",
+      "citation_level": 2,
+      "citation_context": "human-AI teaming mutual adjustment and adaptability"
+    },
+    {
+      "title": "Mind in society: the development of higher psychological processes",
+      "doi": null,
+      "year": 1980,
+      "venue": "Harvard University Press",
+      "citation_level": 2,
+      "citation_context": "zone of proximal development scaffolding framework"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

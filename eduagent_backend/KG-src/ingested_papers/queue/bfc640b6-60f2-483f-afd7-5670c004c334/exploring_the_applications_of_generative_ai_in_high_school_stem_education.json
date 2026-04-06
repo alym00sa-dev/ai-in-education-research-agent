@@ -1,0 +1,81 @@
+{
+  "title": "Exploring the Applications of Generative AI in High School STEM Education",
+  "doi": null,
+  "year": 2024,
+  "venue": "J. ACM",
+  "url": "http://arxiv.org/abs/2510.21718v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator",
+    "Parent",
+    "School"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper investigates how generative AI can be used in high school STEM education, with a particular focus on whether AI tools improve student learning outcomes and engagement in physics. The author frames the study as addressing a gap in the literature: much prior discussion about generative AI in education was described as speculative or theoretical rather than based on experimental evidence from real classrooms.\n\nThe intervention compares four conditions: control (peer discussion only, no external resources), search engine use, generative AI use, and generative AI plus a literacy program. All AI conditions used Bing AI (GPT-4 based), and the literacy-program group received slides about responsible and effective AI use. The study used a pre-test/lecture/treatment/post-test structure over two school days, plus a post-survey. Quantitative outcomes were based on pre/post test score differences; qualitative outcomes came from student survey responses about understanding, engagement, and enjoyment.\n\nParticipants were 171 students from Tomball Memorial High School in Texas, including AP Physics 1 and on-level physics classes, generally aged 16-18. The study was conducted in regular school classrooms with teachers delivering lectures and distributing materials. The paper explicitly describes the design as quasi-experimental, and the grouping appears to be based on existing classes/class periods rather than random assignment.\n\nThe main conclusion is that generative AI by itself did not improve objective performance and in some comparisons appeared worse than search engine or control conditions, whereas generative AI combined with a literacy program showed better performance than AI alone in AP Physics. However, the study found no significant differences between control and experimental groups overall in on-level physics, and survey-based differences in engagement and understanding were not statistically significant. The author argues that AI literacy may be important for responsible and effective use, but also acknowledges that the very short duration and single-school context limit what can be concluded.",
+  "quality_tier": "green",
+  "quality_tier_rationale": "The paper uses a quasi-experimental pre/post comparison with multiple groups and reports sample sizes, descriptive statistics, and significance tests, but it is explicitly not randomized and has notable design weaknesses (class-period grouping, short 2-day intervention, low survey response, likely non-peer-reviewed/grey literature inconsistencies including a suspicious ACM-style formatting and arXiv dating mismatch). It meets some credibility criteria but falls well short of a clean RCT.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "There is no credible positive effect on the main educational outcomes relevant to ChatGPT-based high-school writing feedback, because this is not a writing study at all and even within physics the paper reports no significant difference versus control for the AI conditions. Any claimed improvement is limited to within-treatment contrasts (GAI-LP vs GAI) rather than intervention-vs-control gains, and no effect sizes are reported.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.97,
+      "role": "primary",
+      "use_case": "High school physics students used Bing AI/ChatGPT-like GPT-4 conversational generative AI for a 20-minute study period after a teacher lecture, with pre/post testing on conceptual physics content."
+    },
+    {
+      "intervention": "Computer-Assisted Instruction (CAI)",
+      "confidence": 0.6,
+      "role": "secondary",
+      "use_case": "Search engine-based digital studying (Google/search engine access) served as a non-AI technology comparison condition during the same short study period."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Scientific Reasoning",
+      "confidence": 0.92,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "This was a quasi-experimental pre/post study in high school physics, not a writing study. In AP Physics, score-difference means were Control M=-0.346 (SD=1.355, n=26), Search Engine M=0.484 (SD=1.387, n=31), GAI-LP M=0.500 (SD=1.225, n=14), and GAI M=-0.857 (SD=1.791, n=14), with omnibus ANOVA p=0.011; pairwise tests reported SE vs GAI p=0.0062 and GAI vs GAI-LP p=0.0256. In on-level physics, ANOVA p=0.619, indicating no significant differences; critically, the paper itself states there was no significant difference between control and any experimental group, including GAI-LP.",
+        "measure": "Pre/post physics test score difference on AP Physics momentum/impulse and on-level physics electricity/circuits assessments",
+        "study_size": "n=171 quantitative total; AP subgroup analyzed: Control n=26, SE n=31, GAI n=14, GAI-LP n=14; On-level subgroup analyzed: Control n=21, SE n=16, GAI n=14, GAI-LP n=21",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "AP: Control SD=1.355, SE SD=1.387, GAI-LP SD=1.225, GAI SD=1.791; On-level: Control SD=1.700, SE SD=2.250, GAI SD=2.199, GAI-LP SD=1.569"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.86,
+      "finding": {
+        "direction": "No Effect",
+        "finding_summary": "Survey analyses found no statistically significant differences across groups in understanding, engagement, and enjoyment. MANOVA using Pillai's Trace reported p=0.115 (Trace=0.136, num df=3, den df=40), with only descriptive suggestions that the GAI groups may have had slightly higher engagement; the author concludes the survey evidence did not show a clear impact.",
+        "measure": "Post-survey ratings of understanding, engagement during learning, enjoyment/confidence",
+        "study_size": "n=60 survey responses total; AP n=13, on-level n=47; GAI and GAI-LP merged for some analyses due to sparse responses",
+        "effect_size": "not_reported",
+        "confidence_interval": "95% CIs plotted but numeric values not reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    }
+  ],
+  "limitations": [
+    "short_duration",
+    "single_site",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "classroom",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

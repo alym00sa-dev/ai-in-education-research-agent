@@ -1,0 +1,61 @@
+{
+  "title": "VisScience: An Extensive Benchmark for Evaluating K12 Educational Multi-modal Scientific Reasoning",
+  "doi": null,
+  "year": 2024,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2409.13730v2",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Elementary (PreK-5th)",
+    "Middle School (6th-8th)",
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper introduces VisScience, a new benchmark for evaluating multimodal large language models (MLLMs) on K-12 scientific reasoning. The authors identify a gap in existing benchmarks, which often emphasize mathematics or general visual understanding while underrepresenting physics and chemistry, and they further note the need for bilingual evaluation across English and Chinese and for natural difficulty progression from elementary through high school content.\n\nVisScience is built from 450,000 K-12 questions with visual information and manually curated down to 3,000 final questions, evenly split across mathematics, physics, and chemistry. The dataset covers 21 subjects and five difficulty levels, and is intended to test both text and image understanding in educational science problems. The paper evaluates 25 representative models, including closed-source and open-source MLLMs, using zero-shot and 2-shot CoT settings with GPT-4o as the judge.\n\nThe main findings are that closed-source MLLMs generally outperform open-source ones, with different proprietary models leading in different disciplines. The authors also provide error analysis showing that reasoning errors are the most common, followed by knowledge and vision-recognition errors, especially in physics and chemistry. The work concludes that current MLLMs still struggle with deeper scientific reasoning in multimodal K-12 settings and that benchmarks like VisScience can help identify areas needing improvement.",
+  "limitations": [
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "feedback_evaluation"
+      ],
+      "description": "OpenAI\u2019s GPT-family conversational large language model / multimodal assistant used for text and image understanding, generation, and evaluation.",
+      "use_case": "Used as one of the evaluated models on the VisScience benchmark, and GPT-4o was also used as the judgment model to compare model responses with standard answers.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Scientific Reasoning",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "On the Chinese VisScience benchmark, GPT-4o achieved 31.1% in mathematics, 38.0% in physics, and 39.6% in chemistry in the text-only setting; with image input, it reached 51.7% in mathematics, 38.2% in physics, and 41.6% in chemistry. The paper also reports that GPT-4o\u2019s errors were dominated by reasoning errors (56.5% in mathematics, 50.1% in physics, 40.6% in chemistry), with vision-recognition and knowledge errors also contributing substantially.",
+          "measure": "Accuracy on VisScience across mathematics, physics, and chemistry; error-type distribution for GPT-4o",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=3000 benchmark questions; 25 models evaluated"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical benchmark evaluation paper, but it is not an intervention study and does not report causal effects or randomized comparisons. The methods are systematic, yet the evidence is descriptive performance benchmarking rather than experimental impact estimation.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports accuracy levels and error patterns rather than effect sizes, so educational impact cannot be quantified directly. The findings suggest meaningful capability differences, but the classroom impact remains indirect and uncertain.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

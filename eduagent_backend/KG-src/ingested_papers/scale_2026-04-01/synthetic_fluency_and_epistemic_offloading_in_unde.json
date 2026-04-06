@@ -1,0 +1,266 @@
+{
+  "title": "Synthetic Fluency and Epistemic Offloading in Undergraduate Mathematics in the Age of AI",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "https://arxiv.org/abs/2512.21045",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper examines how the widespread availability of generative AI tools may be changing what homework and assessment scores mean in undergraduate mathematics. The authors focus on whether AI-accessible, unproctored homework still reflects genuine learning, or whether it increasingly captures what they call \"synthetic fluency\"\u2014correct mathematical outputs produced with substantial epistemic offloading to AI rather than internalized understanding. The study asks how these effects vary across different kinds of mathematics courses, especially between more procedural courses and more conceptual or spatially demanding ones.\n\nThe approach is an empirical observational analysis of assessment data collected over two semesters across three undergraduate mathematics courses: Business Calculus, Linear Algebra, and Calculus III. The authors compare student performance on unproctored homework\u2014completed via WebWorK and/or hand-written submissions, both treated as AI-accessible\u2014with performance on in-person proctored midterm and final exams. They analyze divergence using three metrics: raw homework-exam performance gaps, Spearman correlations between homework and exam scores, and Wasserstein distance between homework and exam score distributions. Rather than testing a specific instructional intervention, the study analyzes how existing assessment systems function in an environment where AI tools are readily available.\n\nThe population consists of undergraduate students at Wenzhou-Kean University in China. Business Calculus students were mainly first-year business majors; Linear Algebra students were mostly first-year Data Science and second-year Computer Science majors; and Calculus III students were primarily second-year Data Science majors, with some course repeaters. The same instructor taught the courses included in the study, and the context was regular university mathematics instruction with unproctored homework and proctored in-person exams.\n\nThe main conclusion is that AI-related assessment distortion is strongest in conceptually and spatially demanding mathematics. In Business Calculus, homework remained somewhat predictive of exam performance despite inflated homework scores, suggesting a more pragmatic use of AI. In Linear Algebra, patterns were unstable and depended on whether the final exam emphasized computation or conceptual reasoning. In Calculus III, homework-exam alignment largely collapsed, with near-perfect homework scores paired with much lower exam performance, indicating that unproctored homework often reflected tool capability rather than student mastery. The authors argue that paper-based homework is not inherently more resistant to AI misuse than online homework and recommend de-emphasizing unproctored homework as summative evidence of learning in favor of proctored and process-oriented assessment.",
+  "limitations": [
+    "single_site",
+    "no_control_group",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "blended",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "China",
+  "study_region": "East Asia & Pacific",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "feedback_evaluation"
+      ],
+      "description": "An OpenAI large language model chatbot used for generating explanations, solving problems, and producing step-by-step responses.",
+      "use_case": "Discussed as a representative generative AI tool available to undergraduate mathematics students; the paper frames ChatGPT as part of the AI-accessible environment that may enable epistemic offloading, but does not isolate ChatGPT-specific usage or outcomes.",
+      "findings": []
+    },
+    {
+      "name": "Claude",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "feedback_evaluation"
+      ],
+      "description": "An Anthropic large language model assistant used for conversational problem solving and explanation generation.",
+      "use_case": "Mentioned as an example of widely accessible LLM tools in undergraduate mathematics contexts; not evaluated separately in the empirical analyses.",
+      "findings": []
+    },
+    {
+      "name": "Gemini",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "feedback_evaluation"
+      ],
+      "description": "A Google large language model assistant used for conversational generation and problem solving.",
+      "use_case": "Mentioned as an example of LLM tools available to students in mathematics courses; not empirically separated in the reported results.",
+      "findings": []
+    },
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "tutoring_instruction",
+        "feedback_evaluation"
+      ],
+      "description": "Generative AI tools, including LLMs and related AI systems, that can solve mathematics problems, provide explanations, and generate step-by-step solutions.",
+      "use_case": "Studied as the general AI-accessible environment affecting undergraduate mathematics homework and assessment validity across Business Calculus, Linear Algebra, and Calculus III by comparing unproctored homework with proctored exams.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "In Business Calculus (Spring 2025), homework averages were near ceiling in both sections (Class A: 98.5 \u00b1 3.0; Class B: 96.6 \u00b1 6.5), while final exam averages were lower (73.4 \u00b1 15.3; 75.7 \u00b1 15.4), yielding performance deltas of 25.1 and 20.9 points. Homework-final Spearman correlations remained moderate (r=0.410 and r=0.546), and Wasserstein distances were 25.2 and 20.9, which the authors interpret as substantial but still partially aligned performance in a procedural course.",
+          "measure": "Homework scores, final exam scores, homework-final Spearman correlation, Wasserstein distance in Business Calculus",
+          "effect_size": "\u0394=25.1 points (Class A); \u0394=20.9 points (Class B); r=0.410, 0.546; W1=25.2, 20.9",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "In Linear Algebra, homework remained near ceiling across sections (91.3 to 99.8), but final exam performance varied sharply by semester and exam type. In Spring 2025, computation-oriented finals produced deltas of roughly 20\u201336 points, whereas in Fall 2025, concept-oriented finals dropped to 48.7, 51.2, and 48.8 with homework around 98\u201399, producing deltas exceeding 48 points; homework-final correlations weakened to r=0.252\u20130.471 in Fall and included a negative correlation in Spring Class C (r=-0.176), while homework-final Wasserstein distances reached 42.5\u201349.7 in Fall.",
+          "measure": "Homework scores, final exam scores, homework-final Spearman correlation, Wasserstein distance in Linear Algebra",
+          "effect_size": "Spring \u0394\u224820\u201336; Fall \u0394>48; r=-0.176 to 0.516; W1=20.5 to 49.7",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "In Calculus III (Fall 2025), homework averages stayed near ceiling (Class A: 99.1 \u00b1 1.8; Class B: 97.1 \u00b1 5.4), but final exam averages collapsed to 57.3 \u00b1 21.3 and 52.7 \u00b1 19.2, yielding performance deltas of 41.8 and 44.4 points. Homework-final correlations were weak (r=0.273 and r=0.391), and homework-final Wasserstein distances were 41.7 and 44.4, indicating major divergence between unproctored and proctored performance.",
+          "measure": "Homework scores, final exam scores, homework-final Spearman correlation, Wasserstein distance in Calculus III",
+          "effect_size": "\u0394=41.8, 44.4; r=0.273, 0.391; W1=41.7, 44.4",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "Across Business Calculus and Linear Algebra, homework format did not produce substantively different performance patterns in AI-accessible settings. The authors report similarly high homework averages, comparable homework-exam correlations, and nearly identical Wasserstein distances for online WebWorK versus hand-written/hand-graded homework, concluding that paper-based homework was not inherently more resistant to AI-mediated offloading.",
+          "measure": "Comparison of assessment format effects: online versus hand-written homework patterns",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an observational, correlational multi-course study using course assessment data without random assignment, direct AI-usage logs, or experimental manipulation. The analyses are empirical and systematic, but causal attribution to specific tools or individual AI use remains limited.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports large raw performance divergences between homework and exams, but not standardized causal effect sizes, and the direction varies by course context. Impact appears substantial but is inferred from observational assessment gaps rather than experimentally identified treatment effects.",
+  "citations": [
+    {
+      "title": "Learning mathematics in a cas environment: The genesis of a reflection about instrumentation and the dialectics between technical and conceptual work",
+      "doi": null,
+      "year": 2002,
+      "venue": "International Journal of Computers for Mathematical Learning",
+      "citation_level": 2,
+      "citation_context": "instrumentation framework for technical-conceptual mathematics work"
+    },
+    {
+      "title": "Theory of didactical situations in mathematics: Didactique des math\u00e9matiques, 1970\u20131990",
+      "doi": null,
+      "year": 2002,
+      "venue": "Springer",
+      "citation_level": 2,
+      "citation_context": "didactical contract and Topaze Effect framing"
+    },
+    {
+      "title": "Mathematical capabilities of chatGPT",
+      "doi": null,
+      "year": 2023,
+      "venue": "Thirty-seventh Conference on Neural Information Processing Systems Datasets and Benchmarks Track",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Exploring the opportunities and challenges of nlp models in higher education: is chat gpt a blessing or a curse?",
+      "doi": null,
+      "year": 2023,
+      "venue": "Frontiers in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Ai-based digital cheating at university, and the case for new ethical pedagogies",
+      "doi": null,
+      "year": 2025,
+      "venue": "Journal of Academic Ethics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Design and evaluation of student assignment in the era of generative artificial intelligence",
+      "doi": null,
+      "year": 2023,
+      "venue": "Open Education Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Webwork log files as a rich source of data on student homework behaviours",
+      "doi": null,
+      "year": 2021,
+      "venue": "International Journal of Mathematical Education in Science and Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Cognitive offloading",
+      "doi": null,
+      "year": 2016,
+      "venue": "Trends in Cognitive Sciences",
+      "citation_level": 2,
+      "citation_context": "core construct for epistemic offloading interpretation"
+    },
+    {
+      "title": "Evaluating student response to webwork, a web-based homework delivery and grading system",
+      "doi": null,
+      "year": 2008,
+      "venue": "Computers & Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Relational understanding and instrumental understanding",
+      "doi": null,
+      "year": 1976,
+      "venue": "Mathematics Teaching",
+      "citation_level": 2,
+      "citation_context": "procedural versus conceptual understanding distinction"
+    },
+    {
+      "title": "Chatgpt in higher education: Considerations for academic integrity and student learning",
+      "doi": null,
+      "year": 2023,
+      "venue": "Journal of Applied Learning & Teaching",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Measuring efficiency of teaching mathematics online: experiences with webwork",
+      "doi": null,
+      "year": 2013,
+      "venue": "Procedia-Social and Behavioral Sciences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Cognition and artifacts: A contribution to the study of though in relation to instrumented activity",
+      "doi": null,
+      "year": 1995,
+      "venue": "European Journal of Psychology of Education",
+      "citation_level": 2,
+      "citation_context": "prosthetic artifact and instrumental genesis framing"
+    },
+    {
+      "title": "Optimal transport: old and new",
+      "doi": null,
+      "year": 2008,
+      "venue": "Springer",
+      "citation_level": 3,
+      "citation_context": "theoretical basis for Wasserstein distance analysis"
+    },
+    {
+      "title": "Mind in society: The development of higher psychological processes",
+      "doi": null,
+      "year": 1978,
+      "venue": "Harvard University Press",
+      "citation_level": 2,
+      "citation_context": "ZPD framework used in interpretation"
+    },
+    {
+      "title": "The role of tutoring in problem solving",
+      "doi": null,
+      "year": 1976,
+      "venue": "Journal of Child Psychology and Psychiatry",
+      "citation_level": 2,
+      "citation_context": "scaffolding concept contrasted with prosthetic AI use"
+    },
+    {
+      "title": "Ai meets ai: Artificial intelligence and academic integrity-a survey on mitigating ai-assisted cheating in computing education",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 24th Annual Conference on Information Technology Education",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

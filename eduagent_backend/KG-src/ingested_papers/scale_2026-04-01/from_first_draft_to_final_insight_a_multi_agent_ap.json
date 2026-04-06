@@ -1,0 +1,384 @@
+{
+  "title": "From First Draft to Final Insight: A Multi-Agent Approach for Feedback Generation",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "https://arxiv.org/abs/2505.04869",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Graduate / Doctoral"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper addresses the challenge of generating large volumes of high-quality educational feedback using large language models (LLMs). The authors argue that while LLMs can automate feedback production, single-round feedback generation often suffers from problems such as hallucinations, verbosity, and weak alignment with pedagogical principles, especially learner-centered feedback. The study asks which prompt and framework combinations produce the best initial feedback, how accurately LLMs can evaluate generated feedback, and whether a multi-agent generation-evaluation-regeneration pipeline can improve feedback quality.\n\nThe intervention studied is a multi-agent LLM workflow called \u201cG-E-RG\u201d (generation, evaluation, and regeneration). In the first round, GPT-4o generated feedback using six combinations of prompt strategies and feedback frameworks: zero-shot versus RAG+Chain-of-Thought, crossed with no framework, a learner-centered framework, and a knowledge-transmission framework. A second GPT-4o agent automatically evaluated the generated feedback using a rubric covering reliability, learner-centered components, features, and simplicity. A third GPT-4o agent then regenerated feedback based on these evaluation results. Human research assistants also coded feedback quality and checked evaluation outputs.\n\nThe study was conducted in a graduate course, E-Learning Design Principles and Methods, at Carnegie Mellon University in Fall 2024. The dataset included 208 anonymous student responses drawn from 63 multiple-choice questions and one open-ended question. The educational context was course quiz feedback, with students as recipients of the generated feedback and instructors as the target users of the automation system. Because the data came from a single graduate course at one university, the context is specialized and narrow.\n\nThe main conclusion is that the multi-agent G-E-RG process substantially improved feedback quality across most measured dimensions regardless of the first-round generation method. Evaluation accuracy improved by roughly 3.36% to 12.98%, and regenerated feedback almost universally included the four desired learner-centered components. The RAG_CoT plus learner-centered framework produced the strongest first-round feedback, but the regeneration stage helped bring weaker methods up to a similarly strong level. However, the authors note remaining weaknesses in features such as positivity, usability, and relationship-building, and they emphasize that the pipeline is resource-intensive, depends on retrieval quality, and may still require human oversight for some evaluation dimensions.",
+  "limitations": [
+    "single_site",
+    "no_control_group",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "content_generation"
+      ],
+      "description": "An OpenAI GPT-family large language model used here as the underlying engine for automated feedback generation, evaluation, and regeneration.",
+      "use_case": "GPT-4o was used as three agents in a multi-agent 'G-E-RG' pipeline to generate first-round quiz feedback, automatically evaluate that feedback with a rubric, and regenerate improved second-round feedback for graduate course quiz responses.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Across six prompt/framework methods, the multi-agent G-E-RG pipeline improved feedback evaluation accuracy from first- to second-round feedback by 3.36% to 12.98%. Improvements were statistically significant for all methods except RAG_CoT_knowledge, which showed a non-significant gain of 3.36% (p = 0.07); for example, RAG_CoT_learner reached 97.60% correct evaluation rate in round 2, a 6.73% improvement (p < 0.001).",
+          "measure": "Feedback evaluation accuracy against student responses",
+          "effect_size": "increase of 3.36% to 12.98% depending on method",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=208 responses; 1248 feedback instances"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The proportion of feedback containing all four learner-centered components increased dramatically after regeneration, with second-round coverage ranging from 96.63% to 99.52% across methods. The paper also reports that coverage of individual components in second-round feedback reached 99.04% to 100%, with Wilcoxon signed-rank tests showing significant improvements for most component deficiencies (generally p < 0.001, with some p = 0.005 or p = 0.014).",
+          "measure": "Presence of learner-centered feedback components (critiques, strengths, actionable information, agency)",
+          "effect_size": "all-four-components rose from first-round average 27.72% to second-round average 98.49%",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=1248 feedback instances"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Most learner-centered feature scores improved significantly after G-E-RG across methods (Wilcoxon p < 0.001 for most comparisons), though some dimensions remained suboptimal. The paper notes persistent room for improvement in F1-positive, F2-usable, and F3-relationship, with second-round feature means still only ranging from 2.39/3 to 2.63/3.",
+          "measure": "Learner-centered feedback features (positive affect, usability, relationship, dialogue, independence)",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=1248 feedback instances"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "LLM-based automatic evaluation using GPT-4o showed strong agreement with human coders on several rubric dimensions but weaker performance on others. Reported F1 scores were 0.93 for evaluation accuracy, 0.84 for retrieved slides accuracy, 0.97 for C2-strengths, 0.98 for C3-actionable, 0.99 for F4-dialogue, but only 0.75 for F2-usable and 0.73 for F5-independence.",
+          "measure": "Agreement between LLM-based and human feedback evaluation (accuracy/precision/recall/F1)",
+          "effect_size": "F1 scores 0.73 to 0.99 depending on sub-indicator",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "The G-E-RG process changed feedback length, often condensing verbose outputs without losing core quality dimensions. Significant word-count reductions were observed for Baseline_learner (-25.77 words, p < 0.001), RAG_CoT_learner (-15.24, p < 0.001), and RAG_CoT_knowledge (-76.83, p < 0.001), while RAG_CoT_none increased by 20.34 words (p < 0.001) and Baseline_knowledge showed no significant change (p = 0.439).",
+          "measure": "Feedback simplicity measured by word count",
+          "effect_size": "mean change ranged from -76.83 to +20.34 words depending on method",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=1248 feedback instances"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical evaluation of a multi-agent LLM feedback pipeline, but it is not an RCT or QED on student learning outcomes. The study mainly assesses generated feedback quality and rubric agreement within one course dataset.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports clear positive improvements in feedback quality metrics, but effects are on proxy outcomes rather than direct student learning, and standardized effect sizes are not reported. Impact appears promising but remains unclear in magnitude for educational outcomes.",
+  "citations": [
+    {
+      "title": "Towards an idealized model of feedback uptake: longitudinal development of feedback literacy from a social constructivist perspective",
+      "doi": null,
+      "year": 2024,
+      "venue": "Studies in Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Automatic feedback in online learning environments: A systematic literature review",
+      "doi": null,
+      "year": 2021,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A multi-task automated assessment system for essay scoring",
+      "doi": null,
+      "year": 2024,
+      "venue": "AIED2024",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Assessing the proficiency of large language models in automatic feedback generation: An evaluation study",
+      "doi": null,
+      "year": 2024,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 2,
+      "citation_context": "prior benchmark on LLM feedback quality and learner-centered evaluation"
+    },
+    {
+      "title": "Feedback quality and performance in organisations",
+      "doi": null,
+      "year": 2022,
+      "venue": "The Leadership Quarterly",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Shifting to student-centered learning: Influences of teaching a summer service learning program",
+      "doi": null,
+      "year": 2022,
+      "venue": "Teaching and Teacher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Comparing chatgpt\u2019s correction and feedback comments with that of educators in the context of primary students\u2019 short essays written in english and greek",
+      "doi": null,
+      "year": 2024,
+      "venue": "Education and Information Technologies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Automatic feedback generation on k-12 students\u2019 data science education by prompting cloud-based large language models",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the Eleventh ACM Conference on Learning@ Scale",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Combining llm-generated and test-based feedback in a mooc for programming",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the Eleventh ACM Conference on Learning@ Scale",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Utilizing gpt 4.0 with prompt learning in nursing education: A case study approach based on benner\u2019s theory",
+      "doi": null,
+      "year": 2024,
+      "venue": "Teaching and Learning in Nursing",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "\u2018good job!\u2019the impact of positive and negative feedback on performance",
+      "doi": null,
+      "year": 2024,
+      "venue": "Sports Economics Review",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "To resist it or to embrace it? examining chatgpt\u2019s potential to support teacher feedback in efl writing",
+      "doi": null,
+      "year": 2024,
+      "venue": "Education and Information Technologies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The power of feedback",
+      "doi": null,
+      "year": 2007,
+      "venue": "Review of Educational Research",
+      "citation_level": 3,
+      "citation_context": "knowledge-focused feedback framework adopted in methods"
+    },
+    {
+      "title": "A language model\u2013powered simulated patient with automated feedback for history taking: Prospective study",
+      "doi": null,
+      "year": 2024,
+      "venue": "JMIR Medical Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Agentcoder: Multi-agent-based code generation with iterative testing and optimisation",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv preprint",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A survey on hallucination in large language models: Principles, taxonomy, challenges, and open questions",
+      "doi": null,
+      "year": 2025,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Exploring the potential of generative artificial intelligence in education: applications, challenges, and future research directions",
+      "doi": null,
+      "year": 2023,
+      "venue": "Journal of Educational Technology & Society",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The effects of feedback interventions on performance: a historical review, a meta-analysis, and a preliminary feedback intervention theory",
+      "doi": null,
+      "year": 1996,
+      "venue": "Psychological Bulletin",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Open source language models can provide feedback: Evaluating llms\u2019 ability to help students using gpt-4-as-a-judge",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 2024 on Innovation and Technology in Computer Science Education V. 1",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Retrieval-augmented generation for knowledge-intensive nlp tasks",
+      "doi": null,
+      "year": 2020,
+      "venue": "Advances in Neural Information Processing Systems",
+      "citation_level": 2,
+      "citation_context": "RAG prompting strategy used in first-round generation"
+    },
+    {
+      "title": "Towards the automated generation of readily applicable personalised feedback in education",
+      "doi": null,
+      "year": 2024,
+      "venue": "AIED2024",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Comparing feedback from large language models and instructors: Teaching computer science at scale",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the Eleventh ACM Conference on Learning@ Scale",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Generating high-precision feedback for programming syntax errors using large language models",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv preprint",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Effectiveness of feedback: The students\u2019 perspective",
+      "doi": null,
+      "year": 2008,
+      "venue": "Assessment & Evaluation in Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "On the definition of feedback",
+      "doi": null,
+      "year": 1983,
+      "venue": "Behavioral Science",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Designing learner-centred text-based feedback: a rapid review and qualitative synthesis",
+      "doi": null,
+      "year": 2021,
+      "venue": "Assessment & Evaluation in Higher Education",
+      "citation_level": 3,
+      "citation_context": "learner-centered framework and evaluation rubric source"
+    },
+    {
+      "title": "A systematic survey of prompt engineering in large language models: Techniques and applications",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv preprint",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Verbosity bias in preference labeling by large language models",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv preprint",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Analysis of the effectiveness of large language models in assessing argumentative writing and generating feedback",
+      "doi": null,
+      "year": 2024,
+      "venue": "ICAART",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "\u201cchatgpt is the companion, not enemies\u201d: Efl learners\u2019 perceptions and experiences in using chatgpt for feedback in writing",
+      "doi": null,
+      "year": 2024,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Chatgpt\u2019s capabilities in providing feedback on undergraduate students\u2019 argumentation: A case study",
+      "doi": null,
+      "year": 2024,
+      "venue": "Thinking Skills and Creativity",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Chain-of-thought prompting elicits reasoning in large language models",
+      "doi": null,
+      "year": 2022,
+      "venue": "Advances in Neural Information Processing Systems",
+      "citation_level": 2,
+      "citation_context": "CoT prompting strategy used in generation and evaluation"
+    },
+    {
+      "title": "The power of feedback revisited: A meta-analysis of educational feedback research",
+      "doi": null,
+      "year": 2020,
+      "venue": "Frontiers in Psychology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Autogen: Enabling next-gen llm applications via multi-agent conversation framework",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv preprint",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "From mooc to maic: Reshaping online teaching and learning through llm-driven agents",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv preprint",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

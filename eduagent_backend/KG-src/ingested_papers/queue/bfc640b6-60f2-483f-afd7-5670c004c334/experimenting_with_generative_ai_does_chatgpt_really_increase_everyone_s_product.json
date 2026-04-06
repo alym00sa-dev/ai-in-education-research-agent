@@ -1,0 +1,91 @@
+{
+  "title": "Experimenting with Generative AI: Does ChatGPT Really Increase Everyone\u2019s Productivity?",
+  "doi": null,
+  "year": 2024,
+  "venue": null,
+  "url": "http://arxiv.org/abs/2403.01770v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Randomized Controlled Trial (RCT)",
+  "extended_summary": "This paper examines whether ChatGPT improves productivity for tasks that may be outside its strongest domains, specifically Thai-language writing analysis and Stata-based math/data analysis. The core question is not about motivation or school writing achievement in adolescents, but whether college economics students perform better, faster, and for whom the tool helps or harms.\n\nThe authors conducted an experiment with 121 undergraduate economics students from Chulalongkorn University and Thammasat University in Thailand. Each participant completed both writing-analysis tasks and math/data-analysis tasks under two conditions: with ChatGPT and without ChatGPT. To reduce order and task-set bias, the researchers created two task sets of intended equal difficulty and randomly assigned students to four groups that varied the order of task sets and ChatGPT access. Outcomes were objectively assessed using expert-rated scores out of 10 and task completion time, with each task session capped at 20 minutes.\n\nIn the writing-analysis tasks, the average score increased from 5.33 without ChatGPT to 5.75 with ChatGPT, a mean gain of 0.43 points, while average completion time decreased by 1.73 minutes. In the math/data-analysis tasks, scores increased from 3.09 to 4.74, a mean gain of 1.65 points, and time decreased by 0.99 minutes. However, benefits were not universal: 34% of participants did not improve in writing and 42% did not improve in math/data analysis. Regression analyses suggested that students with stronger econometrics backgrounds tended to gain less or do worse in writing tasks with ChatGPT, while higher self-reported digital skill was associated with better outcomes in math/data tasks.\n\nFor the specific verification task here, this is not the alleged 2026 high-school writing motivation trial with about 25+25 students over 12 weeks. It is a 2024 higher-education productivity experiment with a within-subject crossover structure, not a secondary-school writing-feedback intervention and not a motivation study. No motivation outcome is reported at all, and there is no implausibly large effect size near d = 19 in the original statistics shown. The reported score differences are modest to moderate in raw points, so this study should not be treated as the suspected high-school motivation RCT in any quantitative synthesis of ChatGPT-based writing feedback in high school.",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is an empirical experimental study with random assignment to task/order groups and within-subject comparison of ChatGPT versus no-ChatGPT, which is stronger than correlational work. However, it is a working paper in higher education rather than K-12, lacks the alleged motivation outcome, and does not report standardized treatment effects or full details needed for a high-confidence education RCT judgment.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "Observed effects appear positive but are small-to-moderate in raw score units for writing and moderate for math, with substantial heterogeneity and many non-improvers. Because standardized effect sizes are not reported and the study population is not high-school students, impact for K-12 ChatGPT-based writing feedback remains unclear.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.93,
+      "role": "primary",
+      "use_case": "College economics students completed Thai writing-analysis tasks and Stata-based math/data-analysis tasks with versus without ChatGPT in a randomized crossover task-order design to test whether conversational GenAI improved performance and speed."
+    },
+    {
+      "intervention": "AI Writing / Language Tool",
+      "confidence": 0.62,
+      "role": "secondary",
+      "use_case": "ChatGPT was used as a writing assistant for non-English (Thai) writing-analysis tasks including brainstorming, giving feedback on texts, composing tweets, and summarizing documents."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Literacy",
+      "confidence": 0.84,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "For Thai writing-analysis tasks, the same 121 college students scored higher with ChatGPT than without it: mean 5.75 versus 5.33 out of 10, an average within-student gain of 0.43 points (SD of score difference = 1.98). However, 41 of 121 students (34%) did not improve, and regression results suggest higher econometrics grades predicted smaller or negative gains in writing (approximately -0.54 to -0.57 points per grade unit, p<0.1).",
+        "measure": "Expert-rated writing-analysis task scores (0-10) on brainstorming, feedback on texts, tweet composition, and summarization in Thai",
+        "study_size": "n=121",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "SD_with=1.47; SD_without=1.47; SD_diff=1.98"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 0.76,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "For math and data-analysis tasks in Stata, participants scored higher with ChatGPT than without it: mean 4.74 versus 3.09 out of 10, an average within-student gain of 1.65 points (SD of score difference = 3.67). Still, 51 of 121 students (42%) did not improve, and digital skills were positively associated with gains (about +0.70 to +0.73 points, p<0.1 in most OLS models).",
+        "measure": "Expert-rated math/data-analysis task scores (0-10) covering coding, regression, hypothesis testing, variable generation, and equation derivation",
+        "study_size": "n=121",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "SD_with=2.97; SD_without=2.91; SD_diff=3.67"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.88,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "ChatGPT reduced completion time in both task domains. Writing-analysis time fell from 19.19 to 17.46 minutes, a mean gain of 1.73 minutes (SD_diff=3.43), and math/data-analysis time fell from 18.26 to 17.27 minutes, a mean gain of 0.99 minutes (SD_diff=2.90), under a 20-minute cap per session.",
+        "measure": "Task completion time in minutes under 20-minute limit",
+        "study_size": "n=121",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "Writing SD_diff=3.43; Math SD_diff=2.90"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "non_representative_population",
+    "no_long_term_followup",
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "lab",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Thailand",
+  "study_region": "East Asia & Pacific",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

@@ -1,0 +1,247 @@
+{
+  "title": "Revolutionizing Undergraduate Learning: CourseGPT and Its Generative AI Advancements",
+  "doi": null,
+  "year": 2024,
+  "venue": "arXiv",
+  "url": "https://arxiv.org/abs/2407.18310",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper examines whether a retrieval-augmented generative AI assistant, CourseGPT, can improve support for undergraduate learning in a university course context. The authors are concerned with how large language model size affects the quality of course-specific question answering, and whether a domain-specific AI assistant can provide accurate, faithful, and context-relevant responses to student questions while also supporting instructors with course administration and guidance.\n\nThe intervention is CourseGPT, a course-specific AI assistant built with retrieval-augmented generation (RAG) on open-source Mistral models, primarily comparing Mistral-7b and Mixtral-8x7b. The system was populated with course materials including textbook content, slide decks, syllabus, schedule, and supplementary resources, and was piloted for Iowa State University\u2019s CPR E 431 security course. The empirical evaluation combined quantitative testing of 50 generated course questions using correctness, context recall, and faithfulness metrics, with qualitative/quantitative user feedback from a small survey of former students and a former teaching assistant using Likert-scale ratings.\n\nThe study population is undergraduate course users in a higher education setting, along with educator involvement through instructor design and teaching assistant feedback, all at a single U.S. institution. The paper positions CourseGPT as a tool for supporting undergraduate learning outcomes, especially through immediate, personalized, course-bounded assistance. Although the system is described as benefiting current students, the reported user feedback came from six prior participants affiliated with the course rather than a large live deployment cohort.\n\nThe main conclusion is that the larger Mixtral-8x7b model outperformed the smaller Mistral-7b model on the reported evaluation metrics, achieving 88.0% correctness, 99.6% context recall, and 66.6% faithfulness. Survey feedback suggested that most respondents found CourseGPT helpful and generally accurate, though satisfaction with overall performance was mixed. The authors conclude that CourseGPT shows promise as a personalized educational support tool for higher education, while noting ongoing challenges related to computational efficiency, scalability, and maintaining relevant, high-quality course data.",
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_control_group",
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "CourseGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "feedback_evaluation"
+      ],
+      "description": "A course-specific generative AI assistant built with retrieval-augmented generation over instructor-provided course materials and powered by Mistral AI models.",
+      "use_case": "Studied as a pilot virtual course assistant for Iowa State University's CPR E 431 security course, answering student questions using a knowledge base built from the textbook, slide decks, syllabus, schedule, and supplementary materials.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In an evaluation on a generated test set of N=50 course-related questions, CourseGPT using the larger Mistral-family backend achieved higher answer correctness than the smaller backend. The paper reports 88.0% correctness for the Mixtral-8x7b-backed version versus 78.2% for the Mistral-7b-backed version, indicating more accurate course-answering performance with the larger model.",
+          "measure": "Answer correctness score comparing generated answers to ground-truth answers using weighted semantic similarity and factual accuracy",
+          "effect_size": "88.0% (Mixtral-8x7b backend); 78.2% (Mistral-7b backend)",
+          "confidence_interval": "not_reported",
+          "sample_size": "N=50 questions"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "CourseGPT showed very high retrieved-context alignment in the same N=50-question evaluation. The paper reports average context recall of 99.6% for the Mixtral-8x7b-backed version and 99.0% for the Mistral-7b-backed version, suggesting both versions retrieved highly relevant course context.",
+          "measure": "Context recall, defined as the proportion of ground-truth sentences attributable to the retrieved context",
+          "effect_size": "99.6% (Mixtral-8x7b backend); 99.0% (Mistral-7b backend)",
+          "confidence_interval": "not_reported",
+          "sample_size": "N=50 questions"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "CourseGPT's answer faithfulness to retrieved course materials was moderate and higher for the larger backend in the N=50-question evaluation. The paper reports a 66.6% faithfulness score for the Mixtral-8x7b-backed version and 60.2% for the Mistral-7b-backed version.",
+          "measure": "Faithfulness, defined as the proportion of generated claims inferable from the retrieved context",
+          "effect_size": "66.6% (Mixtral-8x7b backend); 60.2% (Mistral-7b backend)",
+          "confidence_interval": "not_reported",
+          "sample_size": "N=50 questions"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "User feedback from six former students/teaching assistants was favorable on helpfulness: 4 of 6 respondents rated CourseGPT a 5 and 2 of 6 rated it a 4 on a 5-point Likert item about addressing queries. The authors interpret this as strong perceived usefulness for answering course questions.",
+          "measure": "Single-item helpfulness rating on a 5-point Likert scale",
+          "effect_size": "4/6 rated 5; 2/6 rated 4",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=6 respondents"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Perceived accuracy ratings were mostly positive but not uniform among six survey respondents. Three respondents rated CourseGPT's information accuracy a 5, two rated it a 4, and one rated it a 2 on a 5-point Likert scale.",
+          "measure": "Single-item perceived information accuracy rating on a 5-point Likert scale",
+          "effect_size": "3/6 rated 5; 2/6 rated 4; 1/6 rated 2",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=6 respondents"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Overall performance satisfaction was positive but somewhat mixed in the six-person survey. Four respondents rated CourseGPT a 4 and two rated it a 5 on a 5-point Likert scale, although the text notes divergence in satisfaction and a need for refinement.",
+          "measure": "Single-item overall performance satisfaction rating on a 5-point Likert scale",
+          "effect_size": "4/6 rated 4; 2/6 rated 5",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=6 respondents"
+        }
+      ]
+    },
+    {
+      "name": "Mistral",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "language_speech",
+        "tutoring_instruction"
+      ],
+      "description": "A family of large language models from Mistral AI, including Mistral 7B and Mixtral variants.",
+      "use_case": "Used as the underlying LLM family powering CourseGPT; the paper compares smaller and larger Mistral-family models within the course-assistant system.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Within CourseGPT, the larger Mistral-family model outperformed the smaller one on answer correctness over N=50 test questions. Mixtral-8x7b achieved 88.0% correctness compared with 78.2% for Mistral-7b.",
+          "measure": "Answer correctness score",
+          "effect_size": "88.0% vs 78.2%",
+          "confidence_interval": "not_reported",
+          "sample_size": "N=50 questions"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Both Mistral-family backends showed near-ceiling context recall in CourseGPT, with a slight advantage for the larger model. Mixtral-8x7b scored 99.6% context recall, while Mistral-7b scored 99.0%.",
+          "measure": "Context recall",
+          "effect_size": "99.6% vs 99.0%",
+          "confidence_interval": "not_reported",
+          "sample_size": "N=50 questions"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The larger Mistral-family model also produced more faithful answers to retrieved context in CourseGPT. Mixtral-8x7b reached 66.6% faithfulness versus 60.2% for Mistral-7b.",
+          "measure": "Faithfulness to retrieved context",
+          "effect_size": "66.6% vs 60.2%",
+          "confidence_interval": "not_reported",
+          "sample_size": "N=50 questions"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical pilot/system evaluation with benchmark metrics and a very small user survey, but it is not an RCT or strong quasi-experimental study of student learning outcomes. The evidence is primarily technical performance testing plus perceptions from n=6 respondents.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "Reported results are positive for system performance and user perceptions, but impacts on actual student learning, grades, or validated educational outcomes are unclear. No standardized effect sizes or causal learning gains are reported.",
+  "citations": [
+    {
+      "title": "Retrieval-augmented generation for large language models: A survey",
+      "doi": null,
+      "year": 2023,
+      "venue": "ArXiv",
+      "citation_level": 2,
+      "citation_context": "frames RAG benefits and architecture"
+    },
+    {
+      "title": "Mistral 7b",
+      "doi": null,
+      "year": 2023,
+      "venue": "ArXiv",
+      "citation_level": 2,
+      "citation_context": "describes Mistral-7b architecture and efficiency"
+    },
+    {
+      "title": "Mixtral of experts",
+      "doi": null,
+      "year": 2024,
+      "venue": "ArXiv",
+      "citation_level": 2,
+      "citation_context": "describes Mixtral-8x7b architecture and parameters"
+    },
+    {
+      "title": "Platform-independent and curriculum-oriented intelligent assistant for higher education",
+      "doi": null,
+      "year": 2023,
+      "venue": "International Journal of Educational Technology in Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Ai-ta: Towards an intelligent question-answer teaching assistant using open-source llms",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Coursegpt-zh: an educational large language model based on knowledge distillation incorporating prompt optimization",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Towards general text embeddings with multi-stage contrastive learning",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv preprint arXiv:2308.03281",
+      "citation_level": 3,
+      "citation_context": "embedding model training approach used for retrieval"
+    },
+    {
+      "title": "Massive text embedding benchmark (mteb) leaderboard",
+      "doi": null,
+      "year": null,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "How powerful are decoder-only transformer neural models?",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Ragas llm evaluator",
+      "doi": null,
+      "year": null,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "defines correctness, context recall, and faithfulness metrics"
+    },
+    {
+      "title": "Giskard llm evaluator",
+      "doi": null,
+      "year": null,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "supports evaluator-based metric computation"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

@@ -1,0 +1,55 @@
+{
+  "title": "Exploring utilization of generative AI for research and education in data-driven materials science",
+  "doi": null,
+  "year": 2025,
+  "venue": "not_reported",
+  "url": "http://arxiv.org/abs/2504.08817v2",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper examines how generative AI can be used to support research and education in data-driven materials science. The authors frame the work around a 2024 hackathon (AIMHack2024) and use it to showcase three practical applications of AI: assisting software trial-and-error learning, generating tutorials through a custom AI tutor, and helping convert Python scripts into Windows GUI applications and executables.\n\nThe first example uses ChatGPT to guide users through ImageJ for object counting in images, including an extension to overlapping objects using watershed segmentation. The second example builds a MyGPT-based tutor for PHYSBO, a Bayesian optimization package, and evaluates whether the model can produce accurate tutorials when supplied with URLs versus full documentation PDFs. The third example uses ChatGPT to iteratively modify PHYSBO-related Python code into a GUI and executable application with options for input-file selection, acquisition-function selection, and result-output controls.\n\nThe paper\u2019s context is a hackathon involving about 30 participants from materials science, information science, bioinformatics, condensed matter physics, and related backgrounds, including students and industry researchers. However, the paper is not a controlled education study and does not measure K-12 learning outcomes; instead, it is a descriptive report of AI-assisted workflows in higher-education/research software settings. The authors conclude that generative AI can substantially reduce the effort needed for learning software, generating documentation, and building simple tools, but outputs must still be validated by humans because AI can produce plausible yet incorrect information.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a descriptive hackathon-style demonstration and case report, not a controlled empirical study. It does not include a formal research design, comparison group, or inferential analysis relevant to K-12 evidence grading.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "Although the paper describes practical utility, it provides no quantitative impact estimate for learners or schools and no K-12 student outcome data. The evidence is therefore insufficient to claim educational impact in the target taxonomy.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.95,
+      "role": "primary",
+      "use_case": "Using ChatGPT/MyGPT as a conversational tutor to generate step-by-step software tutorials, answer software-use questions, and create a GUI/manual workflow for PHYSBO and ImageJ in materials-science research and education."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.93,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper reports that generative AI reduced effort required for learning unfamiliar software and for creating documentation, GUI applications, and executable tools. For example, ChatGPT-generated instructions enabled successful ImageJ object counting and PHYSBO GUI/exe development, and MyGPT-generated tutorials became accurate after adding PDFs, with the authors emphasizing reduced manual search and documentation workload rather than a formal comparative effect size.",
+        "measure": "Task completion success, accuracy of generated tutorials, and qualitative reduction in time/effort for software learning, documentation, and GUI/exe creation",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "blended",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Japan",
+  "study_region": "East Asia & Pacific",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

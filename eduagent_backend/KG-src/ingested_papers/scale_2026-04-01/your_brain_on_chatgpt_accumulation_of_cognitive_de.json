@@ -1,0 +1,92 @@
+{
+  "title": "Your Brain on ChatGPT: Accumulation of Cognitive Debt when Using an AI Assistant for Essay Writing Task",
+  "doi": null,
+  "year": null,
+  "venue": null,
+  "url": "https://arxiv.org/abs/2506.08872",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper investigates the cognitive and learning-related costs of using a large language model (LLM), specifically ChatGPT-like assistance, during essay writing in an educational context. The authors ask whether using an LLM changes the essays people produce, alters their brain activity during writing, affects memory for what they wrote, and reduces their sense of ownership over their writing. The broader concern is that while LLMs may make writing easier and improve short-term performance, they may also reduce cognitive engagement and impair learning-related processes.\n\nThe study compares three writing conditions: an LLM group, a Search Engine group, and a Brain-only group with no external tools. Participants completed three sessions in their assigned condition, and in a fourth session a subset switched conditions: LLM users wrote without tools, and Brain-only participants wrote with LLM support. The researchers collected multiple forms of data, including EEG recordings during essay writing, NLP-based analyses of the resulting essays, post-session interviews, memory/quoting checks, and essay scoring by both human teachers and an AI judge. This makes the study a multi-method comparison of how different information tools shape writing and cognition.\n\nThe population consisted of 54 participants total, with 18 per group for Sessions 1-3; 18 of these participants completed Session 4. The authors are affiliated with MIT-area institutions, and the paper lists Cambridge, Massachusetts, United States, indicating a U.S.-based study context. The task involved essay writing on SAT-style prompts over a period described as four sessions taking place across four months. The reported context appears to be a controlled research setting rather than a live classroom, with participants fitted with EEG headsets and completing structured writing sessions and interviews.\n\nThe main conclusions are that LLM use was associated with weaker neural connectivity, lower memory for recently written essays, lower perceived ownership of writing, and more homogeneous essay content compared with Brain-only writing. Search Engine use generally fell between the LLM and Brain-only conditions. In Session 4, prior LLM users who then wrote without tools showed weaker neural engagement than participants who had first practiced writing without AI and then used an LLM. The authors interpret these findings as evidence of cognitive offloading and possible reductions in learning-related engagement when LLMs are used for essay writing, while also noting that this is a preliminary study.",
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "non_representative_population",
+    "high_attrition",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "16",
+  "setting": "lab",
+  "teacher_training": "no",
+  "implementation_fidelity": "high",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "language_speech"
+      ],
+      "description": "OpenAI's large language model chatbot used to generate and refine natural-language text.",
+      "use_case": "Participants in the LLM group used ChatGPT as an AI assistant to write SAT-style essays across three sessions; in session 4, prior Brain-only participants used ChatGPT (Brain-to-LLM) and prior LLM users wrote without tools (LLM-to-Brain).",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Literacy",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "Across 4 sessions over 4 months, the paper reports that the LLM group's participants performed worse than the Brain-only group on linguistic and scoring dimensions, despite some initially apparent benefits. Session summaries describe low effort, frequent copy-paste behavior, minimal editing, and essays with little distance from a default ChatGPT answer in Session 3. Exact effect sizes and inferential statistics for essay scores are not reported in the provided text.",
+          "measure": "Essay quality/scoring by human teachers and an AI judge; NLP-based linguistic analyses of essays",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=54"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "The LLM group showed significantly reduced ability to quote from essays they had written minutes earlier, and the abstract states the group fell behind in their ability to quote from their essays compared with other groups. In session 4, Brain-to-LLM participants showed high memory recall, whereas prior LLM users switching to no tools showed weaker performance patterns. No effect sizes are reported.",
+          "measure": "Immediate essay quoting ability and memory recall from participants' own written essays",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=54"
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "Interview results indicated low perceived ownership of essays in the LLM group, lower than the Search Engine group and Brain-only group. Session summaries repeatedly note impaired or split ownership among ChatGPT users, suggesting reduced cognitive agency over written work. No effect sizes are reported.",
+          "measure": "Self-reported essay ownership in post-assessment interviews",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=54"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "EEG analyses showed that LLM assistance elicited the weakest overall neural coupling among the three groups, with brain connectivity scaling down as external support increased. In session 4, LLM-to-Brain participants showed weaker neural connectivity and under-engagement of alpha and beta networks after prior ChatGPT exposure. The figure and text report significant group differences with p-values indicated by significance markers, but exact coefficients/effect sizes are not provided in the excerpt.",
+          "measure": "EEG neural connectivity patterns (dDTF) across alpha, beta, theta, and delta bands during essay writing",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=54"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical primary study with multiple measures (EEG, NLP, interviews, scoring), but the provided text describes a relatively small non-randomized group design and a preprint under review, without enough detail here to support a higher causal-evidence tier.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "The reported effects for ChatGPT are consistently negative for memory, ownership, and neural engagement, and the paper concludes LLM users performed worse than Brain-only participants. Exact standardized effect sizes are not reported in the provided text, but the direction of impact is adverse.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

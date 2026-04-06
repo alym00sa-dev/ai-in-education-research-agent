@@ -1,0 +1,29 @@
+{
+  "title": "Regularity and stability of feedback relaxed controls",
+  "doi": null,
+  "year": 2021,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2001.03148v2",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper studies a theoretical problem in stochastic control and reinforcement learning: how to design feedback control policies that remain stable and robust when the underlying model parameters are perturbed. The authors focus on continuous-time stochastic exit time problems with discrete action spaces, noting that standard optimal feedback controls are often only measurable, can be discontinuous, and may change sharply under small parameter perturbations. The paper aims to address these instability issues and provide theoretical justification for exploration-based regularization methods used in reinforcement learning.\n\nThe approach is a relaxed-control regularization framework that adds an exploration reward to the optimization objective. Instead of mapping each state to a single action, the method maps states to probability distributions over actions. The authors analyze the associated Hamilton-Jacobi-Bellman equations and prove several mathematical results: the regularized problem admits a H\u00f6lder continuous optimal feedback control, both the value function and feedback control are Lipschitz stable with respect to parameter perturbations, a pre-computed relaxed feedback control performs robustly in perturbed systems, first-order sensitivity equations can be derived, and value functions converge monotonically as the exploration parameter vanishes.\n\nThis is not an education study and includes no human participants, students, teachers, or schools. The context is mathematical control theory and reinforcement learning, with analysis conducted in an abstract continuous-time setting rather than a classroom, laboratory intervention, or online learning environment.\n\nThe main conclusion is that adding exploration rewards through relaxed control regularization yields smoother and more robust feedback controls than classical pure-exploitation formulations. The authors provide rigorous proofs of regularity, Lipschitz stability, sensitivity, and convergence results, arguing that these findings theoretically support reinforcement learning heuristics suggesting that exploration regularization can improve robustness in decision making.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a theoretical mathematics/control paper on stochastic control and reinforcement learning regularization, not an empirical education study. It includes no secondary school participants, no writing intervention, no ChatGPT-generated feedback condition, and no comparative educational research design.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "There are no educational outcome data or intervention effects relevant to grades 9-12 writing feedback. Direct evidence for ChatGPT formative feedback on student drafts is absent in this paper.",
+  "interventions": [],
+  "outcome_assignments": [],
+  "limitations": [
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United Kingdom",
+  "study_region": "Europe",
+  "extraction_status": "full_text",
+  "extraction_note": "timeout"
+}

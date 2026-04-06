@@ -1,0 +1,72 @@
+{
+  "title": "ChatGPT in foreign language lesson plan creation: Trends, variability, and historical biases",
+  "doi": "10.1017/S0958344024000272",
+  "year": 2025,
+  "venue": "ReCALL",
+  "url": "https://doi.org/10.1017/s0958344024000272",
+  "source_db": "openalex_search",
+  "populations": [
+    "K-12 (unspecified grade)"
+  ],
+  "user_types": [
+    "Educator"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper examines how well ChatGPT can generate foreign language lesson plans and how much the quality of those plans changes when prompts become more specific. The authors focus on a practical teacher workflow problem: whether zero-shot prompting can produce lesson plans aligned with common language-teaching criteria and licensure expectations, and whether added prompt detail improves the result reliably.\n\nThe intervention studied is not a classroom implementation but a prompt-engineering experiment using ChatGPT-4.0. The authors created five increasingly specific prompts for a 45-minute high school Spanish lesson on a Costa Rican restaurant, then ran each prompt 10 times in separate chats to assess output variability. They scored 50 generated lesson plans against a rubric based on best practices and edTPA-aligned criteria, using quantitative analyses of score trends, word counts, dissimilarity, and clustering.\n\nThe study was conducted in the context of foreign language teacher preparation in the United States, specifically around UNCC\u2019s teacher-licensure-oriented lesson-plan template. The main conclusion is that ChatGPT often produced usable lesson plans, but more detailed prompts did not consistently improve quality. Adding a checklist of required criteria helped most, yet outputs remained highly variable even with identical prompts. The authors also found that many outputs reflected outdated pedagogical practices and biases, especially toward scripted, audio-lingual-style instruction and weak attention to culture. They argue that teachers should critically review and revise AI-generated plans rather than use them unedited.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed empirical study with a clear method, but it is a descriptive/analytic evaluation of AI-generated lesson plans rather than a causal intervention study with human participants. It provides useful evidence on variability and bias, but not on learner outcomes or a randomized design.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper suggests practical benefits for teacher workload and AI literacy, but the demonstrated impact is indirect and modest, based on generated text quality rather than measured educational outcomes. No effect sizes on learner or teacher outcomes were reported.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.95,
+      "role": "primary",
+      "use_case": "Using ChatGPT v4 with zero-shot prompting to generate foreign-language teacher lesson plans, then probing how prompt specificity and repeated chats affect output quality, variability, and bias in the generated plans."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The study found that ChatGPT could streamline lesson-plan creation for foreign language teachers, but quality was inconsistent. Across 50 generated lesson plans (5 prompts x 10 iterations), mean rubric scores ranged from 19.6/25 to 21.6/25, and outputs sometimes omitted multiple required components despite added specificity.",
+        "measure": "Lesson-plan rubric scores and word count of ChatGPT-generated lesson plans",
+        "study_size": "n=50 outputs (5 prompts x 10 iterations)",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.9,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "A central finding was that users need to critically evaluate and revise AI-generated lesson plans because outputs were non-deterministic and sometimes reflected outdated pedagogical practices. The paper did not measure teacher learning directly, but it argued that AI literacy, metatechnolinguistic competence, and prompt refinement are necessary to safely use the tool.",
+        "measure": "Rubric alignment, presence/absence of required lesson components, and qualitative analysis of prompt/output variability and bias",
+        "study_size": "n=50 outputs",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "single_site",
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "yes",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

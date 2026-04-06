@@ -1,0 +1,110 @@
+{
+  "title": "Classroom AI: Large Language Models as Grade-Specific Teachers",
+  "doi": null,
+  "year": 2026,
+  "venue": "npj Artificial Intelligence",
+  "url": "http://arxiv.org/abs/2601.06225v2",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Elementary (PreK-5th)",
+    "Middle School (6th-8th)",
+    "High School (9th-12th)",
+    "Undergraduate",
+    "Graduate / Doctoral",
+    "Adult (non-academic)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses the problem that large language models (LLMs) often generate educational explanations at reading levels that are too advanced for their intended student audience, even when explicitly prompted to simplify. The authors argue that this is especially limiting for direct student-facing use in classrooms, where students need answers they can actually understand and use.\n\nTo solve this, the paper proposes a grade-specific fine-tuning framework that adapts LLM responses to six educational levels: lower elementary, middle elementary, upper elementary, middle school, high school, and college/adult. The method uses synthetic question-answer data generated across eight curriculum fields and classifies outputs with an integrated readability metric built from seven established readability formulas. The paper fine-tunes GPT4o-mini on the resulting grade-labeled corpus to produce separate grade-targeted models.\n\nThe study evaluates the approach on multiple datasets, including ScienceQA, ELI5-Category, Natural Questions, and synthetic GPT4o-generated questions, with compatibility and accuracy assessed through automated metrics and human surveys. Results show that the finetuned models substantially improve grade-level alignment compared with prompt-based baselines while maintaining factual accuracy. Human participants and GPT4o both judged the grade-specific outputs as matching intended comprehension levels, suggesting the framework can support more age-appropriate AI-assisted learning.",
+  "limitations": [
+    "small_sample",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Republic of Korea, United States, England, and online participants via Amazon Mechanical Turk",
+  "study_region": "East Asia & Pacific",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "feedback_evaluation"
+      ],
+      "description": "OpenAI GPT-family large language model used for question generation, answer generation, and evaluation/judging of survey responses in educational text generation tasks.",
+      "use_case": "Used to generate sample questions, generate synthetic questions for training data, produce answers in the survey evaluation, and act as a judge for survey responses; also referenced as GPT-4o/GPT4o-mini in the experiments.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The paper reports that finetuned GPT4o-mini models substantially improved grade-level alignment compared with prompt-based methods while maintaining response accuracy. Across four datasets, the average target-grade success rate improved by 35.64 percentage points over the prompt-based baseline, and human surveys with 208 participants found strong alignment between intended and perceived difficulty (Kendall's \u0003c4=0.76 across 108 participants for Type 1 questions).",
+          "measure": "Grade-level alignment / compatibility; human perception of answer difficulty and comprehensibility; accuracy retention",
+          "effect_size": "35.64 percentage point increase; Kendall's \u0003c4=0.76",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=208 (overall evaluation); n=108 (Survey 1 Type 1); n=120 (Survey 2 Type 2)"
+        }
+      ]
+    },
+    {
+      "name": "Gemini",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation"
+      ],
+      "description": "Google large language model used here as a source model for generating educational questions and few-shot demonstrations in the data construction pipeline.",
+      "use_case": "Used to generate questions across subjects and grade levels as part of the question-generation stage for finetuning data.",
+      "findings": []
+    },
+    {
+      "name": "LLaMA",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation"
+      ],
+      "description": "Meta LLaMA-family large language model used as a source model and as the base model family for grade-specific finetuning.",
+      "use_case": "Used to generate questions, create grade-specific answers, and serve as the base architecture for finetuning grade-specific models and layer-level analysis.",
+      "findings": []
+    },
+    {
+      "name": "Mistral",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation"
+      ],
+      "description": "Mistral-family large language model used as a source model in the question-generation pipeline.",
+      "use_case": "Used to generate questions across subjects and grade levels during synthetic data construction.",
+      "findings": []
+    },
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "content_generation",
+        "tutoring_instruction"
+      ],
+      "description": "Generic generative AI/LLM-based tutoring and educational content generation system without a single distinct product focus.",
+      "use_case": "The paper frames the work as a general framework for student-facing generative AI that produces grade-appropriate educational explanations for open-ended questions.",
+      "findings": []
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical systems paper with human evaluation, but it is not a K-12 classroom intervention study and does not test learning outcomes directly. The evidence is mainly about text-grade alignment and perceived comprehensibility rather than student achievement.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The reported effect on grade-level alignment is substantial (35.64 percentage points), but the impact is on linguistic suitability and perceived comprehensibility, not measured instructional gains. The educational significance is promising but indirect.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

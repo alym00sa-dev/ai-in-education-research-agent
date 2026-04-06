@@ -1,0 +1,115 @@
+{
+  "title": "Artificial intelligence in intelligent tutoring systems toward sustainable education: a systematic review",
+  "doi": "10.1186/s40561-023-00260-y",
+  "year": 2023,
+  "venue": "Smart Learning Environments",
+  "url": "https://doi.org/10.1186/s40561-023-00260-y",
+  "source_db": "openalex_search",
+  "populations": [
+    "Elementary (PreK-5th)",
+    "High School (9th-12th)",
+    "Undergraduate",
+    "Graduate / Doctoral",
+    "K-12 (unspecified grade)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Meta-Analysis / Systematic Review",
+  "extended_summary": "This paper addresses how artificial intelligence (AI) and information technology are being used in intelligent tutoring systems (ITSs) to support sustainable education, and what challenges, outcomes, and future directions emerge from that literature. The authors frame sustainable education as requiring more personalized, student-centered, equitable, and scalable approaches, while also acknowledging barriers such as access, teacher workload, privacy, bias, and explainability.\n\nThe paper is a systematic review rather than an intervention study. Using a PRISMA-based search and screening process, the authors reviewed 29 papers on AI/ITS applications in educational contexts (plus additional papers on broader sustainable education challenges). The reviewed studies included contexts such as K-12, high school, and especially university settings, across multiple regions including Asia, Europe, the Americas, and Oceania. The AI approaches discussed included supervised and unsupervised machine learning, natural language processing, emotion recognition, and explainable AI.\n\nThe main conclusion is that AI-enabled ITSs can improve performance prediction, identify learning behaviors, support early intervention, and enable personalization or adaptation, while also reducing some teacher workload. However, the literature still shows major gaps: limited explainability, fairness concerns, data and feature limitations, portability issues, and insufficient educational theory grounding. The authors argue that future work should emphasize human-centered, trustworthy, and explainable AI, along with better data, broader validation, and stronger alignment with educational practice.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a systematic review with PRISMA-style methods, but it synthesizes heterogeneous observational and design papers rather than running a new controlled evaluation. The evidence base is useful for mapping challenges and trends, yet the review itself does not provide high-credibility causal estimates.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper suggests meaningful but mostly qualitative benefits for teacher support, engagement, and equity, without reporting pooled effect sizes or strong causal evidence. Its impact is therefore plausible and relevant, but the magnitude is unclear and cannot be classified as modest-to-large from the reported data.",
+  "interventions": [
+    {
+      "intervention": "Predictive Analytics / Early Warning",
+      "confidence": 0.95,
+      "role": "primary",
+      "use_case": "Systematic review of AI-enabled tutoring systems that use student log data, behavioral signals, and machine learning to predict performance, detect dropout risk, monitor engagement, and support instructor intervention in educational settings."
+    },
+    {
+      "intervention": "Intelligent Tutoring System (ITS)",
+      "confidence": 0.9,
+      "role": "primary",
+      "use_case": "Review of AI-embedded intelligent tutoring systems for personalized/adaptive instruction, intervention recommendation, learning behavior analysis, and explainable decision support in sustainable education."
+    },
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.5,
+      "role": "secondary",
+      "use_case": "Review includes chatbot/NLP-based tutoring examples that answer student inquiries and provide feedback/interactions, but these are peripheral rather than the core focus."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.86,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Across the reviewed studies, AI/ITS applications were associated with improved engagement, participation, and dropout prevention, especially through early-warning models and timely instructor notification. The review summarizes 5 studies reporting improved participation via early dropout notification and 2 studies reporting enhanced engagement; however, the paper does not report pooled effect sizes or standardized impacts.",
+        "measure": "Engagement, participation rate, dropout risk/early warning outcomes",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Predictive Analytics / Early Warning"
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.93,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The review argues that AI/ITS systems reduce teacher workload by automating performance prediction, monitoring, feedback, and some intervention triggers, allowing instructors to focus more on teaching and individualized support. It also notes that AI can offload routine grading/feedback/remediation tasks, but no quantitative workload effect sizes are reported.",
+        "measure": "Teacher workload, monitoring/feedback efficiency, instructor support",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Intelligent Tutoring System (ITS)"
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.74,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The reviewed literature suggests AI-supported systems can help identify learning behaviors and support self-regulation and personalized learning, but the evidence is largely descriptive and based on individual studies summarized in the review. The paper notes 2 studies on self-regulated learning improvement and several studies on behavior analysis, yet it does not provide pooled estimates or consistent causal evidence.",
+        "measure": "Learning behaviors, self-regulated learning, personalization-related processes",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Intelligent Tutoring System (ITS)"
+    },
+    {
+      "outcome": "Systemic / Institutional Impact",
+      "confidence": 0.8,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The review positions AI-enabled tutoring as supporting broader access, equity, and sustainable education goals by improving personalization and making remote learning more feasible. At the same time, it emphasizes institutional constraints such as infrastructure, privacy, bias, and interpretability, and argues that explainable and human-centered design is needed for trustworthy adoption.",
+        "measure": "Access/equity, policy and implementation considerations, trustworthiness, fairness",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Intelligent Tutoring System (ITS)"
+    }
+  ],
+  "limitations": [
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

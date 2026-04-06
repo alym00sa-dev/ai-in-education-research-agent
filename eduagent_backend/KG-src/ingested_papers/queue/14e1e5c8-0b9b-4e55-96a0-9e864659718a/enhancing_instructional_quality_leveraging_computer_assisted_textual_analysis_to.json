@@ -1,0 +1,65 @@
+{
+  "title": "Enhancing Instructional Quality: Leveraging Computer-Assisted Textual Analysis to Generate In-Depth Insights from Educational Artifacts",
+  "doi": null,
+  "year": 2024,
+  "venue": "arXiv",
+  "url": "https://doi.org/10.48550/arxiv.2403.03920",
+  "source_db": "openalex_search",
+  "populations": [
+    "Elementary (PreK-5th)",
+    "Middle School (6th-8th)",
+    "K-12 (unspecified grade)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator",
+    "Administrator",
+    "School"
+  ],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper reviews the emerging use of AI, machine learning, and natural language processing to analyze educational text artifacts for instructional improvement. Using Elmore\u2019s Instructional Core Framework, it organizes the discussion around three instructional components: teachers, students, and content. The paper argues that text-rich educational data such as classroom transcripts, student responses, lesson plans, textbooks, and online resources can provide more detailed and scalable insight than traditional structured data.\n\nA major focus is generative AI for teacher coaching. The paper discusses prior work on automated detection of instructional features such as authentic questions and accountable talk moves, and reviews a case study where ChatGPT was asked to score classroom transcript segments using CLASS and MQI rubrics, identify instructional strengths and misses, and generate actionable suggestions. The paper reports that ChatGPT could produce relevant responses but did not consistently provide novel or deeply insightful feedback, highlighting the need for more task-specific training data and stronger alignment with human coaching practices.\n\nThe paper also surveys AI applications for student support and assessment, including automated essay scoring, constructed-response scoring, and intelligent tutoring. In the content domain, it highlights work on evaluating and generating lesson plans and open educational resources, including a large-scale project to assess the quality and curricular alignment of middle-grades mathematics lesson plans using human coding and machine learning. Overall, the paper concludes that AI can help scale feedback, assessment, and curriculum analysis, but it must be combined with human expertise, domain knowledge, and ethical safeguards such as privacy protection, bias mitigation, and responsible deployment.",
+  "limitations": [
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "feedback_evaluation",
+        "content_generation"
+      ],
+      "description": "OpenAI's GPT-based conversational generative AI system for text generation, analysis, and assistance.",
+      "use_case": "Reviewed as a generative AI tool for teacher coaching, including scoring classroom transcript segments against CLASS and MQI rubrics, identifying highlights and missed opportunities, and generating actionable pedagogical suggestions.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0014Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "The paper reports that ChatGPT could provide relevant responses for teacher-coaching tasks, but its feedback was not novel or especially insightful. In the three-task evaluation using classroom transcripts, the model performed zero-shot scoring and feedback generation, but the authors conclude that it falls short of a complete coaching solution without further training and fine-tuning.",
+          "measure": "Validity of ChatGPT outputs against human ratings on CLASS and MQI rubric-based tasks; quality of generated pedagogical suggestions",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a qualitative/small empirical evaluation of a named generative AI tool, not a randomized or large-scale quasi-experimental study. The paper itself describes a zero-shot assessment against human judgments but does not provide a rigorous causal design or full quantitative reporting.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The reported effect is directionally positive for relevance, but the paper explicitly notes that ChatGPT failed to provide novel or insightful coaching feedback. Because no effect sizes are reported and the overall impact appears limited, the evidence is modest and unclear.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

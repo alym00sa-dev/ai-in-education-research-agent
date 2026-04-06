@@ -1,0 +1,88 @@
+{
+  "title": "CaseMaster: Designing and Evaluating a Probe for Oral Case Presentation Training with LLM Assistance",
+  "doi": "10.1145/3772318.3790304",
+  "year": 2026,
+  "venue": "Proceedings of the 2026 CHI Conference on Human Factors in Computing Systems (CHI '26)",
+  "url": "",
+  "source_db": "openalex_search",
+  "populations": [
+    "Graduate / Doctoral",
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses the challenge of training medical students to deliver effective oral case presentations (OCPs), a core clinical communication skill that requires organizing patient information clearly, applying clinical reasoning, and presenting concise, relevant details. The authors argue that conventional OCP training often relies on case discussions, role-playing, self-study, and supervisor feedback, but these approaches can be time-consuming, unevenly accessible, and insufficiently structured for novices.\n\nTo address this, they designed and evaluated CaseMaster, a web-based interactive probe that uses large language model assistance to support OCP preparation and reflection. The system guides users through a preparation stage, where they explore patient cases, draft presentations using the SOAP structure, and use LLM-powered actions such as content evaluation, searching, and advice generation; and a reflection stage, where they compare their responses to a reference answer and receive rubric-based feedback and scores. The design was informed by a formative study with six medical educators and then tested in a user study with 12 medical students using CaseMaster and a baseline workflow, followed by a second study with five educators.\n\nThe study context is medical education in Shanghai, China, involving undergraduate and graduate medical students in orthopedic and rehabilitation settings. Results suggest that CaseMaster can improve presentation quality, confidence, and workflow efficiency relative to a conventional self-directed baseline, while also reducing reliance on ad hoc prompting and making feedback more structured. The educators\u2019 feedback further supported the value of scaffolding, transparent criteria, and reflective comparison, while also highlighting concerns about LLM reliability and the need for critical review of generated content.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a formative design paper with a small experimental user study and qualitative educator input, not a controlled efficacy trial with robust outcome measurement. The methodology is transparent and mixed-method, but the evidence is primarily qualitative and exploratory.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper suggests modest positive effects on presentation quality, confidence, and workload, but reports no quantitative effect sizes for learner outcomes. The likely impact is promising but unclear and limited to a small medical student sample.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.98,
+      "role": "primary",
+      "use_case": "LLM-assisted oral case presentation training for medical students, including structured case exploration, SOAP-based drafting, content evaluation, and automated reflection/feedback on presentation quality"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Language Fluency",
+      "confidence": 0.84,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper reports that CaseMaster had the potential to improve oral case presentation quality in medical students compared with a traditional self-directed baseline. In the student experiment (n=12), participants and subsequent educator feedback suggested better presentation clarity, accuracy, and confidence, though the paper does not report a numeric effect size for these outcomes.",
+        "measure": "Oral case presentation quality, clarity, accuracy, and self-reported confidence from user study questionnaires/interviews",
+        "study_size": "n=12",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.82,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "CaseMaster was intended to reduce workload relative to traditional preparation methods by supplying structured prompts, templates, and automated scoring/feedback. The paper states that the controlled study suggested reduced workload compared with traditional methods, but it does not report a numerical effect size for workload reduction.",
+        "measure": "Perceived workload / preparation efficiency from user study feedback and comparative interviews",
+        "study_size": "n=12",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.77,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The system was designed to support reflective evaluation and systematic reasoning during oral case presentation preparation. Evidence from the formative study and experiment indicates that users valued the structured SOAP workflow, comparison with reference answers, and feedback for self-correction, but no quantitative learning gain was reported.",
+        "measure": "Reflection, self-assessment, and reasoning quality in OCP preparation",
+        "study_size": "n=12",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "yes",
+  "implementation_fidelity": "medium",
+  "study_country": "China",
+  "study_region": "East Asia & Pacific",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

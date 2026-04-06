@@ -1,0 +1,33 @@
+{
+  "title": "How Close is ChatGPT to Human Experts? Comparison Corpus, Evaluation, and Detection",
+  "doi": null,
+  "year": 2023,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2301.07597v1",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper investigates how ChatGPT-generated answers compare with human-written answers across a broad set of question-answering domains, and how reliably machine-generated text can be detected. The authors aim to understand both the linguistic and practical differences between ChatGPT and human respondents, as well as the risks posed by AI-generated content in online environments. The work is not an education study and does not examine student writing, formative feedback, or secondary school instructional use cases.\n\nThe main approach is the creation of the HC3 (Human ChatGPT Comparison Corpus), a large bilingual dataset containing nearly 40,000 questions with corresponding human and ChatGPT answers in English and Chinese across domains such as open-domain QA, finance, medicine, law, psychology, and computer science. Using this corpus, the authors conduct several types of empirical analysis: human evaluation experiments (including Turing-style identification tasks and helpfulness judgments), quantitative linguistic analyses (e.g., vocabulary, part-of-speech, dependency, sentiment, and perplexity comparisons), and machine-learning experiments to detect whether an answer was written by ChatGPT or a human.\n\nThe population studied consists of volunteer evaluators rather than students or teachers. Specifically, the human evaluation involved 17 volunteers divided into 8 \"experts\" familiar with ChatGPT and 9 \"amateurs\" unfamiliar with it. The broader corpus itself was assembled from public datasets and wiki-derived question-answer pairs rather than from educational participants in classrooms or schools. The implementation context is primarily online/computational: questions were manually entered into the ChatGPT web interface, and the resulting outputs were compared with existing human-authored answers.\n\nThe main conclusions are that ChatGPT responses are typically more organized, longer, more neutral, and more formal than human answers, but may also fabricate facts, especially in specialized domains. Human evaluators familiar with ChatGPT could often distinguish its outputs from human responses, while amateurs performed much worse. ChatGPT answers were often perceived as more helpful in some domains but less helpful in medicine. Detection experiments showed that RoBERTa-based classifiers outperformed GLTR-style methods and that sentence-level detection is harder than full-text detection. Overall, the paper contributes a comparison corpus and empirical characterization of ChatGPT versus humans, but it provides no direct evidence relevant to high-school writing feedback interventions.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This paper is not an education intervention study. It is an arXiv corpus, evaluation, and detection paper comparing ChatGPT and human answers across general domains, with no secondary-school writing-feedback experiment, no educational comparator condition, and no student learning or writing outcomes.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "There is no direct K-12 educational impact evidence reported. The paper does not test ChatGPT-generated formative feedback on student-authored drafts or any eligible secondary-school writing outcome, so impact for the requested use case is absent.",
+  "interventions": [],
+  "outcome_assignments": [],
+  "limitations": [
+    "small_sample",
+    "no_control_group",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "China",
+  "study_region": "East Asia & Pacific",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

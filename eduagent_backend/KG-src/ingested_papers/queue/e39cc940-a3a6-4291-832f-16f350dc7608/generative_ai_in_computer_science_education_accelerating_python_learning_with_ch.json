@@ -1,0 +1,71 @@
+{
+  "title": "Generative AI in Computer Science Education: Accelerating Python Learning with ChatGPT",
+  "doi": null,
+  "year": null,
+  "venue": null,
+  "url": "http://arxiv.org/abs/2505.20329v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Adult (non-academic)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper examines whether integrating ChatGPT into introductory Python instruction can help adult learners rapidly acquire foundational programming skills. The central problem is the difficulty many novice programmers face with syntax, debugging, abstraction, and timely feedback, especially in compressed online training formats. The authors frame generative AI as a possible way to provide immediate, personalized support that reduces barriers to learning programming.\n\nThe intervention was a self-paced, asynchronous Python module embedded in a sixteen-week professional training course on applied generative AI. Learners were instructed to use ChatGPT to generate code, interpret code behavior, and debug errors while completing coding assignments and assessments. The module was delivered online to 86 adult learners with mixed prior programming backgrounds, including people with Python experience, experience in other languages only, and no prior programming experience.\n\nUsing repeated assessments across the course and a mixed-design ANOVA, the study found that learners without prior programming experience initially scored lower than peers, but these gaps largely disappeared after the Python module. The authors conclude that ChatGPT-supported instruction can accelerate foundational programming learning, close initial skill gaps, and help adult learners reach proficiency quickly. They also caution that AI assistance should be balanced with opportunities for independent problem-solving, and note that human mentorship and instructional scaffolding remain important.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed empirical study with a clear repeated-measures quantitative design, but it is not randomized and lacks a comparison group independent of prior experience. The evidence is therefore suggestive rather than high-credibility causal evidence.",
+  "impact_tier": "green",
+  "impact_tier_rationale": "The reported learning gains appear practically meaningful for a priority population of adult reskilling learners, with early performance gaps closing and post-intervention group differences becoming negligible (\u03b7\u00b2<.05). The overall impact is modest-to-moderate and concentrated in foundational programming proficiency rather than broad academic outcomes.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.98,
+      "role": "primary",
+      "use_case": "ChatGPT-supported self-paced introductory Python learning, where learners used the chatbot to generate code snippets, interpret code, and debug syntax/logic errors during a compressed programming module"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.92,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The study found that learners improved in foundational Python programming proficiency after the ChatGPT-supported instructional module. Early in the course, novices without prior programming experience scored lower than peers (e.g., group effects on conditional statements F(2,114)=4.05, p=.020; looping F(2,105)=4.90, p=.009), but these gaps were no longer statistically significant after the module, with later group effects generally small (\u03b7\u00b2 < .05).",
+        "measure": "Timed code-based assessments and multiple-choice programming quizzes across 30 course assessments, including conditional statements, loops, functions, and Python fundamentals",
+        "study_size": "n=86",
+        "effect_size": "\u03b7\u00b2=.10\u2013.17 early; \u03b7\u00b2<.05 after intervention",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.72,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper reports that ChatGPT helped learners develop metacognitive and problem-solving skills such as troubleshooting, solution synthesis, and adaptive debugging. This conclusion is supported qualitatively by mentor observations that learners increasingly used ChatGPT for just-in-time support and independent error resolution, though no direct standardized durable-skills measure was reported.",
+        "measure": "Instructor/mentor qualitative observations of learner troubleshooting and code interpretation behaviors",
+        "study_size": "n=86",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "16",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

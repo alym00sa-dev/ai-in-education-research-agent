@@ -1,0 +1,116 @@
+{
+  "title": "Exploring the Usage of Generative AI for Group Project-Based Offline Art Courses in Elementary Schools",
+  "doi": null,
+  "year": 2025,
+  "venue": "CSCW '25 (Proceedings of the 2025 ACM SIGCHI Conference on Computer-Supported Cooperative Work & Social Computing)",
+  "url": "http://arxiv.org/abs/2506.16874v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Elementary (PreK-5th)",
+    "K-12 (unspecified grade)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper examines how generative AI can support elementary school students in group-based, project-based art courses in offline classrooms. The authors focus on a gap in prior work: although GenAI is increasingly studied for education, little is known about how younger K-12 students use it in authentic classroom settings, especially for collaborative art projects and teacher-mediated activities rather than student-facing writing feedback.\n\nThe study was conducted as a four-phase field study in China with two experienced K-6 art teachers and 132 students across multiple sessions. In Phases 1 and 2, students used DALL-E and GPT through a standard chat interface to support information seeking and ideation for handcrafted dragon-themed projects. The researchers then designed AskArt, an interface that integrated GPT and DALL-E with features such as project-specific introductions, audio-to-text input, suggested follow-ups, and a select-and-generate workflow. Phases 3 and 4 evaluated AskArt in additional classroom sessions, including a between-groups comparison in Grade 6 classes with and without AskArt.\n\nThe paper finds that GenAI can help elementary students generate ideas, obtain background information, and move from text-based exploration to visual inspiration, while teachers perceived increased engagement. However, students struggled with prompt formulation and typing, and the audio input feature did not work well in practice. AskArt improved students\u2019 understanding of appropriate tool use and increased overall satisfaction in the comparison study, but did not significantly change perceived challenge, collaboration, or creativity. The paper concludes that GenAI can be useful in offline elementary art classrooms when carefully tailored to children\u2019s interaction needs and classroom workflows, but concerns remain about misuse, interface suitability, and the limitations of group-based deployment.",
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_long_term_followup",
+    "non_representative_population"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "classroom",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "medium",
+  "study_country": "China",
+  "study_region": "East Asia & Pacific",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "tutoring_instruction"
+      ],
+      "description": "OpenAI GPT-based large language model chatbot used for conversational text generation, question answering, and guidance.",
+      "use_case": "Used in the study as GPT-4 Turbo (later GPT-4o in AskArt) to support elementary students\u2019 information seeking and project-implementation guidance in group-based offline art courses.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In Phase 2, students reported that GPT helped provide background information and personalized guidance for their art project, and it supported idea implementation. Six respondents rated the generated content as helpful for coming up with more ideas (M=5.67, SD=0.82 on a 7-point scale).",
+          "measure": "Student rating of whether generated content helped the group come up with more ideas; interview and observation evidence on background information and implementation guidance",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=6 respondents (Phase 2 questionnaire); class A n=24 students overall"
+        },
+        {
+          "outcome_category": "Academic \u0014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Students used GPT sequentially for information seeking before switching to DALL-E for visual inspiration. However, many students struggled with typing and query formulation, and some GPT outputs were perceived as incorrect or unhelpful. In Phase 2, 9 queries were perceived as incorrect and 11 as correct but unhelpful.",
+          "measure": "Interaction logs, screen recordings, and coded student responses to GPT outputs",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=28 total queries in Phase 2"
+        },
+        {
+          "outcome_category": "Systemic / Institutional Impact",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Teachers reported that GenAI increased students\u2019 engagement in the classroom, but they also expressed concerns about misuse and interface suitability. This was based on interviews across the four phases.",
+          "measure": "Teacher interview themes on classroom impact",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "2 teachers"
+        }
+      ]
+    },
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "content_generation",
+        "tutoring_instruction"
+      ],
+      "description": "Generic generative AI tools, including text-to-image and conversational LLM systems used for supporting learning tasks.",
+      "use_case": "The paper studies generative AI in general within elementary school art project-based learning, including DALL-E and GPT-based conversational assistance, and then the AskArt interface combining them.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Across phases, GenAI helped elementary students generate project ideas, obtain background knowledge, and receive guidance for implementing their art projects. In Phase 4, students using AskArt reported significantly higher overall satisfaction than the baseline group (M=6.64 vs. 5.46; t=3.62, p=0.0005).",
+          "measure": "Overall satisfaction in class; qualitative reports on ideation and implementation support",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=108 valid responses in Phase 4 overall; n=43 AskArt, n=54 baseline"
+        },
+        {
+          "outcome_category": "Academic \u0014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "GenAI use did not significantly change perceived challenge, team collaboration, or creativity expression in Phase 4. The experimental group with AskArt was not significantly different from the baseline on challenge (t=0.57, p=0.57), team engagement (t=0.70, p=0.48), or creativity expression (t=-0.37, p=0.72).",
+          "measure": "Perceived challenge, team collaboration, and creativity expression ratings",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=108 valid responses in Phase 4 overall; n=43 AskArt, n=54 baseline"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a qualitative/mixed-methods field study in authentic classrooms rather than a randomized or strongly controlled trial. It provides useful contextual evidence, but the evidence base is limited by small teacher samples in earlier phases and nonrandomized classroom comparisons.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The clearest quantitative result is a statistically significant satisfaction increase in Phase 4, but no effect sizes were reported and several other outcomes were null. Overall impact appears modest and context-specific rather than broadly demonstrated.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

@@ -1,0 +1,148 @@
+{
+  "title": "AI Conversational Tutors in Foreign Language Learning: A Mixed-Methods Evaluation Study",
+  "doi": null,
+  "year": 2025,
+  "venue": "Proceedings 14th Panhellenic Conference iCT in Education, Rhodes, October 2025",
+  "url": "http://arxiv.org/abs/2508.05156v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Adult (non-academic)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper examines the design and quality of AI conversational tutors for foreign language learning, with a focus on how well they support conversational practice, contextual feedback, and learner interaction. The author frames the work around three questions: identifying common design patterns in AI tutors, comparing specialized language-learning tutors with general-purpose voice-enabled AI models, and proposing a framework to evaluate tutor quality from chat transcripts.\n\nThe study uses a mixed-methods approach. In the first phase, the author manually explored four specialized language-learning applications (talkio, talkpal, univerbal, and langua) by creating a Spanish learner profile and engaging in short free-chat sessions. In the second phase, the author compared two general-purpose conversational AI systems, ChatGPT and Gemini, used in voice mode for Spanish conversation practice. In the final phase, transcript-based quality evaluation was performed using a 10-dimensional rubric and five LLM-based evaluators, scoring six tutors in total.\n\nThe context is foreign language learning rather than K\u201312 schooling. The paper emphasizes learner-facing conversational use, including speaking practice, correction, turn-taking, and feedback. Across the systems, the study finds that many tools provide supportive and interactive experiences, but they vary substantially in handling breakdowns, contextual correction, and transcript completeness. The author also identifies privacy concerns, noting that voice data are stored without clear consent or warning in some tools. Overall, the paper concludes that conversation representation, contextual error handling, and feedback integrated into the flow of interaction are key design requirements, and that even general-purpose tools can sometimes provide strong conversational quality, though specialized tools may offer better targeted feedback.",
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Greece",
+  "study_region": "Europe",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "language_speech",
+        "feedback_evaluation"
+      ],
+      "description": "OpenAI's GPT-based conversational AI system used for text and voice chat, generation, and feedback.",
+      "use_case": "Used as a general-purpose voice conversational tutor for Spanish language practice (o4-mini) and as one of the artificial expert evaluators (GPT-4-turbo) for transcript-based quality scoring.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u00198 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "In the voice tutoring comparison, ChatGPT followed the instruction to provide feedback on learner mistakes and produced longer, more verbose exchanges than Gemini. The paper reports that the total voice interaction time was 10.45 minutes, average tutor turns were 130 words, and average learner turns were 61 words, but no learning outcome or effect estimate was reported.",
+          "measure": "Voice interaction behavior; transcript completeness; feedback presence",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Academic \u00198 Other",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "The paper reports that the transcript shown after voice interaction was incomplete for ChatGPT, with parts of the conversation missing from the script. The author had to use speech-to-text to obtain a full record for later analysis, indicating a limitation in record keeping rather than a measured learning effect.",
+          "measure": "Completeness of transcript after voice interaction",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Academic \u00198 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In transcript-based quality evaluation by five LLM judges, ChatGPT scored highly on feedback, vocabulary, and supportive style relative to the other tools. No numeric score, confidence interval, or learner outcome effect was reported in the paper text provided.",
+          "measure": "Transcript quality ratings on ten-dimensional framework",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    },
+    {
+      "name": "Gemini",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "language_speech",
+        "feedback_evaluation"
+      ],
+      "description": "Google's Gemini family of conversational AI models used for text and voice chat and feedback.",
+      "use_case": "Used as a general-purpose voice conversational tutor for Spanish language practice (Gemini 2.5 flash) and as one of the artificial expert evaluators (Gemini 2.5 Pro Preview 05-06) for transcript-based quality scoring.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u00198 Other",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "In the voice tutoring comparison, Gemini did not follow the instruction to provide feedback on learner mistakes, although the interaction itself was described as fluid. The total voice interaction time was 6.47 minutes and average tutor turns were 32 words, but no learning outcome or effect estimate was reported.",
+          "measure": "Voice interaction behavior; feedback presence",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Academic \u00198 Other",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "The paper reports that the transcript shown after voice interaction was incomplete for Gemini, with missing parts of the conversation in the script. A separate speech-to-text service was required to recover a full record for analysis.",
+          "measure": "Completeness of transcript after voice interaction",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Academic \u00198 Other",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "In the transcript-based quality evaluation, Gemini lacked clarity and timely feedback relative to the better-performing tutors. The paper does not report a numeric score or effect size for this specific model beyond the qualitative ranking.",
+          "measure": "Transcript quality ratings on ten-dimensional framework",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    },
+    {
+      "name": "DeepSeek",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation"
+      ],
+      "description": "DeepSeek's large language model family used here as an artificial expert evaluator.",
+      "use_case": "Used only as one of five LLM-based expert raters to score anonymized tutor transcripts on a ten-dimensional quality framework.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u00198 Other",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "DeepSeek-V3 was used as an automated evaluator of tutor transcripts. The paper reports inter-rater reliability across the six tutors for the ten dimensions, with overall alpha values ranging from approximately 0.754 to 0.911, but does not isolate DeepSeek-specific outcomes or effects.",
+          "measure": "Automated transcript evaluation scores",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a mixed-methods empirical study with transcript-based evaluation and expert judgment, not an RCT or meta-analysis. It provides useful descriptive evidence but no randomized causal estimate.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports qualitative strengths and limitations of several tutors, but no effect sizes for learner outcomes and no clear evidence of meaningful academic impact. The findings are informative for design and privacy concerns, yet impact on learning is unclear.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

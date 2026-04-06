@@ -1,0 +1,73 @@
+{
+  "title": "CourseAssist: Pedagogically Appropriate AI Tutor for Computer Science Education",
+  "doi": null,
+  "year": 2024,
+  "venue": "SIGCSE '24",
+  "url": "http://arxiv.org/abs/2407.10246v3",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses the challenge of using large language models (LLMs) as tutoring tools in computer science education without encouraging overreliance, inaccurate code generation, or responses that conflict with course learning goals. The authors argue that generic LLMs such as GPT-4 are not sufficiently pedagogically aligned for student support in programming courses, and that educationally appropriate behavior should be a core evaluation criterion for AI tutors.\n\nTo address this, they introduce CourseAssist, an LLM-based tutoring system built on GPT-4 with retrieval-augmented generation, user-intent classification, and question decomposition. These mechanisms are designed to connect answers to specific course materials and to adapt responses to different kinds of student questions, with the goal of giving hints and guidance rather than direct solutions when appropriate. The system is presented as a harm-reduction approach rather than a ban on student use of LLMs.\n\nThe paper evaluates CourseAssist on 50 question-answer pairs drawn from Piazza posts in a programming languages course at a large public university. A course instructor rated generated responses on usefulness, accuracy, and pedagogical appropriateness, and CourseAssist outperformed baseline GPT-4 on all three criteria. The system was also deployed in six computer science courses at the institution, and interviews with 20 student users suggested that it improved access to course-specific help and shortened the feedback loop on programming assignments.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a small-scale poster/report with a human evaluation and interviews, not a controlled student learning study. The methodology is useful but mostly qualitative/benchmark-based rather than a rigorous causal design.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The reported gains are modest-to-clear for response quality and tutoring utility, but they are not direct learning gains and lack effect sizes on student achievement. Impact on real courses is promising, yet the evidence is early-stage and limited to a small evaluation set.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "CourseAssist, a GPT-4-based AI tutor for computer science education that uses retrieval-augmented generation, user intent classification, and question decomposition to provide course-specific hints and answers aligned with learning objectives."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.93,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "CourseAssist outperformed baseline GPT-4 on a 50-question human evaluation from a programming languages course. Average instructor ratings were higher for usefulness (0.91 vs 0.83), accuracy (0.92 vs 0.71), and pedagogical appropriateness (1.00 vs 0.82), indicating stronger CS tutoring quality overall.",
+        "measure": "Instructor human ratings of usefulness, accuracy, and pedagogical appropriateness on 50 QA pairs",
+        "study_size": "n=50 QA pairs",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.62,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Interviews with 20 student users suggested CourseAssist shortened the feedback loop on programming assignments and increased access to course-specific tutoring help. The paper reports deployment in 6 CS courses reaching over 500 students, but does not provide a quantitative effect size for efficiency.",
+        "measure": "Student interviews and deployment reach/usage context",
+        "study_size": "n=20 interviews; deployment reached >500 students",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_long_term_followup",
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

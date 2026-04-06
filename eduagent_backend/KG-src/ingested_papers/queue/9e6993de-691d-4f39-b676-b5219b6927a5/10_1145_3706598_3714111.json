@@ -1,0 +1,97 @@
+{
+  "title": "LitLinker: Supporting the Ideation of Interdisciplinary Contexts with Large Language Models for Teaching Literature in Elementary Schools",
+  "doi": "10.1145/3706598.3714111",
+  "year": 2025,
+  "venue": "CHI Conference on Human Factors in Computing Systems (CHI '25)",
+  "url": "http://arxiv.org/abs/2502.16097v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Elementary (PreK-5th)",
+    "Graduate / Doctoral"
+  ],
+  "user_types": [
+    "Educator",
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses the challenge elementary-school literature teachers face when trying to design interdisciplinary teaching contexts that connect literature lessons with other subjects such as science, art, mathematics, and music. The authors argue that although interdisciplinary literature teaching can improve learning and motivation, teachers often lack the time, subject-matter breadth, and support needed to search across disciplines and meaningfully link those materials to reading texts. The paper focuses on this planning and ideation problem rather than on student literacy outcomes.\n\nTo address this need, the authors developed LitLinker, a web-based interactive system powered by a large language model (GLM-4). LitLinker recommends interdisciplinary topics connected to selected reading materials, analyzes how literary elements relate to those topics, supports teacher exploration through context and text views, and generates structured lesson plans and suggested classroom activities. The system was developed through an iterative user-centered design process involving Chinese language teachers, with design principles emphasizing step-by-step support, detailed contextual analysis, lesson-plan generation aligned with teaching practice, and grounding in curated databases of contexts and reading materials.\n\nThe empirical work took place in China and centered on elementary-school Chinese language/literature instruction. The design process involved 17 Chinese language teachers overall, including 13 teachers in the iterative design and prototype evaluation phases. The main evaluation included two studies: a within-subjects quantitative study with 16 novices of Chinese literature teaching (mainly graduate students and pre-service teachers) comparing LitLinker against a baseline LLM web app, and a qualitative study with elementary Chinese language teachers of varying experience. Participants used the system for lesson-planning and interdisciplinary-context ideation tasks rather than for direct classroom reading instruction.\n\nThe paper concludes that LitLinker improved the depth of subject integration in lesson-plan outcomes compared with an LLM chatbot baseline, while also reducing perceived workload and increasing satisfaction and efficiency. Expert interviews further suggested that teachers found the system useful for generating and refining interdisciplinary course ideas. Overall, the paper presents evidence that an LLM-based creativity-support tool can assist teachers in planning interdisciplinary literature instruction, while also noting concerns about the quality and reliability of purely LLM-generated content.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a comparative empirical study with a within-subjects design, but the excerpt provides incomplete quantitative reporting and focuses on teacher users and task performance rather than a stronger causal K-12 learning design. It is stronger than purely qualitative work but falls short of well-reported RCT/QED standards in the provided text.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports positive effects on teacher ideation quality and workload, but effect sizes and exact statistics are not available in the excerpt, making magnitude unclear. The impact is also on teacher planning rather than direct student literacy outcomes.",
+  "interventions": [
+    {
+      "intervention": "Other",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "LLM-powered teacher ideation system (LitLinker) that helps elementary Chinese literature teachers generate and refine interdisciplinary teaching contexts, analyze links between texts and contexts, and draft lesson plans and classroom activities."
+    },
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.71,
+      "role": "secondary",
+      "use_case": "General-purpose LLM chatbot/web app using the same underlying model as a baseline comparator for teachers' interdisciplinary lesson-planning and literature-context ideation tasks."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.94,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "In a within-subjects study of novices of Chinese literature teaching (N=16), LitLinker significantly reduced perceived task workload compared with an LLM chatbot baseline during interdisciplinary lesson-planning/ideation tasks. The paper reports lower workload and higher efficiency/satisfaction for LitLinker, but the excerpt does not include exact test statistics, effect sizes, confidence intervals, or subscale means.",
+        "measure": "NASA-TLX-style workload items; perceived efficiency and satisfaction during interdisciplinary lesson-planning task",
+        "study_size": "n=16",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.72,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "LitLinker produced stronger interdisciplinary lesson-plan outcomes than the LLM chatbot baseline in a within-subjects evaluation with N=16. The quantitative results reported in the paper indicate deeper integration of different subjects in the outcome lesson plan, based on expert ratings of content alignment, alignment with educational objectives, and depth of integration, though exact statistics are not provided in the excerpt.",
+        "measure": "Expert-rated lesson-plan quality for interdisciplinary literature teaching (content alignment, educational objective alignment, depth of integration)",
+        "study_size": "n=16",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.55,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The study reports that LitLinker supported deeper integration across subjects and was perceived as more satisfying for exploratory ideation work, suggesting benefits for teacher creative thinking and interdisciplinary planning processes. However, this is an indirect measure of durable skills related to ideation and planning rather than a direct student skill outcome, and no effect sizes are reported in the provided text.",
+        "measure": "Creativity-support perceptions (e.g., exploration, expressiveness, immersion) and qualitative reports about ideation support",
+        "study_size": "n=16 quantitative; additional expert interviews n=9 as reported in abstract",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "lab",
+  "teacher_training": "yes",
+  "implementation_fidelity": "not_reported",
+  "study_country": "China",
+  "study_region": "East Asia & Pacific",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

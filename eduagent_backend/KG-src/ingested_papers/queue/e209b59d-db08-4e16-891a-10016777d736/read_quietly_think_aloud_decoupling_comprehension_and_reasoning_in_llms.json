@@ -1,0 +1,76 @@
+{
+  "title": "Read Quietly, Think Aloud: Decoupling Comprehension and Reasoning in LLMs",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv preprint",
+  "url": "http://arxiv.org/abs/2507.03327v1",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper is not about K-12 reading or literacy instruction. Instead, it investigates a machine learning problem: how to improve large language models\u2019 reasoning by separating an initial comprehension stage from later response generation. The authors argue that current LLM methods focus heavily on explicit reasoning traces, but underemphasize an earlier \u2018silent reading\u2019 phase in which the model internalizes the input context before generating an answer.\n\nThe paper proposes two techniques. READQ applies loss masking to the first K tokens of a sequence during training so the model can process context without immediate next-token prediction pressure. READQBUDDY adds an auxiliary model that reads the full input in parallel and passes contextual embeddings to the main generation model, aiming to sustain comprehension throughout generation.\n\nThe experiments are conducted on Llama 3.1 and Llama 3.2 models and evaluated on standard NLP benchmarks such as ARC Challenge, HellaSwag, OpenBookQA, PubMedQA, WinoGrande, MedQA, MedMCQA, GPQA, and MMLU. The authors report consistent accuracy gains over baseline models in these benchmark settings, including some multi-point improvements, but the paper does not involve human learners, classrooms, teachers, or literacy outcomes. As a result, it provides no direct comparative evidence relevant to generative AI tools for K-12 reading or literacy instruction.",
+  "limitations": [
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "identified_tools": [
+    {
+      "name": "LLaMA",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "other"
+      ],
+      "description": "A family of open-weight large language models from Meta used for text understanding and generation.",
+      "use_case": "The paper proposes and evaluates READQ and READQBUDDY on LLaMA 3.2 3B Instruct/Base and LLaMA 3.1 70B models to test whether a silent-reading phase improves benchmark accuracy.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0000 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "On benchmark accuracy, READQ improved LLaMA 3.2 3B Instruct from 37.2 to 45.82 on ARC Challenge, 57.56 to 72.64 on HellaSwag, 34.0 to 40.8 on OpenBookQA, 65.0 to 75.4 on PubMedQA, and 62.35 to 69.22 on Winogrande. READQBUDDY further improved ARC Challenge to 49.06 and slightly changed other tasks (e.g., 73.03 on HellaSwag, 40.8 on OpenBookQA, 75.6 on PubMedQA, 68.82 on Winogrande).",
+          "measure": "Accuracy on ARC Challenge, HellaSwag, OpenBookQA, PubMedQA, and Winogrande",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Academic \u0000 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In ablations on LLaMA 3.2 3B Base, adding READQ improved accuracy from 37.97 to 45.56 on ARC Challenge, 61.98 to 71.6 on HellaSwag, 35.4 to 40.0 on OpenBookQA, 67.6 to 70.8 on PubMedQA, and 64.4 to 67.4 on Winogrande. For LLaMA 3.1 3B Instruct with READQBUDDY plus a sliding window, ARC Challenge improved to 47.18 (SW16) or 47.7 (SW64), HellaSwag to 72.64 or 73.0, OpenBookQA to 40.8 or 41.0, PubMedQA to 75.4 or 75.6, and Winogrande to 70.4 or 70.32.",
+          "measure": "Accuracy in ablation comparisons on the same benchmark suite",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Academic \u0000 Scientific Reasoning",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "For the larger LLaMA 3.1 70B model on scientific-domain benchmarks, READQ improved MedQA from 66.8 to 74.7, MedMCQA from 69.1 to 69.7, PubMedQA from 79.6 to 80.0, GPQA from 37.37 to 38.38, and MMLU from 78.9 to 79.2. The largest gain reported was on MedQA, an 8-point accuracy increase.",
+          "measure": "Accuracy on MedQA, MedMCQA, PubMedQA, GPQA, and MMLU",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a technical preprint on LLaMA model architecture/training, not an education study and not an RCT/QED in K-12 learners. The reported results are benchmark accuracies on NLP tasks, with no classroom, literacy, or student outcome evidence.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "The paper reports model accuracy changes in benchmark tasks, not educational impact. It provides no evidence of K-12 reading or literacy effects, and no effect sizes, sample sizes, or confidence intervals are reported.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

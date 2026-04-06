@@ -1,0 +1,89 @@
+{
+  "title": "Towards Goal-oriented Intelligent Tutoring Systems in Online Education",
+  "doi": "10.1145/3760401",
+  "year": 2025,
+  "venue": "ACM Transactions on Information Systems",
+  "url": "http://arxiv.org/abs/2312.10053v2",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses the problem of how intelligent tutoring systems (ITSs) can do more than react to student questions and instead proactively plan instruction toward a specific learning goal. The authors argue that many existing ITS approaches focus on immediate question answering or next-exercise recommendation, but do not adequately support goal-oriented tutoring where the system must decide when to teach, when to assess, and how to sequence interactions to help a student master a target concept efficiently.\n\nTo study this, the paper proposes Goal-oriented Intelligent Tutoring Systems (GITS) and a Planning-Assessment-Interaction (PAI) framework. PAI formulates tutoring as a reinforcement learning problem and combines a cognitive graph representation of students, exercises, concepts, and prerequisite relations with a cognitive diagnosis model to simulate student responses and mastery. The framework uses these components to select between tutoring and assessment actions and to optimize the path toward concept mastery with fewer turns and less student impatience.\n\nThe empirical evaluation is conducted offline using three benchmark datasets derived from MOOCCubeX in Computer Science, Math, and Psychology, with simulated student interaction rather than live learners. The paper compares PAI against heuristic, supervised, and RL baselines, reports better success rates and efficiency overall, and includes ablation and robustness analyses for different concept difficulties, patience thresholds, and learning rates. The main conclusion is that proactive, goal-oriented tutoring with cognitive structure and assessment-based planning can improve ITS performance in online education settings, especially when students and goals vary in difficulty.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed systems paper with offline benchmark evaluation and ablation studies, but not a randomized or quasi-experimental field study with real students. The evidence is therefore methodologically informative but limited by simulation-based evaluation and use of an injected user simulator rather than direct learning outcomes.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The reported gains are modest and largely confined to simulated online tutoring environments, with no demonstrated real-world classroom impact. While the framework is promising, the evidence does not yet show medium or large effects on actual learner achievement or institutional outcomes.",
+  "interventions": [
+    {
+      "intervention": "Intelligent Tutoring System (ITS)",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "goal-oriented intelligent tutoring for online education that alternates between tutoring exercises and concept assessment to help students master a target concept with fewer interactions"
+    },
+    {
+      "intervention": "Adaptive Learning Platform",
+      "confidence": 0.85,
+      "role": "secondary",
+      "use_case": "reinforcement-learning-based adaptive sequencing of exercises and assessments using student response history, prerequisite concept structure, and cognitive diagnosis to personalize learning paths"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The proposed PAI framework improved goal completion for target-concept mastery across three subject datasets (Computer Science, Math, Psychology) relative to baselines. Reported success rates were 0.375 vs 0.314 for PDDDQN, 0.534 vs 0.488, and 0.303 vs 0.281, respectively, while also reducing average turns in two of three datasets and improving patience loss in all three.",
+        "measure": "Success Rate (goal mastery by turn T), Average Turns, Patience Loss",
+        "study_size": "n=84,022 interactions (Computer Science), n=53,675 (Math), n=430,759 (Psychology); users n=1,966/2,701/4,710",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Intelligent Tutoring System (ITS)"
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "PAI generally reduced student impatience relative to simpler baselines by choosing more appropriate tutoring/assessment timing and avoiding excessive failed assessments. In Table 3, impatience loss was lower for PAI than KNN and Greedy on all three datasets, and lower than PDDDQN on Math and Psychology; the paper interprets this as preserving learning interest and reducing quitting risk.",
+        "measure": "Patience Loss / cumulative impatience during interaction",
+        "study_size": "n=84,022 interactions; n=53,675; n=430,759",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Intelligent Tutoring System (ITS)"
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.9,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The system was designed to achieve target-concept mastery in fewer interaction turns, and the reported results show modest efficiency gains over baselines. Average turns were 16.223 vs 16.443 for PDDDQN in Computer Science and 14.557 vs 14.083 in Math (worse), with 16.903 vs 16.941 in Psychology; the clearest advantage is in the overall planning objective and in some datasets rather than a uniform reduction everywhere.",
+        "measure": "Average Turns to mastery",
+        "study_size": "n=84,022 interactions; n=53,675; n=430,759",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Intelligent Tutoring System (ITS)"
+    }
+  ],
+  "limitations": [
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

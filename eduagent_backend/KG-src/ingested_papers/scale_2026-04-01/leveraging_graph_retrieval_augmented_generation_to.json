@@ -1,0 +1,213 @@
+{
+  "title": "Leveraging Graph Retrieval-Augmented Generation to Support Learners\u2019 Understanding of Knowledge Concepts in MOOCs",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "https://arxiv.org/abs/2505.10074",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Qualitative",
+  "extended_summary": "This paper addresses the challenge that learners in Massive Open Online Courses (MOOCs) often lack direct instructor interaction and may struggle to understand new knowledge concepts. While learners increasingly use large language models (LLMs) for support, the authors note that standard LLMs can hallucinate and that existing retrieval-augmented generation (RAG) systems in education are limited by unstructured course materials and by requiring learners to formulate their own questions without guidance.\n\nTo address this, the authors propose a Graph RAG pipeline implemented in the MOOC platform CourseMapper. The approach combines Educational Knowledge Graphs (EduKGs), which structure course concepts and related Wikipedia resources, with Personal Knowledge Graphs (PKGs), which model each learner\u2019s \u201cdid not understand\u201d concepts. The system has two main components: a PKG-based question generation method that recommends personalized questions about concepts a learner does not understand, and an EduKG-based question answering method that retrieves graph-structured evidence and generates cited answers. The pipeline also includes graph-based reranking of generated questions and citation/highlighting of answer sources.\n\nThe evaluation was conducted with three expert instructors\u2014a professor and two teaching assistants\u2014across three MOOCs in CourseMapper: Learning Analytics, Human-Computer Interaction, and Web Technologies. The user scenario centers on university learners in MOOCs, indicating an undergraduate context, while the actual evaluators were educators rather than students. Instructors reviewed the linguistic quality and relevance of generated questions and the perceived accuracy of answers.\n\nThe main conclusion is that the PKG-based question generation component showed strong promise for guiding learners toward relevant, personalized questions in context. Instructors rated the generated questions highly on fluency, clarity, conciseness, and relevance. However, the EduKG-based question answering component was less successful, with only 45% weighted average perceived accuracy across evaluated responses. The authors conclude that Graph RAG has potential to support personalized concept understanding in MOOCs, but that the answer generation component requires further improvement, including richer knowledge sources and better reasoning over retrieved evidence.",
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_control_group",
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Germany",
+  "study_region": "Europe",
+  "identified_tools": [
+    {
+      "name": "CourseMapper",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "personalization_adaptation",
+        "tutoring_instruction"
+      ],
+      "description": "A MOOC platform that incorporates Educational Knowledge Graphs (EduKGs), Personal Knowledge Graphs (PKGs), and a Graph RAG pipeline to recommend personalized questions and answer learner-selected questions about course concepts.",
+      "use_case": "Studied as the host platform implementing two AI-supported features: PKG-based question generation for learner-marked 'Did Not Understand' concepts, and EduKG-based question answering with citations drawn from Wikipedia-based graph retrieval.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In expert evaluation across three MOOCs, the PKG-based question generation feature in CourseMapper received high ratings on linguistic quality and relevance. Weighted average scores on a 1\u20133 scale were Fluency=2.981, Clarity=2.835, Conciseness=2.973, Relevance to slide=2.853, and Relevance to DNU concept=2.668, based on evaluations of 100 question-answer pairs tied to 20 DNU concepts by 3 instructors.",
+          "measure": "Expert ratings of generated-question linguistic quality and relevance on 1\u20133 scales (Fluency, Clarity, Conciseness, Relevance to slide, Relevance to DNU concept)",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "3 instructors; 100 question-answer pairs; 20 DNU concepts"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "The EduKG-based question answering feature achieved 45.00% perceived accuracy overall in instructor review, with 45 correct answers out of 100. Accuracy varied by MOOC: Learning Analytics 56.67% (17/30), Human-Computer Interaction 45.00% (18/40), and Web Technologies 33.33% (10/30), with instructors noting many answers were too abstract or not sufficiently disambiguated.",
+          "measure": "Instructor-judged accuracy of responses (correct/incorrect)",
+          "effect_size": "45.00% accuracy overall (45/100)",
+          "confidence_interval": "not_reported",
+          "sample_size": "3 instructors; 100 answers reviewed"
+        }
+      ]
+    },
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "tutoring_instruction"
+      ],
+      "description": "OpenAI GPT-family large language models used for generating and answering natural-language educational questions.",
+      "use_case": "A GPT-3.5-turbo model was used inside the Graph RAG pipeline for zero-shot PKG-based question generation and extractive question answering over graph-retrieved Wikipedia contexts.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "When GPT-3.5-turbo was used for PKG-based question generation within the Graph RAG workflow, expert instructors rated the generated questions highly on linguistic quality and relevance. Weighted averages on a 1\u20133 scale were Fluency=2.981, Clarity=2.835, Conciseness=2.973, Relevance to slide=2.853, and Relevance to DNU concept=2.668 across 100 evaluated question-answer pairs.",
+          "measure": "Expert ratings of generated-question linguistic quality and relevance on 1\u20133 scales",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "3 instructors; 100 question-answer pairs"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "When GPT-3.5-turbo was used for EduKG-based extractive question answering, overall perceived answer accuracy was 45.00% (45/100) in expert review. The paper reports that answers were often judged too abstract or incorrectly matched due to retrieval/disambiguation issues, despite citation support.",
+          "measure": "Instructor-judged response accuracy (correct/incorrect)",
+          "effect_size": "45.00% accuracy overall (45/100)",
+          "confidence_interval": "not_reported",
+          "sample_size": "3 instructors; 100 answers reviewed"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "The paper reports an empirical evaluation, but it is a small expert-based human evaluation with 3 instructors rather than an RCT or quasi-experimental study with learners. Outcomes are perceptual ratings and judged accuracy, so the evidence is exploratory/mixed-methods in strength.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "Results suggest promising question-generation quality but only moderate and inconsistent question-answering accuracy, with no standardized learner outcome effect sizes reported. Overall impact is therefore positive but unclear in magnitude.",
+  "citations": [
+    {
+      "title": "Llm-assisted knowledge graph completion for curriculum and domain modelling in personalized higher education recommendations",
+      "doi": null,
+      "year": 2025,
+      "venue": "arXiv preprint",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Automatic construction of educational knowledge graphs: a word embedding-based approach",
+      "doi": null,
+      "year": 2023,
+      "venue": "Information",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Learning channels to support interaction and collaboration in coursemapper",
+      "doi": null,
+      "year": 2022,
+      "venue": "Proceedings of the 14th International Conference on Education Technology and Computers",
+      "citation_level": 2,
+      "citation_context": "CourseMapper platform used as MOOC environment"
+    },
+    {
+      "title": "Learner modeling and recommendation of learning resources using personal knowledge graphs",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 14th Learning Analytics and Knowledge Conference",
+      "citation_level": 2,
+      "citation_context": "PKGs model learners\u2019 unmet concept understanding"
+    },
+    {
+      "title": "EduChat: A large-scale language model-based chatbot system for intelligent education",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv preprint",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Qgeval: Benchmarking multi-dimensional evaluation for question generation",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv preprint",
+      "citation_level": 3,
+      "citation_context": "question generation evaluation framework adapted from this work"
+    },
+    {
+      "title": "Understanding the role of digital technologies in education: A review",
+      "doi": null,
+      "year": 2022,
+      "venue": "Sustainable Operations and Computers",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Making barriers to learning in moocs visible. a factor analytical approach",
+      "doi": null,
+      "year": 2021,
+      "venue": "Open Praxis",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "HiTA: A RAG-based educational platform that centers educators in the instructional loop",
+      "doi": null,
+      "year": 2024,
+      "venue": "International Conference on Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Teaching CS50 with AI: Leveraging generative artificial intelligence in computer science education",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 55th ACM Technical Symposium on Computer Science Education V. 1",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A comprehensive overview of large language models",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv preprint",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Graph retrieval-augmented generation: A survey",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "defines Graph RAG steps and framing"
+    },
+    {
+      "title": "Large language models for education: A survey and outlook",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv preprint",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

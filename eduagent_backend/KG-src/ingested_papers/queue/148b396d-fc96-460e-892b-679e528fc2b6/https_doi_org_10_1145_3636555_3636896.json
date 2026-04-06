@@ -1,0 +1,80 @@
+{
+  "title": "Improving Student Learning with Hybrid Human-AI Tutoring: A Three-Study Quasi-Experimental Investigation",
+  "doi": "https://doi.org/10.1145/3636555.3636896",
+  "year": 2024,
+  "venue": "The 14th Learning Analytics and Knowledge Conference (LAK \u201924)",
+  "url": "http://arxiv.org/abs/2312.11274v3",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Middle School (6th-8th)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator",
+    "School",
+    "Administrator"
+  ],
+  "study_design": "Quasi-Experimental Design (QED)",
+  "extended_summary": "This paper investigates whether hybrid human-AI tutoring can improve middle school math learning, especially for students from low-income backgrounds who may have limited access to high-dosage human tutoring. The core question is whether combining AI-based math software with human tutor support can increase students\u2019 engagement and intermediate learning outcomes more than software alone, and whether the benefits differ by students\u2019 baseline achievement.\n\nThe study reports three quasi-experimental field studies in urban U.S. middle schools, each using a different math platform (IXL, i-Ready, and MATHia) and different tutoring structures. In two sites, tutors used a round-robin approach during the school day; in the third, tutors used a prototype live dashboard to guide support. The samples included 7th graders in two schools and grades 6\u20138 students in one charter school, with the intervention delivered during regular school-day math time. Across the sites, the comparison conditions were math software alone or software plus additional adult support (math teacher and/or remote tutors).",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed quasi-experimental, multi-site field study with mixed-effects modeling, but it lacks random assignment and uses different measures across sites, leaving important internal-validity concerns. The evidence is stronger than descriptive work but does not meet RCT-level criteria.",
+  "impact_tier": "green",
+  "impact_tier_rationale": "The study reports modest-to-moderate positive effects on priority middle-school populations, including meaningful gains in engagement and intermediate math progress. Some effects are above 0.20 and several are clearly positive, but the outcomes are mostly process measures rather than external achievement tests.",
+  "interventions": [
+    {
+      "intervention": "Computer-Assisted Instruction (CAI)",
+      "confidence": 0.95,
+      "role": "primary",
+      "use_case": "Math software used for supplemental individualized practice in middle school, including IXL, i-Ready Personalized Instruction, and Carnegie Learning MATHia, with progress tracked via usage logs and adaptive lesson completion."
+    },
+    {
+      "intervention": "Intelligent Tutoring System (ITS)",
+      "confidence": 0.92,
+      "role": "primary",
+      "use_case": "Adaptive math tutoring software providing step-based practice and proficiency tracking, especially Carnegie Learning MATHia/Cognitive Tutor and comparable intelligent/diagnostic learning systems."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 0.98,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Across three quasi-experimental site studies (n=125, n=385, n=75), hybrid human-AI tutoring improved math learning-process outcomes relative to software-only or earlier lower-intensity tutoring conditions. Site 1 showed significant gains in IXL time spent (\u03b2=0.202, 95% CI [0.057, 0.347]) and skills proficient, Site 2 showed more i-Ready lessons passed during tutoring (\u03b2=0.244, 95% CI [0.106, 0.381]), and Site 3 showed 0.36 additional MATHia workspaces completed per hour (95% CI [0.02, 0.70]).",
+        "measure": "Math software learning-process metrics: time spent, questions answered, skills proficient, lessons passed, and MATHia workspaces completed per hour",
+        "study_size": "n=125; n=385; n=75",
+        "effect_size": "\u03b2=0.202; \u03b2=0.244; 0.36 additional workspaces/hour",
+        "confidence_interval": "[0.057, 0.347]; [0.106, 0.381]; [0.02, 0.70]",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.82,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper reports that hybrid human-AI tutoring increased student engagement with the software, consistent with improved motivation/participation. In Site 1, tutoring increased time spent and in Site 2 weekly time on task rose from 24 to 33 minutes during the tutoring window, indicating stronger sustained engagement for these low-income middle school students.",
+        "measure": "Time spent on task / engagement with math software",
+        "study_size": "n=125; n=385; n=75",
+        "effect_size": "\u03b2=0.202 on time spent; descriptive increase from 24 to 33 min/week",
+        "confidence_interval": "[0.057, 0.347] for Site 1 time-spent model; Site 2 CI not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "no_long_term_followup",
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "classroom",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

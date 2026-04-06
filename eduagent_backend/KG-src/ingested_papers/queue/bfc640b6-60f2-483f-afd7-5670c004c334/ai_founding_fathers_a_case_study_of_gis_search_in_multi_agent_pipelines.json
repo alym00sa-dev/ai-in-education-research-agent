@@ -1,0 +1,31 @@
+{
+  "title": "AI Founding Fathers: A Case Study of GIS Search in Multi-Agent Pipelines",
+  "doi": null,
+  "year": null,
+  "venue": null,
+  "url": "http://arxiv.org/abs/2511.09005v1",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper investigates whether structuring large language model (LLM) reasoning as a gradual, incremental, and sequential (GIS) search process can improve output quality. The author frames the problem as one of LLM optimization and reasoning enhancement, arguing that stronger reasoning may emerge from a carefully organized multi-agent pipeline rather than from a single linear generation process. The study focuses on recursive refinement (RR), defined as iterative self-criticism, adversarial stress-testing, and incorporation of critical feedback.\n\nTo test this idea, the paper compares two multi-agent architectures: a 4-agent simple pipeline and an 8-agent complex pipeline that includes a recursive refinement layer. Both systems simulate three US Founding Fathers (Hamilton, Jefferson, and Madison) using retrieval-augmented generation grounded in persona-specific historical corpora. Each persona responds to three contemporary political questions, yielding nine paired comparisons between the simple and complex models. Outcomes are assessed using two forms of evaluation: quantitative scoring from an LLM arbiter agent and qualitative human judgment.\n\nThe paper is not an education study and does not involve students, teachers, or school-based implementation. Instead, it is a case study in AI system design conducted in a computational/online environment. The experiment uses a very small set of test cases and evaluates generated arguments for qualities such as depth, structure, support, and rhetoric. No intervention duration, teacher training, or educational implementation details are relevant or reported.\n\nThe main conclusion is that the complex recursive-refinement architecture outperformed the simple linear pipeline in all nine comparisons. The reported average arbiter score was 88.3 for the complex model versus 71.6 for the simple model, with advantages described in analytical depth, structural nuance, strategic framing, and handling of counterarguments. The author concludes that recursive refinement is a robust architectural feature for improving LLM reasoning and proposes GIS search as a broader conceptual framework for understanding prompt engineering, in-context learning, and multi-agent optimization.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This paper is not an education study and does not evaluate any K-12 learner-facing intervention. It is an independent, small-sample technical case study of LLM multi-agent pipelines with only 9 model comparison scenarios, no student participants, and no educational outcome measures relevant to the target review question.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports improved generated argument quality for a complex recursive-refinement pipeline versus a simpler pipeline, but the impact is limited to a non-educational benchmark and uses unclear, non-validated outcome measures (LLM arbiter scores plus qualitative human judgment). As a result, impact for education\u2014especially high school writing feedback\u2014is unclear and indirect.",
+  "interventions": [],
+  "outcome_assignments": [],
+  "limitations": [
+    "small_sample",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

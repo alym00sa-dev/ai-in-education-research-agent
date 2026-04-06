@@ -1,0 +1,264 @@
+{
+  "title": "From Co-Design to Metacognitive Laziness: Evaluating Generative AI in Vocational Education",
+  "doi": null,
+  "year": null,
+  "venue": null,
+  "url": "https://arxiv.org/abs/2512.12306",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper investigates how a generative AI tool can be designed and deployed in vocational education, and whether improving lecturers\u2019 teaching workflows translates into better student learning outcomes. The authors focus on a practical problem faced by lecturers during exam preparation periods: repeated student questions, limited time for personalised feedback, and difficulty supporting diverse learners at scale. At the same time, the study examines broader questions about how generative AI may shape student learning behaviours, including dependence on AI and reduced metacognitive effort.\n\nThe intervention was a proof-of-concept AI chatbot called StudyBuddy, co-developed with lecturers using a user-centred design process. The study used three phases: pre-implementation surveys and interviews with 20 lecturers, co-design workshops to identify and prototype the most useful AI solution, and classroom deployment with students during exam preparation. Evaluation drew on lecturer pre/post surveys, post-deployment interviews, anonymised student chat logs, and exam performance comparisons between students with and without chatbot access in two modules. The system was implemented as a retrieval-augmented generative AI chatbot intended to provide 24/7 support, scaffold explanations, and generate practice questions while preserving academic integrity.\n\nThe study took place at a vocational education institution in Singapore, involving lecturers and students in vocational and technical programmes. The context is especially important because vocational education emphasises applied and hands-on learning, and the paper notes a diverse student body that includes learners with varying abilities and some with special educational needs. Lecturers were described as having strong industry backgrounds and foundational pedagogical training. The deployment occurred during exam preparation periods rather than as a semester-long redesign of instruction.\n\nThe main conclusion is that the chatbot improved teaching processes more clearly than student achievement. Lecturers reported reduced repetition, improved efficiency, stronger capacity for personalised support, and greater confidence using AI. However, exam data showed no significant overall improvement in student outcomes, although some evidence suggested greater consistency in performance and increased engagement. Chat log analysis also revealed problematic patterns: many students used the tool to request direct answers, engaged superficially, or appeared to offload thinking to the AI. The authors conclude that generative AI in education should not be judged only by efficiency gains; its effects on self-regulation, cognitive engagement, dependency, and equity are equally important, especially because stronger students appeared to use the tool more strategically than weaker students.",
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "blended",
+  "teacher_training": "yes",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Singapore",
+  "study_region": "East Asia & Pacific",
+  "identified_tools": [
+    {
+      "name": "StudyBuddy",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "feedback_evaluation"
+      ],
+      "description": "A co-developed generative AI chatbot proof-of-concept for vocational education, built on Open WebUI with vLLM and RAG, designed to provide 24/7 scaffolded study support, explanations, and practice questions.",
+      "use_case": "Lecturers deployed StudyBuddy with students during exam preparation periods to handle repeated questions, provide personalised/scaffolded explanations, and generate practice questions while reducing lecturer workload.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Post-implementation lecturer surveys indicated improved teaching support and workflow efficiency after using StudyBuddy. Reported mean changes included confidence in supporting critical thinking with digital content rising from 2.90 to 4.20 (+1.30), capacity to provide personalised feedback from 2.15 to 4.10 (+1.95), and confidence in evaluating AI responses from 2.40 to 3.80 (+1.40); lecturers also reported reduced repetition of student questions and more focus on higher-value activities.",
+          "measure": "Lecturer post-implementation survey ratings and qualitative interview reports on teaching efficiency, personalised feedback capacity, and repeated-question reduction",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=20 lecturers"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "In the Software Development Practices module, the AI-assisted StudyBuddy group (n=103) achieved a mean exam score of 30.98/45 (68.83%), nearly identical to a high-performing non-AI cohort at 30.60/45 (68.00%) and above another non-AI cohort at 23.11/45 (51.36%). The paper concludes AI exposure did not inflate scores, but may have contributed to greater consistency in performance and process-oriented benefits rather than raw score gains.",
+          "measure": "Module examination performance (overall marks out of 45) in Software Development Practices",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=103 for AI group; comparator cohort sizes not_reported"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "In the AI Ethics and Bias module, the AI tool group scored 17.04/45 (37.87%) versus 17.43/45 (38.72%) for the control group, with the lecturer report stating there was no significant improvement in overall marks. The difference was -0.39 marks (-0.85 percentage points), indicating no direct gain in quantitative test performance.",
+          "measure": "Module examination performance (overall marks out of 45) in AI Ethics and Bias",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Across both examined modules, StudyBuddy use was associated with more consistent performance metrics rather than higher scores. In Software Development Practices, the AI group's SD was 7.27 versus 8.77 for one non-AI cohort and SEM was 0.72 versus 3.80 and 3.53 for non-AI cohorts; in AI Ethics and Bias, SD decreased from 5.15 to 4.70 and Section B reliability improved from Cronbach's \u03b1=0.42 to 0.51, with SEM dropping from 2.08 to 1.86.",
+          "measure": "Assessment consistency/reliability metrics including standard deviation, Cronbach's alpha, and standard error of measurement",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=103 for SDP AI group; other group sizes not_reported"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "Chat log analysis suggested dependency and superficial engagement patterns during StudyBuddy use. Of 1,674 user messages across 269 conversations, 672 queries (40.1%) contained dependency-indicating phrases, 428 queries (25.6%) were extremely short, 244 (14.8%) were fewer than five characters, and 126 (7.5%) appeared to be verbatim extracts from assignments or exam papers, supporting concerns about metacognitive offloading and non-strategic use.",
+          "measure": "Chat log indicators of dependency, superficial engagement, and copying behavior",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "269 conversations; 3,385 total messages; 1,674 user messages"
+        },
+        {
+          "outcome_category": "Systemic / Institutional Impact",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "The paper reports equity concerns in how students benefited from StudyBuddy. Lecturers observed that stronger students used the tool strategically and verified responses, while weaker students engaged more intensively but with less critical verification; the authors describe widening performance gaps between high- and low-ability students and raise concerns that GenAI may amplify existing differences rather than reduce them.",
+          "measure": "Lecturer observations, exam subgroup interpretation, and item/discrimination analyses related to differential benefit by student ability",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical mixed-methods deployment study with pre/post lecturer surveys, chat-log analysis, and exam comparisons, but it is not a randomized trial and key comparator sample details/statistical tests are limited or absent.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "Findings show clear operational benefits for lecturers and some consistency benefits in assessment outcomes, but no significant overall improvement in student marks and some negative dependency/equity effects, making overall impact mixed and unclear.",
+  "citations": [
+    {
+      "title": "Advancing equity and inclusion in educational practices with AI \u2010powered educational decision support systems ( AI \u2010 EDSS )",
+      "doi": "10.1111/bjet.13507",
+      "year": 2024,
+      "venue": "British Journal of Educational Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Embracing the future of Artificial Intelligence in the classroom: The relevance of AI literacy, prompt engineering, and critical thinking in modern education",
+      "doi": "10.1186/s41239-024-00448-3",
+      "year": 2024,
+      "venue": "International Journal of Educational Technology in Higher Education",
+      "citation_level": 2,
+      "citation_context": "used for AI literacy and scaffolding of critical thinking"
+    },
+    {
+      "title": "The Efficacy of Artificial Intelligence-Enabled Adaptive Learning Systems From 2010 to 2022 on Learner Outcomes: A Meta-Analysis",
+      "doi": "10.1177/07356331241240459",
+      "year": 2024,
+      "venue": "Journal of Educational Computing Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Assessment of the Relationship Between Music Students\u2019 Self\u2010Efficacy, Academic Performance and Their Artificial Intelligence Readiness",
+      "doi": "10.1111/ejed.12761",
+      "year": 2024,
+      "venue": "European Journal of Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Understanding GAI risk awareness among higher vocational education students: An AI literacy perspective",
+      "doi": "10.1007/s10639-024-13312-8",
+      "year": 2025,
+      "venue": "Education and Information Technologies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Do AI chatbots improve students learning outcomes? Evidence from a meta\u2010analysis",
+      "doi": "10.1111/bjet.13334",
+      "year": 2024,
+      "venue": "British Journal of Educational Technology",
+      "citation_level": 2,
+      "citation_context": "evidence for chatbot effectiveness and reduced educator workload"
+    },
+    {
+      "title": "Artificial Intelligence in L2 learning: A meta-analysis of contextual, instructional, and social-emotional moderators",
+      "doi": "10.1016/j.system.2024.103498",
+      "year": 2024,
+      "venue": "System",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Variations in perceived self-efficacy in information literacy and their impacts on self-regulated English writing strategies",
+      "doi": "10.1177/09610006251320090",
+      "year": 2025,
+      "venue": "Journal of Librarianship and Information Science",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Impact of Adaptive Learning Technologies, Personalized Feedback, and Interactive AI Tools on Student Engagement: The Moderating Role of Digital Literacy",
+      "doi": "10.3390/su17031133",
+      "year": 2025,
+      "venue": "Sustainability",
+      "citation_level": 2,
+      "citation_context": "supports value of personalised feedback mechanisms"
+    },
+    {
+      "title": "The Effectiveness of AI on K-12 Students\u2019 Mathematics Learning: A Systematic Review and Meta-Analysis",
+      "doi": "10.1007/s10763-024-10499-7",
+      "year": 2025,
+      "venue": "International Journal of Science and Mathematics Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Enhancing Student Learning Outcomes through AI-Driven Educational Interventions: A Comprehensive Study of Classroom Behavior and Machine Learning Integration",
+      "doi": "10.70693/itphss.v2i2.216",
+      "year": 2025,
+      "venue": "International Theory and Practice in Humanities and Social Sciences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "An empirical study of the efficacy of AI chatbots for English as a foreign language learning in primary education",
+      "doi": "10.1080/10494820.2023.2282112",
+      "year": 2024,
+      "venue": "Interactive Learning Environments",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Generative AI and the future of higher education: A threat to academic integrity or reformation? Evidence from multicultural perspectives",
+      "doi": "10.1186/s41239-024-00453-6",
+      "year": 2024,
+      "venue": "International Journal of Educational Technology in Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The effects of over-reliance on AI dialogue systems on students\u2019 cognitive abilities: A systematic review",
+      "doi": "10.1186/s40561-024-00316-7",
+      "year": 2024,
+      "venue": "Smart Learning Environments",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Exploring the relationship between AI literacy, AI trust, AI dependency, and 21st century skills in preservice mathematics teachers",
+      "doi": "10.1038/s41598-025-99127-0",
+      "year": 2025,
+      "venue": "Scientific Reports",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "AI in teacher education: Unlocking new dimensions in teaching support, inclusive learning, and digital literacy",
+      "doi": "10.1111/jcal.12988",
+      "year": 2024,
+      "venue": "Journal of Computer Assisted Learning",
+      "citation_level": 2,
+      "citation_context": "supports accommodating learning styles and customised content"
+    },
+    {
+      "title": "How Do Personal Attributes Shape AI Dependency in Chinese Higher Education Context? Insights from Needs Frustration Perspective",
+      "doi": "10.1371/journal.pone.0313314",
+      "year": 2024,
+      "venue": "PLOS ONE",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A home away from home: Building an organic online support community for Chinese students using WeChat",
+      "doi": "10.47408/jldhe.vi24.853",
+      "year": 2022,
+      "venue": "Journal of Learning Development in Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Impact of assignment completion assisted by Large Language Model-based chatbot on middle school students\u2019 learning",
+      "doi": "10.1007/s10639-024-12898-3",
+      "year": 2025,
+      "venue": "Education and Information Technologies",
+      "citation_level": 2,
+      "citation_context": "evidence for chatbot adoption and enhanced learning experiences"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

@@ -1,0 +1,98 @@
+{
+  "title": "MathVC: An LLM-Simulated Multi-Persona Virtual Classroom for Collaborative Mathematical Problem Solving",
+  "doi": null,
+  "year": 2025,
+  "venue": "ACM conference proceedings",
+  "url": "https://doi.org/10.48550/arxiv.2404.06711",
+  "source_db": "openalex_search",
+  "populations": [
+    "Middle School (6th-8th)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator",
+    "Administrator",
+    "Parent"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses the challenge of supporting collaborative problem solving (CPS) in mathematics classrooms, especially when real classrooms lack enough peers, time, or teacher bandwidth to sustain productive group work. The authors argue that large language models (LLMs) can be used not just to tutor individually, but to simulate multiple peer classmates who collaboratively reason with a student in a mathematically structured discussion.\n\nTo explore this idea, the paper introduces MathVC, a multi-persona virtual classroom in which one student interacts with several LLM-simulated virtual peers. The system uses two main mechanisms: a meta-planning controller that manages the stages of CPS (shared understanding, team organization, planning, execution, and validation), and persona simulation that encodes peer knowledge and common misconceptions using task schemas and error-injected persona schemas. The system also controls next-speaker selection and generates short, student-like dialogue acts and responses.\n\nThe authors evaluated MathVC with 14 U.S. middle school students in grades 6\u20138 using math problems aligned to their grade level. Data came from interaction logs, exit surveys, and semi-structured interviews. Students generally reported that the system felt collaborative and helpful, appreciating the diverse perspectives, immediate scaffolding, and human-like fallibility of the virtual peers. The paper concludes that multi-persona LLM systems can plausibly support collaborative mathematical learning, but also notes that authenticity depends on careful conversational design and that some responses can sound too formal or adult-like for middle school settings.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a small qualitative/HCI evaluation with interviews, logs, and an exit survey rather than a controlled impact study. It provides useful design and usability evidence, but it does not establish causal learning effects or include a comparison condition.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The reported benefits are promising but modest and based on perceptions rather than measured achievement gains. There are no standardized effect sizes, so the impact on learning outcomes remains unclear.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.98,
+      "role": "primary",
+      "use_case": "LLM-simulated multi-persona virtual classroom for collaborative mathematical problem solving with middle-school students; virtual peers generate dialogue acts, brief peer-like responses, hints, questions, critiques, and scaffolded feedback during CPS."
+    },
+    {
+      "intervention": "Educational Game / Simulation",
+      "confidence": 0.88,
+      "role": "primary",
+      "use_case": "A simulated virtual classroom environment that recreates peer collaboration for math problem solving, using multiple AI personas to mimic classmates and orchestrate turn-taking, stages of collaboration, and peer discussion."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 0.86,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "In a qualitative evaluation with 14 U.S. middle school students across 40 dialogue sessions, participants reported that MathVC helped them reach shared solutions and understand math problems more effectively. Exit survey ratings were high for working effectively in the environment (M=4.21/5), contributing to the task (M=4.29/5), planning steps (M=4.36/5), and coming to a shared understanding or solution (M=4.43/5).",
+        "measure": "Exit survey items on shared understanding/solution, task contribution, planning, and ability to work on math problems; interview and interaction logs",
+        "study_size": "n=14",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.89,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Students described increased engagement, motivation, persistence, and confidence when collaborating with the virtual peers. The paper reports that reduced cognitive burden, immediate scaffolding, and diverse peer perspectives supported motivation; survey ratings for constructive interaction were high (M=4.36/5), and interviews repeatedly noted that the system felt encouraging and helped students keep working.",
+        "measure": "Semi-structured interviews; exit survey ratings of constructive interaction and engagement-related perceptions",
+        "study_size": "n=14",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.83,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The study suggests MathVC supported collaborative problem solving, metacognitive planning, and reasoning through peer critique and error correction. Students reported that the virtual peers helped them ask questions, build on ideas, and plan steps; the system\u2019s stage-based orchestration was designed to elicit shared understanding, planning, execution, and validation, though no standardized learning gains were reported.",
+        "measure": "Exit survey items on planning and collaboration; interviews about peer interaction and reasoning; dialogue logs",
+        "study_size": "n=14",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "no_control_group",
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

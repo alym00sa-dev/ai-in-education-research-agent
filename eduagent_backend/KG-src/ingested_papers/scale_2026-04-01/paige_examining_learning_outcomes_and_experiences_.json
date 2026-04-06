@@ -1,0 +1,462 @@
+{
+  "title": "PAIGE: Examining Learning Outcomes and Experiences with Personalized AI-Generated Educational Podcasts",
+  "doi": null,
+  "year": 2024,
+  "venue": null,
+  "url": "https://arxiv.org/abs/2409.04645",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This preprint investigates whether generative AI can transform textbook chapters into educational podcasts that are both engaging and effective for learning, and whether personalization improves outcomes further. The authors focus on two main questions: how students perceive AI-generated podcasts compared with traditional textbook reading, and whether generalized versus personalized podcasts affect learning outcomes differently across subject areas.\n\nThe intervention was a system called PAIGE, which converts OpenStax textbook chapters into AI-generated educational podcasts using Gemini 1.5 Pro for transcript generation and a text-to-speech voice model based on AudioLM for spoken delivery. Personalized podcasts were tailored using learner profile data collected before the study, including students\u2019 major, age group, interests, and preferred learning style. The study compared three conditions: traditional textbook reading, generalized AI-generated podcasts, and personalized AI-generated podcasts.\n\nThe study involved 180 current college students in the United States, recruited through Prolific, with participants randomly assigned across a 3x3 design spanning three college textbook subjects: philosophy, psychology, and American government. Each participant completed a single 35-minute remote online session that included exposure to one learning condition, a user experience questionnaire, a 10-item objective multiple-choice knowledge test drawn from textbook test banks, and free-response feedback. This provided both quantitative and qualitative data about learning and experience.\n\nThe main conclusions are that AI-generated podcasts were rated as more attractive/enjoyable than textbooks, regardless of whether they were personalized. Personalized podcasts improved learning outcomes in some subjects\u2014especially philosophy, and to a lesser extent psychology\u2014but not in government, suggesting that the effectiveness of personalization depends on how well the personalized context meaningfully connects to the subject matter. The authors conclude that AI-generated podcasts are a promising modality for making textbook content more engaging, but that personalization should be applied carefully and evaluated by subject and learner context.",
+  "limitations": [
+    "short_duration",
+    "self_reported_measures",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "no",
+  "implementation_fidelity": "medium",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "PAIGE",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "personalization_adaptation"
+      ],
+      "description": "A research system for converting textbook chapters into AI-generated educational podcasts, with optional personalization using learner profile data such as major, interests, age group, and preferred learning style.",
+      "use_case": "Used to generate generalized and personalized educational podcasts from OpenStax textbook chapters for a 3x3 user study comparing podcast-based learning against textbook reading among U.S. college students.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "In a user study with 180 U.S. college students, learning outcomes varied by subject, with a significant interaction between content style and subject for test score, F(4,171)=2.27, p<0.01. For Philosophy, the Personalized podcast condition scored significantly higher (M=7.30, SD=1.45) than both the Generalized condition (M=5.85, SD=1.35, p<0.01) and the Textbook condition (M=5.95, SD=1.57, p=0.01); for Psychology there was a significant main effect of content style, F(2,57)=3.17, p=0.04, but no significant pairwise differences, with Personalized trending higher than Generalized (p=0.07) and Textbook (p=0.09); for Government there was no significant main effect, F(2,57)=2.96, p=0.06.",
+          "measure": "Knowledge retention via 10-item multiple-choice chapter test (scores 0-10)",
+          "effect_size": "F(4,171)=2.27; Philosophy: F(2,57)=6.14; Psychology: F(2,57)=3.17; Government: F(2,57)=2.96",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=180"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The AI-generated podcast conditions were rated as more attractive than textbooks on the UEQ Attractiveness scale, with a significant main effect of content style, F(2,171)=11.06, p<0.01. Both Personalized (M=5.25, SD=1.06) and Generalized (M=5.25, SD=0.88) podcasts were rated significantly higher than the Textbook condition (M=4.52, SD=1.03), with no significant interaction by subject.",
+          "measure": "User Experience Questionnaire (UEQ) Attractiveness subscale",
+          "effect_size": "F(2,171)=11.06",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=180"
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "There were no significant main effects or interaction effects of content style or subject on the UEQ Stimulation scale. Although stimulation ratings showed similar trends to attractiveness, the differences were not statistically significant.",
+          "measure": "User Experience Questionnaire (UEQ) Stimulation subscale",
+          "effect_size": "F(2,171)=2.49, p=0.08",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=180"
+        }
+      ]
+    },
+    {
+      "name": "Gemini",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "personalization_adaptation"
+      ],
+      "description": "Google's large language model family used for generating text content from prompts and contextual inputs.",
+      "use_case": "Gemini 1.5 Pro was used within the PAIGE pipeline to generate podcast configuration files, outlines, and full transcripts from textbook chapters and learner profile information for generalized and personalized educational podcasts.",
+      "findings": []
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is an empirical comparative experiment with random assignment across conditions and a moderate sample (n=180), but it is an exploratory user study rather than a fully reported RCT with effect sizes and full credibility details.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports statistically significant benefits for attractiveness and subject-specific learning gains, but effects are mixed across subjects and standardized effect sizes are not reported, making overall impact promising but unclear in magnitude.",
+  "citations": [
+    {
+      "title": "A multinational study on the factors influencing university students\u2019 attitudes and usage of ChatGPT",
+      "doi": null,
+      "year": 2024,
+      "venue": "Scientific Reports",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Investigating Undergraduate Students\u2019 Perceptions and Awareness of Using ChatGPT as a Regular Assistance Tool: A User Acceptance Perspective Study",
+      "doi": "10.1016/j.caeai.2024.100203",
+      "year": 2024,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Towards Effective Teaching Assistants: From Intent-Based Chatbots to LLM-powered Teaching Assistants",
+      "doi": "10.1016/j.nlp.2024.100101",
+      "year": 2024,
+      "venue": "Natural Language Processing Journal",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Smart Services for Managing the Design of Personalized Educational Video Games",
+      "doi": "10.1145/3351556.3351574",
+      "year": 2019,
+      "venue": "Proceedings of the 9th Balkan Conference on Informatics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Superior Gain in Knowledge by Podcasts Versus Text-Based Learning in Teaching Orthopedics: A Randomized Controlled Trial",
+      "doi": "10.1016/j.jsurg.2016.07.008",
+      "year": 2017,
+      "venue": "Journal of Surgical Education",
+      "citation_level": 2,
+      "citation_context": "prior evidence podcasts outperform textbooks"
+    },
+    {
+      "title": "Doing the reading: The decline of long long-form reading in higher education",
+      "doi": null,
+      "year": 2021,
+      "venue": "Poetics Today",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A Systematic Review of Research on Personalized Learning: Personalized by Whom, to What, How, and for What Purpose(s)?",
+      "doi": "10.1007/s10648-021-09615-8",
+      "year": 2021,
+      "venue": "Educational Psychology Review",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The role of situational interest in personalized learning",
+      "doi": null,
+      "year": 2018,
+      "venue": "Journal of Educational Psychology",
+      "citation_level": 2,
+      "citation_context": "theory that personalization activates prior knowledge"
+    },
+    {
+      "title": "On Cultural Intelligence in LLM-Based Chatbots: Implications for Artificial Intelligence in Education",
+      "doi": null,
+      "year": 2024,
+      "venue": "Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "AudioLM: A Language Modeling Approach to Audio Generation",
+      "doi": "10.1109/TASLP.2023.3288409",
+      "year": 2023,
+      "venue": "IEEE/ACM Transactions on Audio, Speech, and Language Processing",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Personalized learning: A history of the present",
+      "doi": null,
+      "year": 2020,
+      "venue": "Journal of Curriculum Theorizing",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Students\u2019 perceptions of and attitudes towards podcast-based learning: A comparison of two language podcast projects",
+      "doi": null,
+      "year": 2011,
+      "venue": "Electronic Journal of Foreign Language Teaching",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Artificial Intelligence in Education (AIEd): A high-level academic and industry note 2021",
+      "doi": null,
+      "year": 2022,
+      "venue": "AI and Ethics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Empowering Private Tutoring by Chaining Large Language Models",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv preprint arXiv:2309.08112",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Can We Trust AI-Generated Educational Content? Comparative Analysis of Human and AI-Generated Learning Resources",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Effects of an Embodied Pedagogical Agent\u2019s Synthetic Speech Accent on Learning Outcomes",
+      "doi": "10.1145/3536221.3556587",
+      "year": 2022,
+      "venue": "Proceedings of the 2022 International Conference on Multimodal Interaction",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The effectiveness of m-learning in the form of podcast revision lectures in higher education",
+      "doi": "10.1016/j.compedu.2007.09.016",
+      "year": 2008,
+      "venue": "Computers & Education",
+      "citation_level": 2,
+      "citation_context": "prior evidence podcasts outperform textbooks"
+    },
+    {
+      "title": "The Impact of Podcasts in Education",
+      "doi": null,
+      "year": 2018,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "used to argue podcasts may distract learning"
+    },
+    {
+      "title": "\u201cReading Is Important,\u201d but \u201cI Don\u2019t Read\u201d: Undergraduates\u2019 Experiences With Academic Reading",
+      "doi": "10.1002/jaal.1020",
+      "year": 2020,
+      "venue": "Journal of Adolescent & Adult Literacy",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Teachers, Parents, and Students\u2019 perspectives on Integrating Generative AI into Elementary Literacy Education",
+      "doi": "10.1145/3613904.3642438",
+      "year": 2024,
+      "venue": "Proceedings of the CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Personalization of Reading Passages Improves Vocabulary Acquisition",
+      "doi": "10.3233/JAI-2010-0003",
+      "year": 2010,
+      "venue": "International Journal of Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The role of students\u2019 interests during computer-assisted learning: A field experiment",
+      "doi": null,
+      "year": 2022,
+      "venue": "Computers in Human Behavior",
+      "citation_level": 2,
+      "citation_context": "interest personalization can reduce enjoyment"
+    },
+    {
+      "title": "Evaluating the Impact of Advanced LLM Techniques on AI-Lecture Tutors for a Robotics Course",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv preprint arXiv:2408.04645",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Learning Through Listening: A Scoping Review of Podcast Use in Medical Education",
+      "doi": "10.1097/ACM.0000000000004565",
+      "year": 2022,
+      "venue": "Academic Medicine",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Speak, read and prompt: High-fidelity text-to-speech with minimal supervision",
+      "doi": null,
+      "year": 2023,
+      "venue": "Transactions of the Association for Computational Linguistics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Potential and Implications of Generative AI on HCI Education",
+      "doi": "10.1145/3658619.3658627",
+      "year": 2024,
+      "venue": "Proceedings of the 6th Annual Symposium on HCI Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "American Government 3e",
+      "doi": null,
+      "year": 2021,
+      "venue": "OpenStax",
+      "citation_level": 3,
+      "citation_context": "source textbook for government condition"
+    },
+    {
+      "title": "NewsPod: Automatic and Interactive News Podcasts",
+      "doi": "10.1145/3490099.3511147",
+      "year": 2022,
+      "venue": "Proceedings of the 27th International Conference on Intelligent User Interfaces",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Construction and evaluation of a user experience questionnaire",
+      "doi": null,
+      "year": 2008,
+      "venue": "HCI and Usability for Education and Work: 4th Symposium of the Workgroup Human-Computer Interaction and Usability Engineering of the Austrian Computer Society, USAB 2008",
+      "citation_level": 3,
+      "citation_context": "UEQ instrument for attractiveness and stimulation measures"
+    },
+    {
+      "title": "Personalisation in STE(A)M Education: A Review of Literature from 2011 to 2020",
+      "doi": "10.1007/s12528-022-09341-2",
+      "year": 2023,
+      "venue": "Journal of Computing in Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Personalized Learning by Interest Effect on Interest, Cognitive Load, Retention, and Transfer: A Meta-Analysis",
+      "doi": "10.1007/s10648-024-09933-7",
+      "year": 2024,
+      "venue": "Educational Psychology Review",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Cognitive Theory of Multimedia Learning",
+      "doi": null,
+      "year": 2005,
+      "venue": "The Cambridge Handbook of Multimedia Learning",
+      "citation_level": 2,
+      "citation_context": "framework for multimodal overload risk"
+    },
+    {
+      "title": "The perception by university students of the use of ChatGPT in education",
+      "doi": null,
+      "year": 2023,
+      "venue": "International Journal of Emerging Technologies in Learning (Online)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Skeleton-of-Thought: Prompting LLMs for Efficient Parallel Generation",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Conversations with the News: Co-speculation into Conversational Interactions with News Content",
+      "doi": "10.1145/3571884.3597123",
+      "year": 2023,
+      "venue": "Proceedings of the 5th International Conference on Conversational User Interfaces",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Empowering Personalized Learning through a Conversation-based Tutoring System with Student Modeling",
+      "doi": "10.1145/3613905.3651122",
+      "year": 2024,
+      "venue": "Extended Abstracts of the 2024 CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "X5Learn: A Personalised Learning Companion at the Intersection of AI and HCI",
+      "doi": "10.1145/3397482.3450721",
+      "year": 2021,
+      "venue": "Companion Proceedings of the 26th International Conference on Intelligent User Interfaces",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A systematic literature review on the use of podcasts in education among university students",
+      "doi": null,
+      "year": 2022,
+      "venue": "ASEAN Journal of Teaching and Learning in Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "TALKING TOGETHER: USING INTERCOLLEGIATE PODCASTS FOR INCREASED ENGAGEMENT IN MARKETING EDUCATION",
+      "doi": "10.1080/10528008.2021.1875849",
+      "year": 2021,
+      "venue": "Marketing Education Review",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Introduction to Philosophy",
+      "doi": null,
+      "year": 2022,
+      "venue": "OpenStax",
+      "citation_level": 3,
+      "citation_context": "source textbook for philosophy condition"
+    },
+    {
+      "title": "CLASS: A Design Framework for Building Intelligent Tutoring Systems Based on Learning Science principles",
+      "doi": "10.18653/v1/2023.findings-emnlp.130",
+      "year": 2023,
+      "venue": "Findings of the Association for Computational Linguistics: EMNLP 2023",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Psychology 2e",
+      "doi": null,
+      "year": 2020,
+      "venue": "OpenStax",
+      "citation_level": 3,
+      "citation_context": "source textbook for psychology condition"
+    },
+    {
+      "title": "LittleMu: Deploying an Online Virtual Teaching Assistant via Heterogeneous Sources Integration and Chain of Teach Prompts",
+      "doi": "10.1145/3583780.3615484",
+      "year": 2023,
+      "venue": "Proceedings of the 32nd ACM International Conference on Information and Knowledge Management",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Why and for Whom Does Personalizing Math Problems Enhance Performance? Testing the Mediation of Enjoyment and Cognitive Load at Different Ability Levels",
+      "doi": "10.1016/j.lindif.2021.101982",
+      "year": 2021,
+      "venue": "Learning and Individual Differences",
+      "citation_level": 2,
+      "citation_context": "interest personalization can reduce enjoyment"
+    },
+    {
+      "title": "Appraising research on personalized learning: Definitions, theoretical alignment, advancements, and future directions",
+      "doi": "10.1080/15391523.2020.1747757",
+      "year": 2020,
+      "venue": "Journal of Research on Technology in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Nemobot: Crafting Strategic Gaming LLM Agents for K-12 AI Education",
+      "doi": "10.1145/3657604.3664671",
+      "year": 2024,
+      "venue": "Proceedings of the Eleventh ACM Conference on Learning @ Scale",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": "timeout"
+}

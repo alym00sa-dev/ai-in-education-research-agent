@@ -1,0 +1,31 @@
+{
+  "title": "PB-LLM: Partially Binarized Large Language Models",
+  "doi": null,
+  "year": 2023,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2310.00034v2",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses the problem of compressing large language models to extremely low bit-widths while preserving their reasoning and language capabilities. The authors argue that existing binarization methods, when directly applied to LLMs, collapse performance and can even perform worse than random guessing on common-sense reasoning tasks. The core question is how to binarize LLM weights without destroying model utility.\n\nThe proposed approach is Partially-Binarized LLM (PB-LLM), which keeps a small subset of salient weights in higher precision and binarizes the rest. The paper investigates different criteria for selecting salient weights (magnitude vs. Hessian) and different granularities (element-wise vs. column-wise), then extends the method to both post-training quantization and quantization-aware training. It also derives an optimal scaling factor for binary weights and shows that freezing salient weights during training improves convergence.\n\nThe experiments are conducted on pretrained OPT-1.3B and LLaMA-7B models using language modeling and common-sense reasoning benchmarks such as BoolQ, PIQA, HellaSwag, WinoGrande, ARC-Easy, ARC-Challenge, OBQA, WikiText2, and C4. The results show that existing binarization methods fail badly on LLMs, while PB-LLM can preserve substantially more performance, especially when a modest fraction of weights remains unbinarized. The paper concludes that partial binarization is a promising route toward extreme LLM compression, although very aggressive binarization still causes notable degradation.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a model-compression / machine learning methods paper, not an educational intervention study. It does not evaluate K-12 learning outcomes, classroom use, or any student-facing AI support, so it provides no direct evidence for the requested education topic.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "No educational impact is measured or implied. The reported results concern LLM binarization performance on language/reasoning benchmarks and perplexity, which are not K-12 learner outcomes or evidence of positive/negative classroom effects.",
+  "interventions": [],
+  "outcome_assignments": [],
+  "limitations": [
+    "no_control_group",
+    "no_long_term_followup",
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "lab",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

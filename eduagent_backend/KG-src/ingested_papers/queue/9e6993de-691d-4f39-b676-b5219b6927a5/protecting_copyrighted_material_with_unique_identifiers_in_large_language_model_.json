@@ -1,0 +1,48 @@
+{
+  "title": "PROTECTING COPYRIGHTED MATERIAL WITH UNIQUE IDENTIFIERS IN LARGE LANGUAGE MODEL TRAINING",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2403.15740v3",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [
+    "Community"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This technical report addresses the problem of whether large language models are trained on copyrighted online text and how ordinary web users or platforms could verify such use. The paper argues that existing membership inference methods are often too complex for end users and can produce false positives when similar texts appear in training corpora. Rather than studying educational outcomes or classroom use of generative AI, the paper focuses on copyright protection and training-data membership inference for large language models.\n\nThe authors propose an insert-and-detect approach using \"ghost sentences,\" which are unique identifiers embedded into online text before model training. These ghost sentences are built mainly from random diceware-style passphrases and can include customizable prefixes to evade simple filtering. The paper introduces two detection methods: a user-friendly \"last-k words test,\" where a user asks an LLM to complete the end of a ghost sentence, and a perplexity-based test for cases where the identifier appears fewer times in training data. The authors run experiments varying repetition rates, insertion positions, model sizes, learning rates, and data domains to study when these ghost sentences become memorized by models.\n\nThe empirical context is machine learning experimentation on web-scale text and LLM training/fine-tuning datasets such as Reddit-derived Webis-TLDR-17, LaMini-Instruction, OpenOrca, patient-doctor conversations, and code datasets. The paper discusses web users, content platforms, and online communities rather than students, teachers, schools, or educational institutions. Although educational material is mentioned in passing as an example of copyrighted content that can be memorized by LLMs, the study does not evaluate any K-12 reading intervention, literacy support, tutoring, or classroom implementation.\n\nThe main conclusion is that unique identifiers like ghost sentences can provide a transparent and statistically reliable way for users and platforms to detect whether their text was included in LLM training data. The authors report that memorization depends on repetition frequency, model size, insertion position, and identifier design, and that larger models memorize more readily. For the targeted verification question on K-12 foundational reading outcomes using generative AI, this paper is a clear negative finding/near-miss: it is about LLM copyright auditing and memorization, not causal evidence on reading outcomes in school-supported settings.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is an arXiv technical report in machine learning/security, not a peer-reviewed K-12 education impact study, and it does not use randomized or quasi-experimental methods on learners or classrooms. While it contains experiments, they are technical benchmarking studies rather than causal educational evidence.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper shows technically meaningful effects for copyright-auditing and governance tasks, but impact is outside the K-12 educational-outcomes framework and does not estimate student-learning effects. Thus impact for education is unclear rather than demonstrated positive or negative.",
+  "interventions": [],
+  "outcome_assignments": [
+    {
+      "outcome": "Systemic / Institutional Impact",
+      "confidence": 0.9,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "This technical report proposes and experimentally evaluates an insert-and-detect method for identifying whether copyrighted text was included in LLM training data. Across controlled model-training experiments, ghost-sentence identifiers enabled membership inference with strong technical performance under some conditions (e.g., perplexity-test ROC AUC up to 0.891 for LLaMA-13B with 30 ghost sentences repeated an average of 7 times in 148K examples; last-k word user identification reached 11/16 users in a 1.8M-document setting). The outcomes concern copyright auditing, data governance, and platform/user capacity to verify training-data usage rather than any educational or student-learning outcome.",
+        "measure": "Membership inference performance for copyrighted-text detection (ROC AUC, recall, user/document identification accuracy, perplexity, last-k word completion)",
+        "study_size": "Models trained/fine-tuned on datasets ranging from 148K to 9.8M examples; one reported user-level demonstration involved 16 users contributing 383 examples within 1.8M training documents",
+        "effect_size": "ROC AUC up to 0.891; user identification accuracy up to 100% in some synthetic conditions; 11/16 users identified in a 1.8M-document setting",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

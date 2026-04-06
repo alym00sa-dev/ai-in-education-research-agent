@@ -1,0 +1,116 @@
+{
+  "title": "A Multimedia Adaptive Tutoring System for Mathematics that Addresses Cognition, Metacognition and Affect",
+  "doi": "10.1007/s40593-014-0023-y",
+  "year": 2014,
+  "venue": "Int J Artif Intell Educ",
+  "url": "https://doi.org/10.1007/s40593-014-0023-y",
+  "source_db": "openalex_search",
+  "populations": [
+    "Middle School (6th-8th)",
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper examines how an adaptive mathematics tutoring system, Wayang Outpost (now MathSpring), can support student learning not only on cognitive outcomes but also on metacognition and affect. The central problem is how to personalize digital instruction for K-12 students who vary widely in prior knowledge, effort, motivation, and emotional responses while working on standardized-test-style mathematics problems. The authors argue that effective tutoring systems should integrate content selection, feedback, and motivational support rather than focusing only on correctness.\n\nThe intervention combines several components: adaptive problem selection based on an effort-based tutoring algorithm, multimedia hints and worked examples, math fact retrieval training, open student models, progress reports for teachers and students, and animated affective learning companions. The system was used in middle and high school math classes in Massachusetts, with multiple studies spanning several years. Some studies compared Wayang against control conditions in regular math class, and one study randomly assigned students to conditions that included Wayang alone, Wayang plus math fluency training, fluency training alone, or classroom instruction.\n\nAcross these studies, the paper reports improved short-term learning, better standardized-test performance in some cases, and gains in engagement and affect-related measures. The authors conclude that adaptive tutoring can be strengthened by combining cognitive scaffolds, metacognitive supports, and affective interventions, and that teacher-facing analytics can help instructors identify student needs. The paper is primarily a systems-and-evaluation article synthesizing multiple empirical evaluations of the tutor rather than a single focused experiment.",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is a peer-reviewed article synthesizing multiple evaluations, including controlled studies and randomized assignment in at least one experiment. However, much of the evidence is a mix of component studies, historical comparisons, and non-uniform outcome reporting rather than a single clean RCT focused on one intervention.",
+  "impact_tier": "green",
+  "impact_tier_rationale": "The paper reports modest-to-medium positive effects on mathematics outcomes, including Cohen\u2019s d=0.38 on MAP algebra/patterns and d=0.77 for an eighth-grade subgroup, which exceeds the blue threshold for some analyses but is not uniformly demonstrated across all studies. Because the evidence is strongest for priority K-12 math populations but heterogeneous across components and outcomes, a green impact tier is most defensible.",
+  "interventions": [
+    {
+      "intervention": "Intelligent Tutoring System (ITS)",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "multimedia adaptive mathematics tutoring with step-by-step hints, worked examples, problem difficulty adaptation, affect-sensitive feedback, metacognitive scaffolds, and teacher dashboards for K-12 students"
+    },
+    {
+      "intervention": "Automated Feedback System",
+      "confidence": 0.78,
+      "role": "secondary",
+      "use_case": "open student models, progress pages, and automated teacher/student feedback on mastery, effort, and affective state"
+    },
+    {
+      "intervention": "Computer-Assisted Instruction (CAI)",
+      "confidence": 0.58,
+      "role": "secondary",
+      "use_case": "math facts retrieval and fluency practice software used alongside the tutor to automate basic arithmetic retrieval"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 1.0,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Wayang Outpost/MathSpring was associated with improved mathematics achievement on multiple measures across several studies. The paper reports higher end-of-year standardized test performance versus control, including a near-significant MCAS difference for 7th graders (Wayang N=34, Control N=60; F(1,93)=2.2, p=0.14) and a significant MAP Patterns and Algebra gain advantage (p<0.01, Cohen\u2019s d=0.38); an 8th-grade-only analysis showed larger algebra gains (d=0.77).",
+        "measure": "MCAS passing categories; Measures of Academic Progress (MAP) Patterns and Algebra gains; researcher-created pre/post tests",
+        "study_size": "n=198 for the 2012 controlled study; additional pooled studies include n=250 for MFR/Wayang and larger historical samples",
+        "effect_size": "d=0.38; d=0.77",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.93,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper argues and reports that affective companions, progress reports, and adaptive feedback improved student engagement and positive learning experience. Evidence is described using system logs, gaming/engagement records, sensors, and self-reports, with the authors emphasizing reductions in disengagement and improved persistence/effort rather than a single pooled effect size.",
+        "measure": "system logs of engagement/gaming behavior, sensor-based affect detection, student self-reports",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.92,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper presents evidence that the tutor supported metacognition and self-regulation through open student models, progress pages, and help-seeking scaffolds. In the reported analyses, higher use of the student progress page was associated with more desirable self-regulatory behavior, and the authors frame these interventions as improving goal setting, self-monitoring, and strategy choice, although effect sizes are not consistently reported for these specific components.",
+        "measure": "student progress page usage, self-regulation behaviors, help-seeking and choice of continue/review/challenge options",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.7,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Teacher-facing dashboards and reports are described as giving immediate, fine-grained information about student strengths, weaknesses, and engagement, reducing the need for manual diagnosis. The paper emphasizes real-time reporting of individual and class progress as a practical benefit for instruction, though it does not report a formal workload effect size.",
+        "measure": "teacher use of real-time dashboards and progress reports",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "classroom",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

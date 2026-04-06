@@ -1,0 +1,428 @@
+{
+  "title": "Exploring Student Behaviors and Motivations when using AI Teaching Assistants with Optional Guardrails",
+  "doi": null,
+  "year": 2025,
+  "venue": "not_reported",
+  "url": "https://arxiv.org/abs/2504.11146",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper examines how students use an AI teaching assistant (AI TA) in introductory programming when the system includes optional guardrails. The core problem is a tension in AI-supported education: guardrails are intended to encourage learning by providing scaffolded help instead of direct answers, but if they are too restrictive, students may seek unmonitored solutions elsewhere or disable the restrictions. The study asks how often students choose to access direct AI-generated solutions, what motivates that choice, and how solution-seeking relates to course performance and timing of work.\n\nTo investigate this, the authors deployed a web-based tool called Edugator in one weekly lab of a large introductory programming course. The AI TA normally used prompt-based guardrails to avoid giving code solutions and instead provide conceptual help, but students could click a \"See Solution\" button to disable the guardrails and receive a verbatim response from the underlying model, including code. Students completed three C programming tasks (one code-writing task and two debugging tasks), while the researchers collected tool logs on chatbot use, solution-button clicks, submissions, and timing. The study also included an open-ended reflection question, which was analyzed thematically to understand students\u2019 motivations for using or avoiding the solution feature.\n\nThe study involved 885 participating students from a single large public research university in the Australasian region during a 12-week Fall 2024 term, though data for this paper came from one lab activity spanning 9 days. Quantitative results showed that 50% of students used the \"See Solution\" feature at least once, and 14% used it for all three problems. Lower-performing students were more likely to use the feature for all tasks and were also more likely to work near the deadline. However, the decision to use the feature was not significantly associated with when students started the lab overall. Qualitative findings showed that students used the feature for problem-solving assistance, time pressure, lack of self-regulation, and curiosity, while those who avoided it often cited learning value, sufficient support from the guardrailed chatbot, or ethical concerns.\n\nThe paper concludes that optional access to unrestricted AI solutions reveals important student help-seeking behaviors that would otherwise be hidden if students simply turned to external tools. The authors argue that AI TA design should balance pedagogical safeguards with student preferences and needs, especially for struggling students who may be at greater risk of over-reliance. At the same time, the study does not establish causal effects on learning, and the authors recommend future work across longer periods and more controlled settings to determine when and for whom access to direct solutions may be beneficial or harmful.",
+  "limitations": [
+    "single_site",
+    "no_control_group",
+    "self_reported_measures",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "blended",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "New Zealand",
+  "study_region": "East Asia & Pacific",
+  "identified_tools": [
+    {
+      "name": "Edugator",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "feedback_evaluation"
+      ],
+      "description": "A web-based programming learning tool that lets instructors author problems, allows students to code in-browser, receive immediate feedback, and interact with an LLM-powered AI teaching assistant. In this study, the AI TA included optional guardrails and a 'See Solution' button that disabled those guardrails to generate a verbatim response from the underlying model.",
+      "use_case": "Used in one lab of a large introductory programming course for three C programming tasks (one code-writing and two debugging tasks). Students could use the guardrailed AI TA for scaffolded help or click 'See Solution' to receive an unguarded LLM-generated solution/explanation; the study examined usage patterns, motivations, and associations with course performance.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "In the lab activity, 50% of the 885 participating students used the 'See Solution' feature at least once, while 50% did not use it. Specifically, 18% used it for one problem (n=160), 18% for two problems (n=158), and 14% for all three problems (n=122), showing substantial uptake of optional guardrail removal rather than a clearly beneficial or harmful academic effect.",
+          "measure": "Usage rate of the optional 'See Solution' feature across three programming tasks",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=885"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "Students who used the 'See Solution' feature for all three problems had lower average scores on invigilated course tests (\u03bc3=66) than students who never used it (\u03bc0=73) or used it for one or two problems (\u03bc1=72, \u03bc2=73). The paper also reports that students in the lowest performance quartile were more likely to use the feature for all problems; for example, a student in Q1 was twice as likely to use it in all problems as a student in Q4.",
+          "measure": "Association between frequency of 'See Solution' use and invigilated exam performance / performance quartile",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=885"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "Use of the 'See Solution' feature was not significantly related to when students started the lab. The authors report approximately 50% usage regardless of start date, with no significant differences between users and non-users by start date (\u03c7\u00b2(7)=5.92, p=0.55), except that among students who started on the first available day, 65% did not use the feature.",
+          "measure": "Association between 'See Solution' usage and lab start date / timing",
+          "effect_size": "\u03c7\u00b2(7)=5.92, p=0.55",
+          "confidence_interval": "not_reported",
+          "sample_size": "N=883"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "Low-performing students interacted with the tool later and closer to the deadline than higher-performing students. The paper reports that 52% of submissions and 'See Solution' clicks by students in the lowest quartile (Q1) occurred within the last day before the assignment was due, and this deadline-proximate behavior decreased progressively from Q1 to Q4.",
+          "measure": "Timing of submissions and 'See Solution' clicks by student performance quartile",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "N=885"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Qualitative analysis of 839 non-blank reflections found mixed motivations for using or avoiding the optional unguarded solution feature. Students avoided it for perceived learning value, sufficient support from the guardrailed chatbot, or ethical concerns, while those who used it cited problem-solving assistance, time pressure, lack of self-regulation, and curiosity.",
+          "measure": "Student-reported motivations and help-seeking behavior from open-ended reflections",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=839"
+        }
+      ]
+    },
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "language_speech",
+        "content_generation"
+      ],
+      "description": "OpenAI's generative AI / GPT family model used here as the underlying LLM backend (the paper states OpenAI's 4o model).",
+      "use_case": "Served as the underlying model powering Edugator's AI TA, including both the guardrailed scaffolded-help mode and the unguarded 'See Solution' mode that could generate detailed explanations and code solutions.",
+      "findings": []
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an observational mixed-methods study with log analysis and qualitative reflections, not a randomized or quasi-experimental design. Findings are correlational and the authors explicitly note they cannot determine causality.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports meaningful usage patterns and negative associations between heavy solution access and lower performance, but no causal impact estimates or standardized effect sizes. Overall educational impact is therefore unclear rather than demonstrated.",
+  "citations": [
+    {
+      "title": "Toward Meta-cognitive Tutoring: A Model of Help Seeking with a Cognitive Tutor",
+      "doi": null,
+      "year": 2006,
+      "venue": "Int. J. Artif. Intell. Ed.",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Wheel-spinning: Students who fail to master a skill",
+      "doi": null,
+      "year": 2013,
+      "venue": "Artificial Intelligence in Education: 16th International Conference, AIED 2013",
+      "citation_level": 2,
+      "citation_context": "defines wheel-spinning as unproductive time expenditure"
+    },
+    {
+      "title": "Using thematic analysis in psychology",
+      "doi": "10.1191/1478088706qp063oa",
+      "year": 2006,
+      "venue": "Qualitative Research in Psychology",
+      "citation_level": 3,
+      "citation_context": "reflexive thematic analysis approach for open responses"
+    },
+    {
+      "title": "Desirable Characteristics for AI Teaching Assistants in Programming Education",
+      "doi": "10.1145/3649217.3653574",
+      "year": 2024,
+      "venue": "Proceedings of the 2024 on Innovation and Technology in Computer Science Education V. 1 (ITiCSE 2024)",
+      "citation_level": 2,
+      "citation_context": "contrasted with prior student desire for independent solution finding"
+    },
+    {
+      "title": "Computing Education in the Era of Generative AI",
+      "doi": "10.1145/3624720",
+      "year": 2024,
+      "venue": "Commun. ACM",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Edugator: An AI-enabled Tool for Creating and Delivering Interactive Computing Content",
+      "doi": "10.1145/3641555.3705025",
+      "year": 2025,
+      "venue": "Proceedings of the 56th ACM Technical Symposium on Computer Science Education V. 2 (SIGCSETS 2025)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Comparing effective and ineffective behaviors of student programmers",
+      "doi": "10.1145/1584322.1584325",
+      "year": 2009,
+      "venue": "Proceedings of the Fifth International Workshop on Computing Education Research Workshop (ICER '09)",
+      "citation_level": 2,
+      "citation_context": "supports claim that low-performing students procrastinate more"
+    },
+    {
+      "title": "More Than Meets the AI: Evaluating the performance of GPT-4 on Computer Graphics assessment questions",
+      "doi": "10.1145/3636243.3636263",
+      "year": 2024,
+      "venue": "Proceedings of the 26th Australasian Computing Education Conference (ACE '24)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Generative AI in Computer Science Education: Challenges and Opportunities",
+      "doi": null,
+      "year": 2025,
+      "venue": "Cambridge University Press",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Seeing the Forest and the Trees: Solving Visual Graph and Tree Based Data Structure Problems using Large Multimodal Models",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Exploring the Responses of Large Language Models to Beginner Programmers\u2019 Help Requests",
+      "doi": "10.1145/3568813.3600139",
+      "year": 2023,
+      "venue": "Proceedings of the 2023 ACM Conference on International Computing Education Research - V1 (ICER '23)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "AI-TA: Towards an Intelligent Question-Answer Teaching Assistant using Open-Source LLMs",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "More Robots are Coming: Large Multimodal Models (ChatGPT) can Solve Visually Diverse Images of Parsons Problems",
+      "doi": "10.1145/3636243.3636247",
+      "year": 2024,
+      "venue": "Proceedings of the 26th Australasian Computing Education Conference (ACE '24)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Effects of Generative AI on Computing Students\u2019 Help-Seeking Preferences",
+      "doi": "10.1145/3636243.3636248",
+      "year": 2024,
+      "venue": "Proceedings of the 26th Australasian Computing Education Conference (ACE '24)",
+      "citation_level": 2,
+      "citation_context": "supports concern about over-reliance on GenAI help"
+    },
+    {
+      "title": "CodeAid: Evaluating a Classroom Deployment of an LLM-based Programming Assistant that Balances Student and Educator Needs",
+      "doi": "10.1145/3613904.3642773",
+      "year": 2024,
+      "venue": "Proceedings of the 2024 CHI Conference on Human Factors in Computing Systems (CHI '24)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Open Source Language Models Can Provide Feedback: Evaluating LLMs\u2019 Ability to Help Students Using GPT-4-As-A-Judge",
+      "doi": "10.1145/3649217.3653612",
+      "year": 2024,
+      "venue": "Proceedings of the 2024 on Innovation and Technology in Computer Science Education V. 1 (ITiCSE 2024)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "An Exploration of Student-Tutor Interactions in Computing",
+      "doi": "10.1145/3502718.3524786",
+      "year": 2022,
+      "venue": "Proceedings of the 27th ACM Conference on on Innovation and Technology in Computer Science Education Vol. 1 (ITiCSE '22)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "From \"Ban It Till We Understand It\" to \"Resistance is Futile\": How University Programming Instructors Plan to Adapt as More Students Use AI Code Generation and Explanation Tools such as ChatGPT and GitHub Copilot",
+      "doi": "10.1145/3568813.3600138",
+      "year": 2023,
+      "venue": "Proceedings of the 2023 ACM Conference on International Computing Education Research - V1 (ICER '23)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Behaviors of Higher and Lower Performing Students in CS1",
+      "doi": "10.1145/3304221.3319740",
+      "year": 2019,
+      "venue": "Proceedings of the 2019 ACM Conference on Innovation and Technology in Computer Science Education (ITiCSE '19)",
+      "citation_level": 2,
+      "citation_context": "supports claim that low-performing students procrastinate more"
+    },
+    {
+      "title": "CodeHelp: Using Large Language Models with Guardrails for Scalable Support in Programming Classes",
+      "doi": "10.1145/3631802.3631830",
+      "year": 2024,
+      "venue": "Proceedings of the 23rd Koli Calling International Conference on Computing Education Research (Koli Calling '23)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Student Expectations of Tutors in Computing Courses",
+      "doi": "10.1145/3545945.3569766",
+      "year": 2023,
+      "venue": "Proceedings of the 54th ACM Technical Symposium on Computer Science Education V. 1 (SIGCSE 2023)",
+      "citation_level": 2,
+      "citation_context": "compares preference for receiving answers from human tutors"
+    },
+    {
+      "title": "Teaching CS50 with AI: Leveraging Generative Artificial Intelligence in Computer Science Education",
+      "doi": "10.1145/3626252.3630938",
+      "year": 2024,
+      "venue": "Proceedings of the 55th ACM Technical Symposium on Computer Science Education V. 1 (SIGCSE 2024)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Coderunner: a tool for assessing computer programming skills",
+      "doi": "10.1145/2810041",
+      "year": 2016,
+      "venue": "ACM Inroads",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Integrating AI Tutors in a Programming Course",
+      "doi": "10.1145/3649165.3690094",
+      "year": 2024,
+      "venue": "Proceedings of the 2024 on ACM Virtual Global Computing Education Conference V. 1 (SIGCSE Virtual 2024)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Inside the Mind of a CS Undergraduate TA: A Firsthand Account of Undergraduate Peer Tutoring in Computer Labs",
+      "doi": "10.1145/3408877.3432533",
+      "year": 2021,
+      "venue": "Proceedings of the 52nd ACM Technical Symposium on Computer Science Education (SIGCSE '21)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Unproductive Help-seeking in Programming: What it is and How to Address it",
+      "doi": "10.1145/3341525.3387394",
+      "year": 2020,
+      "venue": "Proceedings of the 2020 ACM Conference on Innovation and Technology in Computer Science Education (ITiCSE '20)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Reliability and inter-rater reliability in qualitative research: Norms and guidelines for CSCW and HCI practice",
+      "doi": null,
+      "year": 2019,
+      "venue": "Proceedings of the ACM on Human-Computer Interaction",
+      "citation_level": 3,
+      "citation_context": "justifies not using inter-rater reliability in reflexive analysis"
+    },
+    {
+      "title": "Undergraduate Computing Tutors\u2019 Perceptions of their Roles, Stressors, and Barriers to Effectiveness",
+      "doi": null,
+      "year": 2025,
+      "venue": "Proceedings of the 56th ACM Technical Symposium on Computer Science Education (SIGCSE '25)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Robots Are Here: Navigating the Generative AI Revolution in Computing Education",
+      "doi": "10.1145/3623762.3633499",
+      "year": 2023,
+      "venue": "Proceedings of the 2023 Working Group Reports on Innovation and Technology in Computer Science Education (ITiCSE-WGR '23)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Beyond the Hype: A Comprehensive Review of Current Trends in Generative AI Research, Teaching Practices, and Tools",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Widening Gap: The Benefits and Harms of Generative AI for Novice Programmers",
+      "doi": "10.1145/3632620.3671116",
+      "year": 2024,
+      "venue": "Proceedings of the 2024 ACM Conference on International Computing Education Research - V1 (ICER '24)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Oversight in Action: Experiences with Instructor-Moderated LLM Responses in an Online Discussion Forum",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Challenges Faced by Teaching Assistants in Computer Science Education Across Europe",
+      "doi": "10.1145/3430665.3456304",
+      "year": 2021,
+      "venue": "Proc 26th ACM Conf on Inn and Tech in CS Ed (ITiCSE '21)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Instructor Perceptions of AI Code Generation Tools - A Multi-Institutional Interview Study",
+      "doi": "10.1145/3626252.3630880",
+      "year": 2024,
+      "venue": "Proceedings of the 55th ACM Technical Symposium on Computer Science Education V. 1 (SIGCSE 2024)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Analysis of Novices\u2019 Web-Based Help-Seeking Behavior While Programming",
+      "doi": "10.1145/3545945.3569852",
+      "year": 2023,
+      "venue": "Proceedings of the 54th ACM Technical Symposium on Computer Science Education V. 1 (SIGCSE 2023)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "My Digital Hand: A Tool for Scaling Up One-to-One Peer Teaching in Support of Computer Science Learning",
+      "doi": "10.1145/3017680.3017800",
+      "year": 2017,
+      "venue": "Proc of the 2017 ACM SIGCSE Technical Symposium on CS Education (SIGCSE '17)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "CS1-LLM: Integrating LLMs into CS1 Instruction",
+      "doi": "10.1145/3649217.3653584",
+      "year": 2024,
+      "venue": "Proceedings of the 2024 on Innovation and Technology in Computer Science Education V. 1 (ITiCSE 2024)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Generative AI in Computing Education: Perspectives of Students and Instructors",
+      "doi": "10.1109/FIE58773.2023.10343467",
+      "year": 2023,
+      "venue": "2023 IEEE Frontiers in Education Conference (FIE)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Exploring the Impact of Voluntary Practice and Procrastination in an Introductory Programming Course",
+      "doi": "10.1145/3478431.3499350",
+      "year": 2022,
+      "venue": "Proceedings of the 53rd ACM Technical Symposium on Computer Science Education - V1 (SIGCSE 2022)",
+      "citation_level": 2,
+      "citation_context": "supports claim linking procrastination and low performance"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

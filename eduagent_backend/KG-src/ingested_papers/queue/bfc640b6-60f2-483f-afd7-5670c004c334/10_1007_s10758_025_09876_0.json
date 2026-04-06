@@ -1,0 +1,80 @@
+{
+  "title": "Cultural-Historical Perspective to Design Pedagogical AI for Enhancing Student Writing",
+  "doi": "10.1007/s10758-025-09876-0",
+  "year": 2025,
+  "venue": "Technology, Knowledge and Learning",
+  "url": "https://doi.org/10.1007/s10758-025-09876-0",
+  "source_db": "openalex_search",
+  "populations": [
+    "Middle School (6th-8th)",
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator",
+    "School"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper examines how AI-driven feedback can be designed pedagogically to support student writing, using a cultural-historical framework based on Vygotsky and Galperin. The author argues that feedback should function as a cultural tool that mediates learning, helping students internalise writing criteria and develop self-regulation. The study is motivated by the need to ground educational AI in pedagogy rather than treating it as a purely technical solution.\n\nThe intervention studied is Essay Assessment Technology (EAT), an OpenAI-powered writing feedback system that provides automated feedback on language, content, structure, and organisation. Students drafted essays, received either AI feedback through EAT or peer feedback, discussed feedback in groups, revised across multiple drafts, and submitted final drafts for teacher evaluation. The paper also presents seven pedagogical design principles for AI-supported feedback systems, including alignment to target concepts, student-constructed orientation, tangible feedback, social interaction, reflective revision, and teacher facilitation.\n\nThe empirical component involved three writing processes conducted between 2022 and 2024 in Norwegian public lower secondary schools. Participants included students aged 13-16 and six English teachers from three schools. The comparison condition used peer feedback rather than AI. Although the paper includes some 15-16-year-old students (tenth grade), the setting is described as lower secondary school in Norway, so it is not a conventional high-school study. The writing tasks were English essays on topics such as heroes, food habits, and freedom fighters.\n\nThe main conclusion is that students using EAT generally improved writing scores across drafts, especially in the second and third writing processes, and that AI feedback may support more systematic engagement with revision than peer feedback alone. However, the study is not about ChatGPT as a classroom writing-feedback intervention in high school, and it does not report motivation outcomes. It reports teacher-facilitated classroom writing with a custom AI tool rather than a direct ChatGPT-based secondary writing trial. The paper also notes limitations around higher-order writing feedback, context specificity, and the need for further teacher professional development and broader replication.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "Although the paper is peer-reviewed and reports quantitative pre-post comparisons, it is not a randomized controlled trial. Groups were not randomly assigned, analyses rely largely on within-group draft-to-draft gains, and the design has substantial causal attribution concerns for treatment effectiveness.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports moderate to large within-group gains in writing scores for some EAT classes, but the treatment effect relative to comparison classes is unclear and inconsistently established. Because the estimates are not from a credible high-rigor causal design and do not include any plausible d\u224819 motivation effect, impact should be treated as unclear rather than strong.",
+  "interventions": [
+    {
+      "intervention": "Automated Feedback System",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "LLM-powered Essay Assessment Technology (EAT) providing automated formative feedback on student essays across language, content, structure, and organisation during iterative drafting in Norwegian lower secondary English classes."
+    },
+    {
+      "intervention": "AI Writing / Language Tool",
+      "confidence": 0.88,
+      "role": "secondary",
+      "use_case": "OpenAI-backed writing support used to generate immediate essay feedback for revision, functioning as an AI writing assistance tool embedded in classroom writing instruction."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Literacy",
+      "confidence": 0.99,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper reports improvements in essay scores from first to final draft for classes using EAT across three writing processes, with the strongest gains in the 2024 process. In the third writing process, target classes showed reported Cohen's d values of 0.411 (school X, n=10), 0.95 (school Y, n=22), and 0.92 (school Z, n=15), based on teacher-rated essay marks; however, these are within-group pre-post effects on repeated drafts rather than a clean between-group treatment effect. This is a lower-secondary writing study, not a high-school ChatGPT motivation RCT, and there is no effect anywhere near d\u224819 in the text provided.",
+        "measure": "Teacher-rated essay scores/average marks on student essays across drafts using a common rubric",
+        "study_size": "n=93 across 2022 process; n=81 across 2023 process; n=75 across 2024 process",
+        "effect_size": "reported within-group Cohen's d values: 2022 target classes -0.34, -0.34, -1.37; 2023 target classes 0.437, 0.424, 0.6; 2024 target classes 0.411, 0.95, 0.92",
+        "confidence_interval": "not_reported",
+        "std_deviation": "Reported by class and wave, e.g. 2024 target school Y pre SD=0.71 post SD=1.16; school Z pre SD=0.64 post SD=1.05"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.58,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The paper makes repeated interpretive claims that EAT supported conceptual understanding of feedback, learning to learn, and self-regulation through peer discussion and revision cycles, but these outcomes were not directly measured with validated instruments or separate quantitative analyses. As such, evidence for durable skills is suggestive and theory-driven rather than empirically established.",
+        "measure": "Qualitative observations/video-recorded group discussions and interpretive claims about self-regulation, conceptual understanding, and learning-to-learn",
+        "study_size": "n=93, n=81, and n=75 across three writing processes, but no separate analytic sample for durable skills",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "classroom",
+  "teacher_training": "yes",
+  "implementation_fidelity": "medium",
+  "study_country": "Norway",
+  "study_region": "Europe",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

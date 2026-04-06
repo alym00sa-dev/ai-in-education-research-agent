@@ -1,0 +1,455 @@
+{
+  "title": "ChatGPT-5 in Secondary Education: A Mixed-Methods Analysis of Student Attitudes, AI Anxiety, and Hallucination-Aware Use",
+  "doi": null,
+  "year": 2025,
+  "venue": null,
+  "url": "https://arxiv.org/abs/2512.04109",
+  "source_db": "scale_stanford",
+  "populations": [
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper examines how secondary school students perceive and use ChatGPT-5 in formal education, with particular attention to attitudes toward AI, AI-related anxiety, and how students respond to hallucinated or inaccurate AI outputs. The study addresses gaps in the GenAI-in-education literature by focusing on high school students rather than university populations, by reporting specific interaction modalities used during the intervention, and by explicitly exposing students to hallucinations to study how they manage accuracy concerns.\n\nThe intervention was embedded in the Greek national curriculum course \u201cTechnology\u201d and took place over three days in three Greek high schools. A total of 109 sixteen-year-old students participated in an approximately eight-hour classroom intervention. Students used ChatGPT-5 across several modalities and tasks, including information seeking, CV generation, document summarization, video summarization, image generation, quiz generation, and age-adapted explanations. A central feature of the intervention was deliberate exposure to hallucinated outputs: students were shown pre-identified incorrect responses, asked the chatbot the same questions, and then checked the correct answers. Quantitative data came from the SATAI and AIAS scales, and qualitative data came from semi-structured interviews with 36 students.\n\nThe study found that students held moderately positive attitudes toward AI overall, with stronger cognitive and affective views than behavioral intentions. Students generally believed AI was important and useful, but were less likely to express intentions to pursue AI-related careers or extracurricular engagement. AI anxiety was moderate overall, with relatively modest learning-related anxiety but stronger concerns about AI-driven dependence, laziness, and human replacement. Female students reported significantly more positive cognitive attitudes than males, while prior ChatGPT users showed more favorable attitudes across all SATAI dimensions. Attitudes and anxiety were essentially uncorrelated.\n\nQualitative findings identified four main affordances: knowledge expansion, immediate feedback, a familiar interface, and perceived skill development. Three key constraints were also reported: uncertainty about content accuracy, anxiety related to AI feedback, and privacy concerns. A notable contribution of the paper is the concept of \u201cepistemic safeguarding,\u201d describing how students, after encountering hallucinations, restricted AI use to topics where they already had enough prior knowledge to verify answers. The paper concludes that effective GenAI integration in secondary education requires not only access to AI tools but also explicit support for critical AI literacy and hallucination-aware use.",
+  "limitations": [
+    "short_duration",
+    "no_control_group",
+    "self_reported_measures",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "classroom",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Greece",
+  "study_region": "Europe",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "content_generation"
+      ],
+      "description": "OpenAI's generative AI chatbot / large language model used for conversational text generation and multimodal tasks such as summarization, explanation, quiz generation, and image generation.",
+      "use_case": "Used in an 8-hour secondary school intervention in the Greek 'Technology' course for information seeking, CV generation, document and video summarization, image generation via DALL-E, student-generated quizzes, age-adapted explanations, and deliberate exposure to hallucinated outputs.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Across 109 secondary students, SATAI results showed moderately positive attitudes toward GenAI overall (Total SATAI M=3.24, SD=0.79), with higher cognitive (M=3.44, SD=0.71) and affective attitudes (M=3.38, SD=0.80) than behavioral intentions (M=3.04, SD=1.01). Prior ChatGPT users reported more positive attitudes than non-users on total SATAI (M=3.57 vs. 3.09; t(68.48)=3.13, p=.003, d=0.63), cognitive (t(62.02)=2.82, p=.007, d=0.59), affective (t(61.02)=3.31, p=.002, d=0.70), and behavioral scores (t(70.84)=2.35, p=.021, d=0.47).",
+          "measure": "Student Attitude Towards Artificial Intelligence scale (SATAI) total and subscales",
+          "effect_size": "d=0.63 (total SATAI); d=0.59 (cognitive); d=0.70 (affective); d=0.47 (behavioral)",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=109"
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Students reported moderate AI anxiety overall, with lower learning-related anxiety (AIAS Learning M=3.09, SD=1.37) and higher concern about job replacement (AIAS Job Replacement M=4.07, SD=1.66). Gender differences in anxiety were small and non-significant for total AIAS (M_male=3.58, M_female=3.36; t(87.45)=0.82, p=.416, d=0.16), and attitudes and anxiety were essentially uncorrelated (total SATAI vs. total AIAS: r=-.05, p=.60).",
+          "measure": "Artificial Intelligence Anxiety Scale (AIAS) total, learning anxiety, and job replacement anxiety; correlation between SATAI and AIAS",
+          "effect_size": "d=0.16; r=-.05",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=109"
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Female students reported significantly more positive cognitive attitudes toward AI than male students (M=3.68 vs. 3.09; t(95.23)=-4.71, p<.001, d=-0.91, partial \u03b7\u00b2=.19), with a smaller significant difference on total SATAI (M=3.35 vs. 3.06; t(101.12)=-1.99, p=.049, d=-0.38). Affective and behavioral differences also favored female students but were not statistically significant.",
+          "measure": "SATAI by gender: total, cognitive, affective, behavioral subscales",
+          "effect_size": "d=-0.91; partial \u03b7\u00b2=.19; d=-0.38",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=109"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Qualitative interviews with 36 students identified four perceived affordances of ChatGPT: generating new knowledge (N=29), immediate feedback (N=18), friendly/familiar interface (N=16), and skill development including computational thinking, problem-solving, critical thinking, and digital literacy (N=10). Students often reported using ChatGPT to clarify partially understood concepts rather than replace instruction.",
+          "measure": "Semi-structured interview themes on affordances",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=36"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "After experiencing hallucinated outputs, many students reported restricting future ChatGPT use to topics where they already had enough prior knowledge to verify responses, which the author terms 'epistemic safeguarding.' Interviews also identified constraints around uncertainty about content accuracy (N=21), anxiety related to AI feedback (N=11), and privacy/data protection concerns (N=4).",
+          "measure": "Semi-structured interview themes on hallucination-aware use and constraints",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=36"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a mixed-methods primary study with descriptive statistics, subgroup comparisons, and qualitative interviews, but no randomized control group or causal design estimating learning effects. Evidence is useful but remains observational/intervention-based with limited causal credibility.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper shows meaningful attitudinal differences and identifies notable anxiety and critical-use patterns, but outcomes are mostly perceptions, attitudes, and qualitative themes rather than direct academic achievement gains. Impact on learning is therefore suggestive but unclear.",
+  "citations": [
+    {
+      "title": "The theory of planned behavior",
+      "doi": "10.1016/0749-5978(91)90020-t",
+      "year": 1991,
+      "venue": "Organizational Behavior and Human Decision Processes",
+      "citation_level": 2,
+      "citation_context": "attitude-behavior gap framed via planned behavior"
+    },
+    {
+      "title": "Artificial intelligence in education: Addressing ethical challenges in K-12 settings",
+      "doi": "10.1007/s43681-021-00096-7",
+      "year": 2021,
+      "venue": "AI And Ethics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Generative AI use in K-12 education: a systematic review",
+      "doi": "10.3389/feduc.2025.1647573",
+      "year": 2025,
+      "venue": "Frontiers in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT: Revolutionizing student achievement in the electronic magnetism unit for eleventh-grade students in Emirates schools",
+      "doi": "10.30935/cedtech/13417",
+      "year": 2023,
+      "venue": "Contemporary Educational Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The impact of educational chatbot on student learning experience",
+      "doi": "10.1007/s10639-023-12166-w",
+      "year": 2023,
+      "venue": "Education and Information Technologies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT in physics education: A pilot study on easy-to-implement activities",
+      "doi": "10.30935/cedtech/13176",
+      "year": 2023,
+      "venue": "Contemporary Educational Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Effectiveness of AI-assisted game-based learning on science learning outcomes, intrinsic motivation, cognitive load, and learning behavior",
+      "doi": "10.1007/s10639-024-12553-x",
+      "year": 2024,
+      "venue": "Education and Information Technologies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The impact of Generative AI (GenAI) on practices, policies and research direction in education: a case of ChatGPT and Midjourney",
+      "doi": "10.1080/10494820.2023.2253861",
+      "year": 2023,
+      "venue": "Interactive Learning Environments",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Basics of Qualitative Research (3rd ed.): Techniques and Procedures for Developing Grounded Theory",
+      "doi": "10.4135/9781452230153",
+      "year": 2008,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Translation of Questionnaires Measuring Health Related Quality of Life Is Not Standardized: A Literature Based Research Study",
+      "doi": "10.1371/journal.pone.0127050",
+      "year": 2015,
+      "venue": "PLoS ONE",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Perceived usefulness, perceived ease of use, and user acceptance of information technology",
+      "doi": "10.2307/249008",
+      "year": 1989,
+      "venue": "MIS Quarterly",
+      "citation_level": 2,
+      "citation_context": "technology acceptance framing for attitude-behavior gap"
+    },
+    {
+      "title": "A comprehensive review of AI-powered grading and tailored feedback in universities",
+      "doi": "10.1007/s44163-025-00517-0",
+      "year": 2025,
+      "venue": "Discover Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Does ChatGPT enhance student learning? A systematic review and meta-analysis of experimental studies",
+      "doi": "10.1016/j.compedu.2024.105224",
+      "year": 2024,
+      "venue": "Computers & Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Enhancing teacher AI literacy and integration through different types of cases in teacher professional development",
+      "doi": "10.1016/j.caeo.2024.100178",
+      "year": 2024,
+      "venue": "Computers and Education Open",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "State of the American Teacher Survey: 2024 Technical Documentation and Survey results",
+      "doi": "10.7249/rra1108-11",
+      "year": 2024,
+      "venue": "RAND Corporation eBooks",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Defining intelligence: Bridging the gap between human and artificial perspectives",
+      "doi": "10.1016/j.intell.2024.101832",
+      "year": 2024,
+      "venue": "Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The development of the STEM Career Interest Survey (STEM-CIS)",
+      "doi": "10.1007/s11165-013-9389-3",
+      "year": 2013,
+      "venue": "Research in Science Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Using ChatGPT is easy, using it effectively is tough? A mixed methods study on K-12 students\u2019 perceptions, interaction patterns, and support for learning with generative AI chatbots",
+      "doi": "10.1186/s40561-025-00385-2",
+      "year": 2025,
+      "venue": "Smart Learning Environments",
+      "citation_level": 2,
+      "citation_context": "critical AI literacy discussion extended by current findings"
+    },
+    {
+      "title": "ChatGPT for language teaching and learning",
+      "doi": "10.1177/00336882231162868",
+      "year": 2023,
+      "venue": "RELC Journal",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Teachers\u2019 Experience When Using Interactive Applications with Augmented Reality Glasses",
+      "doi": "10.1007/978-3-031-47328-9_8",
+      "year": 2023,
+      "venue": "Communications in computer and information science",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Trust in automation: designing for appropriate reliance",
+      "doi": "10.1518/hfes.46.1.50_30392",
+      "year": 2004,
+      "venue": "Human Factors the Journal of the Human Factors and Ergonomics Society",
+      "citation_level": 2,
+      "citation_context": "trust calibration contrasted with epistemic safeguarding"
+    },
+    {
+      "title": "The influence of ChatGPT on student engagement: A systematic review and future research agenda",
+      "doi": "10.1016/j.compedu.2024.105100",
+      "year": 2024,
+      "venue": "Computers & Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "What is AI Literacy? Competencies and Design Considerations",
+      "doi": "10.1145/3313831.3376727",
+      "year": 2020,
+      "venue": "CHI \u201920: Proceedings of the 2020 CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 2,
+      "citation_context": "critical AI literacy and fact-checking framework"
+    },
+    {
+      "title": "Motivating students to learn STEM via engaging flight simulation activities",
+      "doi": null,
+      "year": 2021,
+      "venue": "Journal of Science Education and Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Conceptualizing AI literacy: An exploratory review",
+      "doi": "10.1016/j.caeai.2021.100041",
+      "year": 2021,
+      "venue": "Computers and Education Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Empowering student self\u2010regulated learning and science education through ChatGPT : A pioneering pilot study",
+      "doi": "10.1111/bjet.13454",
+      "year": 2024,
+      "venue": "British Journal of Educational Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Adaptive trust calibration for human-AI collaboration",
+      "doi": "10.1371/journal.pone.0229132",
+      "year": 2020,
+      "venue": "PLoS ONE",
+      "citation_level": 2,
+      "citation_context": "trust calibration contrasted with epistemic safeguarding"
+    },
+    {
+      "title": "The PRISMA 2020 statement: an updated guideline for reporting systematic reviews",
+      "doi": "10.1136/bmj.n71",
+      "year": 2021,
+      "venue": "BMJ",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The ebb and flow of online learning",
+      "doi": "10.1016/s0747-5632(04)00036-6",
+      "year": 2005,
+      "venue": "Computers in Human Behavior",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "How do people react to ChatGPT\u2019s unpredictable behavior? Anthropomorphism, uncanniness, and fear of AI: A qualitative study on individuals\u2019 perceptions and understandings of LLMs\u2019 nonsensical hallucinations",
+      "doi": "10.1016/j.ijhcs.2025.103471",
+      "year": 2025,
+      "venue": "International Journal of Human-Computer Studies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Developing a scale to measure attitude towards science learning among school students",
+      "doi": null,
+      "year": 2011,
+      "venue": "Bulletin of Education and Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Using Mobile Applications to Interact with Drones: A Teachers\u2019 Perception Study",
+      "doi": "10.1007/978-3-030-96296-8_59",
+      "year": 2022,
+      "venue": "Lecture notes in networks and systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Aerial Robots: To Use or not to Use Them in Teaching and Learning?",
+      "doi": "10.1007/978-981-19-0568-1_14",
+      "year": 2022,
+      "venue": "Lecture notes in educational technology",
+      "citation_level": 2,
+      "citation_context": "recent education technology attitude-behavior pattern comparison"
+    },
+    {
+      "title": "Development and Validation of a Scale Measuring Student Attitudes Toward Artificial Intelligence",
+      "doi": "10.1177/21582440221100463",
+      "year": 2022,
+      "venue": "SAGE Open",
+      "citation_level": 3,
+      "citation_context": "SATAI scale used for quantitative measurement"
+    },
+    {
+      "title": "Exploring students\u2019 experience of ChatGPT in STEM education",
+      "doi": "10.1016/j.caeai.2024.100360",
+      "year": 2024,
+      "venue": "Computers and Education Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The effect of ChatGPT on students\u2019 learning performance, learning perception, and higher-order thinking: insights from a meta-analysis",
+      "doi": "10.1057/s41599-025-04787-y",
+      "year": 2025,
+      "venue": "Humanities and Social Sciences Communications",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The effects of group composition of self-efficacy and collective efficacy on computer-supported collaborative learning",
+      "doi": "10.1016/j.chb.2006.03.005",
+      "year": 2006,
+      "venue": "Computers in Human Behavior",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Development and validation of an artificial intelligence anxiety scale: an initial application in predicting motivated learning behavior",
+      "doi": "10.1080/10494820.2019.1674887",
+      "year": 2019,
+      "venue": "Interactive Learning Environments",
+      "citation_level": 3,
+      "citation_context": "AIAS scale used for quantitative measurement"
+    },
+    {
+      "title": "Generative artificial intelligence in secondary education: Applications and effects on students\u2019 innovation skills and digital literacy",
+      "doi": "10.1371/journal.pone.0323349",
+      "year": 2025,
+      "venue": "PLoS ONE",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The effectiveness of ChatGPT in assisting high school students in programming learning: evidence from a quasi-experimental research",
+      "doi": "10.1080/10494820.2025.2450659",
+      "year": 2025,
+      "venue": "Interactive Learning Environments",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Artificial intelligence (AI) learning tools in K-12 education: A scoping review",
+      "doi": "10.1007/s40692-023-00304-9",
+      "year": 2024,
+      "venue": "Journal of Computers in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Artificial intelligence: American attitudes and trends",
+      "doi": "10.2139/ssrn.3312874",
+      "year": 2019,
+      "venue": "SSRN Electronic Journal",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Modeling the relationships between secondary school students\u2019 AI learning attitude, AI literacy and AI career interest",
+      "doi": "10.1007/s10639-025-13715-1",
+      "year": 2025,
+      "venue": "Education and Information Technologies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Self-regulated learning and performance: An introduction and an overview",
+      "doi": null,
+      "year": 2011,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

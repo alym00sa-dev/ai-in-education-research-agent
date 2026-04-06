@@ -1,0 +1,29 @@
+{
+  "title": "SYSMOBENCH: Evaluating AI on Formally Modeling Complex Real-World Systems",
+  "doi": null,
+  "year": 2026,
+  "venue": null,
+  "url": "http://arxiv.org/abs/2509.23130v3",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper introduces SYSMOBENCH, a benchmark for evaluating whether generative AI systems, especially large language models and agents, can produce formal models of complex real-world software systems. The core problem the authors address is that formal system models are valuable for verification and testing but are expensive and difficult for humans to create, and it remains unclear whether modern AI can generate such models for realistic concurrent and distributed systems rather than only small code snippets or function-level specifications.\n\nThe approach is the creation of a benchmark centered on TLA+ system modeling tasks derived from real-world artifacts such as Etcd Raft, Redis Raft, ZooKeeper leader election, and synchronization/data-structure components from the Asterinas operating system. SYSMOBENCH evaluates AI-generated models using automated metrics for syntax correctness, runtime correctness, conformance to system implementations via trace validation, and invariant correctness through model checking. The paper also reports baseline evaluations using several agents and LLMs, including Claude-Sonnet-4, GPT-5, Gemini-2.5-Pro, and DeepSeek-R1.\n\nThe paper is not an education study and does not involve K-12 or other learner populations. Its empirical context is software engineering and formal methods research, with benchmark tasks based on open-source system artifacts rather than human participants in instructional settings. The only human-related context described concerns benchmark developers adding tasks and inspecting some LLM-assisted mappings, not study participants.\n\nThe main conclusions are that current generative AI systems can sometimes generate high-quality formal models for relatively small and simple systems, such as a spinlock, but perform poorly on larger and more complex systems such as Etcd Raft. The authors conclude that contemporary LLMs remain limited in comprehending, abstracting, and specifying large complex systems, though benchmarks like SYSMOBENCH can help drive future progress in AI-assisted formal modeling.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This paper is a computer systems/AI benchmark paper about generating formal models of distributed and concurrent software systems, not an education study. It contains no K-12 learners, no literacy intervention, and no education-relevant empirical design for the target review question.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "There is no direct evidence on K-12 literacy, language, motivation, or classroom outcomes. Any reported results concern benchmark performance of AI systems on formal specification tasks, so the paper cannot materially inform the educational review thesis.",
+  "interventions": [],
+  "outcome_assignments": [],
+  "limitations": [
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

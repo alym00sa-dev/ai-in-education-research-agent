@@ -1,0 +1,32 @@
+{
+  "title": "The NPU-HWC System for the ISCSLP 2024 Inspirational and Convincing Audio Generation Challenge",
+  "doi": null,
+  "year": 2024,
+  "venue": "ISCSLP 2024 Inspirational and Convincing Audio Generation Challenge / International Conference on Chinese Spoken Language Processing (ISCSLP 2024)",
+  "url": "http://arxiv.org/abs/2410.23815v1",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper is not the requested education study on \"Impact of ChatGPT on the Academic Writing Quality of Senior High School Students\". Instead, it is a speech and audio generation systems paper describing the NPU-HWC submission to the ISCSLP 2024 Inspirational and Convincing Audio Generation Challenge (ICAGC 2024). The paper addresses the technical problem of generating realistic synthetic speech with both high-quality voice cloning and contextually appropriate background audio.\n\nThe proposed approach has two components. For Track 1, the authors build a zero-shot speaker and style cloning system using Byte Pair Encoding for text tokenization, Single-Codec for speech tokenization, a NanoGPT-style autoregressive language model for speech-token prediction, and DSPGAN as a vocoder to upsample 16 kHz mel-spectrograms to 48 kHz waveforms. For Track 2, they use a large-language-model-based pipeline to generate scene or music descriptions from speech transcripts, then synthesize background audio with Tango 2 and mix it with the generated speech after reducing background gain by 10 dB.\n\nThe empirical context is a speech technology challenge rather than an educational intervention. The systems are trained on more than 80,000 hours of Mandarin speech, including open-source corpora and online podcast/audiobook data, and evaluated on challenge test sets and official listening tests. No student, teacher, or school population is studied, and no classroom implementation is reported.\n\nThe main conclusion is that the submitted system performed strongly in the challenge, placing second in Track 1 and first in Track 2. The paper reports objective metrics for Track 1 (CER 6.86%, SECS 0.849) and subjective MOS-based competition results, concluding that token-level decoupling of timbre/style and LLM-guided background audio generation improved realism and competitiveness. However, because this is a technical challenge system paper rather than an education study, the requested educational metadata are not applicable.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "The provided paper is not the requested education study. It is an arXiv-style technical challenge system paper on speech and background-audio generation, with no K-12 student sample, no academic-writing intervention, and no education evaluation design relevant to the target retrieval.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports technical challenge performance and MOS outcomes for audio generation, but no educational impact on learners. Therefore impact on education outcomes is unclear and not directly estimable from the provided text.",
+  "interventions": [],
+  "outcome_assignments": [],
+  "limitations": [
+    "no_control_group",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "China",
+  "study_region": "East Asia & Pacific",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

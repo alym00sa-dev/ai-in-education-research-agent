@@ -1,0 +1,30 @@
+{
+  "title": "TENET: Leveraging Tests Beyond Validation for Code Generation",
+  "doi": null,
+  "year": 2025,
+  "venue": null,
+  "url": "http://arxiv.org/abs/2509.24148v2",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses repository-level code generation in software engineering, asking how large language model (LLM) agents can better generate code when working in a test-driven development (TDD) setting. The authors argue that tests are not only useful for post hoc validation but also serve as executable specifications that can guide code generation, especially in complex real-world repositories where natural-language descriptions and surrounding code may not fully express intended functionality.\n\nThe paper introduces TENET, an LLM agent framework with three main components: a test harness mechanism that selects a small but diverse subset of informative test cases, a tailored agent toolset for repository-level context retrieval and interactive debugging, and a reflection-based refinement workflow that uses test execution feedback to iteratively improve generated code. The system is evaluated on two repository-level code generation benchmarks, REPOCOD and RepoEval, and is compared with several open-source baselines including RepoCoder, SpecRover, OpenHands, and SWE-Agent.\n\nThe study context is software engineering benchmark evaluation rather than educational settings or human learner populations. No student, teacher, or school participants are studied. Experiments are conducted on benchmark tasks drawn from real-world code repositories, with performance measured using code-generation metrics such as Pass@1, token consumption, API calls, and test coverage under different ablations and test-selection strategies.\n\nThe main conclusion is that TENET outperforms the comparison baselines on both benchmarks, achieving the best Pass@1 while maintaining better efficiency than some agentic alternatives. The authors further conclude that a moderate number of tests\u2014typically three to five\u2014works better than using the entire test suite, that selecting tests with caller diversity and invocation proximity is beneficial, and that using tests at multiple stages of the workflow improves results despite increased token and API costs.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a CS preprint on repository-level code generation, not an education study, and it does not evaluate any K-12 or adolescent writing-feedback intervention. Although it reports benchmark experiments, they are unrelated to the requested education context and come from a non-peer-reviewed preprint.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "No educational impact on student writing, revision, or self-efficacy is studied, so there is no usable evidence for the target comparative-effectiveness question. The reported improvements are on software code-generation benchmarks rather than learner outcomes.",
+  "interventions": [],
+  "outcome_assignments": [],
+  "limitations": [
+    "non_representative_population",
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "lab",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

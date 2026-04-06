@@ -1,0 +1,551 @@
+{
+  "title": "TRAINING LLM-BASED TUTORS TO IMPROVE STUDENT LEARNING OUTCOMES IN DIALOGUES",
+  "doi": null,
+  "year": 2025,
+  "venue": "AIED 2025: The 26th International Conference on Artificial Intelligence in Education",
+  "url": "https://doi.org/10.1007/978-3-031-98414-3_18",
+  "source_db": "openalex_search",
+  "populations": [
+    "K-12 (unspecified grade)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses how to improve LLM-based tutoring systems so that they do not merely sound pedagogically appropriate, but are trained to generate tutor responses that are more likely to improve student performance during tutoring dialogues. The authors argue that prior LLM tutors are usually optimized to follow tutoring principles or prompts, but not explicitly optimized for student learning outcomes across turns of dialogue. Their core research question is whether an open-source LLM tutor can be trained to produce utterances that both preserve pedagogical quality and increase the likelihood that a student responds correctly on the next turn.\n\nThe intervention is a training pipeline for an AI math tutor based on Llama 3.1 8B. The approach first generates multiple candidate tutor utterances from several sources, including human tutors, GPT-4o, and smaller Llama models. Each candidate is then scored on two dimensions: predicted student correctness using LLMKT, a dialogue knowledge-tracing student model, and pedagogical quality using a hand-crafted rubric judged by GPT-4o. These scores are combined to construct preference pairs, and the tutor model is fine-tuned using direct preference optimization (DPO), after an initial distillation stage from GPT-4o outputs. The paper also includes automated evaluation, qualitative analysis, and a small-scale human evaluation.\n\nThe context is one-on-one math tutoring dialogues from the MathDial dataset, which is grounded in GSM8K math word problems. In this dataset, tutors are crowd workers and students are simulated by GPT-3.5 rather than real learners, so the study takes place in a simulated dialogue environment rather than an authentic classroom deployment. The paper concerns K-12 math tutoring in general, but no exact grade band is reported. Human evaluation was conducted with two volunteer university students as annotators, but they were evaluators rather than the learner population under study.\n\nThe main conclusion is that the DPO-trained open-source tutor substantially improves predicted next-turn student correctness compared with the baselines, including GPT-4o, while maintaining pedagogical quality comparable to GPT-4o. Qualitative results suggest the model learns to ask more manageable, scaffolded questions that help students make progress without directly giving away answers. However, the authors explicitly note that the most important limitation is the absence of real students in the experiments; outcomes are based on simulated student modeling and rubric judgments rather than actual learning gains. They position the work as a promising starting point that requires future validation in real educational settings with real students and longer-term learning outcomes.",
+  "limitations": [
+    "small_sample",
+    "no_control_group",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "identified_tools": [
+    {
+      "name": "LLaMA",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "personalization_adaptation"
+      ],
+      "description": "Meta's LLaMA family of large language models, used here as the base family for an open-source dialogue tutor model fine-tuned for math tutoring.",
+      "use_case": "The paper fine-tunes LLaMA (specifically Llama 3.1 8B) via distillation from GPT-4o-generated tutor utterances and then direct preference optimization to generate math tutor dialogue turns that maximize predicted next-turn student correctness while maintaining pedagogical quality.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "On the MathDial test set, the DPO-trained LLaMA tutor achieved a student outcome score of 0.65 on LLMKT-predicted next-turn correctness, compared with 0.47 for the distilled LLaMA model, 0.43 for the base LLaMA model, and 0.49 for GPT-4o. The authors state this is a 33% improvement over the next best method (GPT-4o), indicating the optimized LLaMA tutor was most likely to elicit correct student responses under the student model.",
+          "measure": "Average LLMKT-predicted probability of correct student response on the next tutor-student turn",
+          "effect_size": "0.65 vs 0.49 GPT-4o; 33% improvement over next best method",
+          "confidence_interval": "not_reported",
+          "sample_size": "588 dialogues; 3,101 tutor turns"
+        },
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The DPO-trained LLaMA tutor scored 9.37 overall on the GPT-4o pedagogical rubric, closely matching GPT-4o's 9.40 and outperforming the distilled LLaMA model's 8.93. On rubric components, DPO reached Acc.=0.97, Prog.=0.96, Err.=0.92, Hint.=0.96, Wth.=0.99, and Enc.=0.92, showing strong pedagogical quality alongside improved predicted student correctness.",
+          "measure": "GPT-4o rubric-based pedagogical evaluation of tutor utterances (overall 1-10 score and rubric item scores)",
+          "effect_size": "Overall 9.37 vs 9.40 GPT-4o; vs 8.93 Distill",
+          "confidence_interval": "not_reported",
+          "sample_size": "588 dialogues; 3,101 tutor turns"
+        },
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In human evaluation, the DPO-trained LLaMA tutor was ranked best for likely leading to a correct student response (average correctness rank 1.75, where rank 1 is best), compared with 2.12 for human tutors and 2.13 for GPT-4o. It also received the highest human rubric score, 8.55 versus 8.07 for GPT-4o and 7.36 for human tutors; all differences were reported as statistically significant at p < 0.05 by paired t-test.",
+          "measure": "Human-ranked likelihood of eliciting correct student response and human pedagogical rubric score",
+          "effect_size": "Correctness rank 1.75; rubric score 8.55",
+          "confidence_interval": "not_reported",
+          "sample_size": "50 evaluation instances"
+        },
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "When varying the preference-weight parameter \u03bb from 0.00 to 1.00 on a 500-turn-pair subset, increasing \u03bb generally increased predicted student correctness while generally decreasing pedagogical rubric score. The paper reports that values around 0.5 to 0.75 maintained relatively high pedagogical scores while substantially improving predicted correctness, suggesting a tradeoff rather than a uniformly dominant setting.",
+          "measure": "Tradeoff between LLMKT-predicted correctness and pedagogical rubric score as \u03bb varies",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "500 turn pairs"
+        }
+      ]
+    },
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "tutoring_instruction"
+      ],
+      "description": "OpenAI's GPT family of large language models, used here both as a tutor utterance generator and as an automated evaluator of pedagogical quality.",
+      "use_case": "GPT-4o was used to generate candidate tutor utterances for math dialogues and to judge tutor utterances with a pedagogical rubric; GPT-3.5 appears only as the simulated student source in the underlying MathDial dataset, not as the focal intervention.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "As a tutor-generation baseline, ChatGPT (GPT-4o) achieved a student outcome score of 0.49 on LLMKT-predicted next-turn correctness and an overall pedagogical rubric score of 9.40 on the MathDial test set. This made it second-best on predicted correctness behind the DPO-trained LLaMA model, while remaining the top automated rubric scorer by a small margin.",
+          "measure": "Average LLMKT-predicted probability of correct student response and GPT-4o rubric-based pedagogical score",
+          "effect_size": "Correctness 0.49; overall rubric 9.40",
+          "confidence_interval": "not_reported",
+          "sample_size": "588 dialogues; 3,101 tutor turns"
+        },
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "In human evaluation, ChatGPT (GPT-4o) had an average correctness rank of 2.13 and a rubric score of 8.07, both below the DPO-trained LLaMA tutor (1.75 and 8.55, respectively). The paper reports these differences were statistically significant at p < 0.05, suggesting that although GPT-4o performed strongly, it was not the best-performing tutor in human judgment.",
+          "measure": "Human-ranked likelihood of eliciting correct student response and human pedagogical rubric score",
+          "effect_size": "Correctness rank 2.13; rubric score 8.07",
+          "confidence_interval": "not_reported",
+          "sample_size": "50 evaluation instances"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical study with quantitative automated evaluation and a small human evaluation, but it does not test the tutor with real students; the main outcome is simulated student correctness predicted by LLMKT on an existing dialogue dataset. Because the evidence is based on offline modeling rather than RCT/QED with authentic learners, the study fits yellow-tier evidence.",
+  "impact_tier": "blue",
+  "impact_tier_rationale": "The reported gains are large on the paper's primary metric: the DPO-trained LLaMA tutor improves predicted student correctness from 0.49 to 0.65 versus the next best method, which the authors describe as a 33% improvement. However, this strong impact is on simulated/offline outcomes rather than real-world student achievement.",
+  "citations": [
+    {
+      "title": "Cognitive tutors: Lessons learned",
+      "doi": null,
+      "year": 1995,
+      "venue": "The Journal of the Learning Sciences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Improving socratic question generation using data augmentation and preference optimization",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 19th Workshop on Innovative Use of NLP for Building Educational Applications (BEA 2024)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Learning path recommendation based on knowledge tracing model and reinforcement learning",
+      "doi": null,
+      "year": 2019,
+      "venue": "2019 IEEE 5th International Conference on Computer and Communications (ICCC)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "LiveHint overview",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Training verifiers to solve math word problems",
+      "doi": null,
+      "year": 2021,
+      "venue": "arXiv preprint arXiv:2110.14168",
+      "citation_level": 3,
+      "citation_context": "source of GSM8K math problems underlying MathDial"
+    },
+    {
+      "title": "Mathematics standards",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Knowledge tracing: Modeling the acquisition of procedural knowledge",
+      "doi": null,
+      "year": 1994,
+      "venue": "User Modeling and User-Adapted Interaction",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Adaptive and personalized exercise generation for online language learning",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Measuring conversational uptake: A case study on student-teacher interactions",
+      "doi": null,
+      "year": 2021,
+      "venue": "Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The llama 3 herd of models",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv preprint arXiv:2407.21783",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Hugging Face - the AI community building the future",
+      "doi": null,
+      "year": 2025,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "source for Meta-Llama-3.1-8B-Instruct model used in experiments"
+    },
+    {
+      "title": "DiVERT: Distractor generation with variational errors represented as text for math multiple-choice questions",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Context-aware attentive knowledge tracing",
+      "doi": null,
+      "year": 2020,
+      "venue": "Proceedings of the ACM SIGKDD Conference on Knowledge Discovery and Data Mining",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Intelligent tutoring systems with conversational dialogue",
+      "doi": null,
+      "year": 2001,
+      "venue": "AI Magazine",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "LLM-as-a-tutor in EFL writing education: Focusing on evaluation of student-LLM interaction",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 1st Workshop on Customizable NLP: Progress and Challenges in Customizing NLP for a Domain, Application, Group, or Individual (CustomNLP4U)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Evaluating and optimizing educational content with large language model judgments",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 17th International Conference on Educational Data Mining",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Quizzing policy using reinforcement learning for inferring the student knowledge state",
+      "doi": null,
+      "year": 2021,
+      "venue": "International Educational Data Mining Society",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "LoRA: Low-rank adaptation of large language models",
+      "doi": null,
+      "year": 2021,
+      "venue": "arXiv preprint arXiv:2106.09685",
+      "citation_level": 3,
+      "citation_context": "parameter-efficient fine-tuning method used for model adaptation"
+    },
+    {
+      "title": "Insta-Reviewer: A data-driven approach for generating instant feedback on students\u2019 project reports",
+      "doi": null,
+      "year": 2022,
+      "venue": "International Educational Data Mining Society",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Using large language models to assess tutors\u2019 performance in reacting to students making math errors",
+      "doi": null,
+      "year": 2024,
+      "venue": "AI for Education: Bridging Innovation and Responsibility at the 38th AAAI Annual Conference on AI",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Rank correlation methods",
+      "doi": null,
+      "year": 1948,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "Kendall's tau used for inter-rater agreement analysis"
+    },
+    {
+      "title": "Supercharge your teaching experience with Khanmigo",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Margin matching preference optimization: Enhanced model alignment with granular feedback",
+      "doi": null,
+      "year": 2024,
+      "venue": "Findings of the Association for Computational Linguistics: EMNLP 2024",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Challenges and opportunities of moderating usage of large language models in education",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the International Conference on Mobile and Ubiquitous Multimedia",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Thirteen ways to look at the correlation coefficient",
+      "doi": null,
+      "year": 1988,
+      "venue": "The American Statistician",
+      "citation_level": 3,
+      "citation_context": "Pearson correlation used for agreement with human rubric scores"
+    },
+    {
+      "title": "Student interaction with NewtBot: An LLM-as-tutor chatbot for secondary physics education",
+      "doi": null,
+      "year": 2024,
+      "venue": "Extended Abstracts of the CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Novice learner and expert tutor: Evaluating math reasoning abilities of large language models with misconceptions",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv preprint arXiv:2310.02439",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Open-ended knowledge tracing for computer science education",
+      "doi": null,
+      "year": 2022,
+      "venue": "Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "MathDial: A dialogue tutoring dataset with rich pedagogical properties grounded in math reasoning problems",
+      "doi": null,
+      "year": 2023,
+      "venue": "Findings of the Association for Computational Linguistics: EMNLP 2023",
+      "citation_level": 3,
+      "citation_context": "primary tutor-student dialogue dataset and human tutor baseline"
+    },
+    {
+      "title": "The impressive effects of tutoring on preK-12 learning: A systematic review and meta-analysis of the experimental evidence",
+      "doi": null,
+      "year": 2020,
+      "venue": "National Bureau of Economic Research Working Paper",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Generative large language models for dialog-based tutoring: An early consideration of opportunities and concerns",
+      "doi": null,
+      "year": 2023,
+      "venue": "LLM@AIED",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Hello GPT-4o",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "proprietary model used for generation and rubric evaluation"
+    },
+    {
+      "title": "AutoTutor meets large language models: A language model tutor with rich pedagogy and guardrails",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the Eleventh ACM Conference on Learning@ Scale",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Empowering personalized learning through a conversation-based tutoring system with student modeling",
+      "doi": null,
+      "year": 2024,
+      "venue": "Extended Abstracts of the CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Deep knowledge tracing",
+      "doi": null,
+      "year": 2015,
+      "venue": "Proceedings of NeurIPS",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Direct preference optimization: Your language model is secretly a reward model",
+      "doi": null,
+      "year": 2024,
+      "venue": "Advances in Neural Information Processing Systems",
+      "citation_level": 3,
+      "citation_context": "core optimization algorithm for preference-based fine-tuning"
+    },
+    {
+      "title": "Faster teaching via POMDP planning",
+      "doi": null,
+      "year": 2016,
+      "venue": "Cognitive Science",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Exploring knowledge tracing in tutor-student dialogues using LLMs",
+      "doi": null,
+      "year": 2025,
+      "venue": "Proceedings of the 15th Learning Analytics and Knowledge Conference (LAK 2025)",
+      "citation_level": 3,
+      "citation_context": "provides Dialogue KT annotations and LLMKT evaluation method"
+    },
+    {
+      "title": "Improving the validity of automatically generated feedback via reinforcement learning",
+      "doi": null,
+      "year": 2024,
+      "venue": "International Conference on Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Ruffle&Riley: Insights from designing and evaluating a large language model-based conversational tutoring system",
+      "doi": null,
+      "year": 2024,
+      "venue": "International Conference on Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "CLASS: A design framework for building intelligent tutoring systems based on learning science principles",
+      "doi": null,
+      "year": 2023,
+      "venue": "Findings of the Association for Computational Linguistics: EMNLP 2023",
+      "citation_level": 2,
+      "citation_context": "learning science principles informing the pedagogical rubric"
+    },
+    {
+      "title": "Pedagogical alignment of large language models",
+      "doi": null,
+      "year": 2024,
+      "venue": "Findings of the Association for Computational Linguistics: EMNLP 2024",
+      "citation_level": 2,
+      "citation_context": "supports rubric-based notion of pedagogical quality"
+    },
+    {
+      "title": "Enhancing LLM-based feedback: Insights from intelligent tutoring systems and the learning sciences",
+      "doi": null,
+      "year": 2024,
+      "venue": "International Conference on Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Comparing the quality of human and ChatGPT feedback of students\u2019 writing",
+      "doi": null,
+      "year": 2024,
+      "venue": "Learning and Instruction",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "LearnLM: Improving Gemini for learning",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The architecture of Why2-Atlas: A coach for qualitative physics essay writing",
+      "doi": null,
+      "year": 2002,
+      "venue": "Intelligent Tutoring Systems: 6th International Conference, ITS 2002",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Bridging the novice-expert gap via models of decision-making: A case study on remediating math mistakes",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Tutor CoPilot: A human-AI approach for scaling real-time expertise",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv preprint arXiv:2410.03017",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Automatic pair construction for contrastive post-training",
+      "doi": null,
+      "year": 2024,
+      "venue": "Findings of the Association for Computational Linguistics: NAACL 2024",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Pride and prejudice: LLM amplifies self-bias in self-refinement",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+      "citation_level": 2,
+      "citation_context": "explains possible self-bias in GPT-4o automated evaluation"
+    },
+    {
+      "title": "CRef: An LLM-based conversational software repair framework for programming tutors",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 33rd ACM SIGSOFT International Symposium on Software Testing and Analysis",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Survey on knowledge distillation for large language models: Methods, evaluation, and application",
+      "doi": null,
+      "year": 2024,
+      "venue": "ACM Transactions on Intelligent Systems and Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The future of learning: Large language models through the lens of students",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 25th Annual Conference on Information Technology Education",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

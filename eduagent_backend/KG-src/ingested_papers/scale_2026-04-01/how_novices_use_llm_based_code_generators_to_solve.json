@@ -1,0 +1,524 @@
+{
+  "title": "How Novices Use LLM-Based Code Generators to Solve CS1 Coding Tasks in a Self-Paced Learning Environment",
+  "doi": null,
+  "year": 2023,
+  "venue": "Koli Calling International Conference on Computing Education Research",
+  "url": "https://arxiv.org/abs/2309.14049",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Middle School (6th-8th)",
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper examines how novice learners use large language model (LLM)-based code generators while learning introductory programming, and what these usage patterns may imply for learning. The authors focus on two main questions: how novices interact with an AI code generator during CS1-style coding tasks, and what broader coding approaches emerge when learners have access to such tools. The study is motivated by growing interest in AI coding assistants such as OpenAI Codex, ChatGPT, and GitHub Copilot, alongside concerns about over-reliance, verification, and whether these tools support or undermine learning.\n\nThe study analyzes log data from a prior three-week study using Coding Steps, a self-paced online Python learning environment with 45 programming tasks, instructor feedback, Python documentation, and an embedded AI code generator based on OpenAI Codex. For this paper, the authors focus on the 33 learners in the Codex condition and conduct a thematic analysis of 1,666 AI code-generation requests, while also relating identified coding approaches to quantitative task and post-test outcomes from the larger study. They categorize when learners used Codex, what kinds of prompts they wrote, the quality of the generated code, and how learners integrated, tested, and modified AI-generated code.\n\nParticipants were novice programmers aged 10-17 recruited from coding camps in two major North American cities. The learning context was a self-paced online environment used across ten 90-minute sessions over three weeks, followed by immediate and one-week retention post-tests in the original study design. Learners had access to the AI code generator only during code-authoring tasks in the training phase, not during code-modification tasks or post-tests. The paper identifies four coding approaches: AI Single Prompt, AI Step-by-Step, Hybrid, and Manual.\n\nThe main conclusions are that novices use AI code generators in varied ways, with both productive self-regulated behaviors and problematic over-reliance. The AI Single Prompt approach produced the highest correctness on code-authoring tasks during training but the lowest performance on subsequent code-modification tasks, suggesting possible superficial success without equivalent learning. Hybrid use showed more consistently positive trends with later outcomes, although the relationships with post-test scores were not statistically significant. The authors conclude that AI code generators can support beginners, but their educational value depends heavily on how learners prompt, verify, and integrate generated code, and they argue for curriculum and tool designs that encourage decomposition, verification, and reflective use rather than passive acceptance.",
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "non_representative_population"
+  ],
+  "duration_weeks": "3",
+  "setting": "online",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "OpenAI Codex",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "tutoring_instruction"
+      ],
+      "description": "A large language model for code generation from natural-language prompts, used here through an embedded AI code generator in the Coding Steps learning environment.",
+      "use_case": "Novice learners ages 10-17 used an AI code generator based on OpenAI Codex while completing 45 CS1 Python code-authoring tasks in a self-paced environment; the study analyzed prompts, generated code, usage patterns, and associations with task and post-test performance.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Across 1,666 Codex uses from 33 learners, the AI Single Prompt approach produced the highest code-authoring correctness during training (M=96%, SD=16%; usage n=630) but the lowest correctness on subsequent code-modification tasks during training (M=62%, SD=45%). By contrast, Hybrid use showed lower authoring correctness (M=77%, SD=34%; n=252) but higher code-modification correctness (M=73%, SD=39%), matching Manual performance on modification tasks.",
+          "measure": "Training-phase task correctness scores on code-authoring and code-modification tasks by coding approach",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=33 learners; 1,379 submitted tasks"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "The paper reports no statistically significant relationships between coding-approach utilization rates and immediate or retention post-test scores, but consistent directional trends were observed: AI Single Prompt was negatively related to post-test outcomes, while Hybrid was positively related. The authors interpret this cautiously as suggestive rather than confirmatory evidence about learning effects.",
+          "measure": "Immediate and retention post-test scores on coding tasks and conceptual multiple-choice questions, regressed on utilization rate of each coding approach",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=33"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Most Codex generations were usable at a surface level: 81% of 1,666 AI-generated outputs (n=1,357) were produced without identifiable problems, while 19% (n=309) had issues such as not following task requirements, regenerating existing code, missing minor code, incorrect code, or comments-only output. This indicates substantial productivity support but also frequent failure modes that novices had to manage.",
+          "measure": "Quality/problem characteristics of AI-generated code outputs",
+          "effect_size": "81% usable without identifiable problems",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=1,666 Codex usages"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Thematic analysis found both self-regulation and over-reliance in learners' use of Codex. Learners sometimes verified or tinkered with generated code (e.g., 60% of Codex uses were tested, n=1,005), but also frequently used single-prompt full-solution generation and sometimes submitted generated code without running it (63 cases), suggesting risks for shallow engagement.",
+          "measure": "Observed self-regulation and over-reliance behaviors in log data during AI-assisted coding",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=33 learners; 1,666 Codex usages"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical mixed-methods/log-analysis study with thematic coding and descriptive quantitative analyses, but it is not a randomized evaluation of Codex effects within this paper and reports no causal effect estimates here. Evidence is informative but primarily qualitative/correlational.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper shows mixed effects: strong task-authoring performance benefits for single-prompt use, weaker code-modification performance, and only non-significant trends on post-tests. Overall impact on learning is suggestive but unclear rather than clearly positive.",
+  "citations": [
+    {
+      "title": "Toward meta-cognitive tutoring: A model of help seeking with a Cognitive Tutor",
+      "doi": null,
+      "year": 2006,
+      "venue": "International Journal of Artificial Intelligence in Education",
+      "citation_level": 2,
+      "citation_context": "help-seeking in interactive learning environments"
+    },
+    {
+      "title": "Program synthesis with large language models",
+      "doi": null,
+      "year": 2021,
+      "venue": "arXiv preprint arXiv:2108.07732",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Detecting student misuse of intelligent tutoring systems",
+      "doi": null,
+      "year": 2004,
+      "venue": "Intelligent Tutoring Systems: 7th International Conference, ITS 2004",
+      "citation_level": 2,
+      "citation_context": "bottom-out hints harming learning gains"
+    },
+    {
+      "title": "Grounded copilot: How programmers interact with code-generating models",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the ACM on Programming Languages",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Programming Is Hard-Or at Least It Used to Be: Educational Opportunities and Challenges of AI Code Generation",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 54th ACM Technical Symposium on Computer Science Education V. 1",
+      "citation_level": 2,
+      "citation_context": "signs of over-reliance on AI code generators"
+    },
+    {
+      "title": "Analyzing qualitative data: Systematic approaches",
+      "doi": null,
+      "year": 2016,
+      "venue": "SAGE publications",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Deductive and inductive approaches to qualitative data analysis",
+      "doi": null,
+      "year": 2021,
+      "venue": "Analyzing and interpreting qualitative data: After the interview",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Two studies of opportunistic programming: interleaving web foraging, learning, and writing code",
+      "doi": null,
+      "year": 2009,
+      "venue": "Proceedings of the SIGCHI Conference on Human Factors in Computing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Toward a theory of instruction",
+      "doi": null,
+      "year": 1966,
+      "venue": "Harvard University Press",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "To trust or to think: cognitive forcing functions can reduce overreliance on AI in AI-assisted decision-making",
+      "doi": null,
+      "year": 2021,
+      "venue": "Proceedings of the ACM on Human-Computer Interaction",
+      "citation_level": 2,
+      "citation_context": "humans over-trust incorrect AI agents"
+    },
+    {
+      "title": "Understanding User Reliance on AI in Assisted Decision-Making",
+      "doi": null,
+      "year": 2022,
+      "venue": "Proceedings of the ACM on Human-Computer Interaction",
+      "citation_level": 2,
+      "citation_context": "humans over-trust incorrect AI agents"
+    },
+    {
+      "title": "Evaluating large language models trained on code",
+      "doi": null,
+      "year": 2021,
+      "venue": "arXiv preprint arXiv:2107.03374",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Palm: Scaling language modeling with pathways",
+      "doi": null,
+      "year": 2022,
+      "venue": "arXiv preprint arXiv:2204.02311",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Avoiding the Turing tarpit: Learning conversational programming by starting from code\u2019s purpose",
+      "doi": null,
+      "year": 2021,
+      "venue": "Proceedings of the 2021 CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Conversing with copilot: Exploring prompt engineering for solving cs1 problems using natural language",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 54th ACM Technical Symposium on Computer Science Education V. 1",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Robosourcing Educational Resources\u2013Leveraging Large Language Models for Learnersourcing",
+      "doi": null,
+      "year": 2022,
+      "venue": "arXiv preprint arXiv:2211.04715",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The robots are coming: Exploring the implications of openai codex on introductory programming",
+      "doi": null,
+      "year": 2022,
+      "venue": "Australasian Computing Education Conference",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "My AI Wants to Know if This Will Be on the Exam: Testing OpenAI\u2019s Codex on CS2 Programming Exercises",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 25th Australasian Computing Education Conference",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Do people engage cognitively with ai? impact of ai assistance on incidental learning",
+      "doi": null,
+      "year": 2022,
+      "venue": "27th International Conference on Intelligent User Interfaces",
+      "citation_level": 2,
+      "citation_context": "over-reliance causes superficial processing of AI information"
+    },
+    {
+      "title": "Copilot: Your AI pair programmer",
+      "doi": null,
+      "year": 2022,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Using Adaptive Parsons Problems to Scaffold Write-Code Problems",
+      "doi": null,
+      "year": 2022,
+      "venue": "Proceedings of the 2022 ACM Conference on International Computing Education Research-Volume 1",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Exploring novice programmer example use",
+      "doi": null,
+      "year": 2015,
+      "venue": "2015 IEEE Symposium on Visual Languages and Human-Centric Computing (VL/HCC)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Jigsaw: Large language models meet program synthesis",
+      "doi": null,
+      "year": 2022,
+      "venue": "Proceedings of the 44th International Conference on Software Engineering",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Exploring the Learnability of Program Synthesizers by Novice Programmers",
+      "doi": null,
+      "year": 2022,
+      "venue": "Proceedings of the 35th Annual ACM Symposium on User Interface Software and Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Discovering the syntax and strategies of natural language programming with generative language models",
+      "doi": null,
+      "year": 2022,
+      "venue": "Proceedings of the 2022 CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Evaluation of guided-planning and assisted-coding with task relevant dynamic hinting",
+      "doi": null,
+      "year": 2014,
+      "venue": "Intelligent Tutoring Systems: 12th International Conference, ITS 2014",
+      "citation_level": 2,
+      "citation_context": "guided planning components for future tool design"
+    },
+    {
+      "title": "ChatGPT for good? On opportunities and challenges of large language models for education",
+      "doi": null,
+      "year": 2023,
+      "venue": "Learning and Individual Differences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Studying the effect of AI Code Generators on Supporting Novice Learners in Introductory Programming",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 3,
+      "citation_context": "comparison condition and prior study this work extends"
+    },
+    {
+      "title": "A systematic literature review of automated feedback generation for programming exercises",
+      "doi": null,
+      "year": 2018,
+      "venue": "ACM Transactions on Computing Education (TOCE)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Exploring Problem Decomposition and Program Development through Block-Based Programs",
+      "doi": null,
+      "year": 2019,
+      "venue": "International Journal of Computer Science Education in Schools",
+      "citation_level": 2,
+      "citation_context": "problem decomposition supports program development"
+    },
+    {
+      "title": "Using large language models to enhance programming error messages",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 54th ACM Technical Symposium on Computer Science Education V. 1",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Competition-level code generation with alphacode",
+      "doi": null,
+      "year": 2022,
+      "venue": "Science",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "\u201cWhat It Wants Me To Say\u201d: Bridging the Abstraction Gap Between End-User Programmers and Code-Generating Large Language Models",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 2,
+      "citation_context": "inspired prompt support via grounded abstraction matching"
+    },
+    {
+      "title": "Unproductive help-seeking in programming: What it is and how to address it",
+      "doi": null,
+      "year": 2020,
+      "venue": "Proceedings of the 2020 ACM conference on innovation and technology in computer science education",
+      "citation_level": 2,
+      "citation_context": "heavy reliance on bottom-out hints analogy"
+    },
+    {
+      "title": "Qualitative data analysis: An expanded sourcebook",
+      "doi": null,
+      "year": 1994,
+      "venue": "sage",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Reading Between the Lines: Modeling User Behavior and Costs in AI-Assisted Programming",
+      "doi": null,
+      "year": 2022,
+      "venue": "arXiv preprint arXiv:2210.14306",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The content analysis guidebook",
+      "doi": null,
+      "year": 2017,
+      "venue": "sage",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Overreliance on AI: Literature review",
+      "doi": null,
+      "year": 2022,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "human-AI collaboration over-reliance background"
+    },
+    {
+      "title": "Generating High-Precision Feedback for Programming Syntax Errors using Large Language Models",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv preprint arXiv:2302.04662",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "What do we think we think we are doing? Metacognition and self-regulation in programming",
+      "doi": null,
+      "year": 2020,
+      "venue": "Proceedings of the 2020 ACM conference on international computing education research",
+      "citation_level": 2,
+      "citation_context": "defines self-regulation during learning tasks"
+    },
+    {
+      "title": "Hint generation under uncertainty: The effect of hint quality on help-seeking behavior",
+      "doi": null,
+      "year": 2017,
+      "venue": "Artificial Intelligence in Education: 18th International Conference, AIED 2017",
+      "citation_level": 2,
+      "citation_context": "traditional environments providing correct support"
+    },
+    {
+      "title": "Help-seeking behavior in a problem-solving situation: Development of self-regulation",
+      "doi": null,
+      "year": 1998,
+      "venue": "European Journal of Psychology of education",
+      "citation_level": 2,
+      "citation_context": "reinvestment of received help requirement"
+    },
+    {
+      "title": "Data-driven hint generation in vast solution spaces: a self-improving python programming tutor",
+      "doi": null,
+      "year": 2017,
+      "venue": "International Journal of Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The programmer\u2019s assistant: Conversational interaction with a large language model for software development",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 28th International Conference on Intelligent User Interfaces",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "What is it like to program with artificial intelligence?",
+      "doi": null,
+      "year": 2022,
+      "venue": "arXiv preprint arXiv:2208.06213",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Automatic generation of programming exercises and code explanations using large language models",
+      "doi": null,
+      "year": 2022,
+      "venue": "Proceedings of the 2022 ACM Conference on International Computing Education Research-Volume 1",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Automated feedback generation for introductory programming assignments",
+      "doi": null,
+      "year": 2013,
+      "venue": "Proceedings of the 34th ACM SIGPLAN conference on Programming language design and implementation",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Problem solving and algorithmic development with flowcharts",
+      "doi": null,
+      "year": 2017,
+      "venue": "Proceedings of the 12th Workshop on Primary and Secondary Computing Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Design, Development and Evaluation of the Java Intelligent Tutoring System",
+      "doi": null,
+      "year": 2010,
+      "venue": "Technology, Instruction, Cognition & Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "An Empirical Study of Developer Behaviors for Validating and Repairing AI-Generated Code",
+      "doi": null,
+      "year": 2023,
+      "venue": "Plateau Workshop",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Expectation vs. experience: Evaluating the usability of code generation tools powered by large language models",
+      "doi": null,
+      "year": 2022,
+      "venue": "Chi conference on human factors in computing systems extended abstracts",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Exploring Design Choices to Support Novices\u2019 Example Use During Creative Open-Ended Programming",
+      "doi": null,
+      "year": 2022,
+      "venue": "Proceedings of the 53rd ACM Technical Symposium on Computer Science Education V. 1",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "In-ide code generation from natural language: Promise and challenges",
+      "doi": null,
+      "year": 2022,
+      "venue": "ACM Transactions on Software Engineering and Methodology (TOSEM)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Block-based versus text-based programming environments on novice student learning outcomes: A meta-analysis study",
+      "doi": null,
+      "year": 2019,
+      "venue": "Computer Science Education",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

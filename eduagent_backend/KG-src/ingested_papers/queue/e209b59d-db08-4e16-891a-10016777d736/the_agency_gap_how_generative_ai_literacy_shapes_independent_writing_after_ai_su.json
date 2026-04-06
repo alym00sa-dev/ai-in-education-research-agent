@@ -1,0 +1,95 @@
+{
+  "title": "The Agency Gap: How Generative AI Literacy Shapes Independent Writing after AI Support",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv preprint",
+  "url": "http://arxiv.org/abs/2507.04398v2",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Graduate / Doctoral",
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Randomized Controlled Trial (RCT)",
+  "extended_summary": "This paper examines whether students\u2019 generative AI (GenAI) literacy is associated with stronger independent writing performance after AI support is removed. The authors frame this as an \u201cagency gap,\u201d asking when GenAI literacy matters most and whether its effects persist beyond immediate AI-assisted performance.\n\nThe study experimentally compares two GenAI chatbot support styles: a reactive chatbot that responds only to user questions and a proactive chatbot that scaffolds learners through structured questions and feedback. Seventy-nine higher education participants completed multimodal academic writing tasks based on visual data, first with either reactive or proactive AI support and then again on a parallel task without AI support. Writing was scored on insightfulness, visual data integration, organisation and coherence, linguistic quality, critical thinking, and a composite score. GenAI literacy and visualisation literacy were measured as predictors and possible confounds.\n\nResults showed that GenAI literacy predicted independent writing performance mainly in the reactive condition, especially after AI support was withdrawn. In the proactive condition, performance was more equal across GenAI literacy levels, suggesting that proactive scaffolding reduced reliance on individual literacy differences. The study also found no meaningful indirect effect through AI-supported writing performance, implying that GenAI literacy functioned as a direct, transferable competence rather than merely boosting performance during AI use. The paper concludes that proactive scaffolds may mitigate disparities, while GenAI literacy becomes more consequential when learners must self-initiate and self-regulate.",
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "no_long_term_followup",
+    "non_representative_population",
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "no",
+  "implementation_fidelity": "medium",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "identified_tools": [
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "tutoring_instruction",
+        "content_generation",
+        "feedback_evaluation"
+      ],
+      "description": "A generative AI chatbot system providing reactive question-answering or proactive scaffolding, using multimodal GPT-4o with retrieval-augmented generation to support academic writing tasks.",
+      "use_case": "Studied as a reactive versus proactive GenAI chatbot supporting multimodal academic writing from visual data, followed by a parallel independent writing task without AI support.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In a sample of n=79 higher education medical and nursing students, GenAI literacy positively predicted independent writing performance after AI removal in the reactive chatbot condition, but not in the proactive condition. Significant associations in the reactive condition were reported for insightfulness (rs=.41, p=.010), visual data integration (rs=.40, p=.013), organisation and coherence (rs=.44, p=.005), linguistic quality (rs=.32, p=.045), critical thinking (rs=.37, p=.019), and composite score (rs=.44, p=.005); partial correlations controlling for visualisation literacy remained significant.",
+          "measure": "Spearman correlations and partial correlations between GenAI literacy and writing rubric scores at AI-removal; rubric dimensions plus composite score",
+          "effect_size": "rs=.32 to .45; partial rs=.35 to .45",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=79"
+        },
+        {
+          "outcome_category": "Academic \u0014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Median-split comparisons showed that in the reactive condition (low n=21, high n=18), the high GenAI literacy group scored higher at AI-removal on insightfulness (U=99.00, p=.021, rrb=.34), visual data integration (U=87.50, p=.012, rrb=.36), organisation and coherence (U=67.50, p=.002, rrb=.46), and composite score (U=83.50, p=.009, rrb=.41). At AI-support, only linguistic quality differed significantly (U=120.50, p=.038, rrb=.28). No significant GenAI literacy group differences were found in the proactive condition (low n=23, high n=17).",
+          "measure": "Mann-Whitney U tests comparing low vs high GenAI literacy groups on writing rubric scores at AI-support and AI-removal",
+          "effect_size": "rrb=.28 to .46",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=39 reactive; n=40 proactive"
+        },
+        {
+          "outcome_category": "Academic \u0014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Ordinal logistic regression predicting AI-removal writing found that higher GenAI literacy significantly predicted better visual data integration (b=0.13, SE=0.06, z=2.07, p=.039, OR=1.14), critical thinking (b=0.14, SE=0.07, z=2.18, p=.029, OR=1.15), and composite score (b=0.10, SE=0.05, z=2.15, p=.032, OR=1.11). GenAI literacy did not significantly predict insightfulness, organisation and coherence, or linguistic quality, and chatbot type and visualisation literacy were not significant predictors.",
+          "measure": "Ordinal logistic regression of AI-removal writing outcomes",
+          "effect_size": "OR=1.11 to 1.15",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=79"
+        },
+        {
+          "outcome_category": "Academic \u0014 Other",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "Mediation analyses did not support an indirect pathway from GenAI literacy to independent writing through AI-supported performance in either condition. In the reactive condition, the indirect effect was 0.032 with 95% CI [-0.022, 0.108]; in the proactive condition, the indirect effect was 0.022 with 95% CI [-0.055, 0.102].",
+          "measure": "Bootstrapped mediation of AI-support score between GenAI literacy and AI-removal score",
+          "effect_size": "indirect effect=0.032 reactive; 0.022 proactive",
+          "confidence_interval": "[-0.022, 0.108]; [-0.055, 0.102]",
+          "sample_size": "n=79"
+        }
+      ]
+    }
+  ],
+  "verdict": "genai_general",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a primary mixed-method/experimental study with clear comparison conditions and quantitative analyses, but it is not a randomized educational efficacy trial on a named product and the evidence is limited to a small higher-education sample. The paper is correlational/experimental within-task rather than a full K-12 intervention study.",
+  "impact_tier": "green",
+  "impact_tier_rationale": "The reported associations and group differences are modest to medium in magnitude, with several effects around r=.32-.45 and rrb=.28-.46. The findings suggest meaningful differences in independent writing after AI support, but they are context-specific and not directly K-12.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

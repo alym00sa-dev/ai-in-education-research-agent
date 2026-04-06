@@ -1,0 +1,72 @@
+{
+  "title": "LECTOR: Summarizing E-book Reading Content for Personalized Student Support",
+  "doi": "10.1007/s40593-025-00478-6",
+  "year": 2025,
+  "venue": "International Journal of Artificial Intelligence in Education",
+  "url": "http://arxiv.org/abs/2505.07898v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper addresses the problem of how to better extract semantically meaningful information from e-book lecture slides and how to use that content information alongside reading logs to support personalized student interventions. The authors argue that conventional reading-activity features alone are limited because they show how students engage with materials but not which topics they are reading about. To address this, they introduce LECTOR, an AI/NLP model that estimates slide-topic relationships from lecture slides and can be combined with reading logs to produce topic-preference features.\n\nThe study evaluates LECTOR in two experiments. First, it compares LECTOR against TF-IDF, a binary reader-modeling method, TextRank, and AttentionRank on keyphrase extraction from 2,255 lecture slides from a programming theory course. It also includes a human evaluation with 28 students using slides from the 2023 course cohort. Second, it tests whether topic preferences derived from LECTOR improve identification of at-risk students compared with traditional reading-time/activity features, using reading logs from 218 students across 2019\u20132022 cohorts and logistic regression as the prediction model.\n\nThe population is undergraduate students in a university engineering course at Kyushu University in Japan. The context is an e-book reading platform (BookRoll) used in a programming theory course delivered over 7\u20138 weeks. No K-12 learners or school-based literacy instruction were studied, and the paper does not evaluate generative AI for reading instruction in grades K\u201312.\n\nMain findings are that LECTOR outperformed the TF-IDF baseline in the human evaluation and achieved the best overall technical keyphrase-extraction results at larger cutoffs, while attention-based models did not uniformly dominate in this domain. For the at-risk prediction task, topic-preference features generally matched or outperformed traditional reading features, especially for out-of-class data, but effects were mixed rather than uniformly significant across all cases. The strongest evidence in the paper concerns keyphrase extraction and the alignment of LECTOR outputs with student judgments; the student-risk prediction results are suggestive but not consistently superior across all comparisons.",
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "7",
+  "setting": "blended",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Japan",
+  "study_region": "East Asia & Pacific",
+  "identified_tools": [
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "content_generation",
+        "feedback_evaluation"
+      ],
+      "description": "A generic generative AI / transformer-based NLP system used for keyphrase extraction and topic-related feature construction from e-book lecture slides, rather than a specific commercial product.",
+      "use_case": "LECTOR, a proposed attention-based NLP model, was evaluated for extracting keyphrases from lecture slides and for deriving topic-preference features from reading logs to support at-risk student prediction.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0000 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In technical keyphrase extraction on lecture slides, LECTOR outperformed baseline methods at larger cutoffs, achieving the highest reported performance at @15 with F1=33.44%, and the best overall F1 of 37.92% (n not reported beyond the set of 9 syllabus keyphrases). In the human evaluation with 28 students, LECTOR also outperformed TF-IDF, with mean F-scores of 61.8% (slide-level) and 46.5% / 44.4% (student-level groups ST-1/ST-2), all with very small p-values.",
+          "measure": "Keyphrase extraction performance against syllabus keyphrases and student-validated keyphrases; Precision, Recall, F1-score",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=28 students for human evaluation; 390 slides in slide-level evaluation; 9 ground-truth keyphrases"
+        },
+        {
+          "outcome_category": "Academic \u0000 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Against traditional reading-time features, topic-preference features derived from LECTOR showed higher Fisher's Discriminant Ratio (FDR) in all reported grade-comparison cases, indicating stronger separability of student groups. In the downstream logistic-regression prediction task over 60 cases, topic preferences were often equal or better than traditional features; however, the paper reports many null comparisons and only a few statistically significant wins, with no performance degradation in OUT-CLASS data.",
+          "measure": "Fisher's Discriminant Ratio; logistic regression AUC and F-score for at-risk student prediction",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=218 students for reading logs; 60 prediction cases"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical study with comparative evaluations, but it is not an RCT or quasi-experimental instruction study in K-12 literacy. The evidence is primarily technical/observational and uses university programming-course data rather than K-12 reading outcomes.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The reported gains in keyphrase extraction and prediction are positive but modest-to-unclear in educational impact terms, and the paper does not report classroom reading achievement effects. Because there is no clear effect size for literacy outcomes and the setting is non-K-12, impact on the target use case remains uncertain.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

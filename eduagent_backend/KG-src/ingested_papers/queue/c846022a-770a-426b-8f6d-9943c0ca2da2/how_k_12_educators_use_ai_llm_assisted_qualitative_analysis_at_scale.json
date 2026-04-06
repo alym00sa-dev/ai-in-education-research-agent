@@ -1,0 +1,86 @@
+{
+  "title": "How K-12 Educators Use AI: LLM-Assisted Qualitative Analysis at Scale",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2507.17985v3",
+  "source_db": "arxiv_search",
+  "populations": [
+    "K-12 (unspecified grade)"
+  ],
+  "user_types": [
+    "Educator"
+  ],
+  "study_design": "Qualitative",
+  "extended_summary": "This paper addresses a gap in understanding how K-12 educators actually use generative AI in authentic professional practice, and it also examines whether large language models can support scalable qualitative analysis of those interactions. The authors position the work as distinct from prior AI-in-education studies that focus on technical performance, small samples, or self-reported intentions. Instead, they analyze real educator-AI conversations to characterize instructional and professional uses of AI at scale.\n\nThe study is not an intervention trial; rather, it analyzes over 13,000 unscripted conversations from an open-access generative AI platform used voluntarily by educators. The authors develop and validate a multi-stage LLM-assisted qualitative pipeline inspired by grounded theory, moving from open coding to codebook development, selective coding, and large-scale deductive annotation. The analytic process uses Claude models alongside human researchers to discover themes, refine labels, and annotate messages while retaining researcher oversight.\n\nThe population consists primarily of K-12 educators, though the dataset also includes educator preparation program prompts in some cases; the paper\u2019s analysis and reported findings focus on educator use in real-world instructional contexts. The main findings are that educators most commonly use generative AI for instructional planning and content design, differentiation and accessibility, assessment and feedback, and professional responsibilities such as communication and professional development. The paper concludes that generative AI is being used as a planning and support tool rather than a fully automated substitute, and that human-in-the-loop LLM methods can help scale rigorous qualitative analysis of educator-AI discourse.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a qualitative, descriptive study of authentic educator-AI conversations with large-scale coding and some human validation, but it is not an experimental or quasi-experimental impact evaluation. It provides useful evidence about how generative AI is used in K-12 teaching contexts, but credibility for causal claims about outcomes is limited.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper suggests potentially meaningful workflow benefits for teachers, especially around lesson planning and differentiation, but it does not estimate causal effects or report effect sizes. Because the evidence is descriptive and no student or teacher outcome gains are measured directly, the impact is promising but unclear.",
+  "interventions": [
+    {
+      "intervention": "Other",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "LLM-assisted qualitative analysis of K-12 educator-AI conversations about lesson planning, differentiation, assessment, and professional communication; the paper primarily studies how educators use generative AI rather than testing a student-facing instructional product."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper finds that generative AI is widely used by K-12 educators to speed up instructional planning, content generation, differentiation, and assessment-related tasks. In the coded corpus of 13,071 conversations (104,529 messages), planning appeared in 63.8% of educator requests and assessment/feedback in 47.2%, indicating substantial perceived workflow support rather than causal learning gains.",
+        "measure": "Descriptive code frequencies and qualitative thematic analysis of educator-AI conversations (e.g., planning, assessment, differentiation, professional responsibilities)",
+        "study_size": "n=13,071 conversations; n=104,529 messages",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.7,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The study shows that educators use AI in ways that support pedagogical reasoning, including iterative prompt refinement, critical evaluation of AI outputs, and adaptation of generated lessons to classroom constraints. These are descriptive patterns from authentic conversations, not measured skill gains; no experimental effect size is reported.",
+        "measure": "Qualitative coding of educator prompts and follow-up revisions indicating critical thinking, metacognition, and instructional judgment",
+        "study_size": "n=13,071 conversations; n=52,255 educator requests",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.62,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper reports that educators used AI to support engagement-oriented planning and differentiation for diverse learners, suggesting AI was used to help reduce instructional friction and support classroom responsiveness. This is a descriptive qualitative finding about usage patterns; it does not estimate causal effects on student motivation or engagement.",
+        "measure": "Conversation-level coding of engagement/motivation-related instructional practices and differentiation requests",
+        "study_size": "n=13,071 conversations",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

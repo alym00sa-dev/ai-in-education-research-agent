@@ -1,0 +1,471 @@
+{
+  "title": "Do Students Rely on AI? Analysis of Student-ChatGPT Conversations from a Field Study",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "https://arxiv.org/abs/2508.20244",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper examines how undergraduate students rely on ChatGPT-4 during quiz-based learning tasks in authentic higher education settings. The core problem addressed is whether students over-rely on generative AI, how their reliance unfolds during real student-AI interactions, and what behavioral factors predict whether students adopt AI advice. The authors argue that existing reliance frameworks are poorly suited to educational contexts because students may not have a fixed initial answer before consulting AI, and because prior work often studies AI use in controlled environments rather than natural classroom settings.\n\nThe study analyzes 315 student-ChatGPT conversations collected in a university peer-led-team-learning (PLTL) program across STEM gateway courses. During weeks 9-11 of Fall 2023, students used a web-based quiz system with ChatGPT-4 as an \"AI learning peer\" for the first 30 minutes of PLTL sessions, temporarily replacing human learning peers. The authors developed a four-stage reliance taxonomy based on whether ChatGPT\u2019s response was correct, whether it was relevant, whether the student followed the advice, and whether the student\u2019s final answer was correct. They also extracted behavioral features such as interaction time, prompt-question similarity, and linguistic complexity, and used machine learning models to predict AI adoption.\n\nThe population consisted of undergraduate students at Johns Hopkins University in the United States, with quiz interactions spanning mathematics, physics, chemistry, economics, and public health. Of the consented students assigned to use AI, 182 interacted with ChatGPT-4 at least once, producing the 315 analyzed conversations. Teaching assistants graded quiz answers objectively based on instructor guidelines, and the study focused on naturalistic student use of AI rather than a controlled comparison against a non-AI condition.\n\nThe main conclusions are that students showed overall low reliance on AI rather than blanket overreliance, but many struggled to use AI effectively for learning. The most common patterns were \"Failed application\" and \"Appropriate reliance,\" indicating that students often followed correct AI advice yet still failed to reach the correct answer. Negative reliance patterns often persisted across multiple interactions, suggesting that early unsuccessful experiences discouraged productive future use. Behavioral signals such as prompt similarity to quiz questions, longer interaction time, and greater conversational complexity were stronger predictors of following AI advice than curricular factors like Bloom\u2019s taxonomy or subject area. The authors conclude that students need better onboarding and prompting support, and that AI systems in education should include reliance-calibration mechanisms to promote appropriate and ethical use.",
+  "limitations": [
+    "short_duration",
+    "single_site",
+    "no_control_group",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "3",
+  "setting": "blended",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "language_speech"
+      ],
+      "description": "OpenAI's conversational large language model used as a chatbot learning peer.",
+      "use_case": "Students in university STEM PLTL quiz sessions interacted with ChatGPT-4 through a web-based interface to ask quiz-related questions and receive assistance while solving problems.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Across 315 student-AI quiz conversations from 182 students, the two largest reliance scenarios were 'Failed application' (N=66, 20.95%) and 'Appropriate reliance' (N=65, 20.63%). Students were slightly more likely to follow AI advice (about 52% of interactions) than not, but only about half of AI-guided attempts led to correct answers, indicating difficulty applying ChatGPT support effectively.",
+          "measure": "Conversation-level reliance taxonomy outcomes: appropriate reliance, failed application, follow vs. not-follow, final answer correctness",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=315 conversations; n=182 students"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "The study reports overall low reliance and limited effective use of ChatGPT for learning in this early-adoption setting. There were more cases of 'Inappropriate self-reliance' (N=46, 14.60%), where students ignored correct AI suggestions and answered incorrectly, than 'Inappropriate reliance' where students followed incorrect AI suggestions, suggesting low trust and difficulty productively using the tool.",
+          "measure": "Counts and percentages of reliance scenarios, especially inappropriate self-reliance vs. inappropriate reliance",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=315 conversations"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "At the individual level, nearly 48% of learners (N=87) interacted with ChatGPT only once before disengaging, and negative trajectories persisted across interactions. Common one-step trajectories included 'Failed application' (N=17, 9.34%), 'Inappropriate self-reliance' (N=17, 9.34%), and 'Unguided failure' (N=13, 7.14%), while some multi-step trajectories showed repeated failures such as 'Failed application\u2013Failed application' (N=3, 1.65%).",
+          "measure": "Individual reliance trajectories across quiz items and disengagement after initial interaction",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=182 students"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Behavioral features predicted whether students followed ChatGPT's advice better than text alone. Accuracy for predicting AI adoption was 0.778 for Logistic Regression using behavioral features only, and 0.778 for Random Forest and XGBoost using combined behavioral and text embeddings, compared with a majority baseline of approximately 0.52; key predictors were prompt-question similarity, total time on task, and conversation complexity.",
+          "measure": "Classification accuracy for predicting student adoption of AI advice",
+          "effect_size": "accuracy=0.778",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=315 student-quiz conversation pairs"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical field study with authentic usage data, but it is observational/correlational rather than an RCT or strong quasi-experimental design focused on causal learning effects. Outcomes are mainly descriptive reliance patterns and predictive modeling of adoption behavior.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper shows meaningful patterns in how students used ChatGPT, but it does not report standardized effect sizes or clear causal impacts on achievement. Reported results are mixed, with both appropriate reliance and substantial failed application.",
+  "citations": [
+    {
+      "title": "Knowledge, attitudes, and perceived Ethics regarding the use of ChatGPT among generation Z university students",
+      "doi": null,
+      "year": 2024,
+      "venue": "International Journal for Educational Integrity",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Impact of artificial intelligence on human loss in decision making, laziness and safety in education",
+      "doi": null,
+      "year": 2023,
+      "venue": "Humanities and Social Sciences Communications",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "How Students (Really) Use ChatGPT: Uncovering Experiences Among Undergraduate Students",
+      "doi": null,
+      "year": 2025,
+      "venue": "arXiv preprint arXiv:2505.24126",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Does the whole exceed its parts? the effect of ai explanations on complementary team performance",
+      "doi": null,
+      "year": 2021,
+      "venue": "Proceedings of the 2021 CHI conference on human factors in computing systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Students as Partners in Teaching, Managing, and Developing Peer Learning in STEM Gateway Courses",
+      "doi": null,
+      "year": 2025,
+      "venue": "Journal of College Science Teaching",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Designing for appropriate reliance: The roles of ai uncertainty presentation, initial user decision, and user demographics in AI-assisted decision-making",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the ACM on Human-Computer Interaction",
+      "citation_level": 2,
+      "citation_context": "appropriate reliance framing for AI-assisted decisions"
+    },
+    {
+      "title": "Critical minds: enhancing education with ChatGPT",
+      "doi": null,
+      "year": 2024,
+      "venue": "Cogent Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "How generative AI enables an online project-based learning platform: An applied study of learning behavior analysis in undergraduate students",
+      "doi": null,
+      "year": 2025,
+      "venue": "Applied Sciences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Students\u2019 perceptions of using ChatGPT in a physics class as a virtual tutor",
+      "doi": null,
+      "year": 2023,
+      "venue": "International Journal of Educational Technology in Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A Survey of AI Reliance",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv preprint arXiv:2408.03948",
+      "citation_level": 2,
+      "citation_context": "background taxonomy and framing of AI reliance"
+    },
+    {
+      "title": "Beware of metacognitive laziness: Effects of generative artificial intelligence on learning motivation, processes, and performance",
+      "doi": null,
+      "year": 2025,
+      "venue": "British Journal of Educational Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A global triangulation approach to ChatGPT integration in education",
+      "doi": null,
+      "year": 2025,
+      "venue": "Educational Technology Quarterly",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Impact of Artificial Intelligence on Higher Education: A Literature Review",
+      "doi": null,
+      "year": 2024,
+      "venue": "International Conference in Information Technology and Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "AI Tools in Society: Impacts on Cognitive Offloading and the Future of Critical Thinking",
+      "doi": null,
+      "year": 2025,
+      "venue": "Societies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Shaping the future of education: Exploring the potential and consequences of AI and ChatGPT in educational settings",
+      "doi": null,
+      "year": 2023,
+      "venue": "Education Sciences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Exploring the impact of using Chat-GPT on student learning outcomes in technology learning: The comprehensive experiment",
+      "doi": null,
+      "year": 2023,
+      "venue": "Advances in Mobile Learning Educational Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Anthropic Education Report: How University Students Use Claude",
+      "doi": null,
+      "year": 2025,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Drivers and consequences of ChatGPT use in higher education: Key stakeholder perspectives",
+      "doi": null,
+      "year": 2023,
+      "venue": "European journal of investigation in health, psychology and education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Understanding trust and reliance development in ai advice: Assessing model accuracy, model explanations, and experiences from previous interactions",
+      "doi": null,
+      "year": 2024,
+      "venue": "ACM Transactions on Interactive Intelligent Systems",
+      "citation_level": 2,
+      "citation_context": "trust and reliance development framing"
+    },
+    {
+      "title": "Derivation of new readability formulas (automated readability index, fog count and flesch reading ease formula) for navy enlisted personnel",
+      "doi": null,
+      "year": 1975,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "readability formula used for text complexity feature"
+    },
+    {
+      "title": "Computer science education in chatgpt era: Experiences from an experiment in a programming course for novice programmers",
+      "doi": null,
+      "year": 2024,
+      "venue": "Mathematics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A revision of Bloom\u2019s taxonomy: An overview",
+      "doi": null,
+      "year": 2002,
+      "venue": "Theory into practice",
+      "citation_level": 3,
+      "citation_context": "Bloom level categorization of quiz questions"
+    },
+    {
+      "title": "Unreflected acceptance\u2013investigating the negative consequences of chatgpt-assisted problem solving in physics education",
+      "doi": null,
+      "year": 2024,
+      "venue": "HHAI 2024: Hybrid Human AI Systems for the Social Good",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Psychological Factors Influencing Appropriate Reliance on AI-enabled Clinical Decision Support Systems: Experimental Web-Based Study Among Dermatologists",
+      "doi": null,
+      "year": 2025,
+      "venue": "Journal of Medical Internet Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "On human predictions with explanations and predictions of machine learning models: A case study on deception detection",
+      "doi": null,
+      "year": 2019,
+      "venue": "Proceedings of the conference on fairness, accountability, and transparency",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "BloomBERT: A Task Complexity Classifier",
+      "doi": null,
+      "year": 2023,
+      "venue": "GitHub",
+      "citation_level": 3,
+      "citation_context": "classifier used to assign Bloom/task complexity"
+    },
+    {
+      "title": "Modeling human trust and reliance in ai-assisted decision making: A markovian approach",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+      "citation_level": 2,
+      "citation_context": "trust and reliance conceptualization"
+    },
+    {
+      "title": "A unified approach to interpreting model predictions",
+      "doi": null,
+      "year": 2017,
+      "venue": "Advances in neural information processing systems",
+      "citation_level": 3,
+      "citation_context": "SHAP method for feature-importance analysis"
+    },
+    {
+      "title": "The StudyChat Dataset: Student Dialogues With ChatGPT in an Artificial Intelligence Course",
+      "doi": null,
+      "year": 2025,
+      "venue": "arXiv preprint arXiv:2503.07928",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "MTEB: Massive text embedding benchmark",
+      "doi": null,
+      "year": 2022,
+      "venue": "arXiv preprint arXiv:2210.07316",
+      "citation_level": 3,
+      "citation_context": "benchmark/source informing text embedding model choice"
+    },
+    {
+      "title": "How does value similarity affect human reliance in AI-assisted ethical decision making?",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 2023 AAAI/ACM Conference on AI, Ethics, and Society",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Artificial intelligence in education: The three paradigms",
+      "doi": null,
+      "year": 2021,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A systematic literature review of intelligent tutoring systems with dialogue in natural language",
+      "doi": null,
+      "year": 2020,
+      "venue": "IEEE Access",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Generative Artificial Intelligence in teaching and learning of ICT engineering education: A literature review and illustrative scenarios",
+      "doi": null,
+      "year": 2024,
+      "venue": "2024 47th MIPRO ICT and Electronics Convention (MIPRO)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "For Those About to Rely\u2014A Taxonomy of Experimental Studies on AI Reliance",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "taxonomy source for AI reliance framing"
+    },
+    {
+      "title": "Appropriate reliance on AI advice: Conceptualization and the effect of explanations",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 28th International Conference on Intelligent User Interfaces",
+      "citation_level": 2,
+      "citation_context": "conceptualization of appropriate AI reliance"
+    },
+    {
+      "title": "Exploring computer science students\u2019 perception of ChatGPT in higher education: A descriptive and correlation study",
+      "doi": null,
+      "year": 2023,
+      "venue": "Education Sciences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Using sequence analysis to identify conversational motifs in supportive interactions",
+      "doi": null,
+      "year": 2022,
+      "venue": "Journal of social and Personal Relationships",
+      "citation_level": 3,
+      "citation_context": "sequence-analysis approach for interaction trajectories"
+    },
+    {
+      "title": "Human-AI Interaction: Human Behavior Routineness Shapes AI Performance",
+      "doi": null,
+      "year": 2024,
+      "venue": "IEEE Transactions on Knowledge and Data Engineering",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The impact of ChatGPT on education and future prospects",
+      "doi": null,
+      "year": 2023,
+      "venue": "Highlights in science, engineering and technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Artificial intelligence in education: A systematic literature review",
+      "doi": null,
+      "year": 2024,
+      "venue": "Expert Systems with Applications",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A survey on ChatGPT: AI\u2013generated contents, challenges, and solutions",
+      "doi": null,
+      "year": 2023,
+      "venue": "IEEE Open Journal of the Computer Society",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A Systematic Review of Responses, Attitudes, and Utilization Behaviors on Generative AI for Teaching and Learning in Higher Education",
+      "doi": null,
+      "year": 2025,
+      "venue": "Behavioral Sciences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Understanding the effect of accuracy on trust in machine learning models",
+      "doi": null,
+      "year": 2019,
+      "venue": "Proceedings of the 2019 CHI conference on human factors in computing systems",
+      "citation_level": 2,
+      "citation_context": "trust calibration background for reliance analyses"
+    },
+    {
+      "title": "The effects of over-reliance on AI dialogue systems on students\u2019 cognitive abilities: a systematic review",
+      "doi": null,
+      "year": 2024,
+      "venue": "Smart Learning Environments",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Jasper and Stella: distillation of SOTA embedding models",
+      "doi": null,
+      "year": 2025,
+      "venue": "arXiv",
+      "citation_level": 3,
+      "citation_context": "embedding model source for text representations"
+    },
+    {
+      "title": "Rel-AI: An Interaction-Centered Approach To Measuring Human-LM Reliance",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv preprint arXiv:2407.07950",
+      "citation_level": 2,
+      "citation_context": "interaction-centered measurement framing for reliance"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

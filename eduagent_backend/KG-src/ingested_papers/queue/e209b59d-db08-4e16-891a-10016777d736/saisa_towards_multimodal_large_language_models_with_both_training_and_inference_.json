@@ -1,0 +1,66 @@
+{
+  "title": "SAISA: Towards Multimodal Large Language Models with Both Training and Inference Efficiency",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2502.02458v1",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses the problem of improving the training and inference efficiency of multimodal large language models (MLLMs). The authors analyze two mainstream MLLM alignment strategies: embedding-space alignment, which is relatively cheap to train but costly at inference because it concatenates many visual tokens, and cross-attention-space alignment, which is more efficient at inference but requires many new parameters and substantial training data. The central question is how to build MLLMs that are efficient in both stages without sacrificing performance.\n\nTo solve this, the paper proposes NAAViT (No Attention Among Visual Tokens), a self-attention variant that removes attention among visual tokens, and SAISA (Self-Attention Input Space Alignment), an architecture that aligns visual features directly with the input spaces of self-attention blocks. SAISA also avoids applying feed-forward networks to visual tokens, further reducing computation. The paper validates the design through pilot experiments, ablation studies, and benchmark comparisons against LLaVA-1.5 and other MLLMs, using Vicuna-7B and CLIP-ViT-L/14-336 as the main configuration.\n\nThe work is not an education study: it does not involve students, teachers, schools, or any K-12 population. Instead, it evaluates general-purpose multimodal benchmarks such as MMMU, MMBench, POPE, GQA, ScienceQA IMG, OK-VQA, and vision-centric benchmarks. The main conclusion is that attention among visual tokens is highly redundant in these MLLMs, and SAISA can substantially reduce FLOPs and latency while matching or exceeding baseline performance under the tested settings.",
+  "limitations": [
+    "single_site",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "identified_tools": [
+    {
+      "name": "LLaMA",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "language_speech"
+      ],
+      "description": "A family of large language models used as the backbone for multimodal large language models (MLLMs).",
+      "use_case": "Used as one of the LLM backbones in the SAISA experiments and ablations (e.g., Llama 2, Llama 3 variants normalized to LLaMA).",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0000 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The paper reports that SAISA outperformed LLaVA-1.5 when using LLaMA-family backbones in ablation experiments. With Llama3-8B and CLIP, SAISA improved benchmark scores across several multimodal benchmarks while reducing inference TFLOPs from 9.17 to 2.10.",
+          "measure": "Benchmark performance on MMMU, MMBench, POPE, GQA, ScienceQA IMG, and OK-VQA; inference TFLOPs",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Academic \u0000 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The paper reports that SAISA with LLaMA-family backbones achieved better performance and much lower computational cost than the LLaVA-1.5 baseline. The results are reported as benchmark score gains and FLOPs reductions rather than statistical effect sizes.",
+          "measure": "Inference latency and benchmark performance in multimodal evaluation",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a computer vision / multimodal model architecture paper, not an education study, and it does not use a rigorous causal or educational research design. The paper is empirical, but the evidence is outside the K-12 literacy domain and lacks the study design criteria relevant for high-tier educational evidence.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "No K-12 reading or literacy outcomes are studied, and no educational intervention effects are reported. The reported performance gains are on general multimodal benchmarks and compute efficiency, so there is no direct instructional impact for the target topic.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

@@ -1,0 +1,79 @@
+{
+  "title": "Using Large Language Models to Provide Explanatory Feedback to Human Tutors",
+  "doi": null,
+  "year": 2023,
+  "venue": "arXiv preprint",
+  "url": "http://arxiv.org/abs/2306.15498v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Adult (non-academic)"
+  ],
+  "user_types": [
+    "Community"
+  ],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses the challenge of giving novice tutors timely, explanatory feedback while they practice responding to tutoring scenarios in an online lesson. The authors focus on whether large language models can help automatically identify useful versus less-desired elements in tutor-written responses and then use those identified elements to generate feedback.\n\nThe approach has two parts. First, the authors train a BERT-based binary classifier to label tutor responses in a lesson on giving effective praise as effort-based or outcome-based praise. Second, they adapt a named entity recognition (NER) pipeline to tag the relevant praise segments in tutor responses so that templated explanatory feedback can highlight exactly what in the response is aligned with the desired praise strategy. The data come from 65 volunteer tutors participating in an online training lesson; the full dataset contains 129 annotated tutor responses.\n\nThe work is framed as a work-in-progress and does not evaluate a deployed tutoring intervention with learners. The classifier performed reasonably well for effort-based praise but less well for outcome-based praise, and the NER model showed limited performance overall, reflecting sparse and imbalanced annotations. The authors conclude that LLM-facilitated labeling could support automatic corrective and explanatory feedback for tutor training, but that better data, improved evaluation metrics, and stronger modeling approaches are needed before practical use.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed workshop/work-in-progress study using a small annotated dataset and train/validation/test split, but it is not an RCT or QED and provides only model-development evidence rather than causal impact evidence. The methodology is clear, but evidence credibility is limited by low sample size and prototype status.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The reported model performance suggests potential for useful tutor feedback support, especially for effort-based praise, but the overall impact is unclear because the system has not been tested on learner outcomes or at deployment scale. NER performance is modest to low, so real-world instructional impact remains uncertain.",
+  "interventions": [
+    {
+      "intervention": "Automated Feedback System",
+      "confidence": 0.98,
+      "role": "primary",
+      "use_case": "automatic explanatory feedback for novice tutors' constructed responses in a scenario-based lesson on giving effective praise, using BERT classification and LLM-facilitated named entity recognition to generate templated corrective feedback"
+    },
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.62,
+      "role": "secondary",
+      "use_case": "large language model-facilitated named entity recognition and text classification to support real-time feedback generation for human tutors"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.86,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The system was evaluated on tutor responses in a 'Giving Effective Praise' lesson (n=129 responses from 65 volunteer tutors). BERT classified effort-based praise well (accuracy=0.731, F1=0.811), but outcome-based praise was much weaker (accuracy=0.596, F1=0.350, SD=0.235). The authors also report NER F1=0.202 (SD=0.039) for highlighting praise spans, indicating that the feedback system can support tutor learning on praise but remains uneven and low-performing for some categories.",
+        "measure": "BERT classification accuracy/F1 for praise type; NER F1 for praise-entity span detection",
+        "study_size": "n=129 tutor responses (from 65 volunteer tutors)",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "0.235"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.66,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper argues the method can automate real-time explanatory feedback for tutor training, reducing the need for human experts to manually diagnose responses. However, this is a prototype/work-in-progress paper and does not report a workload or time-saving effect size, only model performance metrics (e.g., Effort F1=0.811; Outcome F1=0.350; NER F1=0.202) that would enable automation.",
+        "measure": "Model performance as a proxy for automation capability",
+        "study_size": "n=129 tutor responses",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "0.039"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "yes",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

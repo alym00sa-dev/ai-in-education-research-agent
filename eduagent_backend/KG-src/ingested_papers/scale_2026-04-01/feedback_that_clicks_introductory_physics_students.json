@@ -1,0 +1,372 @@
+{
+  "title": "Feedback That Clicks: Introductory Physics Students\u2019 Valued Features in AI Feedback Generated From Self-Crafted and Engineered Prompts",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "https://arxiv.org/abs/2509.08516",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper examines how introductory physics students use generative AI to obtain feedback on their physics arguments, and what kinds of AI-generated feedback they find most useful. The authors focus on three questions: how sophisticated students\u2019 self-written prompts are when asking AI for feedback, what features students value in AI feedback, and whether students prefer feedback produced from their own prompts or from more structured prompts that incorporate prompt-engineering techniques and principles of effective feedback.\n\nThe study was conducted as an extra-credit assignment in a large-enrollment calculus-based introductory physics course for future engineers at Purdue University in Spring 2025. Students completed a physics task about the physical meaning of the slope of a gravitational potential energy versus distance graph, then used an AI platform of their choice to request feedback on their Claim-Evidence-Reasoning argument in three ways: with a self-crafted prompt, with a provided prompt using foundational prompt-engineering techniques, and with a provided prompt that combined prompt-engineering with educational principles of effective feedback. The dataset included 1,235 qualified responses from 1,661 respondents out of 2,044 enrolled students. The analysis combined quantitative coding of prompt features and rankings with qualitative emergent coding of students\u2019 written justifications.\n\nThe authors found that students\u2019 self-crafted prompts usually included only a subset of foundational prompting techniques, and none combined all four focal techniques analyzed. Even when prompts were incomplete or ambiguous, AI often inferred the intended task context correctly, though the resulting feedback was not always conceptually accurate or fully appropriate. From students\u2019 justifications, the authors identified 12 valued feedback features grouped into four themes: Evaluation, Content, Presentation, and Depth. Students especially valued feedback that critiqued their work, highlighted strengths, offered actionable guidance, and presented information clearly and concisely.\n\nOverall, students strongly preferred feedback generated from structured prompts, especially prompts that combined prompt engineering with principles of effective feedback. Feedback from self-crafted prompts was most often ranked least useful. The paper concludes that AI feedback systems in STEM education should be designed not only with prompt-engineering strategies but also with established principles of effective feedback, and that prompt engineering itself may be an important skill to teach in introductory physics courses.",
+  "limitations": [
+    "single_site",
+    "no_control_group",
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "feedback_evaluation",
+        "language_speech"
+      ],
+      "description": "A generic generative AI / large language model chatbot used to generate natural-language feedback on student work from prompts.",
+      "use_case": "Introductory physics students used AI platforms of their choice to obtain feedback on CER-style arguments about the physical meaning of the slope of a gravitational potential energy vs. distance graph. The study compared feedback generated from self-crafted prompts versus provided structured prompts incorporating prompt engineering and effective-feedback principles.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Scientific Reasoning",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "In a qualitative/mixed-methods study of introductory physics students, 90.2% of student-crafted prompts explicitly requested feedback, 61.8% evidenced both clear task context and explicit inclusion of the student\u2019s argument, and none included all four foundational prompt-engineering techniques together. Among 293 prompts lacking clear or complete context descriptions, AI correctly interpreted the context in 285 cases (97%), but the paper notes that responses were not always fully appropriate or conceptually correct.",
+          "measure": "Prompt sophistication and AI contextual interpretation of physics-feedback prompts",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=1151 prompts for prompt analysis; 293 ambiguous/incomplete-context cases"
+        },
+        {
+          "outcome_category": "Academic \u2014 Scientific Reasoning",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Students overwhelmingly preferred feedback generated from structured prompts over feedback generated from their own self-crafted prompts. Of 1235 responses, 61.4% ranked feedback from prompts combining prompt engineering with effective-feedback principles (Feedback C) as most useful, 29.7% ranked prompt-engineering-only feedback (Feedback B) first, and only 8.9% ranked self-crafted-prompt feedback (Feedback A) first; 91.1% thus preferred one of the structured-prompt conditions as their top choice.",
+          "measure": "Student ranking of perceived usefulness of AI-generated feedback across prompt types",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=1235"
+        },
+        {
+          "outcome_category": "Academic \u2014 Scientific Reasoning",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "From 1160 valid student justifications, the most frequently valued AI-feedback features fell under Evaluation (69.4%), followed by Content (55.2%), Presentation (47.8%), and Depth (44.2%). Students preferring the prompt that combined prompt engineering and effective-feedback principles most often emphasized critique (48.4%), guidance (52.4%), conciseness (36.2%), and specificity (27.7%), indicating preference for feedback that clearly identifies weaknesses and offers actionable next steps.",
+          "measure": "Student-perceived useful features of AI-generated feedback",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=1160"
+        }
+      ]
+    }
+  ],
+  "verdict": "genai_general",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical course-based study with large samples, but the reported evidence is primarily descriptive and qualitative/mixed-methods rather than an RCT or strong quasi-experimental design estimating causal effects on learning outcomes.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper shows clear positive student preferences for structured AI feedback, but it does not report standardized effect sizes or direct causal gains in achievement, so overall impact magnitude remains unclear.",
+  "citations": [
+    {
+      "title": "The power of feedback",
+      "doi": null,
+      "year": 2007,
+      "venue": "Review of Educational Research",
+      "citation_level": 2,
+      "citation_context": "effective feedback principles framing prompt design"
+    },
+    {
+      "title": "Giving students effective written feedback",
+      "doi": null,
+      "year": 2010,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "effective feedback principles framing prompt design"
+    },
+    {
+      "title": "A meta-analysis of the effects of feedback in computer-based instruction",
+      "doi": null,
+      "year": 1995,
+      "venue": "Journal of Educational Computing Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Continuous performance feedback: Investigating the effects of feedback content and feedback sources on performance, motivation to improve performance and task engagement",
+      "doi": null,
+      "year": 2024,
+      "venue": "Journal of Organizational Behavior Management",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Formative assessment and self-regulated learning: A model and seven principles of good feedback practice",
+      "doi": null,
+      "year": 2006,
+      "venue": "Studies in Higher Education",
+      "citation_level": 2,
+      "citation_context": "principles of good feedback incorporated into prompts"
+    },
+    {
+      "title": "Theoretical approach for providing feedback for instructors through a standardized assessment for undergraduate physics",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 17th International Conference of the Learning Sciences-ICLS 2023",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A new paradigm for research-based assessment development",
+      "doi": null,
+      "year": 2022,
+      "venue": "Physics Education Research Conference Proceedings",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Students\u2019 perceptions to a large language model\u2019s generated feedback and scores of argumentation essays",
+      "doi": null,
+      "year": 2025,
+      "venue": "arXiv preprint",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "How understanding large language models can inform the use of chatgpt in physics education",
+      "doi": null,
+      "year": 2024,
+      "venue": "European Journal of Physics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Evaluating vision-capable chatbots in interpreting kinematics graphs: a comparative study of free and subscription-based models",
+      "doi": null,
+      "year": 2024,
+      "venue": "Frontiers in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Unleashing the potential of prompt engineering for large language models",
+      "doi": null,
+      "year": 2025,
+      "venue": "Patterns",
+      "citation_level": 2,
+      "citation_context": "foundational prompt-engineering techniques lens"
+    },
+    {
+      "title": "Dual-role dynamics in prompting: Elementary pre-service teachers\u2019 ai prompting strategies for representational choices",
+      "doi": null,
+      "year": 2025,
+      "venue": "arXiv preprint",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The boiling-frog problem of physics education",
+      "doi": null,
+      "year": 2025,
+      "venue": "arXiv preprint",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Could an artificial-intelligence agent pass an introductory physics course?",
+      "doi": null,
+      "year": 2023,
+      "venue": "Physical Review Physics Education Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Student and ai responses to physics problems examined through the lenses of sensemaking and mechanistic reasoning",
+      "doi": null,
+      "year": 2024,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Grading assistance for a handwritten thermodynamics exam using artificial intelligence: An exploratory study",
+      "doi": null,
+      "year": 2024,
+      "venue": "Physical Review Physics Education Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Performance of the pre-trained large language model gpt-4 on automated short answer grading",
+      "doi": null,
+      "year": 2024,
+      "venue": "Discover Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Assessing confidence in ai-assisted grading of physics exams through psychometrics: An exploratory study",
+      "doi": null,
+      "year": 2025,
+      "venue": "Physical Review Physics Education Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Applying large language models and chain-of-thought for automatic scoring",
+      "doi": null,
+      "year": 2024,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Grading explanations of problem-solving process and generating feedback using large language models at human-level accuracy",
+      "doi": null,
+      "year": 2025,
+      "venue": "Physical Review Physics Education Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Research on intelligent grading of physics problems based on large language models",
+      "doi": null,
+      "year": 2025,
+      "venue": "Education Sciences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Exploring generative ai assisted feedback writing for students\u2019 written responses to a physics conceptual question with prompt engineering and few-shot learning",
+      "doi": null,
+      "year": 2024,
+      "venue": "Physical Review Physics Education Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "How students use ai feedback matters: Experimental evidence on physics achievement and autonomy",
+      "doi": null,
+      "year": 2025,
+      "venue": "arXiv preprint",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Prompting better feedback: A study of custom gpt for formative assessment in undergraduate physics",
+      "doi": null,
+      "year": 2025,
+      "venue": "Education Sciences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Https://www.qualtrics.com/",
+      "doi": null,
+      "year": null,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "survey platform used for data collection"
+    },
+    {
+      "title": "Matter and interactions",
+      "doi": null,
+      "year": 2015,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "source of physics task context/materials"
+    },
+    {
+      "title": "The uses of argument",
+      "doi": null,
+      "year": 2003,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "argumentation framework underlying student task"
+    },
+    {
+      "title": "Inquiry and scientific explanations: Helping students use evidence and reasoning",
+      "doi": null,
+      "year": 2008,
+      "venue": "Science as Inquiry in the Secondary Setting",
+      "citation_level": 2,
+      "citation_context": "evidence-and-reasoning framing for argumentation task"
+    },
+    {
+      "title": "Qualitative research designs: Selection and implementation",
+      "doi": null,
+      "year": 2007,
+      "venue": "The Counseling Psychologist",
+      "citation_level": 3,
+      "citation_context": "qualitative design guidance for analysis"
+    },
+    {
+      "title": "Analyzing student prompts and their effect on chatgpt\u2019s performance",
+      "doi": null,
+      "year": 2024,
+      "venue": "Cogent Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Students\u2019 perceptions and preferences of generative artificial intelligence feedback for programming",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Assessment of students use of generative artificial intelligence: Prompting strategies and prompt engineering in chemistry education",
+      "doi": null,
+      "year": 2024,
+      "venue": "Journal of Chemical Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Exploring students\u2019 experience of chatgpt in stem education",
+      "doi": null,
+      "year": 2025,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Comparing generative ai and teacher feedback: student perceptions of usefulness and trustworthiness",
+      "doi": null,
+      "year": 2025,
+      "venue": "Assessment & Evaluation in Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A practical guide for supporting formative assessment and feedback using generative ai",
+      "doi": null,
+      "year": 2025,
+      "venue": "arXiv preprint",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "How do physics students evaluate artificial intelligence responses on comprehension questions? a study on the perceived scientific accuracy and linguistic quality of chatgpt",
+      "doi": null,
+      "year": 2023,
+      "venue": "Physical Review Physics Education Research",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

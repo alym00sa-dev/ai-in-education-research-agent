@@ -1,0 +1,234 @@
+{
+  "title": "Towards an AI-Augmented Textbook",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "https://arxiv.org/abs/2509.13348",
+  "source_db": "scale_stanford",
+  "populations": [
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Randomized Controlled Trial (RCT)",
+  "extended_summary": "This paper addresses the longstanding limitation of textbooks as largely static, one-size-fits-all learning materials. The authors investigate whether generative AI can transform textbook content into a more personalized, multimodal, and pedagogically effective learning experience while preserving fidelity to the source material. The paper also asks whether such an AI-augmented textbook can improve learning outcomes compared with standard digital textbook reading.\n\nThe intervention is Learn Your Way, an experimental system built by Google\u2019s LearnLM team. It applies a two-step generation process: first, textbook text is personalized to learner attributes such as grade level and personal interests; second, the personalized content is transformed into multiple representations, including immersive text, slides with optional narration, audio lessons, mind maps, timelines, memory aids, visual illustrations, embedded questions, and quizzes. The system is designed to support personalization, learner agency, multiple representations of knowledge, and formative assessment.\n\nThe empirical work includes two parts. First, pedagogical experts evaluated generated components across 10 OpenStax textbook sources, multiple grade levels, and learner interest profiles using a detailed pedagogy rubric. Second, the paper reports a randomized controlled trial with 60 students aged 15\u201318 from the Chicago area, recruited across urban, suburban, and rural schools. Participants were randomly assigned either to Learn Your Way or to a control condition using a standard digital reader (Adobe Acrobat Reader) to study the same LibreTexts chapter on adolescent brain development. They then completed an immediate assessment, a survey, qualitative interview, and a delayed retention assessment three days later.\n\nThe main conclusion is that students using Learn Your Way outperformed those using the standard digital reader on both the immediate and delayed retention assessments, with statistically significant differences reported for both. Students also rated the AI-augmented tool more positively across multiple learning-experience measures. Expert evaluations suggested that most generated components had high pedagogical value, though visual illustration was weaker than other components. The authors conclude that generative AI can meaningfully augment textbooks and improve learning efficacy, while noting that future work is needed to determine which components drive the effects and to test the system across more topics and settings.",
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "non_representative_population",
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "lab",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "Learn Your Way",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "personalization_adaptation",
+        "content_generation"
+      ],
+      "description": "An experimental AI-augmented textbook learning experience that transforms source textbook content into personalized text, multiple representations (e.g., slides, audio lessons, mind maps, immersive text), and formative assessments. It is built using Gemini-based generation and additional image-model fine-tuning for educational illustrations.",
+      "use_case": "Studied as a personalized textbook-learning system for secondary students, compared against a standard digital reader while students learned an unfamiliar textbook chapter and completed immediate and delayed assessments.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In a randomized study, students using Learn Your Way scored higher than students using a Digital Reader on the Immediate Assessment after learning an unfamiliar textbook chapter. The difference was statistically significant (p = 0.03); 60 students aged 15\u201318 participated, randomly assigned 30 per condition. No effect size was reported.",
+          "measure": "Immediate post-learning assessment score on an expert-written assessment covering the chapter",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=60"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Students using Learn Your Way also outperformed the Digital Reader group on a delayed Retention Assessment administered three days later. The difference was statistically significant (p = 0.03); 58 of 60 participants completed the retention assessment. No effect size was reported.",
+          "measure": "Delayed retention assessment score three days after the learning session",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=58"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Post-study survey results favored Learn Your Way across all reported learning-experience items. For example, 100% vs. 70% agreed the tool made them more comfortable taking the assessment, 93% vs. 67% wanted to use it in the future, 90% vs. 57% found it enjoyable, and 83% vs. 40% said it would make them more effective at learning than tools they currently use; figure notes these differences were significant at p < .05. Item-level sample sizes were n=30 per condition.",
+          "measure": "Learner self-report survey on comfort, understanding, future use, recommendation, enjoyment, perceived performance, and perceived learning effectiveness",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=60"
+        }
+      ]
+    },
+    {
+      "name": "Gemini",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "personalization_adaptation"
+      ],
+      "description": "Google\u2019s large language model family used here as the core generative engine for textbook re-leveling, personalization, content transformation, assessment generation, and interactive lesson generation.",
+      "use_case": "Used as the underlying model powering Learn Your Way\u2019s text personalization, slides, narration, audio lessons, mind maps, mnemonics, embedded questions, and quizzes; also used in expert-rated pedagogical evaluations of generated components.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Pedagogical experts rated the overall Learn Your Way experience generated largely with Gemini at over 0.90 across evaluation axes, and all components received relatively high pedagogy values. The paper reports that Visual Illustration had the lowest scores among components, and that narrated slides scored notably higher on engagement than slides alone. These were expert rubric ratings rather than student learning outcomes, and no inferential statistics or effect sizes were reported.",
+          "measure": "Expert pedagogical rubric ratings of generated components and overall experience",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "green",
+  "quality_tier_rationale": "The paper reports a randomized controlled comparison between Learn Your Way and a digital reader with n=60, plus delayed retention data, which is stronger than correlational evidence. However, effect sizes and confidence intervals are not reported, and the study appears limited to a single chapter/topic and modest sample size.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The direction of effects is positive and statistically significant for immediate and retention assessments, but the magnitude of impact is unclear because no effect sizes or confidence intervals are provided. Survey results also favor the intervention, but these are self-reports rather than standardized achievement effects.",
+  "citations": [
+    {
+      "title": "A systematic review of research on personalized learning: Personalized by whom, to what, how, and for what purpose (s)?",
+      "doi": null,
+      "year": 2021,
+      "venue": "Educational Psychology Review",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A systematic literature review of personalized learning terms",
+      "doi": null,
+      "year": 2020,
+      "venue": "Smart Learning Environments",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The functions of multiple representations",
+      "doi": "10.1016/S0360-1315(99)00029-9",
+      "year": 1999,
+      "venue": "Computers and Education",
+      "citation_level": 2,
+      "citation_context": "supports multiple representations design rationale"
+    },
+    {
+      "title": "Dual coding theory and education",
+      "doi": null,
+      "year": 1991,
+      "venue": "Educational Psychology Review",
+      "citation_level": 2,
+      "citation_context": "theoretical basis for multimodal learning design"
+    },
+    {
+      "title": "Personalization through adaptivity or adaptability? a meta-analysis on simulation-based learning in higher education",
+      "doi": "10.1016/j.edurev.2024.100662",
+      "year": 2025,
+      "venue": "Educational Research Review",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Instruction based on adaptive learning technologies",
+      "doi": null,
+      "year": 2016,
+      "venue": "Handbook of Research on Learning and Instruction",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Toward a taxonomy of adaptivity for learning",
+      "doi": null,
+      "year": 2020,
+      "venue": "Journal of Research on Technology in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Self-regulated learning and performance: An introduction and an overview",
+      "doi": null,
+      "year": 2011,
+      "venue": "Handbook of Self-Regulation of Learning and Performance",
+      "citation_level": 2,
+      "citation_context": "grounds self-regulated learning framing"
+    },
+    {
+      "title": "Visible learning: A synthesis of over 800 meta-analyses relating to achievement",
+      "doi": null,
+      "year": 2008,
+      "venue": "Routledge",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Formative assessment: Assessment is for self-regulated learning",
+      "doi": null,
+      "year": 2012,
+      "venue": "Educational Psychology Review",
+      "citation_level": 2,
+      "citation_context": "links formative assessment to self-regulated learning"
+    },
+    {
+      "title": "Evaluating gemini in an arena for learning",
+      "doi": null,
+      "year": 2025,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Derivation of New Readability Formulas: (automated Readability Index, Fog Count and Flesch Reading Ease Formula) for Navy Enlisted Personnel",
+      "doi": null,
+      "year": 1975,
+      "venue": "Research Branch report ; 8-75",
+      "citation_level": 3,
+      "citation_context": "readability formula source for text simplification"
+    },
+    {
+      "title": "Derivation of new readability formulas (automated readability index, fog count and flesch reading ease formula) for navy enlisted personnel",
+      "doi": null,
+      "year": 1975,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "technical report source for readability formulas"
+    },
+    {
+      "title": "Leveraging what students know to make sense of texts: What the research says about prior knowledge activation",
+      "doi": null,
+      "year": 2024,
+      "venue": "Review of Educational Research",
+      "citation_level": 2,
+      "citation_context": "supports activating learner prior knowledge"
+    },
+    {
+      "title": "Developing the theory of formative assessment",
+      "doi": null,
+      "year": 2009,
+      "venue": "Educational Assessment, Evaluation and Accountability",
+      "citation_level": 2,
+      "citation_context": "theory basis for assessment design"
+    },
+    {
+      "title": "Assessment as Learning: Using Classroom Assessment to Maximize Student Learning",
+      "doi": null,
+      "year": 2013,
+      "venue": "SAGE Publications",
+      "citation_level": 2,
+      "citation_context": "supports on-the-fly assessment and feedback"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

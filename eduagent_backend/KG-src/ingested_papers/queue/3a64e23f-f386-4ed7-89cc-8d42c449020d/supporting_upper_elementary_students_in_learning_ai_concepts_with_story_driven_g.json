@@ -1,0 +1,100 @@
+{
+  "title": "Supporting Upper Elementary Students in Learning AI Concepts with Story-Driven Game-Based Learning",
+  "doi": null,
+  "year": 2024,
+  "venue": "AAAI-24 (Proceedings of the Thirty-Eighth AAAI Conference on Artificial Intelligence)",
+  "url": "https://doi.org/10.1609/aaai.v38i21.30354",
+  "source_db": "openalex_search",
+  "populations": [
+    "Elementary (PreK-5th)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper examines how to support upper elementary students in learning core AI concepts through a story-driven, game-based learning environment called PRIMARYAI. The authors are interested in whether a classroom-friendly AI learning experience can engage young students, support learning of AI planning, and help students progress through a scaffolded sequence of tasks that move from using a prebuilt solution to modifying it and then creating one from scratch.\n\nThe intervention combines AI and life-science instruction around a narrative in which students investigate why penguin populations are declining on a volcanic island. In the version studied here, students worked through an AI planning quest using a block-based interface to manipulate initial states, possible actions, and goal states for a robot. The quest used a Use-Modify-Create scaffolding framework and was preceded by an unplugged AI planning activity. The study was implemented in fourth-grade classrooms in two rural Midwestern U.S. schools over three weeks, with analysis focusing on 16 students in one class whose gameplay trace data were available.\n\nThe study used both quantitative and qualitative evidence, including pre/post tests, gameplay trace logs, and video observation. Results showed significant gains on an AI planning content assessment, strong engagement during gameplay, and evidence that the scaffolded quest design helped students move through the missions. The authors conclude that story-driven game-based learning can effectively support AI learning in elementary settings, while noting that students still needed additional support when transitioning from modifying tasks to creating them independently.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed classroom implementation with pre/post testing, trace data, and qualitative observation, but it is a small uncontrolled study (n=16 analyzed for traces; n=14 for gains) without random assignment or a comparison group. The evidence is promising but primarily descriptive and exploratory.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports a modest positive learning gain on a small sample and encouraging engagement/progression outcomes, but effect magnitude is limited and not enough to establish generalizable impact. The intervention appears useful for a priority population (upper elementary AI learners), yet broader effectiveness remains unclear.",
+  "interventions": [
+    {
+      "intervention": "Educational Game / Simulation",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "story-driven game-based learning environment for upper elementary AI education, using a science inquiry narrative about declining penguin populations and an AI planning quest with block-based interaction"
+    },
+    {
+      "intervention": "Other",
+      "confidence": 0.86,
+      "role": "secondary",
+      "use_case": "Use-Modify-Create scaffolding framework embedded in the game to support progression from using a prebuilt planning task to modifying and creating AI planning solutions"
+    },
+    {
+      "intervention": "Computer-Assisted Instruction (CAI)",
+      "confidence": 0.74,
+      "role": "secondary",
+      "use_case": "unplugged introductory AI planning activities and guided classroom curriculum that supports the game-based AI lesson sequence"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.93,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Students showed significant gains on an AI planning content knowledge assessment after the unit. On the 11-item pre/post test, mean scores increased from 4.36 (SD=1.98) to 5.43 (SD=1.87) for the 14 students with complete data, with a matched-pairs t-test showing t(13)=3.51, p<.01.",
+        "measure": "AI planning content knowledge pre-test/post-test (11 multiple-choice items)",
+        "study_size": "n=14",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "pre SD=1.98; post SD=1.87"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.84,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The qualitative video analysis indicated strong student engagement during gameplay, with students verbalizing progress and enthusiasm (e.g., completing missions) and 8 students raising their hands when asked who had completed all missions. The paper reports active engagement but does not provide a standardized engagement effect size.",
+        "measure": "Classroom video observations and student behavioral engagement during gameplay",
+        "study_size": "n=16",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.78,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Trace-log analyses suggested the Use-Modify-Create scaffold helped students progress through increasingly difficult AI planning tasks. Completion rates declined across phases but remained substantial: 93.75% completed Use, 66.67% of those completed Modify, and 60% of Modify completers completed Create; Mission 1 and 2 times were strongly correlated (r=0.72), indicating smoother transition after initial interface familiarity.",
+        "measure": "Mission completion, progression across Use-Modify-Create phases, time spent per mission, and block-move traces",
+        "study_size": "n=16",
+        "effect_size": "r=0.72 (Mission 1 vs Mission 2 time correlation)",
+        "confidence_interval": "not_reported",
+        "std_deviation": "mission time SDs reported in tables but not pooled"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "no_long_term_followup",
+    "non_representative_population"
+  ],
+  "duration_weeks": "3",
+  "setting": "classroom",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "medium",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

@@ -1,0 +1,67 @@
+{
+  "title": "Need of AI in Modern Education: in the Eyes of Explainable AI (xAI)",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2408.00025v3",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This book chapter examines the role of explainable AI (xAI) in modern education, with a focus on transparency, interpretability, and fairness in high-stakes educational decision-making. Rather than studying a classroom intervention, it argues conceptually that AI systems used in education can reproduce or amplify social bias, especially when decisions are tied to socioeconomic variables such as parental income.\n\nThe chapter uses the Adult Census Income dataset and an XGBoost classifier as a worked example to demonstrate several post-hoc explanation and fairness methods, including permutation importance, SHAP, LIME, surrogate decision trees, and FairML. The central question is not about student outcomes, but about how different explanation methods reveal model behavior and whether they are sufficient to detect unfairness.\n\nThe population and context are not K-12 teachers or students; the empirical example is an adult census dataset, used to proxy parental income and its relationship to educational opportunity. The chapter concludes that common feature-importance methods may miss important bias signals, while FairML surfaces dependence on sensitive attributes such as race, nationality, and sex. The authors argue that educational AI should prioritize transparency, equal opportunity, and accessibility, and that bias mitigation remains an important unresolved challenge.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a conceptual/book-chapter-style discussion with a single illustrative modeling exercise rather than a rigorous educational intervention study. It is not an RCT or QED, and the paper does not evaluate K-12 outcomes or subgroup effects with a clear causal design.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "The paper does not provide measurable K-12 impact estimates or evidence of improved student or teacher outcomes. Its main contribution is methodological and normative, focusing on explainability and fairness concerns rather than demonstrated educational effects.",
+  "interventions": [
+    {
+      "intervention": "Other",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "Explainable AI / model interpretability and fairness auditing for educational decision-making, using XGBoost, decision trees, LIME, SHAP, and FairML on the Adult Census Income dataset to illustrate bias and transparency issues in education-related access contexts"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Systemic / Institutional Impact",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The chapter argues that AI in education can improve transparency and policy-making in principle, but its own empirical example shows persistent bias and fairness problems in model-based educational decision contexts. Using the Adult Census Income dataset (n=not_reported), the authors show that fairness auditing via FairML reveals dependence on sensitive attributes such as race, nationality, and sex, even when other explanation methods (e.g. SHAP) do not surface these biases clearly.",
+        "measure": "Model fairness / bias audit using explanation methods (FairML, SHAP, LIME) on income-prediction models as a proxy for educational opportunity access",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.7,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper presents AI and XAI as tools that can speed up decision-making, improve transparency, and support data-driven educational policy and performance monitoring. However, these claims are conceptual rather than experimentally evaluated, and no direct effect sizes on teacher workload or administrative efficiency are reported.",
+        "measure": "Conceptual discussion of AI-assisted transparency, explainability, and decision support",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "India",
+  "study_region": "South Asia",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

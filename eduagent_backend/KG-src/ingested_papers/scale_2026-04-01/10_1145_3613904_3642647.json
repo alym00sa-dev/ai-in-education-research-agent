@@ -1,0 +1,533 @@
+{
+  "title": "Mathemyths: Leveraging Large Language Models to Teach Mathematical Language through Child-AI Co-Creative Storytelling",
+  "doi": "10.1145/3613904.3642647",
+  "year": 2024,
+  "venue": "Proceedings of the CHI Conference on Human Factors in Computing Systems (CHI '24)",
+  "url": "https://arxiv.org/abs/2402.01927",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Elementary (PreK-5th)"
+  ],
+  "user_types": [
+    "Student",
+    "Parent"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper investigates whether a large-language-model-based conversational agent can serve as an effective storytelling partner for young children learning mathematical language. The authors focus on early childhood math vocabulary development, arguing that children learn mathematical language well through guided storytelling with a knowledgeable partner, but that one-on-one human support is resource-intensive and difficult to scale. The study asks how prompt engineering can optimize an LLM for child-facing educational storytelling, whether children find such interactions engaging, and whether learning outcomes are comparable to those from human-child storytelling.\n\nTo address this, the authors developed Mathemyths, a GPT-4-powered voice-based co-creative storytelling system for children ages 4\u20138. The system alternates turns with children to build stories, asks open-ended questions, gives feedback, continues the narrative while embedding target math terms, and provides scaffolding when children are unsure or offer minimal responses. The target terms were six early math vocabulary words: sum, estimate, add, subtract, equal, and half. The paper also documents an iterative prompt-engineering and model-evaluation process comparing prompt-engineered GPT-4 outputs with human-generated content and a fine-tuned GPT-3.5 baseline.\n\nThe user study involved 35 children recruited from two public libraries in a midwestern U.S. city during summer 2023. Children were randomly assigned to co-create stories either with Mathemyths or with a trained human partner, completed pre- and post-tests of math language knowledge, and then provided enjoyment ratings. The storytelling activity lasted about 12 minutes total, with two short stories. Parents also completed demographic questionnaires. In addition to learning outcomes, the researchers analyzed engagement indicators such as response rates, response length, uncertainty, and story-creation performance.\n\nThe main finding is that children who interacted with Mathemyths showed significant improvement in mathematical language, and these gains were comparable overall to those of children working with a human partner. The AI condition showed a particular advantage on definition-related questions, while both younger and older children benefited, with older children showing somewhat stronger gains descriptively. Children were highly engaged with the AI, responding to most prompts, though human partners elicited somewhat longer and more substantial responses. Overall, the paper concludes that LLM-based storytelling agents can provide a viable and engaging educational experience for supporting early math language learning, while also highlighting differences in how children interact with AI versus human partners.",
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "lab",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "Mathemyths",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "language_speech"
+      ],
+      "description": "A GPT-based voice conversational co-creative storytelling system for children ages 4\u20138 that alternates turns with a child to build stories while embedding and explaining mathematical vocabulary.",
+      "use_case": "Studied as an AI storytelling partner for children to co-create two short stories and learn six mathematical terms (sum, estimate, add, subtract, equal, half), compared against a human storytelling partner.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "In a user study with 35 children ages 4\u20138, children showed significant improvement in total math language scores from pre-test (M=16.686, SD=9.578) to post-test (M=18.971, SD=1.526), F(1,31)=17.009, p<.000. Learning gains were comparable between the Mathemyths condition (pre: M=17.105, SD=9.882; post: M=19.500, SD=11.074; n=19) and the human condition (pre: M=16.187, SD=9.501; post: M=18.344, SD=10.158; n=16), with no condition difference, F(1,31)=0.012, p=.912.",
+          "measure": "24-item math language assessment total score covering definition, recall, transfer, and practice of six target math terms",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=35"
+        },
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Mathemyths showed a significant advantage for definition learning: children in the AI condition improved on definition questions from pre: M=2.737, SD=1.939 to post: M=3.368, SD=2.047, F(1,18)=8.308, p=.010. In contrast, children with a human partner did not significantly improve on definition items, F(1,15)=0.015, p=.903 (pre: M=2.813, SD=1.621; post: M=2.844, SD=1.777).",
+          "measure": "Definition subscale of the math language questionnaire",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=35"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Children actively engaged with Mathemyths, responding to over 95% of its questions, with responses averaging 6\u201310 words in length. However, children were generally more responsive and gave longer answers to a human partner, and Mathemyths elicited fewer substantial responses and more uncertain responses such as 'I don't know' (9.9% vs. 1.8% with a human).",
+          "measure": "Behavioral engagement indicators: response rate, response length, and coded response type during story co-creation",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=35"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "Differences in engagement by age and partner type were descriptive but not statistically significant. Younger children behaved similarly with AI and human partners, while older children tended to give more frequent and longer responses to humans than to Mathemyths, but two-way ANOVA analyses found no significant age-group differences across engagement dimensions.",
+          "measure": "Age-stratified behavioral engagement comparisons during story co-creation",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=35"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical user study with random assignment to AI versus human partner, but the sample is small (n=35) and the design is closer to a lab-based comparative user study than a strong educational efficacy trial. Effect sizes and confidence intervals are not reported, limiting causal evidence strength.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports significant pre-post gains and comparable outcomes to a human partner, plus an advantage on definition items, but magnitude is unclear because no effect sizes are reported. Engagement results are mixed, so overall impact is promising but not yet clearly substantial.",
+  "citations": [
+    {
+      "title": "HaluEval: A Large-Scale Hallucination Evaluation Benchmark for Large Language Models",
+      "doi": "10.48550/arXiv.2305.11747",
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ACUTE-EVAL: Improved Dialogue Evaluation with Optimized Questions and Multi-Turn Comparisons",
+      "doi": "10.48550/arXiv.1909.03087",
+      "year": 2019,
+      "venue": "arXiv",
+      "citation_level": 3,
+      "citation_context": "evaluation method for story continuation quality"
+    },
+    {
+      "title": "Generating with Confidence: Uncertainty Quantification for Black-Box Large Language Models",
+      "doi": "10.48550/arXiv.2305.19187",
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "When do preschoolers learn specific mathematics skills? Mapping the development of early numeracy knowledge",
+      "doi": null,
+      "year": 2020,
+      "venue": "Journal of Experimental Child Psychology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Lost in the Middle: How Language Models Use Long Contexts",
+      "doi": "10.48550/arXiv.2307.03172",
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Young Children and Voice Search: What We Know from Human-Computer Interaction Research",
+      "doi": null,
+      "year": 2019,
+      "venue": "Frontiers in psychology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Hey Google, Do Unicorns Exist? Conversational Agents as a Path to Answers to Children\u2019s Questions",
+      "doi": null,
+      "year": 2019,
+      "venue": "Proceedings of the 18th ACM International Conference on Interaction Design and Children",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT as Author - 100 Words or Less: 100 Short Stories Generated by AI",
+      "doi": null,
+      "year": 2023,
+      "venue": "Independently published",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Retelling Stories: A Strategy for Improving Young Children\u2019s Comprehension, Concept of Story Structure, and Oral Language Complexity",
+      "doi": "10.1086/461427",
+      "year": 1985,
+      "venue": "The Elementary School Journal",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Storytelling: Language experience for meaning making",
+      "doi": null,
+      "year": 1989,
+      "venue": "The Reading Teacher",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Introducing ChatGPT",
+      "doi": null,
+      "year": 2022,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "GPT-4",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "base model used to implement Mathemyths"
+    },
+    {
+      "title": "BunCho: AI Supported Story Co-Creation via Unsupervised Multitask Learning to Increase Writers\u2019 Creativity in Japanese",
+      "doi": "10.1145/3411763.3450391",
+      "year": 2021,
+      "venue": "Extended Abstracts of the 2021 CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Assessing narrative comprehension in young children",
+      "doi": null,
+      "year": 2003,
+      "venue": "Reading Research Quarterly",
+      "citation_level": 3,
+      "citation_context": "basis for narrative comprehension assessment"
+    },
+    {
+      "title": "Does Numeracy Matter More?",
+      "doi": null,
+      "year": 2005,
+      "venue": "National Research and Development Centre for Adult Literacy and Numeracy",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Voice Interfaces in Everyday Life",
+      "doi": "10.1145/3173574.3174214",
+      "year": 2018,
+      "venue": "Proceedings of the 2018 CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Influence of Mathematics Vocabulary Instruction Embedded Within Addition Tutoring for First-Grade Students With Mathematics Difficulty",
+      "doi": "10.1177/0731948714564574",
+      "year": 2015,
+      "venue": "Learning Disability Quarterly",
+      "citation_level": 2,
+      "citation_context": "supports embedding math vocabulary in instruction"
+    },
+    {
+      "title": "The Nonlinear Relations of the Approximate Number System and Mathematical Language to Early Mathematics Development",
+      "doi": "10.1037/dev0000055",
+      "year": 2015,
+      "venue": "Developmental Psychology",
+      "citation_level": 2,
+      "citation_context": "grounds role of mathematical language in math development"
+    },
+    {
+      "title": "Development of Mathematical Language in Preschool and Its Role in Learning Numeracy Skills",
+      "doi": "10.1016/B978-0-12-815952-1.00007-4",
+      "year": 2019,
+      "venue": "Cognitive Foundations for Improving Mathematical Learning",
+      "citation_level": 2,
+      "citation_context": "framing mathematical language as key preschool construct"
+    },
+    {
+      "title": "Causal Connections Between Mathematical Language and Mathematical Knowledge: A Dialogic Reading Intervention",
+      "doi": "10.1080/19345747.2016.1204639",
+      "year": 2017,
+      "venue": "Journal of Research on Educational Effectiveness",
+      "citation_level": 2,
+      "citation_context": "motivates dialogic story-based math language intervention"
+    },
+    {
+      "title": "Engaging Caregivers and Children in Picture Books: A Family-Implemented Mathematical Language Intervention",
+      "doi": "10.1037/edu0000662",
+      "year": 2021,
+      "venue": "Journal of Educational Psychology",
+      "citation_level": 2,
+      "citation_context": "supports storybook-based mathematical language learning"
+    },
+    {
+      "title": "Investigating the Factual Knowledge Boundary of Large Language Models with Retrieval Augmentation",
+      "doi": "10.48550/arXiv.2307.11019",
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Supporting Children\u2019s Math Learning with Feedback-Augmented Narrative Technology",
+      "doi": "10.1145/3392063.3394400",
+      "year": 2020,
+      "venue": "Proceedings of the Interaction Design and Children Conference",
+      "citation_level": 2,
+      "citation_context": "prior narrative technology for children\u2019s math learning"
+    },
+    {
+      "title": "Virtual Peers as Partners in Storytelling and Literacy Learning",
+      "doi": null,
+      "year": 2003,
+      "venue": "Journal of computer assisted learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Adaptive Feedback from Artificial Neural Networks Facilitates Pre-Service Teachers\u2019 Diagnostic Reasoning in Simulation-Based Learning",
+      "doi": null,
+      "year": 2023,
+      "venue": "Learning and Instruction",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Early Childhood Mathematics Education Research: Learning Trajectories for Young Children",
+      "doi": null,
+      "year": 2009,
+      "venue": "Routledge",
+      "citation_level": 2,
+      "citation_context": "background on early childhood math learning trajectories"
+    },
+    {
+      "title": "Oral Storytelling and Teaching Mathematics: Pedagogical and Multicultural Perspectives",
+      "doi": null,
+      "year": 2004,
+      "venue": "SAGE",
+      "citation_level": 2,
+      "citation_context": "conceptual link between storytelling and mathematics teaching"
+    },
+    {
+      "title": "SAGA: Collaborative Storytelling with GPT-3",
+      "doi": "10.1145/3462204.3481771",
+      "year": 2021,
+      "venue": "Companion Publication of the 2021 Conference on Computer Supported Cooperative Work and Social Computing",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Large Language Models Can Be Easily Distracted by Irrelevant Context",
+      "doi": "10.48550/arXiv.2302.00093",
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Enhancing Young Children\u2019s Mathematical Knowledge through a Pre-Kindergarten Mathematics Intervention",
+      "doi": null,
+      "year": 2004,
+      "venue": "Early Childhood Research Quarterly",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Collaborative Storytelling between Robot and Child: A Feasibility Study",
+      "doi": "10.1145/3078072.3079714",
+      "year": 2017,
+      "venue": "Proceedings of the 2017 Conference on Interaction Design and Children",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Impact of Google Assistant on Adolescent EFL Learners\u2019 Willingness to Communicate",
+      "doi": null,
+      "year": 2020,
+      "venue": "Interactive Learning Environments",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Parents\u2019 use of number talk with young children: Comparing methods, family factors, activity contexts, and relations to math skills",
+      "doi": null,
+      "year": 2020,
+      "venue": "Early Childhood Research Quarterly",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Mathematical Language and Mathematical Abilities in Preschool: A Systematic Literature Review",
+      "doi": "10.1016/j.edurev.2022.100457",
+      "year": 2022,
+      "venue": "Educational Research Review",
+      "citation_level": 2,
+      "citation_context": "review grounding mathematical language construct"
+    },
+    {
+      "title": "\u201cAlexa, Can I Program You?\u201d: Student Perceptions of Conversational Artificial Intelligence Before and After Programming Alexa",
+      "doi": "10.1145/3459990.3460730",
+      "year": 2021,
+      "venue": "Proceedings of the 20th Annual ACM Interaction Design and Children Conference",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Mind in the Machine: Anthropomorphism Increases Trust in an Autonomous Vehicle",
+      "doi": "10.1016/j.jesp.2014.01.005",
+      "year": 2014,
+      "venue": "Journal of Experimental Social Psychology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Emergent Abilities of Large Language Models",
+      "doi": "10.48550/arXiv.2206.07682",
+      "year": 2022,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Interplay of Robot Language Level with Children\u2019s Language Learning during Storytelling",
+      "doi": null,
+      "year": 2015,
+      "venue": "Proceedings of the Tenth Annual ACM/IEEE International Conference on Human-Robot Interaction Extended Abstracts",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Designing Emotionally Expressive Social Commentary to Facilitate Child-Robot Interaction",
+      "doi": "10.1145/3459990.3460714",
+      "year": 2021,
+      "venue": "Interaction Design and Children",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Spoken Narrative Assessment: A Supplementary Measure of Children\u2019s Creativity",
+      "doi": "10.1080/10400419.2016.1229989",
+      "year": 2016,
+      "venue": "Creativity Research Journal",
+      "citation_level": 3,
+      "citation_context": "used for spoken narrative creativity assessment"
+    },
+    {
+      "title": "Improving Vocabulary Acquisition by Designing a Storytelling Robot",
+      "doi": null,
+      "year": 2008,
+      "venue": "2008 Eighth IEEE International Conference on Advanced Learning Technologies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "MathKingdom: Teaching Children Mathematical Language Through Speaking at Home via a Voice-Guided Game",
+      "doi": "10.1145/3544548.3581043",
+      "year": 2023,
+      "venue": "Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 2,
+      "citation_context": "closest prior system for teaching mathematical language"
+    },
+    {
+      "title": "Talking with machines: Can conversational technologies serve as children\u2019s social partners?",
+      "doi": null,
+      "year": 2023,
+      "venue": "Child Development Perspectives",
+      "citation_level": 2,
+      "citation_context": "framing conversational technologies as children\u2019s social partners"
+    },
+    {
+      "title": "Dialogue with a Conversational Agent Promotes Children\u2019s Story Comprehension via Enhancing Engagement",
+      "doi": "10.1111/cdev.13708",
+      "year": 2022,
+      "venue": "Child Development",
+      "citation_level": 2,
+      "citation_context": "supports agent dialogue improving story comprehension"
+    },
+    {
+      "title": "Are Current Voice Interfaces Designed to Support Children\u2019s Language Development?",
+      "doi": "10.1145/3411764.3445271",
+      "year": 2021,
+      "venue": "Proceedings of the 2021 CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 2,
+      "citation_context": "motivates design for children\u2019s language development"
+    },
+    {
+      "title": "\u201cElinor\u2019s Talking to Me!\u201d:Integrating Conversational AI into Children\u2019s Narrative Science Programming",
+      "doi": "10.1145/3491102.3502050",
+      "year": 2022,
+      "venue": "Proceedings of the 2022 CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 2,
+      "citation_context": "prior conversational AI in children\u2019s narrative learning"
+    },
+    {
+      "title": "Exploring Young Children\u2019s Engagement in Joint Reading with a Conversational Agent",
+      "doi": "10.1145/3392063.3394417",
+      "year": 2020,
+      "venue": "Proceedings of the Interaction Design and Children Conference",
+      "citation_level": 2,
+      "citation_context": "supports conversational agents for joint reading engagement"
+    },
+    {
+      "title": "What Are You Talking To?: Understanding Children\u2019s Perceptions of Conversational Agents",
+      "doi": "10.1145/3313831.3376416",
+      "year": 2020,
+      "venue": "Proceedings of the 2020 CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 2,
+      "citation_context": "background on children\u2019s perceptions of conversational agents"
+    },
+    {
+      "title": "Wordcraft: Story Writing With Large Language Models",
+      "doi": "10.1145/3490099.3511105",
+      "year": 2022,
+      "venue": "27th International Conference on Intelligent User Interfaces",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Why Johnny Can\u2019t Prompt: How Non-AI Experts Try (and Fail) to Design LLM Prompts",
+      "doi": "10.1145/3544548.3581388",
+      "year": 2023,
+      "venue": "Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Large Language Models as Zero-Shot Human Models for Human-Robot Interaction",
+      "doi": "10.48550/arXiv.2303.03548",
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "StoryDrawer: A Co-Creative Agent Supporting Children\u2019s Storytelling through Collaborative Drawing",
+      "doi": null,
+      "year": 2021,
+      "venue": "Extended Abstracts of the 2021 CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "StoryDrawer: A Child\u2013AI Collaborative Drawing System to Support Children\u2019s Creative Visual Storytelling",
+      "doi": "10.1145/3491102.3501914",
+      "year": 2022,
+      "venue": "Proceedings of the 2022 CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Observe It, Draw It: Scaffolding Children\u2019s Observations of Plant Biodiversity with an Interactive Drawing Tool",
+      "doi": "10.1145/3585088.3589380",
+      "year": 2023,
+      "venue": "Proceedings of the 22nd Annual ACM Interaction Design and Children Conference",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "StoryBuddy: A Human-AI Collaborative Chatbot for Parent-Child Interactive Storytelling with Flexible Parental Involvement",
+      "doi": "10.1145/3491102.3517479",
+      "year": 2022,
+      "venue": "CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 2,
+      "citation_context": "prior human-AI collaborative parent-child storytelling system"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

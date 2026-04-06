@@ -1,0 +1,88 @@
+{
+  "title": "An explanatory study of factors influencing engagement in AI education at the K-12 Level: an extension of the classic TAM model",
+  "doi": "10.1038/s41598-024-64363-3",
+  "year": 2024,
+  "venue": "Scientific Reports",
+  "url": "https://doi.org/10.1038/s41598-024-64363-3",
+  "source_db": "openalex_search",
+  "populations": [
+    "Middle School (6th-8th)",
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper asks what factors influence K-12 students\u2019 engagement and attitudes toward AI education when generative AI tools are used in instruction. The authors extend the Technology Acceptance Model (TAM) with additional cognitive factors\u2014AI intrinsic motivation, AI readiness, AI confidence, and AI anxiety\u2014and human-computer interaction factors\u2014user interface, content, and learner-interface interactivity\u2014to explain students\u2019 perceived usefulness, perceived ease of use, and attitudes toward learning AI.\n\nThe study was carried out with 210 Chinese students in grades K7 to K9 from two high schools. Students completed a one-month AI course centered on creating AI visual narratives and picture books, using tools such as ChatGPT, Midjourney, and AI translation software. After the course, they completed a 38-item questionnaire, and the authors analyzed the data using reliability testing and structural equation modeling.\n\nResults showed that AI intrinsic motivation, AI readiness, AI confidence, interface quality, content quality, and learner-interface interactivity all had positive relationships with perceived usefulness and/or ease of use, while AI anxiety had negative relationships with both. Perceived usefulness and perceived ease of use also positively predicted attitudes toward AI learning. The paper concludes that both cognitive readiness and HCI design matter for K-12 AI education using GenAI, and it argues that curriculum designers should pay attention to these factors when developing and implementing AI4K12 programs.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed empirical correlational/SEM study, not an RCT, and it measures perceptions rather than learning gains. It provides moderate methodological rigor for model testing, but causal inference is limited.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The observed effects are statistically significant but mostly concern attitudes, usefulness, and ease of use rather than direct achievement or large-scale implementation outcomes. The practical impact is therefore promising but modest and somewhat unclear for broader K-12 learning results.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.92,
+      "role": "primary",
+      "use_case": "GenAI-supported K-12 AI course activities using ChatGPT as a conversational assistant for learning AI concepts, generating narrative content, and supporting picture-book creation; Midjourney and AI translation tools were also used as supporting GenAI tools."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.98,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "In a 1-month AI course with 197 valid survey responses from K7-K9 students, several learner factors predicted more favorable attitudes toward learning AI through GenAI tools. AI intrinsic motivation, AI readiness, and AI confidence were positively associated with perceived usefulness and perceived ease of use (e.g., AIIM\u2192PU \u03b2=0.211; AIRD\u2192PU \u03b2=0.152; AICF\u2192PEOU \u03b2=0.159), while AI anxiety was negatively associated with both (AIAX\u2192PU \u03b2=-0.130; AIAX\u2192PEOU \u03b2=-0.162).",
+        "measure": "Self-report survey of AI intrinsic motivation, readiness, confidence, anxiety, perceived usefulness, perceived ease of use, and attitude toward learning AI through GenAI tools",
+        "study_size": "n=197",
+        "effect_size": "\u03b2=0.211 to -0.162",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.88,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Students reported that GenAI tool use improved their perceived usefulness and ease of use, with pathway estimates ranging from \u03b2=0.145 to 0.203 for interface/content/interactivity factors and \u03b2=0.177 to 0.228 for TAM links. Specifically, PU positively predicted attitude (\u03b2=0.208), and PEOU positively predicted both PU (\u03b2=0.177) and attitude (\u03b2=0.228), indicating the course design and tool interaction supported acceptance and likely engagement with AI learning tasks.",
+        "measure": "Structural equation modeling of perceived usefulness, perceived ease of use, and attitude toward AI course learning",
+        "study_size": "n=197",
+        "effect_size": "\u03b2=0.145 to 0.228",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.86,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper focuses on K-12 AI course learning rather than a conventional academic test outcome, and finds that GenAI-supported instruction was associated with more favorable attitudes toward learning AI content. Among HCI variables, content had positive effects on PU and PEOU (C\u2192PU \u03b2=0.168; C\u2192PEOU \u03b2=0.184), and learner-interface interactivity had the strongest positive effect on PEOU (LINT\u2192PEOU \u03b2=0.203).",
+        "measure": "Perceived usefulness, perceived ease of use, and attitude toward learning AI course content using GenAI tools",
+        "study_size": "n=197",
+        "effect_size": "\u03b2=0.168 to 0.203",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "single_site",
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "4",
+  "setting": "classroom",
+  "teacher_training": "yes",
+  "implementation_fidelity": "medium",
+  "study_country": "China",
+  "study_region": "East Asia & Pacific",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

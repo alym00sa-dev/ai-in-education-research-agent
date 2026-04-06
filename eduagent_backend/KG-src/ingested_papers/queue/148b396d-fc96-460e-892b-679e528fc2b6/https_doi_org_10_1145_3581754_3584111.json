@@ -1,0 +1,98 @@
+{
+  "title": "Leveraging Large Language Model and Story-Based Gamification in Intelligent Tutoring System to Scaffold Introductory Programming Courses: A Design-Based Research Study",
+  "doi": "https://doi.org/10.1145/3581754.3584111",
+  "year": 2023,
+  "venue": "IUI \u201923 Companion",
+  "url": "http://arxiv.org/abs/2302.12834v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Undergraduate",
+    "Graduate / Doctoral"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses the challenge international students, especially Chinese international students in the UK, face in introductory programming courses (CS1). The author argues that these students often struggle with prior knowledge gaps, language and cultural barriers, limited interaction, and low sense of belonging, which can reduce engagement and increase anxiety in programming learning.\n\nTo address this, the paper presents a design-based research project exploring AI-enhanced gamification in an intelligent tutoring system (ITS). The work proceeds in three phases: a formative survey/interview study, a story-based gamified prototype deployed in Blackboard, and a GPT-3-enabled story-based ITS model with chatbots for tutoring, peer/critical thinking, career support, and emotion support. The system also provides real-time, tailored feedback on code and incorporates narrative elements, points, badges, levels, and challenges.\n\nThe studies were conducted with Chinese international students enrolled in introductory programming-related modules at the University of Sheffield. Findings suggest that story-based gamification and GPT-3-supported tutoring can improve motivation, engagement, perceived belonging, and the quality of feedback. The paper concludes that AI-enhanced gamification shows promise for scaffolding CS1 learning for international students, while noting the need for more real-world evaluation and longer-term evidence.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a design-based research paper with formative survey, prototype evaluation, and simulation/pilot studies rather than a controlled causal design. The evidence is mainly qualitative and preliminary, so it provides useful but limited credibility for causal claims.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper suggests potentially meaningful benefits for a priority population (Chinese international students) on belonging and engagement, but it does not report standardized learning effects or strong quantitative impact sizes. Overall impact is promising but still unclear and modest based on the available evidence.",
+  "interventions": [
+    {
+      "intervention": "Intelligent Tutoring System (ITS)",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "story-based intelligent tutoring system for introductory programming (CS1) that provides adaptive guidance, Q&A, code explanations, personalized feedback, and gamified progression for Chinese international students"
+    },
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.95,
+      "role": "secondary",
+      "use_case": "GPT-3-powered conversational agents embedded in the tutoring system to answer questions, explain code, ask follow-up questions, and provide emotional/peer/career support"
+    },
+    {
+      "intervention": "Educational Game / Simulation",
+      "confidence": 0.85,
+      "role": "secondary",
+      "use_case": "story-based gamification with narrative missions, role-play, points, badges, leaderboards, avatars, challenges, and teamwork to scaffold CS1 learning"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.9,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "In the formative and pilot phases, the paper reports that the AI-enhanced gamified tutoring environment was intended to support introductory programming learning, and the simulation/pilot suggests the system can provide useful code explanations and feedback. In the computer simulation study, GPT-3-powered agents performed well in providing feedback and insightful conversations, though answer quality varied with question form; no standardized learning gain was reported.",
+        "measure": "Simulation-based performance of GPT-3 agents; qualitative/observational indicators of programming learning support; code explanation and feedback quality",
+        "study_size": "n=360 simulated question-answer rounds; pilot user study n=34 (questionnaires n=32, focus groups n=32)",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper reports positive effects on students' sense of belonging, motivation, engagement, and reduced anxiety in the introductory programming context. In the prototype study with 34 Chinese students (questionnaires n=32; focus groups n=32), most participants said the story-based gamification made them feel more connected to classmates and more motivated, but no quantitative effect size was reported.",
+        "measure": "Sense of belonging survey items, student self-reports of motivation/engagement/anxiety, focus group perceptions",
+        "study_size": "n=34 (questionnaires n=32; focus groups n=32)",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.8,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The system is described as supporting inquiry-based learning, computational thinking, and interaction patterns intended to foster collaboration and critical thinking through follow-up questions and role-based chatbots. Evidence is preliminary and largely qualitative, so no effect size or standardized assessment of durable skills was reported.",
+        "measure": "Qualitative feedback on inquiry, critical thinking, and collaboration; system design intended to support computational thinking",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "2",
+  "setting": "blended",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United Kingdom",
+  "study_region": "Europe",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

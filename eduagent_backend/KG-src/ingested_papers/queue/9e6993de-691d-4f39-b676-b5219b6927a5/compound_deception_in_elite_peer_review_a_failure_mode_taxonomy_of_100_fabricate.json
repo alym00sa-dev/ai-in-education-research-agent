@@ -1,0 +1,67 @@
+{
+  "title": "COMPOUND DECEPTION IN ELITE PEER REVIEW: A FAILURE MODE TAXONOMY OF 100 FABRICATED CITATIONS AT NEURIPS 2025",
+  "doi": null,
+  "year": 2026,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2602.05930v1",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper examines a research integrity problem related to generative AI: large language models producing fabricated academic citations that then pass through elite peer review undetected. The study asks how 100 AI-generated hallucinated citations appearing in 53 accepted NeurIPS 2025 papers managed to evade review, and it develops a taxonomy of failure modes to explain why these false references were not caught.\n\nThe approach is an observational content analysis of a secondary dataset from GPTZero, which had scanned NeurIPS 2025 accepted papers and flagged unverifiable citations. Using the 100 verified hallucinated citations, the author manually coded each citation by primary and secondary failure mode and proposed a five-category taxonomy: Total Fabrication, Partial Attribute Corruption, Identifier Hijacking, Placeholder Hallucination, and Semantic Hallucination. The analysis emphasizes that all 100 cases showed compound failure modes, meaning each citation combined multiple deceptive characteristics, such as plausible-sounding titles plus valid-but-mismatched identifiers.\n\nThe population and context are not educational learners but academic papers and peer review in an AI conference setting. The data come from accepted NeurIPS 2025 papers, each reportedly reviewed by 3\u20135 expert reviewers. The study is situated in scholarly publishing rather than K-12, postsecondary instruction, or direct literacy learning, though it is relevant as adjacent evidence about risks of generative AI in writing workflows, especially hallucination, false authority, and verification burden.\n\nThe main conclusion is that current peer review processes do not reliably verify citations and are vulnerable to AI-generated fabricated references. Most hallucinations were classified as Total Fabrications (66%), with Partial Attribute Corruption accounting for 27%, and every case involved layered deception. The paper argues that mandatory automated citation verification at submission is a practical solution and warns that without stronger verification infrastructure, fabricated citations may become normalized in scientific literature.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a preprint based on secondary descriptive analysis of GPTZero-flagged cases, not an education study, with no causal design, no direct learner outcomes, and no peer-reviewed validation reported in the provided text. It is best treated as grey-literature adjacent evidence on risks of generative AI writing tools rather than rigorous K-12 intervention evidence.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "The paper documents harms/risk signals for institutional integrity rather than demonstrating positive educational impact, and it reports no effect sizes on learners or schools. Under the K-12 impact framework, this maps to red because the evidenced direction is negative/unclear rather than beneficial.",
+  "interventions": [
+    {
+      "intervention": "AI Writing / Language Tool",
+      "confidence": 0.78,
+      "role": "primary",
+      "use_case": "Use of large language models in academic writing workflows to generate manuscript text and references, with analysis focused on hallucinated/fabricated citations and citation verification failures."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Systemic / Institutional Impact",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Negative",
+        "finding_summary": "This preprint reports that 100 AI-generated fabricated citations were identified across 53 accepted NeurIPS 2025 papers, representing about 1% of accepted papers, despite each paper receiving 3-5 expert reviews. The paper argues that current peer-review and submission workflows failed to detect these hallucinations and proposes mandatory automated citation verification as a governance remedy; no causal effect size or comparative institutional impact estimate is reported.",
+        "measure": "Count and taxonomy of fabricated citations in accepted conference papers; contamination rate across accepted papers; descriptive distribution of hallucination types and papers affected",
+        "study_size": "n=100 hallucinated citations across 53 papers (from 4,841 scanned accepted papers; 5,290 accepted total)",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.58,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The paper implies a tradeoff in writing workflow efficiency: LLM-assisted writing can accelerate manuscript production, but undetected hallucinated citations create downstream verification burdens and institutional quality-control failures. The only quantitative evidence presented is descriptive: 92% of contaminated papers contained 1-2 hallucinations and 8% contained 4-13 hallucinations, which the author interprets as minimal versus heavy reliance on AI tools; no direct time-saved or workload-reduction measures are reported.",
+        "measure": "Descriptive counts of hallucinations per paper as a proxy for reliance on AI writing workflows; discussion of verification burden",
+        "study_size": "n=53 contaminated papers",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

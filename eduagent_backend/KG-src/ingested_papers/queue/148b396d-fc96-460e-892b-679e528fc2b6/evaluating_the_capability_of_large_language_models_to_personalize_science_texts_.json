@@ -1,0 +1,60 @@
+{
+  "title": "Evaluating the capability of large language models to personalize science texts for diverse middle-school-age learners",
+  "doi": null,
+  "year": 2024,
+  "venue": "not_reported",
+  "url": "http://arxiv.org/abs/2408.05204v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Middle School (6th-8th)"
+  ],
+  "user_types": [
+    "Student",
+    "School"
+  ],
+  "study_design": "Randomized Controlled Trial (RCT)",
+  "extended_summary": "This paper investigates whether a large language model, GPT-4, can personalize science reading materials for middle school students. The authors frame the problem as a gap in K-12 personalized learning: existing adaptive systems are often limited to pre-specified choices, while LLMs may be able to generate new text tailored to individual learner preferences in real time.\n\nThe intervention used a two-stage GPT-4 workflow. First, students completed a training session in which they selected preferred paragraphs from paired science texts aligned to opposite ends of learning-style dimensions derived from the Felder-Silverman model. Those choices were then used to generate a student profile, which GPT-4 used to rewrite science texts for a test session. In the experimental group, texts were rewritten to match the student\u2019s inferred profile; in the control group, texts were rewritten to oppose it. The study involved 23 seventh- and eighth-grade students from one middle school in Connecticut and took place over a single 25\u201335 minute session conducted at the school.\n\nResults showed that students in the experimental group were more likely than those in the control group to choose the personalized passages over generic ones, with a Mann-Whitney U test indicating significance at the .10 level. However, profile identification was only modestly above chance overall, and no learning or achievement outcomes were measured. The authors conclude that GPT-4 shows promise for generating preference-aligned educational texts for middle school science, but they emphasize the need for larger, more diverse studies and longer-term evaluations before drawing strong general claims about educational effectiveness.",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is a small randomized controlled trial with a clear experimental/control comparison and direct outcome measurement, which supports moderate credibility. However, the sample is very small (n=23), the outcome is preference rather than learning, and the main statistical result is only significant at the .10 level, so it falls short of blue-tier rigor.",
+  "impact_tier": "green",
+  "impact_tier_rationale": "The observed effect on paragraph preference is modest to medium-to-large by the reported alternative effect size (g=0.715), but it is not a learning outcome and is based on a very small sample. This suggests promising but limited impact for K-12 science learning support rather than demonstrated educational gains.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.95,
+      "role": "primary",
+      "use_case": "GPT-4 used to profile middle-school students\u2019 learning preferences and rewrite middle-school science texts to align with each student\u2019s predicted profile; evaluated as a personalized learning text-customization tool."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Scientific Reasoning",
+      "confidence": 0.9,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "In a small randomized controlled trial (n=23), students in the experimental group were more likely to select the GPT-4 rewritten science paragraph aligned with their profile than control students who received text rewritten to contradict their profile. The difference was significant at the .10 level on a Mann-Whitney U test (U=40.5, one-sided p=.059); if treated as a t-test, the effect was medium-to-large (g=0.715, t(21)=1.777, one-sided p=.045).",
+        "measure": "Choice of personalized vs generic science paragraphs during test session; Mann-Whitney U test on choice scores",
+        "study_size": "n=23",
+        "effect_size": "g=0.715",
+        "confidence_interval": "not_reported",
+        "std_deviation": "0.622 (experimental), 0.786 (control)"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "classroom",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

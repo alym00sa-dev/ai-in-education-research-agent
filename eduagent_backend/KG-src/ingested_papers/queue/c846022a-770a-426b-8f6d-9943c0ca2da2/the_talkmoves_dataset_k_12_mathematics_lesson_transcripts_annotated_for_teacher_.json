@@ -1,0 +1,64 @@
+{
+  "title": "The TalkMoves Dataset: K-12 Mathematics Lesson Transcripts Annotated for Teacher and Student Discursive Moves",
+  "doi": null,
+  "year": 2022,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2204.09652v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "K-12 (unspecified grade)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper introduces the TalkMoves dataset, a curated corpus of 567 K-12 mathematics lesson transcripts drawn from classroom video recordings. The central problem addressed is the lack of publicly available, richly annotated classroom discourse data for studying teacher-student interaction and for developing AI/NLP tools that can analyze instructional talk. The authors position the dataset as a resource for both educational research and machine learning, grounded in accountable talk theory.\n\nThe approach is not an intervention study in the traditional sense, but a dataset release and annotation framework. Each transcript is human-transcribed, segmented by speaker, and annotated at the sentence level for ten discursive moves for teachers and students, plus utterance-level dialogue act labels. The dataset combines publicly available transcripts, TIMSS video-study transcripts, Video Mosaic materials, Inside Mathematics resources, and additional anonymized transcripts from the TalkMoves project. The paper also describes the TalkMoves application, which uses these annotations and transformer-based models to provide teachers with automated, immediate feedback about their mathematics discourse.\n\nThe population consists of K-12 mathematics classrooms, primarily in-person lessons with whole-class discussion and small-group work, along with some online lessons. The dataset is skewed toward U.S. middle school classrooms and female-taught lessons, though the exact participant breakdown varies and some descriptive details are not available. The main conclusion is that TalkMoves offers a large, theory-grounded, publicly accessible resource for analyzing classroom discourse and supporting future AI systems that can coach teachers and potentially students in authentic instructional settings.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a dataset and system description with benchmarked model performance, not a controlled evaluation of educational impact. It is peer-reviewed and methodologically clear, but the evidence is descriptive/technical rather than experimental or quasi-experimental.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper suggests potential for scalable teacher feedback and reports strong model accuracy, but it does not demonstrate measured downstream educational gains or workload reduction in authentic teacher planning/coaching cycles. Impact on education practice is therefore plausible but currently unclear.",
+  "interventions": [
+    {
+      "intervention": "Automated Feedback System",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "automated, immediate, and actionable feedback to K-12 mathematics teachers about classroom discourse and talk moves based on lesson transcript analysis"
+    },
+    {
+      "intervention": "Computer-Assisted Instruction (CAI)",
+      "confidence": 0.67,
+      "role": "secondary",
+      "use_case": "teacher-facing NLP/ML dashboard that supports classroom discourse analysis and provides instructional analytics rather than direct student tutoring"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper\u2019s main applied contribution is a teacher-facing system that automates detection and classification of teacher and student talk moves from classroom transcripts, aiming to scale feedback that would otherwise require highly trained observers. The benchmarked models achieved macro-F1 scores of 76.32 for the teacher model (RoBERTa-base) and 73.12 for the student model (BERT-base), indicating strong classification performance for automating feedback generation, but the paper does not report a causal improvement in teacher workload or time savings.",
+        "measure": "Macro-F1 and Matthews correlation coefficient (MCC) for talk-move classification; system functionality for feedback generation",
+        "study_size": "n=567 transcripts; test set size not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Automated Feedback System"
+    }
+  ],
+  "limitations": [
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "blended",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

@@ -1,0 +1,87 @@
+{
+  "title": "Early Alert of Academically At-Risk Students: An Open Source Analytics Initiative",
+  "doi": null,
+  "year": 2014,
+  "venue": "Journal of Learning Analytics",
+  "url": "https://doi.org/10.18608/jla.2014.11.3",
+  "source_db": "openalex_search",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student",
+    "Educator",
+    "Administrator"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper describes the Open Academic Analytics Initiative (OAAI), a multi-year effort to build and evaluate an open-source early alert system for higher education. The core problem addressed is how to identify academically at-risk students early enough to improve course success and retention, especially in institutions serving underserved populations. The authors frame the work as an applied learning analytics initiative rather than a study of a specific commercial product.\n\nThe intervention approach combines predictive modeling with targeted supports. Student demographic, aptitude, course, and learning management system data from Sakai were used to train classifiers that flagged students likely to earn below a C. Four machine-learning methods were compared: logistic regression, SVM/SMO, decision trees, and Na\u00efve Bayes. When students were identified as at risk, they were placed into an Online Academic Support Environment (OASE) that offered open educational resources, academic support staff facilitation, and peer mentoring, along with instructor email notifications and other outreach strategies.\n\nThe study population consisted of undergraduate students at Marist College and partner higher-education institutions in the United States, including community colleges and HBCUs. The paper reports on model development, portability across institutions, and the implementation of intervention strategies, with emphasis on course completion, retention, and academic performance indicators. The authors conclude that the OAAI successfully produced an open-source early alert prototype and that predictive models and interventions can be deployed across multiple institutions, though the paper is primarily a system-and-model report rather than a rigorous causal impact study on learning outcomes.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed empirical/technical case study, but it is primarily descriptive and correlational rather than a rigorous causal evaluation of student learning outcomes. The paper reports model development and deployment, with limited direct outcome evidence and no randomized comparison for the main educational claims.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper shows meaningful institutional implementation of an early-warning analytics system, but it does not demonstrate measurable gains in K-12 science achievement or other student learning outcomes. Any impact is therefore indirect and unclear for the user\u2019s target question.",
+  "interventions": [
+    {
+      "intervention": "Predictive Analytics / Early Warning",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "open-source early alert system that uses LMS logs, demographics, aptitude data, and gradebook data to predict which higher-education students are academically at risk and trigger interventions"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The paper primarily evaluates predictive modeling for identifying at-risk students rather than direct learning gains. It reports that models were trained/tested on 9,938 training samples and 5,212 test samples, with performance assessed via accuracy, recall, precision, and false-positive rate, but no science learning outcomes are reported.",
+        "measure": "classification performance for academic risk detection (accuracy, recall, precision, false-positive rate)",
+        "study_size": "n=15,150 total records (9,938 training; 5,212 test)",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Predictive Analytics / Early Warning"
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.77,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The system is intended to improve institutional efficiency by automating early identification of academically at-risk students and supporting targeted intervention delivery. The paper describes successful deployment of open-source predictive models across partner institutions, but does not provide a numeric effect size for efficiency gains.",
+        "measure": "deployment and predictive model performance for early alert workflow",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Predictive Analytics / Early Warning"
+    },
+    {
+      "outcome": "Systemic / Institutional Impact",
+      "confidence": 0.9,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The study reports that the Open Academic Analytics Initiative successfully developed and deployed an open-source early alert prototype, released predictive models under open license, and explored portability across institutions. This indicates implementation and scalability impact at the institutional level, but the paper does not report a direct causal effect on student learning achievement.",
+        "measure": "prototype deployment, model portability across institutions, and intervention implementation outcomes",
+        "study_size": "4 partner institutions plus Marist College development dataset",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Predictive Analytics / Early Warning"
+    }
+  ],
+  "limitations": [
+    "single_site",
+    "no_control_group",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

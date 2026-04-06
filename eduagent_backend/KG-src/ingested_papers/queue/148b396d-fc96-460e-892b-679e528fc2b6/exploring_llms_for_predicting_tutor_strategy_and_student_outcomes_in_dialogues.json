@@ -1,0 +1,58 @@
+{
+  "title": "Exploring LLMs for Predicting Tutor Strategy and Student Outcomes in Dialogues",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2507.06910v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "K-12 (unspecified grade)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper investigates whether modern large language models can predict tutoring strategy and student outcomes from tutoring dialogues. The authors frame this as a need arising from the growing use of AI tutoring systems, including Khan Academy\u2019s Khanmigo-like tools, where understanding tutor moves and their relationship to learning outcomes is important for assessing and improving performance.\n\nThe study evaluates Llama 3.2 3B (fine-tuned with LoRA) and GPT-4o (zero-shot prompting) on two math tutoring dialogue datasets: MathDial and AlgebraNation. The tasks include predicting the next tutor move, classifying the current tutor move, predicting future dialogue success, and predicting next-turn student success. The paper compares LLM-based approaches with traditional baselines such as Markov chains, logistic regression, and LSTMs, and also analyzes how tutor move annotations affect performance.\n\nThe data involve one-on-one tutoring dialogues in MathDial and real-world online forum tutoring interactions in AlgebraNation. MathDial uses simulated student responses intended to mimic misconceptions, while AlgebraNation contains authentic discourse between students, tutors, and peers. The paper finds that predicting future tutor strategy is difficult even for state-of-the-art LLMs, while student outcome prediction is comparatively easier and benefits from tutor move labels.\n\nOverall, the authors conclude that tutor behavior is highly unpredictable and that explicit pedagogical move information helps with both classification and outcome prediction. They also find that certain tutor moves are associated with better student outcomes, such as confirmatory feedback, giving instruction, and giving explanation in AlgebraNation, while generic and probing moves are more positively associated with success in MathDial. The study emphasizes the importance of studying tutor strategy for AI tutoring, but it does not directly evaluate an intervention in a live K-12 classroom setting.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed empirical modeling study, but it is correlational/predictive rather than an experimental evaluation of student learning impact. It provides useful evidence about tutor move\u2013outcome relationships, but does not establish causal effects on achievement.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper shows informative associations and predictive utility for tutoring dialogue analysis, but no direct learning effect size or intervention impact on K-12 student outcomes is reported. Its practical relevance is moderate for improving analytics and future tutor design, not demonstrated student impact.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.96,
+      "role": "primary",
+      "use_case": "LLM-powered tutoring dialogue analysis and prediction for math tutoring conversations, including forecasting future tutor moves and student outcomes in Khanmigo-like tutoring traces using GPT-4o and Llama 3."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 0.86,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The paper does not test learning gains directly, but it does evaluate whether tutor strategy predicts math tutoring outcomes in two datasets (MathDial n=2,484 dialogues; AlgebraNation n=2,318 posts). Tutor move information improved student outcome prediction, and certain moves were positively associated with success (e.g., confirmatory feedback, giving instruction, giving explanation in AlgebraNation), while telling was negatively associated with success in MathDial.",
+        "measure": "Dialogue-level success / correctness; turn-level student success; prediction performance (accuracy, weighted F1); logistic regression coefficients and chi-squared association with dialogue success",
+        "study_size": "n=2484 and n=2318",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    }
+  ],
+  "limitations": [
+    "non_representative_population",
+    "no_long_term_followup",
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

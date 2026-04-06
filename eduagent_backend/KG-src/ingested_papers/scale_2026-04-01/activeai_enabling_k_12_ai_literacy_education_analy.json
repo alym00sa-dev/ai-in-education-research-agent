@@ -1,0 +1,140 @@
+{
+  "title": "ActiveAI: Enabling K-12 AI Literacy Education & Analytics at Scale",
+  "doi": null,
+  "year": 2025,
+  "venue": "Companion Proceedings 15th International Conference on Learning Analytics & Knowledge (LAK25)",
+  "url": "https://arxiv.org/abs/2412.14200",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Middle School (6th-8th)",
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses the lack of large-scale, replicable datasets and learning platforms for K-12 AI literacy education. Although interest in AI literacy has grown rapidly, the authors note that most prior efforts have focused on learning materials and summer programs rather than scalable classroom-based platforms that generate standardized learning data. The study aims to both support AI literacy instruction in schools and create open, reusable datasets for learning analytics research.\n\nTo address this problem, the authors developed ActiveAI, a web-based learning platform built with Next.js and OpenAI APIs. The platform supports students, teachers, and researchers. Students complete demographic surveys, pre-tests, interactive AI literacy learning modules, and post-tests. The modules are designed using backward design and aligned with AI literacy standards, including activities such as identifying LLM hallucinations in news summaries. Teachers can view aggregated real-time class analytics, while researchers can access downloadable de-identified logs compatible with repositories such as DataShop and LearnSphere. The study also included preliminary quantitative analyses of pre/post assessment data and qualitative triangulation through teacher interviews and student cognitive task analysis.\n\nThe population consisted of over 1,000 secondary-school learners across 12 partner schools in North America, Asia, and Australia, with complete data from 426 learners across four deployed modules. The context varied by school: some Asian schools used the materials in standalone IT courses focused on AI literacy, while schools in other regions integrated them into regular subjects or STEM clubs. The platform was used in authentic school settings through online modules and assessments.\n\nThe main conclusions are that the platform can support scalable K-12 AI literacy education and produce useful learning analytics data. Preliminary results showed significant learning gains in 4 of 7 learning objectives across four modules, especially where activities were interactive rather than passive, consistent with the ICAP framework. The authors also found gender differences in one module on identifying LLM hallucinations, with non-male students outperforming male students on both pre- and post-tests. The paper frames these results as early evidence of the platform's value for both instruction and secondary research, while also emphasizing the need for further data collection and analysis across contexts.",
+  "limitations": [
+    "no_control_group",
+    "high_attrition",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "identified_tools": [
+    {
+      "name": "ActiveAI",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "feedback_evaluation"
+      ],
+      "description": "A web-based intelligent online learning platform for K-12 AI literacy education that delivers AI literacy modules, interactive activities with an AI agent, assessments, and analytics dashboards/data exports for teachers and researchers.",
+      "use_case": "Used across 12 secondary schools to provide AI literacy modules with pre-test, learning module, and post-test sequences; students interacted with AI-agent-based simulated scenarios such as identifying LLM hallucinations, while the system logged learning and assessment data for analysis.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Among 426 learners with complete data across 4 deployed modules, significant pre-post learning gains were observed in 4 of 7 learning objectives using Wilcoxon tests on non-normal score distributions. The paper reports that objectives with significant gains were associated with interactive activities, whereas objectives with smaller gains were linked to passive reading.",
+          "measure": "Pre-test and post-test scores on AI literacy learning objectives",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=426"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Learning gains varied by activity design and were reported to correlate with cognitive engagement level under the ICAP framework: interactive activities showed significant gains, while passive reading showed smaller gains. This finding is descriptive and tied to differences across the 7 learning objectives in 4 modules rather than a single pooled effect.",
+          "measure": "AI literacy learning gains by instructional activity type/cognitive engagement level",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=426"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "In module 4 (Identify LLM Hallucinations), non-male students scored significantly higher than male students on both the pre-test (f=6.97, p<0.01, one-way ANOVA) and post-test (f=6.80, p=0.01, one-way ANOVA), and also showed slightly higher learning gains. The paper presents this as a gender difference in AI literacy assessment performance.",
+          "measure": "Pre-test and post-test assessment scores by gender in module 4",
+          "effect_size": "f=6.97 pre-test; f=6.80 post-test",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=114"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical platform study with pre/post analyses and subgroup comparisons, but it is presented as preliminary results without randomization, clear control groups, or full causal design details. The evidence is therefore correlational/quasi-experimental rather than a high-credibility RCT or meta-analysis.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports significant learning gains in some objectives, but no standardized effect sizes or confidence intervals are provided, making the magnitude of impact unclear. Positive effects are suggested, but impact strength cannot be confidently classified above unclear/modest.",
+  "citations": [
+    {
+      "title": "A Systematic Review of AI Literacy Conceptualization, Constructs, and Implementation and Assessment Efforts (2019-2023)",
+      "doi": null,
+      "year": 2024,
+      "venue": "Computers and Education Open",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The ICAP framework: Linking cognitive engagement to active learning outcomes",
+      "doi": null,
+      "year": 2014,
+      "venue": "Educational Psychologist",
+      "citation_level": 2,
+      "citation_context": "ICAP framework used to interpret learning gains"
+    },
+    {
+      "title": "Generative AI and K-12 Education: An MIT Perspective",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Machine learning and the five big ideas in AI",
+      "doi": null,
+      "year": 2023,
+      "venue": "International Journal of Artificial Intelligence in Education",
+      "citation_level": 3,
+      "citation_context": "AI literacy standards aligned to learning objectives"
+    },
+    {
+      "title": "Assessing the Efficacy of Goal-Based Scenarios in Scaling AI Literacy for Non-Technical Learners",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 55th ACM Technical Symposium on Computer Science Education V. 2",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ActiveAI: The Effectiveness of an Interactive Tutoring System in Developing K-12 AI Literacy",
+      "doi": null,
+      "year": 2024,
+      "venue": "European Conference on Technology Enhanced Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "What is backward design",
+      "doi": null,
+      "year": 1998,
+      "venue": "Understanding by Design",
+      "citation_level": 3,
+      "citation_context": "backward design approach for module development"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

@@ -1,0 +1,61 @@
+{
+  "title": "Towards an Intelligent Tutor for Mathematical Proofs",
+  "doi": "10.4204/EPTCS.79.1",
+  "year": 2012,
+  "venue": "EPTCS 79 (THedu\u201911)",
+  "url": "http://arxiv.org/abs/1202.4828v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "High School (9th-12th)",
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses the problem of how to build an intelligent tutoring system for teaching textbook-style mathematical proofs, an area the authors describe as underdeveloped in existing e-learning systems. The focus is not on ordinary computation or problem solving, but on supporting students in constructing proofs at the level of individual proof steps, including handling underspecified, incomplete, and ambiguous student input.\n\nThe proposed approach adapts the \u2126mega proof assistant into an intelligent tutor that can analyze student proof steps, judge their correctness, assess step granularity, and check relevance to the current proof goal. The system is designed around a Wizard-of-Oz study in which 37 students interacted with a mock natural-language proof tutor while four experienced tutors simulated the system. The corpus from these dialogs is used to motivate the design and to evaluate the reconstruction and hint-generation components.\n\nThe target population is final high-school students and undergraduate university students with domain knowledge in mathematics but not necessarily in formal logic. The paper argues for a model-tracing style tutoring architecture using assertion-level proof reconstruction and strategy-based hint generation. The authors conclude that their prototype can successfully reconstruct and assess many proof steps from the corpus and can generate hierarchical hints of increasing specificity, suggesting that the approach is feasible for proof tutoring in this domain.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed systems paper with an empirical evaluation, but it is not a randomized or comparative educational effectiveness study. The evidence is primarily a small, domain-specific corpus evaluation and prototype validation rather than causal evidence of learning impact.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The reported performance is promising, but the measured outcome is system verification accuracy rather than student learning gains, and the study is confined to a narrow mathematical proof domain. There is no effect size on learner outcomes, so overall educational impact is unclear.",
+  "interventions": [
+    {
+      "intervention": "Intelligent Tutoring System (ITS)",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "rule-based intelligent tutoring system for mathematical proof construction, with step reconstruction, correctness checking, granularity analysis, relevance checking, and hierarchical hint generation for textbook-style proofs"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper reports that the prototype ITS for mathematical proofs was successfully evaluated on a corpus of tutorial dialogs and achieved accurate step verification in its domain. Using 144 proof steps from a Wizard-of-Oz study, the system correctly verified or rejected nearly all steps at depth 4, with an overall accuracy of 98% (116 correct and 28 incorrect steps; 3 steps misverified or unverifiable).",
+        "measure": "proof-step verification accuracy on Wizard-of-Oz corpus of mathematical proof dialogs",
+        "study_size": "n=144 proof steps",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "lab",
+  "teacher_training": "yes",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Germany",
+  "study_region": "Europe",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

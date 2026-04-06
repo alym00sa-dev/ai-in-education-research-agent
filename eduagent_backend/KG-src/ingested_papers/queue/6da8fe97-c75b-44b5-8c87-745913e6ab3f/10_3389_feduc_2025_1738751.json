@@ -1,0 +1,105 @@
+{
+  "title": "Artificial intelligence and learner autonomy: a meta-analysis of self-regulated and self-directed learning",
+  "doi": "10.3389/feduc.2025.1738751",
+  "year": 2025,
+  "venue": "Frontiers in Education",
+  "url": "https://doi.org/10.3389/feduc.2025.1738751",
+  "source_db": "openalex_search",
+  "populations": [
+    "Undergraduate",
+    "Graduate / Doctoral"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Meta-Analysis / Systematic Review",
+  "extended_summary": "This paper examines how artificial intelligence (AI) interventions affect learners\u2019 self-regulated learning (SRL), self-directed learning (SDL), and related learning outcomes. The authors argue that prior evidence on AI-supported learning is fragmented, especially regarding which dimensions of regulation benefit most and under what conditions. To address this, they conducted a PRISMA-guided systematic meta-analysis of empirical studies on AI and learner autonomy.\n\nThe review synthesized 32 studies with 92 effect sizes and 3,029 participants. It included AI tools such as conversational agents, intelligent tutoring systems, adaptive recommendation systems, analytics dashboards, and generative or planning tools. The included learners were predominantly undergraduates and early postgraduate students, with participants aged 18 to 37, across domains including language learning, STEM, and medical education. The analysis compared AI-based interventions against control conditions and examined effects on overall SRL, SRL dimensions, SRL phases, learning outcomes, and SDL, along with moderators such as age, duration, subject domain, and AI system type.\n\nThe main conclusion is that AI-based interventions substantially improve overall SRL and SDL, with smaller but significant gains in cognitive/metacognitive and motivational/affective regulation, forethought, self-reflection, and learning outcomes. Effects on behavioral regulation and performance-phase regulation were inconsistent and highly heterogeneous. Conversational and interactive systems showed the broadest benefits, while longer interventions, older learners, and language-learning contexts tended to show stronger effects. The paper concludes that AI can act as an adaptive scaffold for learner autonomy, but design choices and learner/context fit strongly shape impact.",
+  "quality_tier": "blue",
+  "quality_tier_rationale": "This is a systematic meta-analysis following PRISMA, synthesizing 32 empirical studies with 92 effect sizes and formal moderator, sensitivity, and publication-bias analyses. It meets the highest evidence tier despite some heterogeneity and publication-bias concerns in parts of the analysis.",
+  "impact_tier": "blue",
+  "impact_tier_rationale": "The meta-analysis reports large effects on SRL (g=1.613) and SDL (g=1.111), plus a smaller but positive effect on learning outcomes (g=0.350). These are medium-to-large impacts on learner regulation and moderate academic benefits, so the overall impact tier is blue.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.8,
+      "role": "primary",
+      "use_case": "Meta-analyzes conversational and interactive AI systems, including chatbots and generative AI tutors, as supports for self-regulated and self-directed learning across educational contexts. The paper explicitly includes examples such as ChatGPT, chatbots, and Study Buddy SRL-style conversational agents as intervention types that provide prompts, explanations, and reflective support."
+    },
+    {
+      "intervention": "Intelligent Tutoring System (ITS)",
+      "confidence": 0.7,
+      "role": "primary",
+      "use_case": "Synthesizes studies of instructional and adaptive systems that provide structured tutoring and adaptive guidance for learning regulation, including classical intelligent tutoring and adaptive practice systems. These systems are discussed as AI tools that support goal setting, monitoring, and feedback-driven learning."
+    },
+    {
+      "intervention": "Adaptive Learning Platform",
+      "confidence": 0.7,
+      "role": "primary",
+      "use_case": "Reviews adaptive and recommendation-based AI systems that personalize learning sequences, practice difficulty, or content pacing to support learners' regulation and autonomy. The paper treats these as supportive AI tools that scaffold planning, monitoring, and self-directed study."
+    },
+    {
+      "intervention": "Automated Feedback System",
+      "confidence": 0.7,
+      "role": "primary",
+      "use_case": "Includes feedback-oriented AI systems such as analytics-enhanced feedback tools and rule-based SRL scaffolding engines that deliver prompts, explanations, or progress feedback. These interventions are evaluated for their effects on cognitive/metacognitive and motivational regulation as well as learning outcomes."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.98,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Across 32 empirical studies (92 effect sizes; n=3,029), AI-based interventions had a large positive effect on overall self-regulated learning, g=1.613, p=0.032. They also improved self-directed learning, g=1.111, p=0.043, with the strongest gains in forethought/planning and motivational readiness.",
+        "measure": "Self-regulated learning and self-directed learning scales; SRL dimension and phase measures",
+        "study_size": "n=3,029",
+        "effect_size": "g=1.613 (SRL); g=1.111 (SDL)",
+        "confidence_interval": "SRL 95% CI [0.1366, 3.0887]; SDL 95% CI [0.0457, 2.1764]",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "AI interventions produced small-to-moderate gains in cognitive/metacognitive regulation (g=0.377, p=0.0004) and moderate gains in motivational/affective regulation (g=0.505, p=0.013). Effects on behavioral regulation were inconsistent and non-significant overall despite a large mean estimate (g=0.914, p=0.284), indicating high heterogeneity rather than reliable benefit.",
+        "measure": "Cognitive/metacognitive, motivational/affective, and behavioral SRL subscales; planning, monitoring, evaluation, and effort/time-management indicators",
+        "study_size": "n=3,029",
+        "effect_size": "g=0.377; g=0.505; g=0.914",
+        "confidence_interval": "Cognitive/metacognitive 95% CI [0.2225, 0.5308]; motivational/affective 95% CI [0.1608, 0.8494]; behavioral 95% CI [-1.0454, 2.8742]",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.78,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "AI-based interventions had a small-to-moderate positive effect on learning outcomes and academic performance, g=0.350, p=0.034, across 7 studies and 9 effect sizes. The authors interpret this as evidence that AI-supported regulation translates into measurable academic gains, though heterogeneity was moderate (I2=69.04%).",
+        "measure": "Learning outcomes and performance; achievement and task performance measures",
+        "study_size": "n=3,029",
+        "effect_size": "g=0.350",
+        "confidence_interval": "95% CI [0.0379, 0.6626]",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

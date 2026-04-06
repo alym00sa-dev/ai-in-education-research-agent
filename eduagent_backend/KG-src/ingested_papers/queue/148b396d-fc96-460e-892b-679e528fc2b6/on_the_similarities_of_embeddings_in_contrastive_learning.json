@@ -1,0 +1,30 @@
+{
+  "title": "On the Similarities of Embeddings in Contrastive Learning",
+  "doi": null,
+  "year": 2025,
+  "venue": "Proceedings of the 42nd International Conference on Machine Learning (ICML 2025)",
+  "url": "http://arxiv.org/abs/2506.09781v2",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper studies contrastive learning from a theoretical perspective, focusing on how the cosine similarities of learned embeddings behave under full-batch and mini-batch training. The authors ask when positive pairs can be perfectly aligned and how negative pairs are separated in the embedding space, using a unified framework that covers several common contrastive objectives such as InfoNCE, SimCLR, DCL, DHEL, and SigLIP-style losses.\n\nThe main contribution is a set of theorems showing that, in full-batch settings, optimal embeddings align positive pairs and place negative pairs at cosine similarity -1/(n-1), but some loss formulations can cause excessive separation of negative pairs and misalignment of positives. In mini-batch settings, the paper proves that smaller batch sizes increase the variance of negative-pair similarities even when the expected similarity remains optimal, which helps explain why mini-batch training can underperform full-batch training.\n\nTo address this, the paper proposes an auxiliary loss that reduces the variance of negative-pair similarities by pushing them toward the ideal full-batch value. Experiments on CIFAR-10, CIFAR-100, and ImageNet with standard self-supervised contrastive models show that adding this loss lowers variance and improves downstream classification performance, especially for smaller batch sizes.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a theoretical/methods paper about contrastive learning embeddings, not a study of an educational intervention in K-12 settings. It provides no direct educational outcome evidence, no experimental comparison in schools, and no student- or teacher-level intervention evaluation.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "There is no demonstrated K-12 educational impact in the paper. Any relevance to education would be indirect and upstream (better representation learning), so it does not support an impact claim for classroom practice or learner outcomes.",
+  "interventions": [],
+  "outcome_assignments": [],
+  "limitations": [
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "lab",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

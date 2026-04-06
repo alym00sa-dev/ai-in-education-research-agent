@@ -1,0 +1,111 @@
+{
+  "title": "Large Language Models: A Tool for Solving Mathematical Problems in High School",
+  "doi": "10.60063/GSU.FMI.112.165-183",
+  "year": 2025,
+  "venue": "Annual of Sofia University \u201cSt. Kliment Ohridski\u201d, Faculty of Mathematics and Informatics",
+  "url": "https://doi.org/10.60063/gsu.fmi.112.165-183",
+  "source_db": "openalex_search",
+  "populations": [
+    "High School (9th-12th)",
+    "Graduate / Doctoral"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper examines how large language models (LLMs) can support mathematics education, with a focus on Bulgarian high school problem solving and practicing teachers\u2019 perceptions of AI. The central question is whether contemporary generative AI systems can produce mathematically correct, curriculum-aligned, and linguistically appropriate solutions for Bulgarian National External Assessment (NEA) problems, and how teachers view the pedagogical value and risks of such tools.\n\nThe study has two parts. First, eleven LLMs were evaluated on eight 10th-grade NEA mathematics problems that were converted from multiple-choice to short-answer format. Models were scored not only for exact accuracy but also for structured reasoning, pedagogical alignment with the Bulgarian curriculum, error penalties, and language clarity. Second, qualitative observations were made of practicing mathematics teachers enrolled in a master\u2019s program, who reflected on AI use in task design and instructional practice. The teacher component included coursework in online graduate classes and assignments in which participants compared AI-generated solutions with their own preferred methods.\n\nThe paper reports that some models achieved very high or perfect accuracy, but accuracy did not guarantee educational suitability. Several globally trained models produced mathematically correct answers while deviating from Bulgarian curricular methods or using awkward language, whereas locally fine-tuned models such as BgGPT showed stronger alignment with national terminology and solution conventions. In the teacher observations, participants recognized AI\u2019s potential for personalized support and task generation, but they were cautious about adoption and preferred to retain creative and methodological control. The author concludes that effective AI use in mathematics education requires not just correctness, but also curriculum alignment and linguistically precise explanations; LLMs can complement teacher work, but should not replace it.",
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup",
+    "non_representative_population"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "blended",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Bulgaria",
+  "study_region": "Europe",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "feedback_evaluation"
+      ],
+      "description": "OpenAI's conversational large language model/chatbot for generating and revising text, answering questions, and providing step-by-step explanations.",
+      "use_case": "Studied as one of several LLM chatbots used interactively for solving Bulgarian high school mathematics problems and for teacher-oriented task development; also referenced by teachers as a tool used in coursework and pedagogy.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "In the manual assessment, ChatGPT produced mathematically correct solutions but often used methods and presentation formats that did not align with Bulgarian curriculum expectations. The paper reports that it is the most prevalent model among students and educators in Bulgaria, but its outputs may be inapplicable in some classroom or examination contexts because of methodological mismatch.",
+          "measure": "Curriculum alignment / suitability of generated problem solutions for Bulgarian high school mathematics",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    },
+    {
+      "name": "DeepSeek",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "feedback_evaluation"
+      ],
+      "description": "A large language model chatbot for multilingual reasoning and general-purpose text generation.",
+      "use_case": "Evaluated in automated batch testing and manual interactive problem-solving on Bulgarian 10th-grade mathematics items.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "DeepSeek R1 (7B) achieved 100.0% success on the eight NEA items in automated evaluation, but its mean rubric quality was only 54.17. The paper attributes the lower score to frequent minor deviations from Bulgarian curriculum style and to language issues, despite mathematically correct answers. In manual testing, it could be constrained to use curriculum-specific methods, but this iterative refinement was judged unrealistic for typical tenth-grade students.",
+          "measure": "Problem-solving success rate; rubric-based quality (structured solution, pedagogical quality, critical error, language clarity)",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=8 problems"
+        }
+      ]
+    },
+    {
+      "name": "Mistral",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "feedback_evaluation"
+      ],
+      "description": "Mistral AI's family of large language models/chatbots for text generation and reasoning.",
+      "use_case": "Evaluated across multiple model sizes in automated testing and as Le Chat in manual interactive use for Bulgarian high school mathematics problem solving.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Mistral (22B) achieved a 100.0% success rate and the highest mean rubric quality among the top-performing models (81.25) in the automated evaluation. The paper reports that it also showed strong pedagogical alignment with the Bulgarian curriculum and no critical errors, while Le Chat with image recognition correctly solved all interactive chat-session issues; however, its solution strategies sometimes differed from the methods students are expected to use.",
+          "measure": "Problem-solving success rate; rubric-based quality; curriculum alignment; interactive correctness in manual assessment",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=8 problems"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a mixed-methods study with automated benchmarking and qualitative teacher observations, not a controlled intervention or randomized design. The evidence is informative but largely descriptive and model-evaluation based rather than causal.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports strong performance for some models on a small set of eight mathematics problems, but it does not provide effect sizes from an intervention on learners or teachers. The practical impact is promising yet unclear because findings are about solution quality and alignment rather than measured educational gains.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

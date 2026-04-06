@@ -1,0 +1,561 @@
+{
+  "title": "Learning to Use AI for Learning: Teaching Responsible Use of AI Chatbot to K-12 Students Through an AI Literacy Module",
+  "doi": null,
+  "year": 2026,
+  "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+  "url": "https://arxiv.org/abs/2508.13962",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Middle School (6th-8th)",
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses the need to teach K-12 students how to use AI chatbots responsibly and effectively for learning, with a particular focus on prompting literacy. The authors note that while generative AI tools are increasingly available in schools, few interventions teach secondary students when to use AI for learning, how to formulate effective prompts, and how to avoid unproductive or unethical uses such as asking directly for answers. The study also examines whether an AI-based auto-grader can accurately assess student-written prompts and support learning through immediate feedback.\n\nThe intervention was a web-based AI literacy module built around scenario-based prompting practice. Students first reviewed learning objectives and completed conceptual practice, then engaged in three subject-specific scenarios in biology, geography, and math. In each scenario, students wrote prompts to an AI chatbot, viewed the chatbot response, and then received automated rubric-based feedback on dimensions such as relevance, purpose, conciseness, background/context, elaboration, and avoiding direct-answer requests where appropriate. The module was grounded in learning-by-doing and immediate elaborated feedback, and used GPT-4o for chatbot interaction and auto-grading.\n\nThe intervention was deployed in authentic secondary school classrooms during information technology classes. Study 1 took place in June 2024 across 6 secondary classrooms in East Asia and yielded valid data from 111 students; it combined quantitative analyses of prompt quality, confidence, and pre/post assessments with qualitative thematic analysis of student reflections. Study 2 followed with the same procedure and a similar population in additional classrooms, contributing to a total of 11 authentic secondary classrooms across two iterations. Teachers facilitated the classroom sessions, and students were warned that the auto-grader could make mistakes.\n\nThe paper concludes that the AI-based auto-grader achieved generally strong grading performance, with average classification accuracy around 0.92, and that the module helped students improve certain prompting skills, especially including background/context in prompts. Students also reported higher confidence in using AI for learning after the activity. However, multiple-choice assessments showed ceiling effects, leading the authors to revise the assessment in Study 2; analyses suggested that true/false and open-ended items measured prompting literacy better than the original multiple-choice items. Overall, the findings suggest promise for scalable prompting-literacy instruction, while also indicating the need for broader studies, stronger assessment instruments, and further refinement of the grading system.",
+  "limitations": [
+    "short_duration",
+    "no_control_group",
+    "self_reported_measures",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "classroom",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "East Asia & Pacific",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "tutoring_instruction"
+      ],
+      "description": "OpenAI's GPT-family conversational large language model used here both as the underlying chatbot and as an AI auto-grader within a web-based prompting literacy instructional module.",
+      "use_case": "In this paper, GPT-4o powered a K-12 prompting literacy module where secondary students wrote prompts in biology, geography, and math scenarios, received chatbot responses, and then received immediate rubric-based auto-grading and feedback on their prompts.",
+      "findings": [
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The GPT-4o-based auto-grader achieved high agreement with human scoring on student-written prompts. Average pass/fail classification accuracy across rubric dimensions was high, including Relevance=0.98, Purpose=0.85, Conciseness=0.93, Background=0.96, Elaboration=0.90, and No Direct Answer=0.88; overall explanation accuracy was 0.95. Study 1 analyzed 483 unique student-written prompts from 111 students.",
+          "measure": "Auto-grader accuracy against human rubric scoring of student prompts",
+          "effect_size": "Accuracy values: 0.85-0.98 by dimension; explanation accuracy=0.95",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=111 students; 483 prompts"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Students improved in including background/context in prompts after using the module supported by GPT-4o feedback. McNemar tests showed the proportion correctly including Background was significantly higher in Q3 than Q1 (p=.039), while no significant differences were found for Relevance (p>.90), Conciseness (p=.286), or Purpose (p=.617).",
+          "measure": "Human-graded prompt quality across practice tasks by rubric dimension",
+          "effect_size": "p=.039 for Background improvement",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=111"
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Students reported greater confidence in using AI for learning after the GPT-4o-based activity. Self-reported confidence increased by 10.4% on average (SD=0.92), and the pre-post Wilcoxon test showed this increase was significant (p<.001).",
+          "measure": "5-point Likert self-reported confidence in knowing how to use AI to help learning",
+          "effect_size": "10.4% average increase",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "There was no significant improvement on the multiple-choice prompting literacy pre/post assessment in Study 1. Among 98 students completing both tests, pre-test performance (Mean=4.4, Median=5.0, SD=1.04, full score=6.0) and post-test performance (Mean=4.4, Median=5.0, SD=0.96) did not differ significantly (p=.377), which the authors attribute to a ceiling effect.",
+          "measure": "Six-item multiple-choice prompting literacy assessment",
+          "effect_size": "p=.377",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=98"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Assessment revisions informed by Study 1 produced better-performing items in Study 2 for measuring prompting literacy within the GPT-4o-supported module. None of the original MCQ items fell in the desired difficulty/discrimination range, whereas 60% of open-ended and 30% of true/false revised items did; reliability was moderate with Cronbach's alpha=0.68 for the original assessment and 0.58 for the iterated version.",
+          "measure": "Assessment item difficulty, discrimination index, and Cronbach's alpha",
+          "effect_size": "Cronbach's alpha=0.68 original; 0.58 iterated",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical classroom deployment with mixed methods, pre/post measures, human-vs-AI grading comparison, and assessment analysis, but it does not report a randomized or quasi-experimental comparison group. Findings are promising but primarily from iterative implementation studies.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports positive changes in confidence and one significant improvement in prompt background inclusion, plus strong auto-grader accuracy, but most learning impacts are reported without standardized effect sizes and one pre/post assessment result was null. Overall impact appears promising but still unclear in magnitude.",
+  "citations": [
+    {
+      "title": "Reflections on Bloom\u2019s revised taxonomy",
+      "doi": null,
+      "year": 2006,
+      "venue": "Electronic Journal of Research in Educational Psychology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Process data in NAEP: Past, present, and future",
+      "doi": null,
+      "year": 2019,
+      "venue": "Journal of Educational and Behavioral Statistics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Active learning: Creating excitement in the classroom",
+      "doi": null,
+      "year": 1991,
+      "venue": "ASHE-ERIC Higher Education Reports",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Analysis of test items on difficulty level and discrimination index in the test for research in education",
+      "doi": null,
+      "year": 2013,
+      "venue": "International Journal of Social Science & Interdisciplinary Research",
+      "citation_level": 3,
+      "citation_context": "formula definitions for difficulty and discrimination indices"
+    },
+    {
+      "title": "Multiple-true-false questions reveal more thoroughly the complexity of student thinking than multiple-choice questions: a Bayesian item response model comparison",
+      "doi": null,
+      "year": 2019,
+      "venue": "International Journal of STEM Education",
+      "citation_level": 2,
+      "citation_context": "supports replacing MCQs with true/false items"
+    },
+    {
+      "title": "Technology enhanced assessments in mathematics and beyond: Strengths, challenges, and future directions",
+      "doi": null,
+      "year": 2012,
+      "venue": "ETS Invitational Research Symposium on Technology Enhanced Assessments",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Formative assessment:\u2018There is nothing so practical as a good theory\u2019",
+      "doi": null,
+      "year": 2010,
+      "venue": "Australian Journal of Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "From consumers to critical users: Prompty, an AI literacy tool for high school students",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Conversing with copilot: Exploring prompt engineering for solving cs1 problems using natural language",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 54th ACM Technical Symposium on Computer Science Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Promptly: Using prompt problems to teach learners how to effectively utilize ai code generators",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv preprint",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Multiple-choice question tests: a convenient, flexible and effective learning tool? A case study",
+      "doi": null,
+      "year": 2012,
+      "venue": "Innovations in Education and Teaching International",
+      "citation_level": 2,
+      "citation_context": "supports difficulty of assessing higher-order skills with MCQs"
+    },
+    {
+      "title": "Prompt engineering for ChatGPT: a quick guide to techniques, tips, and best practices",
+      "doi": null,
+      "year": 2023,
+      "venue": "Authorea Preprints",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Item Response Theory for Psychologists",
+      "doi": null,
+      "year": 2000,
+      "venue": "Lawrence Erlbaum Associates",
+      "citation_level": 2,
+      "citation_context": "future assessment scaling with IRT models"
+    },
+    {
+      "title": "Prompt engineering with ChatGPT: a guide for academic writers",
+      "doi": null,
+      "year": 2023,
+      "venue": "Annals of Biomedical Engineering",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Can Large Language Models Make the Grade? An Empirical Study Evaluating LLMs Ability To Mark Short Answer Questions in K-12 Education",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the Eleventh ACM Conference on Learning@ Scale",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "An instructional design framework for authentic learning environments",
+      "doi": null,
+      "year": 2000,
+      "venue": "Educational Technology Research and Development",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Exploring Student Choice and the Use of Multimodal Generative AI in Programming Learning",
+      "doi": null,
+      "year": 2025,
+      "venue": "arXiv preprint",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "What is prompt literacy? An exploratory study of language learners\u2019 development of new literacy skill using generative AI",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv preprint",
+      "citation_level": 2,
+      "citation_context": "conceptualization of prompt literacy"
+    },
+    {
+      "title": "Learning about bones at a science museum: examining the alternate hypotheses of ceiling effect and prior knowledge",
+      "doi": null,
+      "year": 2012,
+      "venue": "Instructional Science",
+      "citation_level": 2,
+      "citation_context": "interprets ceiling effects in assessment results"
+    },
+    {
+      "title": "How novices use LLM-based code generators to solve CS1 coding tasks in a self-paced learning environment",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 23rd Koli Calling International Conference on Computing Education Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Learning is not a spectator sport: Doing is better than watching for learning from a MOOC",
+      "doi": null,
+      "year": 2015,
+      "venue": "Proceedings of the Second ACM Conference on Learning@ Scale",
+      "citation_level": 2,
+      "citation_context": "supports learning-by-doing activity design"
+    },
+    {
+      "title": "Artificial intelligence prompt engineering as a new digital competence: Analysis of generative AI technologies such as ChatGPT",
+      "doi": null,
+      "year": 2023,
+      "venue": "Entrepreneurial Business and Economics Review",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A revision of Bloom\u2019s taxonomy: An overview",
+      "doi": null,
+      "year": 2002,
+      "venue": "Theory Into Practice",
+      "citation_level": 2,
+      "citation_context": "frames higher-order analyze and create skills"
+    },
+    {
+      "title": "Cheating in the age of generative AI: A high school survey study of cheating behaviors before and after the release of ChatGPT",
+      "doi": null,
+      "year": 2024,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "\u201cFrom Unseen Needs to Classroom Solutions\u201d: Exploring AI Literacy Challenges & Opportunities with Project-Based Learning Toolkit in K-12 Education",
+      "doi": null,
+      "year": 2025,
+      "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The CLEAR path: A framework for enhancing information literacy through prompt engineering",
+      "doi": null,
+      "year": 2023,
+      "venue": "The Journal of Academic Librarianship",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Is the education system prepared for the irruption of artificial intelligence? A study on the perceptions of students of primary education degree from a dual perspective: Current pupils and future teachers",
+      "doi": null,
+      "year": 2023,
+      "venue": "Education Sciences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Prompt literacy",
+      "doi": null,
+      "year": 2024,
+      "venue": "EdTechnica: The Open Encyclopedia of Educational Technology",
+      "citation_level": 2,
+      "citation_context": "defines prompt literacy as study focus"
+    },
+    {
+      "title": "Interrater reliability: the kappa statistic",
+      "doi": null,
+      "year": 2012,
+      "venue": "Biochemia Medica",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Prompt engineering as an important emerging skill for medical professionals: tutorial",
+      "doi": null,
+      "year": 2023,
+      "venue": "Journal of Medical Internet Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Teaching high school students artificial intelligence by programming Chatbots",
+      "doi": null,
+      "year": 2023,
+      "venue": "In Teaching Coding in K-12 Schools: Research and Application",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "AI literacy in K-16 classrooms",
+      "doi": null,
+      "year": 2023,
+      "venue": "Springer International Publishing AG",
+      "citation_level": 2,
+      "citation_context": "broader AI literacy framing for K-12 classrooms"
+    },
+    {
+      "title": "Evaluating chatgpt\u2019s decimal skills and feedback generation in a digital learning game",
+      "doi": null,
+      "year": 2023,
+      "venue": "European Conference on Technology Enhanced Learning",
+      "citation_level": 2,
+      "citation_context": "explains keyword-weighting pattern in auto-grader errors"
+    },
+    {
+      "title": "Educational assessment of students",
+      "doi": null,
+      "year": 1996,
+      "venue": "ERIC",
+      "citation_level": 3,
+      "citation_context": "source for assessment evaluation metrics"
+    },
+    {
+      "title": "Tests & measurement for people who (think they) hate tests & measurement",
+      "doi": null,
+      "year": 2017,
+      "venue": "Sage Publications",
+      "citation_level": 3,
+      "citation_context": "source for assessment evaluation metrics"
+    },
+    {
+      "title": "Learning by doing",
+      "doi": null,
+      "year": 2013,
+      "venue": "In Instructional-design theories and models",
+      "citation_level": 2,
+      "citation_context": "supports learning-by-doing instructional approach"
+    },
+    {
+      "title": "Addressing the ceiling effect when assessing STEM out-of-school time experiences",
+      "doi": null,
+      "year": 2021,
+      "venue": "Frontiers in Education",
+      "citation_level": 2,
+      "citation_context": "used to motivate assessment iteration after ceiling effects"
+    },
+    {
+      "title": "Special session: AI for K-12 guidelines initiative",
+      "doi": null,
+      "year": 2019,
+      "venue": "Proceedings of the 50th ACM Technical Symposium on Computer Science Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "AI and the next digital divide in education",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Assessing the Efficacy of Goal-Based Scenarios in Scaling AI Literacy for Non-Technical Learners",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 55th ACM Technical Symposium on Computer Science Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Generative AI in Education: Rethinking Learning, Assessment & Student Agency for the AI Era",
+      "doi": null,
+      "year": 2025,
+      "venue": "Thresholds in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The popstar, the poet, and the grinch: Relating artificial intelligence to the computational thinking framework with block-based coding",
+      "doi": null,
+      "year": 2019,
+      "venue": "Proceedings of International Conference on Computational Thinking Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Immediate elaborated feedback personalization in online assessment",
+      "doi": null,
+      "year": 2008,
+      "venue": "European Conference on Technology Enhanced Learning",
+      "citation_level": 2,
+      "citation_context": "supports immediate elaborated feedback design"
+    },
+    {
+      "title": "Unleashing ChatGPT\u2019s power: A case study on optimizing information retrieval in flipped classrooms via prompt engineering",
+      "doi": null,
+      "year": 2023,
+      "venue": "IEEE Transactions on Learning Technologies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Elaborated feedback and learning: Examining cognitive and motivational influences",
+      "doi": null,
+      "year": 2019,
+      "venue": "Computers & Education",
+      "citation_level": 2,
+      "citation_context": "supports elaborated feedback for learning"
+    },
+    {
+      "title": "Productive struggle in middle school mathematics classrooms",
+      "doi": null,
+      "year": 2015,
+      "venue": "Journal of Mathematics Teacher Education",
+      "citation_level": 2,
+      "citation_context": "frames students\u2019 challenges as productive struggle"
+    },
+    {
+      "title": "A prompt pattern catalog to enhance prompt engineering with chatgpt",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv preprint",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Time for a Pause: Without Effective Public Oversight, AI in Schools Will Do More Harm Than Good",
+      "doi": null,
+      "year": 2024,
+      "venue": "Commercialism in Education Research Unit",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Exploring EFL students\u2019 prompt engineering in human\u2013AI story writing: an activity theory perspective",
+      "doi": null,
+      "year": 2024,
+      "venue": "Interactive Learning Environments",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Exploring How Multiple Levels of GPT-Generated Programming Hints Support or Disappoint Novices",
+      "doi": null,
+      "year": 2024,
+      "venue": "Extended Abstracts of the CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Improving Student-AI Interaction Through Pedagogical Prompting: An Example in Computer Science Education",
+      "doi": null,
+      "year": 2025,
+      "venue": "arXiv preprint",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Do Teachers Dream of GenAI Widening Educational (In)equality? Envisioning the Future of K-12 GenAI Education from Global Teachers\u2019 Perspectives",
+      "doi": null,
+      "year": 2025,
+      "venue": "arXiv preprint",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Artificial intelligence (AI) learning tools in K-12 education: A scoping review",
+      "doi": null,
+      "year": 2024,
+      "venue": "Journal of Computers in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Why Johnny can\u2019t prompt: how non-AI experts try (and fail) to design LLM prompts",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Dosage effects on school readiness: Evidence from a randomized classroom-based intervention",
+      "doi": null,
+      "year": 2010,
+      "venue": "Social Service Review",
+      "citation_level": 2,
+      "citation_context": "supports dosage-effects explanation for limited gains"
+    },
+    {
+      "title": "Scenario-based assessments in writing: An experimental study",
+      "doi": null,
+      "year": 2019,
+      "venue": "Educational Assessment",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A systematic review of ChatGPT use in K-12 education",
+      "doi": null,
+      "year": 2024,
+      "venue": "European Journal of Education",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

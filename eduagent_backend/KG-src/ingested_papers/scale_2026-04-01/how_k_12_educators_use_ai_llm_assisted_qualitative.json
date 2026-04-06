@@ -1,0 +1,94 @@
+{
+  "title": "How K-12 Educators Use AI: LLM-Assisted Qualitative Analysis at Scale",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "https://arxiv.org/abs/2507.17985",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Elementary (PreK-5th)",
+    "Middle School (6th-8th)",
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Educator",
+    "Administrator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper investigates how K-12 educators use generative AI tools in authentic professional practice and how large language models can support scalable qualitative analysis of those interactions. The study addresses two related questions: first, whether an LLM-assisted, human-led pipeline can be used to conduct rigorous qualitative analysis at scale; and second, what kinds of instructional and professional tasks K-12 educators actually pursue when interacting with AI in real-world settings. The motivation is that prior work has offered limited empirical evidence about everyday educator-AI use, especially outside laboratory or self-report settings.\n\nThe authors analyze more than 13,000 unscripted educator-AI conversations from an open-registration platform used voluntarily by educators for instructional planning, differentiation, assessment, communication, and related work. Methodologically, they develop a four-stage pipeline combining grounded-theory-inspired qualitative analysis with LLM support for open coding, axial coding, selective coding, and large-scale deductive annotation. Human researchers retained interpretive control while models such as Claude 3 Sonnet and Claude 3.5 Haiku assisted with theme discovery, codebook development, and structured labeling. The final codebook included six top-level domains, 18 categories, and 68 fine-grained instructional items.\n\nThe population consisted primarily of K-12 education professionals using the platform in authentic contexts, including teachers, school administrators, paraprofessionals, and instructional specialists. The prompt corpus spanned grade levels K-12, multiple subject areas, and a variety of student needs and classroom settings. The platform was open access during the study period, and interactions were collected as part of educators' normal work rather than an imposed intervention. The study was conducted using data from users on a platform associated with researchers in Washington, United States, though the exact national distribution of participants is not fully specified in the excerpt.\n\nThe main conclusion is that educators primarily used AI as a planning and pedagogical support tool rather than as a full automation system. The most common uses involved instructional practices, curriculum and content planning, assessment and feedback, differentiation for diverse learners, and professional communication. The study also concludes that LLM-assisted qualitative analysis is feasible for large educational discourse datasets when embedded in a human-in-the-loop workflow. At the same time, the paper notes ambiguity in coding complex educational discourse, occasional model inconsistency, and the need for researcher oversight to preserve qualitative rigor.",
+  "limitations": [
+    "no_control_group",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "content_generation",
+        "personalization_adaptation"
+      ],
+      "description": "Generative AI / LLM-based educator-facing tools used for instructional planning, content development, differentiation, assessment, and professional communication through natural-language interaction.",
+      "use_case": "Studied via over 13,000 authentic K-12 educator-AI conversations on an open-access educator platform to analyze how educators use generative AI in real-world professional tasks; LLMs were also used in the researchers' qualitative coding pipeline.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "This was a large-scale qualitative/descriptive study of educator use rather than an intervention study measuring student learning gains. Educators most frequently used generative AI for instructional practices (80.1% of conversations), curriculum and content focus (76.6%), assessment and feedback (47.2%), student needs and context (about 44%), and professional responsibilities (34.4%), indicating broad use for planning, differentiation, assessment, and administrative support. No causal effect size on efficiency was reported.",
+          "measure": "Distribution of coded educator-AI conversation domains and categories across 13,071 conversations / 52,255 educator requests",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=13,071 conversations; 52,255 educator requests; 104,529 total messages"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Planning-related use was especially common: planning activities appeared in 63.8% of educator requests, with educators using AI to generate lesson plans, structure activities, align content with standards, and adapt pacing. Qualitative examples showed educators iteratively refining outputs for time limits, grouping, reading level, and format, suggesting AI functioned as an instructional design partner rather than a fully automated substitute. No effect size was reported.",
+          "measure": "Frequency and qualitative patterns of planning/content-design requests",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=13,071 conversations"
+        },
+        {
+          "outcome_category": "Systemic / Institutional Impact",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Differentiation and accessibility appeared in 36.9% of educator conversations, including differentiated instructional strategies (24.8%), multilingual learner support (11.6%), and mixed-ability learner adaptations (12.4%). Qualitative evidence indicated educators used AI to rewrite materials, add scaffolds, simplify language, and generate supports for students with varied needs, though no student outcome effect sizes were reported.",
+          "measure": "Frequency and qualitative patterns of differentiation/accessibility requests",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=13,071 conversations"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "For the methodological use of LLMs in large-scale qualitative coding, interrater agreement among two human coders on educator requests was moderate (Cohen's kappa=0.59, F1=0.70), while Claude's agreement with humans was lower in blind comparison (kappa=0.38, F1=0.40 for requests). In a verification condition, agreement increased substantially, with human-human agreement at 0.81 for requests and human-Claude agreement at 0.83 (F1=0.84), suggesting LLM-assisted verification may be more reliable than fully independent model coding. These are annotation-performance metrics, not educational outcome effects.",
+          "measure": "Human-human and human-LLM coding agreement on annotated messages",
+          "effect_size": "Cohen's kappa=0.59, F1=0.70; Claude-human kappa=0.38, F1=0.40; verification human-human=0.81, human-Claude=0.83, F1=0.84",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=1,000 messages"
+        }
+      ]
+    }
+  ],
+  "verdict": "genai_general",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical large-scale qualitative/descriptive study with some validation analyses, but it does not estimate causal effects of an AI intervention on student outcomes. Evidence is informative about real-world use patterns, not effectiveness in an RCT/QED sense.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper shows substantial educator uptake across planning, differentiation, and assessment tasks, but it does not report student learning effect sizes or causal impact estimates. Impact is therefore suggestive but unclear.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

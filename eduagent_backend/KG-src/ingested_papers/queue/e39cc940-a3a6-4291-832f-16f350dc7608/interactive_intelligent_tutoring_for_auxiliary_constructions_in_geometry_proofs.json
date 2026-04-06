@@ -1,0 +1,72 @@
+{
+  "title": "Interactive, Intelligent Tutoring for Auxiliary Constructions in Geometry Proofs",
+  "doi": null,
+  "year": 2017,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/1711.07154v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Quasi-Experimental Design (QED)",
+  "extended_summary": "This paper addresses the problem of how to teach students to discover auxiliary constructions in geometry proof problems, a notoriously difficult part of K-12 geometry reasoning. The authors argue that many existing geometry tutoring systems can help with standard proof steps but do not effectively teach the strategic skill of inventing helpful extra lines or points, especially in problems where construction is required.\n\nTo address this, they introduce AGPT (Advanced Geometry Proof Tutor), an interactive geometry tutoring system built on top of the automated prover iGeoTutor. AGPT accepts uploaded geometry figures, extracts the diagram and constraints, and then guides students through a template-matching process: students select a candidate construction template and then attempt to draw the missing auxiliary elements themselves. The tutor provides limited feedback first, then more explicit guidance if needed, while trying to keep students engaged in the problem-solving process rather than simply showing the answer. The system was evaluated with 78 ninth-grade students from a local high school, comparing three conditions: a human tutor, iGeoTutor alone, and AGPT.\n\nThe study found that AGPT produced learning gains comparable to a human tutor and superior to the non-interactive theorem prover alone. Students in the AGPT condition improved on post-tests, and when partial credit for incomplete proofs was considered, AGPT was significantly more effective than iGeoTutor in helping students learn auxiliary constructions. The authors conclude that interactive tutoring that exposes the reasoning of a strong solver can be pedagogically effective for geometry instruction.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed pilot study with a quasi-experimental group comparison, but students were not randomly assigned and the design has several credibility limitations. The sample is moderate, outcomes are narrow, and the paper reports limited statistical detail beyond t tests and ANOVA.",
+  "impact_tier": "green",
+  "impact_tier_rationale": "The study suggests a modest positive impact of AGPT on a priority population of high school geometry students, especially compared with a non-interactive geometry prover. The strongest reported evidence is statistically significant but small-to-moderate in scope, and the paper does not provide effect sizes large enough to justify a blue tier.",
+  "interventions": [
+    {
+      "intervention": "Intelligent Tutoring System (ITS)",
+      "confidence": 0.98,
+      "role": "primary",
+      "use_case": "interactive geometry proof tutoring for auxiliary constructions, with template matching, hinting, backtracking, and guided construction practice for high school students"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 0.99,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "In a pilot study with 78 ninth-grade students (n=26 per group), AGPT improved students\u2019 ability to learn auxiliary constructions in geometry proof problems and performed significantly better than iGeoTutor. On the partial-credit improvement score, an ANOVA found a significant group difference, F(2,75)=3.23, p=0.045, with Tukey post hoc tests showing AGPT outperformed iGeoTutor while not differing significantly from the human tutor.",
+        "measure": "Geometry proof performance on pre-test/post-test problems, including solved-problem counts, correct constructions, and partial-credit improvement scores",
+        "study_size": "n=78",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.77,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The system was designed to train students\u2019 problem-solving process, template matching, and independent discovery of constructions rather than only delivering solutions. The authors report that Group C students engaged in repeated attempts and redirections and that the interactive approach likely helped students develop thoughtful problem-solving skills, though no direct standardized durable-skill measure was reported.",
+        "measure": "Student interaction history, attempts, redirections, and qualitative observations of problem-solving behavior",
+        "study_size": "n=26 in AGPT group for interaction analysis",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "blended",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "medium",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

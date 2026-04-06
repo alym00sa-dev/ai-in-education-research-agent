@@ -1,0 +1,513 @@
+{
+  "title": "Can an AI-Powered Presentation Platform Based On The Game \u201cJust a Minute\u201d Be Used To Improve Students\u2019 Public Speaking Skills?",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "https://arxiv.org/abs/2510.03379",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper investigates whether an AI-powered presentation platform based on the game \u201cJust a Minute\u201d (JAM) can help university students improve public speaking, especially spontaneous speaking and reduction of speech disfluencies such as filler words. The authors position the work within research on public speaking anxiety and AI-powered presentation platforms, asking whether a gamified AI system can motivate practice, support immersion, and provide useful automated feedback. They also examine how well AI performs the core functions needed for the platform, including speech generation, speech-to-text transcription, and judging gameplay challenges.\n\nThe intervention is a locally hosted web application in which a human player competes against AI speakers and an AI host in a digital version of JAM. Students speak on impromptu topics for up to 60 seconds while trying to avoid hesitation, repetition, and deviation from topic. The system uses ChatGPT-based models for text generation, speech-to-text, text-to-speech, and end-of-game feedback. Features include adjustable difficulty, randomized AI personalities, AI judging of challenges, and automated constructive criticism of the player\u2019s speeches. Data collection combined questionnaires, gameplay statistics, post-playtest surveys, and verbal discussion.\n\nThe study was conducted with students from the University of York in the United Kingdom. Preliminary user research involved interviews with 5 students and a questionnaire completed by 20 students. The main playtest involved 10 University of York students who completed a pre-questionnaire, played the game twice in one session (about 20 minutes total), reviewed transcription accuracy, and completed a post-playtest questionnaire followed by discussion. The context was not a classroom course implementation; it functioned more like a playtesting or evaluation session.\n\nThe paper concludes that students found the platform enjoyable, motivating, and promising for improving public speaking with repeated use, especially for spontaneous speaking and reducing filler words. However, the short-term study did not establish measurable improvement in speaking ability or anxiety reduction. AI-generated speech and feedback were viewed positively, but speech-to-text transcription errors were substantial and sometimes affected perceived fairness. Overall, the authors argue that gamified AI-powered presentation platforms may be useful for public speaking education, while emphasizing the need for longer-term studies with more participants and improved AI accuracy and immersion features.",
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "no_control_group",
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "lab",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United Kingdom",
+  "study_region": "Europe",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "language_speech"
+      ],
+      "description": "OpenAI's ChatGPT family of models, used for natural language generation, speech-to-text, and text-to-speech.",
+      "use_case": "The JAM AI-powered presentation platform used ChatGPT APIs (including GPT-4o-mini and tts-1) to generate AI speaker/host dialogue, transcribe student speech, judge gameplay-related speaking errors, and produce end-of-game constructive feedback on students' speeches.",
+      "findings": [
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "In a short-term playtest with 10 University of York students, 70% of participants found the AI-generated feedback at least somewhat helpful, and the paper states the constructive criticisms were perceived as clear and useful. However, students only reported possible rather than definite gains in public speaking/spontaneous speaking after about 20 minutes of gameplay, and the authors conclude longer-term study is needed to establish effectiveness.",
+          "measure": "Participant perceptions of usefulness of AI-generated feedback and self-reported gains in public speaking/spontaneous speaking from post-playtest questionnaire",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=10"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "Speech transcription accuracy was a substantial limitation: the study reports that 35% of word tokens were incorrectly recognised. Errors included homophone substitutions, unnatural punctuation, and hallucinated phrases during silence, which could sometimes affect fairness of challenges during gameplay.",
+          "measure": "Speech-to-text transcription accuracy/error rate during gameplay",
+          "effect_size": "35% of word tokens incorrectly recognised",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=10"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The AI was reported to be effective at generating human-like speeches and voices for the game. In the pre-playtest questionnaire of 20 students who viewed gameplay, 65% said the AI speakers sounded 'somewhat' realistic and 20% said 'yes'.",
+          "measure": "Perceived realism of AI-generated speech content and voices",
+          "effect_size": "65% somewhat realistic; 20% yes",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=20"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Regarding AI adjudication, 60% of playtest participants responded with at least 'somewhat' when asked whether opponent challenges were fair, and a slightly higher percentage answered 'yes' when asked whether their own challenges were judged fairly. The authors conclude the AI was only partially effective at evaluation because some students felt frustrated by subjective or incorrect challenge decisions.",
+          "measure": "Perceived fairness of AI-generated/judged gameplay challenges",
+          "effect_size": "60% at least somewhat fair for opponent challenges",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=10"
+        }
+      ]
+    },
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "tutoring_instruction",
+        "feedback_evaluation"
+      ],
+      "description": "A custom AI-powered presentation platform based on the game Just a Minute, where students practice public speaking against AI opponents and receive automated feedback.",
+      "use_case": "The study developed and evaluated a gamified AI-powered presentation platform for university students to practice spontaneous public speaking, reduce speech disfluencies, and receive automated critiques after gameplay.",
+      "findings": [
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Among 10 University of York students who played the platform twice in close succession (about 20 minutes total), every participant reported feeling more confident in their ability to play Just a Minute afterwards. However, when asked whether their public speaking, spontaneous speaking, or anxiety had improved, most answered 'maybe,' and the authors state no quantitative proof of improvement was established in this short-term study.",
+          "measure": "Post-playtest self-reported confidence, public speaking ability, spontaneous speaking ability, and anxiety",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=10"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Participants expressed strong belief in longer-term benefits: 80% responded 'yes' that playing the game more times in the future could improve their speaking skills, and the same proportion was reported for reducing anxiety. In a separate pre-play questionnaire of 20 students, 90% believed the JAM app could improve spontaneous speaking skills and reduce filled pauses, though only 45% believed it could reduce anxiety.",
+          "measure": "Beliefs about potential longer-term effects on public speaking, spontaneous speaking, filled pauses, and anxiety",
+          "effect_size": "80% yes in playtest; 90% yes for spontaneous speaking/reducing filled pauses; 45% yes for anxiety",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=10 and n=20"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The platform's gamified design was well received: 90% of playtest participants said they enjoyed playing the game and would play it again. The authors interpret this as support that gamification increased motivation and engagement.",
+          "measure": "Enjoyment and willingness to replay from post-playtest questionnaire",
+          "effect_size": "90% yes",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=10"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Participants rated immersiveness at an average of 6.5/10. The authors conclude the platform was at least somewhat immersive, though participants suggested avatars and shorter loading times could improve the experience further.",
+          "measure": "Self-reported immersion rating",
+          "effect_size": "mean 6.5/10",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=10"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Gameplay statistics showed that students broke the hesitation rule at least once per speech on average, most commonly due to silent pauses rather than filled pauses. Filled pauses were infrequent (around one per speech) and usually did not exceed the hesitation threshold, which the authors suggest may indicate the platform discouraged filler-word use during gameplay, though transfer beyond the game was not established.",
+          "measure": "Observed hesitation and filled-pause behavior during gameplay speeches",
+          "effect_size": "hesitation broken at least once per speech on average; around one filled pause per speech",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=10"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Students also broke the repetition rule about once per speech on average, while the deviation rule was never broken except by one student intentionally. These gameplay metrics indicate the platform elicited the targeted spontaneous speaking behaviors, but do not on their own demonstrate improvement over time because the study was short-term.",
+          "measure": "Observed repetition and deviation rates during gameplay speeches",
+          "effect_size": "repetition about once per speech; deviation never broken except one intentional case",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=10"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a small mixed-methods pilot/playtest study with questionnaires, interviews, and descriptive gameplay statistics, but no control group, randomization, or validated causal design. Findings are primarily self-reported perceptions and short-term observations.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "Results are promising for motivation, perceived usefulness, and potential skill development, but impacts on actual learning outcomes and anxiety reduction are unclear and not demonstrated quantitatively in the short term.",
+  "citations": [
+    {
+      "title": "Approach to public speaking skills development in an educational organization: A grounded theory",
+      "doi": null,
+      "year": 2019,
+      "venue": "European Journal of Education Studies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Anxiety level in students of public speaking: Causes and remedies",
+      "doi": null,
+      "year": 2017,
+      "venue": "Journal of Education and Educational Development",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Public speaking skills",
+      "doi": null,
+      "year": 2016,
+      "venue": "Training Manual on Theeranaipunya - Equipping Fisherwomen Youth for Future",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The relationship between preparation and performance in public speaking",
+      "doi": "10.1080/03634529409378958",
+      "year": 1994,
+      "venue": "Communication Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Speech disturbances and gaze behavior during public speaking in subtypes of social phobia",
+      "doi": null,
+      "year": 1997,
+      "venue": "Journal of Anxiety Disorders",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Virtual reality public speaking training: Experimental evaluation of direct feedback technology acceptance",
+      "doi": null,
+      "year": 2021,
+      "venue": "2021 IEEE Virtual Reality and 3D User Interfaces (VR)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Just a Minute - Wikipedia",
+      "doi": null,
+      "year": 2025,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "background source for JAM game rules and format"
+    },
+    {
+      "title": "Cicero - towards a multimodal virtual audience platform for public speaking training",
+      "doi": null,
+      "year": 2013,
+      "venue": "Intelligent Virtual Agents",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Strategies to improve public speaking skills",
+      "doi": null,
+      "year": 2024,
+      "venue": "Plastic and Reconstructive Surgery",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Repeating words in spontaneous speech",
+      "doi": null,
+      "year": 1998,
+      "venue": "Cognitive Psychology",
+      "citation_level": 2,
+      "citation_context": "supports repetition as target speech disfluency"
+    },
+    {
+      "title": "Exploring filler words and their impact",
+      "doi": null,
+      "year": 2014,
+      "venue": "Schwa: Linguistic Perspectives on Language",
+      "citation_level": 2,
+      "citation_context": "supports filled pauses as meaningful disfluency measure"
+    },
+    {
+      "title": "What makes a good speaker? subject ratings, acoustic measurements and perceptual evaluations",
+      "doi": null,
+      "year": 2008,
+      "venue": "Proceedings of Interspeech 2008",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "13 Years of Communication Skills Knowledge in 53 minutes \u2014 Vinh Giang",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "How to Stop Saying \u201cUm,\u201d \u201cAh,\u201d and \u201cYou Know\u201d",
+      "doi": null,
+      "year": 2018,
+      "venue": "Harvard Business Review",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Public-speaking fears in a community sample: Prevalence, impact on functioning, and diagnostic classification",
+      "doi": "10.1001/archpsyc.1996.01830020087010",
+      "year": 1996,
+      "venue": "Archives of General Psychiatry",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Anxiety and speech in the initial interview",
+      "doi": null,
+      "year": 1970,
+      "venue": "Journal of Consulting and Clinical Psychology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Enhancing the learning and teaching of public speaking skills",
+      "doi": null,
+      "year": 2023,
+      "venue": "College Teaching",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Virtual reality exposure therapy for anxiety disorders: A meta-analysis",
+      "doi": null,
+      "year": 2008,
+      "venue": "Journal of Anxiety Disorders",
+      "citation_level": 2,
+      "citation_context": "frames anxiety reduction as exposure-therapy problem"
+    },
+    {
+      "title": "Rhetoric",
+      "doi": null,
+      "year": 2007,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Using Rhetorical Techniques in Speech \u2014 SkillsYouNeed",
+      "doi": null,
+      "year": null,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Fostering user engagement: Rhetorical devices for applause generation learnt from TED talks",
+      "doi": null,
+      "year": 2017,
+      "venue": "Proceedings of the International AAAI Conference on Web and Social Media",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "AI-powered presentation platforms for improving public speaking skills: Takeaways and suggestions for improvement",
+      "doi": null,
+      "year": 2023,
+      "venue": "Journal of Interactive Learning Research",
+      "citation_level": 2,
+      "citation_context": "positions study among AI public speaking platforms"
+    },
+    {
+      "title": "PitchVantage presentation Simulator delivers engaging presentation training on-demand",
+      "doi": null,
+      "year": 2025,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Board 441: Work in progress: Unlocking student success: The power of public speaking AI software in engineering education",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Rhema: A real-time in-situ intelligent interface to help people with public speaking",
+      "doi": null,
+      "year": 2015,
+      "venue": "International Conference on Intelligent User Interfaces, Proceedings IUI",
+      "citation_level": 2,
+      "citation_context": "example prior AI public speaking platform"
+    },
+    {
+      "title": "ChatGPT: Jack of all trades, master of none",
+      "doi": null,
+      "year": 2023,
+      "venue": "Information Fusion",
+      "citation_level": 2,
+      "citation_context": "grounds capabilities and limitations of ChatGPT"
+    },
+    {
+      "title": "ChatGPT",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "core LLM used to generate speeches and feedback"
+    },
+    {
+      "title": "Automated chatbot using speech-to-text and text-to-speech with mobile app integration",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "AI-powered tutor Khanmigo by Khan Academy: Your 24/7 homework helper",
+      "doi": null,
+      "year": 2025,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Learn a language for free",
+      "doi": null,
+      "year": 2025,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Automatic and universal prompt injection attacks against large language models",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv preprint arXiv:2403.04957",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "PredGen: Accelerated inference of large language models through input-time speculation for real-time speech interaction",
+      "doi": null,
+      "year": 2025,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The implementation of Just A Minute (JAM) technique to scaffold students\u2019 speaking fluency: A case study",
+      "doi": null,
+      "year": 2020,
+      "venue": "ENGLISH JOURNAL",
+      "citation_level": 2,
+      "citation_context": "supports JAM as speaking-fluency training technique"
+    },
+    {
+      "title": "The significance of Just A Minute (JAM) sessions in developing speaking skills in English language learning (ELL) environment",
+      "doi": null,
+      "year": 2019,
+      "venue": "Research Journal Of English",
+      "citation_level": 2,
+      "citation_context": "supports JAM for developing speaking skills"
+    },
+    {
+      "title": "Repetition and Redundancy - University of Houston-Victoria",
+      "doi": null,
+      "year": 2009,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "How To Use Synonyms In Writing To Add More Variety",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "From game design elements to gamefulness: defining gamification",
+      "doi": null,
+      "year": 2011,
+      "venue": "Proceedings of the 15th International Academic MindTrek Conference: Envisioning Future Media Environments",
+      "citation_level": 2,
+      "citation_context": "defines gamification framing used in platform design"
+    },
+    {
+      "title": "Gamification in management and other non-game contexts\u2014understanding game elements, motivation, reward systems, and user types",
+      "doi": null,
+      "year": 2019,
+      "venue": "Open Journal of Business and Management",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Soft(a)ware in the English classroom: How gamification misses the mark: Playing through failure",
+      "doi": null,
+      "year": 2017,
+      "venue": "The English Journal",
+      "citation_level": 2,
+      "citation_context": "supports learning-through-failure interpretation of gameplay"
+    },
+    {
+      "title": "A grounded investigation of game immersion",
+      "doi": null,
+      "year": 2004,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "grounds immersion construct in evaluating user experience"
+    },
+    {
+      "title": "Welcome to Flask 2014; Flask Documentation (3.1.x)",
+      "doi": null,
+      "year": 2025,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "web framework used to implement the platform"
+    },
+    {
+      "title": "Designing rating scales for effective measurement in surveys",
+      "doi": null,
+      "year": 2012,
+      "venue": "The Handbook of Research Methods in Social and Personality Psychology",
+      "citation_level": 3,
+      "citation_context": "justifies use of 1\u201310 survey rating scales"
+    },
+    {
+      "title": "Misinterpretation of non-speech sounds as speech. Post-Update bug",
+      "doi": null,
+      "year": 2025,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "explains STT hallucinations during silence"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

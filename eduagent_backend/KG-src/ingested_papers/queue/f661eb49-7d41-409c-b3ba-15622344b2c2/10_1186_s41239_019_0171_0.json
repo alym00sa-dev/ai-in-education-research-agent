@@ -1,0 +1,127 @@
+{
+  "title": "Systematic review of research on artificial intelligence applications in higher education \u2013 where are the educators?",
+  "doi": "10.1186/s41239-019-0171-0",
+  "year": 2019,
+  "venue": "International Journal of Educational Technology in Higher Education",
+  "url": "https://doi.org/10.1186/s41239-019-0171-0",
+  "source_db": "openalex_search",
+  "populations": [
+    "Undergraduate",
+    "Graduate / Doctoral"
+  ],
+  "user_types": [
+    "Student",
+    "Educator",
+    "Administrator"
+  ],
+  "study_design": "Meta-Analysis / Systematic Review",
+  "extended_summary": "This paper examines how artificial intelligence has been researched and applied in higher education, with particular attention to whether educators are meaningfully represented in the literature. The authors conducted a systematic review of peer-reviewed English- and Spanish-language journal articles published from 2007 through November 2018, identifying 146 studies from an initial pool of 2,656 records. Their review asks how AI research in higher education has developed over time, how AI is conceptualised, what ethical issues are discussed, and what kinds of applications are being studied.\n\nThe review maps AI applications across four main areas: profiling and prediction, intelligent tutoring systems, assessment and evaluation, and adaptive systems and personalisation. The paper synthesises the kinds of methods used, showing that most studies are quantitative and many are machine-learning based, often comparing algorithmic performance to traditional statistical approaches such as logistic regression. The review also notes that most studies focus on student-facing applications, especially undergraduate populations, while relatively few involve education researchers or educators as first authors.\n\nThe main conclusion is that AI in higher education literature is dominated by computer science and STEM perspectives, with limited critical reflection on ethical risks such as privacy and costs, and very little explicit theoretical or pedagogical framing. The authors argue that the field needs more educator involvement, stronger educational and ethical analysis, and more attention to how AI systems actually support teaching and learning in meaningful ways.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a systematic review, but it synthesizes mostly descriptive and quasi-experimental primary studies rather than providing one well-controlled causal estimate. The review itself is peer-reviewed and methodologically explicit, but the underlying evidence base is heterogeneous, often short-term, and frequently lacks direct RCT comparison.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The review suggests potentially meaningful benefits for tutoring, feedback, and prediction tasks, but the paper does not report a single robust effect size for the focal interventions and much of the evidence is preliminary. Impacts are therefore plausible but uncertain at the field level, with most findings coming from small, short-duration studies and model-accuracy outcomes rather than learner achievement gains.",
+  "interventions": [
+    {
+      "intervention": "Predictive Analytics / Early Warning",
+      "confidence": 0.95,
+      "role": "primary",
+      "use_case": "Systematic review synthesis of machine-learning and classification models that predict student dropout, retention risk, admission decisions, course selection, engagement, and academic achievement in higher education."
+    },
+    {
+      "intervention": "Intelligent Tutoring System (ITS)",
+      "confidence": 0.95,
+      "role": "primary",
+      "use_case": "Systematic review synthesis of classical intelligent tutoring systems for higher education, including adaptive tutoring, hints, diagnosis of student knowledge gaps, automated feedback, and peer-dialogue agents."
+    },
+    {
+      "intervention": "Automated Feedback System",
+      "confidence": 0.9,
+      "role": "primary",
+      "use_case": "Systematic review synthesis of AI systems that provide automated essay scoring, feedback on writing, feedback during problem solving, and automated formative feedback in higher education."
+    },
+    {
+      "intervention": "Adaptive Learning Platform",
+      "confidence": 0.9,
+      "role": "primary",
+      "use_case": "Systematic review synthesis of adaptive systems that personalize course content, recommend materials, adjust learning pathways, and support learner modelling in higher education."
+    },
+    {
+      "intervention": "Computer-Assisted Instruction (CAI)",
+      "confidence": 0.6,
+      "role": "secondary",
+      "use_case": "Review includes AI-supported instructional software and dialogue-based learning systems used as course-delivery or practice tools in higher education."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Across the reviewed higher-education AI applications, the main operational benefits were reduced staff workload, faster grading/feedback, and high classification accuracy for administrative prediction tasks. For example, machine-learning models consistently outperformed logistic regression for prediction tasks, and automated essay scoring studies reported computer-human agreement as high as 94.6%\u201398.2%, suggesting efficiency gains for large-scale assessment tasks.",
+        "measure": "Prediction/classification accuracy; computer-human agreement for grading; reported workload reduction",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.8,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The review reports some AI systems used to detect engagement, motivation, and at-risk status, but the evidence is mixed and mostly preliminary. One cited study on student engagement reported ANN prediction accuracy of 85.9%, while the review notes several ITS/adaptive-system studies showed positive or satisfactory short-term results but also highlighted a negative case where support was poorly matched to learner level and other studies showed delayed-posttest disadvantages.",
+        "measure": "Engagement prediction accuracy; dropout/retention prediction accuracy; delayed post-test performance; short-term pilot results",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Predictive Analytics / Early Warning"
+    },
+    {
+      "outcome": "Academic \u2014 Literacy",
+      "confidence": 0.75,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "AI writing and language tools generally showed beneficial effects for writing-related tasks and feedback quality, but with important caveats about appropriateness and feedback reliability. The review cites automated essay scoring systems with human-computer agreement of 94.6%\u201398.2% and machine-learning feedback tools that were intended to improve student writing; however, it also notes concerns that detailed automated feedback could lead students to question grades and that some beginner language learners may not benefit.",
+        "measure": "Essay scoring agreement; writing-feedback quality; revision behavior",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Automated Feedback System"
+    },
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.8,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "For non-language academic outcomes, the review reports that AI tutoring/adaptive systems often produced positive short-term results for course content learning, especially in STEM and computer science. The review also cites a prior meta-analysis of 39 ITS studies showing a moderate effect of ITS on learning and that ITS outperformed traditional instruction, though it was still less effective than human tutoring; no single pooled effect size is provided in this review text.",
+        "measure": "Learning performance; pre/post test gains; course-specific achievement; system accuracy",
+        "study_size": "not_reported",
+        "effect_size": "moderate effect (per cited meta-analysis); specific effect sizes not reported in this review",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Intelligent Tutoring System (ITS)"
+    }
+  ],
+  "limitations": [
+    "single_site",
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

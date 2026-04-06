@@ -1,0 +1,44 @@
+{
+  "title": "Semi-Disentangled Spatiotemporal Implicit Neural Representations of Longitudinal Neuroimaging Data for Trajectory Classification",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2510.09936v1",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses the problem of representing and classifying longitudinal neuroimaging trajectories when scan times and sampling density vary across subjects. The authors argue that conventional deep learning methods struggle with irregularly sampled longitudinal MRI because they operate on discrete inputs and do not directly capture continuous developmental or disease-related change over time.\n\nTo address this, the paper proposes a semi-disentangled spatiotemporal implicit neural representation (INR) that models each subject\u2019s brain-aging trajectory as a continuous function over space and time. The architecture separates spatial, temporal, and combined parameter streams, and a downstream encoder/classifier operates directly on INR parameters to classify trajectories as healthy versus AD-like. The method is evaluated in a fully synthetic proof-of-concept setting using simulated longitudinal 3D T1-weighted MRI data generated from a conditional diffusion model and then altered with an ODE-based deviation process to create healthy and accelerated-aging trajectories.\n\nThe simulated cohort contains 450 artificial subjects with regular and irregular sampling schemes. Results show that the proposed INR approach reconstructs longitudinal scans reasonably well and that temporal INR parameters, especially the temporal stream alone, perform best for trajectory classification under irregular sampling, outperforming the SFCN baseline in that setting. The authors conclude that the approach is promising for irregular longitudinal neuroimaging analysis, but they emphasize that real-data validation is still needed.",
+  "limitations": [
+    "no_control_group",
+    "no_long_term_followup",
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "lab",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "identified_tools": [
+    {
+      "name": "ITS (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "prediction_analytics"
+      ],
+      "description": "A general category of intelligent tutoring systems or learning analytics models. In this paper, the term is not applicable to an educational tool; no educational AI system is studied.",
+      "use_case": "Not studied; the paper is about longitudinal neuroimaging trajectory classification with implicit neural representations, not education AI.",
+      "findings": []
+    }
+  ],
+  "verdict": "no_tool",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a computer vision / neuroimaging methods paper with no educational intervention, no teachers, and no instructional coaching or lesson-feedback study. It does not evaluate any K-12 AI tool, so there is no education evidence to rate.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "There is no K-12 educational outcome, no instructional practice outcome, and no AI tutoring/coaching system evaluated. Accordingly, there is no educational impact evidence in this paper.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

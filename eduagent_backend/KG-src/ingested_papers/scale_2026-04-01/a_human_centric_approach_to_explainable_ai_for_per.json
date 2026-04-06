@@ -1,0 +1,886 @@
+{
+  "title": "A Human-Centric Approach to Explainable AI for Personalized Education",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "https://arxiv.org/abs/2505.22541",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate",
+    "Graduate / Doctoral",
+    "Adult (non-academic)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This doctoral thesis addresses a central barrier to the use of AI in education: although predictive models can support personalized learning and teaching, they are often not adopted in practice because their decisions are not sufficiently explainable or trustworthy to students, teachers, and other educational stakeholders. The work focuses on explainable AI (XAI) for personalized education, asking how educational AI systems can provide explanations that are accurate, consistent, actionable, and understandable to humans.\n\nThe thesis combines technical AI development with human-centered evaluation. It first studies student modeling at scale across 26 online courses with more than 100,000 students and millions of interactions, then evaluates five existing explainability methods and finds systematic disagreement among explainers on the same students and models. In response, it proposes several intrinsically interpretable or explanation-focused approaches: MultiModN, an interpretable multimodal modular model; InterpretCC, an interpretable mixture-of-experts model using adaptive sparsity; adversarial training to improve explainer consistency; and iLLuMinaTE, an LLM-XAI pipeline for generating user-friendly, actionable explanations.\n\nThe populations and contexts span online higher-education settings and expert stakeholder studies. Human studies reported in the thesis include semi-structured interviews with 26 university professors, evaluations by 56 teachers, interviews with 20 expert learning scientists, and actionability evaluations by 114 university students. The educational context is primarily online course environments, with stakeholders including both students and educators interacting with explanations derived from predictive models of student success and course behavior.\n\nThe main conclusion is that high predictive performance alone is insufficient for educational AI adoption; explainability must be aligned with human needs. The thesis finds that post-hoc explainers can be inconsistent and may not reliably support trust, while expert users value explanations for actionability but differ in what they consider trustworthy. Overall, the work argues for a human-centric shift toward inherently interpretable model designs, rigorous evaluation of explanation quality, and explanation systems that help users move from model outputs to meaningful educational action.",
+  "limitations": [
+    "small_sample",
+    "no_control_group",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Switzerland",
+  "study_region": "Europe",
+  "identified_tools": [
+    {
+      "name": "iLLuMinaTE",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "language_speech"
+      ],
+      "description": "An LLM-XAI pipeline designed to translate model explanations into user-friendly, actionable, zero-shot explanations for personalized education.",
+      "use_case": "Studied as a communication layer for explainable AI that provides mid-semester feedback explanations to university students based on educational prediction models and XAI outputs.",
+      "findings": [
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The thesis reports that 114 university students evaluated the actionability of mid-semester feedback explanations generated with iLLuMinaTE. The abstract states that the system generated user-friendly, actionable explanations and that students evaluated their actionability, but no effect size, confidence interval, or quantitative comparative result is provided in the excerpt.",
+          "measure": "Student-evaluated actionability of mid-semester feedback explanations",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=114"
+        }
+      ]
+    },
+    {
+      "name": "MultiModN",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "personalization_adaptation",
+        "prediction_analytics"
+      ],
+      "description": "An interpretable, modular, multimodal model for prediction and explanation that can handle missing data with fewer parameters.",
+      "use_case": "Proposed and evaluated as an inherently interpretable student modeling approach for personalized learning and teaching, including educational prediction tasks.",
+      "findings": []
+    },
+    {
+      "name": "InterpretCC",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "prediction_analytics",
+        "personalization_adaptation"
+      ],
+      "description": "An interpretable mixture-of-experts model that uses adaptive sparsity to produce concise explanations while maintaining predictive performance.",
+      "use_case": "Proposed and evaluated as an intrinsically interpretable model for educational prediction and explanation, including teacher perception studies of hybrid explanations.",
+      "findings": []
+    },
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "language_speech",
+        "feedback_evaluation"
+      ],
+      "description": "Generic large language model functionality used to generate natural-language explanations from XAI outputs.",
+      "use_case": "Used within the thesis as part of the iLLuMinaTE pipeline to generate user-friendly explanations; specific LLM families are mentioned in chapter figures/tables, but the thesis-level excerpt does not establish a single focal named product for the paper overall.",
+      "findings": []
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a doctoral thesis describing multiple empirical evaluations and human studies, but the provided excerpt does not give enough methodological detail or causal design information for strong causal claims about educational effectiveness. The reported evidence in the excerpt is largely mixed-methods and user-perception/actionability oriented.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The excerpt suggests promising and actionable outcomes, especially for iLLuMinaTE, but does not report effect sizes or clear quantitative learning gains. Impact is therefore unclear from the provided text.",
+  "citations": [
+    {
+      "title": "The future of human-centric eXplainable Artificial Intelligence (XAI) is not post-hoc explanations",
+      "doi": null,
+      "year": 2023,
+      "venue": "Under review at JAIR",
+      "citation_level": 2,
+      "citation_context": "background framing for human-centric XAI limitations"
+    },
+    {
+      "title": "Meta Transfer Learning for Early Success Prediction in MOOCs",
+      "doi": null,
+      "year": 2022,
+      "venue": "Proceedings of the 9th ACM conference on Learning @ Scale",
+      "citation_level": 2,
+      "citation_context": "prior thesis work informing early prediction framing"
+    },
+    {
+      "title": "iLLuMinaTE: An LLM-XAI Framework Leveraging Social Science Explanation Theories towards Actionable Student Performance Feedback",
+      "doi": null,
+      "year": 2025,
+      "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+      "citation_level": 2,
+      "citation_context": "prior thesis work informing explanation-actionability framing"
+    },
+    {
+      "title": "Intelligent tutoring systems",
+      "doi": null,
+      "year": 2021,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Knowledge tracing",
+      "doi": null,
+      "year": 2015,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Automated feedback systems",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Real-time classroom insights",
+      "doi": null,
+      "year": 2018,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Automated question generation",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Massive Open Online Courses and digital learning environments popularity",
+      "doi": null,
+      "year": 2019,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "MOOC industry growth report",
+      "doi": null,
+      "year": 2021,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "COVID-era MOOC enrollment increases",
+      "doi": null,
+      "year": 2021,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "MOOC dropout and low success rates",
+      "doi": null,
+      "year": 2020,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Massive Open Online Course Completion Rates Revisited: Assessment, Length and Attrition",
+      "doi": null,
+      "year": 2015,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Self-regulated learning skills in flipped classrooms",
+      "doi": null,
+      "year": 2019,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Count-based behavioral features for online learning prediction",
+      "doi": null,
+      "year": 2020,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Count-based behavioral features for online learning prediction",
+      "doi": null,
+      "year": 2020,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Course attendance and ratio of videos watched as predictive features",
+      "doi": null,
+      "year": 2018,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Early prediction with video engagement features",
+      "doi": null,
+      "year": 2020,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Raw video events into an LSTM for prediction",
+      "doi": null,
+      "year": 2021,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Regular working patterns are essential for success in MOOCs",
+      "doi": null,
+      "year": 2016,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Meta-analysis of features across early prediction models on flipped courses and MOOCs",
+      "doi": null,
+      "year": 2021,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Video engagement in early weeks predicts pass-fail grades",
+      "doi": null,
+      "year": 2020,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Recent temporal patterns in novice programming tasks for early intervention",
+      "doi": null,
+      "year": 2019,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Logistic regression for student success prediction",
+      "doi": null,
+      "year": 2017,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Support vector machines for student success prediction",
+      "doi": null,
+      "year": 2016,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Random forests for student success prediction",
+      "doi": null,
+      "year": 2016,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "LSTM networks for educational tasks",
+      "doi": null,
+      "year": 2017,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Transformers for educational tasks",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Reinforcement learning architectures for educational tasks",
+      "doi": null,
+      "year": 2019,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Neural networks for student success prediction",
+      "doi": null,
+      "year": 2019,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Estimating early dropout with neural networks",
+      "doi": null,
+      "year": 2019,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Knowledge tracing with neural networks",
+      "doi": null,
+      "year": 2015,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Knowledge tracing with neural networks",
+      "doi": null,
+      "year": 2019,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Interpretable Machine Learning",
+      "doi": null,
+      "year": 2022,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Neural networks represent complex relationships from diverse data inputs",
+      "doi": null,
+      "year": 2021,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Neural networks represent complex relationships from diverse data inputs",
+      "doi": null,
+      "year": 2022,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Interpretable Machine Learning",
+      "doi": null,
+      "year": 2020,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "defines local/global interpretability and XAI taxonomy"
+    },
+    {
+      "title": "Grad-CAM: Visual Explanations from Deep Networks via Gradient-based Localization",
+      "doi": null,
+      "year": 2017,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Concept Bottleneck Models",
+      "doi": null,
+      "year": 2020,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Why Should I Trust You?: Explaining the Predictions of Any Classifier",
+      "doi": null,
+      "year": 2016,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "canonical post-hoc explainer example in taxonomy"
+    },
+    {
+      "title": "A Unified Approach to Interpreting Model Predictions",
+      "doi": null,
+      "year": 2017,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "canonical post-hoc explainer example in taxonomy"
+    },
+    {
+      "title": "Counterfactual Explanations for Machine Learning: A Review",
+      "doi": null,
+      "year": 2020,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "canonical local explanation family in taxonomy"
+    },
+    {
+      "title": "Using interpretable machine learning to predict ICU mortality",
+      "doi": null,
+      "year": 2016,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Explainable models for non-invasive ventilation for ALS patients",
+      "doi": null,
+      "year": 2021,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Explainable AI for credit risk",
+      "doi": null,
+      "year": 2021,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Explainable AI for loan repayment",
+      "doi": null,
+      "year": 2020,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "No explanation confidence measurement in post-hoc XAI",
+      "doi": null,
+      "year": 2019,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Actionability and interpretability depend on input format",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Human-centered evaluation of tabular/time-series explanations",
+      "doi": null,
+      "year": 2022,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "User preferences for hybrid text and visual explanations",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Explanation inconsistency across random seeds and time steps",
+      "doi": null,
+      "year": 2020,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Current metrics for XAI evaluation against expert ground truth",
+      "doi": null,
+      "year": 2022,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Prediction gap metrics for explanation trustworthiness",
+      "doi": null,
+      "year": 2022,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Quantifying the disagreement in explanations provided by local methods",
+      "doi": null,
+      "year": 2022,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "supports claim of systematic explainer disagreement"
+    },
+    {
+      "title": "Benchmarking and survey of explanation disagreement",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Evaluating the Explainers: Black-Box Explainable Machine Learning for Student Success Prediction in MOOCs",
+      "doi": null,
+      "year": 2022,
+      "venue": "Proceedings of the 15th International Conference on Educational Data Mining",
+      "citation_level": 2,
+      "citation_context": "chapter evidence for systematic explainer disagreement"
+    },
+    {
+      "title": "Can humans trust explanations? A user study of interpretability methods",
+      "doi": null,
+      "year": 2018,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Trusting the Explainers: Teacher Validation of Explainable Artificial Intelligence for Course Design",
+      "doi": null,
+      "year": 2023,
+      "venue": "LAK23: 13th International Learning Analytics and Knowledge Conference",
+      "citation_level": 2,
+      "citation_context": "chapter evidence for educator trust in explainers"
+    },
+    {
+      "title": "Layer-wise relevance propagation for neural networks",
+      "doi": null,
+      "year": 2020,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Interpretability Beyond Feature Attribution: Quantitative Testing with Concept Activation Vectors (TCAV)",
+      "doi": null,
+      "year": 2018,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "RIPPLE: Concept-based interpretation for raw time series models in education",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the AAAI Conference on Artificial Intelligence, EAAI Symposium",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Skin condition identification with concept-based explanations",
+      "doi": null,
+      "year": 2020,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Challenges of explainability with large closed models",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "B-cos Networks: Alignment is All We Need for Interpretability",
+      "doi": null,
+      "year": 2022,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "PIP-Net",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "This Looks Like That: Deep Learning for Interpretable Image Recognition",
+      "doi": null,
+      "year": 2019,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Interpretable models for non-image modalities are underexplored",
+      "doi": null,
+      "year": 2022,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Neural Additive Models: Interpretable Machine Learning with Neural Nets",
+      "doi": null,
+      "year": 2021,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Explainable Boosting Machines",
+      "doi": null,
+      "year": 2019,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Hierarchical mixture-of-experts combining interpretable experts with neural networks",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Selective expert activation in mixture-of-experts",
+      "doi": null,
+      "year": 2022,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Concept-based routing in mixture-of-experts",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Adaptive Mixtures of Local Experts",
+      "doi": null,
+      "year": 2018,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Stop Explaining Black Box Machine Learning Models for High Stakes Decisions and Use Interpretable Models Instead",
+      "doi": null,
+      "year": 2019,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "motivates move from black-box to inherent interpretability"
+    },
+    {
+      "title": "Trust in AI systems influences perceived usefulness and adoption",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Transparency and trust in AI-based educational technology",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Transparency, accountability, and ethics in AI systems",
+      "doi": null,
+      "year": 2020,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Open learner models require interpretability",
+      "doi": null,
+      "year": 2018,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "argues interpretability is necessary in educational settings"
+    },
+    {
+      "title": "Transparency increases educators\u2019 trust in AI-based educational technology",
+      "doi": null,
+      "year": 2022,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Auditing educational model mistakes with XAI",
+      "doi": null,
+      "year": 2022,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Auditing educational model mistakes with XAI",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "AI or human? Evaluating student feedback perceptions in higher education",
+      "doi": null,
+      "year": 2024,
+      "venue": "European Conference on Technology Enhanced Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Personalized interventions for students with XAI",
+      "doi": null,
+      "year": 2022,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "RIPPLE: Concept-based interpretation for raw time series models in education",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the AAAI Conference on Artificial Intelligence, EAAI Symposium",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Layer-relevance propagation for knowledge tracing",
+      "doi": null,
+      "year": 2020,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "LIME for transparency in student success prediction",
+      "doi": null,
+      "year": 2022,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "SHAP feature importances for student dropout prediction",
+      "doi": null,
+      "year": 2020,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "XGBoost and SHAP for interpretable student achievement prediction",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Interventions for wheel-spinning students based on Shapley values",
+      "doi": null,
+      "year": 2020,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "LIME on ensemble methods for student performance prediction",
+      "doi": null,
+      "year": 2021,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "LIME explanations in student advising dashboards",
+      "doi": null,
+      "year": 2021,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "LIME for interpreting at-risk student models",
+      "doi": null,
+      "year": 2021,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Tree-based and traditional ML interpretable educational models",
+      "doi": null,
+      "year": 2021,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "LIME for interpreting at-risk student models",
+      "doi": null,
+      "year": 2021,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Tree-based and traditional ML interpretable educational models",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Tree-based and traditional ML interpretable educational models",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Constrained CNN for identification of gaming behavior",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Comparing SHAP/LIME with interpretable neuro-symbolic rule extraction",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

@@ -1,0 +1,162 @@
+{
+  "title": "Tutor CoPilot: A Human-AI Approach for Scaling Real-Time Expertise",
+  "doi": "10.26300/81nh-8262",
+  "year": 2025,
+  "venue": "EdWorkingPaper",
+  "url": "https://nssa.stanford.edu/sites/default/files/ai24_1054_v2.pdf",
+  "source_db": "backfill_v3",
+  "populations": [],
+  "user_types": [
+    "Educator"
+  ],
+  "study_design": "Randomized Controlled Trial (RCT)",
+  "extended_summary": "This paper examines whether a human-AI tutoring support tool can improve instructional quality and student learning in live K-12 math tutoring. The core problem is that novice tutors often lack access to scalable, real-time expert guidance and may respond to student errors with low-quality practices such as generic praise or giving away answers too quickly. The study asks whether AI-generated, expert-informed suggestions can help tutors make better in-the-moment pedagogical decisions and improve student outcomes.\n\nThe intervention, Tutor CoPilot, is a tutor-facing human-AI system integrated into a chat-based virtual tutoring platform. When activated by tutors, it provides multiple suggested responses designed to reflect expert reasoning and effective pedagogical strategies. Tutors retain agency to use, edit, or ignore the suggestions. The authors evaluated the tool through a preregistered randomized controlled trial in which tutors were randomly assigned to treatment (access to Tutor CoPilot) or control (business as usual). The study also analyzed large-scale message data to examine changes in tutoring strategies and conducted tutor interviews about perceptions of the tool.\n\nThe study took place in an in-school virtual tutoring program for mathematics in a large southern U.S. school district, in partnership with FEV Tutor. Participants included 783 tutors and 1,013 elementary and middle school students in grades 3-6 from nine schools serving largely underserved communities; 79% of students identified as Hispanic and 67% were economically disadvantaged. The implementation lasted about 7 weeks, from late March to mid-May 2024. All tutors received standard professional development from the provider, and treatment tutors received additional training on how to use Tutor CoPilot.\n\nThe main conclusion is that Tutor CoPilot improved proximal student learning outcomes: students working with tutors assigned to the tool were 4 percentage points more likely to pass session exit tickets, with larger gains for lower-rated and less-experienced tutors. Message analyses suggest the tool shifted tutor practice toward more effective pedagogy, including more probing prompts and less generic encouragement. However, the study found no statistically significant effects on student survey measures or end-of-year achievement, and the authors note limits related to short duration, low and variable exposure, and a specific underserved study context.",
+  "limitations": [
+    "short_duration",
+    "single_site",
+    "self_reported_measures",
+    "non_representative_population",
+    "high_attrition",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "7",
+  "setting": "online",
+  "teacher_training": "yes",
+  "implementation_fidelity": "medium",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "Tutor CoPilot",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "content_generation"
+      ],
+      "description": "A tutor-facing AI copilot that uses large language models and expert-modeled pedagogical reasoning to generate real-time response suggestions during live tutoring while leaving final instructional decisions to the human tutor.",
+      "use_case": "Used as a real-time assistance tool for tutors in chat-based virtual mathematics tutoring.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In the intent-to-treat session-level analysis, students whose tutors had access to Tutor CoPilot were 4 percentage points more likely to pass the session exit ticket unconditionally than students in the control condition (62% to 66%, p<0.01). The result remained significant after Romano-Wolf multiple-hypothesis correction.",
+          "measure": "Exit ticket passed (unconditional)",
+          "effect_size": "0.040",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=4136",
+          "study_count": null
+        },
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Conditional on attempting the exit ticket, students working with tutors who had access to Tutor CoPilot were 3.1 percentage points more likely to pass than control students (p<0.05).",
+          "measure": "Exit ticket passed (conditional on attempt)",
+          "effect_size": "0.031",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=3521",
+          "study_count": null
+        },
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "Students with tutors assigned to Tutor CoPilot were estimated to be 1.9 percentage points more likely to attempt the exit ticket, but this result was not significant after multiple-hypothesis correction.",
+          "measure": "Exit ticket attempted",
+          "effect_size": "0.019",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=4136",
+          "study_count": null
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "Tutor CoPilot did not produce a statistically significant effect on participation points in the session-level intent-to-treat analysis.",
+          "measure": "Participation points / standardized participation points",
+          "effect_size": "0.094; 0.010",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=4136",
+          "study_count": null
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "The study found no statistically significant treatment effects on student survey perceptions of the tutor or math self-beliefs, including tutor caring, growth-oriented beliefs about math learning, session rating, and tutor rating.",
+          "measure": "Student survey items on tutor perceptions, math self-efficacy, session rating, and tutor rating",
+          "effect_size": "-0.0038; 0.025; 0.017; -0.0015; 0.026",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=1931-1952",
+          "study_count": null
+        },
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In treatment-on-the-treated analysis using two-stage least squares, using Tutor CoPilot during the session was associated with students being about 14 percentage points more likely to pass their exit tickets on average (p<0.01).",
+          "measure": "Exit ticket passed associated with Tutor CoPilot use (TOT/IV estimate)",
+          "effect_size": "14 p.p.",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported",
+          "study_count": null
+        },
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Heterogeneity analysis showed larger benefits for students taught by lower-rated tutors: Tutor CoPilot increased exit-ticket passing by about 9 percentage points for this subgroup, from 56% in control to 65% in treatment.",
+          "measure": "Exit ticket passed among students of lower-rated tutors",
+          "effect_size": "+9 p.p.",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported",
+          "study_count": null
+        },
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "For less experienced tutors, Tutor CoPilot increased students' exit-ticket passing by about 7 percentage points, from 61% in control to 68% in treatment.",
+          "measure": "Exit ticket passed among students of less experienced tutors",
+          "effect_size": "+7 p.p.",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported",
+          "study_count": null
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Analysis of tutor messages indicated that Tutor CoPilot shifted tutoring language toward higher-quality pedagogy. Treatment tutors used the strategy 'prompt student to explain' approximately 10% more than control tutors, with results reported as robust across specifications and multiple-hypothesis corrections.",
+          "measure": "Use of pedagogical strategy: prompt student to explain",
+          "effect_size": "approximately 10% more",
+          "confidence_interval": "95% CI reported in figure only, exact values not provided in text",
+          "sample_size": "n=241005 messages",
+          "study_count": null
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Relative to control tutors, tutors with access to Tutor CoPilot were less likely to use low-quality generic encouragement; control tutors used the strategy 'encourage student in a generic way' approximately 10% more than treatment tutors.",
+          "measure": "Use of pedagogical strategy: encourage student in a generic way",
+          "effect_size": "approximately 10% less",
+          "confidence_interval": "95% CI reported in figure only, exact values not provided in text",
+          "sample_size": "n=241005 messages",
+          "study_count": null
+        }
+      ]
+    }
+  ],
+  "verdict": "",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is a preregistered randomized controlled trial with a large sample and clear analytic methods, but there are some credibility concerns: notable tutor attrition from initial assignment to analytic sample, tutor-level rather than student-level randomization with variable exposure, and limited duration that constrained downstream outcome estimation.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The study shows a statistically significant positive effect on a proximal outcome (about 4 percentage points higher exit-ticket passing, larger for weaker tutors), but impacts on broader outcomes such as student surveys and end-of-year achievement were limited or not statistically significant, making overall impact modest/unclear.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": "Converted from kg_curator_v4 legacy extraction",
+  "_legacy_source": "/Users/alymoosa/Documents/A-Moosa-Dev/AI-EDU-Dev/eduagent/open_deep_research_v2/scripts/extraction_profiles_v3/tutor_copilot_a_human_ai_approach_for_scaling_real_time_expertise.json"
+}

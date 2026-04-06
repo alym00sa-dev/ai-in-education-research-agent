@@ -1,0 +1,79 @@
+{
+  "title": "Developing a Large Language Model-Based Feedback Tool for Primary School Teachers Supporting Neurodivergent Learners",
+  "doi": "https://doi.org/10.5772/acrt.20260007",
+  "year": 2026,
+  "venue": "AI, Computer Science and Robotics Technology",
+  "url": "https://doi.org/10.5772/acrt20260007",
+  "source_db": "openalex_search",
+  "populations": [
+    "Elementary (PreK-5th)"
+  ],
+  "user_types": [
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses the shortage of realistic, practice-based professional development for primary school teachers who support neurodivergent learners, especially pupils with ADHD and autism spectrum disorder (ASD). The authors argue that teachers need a safe way to rehearse classroom responses and receive immediate, evidence-informed feedback, because existing professional development is often too generic, resource intensive, or difficult to scale.\n\nTo address this problem, the study develops a locally run large language model (LLM)-based feedback tool that simulates classroom interactions and evaluates teacher responses. The system was built from a curated evidence base assembled through a systematic review of intervention literature on ADHD and ASD supports. It generated ten test scenarios for children aged 6\u201310 years, with five ADHD and five ASD cases, and produced formative feedback grounded in the literature. The model was deployed offline using DeepSeek-r1:8b via Ollama, with prompt engineering used to constrain outputs, maintain consistent pupil behavior, and protect privacy.\n\nThe paper reports early qualitative validation of the prototype rather than a full effectiveness trial. Across the ten scenarios, the system\u2019s feedback was judged to align with best-practice principles, and the authors conclude that tightly controlled LLM simulations can support teacher reflection and professional learning. However, they also note that the system is still preliminary and requires broader testing, more diverse scenarios, and continued refinement to address occasional prompt misalignment and scenario repetition.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed design-based prototype study with a small pilot evaluation, qualitative review, and no controlled comparison or learner outcome testing. It provides useful implementation evidence, but credibility is limited by the very small sample of scenarios and lack of inferential statistics.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper suggests potentially useful support for teacher professional development and reflective practice, but evidence of actual educational impact is indirect and preliminary. No measurable student or teacher outcome gains were demonstrated beyond 10 scenario-level alignment checks.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.95,
+      "role": "primary",
+      "use_case": "offline large language model-based feedback tool that simulates classroom interactions with ADHD/ASD pupil avatars and generates formative feedback for primary teachers practicing responses to neurodivergent learners"
+    },
+    {
+      "intervention": "Educational Game / Simulation",
+      "confidence": 0.9,
+      "role": "primary",
+      "use_case": "scenario-driven classroom simulation for teacher professional development, using synthetic pupil dialogues and branching exchanges to rehearse teacher responses and receive evidence-based critique"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.85,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The prototype was designed to reduce the burden of sourcing and synthesizing best-practice guidance by generating scenario-specific, evidence-informed feedback for teachers. In pilot testing across 10 scenarios (5 ADHD, 5 ASD), all final outputs (10/10) were judged aligned with best practice, suggesting the tool could streamline reflective practice and PD preparation without external server dependence.",
+        "measure": "Expert/human review of feedback alignment with best-practice literature; binary rubric for aligned vs not aligned outputs",
+        "study_size": "n=10 scenarios",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.7,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper reports that the system can support reflective practice and help teachers respond with clearer structure, emotional validation, reduced sensory load, and calm communication in simulated interactions with neurodivergent pupils. This is a proof-of-concept qualitative evaluation rather than a learner outcome study, so no standardized effect size was reported.",
+        "measure": "Qualitative judgment of feedback quality and pedagogical appropriateness in simulated classroom scenarios",
+        "study_size": "n=10 scenarios",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Educational Game / Simulation"
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "no_control_group",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "lab",
+  "teacher_training": "yes",
+  "implementation_fidelity": "high",
+  "study_country": "Malta",
+  "study_region": "Europe",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

@@ -1,0 +1,295 @@
+{
+  "title": "LearnLens: LLM-Enabled Personalised, Curriculum-Grounded Feedback with Educators in the Loop",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "https://arxiv.org/abs/2507.04295",
+  "source_db": "scale_stanford",
+  "populations": [
+    "High School (9th-12th)",
+    "Adult (non-academic)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses the challenge of providing timely, high-quality, personalised feedback to students while reducing teacher workload. The authors argue that existing LLM-based assessment and feedback tools often focus too narrowly on scoring, lack sufficient curricular grounding, and provide limited opportunities for educator oversight or revision. The paper introduces LearnLens as a response to these shortcomings, aiming to support both scalable feedback generation and meaningful teacher control in science education.\n\nLearnLens is a modular LLM-based system with separate teacher-facing and student-facing interfaces. Its core components include an error-aware assessment module that awards partial credit based on concept-level alignment to curriculum-linked mark schemes, a curriculum-grounded retrieval and generation approach called a Chain-of-Concept framework that organises prior assessments by topic rather than only similarity, and an educator-in-the-loop workflow that allows teachers to inspect, revise, and propagate edits to AI-generated feedback. The system also includes verifier models that rate feedback for scientific accuracy, clarity, and specificity, and iteratively improve outputs when scores fall below a threshold.\n\nThe empirical evaluation is situated in GCSE science, indicating a high-school context, and involved 30 participants with prior STEM teaching experience at either high school or college level who interacted with the system and completed a structured questionnaire. In addition, the system\u2019s scoring and efficiency were tested on 100 authentic student answers to a five-mark short-essay science question. All experiments were locally deployed because of student data privacy concerns. The paper is focused on teacher perceptions and system performance rather than direct measurement of student learning gains, and it explicitly notes that student evaluation is still lacking.\n\nThe main conclusions are that LearnLens was positively received by teacher participants, with high ratings for usability, responsiveness, relevance to instructional goals, and scientific accuracy. Compared with direct-prompt baselines using the same underlying foundation models, the modular LearnLens pipeline achieved better scoring quality with competitive latency and cost. The authors conclude that LearnLens shows promise as a practical classroom-ready AI feedback assistant that can reduce grading workload and support more targeted guidance, while acknowledging the need for future evaluation with students.",
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_control_group",
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United Kingdom",
+  "study_region": "Europe",
+  "identified_tools": [
+    {
+      "name": "LearnLens",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "personalization_adaptation"
+      ],
+      "description": "A modular LLM-based educational feedback system for science education that provides personalised, curriculum-grounded assessment and feedback with teacher oversight through educator- and student-facing interfaces.",
+      "use_case": "Studied as a science feedback tool that generates curriculum-aligned mark schemes, scores short-answer responses with error-aware assessment, produces personalised feedback, supports teacher review/revision, and provides performance visualisation and verifier scores.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In a user study with 30 participants who had prior STEM teaching experience, LearnLens received consistently positive usability and performance ratings: across nine Likert-scale items, the mean rating never fell below 4.1/5. About 80% of teachers described the menu structure as intuitive, and 75% expected results in under 15 seconds; the paper states LearnLens met this threshold in more than 90% of cases during local deployment.",
+          "measure": "Teacher questionnaire ratings on usability, responsiveness, and interface intuitiveness",
+          "effect_size": "mean ratings >=4.1/5; 80% intuitive; 75% acceptable wait time under 15s; >90% met threshold",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=30"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Teachers reported time savings relative to prior practice. Q12 indicated that half of teachers previously spent 10\u201330 minutes per assignment, whereas the median time with LearnLens fell below 5 minutes; additionally, 26 of 30 respondents ranked speed as the tool's top strength.",
+          "measure": "Self-reported teacher time per assignment and perceived speed advantage",
+          "effect_size": "50% previously spent 10\u201330 min; median with LearnLens <5 min; 26/30 ranked speed top strength",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=30"
+        },
+        {
+          "outcome_category": "Systemic / Institutional Impact",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Adoption intent was positive across prior-workflow groups, with no significant difference by prior method. A chi-square test found no significant group difference in overall adoption intent (p=0.63), and every cohort exceeded 65% on 'continue using,' with the automation-savvy group peaking at 85%.",
+          "measure": "Teacher adoption intent / future preference for using the tool",
+          "effect_size": "p=0.63; all groups >65% continue using; peak 85%",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=30"
+        },
+        {
+          "outcome_category": "Academic \u2014 Scientific Reasoning",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "On 100 authentic student answers to a five-mark short-essay science question, LearnLens achieved the best scoring quality among compared systems. It reported MSE=3.190, Pearson correlation=0.388, exact accuracy=0.354, and \u00b11 accuracy=0.747, outperforming the best baseline values reported in the table.",
+          "measure": "Automated scoring quality on science short-essay responses (MSE, Pearson correlation, exact-match accuracy, within-one-mark accuracy)",
+          "effect_size": "MSE=3.190; Corr.=0.388; Acc.=0.354; \u00b11 Acc.=0.747",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=100"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "LearnLens achieved stronger efficiency than the largest reasoning baseline while maintaining strong performance. Average generation latency was 11.39s (min 7.59s, max 16.97s) with per-request cost $0.0099, described as comparable to Qwen2.5-32B and four times faster and 72% cheaper than QwQ-32B.",
+          "measure": "Generation latency and per-request cost",
+          "effect_size": "Avg.=11.39s; Min.=7.59s; Max.=16.97s; Cost=$0.0099; 4x faster and 72% cheaper than QwQ-32B",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=100"
+        }
+      ]
+    },
+    {
+      "name": "LLaMA",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation"
+      ],
+      "description": "Meta's LLaMA family of large language models, used here as a baseline foundation model for direct-prompt scoring, feedback generation, and verification.",
+      "use_case": "Used as a baseline model without the LearnLens modular pipeline, performing scoring, feedback generation, and verification through direct prompting on science student answers.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Scientific Reasoning",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "As a baseline on 100 authentic student answers to a five-mark short-essay science question, LLaMA reported weaker scoring quality than LearnLens: MSE=3.468, correlation=0.235, exact accuracy=0.190, and \u00b11 accuracy=0.646. It was the fastest and cheapest baseline in the table, with average latency 5.14s and cost $0.0040 per request.",
+          "measure": "Automated scoring quality plus latency/cost on science short-essay responses",
+          "effect_size": "MSE=3.468; Corr.=0.235; Acc.=0.190; \u00b11 Acc.=0.646; Avg.=5.14s; Cost=$0.0040",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=100"
+        }
+      ]
+    },
+    {
+      "name": "Qwen",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation"
+      ],
+      "description": "Alibaba's Qwen family of large language models, used here as baseline foundation models for direct-prompt scoring, feedback generation, and verification.",
+      "use_case": "Used as baseline models without the LearnLens modular architecture, directly prompted to score and generate feedback/verification for science student answers.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Scientific Reasoning",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Qwen baselines were evaluated on 100 authentic student answers to a five-mark short-essay science question. Qwen2.5-32B-Instruct achieved MSE=3.658, correlation=0.230, exact accuracy=0.241, and \u00b11 accuracy=0.633 with 12.39s average latency and $0.0096 cost; QwQ-32B achieved MSE=3.506, correlation=0.323, exact accuracy=0.329, and \u00b11 accuracy=0.709 with 45.49s average latency and $0.0351 cost.",
+          "measure": "Automated scoring quality plus latency/cost on science short-essay responses",
+          "effect_size": "Qwen2.5: MSE=3.658, Corr.=0.230, Acc.=0.241, \u00b11 Acc.=0.633, Avg.=12.39s, Cost=$0.0096; QwQ: MSE=3.506, Corr.=0.323, Acc.=0.329, \u00b11 Acc.=0.709, Avg.=45.49s, Cost=$0.0351",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=100"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "The paper reports an empirical system evaluation with a teacher user study and benchmark-style performance comparison, but it does not present an RCT or quasi-experimental design measuring student learning outcomes. Evidence is therefore promising but primarily usability/performance-oriented rather than causal effectiveness evidence.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "Reported results are positive for teacher usability, time savings, and automated scoring quality, but the paper does not provide standardized student outcome effect sizes or causal learning gains. Impact appears promising yet remains unclear for student learning.",
+  "citations": [
+    {
+      "title": "Self-RAG: Learning to retrieve, generate, and critique through self-reflection",
+      "doi": null,
+      "year": 2024,
+      "venue": "The Twelfth International Conference on Learning Representations",
+      "citation_level": 3,
+      "citation_context": "self-reflection mechanism for feedback generation"
+    },
+    {
+      "title": "What feedback literate teachers do: an empirically-derived competency framework",
+      "doi": null,
+      "year": 2023,
+      "venue": "Assessment & Evaluation in Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Large language monkeys: Scaling inference compute with repeated sampling",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_level": 2,
+      "citation_context": "supports extended reasoning for mark scheme generation"
+    },
+    {
+      "title": "Feedback as dialogue",
+      "doi": null,
+      "year": 2016,
+      "venue": "Encyclopedia of Educational Theory and Philosophy",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The faiss library",
+      "doi": null,
+      "year": 2024,
+      "venue": "CoRR",
+      "citation_level": 3,
+      "citation_context": "FAISS-based ranker for topic-constrained retrieval"
+    },
+    {
+      "title": "Retrieval-augmented generation for large language models: A survey",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_level": 2,
+      "citation_context": "contrast with earlier raw embedding similarity retrieval"
+    },
+    {
+      "title": "The power of feedback",
+      "doi": null,
+      "year": 2007,
+      "venue": "Review of Educational Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Teachers\u2019 workload in relation to burnout and work performance",
+      "doi": null,
+      "year": 2021,
+      "venue": "International Journal of Educational Policy Research and Review",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Calibrating llms with preference optimization on thought trees for generating rationale in science question scoring",
+      "doi": null,
+      "year": 2024,
+      "venue": "Findings of the Association for Computational Linguistics: EMNLP 2024",
+      "citation_level": 3,
+      "citation_context": "self-reflection triggered when scoring signals disagree"
+    },
+    {
+      "title": "A survey of personalized large language models: Progress and future directions",
+      "doi": null,
+      "year": 2025,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Should you fine-tune BERT for automated essay scoring?",
+      "doi": null,
+      "year": 2020,
+      "venue": "Proceedings of the Fifteenth Workshop on Innovative Use of NLP for Building Educational Applications",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Automated feedback generation for open-ended questions: Insights from fine-tuned llms",
+      "doi": null,
+      "year": 2025,
+      "venue": "Proceedings of Large Foundation Models for Educational Assessment",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Using llms to bring evidence-based feedback into the classroom: Ai-generated feedback increases secondary students\u2019 text revision, motivation, and positive emotions",
+      "doi": null,
+      "year": 2024,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Scaling llm test-time compute optimally can be more effective than scaling model parameters",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_level": 2,
+      "citation_context": "supports extended reasoning for mark scheme generation"
+    },
+    {
+      "title": "iLLuMinaTE: An LLM-XAI framework leveraging social science explanation theories towards actionable student performance feedback",
+      "doi": null,
+      "year": 2025,
+      "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Automated essay scoring via pairwise contrastive regression",
+      "doi": null,
+      "year": 2022,
+      "venue": "Proceedings of the 29th International Conference on Computational Linguistics (COLING)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Self-contrast: Better reflection through inconsistent solving perspectives",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+      "citation_level": 3,
+      "citation_context": "self-reflection mechanism for feedback generation"
+    },
+    {
+      "title": "Decoding teachers\u2019 dilemma: Unveiling the real obstacles to implementing formative assessment in the classroom",
+      "doi": null,
+      "year": 2025,
+      "venue": "Journal of Qualitative Research in Education",
+      "citation_level": 2,
+      "citation_context": "motivates need for student performance visualisation"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

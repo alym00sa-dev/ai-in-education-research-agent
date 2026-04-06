@@ -1,0 +1,30 @@
+{
+  "title": "LLM-REVal: Can We Trust LLM Reviewers Yet?",
+  "doi": null,
+  "year": 2025,
+  "venue": null,
+  "url": "http://arxiv.org/abs/2510.12367v1",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper investigates whether large language models can be trusted as reviewers in academic peer review, especially when LLMs are also increasingly used to help generate or polish research papers. The core question is whether deep integration of LLMs into both research production and manuscript evaluation creates systematic fairness risks. Rather than studying education or K-12 literacy, the paper focuses on scholarly publishing and simulated conference peer review.\n\nThe authors build a multi-round simulation called LLM-REVal consisting of a research agent and a review agent. The research agent generates LLM-authored papers from topic keywords and revises rejected papers based on review feedback; the review agent simulates reviewer assessment, rebuttal, reassessment, meta-review, and final decisions. Human-authored ICLR papers and LLM-authored papers are compared, and rejected papers are iteratively revised and resubmitted. The study also includes human annotation to compare LLM review judgments with human judgments and analyzes possible sources of bias such as linguistic style preferences and aversion to critical framing.\n\nThe context is academic machine learning research, using public ICLR submissions and simulated reviewing with models such as DeepSeek-R1, DeepSeek-V3, GPT-4o, Qwen3, and Gemini-2.5. There are no K-12 learners, teachers, classroom interventions, or literacy instruction participants in the study. The unit of analysis is papers and reviews rather than students or schools.\n\nThe main conclusions are that LLM reviewers systematically favor LLM-authored writing styles, inflate scores for LLM-generated papers, and tend to undervalue human-authored papers containing critical statements about risks or fairness. At the same time, revision guided by LLM review can improve manuscripts. Overall, the paper argues that LLM reviewers may be useful as assistive tools for early-stage feedback, but they are not yet trustworthy as impartial evaluators in high-stakes peer review due to fairness and bias concerns.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is not a K-12 education intervention study. It is an arXiv simulation paper about LLMs as academic peer reviewers, with no learner-facing educational sample, no school implementation, and no direct literacy instruction evidence.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "The paper reports no direct K-12 literacy or student outcome impacts, so it cannot contribute evidence on the review thesis about generative AI in K-12 literacy instruction.",
+  "interventions": [],
+  "outcome_assignments": [],
+  "limitations": [
+    "non_representative_population",
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

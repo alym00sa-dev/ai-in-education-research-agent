@@ -1,0 +1,100 @@
+{
+  "title": "Personalized Auto-Grading and Feedback System for Constructive Geometry Tasks Using Large Language Models on an Online Math Platform",
+  "doi": null,
+  "year": 2025,
+  "venue": null,
+  "url": "http://arxiv.org/abs/2509.25529v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Middle School (6th-8th)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses the challenge of providing timely, individualized grading and feedback for complex, open-ended constructive geometry tasks in online mathematics learning. The authors focus on tasks that require procedural construction, written explanation, and conceptual reasoning, arguing that conventional answer-matching systems are poorly suited to these richer forms of student work. The study asks whether a large language model\u2013supported system can grade student responses in ways aligned with teacher judgment and provide useful formative feedback during multi-attempt problem solving.\n\nThe intervention is a hybrid auto-grading and feedback system integrated into Algeomath, a Korean web-based dynamic geometry platform. Rule-based methods were used for closed-ended and constructive-geometry submissions, while GPT-4 with few-shot prompting was used to evaluate open-ended explanations and generate personalized feedback. Feedback was teacher-mediated in design rather than live teacher-delivered: teacher-authored exemplars of anticipated student errors and solution paths were embedded into prompts, and the system adapted feedback based on correctness and attempt number across up to four tries. The feedback became progressively more explicit as attempts were exhausted.\n\nThe field study took place in November 2024 with 79 middle-school students across four classes in South Korea working through an 18-question sequence on triangle circumcenters and related geometry concepts. The context was an online platform used in class-based instruction. Quantitative analyses examined agreement between automated grading and teacher judgments, question difficulty and discrimination, cumulative success across repeated attempts, and immediate post-feedback correction rates. The paper also includes qualitative analyses of disagreement cases, feedback quality, and iterative student answer refinement, plus student self-assessment survey data.\n\nThe main conclusions are that the system produced strong teacher alignment overall for open-ended grading (overall agreement 0.866; Cohen's kappa 0.737), perfect agreement for rule-based items, and moderate educational value as a formative support. About 36.7% of initially incorrect responses were corrected on the next attempt after feedback, suggesting short-term benefits for revision within tasks. However, longer-term transfer to later tasks was not statistically demonstrated, and feedback quality was uneven, with issues such as terminology imprecision, model-answer leakage, and overly generic or tone-problematic prompts. The authors conclude that LLMs can support scalable, teacher-aligned formative assessment in mathematics, but stronger prompt and feedback design is needed before claiming robust broader learning gains.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a classroom field study/pilot with 79 middle-school students and no randomized or quasi-experimental comparison group. It reports descriptive and correlational evidence, agreement analyses, and within-system learning patterns, but causal claims about impact are limited.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "Findings suggest promising but unclear impact: short-term revision success and teacher-aligned grading are positive, yet no standardized effect sizes are reported and longer-term transfer effects were not statistically significant. The evidence supports modest or uncertain impact rather than clear achievement gains.",
+  "interventions": [
+    {
+      "intervention": "Automated Feedback System",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "LLM-based auto-grading and adaptive formative feedback for middle-school constructive geometry tasks on the Algeomath online platform, with teacher-authored exemplars and up to four iterative attempts."
+    },
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.72,
+      "role": "secondary",
+      "use_case": "GPT-4 prompt-based feedback generation that provides attempt-aware hints, corrective explanations, and final answer explanations during iterative geometry problem solving."
+    },
+    {
+      "intervention": "Computer-Assisted Instruction (CAI)",
+      "confidence": 0.62,
+      "role": "secondary",
+      "use_case": "Interactive web-based dynamic geometry environment (Algeomath) used by students to construct, measure, and revise geometric solutions during inquiry-based lessons."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 0.94,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "In a field study with 79 South Korean middle-school students, the LLM-enabled grading and feedback system supported frequent short-term corrections in geometry tasks: overall post-feedback correctness conversion was 36.7% (260/708), with cumulative success rising from about 0.60 on first attempt to about 0.80 by the fourth attempt for analyzed questions. However, longer-term transfer to later target questions (Q10, Q11, Q18) was not statistically demonstrated, with all reported comparisons non-significant (all p > 0.05), and some open-ended grading/feedback quality problems remained, especially for terminology-sensitive items such as Q15.",
+        "measure": "Constructive geometry task correctness by attempt, cumulative learning curves, post-feedback correctness conversion, target-question transfer analyses, teacher-system grading agreement for open-ended explanation items",
+        "study_size": "n=79",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.86,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The automated system showed strong alignment with teacher grading while offering scalable formative assessment for complex geometry responses. Rule-based grading for closed-ended and constructive-geometry tasks reached 100% agreement with teachers, and LLM grading of seven open-ended explanation items achieved overall agreement of 0.866 with Cohen's kappa = 0.737 across 878 responses, indicating substantial consistency with teacher judgment.",
+        "measure": "Agreement rate and Cohen's kappa between system grading and teacher assessments; qualitative expert ratings of feedback quality",
+        "study_size": "n=79 students; 878 open-ended responses",
+        "effect_size": "kappa=0.737; agreement=0.866",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.57,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Student self-assessment survey results were favorable, with average ratings reportedly ranging from 4.1 to 4.5 on a 5-point Likert scale across perceived understanding and application items, suggesting generally positive learner perceptions of the activity and system-supported learning experience. The paper also describes encouraging feedback tone as a design feature, but does not provide stronger causal evidence for motivation or engagement outcomes.",
+        "measure": "Student self-assessment Likert survey and open-ended comments on learning experience",
+        "study_size": "n=79",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "no_control_group",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "South Korea",
+  "study_region": "East Asia & Pacific",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

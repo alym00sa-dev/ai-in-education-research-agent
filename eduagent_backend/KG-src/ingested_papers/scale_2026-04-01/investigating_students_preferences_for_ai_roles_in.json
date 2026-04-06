@@ -1,0 +1,457 @@
+{
+  "title": "Investigating Students\u2019 Preferences for AI Roles in Mathematical Modelling: Evidence from a Randomized Controlled Trial",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "https://arxiv.org/abs/2510.06617",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate",
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper examines how artificial intelligence should function during mathematical modelling activities and how students\u2019 design thinking (DT), computational thinking (CT), and mathematical modelling self-efficacy (MMSE) relate to their preferences for different AI roles. The authors address three main questions: the relationships among DT, CT, and MMSE; which AI roles students prefer during modelling; and whether preferences vary across learner profiles. The study is positioned in the context of AI-supported mathematics education, with a focus on higher-order thinking and the challenges students face in abstraction, representation, and iterative reasoning during mathematical modelling.\n\nThe intervention compared five AI roles in mathematical modelling tasks: Tutor, Teaching Assistant, Peer Student, Struggling Student, and Excellent Student, plus a no-assistance baseline. The AI responses were generated with GPT-based models using role-specific prompts. Participants completed one baseline task and five AI-supported tasks in a within-subjects, counterbalanced experiment conducted fully online. Quantitative data included pre-task surveys measuring MMSE, CT, and DT, as well as post-task ratings of confidence, helpfulness, and ease of interaction; qualitative data came from open-ended feedback about the AI roles.\n\nThe final sample included 26 university students aged 18 or older, all from non-STEM majors and without university-level mathematics coursework, chosen because the authors considered their math background comparable to that of high school graduates. The paper also frames the task design to reflect high-school-level mathematical modelling problems, but the actual participants were undergraduates. The study appears to have been conducted with students in Hong Kong SAR through The Hong Kong Polytechnic University, and all activities were completed online with short modelling tasks lasting four minutes each.\n\nThe main findings were that DT and CT were both significant positive predictors of mathematical modelling self-efficacy, with DT showing the stronger effect. Students clearly disliked the Struggling Student AI role, rating it significantly worse than Tutor, Teaching Assistant, Peer, and Excellent Student roles on preference, confidence, helpfulness, and ease of interaction. Among the four competent AI roles, there were no significant preference differences overall, suggesting that students valued competent support more than a specific pedagogical persona. A subgroup analysis found only one notable difference: students with higher design thinking scores preferred the Teaching Assistant role more than lower-DT students. The qualitative analysis reinforced these results by showing that students valued clarity, guidance, and supportive interaction, while criticizing ambiguity and poor pedagogical value.",
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "self_reported_measures",
+    "non_representative_population",
+    "high_attrition",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Hong Kong",
+  "study_region": "East Asia & Pacific",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "personalization_adaptation"
+      ],
+      "description": "OpenAI GPT-family conversational AI used here as a role-playing chatbot that can adopt different instructional personas.",
+      "use_case": "A GPT-based AI agent was used in five role conditions during short mathematical modelling tasks: Tutor, Teaching Assistant, Peer Student, Struggling Student, and Excellent Student. Responses were generated with GPT-based models using role-specific system prompts.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "The paper reports a randomized within-subjects experiment on students\u2019 preferences and experience with AI roles in mathematical modelling, but it does not report direct learning-performance or test-score effects by role. Instead, students significantly preferred competent roles over the Struggling Student role, with the overall Friedman test showing differences in rankings across roles, \u03c72(4, N = 26) = 28.83, p < .001. Tutor was ranked most favorably (M = 2.35, SD = 1.02) and Struggling Student least favorably (M = 4.42, SD = 1.17).",
+          "measure": "Role preference rankings in mathematical modelling support",
+          "effect_size": "r=0.85 Tutor vs Struggling; r=0.80 Excellent vs Struggling; r=0.67 Peer vs Struggling; r=0.57 TA vs Struggling",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=26"
+        },
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "AI role significantly affected students\u2019 task confidence during mathematical modelling, \u03c72(4, N = 26) = 24.85, p < .001. Students reported the highest confidence with Excellent Student (M = 3.69, SD = 1.19) and Tutor (M = 3.65, SD = 1.16), while Struggling Student was lowest (M = 1.88, SD = 1.24); post hoc tests showed Struggling Student was significantly lower than Excellent (W = 28.5, p = .004), TA (W = 12.0, p = .005), and Tutor (W = 9.0, p = .001).",
+          "measure": "Task confidence ratings (Likert scale) after each AI-role-supported modelling task",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=26"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Perceived helpfulness differed significantly by AI role, \u03c72(4, N = 26) = 32.63, p < .001. Tutor was rated most helpful (M = 4.12, SD = 0.91), followed by Excellent Student (M = 3.96, SD = 1.04), while Struggling Student was lowest (M = 1.92, SD = 1.23); Struggling Student was significantly less helpful than Tutor (W = 2.5, p < .001), Excellent (W = 17.0, p = .001), Peer (W = 22.0, p = .004), and TA (W = 13.0, p = .005).",
+          "measure": "Perceived AI helpfulness ratings",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=26"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Ease of interaction also varied significantly across AI roles, \u03c72(4, N = 26) = 36.43, p < .001. Tutor was easiest to interact with (M = 4.08, SD = 0.93), followed by Excellent Student (M = 3.81, SD = 0.98), whereas Struggling Student was lowest (M = 1.81, SD = 1.17); Struggling Student was significantly worse than Tutor (W = 2.0, p < .001), Peer (W = 13.0, p = .001), and Excellent (W = 18.5, p = .002).",
+          "measure": "Ease of interaction ratings",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=26"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Baseline learner characteristics were associated with differences in AI role preference only in a limited way. Higher design thinking participants preferred the Teaching Assistant role more than lower design thinking participants (Mhigh = 2.38, SD = 1.04; Mlow = 3.46, SD = 1.56; p = .049), while no significant differences were found by computational thinking or mathematical modelling self-efficacy for any AI role (all ps > .188 or > .178 as reported).",
+          "measure": "AI role preference differences by baseline DT, CT, and MMSE groups",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=26"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is an empirical randomized within-subjects trial using counterbalancing, but the final sample is small (n=26) and the reported outcomes are mainly preferences and self-reports rather than objective achievement gains.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The study shows statistically significant differences in perceived confidence, helpfulness, interaction ease, and role preference, but impact on actual mathematical learning performance is unclear and effect sizes are only reported for preference contrasts involving the Struggling role.",
+  "citations": [
+    {
+      "title": "Computational thinking and mathematical modelling",
+      "doi": null,
+      "year": 2021,
+      "venue": "Mathematical modelling education in east and west",
+      "citation_level": 2,
+      "citation_context": "links computational thinking with mathematical modelling framing"
+    },
+    {
+      "title": "Mathematical modelling approach in mathematics education",
+      "doi": null,
+      "year": 2015,
+      "venue": "Universal Journal of Educational Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Proactive systems and influenceable users: Simulating proactivity in task-oriented dialogues",
+      "doi": null,
+      "year": 2020,
+      "venue": "Proceedings of the 24th Workshop on the Semantics and Pragmatics of Dialogue-Full Papers",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Mathematics learning through computational thinking activities: A systematic literature review",
+      "doi": null,
+      "year": 2018,
+      "venue": "J. Univers. Comput. Sci.",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Generative ai without guardrails can harm learning: Evidence from high school mathematics",
+      "doi": null,
+      "year": 2025,
+      "venue": "Proceedings of the National Academy of Sciences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Simulating instructional roles through pedagogical agents",
+      "doi": null,
+      "year": 2005,
+      "venue": "International Journal of Artificial intelligence in education",
+      "citation_level": 2,
+      "citation_context": "grounds AI pedagogical role framework"
+    },
+    {
+      "title": "The chatbots\u2019 challenge to education: disruption or destruction?",
+      "doi": null,
+      "year": 2023,
+      "venue": "Education Sciences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Can gpt-3 perform statutory reasoning?",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the Nineteenth International Conference on Artificial Intelligence and Law",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Using survey questions to identify and learn more about those who exhibit design thinking traits",
+      "doi": null,
+      "year": 2015,
+      "venue": "Design Studies",
+      "citation_level": 3,
+      "citation_context": "source of design thinking survey measure"
+    },
+    {
+      "title": "Different perspectives in research on the teaching and learning mathematical modelling",
+      "doi": null,
+      "year": 2009,
+      "venue": "Mathematical applications and modelling in the teaching and learning of mathematics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ICMI study 14: Applications and modelling in mathematics education\u2013discussion document",
+      "doi": null,
+      "year": 2002,
+      "venue": "Educational studies in mathematics",
+      "citation_level": 2,
+      "citation_context": "supports mathematical modelling educational framing"
+    },
+    {
+      "title": "Quality teaching of mathematical modelling: What do we know, what can we do?",
+      "doi": null,
+      "year": 2015,
+      "venue": "The proceedings of the 12th international congress on mathematical education: Intellectual and attitudinal challenges",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Mathematical modelling: Can it be taught and learnt",
+      "doi": null,
+      "year": 2009,
+      "venue": "Journal of mathematical modelling and application",
+      "citation_level": 2,
+      "citation_context": "defines teachability and learning of modelling"
+    },
+    {
+      "title": "Applied mathematical problem solving, modelling, applications, and links to other subjects\u2014state, trends and issues in mathematics instruction",
+      "doi": "10.3390/educsci12120923",
+      "year": 1991,
+      "venue": "Educational studies in mathematics",
+      "citation_level": 2,
+      "citation_context": "foundational conceptualization of mathematical modelling"
+    },
+    {
+      "title": "Investigating quality mathematics teaching: The disum project",
+      "doi": null,
+      "year": 2007,
+      "venue": "Developing and researching quality in mathematics teaching and learning, proceedings of MADIF 5",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Change by design: How design thinking creates new alternatives for business and society",
+      "doi": null,
+      "year": 2009,
+      "venue": "Harper Business",
+      "citation_level": 2,
+      "citation_context": "supports design thinking construct definition"
+    },
+    {
+      "title": "Design thinking",
+      "doi": null,
+      "year": 2008,
+      "venue": "Harvard business review",
+      "citation_level": 2,
+      "citation_context": "supports design thinking construct definition"
+    },
+    {
+      "title": "How can we design for learning in an ai world?",
+      "doi": null,
+      "year": 2022,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A systematic literature review of the current discussion on mathematical modelling competencies: State-of-the-art developments in conceptualizing, measuring, and fostering",
+      "doi": null,
+      "year": 2022,
+      "venue": "Educational Studies in Mathematics",
+      "citation_level": 2,
+      "citation_context": "frames mathematical modelling competencies background"
+    },
+    {
+      "title": "Learning by teaching with chatgpt: The effect of teachable chatgpt agent on programming education",
+      "doi": null,
+      "year": 2024,
+      "venue": "British Journal of Educational Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Common core state standards for mathematics",
+      "doi": null,
+      "year": 2022,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Design thinking: Understanding how designers think and work",
+      "doi": null,
+      "year": 2023,
+      "venue": "Bloomsbury Publishing",
+      "citation_level": 2,
+      "citation_context": "supports design thinking theoretical framing"
+    },
+    {
+      "title": "The relation between academic achievement and the spontaneous use of design-thinking strategies",
+      "doi": null,
+      "year": 2020,
+      "venue": "Computers & Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Does chatgpt enhance student learning? a systematic review and meta-analysis of experimental studies",
+      "doi": null,
+      "year": 2025,
+      "venue": "Computers & Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Thesis of Peter Liljedahl\u2019s student: A placeholder entry",
+      "doi": null,
+      "year": null,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Analysis of the relation between computational thinking skills and various variables with the structural equation model",
+      "doi": null,
+      "year": 2018,
+      "venue": "Computers & Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Mathematical modelling in the early school years",
+      "doi": null,
+      "year": 2005,
+      "venue": "Mathematics education research journal",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Learning how to teach mathematical modeling in school and teacher education",
+      "doi": null,
+      "year": 2018,
+      "venue": "Learning how to teach mathematical modeling in school and teacher education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Evaluating structural equation models with unobservable variables and measurement error",
+      "doi": "10.1177/002224378101800104",
+      "year": 1981,
+      "venue": "Journal of marketing research",
+      "citation_level": 3,
+      "citation_context": "criterion for measurement model validity assessment"
+    },
+    {
+      "title": "Learning by teaching",
+      "doi": null,
+      "year": 1970,
+      "venue": "The Reading Teacher",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Teaching mathematics that addresses learners\u2019 multiple intelligences",
+      "doi": null,
+      "year": 2011,
+      "venue": "Africa Education Review",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Fostering higher-order thinking skills in mathematics education: Strategies, challenges, and classroom practices",
+      "doi": "10.33394/j-ps.v13i2.15099",
+      "year": 2025,
+      "venue": "Prisma Sains: Jurnal Pengkajian Ilmu dan Pembelajaran Matematika dan IPA IKIP Mataram",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Teaching mathematical modeling in the classroom: Analyzing the scaffolding methods of teachers",
+      "doi": null,
+      "year": 2023,
+      "venue": "Teaching and Teacher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Pls-sem: Indeed a silver bullet",
+      "doi": "10.2753/MTP1069-6679190202",
+      "year": 2011,
+      "venue": "Journal of Marketing theory and Practice",
+      "citation_level": 3,
+      "citation_context": "PLS-SEM analysis procedure justification"
+    },
+    {
+      "title": "Exploring the impact of the design thinking model on fifth graders\u2019 creative self-efficacy, situational interest, and individual interest in stem education",
+      "doi": null,
+      "year": 2023,
+      "venue": "Thinking Skills and Creativity",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Use of partial least squares (pls) in strategic management research: A review of four recent studies",
+      "doi": "10.1002/(SICI)1097-0266(199902)20:2<195::AID-SMJ13>3.0.CO;2-7",
+      "year": 1999,
+      "venue": "Strategic management journal",
+      "citation_level": 3,
+      "citation_context": "PLS method justification and reporting guidance"
+    },
+    {
+      "title": "Mathprompter: Mathematical reasoning using large language models",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv preprint arXiv:2303.05398",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Ct leadership toolkit",
+      "doi": null,
+      "year": 2015,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "source of computational thinking framework/measure"
+    },
+    {
+      "title": "Challenges in geometric modelling\u2013a comparison of students\u2019 mathematization with real objects, photos, and 3d models",
+      "doi": null,
+      "year": 2024,
+      "venue": "EURASIA Journal of Mathematics, Science and Technology Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Teach ai how to code: Using large language models as teachable agents for programming education",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 2024 CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Exploring the impact of an llm-powered teachable agent on learning gains and cognitive load in music education",
+      "doi": null,
+      "year": 2025,
+      "venue": "arXiv preprint arXiv:2504.00636",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A global survey of international perspectives on modelling in mathematics education",
+      "doi": "10.1007/s13138-010-0006-y",
+      "year": 2006,
+      "venue": "The International Journal on Mathematics Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Ai tutoring outperforms in-class active learning: an rct introducing a novel research-based design in an authentic educational setting",
+      "doi": null,
+      "year": 2025,
+      "venue": "Scientific Reports",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A validity and reliability study of the computational thinking scales (cts)",
+      "doi": null,
+      "year": 2017,
+      "venue": "Computers in human behavior",
+      "citation_level": 3,
+      "citation_context": "source of computational thinking scale used"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

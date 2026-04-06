@@ -1,0 +1,101 @@
+{
+  "title": "AI Conversational Tutors in Foreign Language Learning: A Mixed-Methods Evaluation Study",
+  "doi": null,
+  "year": 2025,
+  "venue": "Proceedings 14th Panhellenic Conference iCT in Education",
+  "url": "http://arxiv.org/abs/2508.05156v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Adult (non-academic)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper examines AI conversational tutors for foreign language learning, focusing on how well they support speaking and conversational practice, how their interaction design affects user experience, and how their dialogue quality can be evaluated systematically. The author frames the work around three research questions: identifying common design patterns, comparing specialized language-tutoring tools with general-purpose conversational AI, and proposing an evaluation framework for judging tutor quality.\n\nThe study examines four dedicated language-learning applications (talkio, talkpal, univerbal, and langua) and compares them with two general-purpose voice-enabled AI systems (ChatGPT and Gemini) used as Spanish-speaking tutors. The context is a simulated learner profile at B1/B2 level, with interactions conducted through short free-chat voice sessions. The paper reports observations about voice interaction, correction behavior, handling of unfinished utterances, feedback quality, privacy/data issues, and transcript availability. It then applies a 10-dimensional transcript-based rubric to score six tutors, using five LLMs as artificial expert evaluators.\n\nMain findings are that the specialized tools differ substantially in interaction style and feedback quality: some provide supportive, coherent, and corrective dialogue, while others interrupt, fail to repair breakdowns, or offer limited control and less natural conversation. General-purpose models can sometimes produce high-quality conversational tutoring, with ChatGPT scoring especially well on feedback and supportive style, though both general-purpose systems lacked reliable correction behavior and complete transcripts. The paper concludes that future AI tutors should emphasize contextual error correction, coherent dialogue flow, rich vocabulary, and privacy-conscious handling of voice data. It also argues that transcript-based automated evaluation can be useful, while noting that human expert assessment remains important.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a mixed-methods comparative evaluation with qualitative observation and transcript-based scoring, not a controlled trial. It is peer-reviewed conference work, but the design has limited credibility for causal claims and includes only one expert evaluator in the user-experience phase, despite some inter-rater validation in the transcript-scoring phase.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper suggests potentially meaningful design improvements for AI language tutors, but it does not report measured learning gains or effect sizes from an educational intervention. Its impact is therefore informative but unclear for broader K-12 outcomes.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "Mixed-methods evaluation of AI conversational language tutors for foreign-language speaking practice, including free chat, role play, debate, pronunciation/turn-taking support, contextual corrections, and feedback generation in mobile apps and general-purpose voice chatbots."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Language Fluency",
+      "confidence": 1.0,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The paper evaluates conversational fluency, turn-taking, and corrective support in six AI language tutors using transcript-based quality scores and user experience observations. Specialized tutors (especially T1 and T4) were judged stronger on learning value, coherence, and interaction, while general-purpose ChatGPT (T5) scored highly on feedback and vocabulary; Gemini (T6) lacked clarity and timely feedback. No standardized learning gain was reported; the evidence is based on transcript ratings and qualitative comparison rather than pre/post language tests.",
+        "measure": "Transcript-based 10-dimension quality ratings; conversational interaction analysis; user experience observations",
+        "study_size": "n=6 tutors, 1 expert evaluator for qualitative phase; 5 AI evaluators for transcript scoring",
+        "effect_size": "not_reported",
+        "confidence_interval": "95% CIs reported as narrow for most tutors, but exact values not reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.85,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "A core evaluation dimension was the extent to which tutors supported critical thinking and continued reasoning in conversation. T4 in particular was described as guiding the learner toward further reasoning, and T5 (ChatGPT) also elicited reflective, higher-order responses; however, the study is qualitative and does not report an effect size or learner outcome measure for critical thinking itself.",
+        "measure": "Transcript-based evaluation dimension and qualitative discourse analysis of tutor prompts",
+        "study_size": "n=6 tutors",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.8,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Supportive style and encouragement were recurring strengths in the evaluated tutors, especially T2 and T4, which used empathetic, constructive language and repair strategies when learners paused or cut off mid-sentence. The study did not measure motivation or engagement directly, but the observed interaction patterns suggest positive support for learner comfort and persistence.",
+        "measure": "Transcript-based supportive-style ratings and interaction observations",
+        "study_size": "n=6 tutors",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.74,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The paper highlights workflow-related features such as automatic transcript generation, downloadable feedback reports, and exportable chat histories, which could reduce manual review burden. However, it also notes serious efficiency limitations, including missing transcript segments in voice mode for ChatGPT and Gemini, requiring external speech-to-text to reconstruct a full record; no formal teacher-workload measure was collected.",
+        "measure": "Availability/completeness of transcripts and feedback artifacts; qualitative workflow observations",
+        "study_size": "n=6 tutors",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Greece",
+  "study_region": "Europe",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

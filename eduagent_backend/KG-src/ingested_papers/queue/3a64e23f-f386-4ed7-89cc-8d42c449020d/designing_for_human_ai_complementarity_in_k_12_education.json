@@ -1,0 +1,94 @@
+{
+  "title": "Designing for human\u2013AI complementarity in K-12 education",
+  "doi": null,
+  "year": null,
+  "venue": "not_reported",
+  "url": "http://arxiv.org/abs/2104.01266v2",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Middle School (6th-8th)",
+    "K-12 (unspecified grade)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Randomized Controlled Trial (RCT)",
+  "extended_summary": "This paper examines how to design human\u2013AI partnerships in K-12 education so that teachers and AI tutoring systems complement one another rather than working in isolation. The core problem is that AI tutors can support student practice, but teachers still play an important role in interpreting student needs, noticing contextual factors, and providing support that software cannot. The authors argue that effective human\u2013AI systems must be designed around real classroom work practices and should be evaluated in authentic settings.\n\nThe intervention studied is Lumilo, a pair of mixed-reality smart glasses worn by teachers in AI-supported classrooms. Lumilo shows real-time analytics about students\u2019 learning, metacognition, and behavior, plus detailed student-level information when requested. The system was developed through participatory design with teachers and iterative prototyping, including field observations, co-design sessions, replay-based enactments, and pilot studies intended to shape teacher decision-making in positive directions.\n\nThe empirical evaluation involved middle school math classrooms using an AI tutor for linear equation solving. In the final experiment, 343 middle school students across 18 classrooms, 8 teachers, and 4 schools/districts were randomly assigned to one of three conditions: no glasses, glasses without analytics, or glasses with analytics. The paper reports that Lumilo improved student learning, especially for lower-performing students, and shifted teacher attention toward students who needed help most. The authors conclude that real-time teacher-facing analytics can make AI tutoring more effective when designed as a complement to human judgment, not a replacement for it.",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is a peer-reviewed in-the-wild field experiment with random assignment of classrooms to conditions and hierarchical linear modeling, which gives it relatively strong causal credibility. Some concerns remain because the paper is a case study with a modest sample and the text excerpt does not report full effect sizes for the main outcomes.",
+  "impact_tier": "green",
+  "impact_tier_rationale": "The reported effects on linear equation learning are positive and appear meaningful, especially for lower-pretest students, but exact effect sizes are not provided in the excerpt. The impact is therefore promising and likely modest-to-moderate rather than clearly large.",
+  "interventions": [
+    {
+      "intervention": "Intelligent Tutoring System (ITS)",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "AI tutor-supported linear equation solving in middle school classrooms (Lynnette), paired with teacher-facing mixed-reality awareness support to coordinate help during class"
+    },
+    {
+      "intervention": "Other",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "Mixed-reality smart glasses (Lumilo/HoloLens) providing real-time teacher awareness analytics about students' learning, metacognition, behavior, and remote screen monitoring in AI-supported classrooms"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 1.0,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "In a field experiment with 343 middle school students across 18 classrooms, 8 teachers, and 4 schools/districts (analysis on n=286 after absences), students in the Glasses + Analytics condition showed greater pre/post learning gains on linear equation solving than students in the No Glasses business-as-usual condition and the Glasses-only condition. The paper reports statistically supported positive effects, especially for lower-pretest students, but does not provide a numerical effect size in the text excerpt.",
+        "measure": "15-minute pre-test and post-test on linear equation solving",
+        "study_size": "n=286 analyzed (343 enrolled)",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Intelligent Tutoring System (ITS)"
+    },
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 1.0,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The teacher-facing Lumilo system improved outcomes above and beyond a minimal monitoring-only glasses condition. This indicates that the real-time analytics, not just the wearable display or novelty of monitoring, contributed to stronger linear-equation learning gains.",
+        "measure": "Pre/post linear equation solving test gains",
+        "study_size": "n=286 analyzed (343 enrolled)",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Other"
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.78,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Classroom observations and process data suggest Lumilo changed teacher attention allocation in ways consistent with improved in-the-moment decision-making: teachers spent more time with lower-pretest students and used complementary cues from the AI system plus their own observations. The paper frames this as evidence of human\u2013AI complementarity, but the durable-skill outcome is indirect and not measured with a dedicated scale.",
+        "measure": "Teacher attention allocation, classroom observation, and process data on teacher-student interactions",
+        "study_size": "n=8 teachers, 18 classrooms, 286 students",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Other"
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "high_attrition",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "classroom",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "high",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

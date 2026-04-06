@@ -1,0 +1,48 @@
+{
+  "title": "TUTORBENCH: A Benchmark to Assess Tutoring Capabilities of Large Language Models",
+  "doi": "10.48550/arXiv.2510.02663",
+  "year": 2025,
+  "venue": "arXiv preprint",
+  "url": "http://arxiv.org/abs/2510.02663v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper introduces TUTORBENCH, a benchmark for evaluating the tutoring capabilities of large language models (LLMs). The work addresses the gap between general-purpose LLM benchmarks and the more nuanced human-centered skills needed for tutoring, such as adaptive explanation, feedback on student work, and active learning support. The authors argue that existing benchmarks are too narrow and often fail to capture multimodal tutoring interactions or the need for rubric-based evaluation of open-ended responses.\n\nTUTORBENCH contains 1,490 human-expert-curated tutoring conversations centered on high-school and AP-level STEM content across biology, physics, chemistry, statistics, calculus, and computer science. Each sample includes sample-specific rubrics, and model outputs are scored using an LLM-judge with rubric-based pass/fail criteria. The benchmark includes both text-only and image-based student work, reflecting realistic tutoring interactions where learners upload handwritten or printed work.\n\nThe paper evaluates 16 frontier LLMs on TUTORBENCH and finds that even the best models score only about 56% overall, with particular weakness in adaptive explanation generation and in providing fully effective tutoring behaviors. The authors also validate their automated judge against human expert ratings and conclude that rubric-based benchmarking can provide scalable, fine-grained evidence about model strengths and limitations for AI tutoring.\n",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a benchmark and evaluation paper rather than an intervention study with learner outcomes. It uses a comparatively rigorous rubric-based methodology and human-expert validation, but it does not test causal effects on students or classrooms.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper\u2019s impact is methodological and diagnostic: it provides a benchmark that may improve future tutor models, but it reports no direct learner outcome gains. The practical contribution is substantial for model development, yet the measured impact on education is indirect and unclear.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "benchmarking large language models on tutoring-style interactions for high-school/AP STEM questions, including adaptive explanation generation, assessment and feedback, and active learning hint generation with text and image inputs"
+    },
+    {
+      "intervention": "Automated Feedback System",
+      "confidence": 0.8,
+      "role": "secondary",
+      "use_case": "evaluating LLM-generated feedback on student work by detecting mistakes, classifying errors, and providing corrective comments against sample-specific rubrics"
+    }
+  ],
+  "outcome_assignments": [],
+  "limitations": [
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

@@ -1,0 +1,93 @@
+{
+  "title": "Shiksha Copilot: Teacher-AI Collaboration for Curating and Customizing Lesson Plans in Low-Resource Schools",
+  "doi": "10.1145/3788074",
+  "year": 2026,
+  "venue": "Proc. ACM Hum.-Comput. Interact.",
+  "url": "https://doi.org/10.48550/arxiv.2507.00456",
+  "source_db": "openalex_search",
+  "populations": [
+    "Middle School (6th-8th)",
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper examines how teachers in low-resource schools collaborate with an AI-assisted lesson planning system, Shiksha Copilot, to create and adapt curriculum-aligned lesson plans. The core question is not only whether generative AI can produce usable instructional materials, but how teachers actually review, customize, and integrate AI-generated plans into their work in multilingual, resource-constrained settings.\n\nShiksha Copilot combined LLM-based generation, retrieval-augmented generation over textbook content, human curation, bilingual English-Kannada translation, and optional teacher-facing AI tools such as lesson-specific chat and question generation. The system was developed for government schools in Karnataka, India, and deployed to 1,043 teachers teaching grades 5\u201310 across Kannada- and English-medium public schools. The study used a mixed-methods design with system logs, surveys, and interviews, plus a curation phase involving 23 subject curators.\n\nThe findings show that AI-generated lesson plans were generally reliable in English but required heavy linguistic revision in Kannada. Teachers used the tool both for instruction and for bureaucratic record-keeping, and the system reduced planning time and stress while supporting a shift toward more activity-based pedagogy. At the same time, teachers often adapted content mentally or off-platform, and broader change was constrained by structural issues such as administrative demands, staffing shortages, and language/translation quality problems. The paper concludes that effective teacher-AI collaboration depends on human oversight, contextual adaptation, and community-based curation, especially in low-resource and multilingual settings.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed mixed-methods field deployment with surveys, interviews, and log analysis, but it is not a randomized or quasi-experimental causal impact study. The evidence is strong for implementation and user-perceived outcomes, but weaker for attributing changes to the intervention alone.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports clear operational benefits for a priority population of teachers in low-resource schools, especially reduced planning burden and improved access to materials. However, the impact is mostly modest/qualitative, with no direct student achievement effect sizes and substantial constraints on scalability and language quality.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.91,
+      "role": "primary",
+      "use_case": "teacher-facing LLM-based lesson planning and curriculum-aligned content generation with human-in-the-loop curation, bilingual English-Kannada support, lesson-specific chat, general education chat, and question-generation tools for K-12 teachers"
+    },
+    {
+      "intervention": "Computer-Assisted Instruction (CAI)",
+      "confidence": 0.62,
+      "role": "secondary",
+      "use_case": "teacher-supported digital lesson-plan distribution and customization platform for classroom instructional planning in low-resource K-12 schools"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.96,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Shiksha Copilot reduced bureaucratic workload and lesson-planning burden for teachers in low-resource Karnataka schools. Survey and interview evidence indicate measurable reductions in lesson-planning time and teacher stress, with teachers using the tool to generate and customize lesson plans for both instructional delivery and record-keeping; the paper does not report a single pooled effect size for these outcomes.",
+        "measure": "Teacher-reported lesson-planning time, administrative/record-keeping workload, and teacher stress (Teacher Stress Scale)",
+        "study_size": "n=406 matched survey responses; n=22 teacher interviews; platform logs from 5,544 teacher-created lesson plans",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Systemic / Institutional Impact",
+      "confidence": 0.83,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The system supported broader organizational and institutional workflows by helping teachers satisfy administrative documentation requirements and fit state-mandated lesson-plan formats (e.g., 5E). However, the paper also reports that staffing shortages and administrative demands limited broader pedagogical change, so the institutional impact was meaningful but constrained.",
+        "measure": "Qualitative interview themes about documentation compliance, workflow integration, and organizational change",
+        "study_size": "n=43 interviews; n=23 curators; n=1,043 teachers in deployment",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.78,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The tool improved access to curriculum-aligned lesson plans and shifted some teachers toward activity-based pedagogy, but the paper does not provide student learning outcome measures. Curators reported high reliability in English lesson plans (96.13% of content blocks suitable for classroom use, 4.1% edited), while Kannada translations required extensive revision (94.4% of blocks edited), indicating stronger academic utility in English than in Kannada.",
+        "measure": "Curator ratings of lesson-plan quality, edit rates by content block, and teacher reports of pedagogical use",
+        "study_size": "991 curated lesson plans (965 English, 26 Kannada); 5,544 teacher-created lesson plans",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "no_control_group",
+    "self_reported_measures",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "blended",
+  "teacher_training": "yes",
+  "implementation_fidelity": "medium",
+  "study_country": "India",
+  "study_region": "South Asia",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

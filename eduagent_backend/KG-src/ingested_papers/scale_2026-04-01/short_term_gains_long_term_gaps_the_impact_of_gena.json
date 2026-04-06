@@ -1,0 +1,402 @@
+{
+  "title": "SHORT-TERM GAINS, LONG-TERM GAPS: THE IMPACT OF GENAI AND SEARCH TECHNOLOGIES ON RETENTION",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "https://arxiv.org/abs/2507.07357",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Randomized Controlled Trial (RCT)",
+  "extended_summary": "This paper examines whether different information tools\u2014Generative AI (ChatGPT), a search engine (Google), an e-textbook, or no tool\u2014affect students\u2019 immediate learning performance and later retention across tasks of different cognitive complexity. The study is motivated by concern that AI tools may improve short-term task completion by providing fast, structured answers, but may not support durable learning or higher-order thinking. Using Bloom\u2019s taxonomy, the authors compare effects across lower-order tasks (remembering/understanding), medium-order tasks (applying), and higher-order tasks (analyzing/evaluating/creating).\n\nThe intervention was an experimentally controlled comparison of four conditions. Students were randomly assigned to a control group, an e-textbook group, a Google group, or a ChatGPT group. All participants completed three sequential data-privacy learning tasks and then took corresponding quizzes without access to external tools. A delayed post-test administered three weeks after the final task measured retention. The study therefore evaluates both immediate achievement and longer-term retention under different technology conditions.\n\nThe population consisted of 123 students from an information systems department at a private university, and the study was conducted in a supervised laboratory setting as part of a course context. Lecture/demonstration sessions preceded the lab activities, and the lab sessions restricted students to only their assigned resource. The topic domain was data privacy and GDPR, and tasks were scenario-based and aligned to Bloom\u2019s revised taxonomy.\n\nThe main conclusion is that ChatGPT and Google improved immediate performance on lower- and medium-complexity tasks relative to the control group, especially for remembering, understanding, and applying. However, these advantages weakened over time: retention scores for ChatGPT and Google declined and converged with other groups, and no significant advantage appeared for higher-order tasks. For the most complex task, no significant group differences were found, and the control group showed the highest retention. The authors argue that AI and search tools can support efficient short-term performance, but do not automatically promote long-term retention or deeper cognition unless paired with structured pedagogical strategies.",
+  "limitations": [
+    "short_duration",
+    "single_site",
+    "non_representative_population",
+    "high_attrition"
+  ],
+  "duration_weeks": "3",
+  "setting": "lab",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "high",
+  "study_country": "Turkey",
+  "study_region": "Middle East & North Africa",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "tutoring_instruction"
+      ],
+      "description": "OpenAI's generative AI chatbot that produces natural-language responses and synthesized information to user prompts.",
+      "use_case": "Students in the ChatGPT condition used only ChatGPT to complete three data-privacy learning tasks spanning Bloom's taxonomy levels (remember/understand, apply, analyze/evaluate/create), and were then assessed immediately and again three weeks later without tool access.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "For the lower-order 'knowing and understanding' task, the ChatGPT group had the highest immediate assessment performance (M=82.6, SD=17.8) and significantly outperformed the e-textbook group and control group by mean differences of 16.60 and 22.39, respectively (p<.01). The univariate ANOVA for Task 1 was significant, F(3,119)=10.650, p<.001, partial \u03b7\u00b2=.212.",
+          "measure": "Immediate post-task assessment score for Task 1 (remembering and understanding)",
+          "effect_size": "partial \u03b7\u00b2=.212",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=123"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "For the medium-complexity 'applying' task, the ChatGPT group again showed the best immediate performance (M=67.9, SD=20.0). The control group scored significantly lower than the ChatGPT group, with a mean difference of 20.15 (p<.01); the overall Task 2 ANOVA was F(3,119)=7.279, p<.001, partial \u03b7\u00b2=.155.",
+          "measure": "Immediate post-task assessment score for Task 2 (applying)",
+          "effect_size": "partial \u03b7\u00b2=.155",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=123"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "For the higher-order task involving synthesizing, evaluating, and creating, the ChatGPT group did not differ significantly from other groups. Task 3 scores for the ChatGPT group were M=41.2, SD=14.8, and the overall ANOVA was not significant, F(3,119)=0.768, p=.514.",
+          "measure": "Immediate post-task assessment score for Task 3 (synthesizing, evaluating, creating)",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=123"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "For Task 1 retention, the ChatGPT group's score dropped from the immediate assessment mean of 82.6 (SD=17.8) to a three-week retention mean of 65.5 (SD=22.1). The assessment-by-time interaction was significant, Wilk's \u03bb=.885, F(3,119)=5.175, p<.01, partial \u03b7=.115, and the paper states that the ChatGPT group experienced a notable drop in retention scores.",
+          "measure": "Three-week retention score for Task 1 relative to immediate assessment",
+          "effect_size": "partial \u03b7=.115",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=123"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "For Task 2 retention, the ChatGPT group showed a small decline from immediate assessment (M=67.9, SD=20.0) to retention (M=64.5, SD=21.1), but the paper reports that none of the effects were statistically significant. Thus, ChatGPT did not produce a significant retention advantage for the applying task.",
+          "measure": "Three-week retention score for Task 2 relative to immediate assessment",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=123"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "For Task 3 retention, the ChatGPT group's score declined slightly from M=41.2 (SD=14.8) to M=39.9 (SD=15.1), but no effects were statistically significant. The paper notes that the control group had the highest retention on this higher-order task.",
+          "measure": "Three-week retention score for Task 3 relative to immediate assessment",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=123"
+        }
+      ]
+    },
+    {
+      "name": "Google",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "language_speech",
+        "tutoring_instruction"
+      ],
+      "description": "Google's web search engine for retrieving online information through search queries.",
+      "use_case": "Students in the Google condition used only the Google search engine to complete the same three data-privacy learning tasks, followed by immediate quizzes and a three-week retention test completed without tool access.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "For the lower-order 'knowing and understanding' task, the Google group scored M=79.1 (SD=17.4) and significantly outperformed the control group by a mean difference of 18.90 (p<.01). The overall Task 1 ANOVA was significant, F(3,119)=10.650, p<.001, partial \u03b7\u00b2=.212.",
+          "measure": "Immediate post-task assessment score for Task 1 (remembering and understanding)",
+          "effect_size": "partial \u03b7\u00b2=.212",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=123"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "For the 'applying' task, the Google group scored M=66.6 (SD=13.7), and the control group scored significantly lower than the Google group by a mean difference of 18.81 (p<.01). The overall Task 2 ANOVA was significant, F(3,119)=7.279, p<.001, partial \u03b7\u00b2=.155.",
+          "measure": "Immediate post-task assessment score for Task 2 (applying)",
+          "effect_size": "partial \u03b7\u00b2=.155",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=123"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "For the higher-order Task 3, the Google group had M=41.5 (SD=14.8), and there were no significant differences among groups. The overall ANOVA was F(3,119)=0.768, p=.514.",
+          "measure": "Immediate post-task assessment score for Task 3 (synthesizing, evaluating, creating)",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=123"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "For Task 1 retention, the Google group's score declined from the immediate assessment mean of 79.1 (SD=17.4) to a three-week retention mean of 67.8 (SD=25.4). The assessment-by-time interaction for Task 1 was significant, Wilk's \u03bb=.885, F(3,119)=5.175, p<.01, partial \u03b7=.115, and the paper notes that the Google group saw a decline, though less pronounced than ChatGPT.",
+          "measure": "Three-week retention score for Task 1 relative to immediate assessment",
+          "effect_size": "partial \u03b7=.115",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=123"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "For Task 2 retention, the Google group's score changed from M=66.6 (SD=13.7) to M=63.1 (SD=20.1), but the paper reports that none of the effects were statistically significant. This indicates no significant retention difference for the applying task.",
+          "measure": "Three-week retention score for Task 2 relative to immediate assessment",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=123"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "For Task 3 retention, the Google group's mean declined from 41.5 (SD=14.8) to 40.6 (SD=13.8), but no effects were statistically significant. The study reports no significant retention differences across groups for this higher-order task.",
+          "measure": "Three-week retention score for Task 3 relative to immediate assessment",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=123"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is a randomized experimental pre/post study with a control group and three comparison conditions, which is stronger than correlational evidence. However, it is a single-institution lab study with a modest sample (n=123), restricted-resource conditions, and some design limitations noted by the authors, so it does not reach blue-tier confidence.",
+  "impact_tier": "blue",
+  "impact_tier_rationale": "The paper reports statistically significant immediate learning effects with moderate effect sizes at the task level (partial \u03b7\u00b2=.212 for Task 1 and .155 for Task 2), indicating meaningful short-term impact. However, retention benefits were weak or absent, so the impact is strong but concentrated in immediate performance rather than long-term learning.",
+  "citations": [
+    {
+      "title": "E-books or textbooks: Students prefer textbooks",
+      "doi": null,
+      "year": 2010,
+      "venue": "Computers & Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Hypertext fiction reading: haptics and immersion",
+      "doi": null,
+      "year": 2008,
+      "venue": "Journal of Research in Reading",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Electronic environments for reading: An annotated bibliography of pertinent hardware and software (2011)",
+      "doi": null,
+      "year": 2012,
+      "venue": "Scholarly and Research Communication",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Why first-year college students select online research resources as their favorite",
+      "doi": null,
+      "year": 2012,
+      "venue": "First Monday",
+      "citation_level": 2,
+      "citation_context": "e-textbooks linked to deeper engagement with scholarly content"
+    },
+    {
+      "title": "Recent advances on searching as learning: An introduction to the special issue",
+      "doi": null,
+      "year": 2016,
+      "venue": "Journal of Information Science",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Personalized information seeking assistant (pisa): from programming information seeking to learning",
+      "doi": null,
+      "year": 2017,
+      "venue": "Information Retrieval Journal",
+      "citation_level": 2,
+      "citation_context": "Google use requires query formulation and critical filtering"
+    },
+    {
+      "title": "Exploring users\u2019 learning gains within search sessions",
+      "doi": null,
+      "year": 2020,
+      "venue": "Proceedings of the 2020 Conference on Human Information Interaction and Retrieval",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Contrasting search as a learning activity with instructor-designed learning",
+      "doi": null,
+      "year": 2018,
+      "venue": "Proceedings of the 27th ACM International Conference on Information and Knowledge Management",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A taxonomy for learning, teaching, and assessing: A revision of Bloom\u2019s taxonomy of educational objectives: complete edition",
+      "doi": null,
+      "year": 2001,
+      "venue": "Addison Wesley Longman, Inc.",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Assessing problem-based learning in a software engineering curriculum using bloom\u2019s taxonomy and the ieee software engineering body of knowledge",
+      "doi": null,
+      "year": 2016,
+      "venue": "ACM Transactions on Computing Education (TOCE)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Application of bloom\u2019s taxonomy in software engineering assessments",
+      "doi": null,
+      "year": 2008,
+      "venue": "Proceedings of the 8th WSEAS International Conference on Applied Computer Science",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Quantifying student progress through bloom\u2019s taxonomy cognitive categories in computer programming courses",
+      "doi": null,
+      "year": 2015,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Bloom\u2019s taxonomy for cs assessment",
+      "doi": null,
+      "year": 2008,
+      "venue": "Proceedings of the Tenth Conference on Australasian Computing Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Bloom\u2019s taxonomy revisited: specifying assessable learning objectives in computer science",
+      "doi": null,
+      "year": 2008,
+      "venue": "ACM SIGCSE Bulletin",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Searching as learning: A systematization based on literature",
+      "doi": null,
+      "year": 2016,
+      "venue": "Journal of Information Science",
+      "citation_level": 2,
+      "citation_context": "supports framing of search tasks by Bloom\u2019s taxonomy"
+    },
+    {
+      "title": "Using the taxonomy of cognitive learning to model online searching",
+      "doi": null,
+      "year": 2009,
+      "venue": "Information Processing & Management",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Task complexity, vertical display and user interaction in aggregated search",
+      "doi": null,
+      "year": 2012,
+      "venue": "Proceedings of the 35th International ACM SIGIR Conference on Research and Development in Information Retrieval",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Children\u2019s use of the Yahooligans! web search engine: I. cognitive, physical, and affective behaviors on fact-based search tasks",
+      "doi": null,
+      "year": 2000,
+      "venue": "Journal of the American Society for Information Science",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Children\u2019s roles using keyword search interfaces at home",
+      "doi": null,
+      "year": 2010,
+      "venue": "Proceedings of the SIGCHI Conference on Human Factors in Computing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Children searching information on the internet: Performance on children\u2019s interfaces compared to Google",
+      "doi": null,
+      "year": 2010,
+      "venue": "Workshop on Accessible Search Systems 2010",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Google or ChatGPT: Who is the better helper for university students",
+      "doi": null,
+      "year": 2024,
+      "venue": "Education and Information Technologies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT as a learning assistant: Its impact on students learning and experiences",
+      "doi": null,
+      "year": 2024,
+      "venue": "International Journal of Education in Mathematics, Science and Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A revision of Bloom\u2019s taxonomy: An overview",
+      "doi": null,
+      "year": 2002,
+      "venue": "Theory into Practice",
+      "citation_level": 3,
+      "citation_context": "basis for designing three task complexity levels"
+    },
+    {
+      "title": "Discovering statistics using IBM SPSS statistics",
+      "doi": null,
+      "year": 2013,
+      "venue": "Sage",
+      "citation_level": 3,
+      "citation_context": "statistical procedures for MANOVA and repeated-measures ANOVA"
+    },
+    {
+      "title": "Human memory: Theory and practice",
+      "doi": null,
+      "year": 1997,
+      "venue": "Psychology Press",
+      "citation_level": 2,
+      "citation_context": "supports explanation via natural forgetting processes"
+    },
+    {
+      "title": "Assessing the impact of reflective activities in digital and analog electronics courses",
+      "doi": null,
+      "year": 2018,
+      "venue": "IEEE Transactions on Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Spaced retrieval: absolute spacing enhances learning regardless of relative spacing",
+      "doi": null,
+      "year": 2011,
+      "venue": "Journal of Experimental Psychology: Learning, Memory, and Cognition",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

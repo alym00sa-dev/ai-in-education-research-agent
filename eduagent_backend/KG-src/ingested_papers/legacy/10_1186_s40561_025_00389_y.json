@@ -1,0 +1,129 @@
+{
+  "title": "Adaptive intelligent tutoring systems for STEM education: analysis of the learning impact and effectiveness of personalized feedback",
+  "doi": "10.1186/s40561-025-00389-y",
+  "year": 2025,
+  "venue": "Smart Learning Environments",
+  "url": "https://link.springer.com/article/10.1186/s40561-025-00389-y",
+  "source_db": "backfill_v3",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This study examines whether an AI-based adaptive intelligent tutoring system can improve STEM learning by addressing a key limitation of traditional instruction: its inability to personalize content and feedback for students with diverse knowledge levels. The paper focuses on mathematics, physics, and programming, where concept mastery is sequential and students often need timely, targeted support to progress.\n\nThe intervention was a modular intelligent tutoring system that integrated natural language processing, deep learning, content recommendation, and real-time assessment. The system analyzed student responses and interaction patterns, adapted exercise difficulty, recommended personalized content, and generated immediate feedback. Its performance was compared with a control condition using traditional static teaching resources, and the study also included post-experimental surveys and structured interviews to capture perceptions of usefulness and learning experience.\n\nThe study involved 450 university students divided into experimental and control groups and was conducted over six weeks, although the paper also refers to one academic semester in describing the evaluation context. Students used the system in STEM learning modules covering mathematics, physics, and programming. The context appears to be a controlled educational environment within universities in Ecuador, with quantitative analyses including t-tests, ANOVA, and linear regression, alongside qualitative survey and interview data.\n\nThe main conclusion is that the adaptive tutoring system outperformed traditional instruction on several outcomes, including feedback precision, response time, cumulative progress, and discipline-specific performance. The experimental group achieved substantially higher precision and faster responses, and students reported positive perceptions of the adaptive feedback, with 80% finding it useful. The authors conclude that AI-driven personalized feedback and real-time adaptation can improve STEM learning, while also noting limits to generalizability because the sample was a homogeneous university population and the system was not validated in fully real-world settings.",
+  "limitations": [
+    "short_duration",
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "6",
+  "setting": "blended",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Ecuador",
+  "study_region": "Latin America & Caribbean",
+  "identified_tools": [
+    {
+      "name": "ITS",
+      "is_named_product": true,
+      "specificity": "category",
+      "category_key": [
+        "tutoring_instruction"
+      ],
+      "description": "Intelligent tutoring system that provides adaptive instruction and personalized feedback to support student learning through guided practice and ongoing assessment.",
+      "use_case": "Deployed over one academic semester with 450 university students in STEM subjects (mathematics, physics, and programming). The experimental group used the adaptive AI tutoring system for exercises and personalized feedback, while the control group received traditional static resource-assisted teaching methods.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The paper reports significantly higher problem-solving precision for the experimental group using the intelligent tutoring system than for the control group. Reported average precision in the experimental group was 78% in mathematics, 70% in physics, and 85% in programming; the between-group difference was statistically significant (p=0.002).",
+          "measure": "exercise/problem-solving precision in STEM subjects",
+          "effect_size": "p=0.002; experimental-group precision: 78% mathematics, 70% physics, 85% programming",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=450",
+          "study_count": null
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "A linear regression analysis found a positive association between time interacting with the system and progress in fundamental concepts. The reported coefficient of determination was R\u00b2=0.76, and high-interaction students showed progress rates above 90% in programming and 80% in physics.",
+          "measure": "progress in fundamental concepts as a function of interaction time",
+          "effect_size": "R\u00b2=0.76",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=450",
+          "study_count": null
+        },
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In mathematics, students using the intelligent tutoring system achieved 78% average precision on assessed tasks. The paper states this outperformed the control group, though no separate effect size beyond the overall significance test is provided.",
+          "measure": "mathematics task precision",
+          "effect_size": "78%",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=450",
+          "study_count": null
+        },
+        {
+          "outcome_category": "Academic \u2014 Scientific Reasoning",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In physics, students in the experimental group achieved 70% average precision on assessed tasks. Among high-interaction students, progress exceeded 80% in physics, indicating better outcomes with more sustained system use.",
+          "measure": "physics task precision and concept progress",
+          "effect_size": "70%",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=450",
+          "study_count": null
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In programming, students in the experimental group achieved 85% average precision, and high-interaction students exceeded 90% progress rates. The paper presents this as stronger performance than the control group, with overall precision differences significant at p=0.002.",
+          "measure": "programming task precision and concept progress",
+          "effect_size": "85%",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=450",
+          "study_count": null
+        },
+        {
+          "outcome_category": "Affective/Motivational \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Students reported significantly more positive perceived progress in the experimental condition than in the control condition. The between-group difference in perceived progress was statistically significant (p=0.032).",
+          "measure": "self-reported perceived progress",
+          "effect_size": "p=0.032",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=450",
+          "study_count": null
+        },
+        {
+          "outcome_category": "Affective/Motivational \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Student perceptions of the adaptive feedback were favorable, with 80% of students indicating that the feedback was useful for identifying and correcting errors.",
+          "measure": "student-rated usefulness of adaptive feedback",
+          "effect_size": "80%",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=450",
+          "study_count": null
+        }
+      ]
+    }
+  ],
+  "verdict": "",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "The study uses a comparison group and combines quantitative and qualitative methods, but the text does not indicate random assignment and does not provide enough detail to establish a clearly rigorous quasi-experimental design. Because the evidence includes mixed methods with some methodological ambiguity and limited generalizability, yellow is the best fit.",
+  "impact_tier": "green",
+  "impact_tier_rationale": "The paper reports statistically significant positive differences favoring the intervention across precision, response time, and cumulative progress, suggesting meaningful benefits. However, no standardized effect size is reported, so impact appears positive but cannot be classified at the highest level.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": "Converted from kg_curator_v4 legacy extraction",
+  "_legacy_source": "/Users/alymoosa/Documents/A-Moosa-Dev/AI-EDU-Dev/eduagent/open_deep_research_v2/scripts/extraction_profiles_v3/adaptive_intelligent_tutoring_systems_for_stem_education_analysis_of_the_learnin.json"
+}

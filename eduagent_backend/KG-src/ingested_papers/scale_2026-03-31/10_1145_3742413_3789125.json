@@ -1,0 +1,444 @@
+{
+  "title": "GuideAI: A Real-time Personalized Learning Solution with Adaptive Interventions",
+  "doi": "10.1145/3742413.3789125",
+  "year": 2026,
+  "venue": "31st International Conference on Intelligent User Interfaces (IUI '26)",
+  "url": "https://arxiv.org/abs/2601.20402",
+  "source_db": "scale_stanford",
+  "population": "Mixed",
+  "user_type": "Student",
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses a key limitation of current LLM-based learning tools: although they can explain concepts and answer questions, they generally do not adapt to learners\u2019 real-time cognitive, attentional, or physiological states. The authors argue that existing AI tutors are too text-centric and reactive, missing opportunities to detect overload, stress, disengagement, or confusion as they occur. To inform the design, they first conducted a formative survey with 66 participants to understand learner needs, preferences, and frustrations with current AI learning systems.\n\nThe intervention studied is GuideAI, a web-based personalized learning system that integrates large language models with real-time multi-modal biosensory inputs. GuideAI uses eye tracking, heart rate variability, posture monitoring, and note-taking analysis to infer six learner-state dimensions, including cognitive load, attention, engagement, understanding, stress, and fatigue. Based on these signals, it adapts content, pacing, tone, and modality-specific interventions across text, image, audio, and video learning modes. Adaptive supports include simplifying explanations, restructuring content, redirecting attention, prompting breaks, guiding breathing exercises, and adjusting challenge level.\n\nThe empirical evaluation involved a preliminary controlled within-subjects study with 25 participants aged 18 to 42 from undergraduate, master\u2019s, and doctoral backgrounds, all screened to avoid prior knowledge of the learning topics. Each participant used both GuideAI and a non-personalized LLM control condition in a counterbalanced order, with matched STEM-oriented topics and multiple post-task assessments. Outcomes included NASA-TLX cognitive load ratings, multiple-choice recall and problem-solving assessments, subjective ratings, qualitative feedback, and an ablation analysis of intervention types.\n\nThe main conclusions are that GuideAI improved both learning performance and user experience relative to the non-adaptive baseline. Participants showed statistically significant gains in problem-solving and some recall measures, alongside lower reported mental demand, effort, and frustration and higher perceived performance. Qualitative feedback suggested that users valued the system\u2019s personalized pacing, stress regulation, and posture reminders. The authors conclude that biosensor-augmented, state-aware LLM learning systems have strong potential to support individualized learning, while also acknowledging important limitations related to privacy, specialized hardware requirements, possible LLM hallucinations, small-sample preliminary validation, and the lack of long-term follow-up.",
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "self_reported_measures",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "lab",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "India",
+  "study_region": "South Asia",
+  "identified_tools": [
+    {
+      "name": "GuideAI",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "personalization_adaptation",
+        "tutoring_instruction"
+      ],
+      "description": "A biosensor-augmented, multimodal LLM-based personalized learning system that uses real-time signals such as eye gaze, heart rate variability, posture, and note-taking behavior to infer learner state and adapt content, pacing, tone, and interventions across text, image, audio, and video learning modes.",
+      "use_case": "Studied as a real-time adaptive learning platform compared against a non-personalized standard LLM baseline in a within-subjects experiment; it delivered cognitive, physiological, attentional, and tone-adaptive interventions during STEM learning tasks.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In a preliminary within-subjects study, GuideAI improved knowledge performance relative to a non-adaptive LLM baseline across learning modes. Across all modalities, the paper reports a mean improvement of 16.5 percentage points in problem-solving and 10.3 percentage points in recall; problem-solving gains were Text 75% vs 52%, Image 78% vs 48%, Audio 70% vs 59% (p < 0.05), and Video 72% vs 68% (n.s.), while recall gains were Image 82% vs 62% and Audio 70% vs 52% (p < 0.05), with Text 65% vs 64% and Video 72% vs 70%.",
+          "measure": "Multiple-choice knowledge assessments testing factual recall and conceptual understanding/application-based problems",
+          "effect_size": "mean improvement of 16.5 percentage points in problem-solving; 10.3 percentage points in recall",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=25"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "GuideAI reduced several NASA-TLX cognitive load dimensions compared with the control condition. Reported differences were lower mental demand (\u0394 = 0.49, p < 0.05), physical demand (\u0394 = 0.23, p < 0.05), effort (\u0394 = 0.28, p < 0.05), and frustration (\u0394 = 0.54, p < 0.05), alongside higher perceived performance (\u0394 = 0.34, p < 0.05).",
+          "measure": "NASA-TLX ratings: mental demand, physical demand, temporal demand, performance, effort, frustration",
+          "effect_size": "\u0394 = 0.49 mental demand; \u0394 = 0.23 physical demand; \u0394 = 0.28 effort; \u0394 = 0.54 frustration; \u0394 = 0.34 performance",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=25"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Participants rated GuideAI significantly higher than control on focus and attention, content personalization, adaptive pacing, and perceived learning. Means were Focus/Attention M=5.60, SD=1.25 vs 4.85, SD=1.34 (p=0.0418), Content Personalization M=5.55, SD=1.32 vs 4.90, SD=1.26 (p=0.0362), Adaptive Pacing M=5.40, SD=1.28 vs 4.65, SD=1.22 (p=0.0322), and Perceived Learning M=5.50, SD=1.16 vs 4.75, SD=1.18 (p=0.0402).",
+          "measure": "7-point Likert ratings of focus and attention, content personalization, adaptive pacing, and perceived learning",
+          "effect_size": "Focus d=-0.48; Content Personalization d=-0.45; Adaptive Pacing d=-0.47; Perceived Learning d=-0.49",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=25"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "An ablation analysis suggested that GuideAI\u2019s cognitive optimization interventions were the strongest contributors to reduced workload, while attention redirection improved perceived performance and temporal demand. Cognitive optimization reduced mental demand by 0.49 \u00b1 0.10, effort by 0.31 \u00b1 0.08, and frustration by 0.52 \u00b1 0.07; attention redirection reduced temporal demand by 0.39 \u00b1 0.13 and improved perceived performance by 0.49 \u00b1 0.13; tone-adaptive communication most strongly reduced frustration by 0.72 \u00b1 0.11.",
+          "measure": "NASA-TLX improvement scores by intervention category",
+          "effect_size": "0.49 \u00b1 0.10 mental demand; 0.31 \u00b1 0.08 effort; 0.52 \u00b1 0.07 frustration; 0.39 \u00b1 0.13 temporal demand; 0.49 \u00b1 0.13 performance; 0.72 \u00b1 0.11 frustration",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=25"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical within-subjects controlled study of a specific system (GuideAI), but it is a preliminary validation with a small sample (n=25), mixed-method reporting, and limited methodological detail for causal credibility. It is stronger than a purely conceptual paper but does not meet blue/green standards for a well-established RCT/QED evidence base.",
+  "impact_tier": "blue",
+  "impact_tier_rationale": "The paper reports comparatively large practical gains, including 16.5 percentage-point average improvement in problem-solving, 10.3 percentage-point improvement in recall, and several statistically significant workload reductions and subjective gains. These results indicate medium-to-large positive impact, even though precision estimates are not reported.",
+  "citations": [
+    {
+      "title": "Leveraging LLMs and wearables to provide personalized recommendations for enhancing student well-being and academic performance through a proof of concept",
+      "doi": "10.1038/s41598-025-89386-2",
+      "year": 2025,
+      "venue": "Sci Rep"
+    },
+    {
+      "title": "LLMs in Education: Novel Perspectives, Challenges, and Opportunities",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv"
+    },
+    {
+      "title": "On the Opportunities and Risks of Foundation Models",
+      "doi": null,
+      "year": 2022,
+      "venue": "arXiv"
+    },
+    {
+      "title": "Eye movements and the integration of visual memory and visual perception",
+      "doi": "10.3758/BF03193327",
+      "year": 2005,
+      "venue": "Perception & Psychophysics"
+    },
+    {
+      "title": "Empowering Private Tutoring by Chaining Large Language Models",
+      "doi": "10.1145/3627673.3679665",
+      "year": 2024,
+      "venue": "Proceedings of the 33rd ACM International Conference on Information and Knowledge Management"
+    },
+    {
+      "title": "LLM Agents for Education: Advances and Applications",
+      "doi": null,
+      "year": 2025,
+      "venue": "arXiv"
+    },
+    {
+      "title": "Efficiency: an underlying principle of learning?",
+      "doi": "10.1515/revneuro-2017-0050",
+      "year": 2018,
+      "venue": "Reviews in the Neurosciences"
+    },
+    {
+      "title": "RMSSD, a measure of vagus-mediated heart rate variability, is associated with risk factors for SUDEP: the SUDEP-7 Inventory",
+      "doi": "10.1016/j.yebeh.2010.06.011",
+      "year": 2010,
+      "venue": "Epilepsy & Behavior"
+    },
+    {
+      "title": "Navigating the State of Cognitive Flow: Context-Aware AI Interventions for Effective Reasoning Support",
+      "doi": null,
+      "year": 2025,
+      "venue": "arXiv"
+    },
+    {
+      "title": "Gaze tutor: A gaze-reactive intelligent tutoring system",
+      "doi": "10.1016/j.ijhcs.2012.01.004",
+      "year": 2012,
+      "venue": "International Journal of Human-Computer Studies"
+    },
+    {
+      "title": "Multimodal semi-automated affect detection from conversational cues, gross body language, and facial features",
+      "doi": "10.1007/s11257-010-9074-4",
+      "year": 2010,
+      "venue": "User Modeling and User-Adapted Interaction"
+    },
+    {
+      "title": "A Review and Meta-Analysis of Multimodal Affect Detection Systems",
+      "doi": "10.1145/2682899",
+      "year": 2015,
+      "venue": "ACM Comput. Surv."
+    },
+    {
+      "title": "New method for assessing cardiac parasympathetic activity using 24 hour electrocardiograms",
+      "doi": "10.1136/hrt.52.4.396",
+      "year": 1984,
+      "venue": "Heart"
+    },
+    {
+      "title": "PhysioLLM: Supporting Personalized Health Insights with Wearables and Large Language Models",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv"
+    },
+    {
+      "title": "Large Language Models for Wearable Sensor-Based Human Activity Recognition, Health Monitoring, and Behavioral Modeling: A Survey of Early Trends, Datasets, and Challenges",
+      "doi": "10.3390/s24155045",
+      "year": 2024,
+      "venue": "Sensors"
+    },
+    {
+      "title": "Coverage of PPG-based Wearable Devices in Office Tasks",
+      "doi": null,
+      "year": 2023,
+      "venue": "2023 Computing in Cardiology (CinC)"
+    },
+    {
+      "title": "Mechanisms of visual attention revealed by saccadic eye movements",
+      "doi": "10.1016/0028-3932(87)90044-3",
+      "year": 1987,
+      "venue": "Neuropsychologia"
+    },
+    {
+      "title": "Express saccades and visual attention",
+      "doi": "10.1017/S0140525X00031575",
+      "year": 1993,
+      "venue": "Behavioral and Brain Sciences"
+    },
+    {
+      "title": "The Oculomotor System",
+      "doi": null,
+      "year": 1991,
+      "venue": "Principles of Neural Science"
+    },
+    {
+      "title": "Beyond Final Answers: Evaluating Large Language Models for Math Tutoring",
+      "doi": null,
+      "year": 2025,
+      "venue": "arXiv"
+    },
+    {
+      "title": "Development of NASA-TLX (Task Load Index): Results of Empirical and Theoretical Research",
+      "doi": "10.1016/S0166-4115(08)62386-9",
+      "year": 1988,
+      "venue": "Human Mental Workload"
+    },
+    {
+      "title": "Exploring the potential of LLM to enhance teaching plans through teaching simulation",
+      "doi": "10.1038/s41539-025-00300-x",
+      "year": 2025,
+      "venue": "npj Science of Learning"
+    },
+    {
+      "title": "User see, user point: gaze and cursor alignment in web search",
+      "doi": "10.1145/2207676.2208591",
+      "year": 2012,
+      "venue": "Proceedings of the SIGCHI Conference on Human Factors in Computing Systems"
+    },
+    {
+      "title": "A Survey on Hallucination in Large Language Models: Principles, Taxonomy, Challenges, and Open Questions",
+      "doi": "10.1145/3703155",
+      "year": 2025,
+      "venue": "ACM Trans. Inf. Syst."
+    },
+    {
+      "title": "Classification of static postures with wearable sensors mounted on loose clothing",
+      "doi": "10.1038/s41598-022-27306-4",
+      "year": 2023,
+      "venue": "Scientific Reports"
+    },
+    {
+      "title": "Pupil: An Open Source Platform for Pervasive Eye Tracking and Mobile Gaze-based Interaction",
+      "doi": "10.1145/2638728.2641695",
+      "year": 2014,
+      "venue": "Adjunct Proceedings of the 2014 ACM International Joint Conference on Pervasive and Ubiquitous Computing"
+    },
+    {
+      "title": "Meet Khanmigo: Khan Academy\u2019s AI-powered teaching assistant & tutor",
+      "doi": null,
+      "year": 2025,
+      "venue": null
+    },
+    {
+      "title": "The Lab Streaming Layer for Synchronized Multimodal Recording",
+      "doi": "10.1101/2024.02.13.580071",
+      "year": 2024,
+      "venue": "bioRxiv"
+    },
+    {
+      "title": "AI and personalized learning: bridging the gap with modern educational goals",
+      "doi": null,
+      "year": 2025,
+      "venue": "arXiv"
+    },
+    {
+      "title": "A Technique for the Measurement of Attitudes",
+      "doi": null,
+      "year": 1932,
+      "venue": "Archives of Psychology"
+    },
+    {
+      "title": "DeBiasMe: De-biasing Human\u2013AI Interactions with Metacognitive AIED Interventions",
+      "doi": null,
+      "year": 2025,
+      "venue": "arXiv"
+    },
+    {
+      "title": "Advancing Generative Intelligent Tutoring Systems with GPT-4: Design, Evaluation, and a Modular Framework for Future Learning Platforms",
+      "doi": "10.3390/electronics13244876",
+      "year": 2024,
+      "venue": "Electronics"
+    },
+    {
+      "title": "Working memory control predicts fixation duration in scene-viewing",
+      "doi": "10.1007/s00426-022-01694-8",
+      "year": 2023,
+      "venue": "Psychological Research"
+    },
+    {
+      "title": "MediaPipe: A Framework for Perceiving and Processing Reality",
+      "doi": null,
+      "year": 2019,
+      "venue": "CVPR 2019 Workshop on Computer Vision for AR/VR"
+    },
+    {
+      "title": "Synchronized eye movements predict test scores in online video education",
+      "doi": "10.1073/pnas.2016980118",
+      "year": 2021,
+      "venue": "Proceedings of the National Academy of Sciences"
+    },
+    {
+      "title": "The Potential of Cognitive Circles to Measure Mental Load",
+      "doi": "10.1145/3746059.3747716",
+      "year": 2025,
+      "venue": "Proceedings of the 38th Annual ACM Symposium on User Interface Software and Technology"
+    },
+    {
+      "title": "Leveraging LLM Tutoring Systems for Non-Native English Speakers in Introductory CS Courses",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv"
+    },
+    {
+      "title": "Fixation-identification in dynamic scenes: comparing an automated algorithm to manual coding",
+      "doi": "10.1145/1394281.1394287",
+      "year": 2008,
+      "venue": "Proceedings of the 5th Symposium on Applied Perception in Graphics and Visualization"
+    },
+    {
+      "title": "Heart Rate Variability and Cognition: A Narrative Systematic Review of Longitudinal Studies",
+      "doi": "10.3390/jcm13010280",
+      "year": 2024,
+      "venue": "Journal of Clinical Medicine"
+    },
+    {
+      "title": "Introducing ChatGPT Edu",
+      "doi": null,
+      "year": 2024,
+      "venue": null
+    },
+    {
+      "title": "The Impact of Large Language Models on Higher Education: Exploring the Connection between AI and Education 4.0",
+      "doi": "10.3389/feduc.2024.1392091",
+      "year": 2024,
+      "venue": "Frontiers in Education"
+    },
+    {
+      "title": "Pupillometry as a measure of cognitive effort in younger and older adults",
+      "doi": "10.1111/j.1469-8986.2009.00947.x",
+      "year": 2010,
+      "venue": "Psychophysiology"
+    },
+    {
+      "title": "Toward a Cognitive Theory of Instruction",
+      "doi": "10.4324/9781315188522-2",
+      "year": 2017,
+      "venue": "Learning and Motivation in the Classroom"
+    },
+    {
+      "title": "Wilcoxon-Signed-Rank Test",
+      "doi": "10.1007/978-3-642-04898-2_616",
+      "year": 2011,
+      "venue": "International Encyclopedia of Statistical Science"
+    },
+    {
+      "title": "Pupil dilation as cognitive load measure in instructional videos on complex chemical representations",
+      "doi": "10.3389/feduc.2023.1062053",
+      "year": 2023,
+      "venue": "Frontiers in Education"
+    },
+    {
+      "title": "Ultra short term analysis of heart rate variability for monitoring mental stress in mobile settings",
+      "doi": "10.1109/IEMBS.2007.4353378",
+      "year": 2007,
+      "venue": "Proceedings of the Annual International Conference of the IEEE Engineering in Medicine and Biology Society"
+    },
+    {
+      "title": "Identifying fixations and saccades in eye-tracking protocols",
+      "doi": "10.1145/355017.355028",
+      "year": 2000,
+      "venue": "Proceedings of the 2000 Symposium on Eye Tracking Research & Applications"
+    },
+    {
+      "title": "Biomechanics optimizes learning posture and learning efficiency in higher education teaching and learning",
+      "doi": "10.62617/mcb1620",
+      "year": 2025,
+      "venue": "Molecular &; Cellular Biomechanics"
+    },
+    {
+      "title": "MouStress: detecting stress from mouse motion",
+      "doi": "10.1145/2556288.2557243",
+      "year": 2014,
+      "venue": "Proceedings of the SIGCHI Conference on Human Factors in Computing Systems"
+    },
+    {
+      "title": "SDNN/RMSSD as a Surrogate for LF/HF: A Revised Investigation",
+      "doi": "10.1155/2012/931943",
+      "year": 2012,
+      "venue": "Modelling and Simulation in Engineering"
+    },
+    {
+      "title": "Large Language Models for Education: A Survey and Outlook",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv"
+    },
+    {
+      "title": "Spatio-Temporal Modeling and Prediction of Visual Attention in Graphical User Interfaces",
+      "doi": "10.1145/2858036.2858479",
+      "year": 2016,
+      "venue": "Proceedings of the 2016 CHI Conference on Human Factors in Computing Systems"
+    },
+    {
+      "title": "EduAgent: Generative Student Agents in Learning",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv"
+    },
+    {
+      "title": "Understanding the implementation of personalized learning: A research synthesis",
+      "doi": "10.1016/j.edurev.2020.100339",
+      "year": 2020,
+      "venue": "Educational Research Review"
+    },
+    {
+      "title": "Scientific Large Language Models: A Survey on Biological & Chemical Domains",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv"
+    },
+    {
+      "title": "Data-driven Online Learning Engagement Detection via Facial Expression and Mouse Behavior Recognition Technology",
+      "doi": "10.1177/0735633119825575",
+      "year": 2020,
+      "venue": "Journal of Educational Computing Research"
+    },
+    {
+      "title": "Personalization of Large Language Models: A Survey",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv"
+    },
+    {
+      "title": "Intelligent Interaction Strategies for Context-Aware Cognitive Augmentation",
+      "doi": null,
+      "year": 2025,
+      "venue": "arXiv"
+    },
+    {
+      "title": "50 - Psychological Stress and the Autonomic Nervous System",
+      "doi": "10.1016/B978-012589762-4/50051-7",
+      "year": 2004,
+      "venue": "Primer on the Autonomic Nervous System"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

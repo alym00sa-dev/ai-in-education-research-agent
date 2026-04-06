@@ -1,0 +1,30 @@
+{
+  "title": "Prompting in the Wild: An Empirical Study of Prompt Evolution in Software Repositories",
+  "doi": null,
+  "year": 2025,
+  "venue": null,
+  "url": "http://arxiv.org/abs/2412.17298v2",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper investigates how developers manage and evolve prompts embedded in real-world large-language-model-integrated software systems. The core research problem is that prompts have become a new kind of software artifact, but little is known about how they change over time, how those changes relate to code maintenance, how well they are documented, and whether prompt edits actually produce intended changes in model behavior.\n\nThe authors conduct an empirical observational study of prompt evolution in open-source software repositories. Starting from the PromptSet dataset, they clean and filter prompts, then analyze 1,262 unique prompt changes across 243 GitHub repositories. Their approach combines qualitative coding of prompt change types and components with quantitative analysis of commit histories, documentation practices, and limited manual evaluation of prompt impact on LLM responses. They classify prompt changes such as additions, modifications, removals, rephrasing, formatting, and restructuring, and examine how these changes align with software maintenance activities like feature development, bug fixing, and refactoring.\n\nThe population and context are not educational participants but open-source software repositories and software developers working on LLM-integrated applications, primarily in Python projects hosted on GitHub. There is no K-12, literacy, classroom, or student-focused intervention in this paper. Instead, the context is software engineering practice in public repositories, with analysis centered on developer-written prompts and commit histories.\n\nThe main conclusions are that prompt evolution is common and is driven mostly by additions and modifications, especially during feature development. Documentation of prompt changes is poor, with only 21.9% of prompt-changing commits explicitly mentioning prompt changes. Prompt modifications can introduce logical inconsistencies, and intended prompt changes do not always lead to expected LLM response changes. The authors argue that LLM-integrated software development needs better documentation practices, validation tools, and testing frameworks for prompts.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This paper is an empirical software engineering study of prompt evolution in GitHub repositories, not a K-12 education intervention study. It provides no direct learner-level educational evaluation, no school-based sample, and no literacy outcome design relevant to the requested review question.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports descriptive findings about developer prompt-maintenance practices and LLM-integrated software reliability, but it does not estimate educational effects on students, teachers, or literacy outcomes. Any relevance to education is indirect and insufficient for impact claims in the K-12 evidence framework.",
+  "interventions": [],
+  "outcome_assignments": [],
+  "limitations": [
+    "non_representative_population",
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

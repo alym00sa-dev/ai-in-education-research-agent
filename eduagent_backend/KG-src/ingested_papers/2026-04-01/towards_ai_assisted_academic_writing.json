@@ -1,0 +1,399 @@
+{
+  "title": "Towards AI-assisted Academic Writing",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2503.13771v1",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper investigates how AI can assist academic writing, focusing on two tasks: contextual citation recommendation and automatic introduction writing. The authors are motivated by the difficulty of scholarly writing, especially the effort required to find, validate, and integrate relevant prior work while maintaining writing flow. The paper asks whether large-language-model-based tools can generate useful support for academic authors in these tasks and how researchers perceive such support in practice.\n\nThe intervention is an AI-assisted academic writing system with two main components. First, it provides in situ citation recommendations by using the writer\u2019s document context and cursor position, generating a fabricated citation query with an LLM and retrieving candidate papers from an OpenAlex-based corpus using SPECTER2 embeddings and reranking. Second, it generates introduction sections by identifying novel claims in a manuscript relative to cited references, summarizing those claims, and composing an introduction that situates the work in relation to canonical and recent literature. Quantitative evaluations assess citation retrieval on 1,015 citation contexts sampled from S2ORC and introduction generation on 14 NBER papers using ROUGE and LLM-based entailment checks.\n\nThe human-focused portion of the study consists of semi-structured interviews with six experienced academic researchers from the research division of a large technology company, all working in computer science-related fields. These interviews explored how researchers currently find and validate citations, what ideal citation-support tools would do, and how citation practices vary by context. This qualitative component complements the system evaluations by examining real writing workflows and user needs rather than classroom or student learning settings.\n\nThe paper concludes that AI-assisted writing can produce useful support for academic authors, especially for citation suggestion and introduction drafting, but that precision and interpretability are essential. The citation recommendation method retrieved ground-truth citations at moderate-to-strong rates depending on distractor difficulty, and most claims extracted from generated introductions were judged entailed by the originals. Interview findings suggest demand for tools that not only suggest citations but also help validate claims, scope surrounding text accurately, and contextualize references within the broader literature. The authors also note important limitations, including English-only evaluation and potential bias introduced by citation-based filtering of scholarly works.",
+  "limitations": [
+    "small_sample",
+    "no_control_group",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "lab",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "content_generation",
+        "feedback_evaluation"
+      ],
+      "description": "A generative AI academic writing system that uses LLM-based retrieval-augmented citation recommendation and LLM-based introduction generation for scholarly writing.",
+      "use_case": "The paper presents and evaluates two components of an AI-assisted academic writing system: contextual citation recommendation within a live document editor and automated introduction writing from manuscript content and references.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Literacy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "For contextual citation recommendation, the system was evaluated on 1,015 citation retrieval cases extracted from S2ORC papers. Retrieval performance varied by distractor set size and type: with random distractors, MRR=0.755 and p@1=0.612 for n=3; MRR=0.549, p@1=0.333, p@3=0.665 for n=5; and MRR=0.320, p@1=0.124, p@3=0.348, p@5=0.500 for n=10. Performance was somewhat lower with semantically harder distractors, but the system still retrieved ground-truth citations above chance across conditions.",
+          "measure": "Citation recommendation retrieval metrics: mean reciprocal rank (MRR), precision@1, precision@3, precision@5 on 1,015 contextual citation retrieval cases",
+          "effect_size": "MRR=0.755; p@1=0.612 (random, n=3); MRR=0.549; p@1=0.333; p@3=0.665 (random, n=5); MRR=0.320; p@1=0.124; p@3=0.348; p@5=0.500 (random, n=10); MRR=0.661; p@1=0.428 (nearest neighbors, n=3); MRR=0.506; p@1=0.254; p@3=0.661 (nearest neighbors, n=5); MRR=0.300; p@1=0.110; p@3=0.327; p@5=0.523 (nearest neighbors, n=10); MRR=0.676; p@1=0.462 (references, n=3); MRR=0.496; p@1=0.261; p@3=0.641 (references, n=5); MRR=0.308; p@1=0.109; p@3=0.326; p@5=0.519 (references, n=10)",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=1015"
+        },
+        {
+          "outcome_category": "Academic \u2014 Literacy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "For introduction generation, text overlap evaluation on 14 NBER papers yielded an average ROUGE score of 29.9. The paper reports that generated introductions scored better when the original introduction stayed focused on a single topic.",
+          "measure": "ROUGE score comparing generated versus original introductions",
+          "effect_size": "average ROUGE=29.9",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=14 papers"
+        },
+        {
+          "outcome_category": "Academic \u2014 Literacy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In LLM-based entailment evaluation of introduction generation, 52 claims were extracted from 14 generated introductions and 47 of 52 were judged entailed by the original introductions, indicating high precision. Example paragraph-level entailment scores ranged from 0.983 for a high-performing case to 0.279 for a lower-performing case.",
+          "measure": "LLM-based claim entailment of generated introduction claims against original introductions",
+          "effect_size": "47/52 claims entailed; example entailment scores=0.983 and 0.279",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=52 claims"
+        }
+      ]
+    }
+  ],
+  "verdict": "genai_general",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "The paper includes quantitative evaluations and qualitative interviews, but it is not an RCT, QED, or meta-analysis, and outcomes are primarily system-performance and text-quality measures rather than causal learner-impact evidence.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "Results are promising but reported as retrieval metrics, ROUGE, and entailment rates without standardized educational effect sizes or direct student learning gains, so overall educational impact remains unclear.",
+  "citations": [
+    {
+      "title": "Performance of ChatGPT and GPT-4 on neurosurgery written board examinations",
+      "doi": null,
+      "year": 2023,
+      "venue": "Neurosurgery",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "GLAMOR: Graph-based LAnguage MOdel embedding for citation Recommendation",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 18th ACM Conference on Recommender Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Professional Skills & Competencies - American Chemical Society",
+      "doi": null,
+      "year": null,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "SciBERT: A pretrained language model for scientific text",
+      "doi": null,
+      "year": 2019,
+      "venue": "Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Misspecified recovery",
+      "doi": null,
+      "year": 2014,
+      "venue": "National Bureau of Economic Research Working Paper",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Rank analysis of incomplete block designs",
+      "doi": null,
+      "year": 1952,
+      "venue": "Biometrika",
+      "citation_level": 3,
+      "citation_context": "Bradley-Terry model for pairwise ranking aggregation"
+    },
+    {
+      "title": "Keeping and re-finding information on the web: What do people do and what do they need?",
+      "doi": null,
+      "year": 2004,
+      "venue": "Proceedings of the American Society for Information Science and Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Pairwise ranking aggregation in a crowdsourced setting",
+      "doi": null,
+      "year": 2013,
+      "venue": "Proceedings of the Sixth ACM International Conference on Web Search and Data Mining",
+      "citation_level": 3,
+      "citation_context": "pairwise ranking aggregation method for evaluation"
+    },
+    {
+      "title": "The power of noise: Redefining retrieval for RAG systems",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 47th International ACM SIGIR Conference on Research and Development in Information Retrieval",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A cognitive process theory of writing",
+      "doi": null,
+      "year": 1981,
+      "venue": "College Composition & Communication",
+      "citation_level": 2,
+      "citation_context": "writing framed as complex cognitive process"
+    },
+    {
+      "title": "Writing for scholarly publication in English: The case of Hong Kong",
+      "doi": null,
+      "year": 1999,
+      "venue": "Journal of Second Language Writing",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Citation recommendation: approaches and datasets",
+      "doi": null,
+      "year": 2020,
+      "venue": "International Journal on Digital Libraries",
+      "citation_level": 2,
+      "citation_context": "survey framing citation recommendation prior work"
+    },
+    {
+      "title": "Comparing scientific abstracts generated by ChatGPT to real abstracts with detectors and blinded human reviewers",
+      "doi": null,
+      "year": 2023,
+      "venue": "npj Digital Medicine",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Retrieval-augmented generation for large language models: A survey",
+      "doi": null,
+      "year": 2023,
+      "venue": "ArXiv",
+      "citation_level": 2,
+      "citation_context": "LLM-based citation recommendation/RAG background"
+    },
+    {
+      "title": "Sparks: Inspiration for science writing using language models",
+      "doi": null,
+      "year": 2022,
+      "venue": "Proceedings of the First Workshop on Intelligent and Interactive Writing Assistants (In2Writing 2022)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Sparks: Inspiration for science writing using language models",
+      "doi": null,
+      "year": 2022,
+      "venue": "Proceedings of the 2022 ACM Designing Interactive Systems Conference",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A computational inflection for scientific discovery",
+      "doi": null,
+      "year": 2022,
+      "venue": "Communications of the ACM",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Multitasking with Play Write, a mobile microproductivity writing tool",
+      "doi": null,
+      "year": 2018,
+      "venue": "Proceedings of the 31st Annual ACM Symposium on User Interface Software and Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Survey of hallucination in natural language generation",
+      "doi": null,
+      "year": 2023,
+      "venue": "ACM Computing Surveys",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Utilizing context in generative Bayesian models for linked corpus",
+      "doi": null,
+      "year": 2010,
+      "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A design space for intelligent and interactive writing assistants",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 2024 CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 2,
+      "citation_context": "used to situate writing assistant design space"
+    },
+    {
+      "title": "Related work and citation text generation: A survey",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ROUGE: A package for automatic evaluation of summaries",
+      "doi": null,
+      "year": 2004,
+      "venue": "Text Summarization Branches Out",
+      "citation_level": 3,
+      "citation_context": "ROUGE-1 metric for introduction generation evaluation"
+    },
+    {
+      "title": "S2ORC: The Semantic Scholar Open Research Corpus",
+      "doi": null,
+      "year": 2020,
+      "venue": "Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Self-refine: Iterative refinement with self-feedback",
+      "doi": null,
+      "year": 2023,
+      "venue": "Advances in Neural Information Processing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Writing tools: Looking back to look ahead",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Scientists\u2019 perspectives on the potential for generative AI in their fields",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The gift of moving: Intergenerational consequences of a mobility shock",
+      "doi": null,
+      "year": 2016,
+      "venue": "National Bureau of Economic Research Working Paper",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Relatedly: Scaffolding literature reviews with existing related work sections",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 2,
+      "citation_context": "example interface with literature review sensemaking affordances"
+    },
+    {
+      "title": "OpenAlex: A fully-open index of scholarly works, authors, venues, institutions, and concepts",
+      "doi": null,
+      "year": 2022,
+      "venue": "CoRR",
+      "citation_level": 3,
+      "citation_context": "primary scholarly corpus and metadata source"
+    },
+    {
+      "title": "Large language models are effective text rankers with pairwise ranking prompting",
+      "doi": null,
+      "year": 2024,
+      "venue": "Findings of the Association for Computational Linguistics: NAACL 2024",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Beyond performance: Quantifying and mitigating label bias in LLMs",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A dataset of argumentative dialogues on scientific papers",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Judging the judges: A systematic study of position bias in LLM-as-a-judge",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "SciRepEval: A multi-format benchmark for scientific document representations",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "SOAR: improved indexing for approximate nearest neighbor search",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 37th International Conference on Neural Information Processing Systems",
+      "citation_level": 3,
+      "citation_context": "approximate nearest neighbor indexing in retrieval system"
+    },
+    {
+      "title": "Sleeping Beauties in science",
+      "doi": null,
+      "year": 2004,
+      "venue": "Scientometrics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "PaperRobot: Incremental draft generation of scientific ideas",
+      "doi": null,
+      "year": 2019,
+      "venue": "Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The \u201cknown\u201d in known-item searches: Empirical support for user-centered design (research note)",
+      "doi": null,
+      "year": 1995,
+      "venue": "College & Research Libraries",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Wordcraft: Story writing with large language models",
+      "doi": null,
+      "year": 2022,
+      "venue": "Proceedings of the 27th International Conference on Intelligent User Interfaces",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

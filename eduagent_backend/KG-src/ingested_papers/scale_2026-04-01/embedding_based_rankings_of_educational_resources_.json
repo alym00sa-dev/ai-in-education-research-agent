@@ -1,0 +1,436 @@
+{
+  "title": "Embedding-Based Rankings of Educational Resources based on Learning Outcome Alignment: Benchmarking, Expert Validation, and Learner Performance",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "https://arxiv.org/abs/2512.13658",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Adult (non-academic)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses the problem of how to help educators identify or generate educational resources that are well aligned with intended learning outcomes while still supporting personalization and inclusiveness. The authors argue that although large language models can generate learning materials, checking whether those materials actually cover the intended outcomes is still labor-intensive and difficult to scale. To address this, they investigate whether embedding-based similarity rankings can serve as a cost-effective automated way to evaluate alignment between resources and learning outcomes, and whether such rankings are meaningful for actual learner performance.\n\nThe paper studies a framework that benchmarks several text-embedding models on a dataset of educational resources collected from YouTube across 53 topics in domains such as machine learning, Python programming, time management, first aid, and mental health. Domain experts labeled resources as accepted or rejected based on constructive alignment with intended learning outcomes. The authors compared embedding models by ranking resources according to cosine similarity and evaluating whether accepted resources were ranked above rejected ones. The best-performing model, Voyage, achieved 79% accuracy on existing resources. The same model was then applied to 264 LLM-generated resources created by six LLMs for 22 topics in Python programming and machine learning, targeting two use cases: brevity and accessibility for learners with cognitive impairments. Expert consensus validation showed 83% ranking accuracy on these generated resources.\n\nThe learner-facing part of the study involved 360 adult participants recruited online through Prolific, all without prior programming or IT experience. Participants were randomly assigned to one of three groups, each receiving a first-, second-, or third-ranked generated resource for one of 12 selected topics. They studied the resource for ten minutes and then completed an expert-designed multiple-choice assessment. The study was conducted in an online setting, and educators were involved both as expert labelers and as designers of intended learning outcomes and assessments.\n\nThe main conclusion is that embedding-based ranking can effectively support scalable evaluation of educational content alignment and may help teachers personalize resources while preserving learning-outcome coverage. Voyage-based rankings outperformed the YouTube baseline and other tested embedding models, matched expert judgments on generated materials, and predicted better learner performance: students using top-ranked resources scored significantly higher than those using third-ranked resources. The authors conclude that embedding-based alignment scoring is a promising bridge between AI-generated personalization and measurable learning outcomes, while noting that current evidence is still limited by topic scope, short exposure, and narrow outcome measures.",
+  "limitations": [
+    "short_duration",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "identified_tools": [
+    {
+      "name": "Voyage",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "personalization_adaptation",
+        "content_generation"
+      ],
+      "description": "A text-embedding model family used to represent educational resources as vectors and rank them by semantic alignment with intended learning outcomes.",
+      "use_case": "The paper benchmarked Voyage/voyage-large-2-instruct against other embedding models to rank existing YouTube resources and then used the best-performing Voyage model to score and rank LLM-generated educational resources for brevity and cognitive-accessibility use cases.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Among the embedding models benchmarked on 53 topics, Voyage/voyage-large-2-instruct achieved the highest average ranking accuracy at 0.79 \u00b1 0.14, outperforming the YouTube baseline (0.59 \u00b1 0.18). A Friedman test across 8 models plus baseline showed overall differences, \u03c72(8) = 142.65, p < .001, Kendall\u2019s W = .34; Nemenyi post-hoc comparisons found Voyage significantly outperformed every other model except Gemini, where the difference was not statistically significant.",
+          "measure": "Ranking accuracy for accepted-vs-rejected educational resource pairs across 53 topics",
+          "effect_size": "Kendall\u2019s W=.34",
+          "confidence_interval": "not_reported",
+          "sample_size": "53 topics"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Voyage/voyage-large-2-instruct also produced the best top-of-list retrieval performance, with Precision@3 = 0.68 \u00b1 0.25 and Precision@5 = 0.61 \u00b1 0.25. These values exceeded all other tested models and the YouTube baseline (Precision@3 = 0.55 \u00b1 0.31; Precision@5 = 0.51 \u00b1 0.26).",
+          "measure": "Precision@3 and Precision@5 for top-ranked educational resources",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "53 topics"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "When applied to 264 LLM-generated resources across Python Programming and Machine Learning, the optimal Voyage-based ranking achieved an average ranking accuracy of 0.83 against expert consensus labels. Reported subgroup accuracies were 0.85 for brevity/Python Programming, 0.80 for brevity/Machine Learning, 0.80 for cognitive impairment/Python Programming, and 0.83 for cognitive impairment/Machine Learning.",
+          "measure": "Ranking accuracy of generated resources versus expert acceptance/rejection judgments",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "264 generated resources"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In a three-group learner experiment, resources ranked by Voyage were associated with significantly different learner performance outcomes, \u03c72(2, N = 360) = 15.39, p < .001. Learners using the top-ranked resource (n = 120, mean rank = 203.0) scored significantly higher than those using the third-ranked resource (n = 120, mean rank = 158.0), while Group 1 vs. Group 2 and Group 2 vs. Group 3 were not significant after Bonferroni correction (both p = .049; \u03b1 = .017).",
+          "measure": "Multiple-choice assessment scores after 10-minute study of ranked generated resources",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "N=360"
+        }
+      ]
+    },
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation"
+      ],
+      "description": "OpenAI's GPT-family large language model product used to generate educational resources.",
+      "use_case": "GPT-4o, GPT-4o-mini, and GPT-3.5 were used to generate brief and cognitive-accessibility-oriented educational resources for Python Programming and Machine Learning topics.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "ChatGPT-family models were among the six LLMs used to generate educational resources, but the paper reports only pooled acceptance/ranking results across all generating LLMs rather than per-model outcomes. The authors state that all LLMs produced both accepted and rejected resources, indicating variable content quality that required verification via the Voyage-based ranking system.",
+          "measure": "Expert acceptance/rejection of generated resources",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    },
+    {
+      "name": "Gemini",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "personalization_adaptation",
+        "content_generation"
+      ],
+      "description": "Google's Gemini family of models, used here both as a text-embedding model for ranking and as a generative LLM for creating educational resources.",
+      "use_case": "Gemini was benchmarked as an embedding model for ranking educational resources by learning-outcome alignment, and Gemini 1.5 Flash, 1.5 Pro, and 2 Flash were also used to generate educational materials for personalization and inclusiveness use cases.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "As an embedding model, Google/gemini-1.0 achieved an average ranking accuracy of 0.75 \u00b1 0.15 across 53 topics. In post-hoc comparisons, Voyage was favored over Gemini, but the difference was not statistically significant.",
+          "measure": "Ranking accuracy for accepted-vs-rejected educational resource pairs across 53 topics",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "53 topics"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Gemini-family generative models were included among the six LLMs used to generate resources, but no per-model generation performance was reported. The paper states that all LLMs produced both accepted and rejected resources, so Gemini's generative output quality cannot be isolated beyond this pooled mixed result.",
+          "measure": "Expert acceptance/rejection of generated resources",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "green",
+  "quality_tier_rationale": "The paper includes a substantial empirical benchmark and an experimental learner study with random assignment across three groups (N=360), but it is not a full RCT of a single educational intervention with comprehensive causal reporting, and several results are operational benchmarking metrics rather than standardized learning outcomes.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The study shows statistically significant positive effects on learner performance for top-ranked versus third-ranked resources and strong operational gains in ranking accuracy, but standardized effect sizes for learning outcomes are not reported, making educational impact magnitude unclear.",
+  "citations": [
+    {
+      "title": "Foundations of online learning: Challenges and opportunities",
+      "doi": "10.1080/00461520.2022.2090364",
+      "year": 2022,
+      "venue": "Educational Psychologist",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Academia\u2019s responses to crisis: A bibliometric analysis of literature on online learning in higher education during covid-19",
+      "doi": "10.1111/bjet.13191",
+      "year": 2022,
+      "venue": "British Journal of Educational Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "An ai-based open recommender system for personalized labor market driven education",
+      "doi": null,
+      "year": 2022,
+      "venue": "Advanced Engineering Informatics",
+      "citation_level": 2,
+      "citation_context": "brevity personalization use case follows this work"
+    },
+    {
+      "title": "Can we trust ai-generated educational content? comparative analysis of human and ai-generated learning resources",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Extracting topics from open educational resources",
+      "doi": null,
+      "year": 2020,
+      "venue": "Addressing Global Challenges and Quality Education: 15th European Conference on Technology Enhanced Learning, EC-TEL 2020",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Recommender systems leveraging multimedia content",
+      "doi": null,
+      "year": 2020,
+      "venue": "ACM Computing Surveys (CSUR)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Latent curricular drift and semantic adaptability",
+      "doi": null,
+      "year": 2025,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Finding Open Educational Resources",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Cross-repository aggregation of educational resources",
+      "doi": null,
+      "year": 2018,
+      "venue": "Computers & Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Towards the ranking of web-pages for educational purposes",
+      "doi": null,
+      "year": 2019,
+      "venue": "CSEDU",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A semantic approach to ranking techniques: Improving web page searches for educational purposes",
+      "doi": "10.1109/ACCESS.2022.3186356",
+      "year": 2022,
+      "venue": "IEEE Access",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Semantic technology",
+      "doi": null,
+      "year": 2020,
+      "venue": "Springer",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Learning to rank for educational search engines",
+      "doi": null,
+      "year": 2021,
+      "venue": "IEEE Transactions on Learning Technologies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "An approach to discovery and re-ranking of educational content from the world wide web using latent dirichlet allocation",
+      "doi": null,
+      "year": 2011,
+      "venue": "Artificial Intelligence Techniques-Novel Approaches & Practical Applications",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Teacher roles in personalized learning environments",
+      "doi": null,
+      "year": 2020,
+      "venue": "The Elementary School Journal",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Large language models for information retrieval: A survey",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv preprint arXiv:2308.07107",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Enhancing teaching through constructive alignment",
+      "doi": null,
+      "year": 1996,
+      "venue": "Higher education",
+      "citation_level": 2,
+      "citation_context": "accepted resources judged by constructive alignment"
+    },
+    {
+      "title": "Llm integration in workbook design for teaching coding subjects",
+      "doi": null,
+      "year": 2024,
+      "venue": "International Conference on Science and Technology Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Large language models for education: A survey and outlook",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv preprint arXiv:2403.18105",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Evaluating llm-generated worked examples in an introductory programming course",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 26th Australasian Computing Education Conference",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Knowledge graphs as context sources for llm-based explanations of learning recommendations",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv preprint arXiv:2403.03008",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The llm-based mini-lecture generation for enhanced learning project",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "MTEB: Massive text embedding benchmark",
+      "doi": "10.18653/v1/2023.eacl-main.148",
+      "year": 2023,
+      "venue": "Proceedings of the 17th Conference of the European Chapter of the Association for Computational Linguistics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A new measure of rank correlation",
+      "doi": null,
+      "year": 1938,
+      "venue": "Biometrika",
+      "citation_level": 2,
+      "citation_context": "pairwise ranking metric inspired by Kendall\u2019s tau"
+    },
+    {
+      "title": "Learning with youtube: Beyond formal and informal through new actors, strategies and affordances",
+      "doi": "10.1177/13548565211020545",
+      "year": 2022,
+      "venue": "Convergence: The International Journal of Research into New Media Technologies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Measuring the impact and reach of informal educational videos on youtube: The case of scientific animations without borders",
+      "doi": "10.1016/j.heliyon.2021.e08508",
+      "year": 2021,
+      "venue": "Heliyon",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "When large language models meet vector databases: A survey",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv preprint arXiv:2402.01763",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Beyond words: A comparative analysis of llm embeddings for effective clustering",
+      "doi": null,
+      "year": 2024,
+      "venue": "International Symposium on Intelligent Data Analysis",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Word embeddings revisited: Do llms offer something new?",
+      "doi": null,
+      "year": 2024,
+      "venue": "ArXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "An introduction to information retrieval",
+      "doi": null,
+      "year": 2009,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "source for Precision@k evaluation metric"
+    },
+    {
+      "title": "From ranking algorithms to \u2018ranking cultures\u2019 investigating the modulation of visibility in youtube search results",
+      "doi": null,
+      "year": 2018,
+      "venue": "Convergence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "How to Crack the YouTube Algorithm and Get Your Videos Seen",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Ontology-based representation of learner profiles for accessible opencourseware systems",
+      "doi": null,
+      "year": 2017,
+      "venue": "Knowledge Engineering and Semantic Web: 8th International Conference, KESW 2017",
+      "citation_level": 2,
+      "citation_context": "cognitive accessibility use case follows this work"
+    },
+    {
+      "title": "Comparative Analysis of Top LLMs",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Web accessibility design recommendations for people with cognitive disabilities",
+      "doi": null,
+      "year": 2007,
+      "venue": "Technology and disability",
+      "citation_level": 2,
+      "citation_context": "accessibility design principles guided generated resources"
+    },
+    {
+      "title": "Microlearning beyond boundaries: A systematic review and a novel framework for improving learning outcomes",
+      "doi": null,
+      "year": 2025,
+      "venue": "Heliyon",
+      "citation_level": 2,
+      "citation_context": "realistic rapid-introduction scenario motivated by microlearning"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

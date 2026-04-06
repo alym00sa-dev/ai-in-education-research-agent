@@ -1,0 +1,210 @@
+{
+  "title": "Bridging the Skills Gap: A Course Model for Modern Generative AI Education",
+  "doi": null,
+  "year": 2026,
+  "venue": "Proceedings of the AAAI-26 Conference",
+  "url": "https://arxiv.org/abs/2511.11757",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate",
+    "Graduate / Doctoral"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses a growing mismatch between higher education and industry regarding generative AI (GAI) skills. The authors argue that while employers increasingly value AI fluency, universities often restrict student use of generative AI tools, leaving students to experiment informally without guidance. The paper asks whether a structured university course can help students use existing generative AI tools responsibly and effectively, especially in software development contexts.\n\nTo address this, the authors designed and implemented a 10-week Computer Science course at Northwestern University for advanced undergraduates and graduate students. The course focused on applied use of generative AI tools in software engineering rather than on AI model development. It included foundational programming assignments using tools such as Copilot, lectures on best practices and tool selection, guest speakers from industry and policy, an industry interview assignment, and a capstone-style team project in which students built a full-stack application resembling X/Twitter. The evaluation used two mixed-method surveys: a standard university course evaluation and a tailored post-course survey with quantitative ratings and open-ended questions.\n\nThe study population consisted of 28 combined undergraduate and graduate Computer Science students at a private research university in the United States. The course was offered in an in-person classroom format through the Computer Science department as a special projects elective. Students were expected to have prior programming and full-stack development knowledge, and the course targeted those preparing to enter industry. The instructor and one graduate student co-authored the paper, which also includes reflections from both perspectives.\n\nThe main conclusion is that students overwhelmingly perceived the course as valuable and effective. Reported outcomes included increased confidence using generative AI tools in real-world development, perceived gains in practical software engineering skills, and strong endorsement that the department should offer the course again. Students particularly valued guest speakers and the capstone-style applied work. The authors conclude that higher education should move beyond restrictive policies and instead provide structured, ethically informed instruction in generative AI literacy to better align academic practice with workforce expectations, while refining prerequisites, project structure, and ethics coverage in future iterations.",
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_control_group",
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "10",
+  "setting": "classroom",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "GitHub Copilot",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "tutoring_instruction"
+      ],
+      "description": "An AI coding assistant integrated into software development workflows for code generation and related programming support.",
+      "use_case": "Used in a university computer science course as one option for students to complete programming assignments involving test-driven development, code optimization, debugging, and pseudocode-to-code work.",
+      "findings": [
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In the post-course survey of 28 students, 27 reported that the course increased their confidence in using AI tools in real-world development, and all 28 reported leaving with a confident individual approach to programming with AI. Because the course permitted Copilot or other generative AI tools rather than isolating Copilot experimentally, these results reflect the broader applied use of coding assistants within the course rather than a causal estimate for Copilot alone.",
+          "measure": "Student self-reported confidence in using AI tools in real-world development and confidence in programming with AI",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=28"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Students reported high perceived value and efficacy for the course that incorporated Copilot or similar coding tools: aggregate course value averaged 6.32 and efficacy averaged 6.07 on 7-point scales, with no individual quantitative item below a mean or median of 5. These outcomes indicate strong perceived gains in practical software engineering and AI-assisted programming readiness, though they are based on self-report in a mixed-method course evaluation.",
+          "measure": "7-point post-course survey ratings of course value and efficacy related to AI-assisted programming",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=28"
+        }
+      ]
+    },
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "content_generation",
+        "durable_skills"
+      ],
+      "description": "Generative AI tools used for software development tasks such as code generation, debugging, optimization, test writing, pseudocode transformation, and workflow support.",
+      "use_case": "The paper studies a 10-week computer science course teaching undergraduate and graduate students how to use generative AI tools in software development through foundational assignments, a full-stack capstone project, guest lectures, and industry research.",
+      "findings": [
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "All 28 students completed the post-course survey, and 27 of 28 indicated that the course increased their confidence in using AI tools in real-world development; the remaining student reported mixed feelings. All 28 students also reported having a confident individual approach to programming with AI by the end of the course.",
+          "measure": "Self-reported confidence in using AI tools in real-world development and confidence in programming with AI",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=28"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "On the tailored post-course survey, course value averaged 6.32 and course efficacy averaged 6.07 on 7-point scales, with no individual question having a mean or median below 5 (Somewhat Agree). Students also unanimously recommended that the department offer the course again (28/28).",
+          "measure": "7-point agreement ratings on course value and efficacy; recommendation to offer the course again",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=28"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Regarding assignment support, 14 students found AI tools 'very helpful,' 13 found them 'incredibly helpful,' and 1 remained neutral for completing coursework. This indicates overwhelmingly positive perceived utility of generative AI tools for software development tasks in the course.",
+          "measure": "Perceived helpfulness of AI tools in completing assignments",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=28"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "University course evaluations were completed by 17 of 28 students (60.7% response rate). Students rated overall course quality and instruction highly, overall learning and instructor ability to stimulate interest between 4 and 5 on a 6-point scale, and intellectual challenge between 3 and 4; qualitative comments were mostly positive but included some reports that the course was less helpful for students lacking prior full-stack experience.",
+          "measure": "University course evaluation ratings of course quality, learning, intellectual challenge, and instruction; open-ended course feedback",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=17"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a mixed-method course evaluation using surveys and qualitative reflections without a control group or causal design. Outcomes are primarily self-reported perceptions and confidence measures, so evidence quality is moderate but not experimental.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "Reported outcomes are strongly positive, but impacts are based on self-reported confidence, usefulness, and course ratings with no standardized performance effects or effect sizes. The practical impact appears promising but remains unclear in magnitude.",
+  "citations": [
+    {
+      "title": "Investigating the higher education institutions\u2019 guidelines and policies regarding the use of generative AI in teaching, learning, research, and administration",
+      "doi": "10.1186/s41239-025-00507-3",
+      "year": 2025,
+      "venue": "International Journal of Educational Technology in Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Anthropic education report: How university students use Claude",
+      "doi": null,
+      "year": 2025,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Teacher\u2013student relationships and student outcomes: A systematic second-order meta-analytic review",
+      "doi": "10.1037/bul0000461",
+      "year": 2025,
+      "venue": "Psychological Bulletin",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "By Degree(s): Measuring Employer Demand for AI Skills by Educational Requirements",
+      "doi": "10.29338/wc2025-01",
+      "year": 2025,
+      "venue": "FRB Atlanta Workforce Currents",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "\u2018The pinnacle of practicality\u2019: Harvard Computer Science launches new AI software development course",
+      "doi": null,
+      "year": 2025,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Software Engineering Education Must Adapt and Evolve for an LLM Environment",
+      "doi": "10.1145/3626252.3630927",
+      "year": 2024,
+      "venue": "Proceedings of the 55th ACM Technical Symposium on Computer Science Education",
+      "citation_level": 2,
+      "citation_context": "supports need to adapt software engineering education for LLMs"
+    },
+    {
+      "title": "Your brain on chatgpt: Accumulation of cognitive debt when using an ai assistant for essay writing task",
+      "doi": null,
+      "year": 2025,
+      "venue": "arXiv preprint",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Work Trend Index: AI at work is here. Now comes the hard part",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Harnessing the potential of Gen\u2011AI coding assistants in public sector software development",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "How a computer science professor is using AI in her classroom",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

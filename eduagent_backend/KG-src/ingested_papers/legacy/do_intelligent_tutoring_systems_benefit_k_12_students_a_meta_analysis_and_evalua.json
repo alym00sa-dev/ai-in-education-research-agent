@@ -1,0 +1,291 @@
+{
+  "title": "Do intelligent tutoring systems benefit K-12 students? A meta-analysis and evaluation of heterogeneity of treatment effects in the U.S.",
+  "doi": null,
+  "year": null,
+  "venue": null,
+  "url": "https://arxiv.org/pdf/2511.04997",
+  "source_db": "backfill_v3",
+  "populations": [
+    "Elementary (PreK-5th)",
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Meta-Analysis / Systematic Review",
+  "extended_summary": "This paper examines whether intelligent tutoring systems (ITS) improve academic outcomes for K-12 students in the United States and under what conditions they are most effective. The authors focus on heterogeneity of treatment effects, using the MUTOS framework to assess both internal validity and external validity across studies. They also evaluate whether study quality, especially attrition reporting and WWC standards, helps explain differences in results.\n\nThe intervention studied is intelligent tutoring systems: AI-driven educational software that interacts with students turn-by-turn and personalizes support based on learner models. Across the included studies, ITS features varied and included worked-out examples, on-demand hints, just-in-time hints, feedback/explanations, reading materials, motivation supports, and video sequences. The meta-analysis synthesized 18 U.S. experimental studies, comprising 77 effect sizes across 11 ITS programs.\n\nThe population was U.S. K-12 students in elementary, middle, and some middle/high school samples, including general populations as well as disadvantaged groups such as low-achieving students, English learners, and students in poverty. The context was school-based U.S. education, with interventions used as main instruction, separate activities, homework, or after-school supports. Most comparisons were against regular classroom instruction or related control conditions.\n\nThe main conclusion is that ITS had a statistically significant positive effect on student learning outcomes overall (g=0.271). Effects were similar across elementary and middle school settings and for low-achieving students, but lower in studies including rural schools. MetaForest analyses suggested that worked-out examples, intervention duration, intervention condition, type of learning outcome, and immediate measurement were the most important moderators. The paper also notes concerns about internal validity reporting, especially attrition, and concludes that ITS can benefit U.S. K-12 students, though effects vary by implementation characteristics and study context.",
+  "limitations": [
+    "high_attrition",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "blended",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "ITS",
+      "is_named_product": true,
+      "specificity": "category",
+      "category_key": [
+        "tutoring_instruction"
+      ],
+      "description": "Intelligent tutoring systems are AI-based instructional systems that provide step-by-step tutoring, adaptive practice, hints, and feedback based on models of student knowledge or performance.",
+      "use_case": "Meta-analysis of intelligent tutoring systems used in U.S. K-12 schools between 2011 and 2021. Included 18 experimental studies, 77 effect sizes, and 11 ITS across elementary, middle, and some middle/high school contexts; compared against non-ITS control conditions such as regular instruction, classroom instruction, homework, or other study-specific controls.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "pooled_meta",
+          "direction": "positive",
+          "finding_summary": "Across 18 studies and 77 effect sizes, ITS had a statistically significant positive effect on U.S. K-12 students\u2019 learning outcomes after accounting for random study effects and fixed ITS effects. The pooled effect was g=0.271.",
+          "measure": "student academic learning outcomes",
+          "effect_size": "g=0.271",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported",
+          "study_count": 18
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "pooled_meta",
+          "direction": "mixed",
+          "finding_summary": "By differential attrition level, studies with high attrition showed g=0.261, low attrition showed g=0.212, and studies with attrition not reported showed g=0.251. The authors note that high-attrition studies had slightly higher effects than low-attrition studies, but only the no-reported-attrition subgroup was statistically significant.",
+          "measure": "student academic learning outcomes by differential attrition subgroup",
+          "effect_size": "g=0.261; g=0.212; g=0.251",
+          "confidence_interval": "95% CI (-0.081, 0.603); 95% CI (-0.045, 0.468); 95% CI (0.150, 0.352)",
+          "sample_size": "not_reported",
+          "study_count": 18
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "pooled_meta",
+          "direction": "mixed",
+          "finding_summary": "By assignment level in the M dimension, effect sizes were g=0.456 for level 3 assignment, g=0.269 for level 2, and g=0.331 for level 1. Only the level 2 subgroup was statistically significant, and the paper reports that studies with level 2 assignment produced the smallest effect size.",
+          "measure": "student academic learning outcomes by assignment-level subgroup",
+          "effect_size": "g=0.456; g=0.269; g=0.331",
+          "confidence_interval": "95% CI (-1.424, 2.337); 95% CI (0.230, 0.308); 95% CI (-4.853, 5.515)",
+          "sample_size": "not_reported",
+          "study_count": 18
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "pooled_meta",
+          "direction": "mixed",
+          "finding_summary": "By levels of clustering, the effect size with three levels of clustering was g=0.253 and with two levels was g=0.238. The effects were similar in magnitude, but only the three-level clustering subgroup was statistically significant.",
+          "measure": "student academic learning outcomes by clustering-level subgroup",
+          "effect_size": "g=0.253; g=0.238",
+          "confidence_interval": "95% CI (0.210, 0.297); 95% CI (-0.438, 0.914)",
+          "sample_size": "not_reported",
+          "study_count": 18
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "pooled_meta",
+          "direction": "mixed",
+          "finding_summary": "By design type within the M dimension, simple designs had g=0.311 and blocked designs had g=0.271. These effects were similar, though only the simple-design subgroup was statistically significant.",
+          "measure": "student academic learning outcomes by simple versus blocked design subgroup",
+          "effect_size": "g=0.311; g=0.271",
+          "confidence_interval": "95% CI (0.186, 0.435); 95% CI (-0.068, 0.609)",
+          "sample_size": "not_reported",
+          "study_count": 18
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "pooled_meta",
+          "direction": "mixed",
+          "finding_summary": "By publication type, dissertations/theses had the largest estimated effect (g=0.625), followed by journal articles (g=0.190) and conference proceedings (g=0.139). However, only the journal-article subgroup was statistically significant.",
+          "measure": "student academic learning outcomes by publication-type subgroup",
+          "effect_size": "g=0.625; g=0.190; g=0.139",
+          "confidence_interval": "95% CI (-0.704, 1.954); 95% CI (0.138, 0.241); 95% CI (-0.663, 0.941)",
+          "sample_size": "not_reported",
+          "study_count": 18
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "pooled_meta",
+          "direction": "mixed",
+          "finding_summary": "By grade level in the U dimension, elementary-school studies had g=0.266 and middle-school studies had g=0.256, which the authors describe as similar. Studies spanning middle and high school had a higher but non-significant estimate of g=0.335.",
+          "measure": "student academic learning outcomes by grade-level subgroup",
+          "effect_size": "g=0.266; g=0.256; g=0.335",
+          "confidence_interval": "partially malformed in source extraction; reported as 95% CI (0.170, 0.363); 95% CI (0.209, 0.303); 95% CI (-4.156, 4.826)",
+          "sample_size": "not_reported",
+          "study_count": 18
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "pooled_meta",
+          "direction": "mixed",
+          "finding_summary": "By student disadvantage targeting, effect sizes were similar for English learners (g=0.266), low achievers (g=0.270), and students in poverty (g=0.303). Only the low-achiever subgroup was statistically significant; studies with no targeting of disadvantaged groups had a smaller but statistically significant effect of g=0.216.",
+          "measure": "student academic learning outcomes by student-targeting subgroup",
+          "effect_size": "g=0.266; g=0.270; g=0.303; g=0.216",
+          "confidence_interval": "95% CI (-0.627, 1.158); 95% CI (0.063, 0.477); 95% CI (-0.372, 0.977); 95% CI (0.151, 0.281)",
+          "sample_size": "not_reported",
+          "study_count": 18
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "pooled_meta",
+          "direction": "mixed",
+          "finding_summary": "Studies targeting students with low prior domain knowledge had g=0.234, while those without this focus had g=0.275. The two subgroup effects were similar in magnitude, but only the subgroup without low-prior-knowledge targeting was statistically significant.",
+          "measure": "student academic learning outcomes by prior-domain-knowledge subgroup",
+          "effect_size": "g=0.234; g=0.275",
+          "confidence_interval": "95% CI (-0.768, 1.236); 95% CI (0.227, 0.322)",
+          "sample_size": "not_reported",
+          "study_count": 18
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "review_synthesis",
+          "direction": "mixed",
+          "finding_summary": "A MetaForest analysis identified providing worked-out examples, intervention duration, intervention condition, type of learning outcome, and immediate measurement as the most important moderators of treatment effects. The abstract also states that effects were lower in studies including rural schools, while effects were similar across elementary and middle schools and for low-achieving students.",
+          "measure": "moderator importance and heterogeneity of ITS effects",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported",
+          "study_count": 18
+        }
+      ]
+    },
+    {
+      "name": "The vocabulary intelligent tutoring system",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "personalization_adaptation"
+      ],
+      "description": "An intelligent tutoring system focused on vocabulary learning.",
+      "use_case": "Listed in Table 1 as one of the 11 ITS included in this meta-analysis; associated with Baker et al. (2021) and contributed 6 effect sizes. The review includes it as part of the pooled evidence on K-12 ITS effects but does not provide a tool-specific effect estimate or separate conclusion for this system.",
+      "findings": []
+    },
+    {
+      "name": "ALEKS",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "personalization_adaptation"
+      ],
+      "description": "Adaptive online learning platform for mathematics that assesses student knowledge and delivers individualized practice and instruction.",
+      "use_case": "Explicitly named in Table 1 as 'Assessment and Learning in Knowledge Spaces (ALEKS)' and included via Craig et al. (2013), Hu et al. (2012), Huang et al. (2013), and Huang et al. (2016). It contributed 6 effect sizes to the meta-analysis. The review treats ALEKS as one of the ITS whose fixed effects were controlled in overall and moderator analyses, but does not report ALEKS-specific outcomes separately.",
+      "findings": []
+    },
+    {
+      "name": "AnimalWatch",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction"
+      ],
+      "description": "A named intelligent tutoring system, abbreviated AW in the review.",
+      "use_case": "Listed in Table 1 as 'AnimalWatch (AW)' from Niaki et al. (2019), contributing 1 effect size. Included as one of the 11 ITS synthesized in the review, without a separate tool-specific result.",
+      "findings": []
+    },
+    {
+      "name": "Cognitive Tutor Algebra I",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "personalization_adaptation"
+      ],
+      "description": "A Cognitive Tutor intelligent tutoring system for Algebra I instruction.",
+      "use_case": "Listed in Table 1 as 'Cognitive Tutor Algebra I (CTAI)' from Pane et al. (2016), contributing 2 effect sizes. Included in the review's synthesis of K-12 ITS effects; no separate effect estimate or conclusion is reported specifically for this tool.",
+      "findings": []
+    },
+    {
+      "name": "MathConceptz",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction"
+      ],
+      "description": "A named intelligent tutoring system for mathematics learning.",
+      "use_case": "Listed in Table 1 as 'MathConceptz' from Affriie-Adams (2020), contributing 1 effect size. Mentioned as one of the reviewed ITS, with no tool-specific findings reported.",
+      "findings": []
+    },
+    {
+      "name": "MATHia",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "personalization_adaptation"
+      ],
+      "description": "A named intelligent tutoring system for mathematics instruction.",
+      "use_case": "Listed in Table 1 as 'MATHia' from Mariano (2015), contributing 6 effect sizes. Included among the 11 ITS in the meta-analysis; the review does not isolate findings specifically for MATHia.",
+      "findings": []
+    },
+    {
+      "name": "Reasoning Mind\u2019s Grade 5 Common Core Curriculum",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "personalization_adaptation"
+      ],
+      "description": "A named intelligent tutoring curriculum/system for Grade 5 mathematics aligned to Common Core standards.",
+      "use_case": "Listed in Table 1 as 'Reasoning Mind\u2019s Grade 5 Common Core Curriculum (RM-CC5)' from Shechtman et al. (2019), contributing 1 effect size. Included in the pooled ITS synthesis only.",
+      "findings": []
+    },
+    {
+      "name": "Strategy instruction on the Web for Spanish speaking English learners",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "language_speech"
+      ],
+      "description": "A named web-based intelligent tutoring system designed for Spanish-speaking English learners.",
+      "use_case": "Listed in Table 1 as 'Strategy instruction on the Web for Spanish speaking English learners (SWELL)' from Wijekumar et al. (2018), contributing 10 effect sizes. The review includes it as a literacy-oriented ITS and part of the overall moderator analyses, but gives no separate SWELL-specific result.",
+      "findings": []
+    },
+    {
+      "name": "Intelligent Tutoring System for the Structure Strategy",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "personalization_adaptation"
+      ],
+      "description": "A named intelligent tutoring system focused on teaching the structure strategy, likely in reading/writing contexts.",
+      "use_case": "Listed in Table 1 as 'Intelligent Tutoring System for the Structure Strategy (ITSS)' from multiple Wijekumar et al. studies (2012, 2014, 2017, 2020, 2022), contributing 39 effect sizes, the largest share in the review. It is part of the pooled evidence and moderator analyses but no tool-specific estimate is separately reported.",
+      "findings": []
+    },
+    {
+      "name": "Wayang Outpost",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "personalization_adaptation"
+      ],
+      "description": "A named intelligent tutoring system included in K-12 studies in the review.",
+      "use_case": "Listed in Table 1 as 'Wayang Outpost' from Arroyo et al. (2011), contributing 4 effect sizes. Included in the meta-analysis as one of the ITS whose fixed effects were controlled; no separate findings are reported for this product.",
+      "findings": []
+    },
+    {
+      "name": "Woot Math Adaptive Learning",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "personalization_adaptation"
+      ],
+      "description": "A named adaptive learning/intelligent tutoring system for mathematics.",
+      "use_case": "Listed in Table 1 as 'Woot Math Adaptive Learning (WMAL)' from Bush (2021), contributing 1 effect size. Included in the overall ITS synthesis with no separate tool-specific result.",
+      "findings": []
+    }
+  ],
+  "verdict": "",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is a meta-analysis of 18 U.S. experimental studies with positive overall effects, but it has some credibility concerns because attrition reporting was incomplete and not all included studies could be confirmed as meeting WWC standards without reservations.",
+  "impact_tier": "blue",
+  "impact_tier_rationale": "The overall pooled effect on student learning outcomes was positive and statistically significant (g=0.271), exceeding the 0.20 threshold for blue impact and applying to general as well as some priority student populations.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": "Converted from kg_curator_v4 legacy extraction",
+  "_legacy_source": "/Users/alymoosa/Documents/A-Moosa-Dev/AI-EDU-Dev/eduagent/open_deep_research_v2/scripts/extraction_profiles_v3/do_intelligent_tutoring_systems_benefit_k_12_students_a_meta_analysis_and_evalua.json"
+}

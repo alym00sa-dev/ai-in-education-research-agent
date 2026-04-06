@@ -1,0 +1,65 @@
+{
+  "title": "Simulation Streams: A Programming Paradigm for Controlling Large Language Models and Building Complex Systems with Generative AI",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2501.18668v1",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses the problem of how to use large language models (LLMs) to drive long, complex simulations without losing consistency, violating rules, or drifting out of context over many iterations. The authors argue that ordinary prompt-based simulation breaks down because LLMs can become inconsistent in format, fail to track state, and ignore or hallucinate constraints in extended trajectories.\n\nTo address this, the paper proposes Simulation Streams, a programming paradigm for controlling LLM behavior through a state-based architecture. Programs are expressed as sequences of operators that update state variables, generate structured output rows, and selectively invoke the LLM only when needed. The framework also supports substreams for context management and an Entity-Component-System (ECS) organization for modular simulation programs. The implementation is described as a Python codebase with a Flask-based editor and supporting utilities.\n\nThe paper is not an education study. Its examples are illustrative simulations, including a grid-world cheese-finding task, reinforcement-learning benchmark tasks, a social simulation with three characters, and a market economy simulation. The paper compares model behavior within these simulations and argues that newer Gemini models, especially Gemini-2.0-Flash variants, are well suited to the framework because they maintain format consistency and simulation state more reliably.\n\nOverall, the main conclusion is that Simulation Streams offers a flexible and minimally interfering way to structure LLM-driven simulations, enabling consistent long-running trajectories and easier comparison across models and workflows.",
+  "limitations": [
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "identified_tools": [
+    {
+      "name": "Gemini",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "other"
+      ],
+      "description": "Google\u2019s family of large language models used for generative AI, including Flash, Pro, and Thinking variants.",
+      "use_case": "The paper proposes and evaluates the Simulation Streams framework using several Gemini model variants (e.g., Gemini-1.5-Pro-002, Gemini-1.5-Flash-002, Gemini-2.0-Flash-Exp, Gemini-2.0-Flash-Thinking-Exp-01-21) as the language model component for simulation generation and control.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Across the social simulation, Gemini-2.0-Flash-Exp maintained complete consistency across each character\u2019s 250 decisions, and Gemini-2.0-Flash-Thinking-Exp made only a handful of mistakes. The paper also reports that Gemini-2.0-Flash-Exp generated exactly one additional simulation row in the correct format, reducing excess tokens and resampling needs.",
+          "measure": "Simulation consistency across multi-agent social simulation decisions; adherence to exact output format",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "10 independent runs; 250 decisions per character"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In the RL benchmark suite, Gemini-1.5-Pro-002 consistently outperformed Gemini-1.5-Flash-002 across all six tasks, while Gemini-1.5-Flash-002 outperformed Gemini-1.0-Pro in five of six tasks. Gemini-2.0-Flash-Exp outperformed Gemini-1.5-Flash-002 in 4 of 6 tasks, and Gemini-2.0-Flash-Thinking-Exp-01-21 was reported as the best performer on windy gridworld and the only model performing truly well on temperature control.",
+          "measure": "Performance on six classical RL benchmark tasks (Windy Gridworld, Key-Chest, Maze navigation, Mountain Car, Temperature Control, Robot Cleaning)",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "10 independent runs x 25 steps x 6 tasks"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a theoretical/framework paper introducing Simulation Streams, not a K-12 intervention study, RCT, or meta-analysis. The reported experiments are illustrative benchmark and simulation comparisons rather than education research with student outcomes.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "No K-12 reading or literacy outcome is reported, and no direct student-facing instructional effect is measured. The paper\u2019s results concern simulation consistency and RL benchmark performance, so educational impact on the requested domain is not demonstrated.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

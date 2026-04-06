@@ -1,0 +1,29 @@
+{
+  "title": "Demystifying Instruction Mixing for Fine-tuning Large Language Models",
+  "doi": null,
+  "year": 2024,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2312.10793v3",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper investigates how mixing different instruction-tuning datasets affects large language model (LLM) performance. The authors focus on an open question in instruction fine-tuning: how to combine general chat instructions, coding instructions, and NLP task instructions in a way that improves overall capabilities rather than optimizing one skill at the expense of another.\n\nThe intervention studied is not an educational intervention with human participants, but a set of fine-tuning experiments on LLaMA-2 7B and 13B models using three instruction datasets: Alpaca for general chat, CodeAlpaca for code generation, and P3 for reformatted NLP downstream tasks. The models are trained under eight dataset-mixing configurations, with additional experiments varying the ratio and number of specialized instruction samples. Performance is evaluated on NLP benchmarks, HumanEval for coding, and FLASK/GPT-4-based alignment skill assessments.\n\nThe paper finds that specialized instruction datasets improve performance in their matching domains, but mixing all instruction types does not uniformly benefit all tasks. P3 improves NLP benchmark scores but harms alignment/chat abilities; CodeAlpaca improves coding and can also support chat alignment when combined with general instructions; and Alpaca is strongest for alignment overall. Larger models benefit more from diverse mixtures than smaller ones, and performance tends to plateau beyond roughly 10K examples per instruction type. Overall, the study argues that instruction mixture should be designed with target use cases and model scale in mind.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a methods/benchmarking paper about instruction mixture for fine-tuning LLMs, not a K-12 educational intervention study. It does not evaluate educational outcomes with student participants or an instructional design in schooling, so the evidence framework is not applicable as an educational effectiveness study.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "The paper has no direct demonstrated impact on student learning or school outcomes. Its findings are technical and indirect, about how different instruction datasets affect LLM benchmark performance and alignment in general-purpose models.",
+  "interventions": [],
+  "outcome_assignments": [],
+  "limitations": [
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "lab",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

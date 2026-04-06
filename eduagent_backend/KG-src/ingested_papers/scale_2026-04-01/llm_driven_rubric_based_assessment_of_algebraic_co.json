@@ -1,0 +1,297 @@
+{
+  "title": "LLM-Driven Rubric-Based Assessment of Algebraic Competence in Multi-Stage Block Coding Tasks with Design and Field Evaluation",
+  "doi": null,
+  "year": 2024,
+  "venue": null,
+  "url": "https://arxiv.org/abs/2510.06253",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Middle School (6th-8th)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses the challenge of assessing students\u2019 mathematical competence in online learning environments in ways that go beyond checking final answer correctness. The authors focus on algebraic competence in multi-stage tasks involving quadratic equations and block coding, arguing that conventional automated grading systems do not adequately capture students\u2019 reasoning processes, intermediate steps, and alignment with curriculum-based rubric criteria. The study asks whether a large language model (LLM)-driven, rubric-based assessment framework can provide valid, scalable, and process-oriented evaluation of student work in these complex tasks.\n\nThe intervention is a web-based assessment platform built on Algeomath that combines rule-based grading with LLM-supported rubric evaluation. Mathematics education experts designed a multi-stage task sequence centered on finding two consecutive natural numbers whose product equals a target value, using symbolic algebra and block-based programming. The system records students\u2019 intermediate submissions, attempts, feedback logs, self-check survey responses, and short reflections. It maps task segments to rubric dimensions spanning Knowledge and Understanding, Procedural Skills, and Values and Attitudes, then uses the LLM to synthesize evidence into rubric-level judgments and feedback. The study also compares LLM-generated rubric scores with expert ratings to examine validity.\n\nThe empirical field study involved 42 middle school students from two schools in South Korea during November\u2013December 2024. Students had previously learned quadratic equations, though their prior programming experience varied. Teachers introduced the lesson goals and platform usage, while a teaching assistant provided technical support. Students completed the multi-stage tasks in a guided classroom session, receiving automated formative feedback with up to four attempts per item. Quantitative analyses described score distributions, rubric-wise performance, learner clusters, and agreement between LLM and expert scoring, while open-ended reflections and expert interpretation informed the broader evaluation context.\n\nThe main conclusions are that the LLM-based rubric assessment aligned strongly with expert judgments and was able to generate rubric-aligned, process-sensitive evaluations at scale. Students performed relatively well on conceptual and structured tasks but showed weaker performance on more advanced block-coding and proactive tool-use dimensions. The authors conclude that this framework is a promising approach for scalable assessment in mathematics and STEM education, especially where process tracing and rubric-based feedback are important. At the same time, they note that the study is limited by its small sample and narrow problem domain, and they call for future validation with larger datasets and broader content areas.",
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "no_control_group",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "classroom",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "South Korea",
+  "study_region": "East Asia & Pacific",
+  "identified_tools": [
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "feedback_evaluation"
+      ],
+      "description": "A large language model used as a rubric-aligned assessment engine to evaluate open-ended mathematical reasoning, coding-related work, and holistic achievement evidence in an online learning platform.",
+      "use_case": "The paper studies an unnamed LLM embedded in the Algeomath-based platform to score open-ended explanations, synthesize segment-level evidence into rubric ratings across algebra and block-coding competencies, and generate process-oriented feedback aligned with expert-defined rubrics.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In a field study with 42 middle school students, LLM-derived rubric scores showed strong agreement with expert-assigned ratings across five rubric dimensions. Reported alignment metrics were Pearson r=0.79 and Spearman \u03c1=0.76 (both p<0.001), with average bias M=5.1 points, MAE=12.4, and RMSE=15.8; paired t-tests and Wilcoxon signed-rank tests indicated no systematic divergence beyond a small upward bias in LLM scores.",
+          "measure": "Agreement between LLM-derived and expert rubric scores across five rubric dimensions",
+          "effect_size": "r=0.79; \u03c1=0.76; MAE=12.4; RMSE=15.8; bias M=5.1 points",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=42"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The study reports that the LLM consistently produced rubric-aligned, process-oriented feedback and that mathematics education experts judged the synthesized evaluations as reducing the cognitive and temporal burden of manual grading. These conclusions are descriptive and supported by the field deployment, but no quantitative time-savings effect size was reported.",
+          "measure": "Perceived grading scalability and reduction in manual grading burden",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=42"
+        }
+      ]
+    }
+  ],
+  "verdict": "genai_general",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical field study with 42 students, but it does not use an RCT or quasi-experimental design to estimate causal effects on student learning. The strongest evidence concerns correlational alignment between LLM and expert scoring rather than intervention impact.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper shows promising validity and operational usefulness of LLM-based assessment, but impact on learning outcomes is unclear and no standardized intervention effect size on achievement is reported.",
+  "citations": [
+    {
+      "title": "An investigation of the effect of block-based programming and unplugged coding activities on fifth graders\u2019 computational thinking skills, self-efficacy and academic performance",
+      "doi": null,
+      "year": 2022,
+      "venue": "Contemporary Educational Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The concept of academic achievements",
+      "doi": null,
+      "year": 2014,
+      "venue": "International Journal of Education and Science Research Review",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Beyond traditional assessment: Exploring the impact of large language models on grading practices",
+      "doi": null,
+      "year": 2024,
+      "venue": "Journal of Artificial Intelligence, Machine Learning and Data Science",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Mathodyssey: Benchmarking mathematical problem-solving skills in large language models using odyssey math data",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv preprint arXiv:2406.18321",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Evaluating large language models: A comprehensive survey",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv preprint arXiv:2310.19736",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Scalable and explainable automated scoring for open-ended constructed response math word problems",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 18th Workshop on Innovative Use of NLP for Building Educational Applications (BEA 2023)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Can large language models make the grade? an empirical study evaluating llms ability to mark short answer questions in k-12 education",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the Eleventh ACM Conference on Learning@ Scale",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The use of scoring rubrics: Reliability, validity and educational consequences",
+      "doi": null,
+      "year": 2007,
+      "venue": "Educational Research Review",
+      "citation_level": 2,
+      "citation_context": "rubric validity and consequences framing"
+    },
+    {
+      "title": "Examining the process of middle school math teachers diagnosing and eliminating student misconceptions in algebra",
+      "doi": null,
+      "year": 2024,
+      "venue": "Journal of Theoretical Educational Science",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Elements for understanding and fostering self-assessment of learning artifacts in higher education",
+      "doi": null,
+      "year": 2024,
+      "venue": "Frontiers in Education",
+      "citation_level": 2,
+      "citation_context": "self-assessment supports metacognitive awareness"
+    },
+    {
+      "title": "Algeomath",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "web platform used for implementation"
+    },
+    {
+      "title": "Personalized auto-grading and feedback system for constructive geometry tasks using large language models on an online math platform",
+      "doi": "10.48550/arXiv.2509.25529",
+      "year": 2025,
+      "venue": "arXiv preprint arXiv:2509.25529",
+      "citation_level": 3,
+      "citation_context": "technical architecture described in detail"
+    },
+    {
+      "title": "Automated scoring of constructed response items in math assessment using large language models",
+      "doi": null,
+      "year": 2025,
+      "venue": "International Journal of Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Scoring rubric development: Validity and reliability",
+      "doi": null,
+      "year": 2000,
+      "venue": "Practical Assessment, Research, and Evaluation",
+      "citation_level": 2,
+      "citation_context": "rubric development and reliability basis"
+    },
+    {
+      "title": "Algebra I Educator Guide 2023",
+      "doi": null,
+      "year": 2023,
+      "venue": "The University of the State of New York",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Large language models and automated essay scoring of english language learner writing: Insights into validity and reliability",
+      "doi": null,
+      "year": 2024,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Realistic mathematics education: Mathematical reasoning and communication skills in rural contexts",
+      "doi": null,
+      "year": 2021,
+      "venue": "International Journal of Evaluation and Research in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Effects of rubrics on academic performance, self-regulated learning, and self-efficacy: A meta-analytic review",
+      "doi": null,
+      "year": 2023,
+      "venue": "Educational Psychology Review",
+      "citation_level": 2,
+      "citation_context": "formative rubric benefits motivate framework"
+    },
+    {
+      "title": "Rubric is all you need: Enhancing llm-based code evaluation with question-specific rubrics",
+      "doi": null,
+      "year": 2025,
+      "venue": "arXiv preprint arXiv:2503.23989",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Investigating block programming tools in high school to support education 4.0: A systematic mapping study",
+      "doi": null,
+      "year": 2023,
+      "venue": "Informatics in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Scratch: programming for all",
+      "doi": null,
+      "year": 2009,
+      "venue": "Communications of the ACM",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Ratas framework: A comprehensive genai-based approach to rubric-based marking of real-world textual exams",
+      "doi": null,
+      "year": 2025,
+      "venue": "arXiv preprint arXiv:2505.23818",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The role of large language models in personalized learning: a systematic review of educational impact",
+      "doi": null,
+      "year": 2025,
+      "venue": "Discover Sustainability",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The influence of students\u2019 problem-solving understanding and results of students\u2019 mathematics learning",
+      "doi": null,
+      "year": 2023,
+      "venue": "Frontiers in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Harnessing llms for multi-dimensional writing assessment: Reliability and alignment with human judgments",
+      "doi": null,
+      "year": 2024,
+      "venue": "Heliyon",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Scoring rubrics method in performance assessment and its effect of mathematical achievement",
+      "doi": null,
+      "year": 2025,
+      "venue": "Athens Journal of Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Evaluation of llms for mathematical problem solving",
+      "doi": null,
+      "year": 2025,
+      "venue": "arXiv preprint arXiv:2506.00309",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "From automation to augmentation: Large language models elevating essay scoring landscape",
+      "doi": null,
+      "year": 2024,
+      "venue": "CoRR",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

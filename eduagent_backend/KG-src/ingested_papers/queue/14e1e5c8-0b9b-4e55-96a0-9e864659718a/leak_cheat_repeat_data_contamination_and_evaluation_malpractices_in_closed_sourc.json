@@ -1,0 +1,66 @@
+{
+  "title": "Leak, Cheat, Repeat: Data Contamination and Evaluation Malpractices in Closed-Source LLMs",
+  "doi": null,
+  "year": 2024,
+  "venue": "Proceedings of the 18th Conference of the European Chapter of the Association for Computational Linguistics, Volume 1: Long Papers",
+  "url": "https://doi.org/10.18653/v1/2024.eacl-long.5",
+  "source_db": "openalex_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Meta-Analysis / Systematic Review",
+  "extended_summary": "This paper investigates a methodological problem in large language model (LLM) evaluation: indirect data contamination and evaluation malpractice when researchers assess closed-source models such as OpenAI\u2019s GPT-3.5 and GPT-4. The authors argue that because these models may learn from user interactions, benchmark data sent through the ChatGPT web interface can leak back into future model updates, creating unfair advantages and undermining the credibility of evaluation results. In addition to contamination, the paper examines reproducibility and fairness issues in the way proprietary LLMs are commonly tested.\n\nThe study is a systematic literature review of 255 papers that evaluated ChatGPT-related models between late November 2022 and early October 2023. The authors screened the literature, identified which studies used the web interface versus the API, and estimated how much benchmark data was exposed in ways that could be used for further training. They also checked whether papers reported prompts, code repositories, model versions, sampling procedures, and comparable baselines.\n\nThe review found that 90 papers accessed ChatGPT through the web interface, exposing over 4.7 million benchmark samples from 263 datasets. Many leaks were substantial, with more than half of leaked datasets classified as highly leaked. The paper also reports widespread reproducibility gaps and unfair comparisons, such as evaluating ChatGPT on small samples while comparing open models on full benchmarks. The authors conclude with recommended best practices for evaluating closed-source LLMs, including using API access when possible, reporting model versions and prompts, sampling all systems equally, and explicitly disclosing contamination.",
+  "limitations": [
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "Europe",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "content_generation"
+      ],
+      "description": "OpenAI's closed-source chat-based large language model service, accessed via web interface or API; in this paper it refers to GPT-3.5 and GPT-4 as used through ChatGPT.",
+      "use_case": "The paper systematically reviewed prior research using ChatGPT (GPT-3.5/GPT-4) and classified papers by whether they accessed it via the web interface or API, focusing on indirect data contamination and evaluation practices.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "review_synthesis",
+          "direction": "negative",
+          "finding_summary": "Across 255 reviewed papers, 90 papers (about 42% of the relevant set) accessed ChatGPT through the web interface in ways that could leak data to OpenAI for training. The review reports a total of 4,714,753 leaked samples from 263 unique datasets, with 142 datasets categorized as high leakage (>95%).",
+          "measure": "Number of leaked papers, leaked datasets, and leaked benchmark samples via web-interface use",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=255 papers reviewed; n=90 leaked papers"
+        },
+        {
+          "outcome_category": "Systemic / Institutional Impact",
+          "finding_type": "review_synthesis",
+          "direction": "negative",
+          "finding_summary": "The review documents widespread reproducibility and fairness problems in ChatGPT evaluations, including incomplete reporting of prompts, missing repositories, unclear model versions, and comparisons on different sample sizes. It specifically notes that 71 pre-prints and 30 published papers lacked comparison to open-source or non-LLM baselines, and that 54 pre-prints and 34 peer-reviewed papers compared results on different samples.",
+          "measure": "Presence/absence of prompts, code repositories, model version reporting, and fairness of comparative evaluation protocols",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=212 relevant papers"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a systematic review of prior papers, not an empirical study of ChatGPT in a school setting. The evidence is descriptive and audit-oriented rather than experimental, so it does not meet criteria for higher-tier causal evidence.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports large-scale contamination and evaluation-practice issues, which are important at the field level, but it does not estimate educational effect sizes or school-based outcomes. Impact is therefore substantial for research integrity, but not directly for learning outcomes.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

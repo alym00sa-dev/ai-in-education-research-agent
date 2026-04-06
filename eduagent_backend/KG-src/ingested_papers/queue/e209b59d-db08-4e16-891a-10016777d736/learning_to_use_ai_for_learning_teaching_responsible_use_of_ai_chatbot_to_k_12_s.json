@@ -1,0 +1,86 @@
+{
+  "title": "Learning to Use AI for Learning: Teaching Responsible Use of AI Chatbot to K-12 Students Through an AI Literacy Module",
+  "doi": null,
+  "year": 2026,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2508.13962v2",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Middle School (6th-8th)",
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses the need to teach K-12 students how to use generative AI chatbots responsibly and effectively for learning, with a specific focus on prompting literacy. The authors argue that as AI tools such as ChatGPT become more common in school and home settings, students need instruction not only on what AI can do, but also on how to ask better questions, when AI is appropriate for learning, and how to avoid overreliance on direct answers.\n\nTo address this, the paper presents a web-based AI literacy module built around scenario-based practice with an LLM chatbot and an automatic grader. Students complete prompt-writing tasks in three secondary-school learning scenarios (biology, geography, and math) and receive immediate feedback on dimensions such as relevance, purpose, conciseness, background/context, and whether the prompt asks for a direct answer. Study 1 was deployed in six secondary classrooms in East Asia with 111 students and used pre/post surveys, multiple-choice prompting-literacy questions, and open-ended reflections. Study 2 revised the assessment into true/false and open-ended items and re-used a similar classroom sample to evaluate item quality.\n\nFindings suggest that the AI auto-grader generally rated prompts with high accuracy, students improved in including background/context in prompts, and self-reported confidence in using AI for learning increased after the activity. However, conceptual test scores showed a ceiling effect, other prompt dimensions improved less clearly, and the paper notes that some challenges were related to students\u2019 basic typing and computer skills rather than prompting knowledge itself. The authors conclude that the module shows promise for classroom AI literacy instruction, but more extensive and comparative studies are needed to establish learning effectiveness and assessment quality.",
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "no_control_group",
+    "self_reported_measures",
+    "non_representative_population",
+    "no_long_term_followup",
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "classroom",
+  "teacher_training": "yes",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "East Asia & Pacific",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "feedback_evaluation"
+      ],
+      "description": "OpenAI GPT-family large language model chatbot used for interactive prompting practice and AI-based auto-grading/feedback in a K-12 AI literacy module.",
+      "use_case": "Used as the underlying LLM via GPT-4o for student prompt generation, chatbot responses, and automatic grading of student-written prompts in classroom deployments.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In Study 1, the GPT-4o-based auto-grader was compared against human labels on 483 unique student-written prompts and achieved an average accuracy of 0.92 overall. The paper reports high pass/fail accuracy for relevance (0.98), background (0.96), and elaboration (0.90), with lower accuracy for purpose (0.85) and no-direct-answer (0.88), indicating mostly strong grading performance with some rubric-specific weaknesses.",
+          "measure": "Accuracy of AI-based automatic grading against human labels for student-written prompts",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=483 prompts"
+        },
+        {
+          "outcome_category": "Academic \u0014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The prompting literacy module was associated with improved student performance on one prompt dimension: the proportion of students correctly including background/context in prompts increased significantly from Q1 to Q3 (p = .039). Students also reported increased confidence in using AI for learning, with self-reported confidence rising by 10.4% on average (SD = 0.92; Wilcoxon p < .001).",
+          "measure": "Prompt-dimension performance and self-reported confidence in using AI for learning",
+          "effect_size": "10.4% increase in confidence; r=0.27 for prior AI use and first-question performance",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=111 valid Study 1 students; n=98 pre/post test completers"
+        },
+        {
+          "outcome_category": "Academic \u0014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Study 2 compared the original multiple-choice assessment with a revised assessment using True/False and open-ended items. The revised version improved item quality: none of the MCQs fell in the desired difficulty range, whereas 60% of open-ended items and 30% of True/False items did; Cronbach\u2019s alpha was 0.68 for the original assessment and 0.58 for the iterated version.",
+          "measure": "Assessment difficulty, discrimination, and internal reliability for prompting literacy assessment items",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical classroom study with mixed methods and clear procedures, but not a randomized controlled trial. Evidence includes descriptive statistics, nonparametric tests, and item analysis rather than a strong causal design.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The reported gains are modest-to-unclear in scope: one significant improvement in background/context prompting, a self-reported confidence increase, and improved assessment item quality. No standardized literacy outcome or large effect size is reported.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

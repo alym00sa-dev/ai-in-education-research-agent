@@ -1,0 +1,178 @@
+{
+  "title": "Using Generative AI to Evaluate Pre-Service Teachers\u2019 Project-Based Learning Designs",
+  "doi": "10.53349/re-source.2026.is1.a1545",
+  "year": 2026,
+  "venue": "RE-Source. Journal of the Centre for Didactics of Technical and Vocational Education and Training, Special Issue 1: Engineering Pedagogy",
+  "url": "https://www.semanticscholar.org/paper/f0c485eabb5b4e590bd1ac9c0df209bf2411efc0",
+  "source_db": "semantic_scholar_search",
+  "populations": [
+    "Graduate / Doctoral"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper examines whether generative AI can be used to evaluate pre-service teachers\u2019 project-based learning (PBL) lesson plans and provide useful formative feedback. The central question is not only whether AI can score PBL designs against an established framework, but also how its judgments compare with expert teacher evaluations and how different chatbots vary in the feedback they generate.\n\nThe intervention is a system prompt built around the Gold Standard PBL criteria from Larmer, Mergendoller, and Boss (2015). The prompt instructs chatbots to evaluate seven dimensions of project quality, provide criterion-based commentary, identify strengths and weaknesses, and recommend improvements. The study tested this prompt on 10 PBL teaching preparations created by students in vocational teacher education. Five genAI tools were used (ChatGPT, Gemini, Claude, Copilot, and Perplexity), and two vocational education teachers independently evaluated the same materials in parallel.\n\nThe paper reports both quantitative scoring of the seven PBL criteria and qualitative analysis of verbal comments. The findings suggest that GenAI can produce structured, reasonably consistent first-pass evaluations and that its average ratings were similar to those of the teachers overall. The strongest criterion across evaluators was authenticity, while reflection, critique and revision, and sustained inquiry were the weakest areas. The authors conclude that GenAI is useful for rapid, criteria-based feedback, but teachers remain essential for deeper pedagogical interpretation and for judging the educational significance of the designs.",
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Czech Republic",
+  "study_region": "Europe",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "content_generation"
+      ],
+      "description": "OpenAI\u2019s GPT-based conversational AI chatbot used to generate and evaluate text based on prompts.",
+      "use_case": "Used as one of five GenAI chatbots to evaluate 10 pre-service teachers\u2019 project-based learning lesson designs against the Gold Standard PBL criteria and to provide strengths, weaknesses, and recommendations.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "In the 10 PBL plans, ChatGPT\u2019s average rating was 1.88 on the 1\u20134 Gold Standard PBL scale. Across all criteria, it was generally less positive than Gemini and Perplexity, but the paper reports that the average overall AI rating matched the teachers\u2019 average overall rating of 1.79.",
+          "measure": "Average Gold Standard PBL criterion ratings and overall rating for 10 lesson designs",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=10 lesson designs"
+        }
+      ]
+    },
+    {
+      "name": "Claude",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "content_generation"
+      ],
+      "description": "Anthropic\u2019s conversational AI chatbot used for text generation and analysis.",
+      "use_case": "Used as one of five GenAI chatbots to evaluate 10 pre-service teachers\u2019 PBL lesson designs and provide criterion-based feedback.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0014 Other",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "Claude had the most critical average rating among the chatbots, with a mean of 2.50 on the 1\u20134 Gold Standard PBL scale. The paper notes that Claude evaluated all criteria with reservation and was especially critical of Reflection and Critique & Revision.",
+          "measure": "Average Gold Standard PBL criterion ratings and overall rating for 10 lesson designs",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=10 lesson designs"
+        }
+      ]
+    },
+    {
+      "name": "Gemini",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "content_generation"
+      ],
+      "description": "Google\u2019s conversational AI chatbot used for generating and evaluating text.",
+      "use_case": "Used as one of five GenAI chatbots to evaluate 10 pre-service teachers\u2019 PBL lesson designs and provide structured feedback.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Gemini received the most positive average evaluation among the tools, with a mean score of 1.36 on the 1\u20134 Gold Standard PBL scale. The paper reports that it was the most generous evaluator overall, while still identifying weaknesses in Reflection and Critique & Revision.",
+          "measure": "Average Gold Standard PBL criterion ratings and overall rating for 10 lesson designs",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=10 lesson designs"
+        }
+      ]
+    },
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "feedback_evaluation",
+        "content_generation"
+      ],
+      "description": "Generic generative AI chatbot(s) used for producing criterion-based written feedback from prompts.",
+      "use_case": "The paper compares multiple unnamed GenAI chatbots as a category, alongside teacher expert evaluations, for assessing PBL lesson preparations using the same system prompt.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Across the five chatbots, the average AI evaluation was 1.79, which matched the teachers\u2019 average overall rating of 1.79. The paper concludes that GenAI can serve as a valid first stage of evaluation, offering rapid and structured assessment, while teachers remain essential for deeper pedagogical interpretation.",
+          "measure": "Average Gold Standard PBL rating and verbal strength/weakness descriptions for 10 lesson designs",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=10 lesson designs"
+        }
+      ]
+    },
+    {
+      "name": "Copilot",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "content_generation"
+      ],
+      "description": "Microsoft\u2019s conversational AI assistant used for text generation and analysis.",
+      "use_case": "Used as one of five GenAI chatbots to evaluate 10 pre-service teachers\u2019 PBL lesson designs and generate feedback.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Copilot\u2019s mean rating was 1.75 on the 1\u20134 Gold Standard PBL scale, placing it between ChatGPT and Gemini/Perplexity. The paper describes its feedback as concise and clear, with a brief final overview and relatively few recommendations.",
+          "measure": "Average Gold Standard PBL criterion ratings and overall rating for 10 lesson designs",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=10 lesson designs"
+        }
+      ]
+    },
+    {
+      "name": "Perplexity",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "content_generation"
+      ],
+      "description": "Perplexity AI chatbot used for prompt-based question answering and text generation.",
+      "use_case": "Used as one of five GenAI chatbots to evaluate 10 pre-service teachers\u2019 PBL lesson designs and provide constructive feedback.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Perplexity\u2019s mean rating was 1.46 on the 1\u20134 Gold Standard PBL scale, making it one of the most positive evaluators. The paper reports that its outputs were compact, included strengths, weaknesses, and recommendations, and ended with a brief summary and Gold Standard level.",
+          "measure": "Average Gold Standard PBL criterion ratings and overall rating for 10 lesson designs",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=10 lesson designs"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a small empirical study with 10 lesson-design cases and qualitative/quantitative descriptive comparison across chatbots and teachers. It is not a randomized trial and provides no inferential statistics or effect sizes.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports useful practical differences in feedback style and average ratings, but no effect sizes are given and the measured differences are modest and descriptive. The main conclusion is about feasibility and usefulness for teacher support rather than demonstrated large outcome gains.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": "via unpaywall"
+}

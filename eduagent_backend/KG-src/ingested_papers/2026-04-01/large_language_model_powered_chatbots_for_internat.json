@@ -1,0 +1,195 @@
+{
+  "title": "LARGE LANGUAGE MODEL-POWERED CHATBOTS FOR INTERNATIONALIZING STUDENT SUPPORT IN HIGHER EDUCATION",
+  "doi": null,
+  "year": 2024,
+  "venue": null,
+  "url": "http://arxiv.org/abs/2403.14702v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper examines whether a large language model (LLM)-powered chatbot can improve student support for higher education internationalization, especially for international and exchange students seeking information about a university. The authors focus on the challenge of providing timely, accurate, engaging, and multilingual support for students navigating academic, administrative, and cultural questions. The study is motivated by gaps in prior research on how LLM-based chatbots can specifically support international student needs in higher education.\n\nThe intervention is a chatbot built for Al Akhawayn University (AUI) using Python 3, OpenAI GPT-3.5-Turbo and GPT-4-Turbo, LangChain, and a Chroma vector database. The system retrieves relevant information from manually curated and embedded university web content, uses GPT-3.5-Turbo to generate responses, and then uses GPT-4-Turbo as a verifier to reduce hallucinations and align answers with official university information. The chatbot was designed to provide professional, natural, context-aware responses, preserve conversation memory, resist provocation, and support multiple languages.\n\nThe empirical evaluation was conducted at a single institution, Al Akhawayn University in Morocco, using a survey of students who rated sample chatbot responses on Likert-scale measures including quality, relevance, correctness, formality, and human-likeness. The final analyzed dataset included 11 student evaluators (10 Moroccan and 1 international student) and 79 evaluations per metric after removing very short responses. Additional internal testing examined multilingual performance, provocation handling, and information retrieval, though these were not formally validated through the student survey.\n\nThe paper concludes that the chatbot performed strongly overall, with bootstrapped 95% confidence intervals centered around scores of approximately 4 out of 5 across the evaluated dimensions. Students appeared to prefer the chatbot-style support over traditional methods, and the system generally produced relevant, correct, and professional responses with a low error rate, though some hallucination remained possible. The authors argue that LLM-powered chatbots are a scalable and cost-effective way to enhance international student support, while noting the need for larger-scale evaluations, expert assessment of translations, broader datasets, and additional interface and performance testing.",
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_control_group",
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Morocco",
+  "study_region": "Middle East & North Africa",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "language_speech",
+        "other"
+      ],
+      "description": "OpenAI GPT-family large language model used here as the core engine for an LLM-powered student-support chatbot, with retrieval augmentation and verification steps.",
+      "use_case": "The paper designed and evaluated an AUI international student-support chatbot built with GPT-3.5-Turbo for response generation and GPT-4-Turbo for fact-checking/translation, supported by LangChain memory and a Chroma vector store of university information.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In a student survey evaluating the chatbot's general capabilities, perceived Quality received a bootstrapped 95% confidence interval of [4.06\u20134.43] on a 1\u20135 Likert scale. The final evaluation set included 79 evaluations after filtering, indicating students rated the chatbot's response quality highly.",
+          "measure": "Student Likert ratings of response quality (1\u20135) with bootstrapped mean confidence interval",
+          "effect_size": "not_reported",
+          "confidence_interval": "[4.06\u20134.43]",
+          "sample_size": "79 evaluations"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Perceived Relevance of chatbot responses was rated highly, with a bootstrapped 95% confidence interval of [4.02\u20134.41] on a 1\u20135 Likert scale. This was based on 79 retained evaluations from AUI students reviewing query-response pairs.",
+          "measure": "Student Likert ratings of response relevance (1\u20135) with bootstrapped mean confidence interval",
+          "effect_size": "not_reported",
+          "confidence_interval": "[4.02\u20134.41]",
+          "sample_size": "79 evaluations"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Perceived Correctness was strong, with a bootstrapped 95% confidence interval reported in the results table as [4.18\u20134.47] on a 1\u20135 Likert scale. The paper interprets this as evidence that the chatbot generally avoided hallucinations and provided correct information from official sources.",
+          "measure": "Student Likert ratings of response correctness (1\u20135) with bootstrapped mean confidence interval",
+          "effect_size": "not_reported",
+          "confidence_interval": "[4.18\u20134.47]",
+          "sample_size": "79 evaluations"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Perceived Formality was rated highly, with a bootstrapped 95% confidence interval of [4.24\u20134.54] on a 1\u20135 Likert scale. Students thus viewed the chatbot as formal and professional in its support interactions.",
+          "measure": "Student Likert ratings of response formality (1\u20135) with bootstrapped mean confidence interval",
+          "effect_size": "not_reported",
+          "confidence_interval": "[4.24\u20134.54]",
+          "sample_size": "79 evaluations"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Human-Like quality received the lowest but still positive ratings among the surveyed dimensions, with a bootstrapped 95% confidence interval of [3.87\u20134.32] on a 1\u20135 Likert scale. The authors note greater variability across situations for this dimension.",
+          "measure": "Student Likert ratings of human-like responsiveness (1\u20135) with bootstrapped mean confidence interval",
+          "effect_size": "not_reported",
+          "confidence_interval": "[3.87\u20134.32]",
+          "sample_size": "79 evaluations"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Internal testing suggested the chatbot successfully handled multilingual queries and professional responses to provocation, and it usually used retrieved vector-store information correctly. However, the paper reports at least one hallucination case in which the chatbot confidently generated information about a nonexistent 'Poetry major at AUI.'",
+          "measure": "Internal test-set observations of translation, provocation resistance, and information retrieval",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical evaluation of a specific chatbot implementation, but the main evidence is a small survey-based assessment of perceived response quality rather than a controlled study of student learning outcomes. Internal tests for provocation, retrieval, and translation were observational and not fully quantified.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "Results are favorable, with high Likert-scale ratings across operational metrics, but no standardized effect sizes or causal estimates are reported. Impact on educational outcomes is therefore promising but unclear and limited to perceived support quality.",
+  "citations": [
+    {
+      "title": "Internationalisation of higher education: The pros and cons",
+      "doi": null,
+      "year": 2017,
+      "venue": "Social Sciences Postgraduate International Seminar (SSPIS)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Creating large language model applications utilizing langchain: A primer on developing llm apps fast",
+      "doi": null,
+      "year": 2023,
+      "venue": "International Conference on Applied Engineering and Natural Sciences",
+      "citation_level": 3,
+      "citation_context": "used to justify LangChain practicality and capabilities"
+    },
+    {
+      "title": "Chatbots in customer service: Their relevance and impact on service quality",
+      "doi": null,
+      "year": 2022,
+      "venue": "Procedia Computer Science",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Role of AI chatbots in education: systematic literature review",
+      "doi": null,
+      "year": 2023,
+      "venue": "International Journal of Educational Technology in Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Homepage",
+      "doi": null,
+      "year": null,
+      "venue": "Python Package Index",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "GPT-3.5, GPT-4, or BARD? Evaluating LLMs reasoning ability in zero-shot setting and performance boosting through prompts",
+      "doi": null,
+      "year": 2023,
+      "venue": "Natural Language Processing Journal",
+      "citation_level": 2,
+      "citation_context": "supports selection of GPT-3.5 and GPT-4 models"
+    },
+    {
+      "title": "Creating large language model applications utilizing langchain: A primer on developing llm apps fast",
+      "doi": null,
+      "year": 2023,
+      "venue": "International Conference on Applied Engineering and Natural Sciences",
+      "citation_level": 3,
+      "citation_context": "used to justify LangChain practicality and capabilities"
+    },
+    {
+      "title": "Chroma: The open-source embedding database",
+      "doi": null,
+      "year": null,
+      "venue": "Chroma documentation",
+      "citation_level": 3,
+      "citation_context": "source for local vector database functionality"
+    },
+    {
+      "title": "A survey on hallucination in large language models: Principles, taxonomy, challenges, and open questions",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_level": 2,
+      "citation_context": "motivates GPT-4 verifier to mitigate hallucinations"
+    },
+    {
+      "title": "Prompt Engineering or Fine Tuning: An Empirical Assessment of Large Language Models in Automated Software Engineering Tasks",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_level": 2,
+      "citation_context": "supports choosing prompt engineering over fine-tuning"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

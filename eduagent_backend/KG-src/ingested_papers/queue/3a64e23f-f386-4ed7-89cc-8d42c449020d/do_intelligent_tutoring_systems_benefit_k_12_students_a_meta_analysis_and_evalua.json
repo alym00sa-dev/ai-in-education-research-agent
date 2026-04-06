@@ -1,0 +1,102 @@
+{
+  "title": "Do intelligent tutoring systems benefit K-12 students? A meta-analysis and evaluation of heterogeneity of treatment effects in the U.S.",
+  "doi": null,
+  "year": 2025,
+  "venue": "not_reported",
+  "url": "http://arxiv.org/abs/2511.04997v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Elementary (PreK-5th)",
+    "Middle School (6th-8th)",
+    "High School (9th-12th)",
+    "K-12 (unspecified grade)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Meta-Analysis / Systematic Review",
+  "extended_summary": "This paper asks whether intelligent tutoring systems (ITS) benefit K-12 students in the United States, and whether the effects vary by study design, student characteristics, instructional features, outcome measures, and setting. The authors position ITS as an AI-supported educational technology that can personalize practice, hints, feedback, and instructional support, but note that evidence across prior meta-analyses has been mixed in terms of internal and external validity.\n\nThe study is a systematic review and meta-analysis of experimental ITS studies conducted in U.S. K-12 schools from 2011 to 2021. After screening more than 2,000 records, the authors included 18 experimental studies yielding 77 effect sizes across 11 ITS, such as ALEKS, MATHia, Cognitive Tutor Algebra I, SWELL, and the Intelligent Tutoring System for the Structure Strategy. The included studies covered elementary, middle, and some high-school contexts, with many interventions delivered in classrooms, as homework, or as separate activities. Outcomes were primarily academic achievement measures, including mathematics and reading/writing, with both standardized and researcher-developed tests.\n\nOverall, the meta-analysis found a statistically significant positive effect of ITS on learning outcomes (g=0.271). Effects were similar across elementary and middle school, across several student subgroups, and across urban/suburban settings, but were smaller in rural schools. Among the most important moderators were worked-out examples, intervention duration, intervention condition, type of learning outcome, and immediate measurement. The authors conclude that ITS can improve K-12 achievement, especially when they include worked-out examples and are implemented in ways that align with classroom use, but that effect sizes vary meaningfully by context and design.",
+  "quality_tier": "blue",
+  "quality_tier_rationale": "This is a meta-analysis of 18 experimental studies with 77 effect sizes, using multilevel meta-regression and robust variance estimation. It directly evaluates causal evidence and moderator heterogeneity in K-12 ITS studies, which fits the highest evidence-quality tier despite some attrition-reporting limitations.",
+  "impact_tier": "blue",
+  "impact_tier_rationale": "The overall effect is modest but clearly positive (g=0.271), meeting the threshold for medium/large impact in this framework. Effects are also positive across major subgroups and several subject areas, indicating meaningful potential for K-12 implementation.",
+  "interventions": [
+    {
+      "intervention": "Intelligent Tutoring System (ITS)",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "Meta-analysis of classical intelligent tutoring systems used in U.S. K-12 schools, including systems such as ALEKS, Cognitive Tutor Algebra I, MATHia, ASSISTments-like vocabulary tutoring, and related adaptive step-based or hint-based tutors providing feedback, worked examples, and question sequences."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Across 18 experimental studies and 77 effect sizes from 11 ITS, the overall effect on U.S. K-12 learning outcomes was positive and statistically significant (g=0.271, SE=0.011, p=0.001). This supports a modest average benefit of ITS relative to comparison conditions, with the meta-analysis also showing variation by moderators such as duration, measurement timing, and support type.",
+        "measure": "Student learning outcomes / academic achievement (varied subject-specific tests across studies)",
+        "study_size": "n=77 effect sizes from 18 studies",
+        "effect_size": "g=0.271",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 0.9,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Math-focused ITS studies showed positive effects, including g=0.253 for mathematics outcomes across 22 effect sizes. The paper also reports that math ITS had lower importance than worked-out examples but still contributed positively to achievement, with stronger effects observed for some short-to-medium duration implementations and for immediate posttests.",
+        "measure": "Mathematics achievement tests",
+        "study_size": "n=22 effect sizes",
+        "effect_size": "g=0.253",
+        "confidence_interval": "(0.224, 0.281)",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Academic \u2014 Literacy",
+      "confidence": 0.9,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Reading and writing outcomes showed a positive effect of ITS, with g=0.323 across 55 effect sizes and statistically significant results. The MetaForest analysis also ranked reading/writing ITS as having higher effect sizes than math ITS, and immediate post-intervention measures were notably larger than end-of-year measures.",
+        "measure": "Reading and writing achievement tests",
+        "study_size": "n=55 effect sizes",
+        "effect_size": "g=0.323",
+        "confidence_interval": "(0.218, 0.428)",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.7,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper includes motivational support as an ITS feature and notes that support types related to learner regulation and encouragement had positive effects, with motivation support showing g=0.265 across 23 effect sizes. While not the paper's main outcome, this indicates modest gains in engagement-related support within ITS implementations.",
+        "measure": "Motivation support / engagement-related learning support in ITS",
+        "study_size": "n=23 effect sizes",
+        "effect_size": "g=0.265",
+        "confidence_interval": "(0.102, 0.428)",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "high_attrition",
+    "no_long_term_followup",
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "blended",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

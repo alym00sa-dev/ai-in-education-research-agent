@@ -1,0 +1,106 @@
+{
+  "title": "Question Generation for Assessing Early Literacy Reading Comprehension",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2507.22410v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Elementary (PreK-5th)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses the problem of generating reading-comprehension questions for early literacy assessment, especially for K-2 English learners. The authors argue that content-based interactions such as dialogic reading are important for reading acquisition, and propose an automated way to create comprehension questions that can cover source material thoroughly and adjust to learner proficiency.\n\nThe intervention presented is YourBench4Edu, a question-generation framework built on the YourBench pipeline. It ingests learning materials in formats such as PDF, HTML, and markdown, summarizes and segments the text, and then uses large language models to generate diverse question-answer pairs across question types such as factual, analytical, true/false, single-shot, and multi-hop questions. The system is designed to be configurable by question type, difficulty, and quantity, and is intended for use in conversational agents and educator preparation of assessment items.\n\nThe paper validates the framework on the FairytaleQA validation and test sets, which contain narrative-comprehension questions for kindergarten through eighth-grade level materials, though the paper\u2019s stated educational target is K-2 learners. The evaluation compares several language models, including Llama-3.3-70B-Instruct, Qwen3-235B-A22B, and QwQ-32B, against prior question-generation methods using MAP@N with Rouge-L F1 and BERTScore F1. The authors conclude that their framework achieves strong results, especially on Rouge-L-based MAP@N, and suggest it could support autonomous AI-driven English instruction.",
+  "limitations": [
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "LLaMA",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "feedback_evaluation"
+      ],
+      "description": "A Meta LLaMA-family large language model used for question generation and reading-comprehension assessment in an educational pipeline.",
+      "use_case": "Evaluated as the underlying language model for YourBench4Edu to generate early-literacy comprehension questions from story text and ground-truth answers for K-2 English learners.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0002 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The paper reports that LLaMA-3.3-70B-Instruct used within YourBench4Edu achieved competitive question-generation quality on the FairytaleQA validation and test sets. On MAP@N with Rouge-L F1, the model scored 0.515/0.497 at Top 10, 0.508/0.489 at Top 5, 0.500/0.481 at Top 3, and 0.477/0.459 at Top 1; on MAP@N with BERTScore F1 it scored 0.9027/0.8996, 0.9018/0.8987, 0.9006/0.8977, and 0.8971/0.8943, respectively.",
+          "measure": "MAP@N with Rouge-L F1 and MAP@N with BERTScore F1 on FairytaleQA validation/test sets",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    },
+    {
+      "name": "Qwen",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "feedback_evaluation"
+      ],
+      "description": "An Alibaba Qwen-family large language model used to generate educational comprehension questions and assess reading-comprehension content quality.",
+      "use_case": "Evaluated as the language model underpinning YourBench4Edu for question generation on FairytaleQA story materials for K-2 English learners.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0002 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Qwen3-235B-A22B in YourBench4Edu produced competitive question-generation performance on FairytaleQA. It achieved MAP@N with Rouge-L F1 of 0.508/0.497 at Top 10, 0.496/0.483 at Top 5, 0.484/0.470 at Top 3, and 0.454/0.439 at Top 1; MAP@N with BERTScore F1 was 0.9031/0.9022, 0.9015/0.8999, 0.9000/0.8986, and 0.8953/0.8942.",
+          "measure": "MAP@N with Rouge-L F1 and MAP@N with BERTScore F1 on FairytaleQA validation/test sets",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    },
+    {
+      "name": "Qwen",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "feedback_evaluation"
+      ],
+      "description": "An Alibaba Qwen-family large language model used to generate educational comprehension questions and assess reading-comprehension content quality.",
+      "use_case": "Evaluated as the language model underpinning YourBench4Edu for question generation on FairytaleQA story materials for K-2 English learners.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0002 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "QwQ-32B in YourBench4Edu showed the strongest Rouge-L-based results among the reported models. It achieved MAP@N with Rouge-L F1 of 0.573/0.532 at Top 10, 0.553/0.516 at Top 5, 0.540/0.502 at Top 3, and 0.504/0.466 at Top 1; MAP@N with BERTScore F1 was 0.9107/0.9043, 0.9083/0.9022, 0.9064/0.9007, and 0.9011/0.8960.",
+          "measure": "MAP@N with Rouge-L F1 and MAP@N with BERTScore F1 on FairytaleQA validation/test sets",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a system paper evaluating question-generation quality for an educational reading-comprehension pipeline, not a causal study of student literacy outcomes. It reports benchmark metrics on generated questions rather than learner-level effects, so it does not meet evidence standards for direct effectiveness.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The reported gains are on automated generation metrics (MAP@N with Rouge-L F1/BERTScore F1), not on student reading or literacy outcomes, so educational impact is indirect and unclear. No effect sizes on learner outcomes are provided.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

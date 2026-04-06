@@ -1,0 +1,59 @@
+{
+  "title": "How Does ChatGPT Perform on the United States Medical Licensing Examination (USMLE)? The Implications of Large Language Models for Medical Education and Knowledge Assessment",
+  "doi": "10.2196/45312",
+  "year": 2023,
+  "venue": "JMIR Medical Education",
+  "url": "https://doi.org/10.2196/45312",
+  "source_db": "openalex_search",
+  "populations": [
+    "Graduate / Doctoral"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper examines whether ChatGPT can answer medical licensing-style multiple-choice questions at a level comparable to medical trainees, and what that performance implies for medical education. The authors focus on USMLE Step 1 and Step 2 content, asking whether ChatGPT can demonstrate medical knowledge and produce interpretable explanations that might make it useful as an educational support tool.\n\nThe study evaluates ChatGPT on four question sets derived from AMBOSS and NBME free-question banks for Step 1 and Step 2. The researchers standardized question prompts, excluded image-based and table-formatted items, manually entered questions into ChatGPT, and compared its accuracy with GPT-3 and InstructGPT. In addition to scoring correctness, they qualitatively coded ChatGPT responses for logical reasoning, use of information internal to the question, and use of information external to the question.\n\nThe population is not a K-12 population; the context is medical education involving medical students and licensure exam content. The paper is based at Yale University School of Medicine and uses question-bank/exam materials rather than a classroom intervention with school-aged learners. It therefore does not provide direct evidence relevant to K-12 foundational reading outcomes or causal evidence on generative AI for literacy instruction.\n\nThe authors conclude that ChatGPT outperformed GPT-3 and InstructGPT on these medical knowledge tasks and achieved over 60% accuracy on one NBME Step 1 set, which they interpret as roughly a passing threshold for a third-year medical student. They argue that ChatGPT\u2019s dialogic explanations and contextualized responses suggest potential as a medical education aid or virtual tutor, while also noting important limitations related to model versioning, training data cutoff, and the inability to fine-tune or fully assess model variability.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed empirical benchmark study, but it is not a causal education-impact design: there are no students randomized to treatment, no quasi-experimental comparison of learning outcomes, and no K-12 population. It provides performance evidence on assessment items rather than causal evidence of educational effectiveness.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper shows promising task performance in medical question answering, but impact on learners is indirect and unclear because no student achievement, reading, or classroom outcome was measured. For the targeted verification question, this is a near-miss rather than direct K-12 causal evidence on foundational reading outcomes using generative AI.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.93,
+      "role": "primary",
+      "use_case": "Evaluation of ChatGPT as a conversational medical question-answering and potential tutoring tool by testing its responses to USMLE-style multiple-choice questions and analyzing explanatory coherence."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.88,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "In a non-K-12 medical education context, ChatGPT answered USMLE-style medical knowledge questions with accuracies of 44% (44/100) on AMBOSS Step 1, 42% (42/100) on AMBOSS Step 2, 64.4% (56/87) on NBME Free Step 1, and 57.8% (59/102) on NBME Free Step 2. The study reports improved performance over GPT-3 and InstructGPT on these medical knowledge assessments, but it does not evaluate classroom learning gains, foundational reading, or any K-12 literacy outcome.",
+        "measure": "Accuracy on USMLE-style multiple-choice medical knowledge questions; qualitative response features (logical reasoning, internal/external information)",
+        "study_size": "n=389 question responses across four datasets (100 + 100 + 87 + 102 items)",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "single_site",
+    "no_control_group",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

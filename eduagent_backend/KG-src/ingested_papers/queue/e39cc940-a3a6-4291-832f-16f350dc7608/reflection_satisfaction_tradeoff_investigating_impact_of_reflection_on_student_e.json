@@ -1,0 +1,72 @@
+{
+  "title": "Reflection-Satisfaction Tradeoff: Investigating Impact of Reflection on Student Engagement with AI-Generated Programming Hints",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "https://doi.org/10.48550/arxiv.2512.04630",
+  "source_db": "openalex_search",
+  "populations": [
+    "Graduate / Doctoral"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Randomized Controlled Trial (RCT)",
+  "extended_summary": "This paper examines how reflection prompts interact with AI-generated programming hints in an online introductory programming course, with a particular focus on the tradeoff between students\u2019 satisfaction with AI support and the quality of their reflective responses. The authors ask whether prompting students to reflect before or after receiving an AI hint, whether aligning prompts with different self-regulated learning (SRL) phases, and whether using directed versus open reflection prompts changes hint-seeking behavior, reflective depth, and problem-solving outcomes.\n\nThe intervention was implemented in two randomized controlled trials using a custom JupyterLab-based support system that delivered GPT-4-generated hints on demand. Trial 1 compared before-hint reflection, after-hint reflection, and control conditions, and varied the SRL phase targeted by each prompt (planning, monitoring, evaluation). Trial 2 compared open versus directed prompts and also incorporated students\u2019 reflections into the hint-generation prompt. The study was conducted in two offerings of the same online introductory data science programming course at the University of Michigan, with students working on Python programming assignments.\n\nThe main finding was a consistent inverse relationship between the quality of students\u2019 reflections and their satisfaction with the AI-generated hints: more structured reflection conditions tended to produce deeper reflections but lower hint satisfaction. Before-hint prompts, planning-focused prompts, and directed prompts generally elicited higher-quality reflections than their counterparts, but these conditions were often rated as less satisfying. Immediate performance differences were small or not statistically significant. The authors conclude that educational AI should not be optimized only for user satisfaction; instead, it should be designed to encourage effortful engagement and self-regulated learning.",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is a randomized controlled field experiment with two trials in an authentic course setting, which provides relatively strong causal evidence. However, the sample sizes are modest, some analyses are descriptive due to low participation, and the paper focuses on short-term outcomes rather than long-term learning effects.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The intervention shows meaningful changes in reflection quality and engagement, but not in immediate performance outcomes. The overall impact is therefore modest and somewhat mixed, with stronger effects on metacognitive engagement than on academic achievement.",
+  "interventions": [
+    {
+      "intervention": "Automated Feedback System",
+      "confidence": 0.92,
+      "role": "primary",
+      "use_case": "AI-generated programming hints in a JupyterLab course environment, with GPT-4 producing personalized debugging/help hints from buggy code and execution feedback; the study adds reflection prompts around hint requests and also incorporates student reflections into hint generation in Trial 2."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The study found a clear reflection-quality tradeoff: before-hint, planning, and directed prompts produced higher-quality reflections, but students reported lower satisfaction with the AI-generated hints. Immediate problem-solving performance did not differ significantly across conditions (e.g., immediate success rates ranged from 18.8% to 23.1% in Trial 1 and 17.6% to 26.3% across SRL-phase prompts), suggesting the scaffolds changed the depth of processing more than short-term task success.",
+        "measure": "Reflection quality coding; hint satisfaction ratings; immediate success rate on the next submission after a hint request",
+        "study_size": "n=33 Trial 1 students; n=64 Trial 2 students",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.84,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "Reflection prompts changed students' engagement with AI support: before-hint reflection increased participation and produced more non-empty reflections (83.3% of students wrote at least one non-empty reflection vs. 53.8% in after-hint), but hint satisfaction was lower (54.0% before-hint vs. 61.0% control). The intervention appears to increase effortful engagement and self-regulation, while reducing perceived convenience or satisfaction with the AI hints.",
+        "measure": "Hint satisfaction ratings; participation rate in reflection; number of non-empty reflections",
+        "study_size": "n=33 Trial 1 students",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_long_term_followup",
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "4",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "medium",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

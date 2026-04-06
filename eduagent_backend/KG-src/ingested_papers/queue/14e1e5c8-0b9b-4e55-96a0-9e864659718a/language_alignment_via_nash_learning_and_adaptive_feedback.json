@@ -1,0 +1,88 @@
+{
+  "title": "Language Alignment via Nash-learning and Adaptive feedback",
+  "doi": null,
+  "year": 2024,
+  "venue": "ICML 2024 Workshop on Models of Human Feedback for AI Alignment",
+  "url": "http://arxiv.org/abs/2406.15890v1",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses the problem of aligning large language models without relying on a learned preference model or a human-annotated preference dataset. The authors position their work in the broader alignment literature, contrasting reinforcement learning from human feedback and related Nash-learning approaches with a new method that can operate using adaptive self-evaluation.\n\nThe proposed approach, Language Alignment via Nash-learning and Adaptive feedback (LANA), reformulates alignment as a two-player game solved with mirror descent / mirror ascent updates. In the proposed training loop, each policy generates candidate responses, then uses an evaluation prompt to compare responses and treat the preferred answer as coming from an improved opponent. This creates a self-rewarding alignment process intended to improve the model without external preference labels.\n\nExperiments are conducted on instruction-tuned language models, primarily Phi-3-mini-4k-instruct, using 3K prompts from public instruction datasets and evaluated with automatic benchmarks such as AlpacaEval, MT-Bench, and LLM-Evaluation Harness tasks. The paper reports modest gains in preference-based evaluation and claims no clear degradation on reasoning benchmarks, while noting that performance depends strongly on the base model quality. Overall, the paper is a theoretical/methods contribution for LLM alignment rather than a study of educational interventions, teachers, or K\u201312 settings.",
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "lab",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "identified_tools": [
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "content_generation",
+        "feedback_evaluation"
+      ],
+      "description": "A generic large language model / instruction-tuned generative AI system used for self-alignment and preference-style feedback without a named commercial product.",
+      "use_case": "The paper proposes and evaluates LANA, a self-rewarding alignment algorithm in which the model generates two responses to a prompt and then uses adaptive self-evaluation feedback to choose the preferred response during training. Experiments are conducted on instruction-following and benchmark tasks using Phi-3-mini-4k-instruct as the base model, with comparisons to other open models in ablations.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The paper reports that training with LANA on 3K prompts improved AlpacaEval results versus the base model. Table 1 shows LANA at 22.50 LC win rate and 21.35 win rate compared with Phi-mini at 20.84 LC win rate and 19.98 win rate (standard deviations 1.26 and 1.20, respectively).",
+          "measure": "AlpacaEval LC win rate and win rate",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=3000 prompts"
+        },
+        {
+          "outcome_category": "Academic \u0014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "On reasoning benchmarks, the paper reports no noticeable drop relative to the base model, and a slight improvement on GSM8K in MT-Bench, although the tableed values on GSM8K-5shot are slightly lower for LANA than base (0.7703 vs 0.7756). The reported benchmark set also includes HellaSwag and ARC-Challenge, where LANA is marginally below the base model.",
+          "measure": "LLM-Evaluation Harness / MT-Bench reasoning benchmark scores",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Academic \u0014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Using UltraFeedback test data and OpenHermes preference categories, the authors report that LANA improved win rate across all task categories, with more noticeable gains in riddle, theory-of-mind, and plan categories. No numerical effect sizes are provided in the text excerpt.",
+          "measure": "Win rate across preference-data categories",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Academic \u0014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "An ablation study found negligible improvements when the base model was Mistral-7B-Instruct-v0.1 or Gemma-2b-it, suggesting that the base model choice is important for the method to work well. The paper does not report quantitative effect sizes for this ablation in the excerpt.",
+          "measure": "Ablation comparison across base models",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    }
+  ],
+  "verdict": "framework_only",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a theoretical / algorithmic paper on LLM alignment, not an empirical K-12 education study. It does not evaluate teacher coaching, lesson-plan feedback, or student outcomes in an educational setting.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "There is no direct instructional-coaching or K-12 classroom impact measured. The reported results are limited to model-alignment and benchmark performance, so educational impact is not established.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

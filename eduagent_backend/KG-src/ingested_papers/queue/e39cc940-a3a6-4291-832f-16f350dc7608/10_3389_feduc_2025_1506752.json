@@ -1,0 +1,84 @@
+{
+  "title": "Differential effects of GPT-based tools on comprehension of standardized passages",
+  "doi": "10.3389/feduc.2025.1506752",
+  "year": 2025,
+  "venue": "Frontiers in Education",
+  "url": "https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2025.1506752/full",
+  "source_db": "backfill_v3",
+  "populations": [
+    "Adult (non-academic)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Randomized Controlled Trial (RCT)",
+  "extended_summary": "This study examined whether GPT-based educational tools improve or hinder reading comprehension, and whether effects differ by students\u2019 baseline ability. The authors note that AI tools are already widely used in education, but empirical evidence on their learning effects is limited. They focused on standardized reading comprehension as a foundational academic skill and tested whether AI support benefits lower-performing learners while potentially undermining higher-performing learners.\n\nThe intervention consisted of four GPT-4-based tools: an AI-generated summary, an AI-generated outline, a Q&A tutor chatbot, and a Socratic discussion chatbot. In a pre-registered randomized within-subject cross-over online experiment, participants completed five ACT-style reading comprehension conditions in a single session: four AI-tool conditions and one no-AI control. Passage order and condition order were randomized, and comprehension was measured using standardized 10-item ACT-derived quizzes.\n\nThe population was 195 college-aged adults (ages 18\u201322) in the United States recruited through Prolific after exclusions from an initial 228 participants. The study took place online through a custom web portal and used standardized ACT reading passages. Participants were split into lower- and higher-performing groups primarily based on control-passage performance, with SAT/ACT scores used as a secondary validation split.\n\nThe main conclusion was that GPT-based tools had strongly differential effects by baseline performance. Across the control-based split, all four AI tools improved comprehension for lower-performing participants but reduced comprehension for higher-performing participants. The Socratic chatbot showed the largest gains for lower performers, while the summary tool produced the largest declines for higher performers. The authors conclude that AI tools may help struggling learners but that universal implementation could unintentionally harm stronger readers, so deployment should be targeted and tested cautiously.",
+  "quality_tier": "green",
+  "impact_tier": "yellow",
+  "limitations": [
+    "short_duration",
+    "self_reported_measures",
+    "non_representative_population",
+    "high_attrition",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "1",
+  "setting": "online",
+  "teacher_training": "no",
+  "implementation_fidelity": "medium",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": "Retrieved from KG corpus",
+  "interventions": [
+    {
+      "intervention": "ChatGPT",
+      "confidence": 0.9,
+      "role": "primary",
+      "use_case": ""
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Literacy",
+      "confidence": 0.8,
+      "finding": {
+        "direction": "mixed",
+        "finding_summary": "Using a subgroup split based on control-passage performance, the summary tool improved quiz accuracy for lower-performing participants: 55.4% (SD 18.7) with summary versus 44.9% (SD 15.8) in control, t(70)=3.8, p<0.001, d=0.45. The paper notes this positive pattern for lower performers was not robust across alternative subgroup definitions.",
+        "measure": "ACT-derived reading comprehension quiz accuracy",
+        "study_size": "n=71",
+        "effect_size": "d=0.45",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      }
+    },
+    {
+      "outcome": "Academic \u2014 Literacy",
+      "confidence": 0.8,
+      "finding": {
+        "direction": "negative",
+        "finding_summary": "Using the control-passage subgroup split, the summary tool worsened reading comprehension for higher-performing participants: 66.5% (SD 18.4) with summary versus 82.5% (SD 10.5) in control, t(123)=9.2, p<0.001, d=0.83.",
+        "measure": "ACT-derived reading comprehension quiz accuracy",
+        "study_size": "n=124",
+        "effect_size": "d=0.83",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      }
+    },
+    {
+      "outcome": "Academic \u2014 Literacy",
+      "confidence": 0.8,
+      "finding": {
+        "direction": "null",
+        "finding_summary": "Using the SAT/ACT-based subgroup split, the summary tool did not significantly affect quiz performance for lower SAT/ACT performers: 61.5% (SD 18.3) with summary versus 66.2% (SD 22.9) in control.",
+        "measure": "ACT-derived reading comprehension quiz accuracy",
+        "study_size": "n=71",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      }
+    }
+  ],
+  "authors": "",
+  "_kg_source": true
+}

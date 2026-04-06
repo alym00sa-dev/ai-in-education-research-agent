@@ -1,0 +1,151 @@
+{
+  "title": "EZYer: A simulacrum of high school with generative agent",
+  "doi": null,
+  "year": 2025,
+  "venue": "not_reported",
+  "url": "http://arxiv.org/abs/2512.02561v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses the gap in educational AI tools for generating high-school-level mathematics teaching materials and supporting interactive learning. The authors argue that existing systems often have incomplete service, weak interactivity, limited quality assurance, and insufficient support for LaTeX Beamer generation. To address this, they propose EZYer, a generative educational agent designed for high school mathematics.\n\nEZYer has three main components. The Teacher Module turns user-entered content or uploaded documents into structured teaching materials, exercises, and LaTeX Beamer courseware. The Student Module simulates classroom interaction through five roles\u2014Teacher, Assistant, Top Student, Struggling Student, and Note Taker\u2014to produce collaborative notes. The Controller screens inputs and outputs using keyword filtering, content scoring, role co-validation, and dynamic correction to maintain pedagogical appropriateness and academic quality.\n\nThe intended population is high school teachers and students, specifically in high school mathematics. The paper frames the system as useful for instructional preparation, in-class style interaction, and note summarization, rather than as a tested classroom intervention. Evaluation is conducted by having five large language models score 100 generated Beamer and Notes outputs on content accuracy, knowledge coverage, usability, formatting correctness, and visual appeal. The authors report generally strong scores and conclude that EZYer shows promise for high school math instruction, while noting that broader applicability, speed, and manual evaluation remain areas for future work.",
+  "limitations": [
+    "single_site",
+    "no_control_group",
+    "no_long_term_followup",
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "China",
+  "study_region": "East Asia & Pacific",
+  "identified_tools": [
+    {
+      "name": "DeepSeek",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "tutoring_instruction"
+      ],
+      "description": "A DeepSeek large language model/API used to generate teaching materials, exercises, and dialogue responses within the EZYer generative educational agent system.",
+      "use_case": "Used as the underlying LLM API when the text corpus did not match the user input, to generate high school mathematics teaching materials, exercises, classroom dialogue, and notes; also used in the controller for content scoring and correction.",
+      "findings": []
+    },
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation"
+      ],
+      "description": "An OpenAI GPT-family large language model used here as one of several external LLMs to evaluate the quality of generated Beamer and Notes outputs.",
+      "use_case": "Used only as an evaluator of EZYer-generated Beamer and Notes documents; no instructional intervention was studied.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0000 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "ChatGPT-o1 scored EZYer-generated Beamer files highly on content accuracy (4.84), knowledge coverage (4.76), usability (4.65), formatting correctness (4.83), and visual design and appeal (4.54). For Notes, it scored content accuracy 4.56, knowledge coverage 4.53, usability 4.30, formatting correctness 4.02, and visual design and appeal 3.90. The paper reports these as evaluation scores for 100 generated Beamer and Notes documents, but no effect sizes or confidence intervals are reported.",
+          "measure": "LLM evaluation scores for content accuracy, knowledge coverage, usability, formatting correctness, and visual design/appeal",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=100 generated Beamer and Notes documents"
+        }
+      ]
+    },
+    {
+      "name": "Claude",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation"
+      ],
+      "description": "An Anthropic Claude-family large language model used here as one of several external LLMs to evaluate generated educational documents.",
+      "use_case": "Used only as an evaluator of EZYer-generated Beamer and Notes documents; no instructional intervention was studied.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0000 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Claude 3.5 Sonnet scored EZYer-generated Beamer files highly on content accuracy (4.84), knowledge coverage (4.76), usability (4.69), formatting correctness (4.74), and visual design and appeal (4.61). For Notes, it scored content accuracy 4.87, knowledge coverage 4.81, usability 4.75, formatting correctness 4.65, and visual design and appeal 4.58. The paper presents these as rubric-based evaluations of 100 generated Beamer and Notes documents; no effect sizes or confidence intervals are reported.",
+          "measure": "LLM evaluation scores for content accuracy, knowledge coverage, usability, formatting correctness, and visual design/appeal",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=100 generated Beamer and Notes documents"
+        }
+      ]
+    },
+    {
+      "name": "Gemini",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation"
+      ],
+      "description": "A Google Gemini-family large language model used here as one of several external LLMs to evaluate generated educational documents.",
+      "use_case": "Used only as an evaluator of EZYer-generated Beamer and Notes documents; no instructional intervention was studied.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0000 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Gemini-2.0-Pro scored EZYer-generated Beamer files highly on content accuracy (4.74), knowledge coverage (4.75), usability (4.59), formatting correctness (4.47), and visual design and appeal (4.48). For Notes, it scored content accuracy 4.51, knowledge coverage 4.73, usability 4.33, formatting correctness 4.17, and visual design and appeal 4.36. These are evaluation scores for 100 generated Beamer and Notes documents; the paper does not report effect sizes or confidence intervals.",
+          "measure": "LLM evaluation scores for content accuracy, knowledge coverage, usability, formatting correctness, and visual design/appeal",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=100 generated Beamer and Notes documents"
+        }
+      ]
+    },
+    {
+      "name": "Qwen",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation"
+      ],
+      "description": "An Alibaba Qwen-family large language model used here as one of several external LLMs to evaluate generated educational documents.",
+      "use_case": "Used only as an evaluator of EZYer-generated Beamer and Notes documents; no instructional intervention was studied.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0000 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Qwen2.5-Max scored EZYer-generated Beamer files 4.71 for content accuracy, 4.46 for knowledge coverage, 3.75 for usability, 3.29 for formatting correctness, and 3.04 for visual design and appeal. For Notes, it scored content accuracy 4.87, knowledge coverage 4.48, usability 4.18, formatting correctness 3.70, and visual design and appeal 3.41. The paper reports these as rubric-based ratings of 100 generated Beamer and Notes documents; no effect sizes or confidence intervals are reported.",
+          "measure": "LLM evaluation scores for content accuracy, knowledge coverage, usability, formatting correctness, and visual design/appeal",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=100 generated Beamer and Notes documents"
+        }
+      ]
+    },
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "content_generation",
+        "tutoring_instruction"
+      ],
+      "description": "A generic generative AI educational agent/chatbot system using LLMs to generate instructional content and simulate classroom roles.",
+      "use_case": "The paper proposes and evaluates EZYer, a generative agent for high school mathematics that generates Beamer courseware and notes and simulates teacher/student interactions; however, the core study is system evaluation rather than a learner outcome experiment.",
+      "findings": []
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a system/prototype paper with descriptive evaluation by other LLMs, not a student- or teacher-outcome study. It does not provide causal evidence, subgroup analyses, or human participant results.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports high rubric scores for generated materials, suggesting promising utility, but the evidence is indirect and does not measure educational impact on teachers or students. No effect sizes are reported, so impact remains unclear rather than demonstrated.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

@@ -1,0 +1,499 @@
+{
+  "title": "PromptHive: Bringing Subject Matter Experts Back to the Forefront with Collaborative Prompt Engineering for Educational Content Creation",
+  "doi": null,
+  "year": 2024,
+  "venue": null,
+  "url": "https://arxiv.org/abs/2410.16547",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses how to involve subject matter experts (SMEs) more effectively in prompt engineering for educational content creation with large language models. The authors argue that while LLMs can help generate instructional materials, non-AI experts need interface support to systematically experiment with prompts, compare outputs, and collaborate with others. The paper introduces PromptHive, a human-centered, collaborative prompt authoring interface designed to help SMEs create prompts for generating hints in an adaptive tutoring system.\n\nThe intervention studied is PromptHive, an open-source system integrated with the OATutor workflow for college algebra content creation. The interface supports a four-stage workflow\u2014load, author, share, and iterate\u2014and includes tools for sampling problems, comparing prompt-output pairs, cloning prompts, and sharing effective prompt formulations. The authors evaluated the system through two linked studies: a user study with 10 mathematics SMEs who had prior OATutor authoring experience, and a learner study comparing PromptHive-generated hints with previously human-authored hints in OATutor.\n\nThe population and context span both content creators and learners. The SME study involved 10 mathematics tutors/content authors, mostly 3rd- or 4th-year undergraduates or recent graduates, participating remotely via Zoom. The learning study involved current undergraduate college students in the United States recruited through Prolific; learners completed pre-tests, tutoring tasks, and post-tests across college algebra lessons in an online environment. The content was based on OpenStax College Algebra materials used in OATutor.\n\nThe main conclusions are that PromptHive substantially improved the efficiency and usability of educational content authoring for SMEs. Participants reported excellent usability (SUS 89/100), much lower perceived cognitive workload than manual authoring, and strong feelings of control and trust while using the system. The collaborative interface helped SMEs produce prompt-generated hints judged to be comparable to human-authored materials, and the learner study was designed to compare learning gains from PromptHive-generated versus human-authored hints. Overall, the paper concludes that well-designed collaborative prompt engineering tools can enable non-AI experts to create scalable educational content much faster while maintaining educational quality.",
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "yes",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "PromptHive",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "feedback_evaluation"
+      ],
+      "description": "An open-source collaborative prompt-authoring interface that enables subject matter experts to create, test, share, and refine prompts for LLM-generated educational content, especially hint pathways for problems in OATutor.",
+      "use_case": "Studied as a human-centered interface for mathematics subject matter experts to collaboratively author prompts that generate hints and scaffolded hints for a college algebra textbook, and to deploy those hints in OATutor for a learner learning-gain comparison against manually authored hints.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In a user study with 10 mathematics subject matter experts, PromptHive was rated as highly usable with a System Usability Scale score of 89/100. The paper reports that the tool reduced perceived cognitive workload substantially relative to manual hint authoring, with NASA-TLX scores dropping from 55.17 to 26.73 out of 100, and reduced authoring time from several months to a few hours for textbook-scale hint creation.",
+          "measure": "System usability (SUS), perceived cognitive workload (NASA-TLX), authoring time",
+          "effect_size": "SUS=89/100; NASA-TLX 55.17 to 26.73",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=10"
+        },
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "In a learning gain study with 225 unique undergraduate participants and 549 completed lesson submissions (268 human-only, 281 PromptHive), PromptHive-generated hints produced learning gains that were on par with human-authored hints. The paper states there were no statistically significant differences between PromptHive-generated hints and the human-only authored hints control condition on learning gains.",
+          "measure": "Pre-test to post-test learning gains in college algebra under PromptHive-generated versus human-authored hint pathways",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=225 unique participants; 549 completed lesson submissions"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "green",
+  "quality_tier_rationale": "The paper includes empirical evaluation with a learner comparison study and a structured user study, but the excerpt does not report enough statistical detail on the learning-gain design or effect estimates to justify blue. Evidence is stronger than purely qualitative work because it includes comparative outcome data with learners.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "Operational efficiency and usability impacts are clearly positive, but academic impact appears equivalent rather than superior to human-authored hints, and no effect sizes are reported. Overall impact is promising but unclear in magnitude for student learning.",
+  "citations": [
+    {
+      "title": "The diversity crisis of software engineering for artificial intelligence",
+      "doi": null,
+      "year": 2020,
+      "venue": "IEEE Software",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The cognitive tutor authoring tools (CTAT): Preliminary evaluation of efficiency gains",
+      "doi": null,
+      "year": 2006,
+      "venue": "Intelligent Tutoring Systems: 8th International Conference, ITS 2006",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Exploring the Content Ecosystem of the First Open-source Adaptive Tutor and its Applications on Intelligent Textbooks.",
+      "doi": null,
+      "year": 2023,
+      "venue": "iTextbooks@AIED",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Explainable Artificial Intelligence (XAI): Concepts, taxonomies, opportunities and challenges toward responsible AI",
+      "doi": null,
+      "year": 2020,
+      "venue": "Information Fusion",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "AI-Assisted Human Labeling: Batching for Efficiency without Overreliance",
+      "doi": "10.1145/3449163",
+      "year": 2021,
+      "venue": "Proceedings of the ACM on Human-Computer Interaction",
+      "citation_level": 2,
+      "citation_context": "example of producer-to-curator workflow in support emails"
+    },
+    {
+      "title": "Evaluating the Psychometric Properties of ChatGPT-generated Questions",
+      "doi": null,
+      "year": 2024,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Artificial intelligence in mathematics education: A systematic literature review",
+      "doi": null,
+      "year": 2022,
+      "venue": "International Electronic Journal of Mathematics Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Promptify: Text-to-image generation through interactive prompt exploration with large language models",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 36th Annual ACM Symposium on User Interface Software and Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Reflecting on reflexive thematic analysis",
+      "doi": null,
+      "year": 2019,
+      "venue": "Qualitative Research in Sport, Exercise and Health",
+      "citation_level": 3,
+      "citation_context": "thematic analysis approach for qualitative interview data"
+    },
+    {
+      "title": "Facilitating student learning with a chatbot in an online math learning platform",
+      "doi": null,
+      "year": 2024,
+      "venue": "Journal of Educational Computing Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Lawbench: Benchmarking legal knowledge of large language models",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "It Cannot Be Right If It Was Written by AI: On Lawyers\u2019 Preferences of Documents Perceived as Authored by an LLM vs a Human",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "NASA-task load index (NASA-TLX); 20 years later",
+      "doi": null,
+      "year": 2006,
+      "venue": "Proceedings of the Human Factors and Ergonomics Society Annual Meeting",
+      "citation_level": 3,
+      "citation_context": "NASA-TLX cognitive load measure used in study"
+    },
+    {
+      "title": "The ASSISTments ecosystem: Building a platform that brings scientists and teachers together for minimally invasive research on human learning and teaching",
+      "doi": null,
+      "year": 2014,
+      "venue": "International Journal of Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Measures for explainable AI: explanation goodness, user satisfaction, mental models, curiosity, trust, and human-AI performance",
+      "doi": null,
+      "year": 2023,
+      "venue": "Frontiers in Computer Science",
+      "citation_level": 3,
+      "citation_context": "trust scale adapted from this XAI measure source"
+    },
+    {
+      "title": "Cells, generators, and lenses: Design framework for object-oriented interaction with large language models",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 36th Annual ACM Symposium on User Interface Software and Technology",
+      "citation_level": 2,
+      "citation_context": "design framework reviewed to derive interface principles"
+    },
+    {
+      "title": "Large-scale text-to-image generation models for visual artists\u2019 creative works",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 28th International Conference on Intelligent User Interfaces",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Impact of guidance and interaction strategies for LLM use on Learner Performance and perception",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Data, machine learning, and human domain experts: none is better than their collaboration",
+      "doi": null,
+      "year": 2022,
+      "venue": "International Journal of Human\u2013Computer Interaction",
+      "citation_level": 2,
+      "citation_context": "human-AI collaboration framing for system design"
+    },
+    {
+      "title": "The system usability scale: past, present, and future",
+      "doi": null,
+      "year": 2018,
+      "venue": "International Journal of Human\u2013Computer Interaction",
+      "citation_level": 3,
+      "citation_context": "System Usability Scale used for usability evaluation"
+    },
+    {
+      "title": "More agents is all you need",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Leveraging LLM-Respondents for Item Evaluation: a Psychometric Analysis",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Generative students: Using llm-simulated student profiles to support question item evaluation",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the Eleventh ACM Conference on Learning@Scale",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The imperative for regulatory oversight of large language models (or generative AI) in healthcare",
+      "doi": null,
+      "year": 2023,
+      "venue": "NPJ Digital Medicine",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Assessing the quality of multiple-choice questions using gpt-4 and rule-based methods",
+      "doi": null,
+      "year": 2023,
+      "venue": "European Conference on Technology Enhanced Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT performance on MCQ exams in higher education. A pragmatic scoping review",
+      "doi": null,
+      "year": 2023,
+      "venue": "EdArXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Evaluating chatgpt\u2019s decimal skills and feedback generation in a digital learning game",
+      "doi": null,
+      "year": 2023,
+      "venue": "European Conference on Technology Enhanced Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "https://platform.openai.com/docs/guides/prompt-engineering/strategy-split-complex-tasks-into-simpler-subtasks",
+      "doi": null,
+      "year": null,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "OpenStax College Algebra 2e",
+      "doi": null,
+      "year": null,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "source textbook content used in tutoring lessons"
+    },
+    {
+      "title": "Effectiveness of cognitive tutor algebra I at scale",
+      "doi": null,
+      "year": 2014,
+      "venue": "Educational Evaluation and Policy Analysis",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Open-source Adaptive Tutoring System (OATutor)",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Learning gain differences between ChatGPT and human tutor generated algebra hints",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_level": 3,
+      "citation_context": "prior hint-generation study used as human-only comparison basis"
+    },
+    {
+      "title": "ChatGPT-generated help produces learning gains equivalent to human tutor-authored help on mathematics skills",
+      "doi": null,
+      "year": 2024,
+      "venue": "PLOS ONE",
+      "citation_level": 3,
+      "citation_context": "comparison condition and prior finding motivating efficacy study"
+    },
+    {
+      "title": "Oatutor: An open-source adaptive tutoring system and curated content library for learning sciences research",
+      "doi": "10.1145/3544548.3581574",
+      "year": 2023,
+      "venue": "Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 3,
+      "citation_context": "platform integrated by PromptHive and study deployment context"
+    },
+    {
+      "title": "The Assistment Builder: Supporting the life cycle of tutoring system content creation",
+      "doi": null,
+      "year": 2009,
+      "venue": "IEEE Transactions on Learning Technologies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ABScribe: Rapid Exploration & Organization of Multiple Writing Variations in Human-AI Co-Writing Tasks using Large Language Models",
+      "doi": "10.1145/3613904.3641899",
+      "year": 2024,
+      "venue": "Proceedings of the CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The butterfly effect of altering prompts: How small changes and jailbreaks affect large language model performance",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The deskilling of domain expertise in AI development",
+      "doi": null,
+      "year": 2022,
+      "venue": "Proceedings of the 2022 CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 2,
+      "citation_context": "framing risk of displacing domain experts with AI"
+    },
+    {
+      "title": "Comparing Authoring Experiences with Spreadsheet Interfaces vs GUIs",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 14th Learning Analytics and Knowledge Conference",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Human/computer control of undersea teleoperators",
+      "doi": null,
+      "year": 1978,
+      "venue": "NASA Ames Research Center The 14th Annual Conference on Manual Control",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Human-centered artificial intelligence: Reliable, safe & trustworthy",
+      "doi": null,
+      "year": 2020,
+      "venue": "International Journal of Human\u2013Computer Interaction",
+      "citation_level": 2,
+      "citation_context": "human-centered AI framing for trustworthy expert control"
+    },
+    {
+      "title": "Human-centered AI: ensuring human control while increasing automation",
+      "doi": "10.1145/3538882.3542790",
+      "year": 2022,
+      "venue": "Proceedings of the 5th Workshop on Human Factors in Hypertext",
+      "citation_level": 2,
+      "citation_context": "supports optimistic automation while preserving human control"
+    },
+    {
+      "title": "Exposing the Achilles\u2019 Heel: Evaluating LLMs Ability to Handle Mistakes in Mathematical Reasoning",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Openstax",
+      "doi": null,
+      "year": 2018,
+      "venue": "The Charleston Advisor",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Metacognitive Demands and Opportunities of Generative AI",
+      "doi": "10.1145/3613904.3642902",
+      "year": 2024,
+      "venue": "Proceedings of the CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Getting the right design and the design right",
+      "doi": "10.1145/1124772.1124960",
+      "year": 2006,
+      "venue": "Proceedings of the SIGCHI Conference on Human Factors in Computing Systems",
+      "citation_level": 3,
+      "citation_context": "iterative high-fidelity prototyping approach for design process"
+    },
+    {
+      "title": "One Prompt is not Enough: Automated Construction of a Mixture-of-Expert Prompts",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Self-consistency improves chain of thought reasoning in language models",
+      "doi": null,
+      "year": 2022,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Wordflow: Social prompt engineering for large language models",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_level": 2,
+      "citation_context": "prompt-authoring interface prior work informing design review"
+    },
+    {
+      "title": "An interaction design for machine teaching to develop AI tutors",
+      "doi": null,
+      "year": 2020,
+      "venue": "Proceedings of the 2020 CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 2,
+      "citation_context": "machine-teaching precedent for expert authoring of AI tutors"
+    },
+    {
+      "title": "Why Johnny Can\u2019t Prompt: How Non-AI Experts Try (and Fail) to Design LLM Prompts",
+      "doi": "10.1145/3544548.3581388",
+      "year": 2023,
+      "venue": "Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 2,
+      "citation_context": "evidence motivating simplified expert prompt-authoring workflow"
+    },
+    {
+      "title": "Generative AI in medicine and healthcare: promises, opportunities and challenges",
+      "doi": null,
+      "year": 2023,
+      "venue": "Future Internet",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Generative artificial intelligence, human creativity, and art",
+      "doi": null,
+      "year": 2024,
+      "venue": "PNAS Nexus",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

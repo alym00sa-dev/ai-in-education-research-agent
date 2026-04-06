@@ -1,0 +1,378 @@
+{
+  "title": "DeliverC: Teaching Pointers through GenAI-Powered Game-Based Learning",
+  "doi": null,
+  "year": 2026,
+  "venue": "Proceedings of the 57th ACM Technical Symposium on Computer Science Education (SIGCSE 2026)",
+  "url": "https://arxiv.org/abs/2509.14496",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses the challenge of teaching C pointers, a concept that many novice programmers struggle to understand because of its abstract connection to memory operations. The authors ask whether a generative AI-powered game-based learning environment can improve motivation, engagement, self-efficacy, and perceptions of learning while helping students practice pointer concepts. They also investigate how effective students perceive AI-generated feedback to be during gameplay.\n\nThe intervention studied is DeliverC, a Unity-based educational game that uses GPT-4o-mini/GPT-4-mini to generate pointer-related challenges, evaluate student-written C code, provide personalized hints, and translate correct code into in-game actions. The game represents pointer operations through a delivery-truck metaphor on a grid, with scaffolded levels covering pointer initialization, arrays and pointer arithmetic, void pointers, multiple indirection, and function pointers. The system is designed to provide adaptive, real-time support rather than static pre-authored tasks.\n\nThe pilot was deployed in a summer undergraduate programming course at Pennsylvania State University in the United States. The course enrolled 37 students, and 25 undergraduates chose to participate in the optional extra-credit activity. Students completed up to three levels aligned with course pacing, and the evaluation drew on gameplay logs, descriptive statistics, a 15-item post-activity Likert survey, and open-ended responses. This places the study in a single-course higher education classroom context with both quantitative and qualitative data.\n\nThe main conclusions are that DeliverC showed promise for engaging students and supporting understanding of pointers through scaffolded, interactive practice. Most participating students reported greater confidence, reflection, and practical understanding, and gameplay logs suggested that students who progressed may have made fewer mistakes over time. However, participation dropped substantially across levels, and some students found the AI-generated feedback vague or unclear. The authors conclude that GenAI-enhanced game-based learning has potential for systems programming education, but feedback quality and broader scalability require further refinement.",
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_control_group",
+    "self_reported_measures",
+    "non_representative_population",
+    "high_attrition",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "classroom",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "DeliverC",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "feedback_evaluation"
+      ],
+      "description": "A GenAI-powered game-based learning platform for teaching C pointers that embeds an OpenAI GPT model to generate personalized pointer challenges, evaluate student-written C code, provide tailored feedback, and translate correct solutions into game actions.",
+      "use_case": "Studied as an undergraduate programming education tool for learning C pointers through scaffolded game levels with AI-generated tasks and feedback.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In a pilot deployment, 25 of 37 enrolled undergraduate students participated in DeliverC at Level 1, with participation dropping to 20 at Level 2 and 8 at Level 3. The paper reports that error rates/attempt patterns improved for students who reached later scaffolded levels: although tasks became harder, the average and median number of attempts decreased in Level 3 relative to Level 2, suggesting learning progress through earlier practice. No effect size was reported.",
+          "measure": "Gameplay log data: participation by level and number of task attempts across Levels 1\u20133",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=37 enrolled; n=25 participants"
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Survey results indicate that constructs such as metacognition, application, and confidence building received the strongest support, with over 75% of 25 students responding Agree or Strongly Agree. The authors conclude that most students felt more confident and reflective after using DeliverC. No effect size was reported.",
+          "measure": "15-item post-activity Likert survey covering motivation, self-efficacy, metacognition, and related constructs",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=25"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Students generally viewed AI-generated feedback as helpful for revising strategies, but feedback clarity was weaker than other surveyed constructs. The paper notes that Clarity of Feedback and Formative Feedback received lower agreement than other areas, and some students reported receiving unclear, vague, or confusing hints. No effect size was reported.",
+          "measure": "Survey items on feedback quality plus open-ended responses about AI-generated hints/feedback",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=25"
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Open-ended responses were largely favorable: 19 of 25 responses (76%) were positive, 3 (12%) were neutral/unclear, and 3 (12%) were negative. Positive comments emphasized that the game made learning pointers more fun, hands-on, and easier to understand, while negative comments focused on confusing levels and insufficiently clear instructions or hints.",
+          "measure": "Open-ended post-activity survey responses on student experience and engagement",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=25"
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The paper reports strong initial engagement with DeliverC, with 25 students choosing to participate in the optional extra-credit activity at Level 1. Authors interpret survey responses as showing that most students found the game more motivating than traditional practice, though participation declined as difficulty increased and because the activity was optional. No effect size was reported.",
+          "measure": "Participation rates and motivation-related post-survey responses",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=25 participants; n=37 enrolled"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The authors report that DeliverC helped students understand pointer concepts, supported reflective learning, and enabled students to apply prior knowledge in new challenges. These conclusions are based on descriptive gameplay patterns, Likert survey responses, and thematic analysis rather than objective pre/post achievement tests. No effect size was reported.",
+          "measure": "Self-reported learning progress and understanding from post-activity survey and qualitative comments",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=25"
+        }
+      ]
+    },
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "feedback_evaluation"
+      ],
+      "description": "OpenAI GPT-family large language model used to generate tasks, produce reference solutions, evaluate student code, provide personalized feedback, and translate code into executable game commands.",
+      "use_case": "Embedded inside DeliverC as the GenAI engine (reported as GPT-4-mini/GPT-4o-mini) powering adaptive challenge generation and feedback during gameplay.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "As the LLM backend for DeliverC, ChatGPT-supported feedback and task generation were associated with students reporting improved understanding, reflection, and confidence, but some students also reported that AI-generated hints were unclear or vague. The paper does not isolate ChatGPT experimentally from the DeliverC system, so findings are indirect and descriptive. No effect size was reported.",
+          "measure": "Student perceptions of AI-generated hints/feedback within DeliverC",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=25"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a pilot mixed-methods study with descriptive gameplay analytics, post-activity survey data, and qualitative responses, but no randomized or quasi-experimental comparison and no objective pre/post achievement test. Evidence is suggestive but methodologically limited.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "Reported impacts are mostly positive but based on self-reports and descriptive trends without standardized effect sizes or controlled causal estimates. The paper shows promising but still unclear magnitude of impact, with some mixed evidence around feedback clarity.",
+  "citations": [
+    {
+      "title": "Design and Development of Basic C Language Programming Game based Learning Application",
+      "doi": null,
+      "year": 2021,
+      "venue": "International Innovation, Technology & Research Exhibition and Conference",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Refactor4Green: a game for novice programmers to learn code smells",
+      "doi": null,
+      "year": 2020,
+      "venue": "2020 IEEE/ACM 42nd International Conference on Software Engineering: Companion Proceedings (ICSE-Companion)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Conversational AI as a Coding Assistant: Understanding Programmers\u2019 Interactions with and Expectations from Large Language Models for Coding",
+      "doi": null,
+      "year": 2025,
+      "venue": "arXiv preprint",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Codearena: Inspecting and improving code quality metrics in java using minecraft",
+      "doi": null,
+      "year": 2019,
+      "venue": "Proceedings of the 2019 International Conference on Technical Debt (Tool Demos)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Game-based digital learning system assists and motivates C programming language learners",
+      "doi": null,
+      "year": 2010,
+      "venue": "The 6th International Conference on Networked Computing and Advanced Information Management",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "BISCUIT: Scaffolding LLM-Generated Code with Ephemeral UIs in Computational Notebooks",
+      "doi": null,
+      "year": 2024,
+      "venue": "2024 IEEE Symposium on Visual Languages and Human-Centric Computing (VL/HCC)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Pedagogy of Teaching Pointers in the C Programming Language using Graph Transformations",
+      "doi": null,
+      "year": 2025,
+      "venue": "arXiv preprint",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Cleangame: Gamifying the identification of code smells",
+      "doi": null,
+      "year": 2019,
+      "venue": "Proceedings of the XXXIII Brazilian Symposium on Software Engineering",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Cracking Aegis: An Adversarial LLM-based Game for Raising Awareness of Vulnerabilities in Privacy Protection",
+      "doi": null,
+      "year": 2025,
+      "venue": "arXiv preprint",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Codetailor: Llm-powered personalized parsons puzzles for engaging support while learning programming",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the Eleventh ACM Conference on Learning@ Scale",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Lost in Code: A Digital Game-based Learning System to Enhance Programming Skills in Introductory Courses",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Generative AI for scalable feedback to multimodal exercises",
+      "doi": null,
+      "year": 2024,
+      "venue": "International journal of research in marketing",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Codeaid: Evaluating a classroom deployment of an llm-based programming assistant that balances student and educator needs",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 2024 CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A serious game to teach computing concepts",
+      "doi": null,
+      "year": 2017,
+      "venue": "HCI International 2017\u2013Posters\u2019 Extended Abstracts: 19th International Conference, HCI International 2017, Vancouver, BC, Canada, July 9\u201314, 2017, Proceedings, Part II 19",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Data space animation for learning the semantics of C++ pointers",
+      "doi": null,
+      "year": 2009,
+      "venue": "Proceedings of the 40th ACM technical symposium on computer science education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Harnessing Generative AI (GenAI) for Automated Feedback in Higher Education: A Systematic Review",
+      "doi": null,
+      "year": 2024,
+      "venue": "Online Learning",
+      "citation_level": 2,
+      "citation_context": "framing AI-generated feedback in higher education"
+    },
+    {
+      "title": "Will Your Next Pair Programming Partner Be Human? An Empirical Evaluation of Generative AI as a Collaborative Teammate in a Semester-Long Classroom Setting",
+      "doi": null,
+      "year": 2025,
+      "venue": "arXiv preprint",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "PlayIT: Game based learning approach for teaching programming concepts",
+      "doi": null,
+      "year": 2016,
+      "venue": "Journal of Educational Technology & Society",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "AI agents and education: Simulated practice at scale",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv preprint",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A Game-Based Learning Approach to Assist Novice Programmers in Understanding Pointers (Design, Implementation and Evaluation of an Educational Game for Learning C Programming Concepts Surrounding Pointers",
+      "doi": null,
+      "year": 2020,
+      "venue": "Ph. D. Dissertation, University of Auckland",
+      "citation_level": 2,
+      "citation_context": "closest prior pointer-learning game motivating DeliverC gap"
+    },
+    {
+      "title": "The Game-Based Learning (GbL) Platform with Generative AI to Enhance Digital and Technology Literacy Skills",
+      "doi": null,
+      "year": 2024,
+      "venue": "Higher Education Studies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Analysing adaptive scaffolds that help students develop self-regulated learning behaviours",
+      "doi": null,
+      "year": 2023,
+      "venue": "Journal of Computer Assisted Learning",
+      "citation_level": 2,
+      "citation_context": "self-regulated learning scaffold construct in discussion"
+    },
+    {
+      "title": "BoilerTAI: A Platform for Enhancing Instruction Using Generative AI in Educational Forums",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv preprint",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Playing around in the cs curriculum: reversi as a teaching tool",
+      "doi": null,
+      "year": 2005,
+      "venue": "Journal of Computing Sciences in Colleges",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Game-based learning in computer science education: a scoping literature review",
+      "doi": null,
+      "year": 2023,
+      "venue": "International Journal of STEM Education",
+      "citation_level": 2,
+      "citation_context": "background framing for game-based CS education benefits"
+    },
+    {
+      "title": "Level Up Peer Review in Education: Investigating genAI-driven Gamification system and its influence on Peer Feedback Effectiveness",
+      "doi": null,
+      "year": 2025,
+      "venue": "arXiv preprint",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A serious game for learning C programming language concepts using solo taxonomy",
+      "doi": null,
+      "year": 2017,
+      "venue": "International Journal of Emerging Technologies in Learning (Online)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The effectiveness of gamification in programming education: Evidence from a meta-analysis",
+      "doi": null,
+      "year": 2022,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 2,
+      "citation_context": "supports claims about gamification effectiveness in programming education"
+    },
+    {
+      "title": "Students\u2019 perceptions and preferences of generative artificial intelligence feedback for programming",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+      "citation_level": 2,
+      "citation_context": "supports discussion of AI feedback clarity and preferences"
+    },
+    {
+      "title": "Sketch then generate: Providing incremental user feedback and guiding LLM code generation through language-oriented code sketches",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv preprint",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

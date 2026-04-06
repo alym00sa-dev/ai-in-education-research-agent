@@ -1,0 +1,105 @@
+{
+  "title": "Improving Student Learning with Hybrid Human-AI Tutoring: A Three-Study Quasi-Experimental Investigation",
+  "doi": "https://doi.org/10.1145/3636555.3636896",
+  "year": 2024,
+  "venue": "The 14th Learning Analytics and Knowledge Conference (LAK \u201924)",
+  "url": "http://arxiv.org/abs/2312.11274v3",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Middle School (6th-8th)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Quasi-Experimental Design (QED)",
+  "extended_summary": "This paper examines whether combining human tutoring with AI-based math software can improve middle school students\u2019 learning engagement and early achievement-related indicators, especially in low-income settings where access to high-quality tutoring is limited. The authors argue that AI can help scale tutoring by handling adaptive instruction while human tutors provide motivation, relationship-building, and targeted support. The key question is whether this hybrid human-AI model improves student learning processes more effectively than software use alone, and whether benefits differ by students\u2019 baseline math ability.\n\nThe study reports three quasi-experimental implementations across three urban U.S. middle schools, each using a different math platform and tutoring configuration. Site 1 used IXL in a Pennsylvania middle school with a delayed-treatment design comparing software only, software plus math teacher support, and software plus math teacher plus remote tutoring. Site 2 used i-Ready in a California middle school and compared weeks before tutoring to a brief late-spring tutoring period delivered remotely in a round-robin format. Site 3 used Carnegie Learning\u2019s MATHia in a Pennsylvania charter school and examined changes when tutor availability improved and a real-time dashboard was introduced. Across sites, students were overwhelmingly low-income and in grades 6\u20138, with mostly Latinx, Black, or Black male student populations depending on the site.\n\nFindings consistently showed that hybrid human-AI tutoring increased student engagement with the software and improved intermediate learning measures such as time spent, questions answered, skills proficient, lessons passed, and workspaces completed. Effects were strongest for students with lower baseline performance, suggesting the model may help close gaps rather than only benefiting higher-achieving students. The paper concludes that rapid quasi-experimental methods can provide useful early evidence for AI-supported tutoring programs and that future work should refine dashboards, tutor-student ratios, and eventually test impacts on external achievement measures.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed quasi-experimental multi-site field study, but it lacks random assignment and includes site-specific implementation differences and non-equivalent comparisons. The design provides useful early evidence, yet internal validity is weaker than a well-designed RCT or strong QED with tighter controls.",
+  "impact_tier": "green",
+  "impact_tier_rationale": "The study reports positive, practically meaningful gains in engagement and progress, including a tutoring effect of \u03b2=0.202 for time spent and 0.36 additional workspaces/hour in one site. However, the outcomes are mostly intermediate process measures rather than external achievement tests, so the overall impact is modest rather than large.",
+  "interventions": [
+    {
+      "intervention": "Computer-Assisted Instruction (CAI)",
+      "confidence": 0.95,
+      "role": "primary",
+      "use_case": "math software use within hybrid human-AI tutoring across middle school sites (IXL, i-Ready, and MATHia) with remote tutors and/or math teacher support, including dashboard-guided support in one site"
+    },
+    {
+      "intervention": "Intelligent Tutoring System (ITS)",
+      "confidence": 0.8,
+      "role": "secondary",
+      "use_case": "adaptive one-on-one math learning software used as the instructional engine within the tutoring model, especially MATHia; the paper also treats IXL and i-Ready as adaptive math practice platforms in a tutoring context"
+    },
+    {
+      "intervention": "Adaptive Learning Platform",
+      "confidence": 0.8,
+      "role": "secondary",
+      "use_case": "personalized math practice platforms (i-Ready Personalized Instruction and IXL) that adapt lesson assignment and skill progression based on student performance data"
+    },
+    {
+      "intervention": "Predictive Analytics / Early Warning",
+      "confidence": 0.6,
+      "role": "secondary",
+      "use_case": "tutor-facing real-time dashboard/learning analytics (MATHia LiveLab) used to surface student engagement and productivity signals such as idle time and workspaces completed to guide tutor attention"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Across three quasi-experimental middle school sites, hybrid human-AI tutoring improved math-learning process outcomes relative to software-only or earlier pre-treatment periods. Site 1 showed significant gains in time spent, questions answered, and skills proficient when tutoring was added; for time spent, the mixed-effects model estimated a positive tutoring effect of \u03b2=0.202 (95% CI [0.057, 0.347], p=0.006). Site 2 showed more lessons passed during the 3-week tutoring period (\u03b2=0.244, 95% CI [0.106, 0.381], p<0.001), and Site 3 showed an additional 0.36 workspaces per hour after tutor-to-student ratios improved from 1:8 to 1:4 (95% CI [0.02, 0.70], p=.03).",
+        "measure": "math software engagement and progress measures: time spent, questions answered, skills proficient, lessons passed per week, workspaces completed per hour",
+        "study_size": "n=125; n=385; n=75",
+        "effect_size": "not_reported",
+        "confidence_interval": "Site 1 time spent \u03b2=0.202 [0.057, 0.347]; Site 2 lessons passed \u03b2=0.244 [0.106, 0.381]; Site 3 workspaces/hour +0.36 [0.02, 0.70]",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.86,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The intervention increased student engagement with math software, a key behavioral proxy for persistence/engagement. In Site 1, tutoring significantly increased time spent and in Site 2 weekly time on task rose from 24 to 33 minutes during the tutoring period; these gains were strongest for lower-pretest students, suggesting the human component helped sustain participation among students most at risk of disengagement.",
+        "measure": "time spent on task, weekly engagement minutes, participation in software practice",
+        "study_size": "n=125; n=385; n=75",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.78,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper argues and presents evidence that hybrid human-AI tutoring can improve tutoring efficiency and better target support without raising costs to typical high-dosage tutoring levels. The reported marginal cost averaged below $750 per student annually (range $597-$1170), far below the $3,500-$4,300 per-student annual cost cited for comparable human-only high-dosage tutoring models.",
+        "measure": "annual marginal cost per student and tutor-to-student ratio / deployment efficiency",
+        "study_size": "3 sites",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "no_long_term_followup",
+    "implementation_fidelity_not_reported",
+    "non_representative_population"
+  ],
+  "duration_weeks": "16",
+  "setting": "blended",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "medium",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

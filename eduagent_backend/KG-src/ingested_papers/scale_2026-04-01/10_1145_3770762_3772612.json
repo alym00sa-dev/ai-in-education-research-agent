@@ -1,0 +1,423 @@
+{
+  "title": "Closing the Loop: An Instructor-in-the-Loop AI Assistance System for Supporting Student Help-Seeking in Programming Education",
+  "doi": "10.1145/3770762.3772612",
+  "year": 2026,
+  "venue": "Proceedings of the 57th ACM Technical Symposium on Computer Science Education (SIGCSE TS 2026)",
+  "url": "https://arxiv.org/abs/2510.14457",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Graduate / Doctoral"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper examines how to provide timely, high-quality help to students in programming courses when AI feedback is scalable but sometimes inaccurate, and human instructors are more expert but time-constrained. The authors ask how often students rely on AI versus escalating to instructors, how long instructor responses take and what students do while waiting, and why students escalate when AI help is insufficient.\n\nThe intervention is a hybrid instructor-in-the-loop help system embedded in JupyterLab. Students can request GPT-4o-generated planning, debugging, or optimization hints while working on programming assignments. After receiving a hint, they rate it as helpful or unhelpful; if unhelpful, they can escalate the case to a human instructor, adding notes about what remains confusing. Instructors receive the student notebook, comments, the AI hint, and the escalation notes through a web-based interface and provide follow-up feedback.\n\nThe system was deployed in a four-week online introductory Python programming for data science course in a University of Michigan master\u2019s program, with 82 students enrolled. The course contained weekly Jupyter notebook assignments, and one instructor on a three-person instructional team handled escalation requests. The study used system interaction logs, assignment-related behavior data, qualitative coding of bug types and feedback quality, and a small end-of-course survey.\n\nThe authors conclude that the hybrid model is feasible and that students used AI heavily: 71 students requested 673 AI hints, while only 16 unhelpful cases were escalated by nine students. Students generally stayed engaged while waiting for instructor feedback, continuing to code and review materials rather than becoming passive. However, the study also found that instructor feedback was not always high quality in difficult cases, especially when the original AI hint was incorrect, suggesting that adding humans to the loop improves coverage but does not automatically guarantee quality. Overall, the paper argues that hybrid AI-plus-instructor support is a practical way to scale help in programming education, while highlighting the need for careful attention to feedback quality and workflow design.",
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_control_group",
+    "self_reported_measures",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "4",
+  "setting": "online",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "tutoring_instruction"
+      ],
+      "description": "OpenAI GPT-family large language model used here as the backend for generating programming hints.",
+      "use_case": "Used within a hybrid instructor-in-the-loop help system embedded in JupyterLab to generate planning, debugging, and optimization hints for students in a Python data science course; students could rate hints and escalate unhelpful ones to human instructors.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "In a classroom deployment with 82 students, 71 students (87%) requested AI hints, generating 673 total hints. Of these, 146 hints (22%) were rated unhelpful, and only 16 of those unhelpful cases (11%) were escalated to instructors, suggesting the AI handled most support requests but still failed in a notable minority of cases.",
+          "measure": "Help-system usage: number of hint requests, unhelpful ratings, and escalations",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=82"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "AI-generated hints were delivered in approximately 20 seconds, compared with an average wait of 13.5 hours for instructor feedback and 17.8 minutes after the instructor viewed a request. This indicates substantially faster support delivery from the AI component than from human escalation.",
+          "measure": "Response time for AI hints versus instructor feedback",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=16 escalations"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Debugging hints had the highest rate of being rated unhelpful, with 26% marked unhelpful, and debugging was the only hint type that led to instructor escalation. The paper further reports that escalation due to incorrect AI hints was common: among seven escalations following incorrect AI hints, six (86%) received low-quality instructor feedback, highlighting that incorrect AI outputs clustered in difficult cases.",
+          "measure": "Perceived usefulness and correctness of AI-generated hint types in programming support",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=673 hints; n=16 escalations"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "While awaiting instructor responses on 16 escalated cases, students remained engaged: students always continued coding, 87.5% continued coding within the first hour after escalation, 75% watched lecture videos, and roughly half requested additional AI hints. However, only 25% solved the question before receiving instructor feedback, indicating the AI-supported workflow did not appear to induce over-reliance but was insufficient alone for many difficult cases.",
+          "measure": "Student learning behaviors during wait time after escalation",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=16 escalations"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical classroom deployment with descriptive and qualitative analyses, but it is not an RCT or quasi-experimental design and does not estimate causal effects on learning outcomes. Findings are primarily usage, timing, and quality observations from one course context.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper shows clear operational benefits in speed and adoption, but impact on student learning outcomes is not directly measured and effect sizes are not reported. Reported results are therefore promising but ultimately unclear in educational impact.",
+  "citations": [
+    {
+      "title": "Feasibility Study of Augmenting Teaching Assistants with AI for CS1 Programming Feedback",
+      "doi": null,
+      "year": 2025,
+      "venue": "Proceedings of the Technical Symposium on Computer Science Education (SIGCSE)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Impact of Guided Metacognitive Feedback on Novice Programmers Using Learning by Teaching Environment",
+      "doi": null,
+      "year": 2020,
+      "venue": "Journal of King Abdulaziz University-Computing and Information Technology Sciences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Generative AI for Education (GAIED): Advances, Opportunities, and Challenges",
+      "doi": null,
+      "year": 2024,
+      "venue": "CoRR",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Assessing Student Perceptions and Use of Instructor Versus AI-generated Feedback",
+      "doi": null,
+      "year": 2025,
+      "venue": "British Journal of Educational Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Exploring Student Interactions with Ai in Programming Training",
+      "doi": null,
+      "year": 2024,
+      "venue": "Adjunct Proceedings of the Conference on User Modeling, Adaptation and Personalization (UMAP)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Generative AI in Computer Science Education: Challenges and Opportunities",
+      "doi": null,
+      "year": 2025,
+      "venue": "Elements in Generative AI in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Too Long to Wait and Not Much to Do: Modeling Student Behaviors While Waiting for Help in Online Office Hours.",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the Educational Data Mining in Computer Science Education (CSEDM) Workshop",
+      "citation_level": 2,
+      "citation_context": "prior evidence on students canceling help after waiting"
+    },
+    {
+      "title": "Impact of Generative AI Dialogic Feedback on Different Stages of Programming Problem Solving",
+      "doi": null,
+      "year": 2025,
+      "venue": "Education and Information Technologies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Gpt-4o System Card",
+      "doi": null,
+      "year": 2024,
+      "venue": "Arxiv Preprint Arxiv:2410.21276",
+      "citation_level": 3,
+      "citation_context": "model source used to generate all hints"
+    },
+    {
+      "title": "Evaluating the Application of Large Language Models to Generate Feedback in Programming Education",
+      "doi": null,
+      "year": 2024,
+      "venue": "Global Engineering Education Conference (EDUCON)",
+      "citation_level": 2,
+      "citation_context": "supports limits of automated debugging feedback"
+    },
+    {
+      "title": "The Problem of AI Hallucination and How to Solve It",
+      "doi": null,
+      "year": 2024,
+      "venue": "European Conference on E-Learning (ECEL)",
+      "citation_level": 2,
+      "citation_context": "framing AI hallucination as reason for human intervention"
+    },
+    {
+      "title": "Understanding the Impact of AI Hallucinations on the University Community",
+      "doi": null,
+      "year": 2024,
+      "venue": "Cybrarians Journal",
+      "citation_level": 2,
+      "citation_context": "framing AI hallucination as reason for human intervention"
+    },
+    {
+      "title": "Codeaid: Evaluating a Classroom Deployment of an Llm-based Programming Assistant That Balances Student and Educator Needs",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings Of The Conference On Human Factors In Computing Systems (CHI)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Hints-in-Browser: Benchmarking Language Models for Programming Feedback Generation",
+      "doi": null,
+      "year": 2024,
+      "venue": "Advances in Neural Information Processing Systems: Annual Conference on Neural Information Processing Systems (NeurIPS)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Instructor Presence in Online Courses and Student Satisfaction",
+      "doi": null,
+      "year": 2013,
+      "venue": "The International Journal for the Scholarship of Teaching and Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Code-help: Using Large Language Models with Guardrails for Scalable Support in Programming Classes",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the Koli Calling International Conference on Computing Education Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "You\u2019re (Not) My Type-Can LLMs Generate Feedback of Specific Types for Introductory Programming Tasks?",
+      "doi": null,
+      "year": 2025,
+      "venue": "Journal Of Computer Assisted Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Enhancing Programming Education with ChatGPT: A Case Study on Student Perceptions and Interactions in a Python Course",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the Artificial Intelligence in Education (AIED)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Learners Teaching Novices: An Uplifting Alternative Assessment",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the Technical Symposium on Computer Science Education (SIGCSE)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "TeachNow: Enabling Teachers to Provide Spontaneous, Realtime 1: 1 Help in Massive Online Courses",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the Innovation and Technology in Computer Science Education (ITiCSE)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "AI or Human? Evaluating Student Feedback Perceptions in Higher Education",
+      "doi": null,
+      "year": 2024,
+      "venue": "European Conference on Technology Enhanced Learning (ECTEL)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "What Do We Know About the Extent of Teacher Shortages Nationwide? A Systematic Examination of Reports of US Teacher Shortages",
+      "doi": null,
+      "year": 2024,
+      "venue": "Aera Open",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Instructor Social Presence Effects on Learner Social Presence, Achievement, and Satisfaction",
+      "doi": null,
+      "year": 2018,
+      "venue": "TechTrends",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Enhancing Active Learning Through Collaboration Between Human Teachers and Generative AI",
+      "doi": null,
+      "year": 2024,
+      "venue": "Computers and Education Open",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Plan More, Debug Less: Applying Metacognitive Theory to AI-assisted Programming Education",
+      "doi": null,
+      "year": 2025,
+      "venue": "International Conference on Artificial Intelligence in Education (AIED)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Generative AI for Programming Education: Benchmarking Chatgpt, GPT-4, and Human Tutors",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the Conference on International Computing Education Research (ICER) - Volume 2",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Bridging Gaps Between Student and Expert Evaluations of AI-Generated Programming Hints",
+      "doi": null,
+      "year": 2025,
+      "venue": "Proceedings of the Conference on Learning@ Scale (L@S)",
+      "citation_level": 3,
+      "citation_context": "coding scheme for unhelpful AI hint reasons"
+    },
+    {
+      "title": "The Robots Are Here: Navigating the Generative AI Revolution in Computing Education",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the Working Group Reports on Innovation and Technology in Computer Science Education (ITiCSE-WGR)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Conceptualizing and Investigating Instructor Presence in Online Learning Environments",
+      "doi": null,
+      "year": 2015,
+      "venue": "International Review of Research in Open and Distributed Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Next-step Hint Generation for Introductory Programming Using Large Language Models",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the Australasian Computing Education Conference (ACE)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Metocognitive Support Accelerates Computer Assisted Learning for Novice Programmers",
+      "doi": null,
+      "year": 2017,
+      "venue": "Journal of Educational Technology & Society",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The CS Teacher Shortage",
+      "doi": null,
+      "year": 2019,
+      "venue": "Commun. ACM",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Bridging Learnersourcing and AI: Exploring the Dynamics of Student-AI Collaborative Feedback Generation",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the Learning Analytics and Knowledge Conference (LAK)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Investigating Student Mistakes in Introductory Data Science Programming",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the Technical Symposium on Computer Science Education (SIGCSE)",
+      "citation_level": 3,
+      "citation_context": "bug taxonomy used to classify student code"
+    },
+    {
+      "title": "Perceptions and Usage of AI Chatbots Among Students in Higher Education Across Genders, Academic Levels and Fields of Study",
+      "doi": null,
+      "year": 2024,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "AI Teaches the Art of Elegant Coding: Timely, Fair, and Helpful Style Feedback in a Global Course",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the Technical Symposium on Computer Science Education (SIGCSE)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Empowering Instructors with AI: Evaluating the Impact of an AI-driven Feedback Tool in Learning Analytics",
+      "doi": null,
+      "year": 2025,
+      "venue": "Transactions on Learning Technologies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Power of Teacher Feedback in Affecting Student Learning and Achievement: Insights From Students\u2019 Perspective.",
+      "doi": null,
+      "year": 2021,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Development and Evaluation of an AI-enhanced Python Programming Education System",
+      "doi": null,
+      "year": 2024,
+      "venue": "Ubiquitous Computing, Electronics & Mobile Communication Conference (UEMCON)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Evaluating Trust in AI, Human, and Co-produced Feedback Among Undergraduate Students",
+      "doi": null,
+      "year": 2025,
+      "venue": "Arxiv Preprint Arxiv:2504.10961",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Students\u2019 Perceptions and Preferences of Generative Artificial Intelligence Feedback for Programming",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the Conference on Artificial Intelligence (AAAI)",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

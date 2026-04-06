@@ -1,0 +1,375 @@
+{
+  "title": "Future-Proofing Programmers: Optimal Knowledge Tracing for AI-Assisted Personalized Education",
+  "doi": null,
+  "year": 2024,
+  "venue": "IEEE Signal Processing Magazine",
+  "url": "https://arxiv.org/abs/2509.23996",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Randomized Controlled Trial (RCT)",
+  "extended_summary": "This paper addresses how generative AI can be combined with knowledge tracing and signal processing to provide more adaptive and effective personalized education, especially in programming education. The authors argue that many current AI educational tools can generate helpful responses but do not maintain an explicit, interpretable model of student learning progress. To address this gap, they introduce COTUTOR, a system designed to model students\u2019 evolving knowledge states and use those estimates to improve feedback, recommendations, and resource allocation.\n\nCOTUTOR extends Bayesian Knowledge Tracing by integrating real-time learning signals, smoothing and aggregation procedures, convex optimization, and a generative AI copilot interface. The system uses data such as code submissions, timestamps, attempts, participation logs, and chatbot queries to estimate mastery and recommend personalized next steps. The paper includes both a benchmark evaluation on the EdNet educational dataset and a controlled classroom experiment. In the classroom component, students were randomly assigned to COTUTOR, BKT, DKT, Code-DKT, or control conditions, and outcomes included assignment scores, participation, survey ratings, and prediction accuracy.\n\nThe main educational context is university-level programming and AI-related coursework. The practical implementation was embedded in online programming education platforms, including My Code Weapon, Nemobot, and an online judge environment used in an introductory C programming course. The controlled study involved 203 university students over one semester, indicating a higher-education setting with AI-assisted support layered onto course activities such as assignments, lectures, tutorials, quizzes, and chatbot-based interactions. Educators also appear in the system as overseers who review outputs and receive adaptive guidance.\n\nThe paper concludes that COTUTOR outperforms baseline knowledge tracing approaches on benchmark metrics and is associated with better classroom outcomes, including higher average assignment scores, participation, survey ratings, and prediction accuracy. The authors emphasize the model\u2019s interpretability, scalability, and potential for ethically grounded deployment, while also acknowledging privacy, legal, and human-oversight considerations for future real-world implementation.",
+  "limitations": [
+    "single_site",
+    "self_reported_measures",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "blended",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "identified_tools": [
+    {
+      "name": "COTUTOR",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "personalization_adaptation",
+        "tutoring_instruction"
+      ],
+      "description": "An AI-driven personalized education system for programming education that integrates Bayesian Knowledge Tracing, signal processing, convex optimization, and a generative-AI copilot/chatbot to model student learning states and recommend adaptive resources and strategies.",
+      "use_case": "Studied as an AI copilot in university programming/AI courses and online programming platforms to estimate student knowledge states from interaction signals, provide conversational support, send reminders, answer questions, recommend resources, and personalize learning pathways.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In benchmark evaluation on the EdNet dataset, COTUTOR outperformed BKT, DKT, and Code-DKT on predictive performance for student learning events. Reported metrics were Accuracy=84.3%, AUC-ROC=0.717, PR-AUC=0.741, RMSE=0.229, and NLL=0.594; the paper states this supports improved knowledge modeling over baselines.",
+          "measure": "Knowledge tracing / prediction performance on EdNet (Accuracy, AUC-ROC, PR-AUC, RMSE, NLL)",
+          "effect_size": "Accuracy=84.3%; AUC-ROC=0.717; PR-AUC=0.741; RMSE=0.229; NLL=0.594",
+          "confidence_interval": "not_reported",
+          "sample_size": "more than 784,000 students; over 131 million interactions"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In a controlled university course study, the COTUTOR group achieved the highest average assignment score at 73.2%, compared with Control 68.4%, BKT 70.1%, DKT 70.4%, and Code-DKT 71.8%. Relative to the control group, the table reports t=2.78, p=0.01, d=0.62, indicating a medium positive effect; relative to other AI baselines, reported comparisons were BKT t=1.79, p=0.08, d=0.40; DKT t=2.93, p=0.00, d=0.65; Code-DKT t=1.68, p=0.05, d=0.38.",
+          "measure": "Average assignment score across five graded assignments",
+          "effect_size": "vs Control: d=0.62; vs BKT: d=0.40; vs DKT: d=0.65; vs Code-DKT: d=0.38",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=40 for COTUTOR group; total N=203"
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "COTUTOR produced the highest post-course survey score at 72.8%, exceeding Control 67.9%, BKT 69.4%, DKT 67.7%, and Code-DKT 69.8%. Reported comparisons versus COTUTOR were Control t=4.71, p=0.00, d=1.05; BKT t=3.27, p=0.00, d=0.73; DKT t=4.90, p=0.00, d=1.10; Code-DKT t=2.88, p=0.01, d=0.64.",
+          "measure": "Post-course survey score",
+          "effect_size": "vs Control: d=1.05; vs BKT: d=0.73; vs DKT: d=1.10; vs Code-DKT: d=0.64",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=40 for COTUTOR group; total N=203"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "COTUTOR had the highest activity participation rate at 73.9%, compared with Control 64.2%, BKT 67.7%, DKT 67.7%, and Code-DKT 72.8%. Reported comparisons were Control t=3.41, p=0.00, d=0.76; BKT t=2.18, p=0.03, d=0.49; DKT t=2.18, p=0.03, d=0.49; Code-DKT t=0.66, p=0.51, d=0.22, which the paper notes was borderline/non-significant versus Code-DKT.",
+          "measure": "Activity participation rate in class activities",
+          "effect_size": "vs Control: d=0.76; vs BKT: d=0.49; vs DKT: d=0.49; vs Code-DKT: d=0.22",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=40 for COTUTOR group; total N=203"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "COTUTOR achieved the highest prediction accuracy for student performance in the university course at 67.4%, outperforming BKT (59.0%), DKT (62.5%), and Code-DKT (65.1%). The paper presents this as evidence that integrating multimodal learning signals improves student performance prediction.",
+          "measure": "Prediction accuracy of student performance",
+          "effect_size": "67.4% accuracy",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=40 for COTUTOR group; total N=203"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "green",
+  "quality_tier_rationale": "The paper reports a controlled university study with random assignment across five groups and a large-scale benchmark evaluation, which is stronger than correlational work. However, it is a single-study higher education evaluation with limited reporting detail (e.g., no confidence intervals and some borderline/non-significant comparisons), so green is more appropriate than blue.",
+  "impact_tier": "blue",
+  "impact_tier_rationale": "Reported effects for several classroom outcomes are medium to large, including assignment score vs control (d=0.62), post-course survey outcomes up to d=1.10, and participation vs control (d=0.76). These exceed the 0.20 threshold for blue impact.",
+  "citations": [
+    {
+      "title": "Evaluating Large Language Models Trained on Code",
+      "doi": null,
+      "year": 2021,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Khanmigo: An AI-powered tutor using GPT-4",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "GitHub Copilot in the classroom",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Computer Aided Instruction\u2014CAI",
+      "doi": null,
+      "year": 1997,
+      "venue": "The Art of Doing Science and Engineering: Learning to Learn",
+      "citation_level": 2,
+      "citation_context": "early learning-to-learn framing for AI-assisted instruction"
+    },
+    {
+      "title": "Knowledge tracing: A survey",
+      "doi": null,
+      "year": 2023,
+      "venue": "ACM Computing Surveys",
+      "citation_level": 2,
+      "citation_context": "background framework for knowledge tracing landscape"
+    },
+    {
+      "title": "Empowering student self-regulated learning and science education through ChatGPT: A pioneering pilot study",
+      "doi": null,
+      "year": 2024,
+      "venue": "British Journal of Educational Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "From code generation to software testing: AI copilot with context-based retrieval-augmented generation",
+      "doi": null,
+      "year": 2025,
+      "venue": "IEEE Software",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Aligning crowd-sourced human feedback for reinforcement learning on code generation by large language models",
+      "doi": null,
+      "year": 2024,
+      "venue": "IEEE Transactions on Big Data",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Contextual augmented multi-model programming (camp): A local-cloud copilot solution",
+      "doi": null,
+      "year": 2025,
+      "venue": "2025 IEEE Conference on Artificial Intelligence (CAI)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Copilot for Xcode: Exploring AI-assisted programming by prompting cloud-based large language models",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Individualized Bayesian Knowledge Tracing Models",
+      "doi": null,
+      "year": 2013,
+      "venue": "Artificial Intelligence in Education",
+      "citation_level": 3,
+      "citation_context": "baseline BKT model for benchmarking and mastery estimation"
+    },
+    {
+      "title": "Deep knowledge tracing",
+      "doi": null,
+      "year": 2015,
+      "venue": "Proceedings of the 29th International Conference on Neural Information Processing Systems",
+      "citation_level": 3,
+      "citation_context": "baseline DKT model for comparative evaluation"
+    },
+    {
+      "title": "Control knowledge tracing: Modeling students\u2019 learning dynamics from a control-theory perspective",
+      "doi": null,
+      "year": 2024,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 2,
+      "citation_context": "control-theoretic perspective motivating learning dynamics modeling"
+    },
+    {
+      "title": "Comprehension factor analysis: Modeling student\u2019s reading behaviour: Accounting for reading practice in predicting students\u2019 learning in MOOCs",
+      "doi": null,
+      "year": 2019,
+      "venue": "LAK19: Proceedings of the 9th International Conference on Learning Analytics & Knowledge",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "One hundred years of forgetting: A quantitative description of retention",
+      "doi": null,
+      "year": 1996,
+      "venue": "Psychological Review",
+      "citation_level": 2,
+      "citation_context": "retention/forgetting basis for temporal learning dynamics"
+    },
+    {
+      "title": "When is deep learning the best approach to knowledge tracing?",
+      "doi": null,
+      "year": 2020,
+      "venue": "Journal of Educational Data Mining",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Robust and scalable online code execution system",
+      "doi": null,
+      "year": 2020,
+      "venue": "2020 43rd International Convention on Information, Communication and Electronic Technology (MIPRO)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Personalized education and artificial intelligence in the United States, China, and India: A systematic review using a human-in-the-loop model",
+      "doi": null,
+      "year": 2022,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Personalized education in the artificial intelligence era: What to expect next",
+      "doi": null,
+      "year": 2021,
+      "venue": "IEEE Signal Processing Magazine",
+      "citation_level": 2,
+      "citation_context": "conceptual framing for personalized AI education"
+    },
+    {
+      "title": "The 2 sigma problem: The search for methods of group instruction as effective as one-to-one tutoring",
+      "doi": null,
+      "year": 1984,
+      "venue": "Educational Researcher",
+      "citation_level": 2,
+      "citation_context": "motivates tutoring effectiveness target for personalization"
+    },
+    {
+      "title": "Cognitive tutors: Lessons learned",
+      "doi": null,
+      "year": 1995,
+      "venue": "The Journal of the Learning Sciences",
+      "citation_level": 2,
+      "citation_context": "intelligent tutoring systems foundation for cotutoring design"
+    },
+    {
+      "title": "A systematic literature review on educational recommender systems for teaching and learning: research trends, limitations and opportunities",
+      "doi": null,
+      "year": 2023,
+      "venue": "Education and Information Technologies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Saint+: Integrating temporal features for EdNet correctness prediction",
+      "doi": null,
+      "year": 2021,
+      "venue": "LAK21: 11th International Learning Analytics and Knowledge Conference",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "qDKT: Question-centric deep knowledge tracing",
+      "doi": null,
+      "year": 2020,
+      "venue": "arXiv preprint arXiv:2005.12442",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A reinforcement learning approach to personalized learning recommendation systems",
+      "doi": null,
+      "year": 2019,
+      "venue": "British Journal of Mathematical and Statistical Psychology",
+      "citation_level": 2,
+      "citation_context": "resource recommendation framing for personalization optimization"
+    },
+    {
+      "title": "Convex optimization",
+      "doi": null,
+      "year": 2004,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "optimization methods underlying resource allocation formulation"
+    },
+    {
+      "title": "Course signals at Purdue: Using learning analytics to increase student success",
+      "doi": null,
+      "year": 2012,
+      "venue": "Proceedings of the 2nd International Conference on Learning Analytics and Knowledge",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Improving the integrated experience of in-class activities and fine-grained data collection for analysis in a blended learning class",
+      "doi": null,
+      "year": 2018,
+      "venue": "Interactive Learning Environments",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "From signals to knowledge: A conceptual model for multimodal learning analytics",
+      "doi": null,
+      "year": 2018,
+      "venue": "Journal of Computer Assisted Learning",
+      "citation_level": 2,
+      "citation_context": "multimodal signals conceptualization for captured learning data"
+    },
+    {
+      "title": "Nemobot: Crafting strategic gaming LLM agents for K-12 AI Education",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the Eleventh ACM Conference on Learning at Scale (L@S'24)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Blending peer instruction with just-in-time teaching: Jointly optimal task scheduling with feedback for classroom flipping",
+      "doi": null,
+      "year": 2021,
+      "venue": "Proceedings of the Eighth ACM Conference on Learning at Scale (L@S'21)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Convex optimization additional exercises",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "EdNet: A large-scale hierarchical dataset in education",
+      "doi": null,
+      "year": 2020,
+      "venue": "Artificial Intelligence in Education: 21st International Conference, AIED 2020, Proceedings, Part II",
+      "citation_level": 3,
+      "citation_context": "primary public dataset used for benchmark evaluation"
+    },
+    {
+      "title": "Implementing educational technology in higher education institutions: A review of technologies, stakeholder perceptions, frameworks and metrics",
+      "doi": null,
+      "year": 2023,
+      "venue": "Education and Information Technologies",
+      "citation_level": 3,
+      "citation_context": "source for established EdTech evaluation metrics"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

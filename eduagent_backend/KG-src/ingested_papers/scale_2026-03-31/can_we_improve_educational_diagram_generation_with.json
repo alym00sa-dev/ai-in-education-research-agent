@@ -1,0 +1,78 @@
+{
+  "title": "Can We Improve Educational Diagram Generation with In-Context Examples? Not if a Hallucination Spoils the Bunch",
+  "doi": null,
+  "year": 2026,
+  "venue": null,
+  "url": "https://arxiv.org/abs/2601.20476",
+  "source_db": "scale_stanford",
+  "population": "Undergraduate",
+  "user_type": "Educator",
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper investigates whether in-context examples can improve the quality of AI-generated educational diagrams, with a particular focus on reducing hallucinations and improving logical organization, connectivity, and visual layout. The broader problem is that generative AI is increasingly used to create instructional materials in computing education, but the quality and reliability of those materials remain uncertain. The authors ask whether a novel Rhetorical Structure Theory (RST)-based prompting method can make diagram generation more faithful to source text and more useful for education.\n\nThe intervention is a multi-step diagram generation pipeline using large language models. The authors compare two RST-based in-context learning variants (RST1 and RST2) against a zero-shot baseline. In the RST-based methods, models first analyze source text using RST, then retrieve a similar example from a small hand-crafted set, and finally generate Graphviz diagram code that is iteratively repaired and refined. The study also develops a human evaluation rubric and explores whether LLMs can automate diagram evaluation in ways that align with expert human judgments.\n\nThe empirical evaluation used 25 educational computing texts to generate 150 diagrams, which were assessed by four experts in computing education and computational linguistics. These experts were based in a higher education context, and the paper notes that the study involved computer science educators as active stakeholders; a preliminary student survey at Aalto University is mentioned but was not central to the main analysis. The study was conducted at Aalto University in Finland. The setting is best characterized as lab-based evaluation of generated artifacts rather than classroom implementation.\n\nThe main conclusions are that the RST-based approach, especially RST1, can reduce factual hallucinations and improve faithfulness to source context relative to zero-shot generation, although results vary because of LLM stochasticity and multi-step pipeline errors. The o3 model substantially outperformed GPT-4o across most criteria. However, hallucinations remained common, especially with more complex source texts, and LLMs often failed to detect or repair their own mistakes. The authors conclude that while AI can assist educational diagram generation, safeguards are needed before such systems can be relied on in educational practice.",
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "lab",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Finland",
+  "study_region": "Europe",
+  "identified_tools": [
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "content_generation",
+        "feedback_evaluation"
+      ],
+      "description": "Large language model\u2013based generative AI used to generate educational diagram code, refine diagrams, repair code, and perform automated evaluation of generated diagrams.",
+      "use_case": "The paper studies GPT-4o and o3 as LLMs within a multi-step pipeline for generating Graphviz educational diagrams from source texts using zero-shot and RST-guided in-context learning, and also for automated rubric-based evaluation of the resulting diagrams.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Across 150 generated diagrams evaluated by experts, the RST-based in-context method showed preliminary improvements in diagram faithfulness and reduced factual hallucination relative to zero-shot in some settings, but quality varied due to LLM stochasticity. o3 generally outperformed GPT-4o across logical organization, connectivity, and layout aesthetic; for example, for logical organization, RST1 with o3 had quartiles 4,4,5 while RST2 with GPT-4o had quartiles 2,3,4.",
+          "measure": "Expert ratings of logical organization (C1), connectivity (C2), and layout aesthetic (C3) on 5-point ordinal scales for 150 generated diagrams",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=150 diagrams"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Hallucination remained common even with verified educational source texts. The proportion of hallucination-free diagrams for factual hallucination (Hfact) ranged from 0.80 to 0.96 for GPT-4o and 0.88 to 0.96 for o3 across methods, implying up to 20% of diagrams contained factual hallucination; RST2 had the highest factual-hallucination-free rate (0.96 for both models), while 0-shot had the weakest text-context consistency (Hc-free rates 0.32 for GPT-4o and 0.40 for o3).",
+          "measure": "Expert-coded hallucination outcomes: factual hallucination (Hfact) and faithfulness hallucination including context inconsistency (Hc)",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=150 diagrams"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "For automated diagram evaluation, LLM-based scoring aligned only modestly to moderately with human judgments, with o3 outperforming GPT-4o. The best Krippendorff's alpha values were for o3 using instructions only (E3) on connectivity, \u03b1=0.66 (95% CI 0.47,0.78), and for o3 using ICL with instructions (E2), \u03b1=0.58 (95% CI 0.39,0.73) on connectivity; implicit learning alone (E1) was weak, including negative/near-zero agreement for GPT-4o on C1 and C3.",
+          "measure": "Agreement between human and LLM diagram evaluation using Krippendorff's alpha and Kendall's W for C1, C2, C3 rubric scores",
+          "effect_size": "\u03b1=0.66; \u03b1=0.58",
+          "confidence_interval": "95% CI 0.47,0.78; 95% CI 0.39,0.73",
+          "sample_size": "n=150 diagrams"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical evaluation of LLM-generated educational materials using expert ratings, but it is not an RCT or causal study of student learning outcomes. The study is preliminary, uses a limited sample of 25 source texts / 150 diagrams, and focuses on artifact quality rather than learner impact.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports mixed but promising improvements in diagram quality and hallucination reduction, without standardized effect sizes or direct student outcome effects. Impact is therefore unclear and operational rather than clearly demonstrated as substantial.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

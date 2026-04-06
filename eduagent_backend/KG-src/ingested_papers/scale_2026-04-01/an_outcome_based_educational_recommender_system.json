@@ -1,0 +1,315 @@
+{
+  "title": "An Outcome-Based Educational Recommender System",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "https://arxiv.org/abs/2509.18186",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Adult (non-academic)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Randomized Controlled Trial (RCT)",
+  "extended_summary": "This paper addresses a major gap in educational recommender systems: most are evaluated using engagement-oriented metrics such as clicks, ratings, or retention, rather than whether they actually improve learning. The authors propose OBER (Outcome-Based Educational Recommender), a framework that embeds learning outcomes and assessment items directly into the recommender system\u2019s data model so that recommendation methods can be judged on learner mastery rather than only on relevance or usage behavior.\n\nThe intervention is the OBER framework itself and its integration into NamazApp, a non-formal mobile e-learning application designed to help beginners learn Muslim prayer. OBER adds explicit Outcome entities, aligns learning items to outcomes, and computes mastery from interaction logs using assessment-linked items. The system is designed to be method-agnostic, and the authors tested three recommendation approaches within the same platform: a fixed expert-curated trajectory, collaborative filtering (CF), and knowledge-based (KB) filtering.\n\nThe study was conducted in an online non-formal learning setting with over 5,700 learners, with roughly 1,800 learners randomly assigned to each of the three conditions. Participants were end-users of NamazApp, treated here as learners/students in an adult non-academic context. The experiment lasted two weeks and used platform log data to compute three types of outcomes: retention, recommendation relevance via click-through rate, and outcome mastery based on assessment performance.\n\nThe main conclusion is that OBER makes it possible to compare recommender strategies on pedagogically meaningful outcomes without adding separate testing overhead. In the reported trial, collaborative filtering produced the highest retention, but the fixed expert-designed path achieved the highest mastery, while knowledge-based recommendations performed in between. The authors argue that optimizing for engagement alone does not guarantee better learning, and that outcome-based evaluation should be a first-class component of educational recommender systems, especially in non-formal settings.",
+  "limitations": [
+    "short_duration",
+    "single_site",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "2",
+  "setting": "online",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "identified_tools": [
+    {
+      "name": "OBER",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "personalization_adaptation",
+        "prediction_analytics"
+      ],
+      "description": "An Outcome-Based Educational Recommender system that embeds learning outcomes and assessment items into an educational recommender data schema so recommendation methods can be evaluated by learner mastery as well as engagement metrics.",
+      "use_case": "Integrated as an API service into the NamazApp mobile e-learning application to compare three recommendation methods\u2014fixed expert trajectory, collaborative filtering, and knowledge-based filtering\u2014over two weeks using retention, click-through rate, and outcome mastery derived from interaction logs.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In a two-week online controlled A/B/C test in NamazApp, OBER enabled comparison of recommendation methods within one unified logging and mastery pipeline across 5,751 learners total (CF n=1856, Fixed n=1963, KB n=1932). The system produced comparable retention, relevance, and mastery metrics without separate testing phases, demonstrating embedded outcome measurement during normal usage.",
+          "measure": "Ability to compare recommendation methods using unified logging, CTR, retention, and mastery metrics in live deployment",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=5751"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Across the OBER-mediated experiment, the fixed expert trajectory achieved the highest average total mastery score per learner (0.4641), followed by knowledge-based filtering (0.4212) and collaborative filtering (0.3899). The paper also reports that the fixed method showed the steepest mastery growth over the first ten sessions, indicating stronger learning outcomes than the personalized alternatives tested.",
+          "measure": "Average total mastery score per learner; mastery growth over first ten sessions",
+          "effect_size": "Fixed=0.4641; KB=0.4212; CF=0.3899",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=5751"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Using OBER's shared evaluation framework, collaborative filtering showed the highest average retention (6.16 sessions per learner) and slightly highest click-through relevance (CTR=0.3033), compared with the fixed trajectory (retention=5.63, CTR=0.3026) and knowledge-based filtering (retention=5.02, CTR=0.3007). Thus, the framework surfaced a trade-off where the most engaging method was not the one with the highest mastery.",
+          "measure": "Average sessions per learner; average click-through rate for recommendations per learner",
+          "effect_size": "Retention: CF=6.16, Fixed=5.63, KB=5.02; CTR: CF=0.3033, Fixed=0.3026, KB=0.3007",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=5751"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is an empirical online controlled experiment with random assignment across three live conditions and a large sample (over 5,700 learners), which is stronger than correlational work. However, the paper reports no significance tests, confidence intervals, or standardized effect sizes, so there are some credibility concerns.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper shows meaningful differences in mastery and retention across methods, but impact remains unclear because no inferential statistics or standardized effect sizes are reported. Reported outcome differences are descriptive rather than firmly quantified for causal magnitude.",
+  "citations": [
+    {
+      "title": "Recommendation systems in education: a systematic mapping study",
+      "doi": null,
+      "year": 2018,
+      "venue": "International Conference on Information Technology & Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Panorama of recommender systems to support learning",
+      "doi": null,
+      "year": 2015,
+      "venue": "Recommender Systems Handbook",
+      "citation_level": 2,
+      "citation_context": "defines ERS data entities and prior knowledge enrichment"
+    },
+    {
+      "title": "Recommendation systems for education: systematic review",
+      "doi": null,
+      "year": 2021,
+      "venue": "Electronics",
+      "citation_level": 2,
+      "citation_context": "supports claim CF is most popular in ERS"
+    },
+    {
+      "title": "Outcome-Based Education: Critical Issues and Answers",
+      "doi": null,
+      "year": 1994,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "grounds outcome-based approach as educational standard"
+    },
+    {
+      "title": "Europass tools: European qualifications framework",
+      "doi": null,
+      "year": null,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "What the student does: Teaching for enhanced learning",
+      "doi": null,
+      "year": 2012,
+      "venue": "Higher Education Research & Development",
+      "citation_level": 2,
+      "citation_context": "supports constructive alignment of assessment with outcomes"
+    },
+    {
+      "title": "Building an educational product: constructive alignment and requirements engineering",
+      "doi": null,
+      "year": 2021,
+      "venue": "Advances in Artificial Intelligence, Software and Systems Engineering",
+      "citation_level": 2,
+      "citation_context": "prior work aligning assessment activities with intended outcomes"
+    },
+    {
+      "title": "Learning outcomes, assessment, and evaluation in educational recommender systems: A systematic review",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_level": 2,
+      "citation_context": "establishes gap in ERS outcome assessment"
+    },
+    {
+      "title": "Hybrid recommender systems: Survey and experiments",
+      "doi": null,
+      "year": 2002,
+      "venue": "User Modeling and User-Adapted Interaction",
+      "citation_level": 2,
+      "citation_context": "defines collaborative and hybrid recommendation methods"
+    },
+    {
+      "title": "State-of-the-art survey on deep learning-based recommender systems for e-learning",
+      "doi": null,
+      "year": 2022,
+      "venue": "Applied Sciences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Reinforcement learning based recommender systems: A survey",
+      "doi": null,
+      "year": 2022,
+      "venue": "ACM Computing Surveys",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A fuzzy tree matching-based personalized e-learning recommender system",
+      "doi": null,
+      "year": 2015,
+      "venue": "IEEE Transactions on Fuzzy Systems",
+      "citation_level": 2,
+      "citation_context": "supports precedence relations and outcome graph structure"
+    },
+    {
+      "title": "Recommender system and web 2.0 tools to enhance a blended learning model",
+      "doi": null,
+      "year": 2016,
+      "venue": "IEEE Transactions on Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Ontology-based e-learning content recommender system for addressing the pure cold-start problem",
+      "doi": null,
+      "year": 2021,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Ersdo: E-learning recommender system based on dynamic ontology",
+      "doi": null,
+      "year": 2022,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Broad-rsi \u2013 educational recommender system using social networks interactions and linked data",
+      "doi": null,
+      "year": 2018,
+      "venue": "Journal of Internet Services and Applications",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Large-scale e-learning recommender system based on spark and hadoop",
+      "doi": null,
+      "year": 2019,
+      "venue": "Journal of Big Data",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Keys to successful e-learning: Outcomes, assessment and evaluation",
+      "doi": null,
+      "year": 2002,
+      "venue": "Educational Technology",
+      "citation_level": 2,
+      "citation_context": "defines assessment and evaluation distinction"
+    },
+    {
+      "title": "Combining two modelling approaches: Gqm and kaos in an open source project",
+      "doi": null,
+      "year": 2020,
+      "venue": "Open Source Systems: 16th IFIP WG 2.13 International Conference, OSS 2020",
+      "citation_level": 2,
+      "citation_context": "analogy from goal-modeling in requirements engineering"
+    },
+    {
+      "title": "User-centric evaluation of recommender systems in social learning platforms: Accuracy is just the tip of the iceberg",
+      "doi": null,
+      "year": 2018,
+      "venue": "IEEE Transactions on Learning Technologies",
+      "citation_level": 2,
+      "citation_context": "shows rating-based evaluation is insufficient"
+    },
+    {
+      "title": "Recommender systems and scratch: An integrated approach for enhancing computer programming learning",
+      "doi": null,
+      "year": 2020,
+      "venue": "IEEE Transactions on Learning Technologies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "LLM examiner: automating assessment in informal self-directed e-learning using ChatGPT",
+      "doi": null,
+      "year": 2024,
+      "venue": "Knowledge and Information Systems",
+      "citation_level": 2,
+      "citation_context": "supports semi-automatic formulation of learning outcomes"
+    },
+    {
+      "title": "Ascent to Felicity: A Manual on Islamic Creed and Hanafi Jurisprudence",
+      "doi": null,
+      "year": 2010,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "source for Hanafi classification of correct prayer"
+    },
+    {
+      "title": "E-learning recommendation system",
+      "doi": null,
+      "year": 2008,
+      "venue": "2008 International Conference on Computer Science and Software Engineering",
+      "citation_level": 2,
+      "citation_context": "motivates recommender as external API service"
+    },
+    {
+      "title": "The evolution of continuous experimentation in software product development: from data to a data-driven organization at scale",
+      "doi": null,
+      "year": 2017,
+      "venue": "2017 IEEE/ACM 39th International Conference on Software Engineering (ICSE)",
+      "citation_level": 3,
+      "citation_context": "split-testing methodology for online controlled experiment"
+    },
+    {
+      "title": "Creating usage context-based object similarities to boost recommender systems in technology enhanced learning",
+      "doi": null,
+      "year": 2015,
+      "venue": "IEEE Transactions on Learning Technologies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A semantic recommender system for adaptive learning",
+      "doi": null,
+      "year": 2015,
+      "venue": "IT Professional",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Knowledge based recommender system for academia using machine learning: A case study on higher education landscape of pakistan",
+      "doi": null,
+      "year": 2019,
+      "venue": "IEEE Access",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A recommender system method for children\u2019s education using mobile technology",
+      "doi": null,
+      "year": 2022,
+      "venue": "IEEE Access",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

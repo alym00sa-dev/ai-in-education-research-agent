@@ -1,0 +1,86 @@
+{
+  "title": "PsyDraw: A Multi-Agent Multimodal System for Mental Health Screening in Left-Behind Children",
+  "doi": null,
+  "year": 2024,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2412.14769v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Elementary (PreK-5th)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator",
+    "School"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper addresses the challenge of early mental health screening for left-behind children in China, a population facing elevated risks of anxiety, depression, suicidal thoughts, and other psychological difficulties due to parental migration and limited access to mental health professionals. The authors focus on the House-Tree-Person (HTP) drawing test, which is engaging for children but traditionally requires expert interpretation, making it difficult to use at scale in resource-limited rural settings.\n\nTo address this, the paper proposes PsyDraw, a multi-agent multimodal system built on multimodal large language models. PsyDraw separates the task into feature extraction and report generation, using specialized agents to analyze drawings and produce structured psychological reports, plus a manager agent for handling exceptional cases. The system is designed as an assistive screening tool for mental health professionals rather than a standalone diagnostic system.\n\nThe study evaluates PsyDraw on 290 HTP drawings from Chinese primary school students in a rural school context. Psychological teachers reviewed the generated reports and rated consistency against their professional judgments, with 71.03% of cases judged highly consistent and 31.03% flagged as requiring professional attention. The paper concludes that PsyDraw shows promise for preliminary screening in underserved schools, while emphasizing that it should support, not replace, human professionals and that its performance and cultural generalizability still need further validation.",
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "China",
+  "study_region": "East Asia & Pacific",
+  "identified_tools": [
+    {
+      "name": "Claude",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "content_generation"
+      ],
+      "description": "Anthropic's Claude family of large language models for text generation and multimodal reasoning.",
+      "use_case": "Used as the text-only model in PsyDraw for HTP drawing feature analysis and professional report generation.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "PsyDraw used Claude-3.5-sonnet as the text-only model within a multimodal, multi-agent system for mental health screening. The paper reports system-level agreement with psychological teachers rather than a direct Claude-only effect; across 290 HTP drawings, 71.03% of analyses were rated High Consistency, 26.21% Moderate Consistency, and 2.76% Low Consistency.",
+          "measure": "Teacher-rated consistency of generated HTP analysis reports",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=290"
+        }
+      ]
+    },
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "content_generation"
+      ],
+      "description": "OpenAI's GPT family of large language models for text and multimodal generation and reasoning.",
+      "use_case": "Used as the multimodal model in PsyDraw for analyzing HTP drawings and generating psychological reports.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "PsyDraw used GPT-4o as the multimodal model within a multi-agent pipeline for HTP drawing interpretation. The paper reports that, over 290 primary school students' drawings, 71.03% of generated analyses achieved High Consistency with professional evaluations, 26.21% Moderate Consistency, and 2.76% Low Consistency; 31.03% of cases were classified as requiring professional attention (Warning).",
+          "measure": "Teacher-rated consistency of generated HTP analysis reports; binary risk classification (Warning vs Observation)",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=290"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a single-system empirical study using teacher-rated agreement on generated reports, but it is not a controlled trial and does not isolate the effect of the specific LLMs from the broader PsyDraw system. The design is observational/mixed-methods with no randomized comparison.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The reported consistency is fairly high (71.03% High Consistency), but no effect size is provided and the outcome is system-level agreement rather than direct learning or clinical impact. The practical impact is promising yet indirect and therefore unclear in magnitude.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

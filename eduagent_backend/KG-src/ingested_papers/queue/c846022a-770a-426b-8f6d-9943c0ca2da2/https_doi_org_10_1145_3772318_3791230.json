@@ -1,0 +1,79 @@
+{
+  "title": "Beyond Scores: Explainable Intelligent Assessment Strengthens Pre-service Teachers\u2019 Assessment Literacy",
+  "doi": "https://doi.org/10.1145/3772318.3791230",
+  "year": 2026,
+  "venue": "CHI '26 (Proceedings of the 2026 CHI Conference on Human Factors in Computing Systems)",
+  "url": "http://arxiv.org/abs/2603.06059v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses the problem that pre-service teachers often struggle to interpret diagnostic assessment outputs and translate them into instructional decisions. The authors argue that traditional assessment tools present opaque scores or technical parameters, which can hinder reflection, self-regulation, and the development of assessment literacy. To address this, they design XIA, an explainable intelligent assessment platform that combines statistical diagnostic information with visualized reasoning, contrastive explanations, and counterfactual explanations.\n\nThe paper includes two components of empirical work. First, the authors conducted formative interviews with seven in-service teachers in China to identify the kinds of assessment information teachers value and to derive design requirements for the system. Second, they evaluated XIA in a single-session pre-post controlled study with 21 pre-service teachers, using quantitative tasks, questionnaires, and semi-structured interviews. The participants were teacher candidates rather than practicing teachers, and the substantive evaluation centered on teacher-facing assessment reasoning rather than student learning outcomes.\n\nFindings suggest that teachers wanted item-level and class-level information such as question difficulty, typical error patterns, and whether items exceeded curricular scope, but they also wanted to understand why the system reached its conclusions. The XIA interface appeared to support reflection, assessment awareness, and self-regulation, and was associated with more accurate judgments and fewer assessment errors. Overall, the paper concludes that explanatory scaffolding can bridge assessment theory and classroom practice by helping teachers move from score-based judgments to evidence-based reasoning.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a qualitative/formative design study plus a small pre-post controlled evaluation, not a randomized controlled trial. It provides useful preliminary evidence, but the small sample and mixed methods limit causal strength and generalizability.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports promising but preliminary benefits for a priority population (pre-service teachers), with no quantified medium or large effect size in the text provided. Its likely impact is meaningful for design knowledge, but the empirical impact on outcomes is still unclear.",
+  "interventions": [
+    {
+      "intervention": "Other",
+      "confidence": 0.98,
+      "role": "primary",
+      "use_case": "explainable intelligent assessment platform for teacher-facing assessment literacy support, using cognitive diagnostic modeling with contrastive and counterfactual explanations and decision-support dashboards"
+    },
+    {
+      "intervention": "Other",
+      "confidence": 0.7,
+      "role": "secondary",
+      "use_case": "formative teacher-facing intelligent assessment tooling with visualized diagnostic reasoning and natural-language teaching suggestions"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "In a single-session pre-post controlled study with 21 pre-service teachers, the XIA explainable assessment platform was associated with improved components of assessment literacy, especially reflection, self-regulation, and assessment awareness. The paper also reports more accurate judgments and smaller assessment errors after exposure to the system, but does not provide a numerical effect size in the text provided.",
+        "measure": "pre-post assessment literacy tasks, questionnaires, and semi-structured interviews; judgment accuracy and assessment errors",
+        "study_size": "n=21",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Other"
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.6,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The system was designed to help pre-service teachers interpret assessment data more efficiently by surfacing item-, class-, and knowledge-level cues rather than only raw scores. The paper suggests this reduced search effort and supported faster translation of diagnostic results into instructional decisions, but no quantitative efficiency metric is reported.",
+        "measure": "teacher interpretation and decision-support usability in the pre-post study and formative design analysis",
+        "study_size": "n=21",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Other"
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "no_long_term_followup",
+    "non_representative_population"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "China",
+  "study_region": "East Asia & Pacific",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

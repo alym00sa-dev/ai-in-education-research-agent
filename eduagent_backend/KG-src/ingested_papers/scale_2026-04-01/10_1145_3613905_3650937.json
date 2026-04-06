@@ -1,0 +1,324 @@
+{
+  "title": "Exploring How Multiple Levels of GPT-Generated Programming Hints Support or Disappoint Novices",
+  "doi": "10.1145/3613905.3650937",
+  "year": 2024,
+  "venue": "CHI EA '24: Extended Abstracts of the CHI Conference on Human Factors in Computing Systems",
+  "url": "https://arxiv.org/abs/2404.02213",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate",
+    "Graduate / Doctoral"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper investigates how different levels of GPT-generated programming hints affect novice learners\u2019 problem-solving and learning in introductory programming. The authors note that most LLM-based hint systems provide only one kind of hint, typically high-level natural language guidance, and ask whether multiple levels of hints\u2014from general guidance to concrete code support\u2014better match students\u2019 needs during programming tasks.\n\nTo study this, the authors designed the \"LLM Hint Factory,\" a system that generates four levels of hints for each help request: orientation hints, instrumental hints, worked-example hints, and bottom-out hints. They conducted an IRB-approved think-aloud study with 12 novice programming learners who completed three Python data-analysis tasks, along with identical pre- and post-tests and a structured interview. The system was used in a controlled one-hour session, and the authors also performed an expert evaluation of hint quality across dimensions such as appropriateness, targeting, comprehensibility, and alignment.\n\nThe participants were undergraduate and graduate students in the United States who were currently enrolled in, or had only taken, introductory computer science courses for non-majors using Python. The context was a study session using programming tasks adapted from coursework at two U.S. universities. The work focused on novice students seeking on-demand AI-generated help while solving CS1-style problems.\n\nThe main conclusion is that high-level natural language hints alone were often insufficient and could sometimes be misleading or frustrating, especially for next-step logic, next-step syntax, and debugging syntax requests. Lower-level hints\u2014particularly worked-example code with inline comments\u2014were more effective in helping students make correct code changes and learn relevant concepts. The authors argue that future AI tutoring systems should personalize help responses by varying content, format, and granularity to better match students\u2019 immediate help-seeking context.",
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "no_control_group",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "lab",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "tutoring_instruction"
+      ],
+      "description": "OpenAI GPT-family large language model used here to generate multi-level programming hints in the LLM Hint Factory.",
+      "use_case": "Used within the LLM Hint Factory to generate four levels of on-demand programming hints for novice Python learners: orientation, instrumental, worked example, and bottom-out hints during CS1 problem solving.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "In a think-aloud study with 12 novice programming learners, expert review of sampled hints found overall high formal quality for GPT-generated hints: 81.91% appropriate, 99.67% targeted, and 98.36% comprehensible. However, among expert-labeled high-quality hints, 77.78% helped students move forward correctly, 1.43% were misunderstood and led to negative effects, and 27.14% had no observable impact on progression.",
+          "measure": "Expert evaluation of hint quality; observed correctness/progression after hint use during programming tasks",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=12"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Lower-level GPT-generated hints were more effective than high-level natural-language hints for supporting novice programming actions. Among expert-labeled appropriate hints, students made correct code changes in 35 instances (59.32%) after reaching the worked-example hint level and in 5 instances after receiving bottom-out hints; for students who improved from pre- to post-test, 75% were satisfied with worked-example hints and 25% needed bottom-out hints.",
+          "measure": "Correct code changes during learning session; pre- to post-test programming improvements",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=12"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "High-level GPT-generated natural-language hints alone were often insufficient and could be misleading, especially for next-step or syntax-related help requests, while worked-example code hints better supported these cases. By contrast, high-level hints were often sufficient for debugging logic errors, and 33.3% of students (n=4) reported frustration when high-level hints repeated information they already knew.",
+          "measure": "Help-request resolution by hint level/type; student interview reports of helpfulness and frustration",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=12"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical think-aloud user study with pre/post testing and expert hint evaluation, but it uses a very small sample (n=12) and lacks a controlled experimental comparison or reported inferential effect estimates.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper shows promising but largely descriptive evidence that worked-example and bottom-out GPT hints can improve novice programming support relative to high-level hints, but effects are not quantified with standard effect sizes and results are mixed in some conditions.",
+  "citations": [
+    {
+      "title": "Help helps, but only so much: Research on help seeking with intelligent tutoring systems",
+      "doi": null,
+      "year": 2016,
+      "venue": "International Journal of Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The LISP tutor",
+      "doi": null,
+      "year": 1985,
+      "venue": "Byte",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "GPTutor: a ChatGPT-powered programming tool for code explanation",
+      "doi": null,
+      "year": 2023,
+      "venue": "International Conference on Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Intelligent tutoring systems for programming education: a systematic review",
+      "doi": "10.1145/3160489.3160492",
+      "year": 2018,
+      "venue": "Proceedings of the 20th Australasian Computing Education Conference (ACE '18)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "On Designing Programming Error Messages for Novices: Readability and its Constituent Factors",
+      "doi": "10.1145/3411764.3445696",
+      "year": 2021,
+      "venue": "Proceedings of the 2021 CHI Conference on Human Factors in Computing Systems (CHI '21)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Ask-Elle: an Adaptable Programming Tutor for Haskell Giving Automated Feedback",
+      "doi": "10.1007/s40593-015-0080-x",
+      "year": 2017,
+      "venue": "International Journal of Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Using Adaptive Parsons Problems to Scaffold Write-Code Problems",
+      "doi": "10.1145/3501385.3543977",
+      "year": 2022,
+      "venue": "Proceedings of the 2022 ACM Conference on International Computing Education Research - Volume 1",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Understanding the Effects of Using Parsons Problems to Scaffold Code Writing for Students with Varying CS Self-Efficacy Levels",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 23rd Koli Calling International Conference on Computing Education Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Studying the effect of AI Code Generators on Supporting Novice Learners in Introductory Programming",
+      "doi": "10.1145/3544548.3580919",
+      "year": 2023,
+      "venue": "Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems (CHI '23)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "How novices use LLM-based code generators to solve CS1 coding tasks in a self-paced learning environment",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 23rd Koli Calling International Conference on Computing Education Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A Systematic Literature Review of Automated Feedback Generation for Programming Exercises",
+      "doi": "10.1145/3231711",
+      "year": 2019,
+      "venue": "ACM Transactions on Computing Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Exploring the Assistance Dilemma in Experiments with Cognitive Tutors",
+      "doi": "10.1007/s10648-007-9049-0",
+      "year": 2007,
+      "venue": "Educational Psychology Review",
+      "citation_level": 2,
+      "citation_context": "assistance dilemma framing for hint specificity tradeoff"
+    },
+    {
+      "title": "QuickTA: Exploring the Design Space of Using Large Language Models to Provide Support to Students",
+      "doi": null,
+      "year": 2023,
+      "venue": "Learning Analytics and Knowledge Conference",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Debugging support for end user mashup programming",
+      "doi": "10.1145/2470654.2466213",
+      "year": 2013,
+      "venue": "Proceedings of the SIGCHI Conference on Human Factors in Computing Systems (CHI '13)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "CodeHelp: Using Large Language Models with Guardrails for Scalable Support in Programming Classes",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "contrasted natural-language-focused tutor design to avoid over-reliance"
+    },
+    {
+      "title": "\u201cWhat It Wants Me To Say\u201d: Bridging the Abstraction Gap Between End-User Programmers and Code-Generating Large Language Models",
+      "doi": "10.1145/3544548.3580817",
+      "year": 2023,
+      "venue": "Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems (CHI '23)",
+      "citation_level": 2,
+      "citation_context": "proposed abstraction-matching approach for future hint requests"
+    },
+    {
+      "title": "Experiences from Using Code Explanations Generated by Large Language Models in a Web Software Development E-Book",
+      "doi": "10.1145/3545945.3569785",
+      "year": 2023,
+      "venue": "Proceedings of the 54th ACM Technical Symposium on Computer Science Education V. 1",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Revisiting and re-representing scaffolding: The two gradient model",
+      "doi": null,
+      "year": 2017,
+      "venue": "Cogent Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Investigating Best Practices in the Design of Automated Hints and Formative Feedback to Improve Students\u2019 Cognitive and Affective Outcomes - Samiha Marwan PhD Thesis - 2021",
+      "doi": "10.13140/RG.2.2.13347.32805",
+      "year": 2021,
+      "venue": "North Carolina State University",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Towards Generalized Methods for Automatic Question Generation in Educational Domains",
+      "doi": "10.1007/978-3-031-16290-9_20",
+      "year": 2022,
+      "venue": "Educating for a New Future: Making Sense of Technology-Enhanced Learning Adoption (Lecture Notes in Computer Science)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "iSnap: Towards Intelligent Tutoring in Novice Programming Environments",
+      "doi": "10.1145/3017680.3017762",
+      "year": 2017,
+      "venue": "Proceedings of the 2017 ACM SIGCSE Technical Symposium on Computer Science Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Data-Driven Hint Generation in Vast Solution Spaces: a Self-Improving Python Programming Tutor",
+      "doi": "10.1007/s40593-015-0070-z",
+      "year": 2017,
+      "venue": "International Journal of Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Next-Step Hint Generation for Introductory Programming Using Large Language Models",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 26th Australasian Computing Education Conference",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Improving students\u2019 help-seeking skills using metacognitive feedback in an intelligent tutoring system",
+      "doi": "10.1016/j.learninstruc.2010.07.004",
+      "year": 2011,
+      "venue": "Learning and Instruction",
+      "citation_level": 3,
+      "citation_context": "help-seeking model adapted for six request types"
+    },
+    {
+      "title": "Improving the Coverage of GPT for Automated Feedback on High School Programming Assignments",
+      "doi": null,
+      "year": 2023,
+      "venue": "NeurIPS'23 Workshop Generative AI for Education (GAIED)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Focus on Formative Feedback",
+      "doi": "10.3102/0034654307313795",
+      "year": 2008,
+      "venue": "Review of Educational Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The hint factory: Automatic generation of contextualized help for existing computer aided instruction",
+      "doi": null,
+      "year": 2008,
+      "venue": "Proceedings of the 9th International Conference on Intelligent Tutoring Systems Young Researchers Track",
+      "citation_level": 2,
+      "citation_context": "system name and prior hint-factory foundation"
+    },
+    {
+      "title": "Experimental evaluation of automatic hint generation for a logic tutor",
+      "doi": null,
+      "year": 2013,
+      "venue": "International Journal of Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Exploring the Design Space of Automatically Synthesized Hints for Introductory Programming Assignments",
+      "doi": "10.1145/3027063.3053187",
+      "year": 2017,
+      "venue": "Proceedings of the 2017 CHI Conference Extended Abstracts on Human Factors in Computing Systems (CHI EA '17)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The AI Teacher Test: Measuring the Pedagogical Ability of Blender and GPT-3 in Educational Dialogues",
+      "doi": "10.5281/zenodo.6853187",
+      "year": 2022,
+      "venue": "Proceedings of the 15th International Conference on Educational Data Mining",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

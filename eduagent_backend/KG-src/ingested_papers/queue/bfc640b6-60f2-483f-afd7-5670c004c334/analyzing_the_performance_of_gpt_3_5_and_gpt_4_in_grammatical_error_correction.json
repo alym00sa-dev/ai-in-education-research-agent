@@ -1,0 +1,60 @@
+{
+  "title": "Analyzing the Performance of GPT-3.5 and GPT-4 in Grammatical Error Correction",
+  "doi": null,
+  "year": 2023,
+  "venue": null,
+  "url": "http://arxiv.org/abs/2303.14342v2",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper investigates how well GPT-3.5 (text-davinci-003) and GPT-4 (gpt-4-0314) perform on grammatical error correction (GEC), a task framed here as single-sentence revision rather than classroom feedback on full student drafts. The authors note that despite broad interest in GPT models, there was little detailed published analysis of their GEC performance. They therefore compare prompts, decoding settings, benchmark scores, and human judgments to understand the strengths and weaknesses of these models for sentence-level correction.\n\nThe intervention studied is prompt-based use of GPT-3.5 and GPT-4 to rewrite potentially ungrammatical sentences into corrected versions. The experiments use established NLP benchmarks rather than an educational intervention: BEA-2019 and JFLEG. The authors conduct prompt engineering in zero-shot and few-shot settings, evaluate outputs with automatic metrics (F0.5, GLEU, Scribendi), and run a human evaluation in which crowdworkers compare GPT outputs against source sentences, human references, and baseline GEC systems. The study also includes qualitative analysis of over-editing, under-editing, spurious expansions, and prompt sensitivity.\n\nNo school-based learner population is directly studied. The context is an NLP benchmark evaluation using sentence-level datasets and Amazon Mechanical Turk raters, not a classroom, grades 9-12 writing task, or formative feedback on student-authored drafts. The paper therefore does not match the requested topic of comparative studies of LLM-generated formative feedback on student drafts; it is a near-miss because it focuses on automated grammatical revision of isolated sentences and benchmark scoring rather than feedback-only support for student revision.\n\nThe main conclusions are that GPT models, especially GPT-4, perform strongly in sentence-level revision, with GPT-4 achieving a very high JFLEG score. However, performance varies substantially by prompt design and temperature. The models tend to favor fluency-oriented rewrites and sometimes over-edit or alter meaning, which helps on fluency-focused benchmarks like JFLEG but hurts on minimal-edit benchmarks like BEA-2019. The authors conclude that GEC performance depends heavily on task definition, prompting, and evaluation criteria.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical benchmark evaluation with human ratings, but it is not a K-12 comparative intervention study and does not use randomized or quasi-experimental educational design. Evidence is based on NLP benchmark performance rather than student learning outcomes in authentic classroom settings.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper shows promising but mixed practical impact for writing support: strong gains on fluency-oriented benchmark metrics and human ratings, but weaker results on minimal-edit benchmarks and no direct evidence of impact on student revision quality or learning. Impact for the K-12 target use case is therefore unclear.",
+  "interventions": [
+    {
+      "intervention": "AI Writing / Language Tool",
+      "confidence": 0.98,
+      "role": "primary",
+      "use_case": "LLM-based grammatical error correction and sentence revision using GPT-3.5 and GPT-4 on benchmark learner-language datasets; the models rewrite single sentences to produce corrected, more fluent versions."
+    },
+    {
+      "intervention": "Automated Feedback System",
+      "confidence": 0.63,
+      "role": "secondary",
+      "use_case": "Automated correction of learner-written sentences as a writing-support function, compared against baseline grammatical error correction systems and human reference edits."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Literacy",
+      "confidence": 0.88,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper reports that GPT-3.5 and GPT-4 perform strongly on sentence-level grammatical error correction/revision benchmarks, especially on the fluency-oriented JFLEG dataset. GPT-4 achieved GLEU=65.02 on JFLEG test versus GPT-3.5 GLEU=63.40, exceeding the reported baseline ELECTRA-VERNet score of 61.61; on a 100-sentence JFLEG subset, human ratings were 0.819 for GPT-3.5 and 0.809 for GPT-4 versus 0.662 for the baseline. However, on BEA-2019 test, GPT-4 F0.5=52.79 and GPT-3.5 F0.5=49.66, below strong task-specific baselines such as GECToR+BIFI at 72.9, indicating benchmark-dependent performance.",
+        "measure": "Grammatical error correction and sentence revision quality measured by GLEU (JFLEG), F0.5 (BEA-2019), human comparative ratings, and Scribendi reference-less scores",
+        "study_size": "200 sentences for human evaluation subset; benchmark test-set sizes not reported in the provided text",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "no_control_group",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

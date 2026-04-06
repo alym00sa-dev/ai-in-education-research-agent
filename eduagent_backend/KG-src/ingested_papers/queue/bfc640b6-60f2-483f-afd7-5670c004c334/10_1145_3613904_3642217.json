@@ -1,0 +1,95 @@
+{
+  "title": "Rambler: Supporting Writing With Speech via LLM-Assisted Gist Manipulation",
+  "doi": "10.1145/3613904.3642217",
+  "year": 2024,
+  "venue": "Proceedings of the CHI Conference on Human Factors in Computing Systems (CHI '24)",
+  "url": "http://arxiv.org/abs/2401.10838v2",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Undergraduate",
+    "Graduate / Doctoral"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper examines how to better support long-form writing via speech, addressing the problem that dictated text is often disfluent, verbose, hard to review, and difficult to revise in conventional speech-to-text editors. The authors ask whether a specialized LLM-backed interface can help users move from spontaneous spoken ideas to more structured written text, and whether embedding LLM support into a direct-manipulation graphical interface offers advantages over a standard editor plus chatbot workflow.\n\nThe intervention studied is Rambler, a tablet-based dictation and revision interface designed around \"Rambles,\" discrete chunks of spoken text. Rambler includes automatic transcript cleaning, keyword extraction, semantic zoom summaries at multiple compression levels, and macro-revision tools such as respeaking, splitting, merging, reordering, and custom LLM-based transformations. The comparison condition was a baseline speech-to-text editor with ChatGPT available in a separate browser tab. The system was evaluated in a within-subjects comparative study in which participants completed long-form verbal composition tasks using both interfaces.\n\nThe population consisted of 12 university-affiliated participants recruited from a single campus community, including undergraduates and PhD students. Participants were native-fluent English speakers and completed the study in person in a quiet lab room using a researcher-provided iPad Pro. The writing task involved composing and revising a blog-style post on a personally chosen topic from a prompt list. The study collected survey ratings, logs, screen recordings, audio, interviews, and automated text-quality scores.\n\nThe main conclusion is that Rambler was generally preferred over the baseline for organizing thoughts, supporting iteration, reviewing spoken content, and giving users greater control over revision, especially at the macro level. However, final text quality did not significantly differ between Rambler and the baseline on either self-ratings or automated GRUEN scores. The paper is not about secondary-school students or ChatGPT-generated feedback on student-authored drafts in grades 9-12; it provides no subgroup or moderator analysis by baseline writing proficiency, English learner status, disability, grade level, gender effects, school achievement level, subject area, or writing genre. It also reports no delayed follow-up, no unaided posttest writing after feedback removal, and no direct measures of self-efficacy, confidence, metacognition, plagiarism, overreliance, or adverse effects beyond some qualitative comments about uncertainty with LLM outputs and one participant feeling they relied on a feature heavily.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a small within-subject comparative user study with mixed quantitative and qualitative data, but it is not a K-12 study and does not use randomized educational outcome evaluation with validated learning endpoints. It provides some empirical comparative evidence, yet credibility for causal educational impact is limited.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The study suggests useful process and usability advantages for the primary tool, but impacts on writing quality were statistically null/unclear and no educational effect sizes were reported. For the requested K-12 feedback context, impact evidence is effectively absent or not directly applicable.",
+  "interventions": [
+    {
+      "intervention": "AI Writing / Language Tool",
+      "confidence": 0.98,
+      "role": "primary",
+      "use_case": "LLM-assisted speech-to-text writing interface for long-form composition that generates cleaned transcripts, summaries, keywords, and macro-level revisions (split/merge/transform) to support drafting and revising dictated text."
+    },
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.68,
+      "role": "secondary",
+      "use_case": "Comparator condition using a standard speech-to-text editor plus ChatGPT in a separate tab to revise participant-authored dictated text."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Literacy",
+      "confidence": 0.71,
+      "finding": {
+        "direction": "No Effect",
+        "finding_summary": "In a within-subject comparative study with 12 adult participants, final written text quality did not differ significantly between Rambler and the baseline speech-to-text editor plus ChatGPT. Subjective quality ratings showed no significant difference, and GRUEN automated writing-quality scores were also not significantly different (Rambler M=0.75, SD=0.16 vs baseline M=0.70, SD=0.26; paired comparison reported as p=0.46, t(11)=0.77).",
+        "measure": "Self-rated final text quality; GRUEN automated writing quality benchmark (fluency, grammaticality, non-redundancy, focus)",
+        "study_size": "n=12",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "Rambler SD=0.16; baseline SD=0.26"
+      },
+      "intervention": "AI Writing / Language Tool"
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.89,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Qualitative evidence from the within-subject study suggests Rambler improved efficiency of reviewing and macro-revising dictated text relative to a speech-to-text editor plus ChatGPT. Participants reported that Rambler better supported organizing thoughts, iterative revision, and mobile-friendly manipulation of content, with most preferring Rambler and indicating it made reordering, reviewing, and localized revision faster or easier, although no standardized time-based effect size was reported.",
+        "measure": "Participant interviews, feature-use logs, post-task Likert usefulness ratings, comparative workflow observations",
+        "study_size": "n=12",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "AI Writing / Language Tool"
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.58,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper provides qualitative evidence that Rambler supported higher-level writing processes such as organizing ideas, reviewing content, and iterative revision at a conceptual level. Eleven of 12 participants reported Rambler was better for organizing thoughts, and 7 of 12 felt they iterated more with Rambler, but these were process perceptions rather than validated transfer or delayed-posttest measures of independent writing skill.",
+        "measure": "Interview responses about organization, iteration, review, and perceived control over revision",
+        "study_size": "n=12",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "AI Writing / Language Tool"
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "self_reported_measures",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "lab",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

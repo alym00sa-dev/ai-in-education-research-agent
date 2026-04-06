@@ -1,0 +1,54 @@
+{
+  "title": "ChatGPT-3.5, ChatGPT-4, Google Bard, and Microsoft Bing to Improve Health Literacy and Communication in Pediatric Populations and Beyond",
+  "doi": null,
+  "year": 2023,
+  "venue": null,
+  "url": "http://arxiv.org/abs/2311.10075v1",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper examines whether publicly available large language models (LLMs)\u2014ChatGPT-3.5, ChatGPT-4, Google Bard, and Microsoft Bing\u2014can generate explanations of pediatric medical conditions at reading levels appropriate for children and lay audiences. The motivating problem is health literacy: the authors argue that children, adolescents, parents, and other non-expert users may benefit from clearer explanations of medical information, but there is limited evidence on effective interventions and increasing public reliance on online information sources.\n\nThe study evaluates LLM outputs rather than testing a classroom or clinical intervention with human participants. The authors compiled 288 pediatric conditions from children's hospital websites and submitted 26 prompt types to the models, including simple prompts (e.g., \"Explain {condition}\") and prompts that explicitly requested explanations for a given grade level or \"to a __ grader.\" For each generated response, they calculated average reading grade level using four readability indices and also measured word count. ChatGPT-4 was tested on a random subset of 150 conditions because of rate limits; the other models were tested on the full set.\n\nThe context is an automated benchmarking study of model-generated health explanations, with no direct participant sample and no educational implementation in schools. Although the paper is framed around pediatric populations and mentions adolescents and parents as potential users, it does not include K-12 students, teachers, or parents as study participants. The work is therefore best understood as an observational analysis of AI-generated text properties in a health communication context.\n\nThe main conclusion is that all four LLMs showed some ability to modulate output toward requested reading levels, but none could reliably hit exact targets, especially below the sixth-grade level. ChatGPT-3.5 and ChatGPT-4 showed the greatest range in readability adjustment, while Bing and Bard tended to stay near high-school-level output. The authors conclude that LLMs may have promise for improving health communication and health literacy, but emphasize that future work must validate the accuracy, completeness, and real-world effectiveness of these tools with actual users.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical benchmarking study with transparent methods and statistical tests, but it is not a K-12 educational effectiveness study and does not measure student learning or behavior. It provides only indirect evidence relevant to literacy through text readability outputs.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper shows unclear practical impact: LLMs can somewhat modulate readability, but no learner outcomes, comprehension gains, or durable literacy effects are measured. Impact for K-12 literacy is therefore indirect and uncertain.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.88,
+      "role": "primary",
+      "use_case": "Evaluation of general-purpose LLM chatbots (ChatGPT-3.5, ChatGPT-4, Google Bard, Microsoft Bing) for generating pediatric health explanations at requested reading grade levels; the system is assessed as a conversational information/explanation tool rather than a classroom literacy intervention."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Literacy",
+      "confidence": 0.71,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The study measured readability of 288 pediatric-condition explanations across 26 prompts for ChatGPT-3.5, Bing, and Bard, with a 150-condition subset for ChatGPT-4. Basic prompts produced outputs at or above high-school level for all models (e.g., ChatGPT-3.5 median aRGL 13.1 for 'What is', ChatGPT-4 14.2 for 'Explain', Bing about 11.1-11.3, Bard about 9.9), and even grade-targeted prompts rarely reached the requested lower grades; ChatGPT-4 could get as low as median aRGL 6.1 for 'Explain at a first-grade reading level' but models generally failed to produce text below roughly sixth-grade readability. This indicates partial controllability of output readability but not successful delivery of truly elementary-level text.",
+        "measure": "Average reading grade level (aRGL) from Gunning Fog, Flesch-Kincaid, Automated Readability Index, and Coleman-Liau; word count",
+        "study_size": "n=288 conditions for ChatGPT-3.5, Bing, and Bard across 26 prompts; n=150-condition subset for ChatGPT-4",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "no_control_group",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

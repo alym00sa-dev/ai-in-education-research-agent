@@ -1,0 +1,413 @@
+{
+  "title": "What Students Ask, How a Generative AI Assistant Responds: Exploring Higher Education Students\u2019 Dialogues on Learning Analytics Feedback",
+  "doi": null,
+  "year": 2026,
+  "venue": "Proceedings of the 16th International Conference on Learning Analytics & Knowledge (LAK26)",
+  "url": "https://arxiv.org/abs/2601.04919",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Graduate / Doctoral"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper examines how higher education students use a generative AI assistant embedded in a learning analytics dashboard (LAD) to interpret analytics feedback about their learning. The core problem is that many students, especially those with lower self-regulated learning (SRL) competence, struggle to understand dashboard feedback and translate it into actionable learning strategies. The study asks what kinds of questions students pose to the assistant, how effectively the assistant responds, and how students perceive its usefulness and limitations.\n\nThe intervention was a custom-built web-based LAD with an integrated GenAI assistant powered by the OpenAI GPT-4 API. The assistant was configured with system prompts, few-shot examples, visual descriptions, student data, and written feedback so it could answer questions about dashboard visualizations and provide guidance. Students received personalized analytics feedback twice during a 10-week semester, and all assistant interactions were logged. The researchers analyzed 168 queries and responses from 22 students, used an SRL questionnaire to group students into high- and low-SRL clusters, applied thematic analysis and epistemic network analysis to the chat data, quantitatively rated response quality on eight criteria, and qualitatively analyzed student reflections.\n\nThe population was 34 postgraduate students in a campus-based educational technology module at University College London in the UK, with 22 students actually using the assistant. The study took place in one module over one semester, drawing data from Moodle and Google Docs interactions. Students asked for clarification, personalized advice, content-related help, justification of their behavior, emotional support, and technical explanations. Low-SRL students more often sought clarification, reassurance, and expressed uncertainty, whereas high-SRL students more often asked technical questions and requested tailored strategies.\n\nThe main conclusions are that GenAI assistants in LADs can provide clear, generally reliable, and supportive explanations that help students engage with analytics feedback, with particular value for lower-SRL students. However, the assistant was less effective in personalization, contextual synthesis across multiple data points, emotional responsiveness, and handling some out-of-scope or complex requests. Students saw promise in the tool but emphasized the need for better adaptivity, stronger trust and transparency, conversational memory, faster performance, and deeper integration with course activities. Overall, the paper argues that GenAI can scaffold feedback engagement, but more responsive and context-aware designs are needed for it to function as a meaningful learning partner.",
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_control_group",
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "10",
+  "setting": "blended",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United Kingdom",
+  "study_region": "Europe",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "personalization_adaptation"
+      ],
+      "description": "OpenAI's GPT-family large language model used here via API as the backend for a conversational assistant.",
+      "use_case": "Used as the backend model for a custom-built generative AI assistant embedded in a learning analytics dashboard (LAD) to answer students' natural-language questions about their personalized analytics feedback over a 10-week semester.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "In analysis of 168 student queries and responses from 22 of 34 postgraduate students, the GenAI assistant's responses were rated highest for Clarity (M=4.63, SD=0.58), with also high Motivation and Engagement (M=4.23, SD=0.77), Multi-page Cohesiveness (M=4.20, SD=0.84), and Reliability (M=4.12, SD=0.89). Lower ratings for Personalisation (M=3.56, SD=1.24) and Error Handling (M=3.29, SD=1.19) indicated strengths in understandable, trustworthy explanation but limitations in tailoring and handling incomplete/conflicting queries.",
+          "measure": "Researcher ratings of assistant response quality across eight criteria on a 5-point Likert scale",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=168 queries; 22 of 34 students used the assistant"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Students with different self-regulated learning (SRL) levels used the assistant differently: low-SRL students more often sought clarification, more content information, and expressed uncertainty/emotion, whereas high-SRL students more often asked about technical aspects and requested personalized strategies. ENA comparison showed a significant difference between high- and low-SRL students along the primary dimension, U=97.00, p=.02, r=-.62, with high-SRL students positioned higher than low-SRL students.",
+          "measure": "Epistemic Network Analysis and Mann-Whitney U comparison of query-type discourse patterns by SRL group",
+          "effect_size": "r=-.62",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=22 students (high SRL N=12; low SRL N=10)"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Qualitative reflections indicated that students perceived the assistant as helpful for reflection on learning behaviors, motivation, and adopting structured study strategies, with some reporting changes such as becoming 'more proactive' in learning. However, students also reported that responses could be too broad, overly safe, inconsistent, and lacking conversational memory, limiting deeper metacognitive support.",
+          "measure": "Thematic analysis of week-8 student reflections on perceived impact, usability, and suggested improvements",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical mixed-methods study with authentic semester-long use data and qualitative/thematic analyses, but it is not an RCT or quasi-experimental design and does not directly measure academic achievement outcomes.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports promising perceived benefits and strong response-quality ratings, plus meaningful differences by SRL level, but impact on learning outcomes is indirect and no standardized effect on achievement is reported.",
+  "citations": [
+    {
+      "title": "Pedagogical framework for hybrid intelligent feedback",
+      "doi": "10.1080/14703297.2025.2499174",
+      "year": 2025,
+      "venue": "Innovations in Education and Teaching International",
+      "citation_level": 2,
+      "citation_context": "framework for hybrid intelligent feedback design"
+    },
+    {
+      "title": "The design, development, and implementation of student-facing learning analytics dashboards",
+      "doi": "10.1007/s12528-018-9186-0",
+      "year": 2018,
+      "venue": "Journal of Computing in Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Mathematical Foundations of Epistemic Network Analysis",
+      "doi": "10.1007/978-3-030-67788-6_7",
+      "year": 2021,
+      "venue": "Communications in Computer and Information Science",
+      "citation_level": 3,
+      "citation_context": "mathematical basis for epistemic network analysis"
+    },
+    {
+      "title": "Thematic analysis: a practical guide",
+      "doi": null,
+      "year": 2022,
+      "venue": "SAGE",
+      "citation_level": 3,
+      "citation_context": "thematic analysis procedure guidance"
+    },
+    {
+      "title": "Using thematic analysis in psychology",
+      "doi": "10.1191/1478088706qp063oa",
+      "year": 2006,
+      "venue": "Qualitative Research in Psychology",
+      "citation_level": 3,
+      "citation_context": "thematic analysis method source"
+    },
+    {
+      "title": "The development of student feedback literacy: enabling uptake of feedback",
+      "doi": "10.1080/02602938.2018.1463354",
+      "year": 2018,
+      "venue": "Assessment & Evaluation in Higher Education",
+      "citation_level": 2,
+      "citation_context": "dialogic feedback and feedback literacy framing"
+    },
+    {
+      "title": "Teacher feedback literacy and its interplay with student feedback literacy",
+      "doi": "10.1080/13562517.2020.1782372",
+      "year": 2023,
+      "venue": "Teaching in Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The interplay of learning, analytics and artificial intelligence in education: A vision for hybrid intelligence",
+      "doi": "10.1111/bjet.13514",
+      "year": 2024,
+      "venue": "British Journal of Educational Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Assessing the proficiency of large language models in automatic feedback generation: An evaluation study",
+      "doi": "10.1016/j.caeai.2024.100299",
+      "year": 2024,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Impact of AI assistance on student agency",
+      "doi": "10.1016/j.compedu.2023.104967",
+      "year": 2024,
+      "venue": "Computers & Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Power of Feedback",
+      "doi": "10.3102/003465430298487",
+      "year": 2007,
+      "venue": "Review of Educational Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Constructive feedback can function as a reward: Students\u2019 emotional profiles in reaction to feedback perception mediate associations with task interest",
+      "doi": "10.1016/j.learninstruc.2024.102030",
+      "year": 2025,
+      "venue": "Learning and Instruction",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Students\u2019 Perceptions of GenAI-powered Learning Analytics in the Feedback Process:\u2009: A Feedback Literacy Perspective",
+      "doi": "10.18608/jla.2025.8609",
+      "year": 2025,
+      "venue": "Journal of Learning Analytics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Towards Supporting Dialogic Feedback Processes Using Learning Analytics: the Educators\u2019 Views on Effective Feedback",
+      "doi": "10.14742/apubs.2022.54",
+      "year": 2022,
+      "venue": "ASCILITE Publications",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Chatting with a Learning Analytics Dashboard: The Role of Generative AI Literacy on Learner Interaction with Conventional and Scaffolding Chatbots",
+      "doi": null,
+      "year": 2025,
+      "venue": "Proceedings of the 15th International Learning Analytics and Knowledge Conference",
+      "citation_level": 2,
+      "citation_context": "prior chatbot-LAD interaction design and literacy"
+    },
+    {
+      "title": "Generative AI in higher education: A global perspective of institutional adoption policies and guidelines",
+      "doi": "10.1016/j.caeai.2024.100348",
+      "year": 2025,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Probing Actionability in Learning Analytics: The Role of Routines, Timing, and Pathways",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 14th Learning Analytics and Knowledge Conference",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Have Learning Analytics Dashboards Lived Up to the Hype? A Systematic Review of Impact on Students\u2019 Achievement, Motivation, Participation and Attitude",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 14th Learning Analytics and Knowledge Conference",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The lack of generalisability in learning analytics research: why, how does it matter, and where to?",
+      "doi": null,
+      "year": 2025,
+      "venue": "Proceedings of the 15th International Learning Analytics and Knowledge Conference",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Generative AI and Learning Analytics: Pushing Boundaries, Preserving Principles",
+      "doi": "10.18608/jla.2025.8961",
+      "year": 2025,
+      "venue": "Journal of Learning Analytics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "AI literacy and its implications for prompt engineering strategies",
+      "doi": "10.1016/j.caeai.2024.100225",
+      "year": 2024,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Understanding Learner-LLM Chatbot Interactions and the Impact of Prompting Guidelines",
+      "doi": null,
+      "year": 2025,
+      "venue": "Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Prompt engineering in higher education: a systematic review to help inform curricula",
+      "doi": "10.1186/s41239-025-00503-7",
+      "year": 2025,
+      "venue": "International Journal of Educational Technology in Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Students\u2019 perceptions of, and emotional responses to, personalised learning analytics-based feedback: an exploratory study of four courses",
+      "doi": "10.1080/02602938.2020.1782831",
+      "year": 2021,
+      "venue": "Assessment & Evaluation in Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A Systematic Review of Empirical Studies on Learning Analytics Dashboards: A Self-Regulated Learning Perspective",
+      "doi": "10.1109/TLT.2019.2916802",
+      "year": 2020,
+      "venue": "IEEE Transactions on Learning Technologies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Interrater reliability: The kappa statistic",
+      "doi": "10.11613/BM.2012.031",
+      "year": 2012,
+      "venue": "Biochemia medica\u2009: \u010dasopis Hrvatskoga dru\u0161tva medicinskih biokemi\u010dara / HDMB",
+      "citation_level": 3,
+      "citation_context": "interrater reliability statistic for coding"
+    },
+    {
+      "title": "Measuring self-regulated learning and the role of AI: Five years of research using multimodal multichannel data",
+      "doi": "10.1016/j.chb.2022.107540",
+      "year": 2023,
+      "venue": "Computers in Human Behavior",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Use of Predictive Analytics within Learning Analytics Dashboards: A Review of Case Studies",
+      "doi": "10.1007/s10758-022-09613-x",
+      "year": 2023,
+      "venue": "Technology, Knowledge and Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A Tutorial on Epistemic Network Analysis: Analyzing the Structure of Connections in Cognitive, Social, and Interaction Data",
+      "doi": "10.18608/jla.2016.33.3",
+      "year": 2016,
+      "venue": "Journal of Learning Analytics",
+      "citation_level": 3,
+      "citation_context": "epistemic network analysis method tutorial"
+    },
+    {
+      "title": "Cognitive ease at a cost: LLMs reduce mental effort but compromise depth in student scientific inquiry",
+      "doi": "10.1016/j.chb.2024.108386",
+      "year": 2024,
+      "venue": "Computers in Human Behavior",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Examining the Relationship Between Reflective Writing Behaviour and Self-regulated Learning Competence: A Time-Series Analysis",
+      "doi": null,
+      "year": 2021,
+      "venue": "Technology-Enhanced Learning for a Free, Safe, and Sustainable World",
+      "citation_level": 3,
+      "citation_context": "basis for reflective writing and SRL competence analysis"
+    },
+    {
+      "title": "Learning analytics dashboard: a tool for providing actionable insights to learners",
+      "doi": "10.1186/s41239-021-00313-7",
+      "year": 2022,
+      "venue": "International Journal of Educational Technology in Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Engagement with analytics feedback and its relationship to self-regulated learning competence and course performance",
+      "doi": "10.1186/s41239-025-00515-3",
+      "year": 2025,
+      "venue": "International Journal of Educational Technology in Higher Education",
+      "citation_level": 2,
+      "citation_context": "SRL competence and analytics feedback relationship"
+    },
+    {
+      "title": "Learning Analytics Dashboard Applications",
+      "doi": "10.1177/0002764213479363",
+      "year": 2013,
+      "venue": "American Behavioral Scientist",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Learning analytics dashboards: the past, the present and the future",
+      "doi": null,
+      "year": 2020,
+      "venue": "Proceedings of the Tenth International Conference on Learning Analytics & Knowledge",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Studying as Self-Regulated Learning",
+      "doi": null,
+      "year": 1998,
+      "venue": "Metacognition in Educational Theory and Practice",
+      "citation_level": 2,
+      "citation_context": "core self-regulated learning theory"
+    },
+    {
+      "title": "The effects of generative AI agents and scaffolding on enhancing students\u2019 comprehension of visual learning analytics",
+      "doi": "10.1016/j.compedu.2025.105322",
+      "year": 2025,
+      "venue": "Computers & Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "VizChat: Enhancing Learning Analytics Dashboards with Contextualised Explanations Using Multimodal Generative AI Chatbots",
+      "doi": null,
+      "year": 2024,
+      "venue": "Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The feedback triangle and the enhancement of dialogic feedback processes",
+      "doi": "10.1080/13562517.2012.719154",
+      "year": 2013,
+      "venue": "Teaching in Higher Education",
+      "citation_level": 2,
+      "citation_context": "dialogic feedback meaning-making framework"
+    },
+    {
+      "title": "A Systematic Literature Review of Empirical Research on Applying Generative Artificial Intelligence in Education",
+      "doi": "10.1007/s44366-024-0028-5",
+      "year": 2024,
+      "venue": "Frontiers of Digital Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Attaining Self-Regulation",
+      "doi": null,
+      "year": 2000,
+      "venue": "Handbook of Self-Regulation",
+      "citation_level": 2,
+      "citation_context": "expert-novice self-regulation differences framing"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

@@ -1,0 +1,319 @@
+{
+  "title": "Explainable Automated Essay Scoring: Deep Learning Really Has Pedagogical Value",
+  "doi": "10.3389/feduc.2020.572367",
+  "year": 2020,
+  "venue": "Frontiers in Education",
+  "url": "https://doi.org/10.3389/feduc.2020.572367",
+  "source_db": "openalex_search",
+  "population": "High School",
+  "user_type": "Student",
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper addresses the problem of automated essay scoring (AES) as a largely opaque \u201cblack box,\u201d especially at the rubric level where teachers and students would need interpretable information to trust and use AI-generated scores and feedback. The authors argue that prior AES work has focused mostly on holistic scoring and has rarely explained how specific writing features lead to rubric scores. They therefore investigate whether explainable AI methods can make AES more transparent, help debug predictive models, and support the future generation of formative feedback during writing.\n\nThe study builds on a previously developed AES system using a feature-based deep learning approach. Specifically, the authors train multi-layer perceptron neural networks to predict rubric scores, focusing in this paper on the \u201cstyle\u201d rubric. Essays are represented using 1,592 linguistic indices derived from natural language processing tools, then reduced through feature selection. The paper evaluates both predictive accuracy and descriptive accuracy of explanations using SHAP, comparing several SHAP implementations (KernelSHAP, DeepSHAP, and GradientSHAP) and testing whether deeper neural networks yield more trustworthy explanations.\n\nThe population consists of Grade 7 students\u2019 narrative essays from the ASAP dataset. These essays were written in the context of state-wide assessments in the United States, with an average length of 171 words. Each essay was scored by two human raters on four rubrics: ideas, organization, style, and conventions. The study is not an intervention trial with students; rather, it is a secondary analysis of an existing educational assessment dataset to examine how well explainable AES models perform and how their explanations might be used to inspect or eventually support feedback.\n\nThe main conclusions are that deep learning can improve the trustworthiness of explanation models, with descriptive accuracy increasing by about 10% as more hidden layers were added. The study also finds that faster SHAP implementations for deep learning are as accurate as the slower model-agnostic approach, making real-time explanation more feasible. Overall, the paper concludes that explainable deep-learning-based AES has pedagogical value because it can expose important writing features globally and locally, support model debugging, and lay the groundwork for personalized formative feedback, although the pedagogical impact of such feedback on student writing was not evaluated in this study.",
+  "limitations": [
+    "single_site",
+    "no_control_group",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "feedback_evaluation",
+        "language_speech"
+      ],
+      "description": "An automated essay scoring (AES) system using deep learning and explainable AI to predict rubric-level writing scores and generate interpretable feedback from linguistic features.",
+      "use_case": "The paper studies an explainable AES system for Grade-7 essays, focusing on the Style rubric. It uses a multi-layer perceptron with SHAP explanations over 1592 linguistic indices (reduced to 282) to score essays and support formative feedback.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Literacy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "On the ASAP Grade-7 essay dataset, the Style rubric scoring model achieved QWK=0.650, exact agreement=54.3%, adjacent-1 agreement=92.5%, and adjacent-2 agreement=99.8% on the testing set. Human raters\u2019 agreement on the Style rubric was QWK=0.54, with 65.3% exact matches and 34.4% adjacent matches, though on a different 0\u20133 human rating scale versus the model\u2019s resolved 0\u20136 scale.",
+          "measure": "Style rubric scoring accuracy on ASAP Grade-7 essays using quadratic weighted kappa and exact/adjacent agreement rates",
+          "effect_size": "QWK=0.650",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=1567 essays total; testing set n=314"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Faster SHAP implementations for deep learning were reported to be as accurate as the slower model-agnostic KernelSHAP implementation, while improving processing time by up to three orders of magnitude. Independent t-tests found no statistically significant differences between Kernel, Deep, and Gradient explainers on precision, recall, or F1 for descriptive accuracy in the 2-layer ensemble model (all reported p-values > 0.05).",
+          "measure": "Descriptive accuracy equivalence and processing speed of SHAP implementations",
+          "effect_size": "up to three orders of magnitude faster; non-significant differences across explainers",
+          "confidence_interval": "not_reported",
+          "sample_size": "testing set n=314 essays; 500 iterations per essay for explanation evaluation"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "As more hidden layers were added to the neural network, descriptive accuracy increased by about 10%, indicating more trustworthy explanations for deeper models. For GradientSHAP explainers, 2-layer vs 6-layer differences were statistically significant for precision, recall, and F1 at both thresholds tested (e.g., p=0.0003 and 0.0001 for precision; p=0.0000 for recall and F1).",
+          "measure": "Trustworthiness/descriptive accuracy of explanation models across neural network depth",
+          "effect_size": "about 10% increase in descriptive accuracy",
+          "confidence_interval": "not_reported",
+          "sample_size": "testing set n=314 essays; 500 iterations per essay for explanation evaluation"
+        }
+      ]
+    }
+  ],
+  "verdict": "genai_general",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical primary study evaluating an explainable automated essay scoring system on an existing dataset, but it is not an RCT or quasi-experimental study of student learning outcomes. The paper mainly assesses model performance, interpretability, and feasibility rather than causal educational impact.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports positive technical performance and interpretability gains, but does not evaluate actual effects on student writing performance or classroom outcomes. Impact on learning is therefore promising but unclear.",
+  "citations": [
+    {
+      "title": "Social integration of artificial intelligence: functions, automation allocation logic and human-autonomy trust",
+      "doi": "10.1007/s12559-018-9619-0",
+      "year": 2019,
+      "venue": "Cogn. Comput."
+    },
+    {
+      "title": "Peeking inside the black-box: a survey on explainable artificial intelligence (XAI)",
+      "doi": "10.1109/ACCESS.2018.2870052",
+      "year": 2018,
+      "venue": "IEEE Access"
+    },
+    {
+      "title": "Automated essay scoring in the presence of biased ratings",
+      "doi": null,
+      "year": 2018,
+      "venue": "Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies"
+    },
+    {
+      "title": "Explainable Artificial Intelligence (XAI): concepts, taxonomies, opportunities and challenges toward responsible AI",
+      "doi": "10.1016/j.inffus.2019.12.012",
+      "year": 2020,
+      "venue": "Information Fusion"
+    },
+    {
+      "title": "The English lexicon project",
+      "doi": "10.3758/BF03193014",
+      "year": 2007,
+      "venue": "Behavior Research Methods"
+    },
+    {
+      "title": "Deep learning in automated essay scoring",
+      "doi": "10.1007/978-3-319-91464-0_30",
+      "year": 2018,
+      "venue": "Proceedings of the International Conference of Intelligent Tutoring Systems"
+    },
+    {
+      "title": "Shedding light on the automated essay scoring process",
+      "doi": null,
+      "year": 2019,
+      "venue": "Proceedings of the International Conference on Educational Data Mining"
+    },
+    {
+      "title": "SHAPed automated essay scoring: explaining writing features\u2019 contributions to English writing organization",
+      "doi": "10.1007/978-3-030-49663-0_10",
+      "year": 2020,
+      "venue": "Intelligent Tutoring Systems"
+    },
+    {
+      "title": "Explaining models by propagating Shapley values of local components",
+      "doi": null,
+      "year": 2019,
+      "venue": "arXiv"
+    },
+    {
+      "title": "Using human judgments to examine the validity of automated grammar, syntax, and mechanical errors in writing",
+      "doi": "10.17239/jowr-2019.11.02.01",
+      "year": 2019,
+      "venue": "Journal of Writing Research"
+    },
+    {
+      "title": "The tool for the automatic analysis of text cohesion (TAACO): automatic assessment of local, global, and text cohesion",
+      "doi": "10.3758/s13428-015-0651-7",
+      "year": 2016,
+      "venue": "Behavior Research Methods"
+    },
+    {
+      "title": "Sentiment analysis and social cognition engine (SEANCE): an automatic tool for sentiment, social cognition, and social-order analysis",
+      "doi": "10.3758/s13428-016-0743-z",
+      "year": 2017,
+      "venue": "Behavior Research Methods"
+    },
+    {
+      "title": "Effective sampling for large-scale automated writing evaluation systems",
+      "doi": null,
+      "year": 2015,
+      "venue": "Proceedings of the Second (2015) ACM Conference on Learning @ Scale"
+    },
+    {
+      "title": "New directions in formative feedback in interactive learning environments",
+      "doi": "10.1007/s40593-016-0135-7",
+      "year": 2017,
+      "venue": "International Journal of Artificial Intelligence in Education"
+    },
+    {
+      "title": "How automated feedback is delivered matters: formative feedback and knowledge transfer",
+      "doi": null,
+      "year": 2019,
+      "venue": "Proceedings of the 2019 IEEE Frontiers in Education Conference (FIE)"
+    },
+    {
+      "title": "Scaling up writing in the curriculum: batch mode active learning for automated essay scoring",
+      "doi": null,
+      "year": 2019,
+      "venue": "Proceedings of the Sixth (2019) ACM Conference on Learning @ Scale"
+    },
+    {
+      "title": "Automated language essay scoring systems: a literature review",
+      "doi": "10.7717/peerj-cs.208",
+      "year": 2019,
+      "venue": "PeerJ Computer Science"
+    },
+    {
+      "title": "Automated essay scoring and the deep learning black box: how are rubric scores determined?",
+      "doi": "10.1007/s40593-020-00211-5",
+      "year": 2020,
+      "venue": "International Journal of Artificial Intelligence in Education"
+    },
+    {
+      "title": "Discovering the predictive power of five baseline writing competences",
+      "doi": null,
+      "year": 2017,
+      "venue": "Journal of Writing Analytics"
+    },
+    {
+      "title": "Measuring Syntactic Development In L2 Writing: Fine Grained Indices Of Syntactic Complexity And Usage-Based Indices Of Syntactic Sophistication",
+      "doi": null,
+      "year": 2016,
+      "venue": "Dissertation, Georgia State University"
+    },
+    {
+      "title": "The tool for the automatic analysis of lexical sophistication (TAALES): version 2.0",
+      "doi": "10.3758/s13428-017-0924-4",
+      "year": 2018,
+      "venue": "Behavior Research Methods"
+    },
+    {
+      "title": "Consistent individualized feature attribution for tree ensembles",
+      "doi": null,
+      "year": 2018,
+      "venue": "arXiv"
+    },
+    {
+      "title": "A unified approach to interpreting model predictions",
+      "doi": null,
+      "year": 2017,
+      "venue": "Advances in Neural Information Processing Systems"
+    },
+    {
+      "title": "Automated scoring: beyond natural language processing",
+      "doi": null,
+      "year": 2018,
+      "venue": "Proceedings of the 27th International Conference on Computational Linguistics"
+    },
+    {
+      "title": "Building better open-source tools to support fairness in automated scoring",
+      "doi": null,
+      "year": 2017,
+      "venue": "Proceedings of the First (ACL) Workshop on Ethics in Natural Language Processing"
+    },
+    {
+      "title": "MTLD, vocd-D, and HD-D: a validation study of sophisticated approaches to lexical diversity assessment",
+      "doi": "10.3758/brm.42.2.381",
+      "year": 2010,
+      "venue": "Behavior Research Methods"
+    },
+    {
+      "title": "Analytic score prediction and justification identification in automated short answer scoring",
+      "doi": null,
+      "year": 2019,
+      "venue": "Proceedings of the Fourteenth Workshop on Innovative Use of NLP for Building Educational Applications"
+    },
+    {
+      "title": "Interpretable Machine Learning",
+      "doi": null,
+      "year": 2020,
+      "venue": null
+    },
+    {
+      "title": "Definitions, methods, and applications in interpretable machine learning",
+      "doi": "10.1073/pnas.1900654116",
+      "year": 2019,
+      "venue": "Proceedings of the National Academy of Sciences of the United States of America"
+    },
+    {
+      "title": "Evidence-informed practice in education: meanings and applications",
+      "doi": "10.1080/00131881.2017.1314115",
+      "year": 2017,
+      "venue": "Educational Research"
+    },
+    {
+      "title": "Assessing students\u2019 use of evidence and organization in response-to-text writing: using natural language processing for rubric-based automated scoring",
+      "doi": "10.1007/s40593-017-0143-2",
+      "year": 2017,
+      "venue": "International Journal of Artificial Intelligence in Education"
+    },
+    {
+      "title": "Why can\u2019t it mark this one? A qualitative analysis of student writing rejected by an automated essay scoring system",
+      "doi": null,
+      "year": 2018,
+      "venue": "English Austral."
+    },
+    {
+      "title": "Why should i trust you?: explaining the predictions of any classifier",
+      "doi": null,
+      "year": 2016,
+      "venue": "CoRR"
+    },
+    {
+      "title": "Designing, evaluating, and deploying automated scoring systems with validity in mind: methodological design decisions",
+      "doi": "10.1080/08957347.2018.1464448",
+      "year": 2018,
+      "venue": "Applied Measurement in Education"
+    },
+    {
+      "title": "Automated essay scoring at scale: a case study in Switzerland and Germany",
+      "doi": "10.1002/ets2.12249",
+      "year": 2019,
+      "venue": "ETS Research Report Series"
+    },
+    {
+      "title": "Ordered Neurons: Integrating Tree Structures into Recurrent Neural Networks",
+      "doi": null,
+      "year": 2018,
+      "venue": "CoRR"
+    },
+    {
+      "title": "State-of-the-art automated essay scoring: competition, results, and future directions from a United States demonstration",
+      "doi": "10.1016/j.asw.2013.04.001",
+      "year": 2014,
+      "venue": "Assessing Writing"
+    },
+    {
+      "title": "Robust Trait-Specific Essay Scoring using Neural Networks and Density Estimators",
+      "doi": null,
+      "year": 2017,
+      "venue": "Dissertation, National University of Singapore"
+    },
+    {
+      "title": "Trustworthy automated essay scoring without explicit construct validity",
+      "doi": null,
+      "year": 2018,
+      "venue": "Proceedings of the 2018 AAAI Spring Symposium Series"
+    },
+    {
+      "title": "Formative essay feedback using predictive scoring models",
+      "doi": null,
+      "year": 2017,
+      "venue": "Proceedings of the 23rd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

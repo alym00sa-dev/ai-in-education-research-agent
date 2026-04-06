@@ -1,0 +1,89 @@
+{
+  "title": "MathVC: An LLM-Simulated Multi-Persona Virtual Classroom for Collaborative Mathematical Problem Solving",
+  "doi": null,
+  "year": 2025,
+  "venue": "Conference acronym \u2019XX",
+  "url": "https://doi.org/10.48550/arxiv.2404.06711",
+  "source_db": "openalex_search",
+  "populations": [
+    "Middle School (6th-8th)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses the challenge of supporting collaborative problem-solving (CPS) in middle school mathematics, especially when real classrooms cannot always provide well-matched peers, sustained participation, or enough teacher orchestration. The authors ask whether large language models can be used not just as tutors, but as simulated student peers that participate in math discussions in ways that resemble authentic classroom collaboration.\n\nTo explore this, they built MathVC, an LLM-simulated multi-persona virtual classroom in which one student interacts with multiple virtual classmates. The system uses a meta-planning controller to move conversations through CPS stages such as shared understanding, team organization, planning, execution, and validation, and a persona-simulation stack that encodes a task schema and error-injected persona schemas based on teacher-specified or curated misconceptions. The system also controls next-speaker selection and prompts responses to be short and colloquial.\n\nThe evaluation involved 14 U.S. middle school students in grades 6\u20138 who solved mathematics problems with two virtual peers: one limited-skill persona and one advanced-skill persona. Data came from chat logs, exit surveys, and semi-structured interviews. Students generally reported constructive interaction, shared understanding, engagement, motivation, and confidence gains. They especially valued the human-like fallibility of the peers, immediate scaffolding, and diverse perspectives, though some noted that the peers could sound too formal or adult-like. Overall, the paper argues that LLM-based peer simulation can support collaborative mathematical problem-solving, but authenticity depends on both conversational procedure and persona realism.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed qualitative/user-study evaluation with 14 middle school participants, using interviews, logs, and descriptive survey data. It is methodologically useful but lacks experimental control, randomization, and inferential achievement outcomes.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The study suggests a promising, positive engagement and collaboration impact, but the evidence is descriptive and based on a small sample with no measured learning gains or effect sizes. The practical impact appears interesting but remains unclear for broader generalization.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.99,
+      "role": "primary",
+      "use_case": "LLM-simulated multi-persona virtual classroom for middle school mathematics collaborative problem solving, where ChatGPT/GPT-4o generates virtual peer dialogue, stage-aware prompts, dialogue acts, and error-injected peer reasoning."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 0.84,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "In a 14-student middle school evaluation, MathVC was used for collaborative math problem solving on grade-level tasks, and participants reported that they were able to reach shared solutions and work effectively on the problems (exit survey mean=4.43/5 for shared understanding/solution; mean=4.21/5 for understanding and working effectively). The paper does not report pre/post achievement gains or effect sizes, so the evidence is based on descriptive survey and qualitative interaction data rather than measured test-score improvement.",
+        "measure": "Collaborative mathematical problem-solving success, self-reported understanding of the math problem, and exit survey ratings about shared solution attainment",
+        "study_size": "n=14",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.9,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Students reported increased engagement, motivation, persistence, and confidence while working with the virtual peers. Qualitative interviews described reduced cognitive burden, friendly competition, immediate feedback, and supportive scaffolding as mechanisms that helped sustain effort, but no standardized pre/post measure or effect size was reported.",
+        "measure": "Interview themes, engagement/motivation perceptions, and exit survey responses",
+        "study_size": "n=14",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.88,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The study substantively focused on collaboration, planning, and metacognitive reflection in mathematical CPS. Participants rated themselves highly on planning their steps and understanding how actions contributed to solving the problem (mean=4.36/5), and the system was explicitly designed to scaffold shared understanding, role organization, execution, and validation through stage-based dialogue.",
+        "measure": "Exit survey items on planning/role contribution and qualitative evidence of collaborative dialogue and metacognitive reflection",
+        "study_size": "n=14",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

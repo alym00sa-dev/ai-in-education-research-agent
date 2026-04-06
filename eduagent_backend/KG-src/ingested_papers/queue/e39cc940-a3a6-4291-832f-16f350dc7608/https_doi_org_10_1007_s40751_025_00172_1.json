@@ -1,0 +1,116 @@
+{
+  "title": "A Scoping Survey of ChatGPT in Mathematics Education",
+  "doi": "https://doi.org/10.1007/s40751-025-00172-1",
+  "year": 2025,
+  "venue": "Digital Experiences in Mathematics Education",
+  "url": "https://doi.org/10.1007/s40751-025-00172-1",
+  "source_db": "openalex_search",
+  "populations": [
+    "Elementary (PreK-5th)",
+    "Middle School (6th-8th)",
+    "High School (9th-12th)",
+    "Undergraduate",
+    "Graduate / Doctoral"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Meta-Analysis / Systematic Review",
+  "extended_summary": "This paper asks what the literature says about the benefits and challenges of teachers\u2019 and students\u2019 interaction with ChatGPT for mathematics teaching and learning. It is positioned as a scoping survey rather than a primary empirical intervention study, aiming to map early research on ChatGPT in mathematics education and to identify major themes, opportunities, and risks.\n\nThe review searched Google Scholar, Web of Science, arXiv, HAL, and related conference proceedings for work published from November 2022 to May 2024. After screening about 200 items, the authors included 50 studies spanning primary, secondary, and tertiary mathematics education, plus some general education studies relevant to mathematics. The reviewed literature covered student uses of ChatGPT for problem solving, reasoning, statistics, and programming, as well as teacher uses for lesson planning, task design, and assessment.\n\nThe authors conclude that ChatGPT can support concept explanation, personalized feedback, self-regulated learning, collaboration, lesson preparation, and some assessment tasks. However, they emphasize recurring concerns about inaccuracies, hallucinations, over-reliance, weak conceptual understanding, and possible bias or fairness issues. Their overall conclusion is that ChatGPT has promise as a supplementary tool in mathematics education, but it requires strong human oversight and careful prompt design.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a scoping survey/thematic synthesis drawing on a heterogeneous set of studies rather than a single controlled design. It is peer-reviewed and methodologically transparent, but the evidence base is mostly descriptive, qualitative, or mixed-method, with limited causal inference.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The review suggests potentially meaningful benefits for mathematics learning, feedback, and teacher productivity, but reported effects are uneven and often not quantified. Risks and limitations\u2014especially hallucinations, accuracy problems, and over-reliance\u2014temper the overall impact signal.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "scoping review of ChatGPT use in mathematics education, including student tutoring, problem solving, explanation generation, lesson planning support, and teacher-facing conversational assistance"
+    },
+    {
+      "intervention": "Automated Feedback System",
+      "confidence": 0.72,
+      "role": "secondary",
+      "use_case": "ChatGPT used to generate feedback on mathematical work, hints, and automated/scaffolded assessment support for student responses"
+    },
+    {
+      "intervention": "Other",
+      "confidence": 0.58,
+      "role": "secondary",
+      "use_case": "prompting and multi-agent debate methods applied to improve mathematical reasoning quality and reduce hallucinations in LLM outputs"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 0.96,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "Across the reviewed literature, ChatGPT/LLMs showed benefits for basic arithmetic, algebraic expressions, introductory geometry, and some undergraduate-level mathematics, but performance deteriorated on more complex, graduate-level, or visually/graphically rich tasks. Examples include Frieder et al. (2023), where GPT-4 was useful at undergraduate level but not graduate level, and Dao & Le (2023), where ChatGPT\u2019s accuracy fell from 82% on easier exam questions to 10% on harder ones.",
+        "measure": "Accuracy/correctness on mathematical tasks; exam questions; problem-solving correctness; proof tasks",
+        "study_size": "varied across included studies; not_reported overall",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.82,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "Several studies reported gains in computational thinking, reasoning support, and critical reflection, but also risks of reduced independent thinking and over-reliance on AI. For example, Yilmaz & Yilmaz (2023) found significantly higher computational thinking, programming self-efficacy, and motivation with ChatGPT, while other studies warned that students may accept generated answers uncritically and that prompt techniques mainly improved process-related quality rather than content accuracy.",
+        "measure": "Computational thinking scales; reasoning/proof quality; process-related quality ratings; qualitative reports of critical thinking risk",
+        "study_size": "varied across included studies; not_reported overall",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.7,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Where evaluated experimentally, ChatGPT tended to improve motivation, engagement, confidence, and attitudes toward mathematics or statistics, although studies also cautioned that these gains may depend on guidance and appropriate use. Yilmaz & Yilmaz (2023) reported significantly higher motivation in the ChatGPT group, and Wahba et al. (2024) reported more positive attitudes toward statistics in the experimental group using ChatGPT.",
+        "measure": "Motivation toward the lesson; attitudes toward mathematics/statistics; confidence/engagement reports",
+        "study_size": "varied across included studies; not_reported overall",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.88,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The review consistently found that ChatGPT can reduce teacher workload by supporting lesson planning, generating instructional materials, creating assessments, and drafting feedback or hints. However, multiple studies emphasized that the quality of outputs varies and that human oversight remains necessary, so efficiency gains come with tradeoffs in verification and editing time.",
+        "measure": "Lesson-plan generation, assessment creation, feedback generation, teacher workload reduction; qualitative synthesis of reported use cases",
+        "study_size": "varied across included studies; not_reported overall",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

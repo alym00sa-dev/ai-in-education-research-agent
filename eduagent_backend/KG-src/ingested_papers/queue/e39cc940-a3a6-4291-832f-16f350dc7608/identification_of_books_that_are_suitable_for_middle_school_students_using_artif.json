@@ -1,0 +1,76 @@
+{
+  "title": "Identification of Books That are Suitable for Middle School Students Using Artificial Neural Networks",
+  "doi": null,
+  "year": null,
+  "venue": null,
+  "url": "http://arxiv.org/abs/2311.07591v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Middle School (6th-8th)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator",
+    "Administrator",
+    "Parent",
+    "School"
+  ],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses the problem of selecting books that are suitable for middle school students, motivated by concerns that books with inappropriate content can negatively affect children\u2019s development. Rather than studying reader responses or reviews, the authors propose analyzing the books themselves using natural language processing and sentiment analysis.\n\nThe intervention/approach is a custom algorithm built in Python that preprocesses book text, applies VADER sentiment analysis at the word and sentence level, adds a manually created bad-words list, and computes 14 textual and semantic features. These features are then used to train an artificial neural network (ANN) to classify books as suitable or unsuitable for middle school students. The dataset is original and contains 416 books drawn from Turkish Ministry of National Education-approved books, Oxford/Cambridge sources, school libraries, Gutenberg Project books, and books with R ratings or age ratings indicating inappropriate content.\n\nThe context is middle-school reading materials in Turkey and English-language books from international sources. The paper frames the tool as potentially useful for the Ministry of National Education, schools, teachers, parents, and students to screen books for curriculum or reading-list use. The authors report that the trained ANN achieved 90.06% consistency on a sample of 83 test books and conclude that the method can help expedite book selection, though it needs a larger dataset and better handling of academic jargon.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical machine-learning classification study, but it is not a causal educational intervention study and does not use a randomized or strong quasi-experimental design. The evidence is mainly a model-development evaluation on a small custom dataset with limited external validity.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The reported accuracy is reasonably high for the classification task, but the paper does not measure student learning outcomes and therefore has unclear educational impact. Any benefit is indirect, via book screening efficiency and institutional decision support.",
+  "interventions": [
+    {
+      "intervention": "Other",
+      "confidence": 0.98,
+      "role": "primary",
+      "use_case": "NLP-based book suitability classification for middle school texts using VADER sentiment analysis, custom bad-words filtering, and an artificial neural network to screen books for age-appropriateness."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The system was designed to speed up and standardize the book-selection process for middle school curricula and as a screening tool for Ministry of Education, schools, teachers, parents, and students. The paper reports 90.06% consistency on a test set of 83 books and 91.2% accuracy for appropriate books and 80.7% accuracy for inappropriate books, suggesting improved efficiency in identifying age-suitable texts.",
+        "measure": "Book suitability classification accuracy / consistency rate; correct classification of suitable and unsuitable books",
+        "study_size": "n=416 train; n=83 test",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Systemic / Institutional Impact",
+      "confidence": 0.86,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper argues the model could support institutional book-selection decisions for curricula and age-group screening, reducing subjective bias in evaluations by producing numerical suitability scores. Reported performance included 90.06% overall consistency, with proposed use by the Ministry of National Education and schools as a preliminary reference system.",
+        "measure": "Institutional screening utility and classification consistency",
+        "study_size": "n=416 train; n=83 test",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_long_term_followup",
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Turkey",
+  "study_region": "Middle East & North Africa",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

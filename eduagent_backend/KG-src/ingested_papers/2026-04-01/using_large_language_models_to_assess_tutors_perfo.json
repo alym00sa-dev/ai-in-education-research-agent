@@ -1,0 +1,261 @@
+{
+  "title": "Using Large Language Models to Assess Tutors\u2019 Performance in Reacting to Students Making Math Errors",
+  "doi": null,
+  "year": 2024,
+  "venue": "AAAI 2024 Workshop AI4ED",
+  "url": "http://arxiv.org/abs/2401.03238v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Middle School (6th-8th)",
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper investigates whether large language models can accurately assess human tutors\u2019 performance when responding to students\u2019 math errors in authentic tutoring dialogues. The authors focus on a specific pedagogical skill drawn from a tutor lesson called Reacting to Errors: effective tutors should acknowledge effort, remain motivating, respond indirectly so students can self-correct, stay immediate to the problem context, and be mathematically accurate. The central research questions are whether GPT models can score these tutoring behaviors accurately and how GPT-3.5-Turbo compares with GPT-4 for this purpose.\n\nThe study uses 50 real-life remote tutoring transcripts and compares GPT-3.5-Turbo and GPT-4 against human annotation. Two experienced human annotators, who completed the Reacting to Errors lesson and used an annotation guide, first established reliability on a set of 50 synthetic dialogues generated with GPT-4. The models were then prompted with a few-shot scoring rubric and asked to determine whether a student made an error and, if so, score the tutor on five criteria. The tutoring context involved online math tutoring sessions conducted through the Pencil platform, with tutors who were college students at a Pennsylvanian university and middle school students from two schools.\n\nThe participant context includes undergraduate tutors and middle school students in grades 6 through 8. The schools represented populations with low math proficiency; one California public school had 52% Latinx students, and one Pennsylvania charter school was reported as 100% Black and male. The dialogues were real-world online tutoring interactions, but the exact number of unique tutors was unknown and some tutors may have appeared in more than one dialogue. The study took place in the United States.\n\nThe main conclusion is that both GPT-3.5-Turbo and GPT-4 were reasonably effective at assessing several tutor-response criteria, especially the more straightforward criteria of immediacy and mathematical accuracy. GPT-4 outperformed GPT-3.5-Turbo across all five criteria, but both models struggled to determine correctly whether the student had actually made an error. GPT-4 in particular tended to over-identify student errors by inferring uncertainty as error. The authors conclude that GPT-3.5-Turbo may be sufficient for scalable, cost-effective tutor dialogue assessment, but improvements to prompting and larger-scale validation are needed before relying on LLMs alone for tutor evaluation or guidance.",
+  "limitations": [
+    "small_sample",
+    "no_control_group",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "yes",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "tutoring_instruction"
+      ],
+      "description": "OpenAI GPT-family large language model used here as an automated evaluator of tutoring dialogue quality.",
+      "use_case": "GPT-3.5-Turbo and GPT-4 were prompted to score tutor-student math tutoring transcripts on whether a student made an error and whether the tutor's response met five criteria: process-focused, motivating, indirect, immediate, and accurate/sincere.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Across 50 real-life tutoring dialogues, both GPT-3.5-Turbo and GPT-4 showed moderate-to-strong performance for scoring tutor response criteria when the model and human grader agreed that the student had made an error. GPT-3.5-Turbo achieved F1 scores of 0.55 (process-focused), 0.72 (motivating), 0.61 (indirect), 0.80 (immediate), and 0.80 (accurate); GPT-4 achieved 0.64, 0.73, 0.63, 0.93, and 0.95 respectively. However, both models struggled to detect whether a student error had occurred in the first place.",
+          "measure": "Precision, recall, and F1 scores for five tutor-evaluation criteria on tutoring transcripts, compared with a human grader",
+          "effect_size": "GPT-3.5-Turbo F1s: 0.55, 0.72, 0.61, 0.80, 0.80; GPT-4 F1s: 0.64, 0.73, 0.63, 0.93, 0.95",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=50 dialogues"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "The models had limited accuracy in identifying dialogues where the student had not made an error. GPT-3.5-Turbo correctly identified no-error dialogues 54% of the time, while GPT-4 did so 63% of the time; GPT-4 also tended to overidentify errors by inferring them from student uncertainty when human evaluators did not mark an error.",
+          "measure": "Accuracy in identifying no-error dialogues; qualitative error analysis of model overidentification",
+          "effect_size": "GPT-3.5-Turbo: 54%; GPT-4: 63%",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=50 dialogues"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "GPT-4 outperformed GPT-3.5-Turbo on all five tutor-response criteria, with especially notable gains on the more straightforward criteria of immediacy and accuracy. The paper reports an F1 difference of around 0.10 for immediate and accurate scoring, but concludes GPT-3.5-Turbo may still be sufficient for scalable, lower-cost dialogue assessment.",
+          "measure": "Comparative F1 performance of GPT-4 versus GPT-3.5-Turbo on tutor-evaluation criteria",
+          "effect_size": "Immediate F1: 0.93 vs 0.80; Accurate F1: 0.95 vs 0.80",
+          "confidence_interval": "not_reported",
+          "sample_size": "GPT-4 usable responses: 23; GPT-3.5-Turbo usable responses: 17"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical comparison study using 50 tutoring dialogues and human annotation benchmarks, but it is not an intervention study on student learning and uses a small sample with descriptive performance metrics only. The methodology is clear, yet evidence is limited to model-evaluation accuracy in one context.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper shows promising but mixed operational value: the models perform reasonably well on several scoring criteria, but both struggle on the crucial step of recognizing whether a student error occurred. Because outcomes are evaluator-performance metrics rather than student learning impacts, practical impact remains unclear.",
+  "citations": [
+    {
+      "title": "Program of thoughts prompting: Disentangling computation from reasoning for numerical reasoning tasks",
+      "doi": null,
+      "year": 2022,
+      "venue": "arXiv preprint arXiv:2211.12588",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "An evaluation of perceptions regarding mentor competencies for technology-based personalized learning",
+      "doi": null,
+      "year": 2022,
+      "venue": "Society for Information Technology & Teacher Education International Conference",
+      "citation_level": 2,
+      "citation_context": "example tutoring skills for future LLM assessment"
+    },
+    {
+      "title": "Can large language models provide feedback to students? a case study on chatgpt",
+      "doi": null,
+      "year": 2023,
+      "venue": "2023 IEEE International Conference on Advanced Learning Technologies (ICALT)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Gpt-3.5, gpt-4, or bard? evaluating llms reasoning ability in zero-shot setting and performance boosting through prompts",
+      "doi": null,
+      "year": 2023,
+      "venue": "Natural Language Processing Journal",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A blueprint for scaling tutoring and mentoring across public schools",
+      "doi": null,
+      "year": 2021,
+      "venue": "AERA Open",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Measuring five accountable talk moves to improve instruction at scale",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv preprint arXiv:2311.10749",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The wisdom of practice: Lessons learned from the study of highly effective tutors",
+      "doi": null,
+      "year": 2002,
+      "venue": "Improving academic achievement",
+      "citation_level": 2,
+      "citation_context": "defines desirable tutor responses to student errors"
+    },
+    {
+      "title": "Motivational techniques of expert human tutors: Lessons for the design of computer-based tutors",
+      "doi": null,
+      "year": 1993,
+      "venue": "Computers as cognitive tools",
+      "citation_level": 2,
+      "citation_context": "supports avoiding direct error correction or answers"
+    },
+    {
+      "title": "The work of teaching and the challenge for teacher education",
+      "doi": null,
+      "year": 2009,
+      "venue": "Journal of Teacher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Transfer of learning: Concept and process",
+      "doi": null,
+      "year": 1999,
+      "venue": "Social Work Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The national online tuition pilot",
+      "doi": null,
+      "year": 2021,
+      "venue": "Education Endowment Foundation",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Fostering the intelligent novice: Learning from errors with metacognitive tutoring",
+      "doi": null,
+      "year": 2018,
+      "venue": "Computers as Metacognitive Tools for Enhancing Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Effective tutoring techniques: A comparison of human tutors and intelligent tutoring systems",
+      "doi": null,
+      "year": 1992,
+      "venue": "The Journal of the Learning Sciences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Tutoring: Guided learning by doing",
+      "doi": null,
+      "year": 1995,
+      "venue": "Cognition and Instruction",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "OpenAI",
+      "doi": null,
+      "year": 2023,
+      "venue": "OpenAI",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Prompt programming for large language models: Beyond the few-shot paradigm",
+      "doi": null,
+      "year": 2021,
+      "venue": "Extended Abstracts of the 2021 CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 2,
+      "citation_context": "frames prompt engineering as an underexplored paradigm"
+    },
+    {
+      "title": "When the tutor becomes the student: Design and evaluation of efficient scenario-based lessons for tutors",
+      "doi": null,
+      "year": 2023,
+      "venue": "LAK23: 13th International Learning Analytics and Knowledge Conference",
+      "citation_level": 2,
+      "citation_context": "supports prior evidence of tutor learning from lessons"
+    },
+    {
+      "title": "Kappa coefficient: a popular measure of rater agreement",
+      "doi": null,
+      "year": 2015,
+      "venue": "Shanghai Archives of Psychiatry",
+      "citation_level": 3,
+      "citation_context": "basis for interpreting Cohen\u2019s kappa reliability"
+    },
+    {
+      "title": "Is chatgpt a good teacher coach? measuring zero-shot performance for scoring and providing actionable insights on classroom instruction",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv preprint arXiv:2306.03090",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Step-by-step remediation of students\u2019 mathematical mistakes",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv preprint arXiv:2310.10648",
+      "citation_level": 2,
+      "citation_context": "prior benchmark showing LLM limits on math error remediation"
+    },
+    {
+      "title": "Chain-of-thought prompting elicits reasoning in large language models",
+      "doi": null,
+      "year": 2022,
+      "venue": "Advances in Neural Information Processing Systems",
+      "citation_level": 2,
+      "citation_context": "supports importance of prompt engineering for LLM behavior"
+    },
+    {
+      "title": "Do you think you can? the influence of student self-efficacy on the effectiveness of tutorial dialogue for computer science",
+      "doi": null,
+      "year": 2017,
+      "venue": "International Journal of Artificial Intelligence in Education",
+      "citation_level": 2,
+      "citation_context": "motivates indirect strategy for low-efficacy students"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

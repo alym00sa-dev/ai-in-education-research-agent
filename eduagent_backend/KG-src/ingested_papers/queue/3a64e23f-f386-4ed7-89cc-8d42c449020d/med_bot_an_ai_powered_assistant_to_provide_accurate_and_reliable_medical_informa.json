@@ -1,0 +1,38 @@
+{
+  "title": "Med-Bot: An AI-Powered Assistant to Provide Accurate and Reliable Medical Information",
+  "doi": null,
+  "year": 2024,
+  "venue": "not_reported",
+  "url": "http://arxiv.org/abs/2411.09648v1",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper presents Med-Bot, an AI-powered medical chatbot intended to provide users with accurate and reliable healthcare information from medical literature. The paper addresses the broader problem of making trustworthy medical information more accessible through conversational AI, especially in contexts where users may seek quick answers to health-related questions. Although the manuscript describes the system as an assistant for healthcare information dissemination, it does not evaluate learning outcomes, compare against another system in a controlled study, or focus on education-specific use cases.\n\nThe proposed approach combines Llama-2 with AutoGPT-Q quantization, PyTorch, ChromaDB, and LangChain to build a retrieval-based question-answering pipeline over publicly available PDFs from sources such as PubMed, Medline, and WHO archives. The system loads, chunks, embeds, and retrieves content from these documents, then generates responses through a text-generation pipeline. The paper emphasizes prompt engineering, safe-response instructions, and context-based interaction to improve accuracy and relevance.\n\nThe manuscript is framed as a system-development paper rather than an empirical user study. It discusses potential benefits such as more precise and contextually relevant answers, but the evidence presented is largely descriptive and implementation-oriented. The authors note several constraints, including dependence on source quality, difficulty with rare or emerging conditions, limited real-time feedback adaptation, and English-only support.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a system-development paper describing Med-Bot\u2019s architecture and workflow, not a controlled evaluation of educational or learning outcomes. No experimental design, comparison group, or quantitative outcome analysis is reported.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "The paper does not report measurable impact estimates, effect sizes, or K-12 educational outcomes. It is adjacent evidence about conversational AI for healthcare information, not evidence of educational impact.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.98,
+      "role": "primary",
+      "use_case": "medical-information chatbot using Llama-2, LangChain, ChromaDB, and GPTQ quantization to answer user queries from retrieved medical PDFs"
+    }
+  ],
+  "outcome_assignments": [],
+  "limitations": [
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "India",
+  "study_region": "South Asia",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

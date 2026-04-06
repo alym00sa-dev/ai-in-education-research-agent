@@ -1,0 +1,115 @@
+{
+  "title": "Integrating CALL Systems with Chatbots as Conversational Partners",
+  "doi": "10.13053/CyS-21-4-2868",
+  "year": 2017,
+  "venue": "Computaci\u00f3n y Sistemas",
+  "url": "https://doi.org/10.13053/cys-21-4-2868",
+  "source_db": "openalex_search",
+  "populations": [
+    "Undergraduate",
+    "Adult (non-academic)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses a longstanding limitation of computer-assisted language learning (CALL): while CALL systems can present lessons, exercises, and immediate feedback for vocabulary, grammar, pronunciation, and writing, they are weaker at supporting authentic conversational practice. The author argues that conversation is an essential component of language learning and reviews how dialogue systems and chatbots can fill this gap.\n\nThe paper is primarily a conceptual and review-based article. It surveys the evolution of CALL, its common exercise types, and limitations identified in prior work, then discusses integrating conversational agents into CALL environments. It also reviews several related systems and trials, including language-learning chatbots, embodied conversational agents, and dialog-based tutoring systems such as Web-CALL, STyLE, AutoTutor, and others. These examples are used to motivate the claim that chatbots can serve as conversational partners, provide practice opportunities, and increase learner engagement.\n\nThe population context is broad rather than a single empirical sample: the paper discusses language learners generally, with examples including adult non-native English speakers, university and college students, school learners in a Taiwan pronunciation study, and learners of Afrikaans, Swedish, Italian, Maori, and English. The main conclusion is that integrating CALL with chatbots or conversational agents can improve language-learning outcomes and learner experience, especially for conversational practice, though the paper also notes technical limitations such as limited domain coverage and weak linguistic understanding in current chatbot implementations.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a narrative review / conceptual paper with selective reports of prior experiments rather than a new controlled study. It cites some empirical evaluations, but the methodology is not systematic and effect sizes/confidence intervals are largely absent.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper suggests potentially useful effects on language practice and learner enjoyment, but the evidence is mostly qualitative or from small, heterogeneous prior studies. Reported outcomes are promising yet unclear in magnitude for the broader K-12 or teacher-preparation populations.",
+  "interventions": [
+    {
+      "intervention": "Computer-Assisted Instruction (CAI)",
+      "confidence": 0.95,
+      "role": "primary",
+      "use_case": "web-based computer-assisted language learning (CALL) with exercises, hints, immediate feedback, and online self-study materials for foreign language learning"
+    },
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.92,
+      "role": "primary",
+      "use_case": "chatbots and conversational agents used as conversational partners for practicing spoken/written language in CALL environments"
+    },
+    {
+      "intervention": "Robot / Embodied Tutor",
+      "confidence": 0.55,
+      "role": "secondary",
+      "use_case": "embodied conversational agents and virtual language teachers used to provide guided language practice and feedback"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Language Fluency",
+      "confidence": 0.97,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Across the studies reviewed, integrating chatbots/conversational agents into CALL was reported to improve language practice outcomes, especially pronunciation and conversational skills. For example, Ville evaluation with n=402 showed pronunciation improved more than writing and listening, and GeCALL with n=52 reported pronunciation gains; the paper also reports that Web-CALL outperformed a traditional class on comprehension and word order, though exact effect sizes were not reported.",
+        "measure": "pronunciation, comprehension, word order, conversational practice, language-learning test outcomes",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Computer-Assisted Instruction (CAI)"
+    },
+    {
+      "outcome": "Academic \u2014 Language Fluency",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper argues that chatbots as conversational partners improve opportunities for language production and interaction, with users reporting that they enjoyed chatting and found it useful for practicing a language. In the Afrikaans chatbot trial, users were positive about the experience despite many nonsensical responses, indicating perceived usefulness for language practice even when system quality was limited.",
+        "measure": "user feedback, conversational practice experience, language-use engagement",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.8,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper reports that learners enjoyed chatbot-supported CALL and felt more relaxed chatting with a bot than with a real human partner. In the Web-CALL evaluation, 87% of students enjoyed the class, 86% studied positively, and 85% felt free to study at their own pace, suggesting improved motivation and affective comfort.",
+        "measure": "student questionnaire responses on enjoyment, positive study attitudes, and self-paced learning comfort",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Computer-Assisted Instruction (CAI)"
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.75,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Chatbots were described as reducing anxiety and making language practice feel more relaxed and amusing, which the authors frame as beneficial for persistence and willingness to engage. These claims are qualitative and synthesised from prior evaluations rather than a single controlled comparison.",
+        "measure": "qualitative user reactions, perceived relaxation, enjoyment, willingness to continue chatting",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

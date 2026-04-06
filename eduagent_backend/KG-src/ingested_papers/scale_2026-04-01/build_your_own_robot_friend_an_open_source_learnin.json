@@ -1,0 +1,391 @@
+{
+  "title": "Build Your Own Robot Friend: An Open-Source Learning Module for Accessible and Engaging AI Education",
+  "doi": null,
+  "year": 2024,
+  "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+  "url": "https://arxiv.org/abs/2402.01647",
+  "source_db": "scale_stanford",
+  "populations": [
+    "High School (9th-12th)",
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses the problem of making AI education more accessible, affordable, and engaging for learners from different socio-economic backgrounds. The authors argue that many existing AI and robotics education tools are either too expensive, too closed and inflexible, or too narrowly focused on technical content without covering human-centered AI topics such as human-robot interaction, affective computing, and AI ethics. The paper therefore asks whether an open-source, low-cost, customizable learning module centered on building a social robot can provide an effective and engaging introduction to AI, machine learning, and robotics.\n\nThe intervention is a three-part open-source learning module built around a simplified version of the Blossom social robot. Part 1 teaches students to assemble and program their own robot using redesigned 3D-printable hardware and customizable exterior designs. Part 2 introduces a human-centered machine learning pipeline, including training a smiling-classification model on the CelebA dataset and discussing algorithmic fairness and AI ethics. Part 3 integrates robot control with OpenSense so that students program the robot to recognize and imitate user head movements. The robot was redesigned to reduce fabrication complexity and cost, with the authors reporting that each robot can cost under $250 when parts are printed at scale or in-house.\n\nThe empirical evaluation focused on a two-day in-person workshop conducted at a single minority-serving institution in the United States. Fifteen college students participated, and 13 completed the post-workshop survey. Because of workshop time constraints, only Parts 1 and 3 of the module were evaluated in practice. The context was hands-on, in-person team-based work where participants built and programmed the robot over two days. The broader intended audience for the module includes both college and high school students, but the actual evaluated sample was undergraduate students.\n\nThe main conclusions are that the module was perceived by participants as effective, easy to follow, and engaging, and that it increased their interest in studying AI and robotics in the future. All teams successfully completed the workshop tasks, and post-workshop survey results were strongly favorable across perceived learning in robotics, software engineering, AI/ML, and mechanical engineering. At the same time, the evidence is limited to short-term usability and self-reported perceptions from a small sample at one institution, and the authors note that future work should evaluate the machine learning/ethics portion and test the module with high school students.",
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "no_control_group",
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "lab",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "Blossom",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "content_generation"
+      ],
+      "description": "An open-source socially expressive robot platform adapted here into a simplified, affordable, customizable educational robot for hands-on AI/ML, robotics, and human-centered AI learning.",
+      "use_case": "Students built and programmed a modified Blossom robot in a two-day workshop, including assembling hardware and completing a human-robot interaction program where the robot recognized and imitated users\u2019 head movements.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In a two-day usability workshop, 92% of surveyed participants reported that the module helped them learn more about robotics/electronic engineering, computer science/software engineering, AI/ML, and mechanical engineering. Post-workshop Likert responses were significantly above neutral: robotics/electronic engineering (median = Strongly Agree (2), p = .0004), computer science/software engineering (median = Strongly Agree (2), p = .0008), AI/ML (median = Strongly Agree (2), p = .0014), and mechanical engineering (median = Strongly Agree (2), p = .0018).",
+          "measure": "Post-workshop 5-point Likert survey of perceived learning gains across robotics/electronic engineering, computer science/software engineering, AI/ML, and mechanical engineering",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=13"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The learning module was perceived as easy to follow by 85% of participants who completed the post-workshop survey. Responses were significantly more favorable than neutral on a 5-point Likert scale (median = Strongly Agree (2), p = .0009).",
+          "measure": "Post-workshop 5-point Likert survey of perceived usability/ease-of-following",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=13"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "All four teams successfully completed the workshop goals, and 100% of surveyed participants reported that the workshop encouraged them to study more robotics and AI in the future. The corresponding Likert response was significantly above neutral (median = Strongly Agree (2), p = .0001).",
+          "measure": "Workshop task completion and post-workshop 5-point Likert survey of future interest in studying robotics and AI",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=13"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a small-sample usability workshop with post-survey and qualitative feedback, not an RCT or quasi-experimental effectiveness study. Findings rely primarily on student self-reports from 13 survey respondents.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "Results are uniformly positive, but impact is based on perceived learning, usability, and interest rather than standardized learning gains, and no effect sizes are reported.",
+  "citations": [
+    {
+      "title": "A Socially Relevant Focused AI Curriculum Designed for Female High School Students",
+      "doi": null,
+      "year": 2022,
+      "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+      "citation_level": 2,
+      "citation_context": "supports human-centered AI curriculum framing"
+    },
+    {
+      "title": "Social Robots for Education: A Review",
+      "doi": null,
+      "year": 2018,
+      "venue": "Science Robotics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The LEGO BOOST Activity Book",
+      "doi": null,
+      "year": 2018,
+      "venue": "No Starch Press",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Computational thinking and tinkering: Exploration of an early childhood robotics curriculum",
+      "doi": null,
+      "year": 2014,
+      "venue": "Computers & Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Women in academic science: A changing landscape",
+      "doi": null,
+      "year": 2014,
+      "venue": "Psychological science in the public interest",
+      "citation_level": 2,
+      "citation_context": "used to motivate underrepresentation concerns"
+    },
+    {
+      "title": "A one-year introductory robotics curriculum for computer science upperclassmen",
+      "doi": null,
+      "year": 2012,
+      "venue": "IEEE Transactions on Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Socially assistive robots for teaching emotional abilities to children with autism spectrum disorder",
+      "doi": null,
+      "year": 2017,
+      "venue": "3rd Workshop on Child-Robot Interaction at HRI",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The social impacts of innovation: reproducing racial, gender and social class inequality",
+      "doi": null,
+      "year": 2023,
+      "venue": "International Journal of Sociology and Social Policy",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Visual tools for teaching machine learning in K-12: A ten-year systematic mapping",
+      "doi": null,
+      "year": 2021,
+      "venue": "Education and Information Technologies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "From chatgpt to threatgpt: Impact of generative AI in cybersecurity and privacy",
+      "doi": null,
+      "year": 2023,
+      "venue": "IEEE Access",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Educational Robotic Construction Kit: Bioloid",
+      "doi": null,
+      "year": 2008,
+      "venue": "17th World Congress of The International Federation of Automatic Control (IFAC 2008)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A Chat (GPT) about the future of scientific publishing",
+      "doi": null,
+      "year": 2023,
+      "venue": "Brain Behav Immun",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Virtual reality action interactive teaching artificial intelligence education system",
+      "doi": null,
+      "year": 2021,
+      "venue": "Complexity",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Algorithmic inclusion: Shaping the predictive algorithms of artificial intelligence in hiring",
+      "doi": null,
+      "year": 2023,
+      "venue": "Human Resource Management Journal",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Learning multiple layers of features from tiny images",
+      "doi": null,
+      "year": 2009,
+      "venue": "Master\u2019s thesis, Department of Computer Science, University of Toronto",
+      "citation_level": 3,
+      "citation_context": "contrasted baseline tutorial dataset with CelebA"
+    },
+    {
+      "title": "Poppy project: open-source fabrication of 3D printed humanoid robot for science, education and art",
+      "doi": null,
+      "year": 2014,
+      "venue": "Digital Intelligence 2014",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Deep Learning Face Attributes in the Wild",
+      "doi": null,
+      "year": 2015,
+      "venue": "Proceedings of International Conference on Computer Vision (ICCV)",
+      "citation_level": 3,
+      "citation_context": "dataset used for smiling classification tutorial"
+    },
+    {
+      "title": "Materials for Enabling Hands-On Robotics and STEM Education",
+      "doi": null,
+      "year": 2007,
+      "venue": "AAAI spring symposium: Semantic scientific knowledge integration",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A review of the applicability of robots in education",
+      "doi": null,
+      "year": 2013,
+      "venue": "Journal of Technology in Education and Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Is it safe to hug a robot like Baymax?",
+      "doi": null,
+      "year": 2022,
+      "venue": "Science Robotics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "(Mis-) use of standard autopilot and full self-driving (FSD) beta: results from interviews with users of Tesla\u2019s FSD beta",
+      "doi": null,
+      "year": 2023,
+      "venue": "Frontiers in psychology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Bizarre tech",
+      "doi": null,
+      "year": 2022,
+      "venue": "Engineering & Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "GPT-4 Technical Report",
+      "doi": null,
+      "year": 2023,
+      "venue": "ArXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Social robotics in rducation: rtate-of-the-art and directions",
+      "doi": null,
+      "year": 2019,
+      "venue": "Advances in Service and Industrial Robotics: Proceedings of the 27th International Conference on Robotics in Alpe-Adria Danube Region (RAAD 2018)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Boe-Bot",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Pytorch: An imperative style, high-performance deep learning library",
+      "doi": null,
+      "year": 2019,
+      "venue": "Advances in neural information processing systems",
+      "citation_level": 3,
+      "citation_context": "official tutorial basis for ML module"
+    },
+    {
+      "title": "ML-Quest: a game for introducing machine learning concepts to K-12 students",
+      "doi": null,
+      "year": 2022,
+      "venue": "Interactive Learning Environments",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A systematic review of teaching and learning machine learning in K-12 education",
+      "doi": null,
+      "year": 2023,
+      "venue": "Education and Information Technologies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Humanoid robot NAO: Review of control and motion exploration",
+      "doi": null,
+      "year": 2011,
+      "venue": "2011 IEEE international conference on Control System, Computing and Engineering",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Buddy. An Arduino Social Robot",
+      "doi": null,
+      "year": 2020,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Opensense: A platform for multimodal data acquisition and behavior perception",
+      "doi": null,
+      "year": 2020,
+      "venue": "Proceedings of the 2020 International Conference on Multimodal Interaction",
+      "citation_level": 3,
+      "citation_context": "integrated platform for head-pose interaction program"
+    },
+    {
+      "title": "Botball: Autonomous students engineering autonomous robots",
+      "doi": null,
+      "year": 2002,
+      "venue": "2002 Annual Conference",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Blossom: A hand-crafted open-source robot",
+      "doi": null,
+      "year": 2019,
+      "venue": "ACM Transactions on Human-Robot Interaction (THRI)",
+      "citation_level": 3,
+      "citation_context": "base robot design adapted and simplified"
+    },
+    {
+      "title": "Use chat gpt to solve programming bugs",
+      "doi": null,
+      "year": 2023,
+      "venue": "International Journal of Information Technology & Computer Engineering (IJITC)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "LEGO MINDSTORMS \u2013 Invent a Robot",
+      "doi": null,
+      "year": 2022,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Recommendation on the ethics of artificial intelligence",
+      "doi": null,
+      "year": 2021,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "adapted ethical AI principles for tutorial"
+    },
+    {
+      "title": "Vex Robotics",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The effect of the FIRST Robotics Competition on high school students\u2019 attitudes toward science",
+      "doi": null,
+      "year": 2007,
+      "venue": "Ph.D. thesis, University of Kansas",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

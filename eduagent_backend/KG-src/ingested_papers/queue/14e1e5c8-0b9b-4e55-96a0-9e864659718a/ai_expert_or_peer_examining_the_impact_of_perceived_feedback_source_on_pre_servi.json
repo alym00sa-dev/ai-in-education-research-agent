@@ -1,0 +1,61 @@
+{
+  "title": "AI, Expert or Peer? Examining the Impact of Perceived Feedback Source on Pre-Service Teachers Feedback Perception and Uptake",
+  "doi": null,
+  "year": null,
+  "venue": null,
+  "url": "http://arxiv.org/abs/2507.16013v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Randomized Controlled Trial (RCT)",
+  "extended_summary": "This study examines whether pre-service teachers\u2019 perceptions and uptake of feedback depend on the perceived source of the feedback, specifically comparing LLM-generated feedback with expert- and peer-generated feedback. The authors focus on a key gap in feedback research: whether bias toward or against AI changes not only how feedback is judged, but also whether it is actually used.\n\nIn a randomized experiment, 273 bachelor\u2019s students in a German teacher-education program received one piece of written feedback on a mathematics learning goal during their practicum-related coursework. The feedback came from one of three sources: an LLM (ChatGPT-4), an expert, or a peer. Participants identified the presumed source, completed a feedback perception questionnaire, and then revised the learning goal to measure feedback uptake. Objective feedback quality was independently coded and controlled for in the analyses.\n\nResults showed that source perceptions strongly shaped cognitive feedback judgments: LLM feedback was rated more favorably when it was misattributed to a human expert, while expert-labeled feedback was often assumed to be higher quality regardless of its true source. Recognition accuracy was low, especially for LLM feedback. However, actual uptake of feedback suggestions was driven only by objective feedback quality, not by perceived source, recognition accuracy, or subjective perceptions. The study concludes that source labels bias perceptions, but behavioral implementation depends primarily on artifact quality rather than the label attached to it.",
+  "limitations": [
+    "single_site",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "4",
+  "setting": "blended",
+  "teacher_training": "yes",
+  "implementation_fidelity": "medium",
+  "study_country": "Germany",
+  "study_region": "Europe",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "content_generation"
+      ],
+      "description": "An OpenAI GPT-based large language model chatbot used to generate written feedback on a learning goal.",
+      "use_case": "Generated the LLM feedback messages on a mathematics learning goal; ChatGPT-4 was used with a structured prompt to produce feedback comparable to expert and peer feedback.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0014Other",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "In a randomized experiment with 273 pre-service teachers, ChatGPT-generated feedback was correctly identified only slightly above chance (36%). Participants rated LLM feedback more positively on cognitive perceptions when they believed it came from a human expert; however, feedback uptake was driven by feedback quality rather than source or recognition accuracy. The LLM condition showed the highest relative uptake at 52% (103 implemented suggestions out of 198 recognized mistakes), but source did not independently predict implementation in the regression model.",
+          "measure": "Source recognition accuracy; feedback perception (fairness, usefulness, acceptance, willingness to improve, affect); feedback uptake/correction rate",
+          "effect_size": "recognition accuracy = 36%; relative uptake = 52%; source effects on perception significant for fairness/usefulness (b not reported here)",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=273 (uptake model n=161)"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is a randomized experiment with a teacher-education sample and clearly specified measures, but it is a single study with some modeling/measurement limitations and no student achievement outcome. The design is strong for source-perception and uptake effects, but not a full classroom efficacy trial.",
+  "impact_tier": "green",
+  "impact_tier_rationale": "The study reports a modest behavioral effect in uptake metrics and stronger effects on perceptions, but the key behavioral predictor was feedback quality rather than the LLM itself. Because the observed impact is real but limited and context-specific, it fits a modest-impact tier.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

@@ -1,0 +1,225 @@
+{
+  "title": "Effective and Scalable Math Support: Experimental Evidence on the Impact of an AI- Math Tutor in Ghana",
+  "doi": null,
+  "year": 2023,
+  "venue": null,
+  "url": "https://arxiv.org/abs/2402.09809",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Elementary (PreK-5th)",
+    "Middle School (6th-8th)",
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator",
+    "School"
+  ],
+  "study_design": "Randomized Controlled Trial (RCT)",
+  "extended_summary": "This paper examines whether an AI-powered math tutor delivered through WhatsApp can improve students\u2019 mathematics learning in a low-resource educational context. The authors focus on the challenge that many students in sub-Saharan Africa receive instruction that is not well matched to their skill level and have limited access to individualized tutoring. The study asks whether a low-cost, scalable mobile tutoring tool can provide meaningful learning gains when added to ordinary schooling.\n\nThe intervention studied is Rori, an AI-based conversational math tutor developed by Rising Academies. Rori provides students with micro-lessons, scaffolded practice, hints, worked solutions, and natural-language interaction via WhatsApp on basic mobile phones. In the study, treatment schools received access to Rori for two 30-minute sessions per week during study hall, while control schools continued normal schooling without Rori. Students in both groups took the same mathematics assessment at baseline and endline over an approximately 8-month period in 2023.\n\nThe population consisted of students in Rising Academies schools in Ghana, primarily grades 3-8 in the participation section, though the paper also describes grades 3-9 in the introduction. Eleven schools were included, with school-level random assignment to treatment or control. A total of 637 students completed the baseline assessment and 477 completed both baseline and endline. Teachers were present during Rori sessions mainly to address technical issues, while students used the system independently.\n\nThe main finding is that students in the treatment group showed significantly greater growth in math scores than those in the control group. The treatment group\u2019s average growth exceeded the control group by 3.01 points, with p < 0.001, and the reported effect size was 0.36, which the authors interpret as moderate to large in education research and potentially comparable to about an extra year of learning. The paper concludes that AI-supported, chat-based tutoring on low-cost mobile infrastructure may be a cost-effective and scalable way to improve math outcomes in LMIC settings, while noting that results are preliminary, based on year 1 only, and should be interpreted cautiously.",
+  "limitations": [
+    "high_attrition",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "32",
+  "setting": "blended",
+  "teacher_training": "no",
+  "implementation_fidelity": "medium",
+  "study_country": "Ghana",
+  "study_region": "Sub-Saharan Africa",
+  "identified_tools": [
+    {
+      "name": "Rori",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "personalization_adaptation"
+      ],
+      "description": "An AI-powered math tutor delivered through WhatsApp that provides a curriculum of micro-lessons, scaffolded practice questions, hints, worked solutions, and natural-language chat using NLP/LLM methods.",
+      "use_case": "Students in grades 3-8/9 in Ghanaian schools used Rori independently during study hall for two 30-minute sessions per week over 8 months as supplemental math instruction alongside normal classes.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Students with access to Rori showed significantly higher math growth than controls on a 35-item math assessment administered at baseline and endline over 8 months. Control students had mean growth of 2.12 (SD = 6.30, N=241) versus 5.13 (SD = 7.03, N=237/236 reported inconsistently) in treatment, a 3.01-point difference with p < 0.001; the reported effect size was Cohen's d = 0.36.",
+          "measure": "Growth in raw scores on a 35-question math assessment covering numeracy and algebra skills from grades 3 to 5 on the Global Proficiency Framework",
+          "effect_size": "Cohen's d = 0.36",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=477"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is an experimental school-level study with random assignment of 11 schools to treatment and control and baseline equivalence checks, but it is a preliminary year-1 evaluation with attrition and some reporting inconsistencies in sample counts, so it falls short of blue-tier certainty.",
+  "impact_tier": "blue",
+  "impact_tier_rationale": "The reported effect size for math outcomes was d = 0.36, which exceeds the 0.20 threshold for medium/large impact under the framework.",
+  "citations": [
+    {
+      "title": "The State of Global Learning Poverty: 2022 Update",
+      "doi": null,
+      "year": 2022,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "establishes LMIC learning crisis and low math proficiency framing"
+    },
+    {
+      "title": "The 2 Sigma Problem: The Search for Methods of Group Instruction as Effective as One-to-One Tutoring",
+      "doi": "10.2307/1175554",
+      "year": 1984,
+      "venue": "Educational Researcher",
+      "citation_level": 2,
+      "citation_context": "grounds claim that one-to-one tutoring strongly improves learning"
+    },
+    {
+      "title": "The Effectiveness of One-to-One Tutoring by Community Tutors for at-Risk Beginning Readers",
+      "doi": "10.2307/1511219",
+      "year": 1997,
+      "venue": "Learning Disability Quarterly",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Learning from human tutoring",
+      "doi": null,
+      "year": 2001,
+      "venue": "Cognitive Science",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Shadow education in Sub-Saharan Africa: scale, nature and policy implications",
+      "doi": null,
+      "year": 2021,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Overview of state of digital development around the world based on ITU data",
+      "doi": null,
+      "year": 2022,
+      "venue": "International Telecommunication Union (ITU)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Internet Connectivity Seen as Having Positive Impact on Life in Sub-Saharan Africa",
+      "doi": null,
+      "year": null,
+      "venue": "Pew Research Center",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Relative Effectiveness of Human Tutoring, Intelligent Tutoring Systems, and Other Tutoring Systems",
+      "doi": null,
+      "year": 2011,
+      "venue": "Educational Psychologist",
+      "citation_level": 2,
+      "citation_context": "frames ITSs as scalable approximations to one-to-one tutoring"
+    },
+    {
+      "title": "A meta-analysis of the effectiveness of intelligent tutoring systems on college students\u2019 academic learning.",
+      "doi": "10.1037/a0034752",
+      "year": 2014,
+      "venue": "Journal of Educational Psychology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Adaptive intelligent tutoring systems for e-learning systems",
+      "doi": null,
+      "year": 2010,
+      "venue": "Procedia - Social and Behavioral Sciences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Intelligent Tutoring Systems by and for the Developing World: A Review of Trends and Approaches for Educational Technology in a Global Context",
+      "doi": "10.1007/s40593-014-0028-6",
+      "year": 2015,
+      "venue": "International Journal of Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Teaching at the Right Level to improve learning",
+      "doi": null,
+      "year": 2018,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "defines TaRL approach that inspires Rori\u2019s personalized instruction"
+    },
+    {
+      "title": "Mainstreaming an Effective Intervention: Evidence from Randomized Evaluations of \u2018Teaching at the Right Level\u2019 in India",
+      "doi": null,
+      "year": 2016,
+      "venue": "MIT Department of Economics Working Paper",
+      "citation_level": 2,
+      "citation_context": "provides key TaRL evidence benchmark and conceptual inspiration"
+    },
+    {
+      "title": "Disrupting Education? Experimental Evidence on Technology-Aided Instruction in India",
+      "doi": null,
+      "year": 2019,
+      "venue": "American Economic Review",
+      "citation_level": 2,
+      "citation_context": "benchmark for technology-supported personalized learning gains"
+    },
+    {
+      "title": "Mobile Learning During School Disruptions in Sub-Saharan Africa",
+      "doi": "10.1177/23328584211014860",
+      "year": 2021,
+      "venue": "AERA Open",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Learners and caregivers barriers and attitudes to SMS-based mobile learning in Kenya",
+      "doi": "10.30918/AERJ.114.23.088",
+      "year": 2023,
+      "venue": "African Educational Research Journal",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Student Engagement in Mobile Learning via Text Message",
+      "doi": "10.1145/3386527.3405921",
+      "year": 2020,
+      "venue": "Proceedings of the Seventh ACM Conference on Learning @ Scale",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Estimating Effect Sizes From Pretest-Posttest-Control Group Designs",
+      "doi": "10.1177/1094428106291059",
+      "year": 2008,
+      "venue": "Organizational Research Methods",
+      "citation_level": 3,
+      "citation_context": "used to calculate pooled pretest-posttest-control effect size"
+    },
+    {
+      "title": "Visible learning: a synthesis of over 800 meta-analyses relating to achievement",
+      "doi": null,
+      "year": 2010,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Interpreting Effect Sizes of Education Interventions",
+      "doi": "10.3102/0013189X20912798",
+      "year": 2020,
+      "venue": "Educational Researcher",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

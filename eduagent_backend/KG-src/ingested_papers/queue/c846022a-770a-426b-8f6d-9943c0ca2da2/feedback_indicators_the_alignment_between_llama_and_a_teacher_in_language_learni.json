@@ -1,0 +1,79 @@
+{
+  "title": "Feedback Indicators: The Alignment between Llama and a Teacher in Language Learning",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2508.11364v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper investigates whether feedback indicators extracted automatically from student language-learning texts by a large language model (Llama 3.1) align with human teacher ratings. The motivation is to support transparent, scalable formative feedback generation by identifying textual indicators that can later be used to predict rubric-based feedback criteria and, eventually, to auto-generate feedback for learners.\n\nThe study first derives a set of binary and list-based textual indicators from rubric criterion descriptions used in a university French-as-a-foreign-language course. The model is prompted to extract indicator values from student submissions, and these values are then correlated with teacher ratings on a feedback grid covering criteria such as sociolinguistic appropriateness, information and description skills, coherence and cohesion, vocabulary, spelling, grammar, and morphosyntax. The context is an online course at Humboldt-Universit\u00e4t zu Berlin with voluntary writing micro-tasks for students of all faculties.\n\nResults show that many extracted indicators have moderate to strong correlations with teacher ratings, suggesting that LLMs can reliably identify several relevant features from learner texts. However, only a minority of indicators aligned with the intended criterion as originally designed, implying that rubric criteria are often complex and not fully captured by the initial prompt-derived indicators. The authors conclude that LLM-based indicator extraction is promising for teacher-support tools and transparent automated feedback, but that prompt design, validation, and attention to bias and generalizability remain important.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a small correlational study rather than an experimental comparison, using indirect alignment between LLM outputs and teacher rubric ratings. It is peer-reviewed or conference-style research with a clear method, but it does not establish causal effects on learning or teacher performance.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports promising correlations and a potentially useful workflow for automating feedback-indicator extraction, but the sample is very small (n=11) and the work does not measure downstream student gains or actual time savings. The practical impact is therefore plausible but still unclear and modest.",
+  "interventions": [
+    {
+      "intervention": "Automated Feedback System",
+      "confidence": 0.98,
+      "role": "primary",
+      "use_case": "LLM-based extraction of feedback indicators from K-12-adjacent language learners' written submissions to support automated formative feedback generation and teacher-aligned scoring on rubric criteria."
+    },
+    {
+      "intervention": "AI Writing / Language Tool",
+      "confidence": 0.77,
+      "role": "secondary",
+      "use_case": "Llama-based processing of student French writing to identify linguistic and contextual features relevant to teacher feedback on language accuracy and discourse quality."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Literacy",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The study found moderate to high alignment between Llama-generated feedback indicators and teacher ratings for French writing submissions from n=11 consenting students. Across 63 extracted indicators, 44 (70%) had at least one acceptable Pearson correlation (|PCC|\u2265.5) with a rubric criterion, and 15 indicators showed high statistically significant correlations (|PCC|\u2265.70, p<.01).",
+        "measure": "Pearson correlations between LLM-extracted writing indicators and teacher rubric ratings across 10 language-feedback criteria",
+        "study_size": "n=11",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Automated Feedback System"
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.9,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper argues that extracting indicators automatically could reduce teacher workload and enable scalable formative feedback generation. While no direct time-on-task effect was experimentally measured, the approach is presented as a way to automate part of the rating/feedback pipeline and support teacher use of existing rubric data at scale.",
+        "measure": "Teacher workload / scalability of feedback-indicator extraction (conceptual and methodological claim, not a direct time study)",
+        "study_size": "n=11",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Automated Feedback System"
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "non_representative_population",
+    "no_long_term_followup",
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "15",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "medium",
+  "study_country": "Germany",
+  "study_region": "Europe",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

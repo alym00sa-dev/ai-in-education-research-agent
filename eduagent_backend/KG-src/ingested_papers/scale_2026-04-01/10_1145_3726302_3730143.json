@@ -1,0 +1,245 @@
+{
+  "title": "CoachGPT: A Scaffolding-based Academic Writing Assistant",
+  "doi": "10.1145/3726302.3730143",
+  "year": 2025,
+  "venue": "Proceedings of the 48th International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR '25)",
+  "url": "https://arxiv.org/abs/2506.18149",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Qualitative",
+  "extended_summary": "This paper addresses a key concern with large language models in education: while tools such as ChatGPT can generate text fluently, they may undermine learning by producing essays for students instead of teaching them how to write. The authors focus on academic writing support, especially for novice writers and second-language writers who may lack access to instructors or other educational resources. The paper asks how an LLM-based writing assistant can be designed to provide instructional scaffolding rather than simply generating finished text.\n\nTo address this problem, the authors developed CoachGPT, a web-based academic writing assistant built around an 11-stage scaffolding structure. The system guides users through pre-writing, identifying resources, forming a thesis statement, building an outline, drafting introduction/body/conclusion paragraphs, revising, evaluating word choice, and checking grammar. Prompt engineering techniques were used to keep the model in a coaching role, including persona prompting, constraints against rewriting student work, criteria-based feedback, structured output, and input validation. The system was implemented as an online application using a Vue/Nuxt frontend, FastAPI and LangChain backend, and MySQL database.\n\nThe empirical component is a small qualitative user study using cognitive interviews with three users identified by pseudonyms: two with some academic writing experience and one with minimal experience. The paper does not provide explicit institutional enrollment status for participants, but the context is academic writing support for students, and the work is situated at the University of Delaware in the United States. The study examined user experience with personalization, interface navigation, and the usefulness of the scaffolding structure.\n\nThe main conclusion is that CoachGPT appears useful as a responsible academic writing assistant that offers attentive, adaptive feedback and a user-friendly interface. Participants reported that the personalized feedback made them feel heard and supported, and they valued the scaffolded guidance. At the same time, the study revealed areas for improvement, including simplifying terminology in early stages, improving thesis and counterargument support, and making grammar feedback more specific. Overall, the paper presents CoachGPT as a promising educationally oriented alternative to general-purpose text generation tools, though the evidence is preliminary and based on a very small qualitative study.",
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_control_group",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "yes",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "CoachGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "tutoring_instruction"
+      ],
+      "description": "An LLM-based academic writing assistant web application that uses a scaffolding workflow to guide writers through stages such as pre-writing, thesis development, outlining, paragraph drafting, revising, word choice evaluation, and grammar checking, while providing personalized feedback.",
+      "use_case": "Studied as a scaffolding-based academic writing assistant for novice and developing academic writers, including second-language writers, with qualitative user testing focused on usefulness, personalized feedback, interface/navigation, and support across writing stages.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Literacy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In a qualitative user study with three participants (Alex, Taylor, and Jamie; n=3), users reported that CoachGPT was useful for academic writing and provided personalized, attentive, and adaptive feedback during revision. The paper states that the user study 'proves the effectiveness' of CoachGPT, but reports no quantitative learning outcome measures or effect sizes.",
+          "measure": "Qualitative user perceptions of usefulness and personalized writing support in academic writing",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=3"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Participants reported that CoachGPT had an intuitive, user-friendly interface and easy navigation, though they suggested improvements such as being able to view or hide the outline while writing. These findings are based on qualitative cognitive interviews only, with no quantitative usability metrics reported.",
+          "measure": "Qualitative user experience with navigation and interface usability",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=3"
+        },
+        {
+          "outcome_category": "Academic \u2014 Literacy",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Users valued CoachGPT's scaffolding and grammar feedback, but also identified shortcomings: Jamie found the term 'key questions' confusing, all users wanted more formulaic thesis templates, Alex noted issues with counterargument detection, and grammar feedback lacked specific in-text error highlighting compared with Grammarly. This indicates perceived usefulness alongside notable design and feedback limitations.",
+          "measure": "Qualitative perceptions of scaffolding clarity and writing-feedback quality",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=3"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical paper with a user study, but the evidence is based on qualitative cognitive interviews with only three participants and no controlled comparison, validated outcome measure, or quantitative effect estimate.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "Reported impacts are positive but based on small-sample qualitative perceptions rather than measurable gains in writing performance, so the magnitude of impact is unclear.",
+  "citations": [
+    {
+      "title": "Instructional scaffolding in STEM education: Strategies and efficacy evidence",
+      "doi": null,
+      "year": 2017,
+      "venue": "Springer Opener",
+      "citation_level": 2,
+      "citation_context": "defines scaffolding as instructional support framework"
+    },
+    {
+      "title": "Language models are few-shot learners",
+      "doi": null,
+      "year": 2020,
+      "venue": "Advances in Neural Information Processing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ScholarGPT: Fine-Tuning Large Language Models for Discipline-Specific Academic Paper Writing",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Automated focused feedback generation for scientific writing assistance",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Grammarly as AI-powered English writing assistant: Students\u2019 alternative for writing English",
+      "doi": null,
+      "year": 2021,
+      "venue": "Metathesis: Journal of English Language, Literature, and Teaching",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A cognitive process theory of writing",
+      "doi": null,
+      "year": 1981,
+      "venue": "Composition and communication",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Three approaches to qualitative content analysis",
+      "doi": null,
+      "year": 2005,
+      "venue": "Qualitative Health Research",
+      "citation_level": 3,
+      "citation_context": "content analysis method for qualitative user study"
+    },
+    {
+      "title": "Towards explainable ai writing assistants for non-native english speakers",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A review of empirical evidence on scaffolding for science education",
+      "doi": null,
+      "year": 2012,
+      "venue": "International Journal of Science and Mathematics Education",
+      "citation_level": 2,
+      "citation_context": "supports scaffolding definition in educational settings"
+    },
+    {
+      "title": "Write-righter: An academic writing assistant system",
+      "doi": null,
+      "year": 2016,
+      "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Effects of Using Rubrics and Face to Face Feedback in Teaching Writing Skill in Higher Education",
+      "doi": null,
+      "year": 2020,
+      "venue": "International Online Journal of Education and Teaching",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Fine-Tuning Language Models for Scientific Writing Support",
+      "doi": null,
+      "year": 2023,
+      "venue": "International Cross-Domain Conference for Machine Learning and Knowledge Extraction",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Vygotsky, scaffolding, and the role of theory in writing center work",
+      "doi": null,
+      "year": 2014,
+      "venue": "The Writing Center Journal",
+      "citation_level": 2,
+      "citation_context": "basis for scaffolding structure in writing support"
+    },
+    {
+      "title": "Evaluating persona prompting for question answering tasks",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 10th International Conference on Artificial Intelligence and Soft Computing",
+      "citation_level": 2,
+      "citation_context": "motivates persona prompting as writing coach"
+    },
+    {
+      "title": "Open knowledge interface: A digital assistant to support students in writing academic assignments",
+      "doi": null,
+      "year": 2019,
+      "venue": "Proceedings of the 1st ACM SIGSOFT International Workshop on Education Through Advanced Software Engineering and Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Prompt Report: A Systematic Survey of Prompting Techniques",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_level": 2,
+      "citation_context": "supports use of prompt constraints and limiters"
+    },
+    {
+      "title": "Toward an understanding of the distinct nature of L2 writing: The ESL research and its implications",
+      "doi": null,
+      "year": 1993,
+      "venue": "TESOL Quarterly",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "AI-powered chatbots as personalized academic writing assistants for non-native English speakers",
+      "doi": null,
+      "year": 2024,
+      "venue": "Encyclopedia of educational innovation",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Cognitive load theory",
+      "doi": null,
+      "year": 2011,
+      "venue": "Springer",
+      "citation_level": 2,
+      "citation_context": "guides output design to reduce cognitive load"
+    },
+    {
+      "title": "Mind in society: The development of higher psychological processes",
+      "doi": null,
+      "year": 1978,
+      "venue": "Harvard University Press",
+      "citation_level": 2,
+      "citation_context": "theoretical grounding for scaffolding strategy"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

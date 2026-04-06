@@ -1,0 +1,82 @@
+{
+  "title": "Exploring LLM-Generated Feedback for Economics Essays: How Teaching Assistants Evaluate and Envision Its Use",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2505.15596v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Educator",
+    "Student"
+  ],
+  "study_design": "Qualitative",
+  "extended_summary": "This paper investigates whether large language model (LLM)-generated feedback can be useful as a suggestion layer to support human instructors, rather than replace them, in providing feedback on student essays. The authors focus on a key question: even when AI feedback is imperfect, can it still help human graders work faster and provide better feedback? The paper is particularly concerned with feedback on knowledge-intensive essays, where students must demonstrate accurate understanding of disciplinary concepts, and where prior work has shown both promise and limitations for LLM-generated feedback.\n\nTo study this, the authors built an LLM-powered feedback engine for a college introductory economics course. The system used detailed course rubrics to generate feedback in three stages for each rubric item: identifying relevant sentences in the essay, judging whether the rubric was met, and generating feedback intended to guide revision without directly giving the answer. AI-generated feedback, along with rubric information, judgments, highlights, and historical instructor feedback, was shown as in-text comments in a Word plugin. Teaching assistants first completed their normal grading, then in think-aloud sessions reviewed AI-generated feedback on essays they had already graded and compared it with their own feedback.\n\nThe study took place in Fall 2024 in ECON101 at the University of Michigan. Participants were 5 teaching assistants who took part in 20 one-hour think-aloud sessions spanning 4 writing assignments in a foundational undergraduate economics course. The context was a real course setting with frequent short essays on economic concepts such as market failure, externalities, labor, and automation. Although undergraduate students\u2019 essays were the artifact being evaluated, the primary studied users were the TAs, whose perceptions, critiques, and envisioned use of AI support formed the main data source.\n\nThe main conclusion is that TAs saw meaningful promise in using AI-generated feedback as suggestions during grading. They felt AI feedback was often more rubric-aligned, more detailed, and more likely to include praise, explanation, and guiding questions than their own comments under time pressure. At the same time, they identified important limitations: AI could be overly rigid, make conceptual mistakes, miss edge cases, and fail to provide the more holistic feedback humans offer. TAs especially valued transparent intermediate outputs such as highlighted evidence and AI judgments, which helped them detect and correct errors. Overall, the paper argues for human-AI collaboration in feedback provision, especially when detailed rubrics are available, but it does not test student revision outcomes or compare AI feedback against teacher or peer feedback in an experimental design.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a qualitative think-aloud study with 5 college TAs and no randomized or quasi-experimental comparison on student outcomes. It has a clear method, but only one of the credibility criteria relevant to the K-12 evidence framework is met, and it is not directly relevant to grades 9-12.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper suggests potentially useful but unquantified improvements in instructor workflow and perceived feedback quality, with no reported effect sizes or direct student outcome impacts. Impact is therefore unclear rather than demonstrated.",
+  "interventions": [
+    {
+      "intervention": "Automated Feedback System",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "LLM-powered rubric-aligned feedback generation for college introductory economics short essays, presented to teaching assistants as suggested in-text comments during grading rather than directly to students."
+    },
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.72,
+      "role": "secondary",
+      "use_case": "GPT-4o is used as the underlying large language model to identify rubric-relevant sentences, judge rubric satisfaction, and generate formative feedback comments on student-authored essays."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.88,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "In think-aloud sessions, 5 teaching assistants across 20 one-hour sessions reported that AI-generated highlights and draft comments could speed essay reading, reduce time spent composing individualized comments, and improve within-TA grading consistency. These are qualitative perceptions rather than measured productivity gains; no timing experiment, effect size, or statistical comparison was reported.",
+        "measure": "TA perceptions of grading speed, comment-writing effort, and consistency from think-aloud interviews/affinity analysis",
+        "study_size": "n=5 TAs; 20 sessions",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.67,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "TAs judged the LLM-generated feedback to be often more rubric-aligned, explanatory, and personalized than historical generic comments, but also observed recurring failures: rigid rubric application, mistakes on domain-specific economics terminology, insufficient holistic treatment of conceptual misunderstandings, and inability to account for course-specific scope. The study does not measure student learning or essay score improvement, so evidence is limited to instructor perceptions of feedback quality in economics writing.",
+        "measure": "Qualitative TA evaluations of feedback quality, rubric alignment, personalization, and adequacy for economics essay feedback",
+        "study_size": "n=5 TAs; 20 sessions",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_control_group",
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "classroom",
+  "teacher_training": "yes",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

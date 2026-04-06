@@ -1,0 +1,80 @@
+{
+  "title": "Implementing a Chatbot Solution for Learning Management Systems",
+  "doi": null,
+  "year": 2022,
+  "venue": "arXiv preprint",
+  "url": "http://arxiv.org/abs/2206.13187v2",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses the problem of how to build and integrate an educational chatbot into a learning management system so that students can ask questions about course content and receive automated support. The authors focus on making chatbots more useful in an educational setting by combining conversational AI with web scraping and LMS integration, rather than evaluating learning outcomes in a controlled study.\n\nThe intervention is a prototype chatbot built with ChatterBot and a PySide2 graphical interface, integrated into Blackboard through Tampermonkey userscripts. The chatbot was intended to act as a virtual teaching assistant that could answer student questions and potentially learn from course materials scraped from Blackboard pages or other supportive websites. The paper also discusses database management for chatbot training and the technical process of merging training corpora.\n\nThe intended context is higher education, specifically a Blackboard-based course environment at the Norwegian University of Science and Technology. The paper reports that the integration and web scraping were technically feasible in part, but that the bot required more training and that Blackboard security limited direct data extraction. Overall, the paper concludes that integrating an AI chatbot into an educational platform is plausible, but the current prototype is limited by training quality, design issues, and access/security constraints.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a preprint systems/implementation paper with no controlled study, no quantitative evaluation of learner outcomes, and no clear empirical design beyond a prototype demonstration. It is useful as descriptive grey literature but does not meet criteria for rigorous evidence.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "The paper reports feasibility only and provides no measured student outcome improvement or effect size. Any educational impact remains speculative, so the demonstrated impact is effectively absent.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "Educational chatbot integrated into Blackboard to answer student questions about course topics and act as a virtual teaching assistant; the system is trained on corpus data and can be supplemented by scraped course materials."
+    },
+    {
+      "intervention": "Computer-Assisted Instruction (CAI)",
+      "confidence": 0.6,
+      "role": "secondary",
+      "use_case": "Chatbot-assisted support for learning management system course content and basic question answering, functioning as a software-mediated instructional support rather than a full adaptive tutor."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.86,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper reports that integrating a chatbot into Blackboard was technically plausible and could help students access course information without contacting instructors, suggesting potential workflow and access efficiencies. However, this is an implementation/preprint paper without quantitative outcome evaluation, so no effect size or comparative performance data are reported.",
+        "measure": "Feasibility of chatbot integration; ability to answer student questions and surface course materials",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.58,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The authors argue that the chatbot could increase interactivity and improve the learning experience by making support available when instructors are unavailable, but they do not present direct survey or behavioral evidence. The claims are conceptual rather than measured, so no effect size is reported.",
+        "measure": "Perceived interactivity, student learning experience, and engagement claims",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "low",
+  "study_country": "Norway",
+  "study_region": "Europe",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

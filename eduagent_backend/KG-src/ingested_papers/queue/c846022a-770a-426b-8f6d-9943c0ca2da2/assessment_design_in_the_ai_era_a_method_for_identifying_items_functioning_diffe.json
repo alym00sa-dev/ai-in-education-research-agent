@@ -1,0 +1,59 @@
+{
+  "title": "Assessment Design in the AI Era: A Method for Identifying Items Functioning Differentially for Humans and Chatbots",
+  "doi": null,
+  "year": 2026,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2603.23682v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "High School (9th-12th)",
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses a measurement and assessment-design problem created by the rapid adoption of generative AI in education: how to identify assessment items on which large language models (LLMs) and human learners behave differently, in ways that matter for validity, reliability, and fairness. The authors argue that standard benchmark-style comparisons of chatbot performance are insufficient because they mostly report overall scores rather than item-level differences conditioned on ability.\n\nTo address this, the paper proposes a psychometrically grounded method that combines Differential Item Functioning (DIF) analysis with negative control testing and item-total correlation diagnostics. Humans are treated as the reference group and chatbots as the focal group. The approach is evaluated on response data from two instruments: a high school chemistry diagnostic test and a university entrance exam quantitative section. Six chatbots were tested, including multiple versions of GPT, Gemini, and Claude, with repeated runs to simulate artificial students.\n\nThe study finds that LR-DIF is more stable and useful than MH-DIF for this purpose, especially when combined with an ITC threshold to filter unstable items. Domain experts reviewing chemistry items concluded that chatbots tended to outperform humans on items requiring rule-governed conceptual reasoning, but underperformed on items requiring visual interpretation, linguistic nuance, and multi-step quantitative reasoning. The main conclusion is that DIF-based analysis can provide a reliable framework for detecting human\u2013GenAI differences and informing better assessment design in AI-rich contexts.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a method-development and comparative psychometric study, not an intervention trial. It uses a clear analytic design with human and chatbot response data plus negative controls, but it is observational and primarily diagnostic rather than causal.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper has clear relevance for assessment design in AI-rich K-12 and higher-education contexts, but it reports no learning effect size or direct educational impact. Its contribution is methodological and likely important for validity/fairness, yet the demonstrated impact on student outcomes is indirect and unclear.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.95,
+      "role": "primary",
+      "use_case": "Evaluating six leading chatbots (GPT-4o, GPT-5.2, Gemini 1.5 Pro, Gemini 3 Pro, Claude 3.5 Sonnet, Claude 4.5 Sonnet) as respondents on multiple-choice assessment items to characterize where generative AI answers differ from human learners."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Scientific Reasoning",
+      "confidence": 0.94,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The paper does not test student learning gains; instead, it evaluates how well chatbots and humans respond to chemistry assessment items. Subject-matter experts found chatbot advantages on items requiring rule-governed chemistry reasoning (e.g., NaCl ionic structure, conservation of matter, oxidation states) and disadvantages on items requiring visual interpretation and multi-step quantitative problem solving.",
+        "measure": "Item-level correct responses on a 22-item high school chemistry diagnostic test; DIF flags validated by expert content analysis",
+        "study_size": "n=931 students; chatbot responses from 6 LLMs, 20 runs each per model",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

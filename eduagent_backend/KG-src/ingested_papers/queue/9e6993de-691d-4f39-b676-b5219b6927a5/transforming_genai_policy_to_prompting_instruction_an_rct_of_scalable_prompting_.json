@@ -1,0 +1,111 @@
+{
+  "title": "Transforming GenAI Policy to Prompting Instruction: An RCT of Scalable Prompting Interventions in a CS1 Course",
+  "doi": null,
+  "year": 2026,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2602.16033v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper investigates whether explicit instruction in pedagogical prompting can help students use generative AI as a learning support rather than as a shortcut for answers. The authors focus on a higher-education computer science context, arguing that many students already use GenAI tools but often do so in ways that may undermine learning. The study asks whether prompting instruction improves students\u2019 prompting skills, whether different instructional formats matter, and whether gains in prompting skill relate to broader course performance.\n\nTo study this, the authors conducted a semester-long randomized controlled trial in an introductory CS1 course with 979 students at a public North American university. Students were randomly assigned to one of four conditions with increasing cognitive engagement: a brief baseline reminder about ethical AI use, scenario-based reading, component selection, and select-then-write prompting practice with automated LLM feedback. The intervention was embedded in a mandatory weekly lab, and outcomes included pre-test, immediate post-test, delayed post-test, surveys, time-on-task, and qualitative open-ended responses. Prompt quality was scored using a rubric aligned to a five-part pedagogical prompting framework.\n\nThe participant population was primarily first-year undergraduate computing students, mostly intending to major in computer science. After data cleaning, the final analytic sample was 431 students. The study took place in a single university course in North America rather than a K-12 setting, and the learning target was prompting literacy for programming help-seeking, not reading or literacy outcomes.\n\nThe main conclusion is that all four conditions significantly improved pedagogical prompting skill, with larger gains as instructional engagement increased; the select-then-write condition produced the largest immediate and delayed gains. However, there were no significant between-group differences on final exam scores, although stronger prompting post-test performance predicted slightly better final exam results after controlling for pre-test scores. For the user\u2019s retrieval question, this paper is a clear near-miss rather than direct evidence: it is an RCT involving generative AI, but it does not address K-12 populations, foundational reading outcomes, or literacy intervention in reading contexts.",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is a large randomized controlled trial with strong internal validity for its higher-education CS1 context, but it is not K-12, not focused on reading, and the analyzed sample dropped to 431 from 979 randomized, which creates relevance and attrition concerns for the target evidence question.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports substantial effects on prompting-literacy outcomes, but impacts on broader academic performance were unclear because final exam differences were not significant. For the targeted K-12 foundational reading question, this is only an adjacent near-miss and does not establish direct impact on reading outcomes.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.96,
+      "role": "primary",
+      "use_case": "Semester-long randomized instructional intervention in a university CS1 course teaching students to use generative AI through pedagogical prompting as a tutor-like learning support rather than a solution provider; Condition 4 also included LLM-powered validation/feedback on students' written prompts."
+    },
+    {
+      "intervention": "Automated Feedback System",
+      "confidence": 0.66,
+      "role": "secondary",
+      "use_case": "In the highest-engagement condition, an LLM (gpt-4o) automatically evaluated student-written pedagogical prompts against criteria and returned actionable feedback when key components were missing."
+    },
+    {
+      "intervention": "Computer-Assisted Instruction (CAI)",
+      "confidence": 0.56,
+      "role": "secondary",
+      "use_case": "Software-delivered prompting-literacy modules with text reminders, scenario-based reading, selection tasks, and structured prompt-writing activities implemented during a required lab."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.88,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "In a randomized trial in a university CS1 course, all four instructional conditions significantly improved pedagogical prompting skill from pre-test to immediate post-test and delayed post-test. Immediate gains increased from Condition 1 to 4 (0.08, 0.39, 0.45, 0.51), with reported effect sizes ranging from r=0.53 to 1.96 depending on condition/test; however, there were no significant between-group differences on final exam scores (F(3,427)=1.29, p=.278, eta^2=.009), although higher immediate post-test prompting scores predicted slightly higher final exam performance (beta=0.090, t(428)=3.01, p=.003).",
+        "measure": "Pedagogical prompting skill assessments (pre, immediate post, delayed post) and CS1 final exam scores",
+        "study_size": "N=979 randomized; analytic sample n=431",
+        "effect_size": "Immediate gain effect sizes reported by condition: 0.53, 1.63, 1.96, 1.82; delayed gain effect sizes: 0.38, 0.75, 0.85, 1.09; final exam ANOVA eta^2=0.009; regression beta=0.090",
+        "confidence_interval": "Final exam means by condition reported with 95% CIs: C1 [0.64, 0.71], C2 [0.68, 0.74], C3 [0.66, 0.72], C4 [0.68, 0.74]",
+        "std_deviation": "Immediate gain SDs: 0.15, 0.24, 0.23, 0.28; delayed gain SDs: 0.16, 0.20, 0.20, 0.22; final exam SDs: 0.17, 0.17, 0.18, 0.17"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.9,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The randomized interventions produced significant improvements in prompting literacy/pedagogical prompting, interpreted by the authors as a transferable learning strategy and AI literacy skill. Gains were durable at delayed post-test six weeks later, with the strongest condition showing delayed gain M=0.24 (SD=0.22) and the weakest showing M=0.06 (SD=0.16), all p<.001.",
+        "measure": "Prompting literacy / pedagogical prompting rubric-scored assessments across pre-test, immediate post-test, and delayed post-test",
+        "study_size": "N=979 randomized; analytic sample n=431",
+        "effect_size": "Immediate effect sizes by condition: 0.53, 1.63, 1.96, 1.82; delayed effect sizes: 0.38, 0.75, 0.85, 1.09",
+        "confidence_interval": "not_reported",
+        "std_deviation": "Delayed gain SDs by condition: 0.16, 0.20, 0.20, 0.22"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.62,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "Constructive engagement in Condition 4 led to significantly higher frustration than Conditions 1-3 (M=2.07 vs. 1.46-1.58 on a 1-5 scale; F(3,427)=7.05, p<.001), though frustration remained below the midpoint. At the same time, students across conditions reported regular continued use of pedagogical prompting over six weeks (M=3.49-3.83 on a 1-5 frequency scale), and frustration did not predict later usage (beta=-0.010, t(416)=-0.245, p=.807).",
+        "measure": "Self-reported frustration and subsequent usage/adoption surveys",
+        "study_size": "n=431",
+        "effect_size": "Frustration regression beta=-0.010 for predicting usage; omnibus frustration difference F(3,427)=7.05",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.58,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The interventions differed substantially in time cost, with median durations of 0.89, 3.14, 11.11, and 36.92 minutes across Conditions 1-4, while all still produced statistically significant prompting-skill gains. This suggests a tradeoff between instructional time and magnitude of learning gains rather than a single uniformly superior efficiency profile.",
+        "measure": "Time-on-task / intervention duration and gain-per-minute comparisons across conditions",
+        "study_size": "n=431",
+        "effect_size": "not_reported",
+        "confidence_interval": "Median duration 95% CIs reported: C1 [0.71, 1.07], C2 [2.56, 3.62], C3 [8.88, 12.31], C4 [34.71, 42.78]",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "single_site",
+    "non_representative_population",
+    "high_attrition"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "lab",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

@@ -1,0 +1,108 @@
+{
+  "title": "Educators\u2019 Perceptions of Large Language Models as Tutors: Comparing Human and AI Tutors in a Blind Text-only Setting",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2506.08702v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Middle School (6th-8th)"
+  ],
+  "user_types": [
+    "Educator"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper asks how large language model (LLM) tutors compare with human tutors when both are evaluated in a blind, text-only setting. The authors focus not on learning gains, but on four perceived tutoring qualities: engagement, empathy, scaffolding, and conciseness. Their goal is to understand whether LLM-based tutors can match or exceed human tutors on these latent pedagogical factors that may influence learning.\n\nThe study compares dialog snippets from two sources: MathDial conversations, which were produced by human tutors interacting with simulated students, and MWPTutor conversations, which are LLM-generated tutoring dialogs with guardrails to maintain correctness. The materials are math word-problem tutoring conversations at the grade-school level, truncated to five turns and presented side-by-side in a blind pairwise evaluation. Human annotators with teaching experience, recruited through Prolific, judged which dialog was better on each metric; three frontier LLMs also performed the same comparisons.\n\nThe main finding is that both humans and LLM judges generally favored the LLM-based tutor, MWPTutor, across all four metrics, though the human judgments were less extreme and engagement was the only metric without a statistically significant advantage. The authors conclude that, in this constrained text-only tutoring context, LLMs can be perceived as at least as good as human tutors on several important dimensions, suggesting potential for delegating repetitive tutoring tasks to AI. They also note that LLM and human judgments are not perfectly aligned, and that the results are limited to a narrow math tutoring setting with simulated students.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed empirical comparison study, but it is a blind preference/annotation design rather than a causal student-learning experiment. The evidence is qualitative/correlational with substantial ecological limits (text-only, simulated student, one math dataset), so it does not meet strong RCT/QED criteria.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper suggests modest positive effects for tutoring quality and possible workload reduction, but it does not measure student achievement or real-world implementation impact. The findings are relevant to a priority K-12 domain, yet the practical effect on learners is indirect and uncertain.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "Blind text-only comparison of a human tutor versus an LLM-based math word-problem tutor (MWPTutor/GPT-based with guardrails) using 5-turn tutoring snippets on grade-school mathematics."
+    },
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.9,
+      "role": "secondary",
+      "use_case": "Human tutoring conversations from MathDial are used as the comparator baseline against the LLM tutor in the head-to-head evaluation."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "This paper does not measure student learning gains directly; instead, it evaluates tutoring quality in grade-school math word-problem dialogs. Human annotators with teaching experience preferred the LLM tutor (MWPTutor) over the human tutor on scaffolding and overall tutor quality in a blind text-only comparison, with significant advantages on scaffolding (t=3.16, p<0.001) and related tutor behaviors.",
+        "measure": "Human educator pairwise preference judgments on tutoring dialogs for math word problems, especially scaffolding quality",
+        "study_size": "n=210 conversation pairs; 35 annotators",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.9,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Educator judges perceived the LLM tutor as more engaging and empathetic than the human tutor in this blind comparison, although engagement was not statistically significant while empathy was significant. Reported statistics include empathy mean score 0.65 with SD=2.81 and t=3.36 (p<0.001); engagement mean score 0.25 with SD=2.72 and t=1.32 (p=0.09), based on 210 paired dialog comparisons.",
+        "measure": "Human educator pairwise preference judgments on engagement and empathy in tutoring dialogs",
+        "study_size": "n=210 conversation pairs; 35 annotators",
+        "effect_size": "d=0.68 (engagement, subgroup analysis in Continue scenario); d=0.30 (engagement, Fresh scenario); other outcomes not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "2.72 (engagement), 2.81 (empathy)"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.86,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The study uses scaffolding as a proxy for tutoring support that can promote independent problem solving, and the LLM tutor was judged better than the human tutor on this dimension. Human ratings favored MWPTutor on scaffolding with mean score 0.55, SD=2.19, and t=3.65 (p<0.001) across 210 dialog pairs.",
+        "measure": "Human educator pairwise preference judgments on scaffolding quality in math tutoring dialogs",
+        "study_size": "n=210 conversation pairs; 35 annotators",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "2.19"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.9,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper directly argues that the LLM tutor was more concise than the human tutor, which is relevant to reducing conversational overhead and teacher workload. Human ratings significantly favored MWPTutor on conciseness (mean score 0.55, SD=2.19, t=3.65, p<0.001), and the authors interpret this as evidence that LLM tutoring could reduce the load on teachers.",
+        "measure": "Human educator pairwise preference judgments on conciseness of tutoring dialogs",
+        "study_size": "n=210 conversation pairs; 35 annotators",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "2.19"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "no_long_term_followup",
+    "implementation_fidelity_not_reported",
+    "non_representative_population"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "yes",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Switzerland",
+  "study_region": "Europe",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

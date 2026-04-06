@@ -1,0 +1,95 @@
+{
+  "title": "Evidence-Decision-Feedback: Theory-Driven Adaptive Scaffolding for LLM Agents",
+  "doi": null,
+  "year": 2026,
+  "venue": null,
+  "url": "http://arxiv.org/abs/2602.01415v4",
+  "source_db": "arxiv_search",
+  "populations": [
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses how large language model (LLM) pedagogical agents can provide adaptive, theory-grounded support in open-ended learning environments without becoming opaque or encouraging student overreliance. The authors argue that many existing LLM tutors use a one-size-fits-all approach, provide insufficiently interpretable reasoning, and may help task performance without supporting durable learning. In response, they introduce the Evidence-Decision-Feedback (EDF) framework, which separates learner-state inference, pedagogical decision-making, and feedback generation into distinct but connected modules.\n\nThe framework is instantiated in Copa, a collaborative peer agent embedded in the C2STEM environment for STEM+C problem solving. Copa uses multiple sub-agents to analyze student log data and dialogue, infer learner states and conceptual gaps, select dialogue policies, and generate adaptive feedback. The system was developed through participatory design and prompt refinement, and it was intended to scaffold student inquiry while fading support as students gained mastery.\n\nThe empirical evaluation took place in an authentic high school science classroom in Nashville, USA, with 33 sophomore dyads participating in a six-week kinematics curriculum. Students worked on open-ended computational modeling tasks involving 1-D and 2-D motion and interacted with Copa as needed. The study combined system log analyses, conversation analyses, exit surveys, and educator feedback. Quantitative analyses examined whether Copa\u2019s scaffolding changed with student mastery, whether verbalized understanding aligned with mastery, whether students relied less on the agent as mastery increased, and whether the system\u2019s internal evidence-policy-feedback chain was interpretable.\n\nThe main conclusions are that Copa\u2019s feedback adapted in theoretically expected ways as mastery rose, students\u2019 verbalized understanding was positively associated with task mastery, requests for support declined as students became more competent, and the system\u2019s intermediate reasoning outputs showed statistically significant grounding, alignment, and faithfulness relative to random baselines. Student perceptions were mixed: they appreciated thought-provoking questions but often wanted more direct answers. The authors conclude that EDF is a viable framework for designing interpretable, pedagogically meaningful LLM agents, while also noting that the evidence is correlational, from a single implementation context, and lacks comparison against alternative systems.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an authentic classroom empirical study with clear methods and quantitative analyses, but it is a single-group correlational design without randomization or a comparison condition; the authors explicitly note the absence of an RCT and that findings are correlational rather than causal.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports statistically significant within-system associations suggesting beneficial adaptive scaffolding and reduced overreliance, but it does not provide causal treatment effects on external learning outcomes or head-to-head comparator evidence. Impact is therefore promising but unclear.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "Theory-driven adaptive LLM peer agent (Copa) embedded in a high school STEM simulation environment to provide dialogic scaffolding, probing questions, action suggestions, and feedback during dyadic computational modeling of kinematics."
+    },
+    {
+      "intervention": "Educational Game / Simulation",
+      "confidence": 0.66,
+      "role": "secondary",
+      "use_case": "C2STEM open-ended simulation/modeling environment used as the learning context in which students build 1-D and 2-D kinematics models while interacting with the LLM agent."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Scientific Reasoning",
+      "confidence": 0.78,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "In a classroom deployment with n=33 high-school dyads, students' verbalized conceptual understanding was positively associated with task mastery while using Copa. The paper reports a significant Spearman correlation between response success rate after agent probes and mastery deciles (rho=0.40), suggesting that progress in the kinematics modeling tasks aligned with students' ability to explain their reasoning rather than mere task completion; no standardized external science test effect size was reported.",
+        "measure": "Task mastery in C2STEM kinematics tasks and success rate in verbally explaining code/concepts after agent probes",
+        "study_size": "n=33 dyads",
+        "effect_size": "rho=0.40",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.74,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Students relied less on the LLM agent as mastery increased, which the authors interpret as evidence of growing autonomy/self-regulation rather than overreliance. Across n=33 dyads, requests for support were highest early in learning (about 59% of support while mastery was below 40%) and declined significantly with mastery (Spearman rho=-0.26); student perception ratings were mixed, with appropriate questioning rated moderately positively (mean=3.81/5) but perceived usefulness lower (mean=2.77/5).",
+        "measure": "Agent support requests across mastery deciles; exit survey perceptions of appropriateness, understanding, and usefulness",
+        "study_size": "n=33 dyads",
+        "effect_size": "rho=-0.26; survey means 3.81, 3.88, 2.69, 2.77",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.71,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Copa's scaffolding adapted as students progressed, decreasing probing and increasing implementation/extension-oriented prompts, which the authors frame as support for knowledge construction and collaborative problem solving. In n=33 dyads, PROBE_UNDERSTANDING declined with mastery (rho=-0.34, p=0.034), while SUGGEST_ACTION (rho=0.33, p=0.039) and PUSH_LIMIT (rho=0.42, p=0.007) increased, indicating scaffold fading and deeper challenge as students advanced.",
+        "measure": "Dialogue policy frequencies across mastery quintiles; correlations between mastery and agent scaffolding moves",
+        "study_size": "n=33 dyads",
+        "effect_size": "rho=-0.34; rho=0.33; rho=0.42",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_control_group",
+    "self_reported_measures",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "6",
+  "setting": "classroom",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

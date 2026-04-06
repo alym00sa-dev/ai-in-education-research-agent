@@ -1,0 +1,90 @@
+{
+  "title": "ClassMind: Scaling Classroom Observation and Instructional Feedback with Multimodal AI",
+  "doi": null,
+  "year": 2025,
+  "venue": "ACM conference proceedings (conference acronym not reported in text)",
+  "url": "http://arxiv.org/abs/2509.18020v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "K-12 (unspecified grade)",
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses the problem that classroom observation and instructional coaching are effective for teacher development but difficult to scale because they are expensive, time-intensive, and dependent on a limited number of expert coaches. The authors ask how multimodal generative AI can support teacher reflection and instructional feedback while remaining aligned with professional teaching frameworks and teacher expectations.\n\nTo address this, they present ClassMind, an AI-based classroom observation system that ingests classroom recordings and optional contextual materials such as slides, lesson plans, and notes, then produces rubric-aligned feedback. The system uses an AVA-Align agent framework to analyze long classroom videos, identify pedagogical hotspots, generate strengths/growth opportunities/actionable advice, and validate feedback against timestamped evidence. The prototype is grounded in established frameworks including the Danielson Framework, Bloom\u2019s taxonomy, and COPUS.\n\nThe study used a mixed-methods formative design: a survey of 75 U.S. PK\u201312 teachers, interviews with six high school educators (four teachers and two instructional coaches), and a simulated-user role-play study with six secondary-school teachers using ATLAS classroom videos. Across these studies, teachers generally viewed the system as useful, easy to use, fair, and novel, especially for saving time, providing objective evidence, and surfacing full-lesson patterns. Teachers also raised concerns about privacy, AI accuracy, cognitive load, and the limits of AI relative to human judgment. The paper concludes that multimodal AI can scale expert-like instructional feedback, but should complement rather than replace human coaching and must be designed around trust, transparency, and clear role boundaries.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a qualitative/simulated-user study with small samples (n=6 for the main user study; n=75 survey) and no randomized comparison against human coach feedback or another intervention. It is peer-reviewed research with empirical methods, but credibility for causal claims is limited.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The study suggests promising usability and perceived usefulness, but it does not report learning gains or robust effect sizes on teacher practice. Impact appears modest and exploratory, with results mainly indicating potential rather than demonstrated large-scale effects.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.95,
+      "role": "primary",
+      "use_case": "multimodal generative AI coaching for K-12 classroom observation and instructional feedback on full lesson videos, including rubric-aligned comments, timestamped evidence, and actionable teaching suggestions"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper reports that teachers found the system useful for saving time and reducing the burden of classroom observation feedback, with survey results showing 72% comfort with AI saving time and interviewees emphasizing streamlined review of lesson evidence. In the simulated-user study with n=6 teachers, usability was high (USE M=5.9/7, 95% CI [5.5, 6.4]) and workload was modest (NASA-TLX overall M=28.5/100), suggesting the tool can support faster lesson review and reflection.",
+        "measure": "USE questionnaire; NASA-TLX; teacher interview themes about time savings and navigation efficiency",
+        "study_size": "n=6 (user study); n=75 (survey)",
+        "effect_size": "not_reported",
+        "confidence_interval": "USE M=5.9/7, 95% CI [5.5, 6.4]; NASA-TLX M=28.5/100, 95% CI [18.1, 38.9]",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.8,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Teachers reported that the system helped them reflect on instructional practice, compare intended versus actual questioning and engagement patterns, and connect evidence to professional frameworks. In the n=6 study, participants rated fairness and causability highly (FATE total M=5.8/7, 95% CI [5.4, 6.2]), and qualitative feedback indicated that timestamped, rubric-linked feedback supported metacognitive reflection and planning for future lessons.",
+        "measure": "FATE questionnaire; teacher reflection logs; semi-structured interview themes on reflection and professional growth",
+        "study_size": "n=6",
+        "effect_size": "not_reported",
+        "confidence_interval": "FATE total M=5.8/7, 95% CI [5.4, 6.2]",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.7,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Teachers responded positively to the system\u2019s supportive, strengths-oriented feedback style, reporting that it felt fair, non-biased, and easy to engage with. However, some also expressed concerns about privacy, accuracy, and accountability, indicating that affective reception was generally positive but not unqualified.",
+        "measure": "FATE emotion/satisfaction constructs; qualitative interview reactions",
+        "study_size": "n=6",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "no_control_group",
+    "self_reported_measures",
+    "non_representative_population",
+    "no_long_term_followup",
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

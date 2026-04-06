@@ -1,0 +1,120 @@
+{
+  "title": "AI tutoring can safely and effectively support students: An exploratory RCT in UK classrooms",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2512.23633v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Randomized Controlled Trial (RCT)",
+  "extended_summary": "This paper evaluates whether a generative AI tutor, LearnLM, can safely and effectively support secondary school mathematics learning in real classrooms. The motivating question is whether AI can help scale one-to-one tutoring, which is effective but expensive and difficult to provide broadly. The authors focus on direct comparisons between static, pre-written hints, human tutoring, and LearnLM-assisted tutoring under human supervision.\n\nThe intervention was an exploratory randomized controlled trial conducted on the Eedi mathematics platform in five UK secondary schools. A total of 165 students in Years 9 and 10 (ages 13\u201315) were randomly assigned either to receive static hints or to interactive tutoring; students in the tutoring arm were further randomized to sessions with a human tutor alone or with LearnLM supervised by a tutor. The tutors could approve, edit, or replace every AI draft before it reached the student, providing a high-fidelity supervised deployment context.\n\nThe paper reports that LearnLM was generally safe and pedagogically sound, with few factual errors and no harmful content found in the audited message corpus. On learning outcomes, interactive tutoring outperformed static hints for immediate mistake remediation and misconception resolution. Human tutoring and LearnLM were similar on these near-term outcomes, but LearnLM produced better transfer to the next topic: students tutored by LearnLM were more likely to solve a novel problem on subsequent topics than students tutored by human tutors alone. The authors also report that tutors valued LearnLM\u2019s Socratic questioning, but sometimes had to shorten or humanize its messages to avoid frustrating students, indicating a tradeoff between pedagogical rigor and social-emotional nuance.",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is a well-designed exploratory randomized controlled trial with nested randomization, baseline adjustment, and credible comparative outcomes, but it is small (n=165), short-term, and not fully powered for long-term effects. The authors also note design limits around throughput measurement and longer-term transfer, which keeps it below blue.",
+  "impact_tier": "green",
+  "impact_tier_rationale": "The observed learning gains are modest but meaningful: LearnLM shows a 5.5 percentage-point advantage over human tutoring on transfer, while interactive tutoring strongly outperforms static hints on immediate remediation. Because the study is limited to one mathematics platform and a small UK secondary-school sample, the impact is promising but not yet generalizable at scale.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "Supervised chat-based mathematics tutoring with LearnLM, a generative AI model fine-tuned for pedagogical dialogue and prompted to use Socratic questioning to help secondary students self-correct misconceptions on Eedi."
+    },
+    {
+      "intervention": "Computer-Assisted Instruction (CAI)",
+      "confidence": 0.78,
+      "role": "secondary",
+      "use_case": "Static, pre-written hints on the Eedi mathematics platform used as the comparison condition after students answered a diagnostic question incorrectly."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 1.0,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "In an exploratory RCT with n=165 Year 9-10 students across five UK secondary schools, interactive tutoring improved immediate mistake remediation and misconception resolution relative to static hints, and LearnLM performed at least as well as human tutors. Students guided by LearnLM answered the repeated question correctly 93.0% of the time versus 91.2% for human tutors and 65.4% for static hints; on the broader misconception-resolution measure, LearnLM reached 95.4% versus 94.9% for human tutors and 86.8% for hints.",
+        "measure": "Platform-based math learning outcomes: second-attempt correctness, misconception resolution within a study unit, and correctness on the first question of the next unit (knowledge transfer in mathematics).",
+        "study_size": "n=165",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    },
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 1.0,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Compared with static pre-written hints, interactive tutoring substantially improved immediate remediation in the same exploratory RCT (n=165). Human tutors led to 91.2% correct on the second attempt versus 65.4% for static hints, and 94.9% versus 86.8% for misconception resolution within the unit.",
+        "measure": "Platform-based math learning outcomes: second-attempt correctness and misconception resolution after receiving static hints versus human tutoring.",
+        "study_size": "n=165",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Computer-Assisted Instruction (CAI)"
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The strongest comparative advantage for LearnLM was on transfer to a new topic. Students who received supervised LearnLM tutoring were 5.5 percentage points more likely than those with human tutors alone to answer the first question of the next study unit correctly (66.2% vs 60.7%), with the paper reporting a credible interval for the difference of [-1.4%, +12.4%] and 93.6% credibility that LearnLM outperformed human tutoring.",
+        "measure": "Knowledge transfer to the first question of the next study unit in the same sequence.",
+        "study_size": "n=165",
+        "effect_size": "+0.055 (absolute percentage-point difference)",
+        "confidence_interval": "[-0.014, +0.124]",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Both interactive tutoring conditions outperformed static hints on transfer, with static hints at 56.2% correct on the next unit's first question versus 66.2% for LearnLM and 60.7% for human tutors. The paper does not provide a standardized effect size, but the absolute gains indicate a modest advantage for interactive support over pre-written hints.",
+        "measure": "Knowledge transfer to the first question of the next study unit in the same sequence.",
+        "study_size": "n=165",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Computer-Assisted Instruction (CAI)"
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.7,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The study qualitatively found that supervised LearnLM made tutoring feel more fluid and efficient for tutors, and 82.4% of tutors selected 'supporting multiple students at the same time' as its most useful feature. However, the design did not rigorously measure throughput or efficiency, so this is suggestive rather than causal evidence.",
+        "measure": "Tutor surveys, interviews, and informal post-trial simulation of simultaneous conversations",
+        "study_size": "n=17 tutors (survey); n=5 tutors (interviews)",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "no_long_term_followup",
+    "non_representative_population"
+  ],
+  "duration_weeks": "7",
+  "setting": "classroom",
+  "teacher_training": "yes",
+  "implementation_fidelity": "high",
+  "study_country": "United Kingdom",
+  "study_region": "Europe",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

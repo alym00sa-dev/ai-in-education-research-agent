@@ -1,0 +1,556 @@
+{
+  "title": "Retrieval-augmented Generation to Improve Math Question-Answering: Trade-offs Between Groundedness and Human Preference",
+  "doi": null,
+  "year": 2023,
+  "venue": "NeurIPS 2023 Workshop on Generative AI for Education (GAIED)",
+  "url": "https://arxiv.org/abs/2310.03184",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Middle School (6th-8th)",
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper examines whether retrieval-augmented generation (RAG) can improve large language model responses for conceptual math question-answering in educational settings, and whether more grounded responses are actually preferred by humans. The authors focus on a key tension in AI tutoring: LLMs can generate helpful conversational explanations, but they may hallucinate or produce answers that are misaligned with curriculum materials. The study asks whether adding retrieved textbook content to prompts can increase groundedness, and how that affects perceived response quality.\n\nThe intervention is a RAG-based math QA system built using GPT-3.5-turbo and an OpenStax Prealgebra textbook as the retrieval corpus. Student questions were drawn from Math Nation discussion board posts, and the system generated answers under different prompt guidance conditions: no guidance, low guidance, and high guidance, plus an information-retrieval baseline in one study. The authors evaluated outputs in three studies: automated groundedness metrics across 51 real student queries, a human ranking survey in which educators and education technology designers compared response quality and judged groundedness, and a relevance-annotation study examining whether retrieved document relevance predicted groundedness and preference.\n\nThe context is middle-school math question-answering, especially for a WhatsApp-based chatbot tutor called Rori used primarily by low-income learners in Sierra Leone, Liberia, Ghana, and Rwanda. However, the empirical evaluation itself used archived student questions and adult raters rather than live student users. The prompts were written for a hypothetical 13-year-old student in grade 8 or 9 living in Ghana, and the retrieved textbook content came from a prealgebra text covering topics such as functions and geometry.\n\nThe main conclusion is that RAG can improve perceived response quality, but only when prompting does not force the model to adhere too rigidly to retrieved text. Human raters preferred the low-guidance RAG responses over both unguided and highly guided responses, while high-guidance responses were judged more grounded in the textbook. This suggests a trade-off between groundedness and human preference: the most textbook-faithful responses were not necessarily the most helpful or preferred. The authors argue that designers of AI math QA systems should balance curriculum alignment with conversational usefulness, and they identify faithfulness in educational QA as an important open design and evaluation problem.",
+  "limitations": [
+    "small_sample",
+    "no_control_group",
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "identified_tools": [
+    {
+      "name": "Rori",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "language_speech"
+      ],
+      "description": "A WhatsApp-based chatbot math tutor used by middle-school students, with an ITS-style mastery-learning approach for procedural math lessons.",
+      "use_case": "The paper partners with Rori developers as an application context for adding LLM-based conceptual math question-answering, but does not empirically evaluate Rori itself.",
+      "findings": []
+    },
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "language_speech"
+      ],
+      "description": "OpenAI GPT-family large language model used here for generating math tutoring responses.",
+      "use_case": "Used via the OpenAI API (gpt-3.5-turbo-0613) inside a retrieval-augmented generation math QA system to answer real middle-school algebra and geometry questions under none, low, and high guidance prompt conditions.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "In a survey of 9 educators and education technology designers, responses generated with retrieval-augmented prompting were preferred most when using low guidance rather than no guidance or high guidance. Across 144 total preference rankings, low guidance beat high guidance in 63.8% of pairwise comparisons, low guidance beat none in 57.5%, and none beat high guidance in 51.7%, indicating a trade-off between groundedness and human preference rather than a monotonic benefit from more grounding.",
+          "measure": "Human preference rankings of generated math QA responses",
+          "effect_size": "63.8%; 57.5%; 51.7% pairwise preference rates",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=9 educators/designers; 144 rankings"
+        },
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Human raters perceived high-guidance RAG responses as more grounded in the retrieved textbook than low-guidance or no-guidance responses. Groundedness differed significantly across conditions (n=153, one-way ANOVA F(2.0, 99.38)=6.65, p=0.001), with mean groundedness scores of 0.52 for none, 0.59 for low, and 0.90 for high on an ordinal 0-2 scale.",
+          "measure": "Human-annotated groundedness of responses in retrieved textbook content",
+          "effect_size": "F(2.0, 99.38)=6.65",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=153"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Automated groundedness metrics increased as prompt guidance increased, showing prompt engineering can manipulate how strongly generated responses align with retrieved textbook text. The paper reports pooled correlations between automated metrics and human annotations as modest: for groundedness, K-F1++ r=0.52, BLEURT r=0.33, and BERTScore r=0.51; for relevance, K-F1++ r=0.31, BLEURT r=0.30, and BERTScore r=0.42.",
+          "measure": "Correlation of automated groundedness metrics with human annotations",
+          "effect_size": "K-F1++ r=0.52; BLEURT r=0.33; BERTScore r=0.51; relevance correlations r=0.31, 0.30, 0.42",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=51 queries pooled across conditions"
+        },
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Retrieved document relevance was positively associated with perceived groundedness of generated responses, but not with human preference rankings. Across 51 queries, the correlation between retrieved document relevance and perceived groundedness was r=0.56 (p<0.001), while the paper reports no significant relationship between relevance and preference; for example, when low-guidance responses were preferred over high-guidance responses, mean relevance was slightly higher but non-significant (diff=0.19, t=-1.45, p=0.15).",
+          "measure": "Relationship of retrieval relevance to perceived groundedness and preference",
+          "effect_size": "r=0.56; diff=0.19; t=-1.45; p=0.15",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=51 queries"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical multi-study evaluation, but it relies on survey-based human judgments from educators/designers rather than student learning outcomes, with small samples and no randomized trial of learning impact. The study is useful but preliminary.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper shows clear differences in preference and groundedness across prompting conditions, but reports no direct student achievement effects and the practical educational impact remains uncertain. Effects are mostly comparative percentages and correlations rather than demonstrated learning gains.",
+  "citations": [
+    {
+      "title": "Evaluating Correctness and Faithfulness of Instruction-Following Models for Question Answering",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_level": 3,
+      "citation_context": "adapted groundedness judgment scale and procedural faithfulness framing"
+    },
+    {
+      "title": "Towards the Future of AI-Augmented Human Tutoring in Math Learning",
+      "doi": "10.1007/978-3-031-36336-8_3",
+      "year": 2023,
+      "venue": "Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "TripJudge: A Relevance Judgement Test Collection for TripClick Health Retrieval",
+      "doi": "10.1145/3511808.3557714",
+      "year": 2022,
+      "venue": "Proceedings of the 31st ACM International Conference on Information & Knowledge Management",
+      "citation_level": 3,
+      "citation_context": "adapted four-point relevance annotation scale"
+    },
+    {
+      "title": "Using an Intelligent Tutor and Math Fluency Training to Improve Math Performance",
+      "doi": null,
+      "year": 2011,
+      "venue": "International Journal of Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Math Discourse Linguistic Components (Cohesive Cues within a Math Discussion Board Discourse)",
+      "doi": "10.1145/3491140.3528320",
+      "year": 2022,
+      "venue": "Proceedings of the Ninth ACM Conference on Learning @ Scale",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Improving Language Models by Retrieving from Trillions of Tokens",
+      "doi": null,
+      "year": 2022,
+      "venue": "Proceedings of the 39th International Conference on Machine Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "On the application of Large Language Models for language teaching and assessment technology",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Parent Document Retriever - LangChain",
+      "doi": null,
+      "year": 2023,
+      "venue": "LangChain documentation",
+      "citation_level": 3,
+      "citation_context": "retrieval implementation using parent document retriever"
+    },
+    {
+      "title": "Reading Wikipedia to Answer Open-Domain Questions",
+      "doi": "10.18653/v1/P17-1171",
+      "year": 2017,
+      "venue": "Proceedings of the 55th Annual Meeting of the Association for Computational Linguistics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Dangers of trusting Stochastic Parrots: Faithfulness and Trust in Open-domain Conversational Question Answering",
+      "doi": "10.18653/v1/2023.findings-acl.60",
+      "year": 2023,
+      "venue": "Findings of the Association for Computational Linguistics: ACL 2023",
+      "citation_level": 2,
+      "citation_context": "groundedness versus faithfulness distinction frames implications"
+    },
+    {
+      "title": "A Learning Analytics Approach to Monitoring the Quality of Online One-to-One Tutoring",
+      "doi": null,
+      "year": 2022,
+      "venue": "Journal of Learning Analytics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "FaithDial: A Faithful Benchmark for Information-Seeking Dialogue",
+      "doi": "10.48550/arXiv.2204.10757",
+      "year": 2022,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "New and improved embedding model",
+      "doi": null,
+      "year": 2022,
+      "venue": "OpenAI Blog",
+      "citation_level": 3,
+      "citation_context": "embedding model used for dense retrieval"
+    },
+    {
+      "title": "REALM: retrieval-augmented language model pre-training",
+      "doi": null,
+      "year": 2020,
+      "venue": "Proceedings of the 37th International Conference on Machine Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Fine-Grained Relevance Annotations for Multi-Task Document Ranking and Question Answering",
+      "doi": "10.1145/3340531.3412878",
+      "year": 2020,
+      "venue": "Proceedings of the 29th ACM International Conference on Information & Knowledge Management",
+      "citation_level": 3,
+      "citation_context": "adapted four-point relevance annotation scale"
+    },
+    {
+      "title": "Intelligent tutors as teachers\u2019 aides: exploring teacher needs for real-time analytics in blended classrooms",
+      "doi": "10.1145/3027385.3027451",
+      "year": 2017,
+      "venue": "Proceedings of the Seventh International Learning Analytics & Knowledge Conference",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Conceptual Knowledge or Procedural Knowledge or Conceptual Knowledge and Procedural Knowledge: Why the Conjunction Is Important to Teachers",
+      "doi": null,
+      "year": 2021,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Atlas: Few-shot Learning with Retrieval Augmented Language Models",
+      "doi": "10.48550/arXiv.2208.03299",
+      "year": 2022,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Survey of Hallucination in Natural Language Generation",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT for good? On opportunities and challenges of large language models for education",
+      "doi": "10.1016/j.lindif.2023.102274",
+      "year": 2023,
+      "venue": "Learning and Individual Differences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A Blueprint for Scaling Tutoring and Mentoring across Public Schools",
+      "doi": null,
+      "year": 2021,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Internet-augmented language models through few-shot prompting for open-domain question answering",
+      "doi": null,
+      "year": 2022,
+      "venue": "OpenReview",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "llm-math-education: Retrieval augmented generation for middle-school math question answering and hint generation",
+      "doi": "10.5281/zenodo.8284412",
+      "year": 2023,
+      "venue": "Zenodo",
+      "citation_level": 3,
+      "citation_context": "codebase and task setup for math QA system"
+    },
+    {
+      "title": "Retrieval-augmented generation for knowledge-intensive NLP tasks",
+      "doi": null,
+      "year": 2020,
+      "venue": "Proceedings of the 34th International Conference on Neural Information Processing Systems",
+      "citation_level": 2,
+      "citation_context": "RAG paradigm underlies system and study framing"
+    },
+    {
+      "title": "Natural Language Generation Using Deep Learning to Support MOOC Learners",
+      "doi": null,
+      "year": 2021,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Pyserini: A Python Toolkit for Reproducible Information Retrieval Research with Sparse and Dense Representations",
+      "doi": "10.1145/3404835.3463238",
+      "year": 2021,
+      "venue": "Proceedings of the 44th International ACM SIGIR Conference on Research and Development in Information Retrieval",
+      "citation_level": 3,
+      "citation_context": "BM25 sparse retrieval baseline implementation"
+    },
+    {
+      "title": "Are Emergent Abilities in Large Language Models just In-Context Learning?",
+      "doi": "10.48550/arXiv.2309.01809",
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Prealgebra (2 ed.)",
+      "doi": null,
+      "year": 2020,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "retrieval corpus textbook providing grounded source documents"
+    },
+    {
+      "title": "Augmented Language Models: a Survey",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Reframing Instructional Prompts to GPTk\u2019s Language",
+      "doi": "10.18653/v1/2022.findings-acl.50",
+      "year": 2022,
+      "venue": "Findings of the Association for Computational Linguistics: ACL 2022",
+      "citation_level": 2,
+      "citation_context": "prompt reframing motivates guidance manipulation"
+    },
+    {
+      "title": "Scaffolding Student Participation in Mathematical Practices",
+      "doi": null,
+      "year": 2015,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "MTEB: Massive Text Embedding Benchmark",
+      "doi": "10.48550/arXiv.2210.07316",
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "NAEP Mathematics: National Average Scores",
+      "doi": null,
+      "year": 2022,
+      "venue": "NAEP",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The impressive effects of tutoring on prek-12 learning: A systematic review and meta-analysis of the experimental evidence",
+      "doi": null,
+      "year": 2020,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Generative Large Language Models for Dialog-Based Tutoring: An Early Consideration of Opportunities and Concerns",
+      "doi": null,
+      "year": 2023,
+      "venue": "CEUR Workshop Proceedings",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Check Your Facts and Try Again: Improving Large Language Models with External Knowledge and Automated Feedback",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Intelligent tutoring systems: Lessons learned",
+      "doi": null,
+      "year": 1988,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "SQuAD: 100,000+ Questions for Machine Comprehension of Text",
+      "doi": null,
+      "year": 2016,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Cognitive Tutor: Applied Research in Mathematics Education",
+      "doi": null,
+      "year": 2007,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Not a One-Way Street: Bidirectional Relations between Procedural and Conceptual Knowledge of Mathematics",
+      "doi": null,
+      "year": 2015,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Intelligent Tutoring Systems",
+      "doi": "10.1016/B0-08-043076-7/01618-1",
+      "year": 2001,
+      "venue": "International Encyclopedia of the Social & Behavioral Sciences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "BLEURT: Learning Robust Metrics for Text Generation",
+      "doi": "10.18653/v1/2020.acl-main.704",
+      "year": 2020,
+      "venue": "Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics",
+      "citation_level": 3,
+      "citation_context": "automated groundedness metric evaluated against annotations"
+    },
+    {
+      "title": "MathBERT: A Pre-trained Language Model for General NLP Tasks in Mathematics Education",
+      "doi": null,
+      "year": 2021,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "CLASS Meet SPOCK: An Education Tutoring Chatbot based on Learning Science Principles",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Design Recommendations for Intelligent Tutoring Systems. Volume 2: Instructional Management",
+      "doi": null,
+      "year": 2014,
+      "venue": "Technical Report",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "How Does Augmented Observation Facilitate Multimodal Representational Thinking? Applying Deep Learning to Decode Complex Student Construct",
+      "doi": null,
+      "year": 2021,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Improving Mathematics Tutoring With A Code Scratchpad",
+      "doi": "10.18653/v1/2023.bea-1.2",
+      "year": 2023,
+      "venue": "Proceedings of the 18th Workshop on Innovative Use of NLP for Building Educational Applications",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Behavior of Tutoring Systems",
+      "doi": null,
+      "year": 2006,
+      "venue": "International Journal of Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The relative effectiveness of human tutoring, intelligent tutoring systems, and other tutoring systems",
+      "doi": "10.1080/00461520.2011.611369",
+      "year": 2011,
+      "venue": "Educational Psychologist",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "MINT: Evaluating LLMs in Multi-turn Interaction with Tools and Language Feedback",
+      "doi": "10.48550/arXiv.2309.10691",
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Large Language Models as Optimizers",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "LeanDojo: Theorem Proving with Retrieval-Augmented Language Models",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Can Crowds Customize Instructional Materials with Minimal Expert Guidance? Exploring Teacher-guided Crowdsourcing for Improving Hints in an AI-based Tutor",
+      "doi": "10.1145/3449193",
+      "year": 2021,
+      "venue": "Proceedings of the ACM on Human-Computer Interaction",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Critically Examining the \"Neural Hype\": Weak Baselines and the Additivity of Effectiveness Gains from Neural Ranking Models",
+      "doi": "10.1145/3331184.3331340",
+      "year": 2019,
+      "venue": "Proceedings of the 42nd International ACM SIGIR Conference on Research and Development in Information Retrieval",
+      "citation_level": 3,
+      "citation_context": "supports BM25 baseline comparison for retrieval choice"
+    },
+    {
+      "title": "Retrieval-Enhanced Machine Learning",
+      "doi": "10.1145/3477495.3531722",
+      "year": 2022,
+      "venue": "Proceedings of the 45th International ACM SIGIR Conference on Research and Development in Information Retrieval",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "BERTScore: Evaluating Text Generation with BERT",
+      "doi": null,
+      "year": 2020,
+      "venue": "OpenReview",
+      "citation_level": 3,
+      "citation_context": "automated groundedness metric evaluated against annotations"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

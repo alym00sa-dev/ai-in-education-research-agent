@@ -1,0 +1,72 @@
+{
+  "title": "Opportunities for Adaptive Experiments to Enable Continuous Improvement in Computer Science Education",
+  "doi": "10.1145/3660650.3660659",
+  "year": 2024,
+  "venue": "WCCCE \u201924",
+  "url": "http://arxiv.org/abs/2310.12324v2",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper examines how adaptive experimentation can be used to support continuous improvement in computer science education, especially in settings where instructors want to compare pedagogical strategies while still giving current students the best available experience. The authors argue that traditional randomized A/B tests can produce useful evidence but do not quickly feed results back into instruction, creating a tension between research goals and immediate student benefit.\n\nThe paper presents a case study of an online homework intervention in a CS1 course: adding a self-explanation prompt after a multiple-choice question. The adaptive version uses a Bayesian multi-armed bandit approach, Thompson Sampling Beta-Bernoulli, to increasingly allocate students toward the better-performing condition while the experiment is ongoing. The traditional version uses uniform random assignment. The study was implemented in Fall 2021 at a public research-focused North American university in an Introduction to Computer Programming course with more than 1,000 initially enrolled students; the reported analysis includes 483 students in the traditional arm and 438 in the adaptive arm.\n\nThe main result is that both approaches favored the self-explanation prompt, but the adaptive experiment assigned far more students to the better condition: 82.6% received the prompt in the adaptive arm, compared with approximately 50% allocation in the traditional experiment. The paper concludes that adaptive experimentation can help bridge research and practice by improving student experience during the course, while also noting statistical and ethical considerations, especially around inference with bandit data and the need for appropriate design choices such as burn-in and batch updates.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed conference paper with a real classroom deployment and randomized components, but it is primarily a case study/methodological demonstration rather than a fully designed efficacy trial. The adaptive arm also creates non-independent assignment, and the paper relies on simple mean comparisons rather than a rigorous RCT-focused causal analysis.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The observed performance difference is modest (means around 0.51-0.61 on the follow-up MCQ), and the main contribution is procedural\u2014showing that adaptive assignment can favor the better condition\u2014rather than demonstrating a large student learning gain. The evidence is promising but limited to one CS1 homework context and a single proximal outcome.",
+  "interventions": [
+    {
+      "intervention": "Other",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "adaptive experimentation / multi-armed bandit assignment (Thompson sampling) for online CS1 homework prompts, dynamically allocating students to self-explanation vs no-prompt conditions"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.9,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "In a CS1 online homework case study (traditional A/B n=483; adaptive n=438), adding a self-explanation prompt improved correctness on a subsequent multiple-choice question. In the traditional randomized experiment, Condition 2 outperformed Condition 1 (M=0.608, SEM=0.032 vs M=0.512, SEM=0.032; Wald Z=2.122), and the adaptive experiment showed the same pattern (M=0.599 vs M=0.539).",
+        "measure": "Correctness/accuracy on a follow-up multiple-choice question after the homework prompt",
+        "study_size": "n=921 total across both assignment policies (traditional n=483; adaptive n=438)",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Other"
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The adaptive Thompson sampling policy substantially shifted exposure toward the better-performing condition, serving 82.6% of students the self-explanation prompt versus roughly balanced allocation in the traditional experiment (N1=246, N2=237). The paper characterizes this as more than a 30% reallocation toward the better outcome, illustrating improved decision efficiency and faster use of evidence during deployment.",
+        "measure": "Allocation proportion to prompt vs no-prompt conditions under adaptive vs traditional assignment",
+        "study_size": "n=921 total across both assignment policies",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Other"
+    }
+  ],
+  "limitations": [
+    "single_site",
+    "short_duration",
+    "no_long_term_followup",
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Canada",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

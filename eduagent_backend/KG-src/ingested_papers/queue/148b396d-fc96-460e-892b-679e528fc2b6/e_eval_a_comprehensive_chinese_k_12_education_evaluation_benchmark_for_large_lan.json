@@ -1,0 +1,102 @@
+{
+  "title": "E-EVAL: A Comprehensive Chinese K-12 Education Evaluation Benchmark for Large Language Models",
+  "doi": null,
+  "year": 2024,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2401.15927v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Elementary (PreK-5th)",
+    "Middle School (6th-8th)",
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper introduces E-EVAL, a benchmark for evaluating large language models (LLMs) in Chinese K-12 education. The authors argue that existing benchmarks do not adequately cover the full K-12 range in China, especially elementary school content, and propose a more comprehensive evaluation suite focused on subject knowledge and reasoning across primary, middle, and high school levels.\n\nE-EVAL contains 4,351 multiple-choice questions spanning 23 subjects, including Chinese, English, politics, history, geography, mathematics, physics, chemistry, and biology. The benchmark is organized into arts and science categories and includes development, validation, and test splits. The questions were manually collected and processed from regional homework, practice materials, and mock exams, with attention to formatting, formula accuracy, and answer balance. The paper evaluates 15 advanced LLMs using zero-shot, few-shot-answer-only, and few-shot-chain-of-thought prompting.\n\nThe main findings are that Chinese-dominant models generally outperform English-dominant models on Chinese K-12 tasks, but most models still struggle with science subjects, especially mathematics. The authors also find that few-shot prompting helps more on arts subjects than science, while chain-of-thought prompting helps on more complex science problems but can reduce performance overall. They conclude that E-EVAL can serve as a useful benchmark for tracking and improving LLM performance in Chinese K-12 education.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a benchmark/evaluation paper, not a controlled educational intervention study. It uses a systematic test set and compares multiple LLMs, but there is no student-level randomization, causal estimate, or classroom outcome measurement.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper has clear relevance for assessing K-12 LLM capability, but it does not demonstrate learner impact. Reported results are benchmark accuracies only, so any educational impact is indirect and currently unclear.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "Benchmarking large language models for Chinese K-12 education using multiple-choice questions across primary, middle, and high school subjects, including science and arts domains, under zero-shot and few-shot prompting conditions."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 0.9,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The benchmark showed that LLMs performed poorly on complex mathematics relative to arts subjects, with science/math accuracy consistently lower overall. At the same time, chain-of-thought prompting improved performance on challenging science subjects such as mathematics, indicating that reasoning scaffolds can help on harder math items, but no standardized effect size was reported.",
+        "measure": "Accuracy on mathematics multiple-choice questions in E-EVAL; comparison of zero-shot, few-shot-answer-only, and few-shot-chain-of-thought prompting",
+        "study_size": "n=4351 total questions; mathematics subset included within the 10 science subjects (exact n for math not separately reported)",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    },
+    {
+      "outcome": "Academic \u2014 Scientific Reasoning",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "Across the science subset, models generally underperformed relative to arts, and the paper reports that chain-of-thought prompting was effective mainly for challenging science subjects. The authors also note that few-shot prompting helped less for science than arts, suggesting that structured reasoning benefits some science tasks but not uniformly; no effect sizes were reported.",
+        "measure": "Accuracy on science-subject multiple-choice questions (physics, chemistry, biology, mathematics, science) under zero-shot, few-shot-ao, and few-shot-cot prompts",
+        "study_size": "n=4351 total questions; science subset n=1652",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    },
+    {
+      "outcome": "Academic \u2014 Literacy",
+      "confidence": 0.9,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "LLMs performed better on arts/language subjects than on science subjects, and few-shot prompting produced a larger improvement for arts, especially Chinese language, than for science. The paper reports accuracy values for subject groups rather than an intervention effect size; for example, top models reached very high arts accuracy (e.g., 92.5% for Qwen-72B-Chat) compared with lower science accuracy.",
+        "measure": "Accuracy on Chinese and English language/arts multiple-choice questions; zero-shot vs few-shot prompting comparisons",
+        "study_size": "n=4351 total questions; arts subset n=2699",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    },
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.88,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The benchmark reports subject-level performance across history, politics, geography, ethics, and other non-science, non-language K-12 subjects, with models generally doing better in arts than sciences. It is a benchmark study rather than an instructional intervention study, so the main finding is descriptive performance variation rather than a causal effect size.",
+        "measure": "Accuracy on non-science K-12 subject questions across the E-EVAL arts subset",
+        "study_size": "n=4351 total questions; arts subset n=2699",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    }
+  ],
+  "limitations": [
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup",
+    "non_representative_population"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "China",
+  "study_region": "East Asia & Pacific",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

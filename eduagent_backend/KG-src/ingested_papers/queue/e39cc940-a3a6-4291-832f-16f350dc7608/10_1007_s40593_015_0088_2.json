@@ -1,0 +1,94 @@
+{
+  "title": "Example-Tracing Tutors: Intelligent Tutor Development for Non-programmers",
+  "doi": "10.1007/s40593-015-0088-2",
+  "year": 2016,
+  "venue": "Int J Artif Intell Educ",
+  "url": "https://doi.org/10.1007/s40593-015-0088-2",
+  "source_db": "openalex_search",
+  "populations": [
+    "Elementary (PreK-5th)",
+    "Middle School (6th-8th)",
+    "High School (9th-12th)",
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Meta-Analysis / Systematic Review",
+  "extended_summary": "This paper reviews the development and use of example-tracing tutors built with CTAT (Cognitive Tutor Authoring Tools), focusing on whether non-programmers can author effective intelligent tutoring systems (ITS). The authors revisit their earlier claim that example-tracing tutors are a mature ITS paradigm and argue that these tutors qualify as intelligent because they provide adaptive, step-level guidance, student modeling, and problem selection, even when built without traditional programming.\n\nThe intervention studied is not a single experiment but a synthesis of 18 CTAT-built tutors that had been used in real educational settings since 2009, alongside discussion of the CTAT/Tutorshop authoring and deployment architecture. The reviewed tutors span mathematics, science, and other domains, with notable mathematics examples including Mathtutor (grades 6-8), Lynnette (equation solving for grades 6-8), the Stoichiometry Tutor, the Fractions Tutor, the Proportional Reasoning Tutor, and other problem-solving or example-based tutors. These systems support step-by-step feedback, hints, error-specific messages, worked examples, erroneous examples, adaptive task sequencing, and interactive graphical representations.\n\nThe paper concludes that CTAT makes it feasible for non-programmers to create sophisticated ITS at scale and that example-tracing tutors can be effective in real classrooms and other instructional settings. It also notes important tradeoffs and constraints: example-tracing tutors work best when solution spaces are moderately branching, they are less suited to large ontologies, natural-language interaction, and some open-ended domains, and some problem types in middle-school mathematics were too complex to implement feasibly with this approach. The paper further highlights that richer analytics, deeper MOOC/LMS integration, and broader adaptability to affect, metacognition, and custom student models remain areas for future work.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed synthesis and design/evaluation paper, but it is not a single well-controlled experimental study; much of the evidence summarized is drawn from prior classroom studies and project reports. The paper is strong on descriptive and cumulative evidence, but weaker on direct causal inference because it does not present one unified RCT or meta-analysis.",
+  "impact_tier": "green",
+  "impact_tier_rationale": "The paper reports several medium-to-large effects in mathematics and science tutoring, plus substantial deployment scale and cost savings. However, the impact is concentrated in specific tutor implementations rather than a single generalizable intervention effect, so overall impact is best coded as modest-to-strong rather than maximal.",
+  "interventions": [
+    {
+      "intervention": "Intelligent Tutoring System (ITS)",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "example-tracing intelligent tutoring system authoring and deployment platform (CTAT/Tutorshop) for step-level tutoring with hints, error feedback, Bayesian Knowledge Tracing, and adaptive problem selection"
+    },
+    {
+      "intervention": "Educational Game / Simulation",
+      "confidence": 0.6,
+      "role": "secondary",
+      "use_case": "CTAT-supported educational games and interactive simulation-like tutors using example tracing and erroneous examples, including Decimal Point and other game-based instructional activities"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 1.0,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper reports multiple positive learning findings for mathematics tutors built with CTAT. In grades 6-8, the Lynnette equation-solving tutor produced medium to large pre/post gains across four classroom studies with n=487, with effect sizes of d=0.69, d=1.65, and d=1.17; one study was not significant due to a ceiling effect. The Fractions Tutor also showed gains in elementary mathematics, including d=0.40 on an immediate post-test and d=0.60 on a delayed post-test in the last of five classroom studies with over 3,000 students.",
+        "measure": "Pre/post learning gains; post-test and delayed post-test scores on mathematics skill assessments",
+        "study_size": "n=487 for Lynnette; over 3,000 students for Fractions Tutor",
+        "effect_size": "d=0.69, d=1.65, d=1.17; d=0.40; d=0.60",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Academic \u2014 Scientific Reasoning",
+      "confidence": 1.0,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Several CTAT-based science tutors produced positive learning outcomes. The Genetics Tutor, used in 45 single-unit in-course evaluations across 15 colleges/universities and 4 high schools, produced average pretest-to-posttest gains of about 18 percentage points. The Stoichiometry Tutor and AdaptErrEx also showed benefits in chemistry and decimals, including better delayed-test performance for erroneous-example conditions (d=.62 and d=.33 in two studies with n=208 and n=390).",
+        "measure": "Pre/post learning gains, delayed test scores, and performance on science problem-solving assessments",
+        "study_size": "45 single-unit evaluations for Genetics Tutor; n=208 and n=390 for AdaptErrEx; n=295 across two studies for Stoichiometry Tutor",
+        "effect_size": "~18 percentage points; d=.62; d=.33; time-efficiency d=1.76 to 3.31; mental effort d=0.89 to 1.04",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 1.0,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The article argues that CTAT substantially improves authoring efficiency and deployment scalability. It reports that example-tracing tutors were 4-8 times as cost-effective as literature estimates for ITS development, with instructional-to-development time ratios around 1:50 to 1:100 versus earlier estimates of 1:200 to 1:300; a related non-programmer tool reported ratios of 1:28 to 1:40. The paper also notes that CTAT tutors had reached about 44,000 students and generated 48,000,000 transactions, indicating substantial scale of use.",
+        "measure": "Development cost/time ratios; scale of deployment and logged transactions",
+        "study_size": "not_reported",
+        "effect_size": "4-8x cost-effectiveness; 1:50 to 1:100 instructional-to-development time ratio; 44,000 students; 48,000,000 transactions",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "blended",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

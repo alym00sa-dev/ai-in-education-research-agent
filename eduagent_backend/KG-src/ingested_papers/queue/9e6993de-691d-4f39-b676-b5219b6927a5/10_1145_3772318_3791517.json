@@ -1,0 +1,123 @@
+{
+  "title": "When Scaffolding Breaks: Investigating Student Interaction with LLM-Based Writing Support in Real-Time K-12 EFL Classrooms",
+  "doi": "10.1145/3772318.3791517",
+  "year": 2026,
+  "venue": "Proceedings of the 2026 CHI Conference on Human Factors in Computing Systems (CHI '26)",
+  "url": "http://arxiv.org/abs/2512.05506v3",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Middle School (6th-8th)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator",
+    "Parent",
+    "School"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper investigates how large language model (LLM)-based writing support functions in real-time K-12 English-as-a-Foreign-Language (EFL) classrooms, with particular attention to whether scaffolded, step-by-step AI assistance helps or hinders students under ordinary classroom constraints. The authors focus on a key gap in the literature: most prior work on LLM-supported writing has been conducted in asynchronous, higher-education, or self-study settings, whereas middle school classrooms involve limited time, mixed proficiency, teacher orchestration, and equity concerns. The study asks how students with different proficiency levels use the system, how those interaction patterns relate to retention and application of grammar and vocabulary knowledge, and how classroom dynamics shift when an LLM becomes part of instruction.\n\nTo study this, the researchers built WriteAid, a chat-based LLM writing support tool co-designed with a middle school English teacher. The system offered four task-oriented functions: sample essay access, collaborative sentence construction from Korean or code-mixed input, vocabulary/grammar explanation, and grammar checking. It was explicitly designed to scaffold rather than simply provide answers, using prompts based on established scaffolding strategies. The tool was deployed during two classroom writing assignments over six weeks, and the researchers combined multiple data sources: system logs from 133 consenting students, qualitative coding of sampled interactions, naturalistic classroom observations across three sessions, teacher interview data, and a delayed written assessment completed independently 2-3 weeks after the writing sessions.\n\nThe study took place in one public middle school in South Korea with eighth-grade students aged 13-14 learning English as a foreign language. A total of 157 students used the system, with 133 consenting to data analysis. Students worked on in-class English writing tasks typical of the Korean curriculum, producing short compositions that incorporated target grammar from the unit. The classroom context was important to the findings: students had beginner-level English proficiency on average, limited instructional time, and heterogeneous skill levels. The paper also explicitly examines teacher and peer roles in this live classroom environment.\n\nThe main conclusions are that LLM support improved students' ability to produce grammatically correct sentences during class, but the benefits were uneven. Higher-performing students tended to use the LLM for lower-order support such as vocabulary translation and validation, while lower-performing students more often relied on it for sentence generation and iterative revision, suggesting greater dependency. The step-by-step scaffolding approach sometimes demotivated lower-proficiency students and increased frustration, especially under time pressure. The delayed writing assessment suggested that students could use LLM-supported sentence construction to improve immediate grammatical accuracy, but transfer into independent performance was much stronger for high-performing students than for middle- and low-performing students. Classroom observations further showed that the tool changed participation patterns: extroverted students still captured teacher attention, introverted students turned more to the LLM, peer learning opportunities were reduced, and teachers found it harder to identify struggling students. The authors argue that future classroom LLM systems should be proficiency-aware, cross-lingually sensitive, and designed to support teacher awareness and equitable participation.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed classroom deployment with mixed-method evidence, but it is not an RCT or quasi-experimental causal design. Outcomes rely heavily on descriptive statistics, qualitative coding, observation, and follow-up writing assessment without a control group, so credibility is limited.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper shows promising immediate writing-support benefits, especially for sentence-level grammatical correctness, but also notable drawbacks for lower-proficiency students and unclear durable gains. Because no standardized effect size or strong causal estimate is reported, overall impact remains modest or unclear.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.97,
+      "role": "primary",
+      "use_case": "Chat-based LLM scaffolding for eighth-grade South Korean EFL writing in real-time classroom sessions, including step-by-step sentence construction, vocabulary/grammar explanations, and guided grammar revision."
+    },
+    {
+      "intervention": "AI Writing / Language Tool",
+      "confidence": 0.89,
+      "role": "secondary",
+      "use_case": "LLM-powered writing support used as an English writing assistant for composing, revising, and correcting EFL sentences and short paragraphs during classroom writing tasks."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Literacy",
+      "confidence": 0.93,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "In a six-week deployment with 157 eighth-grade students (133 consented for analysis), the LLM-supported tool improved in-class sentence-level grammatical correctness, but durable independent transfer was uneven. During the fall semester, students constructed 632 sentences with LLM assistance; 309 sentences (48.9%) were reused verbatim in later unsupported essays, and 82.3% of those reused sentences were grammatically correct. However, correct incorporation in the later written assessment differed sharply by performance group: 65.8% for high-performing students, 37.8% for middle-performing students, and 14.0% for low-performing students, indicating stronger immediate writing support than independent retention for weaker writers.",
+        "measure": "Analytic writing rubric scores on unsupported follow-up essays; sentence reuse and grammatical correctness of LLM-assisted sentences transferred into later essays",
+        "study_size": "n=157 deployed; n=133 consented for analysis; 632 LLM-assisted sentences in fall analysis",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.88,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The LLM scaffold appeared to support some students' engagement and sense of accomplishment, but it also demotivated lower-proficiency learners and increased frustration when step-by-step guidance became overwhelming. High-performing students showed confusion/annoyance only 3.8 times on average per writing session, compared with 12.2 and 11.4 times for middle- and low-performing groups, respectively; among middle- and low-performing students, 69.2% of negative affective behaviors occurred in the latter half of interaction, consistent with rising frustration and disengagement over time.",
+        "measure": "Observed affective responses in interaction logs (confusion, annoyance, gratitude, indifference) and classroom observation of motivation/engagement",
+        "study_size": "Qualitative coding sample of 1,386 queries from 15 students; classroom deployment n=157 (133 consented)",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.72,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "Interaction patterns suggest the tool supported some students' strategic help-seeking and revision, but lower-performing students often outsourced higher-order writing tasks instead of practicing independent sentence generation. Qualitative analysis found high-performing students more often used the LLM for lower-order tasks such as vocabulary translation and validation, whereas low-performing students more often requested full or partial sentence generation, indicating possible weakening of independent composition and self-regulated problem solving for the latter group.",
+        "measure": "Qualitative coding of student query types and observed help-seeking/reliance patterns",
+        "study_size": "1,386 coded queries from 15 sampled students; 14,863 total messages in deployment",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.79,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The LLM improved scalability for routine classroom support by handling repetitive low-level questions about spelling, vocabulary, and basic grammar, which the teacher reported freed time to circulate and monitor students. At the same time, efficiency gains were offset by orchestration costs: teachers still had to redirect students toward the model, and AI use made it harder to identify struggling students and common misconceptions because questions were diverted away from the teacher.",
+        "measure": "Naturalistic classroom observation and teacher follow-up interview about workload, responsiveness, and classroom orchestration",
+        "study_size": "3 observed 45-minute class sessions; 1 teacher; deployment across 6 classes",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Systemic / Institutional Impact",
+      "confidence": 0.63,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The study identified classroom equity and instructional visibility concerns when LLM support was introduced into real-time K-12 EFL instruction. More introverted students asked fewer questions to the teacher and relied more on the LLM, while a small group of extroverted students continued to dominate teacher attention; the teacher also reported reduced ability to detect shared learning difficulties and intervene at the whole-class level.",
+        "measure": "Classroom observation and teacher interview regarding participation patterns, equity, and teacher awareness of student difficulties",
+        "study_size": "3 observed sessions across a 6-class deployment",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "single_site",
+    "no_control_group",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "6",
+  "setting": "classroom",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "medium",
+  "study_country": "South Korea",
+  "study_region": "East Asia & Pacific",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

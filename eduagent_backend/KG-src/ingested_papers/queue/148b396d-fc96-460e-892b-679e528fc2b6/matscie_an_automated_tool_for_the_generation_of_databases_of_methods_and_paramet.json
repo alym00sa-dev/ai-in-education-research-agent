@@ -1,0 +1,32 @@
+{
+  "title": "MatScIE: An automated tool for the generation of databases of methods and parameters used in the computational materials science literature",
+  "doi": null,
+  "year": 2021,
+  "venue": "Computational Materials Science",
+  "url": "http://arxiv.org/abs/2009.06819v2",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper presents MatScIE, an automated information extraction system for computational materials science literature. The authors focus on the problem that important details in materials-science papers\u2014such as materials studied, methods, code/software, parameters, and crystal structure\u2014are stored in unstructured text and are difficult to reuse for downstream simulations and database construction.\n\nThe proposed approach combines manually annotated data, sequence labeling, and document-level processing. The authors create an annotated dataset of 214 materials science papers and train a BiLSTM-CRF model using word2vec, character-level embeddings, and ELMo embeddings to extract entities of interest. They also develop a sentence-classification model to identify result-related sentences in abstracts for generating short summaries. Several training settings are compared, including sentence-level versus section-level context and a relabeling/mimicking strategy to improve performance.\n\nThe work is not an education study and does not involve students, teachers, or learning outcomes. Its contribution is a materials-science text-mining framework, plus an online interface that allows users to upload PDFs and obtain extracted entities and summaries. The authors conclude that their best model improves extraction performance over several baselines and can help researchers index and analyze computational materials science papers at scale.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This paper is about an NLP information extraction system for computational materials science literature, not an educational intervention or K-12 science learning study. It does not evaluate Khanmigo or any student-facing educational technology, and there is no empirical design relevant to learner outcomes.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "There is no measured impact on K-12 learners, teachers, or educational systems. The paper reports extraction accuracy and software utility in materials-science text mining, so it has no direct educational impact for the requested topic.",
+  "interventions": [],
+  "outcome_assignments": [],
+  "limitations": [
+    "small_sample",
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

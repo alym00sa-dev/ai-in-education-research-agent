@@ -1,0 +1,65 @@
+{
+  "title": "LessonPlanner: Assisting Novice Teachers to Prepare Pedagogy-Driven Lesson Plans with Large Language Models",
+  "doi": "https://doi.org/10.1145/3654777.3676390",
+  "year": 2024,
+  "venue": "UIST '24 (The 37th Annual ACM Symposium on User Interface Software and Technology)",
+  "url": "http://arxiv.org/abs/2408.01102v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Undergraduate",
+    "Graduate / Doctoral",
+    "Elementary (PreK-5th)",
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses the challenge novice teachers face when preparing lesson plans: deciding on effective instructional strategies, finding appropriate teaching materials, and organizing those materials into a coherent plan. The authors ask whether large language models can support lesson-plan preparation in a way that is more structured and pedagogy-informed than a generic chat interface.\n\nTo study this, the authors built LessonPlanner, a web-based system powered by GPT-4 that guides users through lesson-goal setting, outline generation, and section-by-section refinement using Gagne\u2019s Nine Events of Instruction and Bloom\u2019s Taxonomy. The system includes preset prompts, instructional-event templates, a sidebar assistant, editable markdown output, and options to regenerate or contextualize LLM responses. The study focused on novice teachers and teaching assistants, plus a few more experienced teachers in follow-up interviews.\n\nThe evaluation combined a formative interview/co-design study, a within-subjects comparison between LessonPlanner and a baseline ChatGPT web interface, and expert interviews. In the within-subjects study, 12 university students with teaching experience prepared lesson plans for familiar computer-science topics; an expert teacher rated the resulting plans for quality, and participants reported workload and usability perceptions. The paper concludes that LessonPlanner improves the quality of produced lesson plans and reduces workload relative to a generic ChatGPT interface, while also surfacing important concerns about accuracy, trust, and the need for teacher control over generated content.",
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "no_long_term_followup",
+    "non_representative_population"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "China",
+  "study_region": "East Asia & Pacific",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "tutoring_instruction"
+      ],
+      "description": "OpenAI's GPT-based conversational large language model interface for generating and refining text.",
+      "use_case": "Used as the baseline web interface in a within-subjects study; participants could use the ChatGPT web app to prepare lesson plans, with GPT-4 as the underlying model.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0014 Other",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "ChatGPT served as the baseline comparator rather than the intervention. The paper reports that LessonPlanner significantly improved the quality of outcome lesson plans and reduced workload compared with the baseline ChatGPT interface, but it does not provide a separate quantitative result for ChatGPT itself.",
+          "measure": "Lesson plan quality and planning workload compared against the baseline ChatGPT web app",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=12"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a within-subjects user study with qualitative interviews and Likert-scale ratings, not a randomized controlled trial of instructional outcomes in classrooms. The evidence is useful for usability and artifact quality but does not establish causal effects on teacher behavior or student learning.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports improved lesson-plan artifact quality and reduced planning workload when using LessonPlanner versus the ChatGPT baseline, but no effect sizes are reported. The practical impact appears modest and is limited to planning artifacts rather than demonstrated classroom or student outcomes.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

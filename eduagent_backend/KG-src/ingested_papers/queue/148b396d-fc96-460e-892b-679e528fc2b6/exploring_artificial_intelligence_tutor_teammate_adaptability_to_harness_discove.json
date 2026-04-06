@@ -1,0 +1,90 @@
+{
+  "title": "Exploring Artificial Intelligence Tutor Teammate Adaptability to Harness Discovery Curiosity and Promote Learning in the Context of Interactive Molecular Dynamics",
+  "doi": null,
+  "year": null,
+  "venue": null,
+  "url": "http://arxiv.org/abs/2506.22520v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper examines whether an artificial intelligence tutor teammate can support curiosity-driven engagement and learning in a K-12 science learning activity. The central problem is how to design AI-supported interactions that do more than answer questions: the authors investigate whether an AI teammate can actively trigger curiosity, sustain engagement, and improve learning during complex scientific problem solving.\n\nThe intervention is a Wizard-of-Oz AI tutor teammate, simulated by a human experimenter using ChatGPT-4o, who interacted with students through Zoom chat while they completed interactive molecular dynamics (IMD) tasks in the Visual Molecular Dynamics (VMD) environment. The AI used a \u201cpush-pull\u201d communication strategy: curiosity triggers introduced intriguing facts and challenging questions, while curiosity responses provided explanations and scaffolding. Students completed four progressively harder Cytc-related tasks over a 60-minute IMD activity, including solvation and visualization, water-molecule counting, solvent-accessible surface area analysis, and dipole moment calculation.\n\nThe study involved 11 students recruited from Arizona high schools attending a BioSense.Network summer workshop. The researchers used a mixed-methods exploratory design, combining pre/post curiosity surveys, coding of student question complexity, direct performance ratings, and cross-recurrence quantification analysis of student-AI communication dynamics. Results suggested that high-performing teams showed better task completion, understanding, and engagement, and that advanced student questions were associated with AI curiosity-triggering behaviors. The authors conclude that an AI tutor teammate can help create synchronized, adaptive interactions that promote discovery curiosity and learning in applied STEM contexts, while noting the need for more refined AI strategies and multimodal data in future work.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed exploratory mixed-methods study with a very small sample (n=11) and a Wizard-of-Oz design rather than a fully implemented intervention. It provides useful early evidence, but the design is primarily descriptive/correlational and lacks the rigor needed for higher tiers.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The study suggests potentially meaningful benefits for curiosity, engagement, and scientific task performance, but the evidence is limited to a small proof-of-concept sample without robust causal estimates for the main curiosity outcomes. The observed performance difference is large for the high/low group comparison, yet generalizability remains unclear.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.95,
+      "role": "primary",
+      "use_case": "Wizard-of-Oz simulated ChatGPT-4o tutor teammate providing text-chat-based curiosity-triggering questions, explanatory responses, and adaptive scaffolding during interactive molecular dynamics tasks in VMD for high school students."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Scientific Reasoning",
+      "confidence": 0.88,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The study reports that the AI tutor teammate supported learning in applied molecular dynamics tasks, with high-performing teams showing stronger task completion and conceptual understanding than low-performing teams. Across 11 participants (high-performing n=7, low-performing n=6), total performance differed significantly, t(10)=4.90, p=.001, Cohen's d=2.97, suggesting the AI-supported environment was associated with better scientific task performance and deeper understanding of Cytc-related concepts.",
+        "measure": "Task performance rubric scores for task completion, understanding of concepts, and engagement in interactive molecular dynamics (IMD) tasks",
+        "study_size": "n=11",
+        "effect_size": "d=2.97",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.9,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Curiosity-driven engagement increased in the AI-supported IMD sessions, with the authors reporting that curiosity-triggering and curiosity-response behaviors sustained interaction and engagement. Although no pre-post mean change or inferential test for curiosity was reported in the excerpt, the post-task and behavioral evidence (e.g., greater interaction, more advanced questioning, and higher engagement ratings in high-performing teams) indicates a positive effect on student engagement and curiosity-related motivation in this small exploratory sample (n=11).",
+        "measure": "Pre/post curiosity-engagement questionnaire; observed engagement during IMD tasks; question frequency and complexity",
+        "study_size": "n=11",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.84,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper links AI-supported interaction to stronger question asking, collaboration, and coordinated problem solving during the molecular dynamics tasks. High-performing teams asked more detailed and advanced questions, and the CRQA analysis was used to characterize synchronization in student-AI communication; however, the excerpt does not provide the specific CRQA coefficients, so the evidence is descriptive rather than effect-size based.",
+        "measure": "Student question complexity, dyadic communication flow, and CRQA synchronization metrics",
+        "study_size": "n=11",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "no_control_group",
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

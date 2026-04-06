@@ -1,0 +1,87 @@
+{
+  "title": "Students\u2019 perceptions of using ChatGPT in a physics class as a virtual tutor",
+  "doi": "10.1186/s41239-023-00434-1",
+  "year": 2023,
+  "venue": "International Journal of Educational Technology in Higher Education",
+  "url": "https://doi.org/10.1186/s41239-023-00434-1",
+  "source_db": "openalex_search",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper examines how undergraduate students perceive ChatGPT when it is used as a virtual tutor in a physics course. The authors are interested in three related questions: how accurate ChatGPT is at answering physics problems, whether students\u2019 trust in ChatGPT depends on answer accuracy, and how trust shapes students\u2019 perceptions of the tool.\n\nThe intervention was an in-class physics makeup-exam activity in which students interacted with ChatGPT to address questions they had answered incorrectly on a 50-item exam. Students first asked the original questions to ChatGPT, compared ChatGPT\u2019s responses with their own, and then indicated whether they agreed with the answers and why. After completing the assignment, they filled out a survey measuring perceived usefulness, perceived ease of use, and intention to use ChatGPT, and some students also submitted drawings of how they perceived ChatGPT. The study involved 40 undergraduates in an introductory physics class at a public university in the southern United States.\n\nQuantitatively, ChatGPT answered 85% of the 362 questions correctly. Students were clustered into trust, partial-trust, and distrust groups; trust level was associated with the perceived accuracy of ChatGPT\u2019s answers, and trust also related to students\u2019 perceptions, especially ease of use and future intention to use. Qualitatively, many students anthropomorphized ChatGPT or imagined it as a robot, machine, or even a \u201csuper-intelligent\u201d entity. The authors conclude that although ChatGPT can be useful as a tutoring aid, students may trust it even when it is wrong, so AI literacy, critical evaluation skills, and careful design of GenAI tutors are important.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed empirical study, but it is not an RCT or QED of learning effects; it is primarily a correlational/mixed-methods study of student perceptions, trust, and accuracy in one physics class. The evidence is informative but limited for causal claims about educational impact.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports no direct learning gains; it mainly documents moderate accuracy of ChatGPT (85%) and student trust/misperceptions. The implications for education are important, but the measured impact on outcomes is indirect and unclear for general or priority populations.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "ChatGPT used as a virtual tutor/assistant in an introductory physics class to answer students\u2019 exam questions, with students interacting via a structured chat workflow and asking follow-up questions to resolve incorrect answers."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Scientific Reasoning",
+      "confidence": 0.93,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The paper directly evaluated ChatGPT\u2019s correctness on physics questions and found an overall answer accuracy of 85% (307/362 questions correct; 55 incorrect) for light and radioactivity items. However, the study did not measure student learning gains; instead it showed that students often trusted incorrect answers, with the Trust group agreeing with ChatGPT 100% of the time despite only 82% answer accuracy in that group.",
+        "measure": "ChatGPT answer accuracy on physics exam questions; student agreement/trust in ChatGPT responses",
+        "study_size": "n=40",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.82,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "Students\u2019 trust and perceptions of ChatGPT varied meaningfully by answer accuracy. ANOVA showed trust group differences by accuracy, F(2,37)=6.383, p=0.004, \u03b72=0.257, indicating that students who distrusted ChatGPT encountered less accurate answers, while the trust and partial-trust groups did not significantly differ in accuracy.",
+        "measure": "Trust/agreement with ChatGPT responses; clustering of trust levels",
+        "study_size": "n=40",
+        "effect_size": "\u03b72=0.257",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.9,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The study found that trust in ChatGPT was associated with perceptions of ease of use and future intention to use, suggesting effects on students\u2019 evaluative judgment and AI literacy-related critical thinking. Specifically, MANOVA showed trust-level differences in perceptions, F(6,70)=2.478, p=0.031, Wilk\u2019s \u03bb=0.680, \u03b72=0.175, with the Trust group rating ease of use significantly higher than the Partial Trust group (p=0.026).",
+        "measure": "Perceived usefulness, perceived ease of use, intention to use, and qualitative drawings indicating misconceptions/anthropomorphism",
+        "study_size": "n=40 (survey); n=27 (drawings)",
+        "effect_size": "\u03b72=0.175",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "self_reported_measures",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "2",
+  "setting": "classroom",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "medium",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

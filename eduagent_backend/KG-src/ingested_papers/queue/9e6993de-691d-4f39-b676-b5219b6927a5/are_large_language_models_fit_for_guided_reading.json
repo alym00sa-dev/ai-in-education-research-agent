@@ -1,0 +1,75 @@
+{
+  "title": "Are Large Language Models Fit For Guided Reading?",
+  "doi": null,
+  "year": 2023,
+  "venue": null,
+  "url": "http://arxiv.org/abs/2305.10645v2",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Elementary (PreK-5th)",
+    "Middle School (6th-8th)",
+    "Graduate / Doctoral"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper investigates whether large language models (specifically ChatGPT and Bard) are suitable for use in guided reading activities. The core questions are whether these models can generate meaningful comprehension questions from children\u2019s story texts, produce questions that are diverse in topic coverage and cognitive difficulty, and recommend portions of text for a student to reread based on incorrect answers. The paper is relevant to reading instruction conceptually, but it does not test direct effects on students\u2019 foundational reading outcomes such as phonics, decoding, fluency, vocabulary growth, or reading comprehension gains in a classroom trial.\n\nThe study evaluates LLM outputs using the FairytaleQA dataset, a benchmark of annotated children\u2019s storybooks spanning kindergarten through eighth grade. ChatGPT and Bard are compared against prior AI question-generation systems using automated text similarity metrics (ROUGE-L and BERTScore), diversity scoring, and human annotation of question difficulty. The study also includes a text recommendation task in which the model is prompted to identify which section of a passage a student should reread after deliberately altered wrong answers are supplied. Human evaluators for annotation were 36 MSc and PhD students in NLP recruited in Kenya and trained online.\n\nThe context is therefore not a classroom intervention with K-12 students, but an evaluation of model performance on reading-related tasks using a children\u2019s storybook dataset and adult annotators. Although the paper discusses children and teacher-led guided reading, no school-based implementation, randomized assignment, quasi-experimental comparison, or direct student learning assessment is reported. There is no comparator involving student outcomes, dosage of use in instruction, or measured reading gains.\n\nThe main conclusion is that ChatGPT and Bard can generate semantically meaningful questions, cover many topics in a story when input passages are short, produce both low- and high-cognitive-demand questions, and identify relevant text sections for rereading. However, the models are biased toward lower-cognitive-demand questions, their topic diversity drops as input length increases, and the author explicitly notes that further validation and investigation of impacts on teachers and students are needed before deployment. For the retrieval topic, this should be treated as adjacent technical evidence only, not direct causal evidence of generative AI improving K-12 foundational reading outcomes.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a preprint system-evaluation study, not a randomized controlled trial or strong quasi-experiment in K-12 classrooms or school-supported settings. It contains no direct causal evidence on student foundational reading outcomes and does not measure learning impacts on children.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper shows promising technical performance for guided-reading support tasks, but impact on K-12 literacy outcomes is unclear because no student achievement effects were estimated. For the requested evidence question, this should be treated as adjacent feasibility evidence rather than direct impact evidence.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.98,
+      "role": "primary",
+      "use_case": "Evaluation of ChatGPT and Bard as guided reading support agents for children\u2019s storybooks, focusing on question generation, question diversity/cognitive level, and recommending text sections for re-reading based on student responses."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Literacy",
+      "confidence": 0.86,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "This paper evaluates literacy-relevant affordances for guided reading rather than student reading achievement. Using 46 FairytaleQA validation/test storybooks spanning kindergarten to eighth grade, ChatGPT and Bard produced high semantic similarity to reference questions (BERTScore F1 ChatGPT 95.96/96.15; Bard 96.27/94.80 on validation/test), and strong text recommendation scores (ChatGPT BERTScore F1 98.65; Bard 97.99), but their question diversity declined as input length increased (e.g., ChatGPT diversity 61.4 with one paragraph vs. 49.4 with three; Bard 64.2 vs. 48.2) and both overgenerated low-challenge questions relative to the baseline (ChatGPT 70.26%, Bard 73.38%, baseline 53.22%). No classroom causal effects on phonemic awareness, phonics, decoding, oral reading fluency, vocabulary, or reading comprehension were measured.",
+        "measure": "Automated question-generation quality metrics (ROUGE-L, BERTScore), topic diversity/Vendi Score, human-coded question difficulty categories, and BERTScore for text-section recommendation",
+        "study_size": "46 storybooks/excerpts from FairytaleQA validation and test sets; question counts baseline n=2030, ChatGPT n=3006, Bard n=3546; 36 human evaluators",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.58,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The paper indirectly examines whether LLM-generated guided-reading questions support higher-order thinking by classifying questions as confirmative, explicit, or implicit. Relative to the baseline question set, ChatGPT and Bard generated substantially more low-challenge questions (70.26% and 73.38% vs. 53.22%), suggesting potential support for comprehension checking but weaker alignment with inferential/critical-thinking prompting. No student-level critical thinking or metacognitive outcomes were directly measured.",
+        "measure": "Human-coded cognitive level of generated questions (confirmative, explicit, implicit)",
+        "study_size": "Question sets: baseline n=2030, ChatGPT n=3006, Bard n=3546; 36 human evaluators",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "no_control_group",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Kenya",
+  "study_region": "Sub-Saharan Africa",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

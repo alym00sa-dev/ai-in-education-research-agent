@@ -1,0 +1,31 @@
+{
+  "title": "Regularity and stability of feedback relaxed controls",
+  "doi": null,
+  "year": 2021,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2001.03148v2",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper studies the theory of feedback control for continuous-time stochastic exit-time control problems with finite action sets. The core question is how to construct feedback policies that are not only optimal for a given model, but also stable and robust when the underlying system parameters are perturbed. The motivation comes in part from reinforcement learning, where adding an exploration reward is often used heuristically to improve robustness, but where theoretical justification for stability has been limited.\n\nThe authors introduce a relaxed-control regularization framework in which the controller chooses a probability distribution over actions rather than a single action. They define a corresponding Hamilton-Jacobi-Bellman equation with an exploration reward term and prove existence, uniqueness, and regularity of classical solutions under H\u00f6lder assumptions. They also show that the induced feedback control is H\u00f6lder continuous and Lipschitz stable with respect to perturbations in the model coefficients, unlike the original maximizer-based feedback control, which can be discontinuous and unstable.\n\nThe paper further proves a first-order sensitivity equation for the value function and the relaxed feedback policy, and analyzes how the pre-computed policy performs when applied to a perturbed system. It also studies the limit as exploration vanishes, showing monotone convergence back to the original control problem and, for certain smoothing functions, an exact regularization property that recovers the pure exploitation strategy without sending the exploration parameter to zero. The work is entirely theoretical and is not an empirical study of teachers, students, or educational settings.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a theoretical mathematics/control paper on relaxed stochastic control and PDE regularity, not an empirical study of educational technology or teacher coaching. It contains no experimental, observational, or implementation methodology relevant to the retrieval topic.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "There are no measured educational outcomes, no teacher-planning intervention, and no effect estimates. The paper has no direct impact evidence for instructional coaching or lesson-plan feedback in education.",
+  "interventions": [],
+  "outcome_assignments": [],
+  "limitations": [
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

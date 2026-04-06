@@ -1,0 +1,388 @@
+{
+  "title": "Evolution of AI in Education: Agentic Workflows",
+  "doi": null,
+  "year": null,
+  "venue": null,
+  "url": "https://arxiv.org/abs/2504.20082",
+  "source_db": "scale_stanford",
+  "populations": [],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Meta-Analysis / Systematic Review",
+  "extended_summary": "This paper examines how agentic AI workflows are evolving in education and asks how these systems can be understood through four major paradigms: reflection, planning, tool use, and multi-agent collaboration. The authors argue that while large language models have expanded educational AI, stand-alone models remain limited in adaptability, reasoning, and use of real-time information. To address this, the paper develops a structured educational lens for analyzing AI agents and their pedagogical implications.\n\nThe main approach is a structured literature review conducted using PRISMA 2020 guidelines. The authors searched Google Scholar, Scopus, Web of Science, and the ACM Digital Library, retrieving 888 records and ultimately synthesizing 93 included studies. The review analyzes conceptual foundations, educational applications, advantages, and challenges of the four agentic paradigms. In addition to the review, the paper presents a proof-of-concept multi-agent framework for automated essay scoring (MASS), intended to demonstrate how agentic architectures may improve consistency and reliability compared with stand-alone LLMs.\n\nThe paper is not centered on a single participant sample or one educational institution; instead, it synthesizes prior literature across educational contexts. The discussion covers applications involving students and educators, including intelligent tutoring systems, feedback generation, collaborative learning, automated grading, educational simulations, curriculum planning, and teacher training. Specific grade bands or academic levels are not clearly delimited in the reviewed synthesis.\n\nThe authors conclude that agentic AI has substantial transformative potential in education, especially for adaptive learning, metacognitive support, automated assessment, and complex educational workflows. They also emphasize major concerns, including interpretability, trustworthiness, bias, privacy, computational complexity, and uneven generalizability across contexts. Preliminary findings from the essay-scoring proof of concept suggest improved consistency relative to stand-alone LLMs, but the paper stresses that more empirical research is needed before broad educational adoption.",
+  "limitations": [
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "identified_tools": [
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "other",
+        "feedback_evaluation"
+      ],
+      "description": "Agentic AI / LLM-based educational systems discussed as a general class, organized around reflection, planning, tool use, and multi-agent collaboration paradigms.",
+      "use_case": "The paper is primarily a structured literature review and conceptual taxonomy of agentic workflows in education, with discussion of general LLM-based agents and their educational applications.",
+      "findings": []
+    },
+    {
+      "name": "DeepSeek",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "feedback_evaluation"
+      ],
+      "description": "An open-source LLM family with advanced reasoning and reinforcement-learning-based capabilities, discussed as a reflection-oriented agentic model.",
+      "use_case": "Discussed conceptually as a reflection-system example for education, including potential use in intelligent tutoring, analyzing student reasoning, refining explanations, and automated essay scoring.",
+      "findings": []
+    },
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "other"
+      ],
+      "description": "OpenAI GPT-family large language model chatbot.",
+      "use_case": "Mentioned as an example of foundational/fine-tuned LLMs used in earlier educational AI applications and as a stand-alone LLM baseline contrasted with more agentic systems.",
+      "findings": []
+    },
+    {
+      "name": "Multi-agent System for Automated Essay Scoring",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "feedback_evaluation"
+      ],
+      "description": "A proof-of-concept multi-agent framework for automated essay scoring presented by the authors.",
+      "use_case": "Used as the paper's illustrative agentic application for scoring essays, with the authors stating preliminary evidence of improved consistency and reliability relative to stand-alone LLMs.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Literacy",
+          "finding_type": "review_synthesis",
+          "direction": "positive",
+          "finding_summary": "The paper reports preliminary results that the proposed multi-agent automated essay scoring framework achieved increased consistency and reliability in evaluating written work compared to stand-alone LLMs. No quantitative effect size, sample size, confidence interval, or detailed scoring metric is reported in the provided text.",
+          "measure": "Essay scoring consistency and reliability",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is primarily a structured literature review and conceptual/framework paper with a proof-of-concept application. The provided text reports only preliminary empirical results for the essay-scoring system and does not provide a rigorous experimental design, sample, or effect estimates.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper claims improved consistency and reliability for the proposed multi-agent essay-scoring framework, but the magnitude of impact is unclear because no effect sizes or sample details are reported.",
+  "citations": [
+    {
+      "title": "Pandas and Matplotlib in data processing and visualization",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Tool-use systems in education",
+      "doi": null,
+      "year": 2010,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Artificial intelligence in education: A learner-as-collaborator paradigm",
+      "doi": null,
+      "year": 2021,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "frames AI-supported learner-as-collaborator paradigm"
+    },
+    {
+      "title": "Artificial intelligence in education: Promise and implications for teaching and learning",
+      "doi": null,
+      "year": 2019,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Designing educational technology with and for teachers",
+      "doi": null,
+      "year": 2019,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Intelligence unleashed: An argument for AI in education",
+      "doi": null,
+      "year": 2016,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Systematic review of research on artificial intelligence applications in higher education",
+      "doi": null,
+      "year": 2019,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Schools and platforms: Governing education through data infrastructure",
+      "doi": null,
+      "year": 2020,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Digital structural violence: Implications for education",
+      "doi": null,
+      "year": 2020,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Large language models as autonomous agents",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Another 25 years of AIED? Challenges and opportunities for intelligent educational technologies",
+      "doi": null,
+      "year": 2016,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Ethical implications of automated decision-making in education",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Artificial intelligence in higher education: Opportunities and ethical challenges",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Upskilling and reskilling educators for AI integration",
+      "doi": null,
+      "year": 2025,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The place of artificial intelligence in higher education: The teachers\u2019 and students\u2019 perspectives",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Large language model agents",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Large language model empowered agents",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Encouraging divergent thinking with multi-agent systems",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Improving factuality and reasoning with multi-agent debate",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Systematic validation in multi-agent LLM systems",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Multi-agent systems in education: A review",
+      "doi": null,
+      "year": 2022,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A multi-agent adaptive learning system",
+      "doi": null,
+      "year": 2022,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Personalized e-learning system with learner, content, and pedagogical agents",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Online learning platform integrating computer vision and multi-agent systems",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "PitchQuest: A multi-agent AI system for educational simulations",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "MEDCO: Multi-agent system for medical education simulation",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Interactive multidisciplinary learning in virtual medical settings",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "SimClass: A multi-agent classroom simulation framework",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Personalized and effective learning experiences with multi-agent systems",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Automated grading using AI-based methods",
+      "doi": null,
+      "year": 2022,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Advances in automated grading systems",
+      "doi": null,
+      "year": 2025,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A two-agent feedback refinement system for automated scoring",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "motivates multi-agent grading to reduce over-praise"
+    },
+    {
+      "title": "Multi-agent assessment and feedback in language learning",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Hallucinations in conversational AI systems",
+      "doi": null,
+      "year": 2020,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Pedagogical agents in interactive learning environments",
+      "doi": null,
+      "year": 2000,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Performance variability among AI chatbots in educational applications",
+      "doi": null,
+      "year": 2025,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The ASAP 2.0 dataset",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "evaluation dataset for essay grading benchmark"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

@@ -1,0 +1,45 @@
+{
+  "title": "Teaching Longitudinal Linear Mixed Models End-To-End: A Reproducible Case Study in Mouse Body-Weight Growth",
+  "doi": null,
+  "year": null,
+  "venue": null,
+  "url": "http://arxiv.org/abs/2511.14523v1",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper presents a reproducible teaching case study on longitudinal linear mixed models using mouse body-weight data. The core problem is pedagogical: many learners encounter mixed models as fragmented theory or software output, so the author aims to provide a coherent end-to-end workflow that links raw data, exploratory plots, model specification, estimation, diagnostics, and interpretation.\n\nThe approach uses a preclinical mouse experiment in which 31 mice from three groups were weighed weekly over 12 weeks: wild-type controls, pair-fed ob/ob mice, and unrestricted ob/ob mice. The dataset is reshaped from wide to long format and analyzed with random-intercept linear mixed models in R. Three candidate mean structures are compared by maximum likelihood, and linear contrasts are used to estimate group differences in weekly weight trajectories and 12-week gain.\n\nThe paper is aimed at advanced undergraduate and graduate students in biostatistics, epidemiology, applied statistics, and public health methods. It reports that the unrestricted ob/ob group has a much steeper growth trajectory than the other groups, while wild-type and pair-fed mice have similar slopes. The author concludes that the case study is a useful reusable teaching module for demonstrating transparent longitudinal modeling and reproducible statistical practice.",
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_long_term_followup",
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "12",
+  "setting": "lab",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "other"
+      ],
+      "description": "Generative AI chatbots or large language model systems in general.",
+      "use_case": "Not studied. The paper is a statistical teaching case study about longitudinal linear mixed models for mouse body-weight data and does not evaluate any AI tool.",
+      "findings": []
+    }
+  ],
+  "verdict": "no_tool",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This paper does not present an empirical evaluation of an AI tool; it is a methods/teaching case study about linear mixed models. No AI intervention, dataset, or outcome attributable to an AI system is reported.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "There is no measured educational or operational impact from an AI tool in this paper, so impact cannot be assessed. The paper is unrelated to generative AI use in K\u201312 coaching or feedback.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

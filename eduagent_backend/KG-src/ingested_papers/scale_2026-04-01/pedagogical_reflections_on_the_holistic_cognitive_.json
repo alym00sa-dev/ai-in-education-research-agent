@@ -1,0 +1,275 @@
+{
+  "title": "Pedagogical Reflections on the Holistic Cognitive Development (HCD) Framework and AI-Augmented Learning in Creative Computing",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "https://arxiv.org/abs/2511.06779",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses how to support reflective, creative, and self-directed learning in computing education, especially in design-oriented domains such as game development and virtual/extended reality. The author argues that these learning environments require more than technical instruction: students must iteratively analyze, design, critique, and reflect on their work. The paper therefore presents the Holistic Cognitive Development (HCD) framework as a pedagogical model for structuring this process and discusses how AI tools can extend reflective support at scale.\n\nThe core approach is the HCD framework, which organizes learning around four iterative activities: Thinking, Creating, Criticizing, and Reflecting. Around this cycle, the paper proposes a supervision model of balanced supportive autonomy, combining autonomy, ownership, and scaffolding. The paper also describes AI-augmented tools developed by the author\u2019s group\u2014iReflect, ReflexAI, and knowledge-graph-enhanced LLM feedback systems\u2014that provide automated, rubric-based, and context-aware feedback on reflective writing and playtesting artifacts. These tools are presented as operationalizations of HCD, helping students receive scalable and personalized feedback while maintaining responsibility for interpreting and acting on that feedback.\n\nThe context is creative computing education at the National University of Singapore, specifically undergraduate modules in game development, game development projects, and virtual reality systems. The paper discusses how HCD informs assessments such as critical reviews, playtesting, peer critique, reflective journals, and portfolio documentation. Although the article references prior and ongoing empirical studies of these AI tools in creative media courses, this paper itself mainly synthesizes those findings into a conceptual and pedagogical narrative rather than reporting a standalone experimental study.\n\nThe paper concludes that AI-supported reflective feedback can strengthen key student outcomes aligned with HCD, including reflective depth, feedback quality, learner autonomy, and metacognitive awareness. It argues that AI is most valuable as an extension of scaffolding rather than a replacement for human supervision, and it highlights risks such as over-reliance on AI, bias in LLM outputs, and threats to authentic reflection. Overall, the paper advocates a theory-informed balance in which AI supports iterative learning in creative computing while educators remain responsible for higher-level mentoring and supervision.",
+  "limitations": [
+    "single_site",
+    "no_control_group",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "blended",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Singapore",
+  "study_region": "East Asia & Pacific",
+  "identified_tools": [
+    {
+      "name": "iReflect",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "personalization_adaptation"
+      ],
+      "description": "A web application for creative media courses that centralizes playtesting feedback, student responses, and reflective writing; later extended with automated reflective feedback.",
+      "use_case": "Used in creative computing courses to collect playtesting feedback, support student reflection writing, and provide AI-generated formative feedback on reflections.",
+      "findings": [
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "review_synthesis",
+          "direction": "positive",
+          "finding_summary": "The paper reports that in creative media courses, average reflective writing scores improved significantly after students received AI-generated formative feedback through iReflect. It also states that higher-quality reflective writing correlated with stronger project outcomes, but no numerical effect size or sample size is provided in this paper.",
+          "measure": "Rubric-based reflective writing scores; association between reflection quality and project outcomes",
+          "effect_size": "moderate-to-large gains (exact value not_reported)",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "review_synthesis",
+          "direction": "positive",
+          "finding_summary": "Survey data summarized in the paper indicate that a majority of students perceived AI feedback delivered through iReflect-related systems as timely, fair, and motivational. Students also reported greater awareness of their strengths and weaknesses as designers.",
+          "measure": "Student perception survey of timeliness, fairness, motivation, and self-awareness",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    },
+    {
+      "name": "ReflexAI",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "personalization_adaptation"
+      ],
+      "description": "A prompt-engineered LLM feedback system for reflective writing that uses few-shot prompting, repeated evaluation with averaging, and constructive feedback schemas to improve scoring consistency and feedback quality.",
+      "use_case": "Studied as an AI feedback tool for scoring student reflections and providing constructive formative feedback in creative media courses.",
+      "findings": [
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "review_synthesis",
+          "direction": "positive",
+          "finding_summary": "The paper states that average reflective writing scores improved significantly after students received AI-generated formative feedback, with effect sizes described as moderate-to-large on rubric-based measures. For ReflexAI specifically, prompt optimization and repeated evaluation increased alignment with expert assessment, though no sample size or exact improvement estimate is reported here.",
+          "measure": "Rubric-based reflective writing scores",
+          "effect_size": "moderate-to-large gains (exact value not_reported)",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "review_synthesis",
+          "direction": "positive",
+          "finding_summary": "After prompt optimisation and repeated evaluation, correlation between LLM scores and expert ratings reached around r = 0.7\u20130.8, which the paper describes as approaching human-rater agreement. The summary does not provide sample size or confidence intervals.",
+          "measure": "Correlation between LLM scoring and expert ratings",
+          "effect_size": "r = 0.7\u20130.8",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    },
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "personalization_adaptation"
+      ],
+      "description": "OpenAI GPT-family large language models used here as the underlying feedback engine for automated scoring and formative comments on student reflections and playtesting notes.",
+      "use_case": "GPT-4 was used within iReflect and knowledge-graph-enhanced feedback workflows to score reflections, generate formative comments, and provide context-aware feedback on creative computing projects.",
+      "findings": [
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "review_synthesis",
+          "direction": "positive",
+          "finding_summary": "Using GPT-4 models with reflection rubrics, the system automatically scored student reflections and provided formative comments; the paper summarizes that average reflective writing scores improved significantly after AI-generated formative feedback. Exact effect sizes and sample sizes are not reported in this synthesis paper.",
+          "measure": "Rubric-based reflective writing scores after automated formative feedback",
+          "effect_size": "moderate-to-large gains (exact value not_reported)",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    },
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "feedback_evaluation",
+        "personalization_adaptation"
+      ],
+      "description": "Knowledge Graph\u2013enhanced LLM feedback tools that combine retrieval from a lightweight domain knowledge graph with a large language model to generate more context-aware feedback.",
+      "use_case": "Used to provide automated playtesting and reflection feedback in creative media courses by retrieving domain knowledge about genres, mechanics, design patterns, and pitfalls and adding it to LLM prompts.",
+      "findings": [
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "review_synthesis",
+          "direction": "positive",
+          "finding_summary": "The paper reports that knowledge-graph-enhanced feedback produced comments that students and instructors judged to be more specific and helpful than baseline GPT-4 outputs. Evaluation results also suggested better alignment with expert comments, but no exact numeric effect sizes or sample sizes are given in this paper.",
+          "measure": "Perceived specificity/helpfulness of feedback; alignment with expert comments",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "review_synthesis",
+          "direction": "positive",
+          "finding_summary": "The knowledge-graph-enhanced approach is summarized as reducing variance in LLM scoring relative to generic GPT-4 responses. The paper does not report numeric variance estimates, confidence intervals, or sample sizes in this synthesis.",
+          "measure": "Variance/consistency of LLM scoring",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This paper is primarily a conceptual/framework synthesis that summarizes prior and ongoing studies rather than presenting a clearly described empirical design, sample, or analytic methodology in the text provided. Because the evidence details are not reported here, the paper itself is weak as a standalone source for causal claims.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper claims positive effects, including moderate-to-large gains and correlations around r = 0.7\u20130.8, but these are summarized without enough study detail to verify magnitude or robustness from this paper alone. Impact therefore appears promising but remains unclear at the level of this source.",
+  "citations": [
+    {
+      "title": "The Holistic Cognitive Development (HCD) Framework for Reflective and Creative Learning in Computing Education",
+      "doi": null,
+      "year": 2025,
+      "venue": "Technical report, Department of Computer Science, School of Computing, National University of Singapore",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Play testing and reflective learning AI tool for creative media courses",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 16th International Conference on Computer Supported Education (CSEDU 2024)",
+      "citation_level": 3,
+      "citation_context": "empirical basis for iReflect platform and outcomes"
+    },
+    {
+      "title": "LLM-based reflective learning with automated feedback in creative media courses",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 16th International Conference on Computer Supported Education (CSEDU 2024)",
+      "citation_level": 3,
+      "citation_context": "supports automated reflective feedback design and findings"
+    },
+    {
+      "title": "ReflexAI: Optimizing LLMs for consistent and constructive feedback in reflective writing",
+      "doi": null,
+      "year": 2025,
+      "venue": "Proceedings of the 17th International Conference on Computer Supported Education (CSEDU 2025)",
+      "citation_level": 3,
+      "citation_context": "source of prompt-engineered LLM feedback methods"
+    },
+    {
+      "title": "iReflect: Automated playtesting feedback with knowledge graph-augmented GPT-4 for creative media courses",
+      "doi": null,
+      "year": 2025,
+      "venue": "Proceedings of the ACM Conference on International Computing Education Research (ICER 2025)",
+      "citation_level": 3,
+      "citation_context": "basis for KG-augmented GPT-4 feedback system"
+    },
+    {
+      "title": "Automated Playtesting Feedback Tool with Knowledge-Graph-Enhanced LLM Framework",
+      "doi": null,
+      "year": 2025,
+      "venue": "CP5105 project report, School of Computing, National University of Singapore",
+      "citation_level": 3,
+      "citation_context": "evaluation source for KG-enhanced feedback results"
+    },
+    {
+      "title": "LightRAG: Simple and fast retrieval-augmented generation",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv preprint",
+      "citation_level": 2,
+      "citation_context": "retrieval-augmented generation framework inspired this extension"
+    },
+    {
+      "title": "Design thinking",
+      "doi": null,
+      "year": 2008,
+      "venue": "Harvard Business Review",
+      "citation_level": 2,
+      "citation_context": "design thinking foundation for HCD framing"
+    },
+    {
+      "title": "Experiential Learning: Experience as the Source of Learning and Development",
+      "doi": null,
+      "year": 1984,
+      "venue": "Prentice Hall",
+      "citation_level": 2,
+      "citation_context": "experiential learning cycle aligned with HCD"
+    },
+    {
+      "title": "The Reflective Practitioner: How Professionals Think in Action",
+      "doi": null,
+      "year": 1983,
+      "venue": "Basic Books",
+      "citation_level": 2,
+      "citation_context": "reflection-in-action and on-action inform HCD"
+    },
+    {
+      "title": "How We Think: A Restatement of the Relation of Reflective Thinking to the Educative Process",
+      "doi": null,
+      "year": 1933,
+      "venue": "D. C. Heath and Company",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Reflection: Turning Experience into Learning",
+      "doi": null,
+      "year": 1985,
+      "venue": "Kogan Page",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Transformative Dimensions of Adult Learning",
+      "doi": null,
+      "year": 1991,
+      "venue": "Jossey-Bass",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Critical Reflection for Nursing and the Helping Professions: A User\u2019s Guide",
+      "doi": null,
+      "year": 2001,
+      "venue": "Palgrave Macmillan",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

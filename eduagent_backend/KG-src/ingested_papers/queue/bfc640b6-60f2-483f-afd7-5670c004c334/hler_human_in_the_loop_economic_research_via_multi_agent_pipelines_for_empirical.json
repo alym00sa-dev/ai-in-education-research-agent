@@ -1,0 +1,68 @@
+{
+  "title": "HLER: Human-in-the-Loop Economic Research via Multi-Agent Pipelines for Empirical Discovery",
+  "doi": null,
+  "year": 2026,
+  "venue": null,
+  "url": "http://arxiv.org/abs/2603.07444v1",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper addresses how large language model (LLM) agent systems can support empirical economics and social science research without relying on fully autonomous scientific discovery. The authors argue that existing AI research pipelines often generate infeasible or hallucinated hypotheses because they are not sufficiently grounded in the structure of real datasets, and they emphasize that empirical economics requires human judgment for question selection, identification strategy, and publication decisions.\n\nThe intervention studied is HLER, a human-in-the-loop multi-agent research pipeline. The system coordinates specialized agents for data auditing, data profiling, hypothesis generation, data collection, econometric analysis, manuscript drafting, self-critique, and automated review. A key feature is dataset-aware hypothesis generation, where candidate research questions are constrained by available variables, missingness, and statistical diagnostics. The architecture also includes two loops: a question quality loop, in which a human researcher selects among screened candidate questions, and a research revision loop, in which automated review triggers re-analysis and manuscript revision.\n\nThe empirical context is not an education setting and does not involve secondary students, writing feedback on student-authored drafts, or ChatGPT-generated feedback. Instead, the system is evaluated across 14 pipeline runs on three research datasets: the China Health and Nutrition Survey, the China Multi-Generational Panel Dataset (Liaoning), and the UK Biobank, with domain constraints such as labor economics, health economics, and education. Human researchers interact with the system as principal investigators through two decision gates, but no student, teacher, or school participant sample is studied.\n\nThe main conclusions are that dataset-aware question generation substantially improves feasibility relative to unconstrained LLM ideation (87% vs. 41% feasible questions), that 12 of 14 runs complete the end-to-end workflow, and that reviewer scores improve across 2-3 revision iterations. The authors conclude that human-AI collaborative pipelines may offer a practical way to scale empirical research while preserving critical human oversight. For the specific retrieval topic, the paper provides no evidence on subgroup effects, moderators, transfer to unaided writing, self-efficacy, metacognition, authorial voice, plagiarism, overreliance, or adverse effects in grades 9-12 students receiving AI feedback on writing drafts.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a preprint systems evaluation with quantitative benchmarking across 14 runs, but it is not an education study and does not use a K-12 causal design such as an RCT or strong quasi-experiment. Evidence is based on internal pipeline comparisons and LLM-generated reviewer scores, so credibility is limited for the target education evidence framework.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper shows clear positive operational gains for research automation, but it provides no direct evidence on K-12 student outcomes or on the target population of grades 9-12 students receiving ChatGPT feedback on drafts. Impact for the requested educational use case is therefore unclear rather than demonstrated.",
+  "interventions": [
+    {
+      "intervention": "Other",
+      "confidence": 0.98,
+      "role": "primary",
+      "use_case": "Multi-agent LLM pipeline for automating empirical economics research workflows, including dataset auditing, hypothesis generation, econometric analysis, manuscript drafting, and automated review with human decision gates."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.93,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Across 14 pipeline runs on three empirical datasets, the HLER system generated feasible research questions in 87% of cases (69/79) under dataset-aware generation versus 41% (34/82) under unconstrained generation. End-to-end workflow completion occurred in 86% of runs (12/14), with average runtime of 20-25 minutes and API cost of $0.8-$1.5 per run, indicating improved research workflow efficiency and feasibility rather than student learning outcomes.",
+        "measure": "Question feasibility rate, end-to-end pipeline completion rate, runtime, and API cost",
+        "study_size": "14 pipeline runs; 79 dataset-aware questions; 82 unconstrained questions",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.61,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper reports iterative improvement in reviewer-assessed manuscript quality across 12 completed runs, with overall scores increasing from 4.8 (SD=0.9) for draft v1 to 6.3 (SD=0.6) for final drafts. Improvements were largest for clarity (+2.1 points) and identification credibility (+1.4), reflecting stronger research reasoning and exposition within generated manuscripts, though these are LLM-reviewer scores rather than human learner outcomes.",
+        "measure": "ReviewerAgent scores for novelty, identification credibility, data quality, clarity, policy relevance, and overall manuscript quality",
+        "study_size": "12 completed pipeline runs",
+        "effect_size": "Overall reviewer score increase = +1.5 points; clarity = +2.1; identification credibility = +1.4",
+        "confidence_interval": "not_reported",
+        "std_deviation": "Draft v1 overall SD=0.9; final draft overall SD=0.6"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "no_control_group",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

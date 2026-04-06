@@ -1,0 +1,65 @@
+{
+  "title": "LessonPlanner: Assisting Novice Teachers to Prepare Pedagogy-Driven Lesson Plans with Large Language Models",
+  "doi": "10.1145/3654777.3676390",
+  "year": 2024,
+  "venue": "UIST \u201924 (The 37th Annual ACM Symposium on User Interface Software and Technology)",
+  "url": "http://arxiv.org/abs/2408.01102v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Undergraduate",
+    "Graduate / Doctoral"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses the challenge novice teachers face when preparing lesson plans: identifying effective pedagogical strategies, finding suitable materials, and organizing content into a coherent instructional flow. The authors argue that while large language models (LLMs) can generate useful teaching content, using them through a generic chat interface often produces fragmented, hard-to-manage outputs and requires substantial prompting skill and iterative refinement.\n\nTo address this, they develop LessonPlanner, a web-based interactive system powered by GPT-4 that structures lesson-plan creation around Bloom\u2019s Taxonomy and Gagne\u2019s Nine Events of Instruction. The system provides a goal-setting page, a block-based outline editor, preset prompts for common instructional activities, sidebar-based LLM assistance, and flexible editing/regeneration tools. The design was informed by a formative study with six novice teachers and teaching assistants.\n\nThe evaluation included a within-subjects study with 12 university students who acted as teachers and prepared lesson plans for familiar data-structures topics, plus expert interviews with six teachers from university, elementary, and high-school contexts. Compared with a baseline ChatGPT interface, LessonPlanner improved the rated quality of lesson plans and reduced workload. Interview findings also suggest that participants valued the pedagogy-driven structure and the more organized interaction model, but they raised concerns about the accuracy, subject-specific usefulness, and cognitive burden of prompting LLMs. The paper concludes with design implications for supporting teaching activities with LLMs.",
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "self_reported_measures",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "lab",
+  "teacher_training": "yes",
+  "implementation_fidelity": "medium",
+  "study_country": "China",
+  "study_region": "East Asia & Pacific",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "tutoring_instruction"
+      ],
+      "description": "An OpenAI generative AI chatbot/LLM system used for conversational content generation and assistance.",
+      "use_case": "Used as the baseline web app for lesson-plan preparation; also referenced by participants as an existing tool they had used to generate lesson-plan-related content such as answers to student questions.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "In the formative interviews, three participants reported prior use of ChatGPT for lesson preparation, but five participants expressed distrust of its outputs. Concerns included needing to double-check detailed content, inability to produce course-appropriate questions/materials, and a tendency for outputs to be useful only as a rough outline rather than directly usable lesson content.",
+          "measure": "Interview-reported perceptions of usefulness, accuracy, and subject-specific suitability of ChatGPT-generated lesson-plan content",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=6 (formative study); n=12 (within-subjects study participants had baseline access to ChatGPT)"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "The paper uses mixed methods: a formative interview/co-design study plus a within-subjects comparison, but the reported finding here is primarily qualitative and does not provide inferential effect estimates for ChatGPT itself. This supports a yellow tier rather than a higher-evidence tier.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The evidence for ChatGPT in this paper is mostly about user distrust and concerns rather than a measured positive or negative performance effect. Because no effect size is reported and the findings are mixed/qualitative, the impact is unclear.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

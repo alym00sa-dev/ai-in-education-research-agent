@@ -1,0 +1,52 @@
+{
+  "title": "Steering Multimodal Large Language Models Decoding for Context-Aware Safety",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv preprint",
+  "url": "http://arxiv.org/abs/2509.19212v1",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses the problem of context-aware safety in multimodal large language models (MLLMs). The authors argue that existing safety methods are often unbalanced: they can be oversensitive, refusing benign queries, or undersensitive, failing to detect visually grounded risks. The goal is to make MLLMs better at deciding when to refuse or answer based on both the user query and the accompanying image context.\n\nTo solve this, the paper proposes SafeCoDe, a lightweight, model-agnostic decoding framework with two stages. First, it uses contrastive decoding between a real image and a Gaussian-noised version of that image to surface tokens sensitive to visual context. Second, it applies a global-aware token modulation step, using an auxiliary MLLM judge to produce a safe/unsafe verdict that dynamically boosts or suppresses refusal-related tokens during decoding. The method is evaluated on several open-source MLLMs, including LLaVA-1.6-7B, Qwen2.5-VL-7B-Instruct, InstructBLIP-7B, and Idefics-9B-Instruct.\n\nThe study is not about teachers, K-12 classrooms, or educational deployment; it is a technical safety paper on multimodal AI systems. Across contextual safety benchmarks, SafeCoDe improves refusal behavior in both unsafe and benign contexts while preserving utility on general multimodal tasks. The authors conclude that combining visual contrastive signals with global safety verdicts can reduce both oversensitivity and undersensitivity, but they note a limitation that the approach currently assumes access to model logits, making it less directly applicable to fully black-box systems.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed-style research preprint with a clear experimental methodology, but it is not a K-12 study and does not use a randomized or quasi-experimental educational design. It provides benchmark-based evidence for AI safety behavior in MLLMs, so the methodological credibility is moderate for the requested education framework.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "The paper has no direct K-12 educational intervention or student learning impact, and it does not report effect sizes in the educational sense. Its contributions are to model safety/decoding rather than instructional outcomes, so educational impact is absent for this taxonomy.}\u3011}\u3002enderror to=final  \u0d28\u0d47\u0d1f\u0d3f**Note:** The paper is about multimodal LLM safety decoding, not teacher-facing K-12 coaching or lesson-plan feedback. No evidence is provided on teacher experience, subject area, grade level, or school context, and the paper does not study the risks you listed in an education setting.**",
+  "interventions": [
+    {
+      "intervention": "Other",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "safety-aware contrastive decoding for multimodal large language models using visual contrastive signals and global verdict-guided token modulation to improve context-sensitive refusals"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Systemic / Institutional Impact",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper evaluates whether SafeCoDe improves context-aware safety behavior in multimodal large language models, which is a system-level governance/safety outcome rather than a learner outcome. Across four MLLM backbones, it reports consistently better balance between undersensitivity and oversensitivity, with substantially improved contextual safety scores and lower attack success rates on external safety benchmarks, while preserving utility.",
+        "measure": "Contextual safety accuracy/rejection rate on MSSBench and MOSSBench; attack success rate (ASR) on MM-SafetyBench, Hades, and FigStep; downstream utility on MMMU, MIA-Bench, MathVista, and MMVet",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Other"
+    }
+  ],
+  "limitations": [
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

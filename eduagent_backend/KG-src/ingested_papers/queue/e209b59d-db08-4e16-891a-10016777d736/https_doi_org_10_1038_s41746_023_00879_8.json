@@ -1,0 +1,41 @@
+{
+  "title": "The shaky foundations of large language models and foundation models for electronic health records",
+  "doi": "https://doi.org/10.1038/s41746-023-00879-8",
+  "year": 2023,
+  "venue": "npj Digital Medicine",
+  "url": "https://doi.org/10.1038/s41746-023-00879-8",
+  "source_db": "openalex_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper examines the rapidly growing literature on foundation models for electronic health records (EHRs) and argues that the field\u2019s evaluation practices are not well aligned with the clinical value these models are often claimed to provide. The authors review 84 clinical foundation models, dividing them into clinical language models (CLaMs) and foundation models for EMRs (FEMRs), and analyze their training data, public availability, and evaluation tasks.\n\nRather than studying an educational intervention or participant outcomes, the paper proposes a taxonomy and critique of existing model-development practices. It highlights that most CLaMs are trained on a narrow set of corpora such as MIMIC-III and PubMed, while most FEMRs rely on structured codes from small public datasets or private health-system data. The review also notes that many models are evaluated on conventional benchmark tasks that mainly measure predictive accuracy.\n\nThe main conclusion is that current benchmarks provide limited evidence of real-world usefulness, safety, fairness, or deployment value in healthcare. The authors recommend more clinically grounded evaluation metrics and tasks, including ranking-based measures, subgroup calibration, multimodal reasoning, sample-efficiency analyses, and human evaluation for more qualitative model behaviors.",
+  "limitations": [],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "tutoring_instruction"
+      ],
+      "description": "OpenAI's large language model chatbot/system for generating and understanding text through conversational prompting.",
+      "use_case": "This review uses ChatGPT and related GPT-family models as examples of general-purpose foundation models and mentions their application to medical and clinical tasks; it does not evaluate ChatGPT in K-12 literacy.",
+      "findings": []
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a narrative review in digital medicine, not an empirical education study. It does not present K-12 literacy evidence or a controlled evaluation of the tool in an educational setting.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "No educational outcome, subgroup effect, or implementation impact is reported for K-12 literacy. The paper is outside the scope of the requested evidence base and provides no measurable impact for that domain.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

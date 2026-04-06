@@ -1,0 +1,311 @@
+{
+  "title": "Personalized Knowledge Transfer Through Generative AI: Contextualizing Learning to Individual Career Goals",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "https://arxiv.org/abs/2508.04070",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate",
+    "Graduate / Doctoral"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper examines whether generative AI can improve higher education learning experiences by personalizing instructional content to students\u2019 self-reported career goals. The core question is whether aligning course scenarios and examples with learners\u2019 intended professions increases engagement, satisfaction, and study efficiency compared with standard, non-personalized content. The authors position this as a way to make academic material feel more relevant and transferable to real-world professional contexts.\n\nThe intervention was implemented in Syntea, an AI-powered learning assistant integrated into IU International University of Applied Sciences\u2019 digital learning platform. In a randomized A/B between-subjects field experiment, one group received career goal-personalized, scenario-based learning content generated through prompt adaptation, while the control group received traditional non-personalized content covering the same topics. The study also included qualitative analysis of open-ended learner feedback, making it a mixed-methods study.\n\nThe study involved 4,003 bachelor\u2019s and master\u2019s students from multiple disciplines at a single distance-learning university in Germany over six weeks during the winter semester of 2024. Students were randomly assigned to conditions when accessing the platform. Quantitative analyses focused on learners with at least five sessions, using platform interaction logs, Net Promoter Score satisfaction ratings, exam results, and time from course enrollment to exam completion. Qualitative data came from 1,660 open-ended responses from 500 learners in the personalized condition.\n\nThe main findings were that career goal personalization modestly increased session duration and number of sessions, significantly improved learner satisfaction, and was associated with somewhat shorter study duration, though most engagement and efficiency differences were not statistically significant and exam scores were nearly identical across groups. Qualitative feedback suggested that students experienced the personalized content as more motivating, practical, and identity-relevant, supporting deeper reflection and stronger connection to the material. The authors conclude that generative AI-based career alignment can enrich student experience and perceived relevance in digital higher education, while noting limits in generalizability, personalization depth, and longer-term outcome evidence.",
+  "limitations": [
+    "single_site",
+    "self_reported_measures",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "6",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Germany",
+  "study_region": "Europe",
+  "identified_tools": [
+    {
+      "name": "Syntea",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "personalization_adaptation",
+        "tutoring_instruction"
+      ],
+      "description": "An AI-powered learning assistant integrated into IU\u2019s digital learning platform that uses generative language models plus a proprietary didactic framework and personalization engine to provide conversational learning, exam preparation, progress tracking, and adaptive content.",
+      "use_case": "Syntea was extended to personalize scenario-based learning content to students\u2019 self-reported career goals and compared against a traditional non-personalized version in a six-week A/B field study with university learners.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Among learners with at least five sessions, the career goal version showed longer mean session duration (1,457.89 sec vs. 1,385.75 sec; +5.12%), more sessions per learner (14.18 vs. 13.05; +8.66%), and a slightly lower successful-session rate (80.81% vs. 82.41%). None of these differences were statistically significant: session duration t(df) = -0.900, p = .3684; sessions per learner t(1050) = -1.679, p = .0934; successful sessions t(1050) = 1.432, p = .1525.",
+          "measure": "Session duration, number of sessions per learner, and successful session percentage from platform interaction logs",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=1,052"
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Learner satisfaction was slightly higher in the career goal condition than in the traditional condition, with average NPS 9.02 (SD=1.10) versus 8.84 (SD=1.11). This difference was statistically significant, t(942) = -2.448, p = 0.0145, with a small effect size of d = -0.161.",
+          "measure": "Net Promoter Score (0\u201310) collected via in-platform post-session survey",
+          "effect_size": "d = -0.161",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=944"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "Exam results were nearly identical between groups: 78.46% in the career goal condition versus 77.73% in the traditional condition (+0.94%). The paper reports no significant gain in academic performance for this outcome.",
+          "measure": "Exam results (%)",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=825"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "Study duration from enrollment to exam completion was lower in the career goal condition (148.66 days) than in the traditional condition (160.74 days), a 7.51% reduction. However, the difference was not statistically significant, t(514.88) = -.851, p = .3955.",
+          "measure": "Study duration (days between course enrollment and exam completion)",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=825"
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Qualitative feedback from 1,660 open-ended responses by 500 learners in the career goal group was predominantly favorable: 74% of comments were positive, 22% suggested improvements, 5% were explicitly negative, and 4% mentioned technical issues. Learners reported stronger motivation, relevance, identification with content, and deeper reflective engagement through career-aligned scenarios.",
+          "measure": "Open-ended learner feedback coded into positive feedback, suggestions for improvement, negative feedback, and technical issues",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=500"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is a large-scale randomized A/B field study using a between-subjects design and quantitative comparisons, but it has some credibility concerns: analysis was restricted to learners with at least five sessions, several outcomes were non-significant, and the intervention details are partly proprietary.",
+  "impact_tier": "green",
+  "impact_tier_rationale": "The clearest reported impact is a statistically significant but small improvement in satisfaction (d = -0.161). Other outcomes showed modest positive trends or null effects, so the overall impact is modest rather than large.",
+  "citations": [
+    {
+      "title": "Bildung, Trends, Zukunft 2019",
+      "doi": "10.1787/738db6c1-de",
+      "year": 2019,
+      "venue": "OECD",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "AI and Education: Guidance for Policy Makers",
+      "doi": null,
+      "year": 2023,
+      "venue": "UNESCO",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Relative Effectiveness of Human Tutoring, Intelligent Tutoring Systems, and Other Tutoring Systems",
+      "doi": "10.1080/00461520.2011.611369",
+      "year": 2011,
+      "venue": "Educational Psychologist",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "PISA 2022 Results: Creative Thinking",
+      "doi": null,
+      "year": 2023,
+      "venue": "OECD",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The \"what\" and \"why\" of goal pursuits: Human needs and the self-determination of behavior",
+      "doi": null,
+      "year": 2000,
+      "venue": "Psychological Inquiry",
+      "citation_level": 2,
+      "citation_context": "theoretical support via Self-Determination Theory"
+    },
+    {
+      "title": "Motivational Beliefs, Values, and Goals",
+      "doi": "10.1146/annurev.psych.53.100901.135153",
+      "year": 2002,
+      "venue": "Annual Review of Psychology",
+      "citation_level": 2,
+      "citation_context": "theoretical support via Expectancy-Value Theory"
+    },
+    {
+      "title": "Mindset: The New Psychology of Success: How We Can Learn to Fulfill Our Potential: Parenting, Business, School, Relationships",
+      "doi": null,
+      "year": 2016,
+      "venue": "Random House Publishing Group",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT for good? On opportunities and challenges of large language models for education",
+      "doi": "10.1016/j.lindif.2023.102274",
+      "year": 2023,
+      "venue": "Learning and Individual Differences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Educational Personalized Learning Path Planning with Large Language Models",
+      "doi": "10.48550/arXiv.2407.11773",
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Molecular and Systems Biology of Memory",
+      "doi": "10.1016/j.cell.2014.03.001",
+      "year": 2014,
+      "venue": "Cell",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Hippocampal-VTA Loop: Controlling the Entry of Information into Long-Term Memory",
+      "doi": "10.1016/j.neuron.2005.05.002",
+      "year": 2005,
+      "venue": "Neuron",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Dopamine and adaptive memory",
+      "doi": "10.1016/j.tics.2010.08.002",
+      "year": 2010,
+      "venue": "Trends in Cognitive Sciences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Benefits of multisensory learning",
+      "doi": "10.1016/j.tics.2008.07.006",
+      "year": 2008,
+      "venue": "Trends in Cognitive Sciences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Test-Enhanced Learning: Taking Memory Tests Improves Long-Term Retention",
+      "doi": "10.1111/j.1467-9280.2006.01693.x",
+      "year": 2006,
+      "venue": "Psychological Science",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Mind in Society: Development of Higher Psychological Processes",
+      "doi": "10.2307/j.ctvjf9vz4",
+      "year": 1978,
+      "venue": "Harvard University Press",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Intrinsic Motivation and Self-Determination in Human Behavior",
+      "doi": "10.1007/978-1-4899-2271-7",
+      "year": 1985,
+      "venue": "Springer",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Using an E-Module Based on Problem-Based Learning Combined with Socratic Dialogue to Develop Students\u2019 Critical Thinking Skills: A Qualitative Study",
+      "doi": "10.9743/JEO.2025.22.1.18",
+      "year": 2025,
+      "venue": "Journal of Educators Online",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "An Integrative Theory of Prefrontal Cortex Function",
+      "doi": "10.1146/annurev.neuro.24.1.167",
+      "year": 2001,
+      "venue": "Annual Review of Neuroscience",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Why do beliefs about intelligence influence learning success? A social cognitive neuroscience model",
+      "doi": "10.1093/scan/nsl013",
+      "year": null,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Dopamine reward prediction error coding",
+      "doi": "10.31887/DCNS.2016.18.1/wschultz",
+      "year": 2016,
+      "venue": "Dialogues in Clinical Neuroscience",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Implementing Learning Principles with a Personal AI Tutor: A Case Study",
+      "doi": "10.48550/arXiv.2309.13060",
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "When Generative AI Meets Workplace Learning: Creating A Realistic & Motivating Learning Experience With A Generative PCA",
+      "doi": "10.48550/arXiv.2405.15561",
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Projekt SokratesT: Tests adaptiver KI-Tutoren f\u00fcr validierte Lernprozesse mit sokratischen Dialogen",
+      "doi": null,
+      "year": null,
+      "venue": "Hochschule Rhein-Waal",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Revolutionising Distance Learning: A Comparative Study of Learning Progress with AI-Driven Tutoring",
+      "doi": "10.48550/arXiv.2403.14642",
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Ethics of AI in Education: Towards a Community-Wide Framework",
+      "doi": "10.1007/s40593-021-00239-1",
+      "year": null,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Algorithmic Bias in Education",
+      "doi": "10.1007/s40593-021-00285-9",
+      "year": null,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

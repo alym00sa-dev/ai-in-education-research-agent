@@ -1,0 +1,92 @@
+{
+  "title": "Automated Personalized Feedback Improves Learning Gains in an Intelligent Tutoring System",
+  "doi": null,
+  "year": 2020,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2005.02431v2",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Quasi-Experimental Design (QED)",
+  "extended_summary": "This paper investigates whether automatically generated, data-driven personalized feedback can improve learning outcomes in an intelligent tutoring system (ITS). The authors focus on the challenge of scaling feedback in dialogue-based tutoring systems without relying on hand-crafted rules or expert intervention, and ask whether machine-learning-based feedback selection can better support student learning than generic feedback.\n\nThe intervention is implemented in Korbit, a large-scale dialogue-based ITS that teaches topics in data science, machine learning, and artificial intelligence. The system generates several types of automated feedback, including personalized hints, explanations, Wikipedia-based explanations, and mathematical hints. Feedback is selected using machine learning models that incorporate linguistic quality signals and prior student-system interaction features, including shallow and deep personalization using past attempts and interaction history.\n\nThe study uses logged interactions from students using the platform, including 796 annotated student-system interactions from 183 students enrolled in a free machine learning course over a two-month period in 2020. The paper compares baseline no-personalization feedback with shallow and deep personalization models, and evaluates learning gains as whether students answer correctly after receiving feedback. Results show that personalized feedback, especially the deep personalization model, improves learning gains relative to the baseline, and that Wikipedia-based explanations and mathematical hints are generally viewed as helpful.\n\nOverall, the paper concludes that fully automated personalized feedback can substantially improve student learning outcomes in an ITS and can be scaled across domains. The evidence also suggests that automatically generated explanations and math hints are useful additions to the system\u2019s intervention set, though the paper notes that further work is needed to study how different feedback types affect learning across contexts.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed empirical system paper with an observational evaluation and cross-validation analyses, but not a randomized controlled trial. The main learning evidence comes from a small, non-randomized sample and includes some descriptive and expert-judgment outcomes, so credibility is moderate rather than high.",
+  "impact_tier": "green",
+  "impact_tier_rationale": "The reported learning gains are modest to moderate in proportion terms, with the deep personalization model improving correct-retry rates to 60.47% before the second attempt and significantly outperforming baseline. The effect appears promising for a priority technology intervention, but the evidence base is limited and effect sizes are not reported in standard standardized units.",
+  "interventions": [
+    {
+      "intervention": "Intelligent Tutoring System (ITS)",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "large-scale dialogue-based tutoring platform (Korbit) delivering personalized hints, explanations, Wikipedia-based explanations, and mathematical hints based on student responses and prior interaction history"
+    },
+    {
+      "intervention": "Automated Feedback System",
+      "confidence": 1.0,
+      "role": "secondary",
+      "use_case": "automated, data-driven personalized feedback generation for incorrect student solutions, including tailored hints and explanations selected by machine learning models"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper reports improved learning gains in Korbit when personalized feedback is used. Across 796 annotated student-system interactions from 183 students, the deep personalization model achieved the highest learning gain rate (48.53% all attempts; 60.47% before the second attempt) versus the baseline no-personalization model (39.47% all attempts; 37.93% before the second attempt). The before-second-attempt difference between deep personalization and baseline was statistically significant (z-test, p=0.03005).",
+        "measure": "Student learning gain, defined as the proportion of instances where a student provided a correct solution after receiving a personalized hint or explanation",
+        "study_size": "n=183 students; n=796 annotated student-system interactions",
+        "effect_size": "not_reported",
+        "confidence_interval": "[44.41%, 75.02%] for deep personalization before second attempt; baseline [20.69%, 57.74%]",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Intelligent Tutoring System (ITS)"
+    },
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 0.86,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper includes mathematical hints as one of the automated interventions, but evidence is preliminary and based on expert judgment rather than a student learning-outcome comparison. For 86 student-system interactions involving incorrect mathematical equations, over 90% of the generated mathematical hints were judged by two domain experts as either 'very useful' or 'somewhat useful'.",
+        "measure": "Expert usefulness ratings of generated mathematical hints for incorrect equations",
+        "study_size": "n=86 interactions",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Automated Feedback System"
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.7,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper reports improved subjective evaluation of the feedback in addition to learning gains. Students rated either or both types of explanations as helpful 83.33% of the time, suggesting the personalized feedback was perceived positively and likely supported engagement or satisfaction.",
+        "measure": "Subjective helpfulness ratings of explanations/feedback",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Intelligent Tutoring System (ITS)"
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_long_term_followup",
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

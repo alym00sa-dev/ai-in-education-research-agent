@@ -1,0 +1,87 @@
+{
+  "title": "Experimenting with Generative AI: Does ChatGPT Really Increase Everyone\u2019s Productivity?",
+  "doi": null,
+  "year": 2024,
+  "venue": null,
+  "url": "http://arxiv.org/abs/2403.01770v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Randomized Controlled Trial (RCT)",
+  "extended_summary": "This paper examines whether ChatGPT improves performance on tasks where the model may be less strong than in English writing or Python/SQL coding. The authors focus on two task domains: writing analysis tasks in Thai and math/data analysis tasks in Stata. They ask whether generative AI can increase productivity in these less-common language and programming settings, and whether the benefits differ across students with different academic and digital-skill backgrounds.\n\nThe study is an experiment with 121 economics students from Chulalongkorn University and Thammasat University in Thailand. Participants completed two rounds of writing analysis tasks and two rounds of math/data analysis tasks, doing each task set once without ChatGPT and once with ChatGPT. The design used random assignment to task order and task set, and performance was measured with expert-rated scores and completion time. Students also reported academic indicators such as GPAX, econometrics grades, and self-assessed skills.\n\nThe results show that, on average, students scored higher and finished faster when using ChatGPT in both task domains. However, the gains were uneven: about one-third of participants did not improve in writing tasks and about two-fifths did not improve in math/data tasks. Higher-ability students, proxied by econometrics grades, tended to do worse with ChatGPT on writing tasks, while students with stronger digital skills performed better with ChatGPT, especially on math/data tasks. The paper concludes that generative AI can boost productivity on average, but benefits depend on user skills and task type.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a randomized within-subject experiment with 121 college students and repeated measures, which supports internal validity. However, it is not a K-12 study, is not peer reviewed in the provided text, and the focus is on productivity/achievement in economics students rather than a fully validated education intervention trial.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The estimated gains are modest to moderate in task performance, but the population is college economics students and the outcomes are short-horizon task scores rather than durable learning gains. The evidence suggests positive productivity effects, yet general educational impact remains unclear.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "ChatGPT used as a generative AI support tool while economics students completed Thai writing analysis tasks and Stata-based math/data analysis tasks, to compare performance with vs. without LLM assistance."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Literacy",
+      "confidence": 0.9,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "In Thai writing analysis tasks, students scored higher with ChatGPT than without it by 0.43 points on a 10-point scale (n=121). The paper also reports faster completion times with ChatGPT by 1.73 minutes, and the improvement was not universal: 34% of participants saw no score gain.",
+        "measure": "Expert-rated writing analysis score out of 10; task completion time in minutes",
+        "study_size": "n=121",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "1.98 (score diff SD); 3.43 (time diff SD)"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 0.9,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "In math & data analysis tasks using Stata, students scored higher with ChatGPT by 1.65 points on a 10-point scale (n=121). They also finished faster by 0.99 minutes on average, though 42% did not improve, indicating heterogeneous benefits rather than uniform gains.",
+        "measure": "Expert-rated math/data analysis score out of 10; task completion time in minutes",
+        "study_size": "n=121",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "3.67 (score diff SD); 2.90 (time diff SD)"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.86,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Across both task types, ChatGPT reduced completion time relative to no ChatGPT, indicating improved task efficiency. The reported average time gains were 1.73 minutes for writing tasks and 0.99 minutes for math/data tasks, both measured within 20-minute timed sessions.",
+        "measure": "Task completion time in minutes",
+        "study_size": "n=121",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "3.43 (writing time diff SD); 2.90 (math/data time diff SD)"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_long_term_followup",
+    "implementation_fidelity_not_reported",
+    "non_representative_population"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "blended",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Thailand",
+  "study_region": "South Asia",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

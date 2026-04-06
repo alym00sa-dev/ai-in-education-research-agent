@@ -1,0 +1,390 @@
+{
+  "title": "Examining Student Interactions with a Pedagogical AI-Assistant for Essay Writing and their Impact on Students\u2019 Writing Quality",
+  "doi": null,
+  "year": 2026,
+  "venue": "International Conference on Learning Analytics and Knowledge (LAK26)",
+  "url": "https://arxiv.org/abs/2512.08596",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper investigates how higher education students interact with a pedagogically designed generative AI essay-writing assistant and how those interaction patterns relate to writing quality. The authors argue that although prior research has examined general-purpose GenAI tools such as ChatGPT for writing support, less is known about how students use pedagogically grounded AI systems across the planning, drafting, and reviewing phases of writing, especially in undergraduate contexts. The study addresses two questions: whether distinct interaction patterns are associated with differences in essay quality, and how high- and low-performing students differ qualitatively in their AI-supported writing behaviors.\n\nThe intervention studied is an Essay Writing Assistant (EWA), a web-based GenAI tool built with pedagogical prompting informed by the INSPIRE model and effective tutoring principles. EWA was designed to support essay topic selection, outlining, drafting, and review without generating full essays for students. It incorporated contextual materials such as core readings and the scoring rubric, and used GPT-4.1-mini as the backend model. The researchers analyzed 1,282 coded interaction log instances using Sequential Pattern Mining and K-means clustering, then compared clusters on rubric-based essay scores with Mann-Whitney U tests. They also conducted qualitative analysis of interaction sequences in higher- and lower-writing-quality groups.\n\nThe study involved 32 undergraduate students from various majors enrolled in a university summer school. Students completed a 500-1000 word argumentative essay during a two-hour writing session on the topic of human-AI teaming in education. The task was part of course assessment, and students could use EWA, assigned readings, and X5Learn, but not other AI tools or peer communication. Essays were scored with a rubric covering content, analysis, organization and structure, quality of writing, and word limit; inter-rater agreement was high.\n\nThe main findings were that two broad interaction clusters emerged: one focused more on planning and essay structure, while the other focused more on content-related questioning. After multiple-comparison correction, no statistically significant score differences remained across clusters, but the planning/structure-oriented cluster showed a moderate effect size advantage in essay organization. Qualitative results suggested that students with higher writing quality used EWA more actively and iteratively: they asked questions, then submitted draft sections for feedback and revision. Lower-performing students tended to interact more passively by repeatedly asking for content or planning help without following up by writing. The authors conclude that pedagogically designed GenAI can support writing processes, but students benefit most when they actively use the system to refine their own drafts rather than only seeking answers.",
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "no_control_group",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "lab",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United Kingdom",
+  "study_region": "Europe",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "feedback_evaluation"
+      ],
+      "description": "OpenAI's general-purpose LLM chatbot used for writing support, drafting, brainstorming, summarization, and feedback.",
+      "use_case": "Referenced in the literature review as a comparison point for AI-assisted academic writing; not the focal tool evaluated in this study.",
+      "findings": []
+    },
+    {
+      "name": "Claude",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "feedback_evaluation"
+      ],
+      "description": "Anthropic's general-purpose LLM assistant for text generation and writing support.",
+      "use_case": "Mentioned as an example of a proprietary general-purpose GenAI tool; not empirically studied in this paper.",
+      "findings": []
+    },
+    {
+      "name": "Gemini",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "feedback_evaluation"
+      ],
+      "description": "Google's general-purpose LLM assistant for text generation and writing support.",
+      "use_case": "Mentioned as an example of a proprietary general-purpose GenAI tool; not empirically studied in this paper.",
+      "findings": []
+    },
+    {
+      "name": "DeepSeek",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "feedback_evaluation"
+      ],
+      "description": "DeepSeek's general-purpose LLM assistant for text generation and writing support.",
+      "use_case": "Mentioned as an example of a proprietary general-purpose GenAI tool; not empirically studied in this paper.",
+      "findings": []
+    },
+    {
+      "name": "X5Learn",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "other"
+      ],
+      "description": "An online open educational resource platform and personalised learning companion.",
+      "use_case": "Allowed as a supplementary information source during the writing task; not the focus of analysis or evaluation in this paper.",
+      "findings": []
+    },
+    {
+      "name": "Essay Writing Assistant (EWA)",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "tutoring_instruction"
+      ],
+      "description": "A pedagogically prompted GenAI essay-writing assistant prototype designed to support argumentative writing through planning, drafting, and review without generating full drafts.",
+      "use_case": "Used by 32 undergraduate students during a two-hour argumentative essay-writing session; the study analyzed 1,282 interaction logs to examine how interaction patterns with EWA related to essay quality.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Literacy",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Among 32 undergraduates using EWA in a two-hour writing session, K-means clustering of 1,282 coded interaction logs identified two behavior patterns: Cluster 1 emphasized outline planning and essay structure, while Cluster 2 emphasized content development. Mann-Whitney U tests with Holm correction found no statistically significant differences across essay dimensions after correction, but the Organization dimension showed a moderate effect size favoring Cluster 1 (M=3.42, Md=4, N=19) over Cluster 2 (M=2.77, Md=3, N=13), with U=74.5, Z=-2.03, p=0.04, adjusted p=0.16, r=0.36.",
+          "measure": "Argumentative essay rubric scores: content, analysis, organization, quality of writing",
+          "effect_size": "r=0.36 (Organization dimension)",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=32"
+        },
+        {
+          "outcome_category": "Academic \u2014 Literacy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Qualitative and sequential pattern analyses showed that students in the higher writing-quality cluster (n=21) more often displayed an active 'writing' pattern, submitting essay sections to EWA for feedback, whereas the lower writing-quality cluster (n=11) more often showed repeated question-asking patterns such as (hec,hec,hec) and (hep,hec) without follow-up writing. At 65% minsup, 'w' was a unique frequent pattern in the higher-quality group (support=14) and absent in the lower-quality group.",
+          "measure": "Clustered essay quality and sequential interaction patterns with EWA",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=32"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical mixed-methods study with clustering, sequential pattern mining, qualitative analysis, and nonparametric comparisons, but it is not an RCT or strong quasi-experiment. The small sample (n=32) and observational design limit causal inference.",
+  "impact_tier": "green",
+  "impact_tier_rationale": "The paper reports a moderate effect size in essay organization (r=0.36) associated with one EWA interaction pattern, although this did not remain statistically significant after Holm correction. Other effects were unclear or null, so overall impact is modest.",
+  "citations": [
+    {
+      "title": "ChatGPT\u2014A double-edged sword for healthcare education? Implications for assessments of dental students",
+      "doi": "10.1111/eje.12937",
+      "year": 2024,
+      "venue": "European Journal of Dental Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Could ChatGPT get an Engineering Degree? Evaluating Higher Education Vulnerability to AI Assistants",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Manifesto for Teaching and Learning in a Time of Generative AI: A Critical Collective Stance to Better Navigate the Future",
+      "doi": "10.55982/openpraxis.16.4.777",
+      "year": 2024,
+      "venue": "Open Praxis",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Teaching Academic Writing",
+      "doi": null,
+      "year": 2005,
+      "venue": "Routledge",
+      "citation_level": 2,
+      "citation_context": "writing-process approach informs interaction codebook"
+    },
+    {
+      "title": "Human-AI Teaming: State-of-the-Art and Research Needs",
+      "doi": null,
+      "year": 2022,
+      "venue": "National Academies Press",
+      "citation_level": 2,
+      "citation_context": "background for human-AI teaming essay topic"
+    },
+    {
+      "title": "A Learning Analytics Approach to Monitoring the Quality of Online One-to-One Tutoring",
+      "doi": "10.18608/jla.2022.7411",
+      "year": 2022,
+      "venue": "Journal of Learning Analytics",
+      "citation_level": 2,
+      "citation_context": "supports tutor-quality monitoring perspective"
+    },
+    {
+      "title": "Approaches to teaching writing",
+      "doi": null,
+      "year": 2003,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "writing-process approach informs interaction codebook"
+    },
+    {
+      "title": "Enhancing Critical Thinking in Education by means of a Socratic Chatbot",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_level": 2,
+      "citation_context": "supports Socratic chatbot prompting approach"
+    },
+    {
+      "title": "A Cognitive Process Theory of Writing",
+      "doi": null,
+      "year": 1981,
+      "venue": "College Composition and Communication",
+      "citation_level": 2,
+      "citation_context": "writing process framework for coding interactions"
+    },
+    {
+      "title": "To resist it or to embrace it? Examining ChatGPT\u2019s potential to support teacher feedback in EFL writing",
+      "doi": "10.1007/s10639-023-12146-0",
+      "year": 2024,
+      "venue": "Education and Information Technologies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Generative AI in Education: From Foundational Insights to the Socratic Playground for Learning",
+      "doi": null,
+      "year": 2025,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Analyzing the role of ChatGPT as a writing assistant at higher education level: A systematic review of the literature",
+      "doi": "10.30935/cedtech/13605",
+      "year": 2023,
+      "venue": "Contemporary Educational Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Co-Writing with Opinionated Language Models Affects Users\u2019 Views",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Mining sequential patterns by pattern-growth: the PrefixSpan approach",
+      "doi": "10.1109/TKDE.2004.77",
+      "year": 2004,
+      "venue": "IEEE Transactions on Knowledge and Data Engineering",
+      "citation_level": 3,
+      "citation_context": "sequence mining method used for interaction patterns"
+    },
+    {
+      "title": "Student perceptions of generative AI report",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Students-Generative AI interaction patterns and its impact on academic writing",
+      "doi": "10.1007/s12528-025-09444-6",
+      "year": 2025,
+      "venue": "Journal of Computing in Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Chapter 7 - The Wisdom of Practice: Lessons Learned from the Study of Highly Effective Tutors",
+      "doi": null,
+      "year": 2002,
+      "venue": "Improving Academic Achievement",
+      "citation_level": 2,
+      "citation_context": "effective tutor behavior principles for EWA design"
+    },
+    {
+      "title": "Designing and evaluating tutoring Feedback Strategies for Digital Learning",
+      "doi": null,
+      "year": 2013,
+      "venue": "Digital Education Review",
+      "citation_level": 2,
+      "citation_context": "feedback strategy principles for EWA design"
+    },
+    {
+      "title": "Human-AI collaboration patterns in AI-assisted academic writing",
+      "doi": "10.1080/03075079.2024.2323593",
+      "year": 2024,
+      "venue": "Studies in Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "X5Learn: A Personalised Learning Companion at the Intersection of AI and HCI",
+      "doi": null,
+      "year": 2021,
+      "venue": "26th International Conference on Intelligent User Interfaces",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Cultivating writing skills: the role of ChatGPT as a learning assistant\u2014a case study",
+      "doi": "10.1186/s40561-024-00296-8",
+      "year": 2024,
+      "venue": "Smart Learning Environments",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Discovering Behavior Patterns of Self-Regulated Learners in an Inquiry-Based Learning Environment",
+      "doi": null,
+      "year": 2013,
+      "venue": "Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Focus on Formative Feedback",
+      "doi": "10.3102/0034654307313795",
+      "year": 2008,
+      "venue": "Review of Educational Research",
+      "citation_level": 2,
+      "citation_context": "formative feedback principles for EWA responses"
+    },
+    {
+      "title": "Cognitive ease at a cost: LLMs reduce mental effort but compromise depth in student scientific inquiry",
+      "doi": "10.1016/j.chb.2024.108386",
+      "year": 2024,
+      "venue": "Computers in Human Behavior",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Co-writing an essay with chatgpt: experiences and perceptions of students in higher education",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "System Prompts in Large Language Models",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Towards Synergistic Teacher-AI Interactions with Generative Artificial Intelligence",
+      "doi": null,
+      "year": 2025,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Analyzing Interview Data: The Development and Evolution of a Coding System",
+      "doi": null,
+      "year": 2001,
+      "venue": "Qualitative Sociology",
+      "citation_level": 3,
+      "citation_context": "basis for developing qualitative coding system"
+    },
+    {
+      "title": "A comparison of Cohen\u2019s Kappa and Gwet\u2019s AC1 when calculating inter-rater reliability coefficients: a study conducted with personality disorder samples",
+      "doi": "10.1186/1471-2288-13-61",
+      "year": 2013,
+      "venue": "BMC Medical Research Methodology",
+      "citation_level": 3,
+      "citation_context": "inter-rater reliability statistic selection"
+    },
+    {
+      "title": "Distinguishing performance gains from learning when using generative AI",
+      "doi": "10.1038/s44159-025-00467-5",
+      "year": 2025,
+      "venue": "Nature Reviews Psychology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Modifying AI, Enhancing Essays: How Active Engagement with Generative AI Boosts Writing Quality",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The paradox of self-efficacy and technological dependence: Unraveling generative AI\u2019s impact on university students\u2019 task completion",
+      "doi": "10.1016/j.iheduc.2024.100978",
+      "year": 2025,
+      "venue": "The Internet and Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

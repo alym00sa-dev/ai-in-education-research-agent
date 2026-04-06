@@ -1,0 +1,58 @@
+{
+  "title": "A Toolbox for Modelling Engagement with Educational Videos",
+  "doi": null,
+  "year": 2024,
+  "venue": "AAAI Conference on Artificial Intelligence",
+  "url": "http://arxiv.org/abs/2401.05424v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Adult (non-academic)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper addresses the problem of modelling learner engagement with educational videos at scale, especially for informal and lifelong learning contexts where users interact with large collections of video fragments rather than structured course materials. The authors argue that existing learner-modelling approaches such as knowledge tracing and item response theory are less suited to online video consumption because they are typically designed for test-taking or course-based settings and often lack transparency and scalability.\n\nTo address this, the paper introduces two contributions: the PEEKC dataset and the TrueLearn Python library. PEEKC contains more than 20,000 informal learners\u2019 interactions with educational video fragments from VideoLectures.Net, with each fragment annotated using Wikipedia-based knowledge components via Wikification. TrueLearn provides online Bayesian learner models for interest, novelty, and knowledge, plus visualization tools for open learner models. The paper evaluates these models against content-based and concept-based baselines on the PEEKC dataset using a 70/30 train-test split and classification metrics such as accuracy, precision, recall, and F1.\n\nThe population in the dataset consists of adult informal learners viewing mostly AI- and machine-learning-related educational videos in an in-the-wild online setting. The main empirical conclusion is that the TrueLearn models outperform the comparison baselines on several metrics, especially the combined INK model, indicating that the proposed framework is effective for predicting engagement from implicit watch-time signals. The paper also concludes that the dataset and library may support future work on AI education recommendation, but it does not evaluate a live educational intervention or learner outcomes beyond engagement prediction.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical benchmark study on a public dataset with a clear train/test split and statistical comparisons, but it is not a randomized controlled trial or a quasi-experiment about educational impact. The paper primarily evaluates predictive model performance rather than learner outcomes in a live instructional setting.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The reported gains are on engagement prediction, not on learning outcomes, and the paper does not demonstrate downstream educational improvement. The predictive performance is promising for a priority area, but the practical impact on learners remains indirect and unvalidated.",
+  "interventions": [
+    {
+      "intervention": "Other",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "Open-source learner engagement modeling toolkit (TrueLearn) for educational video recommendation, using Bayesian online models and Wikipedia-based knowledge component extraction to predict whether learners will watch at least 75% of a video fragment."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.98,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper reports that the TrueLearn models predict learner engagement with educational video fragments better than comparison baselines on the PEEKC dataset. On the held-out test set (70/30 split; n=20,019 learners, 290,535 interaction events), TrueLearn INK achieved the best overall results with accuracy 78.32%, precision 64.32%, recall 64.03%, and F1=64.00, outperforming the strongest baselines on most metrics (paired t-test, p<0.01 for several comparisons).",
+        "measure": "Binary engagement prediction for whether a learner watched at least 75% of a video fragment; evaluated with accuracy, precision, recall, and F1-score",
+        "study_size": "n=20,019 learners; 290,535 interaction events",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup",
+    "non_representative_population"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

@@ -1,0 +1,92 @@
+{
+  "title": "Teaching Students to Question the Machine: An AI Literacy Intervention Improves Students Regulation of LLM Use in a Science Task",
+  "doi": null,
+  "year": 2026,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2604.01955v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Middle School (6th-8th)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Randomized Controlled Trial (RCT)",
+  "extended_summary": "This paper examines whether a brief AI literacy workshop can improve middle-school students\u2019 ability to use a generative AI system effectively during science problem solving. The central question is whether teaching students how large language models work, why they fail, and how to regulate interactions with them leads to better task performance and better interaction strategies.\n\nThe intervention was a two-hour classroom workshop given two days before the main task. It combined conceptual instruction about LLM limitations such as hallucinations, bias, and sycophancy with procedural guidance on prompting, evaluating responses, and asking follow-up questions. The comparison group received no training. Students then completed six science inquiry exercises using an LLM-supported interface, where researchers measured prompt acceptance, rejection of underspecified prompts, correctness judgments of AI answers, follow-up questioning, and final written answer quality.\n\nThe study was conducted in one French middle school with 116 students in grades 8\u20139 (ages 13\u201315). The authors report that trained students performed better overall, were more selective about prompt use, made more accurate judgments of AI output quality, and asked follow-up questions more often when initial answers were inadequate. The intervention improved behavioral regulation of LLM use, but self-report measures of GenAI attitudes/knowledge and metacognitive awareness did not predict performance, and the workshop did not meaningfully change self-reported GenAI beliefs. The paper concludes that brief, scalable AI literacy instruction can improve middle-school students\u2019 use of generative AI in school-like science tasks.",
+  "limitations": [
+    "short_duration",
+    "single_site",
+    "no_long_term_followup",
+    "non_representative_population"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "classroom",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "France",
+  "study_region": "Europe",
+  "identified_tools": [
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "tutoring_instruction",
+        "feedback_evaluation",
+        "content_generation"
+      ],
+      "description": "A general-purpose generative AI / large language model chatbot used for interactive question answering, prompt response generation, and iterative answer evaluation.",
+      "use_case": "Used by middle-school students as a support tool during six science inquiry tasks; students prompted the system, judged responses, iterated follow-up queries, and wrote final answers. The intervention trained students on how to regulate these interactions.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In this controlled classroom study (N=116), students who received the 2-hour AI literacy workshop achieved higher final-answer performance than controls on the six science tasks. Mean final-answer score was 11.38 (SD 3.87, n=76) versus 10.29 (SD 3.04, n=40), with Mann\u0000adWhitney U=1871, p=.040, r=.19.",
+          "measure": "Final written answer quality / exercise score on a 0-20 scale",
+          "effect_size": "r=.19",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=116"
+        },
+        {
+          "outcome_category": "Academic \u0014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Trained students showed stronger interaction regulation: they accepted fewer suggested prompts overall, were less likely to accept underspecified prompts (51.5% vs. 66.7%, p=.044), judged AI answer correctness more accurately, and asked follow-up questions more often when initial prompts were underspecified. The paper reports that these behavioral changes translated into higher-quality answers in the intervention group for accepted underspecified prompts, with an interaction p=.038.",
+          "measure": "Prompt acceptance, correctness judgments, follow-up-question behavior, and associated performance effects",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=116"
+        },
+        {
+          "outcome_category": "Academic \u0014 Other",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "The workshop did not produce significant changes in students' GenAI self-report scores. Repeated-measures MANOVA showed no overall pre-post effect in the intervention group (Pillai's trace=0.116, F(6,62)=1.36, p=.247), though two dimensions had small non-robust increases (Attitude and Fairness & ethics, both pFDR=.054).",
+          "measure": "GenAI self-report questionnaire dimensions",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=72 intervention; n=40 control for baseline comparison"
+        },
+        {
+          "outcome_category": "Academic \u0014 Other",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "Across all students, GenAI self-report scores were not correlated with task performance (r=0.01, p=.88, R2<.001, n=116). Metacognitive self-report scores were also unrelated to exercise scores (r=0.04, p=.65, R2=.002, n=116), and within the intervention group pre-post changes in GenAI self-reports did not predict prompt-discrimination sensitivity.",
+          "measure": "Correlation between self-report measures and performance",
+          "effect_size": "r=0.01; r=0.04",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=116"
+        }
+      ]
+    }
+  ],
+  "verdict": "genai_general",
+  "quality_tier": "blue",
+  "quality_tier_rationale": "This is a controlled classroom study with a comparison group and behavioral outcomes, providing relatively strong causal evidence for a brief AI literacy intervention. However, subgroup analysis was not possible because demographic data were not collected.",
+  "impact_tier": "green",
+  "impact_tier_rationale": "The main performance effect is modest (r=.19; mean difference about 1.1 points on a 20-point scale), and several related outcomes are behavioral/process gains rather than large achievement effects. The intervention appears meaningful but not large in magnitude.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

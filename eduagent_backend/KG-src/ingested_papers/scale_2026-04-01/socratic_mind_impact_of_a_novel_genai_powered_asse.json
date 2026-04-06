@@ -1,0 +1,452 @@
+{
+  "title": "Socratic Mind: Impact of a Novel GenAI-Powered Assessment Tool on Student Learning and Higher-Order Thinking",
+  "doi": null,
+  "year": 2025,
+  "venue": null,
+  "url": "https://arxiv.org/abs/2509.16262",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper investigates whether a generative AI-powered formative assessment tool, Socratic Mind, can improve student engagement, learning outcomes, and higher-order thinking in higher education. The authors focus on a key concern in AI-supported education: many AI tools support lower-level recall or procedural tasks but do not effectively foster deeper reasoning, reflection, and critical thinking. The study asks how students engage with the tool, whether user experience influences engagement, whether the tool improves perceived and actual learning outcomes, and how it affects higher-order thinking skills such as problem-solving, critical thinking, and self-reflection.\n\nThe intervention studied is Socratic Mind, a GenAI-based assessment system that conducts adaptive Socratic dialogue with students through spoken or written responses. Instructors configure opening prompts, desired answers, rubrics, and misconceptions, and the system follows up with personalized questions until conceptual clarity is reached. The tool was used as an optional extra-credit assignment aligned with course quiz content. The study used a quasi-experimental mixed-methods approach, combining system logs, surveys on engagement and user experience, academic performance data, and thematic analysis of open-ended student reflections. Quantitative analyses included regression and difference-in-differences models.\n\nThe population consisted of undergraduate students enrolled in a 16-week fully online asynchronous introductory computing course (CS1301) at a U.S. research university. The final analytic sample included 171 students who completed the AI assignment and post-survey on time, drawn from a larger course enrollment of 579 students. Students were assigned to complete the AI-based assignment for either Unit 3 or Unit 4, creating a comparison structure across different course units. The context was a large-scale online course delivered through Canvas and edX.\n\nThe main findings show that students reported high affective, behavioral, and cognitive engagement with the tool, and these engagement levels were positively associated with usability, perceived effectiveness, and satisfaction. Students who used the tool showed a significantly smaller decline in quiz performance over time compared with peers, with especially strong benefits for lower-performing students, though similar effects were not found for unit tests. Qualitative responses suggested perceived gains in problem-solving, critical thinking, and self-reflection, with weaker effects for verbal communication due in part to limited use of audio interaction. Overall, the paper concludes that AI-mediated Socratic dialogue is a promising scalable formative assessment strategy for supporting engagement and higher-order thinking in online undergraduate learning.",
+  "limitations": [
+    "single_site",
+    "self_reported_measures",
+    "non_representative_population",
+    "high_attrition",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "16",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "Socratic Mind",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "tutoring_instruction"
+      ],
+      "description": "A GenAI-powered formative assessment tool that simulates Socratic dialogue through adaptive questioning, allowing students to respond by text or speech and providing immediate personalized feedback. Instructors configure prompts, desired answers, rubrics, and misconceptions, and the system can assist with question design from uploaded course materials.",
+      "use_case": "Studied as an optional extra-credit AI-based assessment in a large online introductory computing course, where students completed Unit 3 or Unit 4 assignments aligned to quiz topics and engaged in adaptive Socratic questioning about programming concepts, debugging, and real-world applications.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Using a difference-in-differences regression on quiz performance, students who participated in the Socratic Mind assignment showed a significantly smaller decline in quiz scores over time than peers who did not use the tool. Overall post scores declined by about 11.84 points, but the treatment group\u2019s drop was reduced by an estimated 3.30 points (Post*Treatment: B = 3.300, SE = 1.373, \u0003b2 = .107, p < .05); the final analyzed sample was 171 students, though the regression used 798 score observations.",
+          "measure": "Course quiz scores over time (difference-in-differences regression comparing pre- and post-assignment quiz performance)",
+          "effect_size": "Post*Treatment: B=3.300, \u0003b2=.107, p<.05",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=171"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "The same difference-in-differences analysis found no significant treatment effect on unit test scores. The interaction term for tests was not significant (Post*Treatment: B = -3.017, SE = 2.631, \u0003b2 = -.053, p > .05), indicating no detectable buffering effect on the more open-ended programming tests.",
+          "measure": "Course test scores over time (difference-in-differences regression comparing pre- and post-assignment test performance)",
+          "effect_size": "Post*Treatment: B=-3.017, \u0003b2=-.053, p> .05",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=171"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "An extended quiz regression suggested the tool particularly benefited lower-performing students. For every 1-point lower baseline score, the benefit of the tool increased by about 0.21 points (Pre*Treatment: B = -0.217, SE = 0.104, \u0003b2 = -.635, p < .05), alongside a significant positive post-treatment interaction (Post*Treatment: B = 22.764, SE = 9.393, \u0003b2 = .736, p < .05).",
+          "measure": "Moderation of quiz-score treatment effects by pre-intervention quiz performance",
+          "effect_size": "Pre*Treatment: B=-0.217, \u0003b2=-.635, p<.05; Post*Treatment: B=22.764, \u0003b2=.736, p<.05",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=171"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Thematic analysis of 141 open-ended responses found that 69% of respondents reported positive changes in problem-solving after using Socratic Mind, often citing more structured step-by-step reasoning, deeper conceptual understanding, and greater confidence in debugging. About 17% reported no change and 12% reported mixed change.",
+          "measure": "Student reflections on problem-solving skill development",
+          "effect_size": "69% positive; 17% no change; 12% mixed",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=141"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In qualitative responses, 62% of respondents reported positive changes in critical thinking, describing stronger analytical thinking, clearer reasoning, and better evaluation of coding logic from multiple perspectives. By contrast, 31% reported no change and 5% reported mixed experiences.",
+          "measure": "Student reflections on critical thinking skill development",
+          "effect_size": "62% positive; 31% no change; 5% mixed",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=141"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "For self-reflection, 60% of respondents reported gains after interacting with the tool, including more deliberate evaluation of their understanding and more intentional metacognitive behaviors. Meanwhile, 34% reported no change and about 1% reported mixed effects.",
+          "measure": "Student reflections on self-reflection/metacognitive skill development",
+          "effect_size": "60% positive; 34% no change; 1% mixed",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=141"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Perceived effects on verbal communication were more limited: 38% of respondents reported positive changes, while 56% reported no change, largely because many students typed rather than used the verbal interaction feature. Another 5% reported mixed experiences.",
+          "measure": "Student reflections on verbal communication skill development",
+          "effect_size": "38% positive; 56% no change; 5% mixed",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=141"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is an empirical quasi-experimental mixed-methods study with a named intervention, comparison groups, and difference-in-differences analysis, which is stronger than correlational work but does not meet the standard of a fully rigorous RCT. The authors also note limits including single-course context and potential unmeasured confounding.",
+  "impact_tier": "green",
+  "impact_tier_rationale": "The clearest quantified academic effect is a modest positive buffering effect on quiz-score decline (B = 3.300; \u0003b2 = .107), with stronger benefits for lower-performing students, while test-score effects were null. Overall impact is positive but moderate and somewhat outcome-specific.",
+  "citations": [
+    {
+      "title": "Authors.",
+      "doi": null,
+      "year": 2025,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Authors.",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Mapping the global evidence around the use of ChatGPT in higher education: A systematic scoping review",
+      "doi": "10.1007/s10639-023-12223-4",
+      "year": 2024,
+      "venue": "Education and Information Technologies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Looking beyond the hype: Understanding the effects of AI on learning",
+      "doi": "10.1007/s10648-025-10020-8",
+      "year": 2025,
+      "venue": "Educational Psychology Review",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The ICAP framework: Linking cognitive engagement to active learning outcomes",
+      "doi": "10.1080/00461520.2014.965823",
+      "year": 2014,
+      "venue": "Educational Psychologist",
+      "citation_level": 2,
+      "citation_context": "cognitive engagement framework for learning outcomes"
+    },
+    {
+      "title": "Students' questions: a potential resource for teaching and learning science",
+      "doi": "10.1080/03057260701828101",
+      "year": 2008,
+      "venue": "Studies in Science Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The high demand for durable skills",
+      "doi": null,
+      "year": 2021,
+      "venue": "America Succeeds",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Intelligent tutoring systems: How computers achieve learning gains that rival human tutors",
+      "doi": "10.4324/9780429433726",
+      "year": 2023,
+      "venue": "Handbook of Educational Psychology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Effects of artificial intelligence-powered virtual agents on learning outcomes in computer-based simulations: A meta-analysis",
+      "doi": "10.1007/s10648-024-09855-4",
+      "year": 2024,
+      "venue": "Educational Psychology Review",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Socratic wisdom in the age of AI: a comparative study of ChatGPT and human tutors in enhancing critical thinking skills",
+      "doi": "10.3389/feduc.2025.1528603",
+      "year": 2025,
+      "venue": "Frontiers in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Beware of metacognitive laziness: Effects of generative artificial intelligence on learning motivation, processes, and performance",
+      "doi": "10.1111/bjet.13544",
+      "year": 2025,
+      "venue": "British Journal of Educational Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Enhancing critical thinking in education by means of a Socratic chatbot",
+      "doi": "10.48550/arXiv.2409.05511",
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Reinventing assessments with ChatGPT and other online tools: Opportunities for GenAI-empowered assessment practices",
+      "doi": "10.1016/j.caeai.2024.100250",
+      "year": 2024,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Active learning increases student performance in science, engineering, and mathematics",
+      "doi": "10.1073/pnas.1319030111",
+      "year": 2014,
+      "venue": "Proceedings of the National Academy of Sciences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "How can artificial intelligence decrease cognitive and work burden for front line practitioners?",
+      "doi": "10.1093/jamiaopen/ooad079",
+      "year": 2023,
+      "venue": "JAMIA Open",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The challenges and value of undergraduate oral exams in the physical chemistry classroom: A useful tool in the assessment toolbox",
+      "doi": "10.1021/acs.jchemed.3c00011",
+      "year": 2023,
+      "venue": "Journal of Chemical Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Effects of GenAI Interventions on Student Academic Performance: A Meta-Analysis",
+      "doi": "10.1177/07356331251349620",
+      "year": 2024,
+      "venue": "Journal of Educational Computing Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Generative artificial intelligence in education: Advancing adaptive and personalized learning",
+      "doi": "10.18267/j.aip.235",
+      "year": 2024,
+      "venue": "Acta Informatica Pragensia",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Students\u2019 perceived impact of GenAI tools on learning and assessment in higher education: the role of individual AI competence",
+      "doi": "10.1186/s40561-025-00395-0",
+      "year": 2025,
+      "venue": "Smart Learning Environments",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "How ChatGPT impacts student engagement from a systematic review and meta-analysis study",
+      "doi": "10.1016/j.caeai.2025.100361",
+      "year": 2025,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Autonomy, Relatedness, and Competence in UX Design",
+      "doi": null,
+      "year": 2022,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "self-determination concepts informing UX framing"
+    },
+    {
+      "title": "A human-centred learning and teaching framework using generative artificial intelligence for self-regulated learning development through domain knowledge learning in K\u201312 settings",
+      "doi": "10.1109/TLT.2024.3392830",
+      "year": 2024,
+      "venue": "IEEE Transactions on Learning Technologies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Your brain on ChatGPT: Accumulation of cognitive debt when using an AI assistant for essay writing task",
+      "doi": "10.48550/arXiv.2506.08872",
+      "year": 2025,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A critical review of GenAI policies in higher education assessment: A call to reconsider the \u201coriginality\u201d of students\u2019 work",
+      "doi": "10.1080/02602938.2024.2309963",
+      "year": 2024,
+      "venue": "Assessment & Evaluation in Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Understanding student perceptions of artificial intelligence as a teammate",
+      "doi": "10.1007/s10758-024-09780-z",
+      "year": 2024,
+      "venue": "Technology, Knowledge and Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Designing for motivation, engagement and wellbeing in digital experience",
+      "doi": "10.3389/fpsyg.2018.00797",
+      "year": 2018,
+      "venue": "Frontiers in Psychology",
+      "citation_level": 2,
+      "citation_context": "motivation and UX design framing"
+    },
+    {
+      "title": "Critical thinking: The nature of critical and creative thought",
+      "doi": null,
+      "year": 2006,
+      "venue": "Journal of Developmental Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Does active learning work? A review of the research",
+      "doi": "10.1002/j.2168-9830.2004.tb00809.x",
+      "year": 2004,
+      "venue": "Journal of Engineering Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Board 400: The impact of Oral Exams on Engineering Students\u2019 Learning",
+      "doi": "10.18260/1-2--43137",
+      "year": 2023,
+      "venue": "2023 ASEE Annual Conference & Exposition",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A study of the effects of oral proficiency exams in introductory programming courses on underrepresented groups",
+      "doi": "10.1145/3478431.34993",
+      "year": 2022,
+      "venue": "Proceedings of the 53rd ACM Technical Symposium on Computer Science Education-Volume 1",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Evolution and revolution in artificial intelligence in education",
+      "doi": "10.1007/s40593-016-0110-3",
+      "year": 2016,
+      "venue": "International Journal of Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Evaluating AI-powered learning assistants in engineering higher education: Student engagement, ethical challenges, and policy implications",
+      "doi": "10.48550/arXiv.2506.05699",
+      "year": 2025,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Cognitive ease at a cost: LLMs reduce mental effort but compromise depth in student scientific inquiry",
+      "doi": "10.1016/j.chb.2024.108386",
+      "year": 2024,
+      "venue": "Computers in Human Behavior",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Can AI provide useful holistic essay scoring?",
+      "doi": "10.1016/j.caeai.2024.100255",
+      "year": 2024,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Oral exams: A more meaningful assessment of students\u2019 understanding",
+      "doi": "10.1080/26939169.2021.1914527",
+      "year": 2021,
+      "venue": "Journal of Statistics and Data Science Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT in education: An effect in search of a cause.",
+      "doi": "10.1111/jcal.70105",
+      "year": 2025,
+      "venue": "Journal of Computer Assisted Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Assessment and learning outcomes for generative AI in higher education: A scoping review on current research status and trends",
+      "doi": "10.14742/ajet.9540",
+      "year": 2024,
+      "venue": "Australasian Journal of Educational Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Promises and challenges of generative artificial intelligence for human learning",
+      "doi": "10.1038/s41562-024-02004-5",
+      "year": 2024,
+      "venue": "Nature Human Behaviour",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Using Socratic questioning to promote critical thinking skills through asynchronous discussion forums in distance learning environments",
+      "doi": "10.1207/s15389286ajde1903_4",
+      "year": 2005,
+      "venue": "American Journal of Distance Education",
+      "citation_level": 2,
+      "citation_context": "basis for Socratic questioning rationale"
+    },
+    {
+      "title": "The effect of generative artificial intelligence (AI)-based tool use on students' computational thinking skills, programming self-efficacy and motivation",
+      "doi": "10.1016/j.caeai.2023.100147",
+      "year": 2023,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Artificial Intelligence for Computer Science Education in Higher Education: A Systematic Review of Empirical Research Published in 2003\u20132023: M. Zhu, K. Zhang",
+      "doi": "10.1007/s10758-025-09859-1",
+      "year": 2025,
+      "venue": "Technology, Knowledge and Learning",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

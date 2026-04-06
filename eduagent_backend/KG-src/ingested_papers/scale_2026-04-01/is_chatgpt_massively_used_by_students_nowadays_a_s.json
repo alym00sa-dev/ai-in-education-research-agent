@@ -1,0 +1,642 @@
+{
+  "title": "Is ChatGPT Massively Used by Students Nowadays? A Survey on the Use of Large Language Models such as ChatGPT in Educational Settings",
+  "doi": null,
+  "year": 2024,
+  "venue": "arXiv",
+  "url": "https://arxiv.org/abs/2412.17486",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Middle School (6th-8th)",
+    "High School (9th-12th)",
+    "Undergraduate",
+    "Graduate / Doctoral"
+  ],
+  "user_types": [
+    "Student",
+    "Educator",
+    "Parent"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper examines how widely students are using large language models (LLMs) such as ChatGPT in educational settings, and whether usage differs by age, gender, and subject area. The authors are particularly concerned with how these tools may be reshaping learning practices, potentially supporting learning and productivity while also raising risks related to critical thinking, foundational knowledge, and emerging inequities such as an AI literacy gender gap.\n\nThe study uses a survey-based observational design. A Google Form questionnaire was administered in educational institutions, asking students about whether they used ChatGPT or equivalent tools in academic contexts, how often they used them, for which humanities and science topics, how satisfied they were with the outputs, whether they reworked the generated answers, what devices they used, and why some students did not use the tools. The analysis relies on descriptive statistics, chi-squared tests, residual analysis, and confidence intervals to identify associations across demographic groups.\n\nThe population consisted of 395 students aged 13 to 25 in France and Italy, spanning secondary school, high school, undergraduate, and graduate levels. The survey was conducted between May and October 2024 and was typically administered during class time under professor supervision. The authors note that the university sample was skewed toward science-related fields, and that some younger respondents required parental authorization. The study context was educational use of LLMs across both school and university settings rather than evaluation of a formal instructional intervention.\n\nThe main conclusions are that ChatGPT/LLM use is already very widespread, including among younger students, and increases with age. Male students reported higher use than female students, especially for science-related tasks, which the authors interpret as a potential emerging AI-related gender gap. Most users reported reworking model outputs, but systematic proofreading was less common among younger students. Students were generally satisfied with LLM outputs across age and gender groups. The authors argue that educational institutions should no longer ignore these tools and should adapt curricula and homework practices to integrate AI literacy, ethical use, critical evaluation, and awareness of limitations and environmental costs.",
+  "limitations": [
+    "no_control_group",
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "classroom",
+  "teacher_training": "yes",
+  "implementation_fidelity": "not_reported",
+  "study_country": "France and Italy",
+  "study_region": "Europe",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "language_speech",
+        "other"
+      ],
+      "description": "A generative AI chatbot based on large language models used for conversational question answering, writing assistance, summarization, translation, and related language tasks.",
+      "use_case": "Studied via a cross-sectional survey of students aged 13-25 in France and Italy about whether, how often, and for what academic purposes they used ChatGPT (or equivalent LLM tools), including humanities/science use, satisfaction, proofreading habits, and device preferences.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "In a survey of 395 students, 344/395 (87.1%) reported having used ChatGPT in an academic context. Usage was widespread across age groups, with nearly 70% of 13-16-year-olds reporting use and 89.7%-95.4% use in older groups; male students reported higher use than female students (93.8% vs 79.3%, \u03c72=16.84, p<10^-4).",
+          "measure": "Self-reported academic use of ChatGPT",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=395"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "Among ChatGPT users, systematic reworking/proofreading of outputs was limited, especially among younger students. Only 20% of students aged 13-16 reported always revising answers, and even among the oldest students systematic proofreading remained below 50%; the age-pattern difference was statistically significant (\u03c72=21.22, p=0.0017).",
+          "measure": "Self-reported reworking/proofreading of ChatGPT-generated answers",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=395"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Students reported generally high satisfaction with ChatGPT outputs across age groups, with 'It was quite good' exceeding 50% in all age groups and no significant age difference in satisfaction (\u03c72=4.12, p=0.90). Satisfaction was also similar by gender (\u03c72=0.91, p=0.82).",
+          "measure": "Self-reported satisfaction with ChatGPT answers",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=336"
+        },
+        {
+          "outcome_category": "Systemic / Institutional Impact",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "The survey found notable gender disparities in ChatGPT use frequency and topical use. Male students were more likely to use ChatGPT frequently, particularly for science topics, while female students were less likely to report frequent use; science-topic use differed strongly by gender (\u03c72=41.18, p=5.98\u00d710^-9), and humanities-topic use also differed (p=0.0011), which the authors interpret as a potential emerging AI literacy/technology gender gap.",
+          "measure": "Self-reported use frequency by gender and topic domain",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=336"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical primary study, but it is a cross-sectional survey rather than an RCT or quasi-experiment. Findings are based on self-reported usage and perceptions, with statistical tests for group differences but no causal design.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper shows substantial uptake and important behavioral disparities, but it does not estimate causal learning effects or standardized effect sizes on student achievement. Impact on outcomes is therefore meaningful but unclear in magnitude.",
+  "citations": [
+    {
+      "title": "Large language models: A survey",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Introducing ChatGPT",
+      "doi": null,
+      "year": 2022,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "How large language models can reshape collective intelligence",
+      "doi": null,
+      "year": 2024,
+      "venue": "Nature Publishing Group UK London",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Large language models surpass human experts in predicting neuroscience results",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Artificial Intelligence, Scientific Discovery, and Product Innovation",
+      "doi": null,
+      "year": 2024,
+      "venue": "National Bureau of Economic Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Exploring the implications of chatgpt for language learning in higher education",
+      "doi": null,
+      "year": 2023,
+      "venue": "Indonesian Journal of English Language Teaching and Applied Linguistics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Collaborating with chatgpt in argumentative writing classrooms",
+      "doi": null,
+      "year": 2023,
+      "venue": "Assessing Writing",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Developing an ai-based chatbot for practicing responsive teaching in mathematics",
+      "doi": null,
+      "year": 2022,
+      "venue": "Computers & Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Chatgpt as a universal design for learning tool supporting college students with disabilities",
+      "doi": null,
+      "year": 2023,
+      "venue": "Educational Renaissance",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT as an assistive technology to enhance reading comprehension for individuals with ADHD",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Chatgpt for education and research: Opportunities, threats, and strategies",
+      "doi": null,
+      "year": 2023,
+      "venue": "Applied Sciences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The digital divide in action: how experiences of digital technology shape future relationships with artificial intelligence",
+      "doi": null,
+      "year": 2024,
+      "venue": "Springer",
+      "citation_level": 2,
+      "citation_context": "frames AI literacy and technological divide risks"
+    },
+    {
+      "title": "Digital development and the digital gender gap",
+      "doi": null,
+      "year": 2017,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "grounds discussion of gendered technology access gaps"
+    },
+    {
+      "title": "Systematic mapping of digital gap and gender, age, ethnicity, or disability",
+      "doi": null,
+      "year": 2022,
+      "venue": "Sustainability",
+      "citation_level": 2,
+      "citation_context": "supports demographic digital divide framing"
+    },
+    {
+      "title": "Impact of modern technology in education",
+      "doi": null,
+      "year": 2018,
+      "venue": "Journal of Applied and Advanced Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Constructivism in computer science education",
+      "doi": null,
+      "year": 1998,
+      "venue": "Acm sigcse bulletin",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "\" creating cool stuff\" pupils\u2019 experience of the bbc micro: bit",
+      "doi": null,
+      "year": 2017,
+      "venue": "Proceedings of the 2017 ACM SIGCSE Technical Symposium on Computer Science Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Are there differences in learning gains when programming a tangible object or a simulation?",
+      "doi": null,
+      "year": 2019,
+      "venue": "Proceedings of the 2019 ACM Conference on Innovation and Technology in Computer Science Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Age and staff development experience with computers as factors affecting teacher attitudes toward computers",
+      "doi": "10.1111/j.1949-8594.1985.tb09613.x",
+      "year": 1985,
+      "venue": "School Science and Mathematics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Barriers to adopting technology for teaching and learning",
+      "doi": null,
+      "year": 2002,
+      "venue": "Educause Quarterly",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "What do faculty want?",
+      "doi": null,
+      "year": 2001,
+      "venue": "Educause Quarterly",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ICT in Education",
+      "doi": null,
+      "year": 2020,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The effects of handwriting experience on functional brain development in pre-literate children",
+      "doi": "10.1016/j.tine.2012.08.001",
+      "year": 2012,
+      "venue": "Trends in Neuroscience and Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Literacy training of kindergarten children with pencil, keyboard or tablet stylus: The influence of the writing tool on reading and writing performance at the letter and word level",
+      "doi": null,
+      "year": 2020,
+      "venue": "Frontiers in psychology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Effects of excessive screen time on child development: an updated review and strategies for management",
+      "doi": null,
+      "year": 2023,
+      "venue": "Cureus",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Digital dilemmas and existing recommendations for healthy screen time use for children and adolescents",
+      "doi": null,
+      "year": 2024,
+      "venue": "Asian Journal of Psychiatry",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "How technology can change educational research? definition, factors for improving quality of education and computational bibliometric analysis",
+      "doi": null,
+      "year": 2024,
+      "venue": "ASEAN Journal of Science and Engineering",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Technology and innovation in shaping the future of education",
+      "doi": null,
+      "year": 2024,
+      "venue": "Springer",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Why so serious? on the relation of serious games and learning",
+      "doi": null,
+      "year": 2010,
+      "venue": "Journal for computer game culture",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Prediction and entropy of printed english",
+      "doi": "10.1002/j.1538-7305.1951.tb01366.x",
+      "year": 1951,
+      "venue": "The Bell System Technical Journal",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Statistical language models for information retrieval a critical review",
+      "doi": null,
+      "year": 2008,
+      "venue": "Foundations and Trends\u00ae in Information Retrieval",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "An empirical study of smoothing techniques for language modeling",
+      "doi": null,
+      "year": 1999,
+      "venue": "Computer Speech & Language",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A neural probabilistic language model",
+      "doi": null,
+      "year": 2000,
+      "venue": "Advances in neural information processing systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Bert: Pre-training of deep bidirectional transformers for language understanding",
+      "doi": null,
+      "year": 2018,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Improving language understanding by generative pre-training",
+      "doi": null,
+      "year": 2018,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A comprehensive survey on pretrained foundation models: A history from bert to chatgpt",
+      "doi": null,
+      "year": 2024,
+      "venue": "Springer",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The llama 3 herd of models",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv e-prints",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Mixtral of Experts",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Gemma: Open Models Based on Gemini Research and Technology",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Qwen2 Technical Report",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "PaLM: Scaling Language Modeling with Pathways",
+      "doi": null,
+      "year": 2022,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "GPT-4 Technical Report",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A survey of large language models",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Impact of chatgpt on learning motivation: teachers and students\u2019 voices",
+      "doi": null,
+      "year": 2023,
+      "venue": "Journal of English Studies in Arabia Felix",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Chatgpt for good? on opportunities and challenges of large language models for education",
+      "doi": null,
+      "year": 2023,
+      "venue": "Learning and individual differences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Large language models in education: A systematic review",
+      "doi": "10.1109/CSTE62025.2024.00031",
+      "year": 2024,
+      "venue": "2024 6th International Conference on Computer Science and Technologies in Education (CSTE)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Chatgpt: educational artificial intelligence",
+      "doi": null,
+      "year": 2023,
+      "venue": "International Journal, of advanced trends in computer science and engineering",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT in education: Methods, potentials and limitations",
+      "doi": null,
+      "year": 2023,
+      "venue": "Elsevier",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Analyzing the students\u2019 views, concerns, and perceived ethics about chat GPT usage",
+      "doi": null,
+      "year": 2023,
+      "venue": "Elsevier",
+      "citation_level": 2,
+      "citation_context": "supports framing of students\u2019 ethical concerns about ChatGPT"
+    },
+    {
+      "title": "Chatgpt and large language models in academia: opportunities and challenges",
+      "doi": null,
+      "year": 2023,
+      "venue": "BioData Mining",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "What if the devil is my guardian angel: Chatgpt as a case study of using chatbots in education",
+      "doi": null,
+      "year": 2023,
+      "venue": "Smart learning environments",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT in higher education-a synthesis of the literature and a future research agenda",
+      "doi": null,
+      "year": 2024,
+      "venue": "Springer",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A systematic literature review of empirical research on chatgpt in education",
+      "doi": null,
+      "year": 2024,
+      "venue": "Discover Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Cultivating writing skills: the role of chatgpt as a learning assistant\u2014a case study",
+      "doi": null,
+      "year": 2024,
+      "venue": "Smart Learning Environments",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Chatgpt in education: A blessing or a curse? a qualitative study exploring early adopters\u2019 utilization and perceptions",
+      "doi": null,
+      "year": 2024,
+      "venue": "Computers in Human Behavior: Artificial Humans",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "University students\u2019 self-reported reliance on chatgpt for learning: A latent profile analysis",
+      "doi": null,
+      "year": 2024,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "How understanding the limitations and risks of using chatgpt can contribute to willingness to use",
+      "doi": null,
+      "year": 2024,
+      "venue": "Smart Learning Environments",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Disciplinary differences in undergraduate students\u2019 engagement with generative artificial intelligence",
+      "doi": null,
+      "year": 2024,
+      "venue": "Smart Learning Environments",
+      "citation_level": 2,
+      "citation_context": "frames comparisons across subject areas"
+    },
+    {
+      "title": "Main factors driving the use of chatgpt by undergraduate students: An exploratory and preliminary study in peru",
+      "doi": null,
+      "year": 2024,
+      "venue": "Issues in Information Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "What drives students toward chatgpt? an investigation of the factors influencing adoption and usage of chatgpt",
+      "doi": null,
+      "year": 2024,
+      "venue": "Interactive Technology and Smart Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Determinants of intention to use chatgpt for educational purposes: Findings from pls-sem and fsqca",
+      "doi": null,
+      "year": 2024,
+      "venue": "International Journal of Human\u2013Computer Interaction",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "To use or not to use ChatGPT in higher education? A study of students\u2019 acceptance and use of technology",
+      "doi": null,
+      "year": 2023,
+      "venue": "Taylor & Francis",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Gender gap in science, technology, engineering, and mathematics (stem): Current knowledge, implications for practice, policy, and future directions",
+      "doi": null,
+      "year": 2017,
+      "venue": "Educational psychology review",
+      "citation_level": 2,
+      "citation_context": "interprets observed gender differences in STEM-related LLM use"
+    },
+    {
+      "title": "The effect of repeated writing on memory",
+      "doi": null,
+      "year": 1995,
+      "venue": "Memory & cognition",
+      "citation_level": 2,
+      "citation_context": "supports claim that writing improves memory retention"
+    },
+    {
+      "title": "The importance of cursive handwriting over typewriting for learning in the classroom: A high-density eeg study of 12-year-old children and young adults",
+      "doi": null,
+      "year": 2020,
+      "venue": "Frontiers in Psychology",
+      "citation_level": 2,
+      "citation_context": "supports claim handwriting benefits learning over typing"
+    },
+    {
+      "title": "Potential use of chat gpt in global warming",
+      "doi": null,
+      "year": 2023,
+      "venue": "Annals of biomedical engineering",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The environmental impact of ai: a case study of water consumption by chat gpt",
+      "doi": null,
+      "year": 2023,
+      "venue": "Partners Universal International Innovation Journal",
+      "citation_level": 2,
+      "citation_context": "supports environmental costs of ChatGPT use"
+    },
+    {
+      "title": "Chatgpt and environmental research",
+      "doi": null,
+      "year": 2023,
+      "venue": "Environmental Science & Technology",
+      "citation_level": 2,
+      "citation_context": "supports environmental issues discussion for educational adoption"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

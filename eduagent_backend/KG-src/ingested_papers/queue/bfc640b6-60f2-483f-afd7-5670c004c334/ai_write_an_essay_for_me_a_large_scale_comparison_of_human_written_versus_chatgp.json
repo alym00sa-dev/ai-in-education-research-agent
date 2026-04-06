@@ -1,0 +1,79 @@
+{
+  "title": "AI, write an essay for me: A large-scale comparison of human-written versus ChatGPT-generated essays",
+  "doi": null,
+  "year": 2023,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2304.14276v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper investigates how the quality of ChatGPT-generated argumentative essays compares with human-written student essays, with particular attention to essay quality ratings and linguistic characteristics. The authors frame the work as an independent benchmark of generative AI in an educationally relevant task: writing argumentative essays similar to those encountered in secondary education. It does not study motivation, writing improvement over time, or an instructional intervention in schools; rather, it evaluates pre-existing student essays and newly generated AI essays on the same prompts.\n\nThe approach was to take 90 argumentative essay topics from an essay-forum corpus used by German high-school students, pair each topic with one human-written essay from the corpus, and generate corresponding essays using ChatGPT-3.5 and ChatGPT-4 with a simple prompt. Secondary-school teachers then rated blinded essays on seven rubric dimensions such as topic coverage, logic, language mastery, complexity, and vocabulary/text linking. The study also included computational linguistic analysis of features such as lexical diversity, syntactic complexity, nominalizations, modals, epistemic markers, and discourse markers.\n\nThe participant context was secondary education in Germany. The raters were permanently employed secondary-school teachers, mostly from grammar schools, who had enrolled in an online training session on ChatGPT. The human essays came from a public essay forum frequented by German high-school students who were non-native English speakers. A total of 111 teachers completed the questionnaire, producing 658 ratings across 270 essays. The study was conducted online during a teacher training session, not as a classroom experiment with students randomly assigned to treatment and control conditions.\n\nThe main conclusion is that both ChatGPT-3.5 and ChatGPT-4 produced essays rated significantly higher than the human student essays across all rubric criteria, with ChatGPT-4 generally performing best. Reported effect sizes for human vs. ChatGPT comparisons ranged roughly from medium to very large depending on criterion, but these are essay-rating differences across text sources, not treatment effects from a randomized educational intervention. Because there is no student-level intervention, no motivation outcome, no pre/post design, and no randomized assignment, this paper is not the alleged 2026 motivation RCT and should be excluded from any quantitative synthesis of ChatGPT-based writing feedback interventions in high school.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical comparative study with substantial sample size and transparent methods, but it is not a student learning experiment, not randomized, and not a causal evaluation of ChatGPT-based writing feedback. It benchmarks essay outputs rather than intervention effects on learners.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The reported effects on essay-product quality are large, but they concern AI-generated text outperforming human essays, not improvements in student writing, motivation, or learning outcomes. For educational intervention synthesis, impact is therefore unclear and not directly transferable.",
+  "interventions": [
+    {
+      "intervention": "AI Writing / Language Tool",
+      "confidence": 0.98,
+      "role": "primary",
+      "use_case": "Comparison of ChatGPT-3.5 and ChatGPT-4 as essay-generation tools for argumentative high-school-style writing, evaluated against human-written student essays on teacher-rated writing quality dimensions."
+    },
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.72,
+      "role": "secondary",
+      "use_case": "ChatGPT is accessed through its conversational interface, but the study uses it as a generative writing system rather than as an interactive tutor or feedback agent."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Literacy",
+      "confidence": 0.96,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "This is not a learning-intervention study but a benchmark comparison of writing products. Across 90 essay topics rated by 111 secondary-school teachers, ChatGPT-generated essays were scored significantly higher than human-written student essays on all seven writing-quality criteria. Human vs ChatGPT-3 effect sizes ranged from d=0.52 to d=1.15, and human vs ChatGPT-4 from d=0.88 to d=1.43; overall means were 3.69 (human), 4.36 (ChatGPT-3), and 4.68 (ChatGPT-4) on a 0-6 scale.",
+        "measure": "Teacher ratings of argumentative essay quality on seven rubric dimensions: topic/completeness, logic/composition, expressiveness/comprehensiveness, language mastery, complexity, vocabulary/text linking, and language constructs",
+        "study_size": "90 topics; 270 essays total; 658 ratings from 111 teachers",
+        "effect_size": "Human vs ChatGPT-3: d=0.52 to 1.15; Human vs ChatGPT-4: d=0.88 to 1.43; ChatGPT-3 vs ChatGPT-4 on significant dimensions: d=0.45 to 0.50",
+        "confidence_interval": "95% CIs for mean ratings shown via bootstrap plots, exact numeric CIs not reported",
+        "std_deviation": "Overall SDs: human=1.26, ChatGPT-3=1.14, ChatGPT-4=1.11; criterion-specific SDs reported in Table 2"
+      },
+      "intervention": "AI Writing / Language Tool"
+    },
+    {
+      "outcome": "Systemic / Institutional Impact",
+      "confidence": 0.62,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper argues that because AI-generated essays outperform the sampled human student essays, schools will need to redesign homework, assessment, and writing instruction. However, this is an interpretive implication rather than a directly measured institutional outcome; no empirical school-level policy or implementation metrics were collected.",
+        "measure": "Not directly measured; author interpretation based on comparative essay-quality results",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "AI Writing / Language Tool"
+    }
+  ],
+  "limitations": [
+    "single_site",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "yes",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Germany",
+  "study_region": "Europe",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

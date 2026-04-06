@@ -1,0 +1,682 @@
+{
+  "title": "Assisting the Grading of a Handwritten General Chemistry Exam with Artificial Intelligence",
+  "doi": null,
+  "year": 2025,
+  "venue": "not_reported",
+  "url": "https://arxiv.org/abs/2509.10591",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper examines whether an AI-based grading system can reliably assist with scoring a handwritten, high-stakes general chemistry exam. The core question is how closely AI-assigned scores match human grading across different types of exam responses, including chemical reactions, short and long open-ended text, numerical derivations, symbolic expressions, drawings, and graphing tasks. The study is motivated by the challenge of scaling open-ended assessment in STEM while maintaining reliability, fairness, and trust.\n\nThe authors implemented a multimodal AI grading workflow using an OpenAI model accessed through Azure AI Services. Student exam pages and corresponding rubric pages were uploaded as images, and the AI graded each page in structured JSON output. The study compared AI-assigned points with TA-assigned points treated as the operational ground truth, using linear regression, multiclass exact-match metrics, inter-run reliability measures, and filtering strategies such as partial-credit thresholds, item-response-theory-based risk thresholds, and exclusion of graphical task types. A human-in-the-loop framing was central to the approach, with the goal of using AI for routine grading while deferring uncertain cases to human graders.\n\nThe study took place in a large-enrollment undergraduate general chemistry course for non-majors at ETH Zurich in Switzerland. The sample included 296 consenting students out of 459 enrolled students, and all exams were handwritten and administered in German. The grading context involved 46 exam parts across 15 pages, with traditional TA grading conducted in parallel and used for comparison. Sixteen teaching assistants graded the exams under instructor supervision, with rubric calibration and auditing procedures described.\n\nThe main conclusion is that AI grading shows strong promise for some assessment formats but is not reliable enough to replace human graders in high-stakes settings without selective oversight. Agreement with human grading was highest for textual responses and chemical reaction questions, while performance was weaker for numerical, drawing, and graphing tasks. Aggregate total exam scores correlated strongly with human totals, and repeated AI runs were highly consistent, but item-level errors remained substantial enough to require filtering and human review. The authors conclude that AI can meaningfully reduce grading workload for routine assessment tasks, especially when paired with confidence-based deferral, but fairness, student trust, and careful oversight remain essential.",
+  "limitations": [
+    "single_site",
+    "no_control_group",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "classroom",
+  "teacher_training": "yes",
+  "implementation_fidelity": "high",
+  "study_country": "Switzerland",
+  "study_region": "Europe",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation"
+      ],
+      "description": "OpenAI GPT-family multimodal reasoning model used via Azure AI Services for image-and-text processing and rubric-based scoring.",
+      "use_case": "Used to grade scanned handwritten pages of a high-stakes general chemistry exam by comparing each student exam page image with the corresponding rubric page and outputting JSON point assignments for each problem part; specifically the paper used an OpenAI model ('gpt-o4-mini/high-vision'), normalized here to ChatGPT.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "AI grading processed 13,616 problem parts from 296 consenting students (4,440 pages) in about three hours using up to 30 parallel agents, at approximately $100 total token cost. The paper contrasts this with traditional human grading for the full 459-student exam, estimated at about 80 TA-hours and \u2248$3,500, indicating strong efficiency gains for routine assessment workflows.",
+          "measure": "grading time and estimated grading cost",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=296 students; 13,616 problem parts"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Run-to-run consistency for AI-generated total scores was high, with ICC(A,1)=0.967 for a single run and ICC(A,5)=0.993 when averaging five runs. The within-target repeatability SD was Sw=1.92 points and the 95% repeatability coefficient was RC=5.33 points; Kendall's W=0.959 and pairwise Lin's CCC on totals had median 0.977 (IQR 0.045), showing stable totals despite some residual variation.",
+          "measure": "inter-run reliability of AI-assigned total scores",
+          "effect_size": "ICC(A,1)=0.967; ICC(A,5)=0.993; Sw=1.92 points; RC=5.33 points; Kendall's W=0.959; Lin's CCC median 0.977",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=296 students"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "At the finer item\u00d7student level, agreement across five AI runs was lower but still strong: ICC(A,1)=0.836 and ICC(A,5)=0.962, with Sw=0.25 points and RC=0.68 points per cell. This indicates that small cell-level jitter exists, but much of it cancels out when scores are aggregated into exam totals.",
+          "measure": "inter-run reliability of AI-assigned rubric-cell scores",
+          "effect_size": "ICC(A,1)=0.836; ICC(A,5)=0.962; Sw=0.25 points; RC=0.68 points",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=13,616 problem parts"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Unfiltered agreement between AI and TA grading on total exam scores was high but not sufficient for autonomous high-stakes grading, with regression slope=0.76, intercept=2.9, and R\u00b2=0.91. Per-problem R\u00b2 ranged from 0.61 to 0.85, showing that total-score aggregation improved alignment relative to individual problems through partial cancellation of item-level errors.",
+          "measure": "agreement between AI-assigned and TA-assigned exam scores",
+          "effect_size": "Total-score slope=0.76, intercept=2.9, R\u00b2=0.91; per-problem R\u00b2=0.61-0.85",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=296 students"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Exact-match multiclass grading performance varied by response type. F1 was highest for long answer (0.68), short answer (0.60), and reaction questions (0.59), while graphing was weakest at F1=0.12 with normed F1=-0.098; overall across all 46 parts, Accuracy=0.64, Precision=0.31, Recall=0.29, F1=0.30, and normed F1=0.27.",
+          "measure": "multiclass exact-match grading quality by question type",
+          "effect_size": "Long answer F1=0.68; short answer F1=0.60; reaction F1=0.59; graphing F1=0.12; overall Accuracy=0.64, Precision=0.31, Recall=0.29, F1=0.30, normed F1=0.27",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=13,616 problem parts"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Selective filtering improved the reliability of accepted AI-graded work. With a 50% partial-credit threshold, 47% of items were auto-accepted, mean absolute error on accepted items was 0.18 points, under-credit occurred on 11% of accepted items, under-credit greater than 0.25 points on 6%, over-credit on 25%, and bias was +0.08 points; total-score regression improved to slope=0.91, intercept=3.4, R\u00b2=0.96. Restricting acceptance to full-credit items yielded 27% coverage with MAE=0.12 and regression slope\u22480.99, intercept=1.6, R\u00b2=0.98.",
+          "measure": "filtered AI grading performance under selective automation thresholds",
+          "effect_size": "At t=0.5: 47% accepted, MAE=0.18, Under=11%, Under >0.25=6%, Over=25%, Bias=0.08, slope=0.91, intercept=3.4, R\u00b2=0.96; at t=1.0: 27% accepted, MAE=0.12, slope\u22480.99, intercept=1.6, R\u00b2=0.98",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=13,616 problem parts"
+        },
+        {
+          "outcome_category": "Systemic / Institutional Impact",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "The study concludes the AI system is promising for routine assessment tasks and can reduce grading burden, but is not reliable enough for unfiltered use in high-stakes handwritten chemistry exams. The authors emphasize the need for human oversight, especially for numerical, graphical, and ambiguous responses, and note concerns about student perceptions of fairness and trust.",
+          "measure": "practical suitability for deployment in high-stakes assessment",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=296 students"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical single-study evaluation with substantial quantitative analysis, but it is not an RCT or quasi-experimental study of student learning outcomes; it primarily examines grading reliability and workflow performance in one course context.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper shows promising but mixed operational impact: strong efficiency and good alignment under filtering, but insufficient reliability for unfiltered high-stakes use and clear weaknesses on some task types. Effects are substantial in workflow terms but not reported as standardized educational outcome effects.",
+  "citations": [
+    {
+      "title": "International Journal of Innovation in Science and Mathematics Education",
+      "doi": null,
+      "year": 2012,
+      "venue": "International Journal of Innovation in Science and Mathematics Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Israel Journal of chemistry",
+      "doi": null,
+      "year": 2019,
+      "venue": "Israel Journal of chemistry",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "International Journal of Science Education",
+      "doi": null,
+      "year": 2002,
+      "venue": "International Journal of Science Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Journal of Chemical Education",
+      "doi": null,
+      "year": 2023,
+      "venue": "Journal of Chemical Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Phys. Rev. Phys. Educ. Res.",
+      "doi": null,
+      "year": 2023,
+      "venue": "Physical Review Physics Education Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Chemistry Education Research and Practice",
+      "doi": null,
+      "year": 2021,
+      "venue": "Chemistry Education Research and Practice",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Chemistry Education Research and Practice",
+      "doi": null,
+      "year": 2023,
+      "venue": "Chemistry Education Research and Practice",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Journal of Chemical Education",
+      "doi": null,
+      "year": 2020,
+      "venue": "Journal of Chemical Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Phys. Teach.",
+      "doi": null,
+      "year": 2012,
+      "venue": "The Physics Teacher",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Biochemistry education: From theory to practice",
+      "doi": null,
+      "year": 2019,
+      "venue": "ACS Publications",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Chemistry Education Research and Practice",
+      "doi": null,
+      "year": 2025,
+      "venue": "Chemistry Education Research and Practice",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Phys. Rev. ST Phys. Educ. Res.",
+      "doi": null,
+      "year": 2013,
+      "venue": "Physical Review Special Topics - Physics Education Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Journal of Chemical Education",
+      "doi": null,
+      "year": 2014,
+      "venue": "Journal of Chemical Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Chemistry Education Research and Practice",
+      "doi": null,
+      "year": 2025,
+      "venue": "Chemistry Education Research and Practice",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Chemistry Education Research and Practice",
+      "doi": null,
+      "year": 2025,
+      "venue": "Chemistry Education Research and Practice",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Chemistry Education Research and Practice",
+      "doi": null,
+      "year": 2025,
+      "venue": "Chemistry Education Research and Practice",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Chemistry Education Research and Practice",
+      "doi": null,
+      "year": 2025,
+      "venue": "Chemistry Education Research and Practice",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Chemistry Education Research and Practice",
+      "doi": null,
+      "year": 2025,
+      "venue": "Chemistry Education Research and Practice",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Chemistry Education Research and Practice",
+      "doi": null,
+      "year": 2023,
+      "venue": "Chemistry Education Research and Practice",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "BioData Mining",
+      "doi": null,
+      "year": 2023,
+      "venue": "BioData Mining",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Learning and individual differences",
+      "doi": null,
+      "year": 2023,
+      "venue": "Learning and Individual Differences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Phys. Rev. Phys. Educ. Res.",
+      "doi": null,
+      "year": 2022,
+      "venue": "Physical Review Physics Education Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Phys. Rev. Phys. Educ. Res.",
+      "doi": null,
+      "year": 2024,
+      "venue": "Physical Review Physics Education Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Phys. Rev. Phys. Educ. Res.",
+      "doi": null,
+      "year": 2023,
+      "venue": "Physical Review Physics Education Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Physical Review Physics Education Research",
+      "doi": null,
+      "year": 2024,
+      "venue": "Physical Review Physics Education Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "British Educational Research Journal",
+      "doi": null,
+      "year": 2025,
+      "venue": "British Educational Research Journal",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Journal of Chemical Education",
+      "doi": null,
+      "year": 2024,
+      "venue": "Journal of Chemical Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "International Journal of Educational Technology in Higher Education",
+      "doi": null,
+      "year": 2023,
+      "venue": "International Journal of Educational Technology in Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Phys. Rev. Phys. Educ. Res.",
+      "doi": null,
+      "year": 2023,
+      "venue": "Physical Review Physics Education Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Proceedings of the 2023 ACM Conference on International Computing Education Research-Volume 1",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 2023 ACM Conference on International Computing Education Research-Volume 1",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "EU Artificial Intelligence Act, Annex III",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "EU Artificial Intelligence Act, Article 26: Obligations of Deployers of High-Risk AI Systems",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Proceedings of the 2020 CHI Conference on Human Factors in Computing Systems",
+      "doi": null,
+      "year": 2020,
+      "venue": "Proceedings of the 2020 CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Educational Technology Research and Development",
+      "doi": null,
+      "year": 2023,
+      "venue": "Educational Technology Research and Development",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "International Conference on Artificial Intelligence in Education",
+      "doi": null,
+      "year": 2023,
+      "venue": "International Conference on Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Instructional Science",
+      "doi": null,
+      "year": 2011,
+      "venue": "Instructional Science",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Probabilistic models for some intelligence and attainment tests.",
+      "doi": null,
+      "year": 1993,
+      "venue": "ERIC",
+      "citation_level": 3,
+      "citation_context": "IRT expectation model used for Bayesian filtering"
+    },
+    {
+      "title": "Educational Measurement: Issues and Practice",
+      "doi": null,
+      "year": 1992,
+      "venue": "Educational Measurement: Issues and Practice",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Journal of educational measurement",
+      "doi": null,
+      "year": 2013,
+      "venue": "Journal of Educational Measurement",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "International Conference on Computers in Education",
+      "doi": null,
+      "year": 2024,
+      "venue": "International Conference on Computers in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "International Conference on Artificial Intelligence in Education",
+      "doi": null,
+      "year": 2024,
+      "venue": "International Conference on Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Journal of Cheminformatics",
+      "doi": null,
+      "year": 2024,
+      "venue": "Journal of Cheminformatics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "International Journal of Artificial Intelligence in Education",
+      "doi": null,
+      "year": 2025,
+      "venue": "International Journal of Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Physical Review Physics Education Research",
+      "doi": null,
+      "year": 2025,
+      "venue": "Physical Review Physics Education Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Computers and Education: Artificial Intelligence",
+      "doi": null,
+      "year": 2024,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Computers and Education: Artificial Intelligence",
+      "doi": null,
+      "year": 2024,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "BMC Medical Education",
+      "doi": null,
+      "year": 2024,
+      "venue": "BMC Medical Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "arXiv preprint arXiv:2510.05162",
+      "doi": null,
+      "year": 2025,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Physical Review Physics Education Research",
+      "doi": null,
+      "year": 2025,
+      "venue": "Physical Review Physics Education Research",
+      "citation_level": 2,
+      "citation_context": "similar thermodynamics exam grading results"
+    },
+    {
+      "title": "Proceedings of the AAAI conference on artificial intelligence",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Discover Artificial Intelligence",
+      "doi": null,
+      "year": 2024,
+      "venue": "Discover Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Proceedings of the 2024 on ACM Virtual Global Computing Education Conference V. 2",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 2024 ACM Virtual Global Computing Education Conference V. 2",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "arXiv preprint arXiv:2504.05276",
+      "doi": null,
+      "year": 2025,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Proceedings of the Thirty-Fourth International Joint Conference on Artificial Intelligence",
+      "doi": null,
+      "year": 2025,
+      "venue": "Proceedings of the Thirty-Fourth International Joint Conference on Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Azure AI Services",
+      "doi": null,
+      "year": null,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "platform used to access grading models"
+    },
+    {
+      "title": "Reasoning models",
+      "doi": null,
+      "year": null,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "model documentation for GPT-o4-mini"
+    },
+    {
+      "title": "Psychological bulletin",
+      "doi": null,
+      "year": 1979,
+      "venue": "Psychological Bulletin",
+      "citation_level": 3,
+      "citation_context": "inter-run reliability metric source"
+    },
+    {
+      "title": "The annals of mathematical statistics",
+      "doi": null,
+      "year": 1939,
+      "venue": "The Annals of Mathematical Statistics",
+      "citation_level": 3,
+      "citation_context": "rank-correlation statistic for agreement analysis"
+    },
+    {
+      "title": "Biometrics",
+      "doi": null,
+      "year": 1989,
+      "venue": "Biometrics",
+      "citation_level": 3,
+      "citation_context": "agreement statistic used in reliability analysis"
+    },
+    {
+      "title": "British Journal of Psychology",
+      "doi": null,
+      "year": 1912,
+      "venue": "British Journal of Psychology",
+      "citation_level": 3,
+      "citation_context": "correlation foundation for scoring agreement"
+    },
+    {
+      "title": "Psychological review",
+      "doi": null,
+      "year": 1934,
+      "venue": "Psychological Review",
+      "citation_level": 3,
+      "citation_context": "scaling/correlation foundation for scoring analysis"
+    },
+    {
+      "title": "American Journal of Psychology",
+      "doi": null,
+      "year": 1961,
+      "venue": "American Journal of Psychology",
+      "citation_level": 3,
+      "citation_context": "correlation measure referenced in agreement analysis"
+    },
+    {
+      "title": "The Physics Teacher",
+      "doi": null,
+      "year": 2019,
+      "venue": "The Physics Teacher",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Applied Psychological Measurement",
+      "doi": null,
+      "year": 2006,
+      "venue": "Applied Psychological Measurement",
+      "citation_level": 3,
+      "citation_context": "Bayesian/IRT expectation computation basis"
+    },
+    {
+      "title": "Phys. Rev. Phys. Educ. Res.",
+      "doi": null,
+      "year": 2024,
+      "venue": "Physical Review Physics Education Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Physical Review Physics Education Research",
+      "doi": null,
+      "year": 2025,
+      "venue": "Physical Review Physics Education Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Journal of Chemical Education",
+      "doi": null,
+      "year": 2019,
+      "venue": "Journal of Chemical Education",
+      "citation_level": 2,
+      "citation_context": "supports excluding graphical chemistry tasks from AI grading"
+    },
+    {
+      "title": "Proceedings of the 21st International Conference on Artificial Intelligence in Education (AIED 2020)",
+      "doi": null,
+      "year": 2020,
+      "venue": "Proceedings of the 21st International Conference on Artificial Intelligence in Education (AIED 2020)",
+      "citation_level": 2,
+      "citation_context": "supports transparent, intuitive grading practices"
+    },
+    {
+      "title": "Educational and Psychological Measurement",
+      "doi": null,
+      "year": 2024,
+      "venue": "Educational and Psychological Measurement",
+      "citation_level": 2,
+      "citation_context": "supports Bayesian management of grading uncertainty"
+    },
+    {
+      "title": "Applied Sciences",
+      "doi": null,
+      "year": 2025,
+      "venue": "Applied Sciences",
+      "citation_level": 2,
+      "citation_context": "supports transparency and student acceptance of AI grading"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

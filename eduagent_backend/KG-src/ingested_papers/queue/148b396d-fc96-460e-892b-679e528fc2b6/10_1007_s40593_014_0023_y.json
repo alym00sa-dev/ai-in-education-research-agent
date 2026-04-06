@@ -1,0 +1,112 @@
+{
+  "title": "A Multimedia Adaptive Tutoring System for Mathematics that Addresses Cognition, Metacognition and Affect",
+  "doi": "10.1007/s40593-014-0023-y",
+  "year": 2014,
+  "venue": "Int J Artif Intell Educ",
+  "url": "https://doi.org/10.1007/s40593-014-0023-y",
+  "source_db": "openalex_search",
+  "populations": [
+    "Middle School (6th-8th)",
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper examines how an intelligent adaptive tutoring system, Wayang Outpost (later called MathSpring), can support mathematics learning by addressing three dimensions of student experience at once: cognition, metacognition, and affect. The authors argue that conventional tutoring systems often focus mainly on correctness and mastery, while students also need support for motivation, self-regulation, engagement, and emotional states such as boredom or frustration. The paper therefore asks how educational technology can tailor content and feedback not only to what students know, but also to how hard they are trying, how they are regulating their learning, and how they are feeling.\n\nThe intervention is a multimedia intelligent tutoring system that provides adaptive problem selection, worked examples, hints, animated affective learning companions, open student models, progress reports, and math fluency training. The system uses an effort-based tutoring algorithm to infer student states from incorrect answers, hint use, and response time, and then adjusts difficulty and feedback accordingly. It also provides teacher-facing dashboards with real-time information about student performance, skill mastery, effort, and engagement. The paper additionally describes a separate math facts retrieval component (MathSuccess) used to build fluency in foundational arithmetic skills.\n\nThe studies described were conducted in middle and high school math classrooms in Massachusetts, primarily across urban, suburban, and rural public school settings. Some analyses used randomized or controlled comparisons, including a randomized four-condition study with 250 middle school students for the fluency-training component and a controlled school-year study with 198 seventh- and eighth-grade students for classroom use of Wayang. The outcomes included pre/post tests, standardized test scores, and system logs, rather than solely self-report. Across these studies, the authors report that the system improved short-term learning, longer-term standardized test performance, math fluency, and indicators of engagement and affect, with the strongest gains often appearing when adaptive tutoring was combined with fluency training. The paper concludes that a single tutoring system can meaningfully integrate cognitive, metacognitive, and affective support, although the authors note that further work is needed to refine how these supports are triggered and optimized.",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is a peer-reviewed empirical article with multiple classroom evaluations, including controlled comparisons and reported effect sizes. It is not a single clean RCT across all components, and several findings are aggregated or partially descriptive, so it falls short of blue.",
+  "impact_tier": "green",
+  "impact_tier_rationale": "The paper reports modest-to-medium gains in mathematics outcomes, including d=0.38 and d=0.77 on MAP algebra/patterns, which indicate meaningful though not universal impact. The strongest evidence is on a priority K-12 population in school settings, but effects vary by study and outcome, so green is the best fit.",
+  "interventions": [
+    {
+      "intervention": "Intelligent Tutoring System (ITS)",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "Wayang Outpost/MathSpring multimedia adaptive mathematics tutoring with problem selection, worked examples, hints, affective companions, metacognitive scaffolds, and teacher dashboards for middle and high school students"
+    },
+    {
+      "intervention": "Adaptive Learning Platform",
+      "confidence": 0.84,
+      "role": "secondary",
+      "use_case": "adaptive selection of math problems and difficulty pacing within knowledge units based on recent student performance and effort"
+    },
+    {
+      "intervention": "Automated Feedback System",
+      "confidence": 0.74,
+      "role": "secondary",
+      "use_case": "automatic feedback through hints, progress reports, open student models, and teacher-facing analytics on student mastery, effort, and engagement"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 1.0,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper reports repeated positive effects of Wayang Outpost on mathematics learning, including higher state standardized test performance and pre-post gains. In a 2012 controlled study with 198 seventh- and eighth-grade students, 7th graders using Wayang showed a near-significant MCAS advantage (Mean 244.82 vs. 239.50; F(1,93)=2.2, p=0.14), and combined data showed significant MAP gains in the patterns-and-algebra section (d=0.38), with 8th graders showing larger gains in algebra/patterns (d=0.77).",
+        "measure": "MCAS passing categories and scale scores; MAP mathematics subtest gains (patterns/algebra)",
+        "study_size": "n=198 (2012 controlled study); other aggregated studies across years not fully reported",
+        "effect_size": "d=0.38; d=0.77; p=0.14 for MCAS mean difference",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.86,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper argues and reports that affect-aware scaffolds improved engagement, effort, and students\u2019 emotional experience during tutoring. Evidence cited includes improved engagement measured by system logs of gaming/use and affect measured via sensors and self-reports; however, most results are described qualitatively rather than as a single pooled effect size.",
+        "measure": "system logs of gaming/engagement, affect sensors, and student self-reports of emotions",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.88,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper reports positive effects on metacognition and self-regulation through open student models, progress pages, and help-seeking supports. Results are mainly presented as design-and-evaluation evidence rather than a single causal estimate, but the interventions are explicitly intended to improve reflection, goal setting, monitoring, and strategic help use.",
+        "measure": "use of the Student Progress Page, reflection/goal-setting behavior, and help-seeking/self-monitoring indicators",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.7,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Teacher-facing dashboards and reports are presented as helping instructors quickly identify students\u2019 strengths, weaknesses, and challenging problems in real time. The paper describes this as valuable instructional support, but does not provide a quantified workload reduction estimate.",
+        "measure": "teacher reports / real-time analytics use",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "single_site",
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "classroom",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

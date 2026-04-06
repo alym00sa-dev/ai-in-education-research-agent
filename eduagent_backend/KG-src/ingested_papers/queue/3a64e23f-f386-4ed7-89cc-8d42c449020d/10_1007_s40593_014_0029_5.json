@@ -1,0 +1,100 @@
+{
+  "title": "AutoTutor and Family: A Review of 17 Years of Natural Language Tutoring",
+  "doi": "10.1007/s40593-014-0029-5",
+  "year": 2014,
+  "venue": "Int J Artif Intell Educ",
+  "url": "https://doi.org/10.1007/s40593-014-0029-5",
+  "source_db": "openalex_search",
+  "populations": [
+    "Undergraduate",
+    "Middle School (6th-8th)",
+    "High School (9th-12th)",
+    "Adult (non-academic)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Meta-Analysis / Systematic Review",
+  "extended_summary": "This paper reviews 17 years of research on AutoTutor and related natural-language tutoring systems. The central question is how conversational, AI-powered tutors can support learning by emulating or extending effective human tutoring practices, especially through deep reasoning questions, collaborative dialogue, and adaptive feedback. Rather than reporting a single experiment, the paper synthesizes findings across many studies and systems in the AutoTutor family.\n\nThe intervention described is a set of dialog-based intelligent tutoring systems that use natural language processing, pedagogical agents, semantic matching, and scripted or adaptive tutoring moves such as pumps, hints, prompts, assertions, and corrections. The review covers systems used in domains including computer literacy, conceptual physics, biology, critical thinking, reading comprehension, scientific inquiry, and self-regulated learning. The populations span undergraduate students, high school and middle school students, and adult learners, with implementations in university labs, classroom-like learning environments, and web-based tutoring contexts.\n\nThe paper concludes that AutoTutor-style systems can produce substantial learning gains, often outperforming static materials and in some cases approximating human tutoring. It argues that the most effective mechanisms include helping learners construct explanations, asking deep reasoning questions, and using conversational scaffolding; additional benefits can come from affect-sensitive tutoring, pedagogical agents, collaborative lecturing, and macro-adaptive learning progressions. The review also notes that effectiveness depends on domain, learner knowledge, and implementation details, and that some strategies such as self-regulated learning support or affective support help only under certain conditions.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a narrative review synthesizing prior experiments rather than a new controlled study or meta-analysis. It summarizes multiple empirical findings, but the evidence is heterogeneous and the paper itself does not provide a single unified design meeting higher credibility criteria.",
+  "impact_tier": "blue",
+  "impact_tier_rationale": "The reviewed systems repeatedly show medium-to-large learning gains, including effects around 0.5\u03c3 to 1.22\u03c3 in physics and 0.72\u03c3 in biology, which exceeds the threshold for substantive impact. The strongest effects are on priority STEM and inquiry-related outcomes relevant to K-12 scientific reasoning, even though much of the evidence is from mixed-age or non-K-12 samples.",
+  "interventions": [
+    {
+      "intervention": "Intelligent Tutoring System (ITS)",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "Review of the AutoTutor family of natural-language intelligent tutoring systems using expectation-misconception dialog, deep reasoning questions, hint/prompt/assertion cycles, and pedagogical agents to tutor conceptual understanding in subjects such as physics, biology, computer literacy, and critical thinking."
+    },
+    {
+      "intervention": "Educational Game / Simulation",
+      "confidence": 0.7,
+      "role": "secondary",
+      "use_case": "Game-based or simulation-enhanced variants within the AutoTutor family, including Operation ARIES/ARA serious games and 3D simulation extensions, used to teach scientific inquiry and research acumen through interactive learning tasks and vicarious learning."
+    },
+    {
+      "intervention": "Robot / Embodied Tutor",
+      "confidence": 0.55,
+      "role": "secondary",
+      "use_case": "Animated talking-head pedagogical agents and embodied tutor interfaces that deliver conversational tutoring, feedback, facial expressions, and intonation within AutoTutor-style systems."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Scientific Reasoning",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Across the AutoTutor family, tutoring in physics and biology produced substantial learning gains on science concept and reasoning assessments. The review reports approximately 0.5\u03c3 gains for AutoTutor 1.1/2.0 over textbook controls, 0.61\u03c3 over a control and 1.22\u03c3 over a read-textbook condition in physics, and 0.72\u03c3 for Guru in biology versus classroom instruction only; DeepTutor also showed 0.79\u03c3 pretest-posttest gains in a small-scale study (n=30).",
+        "measure": "Posttest scores on physics concept tests (including essay and multiple-choice items, many adapted from the Force Concept Inventory), biology concept tests, and pretest-posttest science reasoning measures",
+        "study_size": "various_studies; n=30 reported for DeepTutor; other study sizes not_reported",
+        "effect_size": "0.5\u03c3 to 1.22\u03c3; 0.72\u03c3; 0.79\u03c3",
+        "confidence_interval": "not_reported",
+        "std_deviation": "\u03c3 units reported; exact SD not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.9,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The reviewed systems were designed to improve deep reasoning, critical thinking, metacognition, and scientific inquiry skills through self-explanation, question generation, and evaluation of evidence. SEEK targeted scientific inquiry and critical thinking but did not significantly improve skills in finding relevant information after a short 1-hour intervention, whereas Operation ARA reported 1.4\u03c3 gains on a test of scientific research skills compared with no-instruction controls after 8\u201312 hours of use.",
+        "measure": "Critical thinking/scientific inquiry tests, information-finding tasks, metacognitive performance, and research-skill assessments",
+        "study_size": "SEEK study size not_reported; Operation ARA study size not_reported",
+        "effect_size": "not_reported for SEEK; 1.4\u03c3 for Operation ARA",
+        "confidence_interval": "not_reported",
+        "std_deviation": "\u03c3 units reported for Operation ARA; exact SD not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.8,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "Affect-sensitive tutoring showed benefits for low-knowledge learners but not for high-knowledge learners. Supportive AutoTutor improved low-knowledge students' posttest gains to 0.71\u03c3 when negative emotions were detected and addressed, while high-knowledge students did not benefit and sometimes learned less; GazeTutor increased attention and produced 0.26\u03c3 overall gains and 0.45\u03c3 gains on deep learning, though the overall result was not statistically significant (p<.178).",
+        "measure": "Posttest learning gains, attention/disengagement, and affective-state classifications",
+        "study_size": "not_reported",
+        "effect_size": "0.71\u03c3; 0.26\u03c3 overall; 0.45\u03c3 deep learning",
+        "confidence_interval": "not_reported",
+        "std_deviation": "\u03c3 units reported; exact SD not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "single_site",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "blended",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

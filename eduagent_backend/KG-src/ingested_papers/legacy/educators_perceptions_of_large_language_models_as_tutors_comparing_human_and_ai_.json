@@ -1,0 +1,95 @@
+{
+  "title": "Educators\u2019 Perceptions of Large Language Models as Tutors: Comparing Human and AI Tutors in a Blind Text-only Setting",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "https://arxiv.org/pdf/2506.08702v1",
+  "source_db": "backfill_v3",
+  "populations": [],
+  "user_types": [
+    "Educator"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This study examines how educators perceive large language model (LLM) tutors compared with human tutors in a blind, text-only tutoring setting. Rather than measuring student learning gains directly, the authors focus on four latent tutoring qualities that may shape learning: engagement, empathy, scaffolding, and conciseness. The central research question is whether LLM-based tutors can match or outperform human tutors on these pedagogical qualities when both are presented only through chat dialogue snippets.\n\nThe intervention studied is an LLM-based math tutor, MWPTutor, which uses GPT-based generation with guardrails to ensure correctness while tutoring grade-school math word problems. Its tutoring conversations were compared against human-tutor conversations drawn from the MathDial dataset. Educator annotators viewed 210 paired dialogue snippets in a blinded side-by-side format and judged which tutor performed better on each of the four metrics. The study also included parallel ratings from three LLM judges, though the core evidence comes from human annotators.\n\nThe population consisted of 35 Prolific-recruited annotators with self-reported teaching experience. The tutoring content involved grade-school math word problems, but the actual study participants were educators acting as evaluators rather than students receiving tutoring. The context was an online survey environment, where conversations were truncated to five turns and presented without revealing whether a tutor was human or AI. No real classroom implementation or live student interaction was studied.\n\nThe main conclusion is that educators generally perceived the LLM tutor as better than the human tutor on all four metrics, with statistically significant advantages for empathy, scaffolding, and conciseness, while the engagement advantage was not statistically significant. The authors argue that LLM tutors may be able to reduce teacher workload for repetitive tutoring tasks, but they also note important limitations: the study is restricted to a text-only setting, a single subject domain, one LLM tutoring system, and educator judgments rather than actual student outcomes.",
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "self_reported_measures",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "identified_tools": [
+    {
+      "name": "MWPTutor",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "feedback_evaluation"
+      ],
+      "description": "A large-language-model-based tutoring system that uses pedagogical constraints and control logic to generate guided tutoring responses instead of directly providing answers.",
+      "use_case": "Used as the AI tutor in a blind text-only comparison of tutor dialog snippets against human tutor dialogs, with educators rating conciseness, engagement, empathy, and scaffolding.",
+      "findings": [
+        {
+          "outcome_category": "Tutor perception: empathy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Educators rated MWPTutor as more empathetic than human tutors in blind text-only dialog comparisons; this difference was statistically significant.",
+          "measure": "Blind educator ratings of tutor empathy across 210 dialog pairs",
+          "effect_size": "0.23",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=210 dialog pairs; 35 annotators total; 5 annotators per pair",
+          "study_count": null
+        },
+        {
+          "outcome_category": "Tutor perception: scaffolding",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Educators rated MWPTutor as better at scaffolding than human tutors in blind text-only dialog comparisons; this difference was statistically significant.",
+          "measure": "Blind educator ratings of scaffolding across 210 dialog pairs",
+          "effect_size": "0.22",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=210 dialog pairs; 35 annotators total; 5 annotators per pair",
+          "study_count": null
+        },
+        {
+          "outcome_category": "Tutor perception: conciseness",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Educators rated MWPTutor as more concise than human tutors in blind text-only dialog comparisons; this difference was statistically significant.",
+          "measure": "Blind educator ratings of conciseness across 210 dialog pairs",
+          "effect_size": "0.25",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=210 dialog pairs; 35 annotators total; 5 annotators per pair",
+          "study_count": null
+        },
+        {
+          "outcome_category": "Tutor perception: engagement",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Overall, educators did not rate MWPTutor as significantly more engaging than human tutors in the aggregate comparison. Subgroup results differed by dialog condition, with MWPTutor favored in 'Continue' cases and human tutors favored in 'Fresh' cases.",
+          "measure": "Blind educator ratings of engagement across 210 dialog pairs",
+          "effect_size": "0.09",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=210 dialog pairs; 35 annotators total; 5 annotators per pair",
+          "study_count": null
+        }
+      ]
+    }
+  ],
+  "verdict": "",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an observational study based on educator judgments of paired tutoring dialogues in an online annotation task, not an experimental study of student outcomes. It has a clear methodology but relies on subjective ratings from a relatively small, non-representative sample and is posted as an arXiv preprint.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The study reports favorable perceptions of the LLM tutor, including statistically significant differences on several judged metrics, but it does not measure actual learning outcomes or provide a directly interpretable intervention effect on students. Therefore, the practical educational impact remains promising but unclear.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": "Converted from kg_curator_v4 legacy extraction",
+  "_legacy_source": "/Users/alymoosa/Documents/A-Moosa-Dev/AI-EDU-Dev/eduagent/open_deep_research_v2/scripts/extraction_profiles_v3/educators_perceptions_of_large_language_models_as_tutors_comparing_human_and_ai_.json"
+}

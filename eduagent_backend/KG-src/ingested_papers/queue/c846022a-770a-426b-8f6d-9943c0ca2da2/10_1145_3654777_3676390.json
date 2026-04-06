@@ -1,0 +1,63 @@
+{
+  "title": "LessonPlanner: Assisting Novice Teachers to Prepare Pedagogy-Driven Lesson Plans with Large Language Models",
+  "doi": "10.1145/3654777.3676390",
+  "year": 2024,
+  "venue": "UIST \u201924 (The 37th Annual ACM Symposium on User Interface Software and Technology)",
+  "url": "http://arxiv.org/abs/2408.01102v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Undergraduate",
+    "Graduate / Doctoral",
+    "Elementary (PreK-5th)",
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses the challenge novice teachers face when preparing lesson plans and selecting effective instructional strategies and materials. The authors investigate whether large language models (LLMs) can support lesson-plan creation in a pedagogy-driven way rather than through unstructured prompting or generic chat use.\n\nThey first conduct a formative study with six novice teachers and teaching assistants to identify needs and concerns. Based on those findings, they build LessonPlanner, a web-based system powered by GPT-4 that structures lesson planning around Bloom\u2019s Taxonomy and Gagne\u2019s Nine Events of Instruction. The system helps users generate lesson goals, lesson-plan outlines, section-specific materials, instructional suggestions, and slide guidance, while allowing iterative editing and regeneration.\n\nThe evaluation combines a within-subjects user study with 12 university students acting as teachers and expert interviews with six teachers across university, elementary, and high-school contexts. The study found that LessonPlanner improved the quality of lesson plans and reduced workload compared with a ChatGPT baseline. Participants valued the organized outline and generated ideas, but the authors also report concerns about accuracy, the need for subject-specific judgment, and the cognitive burden of prompting.\n\nOverall, the paper concludes that LLMs can be useful for assisting lesson-plan preparation when carefully constrained by pedagogical structure and interactive controls, but they should be treated as supportive tools rather than autonomous teaching experts.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed HCI user study with a within-subjects comparison and follow-up expert interviews, but it is small and not a randomized field trial in authentic classroom deployment. Evidence is useful and moderately rigorous, but credibility/relevance constraints remain substantial.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports a positive but small-scale productivity benefit for novice teachers rather than a measured learning outcome, and it does not report effect sizes in the excerpt. The practical impact is promising but still unclear in magnitude and generalizability.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "An interactive lesson-planning assistant built on GPT-4 that generates lesson goals, lesson outlines, pedagogical activities, teaching materials, and feedback for teachers using Gagne\u2019s Nine Events and Bloom\u2019s Taxonomy."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 1.0,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "In a within-subjects study with n=12 university students preparing lesson plans, LessonPlanner significantly improved the quality of outcome lesson plans and eased workload compared with a ChatGPT web-app baseline, but the paper does not report the exact test statistics or effect size in the excerpt provided. Questionnaire and interview data also indicated reduced mental burden during lesson preparation and better support for organizing the planning process.",
+        "measure": "Lesson plan quality ratings by an expert teacher; NASA-TLX workload ratings; SUS; trust questionnaire",
+        "study_size": "n=12",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "no_long_term_followup",
+    "non_representative_population"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "lab",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "China",
+  "study_region": "East Asia & Pacific",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

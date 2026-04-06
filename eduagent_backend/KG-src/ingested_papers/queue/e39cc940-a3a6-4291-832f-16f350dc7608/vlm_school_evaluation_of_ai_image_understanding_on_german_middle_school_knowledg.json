@@ -1,0 +1,99 @@
+{
+  "title": "VLM@school \u2013 Evaluation of AI image understanding on German middle school knowledge",
+  "doi": null,
+  "year": 2025,
+  "venue": "not_reported",
+  "url": "http://arxiv.org/abs/2506.11604v2",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Middle School (6th-8th)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper introduces VLM@school, a benchmark for evaluating vision-language models (VLMs) on German-language tasks grounded in middle school curriculum content. The authors address the problem that common VLM benchmarks are often English-only, heavily multiple-choice, and may not reflect the kinds of visual reasoning and subject knowledge needed in real educational settings. Their goal is to create a more realistic and challenging testbed that combines image understanding with domain knowledge across school subjects.\n\nThe approach is a newly constructed dataset of 486 images and 2,038 open-ended questions drawn from German school textbooks and other pupil-oriented materials across nine domains: arts, biology, geography, history, math, music, physics, religion, and sports. Questions were created by German native speakers, and some items were intentionally adversarial or text-in-image based to test whether models can resist misleading cues or answer from visuals rather than text alone. The paper evaluates thirteen open-weight VLMs using LLM-based judging with a panel of models.\n\nThe study is not a human learner intervention study; it is a benchmark evaluation focused on middle school-level content in Germany. The results show that even strong models perform poorly on these tasks, with best overall accuracy below 45% and particularly weak performance in domains such as math and music. Adversarial questions are much harder than ordinary questions, and larger models do not always scale proportionally. The authors conclude that current VLMs still struggle to combine visual evidence with domain knowledge, especially in German, and that this benchmark can support future research on multimodal reasoning in educational contexts.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed benchmark/evaluation study with a clear, reproducible methodology and multiple model comparisons, but it is not an educational intervention study and does not use experimental or causal designs with learners. Evidence credibility is limited for K-12 learning effects because the outcomes are model benchmark accuracies rather than student learning outcomes.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The work has clear relevance for educational AI evaluation, especially for middle school math and multimodal reasoning, but it does not demonstrate direct instructional impact on students. Its practical impact is therefore indirect and mainly useful for system selection, benchmarking, and future model development.",
+  "interventions": [
+    {
+      "intervention": "Other",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "Benchmark evaluation of vision-language models on German middle school curriculum questions requiring visual understanding, subject knowledge, and open-ended response generation; includes adversarial questions and some prompts with text embedded in images."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Negative",
+        "finding_summary": "The paper reports that VLMs performed poorly on middle school math items, with best models reaching only about 34.09% accuracy on math and many models substantially lower (e.g., Ovis2 4B at 9.09%). The authors note that models were better at calculating than counting, but often misread shapes or coordinates, leading to incorrect answers on basic geometry and diagram-based calculation tasks.",
+        "measure": "Accuracy on math benchmark questions involving geometry, counting, area, circumference, and diagram interpretation",
+        "study_size": "n=308 math questions",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Academic \u2014 Scientific Reasoning",
+      "confidence": 0.8,
+      "finding": {
+        "direction": "Negative",
+        "finding_summary": "Across physics and biology, models showed limited performance on diagram-based reasoning and explanation questions. Best reported accuracy was 47.65% in physics (Qwen2.5VL 32B) and physics explanations were often incorrect even when the diagram type was recognized; biology questions also showed variable term-to-image matching and guessing behavior.",
+        "measure": "Accuracy on physics and biology questions requiring visual interpretation plus scientific explanation or terminology mapping",
+        "study_size": "n=234 physics questions; n=169 biology questions",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Negative",
+        "finding_summary": "The benchmark shows low-to-moderate performance across non-math school subjects such as arts, history, music, religion, geography, and sports. Overall accuracy across domains stayed below 45% for the best model, with domain highs around 54% in history/religion and lows around 31% in music; this indicates that the models struggled to integrate visual cues with subject-specific background knowledge in middle school content.",
+        "measure": "Domain-specific accuracy on arts, geography, history, music, religion, and sports questions",
+        "study_size": "n=486 images; n=2038 questions total across 9 domains",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.7,
+      "finding": {
+        "direction": "Negative",
+        "finding_summary": "The paper explicitly examines whether models can refrain from answering unanswerable or misleading items, treating this as a form of noncompliance and self-knowledge. On adversarial questions, even the best models reached only 32.83% overall accuracy, and many models gave confident but wrong answers instead of saying the question could not be answered from the image.",
+        "measure": "Accuracy on adversarial questions designed to test refusal/recognition of unanswerable prompts",
+        "study_size": "adversarial subset of the 2038-question benchmark; exact adversarial n not reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "single_site",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Germany",
+  "study_region": "Europe",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

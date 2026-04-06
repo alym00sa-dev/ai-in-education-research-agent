@@ -1,0 +1,37 @@
+{
+  "title": "RLHF-Blender: A Configurable Interactive Interface for Learning from Diverse Human Feedback",
+  "doi": null,
+  "year": 2023,
+  "venue": "Interactive Learning with Implicit Human Feedback Workshop at ICML 2023",
+  "url": "http://arxiv.org/abs/2308.04332v1",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses a tooling gap in reinforcement learning from human feedback (RLHF): researchers lack standardized, configurable software for systematically studying how different kinds of human feedback affect reward learning. The authors argue that current approaches are held back by ad hoc interfaces and simplified assumptions about human feedback quality, which makes it difficult to compare feedback types or study human factors such as irrationality, bias, and cognitive demand.\n\nTo address this, the paper proposes RLHF-Blender, a modular interactive interface and experimentation framework for collecting and learning from diverse feedback types. The system supports evaluative feedback (ratings), comparative feedback (rankings and pairwise comparisons), corrective feedback (action advice/corrections), demonstrative feedback (demonstrations), and descriptive feedback (feature-level annotations or goal-state descriptions). It also includes a standardized encoding scheme, feedback translation and sampling modules, and reward-model integration to support offline or online experimentation.\n\nThe paper is primarily a framework and system design contribution rather than an empirical study. It is positioned for use in RL environments such as BabyAI, Safety-Gym, and HighwayEnv, and the authors outline research opportunities such as multi-type feedback comparison, calibration of human irrationality estimates, continuous calibration, and the effect of explainability on feedback quality. The main conclusion is that RLHF-Blender can enable more systematic and reproducible human-subject studies of diverse feedback in RLHF, though the system itself has not yet been fully evaluated in a large-scale user study.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a framework and interface proposal, not an empirical K-12 study. It does not report a controlled evaluation with student, teacher, or classroom outcomes, and the paper explicitly notes that the system has not yet been fully evaluated in a realistic environment.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "No educational impact is demonstrated because the paper reports no outcome data in K-12 settings. The contribution is methodological and infrastructural, with potential future relevance but no measured effect size or observed impact.",
+  "interventions": [
+    {
+      "intervention": "Other",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "A configurable RLHF experimentation framework and interface for collecting diverse human feedback (ratings, comparisons, corrections, demonstrations, descriptions) to train reward models; this is a tooling/framework paper rather than a K-12 instructional intervention."
+    }
+  ],
+  "outcome_assignments": [],
+  "limitations": [
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

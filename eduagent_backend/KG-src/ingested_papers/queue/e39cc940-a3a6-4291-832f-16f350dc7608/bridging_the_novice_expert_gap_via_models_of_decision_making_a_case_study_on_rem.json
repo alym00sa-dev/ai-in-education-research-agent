@@ -1,0 +1,66 @@
+{
+  "title": "Bridging the Novice-Expert Gap via Models of Decision-Making: A Case Study on Remediating Math Mistakes",
+  "doi": null,
+  "year": 2024,
+  "venue": "Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers)",
+  "url": "https://doi.org/10.18653/v1/2024.naacl-long.120",
+  "source_db": "openalex_search",
+  "populations": [
+    "Elementary (PreK-5th)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses the problem of how large language models (LLMs) and novice tutors can better remediate student math mistakes. The authors argue that a key barrier in tutoring is not only content knowledge but also the expert decision-making process behind effective remediation: identifying the student\u2019s error, choosing an appropriate strategy, and understanding the intention behind that strategy. To study this, they develop Bridge, a cognitive-task-analysis-based framework that translates expert teachers\u2019 latent reasoning into a structured decision-making model.\n\nThe intervention is not a classroom deployment but a modeling and benchmarking approach built from 700 real tutoring conversations collected from an existing tutoring provider. These conversations involved 1st-5th grade students in Title I schools, mostly serving low-income students of color, in a Southern U.S. school district. Four experienced math teachers helped define and validate the decision taxonomy, and they annotated the dataset with expert decisions and responses. The paper evaluates GPT-4, GPT-3.5-turbo, and Llama-2-70B under different prompting conditions: no decision-making, expert decisions, self-generated decisions, and random decisions.\n\nThe main finding is that explicit expert-guided decision-making substantially improves LLM tutoring responses. GPT-4 responses generated with expert decisions were much more preferred, useful, and human-sounding than those generated without the decision framework, while random decisions often hurt performance. The results suggest that embedding expert thought processes into LLM tutoring can help bridge the novice-expert gap, but the paper emphasizes that this is an early framework and not yet an evaluation of student learning outcomes in real-time deployment.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed empirical human-evaluation study with a curated dataset and controlled comparison conditions, but it is not a student-outcome RCT or QED. Evidence is strong for model behavior and perceived response quality, but the paper does not test downstream learning impacts with students.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The reported gains are meaningful for response quality and scalable tutoring workflows, but they are based on teacher judgments rather than student learning outcomes. The paper suggests practical promise, yet the impact on learners remains unmeasured.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "Head-to-head evaluation of GPT-4, GPT-3.5-turbo, and Llama-2-70B chat models as math remediation tutors for student mistakes in real tutoring conversations, with and without expert-guided decision-making (error diagnosis, strategy choice, and intention selection)."
+    },
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.7,
+      "role": "secondary",
+      "use_case": "Used as a response-generation component within the Bridge framework, where expert decisions are supplied to condition LLM-generated tutoring replies."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.78,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper shows that expert-guided decision-making substantially improves LLM tutoring response quality, suggesting a more scalable way to generate higher-quality remediation than direct prompting alone. In human pairwise evaluations by teachers (40 pairs/model, 3 raters each), GPT-4 with expert decisions was 76% more preferred than GPT-4 without decisions, and overall scores improved significantly for all models under expert decision-making (p<0.05).",
+        "measure": "Teacher-rated pairwise comparisons of response usefulness, care, human-soundingness, and overall preference",
+        "study_size": "n=40 pairs per model; 3 annotators per pair; 700 tutoring conversations in the dataset",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "non_representative_population",
+    "no_long_term_followup",
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

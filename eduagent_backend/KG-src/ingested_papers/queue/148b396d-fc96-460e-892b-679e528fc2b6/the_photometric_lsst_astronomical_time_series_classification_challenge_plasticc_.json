@@ -1,0 +1,30 @@
+{
+  "title": "The Photometric LSST Astronomical Time-Series Classification Challenge (PLAsTiCC): Selection of a Performance Metric for Classification Probabilities Balancing Diverse Science Goals",
+  "doi": null,
+  "year": 2021,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/1809.11145v2",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses how to choose an evaluation metric for a probabilistic astronomical classification challenge, PLAsTiCC, where the goal is to identify the best classifier for transient and variable light-curve data. The central problem is that upcoming surveys such as LSST will produce many low signal-to-noise objects and highly imbalanced class distributions, making traditional deterministic metrics like accuracy or purity inadequate for multi-class probabilistic outputs.\n\nThe authors compare candidate probabilistic metrics, especially log-loss and the Brier score, using simulated mock classifiers designed to exhibit specific failure modes such as uncertainty, overconfidence, tunnel vision, cruise control, and class subsumption. They also test these metrics on representative classification outputs from prior supernova challenge methods to see whether the metrics behave sensibly on realistic data.\n\nThe paper is not an intervention study in an educational setting; it is a methodological/theoretical paper about metric design for an astronomy machine-learning competition. The main conclusion is that a weighted log-loss is the most suitable metric for PLAsTiCC because it preserves probabilistic information, handles multiple classes, and can be weighted to reduce incentives for pathological behavior such as ignoring rare classes. The Brier score is also reasonable, but the log-loss is judged more sensitive and better aligned with the challenge goals.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a methods paper about selecting a performance metric for an astronomy classification challenge, not a study of an educational intervention. It contains no K-12 experimental design, no learner sample, and no educational outcome evaluation.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "There is no direct educational impact or student learning outcome in this paper. The work informs challenge metric design in astrophysics, so it does not provide evidence of impact for the requested K-12 science learning topic.",
+  "interventions": [],
+  "outcome_assignments": [],
+  "limitations": [
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

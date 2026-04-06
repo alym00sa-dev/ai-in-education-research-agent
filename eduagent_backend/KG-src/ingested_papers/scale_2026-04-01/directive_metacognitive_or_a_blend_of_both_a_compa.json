@@ -1,0 +1,525 @@
+{
+  "title": "DIRECTIVE, METACOGNITIVE OR A BLEND OF BOTH? A COMPARISON OF AI-GENERATED FEEDBACK TYPES ON STUDENT ENGAGEMENT, CONFIDENCE, AND OUTCOMES",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "https://arxiv.org/abs/2510.19685",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate",
+    "Graduate / Doctoral"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Randomized Controlled Trial (RCT)",
+  "extended_summary": "This paper examines how different types of AI-generated feedback affect student engagement, confidence, and learning outcomes in higher education. The authors focus on a longstanding instructional design question: whether students benefit more from directive feedback that tells them what to change, metacognitive feedback that prompts reflection and self-regulated learning, or a hybrid approach that combines both. The study aims to move beyond theory and small-scale prior work by directly comparing these feedback types in an authentic course setting.\n\nThe intervention was implemented in RiPPLE, an adaptive educational platform used in a university design and programming course. Students created learning resources such as multiple-choice questions and received one of three AI-generated feedback conditions: directive, metacognitive, or hybrid. The feedback was standardized so that only the suggestions-for-improvement section differed by condition. The study analyzed linguistic differences in the feedback itself, student engagement time, whether students revised their work after feedback, confidence ratings, and final resource quality.\n\nThe population consisted of 329 students in a semester-long introductory university course at The University of Queensland. Most participants were undergraduates, with a smaller number of postgraduate and non-award students. The intervention ran over a 12-week semester and was embedded in normal coursework through three four-week collaborative learning rounds. Students used the platform online as part of their course requirements.\n\nThe main findings were that the three AI feedback types were linguistically distinct as designed, and that feedback type significantly influenced revision behavior. Hybrid feedback led to the most revision activity, metacognitive feedback led to the least, and directive feedback fell in between but was also significantly more likely than metacognitive feedback to prompt revisions. However, there were no significant differences across conditions in engagement time, confidence, or final resource quality. The authors conclude that hybrid AI feedback is especially promising because it combines actionable guidance with reflective prompting, supporting revision behavior without reducing confidence or outcomes.",
+  "limitations": [
+    "single_site",
+    "self_reported_measures",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "12",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Australia",
+  "study_region": "East Asia & Pacific",
+  "identified_tools": [
+    {
+      "name": "RiPPLE",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "personalization_adaptation"
+      ],
+      "description": "RiPPLE is an adaptive educational platform for student co-creation of learning resources, peer evaluation, adaptive practice, and AI-supported oversight.",
+      "use_case": "RiPPLE served as the experimental platform in a semester-long randomized controlled trial where students received AI-generated directive, metacognitive, or hybrid feedback on educational resources they created.",
+      "findings": [
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In the RCT with 329 students, action on feedback differed significantly by condition, with students in the Metacognitive condition revising least often (12.1%) versus Directive (21.1%) and Hybrid (27.5%). A logistic mixed-effects model showed an overall condition effect, \u03c72(2)=8.74, p=.013; Directive vs. Metacognitive OR=2.93, 95% CI [1.25, 6.88], p=.009, and Hybrid had about 4.3 times higher odds of revision than Metacognitive, 95% CI [1.82, 10.0], p<.001, while Directive vs. Hybrid was not significant (OR=0.69, 95% CI [0.32, 1.48], p=.484).",
+          "measure": "Revision/action on feedback after receiving AI-generated feedback",
+          "effect_size": "OR=2.93 (Directive vs. Metacognitive); OR=0.69 (Directive vs. Hybrid); Hybrid about 4.3 times higher odds than Metacognitive",
+          "confidence_interval": "Directive vs. Metacognitive 95% CI [1.25, 6.88]; Directive vs. Hybrid 95% CI [0.32, 1.48]; Metacognitive vs. Hybrid 95% CI [0.10, 0.55]",
+          "sample_size": "n=329"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "Engagement time did not differ significantly across feedback conditions in the RCT. Estimated marginal means were 107.9 seconds for Directive (95% CI [94.0, 124.0]), 87.4 seconds for Metacognitive (95% CI [76.1, 100.0]), and 97.8 seconds for Hybrid (95% CI [85.3, 112.0]); the overall Gamma GLMM effect was \u03c72(2)=4.48, p=.107.",
+          "measure": "Engagement time between feedback receipt and subsequent submission",
+          "effect_size": "not_reported",
+          "confidence_interval": "Directive 95% CI [94.0, 124.0]; Metacognitive 95% CI [76.1, 100.0]; Hybrid 95% CI [85.3, 112.0]",
+          "sample_size": "n=329"
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "Confidence ratings were broadly similar across the three feedback conditions, with no statistically significant group differences. The CLMM showed \u03c72=.96, p=.62; back-transformed estimated means were 3.63 for Directive (95% CI [2.94, 4.32]), 3.25 for Metacognitive (95% CI [2.48, 4.02]), and 3.55 for Hybrid (95% CI [2.88, 4.23]).",
+          "measure": "Self-rated confidence/resource quality confidence on a 1-5 scale",
+          "effect_size": "not_reported",
+          "confidence_interval": "Directive 95% CI [2.94, 4.32]; Metacognitive 95% CI [2.48, 4.02]; Hybrid 95% CI [2.88, 4.23]",
+          "sample_size": "n=329"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "Resource outcome quality did not differ significantly by feedback condition. The beta GLMM showed \u03c72=1.40, p=.49; back-transformed estimated means were 3.62 for Directive (95% CI [3.45, 3.78]), 3.72 for Metacognitive (95% CI [3.55, 3.87]), and 3.75 for Hybrid (95% CI [3.59, 3.91]).",
+          "measure": "Resource outcome quality score (1-5)",
+          "effect_size": "not_reported",
+          "confidence_interval": "Directive 95% CI [3.45, 3.78]; Metacognitive 95% CI [3.55, 3.87]; Hybrid 95% CI [3.59, 3.91]",
+          "sample_size": "n=329"
+        }
+      ]
+    },
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "feedback_evaluation"
+      ],
+      "description": "Generic generative AI used to produce automated educational feedback, with no specific model or product identified in the paper.",
+      "use_case": "The study compared three AI-generated feedback designs\u2014directive, metacognitive, and hybrid\u2014delivered to students on their created course resources within RiPPLE.",
+      "findings": [
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "The AI-generated feedback types were linguistically distinct in intended function. Reflective prompts per 100 words were highest in Metacognitive (M=4.45, SD=1.07), intermediate in Hybrid (M=2.20, SD=0.65), and near zero in Directive (M=0.01, SD=0.12), F(2,1024)=3329.39, p<.001, \u03b72=.867; imperatives per 100 words were highest in Directive (M=2.91, SD=0.81), moderate in Hybrid (M=1.34, SD=0.52), and zero in Metacognitive, F(2,1024)=2340.75, p<.001, \u03b72=.821.",
+          "measure": "Linguistic/structural features of AI-generated feedback text",
+          "effect_size": "\u03b72=.867; \u03b72=.821",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=1027 feedback texts"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Feedback length also differed significantly by AI-generated feedback type. Hybrid feedback was longest (M=134.14 words, SD=17.66, 95% CI [132.23, 136.05]), Metacognitive was intermediate (M=97.10, SD=11.71), and Directive shortest (M=83.25, SD=15.63), with F(2,1024)=1019.56, p<.001, \u03b72=.666; all Tukey pairwise contrasts were significant at adjusted p<.001.",
+          "measure": "Word count of AI-generated feedback text",
+          "effect_size": "\u03b72=.666",
+          "confidence_interval": "Hybrid 95% CI [132.23, 136.05]; pairwise mean differences: 13.85 [11.15, 16.56], 50.89 [48.17, 53.61], 37.04 [34.28, 39.79]",
+          "sample_size": "n=1027 feedback texts"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is a semester-long randomized controlled trial with 329 students in an authentic course setting, which is strong primary evidence. It is not blue because results are from a single higher-education context and several main learning outcomes were null, with some reporting limitations around effect sizes for those outcomes.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The clearest impact was on revision behavior/action on feedback, where Hybrid and Directive outperformed Metacognitive, but confidence and resource quality showed no significant differences. Overall impact is therefore meaningful but limited and unclear for academic outcomes.",
+  "citations": [
+    {
+      "title": "The power of feedback",
+      "doi": null,
+      "year": 2007,
+      "venue": "Review of Educational Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The power of feedback revisited: A meta-analysis of educational feedback research",
+      "doi": null,
+      "year": 2020,
+      "venue": "Frontiers in Psychology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The development of student feedback literacy: enabling uptake of feedback",
+      "doi": null,
+      "year": 2018,
+      "venue": "Assessment & Evaluation in Higher Education",
+      "citation_level": 2,
+      "citation_context": "feedback literacy framework for uptake"
+    },
+    {
+      "title": "The power of internal feedback: Exploiting natural comparison processes",
+      "doi": null,
+      "year": 2021,
+      "venue": "Assessment & Evaluation in Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Feedback encounters: towards a framework for analysing and understanding feedback processes",
+      "doi": null,
+      "year": 2023,
+      "venue": "Assessment & Evaluation in Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Unraveling the mechanisms and effectiveness of ai-assisted feedback in education: A systematic literature review",
+      "doi": null,
+      "year": 2025,
+      "venue": "Computers and Education Open",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Emotionally enriched ai-generated feedback: Supporting student well-being without compromising learning",
+      "doi": null,
+      "year": 2025,
+      "venue": "Computers & Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Pedagogical framework for hybrid intelligent feedback",
+      "doi": null,
+      "year": 2025,
+      "venue": "Innovations in Education and Teaching International",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Focus on formative feedback",
+      "doi": null,
+      "year": 2008,
+      "venue": "Review of Educational Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Cognitive load theory",
+      "doi": null,
+      "year": 2011,
+      "venue": "Psychology of Learning and Motivation",
+      "citation_level": 2,
+      "citation_context": "theoretical basis for directive feedback"
+    },
+    {
+      "title": "Formative assessment and self-regulated learning: A model and seven principles of good feedback practice",
+      "doi": null,
+      "year": 2006,
+      "venue": "Studies in Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Understanding the impact of guiding inquiry: The relationship between directive support, student attributes, and transfer of knowledge, attitudes, and behaviours in inquiry learning",
+      "doi": null,
+      "year": 2018,
+      "venue": "Instructional Science",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Metacognition and cognitive monitoring: A new area of cognitive\u2013developmental inquiry",
+      "doi": null,
+      "year": 1979,
+      "venue": "American Psychologist",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Metacognitive theories",
+      "doi": null,
+      "year": 1995,
+      "venue": "Educational Psychology Review",
+      "citation_level": 2,
+      "citation_context": "metacognitive theory framing reflective prompts"
+    },
+    {
+      "title": "Cognition and metacognition within self-regulated learning",
+      "doi": null,
+      "year": 2017,
+      "venue": "Handbook of Self-Regulation of Learning and Performance",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Becoming a self-regulated learner: An overview",
+      "doi": null,
+      "year": 2002,
+      "venue": "Theory Into Practice",
+      "citation_level": 2,
+      "citation_context": "SRL framing for strategic non-action"
+    },
+    {
+      "title": "Metacognition and affect: What can metacognitive experiences tell us about the learning process?",
+      "doi": null,
+      "year": 2006,
+      "venue": "Educational Research Review",
+      "citation_level": 2,
+      "citation_context": "theory linking metacognition and affect"
+    },
+    {
+      "title": "A review of self-regulated learning: Six models and four directions for research",
+      "doi": null,
+      "year": 2017,
+      "venue": "Frontiers in Psychology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The impact of feedback on metacognition: Enhancing in easy tasks, impeding in difficult ones",
+      "doi": null,
+      "year": 2023,
+      "venue": "Consciousness and Cognition",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Cognitive load and challenges in self-regulation: An introduction and reflection on the topical collection",
+      "doi": null,
+      "year": 2025,
+      "venue": "Educational Psychology Review",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Rethinking models of feedback for learning: the challenge of design",
+      "doi": null,
+      "year": 2013,
+      "venue": "Assessment & Evaluation in Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Exploring the effect of directive and reflective feedback on elementary school students\u2019 scientific conceptual understanding, epistemological beliefs, and inquiry performance in online inquiry activities",
+      "doi": null,
+      "year": 2024,
+      "venue": "Research in Science Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The effect of feedback on metacognitive strategy use in efl writing",
+      "doi": null,
+      "year": 2024,
+      "venue": "Computer Assisted Language Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Improving metacognition in the classroom through instruction, training, and feedback",
+      "doi": null,
+      "year": 2016,
+      "venue": "Metacognition and Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Metacognitive instruction enhances the effectiveness of corrective feedback: Variable effects of feedback types and linguistic targets",
+      "doi": null,
+      "year": 2018,
+      "venue": "Language Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Analytics of learner-centered feedback: A large-scale case study in higher education",
+      "doi": null,
+      "year": 2025,
+      "venue": "Computers & Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Examining the factors that influence how instructors provide feedback in online learning environments",
+      "doi": null,
+      "year": 2015,
+      "venue": "International Journal of Online Pedagogy and Course Design",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The influence of teacher emotion on grading practices: a preliminary look at the evaluation of student writing",
+      "doi": null,
+      "year": 2013,
+      "venue": "Teachers and Teaching",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Delivering effective student feedback in higher education: An evaluation of the challenges and best practice",
+      "doi": null,
+      "year": 2024,
+      "venue": "International Journal of Research in Education and Science",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Advancing feedback research in educational psychology: Insights into feedback processes and determinants of effectiveness",
+      "doi": null,
+      "year": 2025,
+      "venue": "Contemporary Educational Psychology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Toward consilience in the use of task-level feedback to promote learning",
+      "doi": null,
+      "year": 2018,
+      "venue": "Psychology of Learning and Motivation",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Ripple: A crowdsourced adaptive platform for recommendation of learning activities",
+      "doi": null,
+      "year": 2019,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Assessing the proficiency of large language models in automatic feedback generation: An evaluation study",
+      "doi": null,
+      "year": 2024,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Empirical study of data-driven learning and generative ai in enhancing meta-cognitive resource utilization: A comprehensive analysis",
+      "doi": null,
+      "year": 2024,
+      "venue": "Research Review International Journal of Multidisciplinary",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Designing and evaluating tutoring feedback strategies for digital learning",
+      "doi": null,
+      "year": 2013,
+      "venue": "Digital Education Review",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Impact of AI assistance on student agency",
+      "doi": null,
+      "year": 2024,
+      "venue": "Computers & Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Harnessing generative ai (genai) for automated feedback in higher education: A systematic review",
+      "doi": null,
+      "year": 2024,
+      "venue": "Online Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Enhancing peer feedback provision through user interface scaffolding: A comparative examination of scripting and self-monitoring techniques",
+      "doi": null,
+      "year": 2025,
+      "venue": "Computers & Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Second language learners\u2019 engagement with written feedback",
+      "doi": null,
+      "year": 2023,
+      "venue": "Australian Review of Applied Linguistics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Enhancing self-regulated learning through using written feedback in higher education",
+      "doi": null,
+      "year": 2017,
+      "venue": "International Journal of Educational Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "L2 learners\u2019 cognitive and behavioral engagement with written corrective feedback",
+      "doi": null,
+      "year": 2022,
+      "venue": "English Teaching",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Feedback as open-ended conversation: Inviting students to coregulate and metacognitively reflect during assessment",
+      "doi": null,
+      "year": 2022,
+      "venue": "Journal of the Scholarship of Teaching and Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The effects of feedback interventions on performance: a historical review, a meta-analysis, and a preliminary feedback intervention theory",
+      "doi": null,
+      "year": 1996,
+      "venue": "Psychological Bulletin",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Improving self-efficacy in problem solving: Learning from errors and feedback",
+      "doi": null,
+      "year": 2007,
+      "venue": "The University of North Carolina at Greensboro",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Self\u2013regulated learning ability, metacognitive ability, and general self-efficacy in a sample of nursing students: A cross-sectional and correlational study",
+      "doi": null,
+      "year": 2019,
+      "venue": "Nurse Education in Practice",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The impact of self-assessment, planning and goal setting, and reflection before and after revision on student self-efficacy and writing performance",
+      "doi": null,
+      "year": 2021,
+      "venue": "Reading and Writing",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Self-efficacy: The exercise of control",
+      "doi": null,
+      "year": 1997,
+      "venue": "Freeman",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Tracing the path toward self-regulated revision: An interplay of instructor feedback, peer feedback, and revision goals",
+      "doi": null,
+      "year": 2021,
+      "venue": "Frontiers in Psychology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Ai or human? evaluating student feedback perceptions in higher education",
+      "doi": null,
+      "year": 2024,
+      "venue": "European Conference on Technology Enhanced Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Comparing generative ai and teacher feedback: student perceptions of usefulness and trustworthiness",
+      "doi": null,
+      "year": 2025,
+      "venue": "Assessment & Evaluation in Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

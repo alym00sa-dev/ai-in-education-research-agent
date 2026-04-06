@@ -1,0 +1,75 @@
+{
+  "title": "Analyzing ChatGPT\u2019s Aptitude in an Introductory Computer Engineering Course",
+  "doi": null,
+  "year": 2023,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2304.06122v2",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper examines how well ChatGPT/GPT-3 can answer the range of assessments used in an introductory undergraduate computer engineering course, rather than a single exam. The authors are interested in both the opportunities and limitations of generative AI in coursework, especially for tasks that go beyond text generation and require diagrams, truth tables, circuit representations, or hands-on lab work. The study also introduces an \"accuracy-per-minute\" metric to compare correctness with speed of solution generation.\n\nThe approach compares three sources of answers within the course: ordinary student work completed without ChatGPT, student-submitted secondary solutions produced with ChatGPT assistance, and answers generated automatically through the OpenAI API using text-davinci-003. The evaluation covers six quizzes, three homework assignments, four laboratory projects, and planned but not yet fully analyzed exam components. Assessment was based on instructor/teaching-assistant grading of the generated work, and the paper reports average scores, completion times, and efficiency metrics.\n\nThe context is a single introductory computer engineering course (EENG 201) at Yale University in the United States, typically taken by freshmen and sophomores, with some more senior students from computer science and a small number from other fields. Students were allowed to submit ChatGPT-assisted versions of their work separately from their graded coursework under explicit rules, enabling comparison between conventional work and AI-assisted responses in an authentic class setting.\n\nThe main conclusion is that ChatGPT performs relatively well on short, text-based quiz questions and can sometimes generate plausible written responses quickly, but performs poorly on homework and other tasks that depend on figures, diagrams, or physical lab activities. The authors conclude that in its current text-only form, ChatGPT could not pass the full course, though its speed makes it highly efficient on a percentage-per-minute basis. They also warn that plausible but incorrect answers could mislead students, and argue that multimodal capabilities would be necessary for much stronger performance in this domain.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical course-based evaluation with quantitative results, but it is not a K-12 comparative intervention study, lacks a clearly reported analytic design and sample size for outcome estimation, and includes substantial risk of grading and selection bias. It provides descriptive performance evidence rather than rigorous causal evidence.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper shows unclear educational impact overall: strong apparent efficiency gains but mixed academic performance, with good results on simple text quizzes and very poor results on more complex coursework. No standardized effect sizes or causal comparisons are reported, so impact remains uncertain.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "Evaluates GPT-3/ChatGPT as a conversational answer generator for quizzes, homework, exams, and lab-manual questions in an introductory university computer engineering course, including student-mediated use of ChatGPT and scripted OpenAI API completions."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.9,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "ChatGPT/GPT-3 performed well on short text-based quiz items but poorly on more complex homework and lab tasks requiring diagrams, figures, or hands-on work. Student ChatGPT-assisted quiz scores reached 87-100% across six quizzes, but ChatGPT-assisted assignment scores were only 8-27% and lab-question scores 60-70%; OpenAI API-generated solutions showed a similar pattern with quiz scores 43-83%, assignments 8-37%, and labs 44-56%.",
+        "measure": "Course assessment performance on quizzes, homework assignments, and laboratory questions in introductory computer engineering",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.82,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Automated GPT-3 solution generation was dramatically faster than human completion, leading the authors to propose an 'accuracy-per-minute' metric favoring the model despite lower correctness on many tasks. API-generated solutions took about 0.2-0.5 minutes for quizzes, 1.7-3.0 minutes for assignments, and 0.3-0.5 minutes for labs, versus student completion times of 5 minutes for quizzes, 380-800 minutes for assignments, and 68-79 minutes for labs.",
+        "measure": "Time to generate solutions and derived accuracy-per-minute efficiency metric",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "classroom",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

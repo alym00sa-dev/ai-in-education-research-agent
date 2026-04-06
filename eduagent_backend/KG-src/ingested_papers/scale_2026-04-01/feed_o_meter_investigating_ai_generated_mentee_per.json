@@ -1,0 +1,107 @@
+{
+  "title": "Feed-O-Meter: Investigating AI-Generated Mentee Personas as Interactive Agents for Scaffolding Design Feedback Practice",
+  "doi": null,
+  "year": 2025,
+  "venue": null,
+  "url": "https://arxiv.org/abs/2509.07424",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate",
+    "Graduate / Doctoral"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses the problem that design students often have limited opportunities to practice giving effective feedback, even though feedback is central to studio-based design learning. Students may hesitate to critique peers because of low confidence, lack of experience, and anxiety about judgment. The authors investigate whether an AI-based role-playing system can create a lower-pressure environment for feedback practice while also helping students reflect on the quality and impact of their feedback.\n\nThe intervention is Feed-O-Meter, an LLM-based system in which the user role-plays as a mentor and gives feedback to an AI mentee named Alex, who is designed to behave like a novice design student. The system includes a chat interface, an idea-updating mechanism showing how feedback changes the mentee\u2019s design ideas, and a Feedback Reflection Interface that visualizes qualities of the user\u2019s feedback, the balance of question/statement and divergent/convergent feedback, and the mentee\u2019s reactions through expressions, inner thoughts, and counter-questions. The system is intended to scaffold feedback practice without prescribing a rigid rubric.\n\nThe study was conducted with 24 design students in South Korea, including both undergraduate and graduate students, primarily in industrial design. Using a within-subject comparative design, participants completed feedback sessions in both a baseline version of the system and the full Feed-O-Meter version. Data included interaction logs, surveys, interviews, and expert ratings of feedback quality, allowing the authors to examine both user perceptions and differences in feedback behavior across conditions.\n\nThe main conclusions are that Feed-O-Meter created a realistic, low-pressure environment that increased engagement and motivation for practicing feedback. The reflection features helped participants pay more attention not just to what feedback they gave, but also to how clearly and constructively they communicated it to the AI mentee. Participants also reported that the system supported self-reflection on their own design thinking. Overall, the paper argues that carefully designed AI personas and feedback-reflection mechanisms can support the development of feedback skills in design education, while also highlighting the importance of aligning AI behavior with its intended educational role.",
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "lab",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "South Korea",
+  "study_region": "East Asia & Pacific",
+  "identified_tools": [
+    {
+      "name": "Feed-O-Meter",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "tutoring_instruction"
+      ],
+      "description": "An LLM-based role-playing system for design education in which learners act as mentors and provide feedback to an AI mentee persona, with interfaces that visualize feedback quality and its effects on the mentee's idea development.",
+      "use_case": "Studied as an interactive practice environment for design students to develop feedback-giving skills by mentoring an AI mentee (Alex), comparing a full version with feedback reflection features against a baseline version without those features.",
+      "findings": [
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In a within-subject user study, participants reported that Feed-O-Meter increased engagement and motivation during feedback practice through role-switching and the low-pressure setting. The study involved 24 design students (N=24), and qualitative findings emphasized reduced fear of judgment and more active participation in feedback activities. ",
+          "measure": "Self-reported engagement, motivation, and interview perceptions of feedback practice experience",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=24"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Participants indicated that the system's Feedback Reflection Interface helped them refine how they communicated feedback, focusing on making comments more comprehensible and acceptable to the AI mentee. In descriptive log data, user feedback was longer in the Feed-O-Meter condition than in baseline (mean syllables per chat 207.85 vs. 183.11; t=-2.28, p=0.0229), suggesting more elaborated feedback. ",
+          "measure": "Feedback communication quality/perceived comprehensibility; interaction log length in syllables per chat",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=24"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The paper reports that participants recognized Feed-O-Meter as useful not only for practicing feedback but also for critically analyzing their own designs and identifying areas for improvement. This finding is based on interview and thematic analysis from the user study with 24 participants. ",
+          "measure": "Interview-based perceptions of critical reflection and transfer to own design analysis",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=24"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The LLM-based feedback categorizer embedded in Feed-O-Meter showed substantial agreement with human annotation. On 60 randomly selected feedback sentences from 1,386 total sentences, human-human agreement was Cohen's kappa=0.86, while human-LLM agreement was kappa=0.80 and 0.72, supporting reliability of the automated categorization component. ",
+          "measure": "Agreement between LLM-based feedback categorization and human raters",
+          "effect_size": "Cohen's kappa=0.80; 0.72",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=60 sentences"
+        }
+      ]
+    },
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "language_speech",
+        "feedback_evaluation"
+      ],
+      "description": "OpenAI GPT-family large language model used via API for conversational response generation, feedback categorization, evaluation, knowledge extraction, and idea updating.",
+      "use_case": "GPT-4o powered the Feed-O-Meter backend, including the AI mentee's dialogue, feedback categorization/evaluation, knowledge extraction, and idea revision pipelines.",
+      "findings": []
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical mixed-methods user study with a within-subject comparative design and N=24, but it is not a randomized controlled trial focused on validated learning outcome gains. Most reported results are qualitative or descriptive, with limited inferential outcome reporting.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports positive perceptions and some descriptive behavioral differences, but effect sizes for educational outcomes are not reported and impacts on student learning or skill improvement remain unclear in magnitude.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

@@ -1,0 +1,53 @@
+{
+  "title": "Assessing the Impact of Prompting Methods on ChatGPT\u2019s Mathematical Capabilities",
+  "doi": null,
+  "year": 2024,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2312.15006v2",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper asks whether prompt engineering can improve ChatGPT-3.5\u2019s ability to solve mathematics problems. Rather than studying human learners, it evaluates the model itself across three broad prompting strategies: simple prompts, persona prompts, and conversational prompts. The authors test ten specific prompts designed to bias the chatbot toward better mathematical reasoning, such as telling it a question is easy or difficult, assigning a high- or low-confidence persona, or priming it with a short conversation about math or physics.\n\nThe intervention is purely model-facing: ChatGPT-3.5 is prompted and then evaluated on existing benchmark datasets, including MATH, GSM8K, and math-related subsets of MMLU. The paper uses an automated grading script, GPT-Grader, to compare model outputs with dataset ground truth. The datasets include grade-school word problems and other mathematics tasks, but the study is not an educational intervention with students, teachers, or classrooms.\n\nThe main finding is that none of the prompting methods consistently improves ChatGPT\u2019s mathematical performance over baseline. Some prompts slightly help on one dataset while harming performance on another, and certain prompts substantially degrade accuracy. The authors conclude that prompt-engineering gains in language tasks do not reliably transfer to mathematical problem solving, and that claims of improvement should be checked across multiple datasets. For the user\u2019s narrow search, this is not a directly empirical ChatGPT mathematics intervention study in grades 6\u20138 with a human counterfactual; it is closest comparator evidence about ChatGPT\u2019s mathematical performance under different prompts.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed empirical benchmarking study, but it is not a student intervention study and uses a non-randomized evaluation of prompts on an LLM across benchmark datasets. The methodology is systematic, yet credibility for educational intervention inference is limited because the outcomes are model accuracy rather than learner outcomes.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "The study shows no generalizable positive impact on mathematical performance; several prompts worsen accuracy substantially. Since it does not evaluate student learning and the effects are mixed to negative, the educational impact tier is red.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "Benchmarking ChatGPT-3.5\u2019s mathematical problem-solving under different prompting strategies (simple, persona, conversational) on MATH, GSM8K, and MMLU math items; evaluates prompt engineering as an intervention on the chatbot\u2019s responses rather than student learning."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 1.0,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "Across three math-related benchmarks (MATH n=12,500 items; GSM8K n=8.5K; MMLU math subsets), none of the tested prompting methods consistently improved ChatGPT-3.5\u2019s accuracy over baseline. Effects varied by prompt and dataset: for example, 'Math Conversation' improved MMLU accuracy by +11.8 points (79.5% to 91.3%) but reduced GSM8K accuracy by -28.0 points (82.0% to 54.0%), while 'No Explanation' sharply degraded performance on GSM8K (-63.2 points) and MMLU (-58.7 points).",
+        "measure": "Accuracy on math problem-solving benchmarks (MATH, GSM8K, MMLU math subsets)",
+        "study_size": "n=12,500 (MATH); n=8,500 (GSM8K); n=math subset of MMLU",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    }
+  ],
+  "limitations": [
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "lab",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

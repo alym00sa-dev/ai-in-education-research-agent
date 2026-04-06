@@ -1,0 +1,32 @@
+{
+  "title": "Whose LLM is it Anyway? Linguistic Comparison and LLM Attribution for GPT-3.5, GPT-4 and Bard",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2402.14533v2",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper does not study educational feedback or student revision. Instead, it investigates whether different large language models exhibit distinct linguistic styles and whether those stylistic differences can be used to identify which model produced a given text. The authors compare outputs from GPT-3.5, GPT-4, and Bard, focusing on vocabulary, part-of-speech distributions, dependency relations, and sentiment.\n\nThe study builds a corpus called LC2 using 5,000 prompts sampled from the English portion of the HC3 corpus across five domains: finance, medicine, open-domain QA, long-form QA (reddit eli5), and computer science. For each prompt, the authors collect responses from GPT-3.5, GPT-4, and Bard, yielding 15,000 total responses. They then conduct statistical comparisons of linguistic features and use those features as inputs to an XGBoost classifier for LLM attribution.\n\nNo human learners, teachers, or educational institutions are studied, and there is no intervention involving formative feedback, writing revision, or comparison against teacher or peer feedback. The context is computational text analysis using existing prompts and LLM-generated responses, rather than an educational setting.\n\nThe main conclusion is that the three LLMs are linguistically distinguishable, especially in vocabulary, part-of-speech usage, and dependency structures. Using these linguistic markers, the authors report 0.88 accuracy and 0.87 F1 for attributing text to its source LLM. The paper also notes limitations related to dataset scope, zero-shot prompting only, and English-only analysis.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This paper is not an education intervention study and does not evaluate LLM-generated formative feedback on student-authored drafts. It is a computational linguistics analysis of stylistic differences among GPT-3.5, GPT-4, and Bard using QA corpora, with no K-12 sample, no comparative instructional design, and no student learning or writing revision outcomes.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports strong technical attribution performance (88% accuracy, F1=0.87) for classifying LLM source texts, but this does not translate into measured educational impact. Relative to the requested K-12 feedback-on-drafts topic, impact is unclear and indirect rather than demonstrating student outcome effects.",
+  "interventions": [],
+  "outcome_assignments": [],
+  "limitations": [
+    "no_control_group",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

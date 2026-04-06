@@ -1,0 +1,51 @@
+{
+  "title": "The TalkMoves Dataset: K-12 Mathematics Lesson Transcripts Annotated for Teacher and Student Discursive Moves",
+  "doi": null,
+  "year": 2022,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2204.09652v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "K-12 (unspecified grade)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper introduces the TalkMoves dataset, a large corpus of 567 K-12 mathematics lesson transcripts annotated for teacher and student discursive moves. The authors frame the dataset around accountable talk theory, arguing that structured classroom discourse is central to equitable and rigorous mathematics learning and that curated transcript resources can support both educational research and AI development.\n\nThe paper does not evaluate a generative AI intervention against human coaching, peer feedback, rubric-only self-review, or business-as-usual. Instead, it describes the creation, annotation protocol, reliability, and composition of the dataset, along with a related TalkMoves application that uses machine learning to detect talk moves and provide automated feedback to teachers. The application is presented as a downstream use case rather than an evaluated intervention in this paper.\n\nThe transcripts come from K-12 mathematics classrooms, primarily in-person lessons with whole-class discussion and/or small-group work, plus some online lessons. Sources include public transcript collections and transcripts gathered through the TalkMoves project. The dataset is heavily oriented toward U.S. middle school classrooms, though the paper notes that some transcripts are international via TIMSS and that many descriptive fields are missing for individual lessons.\n\nThe main conclusion is that TalkMoves is a carefully curated, theory-grounded dataset that can support NLP and educational AI work, including automated feedback systems for teachers. The paper reports strong human annotation reliability and benchmark model performance for talk-move classification, but it does not report teacher behavior-change outcomes, lesson revisions, teacher self-efficacy, or student learning effects from an intervention trial.",
+  "limitations": [
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "classroom",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "feedback_evaluation",
+        "content_generation"
+      ],
+      "description": "A generic AI-based classroom discourse feedback and coaching system that analyzes lesson transcripts/audio and generates automated, personalized feedback for teachers; not a single named commercial product in this paper.",
+      "use_case": "Used as the broader category for the TalkMoves application, which provides teachers with automated, immediate feedback on mathematics instruction and discourse moves.",
+      "findings": []
+    }
+  ],
+  "verdict": "framework_only",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This paper is primarily a dataset and system description, not an empirical evaluation of a teaching intervention. It reports model benchmarking on talk-move classification, but does not test teacher outcomes in a controlled study.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The described application has potential instructional impact, but this paper provides no direct evidence of teacher behavior change, lesson revisions, self-efficacy, or student learning. Reported model performance is moderately strong, but it is an artifact-level benchmark rather than an educational impact result.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

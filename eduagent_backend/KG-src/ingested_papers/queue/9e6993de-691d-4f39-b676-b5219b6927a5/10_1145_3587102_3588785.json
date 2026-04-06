@@ -1,0 +1,59 @@
+{
+  "title": "Comparing Code Explanations Created by Students and Large Language Models",
+  "doi": "10.1145/3587102.3588785",
+  "year": 2023,
+  "venue": "Proceedings of the 2023 Conference on Innovation and Technology in Computer Science Education (ITiCSE 2023)",
+  "url": "http://arxiv.org/abs/2304.03938v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper investigates whether large language models can generate code explanations that are useful for students learning introductory programming, and how those explanations compare with explanations written by students. The authors focus on code comprehension and explanation as foundational programming skills, noting that producing high-quality example explanations at scale is difficult for instructors. Their research questions ask whether student- and LLM-generated explanations differ in accuracy, understandability, and length, and what characteristics students value in a good explanation.\n\nThe study used GPT-3-generated explanations and student-generated explanations for three short C functions. In a first lab activity, students wrote explanations of the functions\u2019 intended purposes. In a second lab, two weeks later, students rated a random set of explanations drawn from a pool containing both student-written and GPT-3-written examples on ease of understanding, accuracy, and ideal length using Likert scales. The study also included an open-ended prompt asking students what makes a code explanation useful, which the authors analyzed thematically.\n\nParticipants were students in a first-year programming course at the University of Auckland, with approximately 1000 students enrolled and 954 participating in the evaluation activity. The context was an in-person lab-based introductory programming course using the C language. The quantitative component compared ratings of LLM and student explanations using Mann-Whitney U tests, while the qualitative component analyzed 100 randomly selected open-ended responses about valued explanation features.\n\nThe main conclusion is that GPT-3-generated explanations were rated significantly easier to understand and more accurate than student-generated explanations, while perceived and actual length did not differ significantly. Students tended to prefer detailed, often line-by-line explanations that clearly described inputs, outputs, and how the code works. The authors conclude that LLM-generated explanations may be useful as scalable scaffolds or examples in introductory programming education, especially for novice learners, while also noting important limits related to generalizability, the simplicity of the code tasks, and the lack of direct learning-outcome measures.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed comparative study with quantitative analysis, but it is not K-12, not a randomized impact evaluation of learning outcomes, and mainly measures student perceptions of explanation quality rather than direct achievement gains. The design supports descriptive comparative inference but has important external-validity and causal limitations.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper finds small positive advantages for LLM-generated explanations on perceived quality, but effect sizes are weak and the outcomes are proxy measures in higher education computing rather than direct K-12 writing or literacy impacts. Impact on the target evidence base is therefore unclear.",
+  "interventions": [
+    {
+      "intervention": "Other",
+      "confidence": 0.94,
+      "role": "primary",
+      "use_case": "Large language model (GPT-3) generation of code explanations that students compare against peer-written explanations in an introductory programming course; the model is used as an on-demand generator of exemplar explanations rather than as a tutor or writing assistant."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.87,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "In a first-year university programming course, students rated GPT-3-generated code explanations as easier to understand and more accurate summaries of code than student-generated explanations. Among 954 students evaluating sampled explanations, Mann-Whitney tests showed significant advantages for LLM explanations on understandability (U=1421596.0, p=3.010\u00d710^-31, RBC=0.206, CLES=0.397) and accuracy (U=1568575.5, p=2.866\u00d710^-12, RBC=0.123, CLES=0.438), with no statistically significant difference in perceived ideal length after Bonferroni correction; effects were small.",
+        "measure": "Student ratings of code explanation understandability, accuracy, and ideal length on 5-point Likert scales in an introductory programming context",
+        "study_size": "n=954 evaluators; course enrollment approximately 1000",
+        "effect_size": "RBC=0.206 (understandability), RBC=0.123 (accuracy); CLES=0.397 and 0.438 respectively",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "single_site",
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "2",
+  "setting": "lab",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "New Zealand",
+  "study_region": "East Asia & Pacific",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

@@ -1,0 +1,170 @@
+{
+  "title": "Bridging Qualitative Rubrics and AI: A Binary Question Framework for Criterion-Referenced Grading in Engineering",
+  "doi": null,
+  "year": 2025,
+  "venue": "AAEE 2025 Proceedings",
+  "url": "https://arxiv.org/abs/2601.15626",
+  "source_db": "scale_stanford",
+  "population": "Undergraduate",
+  "user_type": "Educator",
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper examines whether generative AI can be used to support criterion-referenced grading of mathematical assessments in engineering education. The authors focus on a practical problem in large engineering courses: traditional model-solution marking can be inconsistent, time-consuming, and weak at producing high-quality formative feedback, especially when students use unconventional but valid solution methods. The study asks what challenges demonstrators face in manual marking and how GenAI can be configured to support more reliable grading.\n\nThe intervention was a structured AI-assisted grading approach that converted qualitative rubrics into binary yes/no grading questions. Student handwritten or typed responses were first converted to LaTeX, then a university-provided GenAI tool (UniAI, powered by Claude 3.5 Sonnet) was prompted in a three-step process: read the question, read the student response, and answer rubric-aligned binary questions with brief justifications. This design aimed to reduce ambiguity in partial-credit decisions and simultaneously generate explanatory formative feedback. The study combined qualitative reflections from two researcher-demonstrators with quantitative comparison of AI grading against human grading.\n\nThe context was an undergraduate electrical engineering subject at an Australian university, using weekly pre-laboratory mathematics exercises. Fifteen questions from five pre-lab exercises were selected, and 50 student submissions were evaluated across question types including numerical, descriptive, short answer, and proof tasks. Two researchers who also served as demonstrators independently graded the responses and reflected on both the existing grading process and the AI-supported approach. The study therefore centered primarily on educator use of AI for assessment, though the graded work came from undergraduate students.\n\nThe paper concludes that GenAI, when paired with a binary criterion-referenced rubric framework, can achieve grading accuracy comparable to experienced human graders (reported overall AI accuracy: 92.5%). The authors found that the approach improved consistency and especially enhanced the quality and completeness of formative feedback. However, AI was not considered reliable enough for fully autonomous grading because it struggled with atypical student approaches, interpretation-based judgments, and some symbolic simplification cases. The authors recommend using AI as a human-support tool or second reviewer rather than a replacement for human graders, and call for future research on student perceptions and broader validation.",
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_control_group",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "blended",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Australia",
+  "study_region": "East Asia & Pacific",
+  "identified_tools": [
+    {
+      "name": "UniAI",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "tutoring_instruction"
+      ],
+      "description": "A university-provided generative AI tool powered by Claude 3.5 Sonnet, used to evaluate student responses and generate grading rationales and feedback.",
+      "use_case": "Used to support criterion-referenced grading of engineering mathematics pre-lab assessments by answering binary rubric-aligned Yes/No questions on 50 student submissions across 15 questions, assigning marks, and generating explanatory feedback.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "UniAI achieved an overall grading accuracy of 92.5% when its judgments were compared against the researchers\u2019 agreed-upon consensus benchmark on 50 student submissions across 15 questions. Accuracy by question type was 93.2% for numerical answers, 88.6% for descriptive reasoning, 95.7% for short answers, and 91.9% for proof questions, indicating performance comparable to experienced human graders.",
+          "measure": "Grading accuracy against consensus benchmark, overall and by question type",
+          "effect_size": "92.5% accuracy overall; 93.2% numerical answers; 88.6% descriptive reasoning; 95.7% short answers; 91.9% proof questions",
+          "confidence_interval": "not_reported",
+          "sample_size": "50 student submissions across 15 questions"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Error analysis of UniAI\u2019s grading discrepancies found that 49.1% were due to interpretation differences, 22.7% to simple oversights, 13.2% to unanticipated student approaches, 7.5% to simplification misjudgments, and 7.5% to cases where later review suggested the human benchmark had erred. The paper concludes UniAI was useful as a second reviewer but not yet reliable enough for autonomous grading, especially for unconventional solutions.",
+          "measure": "Distribution of AI grading error sources and perceived reliability for autonomous use",
+          "effect_size": "49.1% interpretation differences; 22.7% simple oversights; 13.2% unanticipated student approaches; 7.5% simplification misjudgments; 7.5% human errors",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Post-testing reflections from the two researcher-demonstrators indicated that UniAI improved the grading workflow by acting as a helpful second reviewer, catching small errors and supporting more consistent judgments. They also reported that AI-generated explanations were more complete than typical manual feedback and substantially enhanced formative feedback quality, though these are perception-based findings from a very small sample.",
+          "measure": "Researcher perceptions of grading consistency, usefulness, and feedback quality",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=2 researchers"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a mixed-methods study with quantitative benchmarking and qualitative reflections, but it uses a very small human sample (two researchers) and no randomized or quasi-experimental design. Evidence is therefore exploratory rather than causal.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports strong operational performance metrics for grading accuracy and positive perceived feedback benefits, but no standardized student outcome effect sizes are reported. Impact appears promising but remains unclear and limited to grading/feedback workflow outcomes.",
+  "citations": [
+    {
+      "title": "Using thematic analysis in psychology",
+      "doi": "10.1191/1478088706qp063oa",
+      "year": 2006,
+      "venue": "Qualitative Research in Psychology"
+    },
+    {
+      "title": "A case study on the impact of automated assessment in engineering mathematics",
+      "doi": "10.11120/ened.2008.03010013",
+      "year": 2008,
+      "venue": "Engineering Education"
+    },
+    {
+      "title": "Assessment-driven learning of mathematics for engineering students",
+      "doi": "10.7227/IJEEE.42.1.8",
+      "year": 2005,
+      "venue": "International Journal of Electrical Engineering & Education"
+    },
+    {
+      "title": "Gemini 2.5 Pro",
+      "doi": null,
+      "year": 2025,
+      "venue": "Google DeepMind"
+    },
+    {
+      "title": "Measurement and Mitigation of Bias in Artificial Intelligence: A Narrative Literature Review for Regulatory Science",
+      "doi": "10.1002/cpt.3117",
+      "year": 2024,
+      "venue": "Clinical Pharmacology & Therapeutics"
+    },
+    {
+      "title": "Student evaluations of faculty grading methods",
+      "doi": "10.1080/08832320309598620",
+      "year": 2003,
+      "venue": "Journal of Education for Business"
+    },
+    {
+      "title": "Grading assistance for a handwritten thermodynamics exam using artificial intelligence: An exploratory study",
+      "doi": "10.1103/PhysRevPhysEducRes.20.020144",
+      "year": 2024,
+      "venue": "Physical Review Physics Education Research"
+    },
+    {
+      "title": "AI-assisted marking: Functionality and limitations of ChatGPT in written assessment evaluation",
+      "doi": "10.14742/ajet.9463",
+      "year": 2024,
+      "venue": "Australasian Journal of Educational Technology"
+    },
+    {
+      "title": "Criterion-referenced and norm-referenced assessments: Compatibility and complementarity",
+      "doi": "10.1080/02602938.2015.1022136",
+      "year": 2016,
+      "venue": "Assessment & Evaluation in Higher Education"
+    },
+    {
+      "title": "Reliability of grading using a rubric versus a traditional marking scheme in statistics",
+      "doi": null,
+      "year": 2019,
+      "venue": "Proceedings of the Australian Conference on Science and Mathematics Education 2018"
+    },
+    {
+      "title": "Formative assessment in mathematics for engineering students",
+      "doi": "10.1080/03043797.2017.1289500",
+      "year": 2017,
+      "venue": "European Journal of Engineering Education"
+    },
+    {
+      "title": "GPT-4 as an automatic grader",
+      "doi": null,
+      "year": 2023,
+      "venue": "KTH Royal Institute of Technology"
+    },
+    {
+      "title": "Mathematics in engineering education: A review of the recent literature with a view towards innovative practices",
+      "doi": "10.1007/s40753-021-00139-8",
+      "year": 2021,
+      "venue": "International Journal of Research in Undergraduate Mathematics Education"
+    },
+    {
+      "title": "The lazy student\u2019s dream: ChatGPT passing an engineering course on its own",
+      "doi": "10.48550/arXiv.2503.05760",
+      "year": 2025,
+      "venue": "arXiv"
+    },
+    {
+      "title": "Autograding Mathematical Induction Proofs with Natural Language Processing",
+      "doi": "10.1007/s40593-025-00498-2",
+      "year": 2025,
+      "venue": "International Journal of Artificial Intelligence in Education"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

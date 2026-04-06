@@ -1,0 +1,305 @@
+{
+  "title": "Studying the effect of AI Code Generators on Supporting Novice Learners in Introductory Programming",
+  "doi": "10.1145/3544548.3580919",
+  "year": 2023,
+  "venue": "Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems",
+  "url": "https://doi.org/10.1145/3544548.3580919",
+  "source_db": "openalex_search",
+  "populations": [
+    "Elementary (PreK-5th)",
+    "Middle School (6th-8th)",
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Quasi-Experimental Design (QED)",
+  "extended_summary": "This paper examines whether AI code generators such as OpenAI Codex help or hinder novice learners who are first learning introductory text-based programming. The authors focus on a key educational concern: although AI-generated code may improve immediate task performance, it could also create over-reliance and weaken learners\u2019 ability to understand, modify, or retain programming knowledge. The study addresses whether novices can effectively use AI code generation, how it changes task performance, and whether prior access to such tools affects later independent coding and retention.\n\nTo study this, the researchers built a web-based Python learning environment called Coding Steps. Learners completed a three-week, 10-session remote program consisting of a Scratch-based introduction and pre-test, seven Python training sessions, and two evaluation sessions (an immediate post-test and a one-week retention test). During training, one group had access to an AI code generator powered by OpenAI Codex, while a comparison group did not. Participants worked through 45 code-authoring tasks, each followed by a code-modification task, plus multiple-choice questions on core introductory Python topics such as variables, conditionals, loops, and arrays. The system logged code edits, documentation use, errors, submissions, and AI prompt/code-generation behavior.\n\nThe population consisted of 69 novice learners aged 10-17 recruited through coding camps in two major North American cities. All reported no prior text-based programming experience, though many had experience with block-based programming environments such as Scratch. Participants were assigned to conditions using a matched-groups design based on Scratch pre-test scores to balance prior programming knowledge. The study was conducted remotely via Google Meet, with instructors available to provide support and personalized feedback during training.\n\nThe main findings were that access to Codex substantially improved performance on training-phase code-authoring tasks: learners completed more tasks, achieved higher correctness, made fewer errors, and finished faster. Importantly, prior use of the AI tool did not reduce performance on subsequent manual code-modification tasks, and learners in the Codex group performed similarly to the baseline group on the immediate post-test without access to the tool. On the one-week retention test, the Codex group showed slightly better performance, though differences were not statistically significant overall. The authors conclude that AI code generators can support novice programming learning without clear evidence of harming short-term retention, and that learners with stronger prior programming competency may benefit the most.",
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "non_representative_population",
+    "high_attrition"
+  ],
+  "duration_weeks": "3",
+  "setting": "online",
+  "teacher_training": "yes",
+  "implementation_fidelity": "high",
+  "study_country": "Canada, United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "tutoring_instruction"
+      ],
+      "description": "OpenAI's GPT-family large language model family, including code-generation capabilities used to produce source code from natural-language prompts.",
+      "use_case": "The study experimentally evaluated OpenAI Codex (an OpenAI GPT-family code generator, normalized here to ChatGPT per schema) embedded in the Coding Steps learning environment to help novice learners generate Python code during introductory programming training tasks.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In the training phase, learners with access to Codex outperformed the baseline group on code-authoring tasks. Correctness was higher (Codex: M=80.1%, SD=14.5%; Baseline: M=44.4%, SD=26.5%; t(67)=6.92, p<.001, d=1.67), completion time was lower (Codex: M=210s, SD=99s; Baseline: M=361s, SD=95s; t(67)=6.40, p<.001, d=1.56), and the paper also summarizes this as 1.15x increased progress, 0.59x fewer errors, 1.8x higher correctness, and 0.57x less time.",
+          "measure": "Python code-authoring task correctness score and completion time during training",
+          "effect_size": "d=1.67; d=1.56",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=69"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "Prior access to Codex did not reduce learners' ability to manually modify code in the training phase when both groups completed code-modification tasks without the generator. Correctness was similar between groups (Codex: M=66.2%, SD=25.6%; Baseline: M=58.4%, SD=23.9%; t(67)=1.28, p=.202, d=0.31).",
+          "measure": "Manual code-modification task correctness during training",
+          "effect_size": "d=0.31",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=69"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "On the immediate post-test conducted without access to the code generator, learners in the Codex and baseline groups performed similarly on authoring and modification tasks. Authoring correctness was Codex: M=61.3%, SD=30.1% versus Baseline: M=62.9%, SD=32.0% (t(67)=0.20, p=.838, d=0.05), and modification correctness was Codex: M=59.7%, SD=33.4% versus Baseline: M=59.3%, SD=31.6% (t(67)=0.058, p=.953, d=0.01).",
+          "measure": "Immediate post-test coding task correctness (authoring and modification)",
+          "effect_size": "d=0.05; d=0.01",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=69"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "On the retention post-test one week later, the Codex group scored somewhat higher but differences were not statistically significant. Authoring correctness was 9.0% higher (Codex: M=59.1%, SD=34.8%; Baseline: M=49.8%, SD=32.4%; t(67)=1.13, p=.262, d=0.28) and modification correctness was 12.7% higher (Codex: M=47.5%, SD=31.6%; Baseline: M=34.8%, SD=29.0%; t(67)=1.70, p=.092, d=0.41), but Codex learners encountered more errors on authoring tasks (Codex: M=1.58, SD=1.34; Baseline: M=0.99, SD=0.92; t(67)=2.08, p=.042, d=0.51).",
+          "measure": "Retention post-test coding correctness and authoring-task error rate",
+          "effect_size": "d=0.28; d=0.41; d=0.51",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=69"
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Qualitative and survey results indicated that learners with access to Codex felt slightly less stressed during training and more eager to continue learning programming after the study. The stress difference approached significance (U=390.5, p=.056), while eagerness to continue learning was higher in the Codex group (U=692, p=.025).",
+          "measure": "Learner self-reports of stress/discouragement and eagerness to continue programming",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=69"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is a controlled between-subject experiment with matched-group assignment and n=69 completers, providing stronger evidence than correlational work. It is not a full randomized classroom RCT and has some limitations around attrition and remote study context, so green fits better than blue.",
+  "impact_tier": "blue",
+  "impact_tier_rationale": "The primary training-phase effects on code-authoring performance are large (e.g., d=1.67 for correctness and d=1.56 for completion time), indicating substantial impact on immediate performance. Longer-term learning effects are more mixed, but the main reported intervention effects are clearly medium-to-large.",
+  "citations": [
+    {
+      "title": "Language to code: Learning semantic parsers for if-this-then-that recipes",
+      "doi": null,
+      "year": 2015,
+      "venue": "Proceedings of the 53rd Annual Meeting of the Association for Computational Linguistics and the 7th International Joint Conference on Natural Language Processing (Volume 1: Long Papers)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "SWIM: synthesizing what I mean: code search and idiomatic snippet synthesis",
+      "doi": null,
+      "year": 2016,
+      "venue": "Proceedings of the 38th International Conference on Software Engineering",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Compositional program synthesis from natural language and examples",
+      "doi": null,
+      "year": 2015,
+      "venue": "IJCAI 2015",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The worked-out-example principle in multimedia learning",
+      "doi": null,
+      "year": 2005,
+      "venue": "The Cambridge handbook of multimedia learning",
+      "citation_level": 2,
+      "citation_context": "worked-example learning principle framing training support"
+    },
+    {
+      "title": "Give P\u2019sa chance: Projects, peers, passion, play",
+      "doi": null,
+      "year": 2014,
+      "venue": "Constructionism and creativity: Proceedings of the third international constructionism conference",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Scratch: programming for all",
+      "doi": null,
+      "year": 2009,
+      "venue": "Communications of the ACM",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A different approach to coding",
+      "doi": null,
+      "year": 2015,
+      "venue": "International Journal of People-Oriented Programming",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Coarse-grained detection of student frustration in an introductory programming course",
+      "doi": null,
+      "year": 2009,
+      "venue": "Proceedings of the fifth international workshop on Computing education research workshop",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Automatic generation of programming exercises and code explanations using large language models",
+      "doi": null,
+      "year": 2022,
+      "venue": "Proceedings of the 2022 ACM Conference on International Computing Education Research-Volume 1",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Vajra: step-by-step programming with natural language",
+      "doi": null,
+      "year": 2019,
+      "venue": "Proceedings of the 24th International Conference on Intelligent User Interfaces",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Exploring programming misconceptions: an analysis of student mistakes in visual program simulation exercises",
+      "doi": null,
+      "year": 2012,
+      "venue": "Proceedings of the 12th Koli Calling International Conference on Computing Education Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Using effect size\u2014or why the P value is not enough",
+      "doi": null,
+      "year": 2012,
+      "venue": "Journal of Graduate Medical Education",
+      "citation_level": 3,
+      "citation_context": "effect size reporting for statistical analysis"
+    },
+    {
+      "title": "Investigating explainability of generative AI for code through scenario-based design",
+      "doi": null,
+      "year": 2022,
+      "venue": "27th International Conference on Intelligent User Interfaces",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Cognitive architecture and instructional design: 20 years later",
+      "doi": null,
+      "year": 2019,
+      "venue": "Educational Psychology Review",
+      "citation_level": 2,
+      "citation_context": "cognitive load theory framing learner support"
+    },
+    {
+      "title": "Tabnine: AI assistant for software developers",
+      "doi": null,
+      "year": 2022,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "AI code generator used as study system"
+    },
+    {
+      "title": "Expectation vs. experience: Evaluating the usability of code generation tools powered by large language models",
+      "doi": null,
+      "year": 2022,
+      "venue": "CHI Conference on Human Factors in Computing Systems Extended Abstracts",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Taking the load off a learner\u2019s mind: Instructional design for complex learning",
+      "doi": null,
+      "year": 2003,
+      "venue": "Educational Psychologist",
+      "citation_level": 2,
+      "citation_context": "instructional load reduction concept for novice learning"
+    },
+    {
+      "title": "Attention is all you need",
+      "doi": null,
+      "year": 2017,
+      "venue": "Advances in Neural Information Processing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Mind in society: Development of higher psychological processes",
+      "doi": null,
+      "year": 1978,
+      "venue": "Harvard University Press",
+      "citation_level": 2,
+      "citation_context": "scaffolding and zone of proximal development framing"
+    },
+    {
+      "title": "Computer science in K-12 school curricula of the 2lst century: Why, what and when?",
+      "doi": null,
+      "year": 2017,
+      "venue": "Education and Information Technologies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Computational thinking",
+      "doi": null,
+      "year": 2006,
+      "venue": "Communications of the ACM",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "App inventor and real-world motivation",
+      "doi": null,
+      "year": 2011,
+      "venue": "Proceedings of the 42nd ACM Technical Symposium on Computer Science Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A syntactic neural model for general-purpose code generation",
+      "doi": null,
+      "year": 2017,
+      "venue": "arXiv preprint arXiv:1704.01696",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Evaluating the effectiveness of parsons problems for block-based programming",
+      "doi": null,
+      "year": 2019,
+      "venue": "Proceedings of the 2019 ACM Conference on International Computing Education Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Seq2sql: Generating structured queries from natural language using reinforcement learning",
+      "doi": null,
+      "year": 2017,
+      "venue": "arXiv preprint arXiv:1709.00103",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

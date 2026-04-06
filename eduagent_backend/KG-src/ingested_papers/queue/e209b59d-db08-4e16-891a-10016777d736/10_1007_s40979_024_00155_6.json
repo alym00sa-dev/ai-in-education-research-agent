@@ -1,0 +1,86 @@
+{
+  "title": "The great detectives: humans versus AI detectors in catching large language model-generated medical writing",
+  "doi": "10.1007/s40979-024-00155-6",
+  "year": 2024,
+  "venue": "International Journal for Educational Integrity",
+  "url": "http://dx.doi.org/10.1007/s40979-024-00155-6",
+  "source_db": "eric_search",
+  "populations": [
+    "Undergraduate",
+    "Graduate / Doctoral"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper examines whether AI-generated academic writing can be detected reliably by commercial AI detectors and by human reviewers, especially after the text has been paraphrased. The authors focus on the growing concern that large language models such as ChatGPT may be used in academic publishing and that existing detection tools may fail when the text is reworded.\n\nTo test this, the study used 50 published rehabilitation-related journal articles from high-impact medical journals and fabricated 50 parallel articles with ChatGPT. The fabricated articles were then paraphrased with Wordtune to make them harder to identify. Six AI content detectors were applied to the original, ChatGPT-generated, and rephrased texts, and four blinded human reviewers (two students and two professorial reviewers) assessed original versus AI-rephrased papers. The study was conducted in the context of medical/rehabilitation publishing, not in a K-12 educational setting.\n\nResults showed that Originality.ai and ZeroGPT were the most effective detectors, with Originality.ai identifying all AI-generated texts and ZeroGPT performing very well overall. Turnitin accurately recognized human-written texts but struggled more with AI-rephrased articles. The more experienced human reviewers generally detected rephrased AI text accurately, but student reviewers were less accurate. The paper concludes that some detectors and experienced reviewers can identify AI-generated writing even after paraphrasing, but AI tools remain imperfect and should be used alongside peer review rather than as a standalone gatekeeping mechanism.",
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_long_term_followup",
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Hong Kong SAR, China",
+  "study_region": "East Asia & Pacific",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "language_speech"
+      ],
+      "description": "OpenAI's conversational large language model chatbot used to generate and rewrite text.",
+      "use_case": "Used to fabricate the introduction, discussion, and conclusion sections of 50 rehabilitation-related academic articles based on original titles, methods, and results.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "ChatGPT (GPT-3.5-Turbo) was used as the text-generation tool, and the study evaluated whether its generated articles could be detected by AI detectors and human reviewers. The paper reports that ChatGPT-generated articles were detected with high accuracy by some detectors, but the model itself was not evaluated on learning or academic outcomes.",
+          "measure": "AI detector classification of ChatGPT-generated academic articles; human reviewer classification of AI-rephrased articles",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=50 ChatGPT-generated articles"
+        }
+      ]
+    },
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "content_generation",
+        "language_speech"
+      ],
+      "description": "A generic generative AI / large language model chatbot without a specific named product.",
+      "use_case": "The paper discusses generative AI more broadly as a source of AI-generated academic writing and as a target for detection tools, beyond the specific ChatGPT product used in the study.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "The paper concludes that generative AI can produce plausible academic text, but that current versions are inadequate for generating rigorous scientific articles and may fabricate data or misuse abbreviations. It also notes that AI-rephrasing can reduce detectability by some tools, while some detectors and experienced reviewers can still identify such text accurately.",
+          "measure": "Accuracy of AI content detectors and human reviewers in identifying AI-generated or AI-rephrased text",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=150 articles total (50 original, 50 ChatGPT-generated, 50 AI-rephrased)"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a single cross-sectional detection study rather than an educational intervention trial, and it does not test student learning outcomes. The paper provides empirical evidence about AI text detection, but the evidence base is not about K-12 literacy outcomes.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The study has practical relevance for academic integrity and AI screening, but it does not demonstrate direct impact on literacy achievement or instruction. Any impact on K-12 literacy is indirect and not measured in this paper.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": "via unpaywall"
+}

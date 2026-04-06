@@ -1,0 +1,74 @@
+{
+  "title": "Evaluating the Design Features of an Intelligent Tutoring System for Advanced Mathematics Learning",
+  "doi": null,
+  "year": null,
+  "venue": "not_reported",
+  "url": "http://arxiv.org/abs/2412.17265v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Randomized Controlled Trial (RCT)",
+  "extended_summary": "This paper examines whether two design features in an intelligent tutoring system (ITS) for mathematics improve learning: the use of free-response questions with automated support and an error-reflection feature that prompts students to identify why mistakes occurred. The study is motivated by the difficulty of automatically assessing free-response math work and by mixed prior evidence on whether constructed-response items and reflection improve learning relative to multiple-choice formats.\n\nThe intervention was conducted in Xiaomai, an ITS for advanced mathematics covering linear algebra, calculus, and statistics. The system provides instructional, practice, and assessment modules, automatic feedback, and knowledge-component recommendations. The study used a 2x2 randomized design comparing multiple-choice versus free-response questions and reflection versus no reflection. One hundred twenty Chinese college students who had taken advanced mathematics courses were randomly assigned to one of four conditions and completed a pretest, a 40-minute practice session on three knowledge components, and a posttest.\n\nResults showed that students in the multiple-choice conditions performed better during practice and had higher adjusted posttest scores than those in the free-response conditions. Reflection on errors did not significantly improve practice performance or learning outcomes, and prior knowledge did not moderate this effect. The authors conclude that the current free-response implementation and error-reflection feature do not improve effectiveness and may need redesign, such as adding incorrect worked examples or better capturing reflection behavior. The findings are relevant as adjacent evidence for understanding how item format and reflection may affect learning in AI-supported mathematics environments when direct ChatGPT evidence is limited.",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is a randomized 2x2 experiment with pretest-posttest measurement and statistical controls, which supports causal inference. However, it is a single study with a specialized college sample, no reported effect sizes for the main outcomes, and the intervention is a design-feature test rather than a full-scale efficacy trial.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The observed effects are modest and mixed: multiple-choice outperformed free-response, but the reflection feature showed no benefit. Because the study is in college advanced mathematics rather than K-12 middle school and the practical gains are limited, the likely transferable impact is unclear and modest at best.",
+  "interventions": [
+    {
+      "intervention": "Intelligent Tutoring System (ITS)",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "Xiaomai intelligent tutoring system for advanced mathematics practice and assessment, including adaptive recommendation of knowledge components, immediate feedback, free-response and multiple-choice item delivery, and metacognitive reflection prompts."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 1.0,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "In a randomized 2x2 experiment with university students (final n=120), item format affected mathematics learning outcomes: multiple-choice practice led to higher adjusted posttest scores than free-response practice (adjusted means 9.21 vs 7.94) and larger pretest-to-posttest gains, though the main effect was only marginal (F(1,115)=3.72, p=0.06). Practice performance also favored multiple-choice, with higher practice scores and more attempts completed (M=21.98 vs 15.41; t(118)=4.29, p<.001), while free-response items took more time and were not more effective for subsequent multiple-choice posttest performance.",
+        "measure": "Pretest and posttest correct answers; practice score; proportion correct; number of attempts; time per item",
+        "study_size": "n=120",
+        "effect_size": "not_reported",
+        "confidence_interval": "adjusted posttest mean difference: [8.32, 10.10] vs [6.99, 8.89]",
+        "std_deviation": "Posttest SDs reported: 3.94, 3.34, 4.96, 3.82; practice SDs reported: 5.95, 6.38, 5.93, 5.71"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.9,
+      "finding": {
+        "direction": "No Effect",
+        "finding_summary": "The metacognitive error-reflection feature did not significantly improve math learning or practice behavior. In the ANCOVA on posttest scores, reflection was non-significant (F(1,115)=0.07, p=0.79), and there was no interaction with prior knowledge; likewise, reflection had no effect on number of attempts (t(118)=0.47, p=0.64), correctness (p=0.81), or time per question (p=0.70).",
+        "measure": "Posttest scores, learning gains, practice attempts, item correctness, response time; prior-knowledge subgroup analysis",
+        "study_size": "n=120",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "lab",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "China",
+  "study_region": "East Asia & Pacific",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

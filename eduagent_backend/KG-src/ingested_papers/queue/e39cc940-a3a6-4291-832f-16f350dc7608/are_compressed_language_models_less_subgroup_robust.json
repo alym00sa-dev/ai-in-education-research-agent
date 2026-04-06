@@ -1,0 +1,53 @@
+{
+  "title": "Are Compressed Language Models Less Subgroup Robust?",
+  "doi": null,
+  "year": 2024,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2403.17811v1",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper investigates whether compressing language models changes their robustness across minority subgroups. The authors ask whether smaller, cheaper BERT-based models produced through model compression are less subgroup robust, and whether the effect depends on the compression method rather than model size alone. The motivation is to understand fairness- and robustness-related tradeoffs when deploying efficient NLP models at scale.\n\nThe study compares 18 compression settings spanning knowledge distillation, structured pruning, quantization, and vocabulary transfer. The experiments are run on three text classification datasets used for subgroup robustness analysis: MultiNLI, CivilComments, and SCOTUS. Subgroups are defined by the combination of labels and dataset attributes such as negation, demographic identity terms, or Supreme Court decision direction. Models are fine-tuned and evaluated using average accuracy and worst-group accuracy across five random initializations.\n\nThe main finding is that compression does not uniformly harm subgroup robustness. On MultiNLI and SCOTUS, smaller models generally show lower worst-group accuracy, but in CivilComments many compressed models improve worst-group performance, suggesting compression can sometimes act like regularization. The paper also finds that models with similar parameter counts can behave differently depending on the compression method, and that some very small models fail to fit minority subgroups at all. Overall, the paper concludes that compression method matters as much as model size, and that compression can sometimes improve rather than degrade subgroup robustness.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed empirical ML study with a clear experimental design, but it is not a K-12 education study and does not involve random assignment of learners or educational settings. Credibility for the education taxonomy is limited because the paper is adjacent evidence about AI robustness rather than direct instructional intervention evidence.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The study has no direct educational impact estimate and does not report learner outcomes; its relevance is indirect, informing deployment risks and tradeoffs for compressed language models. Any impact on education would be mediated through safer or more reliable AI systems rather than measured instructional gains.",
+  "interventions": [
+    {
+      "intervention": "Other",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "Experimental analysis of BERT language model compression methods (knowledge distillation, structured pruning, quantization, and vocabulary transfer) to study subgroup robustness under efficiency constraints."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Systemic / Institutional Impact",
+      "confidence": 0.88,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "This paper does not study student learning outcomes; it evaluates whether compressed NLP models retain subgroup robustness across protected or correlated subgroups. Across 18 compression settings on 3 datasets, worst-group accuracy sometimes decreased with smaller models (e.g., MultiNLI and SCOTUS) but sometimes improved (CivilComments), showing that compression can either help or harm subgroup performance depending on dataset and method.",
+        "measure": "Worst-group accuracy and average accuracy across subgroups in NLP classification benchmarks",
+        "study_size": "n=3 datasets; 18 compressed BERT variants; 5 random initializations per model",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Other"
+    }
+  ],
+  "limitations": [
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

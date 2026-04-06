@@ -1,0 +1,81 @@
+{
+  "title": "What Users Value and Critique: Large-Scale Analysis of User Feedback on AI-Powered Mobile Apps",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2506.10785v1",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper examines what users praise and criticize about AI-powered features in mobile apps, with an emphasis on understanding common concerns, co-occurring praise and complaints, and differences across app categories. The authors argue that user reviews are an underused but valuable source for evaluating AI features \u201cin the wild,\u201d especially given the scale and variability of feedback across modern app stores.\n\nThe study analyzes 2.2 million cleaned Google Play reviews from 292 AI-driven apps across 14 categories, identifying 894K reviews that explicitly reference AI features. The approach combines large language models for AI-related review classification and aspect-sentiment extraction with k-means clustering to organize more than 1.1 million aspect-sentiment pairs into 18 positive and 15 negative user topics. The analysis is not an educational intervention; it is a large-scale review-mining study of app feedback.\n\nAcross categories, users most often value productivity, intelligent assistance, personalization, and helpful answers, while negative feedback concentrates on scanner/OCR failures, pricing and access barriers, language limitations, and other technical issues. The paper also finds that praise and criticism frequently co-occur within the same review, especially for core features such as chat, voice, math, and answer quality. The main conclusion is that AI-powered apps should prioritize reliability, clearer pricing, and better language support, while also addressing category-specific pain points; however, the paper does not study teacher coaching, lesson-plan feedback, or educational effectiveness.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a large-scale observational/qualitative text-mining study of app-store reviews, not a randomized or quasi-experimental evaluation of an educational intervention. It is well-documented and uses validation steps, but it does not meet causal evidence criteria for educational effectiveness.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper has important descriptive value for understanding user-reported strengths, failure modes, and category differences in AI mobile apps, including education-related apps. However, it does not estimate causal effects on learning or teacher outcomes, so the practical impact on education remains indirect and uncertain.",
+  "interventions": [
+    {
+      "intervention": "Mobile / Microlearning App",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "large-scale analysis of AI-powered mobile apps and their user reviews, including education-category apps with AI features such as math solvers, scanning, language support, and personalized assistance"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The paper does not test learning outcomes; it analyzes 894K AI-related reviews from 292 mobile apps and finds that users value AI for productivity, intelligent assistance, and personalized help, but also criticize failures, pricing barriers, and language limitations. The most frequent positive themes were AI Assistant (6,949 aspects; 48,999 reviews), ScanToSolve (6,260; 30,680), and Smart & Personalized (5,988; 49,682), while leading negative themes included Scanner Issues (13,208; 62,598), Access & Pricing (12,526; 31,927), and AI understanding limitations (9,932; 29,450).",
+        "measure": "User review aspect-sentiment analysis and topic clustering of AI-related feedback in mobile apps",
+        "study_size": "n=894K AI-related reviews (from 292 apps)",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Mobile / Microlearning App"
+    },
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 0.78,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "In education apps, math-related AI features were a prominent use case and source of both praise and criticism. Positive feedback highlighted math solvers and scan-to-solve tools, while negative feedback emphasized Math Issues and scanner/OCR failures; the paper reports 6,080 negative aspect mentions for Math Issues and 19,426 positive mentions for Mathsolver, but no experimental effect size because this is review mining rather than an intervention study.",
+        "measure": "User review mentions of math solver quality, scan-to-solve performance, and incorrect math solutions",
+        "study_size": "n=154,350 education-app reviews among 894K AI-related reviews",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Mobile / Microlearning App"
+    },
+    {
+      "outcome": "Academic \u2014 Literacy",
+      "confidence": 0.7,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The paper identifies writing and language-support features as both valued and criticized, especially in education and communication-related apps. Positive themes include AI Writing (4,634 aspects; 28,429 reviews) and Language Support (2,432 aspects; 34,715 reviews), while negative themes include Language Limitations (5,123 aspects; 37,549 reviews) and answer-quality issues that affect comprehension and text assistance.",
+        "measure": "User review themes related to AI writing support, grammar/editing help, and multilingual functionality",
+        "study_size": "n=894K AI-related reviews (from 292 apps)",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Mobile / Microlearning App"
+    }
+  ],
+  "limitations": [
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

@@ -1,0 +1,728 @@
+{
+  "title": "Student-AI Interaction in an LLM-Empowered Learning Environment: A Cluster Analysis of Engagement Profiles",
+  "doi": null,
+  "year": 2025,
+  "venue": null,
+  "url": "https://arxiv.org/abs/2503.01694",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper examines how university students engage with a large-language-model-powered learning environment and whether different patterns of student-AI interaction are associated with learning outcomes. The authors argue that simple counts of activity are insufficient to capture engagement in AI-supported learning, especially in multi-agent environments where students can interact with several pedagogical agents. Their research questions focus on how students engage with the course, what dialogue patterns characterize student interaction with AI agents, and how those patterns relate to learning and affective outcomes.\n\nThe intervention studied is a Massive AI-empowered Course (MAIC) system, an online platform that uses multiple LLM-based agents, including AI teachers, AI teaching assistants, AI student roles, and director agents that manage pacing and participation. Students took an eight-week introductory course on artificial general intelligence composed of six modules, with self-paced study, AI-supported dialogue, module quizzes, and pre/post testing. The study combined platform logs, coded dialogue data, questionnaires, and test scores. The authors used hierarchical cluster analysis to identify engagement profiles, LLM-assisted coding plus human review to classify dialogue by behavioral, cognitive, and emotional dimensions, and Epistemic Network Analysis to compare interaction structures across student groups.\n\nParticipants were 312 undergraduate students from a single elite university in China, with 110 completing the full course. The analyses identified two dropout profiles\u2014early disengagers and stagnating interactors\u2014and three completer profiles\u2014survived lurkers, active questioners, and responsive navigators. Active questioners tended to ask questions and negotiate ideas, while responsive navigators showed more regulatory, responsive, and emotion-sharing behaviors. Lurkers completed the course with minimal interaction. Prior knowledge was associated with some interaction patterns and short-term quiz performance.\n\nThe main conclusion is that more interaction with AI does not automatically mean better engagement or better learning, and low interaction does not necessarily indicate poor outcomes. Students can benefit from AI-supported learning in different ways: some through active knowledge construction, others through regulation and navigation, and some through relatively independent learning with limited AI use. The paper concludes that multi-agent LLM learning environments can support personalized learning, but designers should recognize diverse engagement styles rather than assuming one ideal pattern of student-AI interaction.",
+  "limitations": [
+    "single_site",
+    "no_control_group",
+    "self_reported_measures",
+    "non_representative_population",
+    "high_attrition",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "8",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "China",
+  "study_region": "East Asia & Pacific",
+  "identified_tools": [
+    {
+      "name": "MAIC",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "feedback_evaluation"
+      ],
+      "description": "A Massive AI-empowered Course System: an online learning platform with multiple LLM-driven agents, including AI Teachers, AI Teaching Assistants, AI student personas, and director agents that coordinate instruction and responses.",
+      "use_case": "Studied as the primary learning environment for a six-module undergraduate introductory AI course, where 312 students viewed slides, interacted with multiple AI pedagogical agents, received instruction and real-time feedback, and completed quizzes/tests.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Students showed distinct engagement profiles in MAIC: early disengagers (n=97), stagnating interactors (n=60), survived lurkers (n=75), and active completers (n=73). Controlling for pre-test, active completers achieved significantly higher average quiz scores (M=7.18, SD=1.23) than stagnating interactors (M=6.00, SD=1.63; t=2.84, p=.02) and lurkers (M=6.07, SD=1.40; t=3.23, p=.005), with ANCOVA F(2,125)=7.20, p=.001.",
+          "measure": "Average module quiz scores adjusted for pre-test",
+          "effect_size": "F(2,125)=7.20; t=2.84; t=3.23",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=312"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Prior knowledge differed across engagement profiles: pre-test scores varied significantly across four clusters, F(3,127)=2.93, p=.04. Active completers scored higher on the pre-test (M=6.83, SD=1.61) than lurkers (M=5.96, SD=1.46), suggesting students with greater prior knowledge were more likely to engage actively in the MAIC environment.",
+          "measure": "Pre-test prior knowledge scores",
+          "effect_size": "F(3,127)=2.93",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=312"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "Despite different interaction intensity, final course exam performance did not significantly differ between lurkers and active completers in MAIC. ANCOVA showed no significant difference between Cluster 3 and Cluster 4 on final exam scores, F(1,73)=3.53, p=.06, and no significant difference among Cluster 3 and the two active completer subclusters, F(2,72)=2.62, p=.08.",
+          "measure": "Final course exam scores",
+          "effect_size": "F(1,73)=3.53; F(2,72)=2.62",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=110"
+        },
+        {
+          "outcome_category": "Systemic / Institutional Impact",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "MAIC supported heterogeneous but successful participation patterns: 110 of 312 students completed the course, and the paper identified two dropout types and three completer types. The authors note this completion pattern compares favorably to typical MOOC completion rates, though no causal comparison group was used.",
+          "measure": "Course completion and engagement profile distribution",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=312"
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Students\u2019 attitudes toward AI increased after learning in MAIC for active completers, with a significant increase in Cluster 4 (z=2.31, p=.02) and a marginal increase in Cluster 3 (z=1.93, p=.05). No significant pre-post changes were found for motivation or academic self-efficacy, and between-cluster ANCOVA showed no significant differences in affective change outcomes.",
+          "measure": "Pre-post attitudes toward AI; motivation; academic self-efficacy questionnaires",
+          "effect_size": "z=2.31; z=1.93; Motivation F(2,104)=0.22; Academic Self-Efficacy F(2,104)=0.99; Attitudes toward AI F(2,104)=0.63",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=312"
+        }
+      ]
+    },
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "other"
+      ],
+      "description": "OpenAI GPT-family large language model used here for LLM-assisted coding of educational dialogue data.",
+      "use_case": "Used as GPT-4o / GPT-4 Turbo to assist human coders in categorizing student-AI dialogue logs by behavioral, cognitive, and emotional codes.",
+      "findings": []
+    },
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "tutoring_instruction",
+        "personalization_adaptation"
+      ],
+      "description": "Generic LLM-based pedagogical agents in a multi-agent learning environment providing instruction, Q&A, emotional support, and adaptive classroom orchestration.",
+      "use_case": "Studied through students\u2019 interactions with multiple unnamed/specialized AI agents (AI Teacher, AI Teaching Assistant, AI student personas, director agents) embedded in the course platform.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Among highly interactive students, two dialogue-based engagement profiles emerged: active questioners (n=45) and responsive navigators (n=28). Active questioners showed significantly more asking questions (M=0.66 vs. 0.32, z=6.56, p<.001) and negotiating/confirming ideas (M=0.08 vs. 0.05, z=2.39, p=.02), while responsive navigators showed more responding to questions (M=0.07 vs. 0.01, z=4.15, p<.001), process regulation (M=0.15 vs. 0.07, z=2.02, p=.04), peer management (M=0.11 vs. 0.03, z=3.31, p<.001), and emotion sharing (M=0.07 vs. 0.02, z=4.07, p<.001).",
+          "measure": "Proportions of coded interaction behaviors in student-AI dialogues",
+          "effect_size": "z=6.56; z=2.39; z=4.15; z=2.02; z=3.31; z=4.07",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=73"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "The two active interaction profiles achieved comparable learning outcomes in the multi-agent LLM environment. Average quiz scores were similar for active questioners (M=7.14, SD=1.27) and responsive navigators (M=7.26, SD=1.17), and final exam scores were also not significantly different among lurkers and the two active subclusters, F(2,72)=2.62, p=.08.",
+          "measure": "Average quiz scores and final exam scores by dialogue-based subcluster",
+          "effect_size": "F(2,72)=2.62",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=73"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Prior knowledge was associated with interaction style within the LLM-based environment. Responsive navigators had higher pre-test scores (M=7.19, SD=1.68) than lurkers, t=3.21, p=.005, indicating prior knowledge significantly influenced interaction patterns and short-term learning benefits.",
+          "measure": "Pre-test scores by interaction profile",
+          "effect_size": "t=3.21",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=73"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical primary study with n=312, but it is observational/mixed-methods with clustering, dialogue coding, and associational analyses rather than an RCT or strong quasi-experimental design.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The study reports statistically significant advantages for some engagement profiles on quiz outcomes and improved attitudes toward AI, but effect sizes are mostly not reported and key achievement outcomes such as final exam scores are null or mixed.",
+  "citations": [
+    {
+      "title": "Identifying Weekly Student Engagement Patterns in E-Learning via K-Means Clustering and Label-Based Validation",
+      "doi": null,
+      "year": 2025,
+      "venue": "Electronics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The instructional process: a review of Flanders\u2019 interaction analysis in a classroom setting",
+      "doi": null,
+      "year": 2015,
+      "venue": "International Journal of Secondary Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A taxonomy for learning, teaching, and assessing: A revision of Bloom\u2019s taxonomy of educational objectives: complete edition",
+      "doi": null,
+      "year": 2001,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Self-efficacy: The exercise of control",
+      "doi": null,
+      "year": 1997,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "self-efficacy construct grounding questionnaire interpretation"
+    },
+    {
+      "title": "Handbook I: cognitive domain",
+      "doi": null,
+      "year": 1956,
+      "venue": "New York: David McKay",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Programming education and learner motivation in the age of generative AI: student and educator perspectives",
+      "doi": null,
+      "year": 2025,
+      "venue": "Information and Learning Sciences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Challenging the status quo and exploring the new boundaries in the age of algorithms: Reimagining the role of generative AI in distance education and online learning",
+      "doi": null,
+      "year": 2023,
+      "venue": "Asian Journal of Distance Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Studying learning in the worldwide classroom research into edX\u2019s first MOOC",
+      "doi": null,
+      "year": 2013,
+      "venue": "Research & Practice in Assessment",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "UTAUT and UTAUT 2: A review and agenda for future research",
+      "doi": null,
+      "year": 2012,
+      "venue": "Journal the WINNERS",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "NbClust: an R package for determining the relevant number of clusters in a data set",
+      "doi": null,
+      "year": 2014,
+      "venue": "Journal of Statistical Software",
+      "citation_level": 3,
+      "citation_context": "cluster number determination method"
+    },
+    {
+      "title": "Academic self-efficacy and first year college student performance and adjustment",
+      "doi": null,
+      "year": 2001,
+      "venue": "Journal of Educational Psychology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Exploring the role of generative AI in enhancing language learning: Opportunities and challenges",
+      "doi": null,
+      "year": 2024,
+      "venue": "International Journal of Changes in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "How Students Use AI Feedback Matters: Experimental Evidence on Physics Achievement and Autonomy",
+      "doi": null,
+      "year": 2025,
+      "venue": "arXiv preprint arXiv:2505.08672",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Linking learner factors, teaching context, and engagement patterns with MOOC learning outcomes",
+      "doi": null,
+      "year": 2020,
+      "venue": "Journal of Computer Assisted Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Motivational beliefs, values, and goals",
+      "doi": null,
+      "year": 2002,
+      "venue": "Annual Review of Psychology",
+      "citation_level": 2,
+      "citation_context": "motivation construct framing"
+    },
+    {
+      "title": "Utilizing need for cognition and perceived self-efficacy to predict academic performance",
+      "doi": null,
+      "year": 2002,
+      "venue": "Journal of Applied Social Psychology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Clustering student participation: implications for education",
+      "doi": null,
+      "year": 2018,
+      "venue": "2018 32nd International Conference on Advanced Information Networking and Applications Workshops (WAINA)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Beware of metacognitive laziness: Effects of generative artificial intelligence on learning motivation, processes, and performance",
+      "doi": null,
+      "year": 2025,
+      "venue": "British Journal of Educational Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Interaction Analysis as a Feedback System Interaction Analysis Theory. Research and Application",
+      "doi": null,
+      "year": 1967,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "interaction coding framework basis"
+    },
+    {
+      "title": "The structure of phenotypic personality traits",
+      "doi": null,
+      "year": 1993,
+      "venue": "American Psychologist",
+      "citation_level": 2,
+      "citation_context": "Big Five personality framework background"
+    },
+    {
+      "title": "AI in the classroom: Exploring students\u2019 interaction with ChatGPT in programming learning",
+      "doi": null,
+      "year": 2025,
+      "venue": "Education and Information Technologies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A STUDY OF EFL STUDENTS\u2019LEARNING STYLES IN ENGLISH CLASSROOM INTERACTION",
+      "doi": null,
+      "year": 2019,
+      "venue": "Proceedings of EEIC",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Paradigm shift to the integrative big five trait taxonomy",
+      "doi": null,
+      "year": 2008,
+      "venue": "Handbook of personality: Theory and research",
+      "citation_level": 2,
+      "citation_context": "Big Five trait taxonomy grounding"
+    },
+    {
+      "title": "Learning analytics in online learning environment: A systematic review on the focuses and the types of student-related analytics data",
+      "doi": null,
+      "year": 2022,
+      "venue": "Technology, Knowledge and Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Generative AI and Learning Analytics: Pushing Boundaries, Preserving Principles",
+      "doi": null,
+      "year": 2025,
+      "venue": "Journal of Learning Analytics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Deconstructing disengagement: analyzing learner subpopulations in massive open online courses",
+      "doi": null,
+      "year": 2013,
+      "venue": "Proceedings of the Third International Conference on Learning Analytics and Knowledge",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Analysis of Student Interactions with a Large Language Model in an Introductory Physics Lab Setting",
+      "doi": null,
+      "year": 2025,
+      "venue": "International Journal of Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A review of clustering models in educational data science toward fairness-aware learning",
+      "doi": null,
+      "year": 2023,
+      "venue": "Educational data science: Essentials, approaches, and tendencies: Proactive education based on empirical big data evidence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Unfolding the learning behaviour patterns of MOOC learners with different levels of achievement",
+      "doi": null,
+      "year": 2022,
+      "venue": "International Journal of Educational Technology in Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "An exploration study on student online learning behavior patterns",
+      "doi": null,
+      "year": 2008,
+      "venue": "2008 IEEE International Symposium on IT in Medicine and Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The role of self-efficacy beliefs in student engagement and learning in the classroom",
+      "doi": null,
+      "year": 2003,
+      "venue": "Reading & Writing Quarterly",
+      "citation_level": 2,
+      "citation_context": "links self-efficacy with engagement framing"
+    },
+    {
+      "title": "Collaboration with generative artificial intelligence: An exploratory study based on learning analytics",
+      "doi": null,
+      "year": 2024,
+      "venue": "Journal of Educational Computing Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Automated detection of emotional and cognitive engagement in MOOC discussions to predict learning achievement",
+      "doi": null,
+      "year": 2022,
+      "venue": "Computers & Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Exploring the Interplay of Topic Complexity, Emotional Engagement, and Cognitive Engagement in MOOC Discussions: Using Deep Learning and Topic Modeling",
+      "doi": null,
+      "year": 2025,
+      "venue": "Journal of Educational Computing Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Application of AI thinking visualization tool in the foreign language reading teaching",
+      "doi": null,
+      "year": 2020,
+      "venue": "E3S Web of Conferences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Evaluating large language models in analysing classroom dialogue",
+      "doi": null,
+      "year": 2024,
+      "venue": "npj Science of Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A Meta-Analysis of the Impact of Generative Artificial Intelligence on Learning Outcomes",
+      "doi": null,
+      "year": 2025,
+      "venue": "Journal of Computer Assisted Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Visualizing data using t-SNE",
+      "doi": null,
+      "year": 2008,
+      "venue": "Journal of Machine Learning Research",
+      "citation_level": 3,
+      "citation_context": "t-SNE visualization of clustering results"
+    },
+    {
+      "title": "rENA: epistemic network analysis",
+      "doi": null,
+      "year": 2019,
+      "venue": "Retrieved September",
+      "citation_level": 3,
+      "citation_context": "software/package for epistemic network analysis"
+    },
+    {
+      "title": "Engagement matters: Student perceptions on the importance of engagement strategies in the online learning environment",
+      "doi": null,
+      "year": 2018,
+      "venue": "Online Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Technology acceptance model and e-learning",
+      "doi": null,
+      "year": 2007,
+      "venue": "Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Evaluation of evidence-based practices in online learning: A meta-analysis and review of online learning studies",
+      "doi": null,
+      "year": 2009,
+      "venue": "U. S. Department of Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Patterns of engagement in connectivist MOOCs",
+      "doi": null,
+      "year": 2013,
+      "venue": "Journal of Online Learning and Teaching",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Analysis of Student-LLM Interaction in a Software Engineering Project",
+      "doi": null,
+      "year": 2025,
+      "venue": "2025 IEEE/ACM International Workshop on Large Language Models for Code (LLM4Code)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Human-AI collaboration patterns in AI-assisted academic writing",
+      "doi": null,
+      "year": 2024,
+      "venue": "Studies in Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Student engagement patterns in a blended learning environment: An educational data mining approach",
+      "doi": null,
+      "year": 2021,
+      "venue": "TechTrends",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Dropout rates of massive open online courses: behavioural patterns",
+      "doi": null,
+      "year": 2014,
+      "venue": "EDULEARN14 proceedings",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "An Analysis of Student Engagement Patterns and Online Course Outcomes in Wisconsin. Stated Briefly. REL 2016-157.",
+      "doi": null,
+      "year": 2016,
+      "venue": "Regional Educational Laboratory Midwest",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Collaborative uses of GenAI tools in project-based learning",
+      "doi": null,
+      "year": 2025,
+      "venue": "Education Sciences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Opportunities, challenges, and future directions of generative artificial intelligence in medical education: scoping review",
+      "doi": null,
+      "year": 2023,
+      "venue": "JMIR Medical Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Performance analysis of clustering using partitioning and hierarchical clustering techniques",
+      "doi": null,
+      "year": 2014,
+      "venue": "International Journal of Database Theory and Application",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Modeling and predicting learning behavior in MOOCs",
+      "doi": null,
+      "year": 2016,
+      "venue": "Proceedings of the Ninth ACM International Conference on Web Search and Data Mining",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Application of hierarchical clustering algorithm to evaluate students performance of an institute",
+      "doi": null,
+      "year": 2016,
+      "venue": "2016 Second International Conference on Computational Intelligence & Communication Technology (CICT)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A circumplex model of affect",
+      "doi": null,
+      "year": 1980,
+      "venue": "Journal of Personality and Social Psychology",
+      "citation_level": 2,
+      "citation_context": "emotion categorization framework"
+    },
+    {
+      "title": "The development of academic self-efficacy",
+      "doi": null,
+      "year": 2002,
+      "venue": "Development of achievement motivation",
+      "citation_level": 2,
+      "citation_context": "academic self-efficacy construct grounding"
+    },
+    {
+      "title": "Who does what in a massive open online course?",
+      "doi": null,
+      "year": 2013,
+      "venue": "EducationXPress",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Epistemic network analysis: A worked example of theory-based learning analytics",
+      "doi": null,
+      "year": 2017,
+      "venue": "Handbook of Learning Analytics",
+      "citation_level": 3,
+      "citation_context": "analytic method for discourse relations"
+    },
+    {
+      "title": "Quantitative ethnography",
+      "doi": null,
+      "year": 2017,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "foundational framework for ENA approach"
+    },
+    {
+      "title": "Students\u2019 acceptance of ChatGPT in higher education: An extended unified theory of acceptance and use of technology",
+      "doi": null,
+      "year": 2024,
+      "venue": "Innovative Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Does generative artificial intelligence improve the academic achievement of college students? A meta-analysis",
+      "doi": null,
+      "year": 2024,
+      "venue": "Journal of Educational Computing Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Generative AI as a Dialogic Partner: Enhancing Multiple Perspectives, Reasoning, and Argumentation in Science Education with Customized Chatbots",
+      "doi": null,
+      "year": 2025,
+      "venue": "Journal of Science Education and Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Consumer acceptance and use of information technology: extending the unified theory of acceptance and use of technology",
+      "doi": null,
+      "year": 2012,
+      "venue": "MIS Quarterly",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Hierarchical grouping to optimize an objective function",
+      "doi": null,
+      "year": 1963,
+      "venue": "Journal of the American Statistical Association",
+      "citation_level": 3,
+      "citation_context": "Ward hierarchical clustering algorithm"
+    },
+    {
+      "title": "Mapping patterns of student engagement using cluster analysis",
+      "doi": null,
+      "year": 2021,
+      "venue": "Journal for STEM Education Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Broadening the notion of participation in online discussions: Examining patterns in learners\u2019 online listening behaviors",
+      "doi": null,
+      "year": 2013,
+      "venue": "Instructional Science",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "From Complexity to Parsimony: Integrating Latent Class Analysis to Uncover Multimodal Learning Patterns in Collaborative Learning",
+      "doi": null,
+      "year": 2025,
+      "venue": "Proceedings of the 15th International Learning Analytics and Knowledge Conference",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "From mooc to maic: Reshaping online teaching and learning through llm-driven agents",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv preprint arXiv:2409.03512",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Self-determined motivation to choose college majors, its antecedents, and outcomes: A cross-cultural investigation",
+      "doi": null,
+      "year": 2018,
+      "venue": "Journal of Vocational Behavior",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Generative AI and English essay writing: exploring the role of ChatGPT in enhancing learners\u2019 task engagement",
+      "doi": null,
+      "year": 2025,
+      "venue": "Applied Linguistics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The development and psychometric evaluation of the Chinese Big Five Personality Inventory-15",
+      "doi": null,
+      "year": 2019,
+      "venue": "PloS One",
+      "citation_level": 3,
+      "citation_context": "personality measurement instrument used"
+    },
+    {
+      "title": "Human-generative AI collaborative problem solving who leads and how students perceive the interactions",
+      "doi": null,
+      "year": 2024,
+      "venue": "2024 IEEE Conference on Artificial Intelligence (CAI)",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

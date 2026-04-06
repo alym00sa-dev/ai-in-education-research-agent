@@ -1,0 +1,100 @@
+{
+  "title": "PresentCoach: Dual-Agent Presentation Coaching through Exemplars and Interactive Feedback",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2511.15253v2",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses the problem that existing AI presentation coaching tools usually provide either exemplar generation or performance feedback, but not both in an integrated, pedagogically coherent workflow. The authors argue that effective presentation learning requires a cycle of observing a good model, practicing, and receiving targeted reflection-oriented feedback, rather than isolated scoring or script generation.\n\nTo address this, they introduce PresentCoach, a dual-agent system with an Ideal Presentation Agent and a Coach Agent. The Ideal Presentation Agent converts a user\u2019s slides and voice sample into a personalized exemplar presentation video, while the Coach Agent evaluates the user\u2019s practice recording against that exemplar and provides structured Observation\u2013Impact\u2013Suggestion feedback, plus conversational follow-up. The system also includes an Audience Agent intended to simulate listener reactions and make feedback feel more human-centered and context-aware.\n\nThe study evaluated the system in a controlled between-subjects user study with 24 Mandarin-speaking university students in China who were practicing short English presentations. Participants used either PresentCoach with slides or slide-only self-practice. Quantitative results showed higher post-test speaking confidence in the PresentCoach condition, moderate cognitive workload, and strong usability ratings. Qualitative interviews suggested that the exemplar video and feedback were perceived as complementary, with the exemplar serving as a motivating reference and the coach providing clear, actionable guidance. Overall, the paper concludes that combining personalized demonstration with interactive coaching can reduce anxiety and improve learners\u2019 confidence in presentation rehearsal.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a controlled between-subjects user study with quantitative and qualitative components, but it is small (n=24) and focuses on short-term self-report outcomes rather than objective learning gains. It is stronger than a purely qualitative report, but it does not meet blue/green evidence standards for robust causal evidence in K-12 settings.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The study shows a statistically significant improvement in self-reported presentation confidence, but the sample is small and the outcome is affective rather than a direct academic achievement measure. The impact is therefore promising but still modest and uncertain for broader K-12 educational use.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.95,
+      "role": "primary",
+      "use_case": "dual-agent presentation coaching system that generates slide-aware exemplar presentations and provides conversational, multimodal feedback on user practice recordings"
+    },
+    {
+      "intervention": "Automated Feedback System",
+      "confidence": 0.92,
+      "role": "secondary",
+      "use_case": "multimodal evaluation of presentation delivery against an ideal benchmark with structured Observation\u2013Impact\u2013Suggestion feedback"
+    },
+    {
+      "intervention": "Computer-Assisted Instruction (CAI)",
+      "confidence": 0.6,
+      "role": "secondary",
+      "use_case": "guided presentation rehearsal environment that scaffolds observe-practice-reflect cycles using AI-generated exemplars and feedback"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "In a controlled between-subjects user study (n=24), PresentCoach+PPT improved self-reported speaking confidence on the PRCS from 3.69\u00b10.81 pre-test to 5.03\u00b10.63 post-test, a +36.3% increase; the within-group change was significant (p=.016). The PPT-only group increased from 3.18\u00b10.65 to 3.69\u00b11.17 (+16.1%) but was not significant (p=.219), and post-test confidence was higher for PresentCoach+PPT than PPT-only, t(22)=2.83, p=.014.",
+        "measure": "Personal Report of Confidence as a Speaker (PRCS) pre/post scores",
+        "study_size": "n=24",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "0.63 (post-test PresentCoach+PPT); 1.17 (post-test PPT-only)"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.8,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The system was usable and cognitively manageable during rehearsal, with moderate NASA-TLX workload (M=2.9, SD=0.8 on a 7-point scale) and high SUS subset usability (M=4.1, SD=0.5 on a 5-point scale). These are descriptive results rather than an effect estimate, but they indicate that the AI coaching workflow did not impose excessive burden while remaining easy to use.",
+        "measure": "NASA-TLX workload and 5-item SUS usability ratings",
+        "study_size": "n=24",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "0.8 (NASA-TLX); 0.5 (SUS)"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.8,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Participants rated the dual-agent experience positively, reporting clear role differentiation, complementary guidance, and motivational balance. Quantitatively, items such as role distinguishability (M=6.3, SD=0.6) and complementarity (M=6.1, SD=0.7) were high, suggesting the system supported motivation and confidence during practice.",
+        "measure": "Custom 7-point dual-agent collaboration questionnaire and interview feedback",
+        "study_size": "n=24",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "0.6; 0.7; 0.8; 1.1 (item-level SDs reported)"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "self_reported_measures",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "lab",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "medium",
+  "study_country": "China",
+  "study_region": "East Asia & Pacific",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

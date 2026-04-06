@@ -1,0 +1,89 @@
+{
+  "title": "STRUGGLE FIRST, PROMPT LATER: HOW TASK COMPLEXITY SHAPES LEARNING WITH GENAI-ASSISTED PRETESTING",
+  "doi": null,
+  "year": 2025,
+  "venue": null,
+  "url": "http://arxiv.org/abs/2504.10249v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Randomized Controlled Trial (RCT)",
+  "extended_summary": "This paper investigates whether pretesting before using generative AI tools such as ChatGPT improves learning, and whether the value of AI-assisted adaptive pretesting depends on the type of task students are completing. The authors position the work against a broader concern in AI-supported learning: immediate AI help may reduce productive struggle, prior-knowledge activation, and durable retention. Across three experiments, they test whether requiring learners to attempt problems before receiving GenAI support leads to better learning than going directly to ChatGPT, and whether adaptive AI-generated pretest questions outperform fixed prewritten ones.\n\nThe intervention centers on GenAI-assisted pretesting in an intermediate-level statistics course. In Study 1, students were randomized to either attempt a problem before using ChatGPT (pretest) or access ChatGPT immediately (no-pretest). In Study 2, both groups pretested, but one used fixed prewritten questions while the other used adaptive AI-assisted questioning. In Study 3, the same fixed-versus-adaptive comparison was repeated with a more complex, iterative regression/model-selection task and with additional motivation measures from the Intrinsic Motivation Inventory. Outcomes were objective posttests in all three studies, with Study 3 also including self-reported motivation dimensions.\n\nThe population consisted of undergraduate information sciences students at a large public research university in Pennsylvania, United States, enrolled in the same intermediate statistics course across multiple semesters. The studies were conducted in course sessions within the same week, using classroom-based instructional activities combined with ChatGPT-supported work. Sample sizes were 61 completers in Study 1, 78 in Study 2, and 87 in Study 3 after exclusions for technical issues and non-adherence.\n\nThe main conclusions are that pretesting before ChatGPT substantially improved final test performance versus immediate ChatGPT access in Study 1, and that adaptive AI-assisted pretesting did not outperform fixed pretesting for a linear, well-structured computational task in Study 2. However, in Study 3, adaptive AI-assisted pretesting improved both final test performance and interest/enjoyment for a more exploratory, decision-intensive task. Overall, the paper argues that pretesting remains beneficial in GenAI-supported learning environments, and that adaptive AI pretesting is especially useful when tasks require iterative reasoning, model selection, and higher-order decision-making rather than formulaic computation.",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is a preprint reporting three randomized posttest experiments with clear procedures, comparison groups, and quantitative analyses, which strengthens internal validity. However, it is not K-12, is conducted in one undergraduate course context, lacks reported confidence intervals and some implementation details, and has relevance concerns for the requested literacy-focused education taxonomy.",
+  "impact_tier": "blue",
+  "impact_tier_rationale": "Observed learning effects include a very large effect in Study 1 (d=1.543) and a moderate effect in Study 3 (partial eta squared=.064), indicating at least medium impact in parts of the study. Effects are mixed across studies, but the strongest reported impacts exceed the blue threshold.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "ChatGPT-mediated learning with pretesting in an undergraduate statistics course, including immediate ChatGPT access versus delayed access after fixed or adaptive AI-assisted pretest questions; students used ChatGPT to learn and apply chi-square and regression concepts to cybersecurity scenarios."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.96,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "Across three randomized experiments in an undergraduate statistics course, ChatGPT-supported pretesting improved domain learning in some conditions but not others. In Study 1, students who attempted a problem before consulting ChatGPT outperformed those who accessed ChatGPT immediately on an 11-item transfer test (pretest M=91.85, SD=9.52 vs no-pretest M=78.59, SD=7.62; t(58)=5.979, p<.001, d=1.543; analyzed n=60). In Study 2, fixed versus AI-assisted adaptive pretesting showed no significant difference on the same type of final test (FP M=85.71, SD=8.49 vs AP M=83.56, SD=10.44; t(76)=1.002, p=.319; n=78). In Study 3, for a more exploratory regression/model-selection task, AI-assisted adaptive pretesting outperformed fixed pretesting on final test performance (FP M=69.65, SD=17.03 vs AP M=76.87, SD=10.72; F(1,85)=5.839, p=.018, partial eta squared=.064; n=87).",
+        "measure": "Multiple-choice recall and transfer/final test scores on statistics concepts (chi-square analysis, regression/model selection) in cybersecurity scenarios",
+        "study_size": "Study 1 analyzed n=60; Study 2 n=78; Study 3 n=87",
+        "effect_size": "Study 1 d=1.543; Study 2 not_reported; Study 3 partial eta squared=0.064",
+        "confidence_interval": "not_reported",
+        "std_deviation": "Study 1 final test SD=9.52 vs 7.62; Study 2 SD=8.49 vs 10.44; Study 3 SD=17.03 vs 10.72"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.72,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "Motivational effects were assessed only in Study 3 comparing fixed versus AI-assisted pretesting during a more exploratory task. The AI-assisted group reported significantly higher interest/enjoyment than the fixed-pretesting group (F(1,85)=4.417, p=.039, partial eta squared=.049; FP M=29.08, SD=11.8 vs AP M=33.35, SD=7.0; n=87), but no significant differences were found for tension/pressure, perceived choice, perceived competence, or perceived value despite descriptive trends favoring the AI-assisted group.",
+        "measure": "Intrinsic Motivation Inventory dimensions: interest-enjoyment, tension-pressure, perceived choice, perceived competence, perceived value",
+        "study_size": "n=87",
+        "effect_size": "partial eta squared=0.049 for interest/enjoyment; other subscales not_reported as significant",
+        "confidence_interval": "not_reported",
+        "std_deviation": "Interest/enjoyment SD=11.8 vs 7.0; tension/pressure SD=8.4 vs 7.72; perceived choice SD=4.86 vs 3.57; perceived competence SD=6.4 vs 4.9; perceived value SD=6.25 vs 4.19"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.58,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper frames benefits as stronger application, transfer, and higher-order reasoning when learners must struggle before receiving ChatGPT support, especially in the exploratory Study 3 task. Evidence is indirect, based on improved final transfer test performance for adaptive AI-assisted pretesting in the model-selection/regression condition (F(1,85)=5.839, p=.018, partial eta squared=.064; n=87), rather than on a standalone validated critical-thinking instrument.",
+        "measure": "Transfer/application performance on novel scenarios requiring reasoning, model selection, and concept application",
+        "study_size": "n=87 for Study 3",
+        "effect_size": "partial eta squared=0.064",
+        "confidence_interval": "not_reported",
+        "std_deviation": "FP SD=17.03; AP SD=10.72"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "self_reported_measures",
+    "non_representative_population",
+    "high_attrition",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "1",
+  "setting": "classroom",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "medium",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

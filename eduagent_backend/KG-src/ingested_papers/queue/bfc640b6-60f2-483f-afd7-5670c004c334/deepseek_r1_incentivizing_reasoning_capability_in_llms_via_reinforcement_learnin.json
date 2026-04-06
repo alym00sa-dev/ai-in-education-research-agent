@@ -1,0 +1,31 @@
+{
+  "title": "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning",
+  "doi": null,
+  "year": 2026,
+  "venue": "arXiv",
+  "url": "https://doi.org/10.4230/oasics.icpec.2025.4",
+  "source_db": "openalex_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses how to improve large language model reasoning capability without relying heavily on supervised fine-tuning on human-labeled chain-of-thought data. The authors argue that conventional post-training methods may limit exploration of better reasoning strategies because they depend on human demonstrations, and they investigate whether reinforcement learning alone can induce stronger reasoning behaviors such as reflection, verification, and adaptive problem solving.\n\nThe core intervention is a reinforcement-learning training framework built on DeepSeek-V3-Base using Group Relative Policy Optimization (GRPO). The paper introduces DeepSeek-R1-Zero, trained with rule-based rewards on verifiable reasoning tasks such as mathematics, coding, STEM, and logic, and then DeepSeek-R1, a multi-stage extension that combines cold-start supervised data, reinforcement learning, rejection sampling, and additional supervised fine-tuning. The reward structure includes accuracy, formatting, helpfulness, harmlessness, and language consistency components depending on the stage of training.\n\nThere is no human learner population, school-based implementation, or educational intervention study in the K-12 sense. The evaluation context is model benchmarking on public and in-house datasets such as AIME, MMLU, GPQA, Codeforces, SWE-Bench, and related reasoning benchmarks, with prompts in Chinese and English. Although one benchmark references Chinese National High School Mathematics Olympiad problems, these are benchmark items rather than participants.\n\nThe main conclusion is that large-scale reinforcement learning can substantially improve LLM reasoning performance and can even produce emergent reasoning behaviors without initial supervised fine-tuning. The authors report strong benchmark results for DeepSeek-R1 and DeepSeek-R1-Zero, while also noting limitations including poor structured output, language mixing, token inefficiency, prompt sensitivity, limited gains on software engineering tasks, and the difficulty of building reliable reward signals for less verifiable domains such as writing. For the stated research topic, this is not an eligible direct study of LLM-generated formative feedback on student-authored drafts; it is a model-development and benchmark paper, making it a near-miss exclusion.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a technical foundation-model paper on reinforcement learning for LLM reasoning, not a K-12 comparative study of LLM-generated formative feedback on student drafts. It includes no eligible education study design, no grades 9-12 sample, no writing-task intervention/comparator trial, and no student revision outcomes.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports strong benchmark gains for model reasoning, coding, and STEM tasks, but it does not evaluate educational impact on students, teachers, or institutions. Therefore, impact for the targeted K-12 feedback-use case is unclear and not directly evidenced.",
+  "interventions": [],
+  "outcome_assignments": [],
+  "limitations": [
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

@@ -1,0 +1,86 @@
+{
+  "title": "Benchmarking quantized LLaMa-based models on the Brazilian Secondary School Exam",
+  "doi": null,
+  "year": 2023,
+  "venue": "not_reported",
+  "url": "http://arxiv.org/abs/2309.12071v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper evaluates how well quantized open-source large language models based on LLaMA can answer questions from the Brazilian National Secondary School Exam (ENEM). The motivation is twofold: to test the practical usefulness of these models for question answering and to examine whether quantization makes them usable on home hardware without dedicated GPUs.\n\nThe authors build a dataset of 1,006 ENEM questions from 2010 to 2022, retaining only text-based items that could be processed by language models. They benchmark several model families and sizes, including LLaMA 1, Alpaca, Koala, Vicuna, and LLaMA 2, each quantized to Q4 and run locally on modest machines. Performance is measured by multiple-choice accuracy on Portuguese originals and English translations, and by inference time on two CPUs.\n\nThe results show that the strongest models reached about 46% accuracy on Portuguese questions and 49% on English translations, with LLaMA 2 13B performing best overall. Larger models generally performed better than smaller ones but took longer to run, though the authors conclude that the execution times were still manageable on consumer hardware. The paper frames the dataset and benchmark as a resource for future NLP and LLM research, including possible model training and broader exam evaluation.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed benchmarking study with a clear experimental protocol and defined dataset, but it is not an educational intervention study and lacks a causal design for student outcomes. It primarily reports model accuracy and runtime rather than learning effects.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper shows some utility for local, efficient exam-question answering, but the educational impact is unclear because no learners were involved and the observed accuracies are modest. Its main contribution is technical benchmarking rather than demonstrated K-12 learning gains.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.92,
+      "role": "primary",
+      "use_case": "Benchmarking quantized open-source LLaMA-family language models (LLaMA 1/2, Alpaca, Koala, Vicuna) on multiple-choice ENEM exam question answering on home hardware"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The paper evaluates exam-question answering performance on the Brazilian ENEM, a high-stakes secondary-school admissions exam, using 1,006 text-only questions. Best models reached about 46% accuracy on Portuguese items and 49% on English translations overall, with the strongest model (LLaMA 2 13b) reaching 0.615 accuracy in Humanities (Portuguese) and 0.636 in Humanities (English), but much lower results in Mathematics and Sciences.",
+        "measure": "Multiple-choice accuracy on ENEM questions across subject areas and languages",
+        "study_size": "n=1006 questions",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.73,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "Although the paper does not directly measure student skills, it benchmarks reasoning-oriented question answering on exam items that require comprehension and inference. Performance varied substantially by subject and model, suggesting uneven support for reasoning-heavy tasks; no direct human learning gain was measured.",
+        "measure": "Accuracy on reasoning-heavy exam questions",
+        "study_size": "n=1006 questions",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.97,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper directly measured inference time on modest home hardware and found quantized 7B models averaged about 17.5-21.7 seconds per question and 13B models about 34.3-64.2 seconds, depending on model and machine. This indicates the quantized LLaMA-family models can run locally without dedicated GPUs, with 7B models consistently faster than 13B models.",
+        "measure": "Mean inference time per question (seconds) on AMD Ryzen 5 3600x and Intel i9 9900k",
+        "study_size": "n=1006 questions per model run",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "single_site",
+    "no_control_group",
+    "no_long_term_followup",
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Brazil",
+  "study_region": "Latin America & Caribbean",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

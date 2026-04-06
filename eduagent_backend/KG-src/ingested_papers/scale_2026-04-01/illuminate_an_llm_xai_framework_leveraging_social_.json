@@ -1,0 +1,311 @@
+{
+  "title": "iLLuMinaTE: An LLM-XAI Framework Leveraging Social Science Explanation Theories Towards Actionable Student Performance Feedback",
+  "doi": null,
+  "year": 2025,
+  "venue": "AAAI",
+  "url": "https://arxiv.org/abs/2409.08027",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate",
+    "Graduate / Doctoral",
+    "Adult (non-academic)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses a key challenge in explainable AI for education: although predictive models and post-hoc explainers such as LIME and counterfactual methods can identify factors related to student performance, their outputs are often difficult for non-technical users to understand and act on. The authors ask whether large language models can serve as effective communicators of XAI results by transforming technical model explanations into theory-driven, understandable, and actionable student feedback.\n\nTo address this problem, the paper introduces iLLuMinaTE, a zero-shot, chain-of-prompts LLM-XAI framework. The system combines student performance prediction models for MOOCs, post-hoc explanation methods (LIME, CEM, and MC-LIME), and LLM prompting grounded in eight social science theories of explanation. The pipeline has four stages: student modeling from clickstream features, extraction of local feature importance, explanation selection aligned to explanation theory, and explanation presentation that produces concise feedback using communication and feedback principles. The authors evaluate 21,915 generated explanations across three LLMs and three online courses, and also run a user preference study with 114 university students.\n\nThe study context is three MOOCs offered by a European university to a global audience: Digital Signal Processing, Villes Africaines, and \u00c9l\u00e9ments de G\u00e9omatique. Participants in the user study were university students recruited on Prolific, and the explanatory outputs were framed as feedback about online course performance. The empirical evaluation combines expert and GPT-4o annotation of explanation quality, automated readability analysis, and student preference and actionability assessments.\n\nThe main conclusions are that iLLuMinaTE explanations align well with the intended explanation theories, are understandable, and are strongly preferred by students over traditional post-hoc explanation baselines. Students preferred iLLuMinaTE explanations 89.52% of the time, and simulated follow-up analyses suggested that actions chosen from these explanations could improve predicted student performance. The paper argues that LLMs can play a valuable role as explanation communicators in education, especially for personalized student feedback, while also noting remaining challenges such as explainer variability and the need to study longer-term interactive feedback effects.",
+  "limitations": [
+    "single_site",
+    "no_control_group",
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Switzerland",
+  "study_region": "Europe",
+  "identified_tools": [
+    {
+      "name": "iLLuMinaTE",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "personalization_adaptation"
+      ],
+      "description": "A theory-driven LLM-XAI framework that converts student-model explanations into natural-language, actionable feedback for students by combining post-hoc explainers with LLM-based explanation selection and presentation prompts.",
+      "use_case": "Studied as a framework for generating actionable student performance feedback in online courses, using LLMs plus XAI outputs from student success prediction models; evaluated for theory alignment, readability, student preference, and simulated actionability.",
+      "findings": [
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In a real-world user preference study, students preferred iLLuMinaTE explanations over traditional explainers 89.52% of the time. A Kruskal-Wallis test showed a significant difference between base and iLLuMinaTE explanations (H = 176.38, p < .0001).",
+          "measure": "Student preference for explanation type in user study",
+          "effect_size": "89.52% preferred; H=176.38, p<.0001",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=114"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Theory-based iLLuMinaTE explanations received consistently higher user ratings than base explanations on perceived usefulness and actionability. For example, usefulness for contrastive explanations was 4.18 versus 3.59 for the base explanations on a 1-5 Likert scale.",
+          "measure": "Perceived usefulness, trustworthiness, actionability, completeness, and conciseness ratings",
+          "effect_size": "Usefulness_contrastive=4.18 vs Usefulness_BASE=3.59",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=114"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In a simulation based on student-selected next-step actions, average predicted performance improved for participants preferring iLLuMinaTE explanations by 13.5% for LIME-based pipelines, 14.2% for CEM-based pipelines, and 20.7% for MC-LIME-based pipelines. Across explanation theories, Contrastive and Necessity-Robustness explanations yielded the largest average simulated improvements at 28.2% and 24.9%, respectively.",
+          "measure": "Simulated improvement in predicted student performance after acting on suggested interventions",
+          "effect_size": "13.5% (LIME), 14.2% (CEM), 20.7% (MC-LIME); 28.2% (Contrastive), 24.9% (Necessity-Robustness)",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=114"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Across 21,915 generated explanations, iLLuMinaTE showed high alignment with social science explanation theories, with overall scores exceeding 0.82 for all explainers and theories in explanation selection. In explanation presentation, GPT-4o-based iLLuMinaTE variants scored 0.992 \u00b1 0.070 to 0.992 \u00b1 0.072 on decomposed evaluation questions, and Llama3 70b variants reached 0.997 \u00b1 0.042 to 0.998 \u00b1 0.037.",
+          "measure": "Instruction-following/alignment scores on decomposed evaluation questions for explanation selection and presentation",
+          "effect_size": "Selection overall >0.82 across explainers/theories; Presentation: GPT-4o 0.992\u00b10.070 to 0.992\u00b10.072, LLaMA 0.997\u00b10.042 to 0.998\u00b10.037",
+          "confidence_interval": "95% CIs mentioned as overlapping, exact intervals not reported",
+          "sample_size": "n=21,915 explanations"
+        }
+      ]
+    },
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "language_speech",
+        "feedback_evaluation"
+      ],
+      "description": "OpenAI GPT-family large language model used here as the LLM component within the iLLuMinaTE framework for generating and evaluating explanations.",
+      "use_case": "Used as GPT-4o in the iLLuMinaTE pipeline to generate explanation-selection and explanation-presentation outputs, and also to annotate explanations against decomposed evaluation rubrics.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Among the tested LLMs, GPT-4o achieved the highest explanation-selection scores in iLLuMinaTE, with averages of 0.961 \u00b1 0.148 (CEM), 0.954 \u00b1 0.165 (LIME), and 0.965 \u00b1 0.144 (MC-LIME). For explanation presentation, GPT-4o scored 0.992 \u00b1 0.070 to 0.992 \u00b1 0.072.",
+          "measure": "Explanation selection and presentation instruction-following scores",
+          "effect_size": "Selection: 0.961\u00b10.148, 0.954\u00b10.165, 0.965\u00b10.144; Presentation: 0.992\u00b10.070 to 0.992\u00b10.072",
+          "confidence_interval": "95% CIs overlap with other LLMs; exact intervals not reported",
+          "sample_size": "n=not_reported"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "GPT-4o had 94.68% \u00b1 5.20 agreement with human annotators when applying the decomposed explanation-evaluation rubric to 42 shared responses. The human annotators' inter-rater agreement on the same block was \u03ba = 0.71 \u00b1 0.13.",
+          "measure": "Agreement between LLM-based annotation and human expert annotation",
+          "effect_size": "94.68%\u00b15.20 agreement; human \u03ba=0.71\u00b10.13",
+          "confidence_interval": "not_reported",
+          "sample_size": "42 responses; 315 human-annotated responses total; over 2,350 annotations"
+        }
+      ]
+    },
+    {
+      "name": "LLaMA",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "language_speech",
+        "feedback_evaluation"
+      ],
+      "description": "Meta LLaMA-family large language model used as an LLM backend within the iLLuMinaTE framework.",
+      "use_case": "Used as Llama3 70B to generate explanation-selection and explanation-presentation outputs in the iLLuMinaTE pipeline.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Llama3 70b achieved the highest explanation-presentation scores among tested LLMs, with averages of 0.998 \u00b1 0.037 (CEM), 0.997 \u00b1 0.042 (LIME), and 0.998 \u00b1 0.037 (MC-LIME). The paper also reports that Llama3 70b committed the fewest grammatical errors among the three LLMs on readability analysis.",
+          "measure": "Explanation presentation instruction-following scores and grammar/readability performance",
+          "effect_size": "0.998\u00b10.037, 0.997\u00b10.042, 0.998\u00b10.037",
+          "confidence_interval": "95% CIs overlap with other LLMs for presentation scores; exact intervals not reported",
+          "sample_size": "n=not_reported"
+        }
+      ]
+    },
+    {
+      "name": "Gemini",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "language_speech",
+        "feedback_evaluation"
+      ],
+      "description": "Google Gemini-family large language model used as an LLM backend within the iLLuMinaTE framework.",
+      "use_case": "Used as Gemma2 9b in the iLLuMinaTE pipeline to generate explanation-selection and explanation-presentation outputs.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Gemma2 9b performed close to GPT-4o on explanation selection, with averages of 0.941 \u00b1 0.202 (CEM), 0.937 \u00b1 0.217 (LIME), and 0.939 \u00b1 0.208 (MC-LIME), but lower on explanation presentation at 0.791 \u00b1 0.212 (CEM), 0.801 \u00b1 0.201 (LIME), and 0.767 \u00b1 0.165 (MC-LIME). The paper notes overlapping 95% confidence intervals for selection performance across LLMs.",
+          "measure": "Explanation selection and presentation instruction-following scores",
+          "effect_size": "Selection: 0.941\u00b10.202, 0.937\u00b10.217, 0.939\u00b10.208; Presentation: 0.791\u00b10.212, 0.801\u00b10.201, 0.767\u00b10.165",
+          "confidence_interval": "95% CIs overlap for selection; exact intervals not reported",
+          "sample_size": "n=not_reported"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical paper with large-scale system evaluation and a user study, but it is not a randomized controlled trial or quasi-experimental study of learning outcomes. Key educational outcome claims include preference ratings and simulated performance gains rather than observed causal learning gains.",
+  "impact_tier": "green",
+  "impact_tier_rationale": "The paper reports strong positive user-preference results and notable simulated improvement estimates, but most impacts are perceptual or simulated rather than directly measured academic effects. This supports a modest-to-promising impact rating rather than the highest tier.",
+  "citations": [
+    {
+      "title": "Explainable Artificial Intelligence: Philosophical Foundations, Theories, and Problems",
+      "doi": null,
+      "year": 2022,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "realist vs pragmatic explanation framework"
+    },
+    {
+      "title": "The Character of Explanation",
+      "doi": null,
+      "year": 2006,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "explanation as process or product framing"
+    },
+    {
+      "title": "Explanation in Artificial Intelligence: Insights from the Social Sciences",
+      "doi": null,
+      "year": 2019,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "core taxonomy of explanation theories"
+    },
+    {
+      "title": "Interpretable Machine Learning",
+      "doi": null,
+      "year": 2020,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "contrastive explanations and XAI framing"
+    },
+    {
+      "title": "A Treatise of Human Nature",
+      "doi": null,
+      "year": 2016,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Causation",
+      "doi": null,
+      "year": 2021,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Explanatory Theories in Artificial Intelligence",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Collected Papers of Charles Sanders Peirce",
+      "doi": null,
+      "year": 1997,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Abductive Inference: Computation, Philosophy, Technology",
+      "doi": null,
+      "year": 1996,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Contrastive Explanation",
+      "doi": null,
+      "year": 1990,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "contrastive explanation theory used for explanation generation"
+    },
+    {
+      "title": "Causal Selection and Causal History",
+      "doi": null,
+      "year": 1988,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Psychology of Interpersonal Relations",
+      "doi": null,
+      "year": 1990,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "conversational model guiding explanation presentation"
+    },
+    {
+      "title": "How the Mind Explains Behavior: Folk Explanations, Meaning, and Social Interaction",
+      "doi": null,
+      "year": 2006,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "process model for defining explanation context"
+    },
+    {
+      "title": "A New Introduction to Multiple Source Methods in Developmental Science",
+      "doi": null,
+      "year": 2012,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Logic and Conversation",
+      "doi": null,
+      "year": 1975,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Counterfactual explanations in MOOCs: explaining student success and failure",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "BiLSTM model and educational prediction setting reused"
+    },
+    {
+      "title": "Swamy et al. (2024a)",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "text templates for baseline explanation presentation"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

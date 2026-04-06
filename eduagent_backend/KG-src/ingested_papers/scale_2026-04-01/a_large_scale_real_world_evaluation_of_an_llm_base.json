@@ -1,0 +1,279 @@
+{
+  "title": "A Large-Scale Real-World Evaluation of an LLM-Based Virtual Teaching Assistant",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "https://arxiv.org/abs/2506.17363",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate",
+    "Graduate / Doctoral"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper examines whether an LLM-based virtual teaching assistant (VTA) can be effectively deployed in a real-world higher education course and how students perceive and use it over time. The authors argue that large classes create bottlenecks for timely, personalized help, and that students may hesitate to ask human instructors questions. The study therefore investigates both acceptance and practical classroom use of a VTA, focusing on perceived helpfulness, trustworthiness, appropriateness, comfort, and patterns of student interaction.\n\nThe intervention was a retrieval-augmented VTA built with open-source tools and OpenAI models, using course materials such as lecture PDFs, Jupyter notebooks, and lecture recording transcripts to answer student questions. It was deployed through a Streamlit interface and logged student interactions across a semester. The evaluation combined three rounds of mandatory surveys (pre-, mid-, and post-deployment) with analysis of 3,869 student-VTA interaction pairs and comparison to 144 student-human instructor interactions from the previous year. The study also examined usage patterns by academic background and prior knowledge.\n\nThe population was 472 consenting students enrolled in a graduate-level introductory AI programming course at KAIST in South Korea during Fall 2024, with 477 students originally enrolled. Most participants were master's or doctoral students, with a very small undergraduate subgroup, and students came from 30 departments and 22 countries. The instructional team included one professor and eight TAs, and the VTA was used for general course and coding questions while critical or grade-related issues were handled through standard course channels.\n\nThe main conclusion is that the VTA was feasible and useful as a scalable support tool in this course, especially for students with less prior coding or machine learning experience and for students who were hesitant to ask human instructors questions. Students asked substantially more questions to the VTA than to human instructors, and frequent users reported improved perceptions of helpfulness and comfort over time. However, the VTA remained less trusted than human instructors and did not fully match human support in perceived reliability or depth. Reported limitations included response latency, occasional hallucinations or instruction-following issues, and retrieval problems, suggesting that VTAs are promising complements to human teaching rather than full replacements.",
+  "limitations": [
+    "single_site",
+    "no_control_group",
+    "self_reported_measures",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "14",
+  "setting": "blended",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "South Korea",
+  "study_region": "East Asia & Pacific",
+  "identified_tools": [
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "tutoring_instruction",
+        "feedback_evaluation"
+      ],
+      "description": "An LLM-based virtual teaching assistant (VTA) built for course-specific question answering using retrieval-augmented generation over class materials.",
+      "use_case": "Deployed for 14 weeks in a graduate introductory AI programming course to answer course-content, coding, project, and logistics questions; evaluated via 3 survey rounds and analysis of 3,869 student-VTA interactions.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The VTA was used by nearly half of the 472 consenting students at least once, generating 916 conversations and 3,869 Q&A interactions over 14 weeks at an operational cost of about $180. Compared with 144 student\u2013instructor interactions from the prior year, students asked over 25 times more questions to the VTA, suggesting substantially greater accessibility and scalability for help-seeking.",
+          "measure": "Usage volume, number of conversations/interactions, operational cost, and comparison with prior-year student-instructor interaction counts",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=472"
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Students who had previously refrained from asking human instructors questions reported higher comfort with the VTA both before and after deployment (Pre: 0.69; Post: 0.76) than students who had not refrained (Pre: 0.42; Post: 0.47). These students also used the VTA more on average (13.2 interactions vs. 7.8), indicating the system may reduce psychological barriers to help-seeking.",
+          "measure": "Self-reported comfort asking questions to the VTA relative to human TAs, and average VTA usage by prior hesitation status",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=472"
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Overall comfort interacting with the VTA versus human TAs increased slightly from pre- to post-deployment but was not statistically significant (p = 0.097). Among high-frequency users (Groups A, B, and C), comfort increased significantly over time (p = 0.000748), suggesting repeated use made students more at ease with the VTA.",
+          "measure": "Survey comfortableness ratings comparing VTA to human TAs",
+          "effect_size": "p=0.097 overall; p=0.000748 for high-frequency users",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=472"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Perceived helpfulness of the VTA slightly declined overall from pre- to post-deployment (3.64 to 3.54), but high-frequency users (Groups A, B, and C) showed a statistically significant improvement in helpfulness after sustained use (p = 0.043). Low-frequency users in Group D showed a decline (3.72 to 3.26), suggesting unmet expectations among limited users.",
+          "measure": "Survey helpfulness ratings of VTA responses",
+          "effect_size": "p=0.043 for high-frequency users",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=472"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Perceived trustworthiness increased after deployment, with overall VTA trust ratings rising from 3.27 pre to 3.51 post. However, trust in the VTA remained below human instructor ratings (4.38), indicating improvement but persistent perceived reliability gaps versus humans.",
+          "measure": "Survey trustworthiness ratings of VTA responses versus human instructors",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=472"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Perceived appropriateness of the VTA\u2019s response style improved over time, rising from 3.71 pre to 3.92 post overall. This was the dimension with the smallest gap relative to human instructors (4.07), suggesting students found the VTA\u2019s tone and clarity comparatively acceptable.",
+          "measure": "Survey appropriateness ratings of tone, clarity, and response structure",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=472"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Interaction logs showed the VTA was used more for theory-related questions than the prior year\u2019s human-instructor channel (35.0% vs. 8.3%), while project-related questions remained common in both settings (39.7% for VTA vs. 66.4% for human TA). The authors interpret this as evidence that students may have felt more comfortable using the VTA for conceptual discussion.",
+          "measure": "Distribution of question types across VTA and human-instructor interactions",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=3869 VTA interactions; n=144 human-instructor interactions"
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Relational or social cues appeared in 123 of 916 VTA conversations (13%). Students whose conversations included such cues engaged with the VTA more frequently on average than those without them (27.8 vs. 11.4 interactions), suggesting that socially oriented interaction may be associated with stronger engagement.",
+          "measure": "Presence of social/relational dialogue cues and average interaction frequency",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=916 conversations"
+        }
+      ]
+    }
+  ],
+  "verdict": "genai_general",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a large-scale real-world deployment with longitudinal surveys and interaction-log analysis, but it is not a randomized or quasi-experimental study and relies heavily on self-reported perceptions and descriptive comparisons.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper shows promising but mostly perception- and usage-based benefits, with some statistically significant improvements for frequent users, but no direct causal learning gains or standardized academic effect sizes are reported.",
+  "citations": [
+    {
+      "title": "The value and effectiveness of feedback in improving students\u2019 learning and professionalizing teaching in higher education",
+      "doi": null,
+      "year": 2016,
+      "venue": "Journal of Education and Practice",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Potentiality of generative ai tools in higher education: Evaluating chatgpt\u2019s viability as a teaching assistant for introductory programming courses",
+      "doi": null,
+      "year": 2024,
+      "venue": "STEM Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Language models are few-shot learners",
+      "doi": null,
+      "year": 2020,
+      "venue": "Advances in Neural Information Processing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Seven principles for good practice in undergraduate education",
+      "doi": null,
+      "year": 1987,
+      "venue": "AAHE Bulletin",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The faiss library",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_level": 3,
+      "citation_context": "vector retrieval library used in VTA system"
+    },
+    {
+      "title": "Jill watson doesn\u2019t care if you\u2019re pregnant: Grounding ai ethics in empirical studies",
+      "doi": null,
+      "year": 2018,
+      "venue": "Proceedings of the 2018 AAAI/ACM Conference on AI, Ethics, and Society",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Jill watson: A virtual teaching assistant for online education",
+      "doi": null,
+      "year": 2018,
+      "venue": "Learning Engineering for Online Education",
+      "citation_level": 2,
+      "citation_context": "prior VTA system framing educational assistant role"
+    },
+    {
+      "title": "Recipe: How to integrate chatgpt into efl writing education",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the Tenth ACM Conference on Learning@ Scale",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Chata: Towards an intelligent question-answer teaching assistant using open-source llms",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Billion-scale similarity search with gpus",
+      "doi": null,
+      "year": 2019,
+      "venue": "IEEE Transactions on Big Data",
+      "citation_level": 3,
+      "citation_context": "FAISS-based similarity search supports retrieval implementation"
+    },
+    {
+      "title": "Jill watson: Scaling and deploying an ai conversational agent in online classrooms",
+      "doi": null,
+      "year": 2024,
+      "venue": "International Conference on Intelligent Tutoring Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Retrieval-augmented generation for knowledge-intensive nlp tasks",
+      "doi": null,
+      "year": 2020,
+      "venue": "Advances in Neural Information Processing Systems",
+      "citation_level": 3,
+      "citation_context": "RAG architecture underlies retrieval-plus-generation design"
+    },
+    {
+      "title": "A step towards adaptive online learning: Exploring the role of gpt as virtual teaching assistants in online education",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Text and code embeddings by contrastive pre-training",
+      "doi": null,
+      "year": 2022,
+      "venue": "arXiv",
+      "citation_level": 3,
+      "citation_context": "embedding model for document retrieval/search"
+    },
+    {
+      "title": "Robust speech recognition via large-scale weak supervision",
+      "doi": null,
+      "year": 2023,
+      "venue": "International Conference on Machine Learning",
+      "citation_level": 3,
+      "citation_context": "speech transcription model for lecture materials"
+    },
+    {
+      "title": "Understanding academic help-seeking among first-generation college students: a phenomenological approach",
+      "doi": null,
+      "year": 2025,
+      "venue": "Humanities and Social Sciences Communications",
+      "citation_level": 2,
+      "citation_context": "frames student hesitation in seeking instructor help"
+    },
+    {
+      "title": "Jill watson: A virtual teaching assistant powered by chatgpt",
+      "doi": null,
+      "year": 2024,
+      "venue": "International Conference on Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Chated: a chatbot leveraging chatgpt for an enhanced learning experience in higher education",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

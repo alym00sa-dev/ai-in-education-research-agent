@@ -1,0 +1,89 @@
+{
+  "title": "Is it harmful or helpful? Examining the causes and consequences of generative AI usage among university students",
+  "doi": "10.1186/s41239-024-00444-7",
+  "year": 2024,
+  "venue": "International Journal of Educational Technology in Higher Education",
+  "url": "https://doi.org/10.1186/s41239-024-00444-7",
+  "source_db": "openalex_search",
+  "populations": [
+    "Undergraduate",
+    "Graduate / Doctoral"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper investigates why university students use generative AI, specifically ChatGPT, and whether that usage is associated with helpful or harmful academic consequences. The authors note that much early discussion of ChatGPT in education was speculative, with little empirical evidence about what drives student use or how use relates to outcomes such as academic performance, procrastination, and memory. The paper therefore aims both to develop a measure of ChatGPT use and to test a model of its antecedents and consequences in higher education.\n\nThe research comprises two empirical studies. Study 1 develops and validates an eight-item ChatGPT usage scale using survey data from 165 university students. Study 2 uses a three-wave time-lagged survey design with 494 university students to test whether academic workload, time pressure, sensitivity to rewards, and sensitivity to quality predict ChatGPT use, and whether ChatGPT use in turn predicts procrastination, memory loss, and academic performance (CGPA). The approach is observational rather than experimental: there is no manipulated intervention or comparison group, and the analyses focus on associations among measured variables.\n\nThe population consists of university students in Pakistan drawn from multiple universities, mostly public-sector institutions, and includes primarily bachelor\u2019s students along with smaller numbers of master\u2019s and doctoral students. The context is higher education rather than K-12 schooling, and the paper is not a direct writing-feedback comparator study. Data were collected online in English over three survey waves spaced by 1\u20132 weeks.\n\nThe main conclusions are that heavier academic workload and greater time pressure were associated with more ChatGPT use, while sensitivity to rewards was associated with less use; sensitivity to quality was not significantly related to use. Higher ChatGPT use was associated with greater procrastination, greater self-reported memory loss, and lower CGPA. The authors conclude that excessive reliance on ChatGPT may have harmful personal and academic correlates for university students, while also arguing that institutions should guide students toward using generative AI as a complementary learning resource rather than a substitute for effort and critical thinking.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed empirical study with a three-wave time-lagged correlational design, but it is not a randomized or quasi-experimental comparator study and cannot establish strong causal effects. It is also outside the target secondary-school writing-feedback population.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "Reported associations for the main student outcomes are negative, including procrastination, memory loss, and lower CGPA. Under the K-12 impact framework, predominantly harmful effects map to red.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.97,
+      "role": "primary",
+      "use_case": "University students' general academic use of ChatGPT for assignments, projects, studying, concept learning, and test preparation; the paper measures frequency of use rather than a writing-feedback intervention."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.92,
+      "finding": {
+        "direction": "Negative",
+        "finding_summary": "In Study 2 (n=494), greater ChatGPT usage was associated with higher procrastination among university students (\u03b2=0.309, t=6.984, p<0.001). The study used a three-wave time-lagged survey design, but the procrastination outcome was self-reported rather than behaviorally observed, so this is correlational evidence of a harmful association rather than a causal estimate.",
+        "measure": "Self-report procrastination scale (4 items; Choi & Moran, 2009)",
+        "study_size": "n=494",
+        "effect_size": "\u03b2=0.309",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.76,
+      "finding": {
+        "direction": "Negative",
+        "finding_summary": "Higher ChatGPT usage was associated with more self-reported memory loss in Study 2 (n=494), with a significant positive path coefficient (\u03b2=0.274, t=6.452, p<0.001). The measure captured perceived forgetting and reduced retention rather than direct cognitive testing, so the finding indicates a negative association with perceived cognitive functioning.",
+        "measure": "Self-report memory loss scale (3 items)",
+        "study_size": "n=494",
+        "effect_size": "\u03b2=0.274",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.78,
+      "finding": {
+        "direction": "Negative",
+        "finding_summary": "Greater ChatGPT usage was associated with lower academic performance as measured by self-reported CGPA in Study 2 (n=494), with a significant negative path (\u03b2=-0.104, t=2.390, p=0.017). This is a general academic performance outcome in higher education, not a writing-quality measure, and the effect size is relatively small.",
+        "measure": "Academic performance via latest CGPA (single self-reported score)",
+        "study_size": "n=494",
+        "effect_size": "\u03b2=-0.104",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "no_control_group",
+    "self_reported_measures",
+    "non_representative_population",
+    "high_attrition",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Pakistan",
+  "study_region": "South Asia",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

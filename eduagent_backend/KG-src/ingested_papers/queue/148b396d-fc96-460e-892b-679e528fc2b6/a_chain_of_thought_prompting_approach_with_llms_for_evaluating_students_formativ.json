@@ -1,0 +1,93 @@
+{
+  "title": "A Chain-of-Thought Prompting Approach with LLMs for Evaluating Students\u2019 Formative Assessment Responses in Science",
+  "doi": null,
+  "year": 2024,
+  "venue": "AAAI",
+  "url": "http://arxiv.org/abs/2403.14565v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Middle School (6th-8th)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper examines whether large language models can automatically score and explain middle school students\u2019 short-answer responses on formative science assessments. The authors focus on a challenge that is especially important in K-12 science: open-ended student responses are hard and time-consuming for teachers to grade, and they often require explanations tied to scientific reasoning rather than simple right/wrong matching.\n\nThe study develops a human-in-the-loop prompting approach using GPT-4, combining few-shot examples, chain-of-thought prompting, and a small active-learning loop. The method is applied to assessment responses from an NGSS-aligned middle school Earth Science curriculum (SPICE) on water runoff, where students interpreted and critiqued a diagram of a conceptual model. The assessments targeted both scientific concepts and scientific reasoning, and the prompt included rubric-based examples and explanations to help the model produce both scores and feedback.\n\nUsing manually graded data from two SPICE studies at one public middle school in the southeastern United States, the authors compare zero-shot, few-shot, few-shot with chain-of-thought, and chain-of-thought plus active learning settings. Results show that GPT-4 often aligned well with human scorers, sometimes reaching strong or near-perfect agreement, especially when few-shot examples and active learning were added. The paper concludes that LLMs can support science formative assessment scoring and feedback, but also warns that chain-of-thought and active learning can overfit, especially on simpler or ambiguous items, and that rubric and question wording may need refinement for open-ended science tasks.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed empirical study, but it is not an RCT or QED on student learning; it is primarily a model-evaluation study using held-out test data and human scoring agreement. The methodology is clear and systematic, but credibility for causal educational impact is limited because the paper does not test instructional outcomes in a controlled design.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper shows promising practical alignment for automated scoring, with several subscores achieving strong agreement with humans, but it does not report student achievement gains or classroom outcome effects. The educational impact is therefore indirect and mainly pertains to assessment efficiency rather than demonstrated learning improvement.",
+  "interventions": [
+    {
+      "intervention": "Automated Feedback System",
+      "confidence": 0.96,
+      "role": "primary",
+      "use_case": "LLM-based automated scoring and explanation generation for middle school Earth science formative assessment short-answer responses using few-shot prompting, chain-of-thought reasoning, and active learning"
+    },
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.68,
+      "role": "secondary",
+      "use_case": "GPT-4 used as a teacher-like evaluator via prompt persona to generate rubric-aligned explanations and feedback for student science responses"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.93,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper reports that GPT-4 with chain-of-thought prompting plus active learning can automate scoring and explanation generation for K-12 science formative assessments, reducing teacher workload associated with grading open-ended responses. On the held-out test set, the best configurations achieved strong agreement with human scoring across most subscores (e.g., QWK up to 1.00 on some subscores; 9 of 11 subscores/total scores reached QWK >= 0.8 at some point), indicating practical usefulness for efficient assessment workflows. ",
+        "measure": "Automated scoring agreement with human raters on formative assessment responses; Macro F1, Cohen's Quadratic Weighted Kappa (QWK)",
+        "study_size": "n=270 students",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Academic \u2014 Scientific Reasoning",
+      "confidence": 0.91,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The system\u2019s performance on science-reasoning subscores was mixed: in some cases CoT + active learning improved alignment with human scorers, while in others performance declined and overfitting emerged. For example, Q3 Runoff Direction Reasoning improved to QWK=0.94 with CoT + AL, but Q2 Arrow Direction Reasoning fell to QWK=0.30 under CoT + AL, showing that the approach was not uniformly robust for reasoning-heavy responses.",
+        "measure": "Reasoning subscores on middle school Earth science formative assessment items; Macro F1 and QWK",
+        "study_size": "n=270 students",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.88,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "For science conceptual knowledge items embedded in Earth science formative assessments, GPT-4-based scoring generally aligned well with human ratings, especially after few-shot prompting and active learning. Several subscores reached strong or almost perfect agreement (e.g., Q1 Arrow Size QWK=0.95 with CoT + AL; Q3 Arrow Size QWK=0.83 with CoT + AL), suggesting effective automated scoring of content knowledge in this domain.",
+        "measure": "Conceptual knowledge subscores on Earth science formative assessment short-answer responses; Macro F1 and QWK",
+        "study_size": "n=270 students",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "3",
+  "setting": "classroom",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

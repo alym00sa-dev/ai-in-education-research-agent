@@ -1,0 +1,91 @@
+{
+  "title": "An Experience Report on a Pedagogically Controlled, Curriculum-Constrained AI Tutor for SE Education",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv preprint",
+  "url": "http://arxiv.org/abs/2512.11882v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "High School (9th-12th)",
+    "Undergraduate",
+    "Graduate / Doctoral"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses the design and early evaluation of an AI tutor intended to support learners in a digital programming and computational thinking course. The authors are concerned with how to constrain a large language model so that it provides curriculum-aligned, age-appropriate help rather than generic or incorrect answers, and how such a system is perceived by both learners and educators.\n\nThe intervention, RockStartIT Tutor, is a GPT-4/GPT-4o-based assistant built with OpenAI\u2019s Assistant API, a threaded chat interface, prompt engineering, and a modular Markdown knowledge base with pedagogically tagged content such as tasks, hints, explanations, motivations, and hidden solutions. The system is designed to scaffold learner inquiry, avoid direct solution giving, and remain strictly within the course content. The paper frames the tutor as a complementary support tool rather than a replacement for teachers.\n\nThe study was conducted in a RockStartIT course context with 13 participants total: 7 learners and 6 teachers/prospective teachers. Participants used the tutor for a short session on their own devices and then completed a TAM-based questionnaire plus open-ended questions. Quantitative ratings were generally positive for usefulness, ease of use, and intention to use, and qualitative feedback highlighted value for low-pressure question asking, explanations, and support for independent learning.\n\nOverall, the paper concludes that carefully constrained generative AI can provide practical, pedagogically coherent support in secondary computing education and can be accepted by both learners and teachers. However, the authors emphasize that the evidence is preliminary and that stronger validation with the intended school-age population, longer deployments, and richer behavioral data is still needed.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a mixed-method experience report with a very small convenience sample and no control group, randomization, or pre-post learning measures. It provides useful early-stage qualitative and descriptive evidence, but credibility is limited by prototype status and weak internal validity.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper suggests potentially meaningful but unquantified benefits for support, confidence, and teacher workload in a niche secondary computing context. Because outcomes are based on perceptions rather than observed learning gains or efficiency metrics, the impact is best characterized as modest and unclear.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "pedagogically controlled GPT-4o tutor for a curriculum-constrained secondary school software engineering and computational thinking course, using prompt engineering, threaded chat memory, and tagged knowledge-base retrieval to provide scaffolded hints and explanations without revealing solutions"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.86,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Teachers and learners perceived the AI tutor as potentially helpful for reducing teacher workload and providing on-demand support during independent work. On the TAM items, teachers rated usefulness highly for classroom use (PU8 M=4.50, SD=0.55, n=6), and open-ended responses emphasized that it could relieve teachers while enriching students, though this was based on perceptions rather than measured time savings.",
+        "measure": "Technology Acceptance Model usefulness items; open-ended teacher and learner feedback on workload/support",
+        "study_size": "n=13 (teachers n=6, learners n=7)",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.9,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Participants reported that the tutor supported inquiry, reflection, and metacognitive problem solving by giving hints, paraphrasing concepts, and prompting learners to trace errors. Qualitative comments noted that the tutor helped students understand why they answered questions incorrectly and encouraged deeper engagement with the content, but no objective learning-gain measure was reported.",
+        "measure": "Open-ended qualitative feedback; TAM usefulness perceptions related to understanding and reflection",
+        "study_size": "n=13 (teachers n=6, learners n=7)",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.78,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The tutor was perceived as a low-stakes, nonjudgmental environment that made learners more comfortable asking questions, suggesting improved confidence and reduced hesitation. TAM ratings for ease of use were high (PEOU2 M=4.62, SD=0.51, n=13), and qualitative feedback highlighted emotional safety and encouragement, but the study did not directly measure motivation or anxiety.",
+        "measure": "TAM ease-of-use items; qualitative comments on emotional safety and willingness to ask questions",
+        "study_size": "n=13 (teachers n=6, learners n=7)",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "self_reported_measures",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "classroom",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Germany",
+  "study_region": "Europe",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

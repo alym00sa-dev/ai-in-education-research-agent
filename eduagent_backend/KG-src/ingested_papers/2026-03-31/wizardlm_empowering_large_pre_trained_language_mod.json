@@ -1,0 +1,476 @@
+{
+  "title": "WizardLM: Empowering Large Pre-Trained Language Models to Follow Complex Instructions",
+  "doi": null,
+  "year": 2024,
+  "venue": "ICLR 2024",
+  "url": "http://arxiv.org/abs/2304.12244v3",
+  "source_db": "arxiv_search",
+  "population": "not_reported",
+  "user_type": "Student",
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses the problem of how to create large-scale, high-quality instruction-following datasets for large language models without relying heavily on expensive human annotation. The authors argue that human-written open-domain instruction datasets are costly to produce and tend to underrepresent highly complex instructions. Their central question is whether large language models themselves can be used to automatically generate more diverse and more difficult instructions, and whether training on those instructions improves downstream instruction-following performance.\n\nTo address this, the paper proposes Evol-Instruct, an automated data-generation framework that iteratively rewrites existing instructions to increase their complexity or breadth. The method includes in-depth evolution operations such as adding constraints, deepening questions, concretizing concepts, increasing reasoning steps, and complicating inputs, as well as in-breadth evolution to create new but related prompts. The authors use this process to evolve Alpaca instructions into a much larger dataset, then fine-tune LLaMA 13B to produce WizardLM. They also include filtering mechanisms to remove failed evolutions and evaluate the resulting model against baselines such as Alpaca and Vicuna using benchmark tests, GPT-4-based evaluation, and human judgments.\n\nThe paper is not an education study and does not examine students, teachers, or schools as participants. Instead, the empirical context is machine learning model development and evaluation using benchmark datasets, human annotators for evaluation, and LLM-generated instruction data. Human involvement appears only in model evaluation, where 10 annotators compare outputs, rather than in an educational intervention setting.\n\nThe main conclusion is that Evol-Instruct produces instruction data that substantially improves instruction-following model performance. WizardLM outperforms several open-source baselines on code, math, benchmark, GPT-4, and human evaluation measures, suggesting that automatically generated, complexity-controlled instruction datasets can be more effective than existing machine-generated or human-collected alternatives for supervised fine-tuning. The authors also conclude that instruction complexity is an important factor in improving model performance, while noting limitations in evaluation scalability and coverage.",
+  "limitations": [
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "identified_tools": [
+    {
+      "name": "WizardLM",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "language_speech",
+        "content_generation"
+      ],
+      "description": "A named instruction-following large language model built by fine-tuning LLaMA on synthetic instruction data generated with the Evol-Instruct method.",
+      "use_case": "Studied as the primary model produced by the paper's Evol-Instruct pipeline and evaluated against Alpaca, Vicuna, ChatGPT, and other open-source LLMs on automatic benchmarks and human evaluation.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "WizardLM-13b outperformed same-sized open-source baselines on a broad set of academic and reasoning benchmarks. Reported scores were Avg.=58.96, MMLU=52.92, ARC=57.25, HellaSwag=80.88, TruthfulQA=50.55, compared with Vicuna-13b Avg.=54.60 and Alpaca-13b Avg.=43.44.",
+          "measure": "Automatic benchmark scores on MMLU, ARC, HellaSwag, TruthfulQA, and overall average",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "WizardLM-13b showed stronger code and mathematical reasoning performance than open-source baselines. It achieved HumanEval pass@1=24.0 and GSM8k pass@1=37.15, versus Vicuna-13b HumanEval=12.5 and GSM8k=24.34, and Alpaca-13b HumanEval=9.2 and GSM8k=8.35.",
+          "measure": "HumanEval pass@1 and GSM8k pass@1",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "HumanEval n=164; GSM8k n=1319"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "On LLM-judge evaluations, WizardLM-13b exceeded other open-source models but remained below ChatGPT-3.5. Reported scores were AlpacaEval=75.31, MT-Bench=6.35, and WizardEval=89.1, compared with Vicuna-13b AlpacaEval=70.43, MT-Bench=6.21, WizardEval=86.9.",
+          "measure": "AlpacaEval, MT-Bench, and WizardEval scores",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "WizardEval n=218; AlpacaEval and MT-Bench sample_size=not_reported"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In blind human pairwise comparison on WizardEval, WizardLM achieved significantly better results than Alpaca and Vicuna, supporting the effectiveness of Evol-Instruct. The human evaluation used 10 annotators ranking responses on relevance, knowledgeable, reasoning, calculation, and accuracy; all Kappa scores were greater than 0.6.",
+          "measure": "Blind human ranking/win-rate comparison on WizardEval using relevance, knowledgeable, reasoning, calculation, and accuracy criteria",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=218 instructions; 10 annotators"
+        }
+      ]
+    },
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "language_speech",
+        "content_generation"
+      ],
+      "description": "OpenAI's named conversational large language model used for dialogue, instruction following, and text generation.",
+      "use_case": "Used in this paper as a baseline model for benchmark comparison and also as the API model used to generate evolved instructions and responses during dataset construction.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "As a benchmark comparator, ChatGPT-3.5 achieved the highest reported scores among listed 13B/open-source baselines and WizardLM on the main benchmark table. Reported scores were Avg.=76.15, MMLU=70.0, ARC=85.2, HellaSwag=85.5, TruthfulQA=47.0, HumanEval=48.1, GSM8k=80.8, AlpacaEval=89.37, MT-Bench=7.94, and WizardEval=100.0.",
+          "measure": "Automatic benchmark scores and LLM-judge scores across nine benchmarks",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "HumanEval n=164; GSM8k n=1319; WizardEval n=218"
+        }
+      ]
+    },
+    {
+      "name": "Alpaca",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "language_speech",
+        "content_generation"
+      ],
+      "description": "A named open-source instruction-following model derived from LLaMA and trained on self-instruct style synthetic instructions.",
+      "use_case": "Studied as a named baseline model for comparison with WizardLM, including a retrained Alpaca-13b baseline expanded to 70k instructions.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "Alpaca-13b underperformed WizardLM-13b across the main benchmark suite. Reported scores for Alpaca-13b were Avg.=43.44, MMLU=46.63, ARC=51.20, HellaSwag=76.31, TruthfulQA=41.62, AlpacaEval=33.25, MT-Bench=4.78, and WizardEval=76.6.",
+          "measure": "Automatic benchmark scores and LLM-judge scores across nine benchmarks",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "WizardEval n=218; other benchmark sample_size=not_reported"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "Alpaca-13b showed weaker code and mathematical reasoning than WizardLM-13b. Reported scores were HumanEval pass@1=9.2 and GSM8k pass@1=8.35, far below WizardLM-13b's 24.0 and 37.15 respectively.",
+          "measure": "HumanEval pass@1 and GSM8k pass@1",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "HumanEval n=164; GSM8k n=1319"
+        }
+      ]
+    },
+    {
+      "name": "Vicuna",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "language_speech",
+        "content_generation"
+      ],
+      "description": "A named open-source chatbot model based on LLaMA and fine-tuned on ShareGPT user-shared conversations.",
+      "use_case": "Studied as a named baseline for comparison with WizardLM on benchmark and human evaluations.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "Vicuna-13b performed below WizardLM-13b on the overall benchmark suite. Reported scores for Vicuna-13b were Avg.=54.60, MMLU=50.84, ARC=51.71, HellaSwag=79.94, TruthfulQA=52.68, AlpacaEval=70.43, MT-Bench=6.21, and WizardEval=86.9, compared with WizardLM-13b Avg.=58.96 and WizardEval=89.1.",
+          "measure": "Automatic benchmark scores and LLM-judge scores across nine benchmarks",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "WizardEval n=218; other benchmark sample_size=not_reported"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "Vicuna-13b was weaker than WizardLM-13b on coding and math reasoning. It scored HumanEval pass@1=12.5 and GSM8k pass@1=24.34 versus WizardLM-13b's HumanEval=24.0 and GSM8k=37.15.",
+          "measure": "HumanEval pass@1 and GSM8k pass@1",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "HumanEval n=164; GSM8k n=1319"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is an ML systems conference paper evaluating LLMs on benchmark tasks and human judgments, not an education intervention study with K-12 causal or quasi-experimental methodology. It provides empirical comparisons, but not education-specific impact evaluation or learner-outcome causal evidence.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports clear positive benchmark gains for WizardLM over other open-source LLMs, but no standardized education effect sizes or direct student learning impacts are reported. Impact is therefore promising but unclear for education outcomes.",
+  "citations": [
+    {
+      "title": "Evaluating large language models trained on code",
+      "doi": null,
+      "year": 2021,
+      "venue": "CoRR"
+    },
+    {
+      "title": "Phoenix: Democratizing chatgpt across languages",
+      "doi": null,
+      "year": 2023,
+      "venue": "ArXiv"
+    },
+    {
+      "title": "Vicuna: An open-source chatbot impressing gpt-4 with 90%* chatgpt quality",
+      "doi": null,
+      "year": 2023,
+      "venue": null
+    },
+    {
+      "title": "Scaling instruction-finetuned language models",
+      "doi": null,
+      "year": 2022,
+      "venue": "arXiv preprint arXiv:2210.11416"
+    },
+    {
+      "title": "Think you have solved question answering? try arc, the ai2 reasoning challenge",
+      "doi": null,
+      "year": 2018,
+      "venue": null
+    },
+    {
+      "title": "Training verifiers to solve math word problems",
+      "doi": null,
+      "year": 2021,
+      "venue": "arXiv preprint arXiv:2110.14168"
+    },
+    {
+      "title": "An evaluation on large language model outputs: Discourse and memorization",
+      "doi": null,
+      "year": 2023,
+      "venue": "ArXiv"
+    },
+    {
+      "title": "A framework for few-shot language model evaluation",
+      "doi": "10.5281/zenodo.5371628",
+      "year": 2021,
+      "venue": null
+    },
+    {
+      "title": "Dr. llama: Improving small language models in domain-specific qa via generative data augmentation",
+      "doi": null,
+      "year": 2023,
+      "venue": null
+    },
+    {
+      "title": "A k-means clustering algorithm",
+      "doi": null,
+      "year": 1979,
+      "venue": "JSTOR: Applied Statistics"
+    },
+    {
+      "title": "Annollm: Making large language models to be better crowdsourced annotators",
+      "doi": null,
+      "year": 2023,
+      "venue": "ArXiv"
+    },
+    {
+      "title": "Measuring massive multitask language understanding",
+      "doi": null,
+      "year": 2020,
+      "venue": "arXiv preprint arXiv:2009.03300"
+    },
+    {
+      "title": "Llm-adapters: An adapter family for parameter-efficient fine-tuning of large language models",
+      "doi": null,
+      "year": 2023,
+      "venue": "ArXiv"
+    },
+    {
+      "title": "Audio-gpt: Understanding and generating speech, music, sound, and talking head",
+      "doi": null,
+      "year": 2023,
+      "venue": "ArXiv"
+    },
+    {
+      "title": "Openassistant conversations - democratizing large language model alignment",
+      "doi": null,
+      "year": 2023,
+      "venue": "ArXiv"
+    },
+    {
+      "title": "Camel: Communicative agents for \u201dmind\u201d exploration of large language model society",
+      "doi": null,
+      "year": 2023,
+      "venue": null
+    },
+    {
+      "title": "Enabling programming thinking in large language models toward code generation",
+      "doi": null,
+      "year": 2023,
+      "venue": null
+    },
+    {
+      "title": "Alpacaeval: An automatic evaluator of instruction-following models",
+      "doi": null,
+      "year": 2023,
+      "venue": null
+    },
+    {
+      "title": "Truthfulqa: Measuring how models mimic human falsehoods",
+      "doi": null,
+      "year": 2022,
+      "venue": null
+    },
+    {
+      "title": "Visual instruction tuning",
+      "doi": null,
+      "year": 2023,
+      "venue": "ArXiv"
+    },
+    {
+      "title": "The flan collection: Designing data and methods for effective instruction tuning",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv preprint arXiv:2301.13688"
+    },
+    {
+      "title": "Augmented large language models with parametric knowledge guiding",
+      "doi": null,
+      "year": 2023,
+      "venue": "ArXiv"
+    },
+    {
+      "title": "Fairness-guided few-shot prompting for large language models",
+      "doi": null,
+      "year": 2023,
+      "venue": "ArXiv"
+    },
+    {
+      "title": "Selfcheckgpt: Zero-resource black-box hallucination detection for generative large language models",
+      "doi": null,
+      "year": 2023,
+      "venue": "ArXiv"
+    },
+    {
+      "title": "Orca: Progressive learning from complex explanation traces of gpt-4",
+      "doi": null,
+      "year": 2023,
+      "venue": null
+    },
+    {
+      "title": "Gpt-4 technical report",
+      "doi": null,
+      "year": 2023,
+      "venue": null
+    },
+    {
+      "title": "Training language models to follow instructions with human feedback",
+      "doi": null,
+      "year": 2022,
+      "venue": "Advances in Neural Information Processing Systems"
+    },
+    {
+      "title": "Exploring the limits of transfer learning with a unified text-to-text transformer",
+      "doi": null,
+      "year": 2020,
+      "venue": "Journal of Machine Learning Research"
+    },
+    {
+      "title": "Multitask prompted training enables zero-shot task generalization",
+      "doi": null,
+      "year": 2022,
+      "venue": "International Conference on Learning Representations"
+    },
+    {
+      "title": "Principle-driven self-alignment of language models from scratch with minimal human supervision",
+      "doi": null,
+      "year": 2023,
+      "venue": "ArXiv"
+    },
+    {
+      "title": "Approximating human evaluation of social chatbots with prompting",
+      "doi": null,
+      "year": 2023,
+      "venue": "ArXiv"
+    },
+    {
+      "title": "Stanford alpaca: An instruction-following llama model",
+      "doi": null,
+      "year": 2023,
+      "venue": null
+    },
+    {
+      "title": "Llama: Open and efficient foundation language models",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv preprint arXiv:2302.13971"
+    },
+    {
+      "title": "Visualizing data using t-sne",
+      "doi": null,
+      "year": 2008,
+      "venue": "Journal of Machine Learning Research"
+    },
+    {
+      "title": "Self-instruct: Aligning language model with self generated instructions",
+      "doi": null,
+      "year": 2022,
+      "venue": "arXiv preprint arXiv:2212.10560"
+    },
+    {
+      "title": "Super-naturalinstructions: Generalization via declarative instructions on 1600+ nlp tasks",
+      "doi": null,
+      "year": 2022,
+      "venue": "arXiv preprint arXiv:2204.07705"
+    },
+    {
+      "title": "How far can camels go? exploring the state of instruction tuning on open resources",
+      "doi": null,
+      "year": 2023,
+      "venue": null
+    },
+    {
+      "title": "Knowda: All-in-one knowledge mixture model for data augmentation in few-shot nlp",
+      "doi": null,
+      "year": 2022,
+      "venue": "arXiv preprint arXiv:2206.10265"
+    },
+    {
+      "title": "Finetuned language models are zero-shot learners",
+      "doi": null,
+      "year": 2021,
+      "venue": "arXiv preprint arXiv:2109.01652"
+    },
+    {
+      "title": "Chatgpt-steered editing instructor for customization of abstractive summarization",
+      "doi": null,
+      "year": 2023,
+      "venue": "ArXiv"
+    },
+    {
+      "title": "Baize: An open-source chat model with parameter-efficient tuning on self-chat data",
+      "doi": null,
+      "year": 2023,
+      "venue": null
+    },
+    {
+      "title": "Zeroprompt: Scaling prompt-based pretraining to 1,000 tasks improves zero-shot generalization",
+      "doi": null,
+      "year": 2022,
+      "venue": "arXiv preprint arXiv:2201.06910"
+    },
+    {
+      "title": "Rrhf: Rank responses to align language models with human feedback without tears",
+      "doi": null,
+      "year": 2023,
+      "venue": "ArXiv"
+    },
+    {
+      "title": "Automatic evaluation of attribution by large language models",
+      "doi": null,
+      "year": 2023,
+      "venue": "ArXiv"
+    },
+    {
+      "title": "Hellaswag: Can a machine really finish your sentence?",
+      "doi": null,
+      "year": 2019,
+      "venue": "Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics"
+    },
+    {
+      "title": "Automl-gpt: Automatic machine learning with gpt",
+      "doi": null,
+      "year": 2023,
+      "venue": "ArXiv"
+    },
+    {
+      "title": "A survey of large language models",
+      "doi": null,
+      "year": 2023,
+      "venue": "ArXiv"
+    },
+    {
+      "title": "Judging llm-as-a-judge with mt-bench and chatbot arena",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv preprint arXiv:2306.05685"
+    },
+    {
+      "title": "Sur-adapter: Enhancing text-to-image pre-trained diffusion models with large language models",
+      "doi": null,
+      "year": 2023,
+      "venue": "ArXiv"
+    },
+    {
+      "title": "Minigpt-4: Enhancing vision-language understanding with advanced large language models",
+      "doi": null,
+      "year": 2023,
+      "venue": "ArXiv"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

@@ -1,0 +1,31 @@
+{
+  "title": "Graph Laplacian for Semi-Supervised Learning",
+  "doi": null,
+  "year": 2023,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2301.04956v2",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses a methodological problem in semi-supervised learning: how to make graph-Laplacian methods work better when only a small fraction of labels is available. The authors argue that standard graph-Laplacian optimization can fail to interpolate well in low-label regimes, and that this limitation is especially problematic for clustering and related SSL tasks.\n\nTo address this, they propose a new semi-supervised graph-Laplacian in which label information is incorporated directly into the affinity matrix rather than only as constraints in an optimization problem. Their construction combines density reinforcement between labeled and unlabeled points with contrastive adjustments that strengthen connections among labeled examples from the same class and weaken connections across labeled examples from different classes. They compare this proposed Laplacian against standard graph-Laplacian and weighted nonlocal Laplacian approaches, examining both spectral clustering and Dirichlet-based interpolation.\n\nThe empirical illustrations are on synthetic toy datasets (2-Moons and 3-Moons) and image datasets (MNIST and Fashion-MNIST), with labels provided for only small subsets of points. The paper concludes that the proposed Laplacian improves clustering performance, particularly in low-label settings, and that the contrastive component is especially beneficial for spectral methods while the density component is helpful for constrained optimization. However, this is a graph-learning paper and does not involve educational participants, classrooms, or AI tutoring interventions.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a methods paper on graph Laplacians for semi-supervised learning, not a study of an educational intervention. It does not evaluate ChatGPT, tutoring, or any K-12 learning technology, and provides no causal design or student outcome evidence.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "The paper has no direct educational impact evidence for middle school mathematics or any student population. Its contribution is algorithmic and theoretical within machine learning, with illustrative clustering experiments unrelated to education.",
+  "interventions": [],
+  "outcome_assignments": [],
+  "limitations": [
+    "small_sample",
+    "no_control_group",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

@@ -1,0 +1,94 @@
+{
+  "title": "One-Topic-Doesn\u2019t-Fit-All: Transcreating Reading Comprehension Test for Personalized Learning",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2511.09135v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper investigates whether large-language-model-generated personalized reading comprehension materials can improve English as a Foreign Language (EFL) learning outcomes by aligning reading passages with students\u2019 interests. The authors argue that EFL reading materials are often culturally or topically mismatched to learners, which may reduce engagement and comprehension. They focus on reading comprehension and motivation, asking whether interest-aligned transcreated texts can support better performance and sustain motivation when students later encounter less interesting materials.\n\nThe intervention is a structured \"personalized transcreation\" pipeline built with OpenAI\u2019s gpt-4o. Starting from passages and multiple-choice questions in the RACE-C dataset, the system extracts passage topics, classifies question types using Bloom\u2019s taxonomy, identifies linguistic features, and then rewrites passages and questions so they are semantically aligned with each learner\u2019s interests while preserving linguistic difficulty and cognitive demand. An English expert validated the generated materials and corrected the small number of unanswerable items. In the experiment, one group received transcreated passages matched to their interests, while a comparison group received transcreated passages on randomly assigned topics.\n\nThe study was conducted with 20 Korean college EFL learners at a college in South Korea. Students were divided into two groups of 10 with similar TOEFL profiles. Both groups first completed a transcreated test and then an original test with less-preferred topics. Quantitative outcomes included comprehension test scores, turnaround time, and the Instructional Materials Motivation Survey (IMMS); qualitative data came from open-ended written reflections analyzed thematically.\n\nThe main conclusion is that personalized, interest-aligned reading materials were associated with better comprehension gains, stronger performance on higher-order analytical questions, faster completion times on the later test, and better retention of motivation than non-personalized materials. However, the evidence comes from a very small, single-site higher-education sample and captures only short-term effects. The paper supports the promise of generative AI for personalized literacy-related instruction, but it does not provide K-12 evidence and does not test long-term learning outcomes.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a small controlled experiment with n=20 and a non-K-12 college EFL sample, using group comparison but without a clearly randomized K-12 causal design, reported effect sizes, or strong external validity for the target population. It provides suggestive causal evidence with substantial limitations, so it does not meet green-tier rigor for the K-12 evidence framework.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "Findings are directionally positive for reading comprehension, motivation retention, and efficiency, but effect sizes are not reported and the sample is very small and not K-12. The magnitude therefore remains unclear for the target school-age literacy population.",
+  "interventions": [
+    {
+      "intervention": "Adaptive Learning Platform",
+      "confidence": 0.93,
+      "role": "primary",
+      "use_case": "LLM-generated personalization of EFL reading comprehension passages and multiple-choice questions so that passages are transcreated to match each learner\u2019s stated topic interests while preserving linguistic features and question structure."
+    },
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.62,
+      "role": "secondary",
+      "use_case": "GPT-4o is used behind the scenes to generate and transcreate reading passages and questions for personalized assessment/instruction, though students do not interact dialogically with the model."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Literacy",
+      "confidence": 0.93,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "In a controlled comparison with Korean EFL college learners, the group receiving interest-aligned personalized reading materials improved from 73.33\u00b115.12 to 86.67\u00b18.28 on reading comprehension tests, while the group receiving randomly assigned transcreated materials showed a smaller, non-significant change from 76.50\u00b111.11 to 83.00\u00b19.39. The personalized group also showed larger gains on higher-order Analyze questions (+1.33\u00b10.71 out of 5) than the non-personalized group (+0.00\u00b10.45), suggesting better performance on analytical reading comprehension items.",
+        "measure": "Reading comprehension test scores on two 20-item EFL reading assessments derived from RACE-C, including performance on Analyze-level multiple-choice questions",
+        "study_size": "n=20",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "Test 1 personalized group 15.12; Test 2 personalized group 8.28; Test 1 comparison group 11.11; Test 2 comparison group 9.39; Analyze gain SDs 0.71 and 0.45"
+      },
+      "intervention": "Adaptive Learning Platform"
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.89,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Students exposed first to personalized reading materials retained motivation better across the shift to less engaging texts, with IMMS scores changing only from 4.68\u00b10.66 to 4.61\u00b11.04, compared with a larger decline in the non-personalized group from 4.82\u00b10.38 to 4.44\u00b10.85. Confidence increased in the personalized group (4.30\u00b10.66 to 4.57\u00b11.19) but decreased in the comparison group (5.01\u00b10.82 to 4.30\u00b10.66), and qualitative reflections described higher engagement and sustained interest among personalized-condition participants.",
+        "measure": "Instructional Materials Motivation Survey (IMMS) on a 7-point Likert scale, confidence subscale/item, and qualitative written reflections on engagement and motivation",
+        "study_size": "n=20",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "IMMS SDs 0.66, 1.04, 0.38, 0.85; confidence SDs 0.66, 1.19, 0.82, 0.66"
+      },
+      "intervention": "Adaptive Learning Platform"
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.66,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The personalized group completed the follow-up test faster after receiving interest-aligned reading materials, reducing turnaround time from 30.78\u00b17.60 to 27.78\u00b15.30 minutes, whereas the non-personalized group\u2019s time increased from 24.50\u00b111.04 to 32.00\u00b117.77 minutes. This suggests personalized content may improve task efficiency during reading comprehension work.",
+        "measure": "Test turnaround/completion time in minutes",
+        "study_size": "n=20",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "7.60, 5.30, 11.04, 17.77"
+      },
+      "intervention": "Adaptive Learning Platform"
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "self_reported_measures",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "no",
+  "implementation_fidelity": "medium",
+  "study_country": "South Korea",
+  "study_region": "East Asia & Pacific",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

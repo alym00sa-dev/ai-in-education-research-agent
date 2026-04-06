@@ -1,0 +1,378 @@
+{
+  "title": "MathBuddy: A Multimodal System for Affective Math Tutoring",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "https://arxiv.org/abs/2508.19993",
+  "source_db": "scale_stanford",
+  "populations": [
+    "High School (9th-12th)",
+    "Adult (non-academic)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses the problem that most LLM-based tutoring systems for mathematics do not account for students\u2019 emotional states, despite educational psychology research showing that affect influences motivation, engagement, and learning. The authors argue that ignoring emotions can lead to disengagement and weaker learning experiences, especially in mathematics, where frustration and anxiety are common. To address this gap, they develop and evaluate MathBuddy, an emotionally aware AI math tutor that integrates affect recognition into tutoring responses.\n\nMathBuddy is a multimodal tutoring system that detects student emotion from both conversational text and facial expressions captured through webcam input. It maps these signals into three broad affective categories\u2014positive, neutral, and negative\u2014and then adjusts the tutoring strategy accordingly, using pedagogically grounded prompting for the underlying LLM tutor. The system was evaluated in two ways: automatic benchmarking on math tutoring conversations using win rate and pedagogical quality metrics across eight dimensions, and a real-time within-subject user study comparing an Emotion ON condition versus an Emotion OFF condition.\n\nThe empirical context includes 30 participants aged 15 to 55 who completed two short tutoring sessions on geometry and probability, with randomized order of emotion-aware versus non-emotion-aware conditions. Participants were largely drawn from the IT:U Interdisciplinary Transformation University Austria community, making the setting closer to a controlled digital study than a regular classroom deployment. The paper also reports creation of a small annotated dataset of 224 student utterances for text emotion recognition and evaluates facial emotion recognition components on benchmark image datasets.\n\nThe main conclusions are that incorporating student emotion modeling can improve the pedagogical quality of LLM tutor responses and enhance user experience. On automatic evaluation, the emotion-aware version of the best tutor showed a 23-point gain in win rate and a 3-point gain in overall DAMR score. In the user study, participants generally rated the emotion-aware condition more positively, and facial-expression analyses suggested longer positive emotional states under Emotion ON. However, the authors also note that emotion aggregation remains imperfect, especially for neutral states, and that additional modalities and more nuanced emotion modeling are needed in future work.",
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Austria",
+  "study_region": "Europe",
+  "identified_tools": [
+    {
+      "name": "MathBuddy",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "personalization_adaptation"
+      ],
+      "description": "An emotionally aware multimodal LLM-powered math tutoring system that detects student affect from conversational text and facial expressions, aggregates it into positive/neutral/negative states, and adapts tutoring strategy accordingly.",
+      "use_case": "Studied as a math tutor that uses text- and webcam-based emotion recognition to adapt pedagogical responses, with automatic benchmark evaluation and a within-subject user study comparing emotion-aware vs non-emotion-aware conditions.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "On the MathTutorBench/MathDial-Bridge hard benchmark, the emotion-aware LearnLM-based MathBuddy variant outperformed the non-emotion-aware baseline in automatic pedagogical evaluation. The paper reports a 23-point gain in win rate (0.59 to 0.82) and a 3-point gain in overall DAMR score (0.85 to 0.88) for LearnLM+, with improvements in six of eight pedagogical dimensions.",
+          "measure": "Win Rate and overall Desired Annotation Match Rate (DAMR) across eight pedagogical dimensions on 327 human-annotated math tutoring conversations",
+          "effect_size": "Win rate +0.23; Overall DAMR +0.03",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=327 conversations"
+        },
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In an ablation on Qwen2.5-7B-Socratic-LM, adding emotion features alone reduced performance, but adding emotion features grounded in educational theory improved results above baseline. Reported win rates were 0.28 for QSLM, 0.21 for QSLM+emotion, and 0.37 for QSLM+emotion+ET under the simple prompt; under the complex prompt they were 0.33, 0.12, and 0.35 respectively.",
+          "measure": "Win Rate in ablation study comparing baseline, emotion-only, and emotion+education-theory prompting",
+          "effect_size": "Simple prompt: +0.09 vs baseline for emotion+ET; Complex prompt: +0.02 vs baseline for emotion+ET",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In a within-subject user study, participants reported generally higher average satisfaction scores on a 15-item post-interaction questionnaire when MathBuddy used emotion-aware adaptation (Emotion ON) than when emotions were not used to guide responses (Emotion OFF). The paper interprets this as a more positive perceived learning experience under the emotion-aware condition.",
+          "measure": "15-item Likert-scale post-interaction questionnaire on engagement, perceived support, empathy, coherence, and related learning experience dimensions",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=30 participants"
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Participants showed significantly longer average durations of positive facial expressions in the emotion-aware condition than in the non-adaptive condition. Mean positive-expression duration was 1.14s (SD=0.87) in Emotion ON versus 0.93s (SD=0.87) in Emotion OFF, with a Wilcoxon paired test p=.046; negative and neutral durations were not significantly different.",
+          "measure": "Mean duration of positive, neutral, and negative facial emotion states during tutoring sessions",
+          "effect_size": "Positive emotion duration difference: 1.14s vs 0.93s; p=.046",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=30 participants"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "MathBuddy's real-time multimodal emotion aggregation achieved 60% overall accuracy against participant-reviewed gold annotations. Classwise performance was uneven: Negative precision/recall/F1 = 0.57/0.98/0.72, Neutral = 0.71/0.15/0.25, and Positive = 0.79/0.41/0.54, indicating especially poor recall for neutral states.",
+          "measure": "Accuracy, precision, recall, and F1 of aggregated multimodal emotion detection compared with participant-corrected labels",
+          "effect_size": "Overall accuracy = 60%",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical system paper with automatic benchmark evaluation and a within-subject user study, but it is not a K-12 RCT/QED and relies heavily on automatic pedagogical metrics and user-experience measures. Sample sizes are modest and many learning outcome statistics are descriptive rather than causal achievement effects.",
+  "impact_tier": "green",
+  "impact_tier_rationale": "The paper reports meaningful positive effects on benchmark pedagogical metrics, including a large win-rate improvement (+0.23) and statistically significant gains in positive affect duration. However, direct math learning gains from pre/post tests are not clearly quantified, so overall impact is promising but only modestly evidenced.",
+  "citations": [
+    {
+      "title": "Transformers Unveiled: A Comprehensive Evaluation of Emotion Detection in Text Transcription",
+      "doi": null,
+      "year": 2024,
+      "venue": "2024 Global Conference on Wireless and Optical Technologies (GCWOT)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Llemma: An Open Language Model for Mathematics",
+      "doi": null,
+      "year": 2024,
+      "venue": "The Twelfth International Conference on Learning Representations",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "LLM agents for education: Advances and applications",
+      "doi": null,
+      "year": 2025,
+      "venue": "arXiv preprint",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A review on emotion detection by using deep learning techniques",
+      "doi": null,
+      "year": 2024,
+      "venue": "Artificial Intelligence Review",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Does anxiety explain why math-anxious people underperform in math?",
+      "doi": null,
+      "year": 2023,
+      "venue": "npj Science of Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "FERAC Dataset",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "facial emotion dataset used for model training"
+    },
+    {
+      "title": "Facial Emotion Recognition Dataset",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "facial emotion dataset merged for training"
+    },
+    {
+      "title": "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning",
+      "doi": null,
+      "year": 2025,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "DeepSeek-V3 Technical Report",
+      "doi": null,
+      "year": 2025,
+      "venue": "arXiv preprint",
+      "citation_level": 3,
+      "citation_context": "LLM judge model in evaluation ensemble"
+    },
+    {
+      "title": "Language and discourse are powerful signals of student emotions during tutoring",
+      "doi": null,
+      "year": 2012,
+      "venue": "IEEE Transactions on Learning Technologies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The EU General Data Protection Regulation (GDPR): European regulation that has a global impact",
+      "doi": null,
+      "year": 2017,
+      "venue": "International Journal of Market Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Intelligent tutoring systems",
+      "doi": null,
+      "year": 2012,
+      "venue": "APA handbooks in psychology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Llama 3 Herd of Models",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv preprint",
+      "citation_level": 3,
+      "citation_context": "LLM judge baseline model for evaluation"
+    },
+    {
+      "title": "Analyzing Sentiment in Classical Chinese Poetry",
+      "doi": null,
+      "year": 2015,
+      "venue": "Proceedings of the 9th SIGHUM Workshop on Language Technology for Cultural Heritage, Social Sciences, and Humanities (LaTeCH)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Mixtral of Experts",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv preprint",
+      "citation_level": 3,
+      "citation_context": "LLM judge baseline model for evaluation"
+    },
+    {
+      "title": "Supporting Self-Reflection at Scale with Large Language Models: Insights from Randomized Field Experiments in Classrooms",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the Eleventh ACM Conference on Learning @ Scale",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Reconceptualizing Self-Directed Learning in the Era of Generative AI: An Exploratory Analysis of Language Learning",
+      "doi": null,
+      "year": 2024,
+      "venue": "IEEE Transactions on Learning Technologies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Is it a good move? Mining effective tutoring strategies from human\u2013human tutorial dialogues",
+      "doi": null,
+      "year": 2022,
+      "venue": "Future Generation Computer Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "SocraticLM: Exploring Socratic Personalized Teaching with Large Language Models",
+      "doi": null,
+      "year": 2024,
+      "venue": "Advances in Neural Information Processing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "MathDial: A Dialogue Tutoring Dataset with Rich Pedagogical Properties Grounded in Math Reasoning Problems",
+      "doi": null,
+      "year": 2023,
+      "venue": "Findings of the Association for Computational Linguistics: EMNLP 2023",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "MathTutorBench: A Benchmark for Measuring Open-ended Pedagogical Capabilities of LLM Tutors",
+      "doi": null,
+      "year": 2025,
+      "venue": "Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing",
+      "citation_level": 3,
+      "citation_context": "prompt templates adapted from this benchmark"
+    },
+    {
+      "title": "Enhancing Multimodal Emotion Recognition through Attention Mechanisms in BERT and CNN Architectures",
+      "doi": null,
+      "year": 2024,
+      "venue": "Applied Sciences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Math anxiety in elementary students: Examining the role of timing and task complexity",
+      "doi": null,
+      "year": 2024,
+      "venue": "Journal of School Psychology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Unifying AI Tutor Evaluation: An Evaluation Taxonomy for Pedagogical Ability Assessment of LLM-Powered AI Tutors",
+      "doi": null,
+      "year": 2025,
+      "venue": "Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "LearnLM: Improving gemini for Learning",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "face-api.js: JavaScript API for Face Recognition and Face Detection",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "webcam face detection library in system pipeline"
+    },
+    {
+      "title": "The control-value theory of achievement emotions: Assumptions, corollaries, and implications for educational research and practice",
+      "doi": null,
+      "year": 2006,
+      "venue": "Educational Psychology Review",
+      "citation_level": 2,
+      "citation_context": "achievement-emotion theory framing learner affect"
+    },
+    {
+      "title": "Academic emotions in students\u2019 self-regulated learning and achievement: A program of qualitative and quantitative research",
+      "doi": null,
+      "year": 2002,
+      "venue": "Educational Psychologist",
+      "citation_level": 2,
+      "citation_context": "academic emotions framework motivating emotion-aware tutoring"
+    },
+    {
+      "title": "The circumplex model of affect: An integrative approach to affective neuroscience, cognitive development, and psychopathology",
+      "doi": null,
+      "year": 2005,
+      "venue": "Development and Psychopathology",
+      "citation_level": 2,
+      "citation_context": "conceptual basis for emotion categorization"
+    },
+    {
+      "title": "DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter",
+      "doi": null,
+      "year": 2019,
+      "venue": "Proceedings of Thirty-third Conference on Neural Information Processing Systems (NeurIPS 2019)",
+      "citation_level": 3,
+      "citation_context": "text emotion classifier architecture evaluated"
+    },
+    {
+      "title": "Emotions in mathematics learning: a systematic review and meta-analysis",
+      "doi": null,
+      "year": 2025,
+      "venue": "ZDM\u2013Mathematics Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The influence of academic emotions on learning effects: A systematic review",
+      "doi": null,
+      "year": 2021,
+      "venue": "International Journal of Environmental Research and Public Health",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Understanding self-directed learning in AI-Assisted writing: A mixed methods study of postsecondary learners",
+      "doi": null,
+      "year": 2024,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Emotions in self-regulated learning: A critical literature review and meta-analysis",
+      "doi": null,
+      "year": 2023,
+      "venue": "Frontiers in Psychology",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

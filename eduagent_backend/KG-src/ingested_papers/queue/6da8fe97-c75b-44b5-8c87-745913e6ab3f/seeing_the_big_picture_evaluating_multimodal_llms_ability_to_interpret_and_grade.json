@@ -1,0 +1,73 @@
+{
+  "title": "Seeing the Big Picture: Evaluating Multimodal LLMs\u2019 Ability to Interpret and Grade Handwritten Student Work",
+  "doi": null,
+  "year": 2025,
+  "venue": "not_reported",
+  "url": "http://arxiv.org/abs/2510.05538v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Middle School (6th-8th)",
+    "Elementary (PreK-5th)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper asks whether multimodal large language models (MLLMs) can accurately interpret and grade handwritten student mathematics work, and where their capabilities break down. The authors focus on two related tasks: grading routine handwritten arithmetic with objective answers, and evaluating more complex student-drawn mathematical illustrations that require visual interpretation and pedagogical judgment.\n\nThe study uses two experiments. Experiment A analyzes 288 scanned handwritten arithmetic responses from middle school students in Ghana completing fractions, percentages, and basic algebra. Experiment B analyzes 150 mathematical illustrations drawn by American elementary students, using the DrawEDU dataset. In the first experiment, four frontier MLLMs are asked to identify students\u2019 answers and judge correctness. In the second, the models first grade images directly and then grade the same items again with human-provided descriptions of the visual content to separate visual perception from judgment.\n\nResults show a sharp divide between task types. On routine arithmetic, the best model, Gemini 2.5 Pro, reached near-human performance, with 95% grading accuracy and substantial agreement with human raters. On mathematical illustrations, however, performance was much weaker: direct image-only grading was poor, and even with human descriptions the models plateaued around moderate agreement levels, similar to initial human inter-rater agreement but not sufficient for autonomous deployment. The authors conclude that current MLLMs may be useful for screening routine handwritten arithmetic, but they still lack the visual and contextual tacit knowledge needed for reliable interpretation of student mathematical thinking in more open-ended, ambiguous work.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed empirical evaluation with two experiments and careful human-adjudicated ground truth, but it is not an RCT or QED about student learning outcomes. It is best classified as a methodological/benchmarking study with strong internal procedures but limited causal evidence.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper shows potentially useful operational gains for automating routine math grading, but it does not test effects on student achievement. Its practical impact is therefore indirect and currently constrained by the modest performance on ambiguous mathematical illustrations.",
+  "interventions": [
+    {
+      "intervention": "Automated Feedback System",
+      "confidence": 0.96,
+      "role": "primary",
+      "use_case": "evaluating multimodal LLMs for automated grading and feedback-like assessment of handwritten student mathematics work, including arithmetic worksheets and drawn mathematical responses"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 0.98,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The paper finds near-human performance on routine handwritten arithmetic work from Ghanaian middle school students: the best model (Gemini 2.5 Pro) reached 95% grading accuracy and LWK=0.90 on 288 responses. However, performance dropped sharply on 150 student-drawn mathematical illustrations, where direct image-only grading was only about 61-64% accuracy with kappa as low as 0.15-0.38, improving to 72-75% accuracy and kappa 0.43-0.47 when provided human descriptions. This suggests current MLLMs can handle objective procedural math grading reasonably well but remain weak on more conceptually and visually ambiguous mathematical work.",
+        "measure": "Grading accuracy, Linear Weighted Kappa (LWK)/kappa, precision, recall, F1 on handwritten arithmetic worksheets and mathematical illustration grading",
+        "study_size": "n=288 (Experiment A); n=150 (Experiment B)",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Automated Feedback System"
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.91,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The study suggests a substantial potential productivity gain for educators because MLLMs achieved 95% accuracy on routine handwritten arithmetic grading, implying they could automate a large share of routine scoring work. For more ambiguous illustration-based work, human-in-the-loop support would still be required because direct model performance was only moderate and improved to a ceiling around kappa=0.47 even with human descriptions, indicating limited autonomy for complex grading tasks.",
+        "measure": "Automated grading performance as a proxy for teacher workload reduction",
+        "study_size": "n=288; n=150",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Automated Feedback System"
+    }
+  ],
+  "limitations": [
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Ghana",
+  "study_region": "Sub-Saharan Africa",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

@@ -1,0 +1,92 @@
+{
+  "title": "An Experimental Study of the Effect of AI Course Assistants on Student Grade Outcomes",
+  "doi": "10.55982/openpraxis.17.2.772",
+  "year": 2025,
+  "venue": "Open Praxis",
+  "url": "https://openpraxis.org/articles/10.55982/openpraxis.17.2.772",
+  "source_db": "backfill_v3",
+  "populations": [],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Quasi-Experimental Design (QED)",
+  "extended_summary": "This study examined whether use of an AI course assistant, Spark, was associated with improved student grade outcomes at Los Angeles Pacific University. The central research question asked whether students who used the assistant three or more times earned higher GPAs than students who used it fewer than three times. The study was motivated by growing interest in whether embedded generative AI tools can effectively support learning in online higher education.\n\nThe intervention was Spark, a course-specific generative AI assistant delivered through the Nectir platform and integrated into the university\u2019s LMS. Each Spark was trained with course materials using retrieval-augmented generation and was designed to respond Socratically rather than complete assignments for students. Students were classified as users if they interacted with Spark at least three times in a course. The analysis compared users and non-users using nonparametric tests and propensity score matching to account for differences in age, gender, and ethnicity.\n\nThe population included 2,090 student-course combinations from 1,338 unique undergraduate and graduate students across 99 courses and 225 sections at a fully online, asynchronous university serving many working adults. The context was institution-wide implementation of Spark in online higher education courses, following a smaller pilot. Students and instructors accessed the tool through single sign-on within the LMS, and the institution provided short instructional videos to support use.\n\nAcross analyses, students who used Spark three or more times had significantly higher GPAs than those who did not. Before matching, the treatment group\u2019s mean GPA exceeded the control group\u2019s by 0.226 points; after propensity score matching, the difference was 0.377 points, with statistically significant Wilcoxon and permutation test results. The authors conclude that frequent engagement with AI course assistants may improve academic performance in online asynchronous higher education, while also noting that the quasi-experimental design does not fully establish causality.",
+  "limitations": [
+    "single_site",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "yes",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "Spark",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction"
+      ],
+      "description": "A generative AI course assistant integrated into the Nectir platform that uses retrieval-augmented generation to answer student questions with course-relevant materials.",
+      "use_case": "Deployed across undergraduate and graduate online asynchronous courses at Los Angeles Pacific University as a course-embedded AI assistant accessible via the LMS. Analysis covered 2,090 student-course combinations from 1,338 unique students across 99 courses and 225 sections; students with 3 or more interactions were compared with students with fewer than 3 interactions on course GPA outcomes, including a propensity-score-matched comparison based on age, gender, ethnicity, course, and term.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Before propensity score matching, student-course combinations with Spark use had significantly higher GPA distributions than non-users on a one-sided Mann-Whitney U-test (U=307562.5, p=0.00185). The paper reports a moderate-to-strong effect size of 0.553; descriptive means were 3.28 (SD=1.08) for users versus 3.05 (SD=1.22) for non-users.",
+          "measure": "course GPA",
+          "effect_size": "0.553",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=2,090",
+          "study_count": null
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Before propensity score matching, a permutation test using all data found an observed mean GPA difference of 0.226 points favoring Spark users (p=0.001).",
+          "measure": "course GPA",
+          "effect_size": "0.226 GPA points",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=2,090",
+          "study_count": null
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "After propensity score matching, Spark users had significantly higher GPAs than matched non-users on a Wilcoxon signed-rank test (W=10027.5, p=0.0002583). The reported effect size was r=0.262, based on 229 matched pairs.",
+          "measure": "course GPA",
+          "effect_size": "r = 0.262",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=458",
+          "study_count": null
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In the propensity-score-matched sample, a permutation test for paired mean differences found an observed GPA difference of 0.377 points favoring Spark users (p=0.0005).",
+          "measure": "course GPA",
+          "effect_size": "0.377 GPA points",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=458",
+          "study_count": null
+        }
+      ]
+    }
+  ],
+  "verdict": "",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is a peer-reviewed quasi-experimental study with a large sample, explicit comparison group, and propensity score matching to address confounding. However, participants were not randomly assigned and the authors acknowledge that causation cannot be firmly established, so it fits a green tier rather than blue.",
+  "impact_tier": "blue",
+  "impact_tier_rationale": "The study reports statistically significant positive effects on GPA with effect sizes including rank-biserial correlation of 0.553 before matching and r = 0.262 after matching, both exceeding the 0.20 threshold. This supports a blue impact tier for positive academic impact in this higher education sample.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": "Converted from kg_curator_v4 legacy extraction",
+  "_legacy_source": "/Users/alymoosa/Documents/A-Moosa-Dev/AI-EDU-Dev/eduagent/open_deep_research_v2/scripts/extraction_profiles_v3/an_experimental_study_of_the_effect_of_ai_course_assistants_on_student_grade_out.json"
+}

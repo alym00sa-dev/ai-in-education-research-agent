@@ -1,0 +1,85 @@
+{
+  "title": "MDK12-Bench: A Multi-Discipline Benchmark for Evaluating Reasoning in Multimodal Large Language Models",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2504.05782v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "K-12 (unspecified grade)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper presents MDK12-Bench, a large multimodal benchmark designed to evaluate reasoning in multimodal large language models (MLLMs) on real-world K-12 examination content. The authors argue that existing multimodal reasoning benchmarks are too narrow in scope, too small, and too weakly structured to assess high-order reasoning across school subjects and grade levels.\n\nThe benchmark spans six K-12 disciplines: mathematics, physics, chemistry, biology, geography, and information science. It includes 141,320 questions, both text-only and multimodal, drawn from exams covering grades 1 through 12 and exam years from 2016 to 2025. The dataset is annotated with difficulty levels, detailed answer explanations, and fine-grained knowledge-point labels organized in a six-level knowledge tree. The paper also introduces a dynamic evaluation framework that bootstraps text and images through paraphrasing, word substitution, question-type permutation, spatial and visual transformations, and style transfer to reduce contamination from training data overlap.\n\nThe work is not a study of human learners or classroom implementation; rather, it is a benchmark and evaluation framework for model assessment. Experiments on several state-of-the-art MLLMs show that performance varies substantially by subject and difficulty, and that models are generally more vulnerable under dynamically perturbed test items. The main conclusion is that MDK12-Bench provides a more systematic and contamination-resistant platform for measuring multimodal reasoning in K-12 academic domains, while also exposing current models\u2019 weaknesses in robust contextual reasoning.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a benchmark/assessment paper rather than a causal education intervention study. It is peer-reviewed-style technical work with a clear methodology, but it does not use an experimental or quasi-experimental design to estimate educational impacts on students.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper has clear relevance for evaluating AI systems used in K-12 science and math, but it reports model benchmark accuracies rather than student learning gains. Any educational impact is indirect and currently unclear.",
+  "interventions": [
+    {
+      "intervention": "Other",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "A multi-discipline K-12 benchmark for evaluating multimodal large language models' reasoning on exam-style questions, including dynamic bootstrapped evaluation to test robustness against text and image perturbations."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Scientific Reasoning",
+      "confidence": 0.97,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The paper evaluates multimodal reasoning performance on 141,320 K-12 exam questions across science-related disciplines (physics, chemistry, biology) and finds substantial variability by model, subject, and difficulty. For example, Gemini2-thinking achieved 59.4% overall on MDK12-mini, while open-source models such as InternVL2.5-8B scored 37.7%, indicating strong but uneven scientific reasoning performance rather than a clear intervention effect.",
+        "measure": "Accuracy on K-12 multimodal reasoning questions across physics, chemistry, and biology; also breakdown by knowledge points and difficulty levels",
+        "study_size": "n=141,320 (full benchmark); n=14,595 (MDK12-mini subsets)",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.96,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The benchmark is explicitly designed to test higher-order multimodal reasoning, and dynamic evaluation shows model robustness is highly sensitive to textual and visual perturbations. Under bootstrapped questions, accuracy dropped substantially for several models (e.g., Gemini2-thinking from 58.1% to 41.6%, \u0394=-16.5), suggesting limited generalization and context robustness rather than stable reasoning skill.",
+        "measure": "Accuracy under original versus dynamically bootstrapped questions; robustness to paraphrase, synonym substitution, and image transformations",
+        "study_size": "n=695 easy + 818 medium + 1,124 hard multimodal instances for dynamic evaluation; 141,320 total benchmark items",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 0.91,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "Mathematics is one of the six benchmark disciplines, and models showed large variation by difficulty and knowledge point. Gemini2-thinking reached 60.9% on math in MDK12-mini, while InternVL2.5-8B scored 33.2%, indicating that current MLLMs can solve some K-12 math reasoning problems but remain inconsistent overall.",
+        "measure": "Accuracy on K-12 mathematics exam questions, including open-ended and multimodal items",
+        "study_size": "n=141,320 (full benchmark); n=14,595 (MDK12-mini)",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

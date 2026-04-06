@@ -1,0 +1,135 @@
+{
+  "title": "Large Language Models for Education: A Survey and Outlook",
+  "doi": null,
+  "year": 2024,
+  "venue": "arXiv",
+  "url": "https://doi.org/10.48550/arxiv.2403.18105",
+  "source_db": "openalex_search",
+  "populations": [],
+  "user_types": [
+    "Student",
+    "Educator",
+    "Administrator"
+  ],
+  "study_design": "Meta-Analysis / Systematic Review",
+  "extended_summary": "This paper surveys the use of large language models (LLMs) in education and organizes the literature into a technology-centric taxonomy. Rather than evaluating a single intervention, it reviews prior work across student assistance, teacher assistance, adaptive learning, and commercial education tools, and also summarizes commonly used datasets and benchmarks for these tasks.\n\nThe paper discusses LLM-based approaches for question solving, error correction, confusion-guided hints, question generation, automatic grading, material creation, knowledge tracing, and content personalization. It also catalogs commercial tools such as chatbots, lesson-planning aids, quiz generators, and collaboration tools, with emphasis on how these systems are used by students, teachers, and educational platforms in both academic and applied settings.\n\nA major contribution is its synthesis of risks and challenges, including fairness, reliability and safety, transparency and accountability, privacy and security, and overreliance. The authors highlight concerns such as hallucinations, misinformation, biased outputs, cheating, and reduced student critical thinking, and they argue that future educational LLMs should be more pedagogically aligned, privacy-preserving, and robust through techniques such as retrieval augmentation, multi-agent systems, multimodal support, and specialized models.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a narrative survey and outlook paper, not an empirical study. It does not present primary data, a systematic review protocol with reproducible selection criteria, or causal identification, so it does not meet credibility criteria for higher evidence tiers.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper has broad conceptual relevance for education policy and AI safety, especially around hallucinations, misinformation, and overreliance, but it reports no original effect sizes or direct student outcomes. Its impact is therefore important but unclear in magnitude for K-12 practice.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "survey of large language models used as student-facing chatbots, question solvers, confusion helpers, and conversational educational assistants for K-12 and broader education contexts"
+    },
+    {
+      "intervention": "Automated Feedback System",
+      "confidence": 0.9,
+      "role": "primary",
+      "use_case": "LLM-based error correction and feedback on student writing, grammar, code, and open-ended responses; includes automated grading and explanatory feedback generation"
+    },
+    {
+      "intervention": "AI Writing / Language Tool",
+      "confidence": 0.8,
+      "role": "primary",
+      "use_case": "LLM-powered writing and language support tools such as grammar correction, explanation generation, and writing assistance for educational tasks"
+    },
+    {
+      "intervention": "Adaptive Learning Platform",
+      "confidence": 0.7,
+      "role": "secondary",
+      "use_case": "LLM-supported content personalization and knowledge tracing, including dynamic learning path generation and personalized practice content"
+    },
+    {
+      "intervention": "Other",
+      "confidence": 0.6,
+      "role": "secondary",
+      "use_case": "survey coverage of commercial LLM education tools and chatbots that support lesson planning, quiz generation, content creation, and collaboration"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Literacy",
+      "confidence": 0.8,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The survey reports that LLMs can generate logically consistent answers and help with reading/writing tasks, but also notes weaknesses in correctness, missing information, and occasional inappropriateness. For example, it cites studies where synthetic explanations were sometimes too general or less effective than teacher-written explanations, and where LLM-generated writing support raised plagiarism concerns.",
+        "measure": "Quality/effectiveness of generated explanations, grammar correction, writing support, and essay assistance",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "AI Writing / Language Tool"
+    },
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.75,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "Across education tasks beyond literacy and math, the survey says LLMs show strong performance in question answering, question generation, automatic grading, and material creation, but these applications remain constrained by hallucinations, bias, and the need for human-in-the-loop validation. The paper is a review rather than a single empirical comparison, so it synthesizes findings from many cited studies rather than reporting one pooled effect.",
+        "measure": "Reported performance on educational question answering, question generation, grading, and material creation tasks",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.85,
+      "finding": {
+        "direction": "Negative",
+        "finding_summary": "The survey explicitly warns that overreliance on LLMs may harm students' critical thinking, academic writing, and creativity. It frames this as a major educational risk, but does not provide a pooled quantitative estimate; the conclusion is based on cited concerns and early studies about dependency and reduced independent thought.",
+        "measure": "Reported risk to critical thinking, creativity, and independent reasoning from overreliance on LLMs",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.9,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The survey argues that LLMs can reduce teacher workload by supporting automatic grading, content creation, question generation, and lesson planning. These are described as productivity gains rather than a single measured effect, and the paper does not report an aggregate effect size.",
+        "measure": "Teacher workload reduction / productivity in grading, lesson planning, and content generation",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Automated Feedback System"
+    },
+    {
+      "outcome": "Systemic / Institutional Impact",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "A major focus of the survey is the risk landscape for LLMs in education, including fairness, privacy, transparency, reliability/safety, misinformation, and overreliance. The paper synthesizes concerns that LLMs can produce hallucinations and misleading outputs, create bias, and raise academic integrity and privacy issues, while also discussing mitigation strategies such as retrieval augmentation and guardrails.",
+        "measure": "Surveyed risks and challenges in fairness, reliability, safety, privacy, transparency, accountability, and academic integrity",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    }
+  ],
+  "limitations": [
+    "not_reported"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

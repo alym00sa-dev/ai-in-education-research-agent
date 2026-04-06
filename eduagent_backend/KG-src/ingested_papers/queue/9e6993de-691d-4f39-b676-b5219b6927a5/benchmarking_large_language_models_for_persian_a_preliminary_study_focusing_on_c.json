@@ -1,0 +1,73 @@
+{
+  "title": "Benchmarking Large Language Models for Persian: A Preliminary Study Focusing on ChatGPT",
+  "doi": null,
+  "year": 2024,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2404.02403v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Elementary (PreK-5th)",
+    "Middle School (6th-8th)",
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper investigates how well large language models perform on a broad set of Persian-language NLP tasks, motivated by the concern that models such as ChatGPT have been studied much more extensively in English than in lower-resource languages like Persian. The authors ask how GPT-3.5, GPT-4, and OpenChat-3.5 perform on Persian tasks under zero-shot and few-shot prompting, how prompt language affects results, and how these models compare with task-specific fine-tuned state-of-the-art systems.\n\nThe study benchmarks the models across classic NLP tasks, reasoning tasks, and knowledge tasks. Tasks include sentiment analysis, emotion recognition, named entity recognition, machine translation, reading comprehension, textual entailment, multiple-choice math and logic QA, elementary school math questions, mathematical problems from Iranian entrance exams for 7th and 10th grades, and knowledge-based multiple-choice questions. The intervention is not an educational implementation with learners in classrooms; rather, it is an evaluation of LLM performance on Persian benchmarks using different prompt languages (Persian vs. English) and prompting setups (zero-, one-, and three-shot). The authors also test whether translating Persian samples into English improves performance.\n\nThe context is primarily Persian-language benchmarking, with some educationally themed datasets drawn from Iranian elementary school math exams and entrance exams for middle- and high-school levels. The paper does not study human participants directly; instead, student-related populations appear only indirectly through exam-question datasets. Geographic context is tied to Iran and Persian-language use, with authors based in Iran and Canada and some datasets sourced from Iranian exams.\n\nThe main conclusions are that GPT-4 is generally the strongest of the evaluated LLMs on Persian tasks, followed by GPT-3.5 and then OpenChat-3.5. However, task-specific fine-tuned models still outperform LLMs on many classic tasks such as named entity recognition, emotion recognition, reading comprehension, and textual entailment. The authors also find that English prompts often outperform Persian prompts, and translating Persian inputs into English can improve GPT-3.5 performance. Overall, the paper argues that Persian LLM performance is promising but uneven, with strong results in some reasoning and knowledge tasks and weaker performance on several task-specific language understanding benchmarks.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a model benchmarking paper, not a K-12 intervention study. It does not evaluate effects on students, classrooms, or literacy outcomes, and therefore does not meet the direct-education evidence criteria for stronger empirical tiers.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper shows mixed benchmark performance on literacy-related tasks and stronger benchmark performance on math reasoning, but it provides no direct evidence of impact on K-12 learners. Any educational impact is therefore unclear and indirect.",
+  "interventions": [
+    {
+      "intervention": "Other",
+      "confidence": 0.95,
+      "role": "primary",
+      "use_case": "Benchmarking general-purpose large language models (GPT-3.5, GPT-4, OpenChat-3.5) on Persian NLP tasks, including reading comprehension and school-level question answering, as an evaluation study rather than an educational intervention delivered to K-12 learners."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Literacy",
+      "confidence": 0.72,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The paper reports benchmark performance on Persian reading comprehension rather than student learning outcomes. On a 200-sample subset of the ParsiNLU reading-comprehension test, GPT-4 reached F1=0.687 with English prompts and 3-shot prompting, slightly below the task-specific SOTA model at F1=0.691; GPT-3.5 peaked at F1=0.644 and OpenChat-3.5 at F1=0.613. The authors note zero-shot models often produced overly long answers, and one-/three-shot prompting improved extractive answer matching.",
+        "measure": "Model performance on benchmark reading comprehension task (F1 score on answer-span matching)",
+        "study_size": "n=200 benchmark items",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Other"
+    },
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 0.83,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The study found strong LLM performance on Persian math and logic benchmarks, though these are model benchmark results rather than student outcomes. GPT-4 achieved accuracy=0.725 on ParsiNLU math-and-logic multiple-choice QA (outperforming the SOTA model at 0.395), accuracy=0.740 on a 50-item elementary-school math set, and Math metric=0.564 on a 179-item mathematical-problems set; GPT-3.5 and OpenChat-3.5 performed lower.",
+        "measure": "Benchmark accuracy / Math metric on math-and-logic QA, elementary school math questions, and mathematical problem solving",
+        "study_size": "n=200 benchmark items for math & logic subset; n=50 elementary school questions; n=179 mathematical problems",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Other"
+    }
+  ],
+  "limitations": [
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Iran",
+  "study_region": "Middle East & North Africa",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

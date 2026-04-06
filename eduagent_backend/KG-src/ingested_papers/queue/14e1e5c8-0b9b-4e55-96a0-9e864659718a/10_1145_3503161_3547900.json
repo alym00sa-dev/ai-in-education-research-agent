@@ -1,0 +1,72 @@
+{
+  "title": "The AI Teacher Test: Measuring the Pedagogical Ability of Blender and GPT-3 in Educational Dialogues",
+  "doi": "10.1145/3503161.3547900",
+  "year": 2022,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2205.07540v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Adult (non-academic)"
+  ],
+  "user_types": [
+    "Educator"
+  ],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper asks how to evaluate whether generative conversational models are capable of functioning as AI teachers in educational dialogues. The authors argue that existing automatic text-generation metrics are not sufficient because they do not assess pedagogical qualities such as sounding like a teacher, understanding the student, and helping the student improve. They therefore propose an AI Teacher Test based on comparative judgments between human teachers and AI-generated responses.\n\nTo build the test, the authors ran Blender and GPT-3 in parallel with human teachers on real student-teacher dialogue data from language-learning and mathematics settings. They generated candidate responses to student utterances, then had human raters compare pairs of replies in context across three pedagogical dimensions: likely said by a teacher, understanding the student, and helping the student. A Bayesian Bradley-Terry model was used to estimate latent ability scores and rank responses.\n\nThe evaluation used two dialogue corpora, but the direct human rating study focused on the Teacher-Student Chatroom Corpus in second-language learning, with crowdworkers from the UK and US serving as evaluators rather than the actual students or teachers in the dataset. The main finding is that Blender and GPT-3 can show reasonable conversational uptake, but both remain substantially behind human teachers on pedagogical ability, especially helpfulness. Blender performs better than GPT-3 overall, yet neither model matches human performance. The authors conclude that their method is a first step toward more meaningful evaluation of AI teachers and could eventually support autonomous model development.",
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "language_speech"
+      ],
+      "description": "OpenAI generative language model / chatbot family used for open-domain dialogue and text generation.",
+      "use_case": "Used as GPT-3 (Ada and Davinci completions) to generate AI teacher responses to student utterances in educational dialogues for comparison against human teacher replies.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0007 Other",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "In comparative judgments of teacher responses in educational dialogues, GPT-3 was rated significantly worse than human teachers on all measured pedagogical abilities. Relative to the actual teacher, mean ability differences were \u0006= -0.67 for speaking like a teacher, \u0006= -0.67 for understanding the student, and \u0006= -0.93 for helping the student (all p < .001).",
+          "measure": "Pairwise comparative judgments on three pedagogical dimensions: likely said by a teacher, understanding the student, helping the student",
+          "effect_size": "\u0006 = -0.67; \u0006 = -0.67; \u0006 = -0.93",
+          "confidence_interval": "[95CI -1.00, -0.33]; [95CI -1.02, -0.32]; [95CI -1.28, -0.58]",
+          "sample_size": "n=113 evaluators; 52 dialogue items; 4,782 comparisons"
+        },
+        {
+          "outcome_category": "Academic \u0007 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "GPT-3's responses were positively evaluated in only 33-35% of dialogue contexts across the three abilities, and 2-12% of estimates had credible intervals excluding zero. The paper reports that some GPT-3 responses were still preferred over human teacher responses in specific cases, but overall performance was substantially lower than human teachers.",
+          "measure": "Per-item posterior ability estimates and proportion of responses with positive alpha",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=52 items"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a primary comparative study using human judgments and Bayesian modeling, but it is not an RCT/QED of teacher outcomes. The evidence is observational and evaluative, so it fits a lower-confidence tier.",
+  "impact_tier": "blue",
+  "impact_tier_rationale": "The reported negative differences for GPT-3 vs. human teachers are large in magnitude, especially for helping the student (\u0006 = -0.93). That indicates substantial underperformance on pedagogical ability, even though the direction is adverse.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

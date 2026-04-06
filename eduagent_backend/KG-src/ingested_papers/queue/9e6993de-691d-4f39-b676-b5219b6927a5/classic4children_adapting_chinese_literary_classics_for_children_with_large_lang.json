@@ -1,0 +1,68 @@
+{
+  "title": "Classic4Children: Adapting Chinese Literary Classics for Children with Large Language Model",
+  "doi": null,
+  "year": 2025,
+  "venue": null,
+  "url": "http://arxiv.org/abs/2502.01090v1",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses the problem of making Chinese literary classics more accessible to children. The authors argue that canonical works such as the Four Great Classical Novels are culturally important but often too difficult for children because of classical Chinese, complex plots, and challenging readability. In the context of the user\u2019s research topic, this is not a study of generative AI for foundational reading instruction or reading outcomes in K-12 classrooms; instead, it is an NLP paper on automatic text adaptation and evaluation.\n\nThe paper proposes InstructChild, an LLM-based method for child-friendly literary adaptation. The approach fine-tunes Qwen2-7B-Instruct with instructions enriched by character personality information and narrative-structure triplets extracted using GPT-4o. It then adds a custom Chinese readability reward metric (Red-CN), uses direct preference optimization for refinement, and applies a lookahead decoding strategy during inference to improve readability. The authors also construct the Classic4Children dataset, consisting of aligned original and child-adapted fragments from the Four Great Classical Novels, and evaluate system outputs using automatic metrics and human ratings.\n\nNo human learner intervention is conducted in schools, classrooms, tutoring settings, or other educational delivery contexts. The \u201cchildren\u201d in the paper are a target audience for adapted texts, not enrolled participants receiving and being assessed on an instructional treatment. The empirical work is model evaluation on a dataset, plus human judgments of generated text quality by adult volunteers with Chinese educational backgrounds.\n\nThe main conclusion is that InstructChild outperforms baseline LLMs and text style transfer methods on their adaptation benchmarks, producing more readable and child-friendly rewritten literary text. However, the paper does not provide direct causal evidence about generative AI improving foundational reading outcomes such as phonemic awareness, phonics, decoding, fluency, vocabulary, or comprehension in K-12 students. It is therefore adjacent methodological evidence about text adaptation, not classroom effectiveness evidence.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is an NLP systems paper with benchmark-style evaluation on a curated dataset, not a randomized controlled trial or quasi-experimental study in K-12 classrooms or school-supported settings. It provides no direct causal evidence on student foundational reading outcomes and appears to be an arXiv preprint rather than established education-impact evidence.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper shows promising task-level improvements in generating child-friendly text, which is adjacent to literacy support, but it does not measure student learning impacts. Any educational impact on K-12 foundational reading is therefore unclear and should not be inferred causally from these results.",
+  "interventions": [
+    {
+      "intervention": "AI Writing / Language Tool",
+      "confidence": 0.92,
+      "role": "primary",
+      "use_case": "LLM-based adaptation of Chinese literary classics into child-friendly reading passages, using instruction tuning, readability optimization, and decoding strategies to simplify and rewrite text for children."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Literacy",
+      "confidence": 0.84,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper reports that its InstructChild system outperformed baseline LLMs and style-transfer models on automatic and human evaluations for child-friendly literary adaptation. On the Classic4Children test set, InstructChild achieved BLEU-2=13.09, BERTScore F1=70.21, and Red-CN readability=73.12, compared with GPT-4o at BLEU-2=10.42, BERTScore F1=68.04, and Red-CN=68.19; human evaluation on 200 samples also favored InstructChild for character clarity (1.83 vs. 1.52 for GPT-4o) and narrative efficiency (1.78 vs. 0.95 for GPT-4o). However, these are NLP benchmark and human-rating results on rewritten texts, not causal estimates of student reading gains in K-12 settings.",
+        "measure": "Automatic text-generation metrics (BLEU-1/2, BERTScore precision/recall/F1, Red-CN readability) and human ratings of fluency, content preservation, character clarity, and narrative efficiency",
+        "study_size": "dataset test n=300; human evaluation subset n=200 samples",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "Reported for human ratings only: GPT-4o Flu 0.25, CP 0.22, CC 0.18, NE 0.12; StoryTrans Flu 0.23, CP 0.21, CC 0.15, NE 0.17; GLM4-9B Flu 0.28, CP 0.16, CC 0.19, NE 0.09; InstructChild Flu 0.19, CP 0.17, CC 0.21, NE 0.14"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.63,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper frames the LLM system as a way to automate the otherwise time-consuming and labor-intensive manual adaptation of Chinese literary classics for children. Results show improved automated adaptation quality relative to baselines, suggesting potential productivity gains for content adaptation workflows, but no direct measurement of teacher time, school implementation efficiency, or classroom productivity is provided.",
+        "measure": "System performance on automated adaptation benchmarks as a proxy for content-production efficiency",
+        "study_size": "dataset test n=300",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "no_control_group",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

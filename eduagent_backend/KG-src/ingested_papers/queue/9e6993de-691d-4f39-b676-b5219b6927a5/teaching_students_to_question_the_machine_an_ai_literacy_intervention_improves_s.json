@@ -1,0 +1,90 @@
+{
+  "title": "Teaching Students to Question the Machine: An AI Literacy Intervention Improves Students Regulation of LLM Use in a Science Task",
+  "doi": null,
+  "year": 2026,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2604.01955v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Middle School (6th-8th)",
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Quasi-Experimental Design (QED)",
+  "extended_summary": "This paper examines whether a brief AI literacy intervention can improve how middle-school students regulate their use of large language models during school-like problem solving. The authors focus on a key concern in K\u201312 generative AI use: students may over-trust fluent but incorrect AI outputs, fail to question weak prompts or answers, and delegate too much reasoning to the system. The study asks whether explicit instruction about how LLMs work, how they fail, and how to interact with them critically can improve both students\u2019 interaction strategies and their task performance.\n\nThe intervention was a two-hour workshop delivered two days before the test session. It combined a conceptual component about LLM mechanisms and limitations (such as hallucinations, bias, and sycophancy) with a procedural component teaching transferable heuristics for prompting, evaluating answers, asking follow-up questions, and checking plausibility. Afterward, students completed six science investigation tasks with access to a generative AI chatbot. The study compared an intervention group with a control group that completed the same science task session without prior workshop training. Outcomes included final answer quality, prompt acceptance or rejection, follow-up questioning, and correctness judgments about AI responses, along with self-report questionnaires on GenAI attitudes and metacognition.\n\nParticipants were 116 students from grades 8\u20139 in one French middle school, tested during regular class hours. The final sample included 76 students in the intervention group and 40 in the control group. The context was LLM-supported science inquiry rather than literacy instruction; students used chatbots to help solve science exercises and then wrote final answers in their own words. The study therefore provides direct K\u201312 evidence about AI literacy training and GenAI-supported academic work, but it is adjacent rather than direct evidence for literacy outcomes.\n\nThe main conclusion is that a short, classroom-feasible AI literacy workshop modestly but significantly improved students\u2019 final task performance and several behavioral indicators of better regulation. Trained students were less likely to accept underspecified prompts, more likely to ask follow-up questions when needed, and more accurate in judging response correctness. Self-reported GenAI knowledge, attitudes, and metacognitive scores did not predict performance. The authors argue that effective educational use of generative AI depends less on students\u2019 self-perceived competence and more on explicit training in how to regulate interactions with the system.",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is direct K-12 controlled classroom evidence with a comparison group and behavioral/performance outcomes, which is stronger than correlational work. However, it is a single-school preprint with non-randomized group assignment, attrition/exclusions, and some measurement concerns, so it falls short of blue-tier causal evidence.",
+  "impact_tier": "green",
+  "impact_tier_rationale": "The main academic effect is statistically significant but modest (r=0.19) in a general middle-school population, with clearer gains on process/regulation measures than on large performance outcomes. This supports a modest positive impact rather than a medium/large one.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.95,
+      "role": "primary",
+      "use_case": "Middle-school students used a generative AI chatbot during six science inquiry/problem-solving tasks, and the study tested whether a brief AI literacy workshop improved how students regulate prompting, evaluate chatbot responses, ask follow-up questions, and produce final answers."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Scientific Reasoning",
+      "confidence": 0.92,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "In a controlled classroom study with grades 8\u20139 students (N=116), the intervention group that received a 2-hour AI literacy workshop scored higher on final science-task answers than controls when both used an LLM during six inquiry tasks. Mean performance was 11.38/20 (SD=3.87, n=76) versus 10.29/20 (SD=3.04, n=40), with Mann\u2013Whitney U=1871, p=.040, r=.19, indicating a modest positive effect on LLM-supported science problem solving.",
+        "measure": "Final written-answer validity/performance on six science inquiry tasks, scored on a 0\u201320 scale from a 0\u20132 rubric per item",
+        "study_size": "n=116",
+        "effect_size": "r=0.19",
+        "confidence_interval": "not_reported",
+        "std_deviation": "Intervention SD=3.87; Control SD=3.04"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The AI literacy workshop improved behavioral regulation of LLM use: trained students accepted fewer suggested prompts overall, were less likely than controls to accept underspecified prompts (51.5% vs 66.7%, p=.044), made more accurate correctness judgments, and were more likely to ask follow-up questions after accepted underspecified prompts (59.2% vs 27.9%, p<.001). Across participants, prompt discrimination sensitivity and conservative response bias predicted better performance (sensitivity \u03b2=1.76, 95% CI [1.06, 2.46], p<.001; bias \u03b2=1.65, 95% CI [0.25, 3.05], p=.021), suggesting the workshop strengthened regulation/monitoring-to-control processes in LLM-supported inquiry.",
+        "measure": "Behavioral indicators of interaction regulation during LLM-supported tasks: prompt acceptance/rejection, follow-up questioning, correctness judgments, signal-detection indices (d\u2032, \u03b2)",
+        "study_size": "n=116",
+        "effect_size": "\u03b2=1.76 for sensitivity; \u03b2=1.65 for response bias",
+        "confidence_interval": "95% CI [1.06, 2.46] for sensitivity; 95% CI [0.25, 3.05] for response bias",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.68,
+      "finding": {
+        "direction": "No Effect",
+        "finding_summary": "The workshop did not produce significant pre\u2013post changes in GenAI self-report dimensions within the intervention group, and baseline self-report dimensions did not differ significantly between intervention and control groups after correction. Repeated-measures MANOVA found no overall intervention effect on GenAI self-reports (Pillai's trace=.116, F(6,62)=1.36, p=.247), with only small non-robust trends for Attitude and Fairness & ethics.",
+        "measure": "GenAI self-report questionnaire dimensions including attitude, trust, social influence, fairness/ethics, usefulness, and effort/ease of use",
+        "study_size": "n=112 for questionnaire analyses; n=72 intervention students for pre-post comparison",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "short_duration",
+    "single_site",
+    "self_reported_measures",
+    "non_representative_population",
+    "high_attrition",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "classroom",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "France",
+  "study_region": "Europe",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

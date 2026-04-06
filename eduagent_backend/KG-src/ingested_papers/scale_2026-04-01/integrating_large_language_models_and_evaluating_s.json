@@ -1,0 +1,578 @@
+{
+  "title": "Integrating Large Language Models and Evaluating Student Outcomes in an Introductory Computer Science Course",
+  "doi": null,
+  "year": 2025,
+  "venue": null,
+  "url": "https://arxiv.org/abs/2510.18806",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper examines how a fully redesigned introductory computer science (CS1) course can integrate large language models (LLMs) while preserving student learning outcomes. The authors argue that coding-capable generative AI tools challenge traditional CS1 goals and assessments, creating a need to reconsider what students should learn and how instructors should evaluate them. The study addresses three questions: how student performance in an LLM-centered course compares with historical pre-GenAI benchmarks, how students perceive learning with GitHub Copilot, and whether outcomes differ across demographic groups.\n\nThe intervention was a new CS1 course at a large research-intensive university that explicitly incorporated LLM use, primarily through GitHub Copilot in Visual Studio Code. The course was built around design principles emphasizing use of LLMs, preparation for industry, equity, open-ended projects, and practical computing skills. The curriculum de-emphasized writing code entirely from scratch and emphasized prompting, code reading, debugging, testing, problem decomposition, and large open-ended projects. Quantitative data included exam performance, benchmark questions drawn from a prior international CS1 study, project grades, and regressions by demographic subgroup. Qualitative data came from mid-quarter and end-of-quarter student surveys, including inductive and deductive coding of open-ended responses about working with Copilot.\n\nThe population consisted of undergraduate students enrolled in one introductory programming course in the United States. The course ran over a 10-week quarter and included lectures, peer instruction, homework, labs, projects, and proctored exams; some assessments allowed Copilot while most exams did not. Survey participation was partial, with 400 mid-quarter respondents, 315 end-of-quarter respondents, and 207 students included in demographic regression analyses after filtering for complete data.\n\nThe main findings were that students in the LLM-integrated course performed similarly to historical CS1 benchmarks on programming fundamentals, with somewhat better performance on an \"Explain in Plain English\" code explanation item. Students generally viewed Copilot as helpful for productivity, debugging, and learning, especially for novices, but many also reported concerns about overreliance and reduced confidence coding independently. Demographic analyses showed persistent gaps on exams, particularly for BLNPI students and advantages for students with prior experience, but these gaps did not appear on open-ended projects. The authors conclude that integrating LLMs into CS1 can support learning without obvious declines in core outcomes, and that large projects may be especially valuable in this context, though tensions remain around assessment design, equity, and students' dependence on AI tools.",
+  "limitations": [
+    "single_site",
+    "no_control_group",
+    "self_reported_measures",
+    "non_representative_population",
+    "high_attrition",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "10",
+  "setting": "classroom",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "GitHub Copilot",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "language_speech"
+      ],
+      "description": "An AI code assistant integrated into development environments such as Visual Studio Code that generates and explains code from natural-language prompts and code context.",
+      "use_case": "Used as the primary LLM-based programming assistant in a redesigned introductory computer science (CS1) course. Students used Copilot in VS Code for coding, debugging, asking code-related questions, and completing some homework, projects, and one exam component.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Students in the GenAI-centered CS1 course performed similarly to historical international CS1 benchmarks on final-exam programming fundamentals questions drawn from Simon et al. [48]. Across benchmark items there were 535 responses for all questions except Q7 (n=250), and the paper reports one notable advantage: students in CS1-LLM scored 11% higher than the international average on the short-answer 'Explain in Plain English' item (Q7), while other question types were largely similar.",
+          "measure": "Final-exam performance on Simon et al. [48] benchmark questions assessing code tracing and code explanation",
+          "effect_size": "11% higher than benchmark on Q7; otherwise descriptive similarity",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=535 overall benchmark responses; n=250 for Q7"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "On demographic analyses of average summative exam grade, BLNPI students had significantly lower exam scores (\u03b2=-8.4021, p<0.001, 95% CI [-12.044, -4.760]) and students with prior programming experience had slightly higher exam scores (\u03b2=3.1900, p=0.049, 95% CI [0.014, 6.366]). Other demographic indicators were not statistically significant in the exam model (N=207, adjusted R\u00b2=0.216, F=9.107).",
+          "measure": "Average summative exam grade analyzed via OLS regression by demographic group",
+          "effect_size": "BLNPI \u03b2=-8.4021; Prior Experience \u03b2=3.1900",
+          "confidence_interval": "BLNPI 95% CI [-12.044, -4.760]; Prior Experience 95% CI [0.014, 6.366]",
+          "sample_size": "n=207"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "For average project grades, demographics did not significantly predict performance in the Copilot-supported open-ended projects. The project regression showed adjusted R\u00b2=-0.011 and F=0.670 with N=207, which the authors interpret as suggesting projects may mitigate historical equity gaps, possibly aided by scaffolding and Copilot access.",
+          "measure": "Average open-ended project grade analyzed via OLS regression by demographic group",
+          "effect_size": "Adj. R\u00b2=-0.011",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=207"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Students predominantly reported that Copilot was helpful for completing programming tasks and supporting learning. In qualitative surveys, 69.2% of mid-quarter respondents and 42.2% of end-quarter respondents mentioned that Copilot was helpful (Nmid=272, Nend=133), and 11.5% of mid-quarter plus 8.3% of end-quarter respondents reported it was effective for learning/understanding code or course material (Nmid=45, Nend=26).",
+          "measure": "Student perceptions from mid-quarter and end-quarter qualitative surveys about task support and learning support",
+          "effect_size": "69.2% mid helpful; 42.2% end helpful; 11.5% mid learning support; 8.3% end learning support",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=400 mid survey; n=315 end survey"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "A substantial share of students expressed concern about overreliance on Copilot and possible harm to independent programming ability. In qualitative surveys, 23.9% of mid-quarter and 25.4% of end-quarter respondents reported overreliance concerns (Nmid=94, Nend=80), while 15.0% of mid-quarter and 14.0% of end-quarter respondents said Copilot hindered their learning of programming fundamentals (Nmid=59, Nend=44).",
+          "measure": "Student perceptions of overreliance and hindered learning from qualitative surveys",
+          "effect_size": "23.9% mid and 25.4% end overreliance concerns; 15.0% mid and 14.0% end hindered-learning concerns",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=400 mid survey; n=315 end survey"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical mixed-methods study with historical benchmark comparisons, surveys, and regression analyses, but it is conducted in a single course at one institution without randomized assignment or a contemporaneous control group.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "Impact appears mostly similar to historical baselines, with one descriptive advantage on code explanation and positive perception findings, but no standardized causal effect sizes are reported and some outcomes show persistent gaps or concerns about overreliance.",
+  "citations": [
+    {
+      "title": "Automating autograding: Large language models as test suite generators for introductory programming",
+      "doi": null,
+      "year": 2025,
+      "venue": "Journal of Computer Assisted Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A Many Small Programs (MSP) Approach in a CS1 Course",
+      "doi": null,
+      "year": 2021,
+      "venue": "University of California, Riverside",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Weekly programs in a CS1 class: Experiences with auto-graded many-small programs (MSP)",
+      "doi": null,
+      "year": 2018,
+      "venue": "2018 ASEE Annual Conference & Exposition",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Programming is hard-or at least it used to be: Educational opportunities and challenges of AI code generation",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 54th ACM Technical Symposium on Computer Science Education V. 1",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "What do CS1 syllabi reveal about our expectations of introductory programming students?",
+      "doi": null,
+      "year": 2019,
+      "venue": "Proceedings of the 50th ACM technical symposium on computer science education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The correlation between Arabic student\u2019s english proficiency and their computer programming ability at the university level",
+      "doi": null,
+      "year": 2018,
+      "venue": "International Journal of Managing Public Sector Information and Communication Technologies (IJMPICT)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Why are women underrepresented in Computer Science? Gender differences in stereotypes, self-efficacy, values, and interests and predictors of future CS course-taking and grades",
+      "doi": null,
+      "year": 2014,
+      "venue": "Computer Science Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Use of AI-driven code generation models in teaching and learning programming: a systematic literature review",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 55th ACM Technical Symposium on Computer Science Education V. 1",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Generation CS: The challenges of and responses to the enrollment surge",
+      "doi": null,
+      "year": 2017,
+      "venue": "ACM Inroads",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Listening to early career software developers",
+      "doi": null,
+      "year": 2018,
+      "venue": "J. Comput. Sci. Coll",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Peer Instruction: Ten years of experience and results",
+      "doi": null,
+      "year": 2001,
+      "venue": "American journal of physics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "GitHub Copilot AI pair programmer: Asset or liability?",
+      "doi": null,
+      "year": 2023,
+      "venue": "Journal of Systems and Software",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Prompt Problems: A new programming exercise for the generative AI era",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 55th ACM Technical Symposium on Computer Science Education V. 1",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Explaining code with a purpose: An integrated approach for developing code comprehension and prompting skills",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 2024 on Innovation and Technology in Computer Science Education V. 1",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Can GPT-3 pass a writer\u2019s Turing test?",
+      "doi": null,
+      "year": 2020,
+      "venue": "Journal of Cultural Analytics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "From Automation to Cognition: Redefining the Roles of Educators and Generative AI in Computing Education",
+      "doi": null,
+      "year": 2025,
+      "venue": "Proceedings of the 27th Australasian Computing Education Conference",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "CS1 with a side of AI: Teaching software verification for secure code in the era of generative AI",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 55th ACM Technical Symposium on Computer Science Education V. 1",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The robots are coming: Exploring the implications of OpenAI Codex on introductory programming",
+      "doi": null,
+      "year": 2022,
+      "venue": "Proceedings of the 24th Australasian Computing Education Conference",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Shaping the future of education: exploring the potential and consequences of AI and ChatGPT in educational settings",
+      "doi": null,
+      "year": 2023,
+      "venue": "Education Sciences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Non-native english speakers learning computer programming: Barriers, desires, and design opportunities",
+      "doi": null,
+      "year": 2018,
+      "venue": "Proceedings of the 2018 CHI conference on human factors in computing systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A media computation course for non-majors",
+      "doi": null,
+      "year": 2003,
+      "venue": "Proceedings of the 8th annual conference on Innovation and technology in computer science education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Does it help to have some programming experience before beginning a computing degree program?",
+      "doi": null,
+      "year": 2000,
+      "venue": "Proceedings of the 5th annual SIGCSE/SIGCUE ITiCSE conference on Innovation and technology in computer science education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Gender and race in predicting achievement in computer science",
+      "doi": null,
+      "year": 2003,
+      "venue": "IEEE Technology and Society Magazine",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "CodeAid: Evaluating a classroom deployment of an LLM-based programming assistant that balances student and educator needs",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A revision of Bloom\u2019s taxonomy: An overview",
+      "doi": null,
+      "year": 2002,
+      "venue": "Theory into practice",
+      "citation_level": 2,
+      "citation_context": "learning objectives organized with revised Bloom\u2019s taxonomy"
+    },
+    {
+      "title": "The relationship between sense of belonging and student outcomes in CS1 and beyond",
+      "doi": null,
+      "year": 2021,
+      "venue": "Proceedings of the 17th ACM Conference on International Computing Education Research",
+      "citation_level": 2,
+      "citation_context": "sense of belonging used in discussion of student identity"
+    },
+    {
+      "title": "Computing Krippendorff\u2019s Alpha-Reliability",
+      "doi": null,
+      "year": 2011,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "inter-rater reliability metric for qualitative coding"
+    },
+    {
+      "title": "From \u201cBan it till we understand it\u201d to \u201cResistance is futile\u201d: How university programming instructors plan to adapt as more students use AI code generation and explanation tools such as ChatGPT and GitHub Copilot",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 2023 ACM Conference on International Computing Education Research-Volume 1",
+      "citation_level": 2,
+      "citation_context": "frames ban-versus-embrace GenAI debate"
+    },
+    {
+      "title": "CodeHelp: Using large language models with guardrails for scalable support in programming classes",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 23rd Koli Calling International Conference on Computing Education Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Automatic question-answer pairs generation using pre-trained large language models in higher education",
+      "doi": null,
+      "year": 2024,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "All the pieces matter: The relationship of momentary self-efficacy and affective experiences with CS1 achievement and interest in computing",
+      "doi": null,
+      "year": 2021,
+      "venue": "Proceedings of the 17th ACM Conference on International Computing Education Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Learning to program: Gender differences and interactive effects of students\u2019 motivation, goals, and self-efficacy on performance",
+      "doi": null,
+      "year": 2016,
+      "venue": "Proceedings of the 2016 ACM conference on international computing education research",
+      "citation_level": 2,
+      "citation_context": "self-efficacy invoked in implications for educators"
+    },
+    {
+      "title": "What is the impact of ChatGPT on education? A rapid review of the literature",
+      "doi": null,
+      "year": 2023,
+      "venue": "Education Sciences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Stuck in the Shallow End: Education, Race, and Computing",
+      "doi": null,
+      "year": 2008,
+      "venue": "The MIT Press",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "\u201cExplain in plain English\u201d questions: implications for teaching",
+      "doi": null,
+      "year": 2012,
+      "venue": "Proceedings of the 43rd ACM technical symposium on Computer Science Education",
+      "citation_level": 3,
+      "citation_context": "basis for explain-in-plain-English assessment questions"
+    },
+    {
+      "title": "Investigating the Role of Socioeconomic Factors on CS1 Performance",
+      "doi": null,
+      "year": 2024,
+      "venue": "2024 IEEE Global Engineering Education Conference",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Parson\u2019s programming puzzles: a fun and effective learning tool for first programming courses",
+      "doi": null,
+      "year": 2006,
+      "venue": "Proceedings of the 8th Australasian Conference on Computing Education-Volume 52",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Revisiting why students drop CS1",
+      "doi": null,
+      "year": 2016,
+      "venue": "Proceedings of the 16th Koli Calling International Conference on Computing Education Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "An investigation into student characteristics affecting novice programming performance",
+      "doi": null,
+      "year": 2005,
+      "venue": "SIGCSE Bull.",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A multi-institutional study of Peer Instruction in introductory computing",
+      "doi": null,
+      "year": 2016,
+      "venue": "Proceedings of the 47th ACM Technical Symposium on Computer Science Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Learn AI-assisted Python Programming: With GitHub Copilot and ChatGPT",
+      "doi": null,
+      "year": 2024,
+      "venue": "Manning Publications",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The robots are here: Navigating the generative AI revolution in computing education",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 2023 Working Group Reports on Innovation and Technology in Computer Science Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Beyond the Hype: A Comprehensive Review of Current Trends in Generative AI Research, Teaching Practices, and Tools",
+      "doi": "10.1145/3689187.3709614",
+      "year": 2025,
+      "venue": "2024 Working Group Reports on Innovation and Technology in Computer Science Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT for education and research: Opportunities, threats, and strategies",
+      "doi": null,
+      "year": 2023,
+      "venue": "Applied Sciences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Understanding sources of student struggle in early computer science courses",
+      "doi": null,
+      "year": 2021,
+      "venue": "Proceedings of the 17th ACM Conference on International Computing Education Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A longitudinal evaluation of a best practices CS1",
+      "doi": null,
+      "year": 2020,
+      "venue": "Proceedings of the 2020 ACM conference on international computing education research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Live coding: A review of the literature",
+      "doi": null,
+      "year": 2021,
+      "venue": "Proceedings of the 26th ACM Conference on Innovation and Technology in Computer Science Education V. 1",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Benchmarking introductory programming exams: some preliminary results",
+      "doi": null,
+      "year": 2016,
+      "venue": "Proceedings of the 2016 ACM Conference on International Computing Education Research",
+      "citation_level": 3,
+      "citation_context": "source of benchmark exam questions for comparison"
+    },
+    {
+      "title": "Socioeconomic status and academic achievement: A meta-analytic review of research",
+      "doi": null,
+      "year": 2005,
+      "venue": "Review of educational research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "CS+ X meets CS 1: Strongly themed intro courses",
+      "doi": null,
+      "year": 2020,
+      "venue": "Proceedings of the 51st ACM Technical Symposium on Computer Science Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Prompting for Comprehension: Exploring the Intersection of Explain in Plain English Questions and Prompt Writing",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the Eleventh ACM Conference on Learning@Scale",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Evaluating Large Language Model Code Generation as an Autograding Mechanism for \u201cExplain in Plain English\u201d Questions",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 55th ACM Technical Symposium on Computer Science Education Volume 2",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Exploration of the relationship between prior computing experience and gender on success in college computer science",
+      "doi": null,
+      "year": 1994,
+      "venue": "Journal of educational computing research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "High school socioeconomic neighborhood status and CS1 performance",
+      "doi": null,
+      "year": 2022,
+      "venue": "Proceedings of the 54th ACM Technical Symposium on Computer Science Education Volume 2",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "CS1-LLM: Integrating LLMs into CS1 Instruction",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 2024 conference on Innovation and Technology in Computer Science Education V. 1",
+      "citation_level": 3,
+      "citation_context": "course design blueprint directly extended in this study"
+    },
+    {
+      "title": "A closer look at tracing, explaining and code writing skills in the novice programmer",
+      "doi": null,
+      "year": 2009,
+      "venue": "Proceedings of the fifth international workshop on Computing education research",
+      "citation_level": 2,
+      "citation_context": "shared learning outcomes of tracing, explaining, writing code"
+    },
+    {
+      "title": "Pair-programming helps female computer science students",
+      "doi": null,
+      "year": 2004,
+      "venue": "Journal on Educational Resources in Computing (JERIC)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "PrairieLearn: Mastery-based online problem solving with adaptive scoring and recommendations driven by machine learning",
+      "doi": null,
+      "year": 2015,
+      "venue": "2015 ASEE Annual Conference & Exposition",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Does ChatGPT Help With Introductory Programming? An Experiment of Students Using ChatGPT in CS1",
+      "doi": "10.1145/3639474.3640076",
+      "year": 2024,
+      "venue": "Proceedings of the 46th International Conference on Software Engineering: Software Engineering Education and Training",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

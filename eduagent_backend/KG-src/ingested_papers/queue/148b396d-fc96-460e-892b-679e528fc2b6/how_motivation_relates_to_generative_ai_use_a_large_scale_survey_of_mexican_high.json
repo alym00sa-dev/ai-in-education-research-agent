@@ -1,0 +1,86 @@
+{
+  "title": "How Motivation Relates to Generative AI Use: A Large-Scale Survey of Mexican High School Students",
+  "doi": null,
+  "year": null,
+  "venue": null,
+  "url": "http://arxiv.org/abs/2603.19263v2",
+  "source_db": "arxiv_search",
+  "populations": [
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This study asks how high school students with different motivational profiles use generative AI tools for learning in math and writing. The authors are interested in whether students' self-concept and perceived subject value relate to distinct patterns of AI use, and whether those patterns differ by academic domain.\n\nThe study analyzed anonymous online survey data from 6,793 high school students in their final two years in Chihuahua, Mexico, originally collected from 7,739 respondents after exclusions for failed attention checks or no prior AI experience. Students completed Spanish-language measures of self-concept and perceived subject value in math and writing, both with and without generative AI availability, and reported how often they used AI for specific tasks such as problem interpretation, step-by-step guidance, answer copying, brainstorming, outlining, grammar improvement, and feedback.\n\nUsing K-means clustering, the authors identified three motivational profiles in both domains: Aspirational, Confident, and Disengaged. Across math and writing, these profiles showed different AI-use patterns: Aspirational students tended to use AI as compensatory support, Confident students used it more for refinement and quality assurance, and Disengaged students were more likely to show shortcut-seeking or low-engagement patterns. The paper concludes that AI integration in education is not one-size-fits-all and that motivationally informed interventions may be needed to support appropriate and productive use.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a large cross-sectional survey with K-means clustering and pairwise comparisons, so it is empirically grounded but correlational rather than causal. It provides useful descriptive evidence, but does not test an intervention effect or establish learning impact.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The study suggests important patterns in how students may use generative AI, but it reports no achievement or causal outcome effects. The practical implication is notable for tailoring AI support, yet the direct educational impact remains unclear.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.95,
+      "role": "primary",
+      "use_case": "Survey of students' self-reported use of generative AI tools for learning support in math and writing, including step-by-step guidance, problem interpretation, idea brainstorming, outlining, grammar improvement, and writing feedback."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The study found three distinct motivational profiles among n=6,793 Mexican high school students: Aspirational (high value, low self-concept), Confident (high value, high self-concept), and Disengaged (low value, low self-concept). These profiles were associated with different patterns of generative AI use, suggesting motivation shapes how students engage with AI tools rather than a one-size-fits-all pattern.",
+        "measure": "K-means cluster profiles derived from self-concept and perceived subject value in math and writing; self-reported AI use frequency",
+        "study_size": "n=6,793",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 0.9,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "In math, motivational profiles were associated with different AI use patterns: Aspirational students most often used AI for step-by-step problem guides (M=2.81) and interpreting complex problems (M=2.59), while Confident students used AI less for basic help and more for practice problem generation (M=2.48 vs. Disengaged M=2.32, p<.001). Disengaged students showed the most concerning shortcut-seeking behavior, including the highest direct answer copying (M=2.69), exceeding Aspirational (M=2.53, p<.001) and Confident students (M=2.18, p<.001).",
+        "measure": "Self-reported frequency of AI use for math tasks (formula retrieval, answer copying, problem interpretation, step-by-step guides, solution verification, practice problem generation)",
+        "study_size": "n=6,793",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Academic \u2014 Literacy",
+      "confidence": 0.9,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "In writing, AI use also differed by motivational profile. Aspirational students most often used AI for brainstorming ideas (M=2.83) and producing outlines (M=2.72), while Confident students used AI more for language/grammar improvement (M=2.79) and writing feedback (M=2.67). Disengaged students reported the lowest overall AI usage across most writing tasks, indicating substantial heterogeneity in how generative AI supports writing work.",
+        "measure": "Self-reported frequency of AI use for writing tasks (brainstorming, outlining, supporting evidence, grammar improvement, writing feedback, requirement adaptation)",
+        "study_size": "n=6,793",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "self_reported_measures",
+    "non_representative_population",
+    "no_long_term_followup",
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Mexico",
+  "study_region": "Latin America & Caribbean",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

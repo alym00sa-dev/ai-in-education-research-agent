@@ -1,0 +1,66 @@
+{
+  "title": "Hallucination Detection and Evaluation of Large Language Model",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2512.22416v1",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses the problem of hallucinations in large language models (LLMs), focusing on how to detect and evaluate factually incorrect or unverifiable outputs efficiently. The authors argue that hallucinations undermine trust and reliability, and that existing evaluation pipelines such as KnowHalu are computationally expensive because they use multi-stage verification.\n\nTo improve this, the paper proposes integrating the Hughes Hallucination Evaluation Model (HHEM), a lightweight classification-based hallucination detector that does not depend on LLM judgments. The authors compare HHEM against KnowHalu on QA and summarization tasks from the HaluEval benchmark, using metrics such as true positive rate, true negative rate, accuracy, and processing time. They also introduce a segment-based retrieval strategy to better detect localized hallucinations in summarization by checking smaller text units rather than scoring the whole summary at once.\n\nThe study does not involve K-12 learners, teachers, or classroom deployment; instead, it evaluates LLM outputs and hallucination-detection methods in a computational research setting. The main conclusion is that HHEM can dramatically reduce evaluation time while maintaining strong performance on QA tasks, but it is weaker on summarization unless combined with segment-level verification. The authors further observe that larger models tend to hallucinate less overall, though the relationship is not strictly linear and intermediate-sized models may be less stable.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a technical methods paper on hallucination detection with benchmark comparisons, not an education study, and it does not present a well-designed K-12 intervention evaluation. It is also not an RCT, QED, or meta-analysis, so it does not meet stronger credibility criteria for K-12 evidence grading.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "The paper does not evaluate student learning or K-12 educational outcomes; it focuses on model-level hallucination detection performance. Its relevance to education is indirect and there is no demonstrated impact on learners or schools.",
+  "interventions": [
+    {
+      "intervention": "Other",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "hallucination detection and factual consistency evaluation for large language model outputs using HHEM, KnowHalu, query decomposition, retrieval, and segment-based verification"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 1.0,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The proposed HHEM-based hallucination evaluation workflow substantially reduced evaluation time compared with KnowHalu. On the QA task, HHEM completed detection in about 10 minutes versus roughly 8 hours for KnowHalu, while achieving 76.9% accuracy; HHEM with non-fabrication checking reached the highest reported accuracy (82.2%) and TPR (78.9%).",
+        "measure": "hallucination detection time, accuracy, TPR, TNR on QA and summarization tasks",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Systemic / Institutional Impact",
+      "confidence": 0.74,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The paper argues that structured hallucination evaluation can improve reliability and trust in AI-generated content, which is relevant for institutional deployment of LLMs. However, it also shows important limits: HHEM performed poorly on summarization (TPR 32.2%, accuracy 55.8%), and the combined KnowHalu+HHEM pipeline did not outperform original KnowHalu, indicating that the evaluation framework is not yet robust enough for broad replacement use.",
+        "measure": "hallucination detection TPR, TNR, accuracy across QA and summarization benchmarks",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

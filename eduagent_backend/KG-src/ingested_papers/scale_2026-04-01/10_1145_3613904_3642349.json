@@ -1,0 +1,364 @@
+{
+  "title": "Teach AI How to Code: Using Large Language Models as Teachable Agents for Programming Education",
+  "doi": "10.1145/3613904.3642349",
+  "year": 2024,
+  "venue": "Proceedings of the CHI Conference on Human Factors in Computing Systems (CHI '24)",
+  "url": "https://arxiv.org/abs/2309.14534",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper examines whether large language models (LLMs) can function as teachable agents in programming education, specifically for learning by teaching (LBT). The authors argue that conventional teachable agents are costly to build because they require manually authored domain knowledge and behavior models. They investigate how to make LLM-based agents act more like novice learners rather than overly capable assistants, and whether such agents can better support student knowledge-building during programming instruction.\n\nThe authors developed TeachYou, a web-based learning environment for introductory algorithm learning, and AlgoBo, an LLM-based tutee chatbot. Their approach includes a Reflect-Respond prompting pipeline to constrain the agent's knowledge state and simulate misconceptions, Mode-shifting to make the agent periodically ask \"why\" and \"how\" questions, and a Teaching Helper that provides real-time metacognitive feedback on learners' teaching strategies. The paper includes a formative study with 15 programming novices using a baseline chatbot, a technical evaluation of the prompting pipeline across algorithm topics, and a between-subjects user study comparing TeachYou with a baseline system lacking Mode-shifting and Teaching Helper.\n\nThe main empirical study involved 40 algorithm novices recruited on campus, mostly university students with limited prior knowledge of binary search. Participants learned binary search materials, solved a Parsons problem, and then taught AlgoBo in an online system. Participants were randomly assigned to either the full TeachYou condition or a baseline condition. The study took place in a programming education context focused on introductory algorithms, with all materials translated into Korean.\n\nThe paper concludes that the Reflect-Respond pipeline can make the LLM agent's knowledge more reconfigurable, persistent, and adaptable, enabling the simulation of novice-like misconceptions and learning progress. In the user study, TeachYou produced significantly denser knowledge-building conversations than the baseline (reported effect size 0.71), especially through agent-initiated elaboration questions. Teaching Helper supported reflection on teaching methods, although it did not produce significant gains in measured metacognition. Overall, the authors argue that LLM-based teachable agents can make learning-by-teaching more scalable, interactive, and pedagogically effective in programming education.",
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Republic of Korea",
+  "study_region": "East Asia & Pacific",
+  "identified_tools": [
+    {
+      "name": "TeachYou",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "feedback_evaluation"
+      ],
+      "description": "A web-based learning-by-teaching environment for introductory algorithm learning that integrates an LLM-based teachable agent and real-time metacognitive teaching feedback.",
+      "use_case": "Studied as the full intervention condition for binary search learning, combining AlgoBo's mode-shifting question prompts with the Teaching Helper to support learners teaching an AI tutee.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In a between-subjects study with 40 algorithm novices, TeachYou improved the density of knowledge-building messages in learning-by-teaching conversations compared with a baseline system without Mode-shifting and Teaching Helper. The paper reports a significant difference of p=0.03 with effect size Cohen's d=0.71.",
+          "measure": "Density of knowledge-building messages in LBT conversations",
+          "effect_size": "Cohen's d=0.71",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=40"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Teaching Helper helped participants reflect on their teaching methods and sequence their questions strategically during learning-by-teaching. However, the authors report that they could not observe a significant improvement in participants' metacognition.",
+          "measure": "Metacognitive reflection on teaching methods",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=40"
+        }
+      ]
+    },
+    {
+      "name": "AlgoBo",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "personalization_adaptation"
+      ],
+      "description": "An LLM-based teachable agent for algorithm learning that uses a Reflect-Respond prompting pipeline to simulate prescribed knowledge states, misconceptions, and gradual learning, and uses mode-shifting to ask why/how questions.",
+      "use_case": "Used as the AI tutee that learners taught during programming education tasks; also technically evaluated for its ability to simulate constrained knowledge, persist knowledge state, and adapt to tutoring.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In the user study with 40 algorithm novices, AlgoBo's questions led to more knowledge-dense conversations during learning by teaching. The paper reports p=0.03 and Cohen's d=0.71 for the improvement in knowledge-building message density.",
+          "measure": "Knowledge-building message density in LBT dialogues",
+          "effect_size": "Cohen's d=0.71",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=40"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The technical evaluation found that the Reflect-Respond pipeline could effectively configure AlgoBo's problem-solving performance across algorithm topics and knowledge states. With an empty knowledge state, AlgoBo got all MCQs wrong; with factual and code knowledge added, performance rose, including perfect 3/3 scores on several binary search question types after correct tutoring.",
+          "measure": "MCQ performance under reconfigurability, persistence, and adaptability tests",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    },
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "language_speech"
+      ],
+      "description": "OpenAI's GPT-family conversational LLM used here as the backbone model for the baseline teachable-agent chatbot and for system components in the proposed environment.",
+      "use_case": "Used in the formative study as the backbone for AlgoBo-Basic, where 15 programming novices taught binary search to a chatbot role-playing a tutee.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "In the formative study with 15 Python novices, participants reported that teaching the chatbot helped them reorganize and recall knowledge, but dialogue analysis showed learning was limited mostly to knowledge-telling. Of 546 messages, there were 244 knowledge-telling messages but only 15 knowledge-building utterances.",
+          "measure": "Dialogue composition: knowledge-telling vs knowledge-building messages",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=15"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Participants were generally positive about teaching the chatbot and found the natural-language interaction intuitive and familiar, but many perceived it as overly competent and wanted more student-like questioning and mistakes. Two-thirds of participants commented on awkwardness caused by the chatbot's competence.",
+          "measure": "Participant perceptions of chatbot as learner and teaching experience",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=15"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "The paper includes a between-subjects user study (n=40) and a technical evaluation, but the evidence is primarily mixed-methods/HCI experimental rather than a clearly reported randomized controlled trial with full educational outcome validation. Reported outcomes focus mainly on dialogue quality and metacognitive process measures rather than standardized learning gains.",
+  "impact_tier": "blue",
+  "impact_tier_rationale": "The main reported effect on knowledge-building conversation density is statistically significant with a medium-to-large effect size (Cohen's d=0.71), which meets the blue impact threshold.",
+  "citations": [
+    {
+      "title": "Understanding Tutor Learning: Knowledge Building and Knowledge Telling in Peer Tutors\u2019 Explanations and Questions",
+      "doi": "10.3102/0034654307309920",
+      "year": 2007,
+      "venue": "Review of Educational Research",
+      "citation_level": 2,
+      "citation_context": "knowledge-building versus knowledge-telling framing for tutor learning"
+    },
+    {
+      "title": "The influence of the tutee in learning by peer tutoring",
+      "doi": null,
+      "year": 2004,
+      "venue": "Proceedings of the Annual Meeting of the Cognitive Science Society",
+      "citation_level": 2,
+      "citation_context": "tutee role in peer tutoring informs teachable-agent rationale"
+    },
+    {
+      "title": "Tutor learning: The role of explaining and responding to questions",
+      "doi": null,
+      "year": 2008,
+      "venue": "Instructional Science",
+      "citation_level": 2,
+      "citation_context": "explaining and responding to questions as tutor-learning mechanism"
+    },
+    {
+      "title": "The Programmer\u2019s Assistant: Conversational Interaction with a Large Language Model for Software Development",
+      "doi": "10.1145/3581641.3584037",
+      "year": 2023,
+      "venue": "Proceedings of the 28th International Conference on Intelligent User Interfaces",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Make just one change: Teach students to ask their own questions",
+      "doi": null,
+      "year": 2011,
+      "venue": "Harvard Education Press",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "QuizBot: A Dialogue-based Adaptive Learning System for Factual Knowledge",
+      "doi": "10.1145/3290605.3300587",
+      "year": 2019,
+      "venue": "Proceedings of the 2019 CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Knowledge building: Theory, pedagogy, and technology",
+      "doi": "10.1017/CBO9781139519526.025",
+      "year": 2006,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "knowledge-building theory underlying learning-by-teaching claims"
+    },
+    {
+      "title": "\u201cCan You Clarify What You Said?\u201d: Studying the Impact of Tutee Agents\u2019 Follow-Up Questions on Tutors\u2019 Learning",
+      "doi": null,
+      "year": 2021,
+      "venue": "Artificial Intelligence in Education",
+      "citation_level": 2,
+      "citation_context": "follow-up questions by tutee agents motivate mode-shifting design"
+    },
+    {
+      "title": "Large language models can be easily distracted by irrelevant context",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 40th International Conference on Machine Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Exploring Students\u2019 Perceptions of ChatGPT: Thematic Analysis and Follow-Up Survey",
+      "doi": "10.1109/ACCESS.2023.3268224",
+      "year": 2023,
+      "venue": "IEEE Access",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "How teachable agents influence students\u2019 responses to critical constructive feedback",
+      "doi": "10.1080/15391523.2020.1784812",
+      "year": 2020,
+      "venue": "Journal of Research on Technology in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Chatbots for learning: A review of educational chatbots for the Facebook Messenger",
+      "doi": "10.1016/j.compedu.2020.103862",
+      "year": 2020,
+      "venue": "Computers & Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Leveraging Generative Conversational AI to Develop a Creative Learning Environment for Computational Thinking",
+      "doi": "10.1145/3490100.3516473",
+      "year": 2022,
+      "venue": "27th International Conference on Intelligent User Interfaces",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Cognitive load theory",
+      "doi": null,
+      "year": 2011,
+      "venue": "Psychology of Learning and Motivation",
+      "citation_level": 2,
+      "citation_context": "cognitive load considerations justify concise conversational support"
+    },
+    {
+      "title": "Perfect Match: Facilitating Study Partner Matching",
+      "doi": "10.1145/3287324.3287344",
+      "year": 2019,
+      "venue": "Proceedings of the 50th ACM Technical Symposium on Computer Science Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "LLaMA: Open and Efficient Foundation Language Models",
+      "doi": null,
+      "year": 2023,
+      "venue": "ArXiv",
+      "citation_level": 3,
+      "citation_context": "base language model underlying the implemented system"
+    },
+    {
+      "title": "Vygotsky, the zone of proximal development, and peer collaboration: Implications for classroom practice",
+      "doi": "10.1017/CBO9781139173674.008",
+      "year": 1990,
+      "venue": "Cambridge University Press",
+      "citation_level": 2,
+      "citation_context": "peer collaboration and zone of proximal development framing"
+    },
+    {
+      "title": "The Effect of First Impressions of an E-Commerce Chatbot\u2019s Personality and Abilities on Expectations for the User Experience",
+      "doi": "10.1145/3378539.3393848",
+      "year": 2020,
+      "venue": "Proceedings of the 2020 on Computers and People Research Conference",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "To Tutor the Tutor: Adaptive Domain Support for Peer Tutoring",
+      "doi": null,
+      "year": 2008,
+      "venue": "Intelligent Tutoring Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Is ChatGPT a Good Teacher Coach? Measuring Zero-Shot Performance For Scoring and Providing Actionable Insights on Classroom Instruction",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Problem-Solving Strategies and Group Processes in Small Groups Learning Computer Programming",
+      "doi": "10.3102/00028312023002243",
+      "year": 1986,
+      "venue": "American Educational Research Journal",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "AI Chains: Transparent and Controllable Human-AI Interaction by Chaining Large Language Model Prompts",
+      "doi": "10.1145/3491102.3517582",
+      "year": 2022,
+      "venue": "Proceedings of the 2022 CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 3,
+      "citation_context": "prompt-chaining design for controllable multi-step response pipeline"
+    },
+    {
+      "title": "Allowing learners to choose: self-controlled practice schedules for learning multiple movement patterns",
+      "doi": null,
+      "year": 2011,
+      "venue": "Research Quarterly for Exercise and Sport",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Beyond Instructions: A Taxonomy of Information Types in How-to Videos",
+      "doi": "10.1145/3544548.3581126",
+      "year": 2023,
+      "venue": "Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Tree of Thoughts: Deliberate Problem Solving with Large Language Models",
+      "doi": null,
+      "year": 2023,
+      "venue": "ArXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Promoting Metacognitive Strategy Development through Online Question-Generation Instructional Approach",
+      "doi": null,
+      "year": 2005,
+      "venue": "Proceedings of the 2005 Conference on Towards Sustainable and Scalable Educational Innovations Informed by the Learning Sciences: Sharing Good Practices of Research, Experimentation and Innovation",
+      "citation_level": 2,
+      "citation_context": "question-generation approach motivates thinking-question interventions"
+    },
+    {
+      "title": "Exploring the Curious Case of Code Prompts",
+      "doi": "10.18653/v1/2023.nlrse-1.2",
+      "year": 2023,
+      "venue": "Proceedings of the 1st Workshop on Natural Language Reasoning and Structured Explanations",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "RecurrentGPT: Interactive Generation of (Arbitrarily) Long Text",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv preprint",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

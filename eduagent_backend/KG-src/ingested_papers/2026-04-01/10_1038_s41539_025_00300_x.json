@@ -1,0 +1,622 @@
+{
+  "title": "Exploring the potential of LLM to enhance teaching plans through teaching simulation",
+  "doi": "10.1038/s41539-025-00300-x",
+  "year": 2025,
+  "venue": "npj Science of Learning",
+  "url": "http://dx.doi.org/10.1038/s41539-025-00300-x",
+  "source_db": "eric_search",
+  "population": "High School",
+  "user_type": "Educator",
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper examines whether large language models (LLMs) can support teachers\u2014not students\u2014by improving lesson planning before instruction takes place. The authors focus on a common challenge in teaching preparation: novice teachers often struggle to anticipate students\u2019 misconceptions, learning difficulties, and the kinds of classroom interactions that reveal whether a lesson plan is effective. The study asks whether an LLM can improve teaching plans by simulating teacher\u2013student interactions, generating teaching reflections, and then revising the original plan accordingly.\n\nThe intervention is a prompt-based workflow using GPT-4 (and, in one comparison condition, Claude 3.5 Sonnet) to enhance high school mathematics teaching plans. Starting from existing lesson plans, the model first simulates classroom dialogue involving students with varying ability levels and typical errors, then produces teaching reflections based on those simulated interactions, and finally refines the lesson plan using those reflections. The authors evaluate eight datasets of lesson plans, including LLM-generated plans, human expert-written plans, and plans written by pre-service teachers, with improvements produced through one or two rounds of LLM-based refinement. Human raters scored plans on a detailed framework covering problem chains, teaching activities, knowledge content, teaching methods, evaluation, interdisciplinarity, practical value, scope, and overall quality.\n\nThe context is high school mathematics in China. The evaluation corpus included 480 teaching plans drawn from 60 lessons across four knowledge modules: Algebra, Functions, Geometry, and Statistics. Human evaluation was carried out by mathematics teachers with teaching experience, and the paper compares baseline lesson plans against LLM-enhanced versions rather than measuring direct student learning outcomes. The workflow was implemented through web-based LLM interfaces rather than custom-coded systems, with the aim of keeping the approach accessible to ordinary teachers.\n\nThe main conclusion is that LLM-based simulation and reflection substantially improved the quality of teaching plans. In many dimensions, the refined plans matched or exceeded the quality of high-quality human-written plans, and plans originally written by pre-service teachers also improved notably after LLM enhancement. Performance varied by content area, with the strongest results in statistics and weaker performance in geometry, where visual reasoning is harder to support through text alone. Overall, the paper argues that LLMs can serve as useful pre-class rehearsal and lesson refinement tools for teachers, especially for instructional preparation, though further work is needed on challenging question design, disciplinary depth, and broader validation in authentic teaching settings.",
+  "limitations": [
+    "single_site",
+    "no_control_group",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "2",
+  "setting": "online",
+  "teacher_training": "yes",
+  "implementation_fidelity": "not_reported",
+  "study_country": "China",
+  "study_region": "East Asia & Pacific",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "language_speech"
+      ],
+      "description": "OpenAI GPT-family large language model used for generating and revising text.",
+      "use_case": "Used to generate high school mathematics teaching plans, simulate teacher-student classroom interactions, generate teaching reflections, and iteratively refine teaching plans (Datasets A, B, D, E, H).",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Human evaluation of N=480 teaching plans (240 before enhancement, 240 after enhancement) found that teaching plans enhanced with GPT-4 via simulation, reflection, and refinement scored higher across most evaluated dimensions than baseline plans. One-round GPT-4 enhanced plans (Dataset D) scored slightly higher than high-quality human-written plans (Dataset C), and two-round GPT-4 enhanced plans (Dataset E) surpassed high-quality human-written plans on most dimensions, with 12 dimensions achieving average scores above 6.8 on an 8-point Likert scale.",
+          "measure": "Manual teacher ratings on an 8-point Likert evaluation framework across 16 reported dimensions/19 indicators of teaching plan quality",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "N=480 teaching plans"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "GPT-4 enhancement of pre-service teachers' plans (Dataset H) produced average scores across dimensions around 7 on an 8-point scale, exceeding high-quality teaching plans written by experienced human teachers and approaching the scores of plans improved through two rounds of GPT-4 enhancement. The paper reports especially high practical value for these enhanced real-world plans, with Dimension V1 (practical value) exceeding 7.",
+          "measure": "Manual teacher ratings of enhanced pre-service teacher teaching plans, including practical value dimension V1",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "N=60 teaching plans in Dataset H"
+        },
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Within GPT-4 one-round enhanced plans (Dataset D), performance varied by knowledge module but improved across all four mathematics modules. In the Statistics module, 13 evaluation dimensions scored above 7 points, with several dimensions exceeding 7.3, while Algebra and Functions also outperformed human-written plans in 11 and 13 dimensions respectively; Geometry was comparatively lower, with most scores around 6.4.",
+          "measure": "Manual teacher ratings of mathematics teaching-plan quality by knowledge module (Algebra, Functions, Geometry, Statistics)",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "N=60 per knowledge module"
+        }
+      ]
+    },
+    {
+      "name": "Claude",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "language_speech"
+      ],
+      "description": "Anthropic Claude-family large language model used for generating and revising text.",
+      "use_case": "Used as an alternative LLM to improve the GPT-generated teaching plans from Dataset A through one round of simulation/reflection-based refinement, producing Dataset F.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Teaching plans improved by Claude in one round (Dataset F) achieved average scores around 6.5 on the 8-point evaluation scale, indicating improvement over baseline GPT-generated plans but slightly below high-quality human-written teaching plans (Dataset C). The paper also notes particularly strong Claude results on Dimension C3, introduction of disciplinary history and culture, where enhanced plans outperformed human teachers though average scores still remained below 5.",
+          "measure": "Manual teacher ratings on multidimensional teaching-plan quality framework",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "N=60 teaching plans in Dataset F"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical comparative study with structured human evaluation, but it is not a student-outcome RCT or QED. Outcomes are based on expert ratings of generated teaching plans rather than direct learning gains.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "Results are consistently positive, but impact is based on rubric scores without reported effect sizes or direct student achievement outcomes. The magnitude appears meaningful yet remains unclear by the tier framework.",
+  "citations": [
+    {
+      "title": "Language Models are Few-Shot Learners",
+      "doi": null,
+      "year": 2020,
+      "venue": "Proceedings of the 34th International Conference on Neural Information Processing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Agents and Multi-agent Systems: Technologies and Applications 2023",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Learning design to support student-AI collaboration: perspectives of leading teachers for AI in education",
+      "doi": null,
+      "year": 2022,
+      "venue": "Education and Information Technologies",
+      "citation_level": 2,
+      "citation_context": "supports diverse teaching scenarios and learning needs framing"
+    },
+    {
+      "title": "Conversation-based assessment: a novel approach to boosting test-taking effort in digital formative assessment",
+      "doi": "10.1016/j.caeai.2023.100135",
+      "year": 2023,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Fun and frustrating: Students\u2019 perspectives on practising speaking English with virtual humans",
+      "doi": null,
+      "year": 2023,
+      "venue": "Cogent Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Student perceptions of AI-generated avatars in teaching business ethics: we might not be impressed",
+      "doi": null,
+      "year": 2024,
+      "venue": "Postdigital Science and Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Here\u2019s to the future: conversational agents in higher education-a scoping review",
+      "doi": null,
+      "year": 2023,
+      "venue": "International Journal of Educational Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Artificial intelligence in education: the three paradigms",
+      "doi": "10.1016/j.caeai.2021.100020",
+      "year": 2021,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "GPT-4 in Education: Evaluating Aptness, Reliability, and Loss of Coherence in Solving Calculus Problems and Grading Submissions",
+      "doi": "10.1007/s40593-024-00403-3",
+      "year": 2024,
+      "venue": "International Journal of Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Towards Teachers as Tutors: Automatic Feedback Improves Students\u2019 Programming Explanations in a Novice Classroom",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 18th Workshop on Innovative Use of NLP for Building Educational Applications (BEA 2023)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Teaching english in the age of AI: embracing ChatGPT to optimize EFL materials and assessment",
+      "doi": null,
+      "year": 2023,
+      "venue": "Language Education and Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Learning to plan, planning to learn: the developing expertise of beginning teachers",
+      "doi": null,
+      "year": 2011,
+      "venue": "Teachers and Teaching",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "AIED: from cognitive simulations to learning engineering, with humans in the middle",
+      "doi": null,
+      "year": 2024,
+      "venue": "International Journal of Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "From lesson plan to new comprehension: exploring student teachers\u2019 pedagogical reasoning in learning about teaching",
+      "doi": null,
+      "year": 2009,
+      "venue": "European Journal of Teacher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "GPT-3-driven pedagogical agents to train children\u2019s curious question-asking skills",
+      "doi": null,
+      "year": 2024,
+      "venue": "International Journal of Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Application of \u201cProblem Chain\u201d Teaching Mode in Senior High School English Reading Teaching",
+      "doi": "10.26855/er.2023.08.007",
+      "year": 2023,
+      "venue": "Education Review USA",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Artificial intelligence (AI) student assistants in the classroom: designing chatbots to support student success",
+      "doi": null,
+      "year": 2023,
+      "venue": "Information Systems Frontiers",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The impact of a virtual teaching assistant (chatbot) on students\u2019 learning in Ghanaian higher education",
+      "doi": null,
+      "year": 2022,
+      "venue": "International Journal of Educational Technology in Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Simulated learners in educational technology: a systematic literature review and a turing-like test",
+      "doi": null,
+      "year": 2024,
+      "venue": "International Journal of Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Automatically correcting large language models: Surveying the landscape of diverse automated correction strategies",
+      "doi": null,
+      "year": 2024,
+      "venue": "Transactions of the Association for Computational Linguistics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Th\fedotasks",
+      "doi": null,
+      "year": 2018,
+      "venue": "International Journal of Science and Mathematics Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The role of lesson analysis in pre-service teacher education: an empirical investigation of teacher learning from a virtual video-based field experience",
+      "doi": null,
+      "year": 2007,
+      "venue": "Journal of Mathematics Teacher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Unpacking pedagogical content knowledge: Conceptualizing and measuring teachers\u2019 topic-specific knowledge of students",
+      "doi": null,
+      "year": 2008,
+      "venue": "Journal for Research in Mathematics Education",
+      "citation_level": 2,
+      "citation_context": "PCK theory informs evaluation dimension design"
+    },
+    {
+      "title": "What makes a problem mathematically interesting? Inviting prospective teachers to pose better problems",
+      "doi": null,
+      "year": 2008,
+      "venue": "Journal of Mathematics Teacher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Focus on the representation of problem types in intended curriculum: a comparison of selected mathematics textbooks from Mainland China and the United States",
+      "doi": null,
+      "year": 2006,
+      "venue": "International Journal of Science and Mathematics Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Teaching Plan Generation and Evaluation With GPT-4: Unleashing the Potential of LLM in Instructional Design",
+      "doi": null,
+      "year": 2024,
+      "venue": "IEEE Transactions on Learning Technologies",
+      "citation_level": 3,
+      "citation_context": "baseline datasets and prior evaluation framework come from this study"
+    },
+    {
+      "title": "Developing teachers\u2019 subject didactic competence through problem posing",
+      "doi": null,
+      "year": 2013,
+      "venue": "Educational Studies in Mathematics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The development, validity and reliability of TPACK-deep: A technological pedagogical content knowledge scale",
+      "doi": null,
+      "year": 2012,
+      "venue": "Computers and Education",
+      "citation_level": 3,
+      "citation_context": "previous evaluation dimensions adapted from this scale"
+    },
+    {
+      "title": "Relationship between pre-service mathematics teachers\u2019 knowledge, beliefs and instructional practices in China",
+      "doi": null,
+      "year": 2020,
+      "venue": "ZDM Mathematics Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Standards for professionalization of mathematics teachers: policy, curricula, and national teacher employment test in Korea",
+      "doi": null,
+      "year": 2012,
+      "venue": "ZDM Mathematics Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Posing mathematical problems: an exploratory study",
+      "doi": null,
+      "year": 1996,
+      "venue": "Journal for Research in Mathematics Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Examining science education in ChatGPT: an exploratory study of generative artificial intelligence",
+      "doi": null,
+      "year": 2023,
+      "venue": "Journal of Science Education and Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "CS1 students\u2019 perceptions of and interactions with ChatGPT as a programming help tool",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 55th ACM Technical Symposium on Computer Science Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Efficacy and teaching mathematics by telling: a challenge for reform",
+      "doi": null,
+      "year": 1996,
+      "venue": "Journal for Research in Mathematics Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Mathematical knowledge for teaching and the mathematical quality of instruction: an exploratory study",
+      "doi": null,
+      "year": 2008,
+      "venue": "Cognition and Instruction",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Learning by teaching: a new agent paradigm for educational software",
+      "doi": null,
+      "year": 2005,
+      "venue": "Applied Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Impact of agent-based simulation on novice architects\u2019 workplace design exploration and trade-offs",
+      "doi": null,
+      "year": 2023,
+      "venue": "Automation in Construction",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Using Large Language Models to Simulate Multiple Humans and Replicate Human Subject Studies",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 40th International Conference on Machine Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A survey on large language model based autonomous agents",
+      "doi": null,
+      "year": 2024,
+      "venue": "Frontiers of Computer Science",
+      "citation_level": 2,
+      "citation_context": "student simulation prompt models autonomous agent behaviors"
+    },
+    {
+      "title": "Can ChatGPT Generate CS1-Quality Code Tracing Explanations?",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 23rd Koli Calling International Conference on Computing Education Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Research-based design of pedagogical agent roles: a review, progress, and recommendations",
+      "doi": null,
+      "year": 2016,
+      "venue": "International Journal of Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "An intelligent tutoring system with natural language dialogue based on fuzzy reasoning and student modeling",
+      "doi": null,
+      "year": 2003,
+      "venue": "2003 IEEE International Conference on Systems, Man and Cybernetics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Beyond predictive learning analytics modelling and onto explainable artificial intelligence with prescriptive analytics and ChatGPT",
+      "doi": null,
+      "year": 2024,
+      "venue": "International Journal of Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Measuring pedagogical agent persona and the influence of agent persona on learning",
+      "doi": null,
+      "year": 2017,
+      "venue": "Computers and Education",
+      "citation_level": 2,
+      "citation_context": "supports simulating diverse tutor and student roles"
+    },
+    {
+      "title": "A role simulation for computer science education",
+      "doi": null,
+      "year": 2000,
+      "venue": "Proceedings of the 5th annual SIGCSE/SIGCUE ITiCSE conference on Innovation and technology in computer science education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 36th International Conference on Neural Information Processing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Character-LLM: A Trainable Agent for Role-Playing",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Redefining the learning companion: the past, present, and future of educational agents",
+      "doi": null,
+      "year": 2003,
+      "venue": "Computers and Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Exploring the effects of different interventions of the problem-oriented teaching model on students\u2019 creativity in STEM education",
+      "doi": "10.1080/02635143.2023.2219622",
+      "year": 2023,
+      "venue": "Research in Science and Technological Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Math items about real-world content lower test-scores of students from families with low socioeconomic status",
+      "doi": null,
+      "year": 2024,
+      "venue": "npj Science of Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Bioinspiration as a method of problem-based STEM education: A case study with a class structured around the COVID-19 crisis",
+      "doi": null,
+      "year": 2021,
+      "venue": "Ecology and Evolution",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Automatic Question Generation for Spanish Textbooks: Evaluating Spanish Questions Generated with the Parallel Construction Method",
+      "doi": "10.1007/s40593-024-00394-1",
+      "year": 2024,
+      "venue": "International Journal of Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "DIY productive failure: boosting performance in a large undergraduate biology course",
+      "doi": null,
+      "year": 2019,
+      "venue": "npj Science of Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Integrating educational knowledge: reactivation of prior knowledge during educational learning enhances memory integration",
+      "doi": null,
+      "year": 2018,
+      "venue": "npj Science of Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "What if the devil is my guardian angel: ChatGPT as a case study of using chatbots in education",
+      "doi": null,
+      "year": 2023,
+      "venue": "Smart Learning Environments",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing: System Demonstrations",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Impact of a virtual chemistry lab in chemistry teaching on scientific practices and digital competence for pre-service science teachers",
+      "doi": null,
+      "year": 2024,
+      "venue": "Education and Information Technologies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Where does AI-driven education, in the Chinese Context and Beyond, go next?",
+      "doi": null,
+      "year": 2024,
+      "venue": "International Journal of Artificial Intelligence in Education",
+      "citation_level": 2,
+      "citation_context": "used to frame transparency and interpretability of AI-driven education"
+    },
+    {
+      "title": "TELPS: a method for analysing mathematics pre-service teachers\u2019 Pedagogical Content Knowledge",
+      "doi": null,
+      "year": 2013,
+      "venue": "Teaching and Teacher Education",
+      "citation_level": 3,
+      "citation_context": "assessment indicators for PCK-based evaluation dimensions"
+    },
+    {
+      "title": "Understanding levels of technology integration: A TPACK scale for EFL teachers to promote 21st-century learning",
+      "doi": null,
+      "year": 2022,
+      "venue": "Education and Information Technologies",
+      "citation_level": 3,
+      "citation_context": "assessment indicators adapted for evaluation dimensions"
+    },
+    {
+      "title": "Dissecting success stories on mathematical problem posing: a case of the Billiard Task",
+      "doi": null,
+      "year": 2013,
+      "venue": "Educational Studies in Mathematics",
+      "citation_level": 3,
+      "citation_context": "mathematical problem design indicators inform evaluation rubric"
+    },
+    {
+      "title": "Self-reported technological pedagogical content knowledge (TPACK) of pre-service teachers in relation to digital technology use in lesson plans",
+      "doi": null,
+      "year": 2021,
+      "venue": "Computers in Human Behavior",
+      "citation_level": 3,
+      "citation_context": "previous evaluation dimensions developed from this work"
+    },
+    {
+      "title": "Developing and validating a questionnaire for evaluating the EFL \u2018Total PACKage\u2019: Technological Pedagogical Content Knowledge (TPACK) for English as a Foreign Language (EFL)",
+      "doi": null,
+      "year": 2018,
+      "venue": "Computer Assisted Language Learning",
+      "citation_level": 3,
+      "citation_context": "previous evaluation dimensions developed from this work"
+    },
+    {
+      "title": "Development and validation of the ICT-TPACK-science scale",
+      "doi": null,
+      "year": 2020,
+      "venue": "Journal of Science Education and Technology",
+      "citation_level": 3,
+      "citation_context": "previous evaluation dimensions developed from this work"
+    },
+    {
+      "title": "Role design considerations of conversational agents to facilitate discussion and systems thinking",
+      "doi": null,
+      "year": 2023,
+      "venue": "Computers and Education",
+      "citation_level": 2,
+      "citation_context": "student simulation prompt based on classroom learner characteristics"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": "via unpaywall"
+}

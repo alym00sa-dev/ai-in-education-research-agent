@@ -1,0 +1,65 @@
+{
+  "title": "How Useful is Intermittent, Asynchronous Expert Feedback for Bayesian Optimization?",
+  "doi": null,
+  "year": 2024,
+  "venue": "6th Symposium on Advances in Approximate Bayesian Inference (Workshop, non-archival)",
+  "url": "http://arxiv.org/abs/2406.06459v1",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper asks whether small amounts of intermittently arriving expert feedback can improve Bayesian optimization (BO) when feedback must be incorporated asynchronously and without blocking the optimization loop. The motivation is self-driving laboratory settings, where minimizing human interruption is important, but occasional expert intuition may still be valuable for steering search.\n\nThe proposed approach separates BO into two concurrent threads: one performs standard BO over a black-box objective, while the other gathers sparse pairwise expert preferences and fits a Bayesian Bradley-Terry preference model. The learned preference model is then injected into the BO acquisition function through a Thompson-sampling-style scalarization, allowing the optimizer to balance objective improvement with expert preferences. The paper also explores variants for selecting which pairs are shown to the expert, including random selection and active-learning-style acquisition rules.\n\nExperiments are conducted on synthetic toy functions and on real-world chemistry / drug-discovery benchmark datasets. No human participants are studied directly; instead, expert feedback is simulated from hidden scoring functions or pretrained preference models. The results suggest that even low-frequency asynchronous feedback can improve BO performance and can also bias solutions toward constrained or preferred regions of the search space, although some surrogate-feedback combinations perform worse and active-learning heuristics are not consistently better than random pair selection.",
+  "limitations": [
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "lab",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "identified_tools": [
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "other"
+      ],
+      "description": "A generic AI feedback system using Bayesian optimization with asynchronous expert preference learning; no specific commercial LLM or named educational product is studied.",
+      "use_case": "The paper studies an online, non-blocking Bayesian optimization framework that incorporates intermittent expert pairwise feedback via a Bayesian Bradley-Terry neural network and uses it to steer exploration-exploitation.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In toy optimization tasks and chemistry datasets, intermittent asynchronous expert feedback improved Bayesian optimization relative to a no-feedback baseline. The authors report that with feedback probability pfb=0.1, 'less than 100 randomly-arriving labeled pairs on average' made the GP surrogate significantly better across all test problems; for the LA surrogate, results were mixed and in some cases (Hartmann) performance degraded when \u03b3 was fixed at 1.",
+          "measure": "Optimization performance on toy benchmark functions and docking score optimization on real-world chemistry datasets",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "When the feedback-selection policy used BALD or minimized pairwise Thompson-sample differences, performance was worse than random selection across the board. The authors conclude these active-learning strategies were not suitable in this intermittent-feedback setting.",
+          "measure": "BO performance under active-learning selection strategies for expert feedback versus random selection",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    }
+  ],
+  "verdict": "framework_only",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a methodological/algorithmic workshop paper, not an educational RCT, QED, or field study. It provides simulation results only, with no K\u201312 teacher or student outcomes.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "The paper does not evaluate an educational intervention, instructional coaching tool, or teacher practice outcome. Any reported gains are in Bayesian optimization simulations, not in schooling contexts.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

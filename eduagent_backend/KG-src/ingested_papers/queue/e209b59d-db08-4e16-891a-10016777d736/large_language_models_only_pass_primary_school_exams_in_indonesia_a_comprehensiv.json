@@ -1,0 +1,64 @@
+{
+  "title": "Large Language Models Only Pass Primary School Exams in Indonesia: A Comprehensive Test on IndoMMLU",
+  "doi": null,
+  "year": 2023,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2310.04928v2",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Elementary (PreK-5th)",
+    "Middle School (6th-8th)",
+    "High School (9th-12th)",
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper presents IndoMMLU, a new benchmark for evaluating large language models (LLMs) on Indonesian exam questions spanning primary school through university entrance level. The work addresses the gap that most multilingual LLM evaluation has focused on English or translated English benchmarks, which can miss local language, culture, and curriculum-specific content. The authors argue that school exams are useful educational assessments because they are designed by expert teachers and test both language proficiency and higher-order reasoning.\n\nTo build the benchmark, seven professional Indonesian teachers collected 14,981 publicly available multiple-choice questions from web sources across 64 tasks and four education levels. The dataset covers STEM, social science, humanities, Indonesian language, and local languages/cultures, with explicit attention to culturally grounded content such as Javanese, Sundanese, Balinese, Minangkabau, and other local languages. The paper then evaluates 24 multilingual LLMs, including GPT-3.5, XGLM, Falcon, BLOOMZ, mT0, LLaMA, and Bactrian-X, using zero-shot and few-shot prompting.\n\nThe main finding is that GPT-3.5 performs best overall, but only reaches a level comparable to passing primary school exams in Indonesia, and all models struggle badly on local language and culture questions. Few-shot prompting helps some base models but can hurt instruction-tuned models. The authors also report that negation makes questions harder and examine model confidence calibration. Overall, the paper concludes that LLMs still lack robust Indonesian language and cultural competence, and that education-science-informed benchmarks are important for more meaningful multilingual evaluation.",
+  "limitations": [
+    "single_site",
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "yes",
+  "implementation_fidelity": "medium",
+  "study_country": "Indonesia",
+  "study_region": "East Asia & Pacific",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "feedback_evaluation"
+      ],
+      "description": "OpenAI's GPT family of large language models used for natural language understanding and generation, including ChatGPT-style GPT-3.5/GPT-4 systems.",
+      "use_case": "Evaluated as one of several multilingual LLMs on the IndoMMLU benchmark to assess Indonesian language, local culture, and school-exam knowledge across education levels.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "GPT-3.5 achieved the highest overall accuracy on IndoMMLU at 53.2% across 64 tasks, but this was still low relative to the paper's 65% passing threshold. It passed the highest primary school level for general subjects, but performance fell below passing for grades 3 and above in Indonesian language and it showed limited knowledge of local languages and culture.",
+          "measure": "Zero-shot multiple-choice accuracy on IndoMMLU; passing threshold of 65%",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=14,981 questions"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a benchmark evaluation study, not an RCT or controlled intervention study. The methodology is systematic and empirical, but the paper reports model benchmarking rather than causal evidence about classroom effects.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "GPT-3.5 shows moderate benchmark performance on Indonesian primary-school content, but the paper does not report effect sizes and explicitly notes substantial limitations, especially for local language/culture and higher grades. The practical impact is therefore mixed and uncertain for K-12 use.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

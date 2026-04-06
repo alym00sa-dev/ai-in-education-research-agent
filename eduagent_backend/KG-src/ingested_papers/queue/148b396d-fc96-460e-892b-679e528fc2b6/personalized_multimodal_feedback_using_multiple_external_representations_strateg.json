@@ -1,0 +1,92 @@
+{
+  "title": "Personalized Multimodal Feedback Using Multiple External Representations: Strategy Profiles and Learning in High School Physics",
+  "doi": null,
+  "year": 2026,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2601.09470v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper examines whether and how students\u2019 use of elaborated, multimodal feedback is associated with learning in high school physics. The authors focus on a key question for adaptive learning and intelligent tutoring systems: when learners are given optional feedback in multiple external representations (textual, graphical/pictorial, and mathematical), do different feedback-use patterns relate to better post-test performance, and are those patterns connected to students\u2019 initial representational competence? The study is framed around the challenge of designing personalized feedback that can support science learning, especially as multimodal AI and intelligent tutoring systems become more common.\n\nThe intervention/approach was a computer-based physics practice platform (KI4SCool) that presented verification feedback after each multiple-choice question and allowed students to open optional elaborated feedback in one or more representational formats. The feedback and exercises were authored by the researchers, and students could freely choose whether to view no elaborated feedback, one representation, or multiple representations. The analysis also used pre-test/post-test measures, platform log data, response confidence, and measures of initial representational competence for one cohort. Students were 10th- and 11th-grade high school learners in Germany, drawn from multiple schools and classes, and the study ran over roughly one school term (16\u201324 weeks).\n\nResults showed a small but consistent positive association between more frequent use of elaborated feedback and higher post-test scores, even after adjusting for prior knowledge, platform performance, exercise volume, and confidence. However, because the design was observational, the authors do not claim causality. Cluster analyses suggested that students tended to fall into a few broad usage profiles: never using elaborated feedback, using all three representations frequently, or using mostly verbal feedback, with the pattern of using all three formats more often associated with higher feedback frequency. Overall, the paper argues that adaptive feedback systems in physics should tailor both the amount and the representational form of feedback to learner profiles, but it also shows that merely offering optional multimodal feedback does not by itself reveal strong time-based strategy differences or clear moderation by initial competence.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a prospective observational cohort study with clustering and covariate adjustment, but it is not randomized and cannot support causal claims about the intervention. The design is informative for associations and strategy patterns, yet it retains important confounding risks.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The observed learning association is small and correlational rather than causal, so the practical effect is unclear despite a positive direction. The paper suggests design implications for science tutoring and adaptive feedback, but does not demonstrate a large or robust intervention effect.",
+  "interventions": [
+    {
+      "intervention": "Automated Feedback System",
+      "confidence": 0.96,
+      "role": "primary",
+      "use_case": "computer-based physics practice platform providing immediate verification feedback plus optional elaborated feedback in verbal, graphical, and mathematical formats selected by students"
+    },
+    {
+      "intervention": "Intelligent Tutoring System (ITS)",
+      "confidence": 0.7,
+      "role": "secondary",
+      "use_case": "adaptive feedback design for an intelligent tutoring system that tailors feedback elaboration and representational format to learner profiles"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Scientific Reasoning",
+      "confidence": 0.94,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "In a prospective observational study of high school physics students (Cohort 1 n=351; Cohort 2 n=310; total analytic sample n=661), more frequent use of elaborated multirepresentational feedback was associated with higher post-test scores after adjusting for pre-test score, platform performance, exercises solved, and confidence. The standardized association was small but positive in both cohorts (Cohort 1 \u03b2=0.13, 95% CI [0.05, 0.22]; Cohort 2 \u03b2=0.08, 95% CI [0.00, 0.16], p=.054).",
+        "measure": "High-school physics post-test score (percent correct)",
+        "study_size": "n=661",
+        "effect_size": "\u03b2=0.13; \u03b2=0.08",
+        "confidence_interval": "[0.05, 0.22]; [0.00, 0.16]",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.66,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper also found that feedback-use strategies differed by representation-selection pattern, suggesting meaningful learner differences in representational competence and self-directed strategy use. However, initial representational competences did not significantly differ across feedback-strategy clusters (MANOVA: Pillai's trace=0.018, F=0.74, p=.67), so the main durable-skill signal is descriptive rather than a demonstrated effect.",
+        "measure": "Representational strategy patterns; initial representational competences across clusters",
+        "study_size": "n=661 overall; n=351 for competence analyses",
+        "effect_size": "Pillai's trace=0.018; F=0.74",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.58,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "Feedback frequency was not correlated with prior knowledge, platform score, number of exercises solved, or average confidence, suggesting that greater feedback use was not simply a marker of higher ability or reported confidence. It was moderately correlated with response time (r=0.43 in Cohort 1; r=0.34 in Cohort 2), which the authors interpret as students spending more time reflecting on questions and feedback.",
+        "measure": "Average response confidence, response time, and correlations with feedback use",
+        "study_size": "n=661",
+        "effect_size": "r=0.43; r=0.34",
+        "confidence_interval": "[0.34, 0.51]; [0.24, 0.44]",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "high_attrition",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "16-24",
+  "setting": "blended",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "medium",
+  "study_country": "Germany",
+  "study_region": "Europe",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

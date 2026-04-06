@@ -1,0 +1,59 @@
+{
+  "title": "An adaptive feedback system for the improvement of learners",
+  "doi": "10.1038/s41598-025-01429-w",
+  "year": 2025,
+  "venue": "Scientific Reports",
+  "url": "https://www.nature.com/articles/s41598-025-01429-w",
+  "source_db": "backfill_v3",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper addresses the problem of how to provide more precise, individualized feedback to learners in Learning Management Systems (LMS), especially in tertiary education and outcome-based education contexts. The authors argue that teachers need more granular information about students\u2019 strengths, weaknesses, and specific factors influencing learning outcomes, beyond broad performance summaries. The study focuses on identifying instance-level factors associated with student performance so that educators can better target support.\n\nThe intervention studied is an adaptive feedback system for LMS environments that uses machine learning models to classify learner performance and identify influential student-level instances. The system compares multiple algorithms, including Stacking, Capsule Network, SVM, Random Forest, Decision Tree, and KNN, and presents feedback through a web-based application. The approach emphasizes instance-level exploration and feature selection to highlight which learner characteristics may be affecting outcomes.\n\nThe population is primarily tertiary students, including a simulated dataset of software engineering students and external higher-education student datasets from Kaggle; an additional external evaluation dataset included high school students. The context is primarily online/LMS-based higher education, with attention to automated assessment and learning analytics. The study cites demographic and academic variables such as gender, parental education, accommodation, study habits, and assessment performance.\n\nThe main conclusion is that the proposed adaptive feedback approach can help identify learner-specific challenges and support personalized intervention in LMS settings. Across models, Stacking achieved the highest reported accuracy (about 76.7% on the main comparison), while SVM showed the strongest precision (0.78); performance varied across datasets, with KNN and Stacking performing best in some external evaluations. The authors conclude that the system could help teachers and institutions better understand learning gaps, although the evidence is based on predictive modeling using simulated and secondary datasets rather than direct causal evaluation of effects on learning outcomes.",
+  "quality_tier": "yellow",
+  "impact_tier": "yellow",
+  "limitations": [
+    "small_sample",
+    "no_control_group",
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Cyprus",
+  "study_region": "Europe",
+  "extraction_status": "full_text",
+  "extraction_note": "Retrieved from KG corpus",
+  "interventions": [
+    {
+      "intervention": "Adaptive Feedback System (General)",
+      "confidence": 0.9,
+      "role": "primary",
+      "use_case": ""
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.8,
+      "finding": {
+        "direction": "positive",
+        "finding_summary": "Within the adaptive feedback system, the best-performing compared model was the stacking classifier, with reported accuracy around 76.7% to 76.79% in the main comparison. SVM achieved the highest reported precision at 0.78. Overall, the system demonstrated moderate ability to classify learner performance/challenge categories using machine learning.",
+        "measure": "classification accuracy and precision for student performance/challenge classification",
+        "study_size": "n=5000; n=145; n=2392",
+        "effect_size": "accuracy=76.7%-76.79%; precision=0.78",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      }
+    }
+  ],
+  "authors": "",
+  "_kg_source": true
+}

@@ -1,0 +1,103 @@
+{
+  "title": "Democratizing Foundations of Problem-Solving with AI: A Breadth-First Search Curriculum for Middle School Students",
+  "doi": null,
+  "year": 2026,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2604.01396v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Middle School (6th-8th)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses the challenge of making AI education accessible within regular K\u201312 subject-area instruction, rather than only through stand-alone enrichment experiences. The authors focus on teaching Breadth-First Search (BFS) as a concrete, traceable foundation for AI problem-solving and ask whether a curriculum embedded in middle school science can improve students\u2019 understanding of BFS while fitting the needs of classroom instruction.\n\nThe intervention was a seven-day AI4K12-aligned module co-designed with a teacher and implemented in a rural U.S. middle school health science course. The curriculum used i-SAIL, a Snap!-based learning environment, along with unplugged paper-based and hands-on activities. Students first practiced BFS through guided simulations and then applied it to science contexts such as virus transmission and contact tracing, including a Glo Germ simulation and contact-network tasks. The study collected pre/post assessments, student work artifacts, and a teacher interview.\n\nResults showed significant gains in BFS understanding from pre- to post-test, and many students could correctly identify shortest paths on a paper worksheet after the simulation activities. The teacher reported that the module fit well within the science unit and helped students understand both the science content and the AI ideas, though she recommended simpler language, more vocabulary support, and more teacher-facing scaffolds. Overall, the paper concludes that embedding AI reasoning in familiar disciplinary contexts can broaden access to AI learning for middle school students and support meaningful conceptual understanding without requiring prior computing experience.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a classroom implementation study with pre/post assessment, artifact analysis, and a teacher interview, but it is not a randomized or quasi-experimental comparative design. The evidence is useful but primarily descriptive and qualitative, with limited controls and no comparison group.",
+  "impact_tier": "green",
+  "impact_tier_rationale": "The BFS assessment showed a moderate positive gain (dz=0.453), which exceeds the modest-impact threshold, but the study is small and context-specific. The intervention was implemented with a rural middle school population, suggesting promising but not yet broadly established impact.",
+  "interventions": [
+    {
+      "intervention": "Educational Game / Simulation",
+      "confidence": 0.95,
+      "role": "primary",
+      "use_case": "A seven-day, classroom-embedded BFS learning module using the i-SAIL Snap!-based simulation environment plus unplugged activities to teach middle school students shortest-path search, frontier management, and AI problem-solving in a science context."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Students improved their understanding of BFS after the module. On a matched pre/post assessment with n=41, mean accuracy increased from 0.683 (SD=0.219) to 0.790 (SD=0.232), with a statistically significant paired t-test result (t(40)=2.90, p=.006) and a moderate within-subject effect size (Cohen\u2019s dz=0.453).",
+        "measure": "Matched pre/post BFS knowledge assessment (5-item multiple-choice score, proportion correct)",
+        "study_size": "n=41",
+        "effect_size": "dz=0.453",
+        "confidence_interval": "not_reported",
+        "std_deviation": "pre SD=0.219; post SD=0.232"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Scientific Reasoning",
+      "confidence": 0.75,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper reports that the curriculum supported intended science learning outcomes through its integration of BFS with virus transmission and contact tracing. Evidence comes primarily from teacher interview feedback and student application tasks rather than a direct science posttest, so the result is qualitative but positive.",
+        "measure": "Teacher interview and science-context application activities (virus spread/contact tracing tasks)",
+        "study_size": "n=1 teacher interview; classroom implementation n=103 enrolled, n=59 consented for analysis",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.67,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Students showed emerging procedural reasoning and problem-solving in the unplugged worksheet: 64.5% were able to identify the shortest path using BFS after the simulation-based instruction. However, many omitted intermediate steps and ordering details, indicating partial rather than fully formal procedural mastery.",
+        "measure": "Unplugged BFS worksheet tracing accuracy and completeness",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.67,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Teacher feedback suggested the activities were engaging and helped students retain material, with active, movement-based lessons associated with students starting to 'really understand' and recalling what was taught that day. This is qualitative evidence of engagement and motivation rather than a quantified attitude measure.",
+        "measure": "Teacher interview comments on engagement, motivation, and recall",
+        "study_size": "n=1 teacher interview",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "no_control_group",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "1",
+  "setting": "classroom",
+  "teacher_training": "yes",
+  "implementation_fidelity": "medium",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

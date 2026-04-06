@@ -1,0 +1,83 @@
+{
+  "title": "Fine-Tuning Large Language Models for Educational Support: Leveraging Gagn\u00e9\u2019s Nine Events of Instruction for Lesson Planning",
+  "doi": null,
+  "year": 2024,
+  "venue": "Conference Proceedings of the 28th Global Chinese Conference on Computers in Education (GCCCE 2024)",
+  "url": "http://arxiv.org/abs/2503.09276v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "K-12 (unspecified grade)"
+  ],
+  "user_types": [
+    "Educator"
+  ],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses the problem of how large language models (LLMs) can be adapted to support teachers in lesson planning and classroom dialogue generation in educational settings. The authors focus on aligning LLM outputs with Gagn\u00e9\u2019s Nine Events of Instruction, a well-known instructional design framework, to make generated teaching content more pedagogically structured and curriculum-aligned.\n\nThe paper describes two approaches: prompt tuning using Chain-of-Thought (CoT) prompts with ChatGPT, and model tuning using LoRA-based fine-tuning of open-source models such as ChatGLM and Llama2. The dataset is built from math curriculum standards, definitions/examples of Gagn\u00e9\u2019s events, and teacher dialogue collected from real classrooms, with GPT-4 used to generate additional examples that were then manually reviewed and corrected by educators and subject matter experts. The context is compulsory education mathematics in East China Normal University\u2013affiliated work, with a focus on classroom dialogue analysis and lesson-plan generation rather than student-facing instruction.\n\nThe paper reports that the proposed pipeline can generate and analyze teacher dialogue in ways that better match instructional principles and curriculum standards. However, the work is primarily a framework and system description: it presents the dataset construction, prompting strategy, fine-tuning process, and planned human evaluation, but does not report completed experimental outcomes with participants or learning impact. The authors conclude that the approach has promise for curriculum development, instructional evaluation, and AI-assisted teaching design.",
+  "limitations": [
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "China",
+  "study_region": "East Asia & Pacific",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "feedback_evaluation"
+      ],
+      "description": "OpenAI's generative AI chatbot / family of GPT large language models used for conversational content generation and evaluation tasks.",
+      "use_case": "Used via the ChatGPT API for prompt tuning to generate teacher dialogue aligned with Gagn\u00e9\u2019s Nine Events of Instruction, and as one of the baseline models for generating educational dialogue templates.",
+      "findings": []
+    },
+    {
+      "name": "LLaMA",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation"
+      ],
+      "description": "Meta's large language model family used for open-weight text generation and fine-tuning.",
+      "use_case": "Fine-tuned as an open-source baseline model for generating teacher dialogue aligned with instructional events.",
+      "findings": []
+    },
+    {
+      "name": "Qwen",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation"
+      ],
+      "description": "Alibaba's large language model family used for text generation and fine-tuning.",
+      "use_case": "Included as an open-access baseline model for fine-tuning and evaluation in the educational dialogue generation pipeline.",
+      "findings": []
+    },
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "content_generation",
+        "feedback_evaluation"
+      ],
+      "description": "Generic large language model / generative AI chatbot used for educational content generation and instructional support.",
+      "use_case": "The paper discusses LLM-based educational support broadly, including generic use of chatbots for lesson planning, classroom dialogue analysis, and educational content generation, without reporting a distinct empirical evaluation of a non-specific tool.",
+      "findings": []
+    }
+  ],
+  "verdict": "framework_only",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a framework / methods paper describing dataset construction, prompt tuning, and model fine-tuning rather than reporting a completed empirical study with outcome data. No quantitative results, sample sizes for outcomes, or causal evidence of effects are provided.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper proposes a potentially useful instructional workflow, but it does not report measured impact on learners or teachers. Because there are no outcome effect sizes, the practical impact remains unclear rather than demonstrably positive or negative.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

@@ -1,0 +1,65 @@
+{
+  "title": "Beyond Final Answers: Evaluating Large Language Models for Math Tutoring",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2503.16460v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper investigates whether large language models (LLMs), including several ChatGPT models, can function as effective math tutors rather than merely as problem solvers. The authors argue that existing benchmarks emphasize final-answer accuracy and do not adequately assess whether models provide correct, pedagogically useful step-by-step tutoring support. To address this gap, they ask two questions: how accurately LLMs solve algebra problems drawn from an intelligent tutoring system, and how accurate and high-quality their interactive tutoring guidance is when humans engage them as if they were students.\n\nThe study uses two complementary evaluation approaches. First, the authors use the Apprentice Tutors platform, an intelligent tutoring system for college algebra, as a testbed: they generate 110 algebra problems across 22 problem types and ask GPT-3.5 Turbo, GPT-4, GPT-4o, o1-mini, and o1-preview to solve them. Second, they conduct an interactive tutoring evaluation in which human evaluators prompt the same models for tutoring help on 30 problems, then rate the resulting dialogues for pedagogical quality and correctness using a rubric and independent review. The context is college algebra in an online tutoring setting, not a live classroom implementation with real learners.\n\nThe main conclusion is that LLMs can often produce reasonable final answers and generally supportive tutoring interactions, but they are not yet reliable enough to serve as standalone math tutors. In the tutor-based benchmark, models achieved 85.5% overall correctness on final answers, while in the interactive tutoring setting only 56.6% of dialogues were entirely correct, even though most were judged high quality in a pedagogical sense. The authors conclude that LLMs may be useful for limited tutoring functions such as hint generation, alternative explanations, and positive reinforcement, but human oversight or additional correctness-checking mechanisms are still needed before direct instructional deployment.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed-style empirical evaluation with a clear methodology, but it is not an RCT or QED and does not measure student learning outcomes. The study is primarily qualitative/benchmark-based and compares model outputs against tutor solutions and reviewer judgments.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper suggests important limitations for deploying LLM tutors in algebra, but it reports no direct learning gains or effect sizes on student outcomes. Its impact is therefore informative but still indirect and unclear for K-12 learners.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "Evaluating ChatGPT-family models as math tutors for college algebra, including interactive step-by-step tutoring, hints, feedback, and final-answer generation."
+    },
+    {
+      "intervention": "Intelligent Tutoring System (ITS)",
+      "confidence": 0.95,
+      "role": "secondary",
+      "use_case": "Using the Apprentice Tutors college algebra system as a benchmark/testbed to generate problems and expert solutions for head-to-head evaluation of LLM math tutoring performance."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 1.0,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "Across 110 tutor-generated college algebra problems, LLMs produced correct final answers on 85.5% overall, with model-level accuracy ranging from 74.5% (GPT-4) to 97.3% (GPT-4o). In interactive tutoring with 150 dialogues, final-answer accuracy was 88.6% overall, but only 56.6% of dialogues were fully correct, indicating substantial error rates in stepwise mathematical support.",
+        "measure": "Final-answer correctness on algebra problems; correctness of complete tutoring dialogues",
+        "study_size": "n=110 problem-answer pairs for tutor-based evaluation; n=150 interactive tutoring dialogues",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

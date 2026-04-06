@@ -1,0 +1,72 @@
+{
+  "title": "Preliminary Study of the Impact of AI-Based Interventions on Health and Behavioral Outcomes in Maternal Health Programs",
+  "doi": null,
+  "year": 2024,
+  "venue": "arXiv preprint",
+  "url": "http://arxiv.org/abs/2407.11973v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Adult (non-academic)"
+  ],
+  "user_types": [
+    "Parent",
+    "Community"
+  ],
+  "study_design": "Randomized Controlled Trial (RCT)",
+  "extended_summary": "This paper examines whether AI-scheduled outreach interventions in a maternal mobile health program can improve not only engagement with automated health messages, but also mothers\u2019 knowledge and self-reported health-related behaviors. The core question is whether an AI system that allocates limited live service calls can translate increased listenership into better behavioral and health outcomes.\n\nThe intervention is studied in ARMMAN\u2019s mMitra program in India, which sends weekly automated voice messages to pregnant and postpartum women. A decision-focused learning restless multi-armed bandit algorithm schedules live calls from health workers for a subset of beneficiaries, while a control group does not receive those calls. The study follows three enrollment cohorts totaling 60,464 beneficiaries, and then administers a health survey to a high-risk subset; survey responses are matched across intervention and control groups to compare outcomes.\n\nResults show a statistically significant increase in listenership after AI-scheduled interventions. The authors also report generally better survey performance among intervention beneficiaries, with some statistically significant differences on individual questions, especially among those whose listenership improved the most. However, the overall behavioral/health outcome differences are not consistently statistically significant because of small effective sample sizes, noisy survey responses, and selection issues in who completed the survey. The paper concludes that AI-scheduled intervention allocation can improve engagement and may help improve downstream maternal health knowledge, but larger follow-up studies are needed to establish the effect more firmly.",
+  "limitations": [
+    "small_sample",
+    "self_reported_measures",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "12",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "medium",
+  "study_country": "India",
+  "study_region": "South Asia",
+  "identified_tools": [
+    {
+      "name": "ITS (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "tutoring_instruction",
+        "feedback_evaluation"
+      ],
+      "description": "An intelligent tutoring / adaptive intervention system that allocates instructional or support actions using algorithmic decision-making.",
+      "use_case": "The paper studies AI-scheduled live service calls in the mMitra maternal health program, where a DFL-RMAB algorithm selects beneficiaries for intervention to increase listenership of automated health messages.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The AI-scheduled intervention increased beneficiary listenership relative to control. The paper reports an average increase of 7.43 seconds per call over the 12 automated voice calls following the intervention, with a summed additional listenership of 89.16 seconds over the next 12 calls; the 95% CI was [45.516, 132.936] and p=6.4656 \u00d7 10\u22125.",
+          "measure": "Listenership over the 12 automated voice calls following intervention",
+          "effect_size": "7.43 seconds per call; 89.16 seconds summed additional listenership",
+          "confidence_interval": "[45.516, 132.936]",
+          "sample_size": "n=436 (218 matched pairs)"
+        },
+        {
+          "outcome_category": "Academic \u0002014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The paper reports generally better survey-based behavioral and health knowledge outcomes for beneficiaries who gained in listenership after AI-scheduled interventions, but the overall summed score difference was not statistically significant (p=0.13). Two questions showed statistically significant differences: single-choice question 5 and multiple-choice question 3 (p=0.0021 for the latter).",
+          "measure": "Survey scores on engagement, knowledge, breastfeeding practices, communication, and supplements",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=436 (218 matched pairs)"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is a primary field study / randomized controlled trial with matching and subgroup analysis, but the paper itself notes small sample sizes, noise in responses, and residual confounding from survey nonresponse. Those concerns prevent a blue-tier rating.",
+  "impact_tier": "green",
+  "impact_tier_rationale": "The reported listenership effect is statistically significant but modest in magnitude (7.43 seconds per call). The broader behavioral/health outcomes are positive but mixed and often not statistically significant, so the overall practical impact appears modest.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

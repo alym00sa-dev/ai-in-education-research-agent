@@ -1,0 +1,299 @@
+{
+  "title": "Intelligent Tutor: Leveraging ChatGPT and Microsoft Copilot Studio to Deliver a Generative AI Student Support and Feedback System within Teams",
+  "doi": null,
+  "year": null,
+  "venue": null,
+  "url": "https://arxiv.org/abs/2405.13024",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper examines how to design and evaluate an intelligent tutoring system that integrates the ChatGPT API (using GPT-4) and Microsoft Copilot Studio within Microsoft Teams. The core problem addressed is how to provide students with immediate, personalized support and feedback in online learning while also giving teachers better visibility into student progress and needs. The study is motivated by growing interest in AI-supported adaptive learning and the widespread use of Teams in the author's institutional context.\n\nThe intervention is a prototype smart tutor system embedded in the campus Microsoft Teams environment. It includes a GPT-4-based student support chatbot, automated instructional content generation and adjustment through Microsoft Copilot Studio, and a teacher dashboard for monitoring learning progress, engagement, and common difficulties. The system is intended to tailor feedback and learning resources dynamically in response to student questions, progress, and performance. The study uses a mixed-methods design, combining quantitative surveys, tests, behavioral log analysis, ANOVA and t-tests, with qualitative feedback from students.\n\nThe participants were 100 first-year undergraduate students from a Department of Communication and 4 teachers, apparently at a university in Taiwan. Students were divided into an experimental group that used the intelligent tutoring system and a control group that used traditional teaching methods supported by Teams but without the tutoring system. The intervention lasted one semester, described as approximately five months, and was implemented in a digital learning context centered on Microsoft Teams.\n\nThe paper concludes that students using the smart tutor system showed significantly higher learning motivation, classroom participation, understanding of course content, and perceptions of teacher insight than students in the comparison condition. Qualitative responses suggested that personalized learning and immediate feedback were the most valued features, though students also reported issues with system stability and interface usability. The authors argue that integrating ChatGPT and Copilot Studio into Teams can improve learning outcomes, student engagement, and teaching efficiency, while noting limitations in sample scope and generalizability.",
+  "limitations": [
+    "single_site",
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "20",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Taiwan",
+  "study_region": "East Asia & Pacific",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "feedback_evaluation"
+      ],
+      "description": "OpenAI's conversational LLM family used here via API to power a tutoring chatbot that answers student questions and provides personalized feedback.",
+      "use_case": "Integrated with Microsoft Teams and Microsoft Copilot Studio to build an intelligent tutoring system for first-year university students, providing real-time support, tailored feedback, and adaptive learning assistance.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Students using the smart tutor system showed significantly higher understanding of course content than the control group, based on an independent-samples t-test. Reported statistics were t=2.01, p=0.047; the paper states the experimental group outperformed traditional learning methods, but no standardized effect size was reported.",
+          "measure": "Understanding of course content questionnaire outcome",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=100"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The experimental group reported significantly higher learning motivation than the control group after using the smart tutor system. The reported result was t=2.34, p=0.021, with 100 students total in the study; no effect size was provided.",
+          "measure": "Learning motivation questionnaire score",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=100"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Students who used the smart tutor system had significantly higher classroom participation than students in the control condition. The paper reports t=2.15, p=0.034 from the group comparison, with no effect size or confidence interval reported.",
+          "measure": "Classroom participation questionnaire score",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=100"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Students in the smart tutor condition gave significantly higher evaluations of teachers' insight than those in the control group. The reported test statistic was t=2.48, p=0.016; no effect size was reported.",
+          "measure": "Evaluation of teachers' insight questionnaire score",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=100"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The conclusion states that ANOVA and independent-samples t-tests showed significant differences in unit test scores between the experimental and control groups, indicating better learning outcomes for students using the smart tutor system. However, no exact test statistic, effect size, or confidence interval for unit test scores is reported in the paper text provided.",
+          "measure": "Unit test scores / learning outcomes tests",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=100"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "There was no statistically significant difference between groups in satisfaction with the user experience. The reported result was t=1.89, p=0.062, indicating a non-significant effect under conventional thresholds.",
+          "measure": "Satisfaction with user experience questionnaire score",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=100"
+        }
+      ]
+    },
+    {
+      "name": "Microsoft Copilot Studio",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "personalization_adaptation"
+      ],
+      "description": "Microsoft's no-code chatbot and agent-building platform, used to create conversational systems and automate content generation and workflow logic.",
+      "use_case": "Used with ChatGPT inside Microsoft Teams to create the intelligent tutoring system, including automated generation and adjustment of instructional content, quizzes, and learning activities.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Students using the smart tutor system showed significantly higher understanding of course content than the control group, based on an independent-samples t-test. Reported statistics were t=2.01, p=0.047; the paper attributes this to the integrated smart tutor system built with ChatGPT and Copilot Studio, but does not separate each tool's individual contribution.",
+          "measure": "Understanding of course content questionnaire outcome",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=100"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The experimental group reported significantly higher learning motivation than the control group after using the smart tutor system. The reported result was t=2.34, p=0.021, with 100 students total in the study; no effect size was provided, and effects are reported for the combined system rather than Copilot Studio alone.",
+          "measure": "Learning motivation questionnaire score",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=100"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Students who used the smart tutor system had significantly higher classroom participation than students in the control condition. The paper reports t=2.15, p=0.034 from the group comparison, but does not isolate the unique effect of Copilot Studio from the broader integrated system.",
+          "measure": "Classroom participation questionnaire score",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=100"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Students in the smart tutor condition gave significantly higher evaluations of teachers' insight than those in the control group. The reported test statistic was t=2.48, p=0.016; findings apply to the integrated Teams-based tutoring system including Copilot Studio.",
+          "measure": "Evaluation of teachers' insight questionnaire score",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=100"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The conclusion states that ANOVA and independent-samples t-tests showed significant differences in unit test scores between the experimental and control groups, indicating better learning outcomes for students using the smart tutor system. No exact statistic or effect size for unit test performance is reported in the provided text.",
+          "measure": "Unit test scores / learning outcomes tests",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=100"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "There was no statistically significant difference between groups in satisfaction with the user experience. The reported result was t=1.89, p=0.062, suggesting no clear group difference on this outcome.",
+          "measure": "Satisfaction with user experience questionnaire score",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=100"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical mixed-methods study with a comparison group and reported t-tests/ANOVA, but the paper provides limited methodological detail, no randomization evidence, and several results appear underspecified or partly descriptive. That places it below strong QED/RCT standards.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The study reports several statistically significant positive differences favoring the intervention, but no standardized effect sizes or confidence intervals are provided, making the magnitude of impact unclear. One measured outcome, user experience satisfaction, was not statistically significant.",
+  "citations": [
+    {
+      "title": "Mobile learning: Transforming the delivery of education and training",
+      "doi": null,
+      "year": 2009,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Educational data mining and learning analytics",
+      "doi": null,
+      "year": 2014,
+      "venue": "Learning analytics: From research to practice",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "e-Learning and the science of instruction: Proven guidelines for consumers and designers of multimedia learning",
+      "doi": null,
+      "year": 2016,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The state of AI in education",
+      "doi": null,
+      "year": 2019,
+      "venue": "Educause Review",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A practitioner's guide to gamification of education",
+      "doi": null,
+      "year": 2013,
+      "venue": "Research Report Series, Behavioural Economics in Action",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Microsoft Copilot Studio",
+      "doi": null,
+      "year": null,
+      "venue": "Microsoft website",
+      "citation_level": 2,
+      "citation_context": "platform chosen for tutor system development"
+    },
+    {
+      "title": "Intelligent tutoring systems: An overview",
+      "doi": null,
+      "year": 1990,
+      "venue": "Artificial Intelligence Review",
+      "citation_level": 2,
+      "citation_context": "defines intelligent tutoring system concept"
+    },
+    {
+      "title": "DeepInf: Social influence prediction with deep learning",
+      "doi": null,
+      "year": 2020,
+      "venue": "ACM Transactions on Knowledge Discovery from Data (TKDD)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Language models are unsupervised multitask learners",
+      "doi": null,
+      "year": 2019,
+      "venue": "OpenAI Blog",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Learning analytics and educational data mining: Towards communication and collaboration",
+      "doi": null,
+      "year": 2012,
+      "venue": "Proceedings of the 2nd International Conference on Learning Analytics and Knowledge",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The relative effectiveness of human tutoring, intelligent tutoring systems, and other tutoring systems",
+      "doi": null,
+      "year": 2011,
+      "venue": "Educational Psychologist",
+      "citation_level": 2,
+      "citation_context": "supports ITS effectiveness claims"
+    },
+    {
+      "title": "Attention is all you need",
+      "doi": null,
+      "year": 2017,
+      "venue": "Advances in Neural Information Processing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Building intelligent interactive tutors: Student-centered strategies for revolutionizing e-learning",
+      "doi": null,
+      "year": 2009,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "frames intelligent interactive tutor design"
+    },
+    {
+      "title": "Systematic review of research on artificial intelligence applications in higher education \u2013 where are the educators?",
+      "doi": null,
+      "year": 2019,
+      "venue": "International Journal of Educational Technology in Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

@@ -1,0 +1,396 @@
+{
+  "title": "SlideItRight: Using AI to Find Relevant Slides and Provide Feedback for Open-Ended Questions",
+  "doi": null,
+  "year": 2025,
+  "venue": null,
+  "url": "https://arxiv.org/abs/2505.04584",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Adult (non-academic)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper investigates whether AI-facilitated multimodal feedback can support learning as effectively as human feedback, and how learners perceive different feedback modalities. The authors focus on a common educational challenge: providing individualized, scalable feedback on open-ended responses. They argue that most automated feedback tools emphasize text alone, despite multimedia learning theory suggesting that combining modalities may improve learning and reduce cognitive load when designed well.\n\nTo address this, the paper introduces SlideItRight, a retrieval-augmented feedback system that combines LLM-generated textual feedback with relevant lecture slides retrieved from course materials. The system uses GPT-4o for personalized text feedback and OpenAI vision capabilities to analyze and retrieve slide content relevant to each question. The study used a 2x2 experimental design comparing human vs. AI feedback and with vs. without relevant slide support, yielding four conditions: human feedback, slide-only feedback, AI-only feedback, and combined AI-plus-slide feedback.\n\nThe evaluation was conducted online with 91 adult participants recruited through Prolific in the United States. Participants completed a pre-test, engaged with an online instructional module on the multimedia principle in e-learning design, answered multiple-choice and open-ended questions while receiving condition-specific feedback, then completed a post-test and post-survey. The context was an online crowdsourced learning environment rather than a formal school classroom, and outcomes included both objective learning gains from pre/post testing and self-reported perceptions from Likert-scale and open-ended survey responses.\n\nThe main findings were that all four conditions produced statistically significant pre-to-post learning gains, but there were no statistically significant differences between conditions. The combined AI-plus-slide condition showed the highest average learning gain numerically, but not significantly so. In learner perceptions, human feedback was rated highest for clarity, trust, and motivation; AI feedback was rated strongest for personalization and actionability; slide feedback was valued as helpful reference material but often seen as difficult to understand; and the combined condition was promising but sometimes overwhelming or internally inconsistent. The authors conclude that AI-generated multimodal feedback can provide learning support comparable to human feedback, but improvements are needed in clarity, trustworthiness, and cognitive load management.",
+  "limitations": [
+    "small_sample",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "SlideItRight",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "content_generation"
+      ],
+      "description": "A retrieval-augmented multimodal feedback system that combines LLM-generated textual feedback with retrieved relevant lecture slides to support responses to open-ended questions.",
+      "use_case": "Studied as an automated feedback system in a 2\u00d72 experiment comparing human vs. AI feedback and with vs. without retrieved slide support, measuring learning gains and student perceptions during online learning activities.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "Across all four conditions, participants showed significant pre-to-post learning gains, but between-condition differences were not statistically significant. For the SlideItRight-related conditions, paired t-tests showed significant gains for relevant slide page feedback (t=-5.00, p=0.00005), AI feedback (t=-4.58, p=0.00013), and combined slide + AI feedback (t=-3.99, p=0.00067); however, a two-way ANOVA found no main effect of feedback type (F=1.09, p=0.298), no main effect of slide presence (F=0.535, p=0.466), and no interaction (F=0.0687, p=0.794).",
+          "measure": "Pre/post-test learning gain on baseline and post instructional assessments",
+          "effect_size": "not_reported",
+          "confidence_interval": "95% CI shown in figure for average learning gain, exact values not reported",
+          "sample_size": "n=91"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Average learning gains trended higher in the combined SlideItRight condition (14.8%), followed by AI-only feedback (13.4%) and slide-only feedback (12.5%), compared with human feedback (9.49%), but these differences were not statistically significant. A one-way ANOVA on pre-test scores found no significant baseline differences between groups (F=1.73, p=0.167).",
+          "measure": "Average normalized learning gain and baseline pre-test equivalence",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=91"
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Post-survey results indicated that students viewed AI-generated feedback as personalized and relevant, but trusted it less than human feedback. For AI feedback, 79.17% agreed it was personalized, 79.17% agreed it addressed issues in their responses, 87.50% agreed it provided actionable suggestions, but only 50.00% reported trust in the feedback; the combined condition had 68.18% trust and 86.36% agreement that feedback addressed response issues.",
+          "measure": "5-point Likert post-survey on personalization, relevance, actionability, and trust",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=91"
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Students found slide feedback helpful for learning but difficult to understand, and combined multimodal feedback sometimes created overload or contradictions. In the slide condition, 86.96% reported overall satisfaction and perceived learning gains, but only 39.13% agreed the feedback was easy to understand; qualitative responses noted requests for simpler clarity and concerns that too much information at once was difficult to process in timed settings.",
+          "measure": "5-point Likert post-survey on satisfaction, perceived learning gains, clarity, and qualitative open responses",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=91"
+        }
+      ]
+    },
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "feedback_evaluation"
+      ],
+      "description": "OpenAI GPT-family large language models used for language generation and multimodal understanding.",
+      "use_case": "Used within SlideItRight via GPT-4o for personalized feedback generation and GPT-4 Vision for understanding course slides and supporting retrieval of relevant slide content.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "When used as the LLM backbone within SlideItRight, AI feedback supported significant within-group pre-to-post gains, but did not outperform comparison conditions statistically. The AI feedback condition showed a significant paired t-test result (t=-4.58, p=0.00013), while the two-way ANOVA found no significant main effect of feedback type (F=1.09, p=0.298) or interaction with slide presence (F=0.0687, p=0.794).",
+          "measure": "Pre/post-test learning gain for AI feedback condition within the 2\u00d72 experiment",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=23"
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Students rated the ChatGPT-based feedback as highly actionable and personalized but relatively low in trust. In the AI feedback condition, 87.50% agreed the feedback provided actionable suggestions, 79.17% agreed it was personalized, 79.17% agreed it addressed issues in their responses, but only 50.00% agreed they trusted the feedback.",
+          "measure": "5-point Likert post-survey on actionability, personalization, relevance, and trust",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=23"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is an empirical randomized 2\u00d72 experimental study with pre/post tests and a final sample of 91, which is stronger than correlational work. However, the sample is modest, recruited from Prolific rather than classroom settings, and effect sizes were not reported, so it falls short of blue-tier evidence.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "All conditions showed significant within-group learning gains, but there were no statistically significant differences between AI, slide, combined, and human feedback conditions. Reported impacts therefore appear promising but unclear in magnitude and comparative advantage.",
+  "citations": [
+    {
+      "title": "Enhancing feedback quality at scale: Leveraging machine learning for learner-centered feedback",
+      "doi": null,
+      "year": 2024,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 2,
+      "citation_context": "learner-centered feedback framing"
+    },
+    {
+      "title": "Cognitive load theory: New directions and challenges",
+      "doi": null,
+      "year": 2012,
+      "venue": "Applied Cognitive Psychology",
+      "citation_level": 2,
+      "citation_context": "cognitive load management principles"
+    },
+    {
+      "title": "Teaching For Quality Learning At University",
+      "doi": null,
+      "year": 2011,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "GPTutor: a ChatGPT-powered programming tool for code explanation",
+      "doi": null,
+      "year": 2023,
+      "venue": "International Conference on Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "MuRAG: Multimodal retrieval-augmented generator for open question answering over images and text",
+      "doi": null,
+      "year": 2022,
+      "venue": "Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Assessing the proficiency of large language models in automatic feedback generation: An evaluation study",
+      "doi": "10.1016/j.caeai.2024.100299",
+      "year": 2024,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Mindset: The new psychology of success",
+      "doi": null,
+      "year": 2006,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Retrieval-augmented generation for large language models: A survey",
+      "doi": "10.48550/arXiv.2312.10997",
+      "year": null,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Improving assessment of tutoring practices using retrieval-augmented generation",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Towards understanding the effective design of automated formative feedback for programming assignments",
+      "doi": null,
+      "year": 2022,
+      "venue": "Computer Science Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Power of Feedback",
+      "doi": null,
+      "year": 2007,
+      "venue": "Review of Educational Research",
+      "citation_level": 2,
+      "citation_context": "feedback theory underpinning study framing"
+    },
+    {
+      "title": "Enhancing learning through formative assessment and feedback",
+      "doi": null,
+      "year": 2021,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Routledge Handbook of Multimodal Analysis",
+      "doi": null,
+      "year": 2014,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "LLM-generated Feedback in Real Classes and Beyond: Perspectives from Students and Instructors",
+      "doi": "10.5281/ZENODO.12729974",
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT for good? On opportunities and challenges of large language models for education",
+      "doi": null,
+      "year": 2023,
+      "venue": "Learning and Individual Differences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Multimodal Discourse: The Modes and Media of Contemporary Communication",
+      "doi": null,
+      "year": 2001,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Fine-tuning a large language model with reinforcement learning for educational question generation",
+      "doi": null,
+      "year": 2024,
+      "venue": "Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Retrieval-augmented generation for knowledge-intensive NLP tasks",
+      "doi": "10.48550/arXiv.2005.11401",
+      "year": null,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "RAG architecture grounding approach"
+    },
+    {
+      "title": "Bringing generative ai to adaptive learning in education",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Towards the automated generation of readily applicable personalised feedback in education",
+      "doi": null,
+      "year": 2024,
+      "venue": "Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Learner-centred analytics of feedback content in higher education",
+      "doi": null,
+      "year": 2023,
+      "venue": "LAK23: 13th International Learning Analytics and Knowledge Conference",
+      "citation_level": 2,
+      "citation_context": "learner-centered structure for feedback"
+    },
+    {
+      "title": "How can I get it right? Using GPT to rephrase incorrect trainee responses",
+      "doi": null,
+      "year": 2024,
+      "venue": "International Journal of Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "How to teach programming in the AI era? Using LLMs as a teachable agent for debugging",
+      "doi": null,
+      "year": 2024,
+      "venue": "Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Multimedia learning",
+      "doi": null,
+      "year": 2002,
+      "venue": "Psychology of Learning and Motivation",
+      "citation_level": 2,
+      "citation_context": "multimedia learning principles for slide-text design"
+    },
+    {
+      "title": "The critical role of trust in adopting AI-powered educational technology for learning: An instrument for measuring student perceptions",
+      "doi": null,
+      "year": 2025,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 2,
+      "citation_context": "trust mechanisms in AI feedback"
+    },
+    {
+      "title": "Systemic functional-multimodal discourse analysis (SF-MDA): constructing ideational meaning using language and visual imagery",
+      "doi": "10.1177/1470357208096210",
+      "year": 2008,
+      "venue": "Visual Communication",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "What is multimodality?",
+      "doi": "10.48550/arXiv.2103.06304",
+      "year": null,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Improving the Validity of Automatically Generated Feedback via Reinforcement Learning",
+      "doi": null,
+      "year": 2024,
+      "venue": "Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Jill watson: A virtual teaching assistant powered by ChatGPT",
+      "doi": null,
+      "year": 2024,
+      "venue": "Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Psychophysical and neural evidence for emotion-enhanced perceptual vividness",
+      "doi": null,
+      "year": 2012,
+      "venue": "Journal of Neuroscience",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Designing learner-centred text-based feedback: a rapid review and qualitative synthesis",
+      "doi": null,
+      "year": 2021,
+      "venue": "Assessment & Evaluation in Higher Education",
+      "citation_level": 2,
+      "citation_context": "learner-centered prompting strategy basis"
+    },
+    {
+      "title": "Artificial intelligence in education: A systematic literature review",
+      "doi": "10.1016/j.eswa.2024.124167",
+      "year": 2024,
+      "venue": "Expert Systems with Applications",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The power of feedback revisited: A meta-analysis of educational feedback research",
+      "doi": null,
+      "year": 2020,
+      "venue": "Frontiers in Psychology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The feedback triangle and the enhancement of dialogic feedback processes",
+      "doi": null,
+      "year": 2013,
+      "venue": "Teaching in Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

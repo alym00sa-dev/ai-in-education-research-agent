@@ -1,0 +1,56 @@
+{
+  "title": "Evaluating Privacy Questions From Stack Overflow: Can ChatGPT Compete?",
+  "doi": null,
+  "year": 2023,
+  "venue": "not_reported",
+  "url": "http://arxiv.org/abs/2306.11174v1",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper investigates whether ChatGPT can serve as a viable alternative to Stack Overflow for answering privacy-related technical questions. The authors focus on privacy concerns raised by software developers, especially those involving choice/consent, aggregation, identification, disclosure, and onward transfer, and ask whether generative AI can produce answers comparable to community-vetted responses.\n\nTo study this, the authors extracted 932 Stack Overflow questions posted between 2016 and 2023, randomly sampled 270 question-answer pairs, and manually annotated them using two privacy taxonomies and a natural-language-inference-inspired labeling process. After several annotation and discussion rounds, they created a dataset of 92 privacy-related QAs. They then generated ChatGPT answers to the same questions using the original question text as prompts and compared ChatGPT responses with accepted or highest-voted Stack Overflow answers using expert annotators.\n\nThe paper finds that ChatGPT responses matched Stack Overflow answers in 56.1% of cases, and that Stack Overflow was slightly more accurate when the answers did not match. The authors conclude that ChatGPT can sometimes provide acceptable privacy guidance, but both ChatGPT and Stack Overflow should be used cautiously for privacy-sensitive questions because accuracy is not consistently high enough for full reliance.",
+  "limitations": [
+    "small_sample",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "feedback_evaluation"
+      ],
+      "description": "OpenAI's generative AI chatbot based on GPT-family large language models, capable of producing conversational responses and assisting with text/code generation.",
+      "use_case": "Used to generate answers to Stack Overflow privacy-related questions using the original question text as the prompt, then compared against accepted or highest-upvoted Stack Overflow answers.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Across 82 Stack Overflow privacy-related QAs with available answers, ChatGPT responses were judged to agree with Stack Overflow answers in 46/82 cases (56.1%) when at least two of three annotators agreed. For the non-agreed cases, ChatGPT was considered more accurate for 12/36 (33.3%) and less accurate than Stack Overflow for 15/36 (41.7%), with 9/36 inconclusive.",
+          "measure": "Annotator judgment of agreement and relative accuracy between ChatGPT-generated answers and Stack Overflow answers",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=82"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a mixed-method comparative study with manual annotation and expert judgment, not an experiment with controlled outcome testing. The evidence is useful but has moderate methodological limitations, including small sample size and subjective agreement coding.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The reported effect is modest and mixed: ChatGPT matched or was judged acceptable in just over half of cases, but Stack Overflow remained slightly more accurate overall. No standardized effect size is reported, so impact is best treated as unclear-to-modest.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

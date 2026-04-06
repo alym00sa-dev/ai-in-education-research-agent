@@ -1,0 +1,60 @@
+{
+  "title": "Improving Assessment of Tutoring Practices using Retrieval-Augmented Generation",
+  "doi": null,
+  "year": 2024,
+  "venue": "Proceedings of Machine Learning Research (AI4Ed-AAAI)",
+  "url": "http://arxiv.org/abs/2402.14594v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Middle School (6th-8th)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper examines how large language models can be used to automatically assess the quality of tutoring practices, with a particular focus on social-emotional learning (SEL) strategies in math tutoring. The authors frame the problem as one of expensive and difficult human-expert assessment of novice tutors, especially when trying to evaluate whether tutors provide supportive, relationship-building instruction rather than only content help.\n\nThe approach studied compares four prompting strategies for GPT-3.5 and GPT-4: two zero-shot prompts, a Tree of Thoughts prompt, and a Retrieval-Augmented Generation (RAG) prompt. The prompts are designed to score tutoring transcripts and generate evidence-based explanations using rubric criteria drawn from five SEL-oriented tutoring principles: giving effective praise, supporting a growth mindset, reacting to errors, responding to negative self-talk, and using motivational strategies.\n\nThe data come from five real-world Zoom-based middle-school math tutoring transcripts from the United States, each about 30 minutes long, involving novice tutors working with grades 6-8 students in one-on-one breakout rooms. The tutors had previously completed some SEL-related lessons on a tutor-training platform. The paper reports that the RAG prompt generally produced the most accurate and least hallucinatory assessments, and it was also the most cost-effective option across both GPT models. The study concludes that RAG may be useful for scalable tutor assessment and for supporting personalized tutor training interventions, though the work is preliminary and intended as a proof of concept.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a preliminary work-in-progress study using only five transcripts and a single human coder, with no experimental comparison on student outcomes. It is peer-reviewed conference proceedings, but the methodology is exploratory rather than rigorous causal evidence.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper suggests potential operational benefits for tutor assessment and training workflows, but it does not demonstrate measured learning gains or scalable real-world impact. The observed effect is about evaluation accuracy/cost, not direct educational impact.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.95,
+      "role": "primary",
+      "use_case": "Using GPT-3.5 and GPT-4 with zero-shot, Tree of Thoughts, and retrieval-augmented generation prompts to automatically assess middle-school math tutors\u2019 social-emotional tutoring competencies from dialogue transcripts."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper finds that retrieval-augmented generation (RAG) can automate tutor assessment more accurately and at lower cost than the other prompting strategies tested. Across five tutoring transcripts, RAG with GPT-3.5/GPT-4 produced more correct and less hallucinated evaluations, and GPT-4 was about 10x more expensive than GPT-3.5 for the same task; the authors report RAG as the most cost-effective approach.",
+        "measure": "Human-coded correctness and hallucination of GPT-generated tutor evaluations; API cost per lesson evaluation",
+        "study_size": "n=5 tutoring transcripts",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "yes",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

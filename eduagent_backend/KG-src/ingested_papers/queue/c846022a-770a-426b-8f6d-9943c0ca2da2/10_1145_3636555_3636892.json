@@ -1,0 +1,88 @@
+{
+  "title": "Revealing Networks: Understanding Effective Teacher Practices in AI-Supported Classrooms using Transmodal Ordered Network Analysis",
+  "doi": "10.1145/3636555.3636892",
+  "year": 2024,
+  "venue": "The 14th Learning Analytics and Knowledge Conference (LAK \u201924)",
+  "url": "http://arxiv.org/abs/2312.10826v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Middle School (6th-8th)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper asks how teacher practices in AI-supported classrooms relate to student learning behavior in an AI tutor, and whether adding evidence about teacher actions improves inference of which students are learning quickly or slowly. The authors focus on a methodological problem in learning analytics: tutor log data alone may miss the classroom context that shapes how students use AI tutors, especially teacher monitoring and teacher-student interactions.\n\nTo address this, the study combines three data sources from a middle school mathematics classroom: AI tutor logs from the Lynnette equation-solving tutor, timestamped classroom observation notes, and spatial teacher-position data from ultrawide-band sensors. The authors use Transmodal Ordered Network Analysis, a quantitative ethnography approach, to model temporal co-occurrence among in-tutor and out-of-tutor behaviors. Students were grouped by individualized learning rates estimated from tutor data, and teacher visits were also analyzed before and after they occurred.\n\nThe study found that including teacher-practice data improved model fit for distinguishing low- and high-learning-rate students. Teacher screen alignment and teacher talking were associated differently with the two groups: students with low learning rates more often requested hints after teacher monitoring or talking, whereas high-learning-rate students more often produced correct attempts. After teacher visits, low-learning-rate students showed more consecutive correct attempts, suggesting that visits were especially helpful for them. Qualitative review of observation notes suggested that low-learning-rate students tended to receive more procedural support before visits, while visits themselves often included more conceptual prompting, which may explain the improved post-visit behavior.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed observational case study using multimodal learning analytics and quantitative ethnography in one authentic classroom. It is methodologically rich but correlational, with no randomized assignment or causal identification, so credibility is limited to associative evidence.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The observed associations are promising and include moderate-to-strong correlations, but they do not demonstrate that the teacher-practice patterns caused learning gains. The paper suggests a potentially useful analytics approach for K-12 math classrooms, but the direct instructional impact remains unclear.",
+  "interventions": [
+    {
+      "intervention": "Intelligent Tutoring System (ITS)",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "classroom use of the Lynnette AI math tutor for 7th-grade linear equation solving, including stepwise hints, error feedback, and mastery-based practice"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 0.98,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "This paper does not test a new instructional intervention on achievement directly, but it finds that incorporating teacher-practice variables into models significantly improved inference of students' learning rates in the math tutor. The multimodal model including out-of-tutor teacher practices fit better than the tutor-log-only model (AIC=150.60 vs 158.30; t=12.76, 95% CI [7.06, 9.63], p<.001) in a sample of n=85 7th-grade students.",
+        "measure": "Model fit and inferred individualized learning rates in the linear-equation-solving ITS",
+        "study_size": "n=85",
+        "effect_size": "not_reported",
+        "confidence_interval": "[7.06, 9.63] for the AIC difference test",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.8,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "Teacher monitoring and talking were associated with different student behavioral responses depending on prior learning rate. Low-learning-rate students tended to request more hints after teacher screen alignment and talking, whereas high-learning-rate students tended to produce more correct attempts; the paper interprets this partly through disengagement/hint abuse and partly through differential support type.",
+        "measure": "Temporal co-occurrence of teacher practices with student hint requests, correct attempts, idling, and tutor misuse",
+        "study_size": "n=85",
+        "effect_size": "r=0.55; r=0.60; r=0.53; r=0.45; r=0.36 (reported for several Wilcoxon tests)",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.73,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The qualitative replay analysis suggests that conceptual teacher support and self-explanation prompts around teacher visits were linked to more desirable problem-solving behavior, especially for slower learners. After visits, low-learning-rate students showed more consecutive correct attempts (pre-visit median score -0.33 vs post-visit -0.08; V=303, r=0.49, p=.022), indicating improved productive persistence/problem-solving behavior.",
+        "measure": "Pre/post-visit ordered network scores and consecutive correct attempts in the tutor",
+        "study_size": "n=85",
+        "effect_size": "r=0.49",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "no_long_term_followup",
+    "non_representative_population"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "classroom",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

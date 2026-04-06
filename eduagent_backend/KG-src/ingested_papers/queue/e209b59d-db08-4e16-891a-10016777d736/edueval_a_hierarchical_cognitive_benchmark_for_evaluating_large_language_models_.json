@@ -1,0 +1,84 @@
+{
+  "title": "EduEval: A Hierarchical Cognitive Benchmark for Evaluating Large Language Models in Chinese Education",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2512.00290v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Elementary (PreK-5th)",
+    "Middle School (6th-8th)",
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses the problem of how to evaluate large language models (LLMs) for educational use in a way that reflects authentic K-12 classroom demands rather than relying on narrow benchmark questions. The authors argue that existing evaluation suites for Chinese and general-purpose LLMs overemphasize low-level recall and single-turn prompts, while failing to capture higher-order skills such as application, reasoning, creativity, and ethical judgment that matter in real classrooms.\n\nTo address this gap, the paper introduces EduEval, a benchmark built around a new EduAbility Taxonomy that combines Bloom\u2019s Taxonomy and Webb\u2019s Depth of Knowledge. EduEval includes over 11,000 items across 24 task types drawn from real exam archives, classroom transcripts, student essays, and expert-authored prompts. The benchmark covers Chinese K-12 education from primary through high school and evaluates 14 LLMs in zero-shot and few-shot settings, using accuracy, Rouge-L, RMSE, and GPT-based scoring depending on the task.\n\nThe main conclusion is that current LLMs perform well on memorization and some comprehension tasks, but struggle on authentic classroom applications such as dialogue classification and show uneven performance on creative generation and complex reasoning. Few-shot prompting helps some task types but can also constrain creativity or reduce performance on reasoning. The paper also reports that domain-specific fine-tuning can improve educational tasks but may narrow broader reasoning ability, and it highlights concerns about privacy, bias, and premature classroom deployment.",
+  "limitations": [
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "China",
+  "study_region": "East Asia & Pacific",
+  "identified_tools": [
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "tutoring_instruction",
+        "feedback_evaluation",
+        "content_generation"
+      ],
+      "description": "Large language models used for educational tasks such as tutoring, automated grading, classroom dialogue analysis, content generation, and ethical reasoning.",
+      "use_case": "The paper benchmarks 14 LLMs on Chinese K-12 educational tasks to evaluate capabilities across cognitive dimensions, including memory, understanding, application, reasoning, creativity, and ethics.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0000 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Across 14 LLMs, models performed well on factual/memory tasks but struggled on classroom dialogue classification and more complex application/reasoning tasks. The paper reports that accuracy can drop below 30% for classroom dialogue classification, while top systems exceeded 90% on some recall tasks; however, no single overall effect size is reported.",
+          "measure": "Accuracy on benchmark tasks; Rouge-L for some understanding tasks; RMSE for essay scoring",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=14 models; 11,150 benchmark items"
+        },
+        {
+          "outcome_category": "Academic \u0000 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Few-shot prompting did not uniformly improve performance. The paper reports that examples sometimes helped task-specific conventions such as classroom dialogue classification and ethics, but often slightly reduced average performance overall and could constrain creative generation or interfere with reasoning paths.",
+          "measure": "Zero-shot vs few-shot benchmark performance across cognitive dimensions",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=14 models; 11,150 benchmark items"
+        },
+        {
+          "outcome_category": "Academic \u0000 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Domain-specific fine-tuning improved educationally contextual tasks but could reduce broader abstract reasoning. The education-specialized EduChat-sft-002-13B improved over its Baichuan-13B base model in most authentic educational contexts, especially application and ethics, but showed a slight decrease on abstract reasoning tasks.",
+          "measure": "Benchmark task performance comparing EduChat-sft-002-13B with Baichuan-13B",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=2 models; 11,150 benchmark items"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a benchmark/evaluation paper rather than a controlled intervention study, meta-analysis, or QED. The evidence is descriptive model benchmarking with no causal estimate or experimental comparison against classroom literacy interventions.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports substantial performance differences across tasks, including large drops on classroom dialogue classification and notable gains on factual recall, but it does not provide a single effect size tied to an educational outcome intervention. The practical impact is meaningful for tool evaluation, yet the reported findings are not directly intervention-based.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

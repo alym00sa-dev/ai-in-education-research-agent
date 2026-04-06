@@ -1,0 +1,74 @@
+{
+  "title": "Using Large Language Models to Assess Tutors\u2019 Performance in Reacting to Students Making Math Errors",
+  "doi": null,
+  "year": 2024,
+  "venue": "AAAI 2024 Workshop AI4ED",
+  "url": "http://arxiv.org/abs/2401.03238v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Middle School (6th-8th)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper examines whether large language models can accurately evaluate tutor performance when tutors respond to students making math errors. The authors focus on a specific tutoring skill drawn from the \u201cReacting to Errors\u201d lesson: instead of directly pointing out a mistake, tutors should use indirect, motivating, effort-focused, immediate, and mathematically accurate responses that help students discover and correct their own errors.\n\nThe study first uses GPT-4 to generate 50 synthetic tutor-student dialogues in order to calibrate human annotation and estimate inter-rater reliability. It then evaluates GPT-3.5-Turbo and GPT-4 on 50 real tutoring dialogues from remote online tutoring sessions. The corpus involved college-student tutors working with middle school students in two schools; the tutoring was delivered remotely using the Pencil platform. Human annotators coded whether a student error occurred and whether tutor responses met five criteria.\n\nResults show that both GPT-3.5-Turbo and GPT-4 perform fairly well at judging some criteria, especially immediate and accurate responses, but both models struggle to detect whether a student actually made an error. GPT-4 performs slightly better overall and appears more willing to infer uncertainty as error, but the authors caution that LLM-based assessment is not yet fully reliable on its own. They conclude that GPT-3.5-Turbo may be more cost-effective for scalable assessment, while future work should test larger datasets and learning transfer after tutor training.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed workshop paper using a small observational evaluation with human annotation and model comparison, but it is not an experimental study of learning outcomes. The design is methodologically clear yet limited by the small corpus and absence of student achievement measures.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper demonstrates a potentially useful AI evaluation workflow, but the impact is indirect and operational rather than learner-facing. Reported performance improvements are modest and confined to dialogue scoring, with no evidence of downstream learning gains.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.88,
+      "role": "primary",
+      "use_case": "Using GPT-3.5-Turbo and GPT-4 to assess tutor responses in math tutoring dialogues, specifically whether tutors react appropriately when students make math errors."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper finds that LLMs can automate assessment of tutor dialogue for a set of tutoring skill criteria, suggesting potential to reduce the time and labor required for human evaluation. On 50 real-life tutoring dialogues, GPT-3.5-Turbo and GPT-4 both achieved fairly strong performance on several criteria, especially immediate (F1=0.80 and 0.93) and accurate (F1=0.80 and 0.95), indicating usefulness for scalable tutor scoring.",
+        "measure": "Criterion-level precision/recall/F1 for automated scoring of tutor responses; human-vs-LLM agreement on whether a student made an error",
+        "study_size": "n=50 dialogues",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    },
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 0.72,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The paper focuses on math tutoring contexts and evaluates whether AI can judge tutor responses to student math errors. Performance was mixed: GPT-4 and GPT-3.5-Turbo scored well on some math-tutoring criteria, but both struggled to recognize when a student had actually made an error; GPT-4 correctly identified no-error dialogues 63% of the time versus 54% for GPT-3.5-Turbo.",
+        "measure": "Binary classification of whether a student made a math error; tutor-response scoring for five math-tutoring criteria",
+        "study_size": "n=50 dialogues",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "yes",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

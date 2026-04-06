@@ -1,0 +1,54 @@
+{
+  "title": "Gender bias and stereotypes in Large Language Models",
+  "doi": "10.1145/3582269.3615599",
+  "year": 2023,
+  "venue": "Collective Intelligence Conference (CI '23)",
+  "url": "https://doi.org/10.1145/3582269.3615599",
+  "source_db": "openalex_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper examines whether recently published large language models exhibit gender bias when resolving ambiguous pronouns in sentences containing stereotypically male and female occupations. The authors are motivated by concerns that, despite advances in large language models and reinforcement learning from human feedback, these systems may still reproduce or amplify societal stereotypes. Rather than focusing on educational use or writing feedback, the paper studies bias in language model outputs more generally.\n\nThe authors design a new prompting paradigm inspired by WinoBias but intended to avoid contamination from benchmark memorization. They create 15 ambiguous sentence schemas pairing stereotypically male and female occupations with masculine or feminine pronouns, generate 60 sentence variants, and prompt four publicly available 2023 LLMs three times each in separate sessions. They also ask a follow-up question about whether the unchosen noun could also be a valid referent, and they run a baseline condition with gendered names inserted to test whether the models can override stereotypes when explicit disambiguating information is present. Responses are manually coded for occupation choice, ambiguity recognition, and explanation type.\n\nThere are no human student, teacher, or school participants in the study. The units analyzed are model outputs collected through API-based prompting in an online/computational setting. The paper therefore does not provide evidence relevant to direct comparative studies of ChatGPT-generated writing feedback for high school students, nor does it compare ChatGPT with legacy automated writing evaluation tools such as Criterion, Grammarly, MI Write, PEG, NC Write, or eRevise.\n\nThe main conclusion is that all four tested LLMs showed substantial gender-stereotyped behavior: they were several times more likely to associate masculine pronouns with stereotypically male occupations and feminine pronouns with stereotypically female occupations. Their choices aligned more closely with human stereotype ratings than with labor-force statistics, and the models appeared to amplify stereotypes, especially for women. The models rarely acknowledged ambiguity in their initial responses, though many did so when explicitly prompted, and their explanations were often inaccurate or post hoc rationalizations rather than faithful accounts of why they made their predictions.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical benchmarking study with a clear methodology and quantitative analysis, but it is not a K-12 comparative intervention study, not randomized/quasi-experimental, and does not evaluate educational outcomes or classroom implementation. It provides credible observational evidence about model behavior, with some manual coding procedures described, but limited relevance to the requested high-school writing-feedback comparison question.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "The paper does not measure educational impact on students, writing quality, or school outcomes. Its central empirical result is negative\u2014documenting biased and misleading LLM behavior\u2014so under the K-12 impact framework it should be coded as red rather than implying beneficial impact.",
+  "interventions": [
+    {
+      "intervention": "Other",
+      "confidence": 0.96,
+      "role": "primary",
+      "use_case": "Evaluation of large language models for gender-stereotyped pronoun resolution and explanation generation in ambiguous occupation sentences; not an educational intervention and not a student-facing teaching/feedback tool study."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Systemic / Institutional Impact",
+      "confidence": 0.72,
+      "finding": {
+        "direction": "Negative",
+        "finding_summary": "Across 4 publicly available 2023 LLMs tested on 60 ambiguous occupation-pronoun sentences, repeated 3 times each (180 items total per aggregate analysis), models were on average 6.8 times more likely to choose a stereotypically female occupation with a female pronoun and 3.4 times more likely to choose a stereotypically male occupation with a male pronoun. The models recognized ambiguity in the initial response only about 5% of the time, and their outputs tracked perceived occupational stereotypes more closely than U.S. labor-force statistics (for 'he': Kendall's tau=0.67 with human ratings vs 0.50 with BLS; for 'she': tau=0.49 vs 0.46, all p<0.001), indicating biased and potentially harmful system behavior.",
+        "measure": "Bias in pronoun-resolution choices, ambiguity acknowledgment, and correlation of model outputs with human stereotype ratings vs Bureau of Labor Statistics occupational gender distributions",
+        "study_size": "4 models; 60 sentences; 3 repetitions each; 180 prompted items total in main experiment; 120 baseline items",
+        "effect_size": "6.8x female-stereotype selection skew; 3.4x male-stereotype selection skew; tau=0.67 vs 0.50; tau=0.49 vs 0.46",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "no_control_group",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

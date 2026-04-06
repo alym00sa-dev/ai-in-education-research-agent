@@ -1,0 +1,791 @@
+{
+  "title": "Easy Come, Easy Go? Examining the Perceptions and Learning Effects of LLM-based Chatbot in the Context of Search-as-Learning",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "https://arxiv.org/abs/2410.01396",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate",
+    "Adult (non-academic)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper investigates whether LLM-based chatbots help or hinder learning in Search-as-Learning (SAL), a process in which learners acquire knowledge by seeking and organizing information. The authors focus on a central tension: chatbots make information access faster and more answer-centric, but this may reduce cognitive effort and lead to shallower learning. The study asks both how students and educators perceive these trade-offs and how chatbot-supported learning actually compares with textbook-based and search-engine-based SAL in terms of efficiency, immediate learning, and delayed retention.\n\nThe intervention compares three SAL modalities: textbooks, Google search, and ChatGPT-4o. The researchers first conducted surveys with 75 educators and 92 university students to gather perceived benefits, risks, and preferences. They then ran a controlled within-subjects experiment with the 92 students, who completed SAL tasks in all three conditions in randomized counterbalanced order across three consecutive days. In each condition, students studied STEM topics using a custom browser-based SAL Logger, generated their own search questions, took notes, reviewed their notes, drew concept maps, and completed closed-book multiple-choice tests. A delayed retention test using the same questions was administered two weeks later.\n\nThe population was primarily South Korean university students and educators, with the student experiment conducted at the authors\u2019 institute in South Korea in a university-level STEM context. Educators were mostly based in South Korea, though two were based in the United States. The student sample consisted of 92 undergraduates, and the educator sample included teachers working in educational institutes, mainly university and high school teachers. The study context was a web-based experimental learning environment rather than normal classroom instruction.\n\nThe main conclusion is that LLM-based chatbots improve short-term learning efficiency and immediate conceptual understanding relative to books, and perform similarly to search engines on many measures, but they do not produce superior long-term retention. Chatbot use led to more search Q&A cycles, less time per cycle, richer concept maps, and higher immediate test scores than books, especially at Bloom\u2019s Understand level. However, after two weeks, retention did not differ significantly among chatbot, search engine, and book conditions. Survey findings showed that students preferred chatbots for speed and selectivity, while educators worried about reduced metacognition and cognitive engagement. Overall, the paper concludes that chatbots support efficient short-term learning without causing the long-term deficit educators feared, but they also do not enhance deeper or more durable learning on their own.",
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "non_representative_population"
+  ],
+  "duration_weeks": "2",
+  "setting": "online",
+  "teacher_training": "no",
+  "implementation_fidelity": "medium",
+  "study_country": "South Korea",
+  "study_region": "East Asia & Pacific",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "language_speech",
+        "tutoring_instruction"
+      ],
+      "description": "OpenAI's conversational large language model chatbot used for interactive question answering and synthesized explanations.",
+      "use_case": "Used as the chatbot condition in a within-subject Search-as-Learning experiment, where university students used ChatGPT-4o without web browsing to study STEM topics and were compared against books and Google search.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In the 40-minute Search-as-Learning task, students completed more search Q&A pairs with ChatGPT than with books: 614 total Q&A pairs in the Chatbot condition versus 442 in the Book condition; per student, M=6.69 (SD=5.47) for Chatbot versus M=4.59 (SD=2.91) for Book, with Chatbot > Book (p<.002). Students also spent less time per Q&A pair in the Chatbot condition (M=4.77 minutes, SD=4.97) than in the Book condition (M=6.87, SD=6.57; p<.001) and Search Engine condition (M=5.95, SD=5.58; p=.05).",
+          "measure": "Number of search Q&A pairs completed; average time spent per Q&A pair",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=92"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Concept-map outputs indicated higher immediate information throughput for ChatGPT than books. The Chatbot condition produced more nodes (M=23.76, SD=10.00) than the Book condition (M=18.67, SD=7.71), F(2,272)=7.20, p<.001, and more edges (M=32.83, SD=17.45) than the Book condition (M=25.67, SD=15.42), F(2,272)=4.13, p<.05.",
+          "measure": "Closed-book concept map structure: number of nodes and number of edges",
+          "effect_size": "F(2,272)=7.20; F(2,272)=4.13",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=92"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "On the immediate closed-book test (0-9 scale), ChatGPT produced the highest scores (M=5.80, SD=1.55), outperforming the Book condition (M=4.83, SD=1.67), with Chatbot > Book (p<.001); overall ANOVA was F(2,272)=9.59, p<.001. By Bloom level, the advantage was confined to the Understand level: Chatbot M=2.07 (SD=0.80) versus Book M=1.58 (SD=0.85), p<.001, with no significant differences at Apply or Analyze levels.",
+          "measure": "Immediate closed-book MCQ test scores overall and by Bloom's taxonomy level",
+          "effect_size": "F(2,272)=9.59",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=92"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "On the two-week delayed retention test, ChatGPT did not differ significantly from books or search engines after adjusting for immediate test performance. Adjusted retention means were Chatbot M=5.05, Search Engine M=5.15, and Book M=5.16; the closed-book test score significantly predicted retention, F(1,272)=96.78, p<.001, but there were no significant between-condition differences, including at the Understand, Apply, and Analyze levels.",
+          "measure": "Two-week delayed retention MCQ test scores, overall and by Bloom's taxonomy level, analyzed via ANCOVA with closed-book score as covariate",
+          "effect_size": "F(1,272)=96.78 for covariate; between-condition effect not significant",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=92"
+        }
+      ]
+    },
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "language_speech",
+        "tutoring_instruction"
+      ],
+      "description": "Generic LLM-based chatbots used for conversational information seeking, synthesized explanations, and dialogue-based learning support.",
+      "use_case": "Studied in educator and student surveys as a general category of LLM-based chatbots for Search-as-Learning, focusing on perceived benefits, risks, and tool preferences.",
+      "findings": [
+        {
+          "outcome_category": "Systemic / Institutional Impact",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Survey findings showed a divergence in preferences: educators strongly preferred conventional tools over LLM-based chatbots, while students showed the opposite pattern. Among educators (N=75), 52% preferred books, 36% search engines, and 12% LLM-based chatbots; a Friedman test found significant differences in rankings across tools, X^2(2)=21.62, p<.001, and students' preference for LLM-based chatbots over books was statistically significant (p<.001).",
+          "measure": "Ranked preferences for SAL tools from educator and student surveys",
+          "effect_size": "X^2(2)=21.62",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=75 educators; n=92 students"
+        },
+        {
+          "outcome_category": "Systemic / Institutional Impact",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Both educators and students recognized benefits of LLM-based chatbots for Search-as-Learning, especially time efficiency, diverse explanations, and personalized learning, but also noted risks. Educators most frequently cited time efficiency (50 mentions), limited cognitive engagement (37), personalized learning (26), reduced metacognition (23), and lack of reliability (19), while students most frequently cited lack of reliability (39), time efficiency (36), diverse explanations (29), prior knowledge dependency (24), and selective learning (14).",
+          "measure": "Qualitative survey themes on perceived benefits and risks",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=75 educators; n=92 students"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "green",
+  "quality_tier_rationale": "The paper includes a controlled within-subject empirical experiment with n=92 and clear comparative outcome measures, but it is not a randomized controlled trial in the K-12 intervention sense and also includes perception surveys, so there are some causal and generalizability concerns.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "ChatGPT showed clear short-term advantages on efficiency and immediate understanding outcomes, but no durable advantage on delayed retention and no reported standardized effect sizes. Overall impact is positive but limited and unclear in magnitude over time.",
+  "citations": [
+    {
+      "title": "The flipped classroom: A review of its advantages and challenges",
+      "doi": null,
+      "year": 2018,
+      "venue": "Computers & Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Statistical methods for ranking data",
+      "doi": null,
+      "year": 2014,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Human memory: A proposed system and its control processes",
+      "doi": null,
+      "year": 1968,
+      "venue": "Psychology of learning and motivation",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Searchbots: User engagement with chatbots during collaborative search",
+      "doi": null,
+      "year": 2018,
+      "venue": "Proceedings of the 2018 conference on human information interaction & retrieval",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Generative ai can harm learning",
+      "doi": null,
+      "year": 2024,
+      "venue": "Available at SSRN 4895486",
+      "citation_level": 2,
+      "citation_context": "supports claim that generative AI can impede learning"
+    },
+    {
+      "title": "Scoring concept maps: An integrated rubric for assessing engineering education",
+      "doi": null,
+      "year": 2004,
+      "venue": "Journal of Engineering Education",
+      "citation_level": 3,
+      "citation_context": "concept map scoring rubric for learning assessment"
+    },
+    {
+      "title": "LongSAL: A Longitudinal Search as Learning Study with University Students",
+      "doi": null,
+      "year": 2023,
+      "venue": "Extended Abstracts of the 2023 CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Making things hard on yourself, but in a good way: Creating desirable difficulties to enhance learning",
+      "doi": null,
+      "year": 2011,
+      "venue": "Psychology and the real world: Essays illustrating fundamental contributions to society",
+      "citation_level": 2,
+      "citation_context": "frames desirable difficulty for deeper processing"
+    },
+    {
+      "title": "Learning for Mastery. Instruction and Curriculum. Regional Education Laboratory for the Carolinas and Virginia, Topical Papers and Reprints, Number 1",
+      "doi": null,
+      "year": 1968,
+      "venue": "Evaluation comment",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The University of Google: Education in the (post) information age",
+      "doi": null,
+      "year": 2016,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Varieties of concept mapping",
+      "doi": null,
+      "year": 2004,
+      "venue": "Proceedings of the First International Conference on Concept Mapping",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "An introduction to modern astrophysics",
+      "doi": null,
+      "year": 2017,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "GPTutor: a ChatGPT-powered programming tool for code explanation",
+      "doi": null,
+      "year": 2023,
+      "venue": "International conference on artificial intelligence in education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "More ai assistance reduces cognitive engagement: Examining the ai assistance dilemma in ai-supported note-taking",
+      "doi": null,
+      "year": 2025,
+      "venue": "Proceedings of the ACM on Human-Computer Interaction",
+      "citation_level": 2,
+      "citation_context": "supports reduced cognitive engagement with greater AI assistance"
+    },
+    {
+      "title": "Multiple-comparisons procedures",
+      "doi": "10.2172/6057803",
+      "year": 1979,
+      "venue": "Technical Report LA-7677-MS. Los Alamos National Laboratory (LANL), Los Alamos, NM (United States)",
+      "citation_level": 3,
+      "citation_context": "post-hoc multiple-comparisons statistical procedure"
+    },
+    {
+      "title": "Three applications of semantic network analysis to individual student think-aloud data",
+      "doi": null,
+      "year": 2024,
+      "venue": "Contemporary Educational Psychology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A knowledge capture approach for directly acquiring team mental models",
+      "doi": null,
+      "year": 2016,
+      "venue": "International Journal of Human-Computer Studies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Shaping human-AI collaboration: Varied scaffolding levels in co-writing with language models",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 2024 CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A comparative study of AI-generated (GPT-4) and human-crafted MCQs in programming education",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 26th Australasian Computing Education Conference",
+      "citation_level": 3,
+      "citation_context": "MCQ generation and evaluation criteria source"
+    },
+    {
+      "title": "Relevance, effort, and perceived quality: Language learners\u2019 experiences with AI-generated contextually personalized learning material",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 2023 ACM Designing Interactive Systems Conference",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Opinion Paper:\u201cSo what if ChatGPT wrote it?\u201d Multidisciplinary perspectives on opportunities, challenges and implications of generative conversational AI for research, practice and policy",
+      "doi": null,
+      "year": 2023,
+      "venue": "International journal of information management",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Fact Retrieval by students with and without learning handicaps using print and electronic encyclopedias",
+      "doi": null,
+      "year": 1991,
+      "venue": "Journal of Special Education Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "How Teachers Can Use Large Language Models and Bloom\u2019s Taxonomy to Create Educational Quizzes",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+      "citation_level": 3,
+      "citation_context": "Bloom-aligned MCQ generation and quiz-level evaluation"
+    },
+    {
+      "title": "The concept of information overload: A review of literature from organization science, accounting, marketing, MIS, and related disciplines",
+      "doi": null,
+      "year": 2004,
+      "venue": "The information society",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Handbook of learning and cognitive processes",
+      "doi": null,
+      "year": 2022,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "An information processing theory of verbal learning",
+      "doi": null,
+      "year": 1959,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Construction and Analysis of Collaborative Educational Networks based on Student Concept Maps",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the ACM on Human-Computer Interaction",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The use of ranks to avoid the assumption of normality implicit in the analysis of variance",
+      "doi": null,
+      "year": 1937,
+      "venue": "Journal of the american statistical association",
+      "citation_level": 3,
+      "citation_context": "Friedman test for nonparametric repeated measures"
+    },
+    {
+      "title": "Analyzing knowledge gain of users in informational search sessions on the web",
+      "doi": null,
+      "year": 2018,
+      "venue": "Proceedings of the 2018 conference on human information interaction & retrieval",
+      "citation_level": 2,
+      "citation_context": "prior SAL evidence on knowledge gain during web search"
+    },
+    {
+      "title": "CoAIcoder: Examining the effectiveness of AI-assisted human-to-human collaboration in qualitative analysis",
+      "doi": null,
+      "year": 2023,
+      "venue": "ACM Transactions on Computer-Human Interaction",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Google Search",
+      "doi": null,
+      "year": 2025,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "web search tool used as experimental condition"
+    },
+    {
+      "title": "Blended learning systems: Definition, current trends, and future directions",
+      "doi": null,
+      "year": 2006,
+      "venue": "The handbook of blended learning: Global perspectives, local designs",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Rating versus ranking: What is the best way to reduce response and language bias in cross-national research?",
+      "doi": null,
+      "year": 2009,
+      "venue": "International business review",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Using the taxonomy of cognitive learning to model online searching",
+      "doi": null,
+      "year": 2009,
+      "venue": "Information Processing & Management",
+      "citation_level": 2,
+      "citation_context": "supports Bloom-based framing of online search learning"
+    },
+    {
+      "title": "Long-term retention explained by a model of short-term learning in the adaptive control of reaching",
+      "doi": null,
+      "year": 2008,
+      "venue": "Journal of neurophysiology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Codeaid: Evaluating a classroom deployment of an llm-based programming assistant that balances student and educator needs",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A review of note-taking: The encoding-storage paradigm and beyond",
+      "doi": null,
+      "year": 1989,
+      "venue": "Educational Psychology Review",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Sampling Methodology",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Understanding book search behavior on the web",
+      "doi": null,
+      "year": 2012,
+      "venue": "Proceedings of the 21st ACM international conference on Information and knowledge management",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The role of knowledge in discourse comprehension: A construction-integration model",
+      "doi": "10.1037/0033-295X.95.2.163",
+      "year": 1988,
+      "venue": "Psychological Review",
+      "citation_level": 2,
+      "citation_context": "theoretical basis for knowledge integration during learning"
+    },
+    {
+      "title": "Your brain on chatgpt: Accumulation of cognitive debt when using an ai assistant for essay writing task",
+      "doi": null,
+      "year": 2025,
+      "venue": "arXiv preprint arXiv:2506.08872",
+      "citation_level": 2,
+      "citation_context": "supports cognitive debt concerns from AI assistance"
+    },
+    {
+      "title": "A Revision Bloom\u2019s Taxonomy: An Overview",
+      "doi": null,
+      "year": 2002,
+      "venue": "Theory into Practice",
+      "citation_level": 3,
+      "citation_context": "taxonomy basis for question and learning objective design"
+    },
+    {
+      "title": "The impact of generative AI on critical thinking: Self-reported reductions in cognitive effort and confidence effects from a survey of knowledge workers",
+      "doi": null,
+      "year": 2025,
+      "venue": "Proceedings of the 2025 CHI conference on human factors in computing systems",
+      "citation_level": 2,
+      "citation_context": "supports reduced cognitive effort and confidence effects"
+    },
+    {
+      "title": "Putting things into context: Generative AI-enabled context personalization for vocabulary learning improves learning motivation",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 2024 CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Human information processing: An introduction to psychology",
+      "doi": null,
+      "year": 2013,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Information seeking in electronic environments",
+      "doi": null,
+      "year": 1995,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "information seeking theory informing SAL framing"
+    },
+    {
+      "title": "Bing Search",
+      "doi": null,
+      "year": 2025,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "web search tool used as experimental condition"
+    },
+    {
+      "title": "I Ran The Numbers. There is a 300% Workload Gap Between Some Majors",
+      "doi": null,
+      "year": 2025,
+      "venue": "The Harvard Crimson (Opinion)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Conversational search: From fundamentals to frontiers in the LLM era",
+      "doi": null,
+      "year": 2025,
+      "venue": "Proceedings of the 48th International ACM SIGIR Conference on Research and Development in Information Retrieval",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT in education: A blessing or a curse? A qualitative study exploring early adopters\u2019 utilization and perceptions",
+      "doi": null,
+      "year": 2024,
+      "venue": "Computers in Human Behavior: Artificial Humans",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A case for the superiority of concept mapping-based assessments for assessing mental models",
+      "doi": null,
+      "year": 2018,
+      "venue": "Concept Mapping: Renewing Learning and Thinking. Proceedings of the 8th Int. Conference on Concept Mapping",
+      "citation_level": 2,
+      "citation_context": "justifies concept maps for assessing mental models"
+    },
+    {
+      "title": "Grounded theory method in human-computer interaction and computer-supported cooperative work",
+      "doi": null,
+      "year": 2012,
+      "venue": "The Human Computer Interaction Handbook",
+      "citation_level": 3,
+      "citation_context": "qualitative coding approach based on grounded theory"
+    },
+    {
+      "title": "Concept mapping: A useful tool for science education",
+      "doi": null,
+      "year": 1990,
+      "venue": "Journal of research in science teaching",
+      "citation_level": 2,
+      "citation_context": "concept mapping rationale for knowledge assessment"
+    },
+    {
+      "title": "Measuring team cognition: Concept mapping elicitation as a means of constructing team shared mental models in an applied setting",
+      "doi": null,
+      "year": 2004,
+      "venue": "Proceedings of the First International Conference on Concept Mapping",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT-4o",
+      "doi": null,
+      "year": 2025,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "LLM used to generate experimental MCQs"
+    },
+    {
+      "title": "The efficiency of instructional conditions: An approach to combine mental effort and performance measures",
+      "doi": null,
+      "year": 1993,
+      "venue": "Human factors",
+      "citation_level": 3,
+      "citation_context": "efficiency metric combining effort and performance"
+    },
+    {
+      "title": "Autotutor meets large language models: A language model tutor with rich pedagogy and guardrails",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the Eleventh ACM Conference on Learning@ Scale",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT-generated help produces learning gains equivalent to human tutor-authored help on mathematics skills",
+      "doi": null,
+      "year": 2024,
+      "venue": "Plos one",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Introduction to SQL and NoSQL Databases",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Rediscovering the use of chatbots in education: A systematic literature review",
+      "doi": null,
+      "year": 2020,
+      "venue": "Computer Applications in Engineering Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "AI and the future of humanity: ChatGPT-4, philosophy and education\u2013Critical responses",
+      "doi": null,
+      "year": 2024,
+      "venue": "Educational Philosophy and Theory",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Generating high-precision feedback for programming syntax errors using large language models",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv preprint arXiv:2302.04662",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Throughput: a simple performance index with desirable characteristics",
+      "doi": null,
+      "year": 2006,
+      "venue": "Behavior research methods",
+      "citation_level": 3,
+      "citation_context": "throughput measure for efficiency analysis"
+    },
+    {
+      "title": "Assessment and concept map structure: Interaction between subscores and well-formed mental models",
+      "doi": null,
+      "year": 2004,
+      "venue": "meeting of the American Educational Research Association, San Diego",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Towards searching as a learning process: A review of current perspectives and future directions",
+      "doi": null,
+      "year": 2016,
+      "venue": "Journal of Information Science",
+      "citation_level": 2,
+      "citation_context": "core conceptual framing of search-as-learning"
+    },
+    {
+      "title": "Towards searching as a learning process: A review of current perspectives and future directions",
+      "doi": null,
+      "year": 2016,
+      "venue": "Journal of Information Science",
+      "citation_level": 2,
+      "citation_context": "core conceptual framing of search-as-learning"
+    },
+    {
+      "title": "Electronic versus traditional print textbooks: A comparison study on the influence of university students\u2019 learning",
+      "doi": null,
+      "year": 2013,
+      "venue": "Computers & Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Google generation: the information behaviour of the researcher of the future",
+      "doi": null,
+      "year": 2008,
+      "venue": "Aslib proceedings",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Reading from print, computer, and tablet: Equivalent learning in the digital age",
+      "doi": null,
+      "year": 2019,
+      "venue": "Education and Information Technologies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "AI-Augmented Brainwriting: Investigating the use of LLMs in group ideation",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 2024 CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Information-processing theory of human problem solving",
+      "doi": null,
+      "year": 1978,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Study of interactive feedback during mediated information retrieval",
+      "doi": null,
+      "year": 1997,
+      "venue": "Journal of the american society for information science",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Cognitive load theory",
+      "doi": null,
+      "year": 2011,
+      "venue": "Psychology of learning and motivation",
+      "citation_level": 2,
+      "citation_context": "explains retention limits and cognitive load tradeoffs"
+    },
+    {
+      "title": "Cognitive architecture and instructional design",
+      "doi": null,
+      "year": 1998,
+      "venue": "Educational psychology review",
+      "citation_level": 2,
+      "citation_context": "instructional design basis for cognitive load arguments"
+    },
+    {
+      "title": "The digital natives as learners: Technology use patterns and approaches to learning",
+      "doi": null,
+      "year": 2013,
+      "venue": "Computers & Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Information searching strategies in web-based science learning: The role of Internet self-efficacy",
+      "doi": null,
+      "year": 2003,
+      "venue": "Innovations in education and Teaching International",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The effects of learning objectives on searchers\u2019 perceptions and behaviors",
+      "doi": null,
+      "year": 2020,
+      "venue": "Proceedings of the 2020 acm sigir on international conference on theory of information retrieval",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Searching as learning: A systematization based on literature",
+      "doi": null,
+      "year": 2016,
+      "venue": "Journal of Information Science",
+      "citation_level": 2,
+      "citation_context": "defines SAL and structures literature framing"
+    },
+    {
+      "title": "Information-problem solving: A review of problems students encounter and instructional solutions",
+      "doi": null,
+      "year": 2008,
+      "venue": "Computers in Human Behavior",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Assessing conceptual knowledge using three concept map scoring methods",
+      "doi": null,
+      "year": 2016,
+      "venue": "Journal of engineering education",
+      "citation_level": 3,
+      "citation_context": "concept map scoring methods compared for assessment"
+    },
+    {
+      "title": "Taxonomy of risks posed by language models",
+      "doi": null,
+      "year": 2022,
+      "venue": "Proceedings of the 2022 ACM conference on fairness, accountability, and transparency",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The design of a dynamic book for information search",
+      "doi": null,
+      "year": 1982,
+      "venue": "International Journal of Man-Machine Studies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Ratings are overrated!",
+      "doi": null,
+      "year": 2015,
+      "venue": "Frontiers in ICT",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

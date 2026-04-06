@@ -1,0 +1,80 @@
+{
+  "title": "Lion: Adversarial Distillation of Proprietary Large Language Models",
+  "doi": null,
+  "year": 2023,
+  "venue": "Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing",
+  "url": "https://doi.org/10.18653/v1/2023.emnlp-main.189",
+  "source_db": "openalex_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses the problem of transferring capabilities from a proprietary large language model (LLM), such as ChatGPT, to a compact open-source student model when direct access to teacher weights or gradients is unavailable. The authors argue that standard knowledge distillation is one-way and does not exploit feedback about where the student is weak.\n\nTo address this, they propose Lion, an adversarial knowledge distillation framework with three iterative stages: imitation, discrimination, and generation. In imitation, the student is fine-tuned to match teacher outputs on instruction data. In discrimination, the proprietary model acts as a referee to identify hard instructions where teacher and student responses differ. In generation, the proprietary model creates new hard instructions similar to those challenging examples, as well as some easier ones to preserve diversity and reduce forgetting.\n\nThe empirical setup uses LLaMA as the student base model and ChatGPT as the teacher, starting from Alpaca's 52K instructions and expanding to 70K examples over three AKD iterations. The paper evaluates on open-ended generation and reasoning benchmarks such as Vicuna-Instructions, AGIEval, and BIG-Bench Hard. Lion improves substantially over prior open-source instruction-tuned baselines, especially on difficult reasoning tasks, while still lagging behind ChatGPT on some benchmarks. The paper concludes that feedback-driven, adversarial instruction generation can make LLM distillation more efficient and effective than purely one-way imitation.",
+  "limitations": [
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup",
+    "non_representative_population"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "feedback_evaluation"
+      ],
+      "description": "An OpenAI proprietary conversational LLM chatbot based on GPT-family models, used for instruction following, response generation, and comparative evaluation via prompting.",
+      "use_case": "Used as the proprietary teacher model to generate responses for training, as the referee to score teacher vs. student outputs, and as the generator to create new hard/easy instructions in the adversarial distillation loop.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0013 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "ChatGPT was used as the proprietary teacher in a knowledge distillation setup, but the paper does not report an experimental effect attributable to ChatGPT itself. It served as the reference model for evaluating Lion on Vicuna-Instructions, AGIEval, and BBH; no standalone outcome for ChatGPT is tested.",
+          "measure": "Reference model / comparator for response quality and reasoning accuracy",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    },
+    {
+      "name": "LLaMA",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "tutoring_instruction"
+      ],
+      "description": "A family of open-weight foundation language models from Meta used as a base model for instruction tuning and downstream adaptation.",
+      "use_case": "Used as the open-source student foundation model that is distilled from ChatGPT into Lion-7B and Lion-13B.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0013 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The paper reports that Lion is initialized from LLaMA and then improved through adversarial distillation, but it does not isolate a causal effect of LLaMA itself. LLaMA is a baseline/starting point rather than an intervention with reported effect sizes.",
+          "measure": "Baseline model performance in open-ended generation and reasoning benchmarks",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a model-development paper in NLP, not an education study, and it does not evaluate a K-12 instructional intervention or learning outcomes. The evidence is experimental but outside the target educational context.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "No educational impact on teachers or students is measured, and no lesson-planning or instructional-coaching use case is studied. Reported performance gains are on NLP benchmarks, not classroom outcomes.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

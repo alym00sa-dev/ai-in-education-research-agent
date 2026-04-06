@@ -1,0 +1,88 @@
+{
+  "title": "Visual Analytics of Student Learning Behaviors on K-12 Mathematics E-learning Platforms",
+  "doi": null,
+  "year": 2019,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/1909.04749v2",
+  "source_db": "arxiv_search",
+  "populations": [
+    "K-12 (unspecified grade)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Qualitative",
+  "extended_summary": "This paper addresses the problem of how to interpret rich learning logs from K-12 e-learning platforms, especially detailed mouse-movement and problem-solving interaction data, in order to better understand student thinking and improve the design of learning materials. The authors argue that existing analytics often focus on coarse measures such as clicks or video viewing, while the step-by-step behavior within math problems remains underused.\n\nTo address this, the paper proposes a visual analytics system that combines correlation analysis with visualizations of heat maps and transition maps over students\u2019 mouse trajectories. The system is intended to help educators inspect student performance across an entire question set and to drill down into problem-specific interaction patterns. The authors report three case studies using real log data from a K-12 mathematics e-learning platform.\n\nThe population is K-12 students using a mathematics e-learning platform; educators are the intended secondary users of the analytics system. The study is situated in an online learning context rather than a classroom intervention. The main conclusion is that visual analytics of fine-grained learning logs can reveal mismatches between intended and actual question difficulty, identify different problem-solving and thinking styles, and provide actionable feedback for improving learning resource design and instruction.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a poster-style visual analytics paper using real platform logs and case studies, but it is not a controlled evaluation and reports no causal estimates. The evidence is observational and primarily descriptive.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper suggests useful instructional insights and potential workflow benefits, but it does not measure learning gains or workload reductions with effect sizes. Impact is therefore plausible but unclear and modest based on the reported evidence.",
+  "interventions": [
+    {
+      "intervention": "Predictive Analytics / Early Warning",
+      "confidence": 0.78,
+      "role": "primary",
+      "use_case": "visual analytics of K-12 mathematics learning logs to identify patterns, correlate difficulty labels with performance, and inspect problem-solving behavior for instructional improvement"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 0.83,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper reports that the visual analytics system can help instructors interpret student problem-solving on K-12 math items and identify questions whose labeled difficulty does not match observed performance. In the case studies, some items labeled 'easy' had lower mean scores than expected, suggesting the tool can support revision of math question difficulty and improve interpretation of student mathematical behavior (n not reported; no inferential effect size reported).",
+        "measure": "Mean scores on math questions; visual analysis of mouse-movement logs, heat maps, and transition maps",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.64,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The system is presented as helping educators gain deeper insight into students' thinking styles and problem-solving strategies, including additive versus subtractive approaches. This is a qualitative/observational finding based on log visualization rather than a controlled outcome estimate (n not reported).",
+        "measure": "Observed problem-solving patterns from mouse trajectories and transition maps",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.74,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The authors state that the system can help instructors quickly find possible flaws in learning material design and facilitate quick interpretation of student behaviors. No time-on-task or workload reduction metric is reported, so this is a descriptive efficiency claim rather than a measured effect.",
+        "measure": "Instructor interpretation speed / ability to identify flawed question design from analytics views",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

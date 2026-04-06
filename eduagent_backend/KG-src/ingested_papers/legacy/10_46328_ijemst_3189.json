@@ -1,0 +1,483 @@
+{
+  "title": "Systematic Review: Trends in Intelligent Tutoring Systems in Mathematics Teaching and Learning",
+  "doi": "10.46328/ijemst.3189",
+  "year": 2024,
+  "venue": "International Journal of Education in Mathematics, Science, and Technology (IJEMST)",
+  "url": "https://files.eric.ed.gov/fulltext/EJ1408642.pdf",
+  "source_db": "backfill_v3",
+  "populations": [],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Meta-Analysis / Systematic Review",
+  "extended_summary": "This paper examines the current state of intelligent tutoring systems (ITSs) in mathematics teaching and learning, with a particular focus on higher education institutions and some attention to secondary education. The review asks what purposes ITSs serve, what advantages and limitations are reported, how effective they appear to be, whether user modeling and adaptive processes are included, and what research methodologies are being used in this literature.\n\nThe intervention studied is not a single program but the broader class of AI-enabled and adaptive intelligent tutoring systems used for mathematics education. Across 43 documents published between 2012 and 2022, the review catalogs systems such as ALEKS, PAT2Math, GeoGebraTUTOR, MATHia, ASSISTments, and others. The paper synthesizes how these systems are used for personalization, assessment, feedback, problem solving, skill development, and instructional support, and it also summarizes the adaptive techniques used, including expert systems, predictive models, Bayesian networks, machine learning, and neural networks.\n\nThe population represented in the reviewed literature is primarily students in secondary school and early higher education mathematics, especially those studying foundational topics such as algebra, arithmetic, geometry, calculus, fractions, and problem solving. The review is based on 43 studies selected from Web of Science and Scopus-indexed journals and conferences. Because it is a systematic review of prior studies rather than a direct implementation, setting and intervention duration vary across included studies and are not reducible to a single implementation context.\n\nThe main conclusions are that ITSs in mathematics education are most often used to support personalized and adaptive learning and are frequently associated with improved academic performance, improved learning, immediate feedback, and stronger assessment and monitoring processes. At the same time, the review highlights recurring limitations in the literature, including small samples, short study durations, poor reporting of adaptation and student models, and a lack of longitudinal and generalizable research. The authors conclude that ITSs show clear promise for mathematics education, but stronger and longer-term research is still needed.",
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "identified_tools": [
+    {
+      "name": "ITS",
+      "is_named_product": true,
+      "specificity": "category",
+      "category_key": [
+        "tutoring_instruction"
+      ],
+      "description": "Intelligent tutoring systems are AI-supported instructional systems that provide interactive guidance, adaptive sequencing, problem-solving support, feedback, and learner-tailored tutoring.",
+      "use_case": "Systematic review of intelligent tutoring systems in mathematics teaching and learning across secondary and higher education contexts, based on 43 documents published from 2012-2022.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "review_synthesis",
+          "direction": "positive",
+          "finding_summary": "Improvement in academic performance was the most commonly reported effectiveness outcome, appearing in 16 reviewed studies; improved learning was reported in 8 studies. The review synthesizes these as commonly reported positive mathematics learning outcomes of ITS use, without a pooled effect size.",
+          "measure": "Reported mathematics academic performance and learning outcomes across reviewed ITS studies",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported",
+          "study_count": 16
+        },
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "review_synthesis",
+          "direction": "positive",
+          "finding_summary": "Improved problem solving was reported in 8 reviewed studies, and step-by-step procedural support was identified as an advantage in 5 studies. The review presents these as commonly reported benefits of ITS-supported mathematics instruction.",
+          "measure": "Mathematical problem solving and procedural support",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported",
+          "study_count": 8
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "review_synthesis",
+          "direction": "positive",
+          "finding_summary": "Increased motivation was reported in 5 reviewed studies, and positive student perception was reported in 4 studies, indicating favorable affective responses to ITS use in mathematics learning in part of the reviewed literature.",
+          "measure": "Student motivation and positive perception toward ITS use",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported",
+          "study_count": 5
+        },
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "review_synthesis",
+          "direction": "positive",
+          "finding_summary": "Personalized and adaptive learning was the most frequently reported purpose of ITS use (18 studies) and was also reported as an effectiveness outcome in 5 studies. This indicates that adaptation/personalization was a central design goal and a less frequently reported outcome theme in the reviewed literature.",
+          "measure": "Personalized/adaptive learning support",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported",
+          "study_count": 5
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "review_synthesis",
+          "direction": "positive",
+          "finding_summary": "Increased participation was reported in 2 reviewed studies, and participation promotion was identified as an advantage in 4 studies; collaborative work was noted in 1 study. These findings suggest limited review-reported evidence for engagement-related benefits.",
+          "measure": "Participation, engagement, and collaborative work during mathematics learning",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported",
+          "study_count": 2
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "review_synthesis",
+          "direction": "positive",
+          "finding_summary": "Immediate feedback was cited in 10 reviewed studies, and evaluation or monitoring support in 7 studies, indicating that feedback and formative monitoring were commonly reported functional benefits of ITSs.",
+          "measure": "Immediate feedback, formative assessment, and monitoring support",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported",
+          "study_count": 10
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "review_synthesis",
+          "direction": "mixed",
+          "finding_summary": "The review identified recurring implementation limitations, including small samples (9 studies), limited time (4 studies), connectivity issues (4 studies), and technical problems (2 studies). These were reported as common constraints affecting implementation or evaluation.",
+          "measure": "Implementation limitations including sample size, time, connectivity, and technical problems",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported",
+          "study_count": 9
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "review_synthesis",
+          "direction": "positive",
+          "finding_summary": "Positive results related to ITS design or underlying system algorithms were reported in 5 reviewed studies. This refers to system-level performance or design effectiveness rather than a pooled student learning effect.",
+          "measure": "Effectiveness of ITS design and underlying algorithms",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported",
+          "study_count": 5
+        }
+      ]
+    },
+    {
+      "name": "PAT2Math",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "feedback_evaluation"
+      ],
+      "description": "A web-based intelligent algebra tutor implemented in Java that teaches students to solve linear and quadratic equations, including an algebra editor called PATequation.",
+      "use_case": "The review discusses PAT2Math as an ITS for algebra learning. In the related works section, Jaques et al. (2013) are cited as presenting the expert system of the PAT2Math algebra tutor, which teaches students how to solve linear and quadratic equations. In Table 10, PAT2Math is again listed as a type of ITS used in the reviewed studies for algebra.",
+      "findings": []
+    },
+    {
+      "name": "PATequation",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "feedback_evaluation"
+      ],
+      "description": "The algebra editor component within PAT2Math that supports students while solving equations.",
+      "use_case": "The review mentions PATequation only as the algebra editor inside PAT2Math that helps students solve equations.",
+      "findings": []
+    },
+    {
+      "name": "MeuTutor",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "personalization_adaptation"
+      ],
+      "description": "A gamified intelligent tutoring platform launched by MeuTutor Solu\u00e7\u00f5es Educacionais.",
+      "use_case": "In Table 10, the review lists the platform MeuTutor as a gamified ITS used for mathematical problem solving.",
+      "findings": []
+    },
+    {
+      "name": "CRISTAL",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "personalization_adaptation"
+      ],
+      "description": "An intelligent case-based tutoring system based on case-based reasoning.",
+      "use_case": "The review lists CRISTAL in Table 10 as a case-based reasoning ITS used for algebra.",
+      "findings": []
+    },
+    {
+      "name": "EMATIC",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "other"
+      ],
+      "description": "A game-based learning intelligent tutoring system for mathematics.",
+      "use_case": "The review includes EMATIC in Table 10 as a game-based learning ITS used for mathematical problem solving.",
+      "findings": []
+    },
+    {
+      "name": "GeoGebraTUTOR",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "personalization_adaptation"
+      ],
+      "description": "A geometry-focused tutoring environment built around a geometric workspace and tutorial support for student reasoning.",
+      "use_case": "The review lists GeoGebraTUTOR in Table 10 for geometry and problem solving. It is also noted in the text that GeoGebra TUTOR was used to strengthen students' reasoning through geometric problem solving, citing Tessier-Baillargeon et al. (2014).",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "review_synthesis",
+          "direction": "positive",
+          "finding_summary": "The review reports that GeoGebra TUTOR was used to strengthen students' reasoning through geometric problem solving.",
+          "measure": "",
+          "effect_size": "",
+          "confidence_interval": "",
+          "sample_size": "",
+          "study_count": 1
+        }
+      ]
+    },
+    {
+      "name": "GGBT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "personalization_adaptation"
+      ],
+      "description": "A geometry-related intelligent tutoring system listed separately in the review, likely associated with GeoGebra-based tutoring.",
+      "use_case": "The review includes GGBT in Table 10 as an ITS for geometry and problem solving. No further tool-specific discussion is provided.",
+      "findings": []
+    },
+    {
+      "name": "ASSISTments",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "feedback_evaluation"
+      ],
+      "description": "Online mathematics practice and homework platform that provides immediate feedback, scaffolded problem support, and teacher reports on student performance and progress.",
+      "use_case": "The review lists ASSISTments in Table 10 as a web-based tutoring project used for long-term skill retention.",
+      "findings": []
+    },
+    {
+      "name": "Monkey's Revenge",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "other"
+      ],
+      "description": "A game-based coordinate geometry tutor.",
+      "use_case": "The review lists Monkey's Revenge in Table 10 as a game tutor used for geometry and problem solving.",
+      "findings": []
+    },
+    {
+      "name": "MATHia",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "feedback_evaluation"
+      ],
+      "description": "An intelligent tutoring system in Carnegie Learning's blended middle and high school math curriculum, based on Cognitive Tutor technology.",
+      "use_case": "The review includes MATHia in Table 10 for formative and summative assessment. In the results narrative, it states that MATHia was implemented to support formative and summative assessment processes.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "review_synthesis",
+          "direction": "positive",
+          "finding_summary": "The review reports that MATHia was implemented to support formative and summative assessment processes in mathematics instruction.",
+          "measure": "",
+          "effect_size": "",
+          "confidence_interval": "",
+          "sample_size": "",
+          "study_count": 1
+        }
+      ]
+    },
+    {
+      "name": "Cognitive Tutor",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "personalization_adaptation"
+      ],
+      "description": "A cognitive tutoring technology underlying mathematics instructional systems such as MATHia.",
+      "use_case": "The review mentions Cognitive Tutor technology only as the underlying basis for MATHia in Carnegie Learning's blended math curriculum.",
+      "findings": []
+    },
+    {
+      "name": "MAFint",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "personalization_adaptation"
+      ],
+      "description": "An affective tutorial intervention model for intelligent tutoring systems.",
+      "use_case": "The review lists MAFint in Table 10 as an ITS-related system used for fractions.",
+      "findings": []
+    },
+    {
+      "name": "MITO",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "feedback_evaluation"
+      ],
+      "description": "A platform consisting of small self-paced modular units of educational content with video tutorials, notes, and formative assessments with personalized feedback.",
+      "use_case": "The review lists Platform MITO in Table 10 as used for mathematics in higher education institutions.",
+      "findings": []
+    },
+    {
+      "name": "ALEKS",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "personalization_adaptation"
+      ],
+      "description": "Adaptive online learning platform for mathematics that assesses student knowledge and delivers individualized practice and instruction.",
+      "use_case": "ALEKS is the most frequently used named ITS in the review, reported in 18.6% of the reviewed studies. The review says ALEKS guides the learning process, shows an individualized learning sequence, presents differentiated problems through questions, encourages participation, supports students with diverse performance levels, and requires less teacher supervision and assistance. It is listed in Table 10 as addressing mathematics and problem solving, and specific studies cited include Craig et al. (2013), Huang et al. (2013), and Raju et al. (2018).",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "review_synthesis",
+          "direction": "positive",
+          "finding_summary": "The review reports that ALEKS guides individualized learning sequences and differentiated problem solving, helping students with diverse performance levels in mathematics.",
+          "measure": "",
+          "effect_size": "",
+          "confidence_interval": "",
+          "sample_size": "",
+          "study_count": 3
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "review_synthesis",
+          "direction": "positive",
+          "finding_summary": "The review reports that ALEKS requires less teacher supervision and assistance in students' established learning plans.",
+          "measure": "",
+          "effect_size": "",
+          "confidence_interval": "",
+          "sample_size": "",
+          "study_count": 3
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "review_synthesis",
+          "direction": "positive",
+          "finding_summary": "The review reports that ALEKS encourages student participation during mathematics learning activities.",
+          "measure": "",
+          "effect_size": "",
+          "confidence_interval": "",
+          "sample_size": "",
+          "study_count": 3
+        }
+      ]
+    },
+    {
+      "name": "LEIA",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "feedback_evaluation"
+      ],
+      "description": "A web-based application that helps users learn algebra by solving single-variable algebraic equations.",
+      "use_case": "The review lists LEIA (LEarnIng Algebra) in Table 10 as an ITS for algebra.",
+      "findings": []
+    },
+    {
+      "name": "APA",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "language_speech"
+      ],
+      "description": "An animated pedagogical agent with facial expressions and speech-related behaviors.",
+      "use_case": "The review lists APA (Agente Pedag\u00f3gico Animado) in Table 10 as used for algebra. It is described as having facial expressions related to speech and other expressions such as feeling and blinking.",
+      "findings": []
+    },
+    {
+      "name": "Adaptive collaborative learning support",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "personalization_adaptation"
+      ],
+      "description": "An adaptive collaborative learning support system.",
+      "use_case": "The review lists Adaptive collaborative learning support (ACLS) in Table 10 as a named system for algebra.",
+      "findings": []
+    },
+    {
+      "name": "The Adaptive Peer Tutoring Assistant",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "personalization_adaptation"
+      ],
+      "description": "An adaptive peer tutoring assistant system.",
+      "use_case": "The review lists The Adaptive Peer Tutoring Assistant (APTA) in Table 10 as a named system in the ITS landscape for algebra-related support.",
+      "findings": []
+    },
+    {
+      "name": "Woot Math Adaptive Learning",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "personalization_adaptation"
+      ],
+      "description": "A digital tutor that incorporates dynamic digital manipulatives, video tutorials, and automatic feedback for students and teachers.",
+      "use_case": "The review lists Woot Math Adaptive Learning (WMAL) in Table 10 as used for rational numbers.",
+      "findings": []
+    },
+    {
+      "name": "MapOnLearn",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "other"
+      ],
+      "description": "A method/system for organizing and displaying maps for online learning systems.",
+      "use_case": "The review lists MapOnLearn in Table 10 as used for data structure learning.",
+      "findings": []
+    },
+    {
+      "name": "AmritaITS",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "prediction_analytics",
+        "tutoring_instruction"
+      ],
+      "description": "A program that applies machine learning models to predict reading and writing difficulties.",
+      "use_case": "The review lists AmritaITS in Table 10 as a named system used in algebra-related educational contexts, though its description focuses on predicting reading and writing difficulties.",
+      "findings": []
+    },
+    {
+      "name": "Hybrid-AQG",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "tutoring_instruction"
+      ],
+      "description": "A hybrid automatic question generation system based on semantics and syntax.",
+      "use_case": "The review lists Hybrid-AQG in Table 10 as a named system for programming-related instruction.",
+      "findings": []
+    },
+    {
+      "name": "IPS",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "feedback_evaluation"
+      ],
+      "description": "A model for the intelligent solution of problems in mathematics.",
+      "use_case": "The review lists IPS in Table 10 as a named system used for analytic geometry, algebra, and problem solving.",
+      "findings": []
+    },
+    {
+      "name": "Cyber-Math",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction"
+      ],
+      "description": "A system oriented to the teaching and learning of basic and operational mathematics.",
+      "use_case": "The review lists Cyber-Math in Table 10 as a named ITS for basic mathematics.",
+      "findings": []
+    }
+  ],
+  "verdict": "",
+  "quality_tier": "blue",
+  "quality_tier_rationale": "This is a peer-reviewed systematic review of 43 studies on intelligent tutoring systems in mathematics education, which places it at the highest evidence tier under the provided framework. However, the reviewed studies themselves vary in rigor, and the paper is more descriptive synthesis than quantitative meta-analysis.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The review reports generally positive findings such as improved learning and academic performance, but it does not provide a pooled effect size or a consistent quantitative estimate of impact. Therefore, overall impact is promising but unclear in magnitude.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": "Converted from kg_curator_v4 legacy extraction",
+  "_legacy_source": "/Users/alymoosa/Documents/A-Moosa-Dev/AI-EDU-Dev/eduagent/open_deep_research_v2/scripts/extraction_profiles_v3/systematic_review_trends_in_intelligent_tutoring_systems_in_mathematics_teaching.json"
+}

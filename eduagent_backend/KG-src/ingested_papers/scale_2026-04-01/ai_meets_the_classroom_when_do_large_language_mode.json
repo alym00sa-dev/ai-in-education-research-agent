@@ -1,0 +1,740 @@
+{
+  "title": "AI Meets the Classroom: When Do Large Language Models Harm Learning?",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "https://arxiv.org/abs/2409.09047",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Graduate / Doctoral",
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper investigates when large language models (LLMs) help or harm student learning, addressing mixed prior evidence about whether tools like ChatGPT improve educational outcomes or undermine them. The authors conceptualize learning as involving both the volume of topics covered and the depth of understanding of each topic, and ask whether LLM access changes either or both. They study unrestricted LLM use rather than tightly constrained tutoring systems, with a particular focus on coding education.\n\nThe paper reports three empirical studies: a field study of two graduate programming courses and two pre-registered, incentivized laboratory experiments in which students learned introductory Python. In the field study, the authors use similarity between student code and ChatGPT-generated code, along with variation from ChatGPT outages, to estimate the effects of substitutive LLM use during coursework. In the lab studies, participants were randomly assigned to have or not have LLM access during the learning phase; Study 3 additionally enabled copy-and-paste, which changed how participants used the model. The authors also manually coded LLM chat logs to distinguish substitutive use (asking for solutions) from complementary use (asking for explanations).\n\nThe populations were students in Europe: graduate students in two programming courses at a Dutch public university and student participants from a German university laboratory pool, most with little or no prior Python experience. The field context involved course assignments over 4-5 weeks, while the lab context involved short Python learning sessions with pre-tests, a 45-minute learning phase, and post-tests completed in a single session.\n\nThe main conclusion is that LLMs had no overall effect on learning outcomes in the two randomized lab experiments, but their effects depended strongly on usage behavior. Substitutive use let students move faster and cover more topics, but reduced understanding of each topic and in the field study was associated with worse later performance. Complementary use, such as requesting explanations, improved understanding but did not increase topic volume. The paper also finds heterogeneous effects by prior knowledge: students with higher prior knowledge benefited more, while those with lower prior knowledge were harmed, suggesting that LLMs may widen educational inequality. Finally, LLM access increased perceived learning more than actual learning gains justified.",
+  "limitations": [
+    "single_site",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "5",
+  "setting": "blended",
+  "teacher_training": "no",
+  "implementation_fidelity": "high",
+  "study_country": "Netherlands; Germany",
+  "study_region": "Europe",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "content_generation"
+      ],
+      "description": "OpenAI\u2019s large language model chatbot used as a general-purpose conversational assistant with coding and explanation capabilities.",
+      "use_case": "Students used ChatGPT while learning introductory Python programming and in field-course homework contexts, either to generate coding solutions (substitutive use) or to provide explanations/tutoring (complementary use). The paper also used ChatGPT-generated code to proxy student AI use in the field study.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "In the field study of two graduate programming courses, cumulative ChatGPT similarity was negatively associated with subsequent assignment performance in a two-way fixed effects model: if students submitted code identical to a ChatGPT-generated solution, their grade on all subsequent questions decreased by 0.02 (p<0.001). In the FE2SLS specification using ChatGPT outages as instruments, the negative cumulative effect remained and increased in magnitude to -0.06 (p=0.002), indicating worse later performance from substitutive use.",
+          "measure": "Normalized grade on subsequent programming questions in course assignments",
+          "effect_size": "-0.02 (FE); -0.06 (FE2SLS)",
+          "confidence_interval": "not_reported",
+          "sample_size": "113 students; 6,594 student-question observations"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "For current-question performance in the field study, ChatGPT similarity had a positive significant association in the FE model, increasing the current question grade by 0.18 (p<0.001), but this effect was not significant in the FE2SLS model (coefficient -0.35, p=0.334). This suggests any immediate gain on the focal question was not robust once using outage-based instrumental variables.",
+          "measure": "Normalized grade on current programming question",
+          "effect_size": "0.18 (FE); -0.35, ns (FE2SLS)",
+          "confidence_interval": "not_reported",
+          "sample_size": "113 students; 6,594 student-question observations"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "In laboratory Study 2, access to ChatGPT during the learning phase did not significantly improve overall learning outcomes. The treatment effect on post-test performance was 0.396 (p=0.580) after adjusting for covariates, and the raw treatment-control post-test difference of about 1 question was also not significant (p=0.206).",
+          "measure": "Post-test number of correctly answered Python programming questions",
+          "effect_size": "0.396",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=107"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "In laboratory Study 2, ChatGPT access did not significantly affect topic understanding after controlling for progress through the learning materials. In the regression including Learning Phase performance, the treatment effect on post-test scores was -0.276 (p=0.562).",
+          "measure": "Post-test correct answers controlling for Learning Phase progress (proxy for topic understanding)",
+          "effect_size": "-0.276",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=107"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "In laboratory Study 2, ChatGPT access did not significantly increase the volume of topics covered during the learning phase. The treatment effect on the number of correctly answered learning-phase questions was 0.828 (p=0.214).",
+          "measure": "Learning Phase correctly answered questions",
+          "effect_size": "0.828",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=107"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "In laboratory Study 3, where copy-and-paste was enabled, ChatGPT access still did not significantly improve overall learning outcomes after covariate adjustment. The treatment effect on post-test score was 0.959 (p=0.298), although the raw post-test difference was about 2 questions and marginal in a Welch\u2019s t-test (p=0.092).",
+          "measure": "Post-test number of correctly answered Python programming questions",
+          "effect_size": "0.959",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=69"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In laboratory Study 3, ChatGPT access significantly increased the volume of topics students covered during learning when copy-and-paste was available. The treatment effect on Learning Phase performance was 2.614 (p=0.013), and the raw treatment-control difference was about 4 questions (p=0.003).",
+          "measure": "Learning Phase correctly answered questions",
+          "effect_size": "2.614",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=69"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "In laboratory Study 3, ChatGPT access did not significantly affect topic understanding after accounting for learning-phase progress. The treatment effect on post-test performance controlling for Learning Phase was -0.651 (p=0.359).",
+          "measure": "Post-test correct answers controlling for Learning Phase progress (proxy for topic understanding)",
+          "effect_size": "-0.651",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=69"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Across the combined experimental analyses, substitutive ChatGPT use increased topic volume but reduced understanding. Enabling copy-and-paste among treated students increased Learning Phase progress by 1.733 (p=0.033) but decreased post-test performance conditional on progress by -1.407 (p=0.009), while not affecting overall post-test scores (-0.249, p=0.737).",
+          "measure": "Learning Phase correct answers; post-test controlling for Learning Phase; overall post-test",
+          "effect_size": "1.733; -1.407; -0.249",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=94 treated subjects from Studies 2 and 3"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Message-level usage analyses showed that asking ChatGPT for solutions was associated with worse understanding, whereas asking for explanations was associated with better understanding. In regressions among treated students, Solutions predicted lower overall post-test performance marginally (-0.195, p<0.1) and lower post-test performance controlling for Learning Phase (-0.312, p<0.01), while Explanations did not predict overall post-test performance (-0.003, p=0.990) but positively predicted post-test performance controlling for Learning Phase (0.249, p=0.05).",
+          "measure": "Post-test correct answers; post-test correct answers controlling for Learning Phase",
+          "effect_size": "Solutions: -0.195 and -0.312; Explanations: -0.003 and 0.249",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=94 treated subjects from Studies 2 and 3"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "ChatGPT widened achievement gaps by prior knowledge in the combined experiments. The interaction of Treatment \u00d7 Pre-test > Median was positive for overall post-test performance (2.528, p=0.028) and for understanding measured via post-test conditional on Learning Phase (1.613, p=0.034), while lower pre-test students in treatment understood significantly less than controls because the Treatment main effect on understanding was -0.950 (p=0.043).",
+          "measure": "Post-test correct answers; post-test correct answers controlling for Learning Phase; heterogeneity by pre-test median split",
+          "effect_size": "2.528; 1.613; Treatment main effect for lower-knowledge students: -0.950",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=176"
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "ChatGPT increased students\u2019 perceived learning beyond what could be explained by actual learning gains. In the combined sample, Treatment increased Perceived Learning by 0.338 (p=0.044), and the effect remained 0.348 (p=0.043) when controlling for Learning Phase progress.",
+          "measure": "Self-reported perceived learning on a five-point Likert scale",
+          "effect_size": "0.338; 0.348",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=176"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "green",
+  "quality_tier_rationale": "The paper reports a field quasi-experimental study plus two pre-registered incentivized laboratory experiments with random assignment, but many core conclusions rely on exploratory analyses and some main treatment effects are null or context-dependent rather than clean RCT impacts.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "Overall effects on learning are mostly null, but there are meaningful mixed subgroup and usage-pattern effects, including negative downstream performance from substitutive use and positive perceived learning. The practical impact is therefore unclear and highly contingent on how ChatGPT is used.",
+  "citations": [
+    {
+      "title": "Measuring effectiveness of learning chatbot systems on student\u2019s learning outcome and memory retention",
+      "doi": null,
+      "year": 2014,
+      "venue": "Asian Journal of Applied Science and Engineering",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The impact of educational chatbot on student learning experience",
+      "doi": null,
+      "year": 2023,
+      "venue": "Education and Information Technologies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Alphacode 2 technical report",
+      "doi": null,
+      "year": 2023,
+      "venue": "Technical report",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The economic implications of learning by doing",
+      "doi": null,
+      "year": 1962,
+      "venue": "The Review of Economic Studies",
+      "citation_level": 2,
+      "citation_context": "defines workplace learning-by-doing in discussion"
+    },
+    {
+      "title": "Generative ai can harm learning",
+      "doi": null,
+      "year": 2024,
+      "venue": "SSRN",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Drinking from the fountain of knowledge: Student incentive to study and learn\u2013externalities, information problems and peer pressure",
+      "doi": null,
+      "year": 2006,
+      "venue": "Handbook of the Economics of Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Academic benefits of peer tutoring: A meta-analytic review of single-case research",
+      "doi": null,
+      "year": 2013,
+      "venue": "School Psychology Review",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A tutorial on teaching data analytics with generative ai",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Language models are few-shot learners",
+      "doi": null,
+      "year": 2020,
+      "venue": "Advances in Neural Information Processing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Generative ai at work",
+      "doi": null,
+      "year": 2023,
+      "venue": "National Bureau of Economic Research",
+      "citation_level": 2,
+      "citation_context": "example of LLMs improving workplace learning"
+    },
+    {
+      "title": "Last-place aversion in queues",
+      "doi": null,
+      "year": 2021,
+      "venue": "Management Science",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Technology and education: Computers, software, and the internet",
+      "doi": null,
+      "year": 2016,
+      "venue": "Handbook of the Economics of Education",
+      "citation_level": 2,
+      "citation_context": "prior technology-in-education debates focused on features and substitution"
+    },
+    {
+      "title": "Does professor quality matter? evidence from random assignment of students to professors",
+      "doi": null,
+      "year": 2010,
+      "venue": "Journal of Political Economy",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Promoting students\u2019 learning achievement and self-efficacy: A mobile chatbot approach for nursing training",
+      "doi": null,
+      "year": 2022,
+      "venue": "British Journal of Educational Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Innovation and american k\u201312 education",
+      "doi": null,
+      "year": 2018,
+      "venue": "Innovation Policy and the Economy",
+      "citation_level": 2,
+      "citation_context": "prior technology-in-education debates focused on features and substitution"
+    },
+    {
+      "title": "otree - an open-source platform for laboratory, online, and field experiments",
+      "doi": null,
+      "year": 2016,
+      "venue": "Journal of Behavioral and Experimental Finance",
+      "citation_level": 3,
+      "citation_context": "experimental platform used to implement the studies"
+    },
+    {
+      "title": "A chatbot for learning chinese: Learning achievement and technology acceptance",
+      "doi": null,
+      "year": 2020,
+      "venue": "Journal of Educational Computing Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Educational outcomes of tutoring: A meta-analysis of findings",
+      "doi": null,
+      "year": 1982,
+      "venue": "American Educational Research Journal",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Linear Models with High-Dimensional Fixed Effects: An Efficient and Feasible Estimator",
+      "doi": null,
+      "year": 2017,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "'get ai answer?'\u2013exploring the effects of embedding chatgpt in exams to improve student learning outcomes",
+      "doi": null,
+      "year": 2023,
+      "venue": "SSRN",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Behavioral economics and nudging in education: Evidence from the field",
+      "doi": null,
+      "year": 2020,
+      "venue": "The Economics of Education",
+      "citation_level": 2,
+      "citation_context": "supports education self-control and present-bias framing"
+    },
+    {
+      "title": "Falling asleep at the wheel: Human/ai collaboration in a field experiment on hr recruiters",
+      "doi": null,
+      "year": 2022,
+      "venue": "Technical report",
+      "citation_level": 2,
+      "citation_context": "example of AI potentially reducing attentive work and learning"
+    },
+    {
+      "title": "Navigating the jagged technological frontier: Field experimental evidence of the effects of ai on knowledge worker productivity and quality",
+      "doi": null,
+      "year": 2023,
+      "venue": "Harvard Business School Technology & Operations Mgt. Unit Working Paper",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Measuring actual learning versus feeling of learning in response to being actively engaged in the classroom",
+      "doi": null,
+      "year": 2019,
+      "venue": "Proceedings of the National Academy of Sciences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A neural network solves, explains, and generates university math problems by program synthesis and few-shot learning at human level",
+      "doi": null,
+      "year": 2022,
+      "venue": "Proceedings of the National Academy of Sciences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Intertemporal choice",
+      "doi": null,
+      "year": 2019,
+      "venue": "Handbook of Behavioral Economics: Applications and Foundations 1",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The impact of a virtual teaching assistant (chatbot) on students\u2019 learning in ghanaian higher education",
+      "doi": null,
+      "year": 2022,
+      "venue": "International Journal of Educational Technology in Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Chatgpt has entered the classroom: how llms could transform education",
+      "doi": null,
+      "year": 2023,
+      "venue": "Nature",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Student generative ai survey 2025",
+      "doi": null,
+      "year": 2025,
+      "venue": "HEPI",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Cognitive challenges in human\u2013artificial intelligence collaboration: Investigating the path toward productive delegation",
+      "doi": null,
+      "year": 2022,
+      "venue": "Information Systems Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Gemini: a family of highly capable multimodal models",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Education production functions",
+      "doi": null,
+      "year": 2020,
+      "venue": "The Economics of Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Returns to education quality",
+      "doi": null,
+      "year": 2020,
+      "venue": "The Economics of Education",
+      "citation_level": 2,
+      "citation_context": "analogous quantity-versus-quality distinction in note"
+    },
+    {
+      "title": "The (perceived) returns to education and the demand for schooling",
+      "doi": null,
+      "year": 2010,
+      "venue": "The Quarterly Journal of Economics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Chatgpt for good? on opportunities and challenges of large language models for education",
+      "doi": null,
+      "year": 2023,
+      "venue": "Learning and Individual Differences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Backwards planning with generative ai: Case study evidence from us k12 teachers",
+      "doi": null,
+      "year": 2024,
+      "venue": "SSRN",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Little\u2019s law and educational inequality: A comparative case study of teacher workaround productivity",
+      "doi": null,
+      "year": 2024,
+      "venue": "Management Science",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Crowdfunding the front lines: An empirical study of teacher-driven school improvement",
+      "doi": null,
+      "year": 2022,
+      "venue": "Management Science",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Ai tutoring outperforms active learning",
+      "doi": null,
+      "year": 2024,
+      "venue": "Preprint",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Math education with large language models: Peril or promise?",
+      "doi": null,
+      "year": 2023,
+      "venue": "SSRN",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Behavioral economics of education: Progress and possibilities",
+      "doi": null,
+      "year": 2016,
+      "venue": "Handbook of the Economics of Education",
+      "citation_level": 2,
+      "citation_context": "supports education self-control and present-bias framing"
+    },
+    {
+      "title": "Managing the impact of fitting room traffic on retail sales: Using labor to reduce phantom stockouts",
+      "doi": null,
+      "year": 2021,
+      "venue": "Manufacturing & Service Operations Management",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Spaces for creativity: Unconventional workspaces and divergent thinking",
+      "doi": null,
+      "year": 2024,
+      "venue": "Management Science",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The best programming language to learn - beginners guide to coding",
+      "doi": null,
+      "year": 2022,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Is your code generated by chatgpt really correct? rigorous evaluation of large language models for code generation",
+      "doi": null,
+      "year": 2024,
+      "venue": "Advances in Neural Information Processing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Teaching cs50 with ai: leveraging generative artificial intelligence in computer science education",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 55th ACM Technical Symposium on Computer Science Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Creativity and risk taking aren\u2019t rational: Behavioral operations in MOT",
+      "doi": null,
+      "year": 2017,
+      "venue": "Production and Operations Management",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Chatgpt and large language models in academia: opportunities and challenges",
+      "doi": null,
+      "year": 2023,
+      "venue": "BioData Mining",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Gps use and navigation ability: A systematic review and meta-analysis",
+      "doi": null,
+      "year": 2024,
+      "venue": "Journal of Environmental Psychology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "New modes of learning enabled by ai chatbots: Three methods and assignments",
+      "doi": null,
+      "year": 2022,
+      "venue": "SSRN",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The pen is mightier than the keyboard: Advantages of longhand over laptop note taking",
+      "doi": null,
+      "year": 2014,
+      "venue": "Psychological Science",
+      "citation_level": 2,
+      "citation_context": "example of neurological building blocks of understanding"
+    },
+    {
+      "title": "A matter of balance: Specialization, task variety, and individual learning in a software maintenance environment",
+      "doi": null,
+      "year": 2009,
+      "venue": "Management Science",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The gpt surprise: Offering large language model chat in a massive coding class reduced engagement but increased adopters\u2019 exam performances",
+      "doi": null,
+      "year": 2024,
+      "venue": "Technical report",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Experimental evidence on the productivity effects of generative artificial intelligence",
+      "doi": null,
+      "year": 2023,
+      "venue": "Science",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A caution regarding rules of thumb for variance inflation factors",
+      "doi": null,
+      "year": 2007,
+      "venue": "Quality & Quantity",
+      "citation_level": 3,
+      "citation_context": "justifies excluding multicollinear control in robustness check"
+    },
+    {
+      "title": "Introducing chatgpt",
+      "doi": null,
+      "year": 2022,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Learning gain differences between chatgpt and human tutor generated algebra hints",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Comparing different approaches to generating mathematics explanations using large language models",
+      "doi": null,
+      "year": 2023,
+      "venue": "International Conference on Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "50th anniversary article: Technological innovation, product development, and entrepreneurship in management science",
+      "doi": null,
+      "year": 2004,
+      "venue": "Management Science",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "On the use of operations research and management in public education systems",
+      "doi": null,
+      "year": 2020,
+      "venue": "Pushing the Boundaries: Frontiers in Impactful OR/OM Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Understanding team knowledge production: The interrelated roles of technology and expertise",
+      "doi": null,
+      "year": 2018,
+      "venue": "Management Science",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Would chat gpt3 get a wharton mba? a prediction based on its performance in the operations management course",
+      "doi": null,
+      "year": 2023,
+      "venue": "Technical report",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Llama: Open and efficient foundation language models",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Most used programming languages among developers worldwide as of 2023",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "How does the use of information communication technology affect individuals? a work design perspective",
+      "doi": null,
+      "year": 2020,
+      "venue": "Academy of Management Annals",
+      "citation_level": 2,
+      "citation_context": "supports claim AI may reduce attentiveness and stimulation"
+    },
+    {
+      "title": "Anchoring on historical round number reference points: Evidence from durable goods resale prices",
+      "doi": null,
+      "year": 2023,
+      "venue": "Organization Science",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Econometric analysis of cross section and panel data",
+      "doi": null,
+      "year": 2010,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Seeing the bigger picture? ramping up production with the use of augmented reality",
+      "doi": null,
+      "year": 2022,
+      "venue": "Manufacturing & Service Operations Management",
+      "citation_level": 2,
+      "citation_context": "example of technology affecting memory and workplace learning"
+    },
+    {
+      "title": "Conversation technology with micro-learning: The impact of chatbot-based learning on students\u2019 learning motivation and performance",
+      "doi": null,
+      "year": 2021,
+      "venue": "Journal of Educational Computing Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Economic behavior of information acquisition: Impact on peer grading in massive open online courses",
+      "doi": null,
+      "year": 2023,
+      "venue": "Operations Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Does social interaction improve learning outcomes? evidence from field experiments on massive open online courses",
+      "doi": null,
+      "year": 2017,
+      "venue": "Manufacturing & Service Operations Management",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

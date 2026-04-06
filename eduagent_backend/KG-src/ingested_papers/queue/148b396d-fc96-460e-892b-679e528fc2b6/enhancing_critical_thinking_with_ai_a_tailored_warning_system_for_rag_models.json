@@ -1,0 +1,80 @@
+{
+  "title": "Enhancing Critical Thinking with AI: A Tailored Warning System for RAG Models",
+  "doi": null,
+  "year": 2025,
+  "venue": "2025 ACM Workshop on Human-AI Interaction for Augmented Reasoning (AIREASONING-2025-01)",
+  "url": "http://arxiv.org/abs/2504.16883v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper examines how user-facing warnings affect reasoning, accuracy, and trust when people use retrieval-augmented generation (RAG) systems that may contain hallucinations or bias. The authors focus on the question of whether tailored, context-specific warnings can help users critically evaluate AI-generated answers better than generic warnings or no warnings at all.\n\nThe intervention is a tailored warning system that adds fact-checking at both the retrieval and LLM-output stages and generates a warning message specific to the detected issue. The study was tested in an educational quiz setting using AP U.S. history textbook content. Eighteen participants answered multiple-choice questions under three conditions: no warning, a standard generic warning, or a tailored warning. The task included correct answers, low-level hallucinations, and high-level hallucinations, followed by a survey and short interview about trust and user experience.\n\nResults suggest that tailored warnings improved answer accuracy, especially for hallucinated responses, and produced higher trust than the other warning conditions. However, the authors also report that warnings can create cognitive friction and confusion, indicating a trade-off between encouraging critical thinking and maintaining ease of use. The paper concludes that contextual, actionable warnings may better support AI-augmented reasoning in educational settings, but more work is needed to determine when and how such warnings are most effective.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a small pilot study with n=18 and no randomization or full experimental controls described beyond group assignment, so it is best treated as early-stage evidence. It is peer-reviewed/workshop-level empirical work, but the limited sample and prototype setting leave substantial credibility concerns.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The observed accuracy improvements under tailored warnings are promising and sometimes sizable, but they come from a very small, non-K-12 pilot in an academic quiz setting. The likely practical impact is still unclear for general or K-12 populations until replicated at larger scale.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.95,
+      "role": "primary",
+      "use_case": "A retrieval-augmented generation question-answering chatbot used in a textbook-based quiz task, with a tailored warning layer that explains hallucinations and biases in the generated answers."
+    },
+    {
+      "intervention": "Automated Feedback System",
+      "confidence": 0.85,
+      "role": "primary",
+      "use_case": "User-facing tailored warning messages that provide contextual, actionable feedback about potential hallucinations in LLM outputs at the retrieval and generation stages."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "In a pilot study with n=18 participants, tailored warnings improved critical evaluation of AI output: accuracy was 100% for no-hallucination items, 89% for low-level hallucinations, and 81% for high-level hallucinations, compared with 97%, 81%, and 69% under standard warnings and 100%, 64%, and 56% with no warning. However, qualitative feedback indicated cognitive friction and confusion, suggesting the intervention supports critical thinking but can also make reasoning more difficult.",
+        "measure": "Multiple-choice quiz accuracy on detecting hallucinated RAG answers; participant interviews and trust survey",
+        "study_size": "n=18",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.85,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The tailored-warning condition increased reported trust relative to the other groups by 0.67 points on a 5-point Likert scale, while interface ease was still lower than the no-warning condition and slightly better than the standard-warning condition. This suggests the intervention can support engagement and calibrated trust, but may also introduce confusion for some users.",
+        "measure": "Trust and usability ratings on 5-point Likert scales",
+        "study_size": "n=18",
+        "effect_size": "0.67 Likert-point difference in trust",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

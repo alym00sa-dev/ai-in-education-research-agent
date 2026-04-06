@@ -1,0 +1,53 @@
+{
+  "title": "Machine Translation with Large Language Models: Decoder Only vs. Encoder-Decoder",
+  "doi": null,
+  "year": 2024,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2409.13747v1",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper examines how different large language model architectures perform for multilingual machine translation, with a particular focus on Indian regional languages. The authors compare decoder-only and encoder-decoder approaches and ask which setup is more effective for bilingual and multilingual translation tasks under similar training conditions. The work is framed as a technical comparison of model architectures rather than an education study, and it does not investigate reading instruction, foundational literacy outcomes, or classroom effects.\n\nThe interventions studied are machine translation systems based on in-context learning, fine-tuning, and baseline model development. The paper evaluates models including XGLM, mT5, LLaMA 2, XLNet, and IndicBART using datasets such as BPCC Wiki MT, FLORES-101, TED Talks, and IndicTrans2. Outcomes are translation-quality metrics such as BLEU, chrF, and TER. The paper reports examples such as mT5 achieving a BLEU score of 14.1444 and chrF of 33.8278 for English-Hindi translation, and it concludes that encoder-decoder models provide reliable performance while decoder-only models can be effective in some one-to-one translation settings.\n\nNo human learners, teachers, schools, or classroom implementations are studied. There is no randomized or quasi-experimental evaluation, no educational comparator condition, and no literacy outcome measurement such as phonemic awareness, phonics, decoding, fluency, vocabulary, or comprehension. As a result, for the stated retrieval topic, this paper provides no direct causal evidence about generative AI for foundational reading in K-12. At best, it is adjacent technical evidence about multilingual translation systems, concentrated in foreign-language/NLP model benchmarking rather than mainstream English language arts or school-supported reading interventions.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a technical machine translation modeling paper, not a K-12 intervention study. It provides no randomized or quasi-experimental design, no learner sample, and no direct educational outcome evidence in classrooms or school-supported settings.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "Impact on K-12 foundational reading cannot be established from this paper because no reading outcomes or student impacts are measured. The nearest adjacent evidence is system-level language tool performance on translation benchmarks, with unclear relevance to classroom reading instruction.",
+  "interventions": [
+    {
+      "intervention": "Other",
+      "confidence": 0.99,
+      "role": "primary",
+      "use_case": "Comparison of large language model architectures for multilingual machine translation across Indian languages (e.g., English-Hindi, English-Malayalam, English-Telugu, English-Tamil, English-Marathi), including in-context learning and fine-tuning for translation quality."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.73,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The paper evaluates machine translation performance of encoder-decoder and decoder-only models using automatic MT metrics rather than learner outcomes. Reported results include an mT5 bilingual English-Hindi BLEU score of 14.1444 and chrF of 33.8278; the authors state LLaMA 2 performed better in 1-to-1 than 1-to-many setups and that one-to-many encoder-decoder models showed slight BLEU improvements over one-to-one models, but no classroom, student, or causal educational effects are reported.",
+        "measure": "Machine translation quality metrics (BLEU, chrF, TER), loss convergence",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "lab",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "India",
+  "study_region": "South Asia",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

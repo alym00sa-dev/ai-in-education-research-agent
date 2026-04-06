@@ -1,0 +1,85 @@
+{
+  "title": "LLMs to Support K\u201312 Teachers in Culturally Relevant Pedagogy: An AI Literacy Example",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2505.08083v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses the challenge K\u201312 teachers face in implementing culturally relevant pedagogy (CRP), especially when adapting emerging AI literacy curricula to students\u2019 cultural contexts. The authors argue that teachers often lack the time, training, and resources needed to meaningfully integrate CRP into lesson planning, and that this gap is particularly salient in AI education, where culturally responsive learning materials are limited.\n\nTo explore whether generative AI can help, the paper presents CulturAIEd, an LLM-powered tool that combines demographic information about students, a CRT checklist, rubric-based feedback, and just-in-time chatbot coaching. The system was prototyped with Streamlit and GPT-4o-mini-2024-07-18. Teachers could use it to generate culturally relevant examples and to receive basic versus advanced lesson modifications aligned with CRT levels (Contributions, Additive, Transformation, Social Action), along with formative feedback on lesson quality.\n\nThe study used an exploratory pilot with four secondary teachers from North America and East Asia: science, music education, and information technology teachers working in grades 9\u201312. Participants completed adaptation tasks across multiple phases, including baseline lesson design, unaided revision, checklist-guided revision, and revision using CulturAIEd. The main conclusion is that the tool improved teachers\u2019 confidence in identifying culturally responsive opportunities and reduced planning burden by making demographic integration and feedback more immediate and actionable. The authors also note risks, including biased or stereotyped outputs, routinizing CRP into a checklist, and the need for teacher judgment and professional development to refine AI suggestions.",
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "no_control_group",
+    "self_reported_measures",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "tutoring_instruction",
+        "feedback_evaluation",
+        "content_generation",
+        "personalization_adaptation"
+      ],
+      "description": "A general large language model chatbot / generative AI system used to generate, adapt, and provide feedback on educational content and lesson plans.",
+      "use_case": "The paper studied CulturAIEd, an LLM-powered teacher support tool for adapting K\u201312 AI literacy activities to culturally responsive pedagogy (CRP), using student demographics, a CRT checklist, rubric-based feedback, and just-in-time coaching. The demo used Streamlit and a GPT-4o-based model, but no standalone named product beyond general GPT/ChatGPT-family use was evaluated as a separate commercial tool.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In an exploratory pilot with four K\u201312 teachers (N=4), participants reported increased confidence in identifying opportunities for cultural responsiveness in learning activities and making culturally responsive modifications after using the LLM-based CulturAIEd workflow. The paper reports pre-survey confidence in identifying opportunities for cultural responsiveness rose from 3-5 to all 5 in post-surveys, but does not report inferential statistics or effect sizes.",
+          "measure": "Self-reported confidence in identifying opportunities for cultural responsiveness in learning activities; post-survey ratings",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=4"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Teachers said CulturAIEd streamlined CRP-related lesson adaptation by integrating student demographics, providing concrete examples, and offering rubric-based feedback and just-in-time coaching. The paper characterizes the tool as highly efficient and reports that 3/4 participants strongly agreed it saved time and inspired new ideas, but no quantitative effect size is provided.",
+          "measure": "Perceived time savings, workflow efficiency, and usefulness of rubric-based feedback; post-survey and interview responses",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=4"
+        },
+        {
+          "outcome_category": "Systemic / Institutional Impact",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "The paper identifies risks and implementation concerns for LLM-supported CRP tools, including bias, cultural stereotyping, and the possibility of 'routinizing' CRP into a template-like process that could replace teacher judgment. These are qualitative cautions rather than measured harms, and the authors emphasize that LLM suggestions must be adapted with teacher context and training.",
+          "measure": "Perceived risks and implementation concerns from interviews/discussion",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=4"
+        }
+      ]
+    }
+  ],
+  "verdict": "genai_general",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a small exploratory mixed-methods pilot with four teachers and qualitative interview/survey data. It is useful for implementation insights, but it does not provide controlled causal evidence or effect estimates.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The reported benefits are promising but are based on self-reported confidence and perceived efficiency in a very small sample, with no effect sizes. The evidence suggests potential practical value, but the magnitude of impact is unclear.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

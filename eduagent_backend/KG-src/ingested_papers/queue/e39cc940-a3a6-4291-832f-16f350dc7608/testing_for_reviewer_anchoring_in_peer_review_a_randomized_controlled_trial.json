@@ -1,0 +1,53 @@
+{
+  "title": "Testing for Reviewer Anchoring in Peer Review: A Randomized Controlled Trial",
+  "doi": null,
+  "year": 2023,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2307.05443v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Graduate / Doctoral"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Randomized Controlled Trial (RCT)",
+  "extended_summary": "This paper examines whether reviewers in academic peer review anchor to their original scores when they are later shown new information that should objectively improve a paper. The authors focus on the rebuttal stage of conference peer review, where reviewers first score a paper, then receive additional information from authors, and are asked to revise their scores. The study asks whether revised scores remain artificially close to the initial scores because of anchoring bias.\n\nTo test this, the authors designed a randomized controlled trial with 108 participants who were PhD students or PhDs in computer science-related fields. Participants were assigned to either a control condition, where they viewed a paper with an animated GIF showing stronger evaluation results, or an experimental condition, where they initially saw a frozen frame of the GIF that made the paper appear weaker. After reviewing, experimental participants were told the GIF had failed to load and were then shown the correct animated version, after which they could revise their scores and comments. The task was framed as a mock conference review of an application-focused AI paper, and the setup was designed to isolate anchoring from other confounds.\n\nThe main finding is that the manipulation successfully created a perceived quality difference between the initial experimental paper and the control paper, especially on the Evaluation category. However, when comparing the experimental group\u2019s revised scores to the control group\u2019s scores, the authors found no significant evidence of anchoring in either the Overall score or the Evaluation category. Exploratory subgroup analyses suggested possible differences by reviewer confidence and seniority, but these were not conclusive. Overall, the study concludes that reviewer anchoring was not detected in this peer-review setting, and that limited score change in rebuttal processes may reflect other factors besides anchoring.",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is a well-designed randomized controlled trial with preregistration, random assignment, and a clear experimental manipulation, which supports strong causal inference. However, it is a lab-style simulated peer-review setting rather than a real-world educational or schooling intervention, so relevance/generalizability constraints remain.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "The paper studies reviewer behavior in academic peer review, not an educational intervention affecting student outcomes. It finds no meaningful effect on the measured institutional process outcomes, so the practical impact as defined here is absent.",
+  "interventions": [],
+  "outcome_assignments": [
+    {
+      "outcome": "Systemic / Institutional Impact",
+      "confidence": 0.98,
+      "finding": {
+        "direction": "No Effect",
+        "finding_summary": "This randomized controlled trial tested whether reviewers anchor to their initial scores in conference peer review after seeing corrected paper information. Across 108 participants, revised scores did not differ significantly from control scores for Overall review scores (Vargha-Delaney A=0.5048, adjusted p=0.6064) or Evaluation scores (A=0.4863, adjusted p=0.6064), providing no evidence of anchoring bias in this setting.",
+        "measure": "Reviewer Overall score and Evaluation category score in a simulated conference peer review task",
+        "study_size": "n=108",
+        "effect_size": "A=0.5048 (Overall), A=0.4863 (Evaluation)",
+        "confidence_interval": "[0.3981, 0.6109] (Overall), [0.3836, 0.5888] (Evaluation)",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

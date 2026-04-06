@@ -1,0 +1,53 @@
+{
+  "title": "Conversational AI: The Science Behind the Alexa Prize",
+  "doi": null,
+  "year": 2017,
+  "venue": "Proceedings of Alexa Prize (Alexa Prize 2017)",
+  "url": "http://arxiv.org/abs/1801.03604v1",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper describes the Alexa Prize, a university competition created by Amazon to advance conversational AI. The paper\u2019s main question is not about educational effectiveness, but about how to build, deploy, and evaluate open-domain social conversational agents at scale using live user interactions. It outlines the technical and organizational infrastructure provided to participating university teams, including shared data, cloud resources, feedback systems, monitoring, and evaluation metrics.\n\nThe intervention studied is the Alexa Prize competition itself: 15 university-built socialbots were made available to millions of Alexa users through the \"Alexa, let\u2019s chat\" experience. Users conversed freely with the bots, rated conversations, and provided feedback that teams used to iteratively improve their systems. The paper describes the system architecture, customer experience design, conversational ASR, NLU, dialogue management, response generation, ranking, topic tracking, offensive speech filtering, and evaluation methods developed during the competition.\n\nThe context was a large-scale, real-world deployment in the United States with Amazon Alexa users and university research teams. The paper reports that user engagement was high, ratings improved over the competition, and top teams benefited from strong NLU, dialogue management, and conversational user experience components. It concludes that large-scale live interaction data and iterative feedback can accelerate progress in conversational AI, but it does not address schooling or mathematics learning outcomes.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a peer-reviewed proceedings paper describing a technology competition and system engineering advances, not a controlled empirical study of an educational intervention. It provides observational performance data and correlational analyses, but no rigorous causal design relevant to the requested educational outcome.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "The paper has no direct educational impact on middle school mathematics achievement and does not evaluate ChatGPT or any comparable generative AI tutor in a school setting. Its findings concern conversational AI engagement and system quality, so educational impact for the target question is absent.",
+  "interventions": [
+    {
+      "intervention": "Other",
+      "confidence": 0.99,
+      "role": "primary",
+      "use_case": "Large-scale conversational AI/socialbot platform (Alexa Prize) used to support open-domain chatbots evaluated with live user interactions, ratings, and feedback; includes ASR, NLU, dialog management, and response generation infrastructure rather than tutoring."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.86,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper reports high and improving user engagement with conversational agents, indicating positive social/engagement outcomes for users of the Alexa Prize system. Across the competition, customers spent over 40,000 hours in conversation, and finalist ratings improved by 24.6% from 2.77 to 3.45 over the competition period; conversation duration also increased to a median of 1:53 and 90th percentile of 8:08 for finalists.",
+        "measure": "User ratings of conversations; conversation duration; number of dialog turns; engagement ratings",
+        "study_size": "millions of interactions; 15 socialbots",
+        "effect_size": "24.6% rating increase; 14.0% median duration increase; 56.8% 90th percentile duration increase",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Other"
+    }
+  ],
+  "limitations": [
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

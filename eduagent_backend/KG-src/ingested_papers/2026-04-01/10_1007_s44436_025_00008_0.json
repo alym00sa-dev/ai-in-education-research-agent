@@ -1,0 +1,821 @@
+{
+  "title": "Suitability of Chinese GenAI platforms for early childhood education: A multifaceted evaluation",
+  "doi": "10.1007/s44436-025-00008-0",
+  "year": 2025,
+  "venue": "AI, Brain and Child",
+  "url": "https://doi.org/10.1007/s44436-025-00008-0",
+  "source_db": "openalex_search",
+  "populations": [
+    "Elementary (PreK-5th)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator",
+    "Parent"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses whether currently available Chinese generative AI platforms are suitable for use in early childhood education (ECE), a context in which young children\u2019s developmental needs, age-appropriate content, and ethical protections are especially important. The authors argue that existing AI evaluation frameworks do not adequately capture ECE-specific requirements, so they develop and apply a Chinese evaluation framework organized around three dimensions: technical performance, pedagogical adaptability, and ethical and safety considerations.\n\nThe study evaluates 10 freely accessible Chinese GenAI platforms using a mixed-methods design that combines quantitative scoring with qualitative content analysis. Platforms were assessed on multimodal support, response speed, lesson-plan generation, activity organization, personalization for different age groups, ethical compliance, content appropriateness, and algorithmic fairness. Testing was conducted under standardized hardware, network, and prompt conditions over a two-week period in February 2025, and scoring was completed through expert review and consensus. Rather than testing learning outcomes in classrooms, the study evaluates the capabilities and risks of AI tools that might be used by early childhood educators.\n\nThe context is Chinese early childhood education, especially preschool-aged children and the educators selecting tools for them. The platforms were not necessarily designed specifically for ECE, but were chosen because they are prominent, open-access Chinese GenAI systems with potential relevance to education. The paper also discusses implications for other stakeholders, including parents, developers, and policymakers concerned with AI use in early learning environments.\n\nThe main conclusions are that the proposed framework can differentiate among Chinese GenAI platforms and identify meaningful strengths and weaknesses. Doubao and iFlytek Spark showed particularly strong overall performance, with Doubao excelling broadly and Spark performing especially well in pedagogical adaptability; DeepSeek stood out for pedagogical adaptability but performed poorly technically. Across platforms, the authors conclude that improvements are still needed in multimodal support, transparency of privacy and recommendation policies, ECE-specific datasets, personalization, and ethical safeguards before GenAI can be considered fully suitable for early childhood education.",
+  "limitations": [
+    "no_control_group",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "2",
+  "setting": "online",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "China",
+  "study_region": "East Asia & Pacific",
+  "identified_tools": [
+    {
+      "name": "DeepSeek",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "personalization_adaptation"
+      ],
+      "description": "A Chinese generative AI platform developed by DeepSeek Inc.; evaluated here as a general-purpose GenAI system for producing educational content.",
+      "use_case": "Assessed for suitability in early childhood education using standardized prompts for lesson plan generation, activity design, storytelling, personalization by age group, and ethical/safety checks.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "DeepSeek showed the joint-highest pedagogical adaptability score (2.35 normalized, tied with Spark), achieving perfect scores of 5 in teaching content generation, activity organization and evaluation, and personalization support. However, it had the lowest technical performance score among all platforms (0.26 normalized), with text-only interaction (multimodal support score=1) and the slowest response speed (score=1), often displaying 'network busy' messages.",
+          "measure": "Framework-based platform evaluation scores for pedagogical adaptability and technical performance",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Systemic / Institutional Impact",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "DeepSeek ranked in Tier 2 with an overall normalized score of 3.85 for ECE suitability. It was identified as excelling in pedagogical adaptability, especially for generating age-differentiated activities for 3-year-olds versus 5-year-olds.",
+          "measure": "Overall normalized ECE suitability score and qualitative age-personalization assessment",
+          "effect_size": "3.85 overall normalized score",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "On ethical and safety considerations, DeepSeek scored 1.24 normalized, with ethical compliance score=4, content appropriateness score=5, and algorithmic fairness score=4. The study reports complete age-appropriateness in generated content, with only minimal evidence of bias overall across platforms.",
+          "measure": "Framework-based ethical compliance, content appropriateness, and algorithmic fairness scores",
+          "effect_size": "1.24 normalized ethical/safety score",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    },
+    {
+      "name": "Doubao",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "language_speech"
+      ],
+      "description": "A Chinese generative AI platform developed by ByteDance; evaluated here as a general-purpose multimodal GenAI platform for educational use.",
+      "use_case": "Assessed for early childhood education suitability on multimodal support, response speed, lesson plan generation, activity organization, personalization, and ethical/safety criteria.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Doubao achieved the highest overall normalized score among the 10 evaluated Chinese GenAI platforms, scoring 4.53. It also scored highly across all three dimensions: technical performance 1.24, pedagogical adaptability 2.06, and ethical/safety 1.24 normalized.",
+          "measure": "Overall and dimension-level normalized scores in the Chinese GenAI ECE evaluation framework",
+          "effect_size": "4.53 overall normalized score",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Doubao demonstrated strong technical performance with multimodal support score=4 and response speed score=5. The paper identifies Doubao as one of the strongest platforms for technical performance in ECE-relevant tasks.",
+          "measure": "Multimodal support and response speed rubric scores",
+          "effect_size": "Technical performance normalized score=1.24",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Doubao achieved perfect teaching content generation performance (score=5) and strong activity organization/evaluation and personalization support (both score=4). The platform produced age-appropriate, engaging, and logically sound educational materials for ECE prompts.",
+          "measure": "Teaching content generation, activity organization/evaluation, and personalization support rubric scores",
+          "effect_size": "Pedagogical adaptability normalized score=2.06",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Systemic / Institutional Impact",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Doubao performed strongly on ethical/safety criteria, with ethical compliance score=4, content appropriateness score=5, and algorithmic fairness score=5. The study notes complete age-appropriateness in generated content and minimal evidence of gender-based bias.",
+          "measure": "Ethical compliance, content appropriateness, and algorithmic fairness rubric scores",
+          "effect_size": "Ethical/safety normalized score=1.24",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    },
+    {
+      "name": "ERNIE Bot",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "language_speech"
+      ],
+      "description": "A Chinese generative AI platform developed by Baidu; evaluated here as a general-purpose GenAI platform for educational content and activity support.",
+      "use_case": "Tested for ECE suitability using prompts for lesson planning, activity generation, storytelling, personalization, and ethical/safety evaluation.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "ERNIE Bot ranked in Tier 3 with an overall normalized score of 3.65, indicating notable limitations for ECE use. It showed strong multimodal capability (score=4) and good response speed (score=4), but weaker pedagogical adaptability (1.53 normalized) and ethical/safety performance (1.06 normalized).",
+          "measure": "Overall and dimension-level normalized framework scores",
+          "effect_size": "3.65 overall normalized score",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "Compared with stronger platforms, ERNIE Bot provided more conceptual suggestions rather than fully actionable lesson plans, requiring educators to invest additional effort to develop them into usable activities. Its teaching content generation, activity organization/evaluation, and personalization support each received a score of 3 or 4-level equivalent in the reported results, yielding a pedagogical adaptability normalized score of 1.53.",
+          "measure": "Pedagogical adaptability rubric scores and qualitative assessment of lesson-plan completeness",
+          "effect_size": "1.53 pedagogical adaptability normalized score",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Systemic / Institutional Impact",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "ERNIE Bot had ethical compliance score=4, content appropriateness score=4, and algorithmic fairness score=4, for an ethical/safety normalized score of 1.06. The study notes minor instances of slightly inappropriate content for ECE and generally low explicit bias.",
+          "measure": "Ethical compliance, content appropriateness, and algorithmic fairness rubric scores",
+          "effect_size": "1.06 ethical/safety normalized score",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    },
+    {
+      "name": "TianGong",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "language_speech"
+      ],
+      "description": "A Chinese generative AI platform developed by Kunlun Wanwei; evaluated as a general-purpose GenAI platform for early childhood education tasks.",
+      "use_case": "Evaluated for ECE suitability across technical performance, pedagogical adaptability, and ethical/safety dimensions using standardized prompts.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "TianGong was placed in Tier 1 with an overall normalized score of 4.00. It showed strong technical performance (1.24 normalized), including multimodal support score=4 and response speed score=5, but more moderate pedagogical adaptability (1.71 normalized) and ethical/safety performance (1.06 normalized).",
+          "measure": "Overall and dimension-level normalized framework scores",
+          "effect_size": "4.00 overall normalized score",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "TianGong provided solid but not top-tier pedagogical support, with teaching content generation score=4, activity organization/evaluation score=4, and personalization support score=4. It was characterized as balanced rather than exceptional in ECE pedagogical tasks.",
+          "measure": "Pedagogical adaptability rubric scores",
+          "effect_size": "1.71 pedagogical adaptability normalized score",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Systemic / Institutional Impact",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "On ethical/safety criteria, TianGong scored ethical compliance=4, content appropriateness=4, and algorithmic fairness=4. The study notes only minor instances of slightly inappropriate content, but also broader concerns across platforms about unclear recommendation explanations and privacy transparency.",
+          "measure": "Ethical compliance, content appropriateness, and algorithmic fairness rubric scores",
+          "effect_size": "1.06 ethical/safety normalized score",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    },
+    {
+      "name": "Kimi",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "language_speech"
+      ],
+      "description": "A Chinese generative AI platform developed by Moonshot AI; evaluated as a general-purpose GenAI tool for educational content generation and support.",
+      "use_case": "Tested on ECE-relevant tasks including lesson planning, activity generation, personalization by age, and ethical/safety review.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Kimi ranked in Tier 2 with an overall normalized score of 3.91. It showed relatively strong technical performance (1.15 normalized), with multimodal support score=3 and response speed score=5, alongside moderate pedagogical adaptability (1.71 normalized) and ethical/safety performance (1.06 normalized).",
+          "measure": "Overall and dimension-level normalized framework scores",
+          "effect_size": "3.91 overall normalized score",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Kimi received pedagogical scores of 4 for teaching content generation, 4 for activity organization/evaluation, and 4 for personalization support, indicating balanced ECE-oriented content support. It did not match the highest-performing tools in pedagogical adaptability but showed consistent usefulness across tasks.",
+          "measure": "Pedagogical adaptability rubric scores",
+          "effect_size": "1.71 pedagogical adaptability normalized score",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Systemic / Institutional Impact",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Kimi had the lowest ethical compliance score among platforms mentioned explicitly in this section (score=3), while content appropriateness scored 5 and algorithmic fairness 4, resulting in 1.06 normalized for ethical/safety. The paper highlights incomplete or less transparent privacy/explanation practices despite age-appropriate content.",
+          "measure": "Ethical compliance, content appropriateness, and algorithmic fairness rubric scores",
+          "effect_size": "1.06 ethical/safety normalized score",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    },
+    {
+      "name": "Qwen",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "language_speech"
+      ],
+      "description": "A Chinese generative AI platform developed by Alibaba Cloud; evaluated as a general-purpose GenAI platform for ECE-related tasks.",
+      "use_case": "Assessed using standardized ECE prompts for lesson plans, activities, stories, personalization, and ethical/safety criteria.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "Qwen received the lowest overall normalized score among the 10 platforms, at 3.44, placing it in Tier 3. It consistently showed the weakest dimension scores: technical performance 0.97, pedagogical adaptability 1.41, and ethical/safety 1.06 normalized.",
+          "measure": "Overall and dimension-level normalized framework scores",
+          "effect_size": "3.44 overall normalized score",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "Qwen showed limited personalization support, with minimal differentiation between activities for 3-year-olds and 5-year-olds; the study states that core content and activity types remained largely similar, suggesting reliance on generic templates. It also had low pedagogical scores: teaching content generation=3, activity organization/evaluation=3, and personalization support=3.",
+          "measure": "Pedagogical adaptability rubric scores and qualitative assessment of age-specific adaptation",
+          "effect_size": "1.41 pedagogical adaptability normalized score",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "Technically, Qwen was limited to text-only interaction (multimodal support score=1), although response speed was fast (score=5). This combination produced a relatively weak technical performance normalized score of 0.97.",
+          "measure": "Multimodal support and response speed rubric scores",
+          "effect_size": "0.97 technical performance normalized score",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Systemic / Institutional Impact",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "On ethical/safety criteria, Qwen scored ethical compliance=4, content appropriateness=4, and algorithmic fairness=4, for a normalized score of 1.06. The study reports only minor slightly inappropriate content, but no standout ethical strengths.",
+          "measure": "Ethical compliance, content appropriateness, and algorithmic fairness rubric scores",
+          "effect_size": "1.06 ethical/safety normalized score",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    },
+    {
+      "name": "ChatGLM",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "language_speech"
+      ],
+      "description": "A Chinese generative AI platform developed by Zhipu AI; evaluated as a general-purpose GenAI tool for ECE-related content and planning tasks.",
+      "use_case": "Evaluated on lesson-plan generation, activity design, personalization, and ethical/safety suitability for early childhood education.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "ChatGLM ranked in Tier 3 with an overall normalized score of 3.71. It had technical performance 0.97 normalized, pedagogical adaptability 1.59, and ethical/safety 1.15, indicating moderate but not leading suitability for ECE.",
+          "measure": "Overall and dimension-level normalized framework scores",
+          "effect_size": "3.71 overall normalized score",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "ChatGLM received pedagogical scores of 3 for teaching content generation, 3 for activity organization/evaluation, and 3 for personalization support, indicating middling performance across ECE instructional tasks. It did not demonstrate the age-tailored sophistication of DeepSeek or Spark.",
+          "measure": "Pedagogical adaptability rubric scores",
+          "effect_size": "1.59 pedagogical adaptability normalized score",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Systemic / Institutional Impact",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "ChatGLM scored relatively better on ethical/safety (1.15 normalized) than some other Tier 3 tools, with ethical compliance=4, content appropriateness=5, and algorithmic fairness=4. The study reports complete age-appropriateness in generated content with minimal bias concerns.",
+          "measure": "Ethical compliance, content appropriateness, and algorithmic fairness rubric scores",
+          "effect_size": "1.15 ethical/safety normalized score",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    },
+    {
+      "name": "Tencent Yuanbao",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "language_speech"
+      ],
+      "description": "A Chinese generative AI platform developed by Tencent; evaluated here as a general-purpose GenAI system for ECE-related content tasks.",
+      "use_case": "Assessed using standardized prompts for lesson planning, activities, personalization, and ethical/safety suitability in ECE.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Tencent Yuanbao ranked in Tier 2 with an overall normalized score of 3.82. It showed balanced performance across technical performance (1.15 normalized), pedagogical adaptability (1.53), and ethical/safety (1.15).",
+          "measure": "Overall and dimension-level normalized framework scores",
+          "effect_size": "3.82 overall normalized score",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Tencent Yuanbao showed moderate pedagogical adaptability, with teaching content generation score=3, activity organization/evaluation score=3, and personalization support score=4. It demonstrated some age-tailoring capacity but did not reach the top tier in instructional quality.",
+          "measure": "Pedagogical adaptability rubric scores",
+          "effect_size": "1.53 pedagogical adaptability normalized score",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Systemic / Institutional Impact",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Tencent Yuanbao performed well on ethical/safety criteria, with ethical compliance=4, content appropriateness=5, and algorithmic fairness=4, producing a normalized ethical/safety score of 1.15. The platform was among those reported to generate fully age-appropriate content.",
+          "measure": "Ethical compliance, content appropriateness, and algorithmic fairness rubric scores",
+          "effect_size": "1.15 ethical/safety normalized score",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    },
+    {
+      "name": "ABAB",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "language_speech"
+      ],
+      "description": "A Chinese generative AI platform developed by Minimax; evaluated as a general-purpose GenAI platform for educational use in ECE scenarios.",
+      "use_case": "Tested for early childhood education suitability via standardized prompts for activities, lesson plans, personalization, and ethical/safety review.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "ABAB ranked in Tier 2 with an overall normalized score of 3.82. Its dimension scores were technical performance 1.15, pedagogical adaptability 1.53, and ethical/safety 1.15 normalized, indicating balanced mid-tier suitability for ECE.",
+          "measure": "Overall and dimension-level normalized framework scores",
+          "effect_size": "3.82 overall normalized score",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "ABAB demonstrated moderate pedagogical adaptability with scores of 3 for teaching content generation, 3 for activity organization/evaluation, and 4 for personalization support. It appeared more competent in adaptation than in producing highly structured instructional content.",
+          "measure": "Pedagogical adaptability rubric scores",
+          "effect_size": "1.53 pedagogical adaptability normalized score",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Systemic / Institutional Impact",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "ABAB scored ethical compliance=4, content appropriateness=5, and algorithmic fairness=4, giving it an ethical/safety normalized score of 1.15. The study indicates age-appropriate outputs and little explicit evidence of gender bias.",
+          "measure": "Ethical compliance, content appropriateness, and algorithmic fairness rubric scores",
+          "effect_size": "1.15 ethical/safety normalized score",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    },
+    {
+      "name": "Spark",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "personalization_adaptation"
+      ],
+      "description": "A Chinese generative AI platform developed by iFlytek; evaluated here as a general-purpose GenAI system for educational content generation and adaptation.",
+      "use_case": "Assessed for ECE suitability on multimodal support, response speed, lesson-plan and activity generation, age-based personalization, and ethical/safety dimensions.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Spark ranked second overall and in Tier 1 with an overall normalized score of 4.38. It achieved the joint-highest pedagogical adaptability score (2.35 normalized, tied with DeepSeek), alongside technical performance of 0.88 and ethical/safety of 1.15 normalized.",
+          "measure": "Overall and dimension-level normalized framework scores",
+          "effect_size": "4.38 overall normalized score",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Spark achieved perfect scores of 5 in teaching content generation, activity organization and evaluation, and personalization support. The study describes Spark as providing comprehensive activity plans with clearly defined objectives, preparation steps, detailed procedures, and extension activities, and as strongly tailoring content to different age groups.",
+          "measure": "Pedagogical adaptability rubric scores and qualitative assessment of lesson-plan completeness",
+          "effect_size": "2.35 pedagogical adaptability normalized score",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Spark demonstrated strong multimodal capabilities (score=4) but only moderate response speed (score=3), leading to a technical performance normalized score of 0.88. The paper nonetheless identifies Spark as one of the strongest platforms on technical performance overall.",
+          "measure": "Multimodal support and response speed rubric scores",
+          "effect_size": "0.88 technical performance normalized score",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Systemic / Institutional Impact",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Spark performed well on ethical/safety criteria, with ethical compliance=4, content appropriateness=5, and algorithmic fairness=4, yielding a normalized score of 1.15. It was among the platforms reported to generate fully age-appropriate content for young children.",
+          "measure": "Ethical compliance, content appropriateness, and algorithmic fairness rubric scores",
+          "effect_size": "1.15 ethical/safety normalized score",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical mixed-methods evaluation using expert scoring and standardized prompts, but it is not an RCT, QED, or meta-analysis and does not measure learner outcomes directly. The evidence is useful but primarily benchmark-style and qualitative/observational.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports comparative platform performance scores rather than causal effects on student learning or other outcome effect sizes. Impact is therefore suggestive but unclear in magnitude for educational outcomes.",
+  "citations": [
+    {
+      "title": "Mapping the global evidence around the use of ChatGPT in higher education: A systematic scoping review",
+      "doi": "10.1007/s10639-023-12223-4",
+      "year": 2024,
+      "venue": "Education and Information Technologies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Fostering culturally grounded learning: Generative AI, digital storytelling, and early childhood education",
+      "doi": null,
+      "year": 2023,
+      "venue": "International conference of early childhood education in multiperspectives",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Benchmark MLPerf Training | MLCommons Version 2.0 Results",
+      "doi": null,
+      "year": null,
+      "venue": "MLCommons",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Innovating responsibly: Ethical considerations for AI in early childhood education",
+      "doi": "10.1007/s44436-025-00003-5",
+      "year": 2025,
+      "venue": "AI, Brain and Child",
+      "citation_level": 2,
+      "citation_context": "ethical risks, privacy opacity, and child vulnerability framing"
+    },
+    {
+      "title": "Advancing transformative education: Generative AI as a catalyst for equity and innovation",
+      "doi": "10.48550/arXiv.2411.15971",
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Artificial intelligence development report",
+      "doi": null,
+      "year": 2024,
+      "venue": "China Academy of Information and Communications Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "From Turing\u2019s conception of machine intelligence to the evolution of AI in early childhood education: Conceptual, empirical, and practical insights",
+      "doi": "10.1007/s44436-025-00002-6",
+      "year": 2025,
+      "venue": "AI, Brain and Child",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Generative AI in K-12 education: Challenges and opportunities",
+      "doi": null,
+      "year": 2024,
+      "venue": "Common Sense Media",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Use of artificial intelligence in education delivery and assessment",
+      "doi": "10.58248/PN712",
+      "year": 2024,
+      "venue": "Parliamentary Office of Science and Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Navigating the ethical terrain of AI in education: A systematic review on framing responsible human-centered AI practices",
+      "doi": "10.1016/j.caeai.2024.100306",
+      "year": 2024,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Generative artificial intelligence in education: Advancing adaptive and personalized learning",
+      "doi": "10.18267/j.aip.235",
+      "year": 2024,
+      "venue": "Acta Informatica Pragensia",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Recent advances in generative AI and large language models: Current status, challenges, and perspectives",
+      "doi": "10.1109/TAI.2024.3444742",
+      "year": 2024,
+      "venue": "IEEE Transactions on Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Language writ large: LLMs, ChatGPT, meaning, and understanding",
+      "doi": "10.3389/frai.2024.1490698",
+      "year": 2025,
+      "venue": "Frontiers in Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Consensual qualitative research: An update",
+      "doi": "10.1037/0022-0167.52.2.196",
+      "year": 2005,
+      "venue": "Journal of Counseling Psychology",
+      "citation_level": 3,
+      "citation_context": "expert qualitative evaluation approach informed by consensual qualitative research"
+    },
+    {
+      "title": "The Delphi technique: Making sense of consensus",
+      "doi": "10.7275/pdz9-th90",
+      "year": 2007,
+      "venue": "Practical Assessment, Research, and Evaluation",
+      "citation_level": 2,
+      "citation_context": "future validation via expert Delphi consensus"
+    },
+    {
+      "title": "Generative AI and ChatGPT in school children\u2019s education: Evidence from a school lesson",
+      "doi": "10.3390/su151814025",
+      "year": 2023,
+      "venue": "Sustainability",
+      "citation_level": 2,
+      "citation_context": "supports multisensory pedagogical principle in framework discussion"
+    },
+    {
+      "title": "Perspectives on the impact of generative AI on early-childhood development and education",
+      "doi": "10.1002/icd.2514",
+      "year": 2024,
+      "venue": "Infant and Child Development",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Development of new generation of artificial intelligence in China: When Beijing\u2019s global ambitions meet local realities",
+      "doi": "10.1080/10670564.2024.2333492",
+      "year": 2025,
+      "venue": "Journal of Contemporary China",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Applying the science of learning to EdTech evidence evaluations using the EdTech Evidence Evaluation Routine (EVER)",
+      "doi": "10.1038/s41539-023-00186-7",
+      "year": 2023,
+      "venue": "npj Science of Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The glocalization of early childhood curriculum: Global childhoods, local curricula",
+      "doi": "10.4324/9781003274865",
+      "year": 2023,
+      "venue": "Routledge",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "AI, brain, and child: Navigating the intersection of artificial intelligence, neuroscience, and child development",
+      "doi": "10.1007/s44436-025-00004-4",
+      "year": 2025,
+      "venue": "AI, Brain and Child",
+      "citation_level": 2,
+      "citation_context": "frames ethical risks for vulnerable young children"
+    },
+    {
+      "title": "Holistic evaluation of language models",
+      "doi": "10.48550/arXiv.2211.09110",
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Mmbench: Is your multi-modal model an all-around player?",
+      "doi": "10.1007/978-3-031-72658-3_13",
+      "year": 2024,
+      "venue": "European conference on computer vision",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Aladdin\u2019s genie or Pandora\u2019s box for early childhood education? Experts chat on the roles, challenges, and developments of ChatGPT",
+      "doi": "10.1080/10409289.2023.2214181",
+      "year": 2024,
+      "venue": "Early Education and Development",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "MLPerf training benchmark",
+      "doi": null,
+      "year": 2020,
+      "venue": "Proceedings of Machine Learning and Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Guidelines for the use of generative artificial intelligence by primary and secondary school students (2025 Edition)",
+      "doi": null,
+      "year": 2025,
+      "venue": "Basic Education Teaching Guidance Committee",
+      "citation_level": 2,
+      "citation_context": "policy benchmark for responsible AI use and teacher development"
+    },
+    {
+      "title": "The Delphi method as a research tool: An example, design considerations and applications",
+      "doi": "10.1016/j.im.2003.11.002",
+      "year": 2004,
+      "venue": "Information & Management",
+      "citation_level": 2,
+      "citation_context": "future validation via expert Delphi consensus"
+    },
+    {
+      "title": "2024 China AI large model industry development report [2024\u4e2d\u56fdAI\u5927\u6a21\u578b\u4ea7\u4e1a\u53d1\u5c55\u62a5\u544a]",
+      "doi": null,
+      "year": 2024,
+      "venue": "People\u2019s Daily Online & ZD Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Reflections on DeepSeek\u2019s breakthrough",
+      "doi": "10.1093/nsr/nwaf044",
+      "year": 2025,
+      "venue": "National Science Review",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Standards of evidence: An approach that balances the need for evidence with innovation",
+      "doi": null,
+      "year": 2013,
+      "venue": "Nesta",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "MLPerf inference benchmark",
+      "doi": "10.1109/ISCA45697.2020.00045",
+      "year": 2020,
+      "venue": "2020 ACM/IEEE 47th Annual International Symposium on Computer Architecture (ISCA)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "An introduction to generative AI tools for education 2030",
+      "doi": "10.4018/979-8-3693-2440-0.ch001",
+      "year": 2024,
+      "venue": "Integrating generative AI in education to achieve sustainable development goals",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Powerful or mediocre? Kindergarten teachers\u2019 perspectives on using ChatGPT in early childhood education",
+      "doi": "10.1080/10494820.2023.2266490",
+      "year": 2024,
+      "venue": "Interactive Learning Environments",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Recommendation on the ethics of artificial intelligence",
+      "doi": null,
+      "year": 2021,
+      "venue": "UNESCO",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Policy guidance on AI for children",
+      "doi": null,
+      "year": 2021,
+      "venue": "UNICEF",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Digital learning for every child: Closing the gaps for an inclusive and prosperous future",
+      "doi": null,
+      "year": 2022,
+      "venue": "UNICEF",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A systematic review and comprehensive analysis of pioneering AI Chatbot models from education to healthcare: ChatGPT, Bard, Llama, Ernie and Grok",
+      "doi": "10.3390/fi16070219",
+      "year": 2024,
+      "venue": "Future Internet",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Comparing the performance of ChatGPT and ERNIE Bot in answering questions regarding liver cancer interventional radiology in Chinese and English contexts: A comparative study",
+      "doi": "10.1177/20552076251315511",
+      "year": 2025,
+      "venue": "Digital Health",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Generative AI in education and research: A systematic mapping review",
+      "doi": "10.1002/rev3.3489",
+      "year": 2024,
+      "venue": "Review of Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "AI in teacher education: Unlocking new dimensions in teaching support, inclusive learning, and digital literacy",
+      "doi": "10.1111/jcal.12988",
+      "year": 2024,
+      "venue": "Journal of Computer Assisted Learning",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

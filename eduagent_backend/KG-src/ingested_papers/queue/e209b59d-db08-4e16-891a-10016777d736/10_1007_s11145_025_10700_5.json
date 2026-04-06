@@ -1,0 +1,83 @@
+{
+  "title": "Writing growth among non-English learners and English learners in grades 6\u20138 using automated writing evaluation",
+  "doi": "10.1007/s11145-025-10700-5",
+  "year": 2025,
+  "venue": "Reading and Writing",
+  "url": "https://doi.org/10.1007/s11145-025-10700-5",
+  "source_db": "openalex_search",
+  "populations": [
+    "Middle School (6th-8th)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator",
+    "Administrator",
+    "School"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This study examines whether an automated writing evaluation (AWE) system, MI Write, can serve as a benchmark assessment for monitoring middle-school students\u2019 writing growth over an academic year and whether growth differs for English learners (ELs) and non-ELs. The paper is framed as a response to the need for efficient, scalable, and informative literacy assessment tools within a multi-tiered system of supports (MTSS), especially for identifying and tracking diverse learners in writing instruction.\n\nThe study used three benchmark argumentative writing assessments administered in fall, winter, and spring to 3,299 students in Grades 6\u20138 in one Mid-Atlantic U.S. district, including 464 ELs. Essays were scored by MI Write on an overall writing score and six analytic traits, and the system also generated 81 NLP-derived features representing subskills such as syntax, vocabulary, spelling, and cohesion. Growth was modeled using multilevel longitudinal analyses with reading proficiency, grade, race/ethnicity, special education status, and school effects as covariates. The paper is not an intervention trial; it evaluates assessment performance and subgroup growth patterns in an existing instructional context.\n\nFindings showed modest but significant growth in overall writing quality across the year, with no meaningful difference in total gain between EL and non-EL students once covariates were controlled. However, subgroup patterns emerged at the trait and feature levels: EL students showed relatively faster growth in sentence fluency and some foundational skills such as sentence complexity and spelling accuracy, while non-EL students showed faster growth in more advanced language features such as sophisticated grammar, verb forms, vocabulary, and error reduction. The authors conclude that MI Write can capture distinct developmental pathways among middle school writers and may be useful for monitoring diverse learners, but the subgroup findings are based on outcome data from writing assessments rather than any experimental accessibility or instructional accommodation study.",
+  "limitations": [
+    "single_site",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "classroom",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "MI Write",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "content_generation"
+      ],
+      "description": "An automated writing evaluation (AWE) system that uses NLP and machine learning to score student writing analytically across traits and provide feedback.",
+      "use_case": "Used as the benchmark writing assessment to score middle-school argumentative writing across fall, winter, and spring and to derive 81 NLP features for growth modeling.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Literacy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Across 3,299 middle-school students (n=464 ELs), MI Write Total Score increased significantly over the school year. The average gain was about 1.6 points from fall to spring, corresponding to d=0.32 (95% CI [0.19, 0.45]).",
+          "measure": "MI Write Total Score (overall writing quality) across fall, winter, and spring benchmark argumentative writing prompts",
+          "effect_size": "d=0.32",
+          "confidence_interval": "95% CI [0.19, 0.45]",
+          "sample_size": "n=3299"
+        },
+        {
+          "outcome_category": "Academic \u2014 Literacy",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "No significant difference in overall writing growth was found between EL and non-EL students, and English language proficiency did not predict growth. However, at the trait level EL students showed significantly faster growth in development (\u03b2=0.050, p=.041) and sentence fluency (\u03b2=0.053, p=.031), while time\u00d7EL interactions for organization, word choice, style, and conventions were positive but not statistically significant.",
+          "measure": "MI Write analytic trait scores (development, organization, sentence fluency, style, word choice, conventions) over time and time\u00d7EL interactions",
+          "effect_size": "\u03b2=0.050 to 0.053 for significant trait interactions; other interactions not significant",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=3299"
+        },
+        {
+          "outcome_category": "Academic \u2014 Literacy",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "At the NLP feature level, 58 of 81 features changed significantly over time, and 7 features showed differential growth by EL status. EL students grew faster in sentence complexity (\u03b2=0.141, p<.01) and spelling accuracy (\u03b2=0.081, p<.05), while non-EL students grew faster in subordinate conjunctions, perfect aspect verbs, advanced content words, and reductions in misspellings and homophone errors.",
+          "measure": "81 proprietary NLP features derived from student essays; time effects and time\u00d7EL interactions",
+          "effect_size": "\u03b2=0.141, 0.081 for EL-favored features; \u03b2=-0.090 to -0.151 for non-EL-favored features",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=3299"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is an empirical longitudinal multilevel growth study with a large sample and explicit subgroup analyses, but it is observational rather than randomized. The methodology is strong for detecting differential growth patterns, yet causal claims are limited.",
+  "impact_tier": "green",
+  "impact_tier_rationale": "The main overall gain is modest (d=0.32 across the year), with subgroup differences mostly small and feature-level. The paper reports meaningful but not large differential effects for some writing subskills.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

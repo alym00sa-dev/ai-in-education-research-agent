@@ -1,0 +1,80 @@
+{
+  "title": "ChatGPT in foreign language lesson plan creation: Trends, variability, and historical biases",
+  "doi": "10.1017/S0958344024000272",
+  "year": 2025,
+  "venue": "ReCALL",
+  "url": "https://doi.org/10.1017/S0958344024000272",
+  "source_db": "elsevier_search",
+  "populations": [
+    "Graduate / Doctoral"
+  ],
+  "user_types": [
+    "Educator"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper examines how generative AI, specifically ChatGPT, performs when asked to generate foreign language lesson plans. The authors focus on a practical question for teacher preparation and instructional design: whether increasing prompt specificity improves the quality, consistency, and pedagogical alignment of AI-generated lesson plans, and whether the model exhibits weaknesses or biases in its outputs.\n\nThe intervention/approach studied was zero-shot prompting of ChatGPT 4.0 with five prompts of increasing specificity. The prompts were designed around a 45-minute high school novice-level Spanish lesson and progressively added ACTFL proficiency guidance, a lesson-plan template, world-readiness standards, and finally a checklist of required components. Each prompt was entered 10 times in separate chats, producing 50 lesson plans that were scored against a 25-item rubric based on best practices and edTPA-aligned criteria. The study was conducted in the context of pre-service foreign language teacher training at the University of North Carolina at Charlotte, with outputs evaluated as lesson-planning artifacts rather than by human participants.\n\nThe main findings were that ChatGPT could often generate reasonably aligned lesson plans, but greater prompt specificity did not reliably produce better outputs. Adding a detailed rubric checklist produced the strongest average results, while adding a lesson-plan template sometimes reduced quality. The authors also found substantial variability across repeated outputs from the same prompt, indicating that ChatGPT is not deterministic in this task. In addition, some outputs reflected outdated pedagogical patterns, such as audio-lingual-style repetition and limited attention to culture, suggesting that generative AI may reproduce historically biased or research-rebuked teaching practices. The paper concludes that teachers can use such tools to streamline planning, but only with careful human review and AI literacy focused on critical evaluation and revision.",
+  "limitations": [
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "lab",
+  "teacher_training": "yes",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "feedback_evaluation"
+      ],
+      "description": "OpenAI's generative AI chatbot / large language model used to generate and evaluate text outputs from prompts.",
+      "use_case": "Used via ChatGPT Version 4.0 to generate foreign language lesson plans from five zero-shot prompts of increasing specificity; outputs were scored against an edTPA-aligned rubric to examine prompt specificity, output variability, and pedagogical weaknesses.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0016 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Across 50 ChatGPT-generated lesson plans (10 per prompt), increasing prompt specificity produced only a marginal overall difference in scores (p = 0.0442, F = 2.668, DF = 4), and pairwise tests were not significant after correction (p > 0.12). Mean scores did not increase linearly with specificity; P.3 and P.4 were lower than P.2, while P.5 had the highest mean score (21.6/25).",
+          "measure": "Lesson plan rubric score / presence of 25 criteria; word count",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=50"
+        },
+        {
+          "outcome_category": "Academic \u0016 Other",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "Outputs from identical prompts showed substantial non-determinism. For example, P.1 scores ranged from 23/25 to 16/25, and P.5 scores ranged from 25/25 to 20/25; the authors state that outputs generated from identical prompts varied by at least five elements.",
+          "measure": "Within-prompt variability in rubric scores and Jaccard distance between outputs",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=50"
+        },
+        {
+          "outcome_category": "Academic \u0016 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "The paper identified several strengths and weaknesses in lesson-plan components. Meaningful context, teacher input aligned with objectives, and level-appropriate activities appeared in all outputs, but cultural connections and ACTFL standards in teacher input were largely restricted to P.5, while some rubric elements were present in only about 50% of outputs. The authors also report that many generated plans reflected outdated pedagogical practices such as audio-lingual, script-based instruction.",
+          "measure": "Presence/absence of 25 rubric categories across generated lesson plans",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=50"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical single-study analysis of ChatGPT outputs, but it is not an intervention trial and does not provide causal evidence about student outcomes. The methodology is systematic and transparent, yet the evidence is limited to one tool, one content area, and rubric-based output scoring.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The study reports meaningful differences in output quality and substantial variability, but no standardized effect sizes are provided and the results are not directly tied to measured educational outcomes for learners or teachers. Overall impact is therefore suggestive but unclear in magnitude.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": "via unpaywall"
+}

@@ -1,0 +1,61 @@
+{
+  "title": "Automatic Large Language Models Creation of Interactive Learning Lessons",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2506.17356v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Middle School (6th-8th)"
+  ],
+  "user_types": [
+    "Educator"
+  ],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper investigates whether large language models (LLMs) can automatically generate high-quality scenario-based tutor training lessons for novice human tutors in middle school mathematics. The authors focus on the lesson creation problem itself rather than on learner outcomes, asking how much task decomposition in prompting affects lesson quality and whether LLM-generated lessons compare favorably with expert human-crafted lessons.\n\nThe intervention studied is a Retrieval-Augmented Generation workflow using GPT-4o to generate English tutor-training lessons across five sections: title page, two tutoring scenarios, instructional content, and a conclusion. The authors compare one-, two-, three-, four-, and five-segment prompting strategies, with the generated lessons evaluated by two experienced human coders using a 17-code rubric. For the human comparison, two expert lesson designers reviewed the best-performing three-segment outputs and provided structured written feedback.\n\nThe population and context are novice human tutors preparing to teach middle school mathematics online through scenario-based professional learning materials. The paper reports that three-segment decomposition produced the best overall lesson ratings, while one-segment generation was weakest and five-segment generation was not consistently better. Human reviewers praised the AI-generated lessons for saving time, producing varied scenarios, and supporting human-AI collaboration, but noted weaknesses in feedback specificity, clarity, and citation authenticity. The study concludes that LLMs can support lesson drafting, but human review remains necessary, and the paper does not test whether these AI-generated lessons change tutor behavior, teacher self-efficacy, or student learning.",
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "yes",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation"
+      ],
+      "description": "An OpenAI GPT-family large language model used here via GPT-4o for retrieval-augmented, prompt-engineered generation of structured tutor training lessons.",
+      "use_case": "Used to automatically generate interactive, scenario-based tutor training lessons on three topics, with outputs created under one-, two-, three-, four-, and five-segment prompting strategies and compared against human-crafted lessons using human rubric ratings and designer feedback.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Human raters evaluated GPT-4o-generated tutor training lessons using a 17-code rubric. The three-segment prompting strategy received the highest average lesson rating (14.67), compared with 10.67 for one-segment generation, indicating better apparent lesson quality with moderate decomposition. The paper also notes that five-segment generation was slightly worse than three-segment generation (13.33 vs. 14.67), suggesting diminishing returns from excessive decomposition.",
+          "measure": "Human rubric ratings of generated lesson quality",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=3 lessons generated per prompting condition"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a single-study, qualitative/mixed-methods evaluation of AI-generated lesson artifacts, not a controlled outcome study of teacher behavior change or learning. Evidence is useful but limited to human judgments of content quality and designer reflections.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports meaningful differences in rubric ratings across prompting strategies, but it does not provide standardized effect sizes or demonstrate impacts on teacher practice or student outcomes. The observed gains concern artifact quality rather than downstream educational impact.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

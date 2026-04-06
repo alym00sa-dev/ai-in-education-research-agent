@@ -1,0 +1,223 @@
+{
+  "title": "Promoting AI Literacy in Higher Education: Evaluating the IEC-V1 Chatbot for Personalized Learning and Educational Equity",
+  "doi": null,
+  "year": 2024,
+  "venue": "arXiv",
+  "url": "https://arxiv.org/abs/2412.16165",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses how AI literacy and equitable access to AI-supported learning can be promoted in higher education, especially for prospective teachers. The author argues that reliance on proprietary AI tools may deepen educational inequities because such tools can require payment, technical access, or data practices that are unsuitable for educational settings. The study therefore explores whether an open, locally deployable chatbot could support more personalized learning while also helping future teachers understand how AI systems can be configured and used responsibly.\n\nThe intervention studied is the IEC-V1 prototype, an Individual Educational Chatbot built with open-source components including Ollama, a local LLM setup, Meta\u2019s Llama 3.1 model, and a Gradio interface. A distinctive feature of IEC-V1 is that users can choose response levels such as beginner, intermediate, or advanced, and can constrain the chatbot\u2019s knowledge base by supplying URLs or PDF files. This is intended to support differentiated instruction and reduce uncritical dependence on generic LLM outputs by grounding responses in teacher-selected sources.\n\nThe empirical component is an exploratory pilot study conducted with prospective teachers in a seminar at Heidelberg University of Education, specifically in the context of digital media in foreign language teaching. Students tested the chatbot during an on-site seminar and then completed an online questionnaire with Likert-scale items plus an optional open-ended feedback question. Of 9 students present, 7 completed the questionnaire. The study examined prior chatbot experience and perceptions of IEC-V1\u2019s usability, response quality, speed, design, and especially the usefulness of adjustable proficiency levels.\n\nThe main conclusions are that student teachers responded positively overall to the prototype and showed particular appreciation for the adjustable response-level feature. The study also found strong interest in further using and understanding the tool. At the same time, the pilot revealed technical and usability problems, including unstable access due to deployment issues, slow response times, and occasional PDF processing failures. The author concludes that open-source, locally hosted AI tools can be meaningfully integrated into higher education and teacher preparation while meeting data protection needs, but that further development and broader testing are needed before wider educational deployment.",
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "no_control_group",
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "classroom",
+  "teacher_training": "no",
+  "implementation_fidelity": "low",
+  "study_country": "Germany",
+  "study_region": "Europe",
+  "identified_tools": [
+    {
+      "name": "IEC-V1",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "personalization_adaptation",
+        "tutoring_instruction"
+      ],
+      "description": "A prototype Individual Educational Chatbot that runs locally using a configurable knowledge base (URLs/PDFs) and selectable response proficiency levels to generate tailored answers for learners.",
+      "use_case": "Tested with prospective teachers in a Heidelberg University of Education seminar, where students uploaded course-related URLs/PDFs, selected skill levels (Beginner/Intermediate/Advanced), asked questions, and evaluated the chatbot's usability and functionality.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In an exploratory pilot study, IEC-V1 usability was rated positively by 7 student teachers who completed the questionnaire. Ease of interaction was rated M=3.86 (SD=1.07), response speed M=3.86 (SD=1.07), and design M=3.57 (SD=1.27) on a 5-point Likert scale, indicating generally favorable usability perceptions with some variability.",
+          "measure": "5-point Likert ratings of ease of interaction, response speed, and design/usability",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=7"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The chatbot's personalization feature allowing users to adjust response proficiency levels was the most positively rated component of IEC-V1. Students rated 'Adjust Skill Levels' at M=4.14 (SD=0.69) on a 5-point Likert scale, and the paper interprets this as highlighting the importance of level customization for prospective teachers.",
+          "measure": "5-point Likert rating of the usefulness/user-friendliness of adjustable skill levels",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=7"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Perceived answer quality for the first IEC-V1 prototype was neutral to slightly positive, with a mean rating of 3.29 (SD=0.48) on a 5-point Likert scale. Open-ended feedback also identified shortcomings, including insufficient differentiation in vocabulary across levels and one case where an uploaded PDF was not recognized.",
+          "measure": "5-point Likert rating of response quality plus open-ended usability feedback",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=7"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an exploratory pilot usability study with a very small sample and self-report Likert outcomes, not an RCT or strong quasi-experimental design. The evidence is useful for early-stage feasibility and acceptance but has substantial methodological limitations.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The study reports generally positive perceptions of usability and customization, but no standardized learning outcome effects or causal impact estimates are provided. Impact on student learning is therefore unclear rather than demonstrated.",
+  "citations": [
+    {
+      "title": "Rethinking education: Towards a global common good",
+      "doi": "10.54675/MDZL5552",
+      "year": 2015,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Transforming our world: The 2030 agenda for sustainable development",
+      "doi": null,
+      "year": 2015,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Education at a glance 2020: OECD indicators",
+      "doi": "10.1787/69096873-en",
+      "year": 2020,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "AI Index Report 2022",
+      "doi": null,
+      "year": 2022,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Intelligence unleashed: An argument for AI in education",
+      "doi": null,
+      "year": 2016,
+      "venue": "Pearson",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Weapons of math destruction: How big data increases inequality and threatens democracy",
+      "doi": null,
+      "year": 2016,
+      "venue": "Crown Publishing Group (NY)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Fairness in machine learning: Lessons from political philosophy",
+      "doi": "10.48550/arXiv.1712.03586",
+      "year": 2017,
+      "venue": "arXiv preprint arXiv:1712.03586",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Jan van Dijk. (2020). The digital divide",
+      "doi": "10.1002/asi.24355",
+      "year": 2020,
+      "venue": "Journal of the Association for Information Science and Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "White Paper on Artificial Intelligence - A European approach to excellence and trust",
+      "doi": null,
+      "year": 2020,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Perceived usefulness, perceived ease of use, and user acceptance of information technology",
+      "doi": "10.2307/249008",
+      "year": 1989,
+      "venue": "MIS Quarterly",
+      "citation_level": 2,
+      "citation_context": "TAM model explains acceptance and use"
+    },
+    {
+      "title": "Analysis of freemium business model considering network externalities and consumer uncertainty",
+      "doi": "10.1007/s11518-017-5342-8",
+      "year": 2017,
+      "venue": "Journal of Systems Science and Systems Engineering",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Energy and policy considerations for deep learning in NLP",
+      "doi": "10.18653/v1/P19-1355",
+      "year": 2019,
+      "venue": "Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The simple economics of basic scientific research",
+      "doi": "10.1093/icc/dtl022",
+      "year": 2006,
+      "venue": "Industrial and Corporate Change",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The entrepreneurial state: Debunking private vs. public sector myths",
+      "doi": null,
+      "year": 2013,
+      "venue": "Anthem Press",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Risks of AI-assisted learning on student critical thinking",
+      "doi": "10.4018/IJRCM.350185",
+      "year": 2024,
+      "venue": "International Journal of Risk and Contingency Management",
+      "citation_level": 2,
+      "citation_context": "frames overreliance risks in AI-assisted learning"
+    },
+    {
+      "title": "On the dangers of stochastic parrots: Can language models be too big?",
+      "doi": "10.1145/3442188.3445922",
+      "year": 2021,
+      "venue": "Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency",
+      "citation_level": 2,
+      "citation_context": "supports critique of unverified LLM outputs"
+    },
+    {
+      "title": "Development of a chatbot in Botpress with own knowledge base and implementation in Moodle to support students",
+      "doi": null,
+      "year": 2024,
+      "venue": "Medium",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

@@ -1,0 +1,352 @@
+{
+  "title": "AgentTutor: Empowering Personalized Learning with Multi-Turn Interactive Teaching in Intelligent Education Systems",
+  "doi": null,
+  "year": 2026,
+  "venue": "AAAI",
+  "url": "https://arxiv.org/abs/2601.04219",
+  "source_db": "scale_stanford",
+  "populations": [],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses a core limitation of many large-language-model-powered intelligent education systems: they typically operate as single-turn question-answering tools and therefore do not continuously assess learner understanding, adapt instruction over time, or support richer personalized teaching. The authors argue that effective tutoring requires multi-turn interaction, ongoing learner assessment, and dynamic adjustment of teaching strategies based on learner progress, cognitive level, goals, preferences, and available study materials.\n\nTo address this, the paper introduces AgentTutor, an LLM-based intelligent tutoring architecture built around five modules: curriculum decomposition, learner assessment, dynamic strategy generation, teaching reflection, and knowledge and experience memory. The system uses Bloom's Taxonomy to break curriculum content into hierarchical sub-goals, estimates learner proficiency over time, retrieves and integrates internal and external learning resources, and uses a tree-search-based strategy module to optimize teaching actions. It also supports both interactive dialogue and passive lesson delivery, and stores learner and teaching histories in long-term memory for future personalization.\n\nThe empirical evaluation is conducted on benchmark programming datasets (HumanEval and MBPP) using a simulated learner agent rather than real students. The study context is therefore an AI benchmarking and system evaluation environment rather than a real classroom. The learner is initialized at a basic cognitive level and interacts with AgentTutor for 10 turns per benchmark theme. The paper also includes automated evaluations of teaching quality, human expert judgments of pedagogical quality, and ablation studies to test the contribution of each system module.\n\nThe main conclusion is that AgentTutor outperforms several prompting and reasoning baselines on benchmark-based learner performance and on measures of interactive teaching quality. The authors conclude that multi-turn, dynamically adaptive tutoring architectures may be more effective than static single-turn systems for personalized learning. However, they also acknowledge important constraints, especially the reliance on simulated learners, limited real-world validation, narrow personalization factors, and still-developing multimodal pedagogy generation.",
+  "limitations": [
+    "no_control_group",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "identified_tools": [
+    {
+      "name": "AgentTutor",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "personalization_adaptation"
+      ],
+      "description": "An LLM-powered multi-turn interactive intelligent education system for personalized learning, built as a multi-agent tutoring framework with curriculum decomposition, learner assessment, dynamic strategy generation, teaching reflection, and long-term memory.",
+      "use_case": "Studied as a personalized tutoring system for programming instruction on HumanEval and MBPP, where it interacted for 10 turns with a simulated learner and adapted teaching strategies based on learner cognitive level and progress.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "On the HumanEval benchmark, AgentTutor achieved Pass@1 of 92.7 with GPT-3.5-turbo and 96.9 with GPT-4, outperforming reported baselines including CoT (46.9), ReAct (56.9), ToT (54.4), RAP (63.1), Reflexion (68.1) for GPT-3.5-turbo, and zero-shot GPT-4 (80.1) and Reflexion GPT-4 (91.0). The paper interprets this as improved learner performance after multi-turn tutoring interactions.",
+          "measure": "Pass@1 accuracy on HumanEval programming benchmark",
+          "effect_size": "92.7 Pass@1 (GPT-3.5-turbo); 96.9 Pass@1 (GPT-4)",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=164 tasks"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "On the MBPP benchmark, AgentTutor achieved Pass@1 of 89.4 with GPT-3.5-turbo, exceeding CoT (54.9), ReAct (67.0), ToT (65.8), RAP (71.4), and Reflexion (70.0). The study presents this as evidence that dynamic teaching strategies and multi-turn interactions improve programming-task performance.",
+          "measure": "Pass@1 accuracy on MBPP programming benchmark",
+          "effect_size": "89.4 Pass@1",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=974 tasks"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "For interactive teaching quality, AgentTutor outperformed CoT, ToT, and Reflexion on conversational adaptability, feedback quality, and question difficulty using Prometheus 2 scored on a 5-point rubric. Exact numeric scores are not reported in the text excerpt, but the figure and narrative state AgentTutor was highest across all three metrics.",
+          "measure": "Prometheus 2 5-point rubric scores for conversational adaptability, feedback quality, and question difficulty",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In human evaluation by three teaching experts, AgentTutor received the most favorable ratings versus CoT, ToT, and Reflexion on accuracy, conversational quality, helpfulness/relevance, and question set quality using a 3-point scale. The paper attributes these results to AgentTutor\u2019s multi-turn interaction design and alignment with learner level.",
+          "measure": "Human expert ratings on accuracy, conversational quality, helpfulness/relevance, and question set quality",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=3 experts"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Ablation on HumanEval with GPT-3.5-turbo showed all modules contributed to performance: full AgentTutor scored 92.7 Pass@1; removing DSM reduced performance to 72.9 (-19.8), removing CDM to 84.1 (-8.6), removing KEMM to 85.3 (-7.4), removing LAM to 85.7 (-7.0), and removing TRM to 86.2 (-6.5). The largest drop came from removing the Dynamic Strategy Module.",
+          "measure": "Pass@1 accuracy under module ablations on HumanEval",
+          "effect_size": "-19.8, -8.6, -7.4, -7.0, -6.5 Pass@1 versus full model",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=164 tasks"
+        }
+      ]
+    },
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "language_speech",
+        "tutoring_instruction"
+      ],
+      "description": "OpenAI GPT-family large language models used for conversation, reasoning, and learner simulation.",
+      "use_case": "Used as underlying model components within AgentTutor: GPT-4 for reasoning tasks, GPT-3.5-turbo for conversational interactions and simulated learner behavior.",
+      "findings": []
+    },
+    {
+      "name": "Qwen",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "language_speech",
+        "other"
+      ],
+      "description": "Alibaba Qwen-family multimodal large language model.",
+      "use_case": "Qwen2.5-VL-7B-Instruct was used as the multimodal component for processing study materials in the AgentTutor system.",
+      "findings": []
+    },
+    {
+      "name": "LLaMA",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "language_speech",
+        "other"
+      ],
+      "description": "Meta LLaMA-family large language models, including instruction-tuned variants used for fine-tuning conversational behavior.",
+      "use_case": "Llama-3.1-8B-Instruct was used to train AgentTutor\u2019s conversational teaching model with LoRA and DPO on tutoring datasets.",
+      "findings": []
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical system paper with benchmark experiments, automated evaluation, human ratings, and ablations, but it relies on simulated learners rather than real students and does not report randomized or quasi-experimental causal evidence in authentic educational settings.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports strong benchmark gains and favorable teaching-quality evaluations, but effects are not reported as standard educational effect sizes and the real-world learning impact on actual students remains unclear.",
+  "citations": [
+    {
+      "title": "Enhancing Dialogue State Tracking Models through LLM-backed User-Agents Simulation",
+      "doi": null,
+      "year": 2024,
+      "venue": "ACL",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Empowering personalized learning through a conversation-based tutoring system with student modeling",
+      "doi": null,
+      "year": 2024,
+      "venue": "Extended Abstracts of the CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "PREDICT: Multi-Agent-based Debate Simulation for Generalized Hate Speech Detection",
+      "doi": null,
+      "year": 2024,
+      "venue": "EMNLP",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Deep knowledge tracing",
+      "doi": null,
+      "year": 2015,
+      "venue": "NeurIPS",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "User Adaptive Language Learning Chatbots with a Curriculum",
+      "doi": null,
+      "year": 2023,
+      "venue": "International Conference on Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Training LLM-Based Tutors to Improve Student Learning Outcomes in Dialogues",
+      "doi": null,
+      "year": 2025,
+      "venue": "Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "AgentClinic: a multimodal agent benchmark to evaluate AI in simulated clinical environments",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv preprint arXiv:2405.07960",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Reflexion: language agents with verbal reinforcement learning",
+      "doi": null,
+      "year": 2023,
+      "venue": "NeurIPS",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The AI teacher test: Measuring the pedagogical ability of blender and GPT-3 in educational dialogues",
+      "doi": null,
+      "year": 2022,
+      "venue": "arXiv preprint arXiv:2205.07540",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Tavily Python",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "external web search tool used in DSM"
+    },
+    {
+      "title": "CodeJudge: Evaluating Code Generation with Large Language Models",
+      "doi": null,
+      "year": 2024,
+      "venue": "EMNLP",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "CharacterEval: A Chinese Benchmark for Role-Playing Conversational Agent Evaluation",
+      "doi": null,
+      "year": 2024,
+      "venue": "ACL",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ArgueTutor: An adaptive dialog-based learning system for argumentation skills",
+      "doi": null,
+      "year": 2021,
+      "venue": "CHI",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Strategize Before Teaching: A Conversational Tutoring System with Pedagogy Self-Distillation",
+      "doi": null,
+      "year": 2023,
+      "venue": "Findings of the Association for Computational Linguistics: EACL 2023",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "User behavior simulation with large language model based agents",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv preprint arXiv:2306.02552",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "LLM-powered Multi-agent Framework for Goal-oriented Learning in Intelligent Tutoring System",
+      "doi": null,
+      "year": 2025,
+      "venue": "WWW",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Chain-of-thought prompting elicits reasoning in large language models",
+      "doi": null,
+      "year": 2022,
+      "venue": "NeurIPS",
+      "citation_level": 2,
+      "citation_context": "reasoning strategy underlying teaching/planning prompts"
+    },
+    {
+      "title": "Building math agents with multi-turn iterative preference learning",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv preprint arXiv:2409.02392",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "EduAgent: Generative Student Agents in Learning",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv preprint arXiv:2404.07963",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Tree of thoughts: Deliberate problem solving with large language models",
+      "doi": null,
+      "year": 2024,
+      "venue": "NeurIPS",
+      "citation_level": 2,
+      "citation_context": "deliberate search concept for strategy planning"
+    },
+    {
+      "title": "React: Synergizing reasoning and acting in language models",
+      "doi": null,
+      "year": 2022,
+      "venue": "arXiv preprint arXiv:2210.03629",
+      "citation_level": 2,
+      "citation_context": "reasoning-acting agent framework informs tutoring agents"
+    },
+    {
+      "title": "CodeAgent: Enhancing Code Generation with Tool-Integrated Agent Systems for Real-World Repo-level Coding Challenges",
+      "doi": null,
+      "year": 2024,
+      "venue": "ACL",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Language agent tree search unifies reasoning, acting, and planning in language models",
+      "doi": null,
+      "year": 2024,
+      "venue": "ICML",
+      "citation_level": 3,
+      "citation_context": "DSM search algorithm based on LATS"
+    },
+    {
+      "title": "LangChain",
+      "doi": null,
+      "year": 2022,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "framework for vector store and embedding pipeline"
+    },
+    {
+      "title": "Jurenka et al. (2024)",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "automated interactive teaching metrics adopted"
+    },
+    {
+      "title": "Jiang et al. (2024)",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "evaluation procedure followed for Prometheus setup"
+    },
+    {
+      "title": "Prometheus",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "open-source evaluator used for long-text assessment"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

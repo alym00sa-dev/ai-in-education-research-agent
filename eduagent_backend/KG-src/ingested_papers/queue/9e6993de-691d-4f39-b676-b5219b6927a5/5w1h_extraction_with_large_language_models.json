@@ -1,0 +1,32 @@
+{
+  "title": "5W1H Extraction With Large Language Models",
+  "doi": null,
+  "year": 2024,
+  "venue": null,
+  "url": "http://arxiv.org/abs/2405.16150v1",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper addresses the problem of extracting the journalistic 5W1H elements\u2014What, When, Where, Why, Who, and How\u2014from news articles using large language models. The authors argue that zero-shot and few-shot use of general-purpose LLMs such as ChatGPT is insufficient for this task, especially for longer news articles and for context-dependent elements like What, Why, and How. To address this, they construct a new human-annotated dataset for 5W1H extraction from four public news corpora: CNN/DailyMail, XSum, NYT, and RA-MDS.\n\nThe main approach is to annotate 3,500 news entries with 5W1H labels and then fine-tune open-source LLMs using instruction tuning with QLoRA. The authors compare several models, including LLaMA, Vicuna, and Guanaco in 7B and 13B sizes, and benchmark them against zero-shot and few-shot GPT-3.5 and GPT-4. Performance is evaluated using ROUGE and BLEU metrics by comparing generated structured JSON outputs against the annotated reference answers. The study also examines cross-domain adaptation by testing models fine-tuned on one news dataset against other news datasets.\n\nThe paper does not study educational populations or K-12 learners; its data consist of news documents and model outputs. Human annotators, approximately 10 in total, were involved in dataset construction, with three annotators per article, but they are not study participants in an educational intervention. Experiments were conducted on annotated corpora in a computational setting rather than a classroom or school context.\n\nThe main conclusions are that fine-tuned open-source LLMs outperform ChatGPT on this specific 5W1H extraction task, while few-shot GPT-4 performs strongly and in some cases rivals or exceeds the fine-tuned models. Larger models generally perform better than smaller ones, and extraction of longer, context-dependent elements remains more difficult across datasets. The authors conclude that high-quality annotated data and model fine-tuning are important for improving 5W1H extraction in news analysis.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This paper is a computer science benchmark/dataset paper on 5W1H extraction from news using LLMs, not a K-12 education intervention study. It does not evaluate effects on students, classrooms, or literacy learning, and the evidence presented is model performance on NLP benchmarks rather than causal or quasi-experimental educational evidence.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "No educational impact on K-12 literacy or related student outcomes is studied. Reported gains concern extraction accuracy on news datasets, so impact for the target evidence framework is not established.",
+  "interventions": [],
+  "outcome_assignments": [],
+  "limitations": [
+    "no_control_group",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "lab",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "China",
+  "study_region": "East Asia & Pacific",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

@@ -1,0 +1,67 @@
+{
+  "title": "Generative AI Toolkit - A Framework for Increasing the Quality of LLM-Based Applications Over Their Whole Life Cycle",
+  "doi": null,
+  "year": 2024,
+  "venue": "arXiv preprint",
+  "url": "http://arxiv.org/abs/2412.14215v1",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses the problem of developing, testing, deploying, and monitoring large language model (LLM)-based applications, which the authors argue is still largely manual, slow, and dependent on trial-and-error workflows. The paper proposes the Generative AI Toolkit, an open-source framework intended to automate DevOps-style processes across the full life cycle of LLM applications, from project bootstrapping and prompt/model experimentation to CI/CD integration and post-deployment monitoring.\n\nThe intervention is not an educational tool or student-facing chatbot; it is a software engineering toolkit for developers. It provides templates for creating agents, support for custom metrics, repeatable evaluation cases, parameter permutation across prompts and models, automated testing, deployment via infrastructure-as-code, and logging/monitoring through traces and dashboards. The paper illustrates these capabilities through several representative use cases: a text-to-SQL agent, a restaurant menu RAG agent, an in-car voice assistant, and model-comparison experiments on the assistant use case.\n\nThe population and context are adult developers working on LLM-based applications in industry settings, specifically at BMW Group and Amazon Web Services. The use cases are technical software examples rather than a study of learners, teachers, or classrooms, and no education-related participants are reported. The main conclusion is that the toolkit can improve quality assurance, reduce manual work, shorten cycle times, and make it easier to test and monitor LLM applications at scale, although the authors note that quantitative benefits are hard to generalize from the showcased examples.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a preprint framework paper with illustrative use cases and no controlled educational study, randomized design, or quantitative comparison against a baseline. It provides implementation details and qualitative claims, but not empirical evidence meeting K-12 study standards.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "The paper does not evaluate educational outcomes or student learning effects, and it is not an intervention study in schooling. Any impact is indirect and operational, focused on software development workflows rather than learner outcomes.",
+  "interventions": [
+    {
+      "intervention": "Other",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "framework for developing, testing, deploying, and monitoring LLM-based applications and agents with user-defined metrics and CI/CD automation"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 1.0,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper reports that the Generative AI Toolkit reduces manual work and shortens release cycles for LLM-based applications by automating development, testing, deployment, and monitoring workflows. However, the authors do not provide a controlled evaluation with numerical effect sizes; benefits are described qualitatively across representative use cases (e.g., text-to-SQL, RAG menu agent, in-car assistant).",
+        "measure": "development cycle time, manual work, and automation coverage in LLM application life cycle",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Systemic / Institutional Impact",
+      "confidence": 0.7,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The toolkit is presented as an open-source framework intended to improve the quality and operationalization of LLM systems at scale, including CI/CD integration, logging, monitoring, and audit-friendly evaluation. The evidence is descriptive rather than inferential, so no formal impact estimate is reported.",
+        "measure": "framework capability and lifecycle support for large-scale LLM operations",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Germany",
+  "study_region": "Europe",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

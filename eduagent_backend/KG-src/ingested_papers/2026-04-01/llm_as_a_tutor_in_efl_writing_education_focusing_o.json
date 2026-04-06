@@ -1,0 +1,288 @@
+{
+  "title": "LLM-as-a-tutor in EFL Writing Education: Focusing on Evaluation of Student-LLM Interaction",
+  "doi": null,
+  "year": 2024,
+  "venue": "arXiv",
+  "url": "https://doi.org/10.48550/arxiv.2310.05191",
+  "source_db": "openalex_search",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper examines how large language models (LLMs) can function as tutors in English as a Foreign Language (EFL) writing education, with a particular focus on how to evaluate student-LLM interaction in pedagogically meaningful ways. The authors argue that standard LLM evaluation metrics, which mainly assess output quality, are insufficient for educational settings because writing feedback must also be judged in terms of its usefulness for learning, its pedagogical characteristics, and its effects on students\u2019 understanding and confidence.\n\nThe study investigates an LLM-as-a-tutor approach for generating essay feedback using GPT-3.5-turbo. The authors first conduct exploratory interviews with six EFL learners and written interviews with three instructors to identify feedback needs. They then compare standard prompting with a score-based prompting method, where rubric-based essay scores (content, organization, language) from an automated essay scoring model are supplied to the LLM to guide feedback generation. To evaluate this, 21 English education experts rate the quality and characteristics of the generated feedback, and 33 EFL learners receive score-based feedback through the RECIPE platform as part of their writing coursework and report on their learning outcomes.\n\nThe population is primarily undergraduate EFL learners at KAIST and instructors/English education experts in South Korea. The educational context is EFL writing courses in a college setting, where students write essays independently and receive AI-generated feedback integrated into coursework. The study involves both student and teacher perspectives: teachers assess output quality and feedback characteristics, while students assess perceived essay improvement and understanding of rubric criteria after revising with LLM feedback.\n\nThe main conclusion is that score-based prompting produces more pedagogically appropriate feedback than standard prompting. Experts judged it as more accurate, relevant, helpful, and more aligned with EFL learners\u2019 needs by being more direct, constructive, and specific. Most teacher annotators preferred score-based feedback. Students also reported improved confidence in essay quality and better understanding of rubric criteria, along with high satisfaction with the feedback. At the same time, the paper notes a key limitation: because ChatGPT is used as a black-box model, the system lacks transparency and explainability in how feedback is generated.",
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_control_group",
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "blended",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "South Korea",
+  "study_region": "East Asia & Pacific",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "tutoring_instruction"
+      ],
+      "description": "OpenAI GPT-family conversational large language model used here as an English writing tutor that generates rubric-based essay feedback.",
+      "use_case": "The paper studies ChatGPT (gpt-3.5-turbo, normalized to ChatGPT) as an EFL writing tutor that provides feedback on student essays under standard prompting and score-based prompting, with teacher/expert evaluation of feedback quality/characteristics and student self-reported learning outcomes after receiving the feedback through the RECIPE platform.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Literacy",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "In an initial evaluation of standard-prompted ChatGPT feedback, 21 English education experts rated the feedback as highly positive (mean=5.93/7) but not very direct (mean=3.72/7), and judged it relatively unhelpful (mean helpfulness=3.41/7). The authors interpret this as a limitation for EFL writing support because learners preferred more direct, critical feedback.",
+          "measure": "Expert 7-point Likert ratings of positivity, directness, and helpfulness of ChatGPT-generated essay feedback",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=21"
+        },
+        {
+          "outcome_category": "Academic \u2014 Literacy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Compared with standard prompting, score-based prompting with ChatGPT produced feedback that outperformed standard prompting on accuracy, relevance, and helpfulness across all rubrics, with statistical significance at p<0.05 by paired t-test. Teachers also preferred the score-based feedback in 74.38% of cases versus 12.50% for standard prompting, with 13.12% reporting no difference; this preference difference was significant at p<0.05 (Chi-squared), with Fleiss' Kappa=0.22.",
+          "measure": "Teacher ratings of feedback quality and preference between standard vs score-based ChatGPT feedback",
+          "effect_size": "74.38% preferred score-based vs 12.50% standard; Fleiss' Kappa=0.22",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=21"
+        },
+        {
+          "outcome_category": "Academic \u2014 Literacy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Score-based prompting made ChatGPT feedback more negative, straightforward, direct, and extensive than standard prompting across all rubrics. Despite being judged more extensive, the score-based feedback was also more concise in form, using fewer tokens on average (70.46 vs. 79.19) and fewer sentences (4.20 vs. 5.04).",
+          "measure": "Teacher ratings of feedback characteristics plus token and sentence counts for generated feedback",
+          "effect_size": "70.46 vs 79.19 tokens; 4.20 vs 5.04 sentences",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=21"
+        },
+        {
+          "outcome_category": "Academic \u2014 Literacy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Among 33 EFL learners who received score-based ChatGPT feedback as part of coursework, students reported significant improvement in confidence about essay quality and understanding of the writing rubrics, with significance tested using the Wilcoxon test at p<0.05. Students also reported high satisfaction, rating feedback quality at 6.0/7 and feedback characteristics at 6.03/7.",
+          "measure": "Student self-reported confidence, rubric understanding, and satisfaction questionnaire after revising with ChatGPT feedback",
+          "effect_size": "6.0/7 feedback quality; 6.03/7 characteristics",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=33"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical mixed-methods study with expert ratings and student self-reports, but it is not an RCT or strong quasi-experimental design. Outcomes rely largely on perceived helpfulness, preferences, and self-reported learning rather than externally validated achievement gains.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports statistically significant improvements in feedback ratings and student perceptions, but does not provide standardized effect sizes or objective pre-post writing performance gains. Impact appears promising but remains unclear in magnitude.",
+  "citations": [
+    {
+      "title": "Assessing online writing feedback resources: Generative AI vs. good samaritans",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation (LREC-COLING 2024)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The 2 sigma problem: The search for methods of group instruction as effective as one-to-one tutoring",
+      "doi": null,
+      "year": 1984,
+      "venue": "Educational Researcher",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A survey on evaluation of large language models",
+      "doi": null,
+      "year": 2024,
+      "venue": "ACM Transactions on Intelligent Systems and Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Teachers helping efl students improve their writing through written feedback: the case of native and non-native english-speaking teachers\u2019 beliefs",
+      "doi": null,
+      "year": 2022,
+      "venue": "Frontiers in Psychology",
+      "citation_level": 2,
+      "citation_context": "defines negative-positive feedback characteristic"
+    },
+    {
+      "title": "Expertise in evaluating second language compositions",
+      "doi": null,
+      "year": 1990,
+      "venue": "Language Testing",
+      "citation_level": 2,
+      "citation_context": "supports EFL writing scoring rubric framing"
+    },
+    {
+      "title": "A computational approach to politeness with application to social factors",
+      "doi": null,
+      "year": 2013,
+      "venue": "Proceedings of the 51st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+      "citation_level": 2,
+      "citation_context": "defines straightforward-polite feedback characteristic"
+    },
+    {
+      "title": "A typology of written corrective feedback types",
+      "doi": null,
+      "year": 2008,
+      "venue": "ELT Journal",
+      "citation_level": 2,
+      "citation_context": "supports learners preferring direct negative corrective feedback"
+    },
+    {
+      "title": "The effects of direct and indirect corrective feedback techniques on efl students\u2019 writing",
+      "doi": null,
+      "year": 2014,
+      "venue": "Procedia - Social and Behavioral Sciences",
+      "citation_level": 2,
+      "citation_context": "defines indirect-direct feedback characteristic"
+    },
+    {
+      "title": "Recipe: How to integrate chatgpt into efl writing education",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the Tenth ACM Conference on Learning @ Scale",
+      "citation_level": 3,
+      "citation_context": "platform used to deliver LLM feedback coursework"
+    },
+    {
+      "title": "Sugaring the pill: Praise and criticism in written feedback",
+      "doi": null,
+      "year": 2001,
+      "venue": "Journal of Second Language Writing",
+      "citation_level": 2,
+      "citation_context": "conceptualizes praise versus criticism in feedback"
+    },
+    {
+      "title": "Chatgpt for good? on opportunities and challenges of large language models for education",
+      "doi": null,
+      "year": 2023,
+      "venue": "Learning and Individual Differences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Evaluating human-language model interaction",
+      "doi": null,
+      "year": 2023,
+      "venue": "Transactions on Machine Learning Research",
+      "citation_level": 2,
+      "citation_context": "framework adapted for evaluation metrics"
+    },
+    {
+      "title": "The art of giving online feedback",
+      "doi": null,
+      "year": 2015,
+      "venue": "Journal of Effective Teaching",
+      "citation_level": 2,
+      "citation_context": "defines vague-specific feedback characteristic"
+    },
+    {
+      "title": "Methodological synthesis of research on the effectiveness of corrective feedback in l2 writing",
+      "doi": null,
+      "year": 2015,
+      "venue": "Journal of Second Language Writing",
+      "citation_level": 2,
+      "citation_context": "defines small-large quantity of feedback"
+    },
+    {
+      "title": "Verbs of hedging",
+      "doi": null,
+      "year": 1975,
+      "venue": "Syntax and Semantics volume 4",
+      "citation_level": 2,
+      "citation_context": "supports politeness via hedge expressions"
+    },
+    {
+      "title": "Assessment of students\u2019 argumentative writing: A rubric development",
+      "doi": null,
+      "year": 2022,
+      "venue": "Journal of Ethnic and Cultural Studies",
+      "citation_level": 2,
+      "citation_context": "supports EFL writing scoring rubric framing"
+    },
+    {
+      "title": "Automatically correcting large language models: Surveying the landscape of diverse automated correction strategies",
+      "doi": null,
+      "year": 2024,
+      "venue": "Transactions of the Association for Computational Linguistics",
+      "citation_level": 2,
+      "citation_context": "motivates score-based self-refinement prompting"
+    },
+    {
+      "title": "Written corrective feedback: Students\u2019 perception and preferences",
+      "doi": null,
+      "year": 2021,
+      "venue": "International Online Journal of Education and Teaching",
+      "citation_level": 2,
+      "citation_context": "supports learners preferring direct negative feedback"
+    },
+    {
+      "title": "Evidence on the effectiveness of comprehensive error correction in second language writing",
+      "doi": null,
+      "year": 2012,
+      "venue": "Language Learning",
+      "citation_level": 2,
+      "citation_context": "defines indirect-direct feedback characteristic"
+    },
+    {
+      "title": "Cue-CoT: Chain-of-thought prompting for responding to in-depth dialogue questions with LLMs",
+      "doi": null,
+      "year": 2023,
+      "venue": "Findings of the Association for Computational Linguistics: EMNLP 2023",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Is ChatGPT a good teacher coach? measuring zero-shot performance for scoring and providing actionable insights on classroom instruction",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 18th Workshop on Innovative Use of NLP for Building Educational Applications (BEA 2023)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Practical and ethical challenges of large language models in education: A systematic scoping review",
+      "doi": null,
+      "year": 2024,
+      "venue": "British Journal of Educational Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Dress: Dataset for rubric-based essay scoring on efl writing",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_level": 3,
+      "citation_context": "source of automated essay scoring model"
+    },
+    {
+      "title": "Judging llm-as-a-judge with mt-bench and chatbot arena",
+      "doi": null,
+      "year": 2023,
+      "venue": "Advances in Neural Information Processing Systems",
+      "citation_level": 2,
+      "citation_context": "quality criteria adapted from LLM response assessment"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

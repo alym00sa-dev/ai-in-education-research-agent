@@ -1,0 +1,148 @@
+{
+  "title": "The application of AI technologies in STEM education: a systematic review from 2011 to 2021",
+  "doi": "https://doi.org/10.1186/s40594-022-00377-5",
+  "year": 2022,
+  "venue": "International Journal of STEM Education",
+  "url": "https://doi.org/10.1186/s40594-022-00377-5",
+  "source_db": "openalex_search",
+  "populations": [
+    "Elementary (PreK-5th)",
+    "Middle School (6th-8th)",
+    "High School (9th-12th)",
+    "Undergraduate",
+    "K-12 (unspecified grade)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Meta-Analysis / Systematic Review",
+  "extended_summary": "This paper asks how artificial intelligence (AI) has been applied in STEM education and what effects these applications have had across the empirical literature from 2011 to 2021. The authors argue that AI-STEM is a complex system and use general system theory to organize evidence across multiple elements, including the AI technique itself, the learning content, instructional medium, educational context, and roles of instructors and learners.\n\nThe study is a systematic review of 63 empirical peer-reviewed articles retrieved from major databases and screened under PRISMA-style procedures. The review identifies six broad categories of AI applications: learning prediction, intelligent tutoring systems, student behavior detection, automation, educational robots, and a small set of other applications such as AI textbooks and group formation. The included studies span STEM domains, with most focused on technology/computing and science, and only a small number on mathematics.\n\nAcross the reviewed studies, most AI-STEM applications were conducted in higher education, though some work involved elementary, middle, and high school settings. Common contexts included face-to-face classrooms, web-based learning, and laboratory environments, with computer systems as the most common medium. The review concludes that AI applications generally show positive effects on learning performance, motivation, and higher-order thinking, while also helping detect learning behaviors and patterns; however, the evidence base is dominated by higher-education studies and is uneven across STEM subjects, with relatively little mathematics research.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed systematic review, but it synthesizes heterogeneous empirical studies without meta-analysis and does not provide pooled effect sizes. The evidence quality is therefore correlational/descriptive rather than a single rigorous causal estimate.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The review suggests generally positive effects of AI-STEM interventions, but the reported outcomes are broad, heterogeneous, and mostly not quantified with pooled effects. For middle school math specifically, evidence is indirect and limited, so the likely impact is modest and unclear for this target population.",
+  "interventions": [
+    {
+      "intervention": "Intelligent Tutoring System (ITS)",
+      "confidence": 0.99,
+      "role": "primary",
+      "use_case": "Systematic review of AI-enabled tutoring systems in STEM education, including instructional content delivery, personalized learning-path recommendation, and resource recommendation through adaptive tutoring and feedback."
+    },
+    {
+      "intervention": "Predictive Analytics / Early Warning",
+      "confidence": 0.95,
+      "role": "primary",
+      "use_case": "Learning performance prediction and at-risk student prediction using machine learning, educational data mining, and learning analytics to forecast outcomes and identify students needing intervention."
+    },
+    {
+      "intervention": "Automated Feedback System",
+      "confidence": 0.86,
+      "role": "primary",
+      "use_case": "Automated assessment of STEM work, including grading open-ended responses, syntax/structure checking for programming tasks, and automatic argument assessment with immediate feedback."
+    },
+    {
+      "intervention": "Robot / Embodied Tutor",
+      "confidence": 0.78,
+      "role": "primary",
+      "use_case": "AI-supported educational robots used as tutors, tutees, or learning companions in STEM lessons, including humanoid and programming robots that deliver science or programming instruction."
+    },
+    {
+      "intervention": "Educational Game / Simulation",
+      "confidence": 0.72,
+      "role": "secondary",
+      "use_case": "Digital game-based learning and simulation-like STEM environments, such as personalized math games and mixed-reality learning systems, used as the instructional setting for AI-driven personalization."
+    },
+    {
+      "intervention": "Adaptive Learning Platform",
+      "confidence": 0.7,
+      "role": "secondary",
+      "use_case": "Personalized STEM learning environments that adapt content, sequencing, or recommendations to learner profiles and performance without being framed as full dialogue tutoring."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 0.64,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The review identified mathematics-focused AI-STEM studies, but the evidence base was small (n=3 studies). Across the broader STEM literature, AI applications in math-related contexts generally improved learning performance, though the review does not report a pooled effect size for mathematics specifically.",
+        "measure": "Mathematics learning performance and course outcomes",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Academic \u2014 Scientific Reasoning",
+      "confidence": 0.91,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Across 22 studies reporting learning performance outcomes, 20 found significantly positive effects of AI-supported STEM interventions on achievement. Examples included improved geoscience learning achievements, stronger problem-solving in programming, and better computational thinking in AR-based instruction; the review does not provide a single pooled effect size.",
+        "measure": "Learning performance, achievement tests, problem-solving, computational thinking, final exam scores",
+        "study_size": "n=63 studies in review; 22 studies reported learning performance outcomes",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.83,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Seventeen studies reported affective outcomes and generally found positive attitudes, satisfaction, interest, and motivation toward AI-supported STEM learning. The review summarizes these as favorable perceptions, but does not report a pooled effect size or standardized estimate.",
+        "measure": "Questionnaires, surveys, interviews on attitude, interest, motivation, satisfaction",
+        "study_size": "n=17 studies reporting affective perception outcomes",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.77,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Seven studies found improvements in higher-order thinking skills such as problem-solving, computational thinking, self-regulated learning, and argumentation. Reported examples include stronger problem-solving in flowchart-based ITSs and better computational thinking in a deep-learning-supported AR system, but no pooled effect size is provided.",
+        "measure": "Problem-solving ability, computational thinking, self-regulated learning, argumentation",
+        "study_size": "n=7 studies reporting higher-order thinking outcomes",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.72,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The review reports that AI techniques often achieved good technological performance, including efficient prediction and accurate automated assessment. Examples include better scoring performance for automated assessment systems and high-accuracy prediction models, but the paper does not synthesize these into a single effect size.",
+        "measure": "Algorithm accuracy, prediction performance, automated scoring efficiency",
+        "study_size": "n=24 studies reporting technological effects",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

@@ -1,0 +1,96 @@
+{
+  "title": "FACET: Teacher-Centred LLM-Based Multi-Agent Systems\u2014Towards Personalized Educational Worksheets",
+  "doi": null,
+  "year": 2026,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2508.11401v4",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Middle School (6th-8th)",
+    "K-12 (unspecified grade)"
+  ],
+  "user_types": [
+    "Educator"
+  ],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses the challenge of helping teachers personalize instructional materials for highly heterogeneous K-12 classrooms, especially in mathematics. The authors argue that existing AI personalization tools are often student-facing and focused mainly on performance, while teachers need support that also accounts for motivational and pedagogical factors.\n\nTo address this, the paper introduces FACET, a teacher-facing large-language-model-based multi-agent framework. FACET uses three agents: learner agents that simulate student profiles, a teacher agent that generates differentiated worksheets based on curriculum and didactical principles, and an evaluator agent that provides rubric-based quality feedback. The system is demonstrated with authentic grade 8 mathematics curriculum content from German secondary education and is designed to produce one-page personalized worksheets with scaffolding, hints, motivational comments, and Bloom-aligned task sequencing.\n\nThe study evaluates feasibility through automated agent-based assessment and exploratory feedback from five K-12 in-service teachers. Across ten iterations per learner profile, the generated worksheets were rated as stable and well aligned to learner needs, and teacher feedback highlighted strong structure, clarity, and suitability. The authors conclude that multi-agent LLM systems can support scalable teacher-facing personalization, but note that richer learner profiles and real classroom trials are needed before broader claims about effectiveness can be made.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed-style prototype/feasibility study using exploratory teacher feedback and automated rubric evaluation, not a controlled experiment. The methodology is clear, but it lacks randomization, a true comparison group with outcome testing, and direct learner outcome measures.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper suggests promising medium-scale potential for teacher planning and worksheet personalization, but it reports no measured student learning gains and no effect sizes on educational outcomes. Impact is therefore plausible but currently unclear beyond feasibility and perceived usefulness.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.94,
+      "role": "primary",
+      "use_case": "teacher-facing LLM-based multi-agent system that simulates learner profiles and generates personalized grade 8 mathematics worksheets with scaffolding, motivational comments, and Bloom-aligned tasks"
+    },
+    {
+      "intervention": "Automated Feedback System",
+      "confidence": 0.81,
+      "role": "secondary",
+      "use_case": "evaluator-agent layer that automatically scores generated worksheets on didactical structure, clarity, creativity, and suitability for learner needs"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 0.88,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper reports that FACET-generated worksheets were judged to be suitable for grade 8 mathematics personalization across four learner profiles. Internal agent-based evaluation over 10 iterations per profile showed high scores for suitability (M=4.78, SD=0.06) and clarity (M=4.76, SD=0.12), with didactical structure also favorable (M=4.12, SD=0.22).",
+        "measure": "Agent-based rubric ratings of worksheet quality and suitability for mathematics tasks",
+        "study_size": "n=4 learner profiles x 10 iterations each (internal evaluation)",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "SD=0.06 to 0.26 across rubric dimensions"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    },
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 0.84,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Five K-12 in-service teachers gave the personalized mathematics worksheets favorable ratings, especially for didactical structure (M=4.95) and suitability for learners (M=5.05). Qualitative feedback suggested the outputs aligned well with heterogeneous learner needs, though teachers also recommended additional scaffolding and richer contextualization.",
+        "measure": "Teacher expert ratings and think-aloud feedback on mathematics worksheets",
+        "study_size": "n=5 teachers",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "SD=6.6 years teaching experience; worksheet ratings reported as means and ranges rather than inferential effect sizes"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.74,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The framework is presented as reducing prompting overhead for teachers by using reusable learner and teacher agents, and teachers explicitly valued the ability to personalize tasks more efficiently. However, this was not measured with a direct time-on-task outcome, so the evidence is feasibility-based rather than causal.",
+        "measure": "Exploratory teacher feedback on usability and perceived workload reduction",
+        "study_size": "n=5 teachers",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_control_group",
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Germany",
+  "study_region": "Europe",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

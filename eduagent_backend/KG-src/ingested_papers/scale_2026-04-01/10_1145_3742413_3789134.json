@@ -1,0 +1,586 @@
+{
+  "title": "Improving Human Verification of LLM Reasoning through Interactive Explanation Interfaces",
+  "doi": "10.1145/3742413.3789134",
+  "year": 2026,
+  "venue": "31st International Conference on Intelligent User Interfaces (IUI '26)",
+  "url": "https://arxiv.org/abs/2510.22922",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper investigates whether the way large language model (LLM) reasoning is presented affects people\u2019s ability to understand and verify mathematical solutions, with particular relevance to educational uses such as tutoring and problem solving. The authors argue that standard chain-of-thought (CoT) explanations are often long, text-heavy, and hard for users to inspect for errors. The core research questions ask whether interactive explanation formats improve verification accuracy, reduce time and effort, and are preferred over traditional text-based outputs.\n\nTo address this, the authors designed three interactive explanation interfaces for LLM-generated math reasoning: interactive Chain-of-Thought (iCoT), interactive Program-of-Thought (iPoT), and interactive Graph (iGraph). All three formats preserve the underlying reasoning content but restructure it using features such as dual-panel layouts, problem summaries, color-coded variables, navigation/playback controls, pseudocode representations, or graph-based visualizations. The study used GSM8K math word problems with both correct explanations and systematically injected errors across nine error categories. Participants were randomly assigned to one of four conditions: traditional CoT, iCoT, iPoT, or iGraph.\n\nThe empirical study involved 125 undergraduate students from two U.S. universities in a controlled classroom setting, with the experiment delivered through a web-based platform hosted on HuggingFace Spaces. Each participant reviewed ten explanations and judged whether each was correct; for incorrect cases, they also identified the faulty step. The study collected quantitative outcomes such as verification accuracy, error localization accuracy, response time, and interaction logs, along with post-study Likert-scale survey responses and open-ended feedback about clarity, usability, engagement, and satisfaction.\n\nThe main conclusion is that interactive explanation interfaces improved human verification of LLM reasoning compared with standard CoT. iGraph produced the best overall performance, with the highest verification accuracy and error localization accuracy, and also the fastest average response times. iPoT and iCoT also outperformed traditional CoT on verification-related measures. Participants generally preferred the interactive formats over standard CoT, with iGraph rated highest for clarity and satisfaction and iPoT rated highly for engagement. The authors conclude that interactive, structured explanation interfaces can make AI reasoning easier to follow and audit in educational and human-AI collaboration contexts.",
+  "limitations": [
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "classroom",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "Claude",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "language_speech",
+        "feedback_evaluation"
+      ],
+      "description": "Anthropic's large language model family used to generate mathematical reasoning explanations and interactive explanation interfaces.",
+      "use_case": "Claude was used to generate GSM8K math explanations and render them into four formats: traditional CoT, interactive CoT (iCoT), interactive Program-of-Thought (iPoT), and interactive Graph (iGraph). Participants then used these Claude-generated explanations to judge correctness and identify erroneous steps.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Across 125 participants reviewing Claude-generated GSM8K explanations, interactive explanation formats significantly improved verification accuracy over standard CoT. Verification accuracy was 85.6% for iGraph, 82.5% for iPoT, and 80.6% for iCoT, versus 73.5% for traditional CoT; Kruskal-Wallis H(3)=13.12, p=0.004, with pairwise Mann-Whitney tests showing significant advantages over CoT for iCoT (U=323.5, p=0.047, r=0.32), iPoT (U=306.0, p=0.023, r=0.38), and iGraph (U=221.5, p=0.003, r=0.51).",
+          "measure": "Verification accuracy on judging correctness of Claude-generated GSM8K math explanations",
+          "effect_size": "r=0.32 (iCoT vs CoT); r=0.38 (iPoT vs CoT); r=0.51 (iGraph vs CoT)",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=125"
+        },
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Participants were better able to localize the exact erroneous step in Claude-generated explanations when using interactive formats. Wrong-step identification accuracy was 85.2% for iGraph, 80.1% for iPoT, and 79.3% for iCoT, compared with 66.1% for traditional CoT; Kruskal-Wallis H(3)=13.12, p=0.004, and Bonferroni-corrected pairwise Mann-Whitney tests found significant differences versus CoT for iCoT (U=300.8, p=0.045), iPoT (U=271.5, p=0.021), and iGraph (U=153.0, p<0.001).",
+          "measure": "Error localization / wrong-step identification accuracy on Claude-generated GSM8K explanations",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=125"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Participants using interactive interfaces responded faster on average to Claude-generated explanations, but pairwise differences were not statistically significant after correction. Mean response times were 57.9 seconds for iGraph, 59.5 seconds for iCoT, 60.1 seconds for iPoT, and 64.7 seconds for traditional CoT (with SDs 41.4, 35.8, 37.9, and 40.9 respectively); the overall Kruskal-Wallis test was H(3)=13.12, p=0.004.",
+          "measure": "Response time per question when verifying Claude-generated explanations",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=125"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Post-study survey results indicated users preferred the interactive formats for understanding and checking Claude-generated reasoning, with iGraph rated highest for understanding, error identification, and overall satisfaction, while iPoT received the highest engagement ratings. The paper reports that interactive formats were preferred over traditional CoT on general measures G1-G5 and that design features such as dual-panel layout, summaries, color coding, and step-by-step presentation were rated positively, especially for iGraph.",
+          "measure": "Post-study Likert-scale ratings of understanding, error identification, engagement, preference, and satisfaction",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=125"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is a controlled between-subjects empirical study with random assignment across interface conditions and n=125, but it is not a classroom effectiveness trial and uses undergraduate participants completing verification tasks rather than direct K-12 learning outcomes.",
+  "impact_tier": "blue",
+  "impact_tier_rationale": "The reported improvements in verification accuracy and error localization are substantial in magnitude (e.g., 73.5% to 85.6% accuracy; 66.1% to 85.2% error localization), indicating a meaningful positive impact on human verification of AI-generated math reasoning.",
+  "citations": [
+    {
+      "title": "Trends and trajectories for explainable, accountable and intelligible systems: An hci research agenda",
+      "doi": null,
+      "year": 2018,
+      "venue": "Proceedings of the 2018 CHI conference on human factors in computing systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Faithfulness vs. plausibility: On the (un) reliability of explanations from large language models",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A survey of visual analytics for explainable artificial intelligence methods",
+      "doi": null,
+      "year": 2022,
+      "venue": "Computers & Graphics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "AiModerator: A Co-Pilot for Hyper-Contextualization in Political Debate Video",
+      "doi": null,
+      "year": 2025,
+      "venue": "Proceedings of the 30th International Conference on Intelligent User Interfaces",
+      "citation_level": 3,
+      "citation_context": "visualization methodology for questionnaire results"
+    },
+    {
+      "title": "AiCommentator: A multimodal conversational agent for embedded visualization in football viewing",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 29th International Conference on Intelligent User Interfaces",
+      "citation_level": 3,
+      "citation_context": "visualization methodology for questionnaire results"
+    },
+    {
+      "title": "Anthropic",
+      "doi": null,
+      "year": null,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Program of thoughts prompting: Disentangling computation from reasoning for numerical reasoning tasks",
+      "doi": null,
+      "year": 2022,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "basis for iPoT explanation format"
+    },
+    {
+      "title": "Training verifiers to solve math word problems",
+      "doi": null,
+      "year": 2021,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "supports verifier framing for math reasoning"
+    },
+    {
+      "title": "Where Are We and Where Can We Go on the Road to Reliance-Aware Explainable User Interfaces?",
+      "doi": null,
+      "year": 2024,
+      "venue": "2024 IEEE Symposium on Visual Languages and Human-Centric Computing (VL/HCC)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Online Learning: A Cognitive Tool for Learning, an Alternative to Traditional Learning Style",
+      "doi": null,
+      "year": 2023,
+      "venue": "Psychology",
+      "citation_level": 2,
+      "citation_context": "problem summaries help learners form mental models"
+    },
+    {
+      "title": "In search of verifiability: Explanations rarely enable complementary performance in AI-advised decision making",
+      "doi": null,
+      "year": 2024,
+      "venue": "AI Magazine",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A survey on mathematical reasoning and optimization with large language models",
+      "doi": null,
+      "year": 2025,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Interactive explanation with varying level of details in an explainable scientific literature recommender system",
+      "doi": null,
+      "year": 2024,
+      "venue": "International Journal of Human\u2013Computer Interaction",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Got It! Prompting Readability Using ChatGPT to Enhance Academic Texts for Diverse Learning Needs",
+      "doi": null,
+      "year": 2025,
+      "venue": "Proceedings of the 15th International Learning Analytics and Knowledge Conference",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Graphologue: Exploring large language model responses with interactive diagrams",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 36th annual ACM symposium on user interface software and technology",
+      "citation_level": 2,
+      "citation_context": "motivates interactive diagram-based explanations"
+    },
+    {
+      "title": "Evaluating LLMs at detecting errors in LLM responses",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Interpreting interpretability: understanding data scientists\u2019 use of interpretability tools for machine learning",
+      "doi": null,
+      "year": 2020,
+      "venue": "Proceedings of the 2020 CHI conference on human factors in computing systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Explainable artificial intelligence in education",
+      "doi": null,
+      "year": 2022,
+      "venue": "Computers and education: artificial intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Improved explanatory efficacy on human affect and workload through interactive process in artificial intelligence",
+      "doi": null,
+      "year": 2020,
+      "venue": "IEEE Access",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Human-centered evaluation of explainable AI applications: a systematic review",
+      "doi": null,
+      "year": 2024,
+      "venue": "Frontiers in Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "\" help me help the ai\": Understanding how explainability can support human-ai interaction",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 2023 CHI conference on human factors in computing systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Large language models are zero-shot reasoners",
+      "doi": null,
+      "year": 2022,
+      "venue": "Advances in neural information processing systems",
+      "citation_level": 2,
+      "citation_context": "Chain-of-Thought baseline motivation"
+    },
+    {
+      "title": "Impact of survey length and compensation on validity, reliability, and sample characteristics for ultrashort-, short-, and long-research participant perception surveys",
+      "doi": null,
+      "year": 2018,
+      "venue": "Journal of clinical and translational science",
+      "citation_level": 2,
+      "citation_context": "justifies limiting study length to avoid fatigue"
+    },
+    {
+      "title": "Response strategies for coping with the cognitive demands of attitude measures in surveys",
+      "doi": null,
+      "year": 1991,
+      "venue": "Applied cognitive psychology",
+      "citation_level": 2,
+      "citation_context": "justifies limiting study length to avoid fatigue"
+    },
+    {
+      "title": "Properties and challenges of llm-generated explanations",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Human evaluation of models built for interpretability",
+      "doi": null,
+      "year": 2019,
+      "venue": "Proceedings of the AAAI conference on human computation and crowdsourcing",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Faithful and customizable explanations of black box models",
+      "doi": null,
+      "year": 2019,
+      "venue": "Proceedings of the 2019 AAAI/ACM Conference on AI, Ethics, and Society",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "S-chain: Structured visual chain-of-thought for medicine",
+      "doi": null,
+      "year": 2025,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "example of transfer to medical diagnosis"
+    },
+    {
+      "title": "Evaluating mathematical reasoning of large language models: A focus on error identification and correction",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Human-centered explainable ai (xai): From algorithms to user experiences",
+      "doi": null,
+      "year": 2021,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "structured explanations promote engagement and comprehension"
+    },
+    {
+      "title": "How level of explanation detail affects human performance in interpretable intelligent systems: A study on explainable fact checking",
+      "doi": null,
+      "year": 2021,
+      "venue": "Applied AI Letters",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Explanation in artificial intelligence: Insights from the social sciences",
+      "doi": null,
+      "year": 2019,
+      "venue": "Artificial intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Investigating the Shortcomings of LLMs in Step-by-Step Legal Reasoning",
+      "doi": null,
+      "year": 2025,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Operationalizing selective transparency using progressive disclosure in artificial intelligence clinical diagnosis systems",
+      "doi": null,
+      "year": 2025,
+      "venue": "International Journal of Human-Computer Studies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Elements that influence transparency in artificial intelligent systems-a survey",
+      "doi": null,
+      "year": 2023,
+      "venue": "IFIP Conference on Human-Computer Interaction",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "How do humans understand explanations from machine learning systems? an evaluation of the human-interpretability of explanation",
+      "doi": null,
+      "year": 2018,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Concise thoughts: Impact of output length on llm reasoning and cost",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Interpretable llm-based table question answering",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "example of transfer to spreadsheet analysis"
+    },
+    {
+      "title": "Allowing humans to interactively guide machines where to look does not always improve human-AI team\u2019s classification accuracy",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "HoT: Highlighted Chain of Thought for Referencing Supporting Facts from Inputs",
+      "doi": null,
+      "year": 2025,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "inspiration for consistent variable highlighting"
+    },
+    {
+      "title": "Don\u2019t explain without verifying veracity: an evaluation of explainable ai with video activity recognition",
+      "doi": null,
+      "year": 2020,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Explaining recommendations in e-learning: Effects on adolescents\u2019 trust",
+      "doi": null,
+      "year": 2022,
+      "venue": "Proceedings of the 27th International Conference on Intelligent User Interfaces",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Examining the Role of LLM-Driven Interactions on Attention and Cognitive Engagement in Virtual Classrooms",
+      "doi": null,
+      "year": 2025,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Chatbots put to the test in math and logic problems: A comparison and assessment of ChatGPT-3.5, ChatGPT-4, and Google Bard",
+      "doi": null,
+      "year": 2023,
+      "venue": "Ai",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Towards human-centered explainable ai: A survey of user studies for model explanations",
+      "doi": null,
+      "year": 2023,
+      "venue": "IEEE transactions on pattern analysis and machine intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Progressive disclosure",
+      "doi": null,
+      "year": 2010,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "principle motivating step-by-step reveal design"
+    },
+    {
+      "title": "Progressive disclosure: designing for effective transparency",
+      "doi": null,
+      "year": 2018,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "principle motivating step-by-step reveal design"
+    },
+    {
+      "title": "Cognitive load during problem solving: Effects on learning",
+      "doi": null,
+      "year": 1988,
+      "venue": "Cognitive science",
+      "citation_level": 2,
+      "citation_context": "supports dual-panel layout reducing extraneous load"
+    },
+    {
+      "title": "Leveraging explanations in interactive machine learning: An overview",
+      "doi": null,
+      "year": 2023,
+      "venue": "Frontiers in Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Language models don\u2019t always say what they think: Unfaithful explanations in chain-of-thought prompting",
+      "doi": null,
+      "year": 2023,
+      "venue": "Advances in Neural Information Processing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Towards understanding chain-of-thought prompting: An empirical study of what matters",
+      "doi": null,
+      "year": 2022,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Towards Understanding Chain-of-Thought Prompting: An Empirical Study of What Matters",
+      "doi": "10.18653/v1/2023.acl-long.153",
+      "year": 2023,
+      "venue": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Large language models for education: A survey and outlook",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Chain-of-thought reasoning without prompting",
+      "doi": null,
+      "year": 2024,
+      "venue": "Advances in Neural Information Processing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Chain-of-thought prompting elicits reasoning in large language models",
+      "doi": null,
+      "year": 2022,
+      "venue": "Advances in neural information processing systems",
+      "citation_level": 3,
+      "citation_context": "traditional CoT baseline explanation format"
+    },
+    {
+      "title": "How do visual explanations foster end users\u2019 appropriate trust in machine learning?",
+      "doi": null,
+      "year": 2020,
+      "venue": "Proceedings of the 25th international conference on intelligent user interfaces",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Human-Centered Explainability in Interactive Information Systems: A Survey",
+      "doi": null,
+      "year": 2025,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Automatic chain of thought prompting in large language models",
+      "doi": null,
+      "year": 2022,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Explainability for large language models: A survey",
+      "doi": null,
+      "year": 2024,
+      "venue": "ACM Transactions on Intelligent Systems and Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The mHealth app usability questionnaire (MAUQ): development and validation study",
+      "doi": null,
+      "year": 2019,
+      "venue": "JMIR mHealth and uHealth",
+      "citation_level": 3,
+      "citation_context": "questionnaire design adapted for post-study measures"
+    },
+    {
+      "title": "iball: Augmenting basketball videos with gaze-moderated embedded visualizations",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 3,
+      "citation_context": "visualization methodology for questionnaire results"
+    },
+    {
+      "title": "Cognitive overhead in hypertext learning reexamined: Overcoming the myths",
+      "doi": null,
+      "year": 2006,
+      "venue": "Journal of Educational Multimedia and Hypermedia",
+      "citation_level": 2,
+      "citation_context": "supports concern about cognitive fatigue and overhead"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

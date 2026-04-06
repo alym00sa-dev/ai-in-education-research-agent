@@ -1,0 +1,64 @@
+{
+  "title": "Is ChatGPT a Good Teacher Coach? Measuring Zero-Shot Performance For Scoring and Providing Actionable Insights on Classroom Instruction",
+  "doi": null,
+  "year": 2023,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2306.03090v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Elementary (PreK-5th)"
+  ],
+  "user_types": [
+    "Educator"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper asks whether generative AI, specifically ChatGPT, can function as an automated teacher coach. The authors focus on a longstanding problem in teacher professional development: classroom observation and coaching are valuable but difficult to provide consistently because of time, cost, and limited expert access. Rather than training or deploying a classroom intervention, the study evaluates ChatGPT\u2019s zero-shot ability to perform coaching-related tasks on existing classroom transcript data.\n\nThe paper proposes three tasks for AI-based coaching: (A) scoring transcript segments using classroom observation rubrics, (B) identifying highlights and missed opportunities in instruction, and (C) generating actionable suggestions to elicit more student reasoning. The evaluation uses the NCTE transcript dataset of U.S. elementary mathematics classrooms, containing 4th- and 5th-grade observations from 317 teachers across four school districts. The authors compare ChatGPT\u2019s rubric scores with expert annotations and recruit experienced math teachers to judge the quality of the model\u2019s qualitative feedback.\n\nThe main finding is that ChatGPT shows promise but is not yet reliable enough to replace expert coaching. Its score predictions correlate weakly with human ratings, and its qualitative feedback is often relevant but frequently not novel or insightful. For suggestions on eliciting reasoning, most outputs were actionable, but 82% repeated something already present in the transcript. The paper concludes that generative AI could eventually complement human coaching, but substantial improvements in faithfulness, novelty, and pedagogical insight are needed.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed-style empirical evaluation with human ratings and quantitative comparisons, but it is not an intervention trial and lacks causal assignment or student outcome measurement. It is best characterized as a qualitative/benchmarking study of model capability with a small human evaluation sample.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper shows limited practical promise for automated coaching, but no demonstrated impact on teacher practice or student outcomes. The observed performance is mixed and often weak, so the real-world impact remains unclear.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "Zero-shot use of ChatGPT/gpt-3.5-turbo as an automated teacher coach to score classroom transcript segments, identify highlights and missed opportunities, and generate actionable suggestions for eliciting student mathematical reasoning."
+    },
+    {
+      "intervention": "Automated Feedback System",
+      "confidence": 1.0,
+      "role": "secondary",
+      "use_case": "Automated feedback on teacher instructional practice from classroom transcript segments using rubric-based scoring and qualitative coaching suggestions for CLASS and MQI observation items."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 1.0,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The paper evaluates whether ChatGPT can serve as a scalable, cost-effective complement to expert coaching for classroom observation and feedback. It finds the system can produce relevant and sometimes actionable feedback, but it is often not novel or insightful; for example, 82% of suggestions repeat what the teacher already does, and scoring correlations with human ratings are low across items.",
+        "measure": "Spearman correlation with human rubric scores; human teacher ratings of relevance, faithfulness, insightfulness, actionability, and novelty/redundancy",
+        "study_size": "n=100 transcript segments for scoring; n=216 CLASS items; n=288 MQI items; n=36 suggestion items; 2 human raters",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "non_representative_population"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "classroom",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

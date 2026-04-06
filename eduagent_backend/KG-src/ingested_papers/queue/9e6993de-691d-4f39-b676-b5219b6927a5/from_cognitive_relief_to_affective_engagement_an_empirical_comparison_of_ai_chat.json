@@ -1,0 +1,106 @@
+{
+  "title": "From Cognitive Relief to Affective Engagement: An Empirical Comparison of AI Chatbots and Instructional Scaffolding in Physics Education",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2508.06254v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Quasi-Experimental Design (QED)",
+  "extended_summary": "This paper examines whether a custom-configured generative AI chatbot can provide cognitive and affective benefits comparable to or better than established instructional scaffolding in secondary physics education. The authors focus on a common instructional problem: helping students work through conceptually difficult physics problems in a scalable way, without requiring teachers to create labor-intensive tiered support materials for every task. The study compares three support conditions during physics problem solving: an AI chatbot, a structured tiered-hints system, and static textbook-style textual support.\n\nThe intervention was a quasi-experimental field study conducted with 273 ninth-grade students in Germany. Students worked individually in their regular classrooms on a buoyancy problem, with class-level cluster randomization assigning classes to one of the three conditions. The chatbot was built using OpenAI's o3-mini model via the Fobizz platform and prompt-engineered to act as a supportive tutor using reflective questioning rather than direct answer-giving. The tiered-support condition provided sequentially revealed hints adapted from prior physics education materials, while the control condition received a static digital textbook-style page. Outcomes were measured immediately before and after the intervention using validated self-report questionnaires assessing intrinsic and extraneous cognitive load, enjoyment, hope, hopelessness, self-efficacy, and situational interest.\n\nThe main findings were that both interactive support systems\u2014the AI chatbot and tiered support\u2014significantly reduced intrinsic and extraneous cognitive load compared with textual support. The AI chatbot also showed broader affective benefits than textual support, significantly improving enjoyment, hope, self-efficacy, and situational interest while reducing hopelessness. Differences between the chatbot and tiered support were not statistically significant, though the chatbot consistently trended more positively on affective measures. The authors conclude that structured guidance is important for reducing cognitive burden, and that AI chatbots may add value through their interactive and socially engaging qualities.\n\nFor the targeted verification topic of generative AI and foundational reading, this study is a near-miss rather than direct evidence. It is a K-12 causal-style comparison involving a generative AI chatbot, but it is set in ninth-grade physics, not reading or literacy, and it measures cognitive load and affective outcomes rather than phonemic awareness, phonics, decoding, fluency, vocabulary, or reading comprehension. Therefore, it should not be counted as direct causal evidence for generative AI effects on foundational reading outcomes.",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is a cluster-assigned quasi-experimental field study in K-12 classrooms with a substantial sample (n=273) and comparison groups, giving it stronger causal leverage than correlational work. However, it is not a full individual-level RCT, is presented as an arXiv preprint, and does not address literacy or foundational reading outcomes, so there are important credibility and relevance concerns for the retrieval question.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports mostly small-to-moderate effects, with the clearest effects on cognitive load and modest affective advantages of the chatbot over static text. Impact is not on foundational reading or literacy outcomes, so for the targeted K-12 generative-AI reading evidence question the practical impact is unclear and only adjacent.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "Custom-configured generative AI chatbot (OpenAI o3-mini via Fobizz) used as a task-specific physics tutor for 9th-grade students solving a buoyancy problem, providing conversational guidance, reflective prompts, and feedback to support independent problem solving."
+    },
+    {
+      "intervention": "Computer-Assisted Instruction (CAI)",
+      "confidence": 0.76,
+      "role": "secondary",
+      "use_case": "Digital textbook-style page delivering static, non-interactive explanatory support for the same buoyancy task, used as the comparison/control condition."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.94,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "In a quasi-experimental classroom study with 273 ninth-grade students, the AI chatbot condition outperformed the textual support condition on all measured affective outcomes: enjoyment, hope, situational interest, and self-efficacy, and also reduced hopelessness. Pairwise differences between chatbot and textbook were statistically significant across all affective variables, with reported Cohen's d ranging from 0.44 (situational interest, self-efficacy) to values near the medium range; however, chatbot differences versus tiered support were not statistically significant despite consistently more favorable trends.",
+        "measure": "Research-validated questionnaire scales for enjoyment, hope, hopelessness, situational interest, and self-efficacy (5-point Likert scales)",
+        "study_size": "n=273",
+        "effect_size": "d=0.44 to small/approaching-medium range for chatbot vs textual support; omnibus eta_p^2=0.04-0.06 across affective outcomes",
+        "confidence_interval": "not_reported",
+        "std_deviation": "Enjoyment SD=0.93 (chatbot) vs 0.89 (textbook); Hope SD=0.87 vs 0.84; Situational Interest SD=0.83 vs 0.77; Self-Efficacy SD=0.77 vs 0.81; Hopelessness SD=0.97 vs 0.94"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    },
+    {
+      "outcome": "Academic \u2014 Scientific Reasoning",
+      "confidence": 0.86,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The chatbot reduced students' perceived cognitive burden during physics problem solving relative to static textual support. Significant omnibus effects were reported for intrinsic cognitive load and two extraneous cognitive load measures, and chatbot vs textbook pairwise differences were significant for every cognitive load variable, with the largest reported pairwise effect at d=0.72 for intrinsic cognitive load; chatbot and tiered support did not significantly differ.",
+        "measure": "Perceived intrinsic cognitive load, extraneous cognitive load of the exercise, and extraneous cognitive load of the support during a buoyancy problem-solving task",
+        "study_size": "n=273",
+        "effect_size": "Intrinsic CL chatbot vs textbook d=0.72; omnibus eta_p^2=0.10 (intrinsic CL), 0.11 (extraneous CL exercise), 0.08 (extraneous CL support)",
+        "confidence_interval": "not_reported",
+        "std_deviation": "Intrinsic CL SD=0.82 (chatbot) vs 0.77 (textbook); Extraneous CL exercise SD=0.76 vs 0.75; Extraneous CL support SD=0.93 vs 0.92"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.74,
+      "finding": {
+        "direction": "No Effect",
+        "finding_summary": "The static textual support condition produced significantly worse affective outcomes than the AI chatbot on enjoyment, hope, hopelessness, situational interest, and self-efficacy. Means were consistently less favorable for textbook support (e.g., enjoyment 2.20 vs 2.65; hope 2.14 vs 2.62; situational interest 2.11 vs 2.46), indicating that non-interactive digital text was comparatively ineffective for supporting students' motivation and emotions during the physics task.",
+        "measure": "Questionnaire scales for enjoyment, hope, hopelessness, situational interest, and self-efficacy",
+        "study_size": "n=273",
+        "effect_size": "chatbot vs textual support d=0.44 and above depending on affective measure; exact per-measure ds mostly not fully reported in text",
+        "confidence_interval": "not_reported",
+        "std_deviation": "Enjoyment SD=0.89; Hope SD=0.84; Hopelessness SD=0.94; Situational Interest SD=0.77; Self-Efficacy SD=0.81 for textual support group"
+      },
+      "intervention": "Computer-Assisted Instruction (CAI)"
+    },
+    {
+      "outcome": "Academic \u2014 Scientific Reasoning",
+      "confidence": 0.72,
+      "finding": {
+        "direction": "Negative",
+        "finding_summary": "Relative to the chatbot, the static digital textbook-style support imposed significantly higher cognitive load during the buoyancy problem-solving task. Textbook support had the highest mean intrinsic and extraneous load scores across groups (e.g., intrinsic CL mean 3.74 vs 3.18 in chatbot; extraneous CL exercise 3.42 vs 2.92), and all pairwise chatbot-textbook comparisons on cognitive load were statistically significant.",
+        "measure": "Perceived intrinsic and extraneous cognitive load during physics problem solving",
+        "study_size": "n=273",
+        "effect_size": "relative disadvantage vs chatbot includes intrinsic CL d=0.72; omnibus eta_p^2 up to 0.11",
+        "confidence_interval": "not_reported",
+        "std_deviation": "Intrinsic CL SD=0.77; Extraneous CL exercise SD=0.75; Extraneous CL support SD=0.92 for textual support group"
+      },
+      "intervention": "Computer-Assisted Instruction (CAI)"
+    }
+  ],
+  "limitations": [
+    "short_duration",
+    "self_reported_measures",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "classroom",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Germany",
+  "study_region": "Europe",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

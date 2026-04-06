@@ -1,0 +1,71 @@
+{
+  "title": "Can Large Language Models Make the Grade? An Empirical Study Evaluating LLMs Ability to Mark Short Answer Questions in K-12 Education",
+  "doi": null,
+  "year": 2024,
+  "venue": "Learning at Scale '24",
+  "url": "http://arxiv.org/abs/2405.02985v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "K-12 (unspecified grade)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper investigates whether large language models (LLMs) can reliably mark short-answer responses in K-12 education, focusing on the educational assessment task rather than direct instructional use. The authors ask whether GPT-3.5 and GPT-4 can classify student responses as correct or incorrect on open-response questions, and whether performance varies by subject, grade band, and item difficulty.\n\nThe study uses a newly assembled dataset of 1,710 student responses from the Carousel online quizzing platform, spanning Science and History questions across Key Stages 2, 3, and 4 (ages 5-16). Human expert teachers first rated the responses, establishing ground truth and interrater agreement, and then the same items were evaluated by LLM configurations using zero-shot and few-shot prompting. The comparison is direct but not an intervention study; it benchmarks model scoring against human raters.\n\nResults show that GPT-4 with few-shot prompting performed best, reaching Cohen's kappa of 0.70, which was close to human agreement at 0.75. GPT-3.5 performed substantially worse (kappa 0.44-0.45), and few-shot prompting offered only a modest improvement. Performance was relatively stable across subjects, key stages, and question difficulty, suggesting potential utility for low-stakes formative assessment support in K-12 settings. The paper's strongest evidence is for GPT-4 as an automated scoring aid, while also highlighting that human agreement sets a practical ceiling for performance on ambiguous short-answer items.",
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_long_term_followup",
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "yes",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United Kingdom",
+  "study_region": "Europe",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation"
+      ],
+      "description": "OpenAI GPT-family large language model used for zero-shot and few-shot automated scoring/grading of short-answer student responses.",
+      "use_case": "Evaluated whether GPT-3.5-turbo-0125 and GPT-4-0125-preview could mark K-12 student short-answer responses as correct or incorrect, compared against expert human raters and the rater ground truth.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Across 1,710 short-answer responses from K-12 Science and History questions, GPT-4 with few-shot prompting achieved Cohen's kappa=0.70 against the expert-human ground truth, compared with human rater agreement of kappa=0.75. The paper reports this as close to human-level performance for automated marking.",
+          "measure": "Agreement with expert human ground truth on correct/incorrect grading; Cohen's kappa",
+          "effect_size": "0.70",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=1710"
+        },
+        {
+          "outcome_category": "Academic \u0014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "GPT-3.5-turbo performed substantially worse than GPT-4 for the same grading task, with kappa=0.44 in zero-shot and 0.45 in few-shot conditions. The authors note the improvement was mainly due to GPT-4's much higher recall.",
+          "measure": "Agreement with expert human ground truth on correct/incorrect grading; Cohen's kappa",
+          "effect_size": "0.44 to 0.45",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=1710"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a correlational model-evaluation study, not an RCT or quasi-experiment on student learning outcomes. The paper does report clear quantitative agreement statistics, but the methodology concerns and absence of causal inference keep it below experimental tiers.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The reported agreement for the best model is moderate-to-strong (kappa=0.70) and close to human raters, but the paper evaluates grading accuracy rather than instructional impact. That makes the educational impact indirect and not clearly tied to learning gains.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

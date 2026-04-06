@@ -1,0 +1,693 @@
+{
+  "title": "LessonPlanner: Assisting Novice Teachers to Prepare Pedagogy-Driven Lesson Plans with Large Language Models",
+  "doi": "10.1145/3654777.3676390",
+  "year": 2024,
+  "venue": "The 37th Annual ACM Symposium on User Interface Software and Technology (UIST '24)",
+  "url": "https://doi.org/10.1145/3654777.3676390",
+  "source_db": "openalex_search",
+  "population": "Adult",
+  "user_type": "Educator",
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper examines whether a large-language-model-based planning tool can help novice teachers create better lesson plans with less effort. The authors focus on a common challenge in teaching preparation: novice teachers often struggle to design pedagogically sound lesson plans, choose effective teaching strategies, and locate or adapt suitable instructional materials. The paper also asks what kinds of support teachers need when using LLMs for lesson planning, and whether a specialized interface can outperform a general-purpose ChatGPT interface.\n\nTo address this, the authors first conducted a formative qualitative study with six novice teachers or teaching assistants to identify needs and design requirements. Based on these findings, they built LessonPlanner, a web application powered by GPT-4 that structures lesson planning around Gagne's Nine Events of Instruction and supports goal generation using Bloom's Taxonomy. The system provides an outline-generation workflow, block-based lesson plan editing, preset prompts for common pedagogical actions, contextual generation of teaching materials and activities, and flexible options for revising, regenerating, or querying content.\n\nThe empirical evaluation combined quantitative and qualitative methods. A within-subjects study with 12 university students acting as novice teachers compared LessonPlanner against a baseline condition using the ChatGPT web app plus search and a markdown editor. Participants prepared 90-minute lesson plans for familiar data structures topics. The paper reports that LessonPlanner significantly improved the quality of the resulting lesson plans and reduced users' workload relative to the baseline. The researchers also conducted expert think-aloud interviews with six teachers from different educational levels and subjects, who generally found the system useful for organizing lesson outlines, suggesting teaching strategies, and generating meaningful teaching resources.\n\nOverall, the paper concludes that a pedagogy-guided, purpose-built LLM interface can support lesson planning more effectively than a generic chatbot interface, particularly for novice teachers. At the same time, the findings highlight concerns about the trustworthiness, subject-specific quality, and accuracy of generated content, suggesting that human oversight remains necessary. The authors argue for future educational LLM systems that combine strong pedagogical scaffolding with flexible user control.",
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "self_reported_measures",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "lab",
+  "teacher_training": "yes",
+  "implementation_fidelity": "not_reported",
+  "study_country": "China",
+  "study_region": "East Asia & Pacific",
+  "identified_tools": [
+    {
+      "name": "LessonPlanner",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "tutoring_instruction"
+      ],
+      "description": "A web-based lesson planning system powered by an OpenAI GPT-4 family model that helps teachers generate pedagogy-driven lesson goals, outlines, teaching materials, and activity suggestions structured around Gagne\u2019s Nine Events of Instruction.",
+      "use_case": "Studied as an interactive lesson-planning assistant for novice teachers preparing 90-minute lesson plans; compared against the baseline ChatGPT web interface in a within-subjects study, with additional expert interviews on usefulness and usability.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In a within-subjects study, LessonPlanner significantly improved the quality of outcome lesson plans and reduced users\u2019 workload compared with the baseline ChatGPT interface. The paper reports participant sample size N=12 for the comparative study, but the excerpt does not provide the exact effect sizes, confidence intervals, or per-measure test statistics.",
+          "measure": "Lesson plan quality ratings and workload during lesson preparation versus baseline ChatGPT",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=12"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Expert interviews indicated that LessonPlanner was useful for lesson planning because it provided a well-organized outline and inspiring content, and helped suggest effective teaching strategies and meaningful educational resources. The expert evaluation involved N=6 teachers, but no quantitative effect sizes were reported in the excerpt.",
+          "measure": "Expert perceptions of usefulness for lesson planning, teaching strategy suggestion, and resource support",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=6"
+        }
+      ]
+    },
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "other"
+      ],
+      "description": "OpenAI\u2019s general-purpose LLM chatbot interface used for free-form prompting and content generation.",
+      "use_case": "Used as the baseline interface for lesson planning, against which LessonPlanner was compared in the within-subjects study.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "Compared with LessonPlanner, the baseline ChatGPT interface produced lower-quality lesson plans and higher workload in the within-subjects comparison. The study sample was N=12, but the excerpt does not report exact baseline scores, effect sizes, or confidence intervals.",
+          "measure": "Comparative lesson plan quality and workload in lesson preparation",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=12"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical mixed-methods paper with a within-subjects comparative user study (N=12) and expert interviews (N=6), but the excerpt does not provide full statistical details or rigorous causal education outcome evidence such as RCT/QED student learning impacts.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports significant improvements in lesson plan quality and workload for LessonPlanner versus ChatGPT, suggesting positive operational impact, but effect sizes and detailed outcome magnitudes are not reported in the excerpt, so impact remains unclear in magnitude.",
+  "citations": [
+    {
+      "title": "GPT-3-driven pedagogical agents for training children\u2019s curious question-asking skills",
+      "doi": null,
+      "year": 2022,
+      "venue": "ArXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Applying Kolb\u2019s experiential learning cycle for laboratory education",
+      "doi": null,
+      "year": 2009,
+      "venue": "Journal of Engineering Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Intelligence unleashed: An argument for AI-enabled learning ecologies with real world examples of today and a peek into the future",
+      "doi": null,
+      "year": 2023,
+      "venue": "AIP Conference Proceedings",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The iLessonPlan: a lesson planning tool for the 21 st century",
+      "doi": null,
+      "year": 2011,
+      "venue": "Proceedings of the Annual Conference of the Australasian Society for Computers in Learning in Tertiary Education, ASCILITE 2011",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Implementation of CIPP Model for Quality Evaluation at School Level: A Case Study",
+      "doi": null,
+      "year": 2018,
+      "venue": "Journal of Education and Educational Development",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The instructional planning experiences of beginning teachers",
+      "doi": null,
+      "year": 2007,
+      "venue": "Journal of Agricultural Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Machine learning based feedback on textual student answers in large courses",
+      "doi": null,
+      "year": 2022,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Towards automated generation and evaluation of questions in educational domains",
+      "doi": null,
+      "year": 2022,
+      "venue": "Proceedings of the 15th International Conference on Educational Data Mining",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Artificial intelligence for education: Knowledge and its assessment in AI-enabled learning ecologies",
+      "doi": "10.1080/00131857.2020.1728732",
+      "year": 2021,
+      "venue": "Educational Philosophy and Theory",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Assessing the Utilization of Large Language Models in Medical Education: Insights From Undergraduate Medical Students",
+      "doi": null,
+      "year": 2023,
+      "venue": "Cureus",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Large Language Model-Based Artificial Intelligence in the Language Classroom: Practical Ideas for Teaching",
+      "doi": null,
+      "year": 2023,
+      "venue": "Teaching English with Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Thematic analysis",
+      "doi": null,
+      "year": 2012,
+      "venue": "American Psychological Association",
+      "citation_level": 3,
+      "citation_context": "qualitative interview analysis approach"
+    },
+    {
+      "title": "SUS: a retrospective",
+      "doi": null,
+      "year": 2013,
+      "venue": "Journal of Usability Studies",
+      "citation_level": 3,
+      "citation_context": "basis for SUS usability measurement"
+    },
+    {
+      "title": "Recent advances in retrieval-augmented text generation",
+      "doi": null,
+      "year": 2022,
+      "venue": "Proceedings of the 45th International ACM SIGIR Conference on Research and Development in Information Retrieval",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "An electronic system to support novice teachers\u2019 reflective lesson design",
+      "doi": null,
+      "year": 2007,
+      "venue": "Multicultural Education & Technology Journal",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Intelligent instructional design via interactive knowledge graph editing",
+      "doi": null,
+      "year": 2022,
+      "venue": "International Conference on Web-Based Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Content wizard: concept-based recommender system for instructors of programming courses",
+      "doi": null,
+      "year": 2017,
+      "venue": "Adjunct Publication of the 25th Conference on User Modeling, Adaptation and Personalization",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "RetAssist: Facilitating Vocabulary Learners with Generative Images in Story Retelling Practices",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 2024 ACM Designing Interactive Systems Conference",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Enhancing AI-Assisted Group Decision Making through LLM-Powered Devil\u2019s Advocate",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Sora as an AGI World Model? A Complete Survey on Text-to-Video Generation",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv preprint arXiv:2403.05131",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Investigating attitudes of professional writers to GPT text generation AI based creative support tools",
+      "doi": null,
+      "year": 2022,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Generative AI for Education (GAIED): Advances, Opportunities, and Challenges",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv preprint arXiv:2402.01580",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Challenges for New Teachers and Ways of Coping with Them",
+      "doi": null,
+      "year": 2017,
+      "venue": "Journal of Education and Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The tools of the future are the challenges of today: The use of ChatGPT in problem-based learning medical education",
+      "doi": null,
+      "year": 2024,
+      "venue": "Medical Teacher",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Bloom\u2019s taxonomy",
+      "doi": null,
+      "year": 2010,
+      "venue": "Emerging Perspectives on Learning, Teaching, and Technology",
+      "citation_level": 2,
+      "citation_context": "used to ground lesson goal formulation"
+    },
+    {
+      "title": "Doc2ppt: Automatic presentation slides generation from scientific documents",
+      "doi": null,
+      "year": 2022,
+      "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Quiz maker: Automatic quiz generation from text using NLP",
+      "doi": null,
+      "year": 2022,
+      "venue": "Futuristic Trends in Networks and Computing Technologies: Select Proceedings of Fourth International Conference on FTNCT 2021",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The conditions of learning and theory of instruction Robert Gagn\u00e9",
+      "doi": null,
+      "year": 1985,
+      "venue": "New York, NY: Holt, Rinehart ja Winston",
+      "citation_level": 2,
+      "citation_context": "nine instructional events underpin system design"
+    },
+    {
+      "title": "ReDBot: Exploring Conversational Recommendation for Decision-Making Support in Group Chats",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the Eleventh International Symposium of Chinese CHI",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Development of NASA-TLX (Task Load Index): Results of empirical and theoretical research",
+      "doi": null,
+      "year": 1988,
+      "venue": "Advances in Psychology",
+      "citation_level": 3,
+      "citation_context": "basis for workload measurement with NASA-TLX"
+    },
+    {
+      "title": "Learning and teaching in the elementary school",
+      "doi": null,
+      "year": 1970,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A science lesson plan analysis instrument for formative and summative program evaluation of a teacher education program",
+      "doi": null,
+      "year": 2008,
+      "venue": "Science Education",
+      "citation_level": 3,
+      "citation_context": "informed lesson plan quality evaluation rubric"
+    },
+    {
+      "title": "Co-writing with opinionated language models affects users\u2019 views",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Foundations for an empirically determined scale of trust in automated systems",
+      "doi": null,
+      "year": 2000,
+      "venue": "International Journal of Cognitive Ergonomics",
+      "citation_level": 3,
+      "citation_context": "basis for trust in automation scale"
+    },
+    {
+      "title": "Graphologue: Exploring large language model responses with interactive diagrams",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 36th Annual ACM Symposium on User Interface Software and Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "An Effective 5 E Lesson Plan in Teaching Prose: A Model",
+      "doi": null,
+      "year": 2019,
+      "venue": "Online Submission",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "How to use Gagne\u2019s model of instructional design in teaching psychomotor skills",
+      "doi": null,
+      "year": 2011,
+      "venue": "Gastroenterology and Hepatology from Bed to Bench",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Teaching English in the age of AI: Embracing ChatGPT to optimize EFL materials and assessment",
+      "doi": null,
+      "year": 2023,
+      "venue": "Language Education and Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Performance of ChatGPT on USMLE: potential for AI-assisted medical education using large language models",
+      "doi": null,
+      "year": 2023,
+      "venue": "PLoS Digital Health",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Coauthor: Designing a human-ai collaborative writing dataset for exploring language model capabilities",
+      "doi": null,
+      "year": 2022,
+      "venue": "Proceedings of the 2022 CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Retrieval-augmented generation for knowledge-intensive nlp tasks",
+      "doi": null,
+      "year": 2020,
+      "venue": "Advances in Neural Information Processing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "\u201cWhat it wants me to say\u201d: Bridging the abstraction gap between end-user programmers and code-generating large language models",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Pre-train, prompt, and predict: A systematic survey of prompting methods in natural language processing",
+      "doi": null,
+      "year": 2023,
+      "venue": "Comput. Surveys",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Co-writing screenplays and theatre scripts with language models: Evaluation by industry professionals",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "RetLLM-E: Retrieval-Prompt Strategy for Question-Answering on Student Discussion Forums",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Exploring user perspectives on chatgpt: Applications, perceptions, and implications for ai-integrated education",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv preprint arXiv:2305.13114",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT in education: A blessing or a curse? A qualitative study exploring early adopters\u2019 utilization and perceptions",
+      "doi": null,
+      "year": 2024,
+      "venue": "Computers in Human Behavior: Artificial Humans",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Using AI to implement effective teaching strategies in classrooms: Five strategies, including prompts",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The important role of lesson plan on educational achievement of Iranian EFL teachers\u2019 attitudes",
+      "doi": null,
+      "year": 2014,
+      "venue": "International Journal of Foreign Language Teaching & Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "An AI-based lesson planning software to support competence-based learning",
+      "doi": null,
+      "year": 2022,
+      "venue": "8th International Conference on Higher Education Advances (HEAd\u201922)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The impact of ai on developer productivity: Evidence from github copilot",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv preprint arXiv:2302.06590",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Anglekindling: Supporting journalistic angle ideation with large language models",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Developing a Gagne Theory-Based Learning Video for Thematic Subject in Elementary School",
+      "doi": null,
+      "year": 2022,
+      "venue": "International Research Journal of Management, IT and Social Sciences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Take It, Leave It, or Fix It: Measuring Productivity and Trust in Human-AI Collaboration",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv preprint arXiv:2402.18498",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT for education and research: Opportunities, threats, and strategies",
+      "doi": null,
+      "year": 2023,
+      "venue": "Applied Sciences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Collectiveteach: a system to generate and sequence web-annotated lesson plans",
+      "doi": null,
+      "year": 2021,
+      "venue": "ACM SIGCAS Conference on Computing and Sustainable Societies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Analysis In Teaching With Cases: A Revisit To Blooms Taxonomy Of Learning Objectives",
+      "doi": null,
+      "year": 2008,
+      "venue": "College Teaching Methods & Styles Journal (CTMS)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Requirement elicitation techniques for an improved case based lesson planning system",
+      "doi": null,
+      "year": 2018,
+      "venue": "Journal of Systems and Information Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Seeking comfort: How and why pre-service teachers use internet resources for lesson planning",
+      "doi": null,
+      "year": 2018,
+      "venue": "Journal of Early Childhood Teacher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Generate & rank: A multi-task framework for math word problems",
+      "doi": null,
+      "year": 2021,
+      "venue": "arXiv preprint arXiv:2109.03034",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Integration of technology by novice mathematics teachers\u2013what facilitates such integration and what makes it difficult?",
+      "doi": null,
+      "year": 2020,
+      "venue": "Education and Information Technologies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "PLATON: Developing a graphical lesson planning system for prospective teachers",
+      "doi": null,
+      "year": 2019,
+      "venue": "Education Sciences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The CIPP model for evaluation",
+      "doi": null,
+      "year": 2000,
+      "venue": "Evaluation models: Viewpoints on educational and human services evaluation",
+      "citation_level": 2,
+      "citation_context": "evaluation framework for expert interview dimensions"
+    },
+    {
+      "title": "Llama 2: Open foundation and fine-tuned chat models",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv preprint arXiv:2307.09288",
+      "citation_level": 3,
+      "citation_context": "LLM model used in implementation"
+    },
+    {
+      "title": "Enabling conversational interaction with mobile ui using large language models",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Chain-of-thought prompting elicits reasoning in large language models",
+      "doi": null,
+      "year": 2022,
+      "venue": "Advances in Neural Information Processing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Adapting lesson plans for the mainstreamed student",
+      "doi": null,
+      "year": 1988,
+      "venue": "The Clearing House",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Wilcoxon signed-rank test",
+      "doi": null,
+      "year": 2007,
+      "venue": "Wiley encyclopedia of clinical trials",
+      "citation_level": 3,
+      "citation_context": "nonparametric significance test for within-subject comparisons"
+    },
+    {
+      "title": "Persua: A Visual Interactive System to Enhance the Persuasiveness of Arguments in Online Discussion",
+      "doi": "10.1145/3555210",
+      "year": 2022,
+      "venue": "Proc. ACM Hum.-Comput. Interact.",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Jamplate: Exploring LLM-Enhanced Templates for Idea Reflection",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Wordcraft: story writing with large language models",
+      "doi": null,
+      "year": 2022,
+      "venue": "27th International Conference on Intelligent User Interfaces",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Collaborative Instructional Design System (CIDS): Visualizing the 21st Century Learning",
+      "doi": null,
+      "year": 2017,
+      "venue": "Universal Journal of Educational Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Text-to-image diffusion model in generative ai: A survey",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv preprint arXiv:2303.07909",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Siren\u2019s song in the AI ocean: a survey on hallucination in large language models",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv preprint arXiv:2309.01219",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Telling stories from computational notebooks: Ai-assisted presentation slides creation for presenting data science work",
+      "doi": null,
+      "year": 2022,
+      "venue": "Proceedings of the 2022 CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

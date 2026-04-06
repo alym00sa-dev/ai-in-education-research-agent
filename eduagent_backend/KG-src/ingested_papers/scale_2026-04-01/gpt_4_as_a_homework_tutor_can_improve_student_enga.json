@@ -1,0 +1,395 @@
+{
+  "title": "GPT-4 as a Homework Tutor can Improve Student Engagement and Learning Outcomes",
+  "doi": null,
+  "year": 2024,
+  "venue": "arXiv Preprint",
+  "url": "https://arxiv.org/abs/2409.15981",
+  "source_db": "scale_stanford",
+  "populations": [
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator",
+    "School"
+  ],
+  "study_design": "Randomized Controlled Trial (RCT)",
+  "extended_summary": "This paper examines whether GPT-4 can serve as an effective homework tutor in a real secondary-school setting, addressing the problem that homework often lacks timely feedback and follow-up support. The authors position LLM-based tutoring as a potentially scalable alternative to private tutoring or more labor-intensive intelligent tutoring systems, especially for language learning. They specifically investigate whether replacing traditional English homework with interactive GPT-4 tutoring can improve student engagement and learning outcomes.\n\nThe intervention used a prompting strategy that required teachers to provide only three elements for each homework assignment: its purpose, a task description, and an example. GPT-4 was then prompted to generate an interactive tutoring session aligned with the teacher\u2019s pedagogical goals. Students in the treatment condition completed homework through a dedicated website where they interacted with GPT-4, while control students completed standard homework tasks. The study used pre/post tests, weekly surveys, and initial/final questionnaires to assess learning gains, engagement, satisfaction, and perceptions of support.\n\nThe study was conducted in one technical high school in Italy with four English classes taught by the same teacher: two 3rd-year classes and two 5th-year classes, with a total of 75 students. Students were randomly assigned within class to treatment or control using stratified randomization based on self-reported English GPA. The intervention targeted English as a second language homework, with students accessing the system outside school hours on their own devices. The planned 6-week intervention was extended to 8 weeks.\n\nThe authors conclude that GPT-4 homework tutoring improved student engagement and yielded some learning benefits, especially for 3rd-year students doing more objective grammar-focused homework. Students in the treatment group reported homework as more interesting and felt they had more resources available, and most wanted to continue using the tutor after the study. The paper also reports a low observed error rate in tutor interactions and finds no evidence that only stronger students benefited. However, effects on learning were limited overall, especially for 5th-year students, and the study emphasizes the promise of GPT-4 as a practical, minimally disruptive support tool rather than a full replacement for human instruction.",
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "self_reported_measures",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "8",
+  "setting": "online",
+  "teacher_training": "no",
+  "implementation_fidelity": "medium",
+  "study_country": "Italy",
+  "study_region": "Europe",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "feedback_evaluation"
+      ],
+      "description": "OpenAI's GPT-family conversational large language model used here as an interactive homework tutor.",
+      "use_case": "The paper used GPT-4 (gpt-4-0125-preview), delivered through a custom website, to replace traditional English homework with interactive tutoring sessions for Italian high-school students learning English as a second language.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Language Fluency",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "In the randomized controlled trial, overall learning gains favored the treatment group but were not statistically significant when pooling cohorts (Cohen's d=0.251, p=0.314). When analyzed by cohort, the 3rd year classes showed a larger, marginally significant advantage for GPT-4 homework tutoring (d=0.603, p=0.087), while the 5th year classes showed essentially no difference (d=-0.004, p=0.991).",
+          "measure": "Pre-test/post-test learning gains on 24-item multiple-choice English assessments",
+          "effect_size": "d=0.251 overall; d=0.603 (3rd year); d=-0.004 (5th year)",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=75"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Students in the treatment group rated homework as significantly more interesting than controls, with a medium effect size (d=0.593, p=0.011). The authors interpret this as improved short-term engagement with homework when GPT-4 replaced static assignments.",
+          "measure": "Weekly questionnaire rating of homework interestingness",
+          "effect_size": "d=0.593",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Students in the treatment condition reported significantly higher perceived availability of resources for completing exercises than controls (d=0.586, p=0.015). This suggests GPT-4 made students feel better supported during homework completion.",
+          "measure": "Weekly questionnaire rating of level_of_resources",
+          "effect_size": "d=0.586",
+          "confidence_interval": "not_reported",
+          "sample_size": "160 weekly responses"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Students rated GPT-4 homework as more useful than traditional homework, but the difference was not statistically significant (d=0.356, p=0.125). The direction favored the treatment group, indicating a positive but inconclusive perceived utility effect.",
+          "measure": "Weekly questionnaire rating of usefulness",
+          "effect_size": "d=0.356",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Students rated GPT-4-supported exercises as more comprehensive than control homework, but the difference was not statistically significant (d=0.281, p=0.234). This indicates a positive but statistically inconclusive trend in perceived comprehensiveness.",
+          "measure": "Weekly questionnaire rating of comprehensiveness",
+          "effect_size": "d=0.281",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Final survey responses showed high student acceptance and satisfaction with the tutor. Specifically, 32/33 respondents said the tutor helped them with homework, 30/35 said it improved them on a practical level, 26/34 said it helped them keep up with the English program, and 32/35 wanted to continue using it.",
+          "measure": "Final questionnaire perceptions of helpfulness, practical improvement, ability to keep up, and willingness to continue use",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=33-35 depending on item"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is a real-world randomized controlled trial in four high-school classes with treatment and control conditions, which is stronger than correlational evidence. However, the sample is modest, several outcomes are self-reported, and the primary academic effect is only marginally significant in one cohort and null in another.",
+  "impact_tier": "blue",
+  "impact_tier_rationale": "The study reports medium-sized positive effects on engagement-related outcomes (d=0.593 and d=0.586) and a medium academic effect in the 3rd year subgroup (d=0.603), even though overall academic effects are mixed. Because reported effect sizes reach or exceed 0.20, the impact tier is blue.",
+  "citations": [
+    {
+      "title": "Plagiarism in the age of massive Generative Pre-trained Transformers (GPT-3)",
+      "doi": null,
+      "year": 2021,
+      "venue": "Ethics in Science and Environmental Politics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Innovative Pedagogy at Massive Scale: Teaching and Learning in MOOCs",
+      "doi": null,
+      "year": 2014,
+      "venue": "Open Learning and Teaching in Educational Communities",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Evaluating the Application of Large Language Models to Generate Feedback in Programming Education",
+      "doi": "10.1109/educon60312.2024.10578838",
+      "year": 2024,
+      "venue": "2024 IEEE Global Engineering Education Conference (EDUCON)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT for good? On opportunities and challenges of large language models for education",
+      "doi": "10.1016/j.lindif.2023.102274",
+      "year": 2023,
+      "venue": "Learning and Individual Differences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Evaluation of ChatGPT\u2019s Real-Life Implementation in Undergraduate Dental Education: Mixed Methods Study",
+      "doi": "10.2196/51344",
+      "year": 2024,
+      "venue": "JMIR Medical Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "CodeAid: Evaluating a Classroom Deployment of an LLM-based Programming Assistant that Balances Student and Educator Needs",
+      "doi": "10.1145/3613904.3642773",
+      "year": 2024,
+      "venue": "Proceedings of the CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Unreflected Acceptance \u2013 Investigating the Negative Consequences of ChatGPT-Assisted Problem Solving in Physics Education",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Use of the ARCS model in education: A literature review",
+      "doi": null,
+      "year": 2018,
+      "venue": "Computers & Education",
+      "citation_level": 2,
+      "citation_context": "motivation framing uses ARCS model for questionnaires"
+    },
+    {
+      "title": "Tutorly: Turning Programming Videos Into Apprenticeship Learning Environments with LLMs",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "CodeHelp: Using Large Language Models with Guardrails for Scalable Support in Programming Classes",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Teaching CS50 with AI: Leveraging Generative Artificial Intelligence in Computer Science Education",
+      "doi": "10.1145/3626252.3630938",
+      "year": 2024,
+      "venue": "Proceedings of the 55th ACM Technical Symposium on Computer Science Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Evaluating the Effectiveness of LLMs in Introductory Computer Science Education: A Semester-Long Field Study",
+      "doi": "10.1145/3657604.3662036",
+      "year": 2024,
+      "venue": "Proceedings of the Eleventh ACM Conference on Learning @ Scale",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Intelligent tutoring systems: an overview",
+      "doi": null,
+      "year": 1990,
+      "venue": "Artificial Intelligence Review",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Will Ai Writing Tools Revolutionise Learning Attitudes-Insight from Undergraduate Students of Global South",
+      "doi": null,
+      "year": null,
+      "venue": "SSRN",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "GPT-4 Technical Report",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_level": 3,
+      "citation_context": "base model powering the homework tutor"
+    },
+    {
+      "title": "Insights from Social Shaping Theory: The Appropriation of Large Language Models in an Undergraduate Programming Course",
+      "doi": null,
+      "year": 2024,
+      "venue": "ACM Conference on International Computing Education Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Navigating Compiler Errors with AI Assistance - A Study of GPT Hints in an Introductory Programming Course",
+      "doi": "10.1145/3649217.3653608",
+      "year": 2024,
+      "venue": "Proceedings of the 2024 on Innovation and Technology in Computer Science Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT-generated help produces learning gains equivalent to human tutor-authored help on mathematics skills",
+      "doi": "10.1371/journal.pone.0304013",
+      "year": 2024,
+      "venue": "PLOS ONE",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Empowering Personalized Learning through a Conversation-based Tutoring System with Student Modeling",
+      "doi": "10.1145/3613905.3651122",
+      "year": 2024,
+      "venue": "Extended Abstracts of the CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Implementation of AI-driven technology into education \u2013 a pilot study on the use of chatbots in foreign language learning",
+      "doi": "10.1080/2331186X.2024.2355385",
+      "year": 2024,
+      "venue": "Cogent Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Widening Gap: The Benefits and Harms of Generative AI for Novice Programmers",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A Knowledge-Component-Based Methodology for Evaluating AI Assistants",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Developing self-regulation skills: The important role of homework",
+      "doi": null,
+      "year": 2011,
+      "venue": "Journal of Advanced Academics",
+      "citation_level": 2,
+      "citation_context": "homework framed as supporting self-regulation and learning"
+    },
+    {
+      "title": "Exploring large language models as an integrated tool for learning, teaching, and research through the Fogg Behavior Model: a comprehensive mixed-methods analysis",
+      "doi": "10.1080/23311916.2024.2353494",
+      "year": 2024,
+      "venue": "Cogent Engineering",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Giving feedback\u2013An integral part of education",
+      "doi": null,
+      "year": 2012,
+      "venue": "Best Practice & Research Clinical Anaesthesiology",
+      "citation_level": 2,
+      "citation_context": "feedback valued as key educational mechanism"
+    },
+    {
+      "title": "Ruffle&Riley: Insights from Designing and Evaluating a Large Language Model-Based Conversational Tutoring System",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "An Exploratory Study on Upper-Level Computing Students\u2019 Use of Large Language Models as Tools in a Semester-Long Project",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Gemini: A Family of Highly Capable Multimodal Models",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Battling Botpoop using GenAI for Higher Education: A Study of a Retrieval Augmented Generation Chatbots Impact on Learning",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "LLaMA: Open and Efficient Foundation Language Models",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The development of a questionnaire to measure students\u2019 motivation towards science learning",
+      "doi": null,
+      "year": 2005,
+      "venue": "International Journal of Science Education",
+      "citation_level": 3,
+      "citation_context": "standardized SESQ items adapted for motivation measures"
+    },
+    {
+      "title": "PATIENT-\u03a8: Using Large Language Models to Simulate Patients for Training Mental Health Professionals",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "CREF: An LLM-based Conversational Software Repair Framework for Programming Tutors",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The effects of over-reliance on AI dialogue systems on students\u2019 cognitive abilities: a systematic review",
+      "doi": null,
+      "year": 2024,
+      "venue": "Smart Learning Environments",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Investigation of the effectiveness of applying ChatGPT in Dialogic Teaching Using Electroencephalography",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

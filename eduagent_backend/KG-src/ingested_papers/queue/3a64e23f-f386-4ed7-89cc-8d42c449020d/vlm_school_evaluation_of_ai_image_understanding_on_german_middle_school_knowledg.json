@@ -1,0 +1,35 @@
+{
+  "title": "VLM@school \u2013 Evaluation of AI image understanding on German middle school knowledge",
+  "doi": null,
+  "year": 2025,
+  "venue": "not_reported",
+  "url": "http://arxiv.org/abs/2506.11604v2",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Middle School (6th-8th)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper presents VLM@school, a benchmark for evaluating vision-language models (VLMs) on German middle school\u2013level knowledge tasks. The authors argue that many existing multimodal benchmarks are overly English-centric, too text-dependent, or insufficiently grounded in real curricular material, and they propose a dataset built from German school textbooks and related educational images.\n\nThe benchmark contains 486 images and 2,038 open-ended questions across nine domains, including biology, physics, geography, history, math, arts, music, religion, and sports. The items are designed to require visual interpretation plus subject-specific background knowledge, and the benchmark also includes adversarial questions that are intentionally unanswerable from the image alone to test whether models appropriately decline or avoid hallucinating answers. The paper evaluates 13 open-weight VLMs, using LLM-as-a-judge / jury-based scoring for open-ended responses.\n\nResults show that the benchmark is challenging: the best model reaches under 45% overall accuracy, with especially weak performance on adversarial questions. The authors conclude that middle-school educational images and questions provide a useful stress test for VLMs, particularly in non-English settings, and that performance on popular public benchmarks does not reliably transfer to this more curriculum-grounded target domain.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a benchmark/evaluation paper for vision-language models, not a K-12 intervention study. It does not use an experimental or quasi-experimental design with student outcomes, nor does it report educational treatment effects, delayed post-tests, transfer tasks, subgroup analyses, or implementation fidelity in a classroom setting.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "No educational impact on learners is demonstrated because the paper evaluates model accuracy on benchmark questions rather than any instructional intervention. Claims about science reasoning or inquiry are about benchmark difficulty and model performance, not student learning gains, so the broader optimistic thesis is not supported by this paper.",
+  "interventions": [],
+  "outcome_assignments": [],
+  "limitations": [
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Germany",
+  "study_region": "Europe",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

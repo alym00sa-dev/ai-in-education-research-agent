@@ -1,0 +1,513 @@
+{
+  "title": "Next-Gen Education: Enhancing AI for Microlearning",
+  "doi": null,
+  "year": 2025,
+  "venue": "Proceedings of the 2025 ASEE Annual Conference & Exposition",
+  "url": "https://arxiv.org/abs/2508.11704",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses whether AI-generated microlearning materials can support student learning in higher education and how accurate such materials are when produced by large language models. The authors frame the problem around low attendance, limited student engagement with long recorded lectures, and the time burden on educators who might otherwise create supplementary microlearning content manually. They focus on two research questions: how students perceive the effectiveness of AI-generated microlearning for learning and engagement, and how accurate students find the AI-produced content.\n\nThe intervention is an AI-supported pipeline that converts lecture videos and slides into microlearning materials. Using OpenAI Whisper to transcribe lecture videos and ChatGPT/GPT-4o to refine transcripts and generate content, the system produces interactive quizzes, digital flashcards, mini-lessons, and scenario-based learning activities. The paper also includes a case study demonstrating the pipeline on a 22-minute lecture about pointers in C programming, showing sample prompts and generated outputs. In addition, the authors computed readability scores for the generated materials.\n\nThe empirical study was conducted in two junior-level computer science courses at Pennsylvania State University in the United States: Discrete Mathematics and Programming Language Principles. The combined enrollment was 650 undergraduate students in hybrid courses with both in-person and recorded lectures. Microlearning materials were integrated throughout a semester, with different frequencies and grading policies across the two courses. At the end of the semester, 360 students completed surveys about learning efficiency, engagement, usefulness as a starting point, perceived inaccuracies, and alignment with course content.\n\nThe main conclusions are that students generally viewed the AI-generated microlearning materials positively, especially for time efficiency, engagement, and as a starting point for learning new topics. Programming Language Principles showed stronger positive responses than Discrete Mathematics, suggesting that microlearning may fit application-oriented subjects better than more abstract ones. Students reported relatively few inaccuracies, and most judged the materials as relevant to course content, but the authors emphasize that human review remains necessary. Overall, the paper concludes that AI-enhanced microlearning is a scalable and promising support strategy in higher education, while also noting the importance of instructor oversight and subject-specific adaptation.",
+  "limitations": [
+    "single_site",
+    "no_control_group",
+    "self_reported_measures",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "blended",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "feedback_evaluation"
+      ],
+      "description": "OpenAI's generative AI/chatbot family used for text generation and transformation tasks.",
+      "use_case": "Used to refine Whisper-generated lecture transcripts and generate AI-based microlearning materials from lecture videos and slides, including flashcards, quizzes, mini-lessons/summaries, and scenario-based learning activities for two junior-level computer science courses.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Student survey responses indicated generally positive perceived learning efficiency from the ChatGPT-generated microlearning materials. Aggregated across both courses, Time Efficiency had mean=4.04 (SD=0.92), Improved Retention had mean=3.70 (SD=0.95), and Interactive Learning had mean=3.71 (SD=0.97); these were self-reported perceptions rather than objective performance measures.",
+          "measure": "Student self-reported perceptions of learning efficiency, including time efficiency, improved retention, and interactive learning",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=360"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Students reported positive engagement with the AI-generated microlearning content. In Discrete Mathematics, approximately 67% either agreed or strongly agreed that the content supported engagement, compared with 80% in Programming Language Principles; disagreement was 8% (7 students) and 4% (12 students), respectively.",
+          "measure": "Student self-reported engagement with course content supported by AI-generated microlearning",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=360"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Students generally viewed the ChatGPT-generated microlearning as a useful starting point for learning new topics. More than 65% of students in Discrete Mathematics and more than 80% in Programming Language Principles agreed or strongly agreed; disagreement was 7% (6 students) and 5% (13 students), respectively.",
+          "measure": "Student self-reported value of microlearning as a starting point for learning new topics",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=360"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Students reported that inaccuracies were present but relatively infrequent in the AI-generated materials. Over 35% of students in both courses reported never encountering incorrect information, while more than 40% in Discrete Mathematics and over 50% in Programming Language Principles reported encountering incorrect information 1 to 3 times; instructor anecdotal review found fewer than 10 inaccuracies across all generated materials.",
+          "measure": "Student-reported frequency of inaccuracies in AI-generated instructional content",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=360"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Students largely judged the AI-generated microlearning content to be relevant and aligned with course material. In Discrete Mathematics, 76.5% responded 'Yes', 18.5% 'Maybe', and 4.9% 'No'; in Programming Language Principles, 87.1% responded 'Yes', 11.1% 'Maybe', and 1.8% 'No'.",
+          "measure": "Student-reported relevance/alignment of AI-generated content with actual course materials",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=360"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The AI pipeline using ChatGPT and related OpenAI tools substantially reduced content production time. The paper reports that 150 to 225 minutes of lecture video and over 100 pages of lecture slides could be processed into microlearning materials within about 45 minutes for each assignment.",
+          "measure": "Time required to process lecture videos and slides into microlearning materials",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    },
+    {
+      "name": "Whisper",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "language_speech",
+        "content_generation"
+      ],
+      "description": "OpenAI's automatic speech recognition model for speech-to-text transcription.",
+      "use_case": "Used to transcribe recorded lecture videos as the first step in the microlearning-generation pipeline.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Whisper enabled automated transcription of lecture videos for downstream microlearning generation, but the paper reports several transcription problems. The authors observed grammatical errors, improper word usage, unclear passages, and some inaccurately transcribed segments due to poor recording quality, which necessitated subsequent transcript refinement with ChatGPT.",
+          "measure": "Observed transcription quality and usability of lecture video transcripts",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical deployment study with survey-based evaluation across two university courses, but it relies primarily on descriptive self-reported perceptions rather than validated causal designs or objective learning outcomes. No RCT, quasi-experimental comparison, or effect-size-based achievement analysis is reported.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "Findings are generally positive for perceived engagement, efficiency, and relevance, and operational time savings are substantial, but impact on actual academic performance is unclear because no objective outcome effects or standardized effect sizes are reported.",
+  "citations": [
+    {
+      "title": "Microlearning for Macro-outcomes: Students\u2019 Perceptions of Telegram as a Microlearning Tool",
+      "doi": null,
+      "year": 2019,
+      "venue": "Digital Turn in Schools\u2014Research, Policy, Practice",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A comparison of ChatGPT-generated articles with human-written articles",
+      "doi": null,
+      "year": 2023,
+      "venue": "Skeletal Radiology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Textstat: Calculate statistical features from text",
+      "doi": null,
+      "year": null,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "automatic readability scoring via TextStat library"
+    },
+    {
+      "title": "Class attendance in US universities \u2018at record low,\u2019",
+      "doi": null,
+      "year": 2023,
+      "venue": "Times Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "From Data to Learning: The Scientific Approach to AI-Enhanced Online Course Design",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 2023 International Conference on Big Data, Knowledge and Control Systems Engineering (BdKCSE)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Artificial intelligence in education: A review",
+      "doi": null,
+      "year": 2020,
+      "venue": "IEEE Access",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Effects of remote learning during COVID-19 lockdown on children\u2019s learning abilities and school performance",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "How to conduct a bibliometric analysis: An overview and guidelines",
+      "doi": null,
+      "year": 2021,
+      "venue": "Journal of Business Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A new readability yardstick",
+      "doi": null,
+      "year": 1948,
+      "venue": "Journal of Applied Psychology",
+      "citation_level": 3,
+      "citation_context": "Flesch Reading Ease formula for readability"
+    },
+    {
+      "title": "Systematic literature review of e-learning capabilities to enhance organizational learning",
+      "doi": null,
+      "year": 2022,
+      "venue": "Information Systems Frontiers",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Exploration of education transformation and teacher literacy in the age of artificial intelligence",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 5th International Workshop Artificial Intelligence and Education (WAIE)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Keeping Us Engaged: Student Perspectives (and Research-Based Strategies) on What Works and Why",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "FACT SHEET: Biden-Harris Administration Announces Improving Student Achievement Agenda in 2024",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Construction and Application of Micro Technology Platform in Applied Technology Universities under the Background of Internet Plus",
+      "doi": null,
+      "year": 2020,
+      "venue": "Journal of Physics: Conference Series",
+      "citation_level": 2,
+      "citation_context": "supports microlearning adoption gap claim"
+    },
+    {
+      "title": "Grammarly: Writing Assistant",
+      "doi": null,
+      "year": null,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Kaltura: Online Video Platform",
+      "doi": null,
+      "year": null,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Understanding in-video dropouts and interaction peaks in online lecture videos",
+      "doi": null,
+      "year": 2014,
+      "venue": "Proceedings of the 1st ACM Conference on Learning@Scale",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Microlearning as a Teaching and Learning Approach",
+      "doi": "10.1007/978-981-99-2774-6_1",
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Microlearning for Generation Z in the Foreign Language Classroom",
+      "doi": null,
+      "year": 2023,
+      "venue": "EDULEARN23 Proceedings",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Mobile microlearning design and effects on learning efficacy and learner experience",
+      "doi": null,
+      "year": 2021,
+      "venue": "Educational Technology Research and Development",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Generative AI for Learning: Investigating the Potential of Learning Videos with Synthetic Virtual Instructors",
+      "doi": null,
+      "year": 2023,
+      "venue": "Artificial Intelligence in Education: Posters and Late Breaking Results, Workshops and Tutorials, Industry and Innovation Tracks, Practitioners, Doctoral Consortium and Blue Sky",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A review of the trend of microlearning",
+      "doi": null,
+      "year": 2020,
+      "venue": "Journal of Work-Applied Management",
+      "citation_level": 2,
+      "citation_context": "background on microlearning components and contexts"
+    },
+    {
+      "title": "The effectiveness of microlearning to improve students\u2019 learning ability",
+      "doi": null,
+      "year": 2018,
+      "venue": "International Journal of Educational Research Review",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "OpenAI: Research and Development in Artificial Intelligence",
+      "doi": null,
+      "year": null,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT: Language Model",
+      "doi": null,
+      "year": null,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Whisper: Automatic Speech Recognition System",
+      "doi": null,
+      "year": null,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A Prompting Framework to Enhance Language Model Output",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the Australasian Joint Conference on Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Accelerated Action Learning: Using a Hands-on Talent Development Strategy to Solve Problems, Innovate Solutions, and Develop People",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Measuring the Return on Investment (ROI) in Technology-Based Learning",
+      "doi": "10.4324/9781003502302",
+      "year": 2024,
+      "venue": "Trends and Issues in Instructional Design and Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Revolutionizing the Online Learning Journey: 1,500 Ways to Increase Engagement",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The effect of scenario-based training on the core competencies of nursing students: A semi-experimental study",
+      "doi": null,
+      "year": 2023,
+      "venue": "BMC Nursing",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Microlearning and narration",
+      "doi": null,
+      "year": 2005,
+      "venue": "Fourth Media in Transition Conference",
+      "citation_level": 2,
+      "citation_context": "seven-dimension framework for microlearning"
+    },
+    {
+      "title": "Conversation technology with micro-learning: The impact of chatbot-based learning on students\u2019 learning motivation and performance",
+      "doi": null,
+      "year": 2021,
+      "venue": "Journal of Educational Computing Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Work-in-progress: Fine-tuning large language models for automated feedback in complex engineering problem-solving",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 2024 ASEE Annual Conference & Exposition",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Game of Algorithms: ChatGPT Implications for the Future of Tourism Education and Research",
+      "doi": null,
+      "year": 2023,
+      "venue": "Journal of Educational Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Harnessing LLMs in curricular design: Using GPT-4 to support authoring of learning objectives",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The micro revolution: Effect of Bite-Sized Teaching (BST) on learner engagement and learning in postgraduate medical education",
+      "doi": null,
+      "year": 2021,
+      "venue": "BMC Medical Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT versus Human in Generating Medical Graduate Exam Multiple Choice Questions",
+      "doi": null,
+      "year": 2023,
+      "venue": "MedEd Journal",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Didactics of Microlearning",
+      "doi": null,
+      "year": 2007,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Nine Ways to Reduce Cognitive Load in Multimedia Learning",
+      "doi": null,
+      "year": 2003,
+      "venue": "Educational Psychologist",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Bite-Sized Teaching: Delivering Knowledge of Physical Health Issues in Mental Health Settings",
+      "doi": null,
+      "year": 2017,
+      "venue": "British Journal of Mental Health Nursing",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Transforming Microlearning with Generative AI: Current Advances and Future Challenges",
+      "doi": "10.1007/978-3-031-65691-0_13",
+      "year": 2024,
+      "venue": "General Aspects of Applying Generative AI in Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Experiencing Organization Development Practice through Case Stories and Role-Plays",
+      "doi": null,
+      "year": 2025,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Exploring learner satisfaction and the effectiveness of microlearning in higher education",
+      "doi": "10.1016/j.iheduc.2024.100952",
+      "year": 2024,
+      "venue": "The Internet and Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "MemReflex: Adaptive flashcards for mobile microlearning",
+      "doi": null,
+      "year": 2012,
+      "venue": "Microsoft Research Asia",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Designing Microlearning",
+      "doi": null,
+      "year": 2019,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The effects of student engagement, student satisfaction, and perceived learning in online learning environments",
+      "doi": null,
+      "year": 2016,
+      "venue": "International Journal of Educational Leadership Preparation",
+      "citation_level": 2,
+      "citation_context": "supports engagement as determinant of academic success"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

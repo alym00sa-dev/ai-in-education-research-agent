@@ -1,0 +1,60 @@
+{
+  "title": "Research on the Application of Large Language Models in Automatic Question Generation: A Case Study of ChatGLM in the Context of High School Information Technology Curriculum",
+  "doi": null,
+  "year": null,
+  "venue": null,
+  "url": "http://arxiv.org/abs/2408.11539v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Educator"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper examines whether a large language model, ChatGLM, can automatically generate written exam questions for a high school information technology curriculum. The central problem is the heavy workload of question setting for information technology teachers and whether AI-generated questions can approach or exceed the quality of human-generated questions.\n\nThe intervention studied is prompt-engineered question generation using ChatGLM. The authors used textbook content from two high school information technology chapters, \"Data and Information\" and \"Algorithm Basics,\" to generate 20 questions with ChatGLM and compare them against 20 manually written questions. The prompts framed ChatGLM as a high school information technology teacher and asked it to output questions in pseudocode-like format.\n\nFive experienced high school information technology teachers evaluated the questions on hitting/alignment, fitting/core competency alignment, clarity, and willingness to use. The study found no significant difference between ChatGLM and human questions for hitting, fitting, or clarity, but ChatGLM scored significantly higher on willingness to use. The authors conclude that ChatGLM shows promise for reducing teachers' workload and improving the acceptability of generated assessment items, especially in high school information technology contexts.",
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_long_term_followup",
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "China",
+  "study_region": "East Asia & Pacific",
+  "identified_tools": [
+    {
+      "name": "ChatGLM",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation"
+      ],
+      "description": "A Chinese large language model used for text generation and question generation tasks.",
+      "use_case": "Used with prompt engineering to generate high school information technology exam questions, which were compared against human-generated questions and evaluated by five experienced teachers.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0012 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "In a case study of 20 human-generated and 20 ChatGLM-generated questions for high school information technology, five teachers rated ChatGLM slightly lower on Hitting (mean 4.17 vs 4.32) and essentially equal on Fitting (4.10 vs 4.11), but higher on Clarity (4.14 vs 4.03) and much higher on Willingness to use (3.98 vs 3.05). Welch's ANOVA found no significant differences for Hitting (p=0.067), Fitting (p=0.891), or Clarity (p=0.149), but Willingness differed significantly (p<.001).",
+          "measure": "Teacher ratings of Hitting, Fitting, Clarity, and Willingness to use for generated exam questions",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=20 questions per condition; n=5 teachers"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a small case study with teacher ratings rather than a controlled educational outcome trial. The methodology is clear, but evidence is limited to expert evaluation of generated questions.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The strongest reported difference is on teacher willingness to use the questions, but no effect size is reported and the study does not measure student learning outcomes. Overall impact is modest and mostly centered on perceived usefulness.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

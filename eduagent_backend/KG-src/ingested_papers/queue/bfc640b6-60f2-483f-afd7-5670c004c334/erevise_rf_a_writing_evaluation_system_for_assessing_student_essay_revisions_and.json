@@ -1,0 +1,81 @@
+{
+  "title": "eRevise+RF: A Writing Evaluation System for Assessing Student Essay Revisions and Providing Formative Feedback",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2501.00715v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Elementary (PreK-5th)",
+    "Middle School (6th-8th)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator",
+    "Administrator",
+    "School"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper addresses how to support young students in revising argumentative essays after receiving formative feedback. The authors focus on a common problem in automated writing evaluation: students may receive feedback on a draft, but still struggle to make effective revisions that actually improve the quality of evidence use and reasoning in later drafts. The paper asks whether NLP methods can effectively assess student revisions and whether a deployed system can help students improve essays across multiple drafts.\n\nThe intervention is eRevise+RF, an enhanced automated writing evaluation system that provides two kinds of expert-designed formative feedback across three drafts: evidence-use feedback after draft 1 and revision feedback after draft 2. The system analyzes essays using indicators such as number of pieces of evidence (NPE) and specificity (SPC), aligns sentences across drafts, and classifies revisions as surface/content, evidence/reasoning, and successful/unsuccessful. Although ChatGPT is used inside one classifier (RC-Evidence) and for extracting argument context in prior-model components, the student-facing feedback itself is not LLM-generated; the paper explicitly states that the system uses expert-crafted rather than LLM-generated feedback messages.\n\nThe study was conducted with 406 students and 6 teachers across 3 schools in Pennsylvania and Louisiana in the United States, spanning grades 4-8. The argumentative writing tasks were Response-to-Text Assessment prompts based on articles about the Millennium Villages Project in Kenya and space exploration. Students wrote in classroom deployments across three sessions over 3 to 5 days, producing first, second, and third drafts. Analyses included NLP agreement with human annotations and changes in essay quality metrics such as word count, evidence score, NPE, and SPC across drafts.\n\nThe main conclusion is that eRevise+RF shows promise as a formative writing support tool for upper-elementary and middle-school students. The system achieved reasonably strong agreement with human annotations on several automated measures, and essays improved across drafts in evidence-related metrics after students received feedback. However, this was a pilot deployment without a control group, so the study does not provide causal evidence that the system outperformed teacher feedback, peer feedback, business-as-usual instruction, or no feedback. It is therefore a near-miss for the requested research topic on direct comparative studies of LLM-generated formative feedback for grades 9-12; additionally, it is not a high-school study and the feedback provided to students was not ChatGPT-generated.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a pilot deployment study with pre/post descriptive analyses and technical validation, but no randomized or quasi-experimental comparison group. It provides useful empirical evidence, yet causal credibility is limited for intervention effectiveness claims.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "Results suggest improvement in writing and revision-related outcomes, but impact magnitude is unclear because no standardized effect sizes or controlled counterfactual estimates are reported. The paper therefore indicates promising but not clearly quantified impact.",
+  "interventions": [
+    {
+      "intervention": "Automated Feedback System",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "Automated writing evaluation system (eRevise+RF) that scores students' argumentative essay drafts and revisions, then delivers expert-authored formative feedback on evidence use and revision quality across three drafts."
+    },
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.56,
+      "role": "secondary",
+      "use_case": "ChatGPT-3.5 is used inside the backend as a sentence-level revision classifier to label revisions as evidence vs. reasoning; it does not generate formative feedback for students."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Literacy",
+      "confidence": 0.94,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "In a single-arm pilot deployment with 406 students across 3 schools, the system was associated with improvement in argumentative writing across drafts rather than in a randomized or comparative design. For the analytic sample completing all three sessions, essay quality metrics improved from draft 1 to draft 3 on MVP essays (N=516 total drafts from 172 students): predicted evidence score rose 2.45 to 2.91, NPE 2.56 to 3.34, and SPC 8.81 to 13.98; SPACE essays showed similar gains (N=450 total drafts from 150 students): evidence score 2.09 to 2.85, NPE 3.02 to 4.09, SPC 6.07 to 8.84. No standardized between-group effect sizes were reported.",
+        "measure": "Argumentative writing quality measured via predicted Evidence Score (ES), Number of Pieces of Evidence (NPE), Specificity (SPC), and word count across essay drafts",
+        "study_size": "406 students deployed overall; analytic sample 172 students for MVP (516 drafts) and 150 students for SPACE (450 drafts)",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "reported in descriptive form for revision statistics in Table 1, but not for main draft-quality outcomes"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.57,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper argues the system supports revision skill and self-evaluation in argumentative writing, and reports that revision changes tracked the type of feedback students received. On manually annotated MVP essays, students receiving EF1 showed +128% change in NPE from draft 1 to 2, while EF2 recipients showed +55.0% change in SPC; these descriptive patterns were interpreted as evidence that students revised in alignment with feedback. However, there was no control group and no direct validated measure of metacognition or self-regulation.",
+        "measure": "Responsiveness of revision behavior to feedback, using annotated and predicted changes in NPE and SPC between drafts as proxies for revision skill",
+        "study_size": "MVP analytic sample n=172 students (516 essays); feedback-alignment tables report subgroup Ns such as EF1 n=74, EF2 n=11, EF3 n=87",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "classroom",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

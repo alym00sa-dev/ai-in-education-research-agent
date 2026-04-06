@@ -1,0 +1,40 @@
+{
+  "title": "Privacy Preserving In-Context-Learning Framework for Large Language Models",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2509.13625v4",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses the problem of preserving privacy when using large language models (LLMs) for in-context learning and synthetic text generation. The core concern is that prompts and generated outputs can leak sensitive information from private records, especially when LLMs are used with user data. The authors propose a differentially private (DP) private-prediction framework that can generate synthetic text from private datasets without fine-tuning model weights.\n\nThe method operates in two stages. First, it privately generates synthetic examples by running inference on disjoint subsets of private prompts, clipping and averaging token logits, and blending them with logits from a public prompt before sampling the next token. Second, these synthetic generations are reused as few-shot demonstrations for downstream in-context learning. The approach is evaluated on general NLP benchmark tasks, including AGNews, DBPedia, TREC, MIT-G, MIT-D, and a structured JSON generation task, using decoder-only LLMs such as Gemma 1.1 2B IT. The paper also tests privacy empirically with membership inference and PII extraction attacks.\n\nThe results show that the proposed approach can improve in-context learning accuracy compared with prior private-generation baselines while providing formal DP guarantees and reduced leakage in attack evaluations. The authors report that model utility varies with privacy budget, number of shots, and model size, illustrating the privacy-utility trade-off. However, the work is a methodological privacy paper rather than a K-12 education study, and it does not investigate teacher-facing coaching, lesson feedback, or school-based instructional use.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a methods paper on privacy-preserving LLM inference and synthetic text generation, not an education intervention study. It reports benchmark utility and privacy attacks, but does not evaluate K-12 teaching or learning outcomes, teacher experience, or classroom context.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "No direct educational impact on K-12 instruction or student outcomes is studied. The reported gains are computational/utility improvements on NLP benchmarks and privacy leakage reduction, so the paper provides no evidence of instructional impact in schools.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.58,
+      "role": "secondary",
+      "use_case": "privacy-preserving in-context learning and synthetic text generation for LLM prompting, including few-shot demonstration generation and token-level decoding; not a teacher-facing tutoring intervention itself"
+    }
+  ],
+  "outcome_assignments": [],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

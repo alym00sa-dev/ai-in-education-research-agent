@@ -1,0 +1,106 @@
+{
+  "title": "Generative AI alone may not be enough: Evaluating AI Support for Learning Mathematical Proof",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2509.16778v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Randomized Controlled Trial (RCT)",
+  "extended_summary": "This paper evaluates whether an LLM-powered tutoring system can improve undergraduate students\u2019 learning in a discrete mathematics proof-writing course. The authors ask whether AI support improves homework and exam performance, affects time spent on coursework, and how students perceive the tool\u2019s strengths and limitations.\n\nThe intervention, LLM-Tutor, combined two AI features: a proof-review tutor that gave formatted, real-time feedback on students\u2019 LaTeX proof submissions and a chatbot for math-related questions. Students could choose between stronger/slower and faster/weaker OpenAI models for feedback. The system was deployed in an introductory discrete mathematics course at a U.S. research university, and students were randomly assigned to treatment and control groups. The experimental group received access immediately after the first midterm and homework 4, while the control group received access later, after the second midterm.\n\nAcross 155 recruited students, quantitative analyses showed significant improvement on homework scores when the experimental group had access to LLM-Tutor, but no significant effects on midterm or final exam performance and no significant difference in reported time spent on coursework. Correlational, regression, and mediation analyses suggested that chatbot use was negatively associated with later exam performance, especially for students with lower self-efficacy, while proof-review usage showed a more positive pattern for final exam performance. Interviews with 19 students indicated that the system was appreciated for accessibility and immediate feedback, but students also raised concerns about over-reliance and limited depth compared with TA feedback.",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is a randomized controlled classroom study with a control group, multiple academic outcomes, and mixed-methods triangulation. However, it has some concerns: recruitment was voluntary, attrition occurred across waves, and several analyses are correlational/associational rather than pure intent-to-treat effects.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The main causal benefit is modest and task-specific: homework improved, but exams and time spent did not. Because the statistically significant gain is limited to homework performance and broader learning outcomes were null, the overall impact is best classified as yellow.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "LLM-Tutor for discrete mathematics proof-writing support, combining an AI proof-review tutor that highlights and comments on students' written proofs with a math-focused chatbot for real-time help and Socratic questioning."
+    },
+    {
+      "intervention": "Automated Feedback System",
+      "confidence": 0.94,
+      "role": "primary",
+      "use_case": "AI-based proof-review feedback on students' LaTeX proof submissions with highlighted problematic lines and inline formative comments."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 1.0,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "In a randomized classroom study of an intro discrete mathematics course, LLM-Tutor improved homework performance but did not improve exam performance. Homework scores for the experimental group were significantly higher during the period when only that group had access to LLM-Tutor (M=99.64, SD=8.03 vs M=96.55, SD=11.66; t(146)=2.19, p=.030), while midterm and final exam comparisons were not statistically significant.",
+        "measure": "Normalized homework percentages; midterm exam scores; final exam score",
+        "study_size": "n=155 recruited; n=148 for homework comparison t-tests; n=73 experimental and n=75 control after attrition before midterm 2; n=72 control at final",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "Homework: experimental SD=8.03, control SD=11.66; time outcome SDs reported separately"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.77,
+      "finding": {
+        "direction": "No Effect",
+        "finding_summary": "LLM-Tutor did not significantly reduce self-reported time spent on assignments and textbook reading. In the subgroup with matched survey responses, before use the control and experimental groups reported similar time (11.81 vs 12.07 hours; t=0.26, p=.79), and after the experimental group used LLM-Tutor the groups again did not differ (7.55 vs 7.68 hours; t=0.20, p=.83).",
+        "measure": "Self-reported weekly hours spent on assignments and textbook reading",
+        "study_size": "n=41 experimental responders and n=40 control responders at both time points",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "Pre-use SDs: 3.98 control, 4.71 experimental; post-use SDs: 2.85 control, 3.06 experimental"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.83,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "Survey and interview data suggest mixed effects on motivation, engagement, and confidence. Quantitatively, the paper reports no significant time-spent change and no exam gain, but qualitatively most interviewed students said the tool increased motivation to do homework (N=12), improved understanding (N=13), and slightly increased confidence for some (N=7), while others reported neutral effects or concern about over-reliance (N=5).",
+        "measure": "Semi-structured interview themes on motivation, engagement, and confidence; survey usability and time-use perceptions",
+        "study_size": "n=19 interviews; n=41 SUS responses; n=41 experimental + n=40 control for time survey",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "SUS SD not reported; Cronbach's alpha=0.875 for SUS"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.76,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The paper links tool use to self-efficacy and learning habits, but the measured relationships are mixed. Self-efficacy positively predicted Midterm 3 performance (B=5.088 in Model 2; B=3.207 in Model 4), while chatbot usage was consistently negatively associated with Midterm 3 (B=-0.056 to -0.030 across models); proof-review usage was not a significant predictor in regression, though interviews suggested some students used the tool as a 'sanity check' and for iterative self-correction.",
+        "measure": "Self-efficacy scale; usage frequency of chatbot and proof-review features; regression predicting Midterm 3 scores",
+        "study_size": "n=148 for t-tests/regression subset (implied by t(146)); interviews n=19",
+        "effect_size": "R2=.134 to .355 across models; standardized beta for chatbot=-0.356 in Model 1",
+        "confidence_interval": "not_reported",
+        "std_deviation": "Self-efficacy Cronbach's alpha=0.91; regression SE not treated as SD"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_long_term_followup",
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "classroom",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

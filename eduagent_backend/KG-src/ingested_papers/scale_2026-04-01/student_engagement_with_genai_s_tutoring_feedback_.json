@@ -1,0 +1,570 @@
+{
+  "title": "Student Engagement with GenAI\u2019s Tutoring Feedback: A Mixed Methods Study",
+  "doi": null,
+  "year": 2025,
+  "venue": "Koli Calling \u201925",
+  "url": "https://arxiv.org/abs/2509.22974",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper examines how students engage with immediate AI-generated tutoring feedback in introductory programming education. The authors argue that feedback effectiveness depends not only on feedback quality, but also on students\u2019 engagement with that feedback\u2014specifically how they perceive, interpret, and use it. The study addresses two questions: what students think while interacting with different tutoring feedback components, and how those thoughts relate to visual attention and immediate problem-solving actions.\n\nTo investigate this, the authors built a Python programming learning environment, Tutor Kai, that provides four types of GenAI tutoring feedback: Find Problems, Explanations and Examples, Next Step Hint, and Strategic Approach. Feedback was generated with OpenAI\u2019s gpt-4.1 model and presented as individually selectable components. The study used a mixed-methods design combining think-aloud protocols, eye-tracking, screen recordings, logs, and a questionnaire. The analysis focused on which feedback components students requested and read, what they verbalized while processing them, and whether they subsequently improved their code, made no change, or took a counterproductive step.\n\nThe participants were 20 undergraduate students enrolled in an introductory programming course at a German university, primarily in their first or second semester. Data collection took place during the third and fourth weeks of the summer semester of 2025. Students completed programming tasks in a supervised lab setting using standard computing equipment and Tobii eye-tracking glasses. Across 172 GenAI feedback requests, 688 feedback components were generated; students selectively opened 384 of them, and almost all opened components were read.\n\nThe main findings are that students most often verbalized understanding, but also frequently expressed a need for additional information or disagreement with the feedback. When students expressed understanding, the related feedback often led to code improvements. When they expressed disagreement or needed more information, they typically did not act immediately on the feedback and instead opened another feedback component. Overall, the study concludes that students actively self-regulate their use of AI tutoring feedback rather than passively accepting it, and that students\u2019 internal evaluation of feedback is a key factor in whether AI-generated tutoring feedback supports learning. The authors suggest that future systems should better support follow-up questioning and feedback literacy.",
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "no_control_group",
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "2",
+  "setting": "lab",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Germany",
+  "study_region": "Europe",
+  "identified_tools": [
+    {
+      "name": "Tutor Kai",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "feedback_evaluation"
+      ],
+      "description": "A programming learning environment for Python exercises that provides immediate AI-generated tutoring feedback through four components: Find Problems, Explanations and Examples, Next Step Hint, and Strategic Approach.",
+      "use_case": "Studied as an online environment for introductory programming students solving Python tasks, where students could request and selectively open AI-generated tutoring feedback components while researchers analyzed attention, think-aloud responses, and immediate code actions.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In this mixed-methods study of 20 undergraduate students, 172 GenAI feedback requests were made in Tutor Kai, generating 688 feedback components; students collected 384 (55.8%) and read 380 of those. Overall, in 141 of 172 feedback requests (82.0%), at least one collected/read component resulted in an improvement to student code.",
+          "measure": "Immediate code improvement following AI-generated tutoring feedback during Python problem solving",
+          "effect_size": "82.0% of feedback requests resulted in at least one improvement",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=20"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Students acted upon 201 of 380 read feedback components (52.9%), resulting in improvement (160 cases), setback (13 cases), or both improvement and setback (28 cases). The Next Step Hint component most frequently led to improvement, doing so in 38 of 73 read instances (52.1%), compared with 69 of 166 for Find Problems, 42 of 111 for Explanations and Examples, and 11 of 30 for Strategic Approach.",
+          "measure": "Immediate code actions after reading feedback components, including improvement/setback rates by component",
+          "effect_size": "52.9% acted upon; KH improvement rate=52.1%",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=20; 380 read feedback components"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "When students\u2019 verbalized thoughts indicated understanding, 76.2% of related feedback components led to code improvements. Conversely, when students expressed disagreement or a need for additional information, 69.5% of related feedback components led to no immediate code action, and in 79.2% of those no-action cases students instead collected another feedback component.",
+          "measure": "Relation between think-aloud engagement categories and immediate code actions",
+          "effect_size": "76.2% improvement after understanding; 69.5% no action after disagreement/additional-info needs; 79.2% collected another component in no-action cases",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=20; based on coded read feedback components"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Analysis of 314 coded think-aloud instances tied to 380 read feedback components found four themes in student engagement: expressions of understanding (45.5%), additional information needed (21.6%), disagreement (18.7%), and explicit judgments of helpfulness (14.3%). These results indicate students actively evaluated feedback rather than uniformly accepting it, with selective uptake depending on perceived relevance and clarity.",
+          "measure": "Think-aloud coded categories reflecting feedback engagement, interpretation, and self-regulated response",
+          "effect_size": "45.5% understanding; 21.6% additional information needed; 18.7% disagreement; 14.3% explicit judgments",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=20; 314 coded verbalized thoughts"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Students selectively used Tutor Kai\u2019s feedback rather than opening everything available: they collected 384 of 688 generated components (55.8%), and almost all collected components were read (380 of 384, about 99%). Collection frequency decreased in interface order from Find Problems to Explanations and Examples to Next Step Hint to Strategic Approach, suggesting students self-directed their information seeking.",
+          "measure": "Feedback uptake and reading behavior within the tutoring interface",
+          "effect_size": "55.8% collected; ~99.0% of collected components read",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=20; 688 generated feedback components"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical mixed-methods study with eye-tracking, think-aloud protocols, logs, and questionnaire data, but it is qualitative/exploratory and does not use an RCT or quasi-experimental design. The sample is small (n=20 analyzed), so causal claims about learning effectiveness are limited.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports promising improvement rates in immediate coding actions, but effects are descriptive percentages rather than standardized learning gains, and no effect sizes or confidence intervals are reported. Impact on broader academic outcomes is therefore positive but still unclear in magnitude.",
+  "citations": [
+    {
+      "title": "Feedback-Generation for Programming Exercises With GPT-4",
+      "doi": "10.1145/3649217.3653594",
+      "year": 2024,
+      "venue": "Proceedings of the 2024 on Innovation and Technology in Computer Science Education V. 1 (ITiCSE 2024)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Programming Is Hard - Or at Least It Used to Be: Educational Opportunities and Challenges of AI Code Generation",
+      "doi": "10.1145/3545945.3569759",
+      "year": 2023,
+      "venue": "Proc. of the 54th ACM Techn. Symp. V. 1",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "One Step at a Time: Combining LLMs and Static Analysis to Generate Next-Step Hints for Programming Tasks",
+      "doi": "10.1145/3699538.3699556",
+      "year": 2024,
+      "venue": "Proceedings of the 24th Koli Calling International Conference on Computing Education Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Sample size for qualitative research",
+      "doi": null,
+      "year": 2016,
+      "venue": "Qualitative market research: An international journal",
+      "citation_level": 2,
+      "citation_context": "used to justify saturation and sample adequacy"
+    },
+    {
+      "title": "Coefficient Kappa: Some Uses, Misuses, and Alternatives",
+      "doi": "10.1177/001316448104100307",
+      "year": 1981,
+      "venue": "Educational and Psychological Measurement",
+      "citation_level": 3,
+      "citation_context": "basis for inter-rater agreement interpretation/statistics"
+    },
+    {
+      "title": "Eye tracking in computing education",
+      "doi": "10.1145/2632320.2632344",
+      "year": 2014,
+      "venue": "Proceedings of the tenth annual conference on International computing education research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Feedback and Self-Regulated Learning: A Theoretical Synthesis",
+      "doi": "10.3102/00346543065003245",
+      "year": 1995,
+      "venue": "Review of Educational Research",
+      "citation_level": 2,
+      "citation_context": "self-regulation framing for students\u2019 feedback engagement"
+    },
+    {
+      "title": "The development of student feedback literacy: enabling uptake of feedback",
+      "doi": "10.1080/02602938.2018.1463354",
+      "year": 2018,
+      "venue": "Assessment & Evaluation in Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Feedback Literacy: Holistic Analysis of Secondary Educators\u2019 Views of LLM Explanations of Program Error Messages",
+      "doi": "10.1145/3649217.3653595",
+      "year": 2024,
+      "venue": "Proceedings of the 2024 on Innovation and Technology in Computer Science Education V. 1 (ITiCSE 2024)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Combining LLM-Generated and Test-Based Feedback in a MOOC for Programming",
+      "doi": "10.1145/3657604.3662040",
+      "year": 2024,
+      "venue": "Proceedings of the Eleventh ACM Conference on Learning @ Scale (L@S '24)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Power of Feedback",
+      "doi": "10.3102/003465430298487",
+      "year": 2007,
+      "venue": "Review of Educational Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Exploring the Responses of Large Language Models to Beginner Programmers\u2019 Help Requests",
+      "doi": "10.1145/3568813.3600139",
+      "year": 2023,
+      "venue": "Proceedings of the 2023 ACM Conference on International Computing Education Research - Volume 1",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Data: Student Engagement with GenAI\u2019s Tutoring Feedback: A Mixed Methods Study",
+      "doi": "10.17605/OSF.IO/XDG34",
+      "year": 2025,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Evaluating the Application of Large Language Models to Generate Feedback in Programming Education",
+      "doi": "10.1109/EDUCON60312.2024.10578838",
+      "year": 2024,
+      "venue": "2024 IEEE Global Engineering Education Conference (EDUCON)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Leveraging Lecture Content for Improved Feedback: Explorations with GPT-4 and Retrieval Augmented Generation",
+      "doi": "10.1109/CSEET62301.2024.10663001",
+      "year": 2024,
+      "venue": "2024 36th International Conference on Software Engineering Education and Training (CSEE&T)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "That\u2019s Not the Feedback I Need! - Student Engagement with GenAI Feedback in the Tutor Kai",
+      "doi": "10.1145/3754508.3754512",
+      "year": 2025,
+      "venue": "Proceedings of the 2025 Conference on UK and Ireland Computing Education Research (UKICER '25)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "GenAI Voice Mode in Programming Education",
+      "doi": "10.48550/arXiv.2509.10596",
+      "year": 2025,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Unlimited Practice Opportunities: Automated Generation of Comprehensive, Personalized Programming Tasks",
+      "doi": "10.1145/3724363.3729089",
+      "year": 2025,
+      "venue": "Proceedings of the 30th ACM Conference on Innovation and Technology in Computer Science Education V. 1 (ITiCSE 2025)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "CodeAid: Evaluating a Classroom Deployment of an LLM-based Programming Assistant that Balances Student and Educator Needs",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A Systematic Literature Review of Automated Feedback Generation for Programming Exercises",
+      "doi": "10.1145/3231711",
+      "year": 2019,
+      "venue": "ACM Transactions on Computing Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Kompetenzf\u00f6rderung in der Programmierausbildung durch Modellierung von Kompetenzen und informativem Feedback",
+      "doi": null,
+      "year": 2022,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Investigating the Use and Effects of Feedback in CodingBat Exercises: An Exploratory Thinking Aloud Study",
+      "doi": "10.1109/IEEECONF56852.2023.10104622",
+      "year": 2023,
+      "venue": "2023 Future of Educational Innovation-Workshop Series Data in Action",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Modeling programming competency: A qualitative analysis",
+      "doi": "10.1007/978-3-031-47148-3",
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Evaluating Language Models for Generating and Judging Programming Feedback",
+      "doi": "10.48550/arXiv.2407.04873",
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Analyzing Qualitative Data with MAXQDA: Text, Audio, and Video",
+      "doi": "10.1007/978-3-030-15671-8",
+      "year": 2019,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "guidance for qualitative coding and analysis workflow"
+    },
+    {
+      "title": "How Helpful do Novice Programmers Find the Feedback of an Automated Repair Tool?",
+      "doi": "10.1109/TALE56641.2023.10398393",
+      "year": 2023,
+      "venue": "2023 IEEE International Conference on Teaching, Assessment and Learning for Engineering (TALE)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Measurement of Observer Agreement for Categorical Data",
+      "doi": "10.2307/2529310",
+      "year": 1977,
+      "venue": "Biometrics",
+      "citation_level": 3,
+      "citation_context": "used to interpret agreement coefficients"
+    },
+    {
+      "title": "Student \u2013 Feedback Interaction Model: Revised",
+      "doi": "10.1016/j.stueduc.2022.101208",
+      "year": 2022,
+      "venue": "Studies in Educational Evaluation",
+      "citation_level": 2,
+      "citation_context": "frames interplay of students and feedback"
+    },
+    {
+      "title": "Teaching CS50 with AI: Leveraging Generative Artificial Intelligence in Computer Science Education",
+      "doi": "10.1145/3626252.3630938",
+      "year": 2024,
+      "venue": "Proceedings of the 55th ACM Technical Symposium on Computer Science Education V. 1 (SIGCSE 2024)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Improving AI in CS50: Leveraging Human Feedback for Better Learning",
+      "doi": "10.1145/3641554.3701945",
+      "year": 2025,
+      "venue": "Proceedings of the 56th ACM Technical Symposium on Computer Science Education V. 1 (SIGCSETS 2025)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "You\u2019re (Not) My Type-Can LLMs Generate Feedback of Specific Types for Introductory Programming Tasks?",
+      "doi": "10.1111/jcal.13107",
+      "year": 2025,
+      "venue": "Journal of Computer Assisted Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Revisiting \u201cThe Power of Feedback\u201d from the perspective of the learner",
+      "doi": "10.1016/j.learninstruc.2022.101718",
+      "year": 2023,
+      "venue": "Learning and Instruction",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Automated Grading and Feedback Tools for Programming Education: A Systematic Review",
+      "doi": "10.1145/3636515",
+      "year": 2024,
+      "venue": "ACM Trans. Comput. Educ.",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Informatives tutorielles Feedback. Entwicklungs- und Evaluationsprinzipien auf der Basis instruktionspsychologischer Erkenntnisse",
+      "doi": null,
+      "year": 2006,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Feedback Strategies for Interactive Learning Tasks",
+      "doi": null,
+      "year": 2008,
+      "venue": "Handbook of Research on Educational Communications and Technology",
+      "citation_level": 2,
+      "citation_context": "external and internal feedback loops framing"
+    },
+    {
+      "title": "Using GPT-4 to Provide Tiered, Formative Code Feedback",
+      "doi": "10.1145/3626252.3630960",
+      "year": 2024,
+      "venue": "Proceedings of the 55th ACM Technical Symposium on Computer Science Education V. 1 (SIGCSE 2024)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Identifying parameter values for an I-VT fixation filter suitable for handling data sampled with various sampling frequencies",
+      "doi": "10.1145/2168556.2168625",
+      "year": 2012,
+      "venue": "Proceedings of the Symposium on Eye Tracking Research and Applications",
+      "citation_level": 3,
+      "citation_context": "basis for eye-tracking fixation filter parameters"
+    },
+    {
+      "title": "Generative AI for Programming Education: Benchmarking ChatGPT, GPT-4, and Human Tutors",
+      "doi": "10.1145/3568812.3603476",
+      "year": 2023,
+      "venue": "Proceedings of the 2023 ACM Conference on International Computing Education Research - Volume 2 (ICER '23)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Robots Are Here: Navigating the Generative AI Revolution in Computing Education",
+      "doi": "10.1145/3623762.3633499",
+      "year": 2023,
+      "venue": "Proceedings of the 2023 Working Group Reports on Innovation and Technology in Computer Science Education (ITiCSE-WGR '23)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Beyond the Hype: A Comprehensive Review of Current Trends in Generative AI Research, Teaching Practices, and Tools",
+      "doi": "10.1145/3689187.3709614",
+      "year": 2025,
+      "venue": "2024 Working Group Reports on Innovation and Technology in Computer Science Education (ITiCSE 2024)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Feedback: focusing attention on engagement",
+      "doi": "10.1080/03075079.2010.483513",
+      "year": 2011,
+      "venue": "Studies in Higher Education",
+      "citation_level": 2,
+      "citation_context": "supports interpretation of no action as possible engagement"
+    },
+    {
+      "title": "Students\u2019 Misconceptions and Other Difficulties in Introductory Programming: A Literature Review",
+      "doi": "10.1145/3077618",
+      "year": 2018,
+      "venue": "ACM Transactions on Computing Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Robust Speech Recognition via Large-Scale Weak Supervision",
+      "doi": "10.48550/arXiv.2212.04356",
+      "year": 2022,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "speech recognition model used in transcription pipeline"
+    },
+    {
+      "title": "Management and the Worker",
+      "doi": null,
+      "year": 1939,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "supports observer-effect threat to validity"
+    },
+    {
+      "title": "How Novice Programmers Use and Experience ChatGPT when Solving Programming Exercises in an Introductory Course",
+      "doi": "10.1109/FIE61694.2024.10893442",
+      "year": 2024,
+      "venue": "2024 IEEE Frontiers in Education Conference (FIE)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Students\u2019 Feedback Requests and Interactions with the SCRIPT Chatbot: Do They Get What They Ask For?",
+      "doi": "10.48550/arXiv.2507.17258",
+      "year": 2025,
+      "venue": "PPIG 2025 Workshop",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Analyzing Chat Protocols of Novice Programmers Solving Introductory Programming Tasks with ChatGPT",
+      "doi": "10.18420/delfi2024_05",
+      "year": 2024,
+      "venue": "Proceedings of DELFI 2024",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A practical guide on conducting eye tracking studies in software engineering",
+      "doi": "10.1007/s10664-020-09829-4",
+      "year": 2020,
+      "venue": "Empirical Software Engineering",
+      "citation_level": 3,
+      "citation_context": "practical methodological guidance for eye-tracking study"
+    },
+    {
+      "title": "Focus on formative feedback",
+      "doi": null,
+      "year": 2008,
+      "venue": "Review of educational research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Narrowing the Gap: Supervised Fine-Tuning of Open-Source LLMs as a Viable Alternative to Proprietary Models for Pedagogical Tools",
+      "doi": "10.48550/arXiv.2507.05305",
+      "year": 2025,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The think aloud method: A practical guide to modelling cognitive processes",
+      "doi": "10.1016/0306-4573(95)90031-4",
+      "year": 1994,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "think-aloud protocol design and execution"
+    },
+    {
+      "title": "Consensual qualitative research for simple qualitative data: An introduction to CQR-M",
+      "doi": null,
+      "year": 2012,
+      "venue": "Consensual qualitative research: A practical resource for investigating social science phenomena",
+      "citation_level": 3,
+      "citation_context": "method for qualitative analysis of simple data"
+    },
+    {
+      "title": "Exploring Human-Centered Approaches in Generative AI and Introductory Programming Research: A Scoping Review",
+      "doi": "10.1145/3689535.3689553",
+      "year": 2024,
+      "venue": "Proceedings of the 2024 Conference on United Kingdom & Ireland Computing Education Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Student perceptions of assessment feedback: a critical scoping review and call for research",
+      "doi": "10.1007/s11092-020-09331-x",
+      "year": 2021,
+      "venue": "Educational Assessment, Evaluation and Accountability",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Supporting Learners\u2019 Agentic Engagement With Feedback: A Systematic Review and a Taxonomy of Recipience Processes",
+      "doi": "10.1080/00461520.2016.1207538",
+      "year": 2017,
+      "venue": "Educational Psychologist",
+      "citation_level": 2,
+      "citation_context": "conceptual basis for feedback engagement/recipience"
+    },
+    {
+      "title": "Designing effective feedback processes in higher education. A learning-focused approach",
+      "doi": null,
+      "year": 2019,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Exploring How Multiple Levels of GPT-Generated Programming Hints Support or Disappoint Novices",
+      "doi": "10.1145/3613905.3650937",
+      "year": 2024,
+      "venue": "Extended Abstracts of the CHI Conference on Human Factors in Computing Systems (CHI EA '24)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "FEEDBOT: Formative Design Feedback on Programming Assignments",
+      "doi": "10.1145/3724363.3729063",
+      "year": 2025,
+      "venue": "Proceedings of the 30th ACM Conference on Innovation and Technology in Computer Science Education V. 1 (ITiCSE 2025)",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

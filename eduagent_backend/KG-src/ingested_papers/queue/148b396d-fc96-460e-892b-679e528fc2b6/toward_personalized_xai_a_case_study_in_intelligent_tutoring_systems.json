@@ -1,0 +1,75 @@
+{
+  "title": "Toward Personalized XAI: A Case Study in Intelligent Tutoring Systems",
+  "doi": null,
+  "year": null,
+  "venue": "Preprint submitted to the JAI \u2013 Special Issue on Explainable Artificial Intelligence",
+  "url": "http://arxiv.org/abs/1912.04464v4",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Undergraduate",
+    "Graduate / Doctoral"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Randomized Controlled Trial (RCT)",
+  "extended_summary": "This paper investigates whether explanations for AI-generated hints in an intelligent tutoring system improve students\u2019 learning and perceptions of the system. The authors focus on a personalized XAI question in an educational context: when an ITS provides adaptive hints based on a user model, would additional explanations about why a hint was given and how it was chosen increase trust, perceived usefulness, and learning gains?\n\nThe intervention was an explanation functionality added to the Adaptive CSP (ACSP) applet, an interactive intelligent tutoring system that teaches the AC-3 algorithm for solving constraint satisfaction problems. The explanation interface offered layered why and how explanations about the user model, the classification of the learner as lower- or higher-learning, and the selection/ranking of adaptive hints. A pilot study with nine university students informed the design, and a controlled between-subject study compared students using ACSP with explanations versus a control version without explanations. The main study involved 72 university participants; after excluding those who received no hints or did not access explanations, analyses focused on 24 students in the explanation condition and 17 in the control condition.\n\nResults showed that explanations increased students\u2019 trust in the hints, perceived usefulness, and intention to reuse the system. Participants generally viewed the explanations positively and most accessed the initial why explanations more than the deeper how explanations. Need for Cognition predicted greater attention to explanations, indicating that cognitive style influenced explanation use. However, explanations did not significantly improve overall learning gains relative to control. The effect of explanations on learning was moderated by conscientiousness, suggesting that user traits matter for whether and how explanations benefit students in intelligent tutoring settings.",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is a controlled between-subject study with randomized conditions and quantitative outcomes, but it is not a large-scale RCT and has important analytic limitations (e.g., only 41 analyzable participants for the main comparison, plus subgroup and interaction analyses). The paper is peer-reviewed/preprint-style empirical work with reasonable internal validity, but not enough to merit blue.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The main learning outcome shows no effect (d=.12), while secondary perception and usage outcomes are positive but modest and mixed. Overall impact on student learning is unclear despite some beneficial effects on trust and explanation engagement.",
+  "interventions": [
+    {
+      "intervention": "Intelligent Tutoring System (ITS)",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "an ITS for learning the AC-3 algorithm and constraint satisfaction problems, with adaptive hint generation based on user modeling and an added explanation layer for those AI-driven hints"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 0.88,
+      "finding": {
+        "direction": "No Effect",
+        "finding_summary": "This controlled study compared students using the ACSP intelligent tutoring system with explanations versus without explanations on learning the AC-3 algorithm for constraint satisfaction problems (n=24 explanation users who viewed explanations; n=17 control). Post-pretest percentage learning gains did not differ significantly between groups (M=.49 vs .45), t(25.7)=0.36, p=.70, d=.12, indicating no detectable learning benefit from the explanation feature overall.",
+        "measure": "Percentage learning gains on pre-test/post-test assessment of AC-3 algorithm concepts",
+        "study_size": "n=41",
+        "effect_size": "d=.12",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.83,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The explanation functionality improved students\u2019 trust in the hints, perceived usefulness, and intention to use the system again, suggesting a beneficial effect on metacognitive acceptance and help-seeking attitudes. For explanation use itself, Need for Cognition significantly predicted higher explanation attention (F(1,22)=8.51, p=.008, partial \u03b7\u00b2=.28), indicating that users with higher cognitive engagement were more likely to inspect the explanations.",
+        "measure": "Questionnaire ratings of trust/usefulness/intention to reuse; eye-tracked explanation attention",
+        "study_size": "n=24 explanation users for explanation-use analyses; n=41 for learning comparison",
+        "effect_size": "\u03b7p\u00b2=.28",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "no_long_term_followup",
+    "implementation_fidelity_not_reported",
+    "non_representative_population"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "lab",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Canada",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

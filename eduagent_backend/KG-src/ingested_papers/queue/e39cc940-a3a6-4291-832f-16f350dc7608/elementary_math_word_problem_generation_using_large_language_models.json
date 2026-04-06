@@ -1,0 +1,72 @@
+{
+  "title": "Elementary Math Word Problem Generation using Large Language Models",
+  "doi": null,
+  "year": 2026,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2506.05950v2",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Elementary (PreK-5th)"
+  ],
+  "user_types": [
+    "Educator"
+  ],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses the problem of automatically generating mathematics word problems (MWPs) using large language models (LLMs), with an emphasis on producing questions that match a requested grade level and question type. The authors present MathWiz, a generation system that takes only minimal user inputs: the number of problems desired, the grade, and the problem type/section. They argue that earlier MWP generation systems often required more specific inputs such as seed text or equations, and they aim to make generation more flexible and useful for tutors and teachers.\n\nThe paper studies several intervention components: model selection among open-source 7B LLMs, prompt engineering, diversity-oriented decoding settings, instruction fine-tuning with custom datasets, preference optimization using human feedback, few-shot in-context learning, and a solvability checker based on another LLM. The work uses a custom MathWizard dataset aligned to the U.S. Common Core curriculum, covering grades 1 through 6, and also a smaller preference dataset for selected grade/section pairs. The main evaluation compares different generation configurations using human annotation and LLM-based judging across multiple error categories such as grammar, solvability, grade relevance, and section relevance.\n\nThe population is not learners in a classroom intervention, but rather math-word-problem content targeted at elementary and early middle-grade mathematics. The study\u2019s human evaluators were university students and two mathematics teachers, and the paper primarily focuses on the generation system rather than student learning outcomes. The authors conclude that LLMs can generate generally fluent and solvable MWPs, but still struggle to consistently satisfy grade-level and section constraints. Their best configuration used a fine-tuned Llama-2 model with 5-shot prompting and a solvability filter, which improved some metrics but still left substantial room for improvement.\n\nThere is no directly empirical ChatGPT mathematics intervention study in grades 6\u20138 with a student counterfactual in this paper. The closest comparator evidence is a generation-focused LLM study that includes grade 6 content in the curriculum dataset and mentions ChatGPT only in the context of manuscript preparation and as one evaluation model, not as a student-facing instructional intervention.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed empirical systems paper, but it is not an education-outcome study and does not use an RCT or quasi-experimental student design. Evidence is largely human/LLM evaluation of generated content quality, so credibility for causal educational impact is limited.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper shows modest-to-strong improvements in generated item quality and pedagogical fit, but it does not demonstrate learner achievement gains. Educational impact is therefore plausible but indirect and currently unclear for K-12 students.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.77,
+      "role": "primary",
+      "use_case": "LLM-based math word problem generation system (MathWiz) for creating grade- and section-specific elementary school math practice items, with prompting, fine-tuning, preference optimization, and solvability checking. The paper also uses ChatGPT/Gemini/Copilot as evaluation or preference/solvability support tools, but the main intervention under study is LLM-driven problem generation rather than tutoring."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 0.91,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "This paper does not test student learning outcomes; instead, it evaluates the quality of generated math word problems for educational use. The best configuration (fine-tuned Llama-2 with 5-shot prompting plus solvability checking) improved weighted average error-free performance to 92.56% from 89.63% for the zero-shot baseline, and improved grade relevance from 52.69% to 79.62% and section relevance from 42.69% to 81.15% in the reported table, but this is generation-quality evidence rather than learner achievement evidence.",
+        "measure": "Human and LLM-judge ratings of generated math word problems on solvability, grade relevance, section relevance, realism, grammar, and weighted average error-free score",
+        "study_size": "n=8,561 generated questions reviewed; n=4,000 annotated corpus; n=312 judged sample for correlation analysis",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.88,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper reports that LLMs can generate math word problems from only grade, section, and count inputs, reducing the need for tutors to manually author practice items or provide seeds/equations. The system is positioned as a time-saving workflow for question generation, and the authors further automate quality control with a solvability detector; however, no formal time-savings effect size or workload experiment was reported.",
+        "measure": "Author-reported generation workflow efficiency and reduction in manual question-authoring requirements",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    }
+  ],
+  "limitations": [
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup",
+    "non_representative_population"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Sri Lanka",
+  "study_region": "South Asia",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

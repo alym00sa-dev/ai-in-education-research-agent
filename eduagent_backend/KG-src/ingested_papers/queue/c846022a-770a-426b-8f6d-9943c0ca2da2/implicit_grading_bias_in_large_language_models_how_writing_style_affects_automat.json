@@ -1,0 +1,98 @@
+{
+  "title": "Implicit Grading Bias in Large Language Models: How Writing Style Affects Automated Assessment Across Math, Programming, and Essay Tasks",
+  "doi": null,
+  "year": 2026,
+  "venue": "Preprint \u2014 Under Review",
+  "url": "http://arxiv.org/abs/2603.18765v1",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper examines whether large language models used as automated graders exhibit implicit bias when scoring student work, even when they are explicitly instructed to ignore writing style and judge only content correctness. The central question is whether stylistic differences in otherwise equivalent responses can systematically affect grades, and whether this varies by subject area and perturbation type.\n\nThe authors construct a controlled synthetic dataset of 180 student responses across three subjects: Mathematics, Programming, and Essay/Writing. Each response is derived from a correct base answer and then perturbed in one of three ways: grammar errors, informal language, or non-native phrasing. Two open-source LLMs, LLaMA 3.3 70B and Qwen 2.5 72B, are used as graders with a standardized prompt that explicitly tells them not to penalize style-related features. The study compares model scores against human-assigned ground-truth scores and analyzes score penalties, significance, effect sizes, and agreement with human ratings.\n\nResults show a strong subject-dependent pattern. Essay/Writing tasks exhibit statistically significant bias across all perturbation types for both models, with informal language penalized most heavily. Mathematics and Programming show little to no bias, with only one statistically significant non-native phrasing effect in Mathematics for Qwen. The paper concludes that prompt-based debiasing is insufficient for high-stakes educational grading and recommends perturbation-based bias audits, restricting LLM grading to more objective assessment types, and using style-aware fine-tuning plus human oversight for subjective evaluation.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a controlled experimental audit study, but it is a preprint under review rather than a peer-reviewed RCT or QED, and it uses synthetic responses rather than authentic classroom data. It provides strong internal control and clear statistical testing, but credibility is limited by external validity and study design constraints.",
+  "impact_tier": "green",
+  "impact_tier_rationale": "The observed penalties are medium to very large in essay grading and therefore could meaningfully affect high-stakes student outcomes if deployed. The impact is important for priority populations such as non-native English speakers, but the evidence comes from an experimental audit rather than a real-world deployment study.",
+  "interventions": [
+    {
+      "intervention": "Automated Feedback System",
+      "confidence": 0.98,
+      "role": "primary",
+      "use_case": "LLM-based automated grading of student responses across math, programming, and essay tasks, with the model scoring answers and generating brief justifications; the paper evaluates grading bias in this assessment workflow rather than feedback generation per se."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Literacy",
+      "confidence": 0.96,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The paper finds strong negative bias in essay/writing assessment: both LLaMA 3.3 70B and Qwen 2.5 72B penalized informal language, grammar errors, and non-native phrasing despite explicit instructions not to do so. In Essay/Writing tasks, all six conditions were statistically significant with very large effects (Cohen\u2019s d ranging from 0.64 to 4.25); the largest penalty was LLaMA\u2019s informal-language effect (\u2206=1.90 points on a 10-point scale, d=4.25), and both models showed weak overall agreement with human scores (LLaMA r=0.315, MAE=0.922; Qwen r=0.339, MAE=0.856).",
+        "measure": "LLM grading scores on essay/writing responses; score penalties relative to base answers; correlation/MAE versus human ground-truth scores",
+        "study_size": "n=180 perturbed responses plus 60 base responses; 480 total evaluations",
+        "effect_size": "d=0.64 to d=4.25",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 0.86,
+      "finding": {
+        "direction": "No Effect",
+        "finding_summary": "Mathematics grading showed minimal bias overall, with most perturbation conditions failing to reach statistical significance. The only notable exception was Qwen\u2019s non-native phrasing condition in math (\u2206=0.40, d=0.59, p=.017), while LLaMA\u2019s math conditions were essentially zero bias in some cases (e.g., grammar \u2206=0.00, d=0.00, p=1.00).",
+        "measure": "LLM grading score penalties for perturbed math responses; human-LLM agreement metrics",
+        "study_size": "n=60 math base responses and 120 perturbed math evaluations across two models",
+        "effect_size": "d=0.00 to d=0.59",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.86,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "Programming responses were graded with very little style-related bias, with most conditions non-significant and penalties near zero. Human-LLM agreement was strongest here relative to other subjects (r\u22480.48 for both models), indicating that the models handled objective coding tasks more consistently than subjective writing tasks.",
+        "measure": "LLM grading scores on programming tasks; correlation with human ground-truth scores",
+        "study_size": "n=60 programming base responses and 120 perturbed programming evaluations across two models",
+        "effect_size": "d=not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Systemic / Institutional Impact",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Negative",
+        "finding_summary": "The study shows that prompt-level anti-bias instructions do not reliably prevent biased automated grading, creating a serious governance and fairness risk for institutional adoption. Bias was subject-dependent and systematic across models, with essay/writing tasks most vulnerable; the authors recommend mandatory bias auditing, restricting automated grading to objective tasks, and maintaining human oversight for subjective assessments.",
+        "measure": "Observed grading bias across subjects and perturbation types; significance rates and effect sizes across conditions",
+        "study_size": "n=2 LLMs, 3 subjects, 3 perturbation types, 18 experimental conditions",
+        "effect_size": "d=0.64 to d=4.25 in essay/writing conditions; overall bias indices 0.472 (LLaMA) and 0.350 (Qwen)",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

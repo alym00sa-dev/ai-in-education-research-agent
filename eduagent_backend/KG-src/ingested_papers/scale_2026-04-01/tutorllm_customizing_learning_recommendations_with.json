@@ -1,0 +1,405 @@
+{
+  "title": "TutorLLM: Customizing Learning Recommendations with Knowledge Tracing and Retrieval-Augmented Generation",
+  "doi": null,
+  "year": 2024,
+  "venue": "Proceedings of the 18th ACM Conference on Recommender Systems (RecSys 2024)",
+  "url": "https://arxiv.org/abs/2502.15709",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses a key limitation of large language models in education: although tools such as ChatGPT can answer a wide range of student questions, they often lack personalization and may provide irrelevant or inaccurate responses. The authors aim to improve educational usefulness by combining the flexibility of LLMs with student modeling and course-specific retrieval, asking whether a personalized recommender LLM can improve student experience and learning outcomes compared with a general-purpose LLM alone.\n\nThe proposed intervention, TutorLLM, integrates three components: a knowledge tracing module based on the MLFBK model to estimate students\u2019 learning states, a scraper that collects course-specific textual content from online learning pages, and a retrieval-augmented GPT-4-based LLM that uses both the student model and retrieved course materials to generate personalized responses and study recommendations. The system was implemented as a Chrome browser plugin that students could use during online study sessions and after class for tailored recommendations of additional materials.\n\nThe empirical evaluation was conducted as a two-week field study with 30 first-year undergraduate students enrolled in a linear algebra module at the University of Southampton. Students were randomly allocated to three groups: a general-LLM control group, a hybrid group that used general LLM first and TutorLLM second, and a TutorLLM group that used TutorLLM throughout. The study took place in an online course context, with daily quizzes and a final test used to assess performance, alongside usability and user experience questionnaires for students using TutorLLM.\n\nThe main conclusions are that TutorLLM showed promise for improving the learning experience, with higher user satisfaction, strong usability scores, greater engagement time, and modest gains in quiz performance relative to general LLM use. However, the differences in academic performance were not statistically significant in this small study. The authors conclude that the approach is promising but requires further validation with larger samples, longer durations, and broader disciplinary settings.",
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "2",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United Kingdom",
+  "study_region": "Europe",
+  "identified_tools": [
+    {
+      "name": "TutorLLM",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "personalization_adaptation",
+        "tutoring_instruction"
+      ],
+      "description": "A personalized educational recommender LLM system that combines knowledge tracing (MLFBK), retrieval-augmented generation, a web-content scraper, and GPT-4 to provide course-specific answers and personalized study recommendations.",
+      "use_case": "Studied as a Chrome browser plugin for undergraduate linear algebra learning, where students asked questions during online study sessions and received personalized post-session study material recommendations.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "In a two-week field study with 30 first-year undergraduate students in a linear algebra module, the TutorLLM group had the highest overall mean score (74.48) versus the hybrid LLM group (72.81) and general LLM group (71.97). However, ANOVA on final exam scores found no statistically significant difference across groups (F=0.795, p=0.462), although the authors note a trend toward improved performance and describe this as about a 5% improvement in quiz scores compared to general LLMs.",
+          "measure": "Daily quizzes and final comprehensive linear algebra exam scores",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=30"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "TutorLLM received generally positive usability ratings, with an average System Usability Scale (SUS) score of 76.35 and median 79. Score variability was moderate (SD=14.46), the Shapiro-Wilk test supported normality (p=0.721), and bootstrap analysis estimated the median's 95% confidence interval as 68.5 to 83.",
+          "measure": "System Usability Scale (SUS)",
+          "effect_size": "not_reported",
+          "confidence_interval": "95% CI for median: 68.5 to 83",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "User experience ratings for TutorLLM were positive, with average scores of 3.50 for Comfort Level, 3.40 for Continue Willingness, and 3.61 for User Satisfaction on 5-point scales. The paper also reports a 10% increase in user satisfaction compared to the general LLM approach and moderate positive correlations among CL, CW, and US (0.53, 0.45, and 0.40 respectively).",
+          "measure": "User Experience questionnaire: Comfort Level, Continue Willingness, and User Satisfaction",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Students using TutorLLM spent 36% more time engaging with the system than students using general LLMs. The authors interpret this as indicating higher satisfaction and willingness to invest time in the personalized system.",
+          "measure": "Duration of LLM usage / engagement time",
+          "effect_size": "36% more time",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    },
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction"
+      ],
+      "description": "OpenAI's large language model family used as a general-purpose conversational AI assistant.",
+      "use_case": "Used as the control condition via the general web version of ChatGPT-4 for students to ask questions during online linear algebra study, without personalized recommendations.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "The control group using the general web version of ChatGPT-4 had an overall mean score of 71.97, compared with 74.48 for TutorLLM and 72.81 for the hybrid LLM group. ANOVA on final exam scores showed no statistically significant variance across groups (F=0.795, p=0.462).",
+          "measure": "Daily quizzes and final comprehensive linear algebra exam scores",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=30"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is an empirical controlled field study with random allocation and a crossover element, but the sample is small (n=30) and the main academic outcome was not statistically significant. The design is stronger than descriptive work, yet falls short of high-certainty evidence.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "Reported impacts are promising but mostly unclear in magnitude, with no effect sizes reported and no statistically significant academic improvement on final exam analysis. Positive usability, satisfaction, and engagement findings support some practical benefit, but overall impact remains modest/uncertain.",
+  "citations": [
+    {
+      "title": "Large language models and the perils of their hallucinations",
+      "doi": null,
+      "year": 2023,
+      "venue": "Critical Care",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "An empirical evaluation of the system usability scale",
+      "doi": null,
+      "year": 2008,
+      "venue": "Intl. Journal of Human\u2013Computer Interaction",
+      "citation_level": 3,
+      "citation_context": "SUS instrument used in user study questionnaire"
+    },
+    {
+      "title": "The influence of motivation and comfort-level on learning to program",
+      "doi": null,
+      "year": 2005,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "comfort level construct for UX evaluation"
+    },
+    {
+      "title": "Language models are few-shot learners",
+      "doi": null,
+      "year": 2020,
+      "venue": "Advances in Neural Information Processing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A survey on evaluation of large language models",
+      "doi": null,
+      "year": 2024,
+      "venue": "ACM Transactions on Intelligent Systems and Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Big data analytics for educational recommender systems: A review and research agenda",
+      "doi": null,
+      "year": 2020,
+      "venue": "MIS quarterly",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Improving interpretability of deep sequential knowledge tracing models with question-centric cognitive representations",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A survey of large language models",
+      "doi": null,
+      "year": 2021,
+      "venue": "arXiv preprint arXiv:2109.11601",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Knowledge tracing: Modeling the acquisition of procedural knowledge",
+      "doi": null,
+      "year": 1994,
+      "venue": "User modeling and user-adapted interaction",
+      "citation_level": 2,
+      "citation_context": "foundational knowledge tracing concept framing personalization"
+    },
+    {
+      "title": "GPT-3: Its nature, scope, limits, and consequences",
+      "doi": null,
+      "year": 2020,
+      "venue": "Minds and Machines",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Willingness to communicate: can online chat help?",
+      "doi": null,
+      "year": 2006,
+      "venue": "International journal of applied linguistics",
+      "citation_level": 2,
+      "citation_context": "continue willingness construct for UX evaluation"
+    },
+    {
+      "title": "Performance of ChatGPT on USMLE: potential for AI-assisted medical education using large language models",
+      "doi": null,
+      "year": 2023,
+      "venue": "PLoS digital health",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "MonaCoBERT: Monotonic attention based ConvBERT for Knowledge Tracing",
+      "doi": null,
+      "year": 2022,
+      "venue": "arXiv preprint arXiv:2208.12615",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Retrieval-augmented generation for knowledge-intensive nlp tasks",
+      "doi": null,
+      "year": 2020,
+      "venue": "Advances in Neural Information Processing Systems",
+      "citation_level": 3,
+      "citation_context": "RAG approach used for response generation"
+    },
+    {
+      "title": "Deep Reinforcement Learning Approaches for Technology Enhanced Learning",
+      "doi": null,
+      "year": 2023,
+      "venue": "Durham University",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Broader and Deeper: A Multi-Features with Latent Relations BERT Knowledge Tracing Model",
+      "doi": null,
+      "year": 2023,
+      "venue": "European Conference on Technology Enhanced Learning",
+      "citation_level": 3,
+      "citation_context": "MLFBK knowledge tracing model implemented in system"
+    },
+    {
+      "title": "A survey of collaborative reinforcement learning: interactive methods and design patterns",
+      "doi": null,
+      "year": 2021,
+      "venue": "Proceedings of the 2021 ACM Designing Interactive Systems Conference",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Sim-GAIL: A generative adversarial imitation learning approach of student modelling for intelligent tutoring systems",
+      "doi": null,
+      "year": 2023,
+      "venue": "Neural Computing and Applications",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Towards student behaviour simulation: a decision transformer based approach",
+      "doi": null,
+      "year": 2023,
+      "venue": "International Conference on Intelligent Tutoring Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Lbkt: a lstm bert-based knowledge tracing model for long-sequence data",
+      "doi": null,
+      "year": 2024,
+      "venue": "International Conference on Intelligent Tutoring Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Integrating LSTM and BERT for Long-Sequence Data Analysis in Intelligent Tutoring Systems",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv preprint arXiv:2405.05136",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A survey of knowledge tracing",
+      "doi": null,
+      "year": 2021,
+      "venue": "arXiv preprint arXiv:2105.15106",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Machine learning based approaches for personalized recommender system: A survey",
+      "doi": null,
+      "year": 2019,
+      "venue": "Procedia computer science",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Bayesian knowledge tracing, logistic models, and beyond: an overview of learner modeling techniques",
+      "doi": null,
+      "year": 2017,
+      "venue": "User modeling and user-adapted interaction",
+      "citation_level": 2,
+      "citation_context": "BKT basis for skill mastery feature engineering"
+    },
+    {
+      "title": "Deep knowledge tracing",
+      "doi": null,
+      "year": 2015,
+      "venue": "Advances in neural information processing systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Introduction to recommender systems handbook",
+      "doi": null,
+      "year": 2011,
+      "venue": "Recommender systems handbook",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "K-means clustering: a half-century synthesis",
+      "doi": null,
+      "year": 2006,
+      "venue": "Brit. J. Math. Statist. Psych.",
+      "citation_level": 3,
+      "citation_context": "K-means updates student ability profile features"
+    },
+    {
+      "title": "BEKT: Deep Knowledge Tracing with Bidirectional Encoder Representations from Transformers",
+      "doi": null,
+      "year": 2021,
+      "venue": "Proceedings of the 29th International Conference on Computers in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Attention is all you need",
+      "doi": null,
+      "year": 2017,
+      "venue": "Advances in neural information processing systems",
+      "citation_level": 3,
+      "citation_context": "Transformer architecture basis for BERT-based KT encoder"
+    },
+    {
+      "title": "User experience evaluation methods: current state and development needs",
+      "doi": null,
+      "year": 2010,
+      "venue": "Proceedings of the 6th Nordic conference on human-computer interaction: Extending boundaries",
+      "citation_level": 3,
+      "citation_context": "UX questionnaire framework cited for evaluation"
+    },
+    {
+      "title": "Comparative Efficacy of 2D and 3D Virtual Reality Games in American Sign Language Learning",
+      "doi": null,
+      "year": 2024,
+      "venue": "The 31st IEEE Conference on Virtual Reality and 3D User Interfaces",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Enhancing User Experience in Chinese Initial Text Conversations with Personalised AI-Powered Assistant",
+      "doi": "10.1145/3613905.3651104",
+      "year": 2024,
+      "venue": "Extended Abstracts of the CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Impact of Personalised AI Chat Assistant on Mediated Human-Human Textual Conversations: Exploring Female-Male Differences",
+      "doi": null,
+      "year": 2024,
+      "venue": "Companion Proceedings of the 29th International Conference on Intelligent User Interfaces",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Exploring the Potential of Immersive Virtual Environments for Learning American Sign Language",
+      "doi": null,
+      "year": 2023,
+      "venue": "European Conference on Technology Enhanced Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Practical and ethical challenges of large language models in education: A systematic scoping review",
+      "doi": null,
+      "year": 2024,
+      "venue": "British Journal of Educational Technology",
+      "citation_level": 2,
+      "citation_context": "frames LLM limitations in education and motivation"
+    },
+    {
+      "title": "Deep learning based recommender system: A survey and new perspectives",
+      "doi": null,
+      "year": 2019,
+      "venue": "ACM computing surveys (CSUR)",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

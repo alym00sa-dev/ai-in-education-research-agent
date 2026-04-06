@@ -1,0 +1,70 @@
+{
+  "title": "Learning From Failure: Integrating Negative Examples when Fine-tuning Large Language Models as Agents",
+  "doi": null,
+  "year": 2024,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2402.11651v2",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper asks whether large language models can learn from failed interaction trajectories when they are fine-tuned to behave as agents. Prior agent-tuning work typically collects trajectories from a stronger model, filters out unsuccessful attempts, and fine-tunes smaller models only on successful examples. The authors argue that this discards useful information and wastes data, especially in low-resource settings.\n\nThe proposed approach, called negative-aware training (NAT), keeps both successful and unsuccessful trajectories but reformats them with explicit prompts that mark whether the following solution should be correct or incorrect. The method is evaluated on agent-style tasks involving mathematical reasoning, multi-hop question answering, and strategic question answering, using LLaMA-2-Chat 7B and 13B models fine-tuned on trajectories generated mainly by GPT-3.5. The agent setup uses ReAct-style interleaving of thoughts, actions, and observations with tools such as a calculator and search engine.\n\nResults show that incorporating negative examples can improve performance, but only if the model is told to distinguish positive from negative trajectories. NAT outperforms both training on positives only and naively mixing positive and negative samples. The gains are strongest when positive data are scarce and when negative data are high quality. The paper concludes that failed trajectories can be valuable supervision for agent tuning, and that simple prompt-based reformatting is an effective way to use them.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed-style empirical machine learning study with clear experiments, but it is not a K-12 education study and does not use educational populations or randomized schooling interventions. The evidence is indirect for education and primarily concerns benchmark performance in language-agent fine-tuning.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper shows moderate performance gains on reasoning benchmarks, but these are technical improvements rather than demonstrated classroom or student-learning impacts. For K-12 science use cases such as Khanmigo, the findings are suggestive but indirect and do not establish educational impact size in real school settings.",
+  "interventions": [
+    {
+      "intervention": "Other",
+      "confidence": 0.98,
+      "role": "primary",
+      "use_case": "negative-aware training of large language models as agents using positive and negative interaction trajectories, with prefix/suffix labels to distinguish correct vs incorrect tool-use and reasoning traces"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper reports improved math task accuracy when fine-tuning LLaMA-2 agents with negative-aware training (NAT) versus positive-only vanilla training and negative-unaware training (NUT). For LLaMA-2-7B with 2k positive examples, average accuracy rose from 55.90 (Vanilla) to 64.64 (NAT), an 8.74-point gain; with 5k positives, accuracy rose from 64.17 to 67.42 (+3.25).",
+        "measure": "Accuracy on GSM8K, ASDiv, SVAMP, and MultiArith math word problem benchmarks",
+        "study_size": "n_not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Other"
+    },
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.9,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper also finds improved performance on multi-hop and strategic question answering tasks, which are academic reasoning tasks outside math. On HotpotQA, NAT-2 improved EM/F1 over no-negative baselines (e.g., 28.80/41.37 for NAT vs 27.44/36.41 for Vanilla on 7B), and on StrategyQA NAT reached 65.80 vs 55.40 for Vanilla on 7B.",
+        "measure": "Exact match and F1 on HotpotQA; accuracy on StrategyQA",
+        "study_size": "n_not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Other"
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "lab",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

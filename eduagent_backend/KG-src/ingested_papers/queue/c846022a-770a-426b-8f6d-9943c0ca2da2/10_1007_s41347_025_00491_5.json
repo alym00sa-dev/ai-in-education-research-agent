@@ -1,0 +1,57 @@
+{
+  "title": "Comparing Large Language Model AI and Human-Generated Coaching Messages for Behavioral Weight Loss",
+  "doi": "10.1007/s41347-025-00491-5",
+  "year": 2025,
+  "venue": "Journal of Technology in Behavioral Science",
+  "url": "http://arxiv.org/abs/2312.04059v2",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Adult (non-academic)"
+  ],
+  "user_types": [],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper examines whether large language model (LLM) artificial intelligence, specifically ChatGPT, can generate behavioral weight loss coaching messages that are perceived as helpful as those written by a human coach. The authors address a practical problem in automated health coaching: existing rule-based or templated messages can feel repetitive, impersonal, and costly to scale, potentially limiting engagement and effectiveness.\n\nThe study used messages drawn from an ongoing year-long behavioral weight-loss trial (Project ReLearn) involving adults in the United States with overweight or obesity. Eighty-seven participants rated ten coaching messages across two phases: five human-written and five ChatGPT-generated messages. After Phase 1 feedback suggested the AI messages felt impersonal, overly negative, and overly data-driven, the prompt was revised to better convey empathy and encouragement, and a second set of messages was generated for Phase 2. Participants rated helpfulness, judged whether messages were AI- or human-written, and provided open-ended feedback.\n\nQuantitatively, ChatGPT messages improved from Phase 1 to Phase 2 and were rated nearly as helpful as human-written messages by the end of the study, though human messages still held a small advantage. Participants often could not reliably distinguish AI from human messages, suggesting the model could mimic human-like coaching fairly well. Qualitatively, however, participants preferred messages that felt more authentic, personalized, autonomy-supportive, and context-aware, and they were wary of formulaic, overly prescriptive, or overly enthusiastic wording. The authors conclude that LLMs show promise for scalable weight-loss coaching, but further prompt refinement and future trials are needed to evaluate actual clinical effectiveness.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed, small-sample comparative study with mixed quantitative and qualitative methods, but it is not an RCT and does not evaluate real-world outcomes beyond subjective ratings. It provides useful early evidence but has notable concerns about ecological validity and generalizability.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The study suggests modest-to-moderate perceived helpfulness gains after prompt refinement (e.g., d=0.15 in Phase 2 human-vs-AI comparison), but the outcome is subjective and limited to a weight-loss coaching context. The practical impact is promising but still unclear for broader deployment or behavioral outcomes.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "ChatGPT (GPT-3.5) generated behavioral weight-loss coaching messages from structured participant data and prompts, with prompt refinement across two phases to improve tone, empathy, and helpfulness."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "Participants rated ChatGPT-generated coaching messages as less helpful than human-written messages in Phase 1 (median 3 vs 4; t(234)=8.41, p<0.001, d=0.55), but after prompt revisions in Phase 2 the gap narrowed substantially (median 4 vs 4; t(199)=2.10, p=0.037, d=0.15). Qualitative feedback indicated the AI messages were more empathetic and personalized in Phase 2, yet still often felt formulaic, impersonal, and overly prescriptive.",
+        "measure": "Perceived helpfulness ratings of coaching messages on a 1\u20135 Likert scale; open-ended participant feedback",
+        "study_size": "n=87",
+        "effect_size": "d=0.55 (Phase 1 human vs AI); d=0.15 (Phase 2 human vs AI); d=0.48 (AI improvement from Phase 1 to Phase 2)",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "no_long_term_followup",
+    "single_site",
+    "self_reported_measures",
+    "non_representative_population"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "medium",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

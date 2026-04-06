@@ -1,0 +1,334 @@
+{
+  "title": "Students\u2019 Reliance on AI in Higher Education: Identifying Contributing Factors",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "https://arxiv.org/abs/2506.13845",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper examines why some higher-education students rely on AI appropriately while others overrely on it or underrely on it. The authors focus on undergraduate students\u2019 interactions with AI in programming tasks, asking which pre-existing factors (such as programming self-efficacy, programming literacy, need for cognition, AI literacy, and trust-related beliefs) and post-task perceptions (such as trust in the chatbot and satisfaction) are associated with different reliance patterns. The motivation is that AI tools are increasingly common in education, but uncritical acceptance of incorrect AI output may undermine learning and critical thinking.\n\nTo study this, the authors conducted a controlled experimental task paired with pre- and post-surveys. Fifty undergraduate students in computing-related courses completed 14 Python programming problems using a web-based AI assistant. The assistant provided 8 accurate recommendations and 6 deliberately misleading ones in randomized order. Initial responses were pre-programmed using a Wizard-of-Oz setup to keep conditions consistent, while follow-up questions were handled through OpenAI\u2019s gpt-3.5-turbo-0125 API. The study then calculated behavioral measures of appropriate reliance, overreliance, and underreliance based on whether students correctly accepted or rejected AI suggestions, and correlated these behaviors with survey-based measures.\n\nThe population consisted of undergraduate students with prior Python experience at the University of Florida in the United States. The context was a higher-education computing setting, likely administered through a controlled web-based task environment rather than regular classroom instruction. Participants were recruited through course announcements and received extra credit. No teacher-facing intervention was studied.\n\nThe main conclusions are that appropriate reliance was positively associated with programming self-efficacy, programming literacy, need for cognition, and more careful decision-making, while it was negatively associated with post-task trust and satisfaction. Overreliance was not predicted by pre-task traits, but was positively associated with trust in the chatbot, satisfaction, and students\u2019 own self-assessed overreliance. Underreliance was negatively associated with programming literacy, self-efficacy, and need for cognition. The authors argue that effective educational interventions should build domain knowledge, critical thinking, and reflective mechanisms that help students calibrate trust in AI rather than simply increasing comfort with AI tools.",
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "no_control_group",
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "feedback_evaluation"
+      ],
+      "description": "OpenAI's conversational large language model used for interactive assistance and explanations.",
+      "use_case": "A web-based programming-task platform used a Wizard-of-Oz chatbot with pre-programmed initial recommendations, while follow-up interactions were handled through OpenAI's API (gpt-3.5-turbo-0125, normalized to ChatGPT) as students solved Python problems and decided whether to follow accurate or misleading suggestions.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "In a controlled correlational study with undergraduate computing students (n=50), appropriate reliance on the ChatGPT-based assistant was positively associated with programming self-efficacy (r=0.333, p=.018), programming literacy (r=0.370, p=.008), need for cognition (r=0.371, p=.008), and decision-making process (r=0.312, p=.027). Appropriate reliance was negatively associated with final trust in the chatbot (r=-0.303, p=.032) and satisfaction (r=-0.292, p=.040).",
+          "measure": "Appropriate reliance percentage on programming problems; correlations with pre- and post-task measures",
+          "effect_size": "r=0.333; r=0.370; r=0.371; r=0.312; r=-0.303; r=-0.292",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=50"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Overreliance on the ChatGPT-based assistant was not significantly related to any pre-survey measures, but was positively associated with final trust in the chatbot (r=0.441, p=.001), satisfaction (r=0.348, p=.013), and overreliance self-assessment (r=0.355, p=.011). Decision-making process showed a negative but non-significant association with overreliance (r=-0.265, p=.063).",
+          "measure": "Overreliance percentage on misleading AI recommendations; correlations with pre- and post-task measures",
+          "effect_size": "r=0.441; r=0.348; r=0.355; r=-0.265",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=50"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Underreliance on the ChatGPT-based assistant was negatively associated with programming self-efficacy (r=-0.308, p=.030), need for cognition (r=-0.312, p=.027), and programming literacy (r=-0.439, p=.001), with programming literacy showing the strongest association. General trust in AI, concerns for trust, AI literacy, and all post-task measures were not significantly correlated with underreliance.",
+          "measure": "Underreliance percentage on helpful AI recommendations; correlations with pre- and post-task measures",
+          "effect_size": "r=-0.308; r=-0.312; r=-0.439",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=50"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a primary empirical study with a controlled task, but the analysis is correlational rather than causal and uses a small pilot sample (n=50). The paper reports associations, not intervention effects on learning outcomes.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The reported associations are moderate in magnitude for reliance behaviors, but impact on student learning is indirect and unclear. No standardized learning gains or causal effect estimates are reported.",
+  "citations": [
+    {
+      "title": "Impact of artificial intelligence on human loss in decision making, laziness and safety in education",
+      "doi": null,
+      "year": 2023,
+      "venue": "Humanities and Social Sciences Communications",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Students\u2019 use of large language models in engineering education: A case study on technology acceptance, perceptions, efficacy, and detection chances",
+      "doi": null,
+      "year": 2023,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "To trust or to think: cognitive forcing functions can reduce overreliance on ai in ai-assisted decision-making",
+      "doi": null,
+      "year": 2021,
+      "venue": "Proceedings of the ACM on Human-computer Interaction",
+      "citation_level": 2,
+      "citation_context": "cognitive forcing functions reduce overreliance"
+    },
+    {
+      "title": "The need for cognition",
+      "doi": null,
+      "year": 1982,
+      "venue": "Journal of Personality and Social Psychology",
+      "citation_level": 2,
+      "citation_context": "defines need for cognition construct"
+    },
+    {
+      "title": "Extended tam based acceptance of ai-powered chatgpt for supporting metacognitive self-regulated learning in education: A mixed-methods study",
+      "doi": null,
+      "year": 2024,
+      "venue": "Heliyon",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Chatgpt and other ai users: Innovative and creative utilitarian value and mindset shift",
+      "doi": null,
+      "year": 2023,
+      "venue": "Journal of Namibian Studies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Expanding explainability: Towards social transparency in ai systems",
+      "doi": null,
+      "year": 2021,
+      "venue": "Proceedings of the 2021 CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Do as ai say: susceptibility in deployment of clinical decision-aids",
+      "doi": null,
+      "year": 2021,
+      "venue": "NPJ Digital Medicine",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Human trust in artificial intelligence: Review of empirical research",
+      "doi": null,
+      "year": 2020,
+      "venue": "Academy of Management Annals",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Automation bias: a systematic review of frequency, effect mediators, and mitigators",
+      "doi": null,
+      "year": 2012,
+      "venue": "Journal of the American Medical Informatics Association",
+      "citation_level": 2,
+      "citation_context": "automation bias framing in AI reliance"
+    },
+    {
+      "title": "Cognitive forcing for better decision-making: Reducing overreliance on ai systems through partial explanations",
+      "doi": null,
+      "year": 2025,
+      "venue": "Proceedings of the ACM on Human-Computer Interaction",
+      "citation_level": 2,
+      "citation_context": "partial explanations to reduce overreliance"
+    },
+    {
+      "title": "Thinking, fast and slow",
+      "doi": null,
+      "year": 2011,
+      "venue": "Macmillan",
+      "citation_level": 2,
+      "citation_context": "dual process theory framing reliance decisions"
+    },
+    {
+      "title": "Generative-ai, a learning assistant? factors influencing higher-ed students\u2019 technology acceptance",
+      "doi": null,
+      "year": 2024,
+      "venue": "Electronic Journal of e-Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "How much information? effects of transparency on trust in an algorithmic interface",
+      "doi": null,
+      "year": 2016,
+      "venue": "Proceedings of the 2016 CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Trust and reliance on ai\u2014an experimental study on the extent and costs of overreliance on ai",
+      "doi": null,
+      "year": 2024,
+      "venue": "Computers in Human Behavior",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Appropriate reliance on artificial intelligence in radiology education",
+      "doi": null,
+      "year": 2023,
+      "venue": "Journal of the American College of Radiology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Factors influencing college students\u2019 use of ai chatbots for learning\u2013empirical study based on tam extended model",
+      "doi": null,
+      "year": 2024,
+      "venue": "2024 5th International Conference on Artificial Intelligence and Electromechanical Automation (AIEA)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The critical role of trust in adopting ai-powered educational technology for learning: An instrument for measuring student perceptions",
+      "doi": null,
+      "year": 2025,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Complacency and bias in human use of automation: An attentional integration",
+      "doi": null,
+      "year": 2010,
+      "venue": "Human Factors",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Humans and automation: Use, misuse, disuse, abuse",
+      "doi": null,
+      "year": 1997,
+      "venue": "Human Factors",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A proposed model of learners\u2019 acceptance and trust of pedagogical conversational ai",
+      "doi": "10.1145/3657604.3664682",
+      "year": 2024,
+      "venue": "Proceedings of the Eleventh ACM Conference on Learning@ Scale",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Student perspectives on the benefits and risks of ai in education",
+      "doi": null,
+      "year": 2025,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Understanding human-ai trust in education",
+      "doi": null,
+      "year": 2025,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "L2 student engagement with automated feedback on writing: Potential for learning and issues of trust",
+      "doi": null,
+      "year": 2021,
+      "venue": "Journal of Second Language Writing",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Investigating User Trust in Context-Aware Recommender Systems in Search as Learning",
+      "doi": null,
+      "year": 2023,
+      "venue": "University of Florida",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Artificial intelligence (ai)-powered virtual assistants and their effect on human productivity and laziness: Study on students of delhi-ncr (india) & fujairah (uae)",
+      "doi": null,
+      "year": 2023,
+      "venue": "Journal of Content, Community and Communication",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Assessed by machines: Development of a tam-based tool to measure ai-based assessment acceptance among students",
+      "doi": null,
+      "year": 2020,
+      "venue": "International Journal of Interactive Multimedia and Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Explanations can reduce overreliance on ai systems during decision-making",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the ACM on Human-Computer Interaction",
+      "citation_level": 2,
+      "citation_context": "cost-benefit verification and explanation framing"
+    },
+    {
+      "title": "Transparency and the black box problem: Why we do not trust ai",
+      "doi": null,
+      "year": 2021,
+      "venue": "Philosophy & Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The effects of over-reliance on ai dialogue systems on students\u2019 cognitive abilities: a systematic review",
+      "doi": null,
+      "year": 2024,
+      "venue": "Smart Learning Environments",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Effect of confidence and explanation on accuracy and trust calibration in ai-assisted decision making",
+      "doi": null,
+      "year": 2020,
+      "venue": "Proceedings of the 2020 Conference on Fairness, Accountability, and Transparency",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

@@ -1,0 +1,135 @@
+{
+  "title": "Distilling Feedback into Memory-as-a-Tool",
+  "doi": null,
+  "year": 2026,
+  "venue": "MemAgents Workshop, ICLR 2026",
+  "url": "http://arxiv.org/abs/2601.05960v2",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper proposes a framework for amortizing inference-time reasoning in large language models by converting transient feedback into persistent, retrievable guidelines stored in a file-based memory system. The core idea is that instead of repeatedly performing self-critique on each new task, the model distills feedback from one interaction into structured memory files and later rereads those lessons when facing related tasks.\n\nThe approach is evaluated on the Rubric Feedback Bench, a newly introduced benchmark of 42 rubric-based scenarios spanning creative writing, analytical writing, behavioral/persona-following tasks, and ethical reasoning. The experiments compare a zero-shot baseline, an inference-time self-critique baseline, and the proposed memory-augmented method across three frontier models: Claude Sonnet 4.5, GPT-5.1, and Gemini 3 Pro. The setup is not a human-learner study; it is an LLM-agent evaluation in which another model generates rubric-based feedback and scores.\n\nResults show that the memory-based approach rapidly improves over repeated tasks, often matching or approaching the self-critique baseline while substantially reducing inference cost. In a longer mixed-task sequence, the memory-augmented agent outperforms a no-memory baseline and demonstrates that feedback can be consolidated across tasks. The paper concludes that explicit, interpretable memory files can preserve useful critiques as reusable guidelines, yielding a favorable cost-performance tradeoff, although scalability and retrieval complexity remain open issues.",
+  "limitations": [
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "identified_tools": [
+    {
+      "name": "Claude",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "feedback_evaluation",
+        "personalization_adaptation"
+      ],
+      "description": "Anthropic's Claude family of large language models, used here in an agentic setup with tool calling and persistent file-based memory.",
+      "use_case": "Evaluated as one of three frontier LLM agents (alongside GPT-5.1 and Gemini 3 Pro) in a memory-augmented feedback-learning framework. The paper tested Claude Sonnet 4.5 with zero-shot, self-critique, and memory-plus-feedback configurations on the Rubric Feedback Bench and a long-horizon mixed-task sequence.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0000 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "On the Rubric Feedback Bench continual-learning setup, the memory-plus-feedback configuration for Claude Sonnet 4.5 improved over the zero-shot baseline and matched or exceeded the self-critique baseline after two rounds of feedback. The paper reports that all models benefited from memory, with Claude showing the steepest learning curve, but it does not report task-level n or formal statistical tests.",
+          "measure": "Mean rubric-based judge scores across sequential tasks on Rubric Feedback Bench",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "15 total examples per model"
+        },
+        {
+          "outcome_category": "Academic \u0000 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In the long-horizon mixed-task experiment (H = 12), Claude Sonnet 4.5 with memory and feedback achieved a higher final aggregated score than the baseline without memory, with lower variance. The paper reports scores of 0.78 \u0000 0.10 with memory versus 0.52 \u0000 0.25 without memory, but these are judge scores rather than student outcomes and no inferential statistics are reported.",
+          "measure": "Aggregated judge scores on final tasks of each category in mixed-task sequence",
+          "effect_size": "0.26",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    },
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "feedback_evaluation",
+        "personalization_adaptation"
+      ],
+      "description": "OpenAI's GPT family of large language models, used here as an agentic LLM with tool access and persistent memory.",
+      "use_case": "Evaluated as one of the frontier models in the same memory-augmented framework, using the GPT-5.1 variant with zero-shot, self-critique, and memory-plus-feedback settings.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0000 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The paper reports that GPT-5.1 benefited from the memory mechanism on the Rubric Feedback Bench, with memory-plus-feedback improving over the zero-shot baseline and approaching the self-critique baseline after iterative feedback. Results are described only at the aggregate trajectory level; the paper does not provide GPT-specific numeric effect sizes, confidence intervals, or sample sizes beyond the 15-example per-model setup.",
+          "measure": "Mean rubric-based judge scores across sequential tasks on Rubric Feedback Bench",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "15 total examples per model"
+        },
+        {
+          "outcome_category": "Academic \u0000 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Across the long-horizon mixed-task experiment, the memory-augmented GPT agent is described as showing substantially better performance than the no-memory baseline, consistent with the overall framework result. The paper does not report GPT-specific final scores or inferential statistics for this condition.",
+          "measure": "Aggregated judge scores on long-horizon mixed-task sequence",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    },
+    {
+      "name": "Gemini",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "feedback_evaluation",
+        "personalization_adaptation"
+      ],
+      "description": "Google's Gemini family of large language models, used here as an agentic LLM with tool access and persistent memory.",
+      "use_case": "Evaluated as one of the three frontier models in the memory-as-a-tool framework, using the Gemini 3 Pro variant under the same zero-shot, self-critique, and memory-plus-feedback conditions.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0000 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The paper reports that Gemini 3 Pro benefited from the memory mechanism on the Rubric Feedback Bench, with performance increasing after feedback and eventually matching or exceeding self-critique on later rounds. No Gemini-specific numerical effect sizes, confidence intervals, or sample sizes are reported beyond the shared experimental design.",
+          "measure": "Mean rubric-based judge scores across sequential tasks on Rubric Feedback Bench",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "15 total examples per model"
+        },
+        {
+          "outcome_category": "Academic \u0000 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In the longer mixed-task sequence, the memory-based agent is reported to generalize across heterogeneous tasks better than the baseline without memory. The paper does not provide separate Gemini-only final scores or statistical tests.",
+          "measure": "Aggregated judge scores on long-horizon mixed-task sequence",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a conference paper on an LLM memory framework, not a K-12 teacher coaching study. It reports benchmark scores from synthetic rubric-based tasks rather than classroom, teacher-practice, or student-outcome evidence, and does not use a rigorous educational field-study design.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The reported benchmark gains are moderate in at least one comparison (e.g., 0.78 vs 0.52 on the mixed-task score), but they reflect artifact quality on an AI evaluation benchmark rather than demonstrated instructional impact in K-12 settings.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

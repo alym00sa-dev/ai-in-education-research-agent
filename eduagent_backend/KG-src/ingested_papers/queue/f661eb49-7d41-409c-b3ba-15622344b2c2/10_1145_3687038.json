@@ -1,0 +1,102 @@
+{
+  "title": "Impact of Guidance and Interaction Strategies for LLM Use on Learner Performance and Perception",
+  "doi": "10.1145/3687038",
+  "year": 2024,
+  "venue": "Proc. ACM Hum.-Comput. Interact. (CSCW2)",
+  "url": "https://doi.org/10.48550/arxiv.2310.13712",
+  "source_db": "openalex_search",
+  "populations": [
+    "Undergraduate",
+    "Adult (non-academic)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Randomized Controlled Trial (RCT)",
+  "extended_summary": "This paper examines how different guidance strategies shape learner interactions with large language models (LLMs) used for educational support. The authors focus on a key question in AI-in-education literature: when the AI intervention is present, what should the non-AI baseline look like, and which conventional tutoring-style supports are most effective for guiding student use of the system. They study four pedagogically motivated guidance strategies: lists of suggestions, example-based instruction, metacognitive questioning, and a solve-first-then-refine approach.\n\nThe paper reports two studies. Study 1 was a formative classroom deployment in an undergraduate computer science databases course at a North American university, where 145 students used a GPT-3-based chatbot while completing assignment problems. Study 2 was a randomized controlled online experiment on Prolific with 356 adults solving elementary- and high-school-level math problems with an LLM chatbot. In Study 2, the authors also compared a prompted LLM with an unprompted one, while participants received one of the guidance strategies or no instruction.\n\nAcross both studies, the intervention primarily affected interaction patterns and confidence more than objective task performance. Structured guidance reduced irrelevant or copy-pasted queries and helped steer students toward more productive engagement with the chatbot, but effects on task accuracy were limited. The authors conclude that pedagogically informed guidance can improve how learners use LLM tutors, yet the benefits depend on how instruction is framed and on whether learners are encouraged to solve independently before consulting the model.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed empirical paper with two randomized experiments, but it is partly formative and exploratory, and several key findings are descriptive or null without full inferential detail. The design is fairly strong, yet the evidence is not a clean, large-scale RCT establishing causal effects for a single intervention.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper suggests useful design guidance for LLM tutoring interactions, but main performance effects are null or mixed and the observed changes are mostly in intermediate perceptions and interaction quality. That makes the overall educational impact promising but modest and still uncertain.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "GPT-3-based chatbot tutor used for guided problem solving in a databases assignment and math problems, with system prompts/pre-prompts and pedagogically informed guidance strategies for student interaction."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "No Effect",
+        "finding_summary": "In the Prolific study (n=356), learner+AI performance on 4 multiple-choice math problems did not differ significantly by guidance type (Kruskal-Wallis \u03c7\u00b2(4)=0.13, p=1) or by whether the LLM was prompted vs. unprompted (Mann-Whitney W=15025, p=0.37). Exploratory subgroup patterns suggested G2 example-based instruction and G3 metacognitive questioning may help with an unprompted LLM, but the main inferential result was null.",
+        "measure": "Accuracy / average score on 4 elementary- and high-school-level math questions",
+        "study_size": "n=356",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.88,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "In the classroom study (n=145), homework performance on a databases assignment varied by guidance condition, with G4 solve-then-refine appearing less helpful for homework score than G1, G2, and G3. The paper reports descriptive means rather than a single summary effect size, so the evidence here is pattern-based and not a single confirmatory estimate.",
+        "measure": "Homework score on database assignment; final exam score on isomorphic database questions",
+        "study_size": "n=145",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.9,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The paper directly studied metacognitive/help-seeking behaviors such as query quality, rephrasing, and reduction of unrelated or verbatim copy-paste prompts. Structured guidance (G1, G3, G4) reduced unrelated queries and verbatim copying, while G2 example-based instruction sometimes increased unrelated queries or chatbot testing behavior.",
+        "measure": "First-query coding categories; incidence of unrelated queries, verbatim copy-paste, rephrased questions, and clarification requests",
+        "study_size": "n=145 (classroom); n=356 (controlled study for related confidence measures)",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.9,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "Across the controlled study (n=356), confidence in using LLMs increased immediately after guidance (Mean=5.19 from 4.51) but then dropped after task completion (Mean=4.57), with Friedman \u03c7\u00b2(2)=72.82, p<0.001. Trust in LLM responses also declined after use (Mean=3.49 vs. 4.36 initial; Friedman \u03c7\u00b2(2)=80.31, p<0.001), while self-confidence in solving math stayed largely stable (5.04 to 5.16, p=0.079).",
+        "measure": "Self-reported confidence in using LLMs, trust in LLM responses, and confidence in math-solving ability",
+        "study_size": "n=356",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "SD=1.49 initial confidence in LLM use; SD=1.66 after guidance; SD=1.81 after use; SD=1.36 initial trust; SD=1.89 after guidance; SD=1.80 after use; SD=1.41 pre-task math confidence; SD=1.62 post-task math confidence"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "short_duration",
+    "single_site",
+    "self_reported_measures",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "blended",
+  "teacher_training": "yes",
+  "implementation_fidelity": "medium",
+  "study_country": "Canada",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

@@ -1,0 +1,79 @@
+{
+  "title": "Predicting the Quality of Revisions in Argumentative Writing",
+  "doi": null,
+  "year": 2023,
+  "venue": null,
+  "url": "http://arxiv.org/abs/2306.00667v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Elementary (PreK-5th)",
+    "Middle School (6th-8th)",
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper addresses the problem of automatically predicting whether a student\u2019s argumentative revision is successful or unsuccessful. The authors argue that revision quality depends on argumentative context: the same added sentence may improve one essay but weaken another depending on surrounding claims, evidence, and reasoning. Their research questions ask whether argumentative contexts help revision-quality prediction, which type of context is most useful, and whether ChatGPT prompts can generate these contexts effectively.\n\nThe approach combines annotated student revision data with large language model prompting. The authors define three kinds of argumentative context\u2014claim, reasoning, and evidence\u2014and use ChatGPT, including zero-shot Chain-of-Thought prompts, to extract or summarize those contexts from essays. These generated contexts are then paired with student revisions and fed into a DistilRoBERTa-based classifier to predict whether revisions are successful or unsuccessful. The study compares these context-based methods against prior location-based baselines that use nearby sentences around a revision.\n\nThe empirical data come from two corpora: 596 essays from grade 5\u20136 students responding to automated formative feedback in an Automated Writing Evaluation system, and an existing benchmark of 60 college students\u2019 argumentative essays. The elementary students revised essays written for Response to Text Assessment prompts about the Millennium Villages Project or Space Exploration; the college corpus involved essays about technology proliferation revised after feedback. The paper reports 10-fold cross-validation results on annotated sentence-level revisions of evidence and reasoning.\n\nThe main conclusion is that argumentative contexts generated with ChatGPT improve prediction of revision quality over location-based baselines in both elementary and college corpora. In the elementary corpus, reasoning-context prompts were especially helpful, and Chain-of-Thought prompting generally outperformed single-pass prompting by small margins. The study does not evaluate student literacy gains from using generative AI directly; instead, it shows that generative AI can support automated assessment of revision quality within writing-feedback systems. The authors conclude that argumentative context is a promising direction for improving automated writing evaluation and feedback on student revisions.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical modeling study on K-12 student writing data, but it does not test effects of the AI system on student literacy outcomes through an RCT or quasi-experiment. The evidence is primarily benchmark/classification performance on annotated essays, so it fits correlational/developmental evidence rather than causal impact evidence.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The study reports positive improvements in automated prediction accuracy for revision quality, but no direct effect sizes or demonstrated student outcome gains after using the system. Impact on learners is therefore promising but unclear.",
+  "interventions": [
+    {
+      "intervention": "Automated Feedback System",
+      "confidence": 0.95,
+      "role": "primary",
+      "use_case": "LLM-assisted prediction of the quality of students\u2019 argumentative writing revisions, intended to support automated writing evaluation and formative feedback on evidence and reasoning revisions in grade 5-6 essays."
+    },
+    {
+      "intervention": "AI Writing / Language Tool",
+      "confidence": 0.76,
+      "role": "secondary",
+      "use_case": "Use of ChatGPT with single and chain-of-thought prompts to generate argumentative context summaries (claims, reasoning, evidence) that improve automated assessment of revision quality in student essays."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Literacy",
+      "confidence": 0.89,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "On an elementary corpus of 596 students\u2019 grade 5-6 argumentative essays, LLM-generated argumentative contexts improved prediction of successful vs. unsuccessful writing revisions over location-based baselines. For all reasoning and evidence revisions, the best model (AC-Reasoning with CoT prompts) reached macro F1=70.81 versus 68.06 for the strong baseline; for reasoning revisions F1=72.63 versus 69.71; for evidence revisions F1=67.16 versus 64.71. These are improvements in automated classification of revision quality rather than direct gains in students\u2019 writing performance.",
+        "measure": "Macro precision, recall, and F1 for classifying revision quality in argumentative writing revisions",
+        "study_size": "n=596 elementary students; 3267 annotated elementary revisions",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.72,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper shows that using ChatGPT-generated argumentative contexts can improve automated detection of revision quality compared with standard short- and long-context baselines, potentially making automated writing evaluation more informative for formative feedback workflows. However, no direct measures of teacher time savings, grading speed, or workflow efficiency were reported; the evidence is based on model-performance gains only.",
+        "measure": "Model performance improvement for automated revision-quality prediction as a proxy for improved feedback-system capability",
+        "study_size": "n=596 elementary students; 60 college students benchmarked secondarily",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "implementation_fidelity_not_reported",
+    "no_control_group",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

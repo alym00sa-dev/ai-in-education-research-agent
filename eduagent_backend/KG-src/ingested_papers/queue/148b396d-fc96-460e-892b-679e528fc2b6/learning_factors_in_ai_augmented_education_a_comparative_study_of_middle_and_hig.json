@@ -1,0 +1,95 @@
+{
+  "title": "Learning Factors in AI-Augmented Education: A Comparative Study of Middle and High School Students",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv preprint",
+  "url": "http://arxiv.org/abs/2512.21246v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Middle School (6th-8th)",
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper examines how four learning-related perception dimensions\u2014experience, clarity, comfort, and motivation\u2014relate to one another in AI-mediated educational settings, and whether those relationships differ between middle school and high school students. The authors focus on a gap in prior AI-in-education research: most studies have centered on higher education, while K-12 learners and developmental differences have received less attention.\n\nThe study was conducted in authentic extracurricular computer science courses, where AI tools were used as part of programming-related learning activities. Middle school students used Teachable Machine in an introductory AI course, while high school students used large language models such as Gemini and Claude for vibe coding and prompt-based programming support. Data came from a 17-item questionnaire with Likert-scale and open-ended items, and the authors analyzed the results using correlation analysis, Mann-Whitney U tests, and text mining of student reflections.\n\nParticipants were 53 students from Italy: 25 middle school students and 28 high school students. The study is cross-sectional and relies on self-reported perceptions rather than direct learning-performance measures. The main finding is that the two age groups exhibit different correlation structures: middle school students show tightly linked, holistic evaluations across the four dimensions, whereas high school students show weaker and more differentiated relationships, suggesting a more critical and modular appraisal of AI-supported learning. The authors conclude that AI-supported educational design should be developmentally sensitive, with clearer scaffolding for younger learners and more targeted support for usability and motivation in older learners.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a cross-sectional correlational study with text mining and Mann-Whitney U tests, not an experimental design. It provides useful descriptive evidence about student perceptions, but it does not establish causal effects on learning outcomes.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper suggests positive perceived usability and learning support, but the evidence is based on perceptions rather than measured achievement gains. Any impact is therefore modest and unclear for actual K-12 learning outcomes.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.92,
+      "role": "primary",
+      "use_case": "AI-augmented programming learning activities for middle and high school students, including use of LLMs such as Gemini and Claude for vibe coding, prompting practice, code explanation, and support during exercises"
+    },
+    {
+      "intervention": "Computer-Assisted Instruction (CAI)",
+      "confidence": 0.66,
+      "role": "secondary",
+      "use_case": "Structured AI-supported classroom activities in extracurricular computer science courses, including hands-on classification tasks with Teachable Machine and chatbot interaction as part of the final instructional module"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Students reported generally positive experiences with AI tools across experience, comfort, and motivation items. In the only statistically significant group difference, high school students rated ease of use higher than middle school students (M=3.68 vs 3.16; U=192.00, p=0.0013), suggesting better perceived usability among older learners.",
+        "measure": "Likert-scale perceptions of experience, ease of use, comfort, motivation, and willingness to use AI again",
+        "study_size": "n=53",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.86,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The study found age-differentiated perception structures relevant to metacognition and evaluative judgment. Middle school students showed strong positive correlations across dimensions (e.g., Experience\u2013Clarity rho=0.79; Clarity\u2013Motivation rho=0.60), while high school students showed weaker or near-zero associations for several pairs (e.g., Experience\u2013Motivation rho=0.02), indicating more differentiated evaluation rather than uniformly positive appraisal.",
+        "measure": "Spearman correlations among learning-perception dimensions (experience, clarity, comfort, motivation)",
+        "study_size": "n=53",
+        "effect_size": "rho=0.79 (middle school Experience\u2013Clarity); rho=0.02 (high school Experience\u2013Motivation)",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.83,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Open-ended responses indicated that students perceived the AI tools as supporting learning in programming contexts. Middle school students emphasized understanding and general learning support, while high school students focused more on explanation, code, and analytical reasoning; however, these were qualitative pattern findings rather than causal learning gains.",
+        "measure": "Open-ended reflections on how AI influenced learning in programming exercises",
+        "study_size": "n=53",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "classroom",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Italy",
+  "study_region": "Europe",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

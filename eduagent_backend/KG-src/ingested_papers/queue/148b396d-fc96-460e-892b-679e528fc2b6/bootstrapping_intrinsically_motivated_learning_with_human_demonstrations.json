@@ -1,0 +1,68 @@
+{
+  "title": "Bootstrapping Intrinsically Motivated Learning with Human Demonstrations",
+  "doi": null,
+  "year": 2011,
+  "venue": "IEEE International Conference on Development and Learning",
+  "url": "http://arxiv.org/abs/1112.1937v1",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses how to combine intrinsic motivation with social guidance so that a learning system can both explore autonomously and benefit from human demonstrations. The authors argue that purely human-guided learning can be too dependent on teacher input, while purely intrinsic-motivation approaches can struggle in high-dimensional or unbounded spaces. Their goal is to design an architecture that leverages both mechanisms to improve learning efficiency and coverage of the task space.\n\nThe proposed approach, Socially Guided Intrinsic Motivation by Demonstration (SGIM-D), merges the SAGG-RIAC intrinsic motivation algorithm with a demonstration-based social learning module. The architecture operates at two levels: a higher level that selects goals based on competence progress and integrates teacher demonstrations, and a lower level that tries to reach those goals through exploration and imitation. The paper also analyzes several possible roles for the teacher (feedback, means, contexts, goals, or means-plus-goals) and chooses demonstrations of both action and goal given at regular intervals.\n\nThe empirical evaluation is conducted in simulation with a 6-degree-of-freedom robot arm learning a fishing task in a continuous, high-dimensional action space. The robot learns to map movement parameters to hook positions, comparing SGIM-D against random exploration, intrinsic motivation alone (SAGG-RIAC), and learning from demonstrations alone. The results show that intrinsic motivation improves exploration over random action selection, and that SGIM-D further improves precision while helping the robot discover otherwise neglected subspaces. The authors conclude that even sparse demonstrations can bootstrap autonomous exploration and improve performance, but they note that real-world human-teacher studies are still needed.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a peer-reviewed conference paper, but it is a methodology/algorithm paper rather than a study of educational intervention effects in K-12 settings. Evidence is based on a robot simulation with no experimental control design aimed at learner outcomes, so it does not meet credibility criteria for K-12 impact evidence.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "The paper does not evaluate direct educational impact on students; it tests a robotic learning algorithm in simulation. Any relevance to K-12 science tutoring is indirect and speculative, with no measurable student effect size.",
+  "interventions": [
+    {
+      "intervention": "Robot / Embodied Tutor",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "Developmental robot arm learning a fishing skill via socially guided intrinsic motivation and demonstration, combining autonomous exploration with human-provided action/goal demonstrations."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.5,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "This paper is a technical simulation study, not a learner-outcome study in schools. It reports that SGIM-D improved the robot\u2019s task performance in a continuous 24-dimensional action space compared with random exploration and learning by demonstration alone, but it does not report standard effect sizes or confidence intervals. The closest measured outcome is task accuracy in a fishing simulation, assessed by mean distance to benchmark goals over 5,000 movements.",
+        "measure": "Mean distance to benchmark goal points in the fishing simulation; coverage of explored task space",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.7,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The algorithm is designed to increase autonomous exploration, adaptability, and interest-driven learning, which are durable-skill-like capacities in the robot. In simulation, SGIM-D expanded exploration into previously ignored subspaces and improved precision over random exploration, but these are algorithmic learning behaviors rather than human student outcomes. No effect size or CI is reported.",
+        "measure": "Exploration diversity, competence progress, and mean error on benchmark goals",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "single_site",
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "lab",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "France",
+  "study_region": "Europe",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

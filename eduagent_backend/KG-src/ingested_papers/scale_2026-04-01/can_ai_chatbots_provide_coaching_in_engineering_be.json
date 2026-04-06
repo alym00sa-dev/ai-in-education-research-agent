@@ -1,0 +1,418 @@
+{
+  "title": "Can AI Chatbots Provide Coaching in Engineering? Beyond Information Processing Toward Mastery",
+  "doi": null,
+  "year": 2026,
+  "venue": "arXiv",
+  "url": "https://arxiv.org/abs/2601.03693",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate",
+    "Graduate / Doctoral",
+    "Adult (non-academic)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper examines whether AI chatbots can function as coaching tools in engineering education, with a particular focus on the boundary between technical support and deeper developmental guidance. The authors argue that engineering education is being reshaped by two simultaneous trends: the erosion of traditional apprenticeship-style mentoring and the rapid uptake of generative AI as an informal support tool. The central research questions ask how students and faculty perceive AI chatbots' role across technical, reflective, interpersonal, and ethical coaching domains, and what conditions around privacy, accountability, and transparency are required for acceptable use.\n\nThe empirical component is a mixed-methods perception study using surveys and brief open-ended responses. The study involved 75 engineering students and 7 engineering faculty members from Information Technology University in Pakistan. Survey items measured perceived usefulness across task domains, trust and relational boundaries, risk perception, and institutional safeguards. The study did not test a deployed chatbot intervention on learning outcomes; instead, it investigated stakeholder attitudes toward AI coaching before formal institutional integration. Quantitative analyses included descriptive statistics, composite scales, reliability analysis, and Welch's t-tests, while qualitative responses were thematically summarized.\n\nFindings show conditional acceptance of AI coaching. Both students and faculty rated AI similarly useful overall for convergent tasks such as technical problem solving, concept clarification, and structured post-failure reflection. However, faculty perceived significantly greater risks than students, especially around over-trust, de-skilling, privacy, and inappropriate use in emotionally or ethically sensitive situations. Participants drew a strong boundary between acceptable AI uses for procedural and cognitive support versus unacceptable use for moral judgment, emotional support, and conflict management. Both groups strongly preferred AI as a supplement to, not a replacement for, human mentorship.\n\nThe paper concludes that generative AI can scale access to certain forms of engineering support, but it cannot replicate the embodied, relational, and value-laden dimensions of human coaching. The authors propose a multiplex coaching framework in which AI handles convergent, well-structured support tasks while human mentors remain responsible for divergent developmental work involving empathy, ethics, and contextual judgment. They also emphasize privacy-first governance, transparency, faculty preparation, and expert-in-the-loop design as prerequisites for responsible adoption.",
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_control_group",
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Pakistan",
+  "study_region": "South Asia",
+  "identified_tools": [
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "tutoring_instruction",
+        "personalization_adaptation"
+      ],
+      "description": "Generic generative AI chatbots used as coaching or support systems for learners, without a single specific product being the evaluated intervention.",
+      "use_case": "Studied as an AI coaching chatbot in engineering education to assess student and faculty perceptions of its usefulness, risks, privacy requirements, and appropriate boundaries across convergent technical tasks versus divergent emotional/ethical/interpersonal tasks.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "In a mixed-methods perception study, students and faculty rated the perceived utility of AI coaching similarly for technical/academic support tasks: students M=3.84 (SD=0.62) and faculty M=3.83 (SD=0.58), with no significant between-group difference, t(9.85)=0.02, p=0.985, Cohen\u2019s d=0.02. Item-level results indicated higher acceptance for convergent tasks such as getting unstuck on technical problems and concept clarification (both reported as M>4.0), with lower trust for divergent tasks such as team conflict management (students M=3.10, SD=1.08).",
+          "measure": "Perceived utility/usefulness of AI coaching across task domains on 5-point Likert scales; composite utility and item-level ratings",
+          "effect_size": "Cohen\u2019s d=0.02",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=82 (75 students, 7 faculty)"
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "Participants expressed strong skepticism about AI chatbots for emotional, moral, and contextual coaching. Faculty showed 0% trust in AI for emotional support roles, and students also preferred human mentors even when AI was available (reported as M>4.0 on mentor preference items), indicating AI was not accepted as a substitute for human support in affective and judgment-laden domains.",
+          "measure": "Trust/acceptance for emotional support, moral guidance, and human mentor preference on 5-point Likert items plus qualitative responses",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=82 (75 students, 7 faculty)"
+        },
+        {
+          "outcome_category": "Systemic / Institutional Impact",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "Faculty perceived significantly greater risk from AI coaching than students: faculty M=4.71 (SD=0.28) versus students M=4.14 (SD=0.54), t(7.65)=-3.98, p=0.003, Cohen\u2019s d=1.34. This large effect suggests substantial concern among faculty about over-trust, privacy, and broader harms even though perceived utility was similar across groups.",
+          "measure": "Composite perceived risk on 5-point Likert scales",
+          "effect_size": "Cohen\u2019s d=1.34",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=82 (75 students, 7 faculty)"
+        },
+        {
+          "outcome_category": "Systemic / Institutional Impact",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Privacy emerged as a key deployment condition for AI coaching systems: 64.6% of students and 71.4% of faculty said conversation logs must remain completely private and inaccessible to instructors. Additional privacy governance preferences included anonymized data being acceptable for 29.2% of students and 42.9% of faculty, while only 16.7% of students and 28.6% of faculty supported full instructor access.",
+          "measure": "Privacy and data governance preferences from survey frequency distributions",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=82 (75 students, 7 faculty)"
+        }
+      ]
+    }
+  ],
+  "verdict": "genai_general",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical mixed-methods perception study from a single institution with convenience samples (75 students, 7 faculty). It reports descriptive and inferential statistics, but it does not test causal effects on learning outcomes or coaching effectiveness.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper shows a large group difference in perceived risk (d=1.34), but outcomes are attitudes and acceptance rather than demonstrated student learning gains. Overall educational impact remains unclear because no causal achievement or behavior effects were measured.",
+  "citations": [
+    {
+      "title": "Engineering education in the era of ChatGPT: Promise and pitfalls of generative AI for education",
+      "doi": null,
+      "year": 2023,
+      "venue": "2023 IEEE Global Engineering Education Conference (EDUCON)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Introducing Khanmigo: Khan Academy\u2019s AI-powered guide",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Announcing AI-powered capabilities enabling educators to use Coursera Coach to deliver interactive, personalized instruction",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Skill Code: How to Save Human Ability in an Age of Intelligent Machines",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "de-skilling warning about automation replacing human practice"
+    },
+    {
+      "title": "The Tacit Dimension",
+      "doi": null,
+      "year": 1966,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Making of an Expert Engineer",
+      "doi": null,
+      "year": 2014,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "embodied, situated knowledge beyond codification"
+    },
+    {
+      "title": "Mind Over Machine: The Power of Human Intuition and Expertise in the Era of the Computer",
+      "doi": null,
+      "year": 1986,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Mental health and well-being of undergraduate students in engineering: A systematic literature review",
+      "doi": null,
+      "year": 2024,
+      "venue": "Journal of Engineering Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Criteria for accrediting engineering programs, 2019\u20132020",
+      "doi": null,
+      "year": 2019,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Engineer of 2020: Visions of Engineering in the New Century",
+      "doi": null,
+      "year": 2004,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Management and communication in the office of the future",
+      "doi": null,
+      "year": 1981,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Conversations for Action and Collected Essays",
+      "doi": null,
+      "year": 2012,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "How modern coaching can help develop engineers and the profession: And how philosophy can help",
+      "doi": null,
+      "year": 2023,
+      "venue": "Rethinking Technology and Engineering: Dialogues Across Disciplines and Geographies",
+      "citation_level": 2,
+      "citation_context": "Goldberg coaching framework grounding hybrid engineering coaching"
+    },
+    {
+      "title": "Computer Power and Human Reason: From Judgment to Calculation",
+      "doi": null,
+      "year": 1976,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Understanding Computers and Cognition: A New Foundation for Design",
+      "doi": null,
+      "year": 1987,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Reflective Practitioner: How Professionals Think in Action",
+      "doi": null,
+      "year": 1983,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "In principle obstacles for empathic AI: Why we can\u2019t replace human empathy in healthcare",
+      "doi": null,
+      "year": 2022,
+      "venue": "AI & Society",
+      "citation_level": 2,
+      "citation_context": "human empathy cannot be replaced by AI"
+    },
+    {
+      "title": "Does it matter if empathic AI has no empathy?",
+      "doi": null,
+      "year": 2024,
+      "venue": "Nature Machine Intelligence",
+      "citation_level": 2,
+      "citation_context": "human empathy remains necessary despite empathic AI"
+    },
+    {
+      "title": "The guides framework: Enhancing engineering education with generative AI",
+      "doi": "10.21125/edulearn.2024.2006",
+      "year": 2024,
+      "venue": "Proceedings of the 16th International Conference on Education and New Learning Technologies (EDULEARN24)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "On becoming a reflective practitioner",
+      "doi": null,
+      "year": 2018,
+      "venue": "Proceedings of the Genetic and Evolutionary Computation Conference",
+      "citation_level": 2,
+      "citation_context": "Five Shifts framework used to interpret findings"
+    },
+    {
+      "title": "The Complete Handbook of Coaching",
+      "doi": null,
+      "year": 2014,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Engineering education, moving into 2020s: Essential competencies for effective 21st century electrical & computer engineers",
+      "doi": null,
+      "year": 2020,
+      "venue": "2020 IEEE Frontiers in Education Conference (FIE)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "\u201cAI coaching\u201d: Democratising coaching service or offering an ersatz?",
+      "doi": null,
+      "year": 2024,
+      "venue": "Coaching: An International Journal of Theory, Research and Practice",
+      "citation_level": 2,
+      "citation_context": "AI coaching framed as conditional rather than universal"
+    },
+    {
+      "title": "Co-Active Coaching: Changing Business, Transforming Lives",
+      "doi": null,
+      "year": 2007,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A Whole New Engineer: The Coming Revolution in Engineering Education",
+      "doi": null,
+      "year": 2014,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "embodied listening and whole engineer framing"
+    },
+    {
+      "title": "A Field Manual for a Whole New Education: Rebooting Higher Education for Human Connection and Insight in a Digital World",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Polarity Management: Identifying and Managing Unsolvable Problems",
+      "doi": null,
+      "year": 1996,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The influence of experience and deliberate practice on the development of superior expert performance",
+      "doi": null,
+      "year": 2006,
+      "venue": "The Cambridge handbook of expertise and expert performance",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Critical studies of artificial intelligence and education: Putting a stake in the ground",
+      "doi": null,
+      "year": 2025,
+      "venue": "SSRN Electronic Journal",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Ironies of automation",
+      "doi": null,
+      "year": 1983,
+      "venue": "Automatica",
+      "citation_level": 2,
+      "citation_context": "automation can erode expertise through over-reliance"
+    },
+    {
+      "title": "A Guide for the Perplexed",
+      "doi": null,
+      "year": 1977,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "convergent-divergent epistemological boundary framework"
+    },
+    {
+      "title": "The promise of artificial intelligence: reckoning and judgment",
+      "doi": null,
+      "year": 2019,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Learning 101 reloaded: Revisiting the basics for the GenAI era",
+      "doi": null,
+      "year": 2024,
+      "venue": "IEEE Potentials",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A critical AI approach for managing the risks in educational metaverses",
+      "doi": null,
+      "year": 2024,
+      "venue": "EDULEARN24 Proceedings",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "On the dangers of stochastic parrots: Can language models be too big?",
+      "doi": null,
+      "year": 2021,
+      "venue": "Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Educating for the AI era: Harnessing the wild genai horse through multiplex AI humanities and critical AI literacy",
+      "doi": null,
+      "year": 2024,
+      "venue": "SSRN",
+      "citation_level": 2,
+      "citation_context": "multiplex coaching and critical AI literacy framing"
+    },
+    {
+      "title": "Self-Efficacy: The Exercise of Control",
+      "doi": null,
+      "year": 1997,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "mastery learning reflection rationale after failure"
+    },
+    {
+      "title": "Why AI isn\u2019t a magic bullet for mental health",
+      "doi": null,
+      "year": 2024,
+      "venue": "Berkeley Public Health News",
+      "citation_level": 2,
+      "citation_context": "empathy cannot be mechanized in coaching"
+    },
+    {
+      "title": "GPTCoach: Towards LLM-Based physical activity coaching",
+      "doi": null,
+      "year": 2025,
+      "venue": "Proceedings of the 2025 CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 2,
+      "citation_context": "health coaching parallel defining LLM coaching roles"
+    },
+    {
+      "title": "Bloom: Designing for LLM-augmented behavior change interactions",
+      "doi": null,
+      "year": 2025,
+      "venue": "arXiv",
+      "citation_level": 2,
+      "citation_context": "randomized health coaching comparison for psychological-behavioral divergence"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

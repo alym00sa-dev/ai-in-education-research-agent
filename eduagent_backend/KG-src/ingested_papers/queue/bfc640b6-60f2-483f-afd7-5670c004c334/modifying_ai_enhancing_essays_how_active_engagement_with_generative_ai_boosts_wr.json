@@ -1,0 +1,79 @@
+{
+  "title": "Modifying AI, Enhancing Essays: How Active Engagement with Generative AI Boosts Writing Quality",
+  "doi": null,
+  "year": 2024,
+  "venue": "not_reported",
+  "url": "http://arxiv.org/abs/2412.07200v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Adult (non-academic)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper investigates how different patterns of generative AI-assisted writing behavior relate to the quality of final written essays. Rather than asking whether AI helps writing in a simple treatment-versus-control sense, the study asks which forms of engagement with AI are associated with better outcomes: seeking suggestions but not accepting them, accepting suggestions without revision, or accepting and then modifying AI-generated text. The authors are especially concerned with whether meaningful cognitive engagement during writing still occurs when students or writers use generative AI.\n\nThe study uses the publicly available CoAuthor dataset, containing 1,445 writing sessions from 63 writers interacting with GPT-3 across creative and argumentative writing tasks. This is not a randomized experiment; it is an observational causal-inference study using existing behavioral trace data. The authors define three binary \"treatments\" based on frequencies of writing behaviors and estimate their effects on four essay-quality outcomes: lexical sophistication, syntactic complexity, text cohesion, and gender bias. They adjust for confounders including genre, writing topic, first-language background, GPT temperature, and frequency penalty, and estimate average and individual treatment effects using X-learner models.\n\nThe population is not actual school students. Participants were crowd-sourced adult writers completing writing tasks in a generative-AI writing environment, which the authors argue resembles educational writing scenarios but does not directly represent high-school or college classrooms. The setting appears to be an online writing platform where participants could request up to five GPT-3 suggestions and then accept, reject, or revise them.\n\nThe main conclusion is that active revision of AI-generated suggestions is associated with better writing outcomes, while directly accepting AI text without modification is associated with worse lexical sophistication, syntactic complexity, and cohesion. Specifically, the reported average treatment effects were positive for the \"accept and revise\" behavior (Y1 lexical sophistication +0.102; Y2 syntactic complexity +0.963; Y3 text cohesion +0.008) and negative for the \"accept without revision\" behavior (Y1 -0.086; Y2 -0.869; Y3 -0.007). For gender bias, all three behaviors were associated with lower bias scores, with the largest reduction for seeking suggestions without acceptance (Y4 -0.163). For the user\u2019s verification purpose, this paper is clearly not the alleged 2026 randomized controlled trial with approximately 25+25 secondary students over 12 weeks, contains no motivation outcome, is not a high-school ChatGPT feedback experiment, and should therefore be excluded from any quantitative synthesis of randomized ChatGPT-based writing feedback interventions in high school.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a nonrandomized observational study using causal modeling on an existing dataset, not a randomized controlled trial. It has a clear methodology and robustness checks, but participants are crowdworkers rather than K-12 students and outcomes are proxy text metrics rather than direct educational assessments.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports mixed associations depending on AI-use behavior, with some positive and some negative estimated effects on essay-quality proxies, but effects are not reported as standardized educational impacts and are not directly generalizable to high-school ChatGPT writing-feedback interventions.",
+  "interventions": [
+    {
+      "intervention": "AI Writing / Language Tool",
+      "confidence": 0.96,
+      "role": "primary",
+      "use_case": "Generative-AI-assisted essay writing using GPT-3 suggestions that writers can request, reject, accept verbatim, or accept and revise; the study analyzes how these writing-assistance interaction patterns relate to essay quality."
+    },
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.58,
+      "role": "secondary",
+      "use_case": "GPT-3 is used as a suggestion-generating conversational text assistant during writing sessions, but the paper does not evaluate it as a tutor; it functions mainly as an LLM writing aid."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Literacy",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "This is not a school-based ChatGPT feedback experiment and not an RCT; it is an observational causal-inference study using the CoAuthor dataset of 1,445 GPT-3-assisted writing sessions from 63 crowdworkers, not high-school students. The primary literacy outcomes were computational measures of essay quality: lexical sophistication, syntactic complexity, text cohesion, and gender bias. Estimated average treatment effects showed that accepting AI suggestions without revision was associated with worse writing quality (Y1 lexical sophistication ATE=-0.086; Y2 syntactic complexity ATE=-0.869; Y3 cohesion ATE=-0.007), while accepting and revising AI suggestions was associated with better quality (Y1=0.102; Y2=0.963; Y3=0.008). No motivation measure, no pre/post student writing test with 25+25 participants, and no standardized effect size d were reported.",
+        "measure": "Computational essay-quality indices: Advanced Guiraud (lexical sophistication), Mean Length of T-Unit (syntactic complexity), Semantic Overlap (text cohesion), and Genbit Score (gender bias)",
+        "study_size": "n=1,445 writing sessions from 63 writers",
+        "effect_size": "ATEs only: T2->Y1 -0.086, T2->Y2 -0.869, T2->Y3 -0.007; T3->Y1 0.102, T3->Y2 0.963, T3->Y3 0.008; no standardized d/g reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.56,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The paper conceptually links 'accept and revise' behavior to more active cognitive engagement and meaningful learning, but it does not directly measure metacognition, critical thinking, or self-regulation with validated instruments. Instead, durable-skill-like claims are inferred from behavioral proxies in log data, with revised AI uptake associated with better essay-quality metrics than verbatim acceptance; therefore evidence for durable skills is indirect and should not be synthesized as a direct student-skill effect.",
+        "measure": "Behavioral proxies from writing logs: seeking suggestions, accepting without revision, accepting with revision",
+        "study_size": "n=1,445 writing sessions from 63 writers",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "no_control_group",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

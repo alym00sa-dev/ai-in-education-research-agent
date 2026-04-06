@@ -1,0 +1,66 @@
+{
+  "title": "AI-based response assessment and prediction in longitudinal imaging for brain metastases treated with stereotactic radiosurgery",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2509.06396v1",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper addresses the problem of analyzing and predicting treatment response in longitudinal MRI for brain metastases treated with stereotactic radiosurgery (SRS). The authors note that follow-up imaging creates a substantial clinical workload and is often assessed only by visual observation, motivating automated methods for curation, clustering, and response prediction.\n\nThe study develops an automated pipeline to extract, register, resegment, and track longitudinal lesion data from routine clinical PACS records at Lausanne University Hospital. Using 896 brain metastases from 177 patients with follow-up over about a year, the authors cluster lesion volume trajectories and train both classical machine learning models and graph machine learning models to predict one-year lesion-level response from early follow-up MRI and clinical/radiomic features.\n\nThe paper finds five dominant growth trajectories, including patterns consistent with complete response, pseudoprogression, and progressive disease. Predictive performance improves when longitudinal information is included, with robust results after the first follow-up scan and the best performance with more time points. The authors conclude that automated longitudinal analysis may support clinical decision-making and personalized care, while also noting that their graph models did not consistently outperform classical approaches.",
+  "limitations": [
+    "single_site",
+    "non_representative_population",
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Switzerland",
+  "study_region": "Europe",
+  "identified_tools": [
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "prediction_analytics",
+        "other"
+      ],
+      "description": "A general AI/ML-based automated pipeline for longitudinal medical image curation, lesion tracking, clustering, and response prediction; no named generative AI product is studied.",
+      "use_case": "Used to automatically curate longitudinal brain metastasis imaging data, propagate segmentations, track lesions over time, cluster growth trajectories, and predict 1-year response after stereotactic radiosurgery.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Using longitudinal imaging features, the models achieved robust response prediction for brain metastases after SRS. For CR vs non-CR, the best ROC AUC reached 0.90 (95% CI 0.88-0.92) using pre-treatment and first follow-up MRI; for responding vs non-responding, the best ROC AUC reached 0.97 (95% CI 0.96-0.98) when using the full follow-up period.",
+          "measure": "ROC AUC for lesion-level one-year response prediction",
+          "effect_size": "AUC up to 0.90 / 0.97",
+          "confidence_interval": "95% CI 0.88-0.92 / 0.96-0.98",
+          "sample_size": "n=896 lesions in 177 patients"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The paper reports that the semi-automatic pipeline made curation of a large longitudinal imaging dataset feasible where manual processing would be unfeasible. The authors note rare quality-control issues (about 16% partial segmentation and other failures; about 1% misaligned image pairs) and that automated rejection of outliers reduced manual cleaning to a minimal level.",
+          "measure": "Manual processing burden / quality-control of automated curation pipeline",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "random subset of 66 lesion time series for quality control"
+        }
+      ]
+    }
+  ],
+  "verdict": "no_tool",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a technical medical imaging/ML paper rather than an education study, and it does not evaluate an educational AI tool. The evidence is empirical but not relevant to K-12 instructional coaching or lesson-plan feedback.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "No K-12 teaching, coaching, or lesson-feedback outcome is studied, so there is no direct educational impact to assess. Any reported performance is for medical prediction, not classroom use.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

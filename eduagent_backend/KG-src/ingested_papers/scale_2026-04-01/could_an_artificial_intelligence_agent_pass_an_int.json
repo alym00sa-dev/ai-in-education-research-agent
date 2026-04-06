@@ -1,0 +1,450 @@
+{
+  "title": "Could an Artificial-Intelligence agent pass an introductory physics course?",
+  "doi": null,
+  "year": 2023,
+  "venue": "arXiv",
+  "url": "https://arxiv.org/abs/2301.12127",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper examines whether ChatGPT, a large language model, could successfully complete the kinds of assessments used in a standard introductory calculus-based undergraduate physics course. The core question is not only whether the AI can obtain passing scores, but also whether its errors resemble those of beginning physics students. The author frames the study in the context of growing concern about AI in education, especially around cheating, misinformation, and the implications for physics instruction.\n\nTo investigate this, the author entered representative course assessment materials into ChatGPT and evaluated its performance as if it were a student in the course. The materials came from first-year calculus-based physics courses previously taught by the author at Michigan State University and included a Force Concept Inventory, online homework, clicker questions, programming exercises, and a final exam. ChatGPT\u2019s January 9, 2023 version was used. The AI was allowed different levels of interaction depending on the task: multiple attempts and dialogue for homework and programming, replayed peer-instruction discussion for clicker questions, and only a first response for exams. Figures and graphs had to be transcribed into text because the system was text-based.\n\nThe context is undergraduate physics education at a single university course sequence. The paper does not study human learners as the main analytic unit; rather, it benchmarks ChatGPT against the structure, standards, and grading practices of the course, while drawing comparisons to common novice student misconceptions. The instructor-author serves as evaluator, grader, and prompt provider throughout the study.\n\nThe main conclusion is that ChatGPT would narrowly pass the course overall, earning an estimated course grade of 1.5 out of 4.0 under a typical weighting scheme. It performed relatively well on concept inventory and clicker questions, extremely well on programming tasks, and poorly on exams and many numerical calculations. The author argues that ChatGPT often displays the same conceptual errors and unproductive guessing patterns seen in beginning learners, but lacks metacognition and presents incorrect reasoning with confidence. The paper concludes that the key educational issue is less AI-enabled cheating and more how physics education should adapt to a future in which students and professionals work alongside AI systems.",
+  "limitations": [
+    "single_site",
+    "no_control_group",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "tutoring_instruction"
+      ],
+      "description": "OpenAI's large language model chatbot that generates human-like text responses and explanations across domains, including physics problem solving and code generation.",
+      "use_case": "ChatGPT was tested on representative assessments from an introductory calculus-based physics course, including the Force Concept Inventory, homework, clicker questions, a programming exercise, and a final exam, with responses graded as student work would be graded.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Scientific Reasoning",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "On the Force Concept Inventory, ChatGPT scored 18/30 (60%), which the author interprets as corresponding to the suggested entry threshold for Newtonian physics. The paper reports that ChatGPT showed common novice-like physics misconceptions, including impetus reasoning and confusion between individual and net forces.",
+          "measure": "Force Concept Inventory score",
+          "effect_size": "18/30 (60%)",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=1"
+        },
+        {
+          "outcome_category": "Academic \u2014 Scientific Reasoning",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Across 76 homework problems, ChatGPT solved 55% correctly using an average of 1.88 attempts. Performance varied by topic: 48% on trajectory motion and friction, 68% on thermodynamics, 62% on capacitance, and 36% on special relativity; the author attributes much of the difficulty to numerical and algebraic manipulation errors, especially with square roots.",
+          "measure": "Homework problem accuracy and attempts",
+          "effect_size": "55% overall; average 1.88 attempts; 48%, 68%, 62%, 36% by topic",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=76 problems"
+        },
+        {
+          "outcome_category": "Academic \u2014 Scientific Reasoning",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "On clicker questions from a momentum lecture, ChatGPT correctly solved 10 of 12 questions. Under the course's participation-based clicker grading policy, this would yield a 93% clicker score, reportedly better than most students in the actual course, though the paper notes students were learning new concepts while ChatGPT was already pretrained.",
+          "measure": "Clicker question correctness / clicker score",
+          "effect_size": "10/12 correct; 93% course clicker score",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=12 questions"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In a VPython programming exercise, ChatGPT initially produced code with errors, but after one corrective prompt it generated a working program, and after a third prompt it added the bonus graphing feature. The author reports that this would earn full credit plus bonus (120%) and that ChatGPT performed better than any students in the course on this component.",
+          "measure": "Programming exercise performance / course credit",
+          "effect_size": "120%",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=1 exercise"
+        },
+        {
+          "outcome_category": "Academic \u2014 Scientific Reasoning",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "On the mechanics final exam, ChatGPT scored 14/30 (47%) by answer correctness. The author estimates that with hand grading and partial credit, the score would have been between 46% and 50%, because some wrong answers came from numerical errors while some correct answers reflected flawed reasoning.",
+          "measure": "Final exam score",
+          "effect_size": "14/30 (47%); hand-graded estimate 46%-50%",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=1 exam"
+        },
+        {
+          "outcome_category": "Academic \u2014 Scientific Reasoning",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Using a typical course weighting of 20% homework, 5% clicker, 5% programming, and 70% exams, ChatGPT's overall course score would be 54.55%, corresponding to a grade of 1.5. The paper concludes this would be enough for course credit but below the 2.0 grade-point average needed for graduation, and suggests improved numerical functionality could raise performance to a 2.0-grade level.",
+          "measure": "Weighted course grade",
+          "effect_size": "54.55%; grade 1.5",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=1 course simulation"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical single-paper evaluation of one tool on authentic course assessments, but it is essentially a case study with anecdotal elements, no comparison group, and no student sample or causal design. The author explicitly describes the methodology as strictly empirical and arguably anecdotal.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper shows mixed performance: ChatGPT narrowly passes the course simulation overall, performs strongly on clicker questions and programming, but only moderately on homework and poorly on the exam. Because no standardized causal effect size on learners is reported and impacts are uneven across measures, impact is best classified as unclear/mixed.",
+  "citations": [
+    {
+      "title": "ChatGPT",
+      "doi": null,
+      "year": null,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Modeling unproductive behavior in online homework in terms of latent student traits: An approach based on item response theory",
+      "doi": null,
+      "year": 2017,
+      "venue": "Journal of Science Education and Technology",
+      "citation_level": 2,
+      "citation_context": "guessing behavior compared to latent-trait homework behavior"
+    },
+    {
+      "title": "Students\u2019 use and perception of textbooks and online resources in introductory physics",
+      "doi": null,
+      "year": 2020,
+      "venue": "Physical Review Physics Education Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Teaching general learning and problem-solving skills",
+      "doi": null,
+      "year": 1976,
+      "venue": "American Journal of Physics",
+      "citation_level": 2,
+      "citation_context": "contrasted with human problem-solving and evaluation strategies"
+    },
+    {
+      "title": "Millikan lecture 1994: Understanding and teaching important scientific thought processes",
+      "doi": null,
+      "year": 1995,
+      "venue": "American Journal of Physics",
+      "citation_level": 2,
+      "citation_context": "supports metacognitive scientific thought processes framing"
+    },
+    {
+      "title": "The losing battle against plug-and-chug",
+      "doi": null,
+      "year": 2016,
+      "venue": "The Physics Teacher",
+      "citation_level": 2,
+      "citation_context": "supports need for evaluative human problem-solving skills"
+    },
+    {
+      "title": "Force Concept Inventory, revision 1995",
+      "doi": null,
+      "year": 1995,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "source of the concept inventory used"
+    },
+    {
+      "title": "Experiences using the open-source learning content management and assessment system LON-CAPA in introductory physics courses",
+      "doi": null,
+      "year": 2008,
+      "venue": "American Journal of Physics",
+      "citation_level": 3,
+      "citation_context": "source of free-response homework platform and format"
+    },
+    {
+      "title": "ChatGPT Release Notes",
+      "doi": null,
+      "year": null,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "An empirical study of the effect of granting multiple tries for online homework",
+      "doi": null,
+      "year": 2015,
+      "venue": "American Journal of Physics",
+      "citation_level": 3,
+      "citation_context": "basis for allowing five homework attempts"
+    },
+    {
+      "title": "The psychometric properties of classroom response system data: a case study",
+      "doi": null,
+      "year": 2016,
+      "venue": "Journal of Science Education and Technology",
+      "citation_level": 3,
+      "citation_context": "source of clicker question set and comparison data"
+    },
+    {
+      "title": "The nature of collaborations on programming assignments in introductory physics courses: a case study",
+      "doi": null,
+      "year": 2018,
+      "venue": "European Journal of Physics",
+      "citation_level": 3,
+      "citation_context": "source of programming exercise context and collaboration norms"
+    },
+    {
+      "title": "WCAG 2 overview",
+      "doi": null,
+      "year": null,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "graphics transcribed using accessibility-style guidelines"
+    },
+    {
+      "title": "Functions, graphs, and graphing: Tasks, learning, and teaching",
+      "doi": null,
+      "year": 1990,
+      "venue": "Review of Educational Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Graphical response exercises for teaching physics",
+      "doi": null,
+      "year": 2007,
+      "venue": "The Physics Teacher",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Function plot response: A scalable system for teaching kinematics graphs",
+      "doi": null,
+      "year": 2012,
+      "venue": "American Journal of Physics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Interactive-engagement versus traditional methods: A six-thousand-student survey of mechanics test data for introductory physics courses",
+      "doi": null,
+      "year": 1998,
+      "venue": "American Journal of Physics",
+      "citation_level": 3,
+      "citation_context": "pre/post FCI gains practice in original course"
+    },
+    {
+      "title": "Interpreting the Force Concept Inventory: A response to march 1995 critique by huffman and heller",
+      "doi": null,
+      "year": 1995,
+      "venue": "The Physics Teacher",
+      "citation_level": 2,
+      "citation_context": "used to interpret ChatGPT\u2019s FCI score threshold"
+    },
+    {
+      "title": "Categorization and representation of physics problems by experts and novices",
+      "doi": null,
+      "year": 1981,
+      "venue": "Cognitive Science",
+      "citation_level": 2,
+      "citation_context": "expert-novice distinction for surface-feature test"
+    },
+    {
+      "title": "Rigging the deck: Selecting good problems for expert-novice card-sorting experiments",
+      "doi": null,
+      "year": 2012,
+      "venue": "Physical Review Special Topics-Physics Education Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Force Concept Inventory",
+      "doi": "10.1119/1.2343497",
+      "year": 1992,
+      "venue": "The Physics Teacher",
+      "citation_level": 2,
+      "citation_context": "used to classify errors as impetus misconceptions"
+    },
+    {
+      "title": "Students\u2019 preconceptions in introductory mechanics",
+      "doi": null,
+      "year": 1982,
+      "venue": "American Journal of Physics",
+      "citation_level": 2,
+      "citation_context": "supports novice preconceptions comparison"
+    },
+    {
+      "title": "The influence of web-based homework on quantitative problem-solving in a university physics class",
+      "doi": null,
+      "year": 2004,
+      "venue": "Proc. NARST Annual Meeting",
+      "citation_level": 2,
+      "citation_context": "supports repeated guessing behavior comparison"
+    },
+    {
+      "title": "Metacognition in computation: A selected research review",
+      "doi": null,
+      "year": 2005,
+      "venue": "Artificial Intelligence",
+      "citation_level": 2,
+      "citation_context": "basis for claim that ChatGPT lacks metacognition"
+    },
+    {
+      "title": "Peer instruction: Ten years of experience and results",
+      "doi": "10.1119/1.1374249",
+      "year": 2001,
+      "venue": "American Journal of Physics",
+      "citation_level": 2,
+      "citation_context": "defines peer instruction phase for clicker questions"
+    },
+    {
+      "title": "Vpython: 3d interactive scientific graphics for students",
+      "doi": null,
+      "year": 2000,
+      "venue": "Computing in Science & Engineering",
+      "citation_level": 3,
+      "citation_context": "programming exercises implemented in VPython"
+    },
+    {
+      "title": "Jupyter notebooks",
+      "doi": null,
+      "year": null,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Performance of chatgpt on usmle: Potential for ai-assisted medical education using large language models",
+      "doi": null,
+      "year": 2022,
+      "venue": "medRxiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT passes exams from law and business schools",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Computing machinery and intelligence",
+      "doi": null,
+      "year": 1950,
+      "venue": "Mind",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Understanding student computational thinking with computational modeling",
+      "doi": null,
+      "year": 2013,
+      "venue": "AIP Conference Proceedings",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Students\u2019 perspectives on computational challenges in physics class",
+      "doi": null,
+      "year": 2022,
+      "venue": "Physical Review Physics Education Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT detector by ZeroGPT: detect OpenAI text",
+      "doi": null,
+      "year": null,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Turnitin Corp.",
+      "doi": null,
+      "year": null,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Chegg",
+      "doi": null,
+      "year": null,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Assessing-to-learn: Formative assessment in physics instruction",
+      "doi": null,
+      "year": 2004,
+      "venue": "The Physics Teacher",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Formative assessment: Assessment is for self-regulated learning",
+      "doi": null,
+      "year": 2012,
+      "venue": "Educational Psychology Review",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "\u00dcber das Ged\u00e4chtnis: Untersuchungen zur experimentellen Psychologie",
+      "doi": null,
+      "year": 1885,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Replication and analysis of Ebbinghaus\u2019 forgetting curve",
+      "doi": null,
+      "year": 2015,
+      "venue": "PLOS ONE",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Learning to think like a physicist: A review of research-based instructional strategies",
+      "doi": null,
+      "year": 1991,
+      "venue": "American Journal of Physics",
+      "citation_level": 2,
+      "citation_context": "supports physicist evaluation techniques and limiting cases"
+    },
+    {
+      "title": "Reinventing college physics for biologists: Explicating an epistemological curriculum",
+      "doi": null,
+      "year": 2009,
+      "venue": "American Journal of Physics",
+      "citation_level": 2,
+      "citation_context": "supports expert-like epistemology framing"
+    },
+    {
+      "title": "Homework as a metacognitive tool in an undergraduate physics course",
+      "doi": null,
+      "year": 2019,
+      "venue": "Physical Review Physics Education Research",
+      "citation_level": 2,
+      "citation_context": "supports homework as metacognitive evaluation practice"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

@@ -1,0 +1,504 @@
+{
+  "title": "Generative artificial intelligence-supported programming education: Effects on learning performance, self-efficacy and processes",
+  "doi": null,
+  "year": 2025,
+  "venue": "Australasian Journal of Educational Technology",
+  "url": "https://doi.org/10.14742/ajet.9932",
+  "source_db": "eric_search",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Quasi-Experimental Design (QED)",
+  "extended_summary": "This paper examines whether generative artificial intelligence (GenAI), specifically ChatGPT, improves programming education outcomes and how it shapes students\u2019 learning processes. The authors focus on four questions: whether GenAI improves programming output quality and knowledge transfer, whether it affects programming self-efficacy, how it changes students\u2019 programming behaviours, and how different behaviour patterns under GenAI relate to academic performance. The study responds to mixed prior findings suggesting that GenAI may improve immediate task performance but may not always support deeper learning.\n\nThe intervention was a quasi-experiment in which one group of students used a ChatGPT-based platform (ChatGPT-Next-Web using GPT-3.5-turbo) for self-directed programming learning, while a control group used other Internet resources instead of GenAI. Both groups completed the same Turtle-library programming learning tasks in a standardized computer lab setting. Measures included ratings of programming products across multiple dimensions, pre/post programming self-efficacy surveys, and fine-grained behavioural trace data captured through scripts and analysed with frequency analysis, process mining, and clustering.\n\nParticipants were 55 undergraduate Physics Education students at a public university in China. All had prior foundational Python experience but were new to the Python Turtle library. The experimental activity itself lasted 120 minutes, followed by a 40-minute post-test task completed without external resources. The study took place in university computer labs with uniform hardware, and the authors also provided the experimental group with a GenAI user guide to support interaction with the tool.\n\nThe main conclusions are that GenAI support improved short-term programming performance and increased self-efficacy, especially in self-regulation and complex programming tasks, but did not improve longer-term knowledge transfer when students later had to work without external resources. Behavioural analyses showed that GenAI-supported learners relied more on information retrieval and copying, whereas control students engaged more in independent coding and code revision. Within the GenAI group, higher-performing students used the tool more critically and interactively, showing greater epistemic agency, while lower-performing students were more likely to copy outputs directly. The authors argue that GenAI can be beneficial for programming education, but only when instructional design discourages over-reliance and supports active cognitive engagement.",
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "self_reported_measures",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "lab",
+  "teacher_training": "no",
+  "implementation_fidelity": "medium",
+  "study_country": "China",
+  "study_region": "East Asia & Pacific",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "feedback_evaluation"
+      ],
+      "description": "OpenAI's conversational large language model used to generate natural-language responses and code-related assistance.",
+      "use_case": "Students in the experimental group used a simplified ChatGPT-Next-Web platform running GPT-3.5-turbo as the sole external support for self-directed Python Turtle programming learning, asking questions and receiving feedback/help during a 120-minute learning phase.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In the practice phase, the ChatGPT-supported experimental group outperformed the control group on overall programming product quality. Median exercise-program scores were 22.30 for the experimental group versus 18.75 for the control group, with a significant Mann-Whitney difference (Z = -5.129, p = 0.000).",
+          "measure": "Exercise programme overall score based on six-dimension programming evaluation framework",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=55"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "On the post-test programming tasks completed without external resources, there was no significant overall score difference between groups despite a slightly higher experimental-group mean. The Mann-Whitney test for test-program scores was non-significant (Z = -0.615, p = 0.538).",
+          "measure": "Test programme overall score completed without external resources",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=55"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "For exercise-program dimensions, the ChatGPT group scored significantly higher on algorithm design (Z = -3.757, p = 0.000), code structure (Z = -3.975, p = 0.000), and code style (Z = -5.439, p = 0.000), with no significant differences on correct syntax, logical correctness, or functionality completeness. For test-program dimensions, the ChatGPT group retained an advantage only in code style (Z = -3.899, p = 0.000) but performed significantly worse on logical correctness (Z = -2.245, p = 0.025) and functionality completeness (Z = -2.319, p = 0.020).",
+          "measure": "Programming product subdimension scores: correct syntax, logical correctness, functionality completeness, algorithm design, code structure, code style",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=55"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "ChatGPT support significantly improved programming self-efficacy in two post-test dimensions. Compared with the control group, the experimental group scored higher on self-regulation (t = 2.778, df = 52, p = 0.008) and complex programming tasks (t = 2.550, df = 52, p = 0.014), while no significant difference was found for independence and persistence (t = 1.125, df = 52, p = 0.266).",
+          "measure": "Programming self-efficacy scale post-test dimensions: self-regulation, complex programming tasks, independence and persistence",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=54"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Within the ChatGPT group, clustered behavior patterns were associated with different post-test outcomes. Type 2 learners had significantly higher post-test scores than Type 1 learners (Mean = 19.34 vs 16.13; Mann-Whitney U = 48.50, Z = -2.065, p = 0.039), while learning gain differences were not significant; higher-performing learners more often questioned, evaluated, and selectively applied AI output, whereas lower-performing learners more often copied generated code directly.",
+          "measure": "Post-test score and learning gain by clustered learning-behavior pattern within experimental group",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=27"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is a quasi-experimental study with pretest/posttest group comparison and detailed behavioral/process data, but it is not a randomized trial and uses a relatively small sample from one university context.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper shows clear positive short-term effects on practice performance and self-efficacy, but no overall post-test advantage and some negative transfer effects on logical correctness and functionality without AI support. Because effect sizes are not reported and impacts are mixed across outcomes, overall impact is best classified as unclear/modest.",
+  "citations": [
+    {
+      "title": "Exploring the role of artificial intelligence in enhancing academic performance: A case study of ChatGPT",
+      "doi": "10.2139/ssrn.4312358",
+      "year": 2022,
+      "venue": "SSRN",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Self-efficacy mechanism in human agency",
+      "doi": "10.1037//0003-066x.37.2.122",
+      "year": 1982,
+      "venue": "American Psychologist",
+      "citation_level": 2,
+      "citation_context": "self-efficacy theoretical grounding"
+    },
+    {
+      "title": "Grounded Copilot: How programmers interact with code-generating models",
+      "doi": "10.1145/3586030",
+      "year": 2023,
+      "venue": "Proceedings of the ACM on Programming Languages",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Better by you, better than me? ChatGPT-3 as writing assistance in students\u2019 essays",
+      "doi": "10.35542/osf.io/n5m7s",
+      "year": 2023,
+      "venue": "EdArXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Failure rates in introductory programming",
+      "doi": "10.1145/1272848.1272879",
+      "year": 2007,
+      "venue": "ACM SIGCSE Bulletin",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Machine learning based feedback on textual student answers in large courses",
+      "doi": "10.1016/j.caeai.2022.100081",
+      "year": 2022,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Programming pluralism: Using learning analytics to detect patterns in the learning of computer programming",
+      "doi": "10.1080/10508406.2014.954750",
+      "year": 2014,
+      "venue": "Journal of the Learning Sciences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Changing a generation\u2019s way of thinking: Teaching computational thinking through programming",
+      "doi": "10.3102/0034654317710096",
+      "year": 2017,
+      "venue": "Review of Educational Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Unpacking help-seeking process through multimodal learning analytics: A comparative study of ChatGPT vs Human expert",
+      "doi": "10.1016/j.compedu.2024.105198",
+      "year": 2025,
+      "venue": "Computers & Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Hybrid intelligence",
+      "doi": "10.1007/s12599-019-00595-2",
+      "year": 2019,
+      "venue": "Business & Information Systems Engineering",
+      "citation_level": 2,
+      "citation_context": "hybrid intelligence framing for human-AI collaboration"
+    },
+    {
+      "title": "Students\u2019 perceptions of using ChatGPT in a physics class as a virtual tutor",
+      "doi": "10.1186/s41239-023-00434-1",
+      "year": 2023,
+      "venue": "International Journal of Educational Technology in Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Compatibility and requirements analysis of distributed pair programming",
+      "doi": "10.1109/etcs.2010.367",
+      "year": 2010,
+      "venue": "Proceedings of the Second International Workshop on Education Technology and Computer Science",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Hidden markov models",
+      "doi": "10.1016/S0959-440X(96)80056-X",
+      "year": 1996,
+      "venue": "Current Opinion in Structural Biology",
+      "citation_level": 3,
+      "citation_context": "hidden Markov models for process transition analysis"
+    },
+    {
+      "title": "The role of ChatGPT, generative language models, and artificial intelligence in medical education: A conversation with ChatGPT and a call for papers",
+      "doi": "10.2196/46885",
+      "year": 2023,
+      "venue": "JMIR Medical Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Beware of metacognitive laziness: Effects of generative artificial intelligence on learning motivation, processes, and performance",
+      "doi": "10.1111/bjet.13544",
+      "year": 2024,
+      "venue": "British Journal of Educational Technology",
+      "citation_level": 2,
+      "citation_context": "metacognitive laziness explains over-reliance on GenAI"
+    },
+    {
+      "title": "pMineR: An innovative R library for performing process mining in medicine",
+      "doi": "10.1007/978-3-319-59758-4_42",
+      "year": 2017,
+      "venue": "Artificial intelligence in medicine",
+      "citation_level": 3,
+      "citation_context": "process mining tool used for behavioural sequence analysis"
+    },
+    {
+      "title": "Impact of generative AI dialogic feedback on different stages of programming problem solving",
+      "doi": "10.1007/s10639-024-13173-1",
+      "year": 2024,
+      "venue": "Education and Information Technologies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Exploring the learnability of program synthesizers by novice programmers",
+      "doi": "10.1145/3526113.3545659",
+      "year": 2022,
+      "venue": "Proceedings of the 35th Annual ACM Symposium on User Interface Software and Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Computing at school in the UK",
+      "doi": null,
+      "year": 2013,
+      "venue": "Microsoft",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Self-efficacy and behavioural engagement in introductory programming courses",
+      "doi": null,
+      "year": 2017,
+      "venue": "Proceedings of the 21st Pacific-Asia Conference On Information Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Remote pair programming in online CS education: Investigating through a gender Lens",
+      "doi": "10.1109/vlhcc.2019.8818790",
+      "year": 2019,
+      "venue": "Proceedings of the 2019 IEEE Symposium on Visual Languages and Human-Centric Computing",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The relationship between student interaction with generative artificial intelligence and learning achievement: Serial mediating roles of self-efficacy and cognitive engagement",
+      "doi": "10.3389/fpsyg.2023.1285392",
+      "year": 2023,
+      "venue": "Frontiers in Psychology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Self-efficacy beliefs and their sources in undergraduate computing disciplines: An examination of gender and persistence",
+      "doi": "10.1177/0735633115608440",
+      "year": 2016,
+      "venue": "Journal of Educational Computing Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Collaboration with generative artificial intelligence: An exploratory study based on learning analytics",
+      "doi": "10.1177/07356331241242441",
+      "year": 2024,
+      "venue": "Journal of Educational Computing Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A systematic literature review on teaching and learning introductory programming in higher education",
+      "doi": "10.1109/te.2018.2864133",
+      "year": 2019,
+      "venue": "IEEE Transactions on Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "FinTech and artificial intelligence for sustainable development",
+      "doi": "10.1007/978-3-031-37776-1_17",
+      "year": 2023,
+      "venue": "Springer",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Assessing the quality of student-generated short answer questions using GPT-3",
+      "doi": "10.1007/978-3-031-16290-9_18",
+      "year": 2022,
+      "venue": "Educating for a new future: Making sense of technology-enhanced learning adoption",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Ward\u2019s hierarchical agglomerative clustering method: Which algorithms implement Ward\u2019s criterion?",
+      "doi": "10.1007/s00357-014-9161-z",
+      "year": 2014,
+      "venue": "Journal of Classification",
+      "citation_level": 3,
+      "citation_context": "Ward clustering used to group learner behaviour patterns"
+    },
+    {
+      "title": "An artificial intelligence-driven learning analytics method to examine the collaborative problem-solving process from the complex adaptive systems perspective",
+      "doi": "10.1007/s11412-023-09387-z",
+      "year": 2023,
+      "venue": "International Journal of Computer-Supported Collaborative Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Collaborating with ChatGPT: Considering the implications of generative artificial intelligence for journalism and media education",
+      "doi": "10.1177/10776958221149577",
+      "year": 2023,
+      "venue": "Journalism & Mass Communication Educator",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Engineering education in the era of ChatGPT: Promise and pitfalls of generative AI for education",
+      "doi": "10.1109/EDUCON54358.2023.10125121",
+      "year": 2023,
+      "venue": "Proceedings of the 2023 IEEE Global Engineering Education Conference",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Exploring the use of chatgpt as a tool for learning and assessment in undergraduate computer science curriculum: Opportunities and challenges",
+      "doi": "10.48550/arXiv.2304.11214",
+      "year": 2023,
+      "venue": "EdArXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Development and validation of scores on a computer programming self-efficacy scale and group analyses of novice programmer self-efficacy",
+      "doi": "10.2190/C670-Y3C8-LTJ1-CT3P",
+      "year": 1998,
+      "venue": "Journal of Educational Computing Research",
+      "citation_level": 3,
+      "citation_context": "programming self-efficacy scale adopted for RQ2"
+    },
+    {
+      "title": "Cognitive offloading",
+      "doi": "10.1016/j.tics.2016.07.002",
+      "year": 2016,
+      "venue": "Trends in Cognitive Sciences",
+      "citation_level": 2,
+      "citation_context": "core concept explaining technology reliance"
+    },
+    {
+      "title": "The role of ICT self-efficacy for students' ICT use and their achievement in a computer and information literacy test",
+      "doi": "10.1016/j.compedu.2016.08.001",
+      "year": 2016,
+      "venue": "Computers & Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT: Bullshit spewer or the end of traditional assessments in higher education?",
+      "doi": "10.37074/jalt.2023.6.1.9",
+      "year": 2023,
+      "venue": "Journal of applied learning and teaching",
+      "citation_level": 2,
+      "citation_context": "epistemic agency framing in AI-assisted learning"
+    },
+    {
+      "title": "ChatGPT and artificial intelligence in higher education: Quick start guide",
+      "doi": null,
+      "year": 2023,
+      "venue": "UNESCO",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Examining student performance and attitudes on distributed pair programming",
+      "doi": "10.1155/2018/6523538",
+      "year": 2018,
+      "venue": "Scientific Programming",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Google effects on memory: Cognitive consequences of having information at our fingertips",
+      "doi": "10.1126/science.1207745",
+      "year": 2011,
+      "venue": "Science",
+      "citation_level": 2,
+      "citation_context": "evidence that technology reliance impairs learning abilities"
+    },
+    {
+      "title": "Would ChatGPT-facilitated programming mode impact college students\u2019 programming behaviors, performances, and perceptions? An empirical study",
+      "doi": "10.1186/s41239-024-00446-5",
+      "year": 2024,
+      "venue": "International Journal of Educational Technology in Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Cognitive load theory",
+      "doi": "10.1016/B978-0-12-387691-1.00002-8",
+      "year": 2011,
+      "venue": "The psychology of learning and motivation: Cognition in education",
+      "citation_level": 2,
+      "citation_context": "supports beneficial side of cognitive offloading"
+    },
+    {
+      "title": "Improving elementary EFL speaking skills with generative AI chatbots: Exploring individual and paired interactions",
+      "doi": "10.1016/j.compedu.2024.105112",
+      "year": 2024,
+      "venue": "Computers & Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "An empirical study on pair performance and perception in distributed pair programming",
+      "doi": "10.1007/978-3-030-11935-5_72",
+      "year": 2019,
+      "venue": "The challenges of the digital transformation in education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Research on the future vision of the intelligent integration of ChatGPT and online education",
+      "doi": null,
+      "year": 2023,
+      "venue": "Advances in Educational Technology and Psychology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Failure rates in introductory programming revisited",
+      "doi": "10.1145/2591708.2591749",
+      "year": 2014,
+      "venue": "Proceedings of the 2014 Conference on Innovation & Technology in Computer Science Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Enhancing legal writing skills: The impact of formative feedback in a hybrid intelligence learning environment",
+      "doi": "10.1111/bjet.13529",
+      "year": 2024,
+      "venue": "British Journal of Educational Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Relationships among individual task self-efficacy, self-regulated learning strategy use and academic performance in a computer-supported collaborative learning environment",
+      "doi": "10.1080/01443410.2014.926312",
+      "year": 2014,
+      "venue": "Educational Psychology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The effect of generative artificial intelligence (AI)-based tool use on students' computational thinking skills, programming self-efficacy and motivation",
+      "doi": "10.1016/j.caeai.2023.100147",
+      "year": 2023,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "\u4eba\u5de5\u667a\u80fd\u6559\u80b2\u5e94\u7528\u7684\u8ba4\u77e5\u5916\u5305\u9677\u9631\u53ca\u5176\u8de8\u8d8a [The cognitive offloading trap in AI educational applications and its overcoming]",
+      "doi": "10.13811/j.cnki.eer.2023.12.001",
+      "year": 2023,
+      "venue": "e-Education Research",
+      "citation_level": 2,
+      "citation_context": "negative cognitive offloading in AI education"
+    },
+    {
+      "title": "The paradox of self-efficacy and technological dependence: Unraveling generative AI\u2019s impact on university students\u2019 task completion",
+      "doi": "10.1016/j.iheduc.2024.100978",
+      "year": 2025,
+      "venue": "The Internet and Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": "via unpaywall"
+}

@@ -1,0 +1,63 @@
+{
+  "title": "Exploring LLM-Generated Feedback for Economics Essays: How Teaching Assistants Evaluate and Envision Its Use",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2505.15596v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Educator"
+  ],
+  "study_design": "Qualitative",
+  "extended_summary": "This paper examines whether AI-generated feedback can support instructors\u2019 grading of student writing, focusing on the question of how teaching assistants (TAs) perceive the quality and usability of LLM-generated feedback as suggestions in their workflow. Rather than testing student learning outcomes, the study investigates instructor-facing use of generative AI for feedback provision and the conditions under which it may be useful.\n\nThe authors built an LLM-powered feedback engine for short economics essays in a foundational college ECON101 course. The system decomposes feedback generation into three steps: identifying relevant evidence in the essay, judging whether rubric criteria are met, and generating rubric-aligned feedback. It also visualizes highlights and intermediate outputs in a Word plugin, and in one variant retrieves historic instructor feedback when a rubric is missed. The study involved 5 teaching assistants who first graded essays as usual and then participated in think-aloud sessions reviewing AI feedback on the same essays across 4 writing assignments over 20 one-hour sessions.\n\nThe TAs reported that AI feedback was often more detailed, more positive, and more closely aligned to rubrics than their own comments, and that the highlighting interface could speed up reading and make AI suggestions easier to verify. They also noted important limitations: the AI could be overly rigid, miss deeper conceptual issues, and over-focus on rubric fragments rather than holistic writing quality. Overall, the paper concludes that AI feedback has promise as a suggestion tool for grading support, but only when paired with clear rubrics, transparent highlights, and human judgment; it does not evaluate downstream effects on student performance.",
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "self_reported_measures",
+    "non_representative_population",
+    "no_long_term_followup",
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "content_generation"
+      ],
+      "description": "An OpenAI GPT-based large language model used to generate and evaluate feedback text.",
+      "use_case": "Used as the underlying model (GPT-4o) in a feedback engine that identified relevant essay sentences, made rubric judgments, and generated feedback comments for economics essays shown to teaching assistants.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In think-aloud sessions, 5 teaching assistants across 20 one-hour sessions reported that AI feedback could expedite grading, save time constructing comments, and improve consistency in their workflow. This was a qualitative mixed-methods study; no experimental effect sizes were reported.",
+          "measure": "TA perceptions of grading speed, time savings, and grading consistency",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=5 TAs; 20 sessions"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a qualitative think-aloud study with 5 TAs and no experimental comparison of outcomes. It provides useful user-perspective evidence, but not causal evidence about learning or practice change.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "Participants perceived the tool as potentially helpful for speeding grading and improving consistency, but the paper did not report measured effect sizes or demonstrated behavior or student outcome impacts.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

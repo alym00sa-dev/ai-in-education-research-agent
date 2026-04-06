@@ -1,0 +1,117 @@
+{
+  "title": "A systematic review of AI-driven intelligent tutoring systems (ITS) in K-12 education",
+  "doi": "10.1038/s41539-025-00320-7",
+  "year": 2025,
+  "venue": "npj Science of Learning",
+  "url": "https://doi.org/10.1038/s41539-025-00320-7",
+  "source_db": "openalex_search",
+  "populations": [
+    "Elementary (PreK-5th)",
+    "Middle School (6th-8th)",
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Meta-Analysis / Systematic Review",
+  "extended_summary": "This paper systematically reviews research on AI-driven intelligent tutoring systems (ITS) in K-12 education, with two main questions: what experimental designs are used to evaluate ITSs, and what effects ITSs have on student learning and performance. The authors note that, despite rapid growth in AI in education, the real educational value of ITSs remains unclear, especially in school settings.\n\nThe review synthesizes 28 studies involving 4,597 students. The included studies cover elementary, middle, and high school learners, with most concentrated in STEM subjects, especially mathematics and physics, and a smaller number in language learning. The paper emphasizes that most primary studies used quasi-experimental designs with pre-test/post-test comparisons across conditions such as ITS vs teacher, ITS vs non-intelligent tutoring systems, ITS vs modified ITS, and ITS vs no control.\n\nOverall, the review finds generally positive effects of ITSs on learning and performance in K-12 education, but the benefits are less consistent when ITSs are compared to non-intelligent alternatives or when studies use very short interventions. The authors argue that personalization, adaptivity, immediate feedback, and teacher support are important contributors to ITS effectiveness, while calling for longer studies, larger and more diverse samples, and more attention to ethical issues.",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is a systematic review of 28 K-12 studies (N=4597) with explicit inclusion criteria and comparative synthesis, which provides stronger evidence than a single observational study. However, the underlying studies were mostly quasi-experimental, heterogeneous in design and outcomes, and the review notes limited consistency in effect-size reporting, so credibility is good but not fully blue-tier.",
+  "impact_tier": "green",
+  "impact_tier_rationale": "The review finds generally positive effects for ITSs, with several medium-to-large effects in math and literacy, but the evidence is heterogeneous and often context-specific rather than consistently large across studies. Because the overall conclusion is positive yet mixed with many null comparisons, the impact is best characterized as modest-to-moderate on general K-12 populations.",
+  "interventions": [
+    {
+      "intervention": "Intelligent Tutoring System (ITS)",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "Systematic review of AI-driven intelligent tutoring systems in K-12 education, including adaptive tutoring, personalized feedback, and step-by-step guidance across subjects such as mathematics, science, and language arts."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Across the review, math-focused ITS studies generally showed positive effects on K-12 achievement and learning gains. Examples include Yixue for the Pythagorean theorem (n=163; Hedges g=0.68), ALEKS PPL math placement scores (n=100; d=0.87), and a redesigned Algebra 1 ITS (n=129; d=0.31), although some math comparisons were null or mixed depending on comparator and implementation context.",
+        "measure": "Pre-/post-test math achievement, placement exam scores, unit tests, and learning gains across algebra, geometry, fractions, and multiplication/division",
+        "study_size": "n=4597 (systematic review total); math-specific studies varied by comparison",
+        "effect_size": "mixed; examples include g=0.68, d=0.87, d=0.31, partial \u03b7\u00b2=0.10",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Academic \u2014 Literacy",
+      "confidence": 0.85,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The review also included literacy-focused ITS studies, which generally reported positive gains in writing and reading-related outcomes. For example, Writing Pal showed improved essay scores over six months (n=113; d=0.71), and WeWrite improved planning skills in elementary writing (reported d=0.77), though writing quality effects were smaller or not significant in some cases.",
+        "measure": "Essay scores, writing quality, planning skills, and text comprehension outcomes",
+        "study_size": "n=4597 (systematic review total); literacy-specific studies varied by comparison",
+        "effect_size": "examples include d=0.71 and d=0.77",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Academic \u2014 Language Fluency",
+      "confidence": 0.7,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Several ITS studies in second-language and first-language contexts suggested gains in language learning, though not always with direct fluency measures. The review reports positive outcomes for English grammar and second-language learning systems, but the evidence is less directly about speaking/listening fluency than about language performance more broadly.",
+        "measure": "Grammar/second-language learning tests and language performance assessments",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.9,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "A substantial subset of studies examined durable skills such as self-regulation, planning, self-assessment, and metacognition within ITS use. Findings were mostly positive but not uniform: for example, self-assessment prompts, progress information, and co-regulation supports sometimes improved learning or performance, while other studies found no differences on transfer or post-test outcomes.",
+        "measure": "Planning skills, self-assessment, self-regulated learning behaviors, metacognitive supports, and related performance outcomes",
+        "study_size": "not_reported",
+        "effect_size": "examples include d=0.39, d=0.92, \u03b7\u00b2=0.078, r=0.21",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.55,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The review includes some evidence related to engagement and perceived ease of independent work, but these were not the primary outcomes and were often reported qualitatively. One study on cognitive load also found gender differences in perceived mental effort and load (n=24; d values roughly 0.67-0.87), but this is better interpreted as learner experience rather than broad socio-emotional benefit.",
+        "measure": "Cognitive load questionnaire, student feedback, and engagement-related comments",
+        "study_size": "not_reported",
+        "effect_size": "examples include d=0.825, d=0.674, d=0.872",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "short_duration",
+    "single_site",
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "blended",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

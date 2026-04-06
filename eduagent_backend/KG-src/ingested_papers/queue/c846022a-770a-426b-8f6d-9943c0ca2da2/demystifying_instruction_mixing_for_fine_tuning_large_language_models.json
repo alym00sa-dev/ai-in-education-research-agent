@@ -1,0 +1,53 @@
+{
+  "title": "Demystifying Instruction Mixing for Fine-tuning Large Language Models",
+  "doi": null,
+  "year": 2024,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2312.10793v3",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper investigates how different instruction dataset mixtures affect large language model (LLM) fine-tuning performance. The authors focus on a core question in instruction tuning: how to combine datasets so that a model gains broad capability without harming specific skills. They categorize instructions into three types: NLP downstream tasks, coding, and general chat.\n\nThe study fine-tunes LLaMA-2 7B and 13B models using representative datasets for each type: P3 for NLP tasks, CodeAlpaca for coding, and Alpaca for general instructions. They evaluate all eight combinations of these datasets on three outcome areas: NLP benchmark performance, code generation, and alignment/chat ability. The evaluation uses standard benchmarks such as ARC, MMLU, HumanEval, and the FLASK alignment framework with GPT-4 scoring.\n\nResults show that specialized datasets improve performance in their own domains, but mixing all instruction types does not uniformly improve every capability. Alpaca is strongest for alignment and general NLP performance, CodeAlpaca improves coding and can also support chat quality, while P3 improves NLP task performance but tends to reduce alignment/chat ability when combined with other instruction types. The paper concludes that instruction mixing should be chosen carefully based on target use case and model size, since larger models appear better able to benefit from diverse instruction mixtures.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed empirical benchmarking study with a clear experimental setup, but it is not a K-12 educational study and does not evaluate learner outcomes in authentic classrooms. It provides correlational/experimental evidence about LLM fine-tuning mixtures rather than a rigorous education intervention trial.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "The paper has no direct impact on K-12 learners or educators and reports model benchmark changes rather than educational effects. Its findings are about LLM capability tradeoffs, not student or teacher outcomes. ",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.95,
+      "role": "primary",
+      "use_case": "instruction tuning and mixing for LLaMA-2 chat-style and task-following behavior using Alpaca, CodeAlpaca, and P3 datasets; the paper evaluates how fine-tuning mixtures affect model capabilities in chat/alignment and downstream task performance"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.86,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "This paper evaluates efficiency-like model utility in terms of benchmark performance and alignment skill under different instruction mixtures, not human learner outcomes. Instruction mixing improves some capabilities but can also hurt others: for example, P3 hurts alignment by -2.8 points for LLaMA-2-7B and -3.6 for 13B, while Alpaca and CodeAlpaca improve alignment and task performance.",
+        "measure": "Zero-shot NLP benchmark averages, HumanEval pass@1/pass@10, FLASK alignment skill scores",
+        "study_size": "n=2 model sizes (LLaMA-2-7B, LLaMA-2-13B); 20K samples per dataset condition; alignment eval n=1,180 prompts",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    }
+  ],
+  "limitations": [
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

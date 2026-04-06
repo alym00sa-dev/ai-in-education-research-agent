@@ -1,0 +1,77 @@
+{
+  "title": "VLM@school \u2013 Evaluation of AI image understanding on German middle school knowledge",
+  "doi": null,
+  "year": 2025,
+  "venue": null,
+  "url": "http://arxiv.org/abs/2506.11604v2",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Middle School",
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper addresses the question of how well current vision-language models (VLMs) can answer visually grounded, subject-specific questions based on real German middle-school knowledge. The authors argue that widely used multimodal benchmarks are often English-dominant, overly benchmark-optimized, and insufficiently representative of realistic school-level visual reasoning tasks. They therefore introduce a new German-language benchmark intended to test whether state-of-the-art open-weight VLMs can combine image understanding with background knowledge across authentic school subjects.\n\nThe study\u2019s main approach is the creation and evaluation of a benchmark dataset built from German educational materials. The dataset contains 2,038 open-ended questions linked to 486 images across nine domains: arts, biology, geography, history, math, music, physics, religion, and sports. The benchmark includes both standard questions and adversarial questions that intentionally ask about information not actually shown in the image. Thirteen open-weight VLMs were evaluated, and answers were scored using an automated LLM-as-a-judge approach with multiple judge models.\n\nThe context is German schooling, specifically grades 8 to 10 and school types including Gymnasium and Realschule. Although no human participants were recruited as study subjects, the benchmark content is explicitly drawn from middle-school curricula and educational resources intended for students in that range. The paper is therefore about AI system performance on tasks representing middle-school learners\u2019 curricular knowledge rather than an intervention delivered to students or teachers.\n\nThe main conclusion is that current open-weight VLMs perform poorly on this benchmark, with the best model scoring below 45% overall accuracy and much lower performance in domains such as music and mathematics. Models performed especially badly on adversarial questions, indicating persistent difficulty recognizing when an image does not support an answer. The authors conclude that middle-school-level multimodal tasks in German are a meaningful and underused stress test for VLMs, and that performance on established public benchmarks does not reliably predict real-world multimodal reasoning performance in non-English educational contexts.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a benchmark/model-evaluation paper, not a K-12 intervention study with learners. It provides no student sample, no educational treatment, and no causal or correlational design about learning outcomes.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "The paper reports no direct impact on K-12 learners, teachers, or institutions from an educational intervention. Findings are about AI model performance limitations, so it does not provide evidence of positive educational impact.",
+  "interventions": [],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 0.68,
+      "finding": {
+        "direction": "Negative",
+        "finding_summary": "This paper evaluates 13 open-weight vision-language models on a German middle-school benchmark and finds weak performance on mathematics items that require combining image understanding with background knowledge. Best math accuracy is only 34.09% (Qwen2.5VL 32B), with many models far lower (e.g., Ovis2 4B = 9.09%, InternVL3 8B = 19.32%), indicating poor multimodal mathematical reasoning rather than educational gains for learners. No human student sample, effect size, or intervention comparison is reported.",
+        "measure": "Model accuracy on middle-school mathematics benchmark questions derived from German curricular materials",
+        "study_size": "486 images; 2,038 questions overall; math domain includes 112 images and 308 questions",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Academic \u2014 Scientific Reasoning",
+      "confidence": 0.74,
+      "finding": {
+        "direction": "Negative",
+        "finding_summary": "Across science-related domains such as biology and physics, the benchmark shows that current VLMs perform far below mastery on German middle-school multimodal tasks. Best reported scores are 48.53% in biology and 47.65% in physics, with models often failing diagram interpretation, causal explanation, and domain-specific identification, especially on adversarial questions. The study reports no student learning outcomes, only model-performance limitations.",
+        "measure": "Model accuracy on biology and physics benchmark questions, including adversarial items",
+        "study_size": "486 images; 2,038 questions overall; biology includes 33 images/169 questions and physics includes 52 images/234 questions",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.88,
+      "finding": {
+        "direction": "Negative",
+        "finding_summary": "The paper\u2019s central finding is that state-of-the-art open-weight VLMs perform poorly on authentic German middle-school knowledge tasks spanning history, geography, arts, music, religion, and sports. Overall accuracy ranges from 23.53% to 43.26%, and even the best model remains below 45% overall; adversarial-question performance is worse, often near or below 30%, suggesting substantial limits in real-world multimodal school knowledge understanding. These are benchmark results on AI systems, not educational impacts on K-12 students.",
+        "measure": "Overall and domain-specific model accuracy on a German multimodal middle-school benchmark, including adversarial-question accuracy",
+        "study_size": "13 models evaluated on 486 images and 2,038 open-ended questions across 9 domains",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Germany",
+  "study_region": "Europe",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

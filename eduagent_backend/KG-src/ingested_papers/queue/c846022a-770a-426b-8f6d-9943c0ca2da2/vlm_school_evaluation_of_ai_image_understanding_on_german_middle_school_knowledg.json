@@ -1,0 +1,35 @@
+{
+  "title": "VLM@school \u2013 Evaluation of AI image understanding on German middle school knowledge",
+  "doi": null,
+  "year": 2025,
+  "venue": "not_reported",
+  "url": "http://arxiv.org/abs/2506.11604v2",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Middle School (6th-8th)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper presents VLM@school, a benchmark dataset for evaluating vision-language models on German-language, middle school-level tasks that require combining image understanding with subject-specific background knowledge. The authors argue that existing benchmarks are often English-only, overly reliant on multiple-choice formats, and too decontextualized to reflect real-world multimodal reasoning. Their dataset was constructed from German school textbooks and related materials for grades 8\u201310 and covers nine subject domains, including arts, biology, geography, history, math, music, physics, religion, and sports.\n\nThe intervention/approach is not a classroom intervention but a benchmark and evaluation protocol. The dataset includes 486 images and 2,038 open-ended questions, including intentionally adversarial questions that cannot be answered from the image alone. The authors evaluate 13 open-weight vision-language models using an LLM-as-a-judge setup with multiple judges to score free-text answers against ground truth. They also examine performance by domain and compare results to public benchmark scores such as MMMU.\n\nThe paper\u2019s main conclusion is that middle school-level tasks are surprisingly challenging for current VLMs, especially when answers require visual reasoning plus contextual knowledge in German. Best overall accuracy remains below 45%, with strong variation by subject; performance is notably weaker on music, math, and adversarial questions. The authors conclude that benchmark performance on popular datasets does not necessarily translate to this German educational context and that better evaluation data are needed for non-English, school-based multimodal reasoning.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a benchmark/evaluation paper for vision-language models, not a study of an educational intervention with learner or teacher outcomes. It is peer-reviewed, but it does not use a causal or comparative design relevant to K-12 intervention evidence.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "The paper has no measured educational impact on students or teachers; it reports model benchmark accuracy on middle-school curriculum questions. Any implications are indirect and methodological rather than evidence of educational effectiveness.",
+  "interventions": [],
+  "outcome_assignments": [],
+  "limitations": [
+    "implementation_fidelity_not_reported",
+    "no_control_group",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Germany",
+  "study_region": "Europe",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

@@ -1,0 +1,80 @@
+{
+  "title": "Enhancing Educational Efficiency: Generative AI Chatbots and DevOps in Education 4.0",
+  "doi": null,
+  "year": null,
+  "venue": null,
+  "url": "http://arxiv.org/abs/2406.15382v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Quasi-Experimental Design (QED)",
+  "extended_summary": "This paper examines whether integrating generative AI chatbots and DevOps practices into a computer science course can improve teaching and learning efficiency in Education 4.0. The authors are motivated by the need to align software-development education with Industry 4.0 practices and to support problem-solving, active learning, and project-based learning in Content Management Systems (CMS) development.\n\nThe intervention combines a constructivist course design with three five-week sprints covering object-oriented PHP, theme development, and plugin development. ChatGPT is used as a supportive tool for code generation, debugging, explanation, and task creation, while Git/GitHub and Trello are used to support version control and agile workflow. The study was implemented in a CMS course at the State University of Novi Pazar with undergraduate students, and the paper reports that the 2023\u20132024 cohort had 20 students under the AI/DevOps-supported model.\n\nThe paper compares this newer approach with earlier years when the course was taught using a more traditional constructive approach without AI and DevOps tools. It reports higher efficiency for themes, plugins, and application development under the AI/DevOps-supported curriculum, and concludes that the combination of ChatGPT and DevOps tools can improve learning output and better prepare students for modern software development practices. The authors also note limitations related to generalisability, dependence on AI models, resource demands, and the need to study longer-term effects.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a single-course case study with historical comparison and no randomized assignment, no control for confounding, and no formal statistical testing. The paper reports descriptive efficiency calculations only, so the causal credibility is low despite its practical relevance.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The reported gains are described as meaningful and likely educationally relevant, but the evidence is descriptive and lacks effect sizes or rigorous inference. The apparent impact is positive for a specific computer science course, but generalizability and magnitude remain unclear.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.95,
+      "role": "primary",
+      "use_case": "Using ChatGPT as an auxiliary teaching and problem-solving tool to generate code examples, debug student work, analyze existing theme files, and create more challenging programming tasks in CMS development sprints."
+    },
+    {
+      "intervention": "Computer-Assisted Instruction (CAI)",
+      "confidence": 0.7,
+      "role": "secondary",
+      "use_case": "Git/GitHub, Trello, and structured sprint/backlog workflows used to organize and deliver course materials, track student coding tasks, and support iterative learning in CMS development."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper reports higher teaching and learning efficiency after introducing ChatGPT-supported and DevOps-supported instruction in a CMS development course. In the 2023\u20132024 cohort (n=20), efficiency was defined as 100% at the standard output rate, and the authors argue this exceeded prior years without AI/DevOps support; however, no inferential statistics, confidence intervals, or effect sizes were reported.",
+        "measure": "Efficiency of theme development, plugin development, and app development output rates versus standard output rates",
+        "study_size": "n=20 (primary AI/DevOps cohort); comparison cohorts n=12, n=17, n=9",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    },
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.9,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The intervention was associated with improved performance in CMS-related programming tasks, including theme creation, plugin development, and application development. In the AI/DevOps-supported cohort, students completed 4 themes per student, 20 plugins per student, and 10 applications across teams, while earlier cohorts showed lower per-student output rates (e.g., theme efficiency 69%\u201372%, plugin efficiency 70.55%\u201379.2%, app efficiency 50%\u201366%).",
+        "measure": "Completed CMS development artifacts (themes, plugins, applications) and derived efficiency percentages",
+        "study_size": "n=20; historical comparison cohorts n=12, n=17, n=9",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_long_term_followup",
+    "non_representative_population",
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "15",
+  "setting": "blended",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Serbia",
+  "study_region": "Europe",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

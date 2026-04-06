@@ -1,0 +1,298 @@
+{
+  "title": "ALIGNAgent: Adaptive Learner Intelligence for Gap Identification and Next-step guidance",
+  "doi": null,
+  "year": 2026,
+  "venue": "arXiv",
+  "url": "https://arxiv.org/abs/2601.15551",
+  "source_db": "scale_stanford",
+  "population": "Undergraduate",
+  "user_type": "Student",
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper addresses the problem that many personalized learning systems in education are fragmented: some estimate student knowledge, others diagnose misconceptions, and others recommend resources, but few connect these functions into a continuous adaptive cycle. The authors aim to build and evaluate a unified AI-based framework that can use student assessment data to estimate topic proficiency, identify concept-level skill gaps, and recommend targeted next-step learning resources before students move on to new material.\n\nThe proposed intervention is ALIGNAgent, a multi-agent educational framework composed primarily of a Skill Gap Agent, a Recommender Agent, and a Summary Agent. The system processes learner preference survey data, gradebook records, and question-level quiz responses to compute topic-level proficiency scores, diagnose likely misconceptions using concept tags and incorrect answer patterns, and retrieve preference-aware learning materials through web search. The framework also generates learner-facing summaries that explain strengths, weaknesses, and suggested next actions. The empirical evaluation compares model-generated knowledge proficiency estimates and difficulty labels against instructor judgments and actual student exam performance, using precision, recall, F1, and accuracy.\n\nThe population consisted of undergraduate students in two computer science courses at Florida Polytechnic University in the United States: COP3415 (Data Structures; 14 students) and CDA2108 (Fundamentals of Computer Systems; 11 students), both offered in Summer 2025. The study used authentic classroom data including quizzes, midterm and final exam scores, and self-reported learning preferences. The context was regular higher-education coursework at a single university, with midterm and final exam outcomes treated as the ground truth for validating model inferences.\n\nThe main conclusion is that ALIGNAgent shows promising effectiveness for AI-supported personalized learning in higher education. According to the abstract and reported results, GPT-4o-based agents achieved strong performance in knowledge proficiency estimation, with precision of 0.87-0.90 and F1 scores of 0.84-0.87 when validated against actual exam performance. GPT-4o also outperformed Claude 3.5 Sonnet and LLaMA 3 in question difficulty labeling across both courses. Overall, the authors argue that a coordinated multi-agent pipeline can provide interpretable diagnosis, targeted recommendations, and a practical closed-loop approach to adaptive learning, though the evidence comes from a small, single-institution sample.",
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_control_group",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "blended",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "ALIGNAgent",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "personalization_adaptation",
+        "feedback_evaluation"
+      ],
+      "description": "A proposed multi-agent personalized learning framework that integrates knowledge estimation, skill-gap identification, resource recommendation, and summary feedback using LLM-based agents.",
+      "use_case": "Studied as an adaptive higher-education learning system using quiz performance, gradebook data, and learner preferences from two undergraduate computer science courses to estimate topic proficiency, identify concept-level gaps, and recommend targeted resources; GPT-4o-, Claude 3.5-, and LLaMA 3-based agent configurations were compared.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "On two authentic undergraduate computer science course datasets, ALIGNAgent with GPT-4o-based agents achieved precision of 0.87-0.90 and F1 scores of 0.84-0.87 for knowledge proficiency estimation, validated against actual exam performance. The abstract reports these results as evidence of effective knowledge proficiency estimation, though full per-dataset sample-linked breakdowns are not provided in the excerpt.",
+          "measure": "Knowledge proficiency estimation performance against actual exam performance (precision, F1)",
+          "effect_size": "precision=0.87-0.90; F1=0.84-0.87",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=25"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "For question difficulty labeling used within the ALIGNAgent pipeline, GPT-4o produced the strongest reported performance among compared models. In COP3415, GPT-4o achieved precision 0.81, recall 0.53, F1 0.61, accuracy 0.52; in CDA2108, it achieved precision 0.88, recall 0.61, F1 0.72, accuracy 0.63.",
+          "measure": "Question difficulty labeling performance (precision, recall, F1, accuracy)",
+          "effect_size": "COP3415: precision=0.81, recall=0.53, F1=0.61, accuracy=0.52; CDA2108: precision=0.88, recall=0.61, F1=0.72, accuracy=0.63",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=25"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical evaluation on authentic course datasets, but the study appears to be a non-randomized system evaluation with small samples from two undergraduate courses (14 and 11 students) rather than an RCT or strong causal design.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports promising precision/F1 performance for proficiency estimation and labeling accuracy, but does not report student learning gains, standardized effect sizes, or causal impacts on outcomes, so practical impact remains encouraging but unclear.",
+  "citations": [
+    {
+      "title": "Claude 3.5 sonnet model card addendum",
+      "doi": null,
+      "year": 2024,
+      "venue": null
+    },
+    {
+      "title": "Knowledge tracing: Modeling the acquisition of procedural knowledge",
+      "doi": null,
+      "year": 1994,
+      "venue": "User modeling and user-adapted interaction"
+    },
+    {
+      "title": "A cognitive diagnosis model for cognitively based multiple-choice options",
+      "doi": null,
+      "year": 2009,
+      "venue": "Applied Psychological Measurement"
+    },
+    {
+      "title": "Improving students\u2019 learning with effective learning techniques: Promising directions from cognitive and educational psychology",
+      "doi": null,
+      "year": 2013,
+      "venue": "Psychological Science in the Public interest"
+    },
+    {
+      "title": "Practical Approaches to Using Learning Styles in Higher Education: The How-to Steps",
+      "doi": null,
+      "year": 2000,
+      "venue": null
+    },
+    {
+      "title": "Boxcd: Leveraging contrastive probabilistic box embedding for effective and efficient learner modeling",
+      "doi": null,
+      "year": 2025,
+      "venue": "Proceedings of the ACM on Web Conference 2025"
+    },
+    {
+      "title": "Agent4edu: Generating learner response data by generative agents for intelligent education systems",
+      "doi": null,
+      "year": 2025,
+      "venue": "Proceedings of the AAAI Conference on Artificial Intelligence"
+    },
+    {
+      "title": "Context-aware attentive knowledge tracing",
+      "doi": null,
+      "year": 2020,
+      "venue": "Proceedings of the 26th ACM SIGKDD international conference on knowledge discovery & data mining"
+    },
+    {
+      "title": "The power of feedback",
+      "doi": null,
+      "year": 2007,
+      "venue": "Review of educational research"
+    },
+    {
+      "title": "The assistments ecosystem: Building a platform that brings scientists and teachers together for minimally invasive research on human learning and teaching",
+      "doi": null,
+      "year": 2014,
+      "venue": "International Journal of Artificial Intelligence in Education"
+    },
+    {
+      "title": "Foke: A personalized and explainable education framework integrating foundation models, knowledge graphs, and prompt engineering",
+      "doi": null,
+      "year": 2024,
+      "venue": "China National Conference on Big Data and Social Computing"
+    },
+    {
+      "title": "Survey of personalized learning software systems: A taxonomy of environments, learning content, and user models",
+      "doi": null,
+      "year": 2023,
+      "venue": "Education Sciences"
+    },
+    {
+      "title": "A survey on knowledge graphs: Representation, acquisition, and applications",
+      "doi": null,
+      "year": 2021,
+      "venue": "IEEE transactions on neural networks and learning systems"
+    },
+    {
+      "title": "Personalized learning path recommendation with time-aware attention-based reinforcement learning",
+      "doi": null,
+      "year": 2025,
+      "venue": "ACM Transactions on Intelligent Systems and Technology"
+    },
+    {
+      "title": "Chatgpt for good? on opportunities and challenges of large language models for education",
+      "doi": null,
+      "year": 2023,
+      "venue": "Learning and individual differences"
+    },
+    {
+      "title": "Recommender systems: from algorithms to user experience",
+      "doi": null,
+      "year": 2012,
+      "venue": "User modeling and user-adapted interaction"
+    },
+    {
+      "title": "Penetrating the fog: analytics in learning and education [j]",
+      "doi": null,
+      "year": 2014,
+      "venue": "Italian Journal of Educational Technology"
+    },
+    {
+      "title": "Deep learning vs. bayesian knowledge tracing: Student models for interventions",
+      "doi": null,
+      "year": 2018,
+      "venue": "Journal of educational data mining"
+    },
+    {
+      "title": "Introducing meta llama 3: The most capable openly available llm to date",
+      "doi": null,
+      "year": 2024,
+      "venue": null
+    },
+    {
+      "title": "Hello gpt-4o",
+      "doi": null,
+      "year": 2024,
+      "venue": null
+    },
+    {
+      "title": "A review of student models used in intelligent tutoring systems",
+      "doi": null,
+      "year": 2013,
+      "venue": "Design recommendations for intelligent tutoring systems"
+    },
+    {
+      "title": "Elo-based learner modeling for the adaptive practice of facts",
+      "doi": null,
+      "year": 2017,
+      "venue": "User Modeling and User-Adapted Interaction"
+    },
+    {
+      "title": "Deep knowledge tracing",
+      "doi": null,
+      "year": 2015,
+      "venue": "Advances in neural information processing systems"
+    },
+    {
+      "title": "Adaptive deep reinforcement learning for personalized learning pathways: A multimodal data-driven approach with real-time feedback optimization",
+      "doi": null,
+      "year": 2025,
+      "venue": "Computers and Education: Artificial Intelligence"
+    },
+    {
+      "title": "Variables associated with achievement in higher education: A systematic review of meta-analyses",
+      "doi": null,
+      "year": 2017,
+      "venue": "Psychological bulletin"
+    },
+    {
+      "title": "A survey of knowledge tracing: Models, variants, and applications",
+      "doi": null,
+      "year": 2024,
+      "venue": "IEEE Transactions on Learning Technologies"
+    },
+    {
+      "title": "Focus on formative feedback",
+      "doi": null,
+      "year": 2008,
+      "venue": "Review of educational research"
+    },
+    {
+      "title": "Systematic review of ai and non-ai approaches for personalized learning paths",
+      "doi": null,
+      "year": 2025,
+      "venue": "North American Conference on Industrial Engineering and Operations Management-Computer Science Tracks"
+    },
+    {
+      "title": "Personalized learning paths recommendation system with collaborative filtering and content-based approaches",
+      "doi": null,
+      "year": 2024,
+      "venue": "VNUHCM Journal of Economics-Law and Management"
+    },
+    {
+      "title": "The relative effectiveness of human tutoring, intelligent tutoring systems, and other tutoring systems",
+      "doi": null,
+      "year": 2011,
+      "venue": "Educational psychologist"
+    },
+    {
+      "title": "Using adaptive learning technologies to personalize instruction to student interests: The impact of relevant contexts on performance and learning outcomes",
+      "doi": null,
+      "year": 2013,
+      "venue": "Journal of educational psychology"
+    },
+    {
+      "title": "A novel personalized learning path mining based on steiner tree and knowledge graph",
+      "doi": null,
+      "year": 2024,
+      "venue": "Procedia Computer Science"
+    },
+    {
+      "title": "Llm-powered multi-agent framework for goal-oriented learning in intelligent tutoring system",
+      "doi": null,
+      "year": 2025,
+      "venue": "Companion Proceedings of the ACM on Web Conference 2025"
+    },
+    {
+      "title": "Eduagent: Generative student agents in learning",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv preprint arXiv:2404.07963"
+    },
+    {
+      "title": "Study on personalized recommendation algorithm of online educational resources based on knowledge association",
+      "doi": null,
+      "year": 2022,
+      "venue": "Computational intelligence and neuroscience"
+    },
+    {
+      "title": "Enhancing students performance through dynamic personalized learning path using ant colony and item response theory (acoirt)",
+      "doi": null,
+      "year": 2024,
+      "venue": "Computers and Education: Artificial Intelligence"
+    },
+    {
+      "title": "Coderagent: Simulating student behavior for personalized programming learning with large language models",
+      "doi": null,
+      "year": 2025,
+      "venue": "arXiv preprint arXiv:2505.20642"
+    },
+    {
+      "title": "Eduplanner: Llm-based multi-agent systems for customized and intelligent instructional design",
+      "doi": null,
+      "year": 2025,
+      "venue": "IEEE Transactions on Learning Technologies"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

@@ -1,0 +1,358 @@
+{
+  "title": "Owlgorithm: Supporting Self-Regulated Learning in Competitive Programming through LLM-Driven Reflection",
+  "doi": "10.1145/3770762.3772662",
+  "year": 2026,
+  "venue": "Proceedings of the 57th ACM Technical Symposium on Computer Science Education V.1 (SIGCSE TS 2026)",
+  "url": "https://arxiv.org/abs/2511.09969",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses how to support the often-neglected reflection phase of self-regulated learning (SRL) in competitive programming courses. The authors argue that students in competitive programming environments typically focus on planning and coding performance, but rarely engage in structured reflection after receiving pass/fail results from online judges. The study investigates whether an LLM-based tool can provide tailored reflective prompts that help students explain their reasoning, diagnose errors, and think more deeply about algorithms and debugging.\n\nThe intervention is Owlgorithm, a web-based platform that uses GPT-4o to generate context-aware reflective questions based on students\u2019 code submissions and problem statements. The system adapts its prompts depending on whether a submission passed all test cases or failed some/all cases. For successful solutions, it emphasizes generalization, complexity, and justification; for unsuccessful solutions, it emphasizes debugging, failure analysis, and revision planning. The architecture uses separate LLM roles for question generation and review, aligns prompts with Bloom\u2019s Taxonomy, and provides scores, hints, and a summary of student responses.\n\nThe population and context were undergraduate competitive programming courses at Purdue University, specifically second- and third-year courses labeled CP1, CP2, and CP3. Empirical evidence came from an exploratory deployment including six undergraduate teaching assistants and one instructor surveyed in Spring 2025, along with student in-app ratings and exploratory testing from an initial CP1 deployment. The paper presents both quantitative descriptive results (e.g., ratings of question and feedback quality, predicted student usage across course levels) and qualitative perceptions from TAs and students.\n\nThe main conclusions are that LLM-supported reflection shows promise, particularly for novice or lower-level competitive programming students, especially for debugging support and structured self-explanation. However, the system still had substantial limitations, including hallucinations, inaccurate or misleading feedback, slow response times, generic prompts, and weaker perceived value in more advanced courses. The authors conclude that GenAI can support structured reflection in education, but that reliability, interface design, and adaptive conversational functionality need improvement before broad adoption.",
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_control_group",
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "Owlgorithm",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "tutoring_instruction"
+      ],
+      "description": "A web-based educational platform for competitive programming that uses GPT-based prompt pipelines to generate adaptive reflective questions, score student responses, and provide formative feedback to support self-regulated learning.",
+      "use_case": "Studied as an LLM-driven reflection tool integrated into second- and third-year competitive programming courses, generating different prompts for correct vs. failing submissions and collecting TA, instructor, student, and in-app perception ratings about usefulness, quality, and likely adoption.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "In a Spring 2025 perception survey of six undergraduate TAs and one instructor, Owlgorithm\u2019s generated questions received neutral-to-slightly positive ratings: question correctness ranged from 21% to 100% (M=62.1%, SD=25.8%), helpfulness for understanding was M=3.0 (SD=0.8), and helpfulness for debugging was M=3.4 (SD=1.0). Ratings suggested higher perceived value for debugging than for conceptual understanding, with substantial variability in quality.",
+          "measure": "TA/instructor ratings of question correctness and helpfulness for understanding/debugging",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=7"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "Feedback quality was rated lower than question quality in the same perception study: feedback correctness ranged from 19% to 100% (M=49.9%, SD=30.4%), helpfulness for understanding was M=2.7 (SD=1.0), and helpfulness for debugging was M=2.9 (SD=0.7). The paper reports concerns about misleading or incorrect feedback and notes limited feedback accuracy of approximately 40% in the pilot discussion.",
+          "measure": "TA/instructor ratings of feedback correctness and helpfulness for understanding/debugging",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=7"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Perceived helpfulness and anticipated learning impact declined sharply with course level. Perceived helpfulness was CP1: M=3.1 (SD=0.8), CP2: M=1.9 (SD=0.6), CP3: M=1.7 (SD=0.5); debugging usefulness was CP1: M=3.3 (SD=0.7), CP2: M=2.3 (SD=0.7), CP3: M=2.0 (SD=0.6); anticipated learning impact was CP1: M=3.0 (SD=0.0), CP2: M=2.1 (SD=0.6), CP3: M=1.7 (SD=0.5). The authors conclude the tool is best suited for lower-level courses and may be of limited value in advanced courses.",
+          "measure": "TA/instructor ratings of helpfulness, debugging usefulness, and anticipated learning impact by course level",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=7"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Predicted student adoption was concentrated around debugging use, with 87.5% expecting debugging use and 62.5% expecting CP1 interview-preparation use. However, TAs expected very low uptake in advanced courses: 75% predicted CP2 students would never use it and 100% predicted CP3 students would never use it; additionally, five of eight TAs predicted no student adoption in CP2 and seven of eight in CP3. Qualitative comments described the system as 'office-hours on demand' but noted hallucinations, slow response times, and lack of conversational interactivity as barriers.",
+          "measure": "Predicted student usage/adoption and qualitative perceptions of instructional support value",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=7"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Exploratory student and in-app ratings indicated that many students appreciated high-quality prompts, but just under half still reported low satisfaction. The paper states that only about half the questions felt useful, with frustration driven by generic hypotheticals, repeated scenarios, and broad edge-case prompts rather than bug-specific guidance.",
+          "measure": "Student satisfaction and in-app usefulness ratings of generated prompts",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    },
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "language_speech",
+        "content_generation"
+      ],
+      "description": "OpenAI GPT-family large language model system used here as the underlying model family powering prompt generation, review, scoring, hints, and summaries.",
+      "use_case": "GPT-4o was the underlying LLM used within Owlgorithm to generate reflective questions, reviewer refinements, rubrics, scores, feedback hints, and summaries for competitive programming submissions.",
+      "findings": []
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an exploratory evaluation centered on perception surveys, in-app ratings, and qualitative feedback rather than a randomized or quasi-experimental design with direct learning outcome comparisons. The evidence is useful but methodologically limited for causal claims about effectiveness.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "Reported effects are mixed and largely perception-based: modest promise for novice debugging/reflection support, but substantial concerns about accuracy, usability, and low expected adoption in advanced courses. No causal effect sizes or standardized achievement gains are reported.",
+  "citations": [
+    {
+      "title": "Automatic and Intelligent Recommendations to Support Students\u2019 Self-Regulation",
+      "doi": "10.1109/ICALT52272.2021.00107",
+      "year": 2021,
+      "venue": "2021 International Conference on Advanced Learning Technologies (ICALT)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Using e-journaling to improve self-regulated learning in introductory computer programming course",
+      "doi": "10.1109/EDUCON.2014.6826116",
+      "year": 2014,
+      "venue": "IEEE Global Engineering Education Conference (EDUCON)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Training in Self-Explanation and Self-Regulation Strategies: Investigating the Effects of Knowledge Acquisition Activities on Problem Solving",
+      "doi": "10.1207/s1532690xci1302_3",
+      "year": 1995,
+      "venue": "Cognition and Instruction",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Impact Analysis of the Use of Artificial Intelligence with Self-Regulated Learning Theory on Student Academic Performance in Indonesia",
+      "doi": "10.1109/CENIM64038.2024.10882800",
+      "year": 2024,
+      "venue": "2024 International Conference on Computer Engineering, Network, and Intelligent Multimedia (CENIM)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Understanding the relationships between self-regulated learning and students source code in a computer programming course",
+      "doi": "10.1109/FIE.2017.8190467",
+      "year": 2017,
+      "venue": "IEEE Frontiers in Education Conference (FIE)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Review of *A Taxonomy for Learning, Teaching, and Assessing: A Revision of Bloom\u2019s Taxonomy of Educational Objectives\u2014Complete Edition* by Lorin W. Anderson et al.",
+      "doi": null,
+      "year": 2005,
+      "venue": "Educational Horizons",
+      "citation_level": 2,
+      "citation_context": "source for Revised Bloom\u2019s Taxonomy framing"
+    },
+    {
+      "title": "GAIDE: A Framework for Using Generative AI to Assist in Course Content Development",
+      "doi": "10.1109/FIE61694.2024.10893132",
+      "year": 2024,
+      "venue": "2024 IEEE Frontiers in Education Conference (FIE)",
+      "citation_level": 2,
+      "citation_context": "supports two-role LLM architecture and context bleeding concern"
+    },
+    {
+      "title": "Generative AI and teachers\u2019 perspectives on its implementation in education",
+      "doi": null,
+      "year": 2023,
+      "venue": "Journal of Interactive Learning Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A Human-Centered Learning and Teaching Framework Using Generative Artificial Intelligence for Self-Regulated Learning Development Through Domain Knowledge Learning in K\u201312 Settings",
+      "doi": "10.1109/TLT.2024.3392830",
+      "year": 2024,
+      "venue": "IEEE Transactions on Learning Technologies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Let\u2019s Ask Students About Their Programs, Automatically",
+      "doi": "10.1109/ICPC52881.2021.00054",
+      "year": 2021,
+      "venue": "2021 IEEE/ACM 29th International Conference on Program Comprehension (ICPC)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Cognitive Consequences of Programming Instruction: Instruction, Access, and Ability",
+      "doi": null,
+      "year": 1985,
+      "venue": "Educational Psychologist",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Metacognition and Self-Regulation in Programming Education: Theories and Exemplars of Use",
+      "doi": "10.1145/3487050",
+      "year": 2022,
+      "venue": "ACM Transactions on Computing Education",
+      "citation_level": 2,
+      "citation_context": "evidence that students often skip reflection in programming"
+    },
+    {
+      "title": "Large Language Models as Code Executors: An Exploratory Study",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Training Learners to Self-Explain: Designing Instructions and Examples to Improve Problem Solving",
+      "doi": null,
+      "year": 2016,
+      "venue": "Proceedings of the 12th International Conference of the Learning Sciences (ICLS 2016), Volume 1",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Ability to 'explain in plain english' linked to proficiency in computer-based programming",
+      "doi": "10.1145/2361276.2361299",
+      "year": 2012,
+      "venue": "Proceedings of the Ninth Annual International Conference on International Computing Education Research (ICER \u201912)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A Conceptual Framework for Assessing Motivation and Self-Regulated Learning in College Students",
+      "doi": "10.1007/s10648-004-0006-x",
+      "year": 2004,
+      "venue": "Educational Psychology Review",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "What Do We Think We Think We Are Doing?: Metacognition and Self-Regulation in Programming",
+      "doi": "10.1145/3372782.3406263",
+      "year": 2020,
+      "venue": "Proceedings of the 2020 ACM Conference on International Computing Education Research (ICER \u201920)",
+      "citation_level": 2,
+      "citation_context": "supports Bloom-based metacognitive reflection design"
+    },
+    {
+      "title": "Exploring Self-regulated Learning Support for AI Related Work in an Insurance Firm",
+      "doi": "10.1109/WEEF-GEDC59520.2023.10343803",
+      "year": 2023,
+      "venue": "2023 World Engineering Education Forum - Global Engineering Deans Council (WEEF-GEDC)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A Systematic Review Exploring AI\u2019s Role in Self-Regulated Learning Within Education Contexts",
+      "doi": "10.1109/ACCESS.2025.3582600",
+      "year": 2025,
+      "venue": "IEEE Access",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Mathematical Model and AI Oriented Analysis for Self-Regulated Learning in Remote Health Treatments",
+      "doi": "10.1109/GCWkshps50303.2020.9367487",
+      "year": 2020,
+      "venue": "2020 IEEE Globecom Workshops (GC Wkshps)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Automatic Generation of Programming Exercises and Code Explanations Using Large Language Models",
+      "doi": "10.1145/3501385.3543957",
+      "year": 2022,
+      "venue": "Proceedings of the 2022 ACM Conference on International Computing Education Research - Volume 1 (ICER \u201922)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Can Language Models Solve Olympiad Programming?",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Integrating Reflective Writing in CS/IS",
+      "doi": "10.1145/1272848.1272881",
+      "year": 2007,
+      "venue": "SIGCSE Bulletin",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Metacognitive Demands and Opportunities of Generative AI",
+      "doi": "10.1145/3613904.3642902",
+      "year": 2024,
+      "venue": "Proceedings of the 2024 CHI Conference on Human Factors in Computing Systems (CHI \u201924)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Bloom\u2019s Taxonomy for CS Assessment",
+      "doi": null,
+      "year": 2008,
+      "venue": "Proceedings of the Tenth Australasian Computing Education Conference (ACE 2008)",
+      "citation_level": 2,
+      "citation_context": "evidence higher-level Bloom prompts aid programming understanding"
+    },
+    {
+      "title": "Benefits of Self-explanation in Introductory Programming",
+      "doi": "10.1145/2676723.2677260",
+      "year": 2015,
+      "venue": "Proceedings of the 46th ACM Technical Symposium on Computer Science Education (SIGCSE \u201915)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A Prompt Pattern Catalog to Enhance Prompt Engineering with ChatGPT",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_level": 3,
+      "citation_context": "persona prompt pattern used in prompt engineering"
+    },
+    {
+      "title": "AI Chains: Transparent and Controllable Human-AI Interaction by Chaining Large Language Model Prompts",
+      "doi": null,
+      "year": 2022,
+      "venue": "arXiv",
+      "citation_level": 3,
+      "citation_context": "prompt chaining and delimiters structure system prompts"
+    },
+    {
+      "title": "How Pre-service Teachers\u2019 Basic Need Satisfaction Affect their AI Literacy in AI Introductory Courses? the Roles of Emotional Engagement and Self-regulated Learning",
+      "doi": "10.1109/ISET61814.2024.00029",
+      "year": 2024,
+      "venue": "2024 International Symposium on Educational Technology (ISET)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Becoming a Self-Regulated Learner: An Overview",
+      "doi": "10.1207/s15430421tip4102_2",
+      "year": 2002,
+      "venue": "Theory Into Practice",
+      "citation_level": 2,
+      "citation_context": "core SRL cycle underlying Owlgorithm design rationale"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

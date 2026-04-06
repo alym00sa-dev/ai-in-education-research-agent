@@ -1,0 +1,58 @@
+{
+  "title": "Mathematical Capabilities of ChatGPT",
+  "doi": "10.48550/arXiv.2301.13867",
+  "year": 2023,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2301.13867v2",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Graduate / Doctoral",
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper evaluates the mathematical capabilities of ChatGPT (two January 2023 versions) and GPT-4 using a newly created benchmark of natural-language mathematics problems called GHOSTS, plus a smaller miniGHOSTS subset for GPT-4. The authors focus on whether large language models can handle different kinds of mathematical reasoning, including factual recall, filling in gaps in proofs, symbolic integration, olympiad-style problem solving, and search-engine-like retrieval of definitions and theorem statements.\n\nThe study does not involve classroom instruction or an educational intervention; instead, it is a benchmark/evaluation paper using hand-crafted and sourced prompts from graduate-level textbooks, math.stackexchange, the MATH dataset, symbolic mathematics datasets, and olympiad materials. The relevant population is therefore the mathematical knowledge domain represented by undergraduate and graduate-level exercises rather than human learners in a school setting.\n\nThe main conclusion is that ChatGPT is most useful as a mathematical assistant for factual lookup and search-like tasks, while GPT-4 improves on ChatGPT and can sometimes handle undergraduate-level tasks, but still falls short on graduate-level mathematics and complex proofs. The authors conclude that, despite public hype, these models are not yet reliable for advanced mathematics, although they may be helpful as workflow aids for mathematically proficient users who can verify the output.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a systematic benchmark study with human annotation and clear evaluation methodology, but it is not an intervention study in K-12 education and does not use an experimental or quasi-experimental design with learners. It provides descriptive performance evidence rather than causal evidence of educational impact.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper shows clear capability differences in mathematical problem solving and assistant usefulness, but it does not measure student learning gains or educational outcomes directly. Its likely impact is on model evaluation and downstream tutoring use, not demonstrated population-level educational impact.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "Benchmarking ChatGPT (two 2023 versions) and GPT-4 as mathematical assistants for querying facts, filling gaps in proofs, solving undergraduate/graduate math problems, symbolic integration, and theorem/definition retrieval."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 1.0,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The paper finds that ChatGPT and GPT-4 have uneven mathematical performance across task types. On GHOSTS, the 9-Jan-2023 ChatGPT version averaged rating 3.20 (SD=1.23) and the 30-Jan-2023 version averaged 3.29 (SD=1.28), while GPT-4 averaged 4.15 (SD=1.12) on miniGHOSTS; GPT-4 still failed on graduate-level and olympiad-style tasks. For symbolic integration, ChatGPT averaged 2.51 (SD=0.87) on a random sample, and GPT-4 reached 3.50 (SD=1.43), indicating better but still limited mathematical competence overall.",
+        "measure": "Human-rated mathematical solution quality across task sets (rating 1-5) on GHOSTS/miniGHOSTS; also exact-answer success on subsets such as MATH and symbolic integration",
+        "study_size": "n=709 prompts (1636 human ratings); GPT-4 evaluated on n=170 prompts",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "1.23; 1.28; 1.12; 0.87; 1.43"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    }
+  ],
+  "limitations": [
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

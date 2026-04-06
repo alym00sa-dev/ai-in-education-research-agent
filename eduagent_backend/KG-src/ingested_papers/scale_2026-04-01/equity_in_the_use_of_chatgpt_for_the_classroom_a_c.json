@@ -1,0 +1,421 @@
+{
+  "title": "Equity in the Use of ChatGPT for the Classroom: A Comparison of the Accuracy and Precision of ChatGPT 3.5 vs. ChatGPT4 with Respect to Statistics and Data Science Exams",
+  "doi": null,
+  "year": 2024,
+  "venue": "arXiv",
+  "url": "https://arxiv.org/abs/2412.13116",
+  "source_db": "scale_stanford",
+  "populations": [
+    "High School (9th-12th)",
+    "Undergraduate",
+    "Graduate / Doctoral"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper examines whether students who rely on the free version of ChatGPT (ChatGPT 3.5) are disadvantaged relative to students who can pay for ChatGPT4 when using generative AI for statistics and data science learning. The central question is an equity one: if paid and free versions differ substantially in accuracy and response quality, then generative AI could widen rather than reduce educational inequality. The authors frame this in relation to social mobility, the digital divide, and the growing use of AI tools by students even when classroom policies restrict them.\n\nThe study compares ChatGPT 3.5 and ChatGPT4 by entering the same statistics questions, one at a time, into each platform and grading the outputs. The question set consisted of 93 items drawn from four exams at different levels: the Arkansas Council of Teachers of Mathematics exam, the CAOS exam, the 2011 AP Statistics exam, and a first-year graduate statistical methods exam for PhD students in statistics, biostatistics, and data science. Questions included multiple-choice and free-response formats, with and without images. Responses were scored using a rubric, then compared using McNemar's test for dichotomized correctness and ordinal logistic regression for quality differences.\n\nThe educational context spans high school statistics, introductory college statistics, AP-level statistics, and graduate-level statistical methods, but the paper does not study students interacting with the tool directly in an instructional intervention. Instead, it treats exam performance as a proxy for the quality of tutoring or study assistance a student might receive. The study was conducted by researchers in the Department of Statistics and Data Science at Southern Methodist University in the United States.\n\nThe main conclusion is that ChatGPT4 consistently outperformed ChatGPT 3.5 across all exams and question types. ChatGPT4 answered 80% of all questions correctly versus 50% for ChatGPT 3.5, and the gap was especially large for image-based questions because ChatGPT 3.5 could not interpret images. The authors argue that this performance gap creates an equity concern: students who cannot afford paid AI access may receive poorer instructional support. They also note that the study is limited by sample size, single-institution authorship/context, lack of direct student-use data, and the fact that the analyzed version landscape became outdated as newer models were released.",
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "tutoring_instruction"
+      ],
+      "description": "OpenAI's generative AI chatbot family used for question answering and assistance across text and image-enabled tasks.",
+      "use_case": "The paper compared ChatGPT 3.5 and ChatGPT 4 on 93 statistics and data science exam questions from ACTM, CAOS, AP Statistics, and a first-year graduate methods exam, grading accuracy and response quality on multiple-choice and free-response items with and without images.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Across all 93 statistics/data science exam questions, ChatGPT4 outperformed ChatGPT3.5 on paired accuracy. ChatGPT4 answered 80% (76/93) correctly versus 50% (47/93) for ChatGPT3.5; McNemar's test on discordant pairs gave \u03c72_1 = 19.9, p = .000012, with 35 questions correct for ChatGPT4 and incorrect for ChatGPT3.5 versus 6 in the opposite direction.",
+          "measure": "Correct vs incorrect answers on 93 paired exam questions across four statistics/data science exams",
+          "effect_size": "\u03c72_1 = 19.9",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=93"
+        },
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "On questions without images, ChatGPT4 showed higher paired accuracy than ChatGPT3.5. ChatGPT4 answered 88% of non-image questions correctly versus 71% for ChatGPT3.5; among discordant pairs, 17 favored ChatGPT4 and 6 favored ChatGPT3.5, with McNemar p = .03.",
+          "measure": "Correct vs incorrect answers on questions without images",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=63"
+        },
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "On questions with images, ChatGPT4 substantially outperformed ChatGPT3.5. ChatGPT4 answered 66% (20/30) of image-based questions correctly versus 6% (2/30) for ChatGPT3.5; discordant pairs were 18 favoring ChatGPT4 and 0 favoring ChatGPT3.5, with McNemar p = .00006.",
+          "measure": "Correct vs incorrect answers on image-based questions",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=30"
+        },
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "For free-response questions, ChatGPT4 had higher accuracy than ChatGPT3.5 after dichotomizing scores as correct if >=3 on the rubric. ChatGPT4 answered 82% (23/28) correctly versus 43% (12/28) for ChatGPT3.5; McNemar's test gave p = .010, with 18 discordant questions favoring ChatGPT4 and 2 favoring ChatGPT3.5.",
+          "measure": "Correct vs incorrect on free-response questions scored with a 0-4 rubric and dichotomized at >=3",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=28"
+        },
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "For multiple-choice questions, ChatGPT4 outperformed ChatGPT3.5 on paired accuracy. The paper reports McNemar p = .0009, with 22 discordant questions favoring ChatGPT4 and 4 favoring ChatGPT3.5.",
+          "measure": "Correct vs incorrect answers on multiple-choice questions",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=65"
+        },
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Ordinal logistic regression on response quality differences found that image presence strongly increased ChatGPT4's advantage over ChatGPT3.5. The Image Present coefficient was 1.9172 (SE = 0.4599, z = 4.169, p = 3.06 x 10^-5), corresponding to an estimated 580% increase in the odds that ChatGPT4 would provide a higher-quality response; the paper states a 95% confidence interval for the increase in odds between 276% and 1575%.",
+          "measure": "Quality difference in responses on a 0-4 ordinal scoring rubric modeled by ordinal logistic regression",
+          "effect_size": "\u03b2=1.9172; OR\u2248e^1.9172",
+          "confidence_interval": "95% CI for increase in odds: 276% to 1575%",
+          "sample_size": "n=93"
+        },
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "Ordinal logistic regression did not find sufficient evidence that free-response versus multiple-choice format changed ChatGPT4's advantage over ChatGPT3.5 after controlling for image presence. The TypeFR coefficient was 0.4565 (SE = 0.4538, z = 1.006, p = 0.314439), which the authors interpret as an estimated 57% increase in odds with a 95% confidence interval ranging from a 35.2% decrease to a 284% increase.",
+          "measure": "Effect of question type on quality difference between ChatGPT4 and ChatGPT3.5 in ordinal logistic regression",
+          "effect_size": "\u03b2=0.4565; OR\u2248e^0.4565",
+          "confidence_interval": "95% CI for percent change in odds: -35.2% to 284%",
+          "sample_size": "n=93"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical comparative study of a named AI tool using paired exam-item analyses, but it is not a student learning intervention, RCT, or QED with learners assigned to tool conditions. Outcomes are tool performance on exam questions rather than direct student outcomes.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper shows clear performance differences favoring ChatGPT4 over ChatGPT3.5, especially for image-based statistics questions, but it does not report standardized educational effect sizes or direct impacts on students' learning. Impact on education is therefore suggestive but indirect and unclear.",
+  "citations": [
+    {
+      "title": "Opportunity engines: Middle class mobility in higher education",
+      "doi": null,
+      "year": 2020,
+      "venue": "Economic Research: Brookings Institution",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Years that Matter Most: How College Makes Us or Breaks Us",
+      "doi": null,
+      "year": 2019,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Morse Code: Inside the College Rankings",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT: Optimizing language models for dialogue",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT: Optimizing language models for dialogue",
+      "doi": null,
+      "year": 2022,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Chat GPT 4 vs GPT 3.5: Comparative Analysis of OpenAI Tools",
+      "doi": null,
+      "year": 2023,
+      "venue": "Almabetter Website",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "I am a student: You have no idea how much we are using chatGPT",
+      "doi": null,
+      "year": null,
+      "venue": "The Chronical of Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Meet Claude",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Google Gemini",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Microsoft Copilot",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Pi (personal AI",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "personal communication",
+      "doi": null,
+      "year": null,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Generative AI can enhance equity of access and attainment",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "supports equity framing around generative AI access"
+    },
+    {
+      "title": "Arkansas Council of Teachers of Mathematics Exam",
+      "doi": null,
+      "year": 2011,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "source of exam questions in study dataset"
+    },
+    {
+      "title": "Assessing students\u2019 conceptual understanding after a first course in statistics",
+      "doi": "10.52041/serj.v6i2.483",
+      "year": 2007,
+      "venue": "Statistics Education Research Journal",
+      "citation_level": 3,
+      "citation_context": "source of CAOS exam questions"
+    },
+    {
+      "title": "Transformative effects of chatgpt on modern education: Emerging era of ai chatbots",
+      "doi": "10.1016/j.iotcps.2023.06.002",
+      "year": 2024,
+      "venue": "Internet of Things and Cyber-Physical Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Chatgpt, ai-generated content, and engineering management",
+      "doi": null,
+      "year": 2024,
+      "venue": "Front. Eng. Manag.",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Education in the era of generative artificial intelligence (AI): Understanding the potential benefits of ChatGPT in promoting teaching and learning",
+      "doi": "10.61969/jai.1337500",
+      "year": 2023,
+      "venue": "Journal of AI",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Comparative performance of humans versus GPT-4.0 and GPT-3.5 in the self-assessment program of American Academy of Ophthalmology",
+      "doi": "10.1038/s41598-023-45837-2",
+      "year": 2023,
+      "venue": "Scientific Reports",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "GPT-4 Technical Report",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "GPT takes the bar exam",
+      "doi": null,
+      "year": 2022,
+      "venue": "Social Science Research Network (SSRN)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Latest version of ChatGPT aces bar exam with score nearing 90th percentile",
+      "doi": null,
+      "year": 2023,
+      "venue": "ABA Journal",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Performance of GPT-4 and GPT-3.5 in generating accurate and comprehensive diagnoses across medical subspecialties",
+      "doi": "10.1097/JCMA.0000000000001064",
+      "year": 2024,
+      "venue": "Journal of the Chinese Medical Association",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Generative AI in Statistics",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "motivates use of generative AI in statistics education"
+    },
+    {
+      "title": "A new era of learning: Considerations for chatgpt as a tool to enhance statistics and data science education",
+      "doi": "10.1080/26939169.2023.2223609",
+      "year": 2023,
+      "venue": "Journal of Statistics and Data Science Education",
+      "citation_level": 2,
+      "citation_context": "frames ChatGPT as tool in statistics education"
+    },
+    {
+      "title": "Opportunities and challenges in the application of chatgpt in foreign language teaching",
+      "doi": null,
+      "year": 2023,
+      "venue": "International Journal of Education and Social Science Research (IJESSR)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Evaluating the effectiveness of chatgpt to improve english students\u2019 writing skills",
+      "doi": "10.36597/heal.v1i1.1467",
+      "year": 2024,
+      "venue": "Humanities, Education, Applied Linguistics, and Language Teaching: Conference Series",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Data analytics and programming for linguistics students: A swot and survey study",
+      "doi": "10.1080/26939169.2023.2276441",
+      "year": 2023,
+      "venue": "Journal of Statistics and Data Science Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT in the classroom: An analysis of its strengths and weaknesses for solving undergraduate computer science questions",
+      "doi": null,
+      "year": 2023,
+      "venue": "SIGCSE 2024: Proceedings of the 55th ACM Technical Symposium on Computer Science Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The content analysis of the lesson plans created by chatgpt and google gemini",
+      "doi": "10.46303/ressat.2024.19",
+      "year": 2024,
+      "venue": "Research in Social Sciences and Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Note on the sampling error of the difference between correlated proportions or percentages",
+      "doi": "10.1007/bf02295996",
+      "year": 1947,
+      "venue": "Psychometrika",
+      "citation_level": 3,
+      "citation_context": "basis for McNemar\u2019s test of paired correctness"
+    },
+    {
+      "title": "An Introduction to Categorical Data Analysis",
+      "doi": null,
+      "year": 1996,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "basis for ordinal logistic regression analysis"
+    },
+    {
+      "title": "The learning nonprofit: Khan academy piloting a version of gpt called khanmigo",
+      "doi": null,
+      "year": 2023,
+      "venue": "Fast Company",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Four Stars for Khanmigo: Common Sense Media Rates AI Tools for Learning",
+      "doi": null,
+      "year": 2024,
+      "venue": "Khan Academy",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "GPT-4o and More Tools to ChatGPT Free",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "HuggingFace\u2019s Transformers: State-of-the-art Natural Language Processing",
+      "doi": null,
+      "year": 2020,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A.I. project STAT 6337",
+      "doi": null,
+      "year": null,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

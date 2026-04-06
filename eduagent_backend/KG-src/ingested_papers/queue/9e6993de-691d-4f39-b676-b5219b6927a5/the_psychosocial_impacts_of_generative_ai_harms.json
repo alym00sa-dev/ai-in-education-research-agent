@@ -1,0 +1,59 @@
+{
+  "title": "The Psychosocial Impacts of Generative AI Harms",
+  "doi": null,
+  "year": null,
+  "venue": null,
+  "url": "http://arxiv.org/abs/2405.01740v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "K-12 (unspecified grade)",
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper examines the potential psychosocial harms of generative language models when they produce classroom-related narratives about students. The central problem is not writing improvement or instructional effectiveness, but whether biased AI-generated text can reinforce harmful representations of learners from marginalized groups through erasure, subordination, and stereotyping. The authors argue that as generative AI tools are increasingly introduced into educational settings, there is a need to understand how their outputs may affect users' social and psychological well-being.\n\nThe study analyzes 150,000 short stories from the existing \u201cLaissez-Faire Harms\u201d dataset, using outputs from five major generative language models: ChatGPT-3.5, ChatGPT-4, Claude 2.0, Llama 2, and PaLM 2. These models were prompted with 30 open-ended classroom-related prompts about students across 15 academic subjects, including both power-neutral and power-laden versions. The authors combine quantitative pattern analysis of generated names and subject associations with qualitative purposive analysis of especially egregious examples. They also classify subjects into STEM and humanities/social sciences to examine stereotype patterns more closely.\n\nThe educational context is simulated rather than based on direct interventions with human learners. The prompts concern American students in classroom scenarios, and the paper discusses implications for K-20 settings, especially students and teachers who may encounter such tools in schools. Although no human participants were recruited into an intervention, the analysis focuses on how generated depictions may affect students from historically marginalized groups, including Indigenous/Native American, Latine, and Asian/Asian American learners.\n\nThe main conclusion is that the five language models frequently generate biased educational narratives that risk psychosocial harm. The paper finds strong evidence of Indigenous erasure, Latine subordination, and stereotypes such as the \u201cwhite savior\u201d and \u201cmodel minority.\u201d The authors conclude that generative AI tools used in education may reproduce and amplify social bias, and they call for more empirical research, teacher preparation, and policy attention to mitigate these harms before broader classroom adoption.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical computational content-analysis study with a described dataset and analytic approach, but it is not a K-12 comparative intervention study and does not estimate causal effects on student outcomes. It provides some methodological transparency but lacks experimental educational outcome evidence.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "The paper documents potential harms and argues for risk mitigation; it does not show positive educational impact and its substantive finding is negative risk in generated content. No effect size on learners, teachers, or institutions is reported.",
+  "interventions": [
+    {
+      "intervention": "Other",
+      "confidence": 0.99,
+      "role": "primary",
+      "use_case": "Evaluation of five generative language models (ChatGPT-3.5, ChatGPT-4, Claude 2.0, Llama 2, PaLM 2) generating short classroom-related stories in response to open-ended prompts, to analyze representational and psychosocial harms in educationally themed text outputs rather than student learning gains."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Systemic / Institutional Impact",
+      "confidence": 0.79,
+      "finding": {
+        "direction": "Negative",
+        "finding_summary": "The study finds that leading generative language models can produce biased classroom narratives that risk reinforcing representational harms in educational contexts, including erasure of Indigenous/Native American learners, subordination of Latine learners, and stereotyping such as 'white savior' and 'model minority' portrayals. Evidence is based on analysis of 150,000 model-generated 100-word stories from 30 classroom-related prompts across five models; no causal effect sizes, confidence intervals, or learner outcome statistics are reported because this is not an intervention trial with students.",
+        "measure": "Content analysis of LM-generated classroom narratives for representational harms (erasure, subordination, stereotyping) across prompts and character depictions",
+        "study_size": "n=150,000 generated stories",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "lab",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

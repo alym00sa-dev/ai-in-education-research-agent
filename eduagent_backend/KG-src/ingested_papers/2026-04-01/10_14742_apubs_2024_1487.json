@@ -1,0 +1,310 @@
+{
+  "title": "GenAI Teachers: Constructivist Learning Design and Value Propositions",
+  "doi": "10.14742/apubs.2024.1487",
+  "year": 2024,
+  "venue": "ASCILITE 2024",
+  "url": "https://doi.org/10.14742/apubs.2024.1487",
+  "source_db": "openalex_search",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper examines how generative AI tutoring tools are actually used by students in higher education, with a particular focus on whether students prefer constructivist uses of AI tutors (for example, dialogue, reflection, and active quizzing) over more instructivist uses (such as summarization, factual retrieval, and definitions). The author also investigates whether students with stronger self-directed learning tendencies show greater preference for constructivist AI-tutor interactions, and whether AI tutors offer a viable value proposition for universities relative to their operating costs.\n\nThe intervention involved four custom AI tutors built for a second-year undergraduate chemical engineering subject at the University of Melbourne. The tutors were implemented as chatbot interfaces using different large language models (GPT-3.5 turbo, GPT-4, GPT-4o, and Claude), all supported by retrieval-augmented generation using course notes. Students were introduced to the tools in class, given examples of possible uses, and then allowed to use them voluntarily and unsupervised over a two-week period before the final exam. Data came primarily from an anonymous Qualtrics survey that asked students to rate the usefulness of 19 AI-tutor use cases, assessed self-directed learning using the SRSSDL instrument, and gathered perceptions about model preference and acceptable pricing. Usage metadata such as API requests and unique IP addresses were also logged.\n\nThe study was conducted with undergraduate students in a single chemical engineering course in Australia. Of 83 enrolled students, 40 responded to the survey and 37 complete responses were analyzed, with 35 completing the self-directed learning scale. The setting appears blended: students received an in-class demonstration but used the AI tutors independently online outside class. The study did not use a control group or objective achievement outcomes; instead it relied on student perceptions of learning utility.\n\nThe main conclusion is that students reported the greatest value from non-constructivist, instructivist uses of the AI tutor, contrary to the author's initial hypothesis. The most highly rated uses were obtaining definitions, summaries, study guides, and factual information, although some constructivist uses such as being quizzed and cross-checking understanding were also valued. Self-directed learners showed only a slight additional preference for AI tutors, with no strong pattern linking self-directed learning to constructivist use. The paper also concludes that students often could not distinguish among underlying LLMs when retrieval augmentation was used, and that the cost of running the system was substantially below the value students assigned to it, suggesting a favorable institutional business case.",
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "no_control_group",
+    "self_reported_measures",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "2",
+  "setting": "blended",
+  "teacher_training": "no",
+  "implementation_fidelity": "medium",
+  "study_country": "Australia",
+  "study_region": "East Asia & Pacific",
+  "identified_tools": [
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "tutoring_instruction",
+        "content_generation"
+      ],
+      "description": "Custom AI tutors built as retrieval-augmented chatbot wrappers over large language models, using course notes to answer subject-specific questions and support study activities.",
+      "use_case": "Students in a second-year undergraduate chemical engineering subject used four custom RAG-based AI tutors over two weeks before the final exam for concept definitions, summaries, factual retrieval, quizzes, critique of understanding, and other study-support interactions.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Student self-reports indicated the highest perceived learning utility came from non-constructivist/instructivist uses of the AI tutor rather than the hypothesized constructivist uses. Top-rated uses were providing short definitions of key concepts (93.9% agree, 7.5% did not use), summarizing lecture notes or textbook content (92.3% agree, 25.0% did not use), creating study guides and module summaries (92.0% agree, 27.5% did not use), and providing factual information (91.2% agree, 5.0% did not use); a constructivist use, quizzing students on course material, was also highly rated (90.5% agree, 37.5% did not use).",
+          "measure": "Student perceived learning utility by use-case via Likert survey",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=37"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "The study found no significant relationship between self-directed learning and AI-tutor use strategies, with only a slight preference for AI tutors among highly self-directed learners. Among respondents completing the SRSSDL, high self-directed learners reported 100% agreement that the AI tutor was useful (average Likert 4.6, SD 0.5) versus 87% for moderate self-directed learners (average Likert 4.3, SD 0.9), and 90% vs 93% agreement that they would like AI tutors available for all subjects (average Likert 4.6 vs 4.5).",
+          "measure": "SRSSDL self-directed learning categories and AI-tutor usefulness/preference survey items",
+          "effect_size": "Difference in mean Likert score = 0.3 and 0.1",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=35"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Students perceived the AI tutor as offering value above its compute cost. The paper reports a student price tipping point between AUD $20 and $50 per semester, while total token costs were AUD $1.98 for 25 days of use, extrapolated to AUD $7.7 across a full semester, leading the authors to conclude the tool has a compelling university business case.",
+          "measure": "Student willingness-to-pay/value perception benchmarked against compute cost",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=37"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Usage was high during deployment. Across 25 days, the system logged 103 unique IP addresses accessing the tutors (98 attributed to students after excluding 5 staff IPs) and 3,230 total API requests, equivalent to about 39 questions per enrolled student or just over 1.5 questions per student per day for a class of 83 students.",
+          "measure": "System usage logs: unique IP access and total API requests",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=83"
+        }
+      ]
+    },
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "content_generation"
+      ],
+      "description": "OpenAI GPT-family large language models used as the backend for conversational AI tutors.",
+      "use_case": "Two of the four custom AI tutors were built on OpenAI GPT-family models (GPT-3.5 turbo, GPT-4, GPT-4o; normalized here to ChatGPT) with RAG over course notes; students compared unlabeled tutor variants and expressed model preferences.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "When students compared unlabeled AI tutors backed by different LLMs, the most common response was no preference, suggesting many learners could not distinguish between models when enhanced with RAG. After no preference, the GPT-4 turbo-backed tutor was the most popular, a pattern also confirmed in API calls.",
+          "measure": "Student stated LLM preference and observed usage across unlabeled tutor variants",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=37"
+        }
+      ]
+    },
+    {
+      "name": "Claude",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "content_generation"
+      ],
+      "description": "Anthropic Claude-family large language models used as the backend for conversational AI tutors.",
+      "use_case": "One of the four custom AI tutors was built on Claude (Claude-3 Opus; normalized here to Claude) with RAG over course notes; students compared unlabeled tutor variants.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "Students generally could not perceive major differences between LLM-backed tutors when model identity was hidden and RAG was used. The paper states that the most common response was no preference across models, implying Claude was not clearly distinguishable from alternatives in this setting.",
+          "measure": "Student stated LLM preference across unlabeled tutor variants",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=37"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical single-course study using anonymous surveys and usage logs, but it relies primarily on student self-reported perceived learning utility rather than direct learning outcomes or a controlled causal design. The sample is small and non-random, so evidence quality is correlational/mixed-methods rather than experimental.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "Findings suggest positive perceived usefulness, high uptake, and favorable cost-value perceptions, but impacts on actual academic outcomes are unclear and no effect sizes on achievement are reported. Results are therefore promising but substantively uncertain.",
+  "citations": [
+    {
+      "title": "The opportunities and challenges of ChatGPT in education",
+      "doi": "10.1080/10494820.2023.2253858",
+      "year": 2023,
+      "venue": "Interactive Learning Environments",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Exploring learning-oriented assessment processes",
+      "doi": "10.1007/s10734-014-9816-z",
+      "year": 2015,
+      "venue": "Higher Education",
+      "citation_level": 2,
+      "citation_context": "assessment shapes student learning behaviour"
+    },
+    {
+      "title": "A Constructionist Approach to Learning with AI: An \u201cOld\u201d Solution to a \u201cNew\u201d Problem?",
+      "doi": "10.1007/978-3-031-53963-3_2",
+      "year": 2024,
+      "venue": "Future of Information and Communication Conference",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "From instructivism to connectivism: theoretical underpinnings of MOOCs",
+      "doi": null,
+      "year": 2016,
+      "venue": "Current Issues in Emerging eLearning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Behaviorism, cognitivism, constructivism: Comparing critical features from an instructional design perspective",
+      "doi": "10.1002/piq.21143",
+      "year": 2013,
+      "venue": "Performance Improvement Quarterly",
+      "citation_level": 2,
+      "citation_context": "used to frame constructivist versus instructivist learning design"
+    },
+    {
+      "title": "Active learning: An introduction",
+      "doi": null,
+      "year": 2009,
+      "venue": "ASQ Higher Education Brief",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A review on the use of large language models as virtual tutors",
+      "doi": "10.1007/s11191-024-00530-2",
+      "year": 2024,
+      "venue": "Science & Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Learning patterns in higher education",
+      "doi": "10.4324/9781315885438",
+      "year": 2014,
+      "venue": "Routledge",
+      "citation_level": 2,
+      "citation_context": "assessment design influences student study habits"
+    },
+    {
+      "title": "The Delphi technique: a critique",
+      "doi": "10.1111/j.1365-2648.1987.tb01376.x",
+      "year": 1987,
+      "venue": "Journal of Advanced Nursing",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Student learning and assessment are inextricably linked",
+      "doi": "10.1080/03043799708923471",
+      "year": 1997,
+      "venue": "European Journal of Engineering Education",
+      "citation_level": 2,
+      "citation_context": "assessment and learning are directly related"
+    },
+    {
+      "title": "Constructivist learning theory",
+      "doi": null,
+      "year": 1991,
+      "venue": "Institute for Inquiry",
+      "citation_level": 2,
+      "citation_context": "supports claim that interactivity enhances learning"
+    },
+    {
+      "title": "GenAI in the classroom: Customized GPT Roleplay for Process Safety Education",
+      "doi": "10.1016/j.ece.2024.09.001",
+      "year": 2024,
+      "venue": "Education for Chemical Engineers",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A Tool for Learning: Classroom Use-cases for Generative AI",
+      "doi": null,
+      "year": 2023,
+      "venue": "The Chemical Engineer",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Likert items and scales",
+      "doi": null,
+      "year": 2010,
+      "venue": "Survey Question Bank",
+      "citation_level": 3,
+      "citation_context": "standard handling of Likert responses"
+    },
+    {
+      "title": "Likert scale: Explored and explained",
+      "doi": "10.9734/BJAST/2015/14975",
+      "year": 2015,
+      "venue": "Current Journal of Applied Science and Technology",
+      "citation_level": 3,
+      "citation_context": "supports survey design and Likert scoring approach"
+    },
+    {
+      "title": "Self-directed learning: A guide for learners and teachers",
+      "doi": null,
+      "year": 1975,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Constructivism\u2014Constructivist learning theory",
+      "doi": null,
+      "year": 2013,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Self\u2010directed learning in nurse education: a review of the literature",
+      "doi": "10.1046/j.1365-2648.2003.02673.x",
+      "year": 2003,
+      "venue": "Journal of Advanced Nursing",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Chatbots applications in education: A systematic review",
+      "doi": "10.1016/j.caeai.2021.100033",
+      "year": 2021,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Utilizing generative conversational artificial intelligence to create simulated patient encounters: a pilot study for anaesthesia training",
+      "doi": "10.1093/postmj/qgad137",
+      "year": 2024,
+      "venue": "Postgraduate Medical Journal",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Development of a self-rating scale of self-directed learning",
+      "doi": "10.7748/nr2007.01.14.2.66.c6022",
+      "year": 2007,
+      "venue": "Nurse Researcher",
+      "citation_level": 3,
+      "citation_context": "SRSSDL instrument scoring and classification"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

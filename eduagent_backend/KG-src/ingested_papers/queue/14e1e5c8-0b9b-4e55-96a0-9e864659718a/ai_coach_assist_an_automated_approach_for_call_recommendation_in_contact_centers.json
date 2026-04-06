@@ -1,0 +1,59 @@
+{
+  "title": "AI Coach Assist: An Automated Approach for Call Recommendation in Contact Centers for Agent Coaching",
+  "doi": null,
+  "year": 2023,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2305.17619v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Adult (non-academic)"
+  ],
+  "user_types": [
+    "Administrator"
+  ],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses the problem of helping contact center supervisors identify which customer-agent calls are most useful for coaching. The authors argue that manual review and random sampling of calls are time-consuming and inefficient, and propose an AI-based call recommendation system that prioritizes calls likely to contain coachable moments.\n\nThe intervention studied is AI Coach Assist, a text classification system that combines a supervisor\u2019s quality-assurance question with an ASR transcript of a call and predicts whether the call is coachable for that question. The system is implemented with fine-tuned transformer models, especially DialogLED for higher accuracy and DistilBERT for a more efficient deployment option. The paper also compares these models against TF-IDF plus classical machine-learning baselines and reports ablation results showing that including the question text and allowing longer input sequences improve performance.\n\nThe data come from real-world contact centers and include 58 coaching questions paired with call transcripts annotated by contact center managers and supervisors. The paper does not study K-12 teachers or students; instead, it focuses on adult contact-center personnel in a business setting. The authors conclude that their system can improve the efficiency of coaching workflows by helping managers select calls for manual review, while explicitly not replacing human judgment or automating performance scoring.",
+  "limitations": [
+    "no_long_term_followup",
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Canada",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "prediction_analytics",
+        "feedback_evaluation"
+      ],
+      "description": "A transformer-based text classification system that uses a query and call transcript to predict whether a call is coachable for agent coaching.",
+      "use_case": "Used to recommend contact-center calls for coaching by predicting whether a call/transcript pair is coachable for a given manager question; specifically compared DistilBERT and DialogLED variants, but no single commercial named product was studied.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "On the QA Scorecard test set, the DialogLED-based AI Coach Assist model achieved accuracy of 70.52 and precision of 67.92, outperforming the DistilBERT variant (accuracy 66.25, precision 62.53). The paper frames this as improving call selection efficiency for human coaching, not replacing human review.",
+          "measure": "Classification performance for coachable vs. not coachable call-transcript pairs",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=3435 test samples"
+        }
+      ]
+    }
+  ],
+  "verdict": "genai_general",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a single technical model-development paper with offline classification experiments, not an RCT, QED, or field study of coaching outcomes. The paper evaluates prediction performance only, without causal evidence on teacher or agent behavior change.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The reported model performance is moderate and relevant for operational triage, but there is no reported effect size on downstream coaching effectiveness. Because the outcome is predictive accuracy rather than behavior or learning impact, the practical impact remains unclear.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

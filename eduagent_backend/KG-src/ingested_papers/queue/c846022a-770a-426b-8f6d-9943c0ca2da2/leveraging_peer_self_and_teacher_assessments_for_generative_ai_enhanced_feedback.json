@@ -1,0 +1,108 @@
+{
+  "title": "Leveraging Peer, Self, and Teacher Assessments for Generative AI-Enhanced Feedback",
+  "doi": null,
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "url": "http://arxiv.org/abs/2512.18306v2",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper examines how teacher, peer, and self-assessments relate to one another in a GenAI-enhanced feedback workflow, with the broader goal of improving the design of AI-supported feedback systems. The core question is whether different human evaluative sources provide consistent, reliable, and sufficiently informative inputs for generating pedagogically meaningful feedback, and whether those inputs should be weighted differently rather than treated as equivalent.\n\nThe study was conducted inside the AICoFe collaborative feedback system, which combines rubric-based teacher, peer, and self-assessments with a generative AI model (GePeTo) that produces personalized feedback. The authors analyzed 46 evaluation sets from undergraduate engineering students delivering oral presentations. Students completed peer and self-assessments using the same validated rubric as the teacher, and the teacher also provided an independent overall grade. The analysis focused on agreement, correlations, and systematic scoring differences across evaluator types.\n\nResults showed moderate to substantial agreement overall, with peer ratings aligning reasonably well with teacher ratings and self-ratings showing the weakest alignment. The teacher\u2019s rubric scores were stricter than peer and self scores, while peers and students tended to score slightly higher. Based on these findings, the paper proposes an enhanced GenAI feedback design that gives greater weight to teacher assessments, incorporates self-assessments as an additional signal, and includes bias/divergence detection before generating feedback. The study concludes that human judgments are complementary but not interchangeable, and that GenAI systems for feedback should explicitly model those differences.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a correlational observational study with paired comparisons and agreement analysis, not an experimental design. It provides useful empirical evidence, but causal claims about the GenAI feedback system improving outcomes are not directly tested.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The reported effects are mostly on agreement, validity, and score alignment rather than learner gains, and no direct learning effect size is established. The practical implications for feedback design are meaningful, but the demonstrated impact on students is still indirect and modest.",
+  "interventions": [
+    {
+      "intervention": "Automated Feedback System",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "GenAI-enhanced collaborative feedback in the AICoFe system, using rubric-based teacher, peer, and self-assessments to generate personalized feedback for student oral presentations"
+    },
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.67,
+      "role": "secondary",
+      "use_case": "GePeTo generative model that produces context-aware feedback messages from aggregated evaluator inputs within learning analytics dashboards"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Language Fluency",
+      "confidence": 0.84,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper studies oral presentation performance feedback in engineering education, using rubric scores and teacher grades for 46 presentations (n=46). While it does not test learning gains directly, it finds substantial alignment among evaluators and strong correlations between rubric-based scores and the teacher\u2019s overall oral presentation grade (teacher rubric vs grade r=0.88; peers vs grade r=0.69; self vs grade r=0.59), suggesting the feedback process validly captures speaking performance.",
+        "measure": "Oral presentation rubric scores and teacher's overall grade for presentations",
+        "study_size": "n=46",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Automated Feedback System"
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.89,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper directly examines evaluative judgment, self-assessment, and peer assessment consistency in a rubric-based feedback cycle for 46 undergraduate oral presentations. Agreement was moderate to substantial depending on the statistic used (Gwet\u2019s AC2=0.58-0.63 pairwise; Kendall\u2019s W=0.46-0.51 overall), indicating the system supports structured comparison and reflective judgment across students and teachers.",
+        "measure": "Inter-rater agreement (weighted Cohen\u2019s kappa, Gwet\u2019s AC2, Kendall\u2019s W) across teacher, peer, and self-assessments",
+        "study_size": "n=46",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Automated Feedback System"
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.74,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The paper does not measure motivation or engagement directly, but it discusses self-assessment and reflective use of video-rubric review as part of the feedback cycle. Self-assessments showed moderate alignment with the teacher grade (r=0.59) but also a small positive bias relative to teacher rubric scores (+0.36, p=0.037), implying reflective benefits alongside calibration limits.",
+        "measure": "Self-assessment rubric scores and their correlation/difference relative to teacher scores",
+        "study_size": "n=46",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Automated Feedback System"
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.81,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "A central aim of the paper is to improve scalable feedback generation by combining human assessments with GenAI in AICoFe. The study argues that weighted aggregation and bias detection could make feedback generation more efficient and pedagogically valid, but it does not report a direct workload or time-saving effect.",
+        "measure": "Proposed efficiency of GenAI-enhanced feedback workflow; no direct workload metric reported",
+        "study_size": "n=46",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Automated Feedback System"
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_long_term_followup",
+    "implementation_fidelity_not_reported",
+    "non_representative_population"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "classroom",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Spain",
+  "study_region": "Europe",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

@@ -1,0 +1,73 @@
+{
+  "title": "Do Hackers Dream of Electric Teachers?: A Large-Scale, In-Situ Evaluation of Cybersecurity Student Behaviors and Performance with AI Tutors",
+  "doi": null,
+  "year": 2026,
+  "venue": "not_reported",
+  "url": "http://arxiv.org/abs/2602.17448v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper asks how students actually use an AI tutor in a real cybersecurity course, whether different conversational behaviors relate to course performance, and what students perceive as the tutor\u2019s benefits and drawbacks. The authors note that while AI tutors have shown promise in introductory programming, little is known about their use in the more open-ended, hands-on setting of cybersecurity challenge solving.\n\nThe intervention studied is SENSAI, an LLM-based, context-aware tutoring system integrated into an upper-division undergraduate cybersecurity course. The system was embedded in a 15-week course hosted on pwn.college and provided chat-based help with access to the student\u2019s terminal and file context. The study analyzed 142,526 tutor queries from 309 undergraduate students across 25,261 conversations and combined these logs with challenge completion data and end-of-semester survey responses.\n\nThe paper finds three broad conversational styles: Short, Reactive, and Proactive. Short and Proactive conversations were associated with higher challenge completion than Reactive conversations, and the gap widened on harder, later-course material. Students valued the tutor\u2019s availability but said it was less useful for harder challenges and rated it below human TAs. The authors conclude that AI tutors can complement human support in cybersecurity education, but students need guidance on how to use them effectively and the tool may be less helpful on advanced material.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed observational in-situ study with mixed-methods analysis, but it is not experimental and cannot support causal claims. The evidence is substantive and well-analyzed, yet it meets primarily correlational/qualitative credibility criteria rather than RCT/QED standards.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper shows clear associations between AI tutor conversation style and course challenge completion, but the effects are context-specific to one cybersecurity course and not causal. The reported differences are meaningful for this setting, yet the general impact on broader K-12 populations is unclear.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "An embedded GPT-4o-based Socratic AI tutor (SENSAI) for cybersecurity CTF-style challenge solving, using chat plus terminal/file context to answer conceptual questions, provide light coding help, and guide students through debugging and implementation."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.98,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "In this semester-long observational study (n=309 students; 142,526 tutor queries across 25,261 conversations), AI tutor conversation style was significantly associated with cybersecurity challenge completion. Mixed-effects logistic regression found conversation type predicted completion (likelihood-ratio \u03c72=168.18, p<.001), and the effect varied by module (interaction \u03c72(16)=46.67, p<.001). Short conversations had the highest overall completion rate (94.6%), followed by proactive (90.7%) and reactive (87.5%) conversations; reactive conversations were significantly less likely than short conversations in most modules, with odds ratios ranging from 0.27 to 0.61.",
+        "measure": "Cybersecurity challenge completion rate; mixed-effects logistic regression; module-level completion percentages",
+        "study_size": "n=309 students; 25,261 conversations; 142,526 queries",
+        "effect_size": "OR=0.27-0.69 for Reactive vs Short; OR=0.39-0.66 for Proactive vs Short across several modules",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.72,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "Students reported valuing the tutor\u2019s availability and accessibility, but also said its usefulness declined on harder material and that it was rated below human TAs. The paper\u2019s qualitative survey results suggest the tool may support persistence by offering immediate help, yet also encourage frustration or overreliance when students get stuck in repetitive reactive loops.",
+        "measure": "End-of-semester reflection survey and open-ended responses about usefulness, trust, and comparison to TAs",
+        "study_size": "n=293 survey responses (from 309 participating students)",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "single_site",
+    "no_control_group",
+    "self_reported_measures",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "15",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

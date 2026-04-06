@@ -1,0 +1,55 @@
+{
+  "title": "Fake News Mitigation via Point Process Based Intervention",
+  "doi": null,
+  "year": 2017,
+  "venue": "International Conference on Machine Learning (ICML)",
+  "url": "http://arxiv.org/abs/1703.07823v2",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses the problem of mitigating the spread of fake news in social networks. The authors ask how to optimally allocate intervention resources so that users exposed to fake news are also exposed to real news, reducing the likelihood that fake news will persuade them. Rather than focusing on content classification or manual fact-checking, the paper frames fake news mitigation as a sequential control problem over a network.\n\nThe proposed approach models fake news and mitigation activities as competing multivariate Hawkes point processes. Interventions are implemented by increasing the exogenous intensity of selected campaigner nodes over multiple stages under budget constraints, and the optimal policy is learned with a reinforcement-learning style least-squares temporal difference (LSTD) policy-iteration method. The paper defines reward functions based on either correlation maximization between fake and real news exposures or minimization of their difference, and derives first- and second-order statistics needed for policy evaluation.\n\nThe empirical context is not K-12 education but social media, including synthetic Twitter-like networks and a real-time experiment using Twitter accounts discussing machine learning topics. The main conclusion is that the proposed LSTD intervention method outperforms several baselines, including open-loop optimization, certainly equivalence control, centrality-based heuristics, and random allocation, in both synthetic and real-time experiments. The authors also note several limitations of their evaluation, including the content-neutral nature of the real-world experiment, imperfect measurement of exposure, and the fact that the method optimizes conditional intensity rather than exact intervention times.",
+  "limitations": [
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "other"
+      ],
+      "description": "A generic AI system or method category; in this paper, the relevant AI method is a point-process-based reinforcement learning intervention framework for social network activity, not a named commercial product.",
+      "use_case": "The paper proposes and evaluates a point process intervention framework using reinforcement learning and LSTD to optimize mitigation activity against fake news propagation in a network.",
+      "findings": [
+        {
+          "outcome_category": "Systemic / Institutional Impact",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The proposed point-process-based intervention framework outperformed baseline mitigation strategies in synthetic and real-time Twitter experiments. In the real-time experiment, the authors report that their method outperformed three baselines (CEC, EXP, and RND) by a reasonable margin; the paper notes roughly a 5-point increase for the correlation maximization objective and around a 7-point result for the difference minimization objective, but does not report standardized effect sizes.",
+          "measure": "Total reward; average correlation; average difference in exposure; rank correlation for prediction",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "synthetic: n=300 nodes; real-time: 1894 users and 23407 directed edges"
+        }
+      ]
+    }
+  ],
+  "verdict": "framework_only",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a theoretical/methodological paper with synthetic and real-world proof-of-concept experiments rather than a randomized or quasi-experimental education study. The evidence is therefore useful but indirect for K-12 classroom applications.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The reported gains are described in relative terms and appear practically meaningful in the paper\u2019s network-intervention context, but no standardized effect size is provided. Because the work is not an education intervention study, its classroom impact remains uncertain and indirect.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

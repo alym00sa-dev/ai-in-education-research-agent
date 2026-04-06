@@ -1,0 +1,370 @@
+{
+  "title": "LLM-based Multimodal Feedback Produces Equivalent Learning and Better Student Perceptions than Educator Feedback",
+  "doi": null,
+  "year": 2026,
+  "venue": "LAK 2026: 16th International Learning Analytics and Knowledge Conference",
+  "url": "https://arxiv.org/abs/2601.15280",
+  "source_db": "scale_stanford",
+  "population": "Undergraduate",
+  "user_type": "Student",
+  "study_design": "Randomized Controlled Trial (RCT)",
+  "extended_summary": "This paper examines whether real-time LLM-based multimodal feedback can match or exceed educator-authored feedback in educational effectiveness and student experience. The core problem is that timely, targeted, and multimodal feedback is valuable for learning but difficult for instructors to provide at scale. The authors ask whether an AI system that combines structured textual feedback with retrieved course slides and optional AI audio narration can support learning as effectively as business-as-usual educator feedback while improving engagement and perceptions.\n\nThe intervention was an AI-facilitated multimodal feedback system embedded into an online learning workflow. After students answered multiple-choice and open-ended practice questions, the system generated structured corrective feedback using GPT-5, retrieved the most relevant lecture slide via retrieval-augmented generation, and offered optional streaming audio narration. This treatment was compared against a control condition in which learners received fixed, pre-written educator feedback and access to the same slide deck without targeted slide retrieval. The study used a randomized controlled online crowdsourcing experiment with pre-test, practice activities, post-test, and post-survey measures.\n\nParticipants were 197 U.S.-based university or college students recruited via Prolific, completing the study in a single online session hosted on Qualtrics. The learning content came from a learning sciences course on the multimedia principle in e-learning design. Learners completed 14 MCQs and 2 open-ended questions on the pre-test, 13 learning-by-doing activities with immediate feedback, and then the same post-test and a perception survey. The study also analyzed usage logs such as submissions, revisions, and time on task.\n\nThe main finding is that AI multimodal feedback produced learning gains equivalent to educator feedback: both groups improved significantly from pre- to post-test, and the between-group difference in post-test performance was not significant after controlling for pre-test scores. However, the AI condition was rated significantly better on mental effort, satisfaction, specificity, clarity, simplicity/conciseness, and motivation, while being comparable on correctness, trust, and acceptance. Log data suggested different engagement patterns by question type: educator feedback led to more MCQ retries, whereas AI feedback encouraged more revision behavior on open-ended items. The authors conclude that structured, context-aware AI multimodal feedback can be a scalable way to reduce instructor workload while maintaining learning outcomes and improving the learner experience.",
+  "limitations": [
+    "short_duration",
+    "self_reported_measures",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "feedback_evaluation",
+        "language_speech"
+      ],
+      "description": "A real-time LLM-based multimodal feedback system that generates structured textual corrective feedback, retrieves relevant slide pages via RAG, and provides optional AI audio narration grounded in course materials.",
+      "use_case": "Studied as an AI-facilitated multimodal feedback intervention for university learners completing multiple-choice and open-ended learning-by-doing activities, compared against fixed educator-authored business-as-usual feedback in an online randomized experiment.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "In a randomized online crowdsourcing experiment, AI multimodal feedback produced significant pre-post learning gains within the treatment group (t=-5.6273, p<0.001, Cohen's d=0.7623), but did not outperform educator feedback after controlling for pre-test scores. ANCOVA showed no significant condition effect on post-test scores (F=0.91, p=0.34, partial \u03b72=0.0047), indicating equivalent learning outcomes relative to educator feedback.",
+          "measure": "Pre-test to post-test knowledge scores on multimedia principle content; ANCOVA on post-test controlling for pre-test",
+          "effect_size": "Cohen's d=0.7623; partial \u03b72=0.0047",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=197"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The AI system delivered feedback with median response time of 0.299 seconds for multiple-choice questions and 6.23 seconds for open-ended questions. Using word-count proxy estimates, the authors report the system was approximately 2.77\u00d7 more time-efficient than authoring equivalent human text feedback (985/356 \u2248 2.77), suggesting reduced educator workload and rapid learner support.",
+          "measure": "System response time and estimated authoring efficiency relative to human-authored feedback",
+          "effect_size": "2.77\u00d7 more time-efficient; MCQ median=0.299s; OEQ median=6.23s",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=197"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Overall active-learning actions did not significantly differ between conditions (Mann\u2013Whitney U=4075.5, p=0.0738). By question type, AI feedback was associated with fewer multiple-choice submissions than educator feedback (U=5660.5, p=0.02) and a trend toward more open-ended submissions (U=4060.5, p=0.066), consistent with less trial-and-error on MCQs and more iterative revision on OEQs.",
+          "measure": "Usage-log active learning actions (submit/update counts) overall and by question type",
+          "effect_size": "U=4075.5 overall; U=5660.5 MCQ; U=4060.5 OEQ",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=197"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "Total time spent on learning-by-doing activities did not significantly differ between AI and educator-feedback conditions. The business-as-usual group spent a median of 21.13 minutes and the AI group a median of 25.44 minutes, with an independent-samples t-test showing no significant difference (t=-0.413, p=0.680, Cohen's d=-0.062).",
+          "measure": "Total learning-by-doing time-on-task",
+          "effect_size": "Cohen's d=-0.062",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=197"
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Learners reported significantly lower mental effort and higher satisfaction with AI multimodal feedback than with educator feedback. Mental effort ratings were 6.17 vs. 7.22 (U=5190.50, p=0.0006), and satisfaction ratings were 4.46 vs. 4.19 (U=3310.50, p=0.0240), favoring the AI condition.",
+          "measure": "Post-survey ratings of mental effort and satisfaction",
+          "effect_size": "U=5190.50; U=3310.50",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=180"
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Participants rated AI feedback significantly higher on specificity, clarity, simplicity, and motivation than educator feedback. Survey results were specificity 4.28 vs. 3.78 (U=2638.00, p=0.0001), clarity 4.68 vs. 4.48 (U=3346.50, p=0.0199), simplicity 4.09 vs. 3.75 (U=3246.00, p=0.0207), and motivation 4.04 vs. 3.70 (U=3174.50, p=0.0146).",
+          "measure": "Post-survey ratings of feedback specificity, clarity, simplicity, and motivation",
+          "effect_size": "U=2638.00; U=3346.50; U=3246.00; U=3174.50",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=180"
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "Perceived correctness, trust, and acceptance of AI feedback were statistically comparable to educator feedback. Reported tests were correctness U=3806.50, p=0.5378; trust U=3543.00, p=0.1456; and acceptance U=3614.00, p=0.2393, indicating no significant differences on these dimensions.",
+          "measure": "Post-survey ratings of correctness, trust, and acceptance",
+          "effect_size": "U=3806.50; U=3543.00; U=3614.00",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=180"
+        }
+      ]
+    }
+  ],
+  "verdict": "genai_general",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is a randomized controlled online experiment with a comparison condition and n=197, which is stronger than correlational evidence. However, it was conducted in a short-term crowdsourcing setting rather than an authentic classroom, and the main between-group academic outcome was equivalence/null rather than a clear treatment advantage.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "Academic impact was unclear between groups because post-test differences were not significant (F=0.91, p=0.34, partial \u03b72=0.0047), despite positive within-group gains. The intervention showed positive perception and efficiency benefits, but core learning impact relative to educator feedback was modest/unclear.",
+  "citations": [
+    {
+      "title": "Analytics of Learner-Centered Feedback: A Large-Scale Case Study in Higher Education",
+      "doi": "10.1016/j.compedu.2025.105360",
+      "year": 2025,
+      "venue": "Computers & Education"
+    },
+    {
+      "title": "Emotionally enriched AI-generated feedback: Supporting student well-being without compromising learning",
+      "doi": "10.1016/j.compedu.2025.105363",
+      "year": 2025,
+      "venue": "Computers & Education"
+    },
+    {
+      "title": "Claude Sonnet 4.5 System Card",
+      "doi": null,
+      "year": 2025,
+      "venue": "Anthropic PBC"
+    },
+    {
+      "title": "Large Language Models Generating Feedback for Students of Introductory Programming Courses",
+      "doi": null,
+      "year": 2025,
+      "venue": "Artificial Intelligence in Education"
+    },
+    {
+      "title": "A Study of Thinking",
+      "doi": null,
+      "year": 1956,
+      "venue": "John Wiley and Sons"
+    },
+    {
+      "title": "From First Draft to Final Insight: A Multi-agent Approach for Feedback Generation",
+      "doi": null,
+      "year": 2025,
+      "venue": "Artificial Intelligence in Education"
+    },
+    {
+      "title": "The development of student feedback literacy: enabling uptake of feedback",
+      "doi": "10.1080/02602938.2018.1463354",
+      "year": 2018,
+      "venue": "Assessment & Evaluation in Higher Education"
+    },
+    {
+      "title": "Automatic feedback in online learning environments: A systematic literature review",
+      "doi": null,
+      "year": 2021,
+      "venue": "Computers and Education: Artificial Intelligence"
+    },
+    {
+      "title": "VTutor for High-Impact Tutoring at Scale: Managing Engagement and Real-Time Multi-Screen Monitoring with P2P Connections",
+      "doi": "10.1145/3698205.3733948",
+      "year": 2025,
+      "venue": "Proceedings of the Twelfth ACM Conference on Learning @ Scale (L@S '25)"
+    },
+    {
+      "title": "Combining LLM-Generated and Test-Based Feedback in a MOOC for Programming",
+      "doi": "10.1145/3657604.3662040",
+      "year": 2024,
+      "venue": "Proceedings of the Eleventh ACM Conference on Learning @ Scale"
+    },
+    {
+      "title": "Predicting Long-Term Student Outcomes from Short-Term EdTech Log Data",
+      "doi": "10.1145/3706468.3706552",
+      "year": 2025,
+      "venue": "Proceedings of the 15th International Learning Analytics and Knowledge Conference (LAK '25)"
+    },
+    {
+      "title": "Retrieval-Augmented Generation for Large Language Models: A Survey",
+      "doi": "10.48550/arXiv.2312.10997",
+      "year": 2024,
+      "venue": null
+    },
+    {
+      "title": "Gemini 2.5: Pushing the Frontier with Advanced Reasoning, Multimodality, Long Context, and Next Generation Agentic Capabilities",
+      "doi": null,
+      "year": 2025,
+      "venue": null
+    },
+    {
+      "title": "Feedback Specificity, Exploration, and Learning",
+      "doi": "10.1037/0021-9010.89.2.248",
+      "year": 2004,
+      "venue": "The Journal of applied psychology"
+    },
+    {
+      "title": "The Power of Feedback",
+      "doi": null,
+      "year": 2007,
+      "venue": "Review of Educational Research"
+    },
+    {
+      "title": "Chatting with a Learning Analytics Dashboard: The Role of Generative AI Literacy on Learner Interaction with Conventional and Scaffolding Chatbots",
+      "doi": "10.1145/3706468.3706545",
+      "year": 2025,
+      "venue": "Proceedings of the 15th International Learning Analytics and Knowledge Conference (LAK '25)"
+    },
+    {
+      "title": "Predictive power of regularity of pre-class activities in a flipped classroom",
+      "doi": "10.1016/j.compedu.2019.02.011",
+      "year": 2019,
+      "venue": "Computers & Education"
+    },
+    {
+      "title": "Generative AI for scalable feedback to multimodal exercises",
+      "doi": "10.1016/j.ijresmar.2024.05.005",
+      "year": 2024,
+      "venue": "International Journal of Research in Marketing"
+    },
+    {
+      "title": "Relationships Between Instructional Coaches\u2019 Time Use and District- and School-Level Policies and Expectations",
+      "doi": "10.3102/0002831219826580",
+      "year": 2019,
+      "venue": "American Educational Research Journal"
+    },
+    {
+      "title": "ChatGPT for good? On opportunities and challenges of large language models for education",
+      "doi": "10.1016/j.lindif.2023.102274",
+      "year": 2023,
+      "venue": "Learning and Individual Differences"
+    },
+    {
+      "title": "A Systematic Literature Review of Automated Feedback Generation for Programming Exercises",
+      "doi": "10.1145/3231711",
+      "year": 2018,
+      "venue": "ACM Trans. Comput. Educ."
+    },
+    {
+      "title": "Multimodality of AI for Education: Toward Artificial General Intelligence",
+      "doi": "10.1109/TLT.2025.3574466",
+      "year": 2025,
+      "venue": "IEEE Transactions on Learning Technologies"
+    },
+    {
+      "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+      "doi": null,
+      "year": 2021,
+      "venue": null
+    },
+    {
+      "title": "MuFIN: A Framework for Automating Multimodal Feedback Generation using Generative Artificial Intelligence",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the Eleventh ACM Conference on Learning @ Scale"
+    },
+    {
+      "title": "Multimedia Learning",
+      "doi": null,
+      "year": 2020,
+      "venue": "Cambridge University Press"
+    },
+    {
+      "title": "Formative assessment and self-regulated learning: a model and seven principles of good feedback practice",
+      "doi": "10.1080/03075070600572090",
+      "year": 2006,
+      "venue": "Studies in Higher Education"
+    },
+    {
+      "title": "GPT-5 System Card",
+      "doi": null,
+      "year": 2025,
+      "venue": "OpenAI"
+    },
+    {
+      "title": "Introducing gpt-realtime and Realtime API updates for production voice agents",
+      "doi": null,
+      "year": 2025,
+      "venue": null
+    },
+    {
+      "title": "Dual Coding Theory",
+      "doi": null,
+      "year": 1990,
+      "venue": "Mental Representations: A dual coding approach"
+    },
+    {
+      "title": "Students\u2019 perceptions toward providing video-enhanced multimodal feedback on oral presentations",
+      "doi": "10.1080/09588221.2024.2344546",
+      "year": 2024,
+      "venue": "Computer Assisted Language Learning"
+    },
+    {
+      "title": "Does Active Learning Work? A Review of the Research",
+      "doi": null,
+      "year": 2004,
+      "venue": "Journal of Engineering Education"
+    },
+    {
+      "title": "Feedback modes matter: Comparing student perceptions of digital and non-digital feedback modes in higher education",
+      "doi": "10.1111/bjet.12749",
+      "year": 2019,
+      "venue": "British Journal of Educational Technology"
+    },
+    {
+      "title": "Designing learner-centred text-based feedback: a rapid review and qualitative synthesis",
+      "doi": "10.1080/02602938.2020.1828819",
+      "year": 2021,
+      "venue": "Assessment & Evaluation in Higher Education"
+    },
+    {
+      "title": "Feedback on Feedback: Student\u2019s Perceptions for Feedback from Teachers and Few-Shot LLMs",
+      "doi": "10.1145/3706468.3706479",
+      "year": 2025,
+      "venue": "Proceedings of the 15th International Learning Analytics and Knowledge Conference (LAK '25)"
+    },
+    {
+      "title": "Towards Adaptive Feedback with AI: Comparing the Feedback Quality of LLMs and Teachers on Experimentation Protocols",
+      "doi": null,
+      "year": 2025,
+      "venue": null
+    },
+    {
+      "title": "Comparing Student Preferences for AI-Generated and Peer-Generated Feedback in AI-driven Formative Peer Assessment",
+      "doi": "10.1145/3706468.3706488",
+      "year": 2025,
+      "venue": "Proceedings of the 15th International Learning Analytics and Knowledge Conference (LAK '25)"
+    },
+    {
+      "title": "Focus on Formative Feedback",
+      "doi": "10.3102/0034654307313795",
+      "year": 2008,
+      "venue": "Review of Educational Research"
+    },
+    {
+      "title": "Cognitive ease at a cost: LLMs reduce mental effort but compromise depth in student scientific inquiry",
+      "doi": "10.1016/j.chb.2024.108386",
+      "year": 2024,
+      "venue": "Computers in Human Behavior"
+    },
+    {
+      "title": "CHAPTER TWO - Cognitive Load Theory",
+      "doi": null,
+      "year": 2011,
+      "venue": "Psychology of Learning and Motivation"
+    },
+    {
+      "title": "Combining Large Language Models with Tutoring System Intelligence: A Case Study in Caregiver Homework Support",
+      "doi": "10.1145/3706468.3706516",
+      "year": 2025,
+      "venue": "Proceedings of the 15th International Learning Analytics and Knowledge Conference (LAK '25)"
+    },
+    {
+      "title": "T2A-Feedback: Improving Basic Capabilities of Text-to-Audio Generation via Fine-grained AI Feedback",
+      "doi": "10.18653/v1/2025.acl-long.1147",
+      "year": 2025,
+      "venue": "Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)"
+    },
+    {
+      "title": "SlideItRight: Using AI to Find Relevant Slides and Provide Feedback for Open-Ended Questions",
+      "doi": null,
+      "year": 2025,
+      "venue": "Artificial Intelligence in Education"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

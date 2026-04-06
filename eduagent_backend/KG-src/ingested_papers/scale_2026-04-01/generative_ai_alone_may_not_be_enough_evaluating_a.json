@@ -1,0 +1,447 @@
+{
+  "title": "Generative AI alone may not be enough: Evaluating AI Support for Learning Mathematical Proof",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "https://arxiv.org/abs/2509.16778",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper investigates whether an LLM-powered tutoring system can meaningfully improve learning in undergraduate mathematics, particularly in the challenging area of proof writing. The authors focus on a key open question in AI in education: whether generative AI tools provide real learning benefits beyond convenience, and how different forms of AI support relate to student self-efficacy, homework performance, exam outcomes, and learning behaviors.\n\nThe intervention studied is LLM-Tutor, a system developed for an introductory discrete mathematics course. It includes two components: a Proof-Review-AI-Tutor that gives real-time feedback on students\u2019 written proofs using highlighted comments on problematic sections, and a chatbot designed to answer math-related questions using Socratic prompting rather than immediately giving solutions. The study used a randomized treatment/control structure for access timing, and also incorporated surveys, usage logs, and semi-structured interviews. Quantitative analyses included t-tests, correlations, regression, and mediation analysis; qualitative analysis was based on interviews with 19 students.\n\nThe study was conducted at a single U.S. research university with students in an intro-level discrete math course. Of 308 enrolled students, 155 were recruited, and 148 remained after withdrawals for the main comparison period. Students were randomly assigned to an experimental group that received LLM-Tutor access after the first midterm and a control group that received access after the second midterm. Data included 10 homework assignments, 3 midterms, a final exam, self-efficacy surveys, self-reported time spent, system usability ratings, and platform interaction logs.\n\nThe main findings were mixed. Access to LLM-Tutor significantly improved homework performance during the period when only the experimental group had access, but it did not significantly improve exam scores or reduce time spent. Frequent chatbot use was consistently associated with lower midterm performance, especially among students with lower self-efficacy, suggesting possible over-reliance or ineffective help-seeking. In contrast, heavier use of the proof-review tool among lower-self-efficacy students later in the course was associated with better final exam performance. Interview data showed that students valued the tool\u2019s accessibility, immediacy, and support for clarifying proofs, but also reported limits relative to TAs and concerns that reliance on the tool might undermine independent problem solving. The authors conclude that generative AI alone is insufficient and that AI tutoring tools should be redesigned with stronger learning-sciences principles and used as a supplement to human support.",
+  "limitations": [
+    "single_site",
+    "self_reported_measures",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "LLM-Tutor",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "feedback_evaluation"
+      ],
+      "description": "An LLM-powered tutoring system for discrete mathematics proof writing that combines a proof-review tutor for real-time feedback on student proofs with a chatbot for math-related questions.",
+      "use_case": "Studied as an intervention in an undergraduate discrete mathematics course to support proof-writing homework via highlighted proof feedback and chatbot-based guidance.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In a randomized experiment with 148 students remaining after withdrawals, the experimental group with access to LLM-Tutor scored significantly higher on homework HW5 and HW6 than the control group after the intervention began. The reported means were M = 99.64 (SD = 8.03) for the experimental group versus M = 96.55 (SD = 11.66) for the control group, with t(146) = 2.19, p = .030.",
+          "measure": "Normalized homework scores (HW5 and HW6 average percentages)",
+          "effect_size": "t(146)=2.19, p=.030",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=148"
+        },
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "LLM-Tutor did not produce statistically significant differences in exam performance between experimental and control groups across the three midterms and the final exam. The paper states that no condition-based significant differences were observed before or after implementation.",
+          "measure": "Midterm exam scores and final exam scores",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=148"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "Self-reported time spent on assignments and textbook reading did not differ significantly between groups before or after the experimental group used LLM-Tutor. Before use, control mean = 11.81 hours (SD = 3.98) and experimental mean = 12.07 hours (SD = 4.71), t = 0.26, p = 0.79; after use, control mean = 7.55 hours (SD = 2.85) and experimental mean = 7.68 hours (SD = 3.06), t = 0.20, p = 0.83.",
+          "measure": "Self-reported weekly time spent on assignments and textbook reading",
+          "effect_size": "Before: t=0.26, p=0.79; After: t=0.20, p=0.83",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=81"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Students rated LLM-Tutor's usability at an average SUS score of 69.94, which the authors interpret as slightly above average and in the acceptable usability range. This was based on 41 responses from the experimental group, with Cronbach's alpha = 0.875.",
+          "measure": "System Usability Scale (SUS)",
+          "effect_size": "Mean SUS=69.94",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=41"
+        }
+      ]
+    },
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "language_speech"
+      ],
+      "description": "OpenAI's GPT-family large language model chatbot product, normalized here because LLM-Tutor's chatbot used GPT-4o.",
+      "use_case": "Used as the underlying model family for the LLM-Tutor chatbot feature that answered math-related student questions using Socratic/scaffolding prompts rather than directly giving answers.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "Chatbot usage frequency significantly negatively predicted Midterm 3 scores in regression analyses. Reported coefficients were B = -0.056, p = 0.000 in Model 1; B = -0.040, p = 0.002 in Model 2; B = -0.037, p = 0.003 in Model 3; and B = -0.030, p = 0.014 in Model 4.",
+          "measure": "Midterm 3 exam scores predicted by chatbot usage frequency",
+          "effect_size": "B=-0.056 (p=0.000); B=-0.040 (p=0.002); B=-0.037 (p=0.003); B=-0.030 (p=0.014)",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "Mediation analysis showed that chatbot usage frequency partially mediated the relationship between lower self-efficacy and lower Midterm 3 scores. Students with lower self-efficacy used the chatbot more frequently, and this higher chatbot use was associated with lower midterm performance.",
+          "measure": "Mediated relationship among self-efficacy, chatbot usage frequency, and Midterm 3 score",
+          "effect_size": "p<.05 for significant paths",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    },
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "tutoring_instruction"
+      ],
+      "description": "OpenAI's GPT-family large language model product, normalized here because students could choose OpenAI o1 or GPT-4o within the proof-review component.",
+      "use_case": "Used as the underlying model family for the Proof-Review-AI-Tutor component that reviewed student proof submissions, highlighted problematic sections, and provided targeted feedback.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "Proof-Review-AI-Tutor usage frequency was not a significant predictor of Midterm 3 scores in the regression analyses. Reported coefficients were B = -0.027, p = 0.713 in Model 1; B = 0.049, p = 0.486 in Model 2; B = 0.032, p = 0.645 in Model 3; and B = 0.048, p = 0.480 in Model 4.",
+          "measure": "Midterm 3 exam scores predicted by Proof-Review-AI-Tutor usage frequency",
+          "effect_size": "B=-0.027 (p=0.713); B=0.049 (p=0.486); B=0.032 (p=0.645); B=0.048 (p=0.480)",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "For the final exam, mediation analysis indicated that Proof-Review-AI-Tutor usage frequency showed a significant partial mediation effect linking lower self-efficacy to better final exam performance. The authors interpret this as lower-self-efficacy students using the proof-review tutor more after Midterm 3, which partially explained higher final exam scores.",
+          "measure": "Mediated relationship among self-efficacy, Proof-Review-AI-Tutor usage frequency, and final exam score",
+          "effect_size": "p<.05 for significant paths",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "green",
+  "quality_tier_rationale": "The paper includes an experimental comparison with random assignment between treatment and control groups plus mixed-method evidence, but reporting is incomplete for some outcomes and several key findings rely on correlational/regression and mediation analyses rather than fully reported RCT effect estimates.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "Impact is mixed and mostly unclear: there is a statistically significant positive effect on homework, but no significant effect on exams or time spent, and chatbot use is associated with negative exam outcomes. Overall impact is therefore modest and inconsistent.",
+  "citations": [
+    {
+      "title": "An effective metacognitive strategy: Learning by doing and explaining with a computer-based cognitive tutor",
+      "doi": null,
+      "year": 2002,
+      "venue": "Cognitive Science",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Intelligent tutoring systems",
+      "doi": null,
+      "year": 1985,
+      "venue": "Science",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Self-efficacy: The exercise of control",
+      "doi": null,
+      "year": 1997,
+      "venue": "Macmillan",
+      "citation_level": 2,
+      "citation_context": "self-efficacy construct framing student differences"
+    },
+    {
+      "title": "An empirical evaluation of the system usability scale",
+      "doi": null,
+      "year": 2008,
+      "venue": "International Journal of Human\u2013Computer Interaction",
+      "citation_level": 2,
+      "citation_context": "interprets SUS score benchmarks for usability"
+    },
+    {
+      "title": "SUS: A quick and dirty usability scale",
+      "doi": null,
+      "year": 1996,
+      "venue": "Usability Evaluation in Industry",
+      "citation_level": 3,
+      "citation_context": "SUS questionnaire used to assess system usability"
+    },
+    {
+      "title": "Language models are few-shot learners",
+      "doi": null,
+      "year": 2020,
+      "venue": "arXiv preprint arXiv:2005.14165",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A systematic review on prompt engineering in large language models for K-12 STEM education",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv preprint arXiv:2410.11123",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Assessing the proficiency of large language models in automatic feedback generation: An evaluation study",
+      "doi": null,
+      "year": 2024,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Mathematical capabilities of ChatGPT",
+      "doi": null,
+      "year": 2024,
+      "venue": "Advances in Neural Information Processing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Learners\u2019 use of domain-specific computer-based feedback to overcome logical circularity in deductive proving in geometry",
+      "doi": null,
+      "year": 2018,
+      "venue": "ZDM",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Mathematics education in the spotlight: Its purpose and some implications",
+      "doi": null,
+      "year": 2018,
+      "venue": "London Review of Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Role of mathematics self-efficacy in the choice of math-related majors of college women and men: A path analysis",
+      "doi": null,
+      "year": 1985,
+      "venue": "Journal of Counseling Psychology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Large language models: An introduction",
+      "doi": null,
+      "year": 2024,
+      "venue": "Large Language Models: A Deep Dive: Bridging Theory and Practice",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Khanmigo",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Bringing generative AI to adaptive learning in education",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv preprint arXiv:2402.14601",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The role of mathematics in interdisciplinary STEM education",
+      "doi": null,
+      "year": 2019,
+      "venue": "ZDM",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Interrater reliability: the kappa statistic",
+      "doi": null,
+      "year": 2012,
+      "venue": "Biochemia Medica",
+      "citation_level": 3,
+      "citation_context": "interprets interview coding kappa agreement"
+    },
+    {
+      "title": "GPT-4 technical report",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Learning to reason with LLMs | OpenAI",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Motivational and self-regulated learning components of classroom academic performance",
+      "doi": null,
+      "year": 1990,
+      "venue": "Journal of Educational Psychology",
+      "citation_level": 2,
+      "citation_context": "self-efficacy and academic performance framing"
+    },
+    {
+      "title": "Series editor\u2019s foreword: The soul of mathematics in DA Stylianou, ML Blanton, & EJ Knuth",
+      "doi": null,
+      "year": 2010,
+      "venue": "Teaching and Learning Proof Across the Grades: A K-16 Perspective",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Self-efficacy and academic motivation",
+      "doi": null,
+      "year": 1991,
+      "venue": "Educational Psychologist",
+      "citation_level": 2,
+      "citation_context": "motivational role of self-efficacy in learning"
+    },
+    {
+      "title": "Exploring the impact of generative AI-based technologies on learning performance through self-efficacy, fairness & ethics, creativity, and trust in higher education",
+      "doi": null,
+      "year": 2024,
+      "venue": "Education and Information Technologies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "An evaluation of Khanmigo, a generative AI tool, as a computer-assisted language learning app",
+      "doi": null,
+      "year": 2024,
+      "venue": "Studies in Applied Linguistics and TESOL",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Enhancing LLM-based feedback: Insights from intelligent tutoring systems and the learning sciences",
+      "doi": null,
+      "year": 2024,
+      "venue": "AIED",
+      "citation_level": 2,
+      "citation_context": "supports learning-sciences-based AI tutor design argument"
+    },
+    {
+      "title": "Student perspectives on proof in linear algebra",
+      "doi": null,
+      "year": 2019,
+      "venue": "ZDM",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Proof and proving in school and university mathematics education research: a systematic review",
+      "doi": null,
+      "year": 2024,
+      "venue": "ZDM\u2013Mathematics Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "On proof and progress in mathematics",
+      "doi": null,
+      "year": 1995,
+      "venue": "For the Learning of Mathematics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Explanations can reduce overreliance on AI systems during decision-making",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the ACM on Human-Computer Interaction",
+      "citation_level": 2,
+      "citation_context": "frames overreliance risk in AI support"
+    },
+    {
+      "title": "ChatGPT: A revolutionary tool for teaching and learning mathematics",
+      "doi": null,
+      "year": 2023,
+      "venue": "Eurasia Journal of Mathematics, Science and Technology Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Chain-of-thought prompting elicits reasoning in large language models",
+      "doi": null,
+      "year": 2022,
+      "venue": "Advances in Neural Information Processing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The role of mathematics education in developing students\u2019 21st century skills, competencies and STEM capabilities",
+      "doi": null,
+      "year": 2022,
+      "venue": "Mathematics Education Research Group of Australasia",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Promoting self-regulation progress and knowledge construction in blended learning via ChatGPT-based learning aid",
+      "doi": null,
+      "year": 2024,
+      "venue": "Journal of Educational Computing Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Improving students\u2019 mathematics self-efficacy: A systematic review of intervention studies",
+      "doi": null,
+      "year": 2022,
+      "venue": "Frontiers in Psychology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The effects of over-reliance on AI dialogue systems on students\u2019 cognitive abilities: a systematic review",
+      "doi": null,
+      "year": 2024,
+      "venue": "Smart Learning Environments",
+      "citation_level": 2,
+      "citation_context": "supports concern about chatbot overreliance"
+    },
+    {
+      "title": "Self-efficacy: An essential motive to learn",
+      "doi": null,
+      "year": 2000,
+      "venue": "Contemporary Educational Psychology",
+      "citation_level": 2,
+      "citation_context": "self-efficacy as key learning motivation construct"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

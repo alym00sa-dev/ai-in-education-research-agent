@@ -1,0 +1,96 @@
+{
+  "title": "Artificial Intelligence Agents in Music Analysis: An Integrative Perspective Based on Two Use Cases",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2511.13987v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Middle School (6th-8th)",
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses how artificial intelligence can be applied to music analysis and music education, with a particular focus on bridging technical AI developments and pedagogical use. It combines an integrative review of AI methods in music analysis with two empirical use cases: one educational case involving secondary students using generative AI tools in music-learning activities, and one technical case involving a multi-agent system for symbolic music analysis. Although the retrieval topic concerns ChatGPT-generated feedback on student-authored drafts in grades 9\u201312, this paper does not study writing feedback, student-authored drafts, or unaided writing outcomes; its educational use of ChatGPT is for lyric generation and refinement of compositional parameters in music activities.\n\nIn the secondary education case, 200 students aged 12\u201316 participated in workshop sessions analyzing contemporary popular songs, defining compositional parameters collaboratively, and using ChatGPT to generate lyrics and refine music-composition specifications. The generated lyrics were then used with Suno and Music.ai to create musical outputs, which students evaluated using both objective music-analysis metrics (e.g., melodic similarity, harmonic coherence, rhythmic diversity) and subjective Likert ratings. Qualitative reflections were also collected on analytical intentions, prompt iterations, and perceptions of pedagogical effectiveness. The second case presents a modular multi-agent framework for symbolic music analysis, with specialized agents for structural, stylistic, and harmonic analysis evaluated on a curated corpus of 18th-century musical works and reviewed by expert musicologists and educators.\n\nThe study population in the educational case is secondary school students, spanning ages 12\u201316, which likely includes both middle- and high-school-aged learners, in workshop-based instructional sessions. Teachers are present as commentators on pedagogical usefulness, and expert educators/musicologists also appear in the validation procedures for the technical case. The setting appears to be an in-person educational workshop or classroom-like event, but the paper does not provide detailed institutional context, school characteristics, subgroup breakdowns, or participant demographics such as gender, disability status, English learner status, or baseline proficiency. It also does not report any analysis by grade level subgroup, achievement level, subject area beyond music, or genre of student writing, because writing is not the target domain.\n\nThe main conclusions are that AI agents and generative AI tools can support music analysis, compositional exploration, and educational feedback in music contexts, with tradeoffs between stylistic fidelity and creative variability across platforms. Students reportedly improved in analytical articulation and recognized the importance of precise prompting, while the iterative process appeared to foster metacognitive skills. At the same time, the authors note challenges around over-reliance on AI, dataset bias, transparency, and the need for hybrid human-AI evaluation. For the retrieval-specific evidence request, the paper provides no evidence on ChatGPT feedback on student-authored drafts, no delayed posttest or transfer evidence on unaided writing after feedback removal, no independent revision-skill outcomes, no writing self-efficacy/confidence measures, and no subgroup or moderator analyses relevant to secondary writing studies.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an experimental workshop/case-study paper with descriptive quantitative comparisons and qualitative observations, but no randomization, no clear control group for student learning outcomes, and limited methodological detail for causal inference. It provides some empirical data (n=200) yet lacks the design rigor required for green or blue tiers.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper suggests potentially positive but unclear impact on secondary music-learning and metacognitive outcomes, with percentages and comparative product ratings but no student-level effect sizes on validated educational outcomes. Adverse-effect concerns such as over-reliance are mentioned, making overall educational impact promising but still uncertain.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.68,
+      "role": "primary",
+      "use_case": "Secondary students used ChatGPT collaboratively to generate song lyrics and refine compositional parameters during music-analysis and music-creation workshops."
+    },
+    {
+      "intervention": "Other",
+      "confidence": 0.76,
+      "role": "secondary",
+      "use_case": "Generative music platforms (Suno and Music.AI) produced audio compositions from student-defined parameters and AI-generated lyrics for comparison of musical outputs."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.79,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "In a secondary music-education workshop with 200 students ages 12\u201316, 85% reported improved analytical articulation skills and 90% recognized the importance of precise parameter specification after using ChatGPT plus music-generation tools in structured analysis/creation activities. The study also reports comparative ratings of generated music outputs, with Suno outperforming Music.AI on stylistic accuracy (4.4\u00b10.4 vs 3.8\u00b10.7, p=0.001) and harmonic coherence (4.5\u00b10.5 vs 4.0\u00b10.6, p=0.003), though these are product-evaluation measures rather than direct unaided student achievement tests.",
+        "measure": "Student self-reports on analytical articulation and parameter specification; blind listening ratings of generated music on stylistic accuracy and harmonic coherence",
+        "study_size": "n=200",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "reported for comparative ratings only: Suno/Music.AI stylistic accuracy SD=0.4/0.7; harmonic coherence SD=0.5/0.6"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.74,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper reports that 75% of students acknowledged the gap between analytical and creative processes, and the discussion states that the iterative prompting process fostered metacognitive skills. These findings suggest positive effects on reflection and higher-order thinking in music composition/analysis tasks, but they are based on descriptive reporting without validated metacognition scales or effect sizes.",
+        "measure": "Student reflections/self-reports about analytical-creative processes; qualitative assessment of metacognitive skill development",
+        "study_size": "n=200",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.56,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "Teachers qualitatively highlighted that the tools supported personalized learning and promoted student autonomy, suggesting positive motivational or self-regulatory effects. However, the discussion also explicitly notes pedagogical challenges including over-reliance on AI, indicating possible adverse effects on learner independence; no validated self-efficacy, confidence, or engagement measures were reported.",
+        "measure": "Teacher qualitative observations about autonomy/personalized learning; discussion of over-reliance risks",
+        "study_size": "n=200 students; teacher sample not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "short_duration",
+    "single_site",
+    "no_control_group",
+    "self_reported_measures",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "classroom",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Spain",
+  "study_region": "Europe",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

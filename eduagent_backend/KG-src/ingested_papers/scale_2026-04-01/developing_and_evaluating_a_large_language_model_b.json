@@ -1,0 +1,492 @@
+{
+  "title": "Developing and Evaluating a Large Language Model-Based Automated Feedback System Grounded in Evidence-Centered Design for Supporting Physics Problem Solving",
+  "doi": null,
+  "year": 2025,
+  "venue": "IEEE Transactions on Learning Technologies",
+  "url": "https://arxiv.org/abs/2512.10785",
+  "source_db": "scale_stanford",
+  "populations": [
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses whether a large language model (LLM)-based automated feedback system can provide useful and accurate formative feedback for complex physics problem solving, rather than only for simpler conceptual tasks. The authors argue that physics problem solving requires multiple forms of knowledge and skill, making automated assessment and feedback difficult. They also examine a key risk of generative AI in education: students may trust incorrect feedback, especially when it is presented fluently and confidently.\n\nThe intervention was an online feedback system built around OpenAI\u2019s GPT-4o and grounded in evidence-centered design (ECD). Students entered written solution approaches to physics problems, and the system generated short, analytic feedback tied to problem-specific evidentiary schemes covering conceptual, conditional, procedural, factual, mathematical, and metacognitive aspects of problem solving. The system used a two-step feedback cycle in which students received feedback on an initial attempt, revised their work, and then received a second round of feedback. The design aimed to constrain the LLM and reduce hallucinations by anchoring prompts in explicit model-based evidence structures.\n\nThe system was evaluated with participants in the German Physics Olympiad during the first stage of the competition. These were secondary school students in Germany who voluntarily used the web-based tool as a problem-solving training opportunity. The study collected 64 Likert-scale ratings of feedback usefulness and perceived factual correctness, along with 47 open-text explanations of those ratings. In addition, two human raters reviewed the generated feedback to determine its actual correctness.\n\nThe main findings were that students generally perceived the feedback as useful and highly accurate, and some appreciated its adaptivity. However, students also criticized limited adaptiveness when their valid alternative solution paths were not recognized. Most importantly, human review showed that about 20% of feedback instances contained minor to substantial factual or pedagogical errors, and students usually failed to detect these errors. The authors conclude that ECD-grounded LLM feedback is promising for supporting physics problem solving, but current systems still pose risks due to undetected inaccuracies and limited handling of alternative solution strategies. They recommend clearer warning mechanisms, feedback flagging, better support for multiple solution paths, and future integration of student models to improve adaptivity.",
+  "limitations": [
+    "small_sample",
+    "no_control_group",
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Germany",
+  "study_region": "Europe",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "tutoring_instruction"
+      ],
+      "description": "OpenAI GPT-family large language model used here as the engine for an automated feedback system that generates natural-language formative feedback on student work.",
+      "use_case": "GPT-4o was integrated via the OpenAI API into an evidence-centered-design-grounded automated feedback system for German Physics Olympiad participants, generating short feedback on students\u2019 written physics problem-solving approaches across a two-step revise-and-feedback cycle.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Scientific Reasoning",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Students generally perceived the LLM-generated feedback as useful for supporting physics problem solving (M=3.6, SD=1.7 on a 5-point Likert scale). The paper reports N=64 usefulness ratings, with qualitative comments indicating some students found the feedback helpful and adaptive, while others criticized limited adaptiveness to alternative valid solution paths.",
+          "measure": "Student-rated perceived usefulness of feedback on a 5-point Likert scale",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=64"
+        },
+        {
+          "outcome_category": "Academic \u2014 Scientific Reasoning",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Students rated the feedback as highly accurate (M=4.4, SD=1.0 on a 5-point Likert scale), but human review found the feedback was physically correct in 51 of 64 cases (\u224880%) and contained 14 minor to substantial errors across 13 of 64 cases (\u224820%). Errors included calculation mistakes, incorrect physical concepts or assumptions, inappropriate solution strategies, and misclassification of correct alternative approaches as incorrect; most errors went unnoticed by students.",
+          "measure": "Student-rated perceived correctness of feedback and expert-coded actual correctness of generated physics feedback",
+          "effect_size": "U=363, p=0.543",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=64"
+        },
+        {
+          "outcome_category": "Academic \u2014 Scientific Reasoning",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "There was no significant difference in perceived accuracy ratings between students who received correct feedback (N1=51, M1=4.4, SD1=1.0) and those who received incorrect feedback (N2=13, M2=4.3, SD2=0.9). A two-sided Mann\u2013Whitney U test showed U=363, p=0.543, indicating students judged feedback as similarly accurate regardless of whether it was actually correct.",
+          "measure": "Difference in perceived accuracy ratings by actual correctness group",
+          "effect_size": "U=363, p=0.543",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=64"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical evaluation of a specific LLM-based feedback system with quantitative ratings and qualitative analysis, but it is not an RCT or strong quasi-experimental design focused on causal learning effects. The main outcomes are perceptions of usefulness/accuracy and expert error analysis.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The study shows promising perceived usefulness and high perceived accuracy, but impact on actual learning or performance was not measured, and 20% of feedback instances contained errors. Overall educational impact is therefore unclear and mixed.",
+  "citations": [
+    {
+      "title": "Using a Chatbot to Provide Formative Feedback: A Longitudinal Study of Intrinsic Motivation, Cognitive Load, and Learning Performance",
+      "doi": null,
+      "year": 2024,
+      "venue": "IEEE Transactions on Learning Technologies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Grading Explanations of Problem-Solving Process and Generating Feedback Using Large Language Models at Human-Level Accuracy",
+      "doi": null,
+      "year": 2025,
+      "venue": "Physical Review Physics Education Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Science Education in the Age of Artificial Intelligence: Opportunities, Challenges, and Research",
+      "doi": null,
+      "year": 2025,
+      "venue": "IEEE Transactions on Learning Technologies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "How People Learn",
+      "doi": null,
+      "year": 2000,
+      "venue": "National Academy Press",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Teaching Discipline-Based Problem Solving",
+      "doi": null,
+      "year": 2022,
+      "venue": "CBE\u2014Life Sciences Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Scientific study of expert levels of performance: General implications for optimal learning and creativity",
+      "doi": null,
+      "year": 1998,
+      "venue": "High Ability Studies",
+      "citation_level": 2,
+      "citation_context": "deliberate practice framing for problem-solving development"
+    },
+    {
+      "title": "Exploring the Development of Conceptual Understanding through Structured Problem-solving in Physics",
+      "doi": null,
+      "year": 2007,
+      "venue": "International Journal of Science Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A Brief Introduction to Evidence-Centered Design",
+      "doi": null,
+      "year": 2003,
+      "venue": "ETS Research Report Series",
+      "citation_level": 3,
+      "citation_context": "ECD foundation for evidentiary schemes and feedback generation"
+    },
+    {
+      "title": "These strange new minds: How AI learned to talk and what it means",
+      "doi": null,
+      "year": 2025,
+      "venue": "Penguin Viking",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Toward a Unified Theory of Problem Solving: A View from Biology",
+      "doi": null,
+      "year": 1988,
+      "venue": "Annual Meeting of the American Educational Research Association",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Field research on complex decision-making processes\u2014the phase theorem",
+      "doi": null,
+      "year": 1972,
+      "venue": "International Studies of Management & Organization",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Types and Qualities of Knowledge and their Relations to Problem Solving in Physics",
+      "doi": null,
+      "year": 2006,
+      "venue": "International Journal of Science and Mathematics Education",
+      "citation_level": 2,
+      "citation_context": "knowledge types framing evidentiary scheme categories"
+    },
+    {
+      "title": "Exploring the sequential structure of students\u2019 physics problem-solving approaches using process mining and sequence analysis",
+      "doi": null,
+      "year": 2025,
+      "venue": "Physical Review Physics Education Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Using Qualitative Problem-solving Strategies to Highlight the Role of Conceptual Knowledge in Solving Problems",
+      "doi": null,
+      "year": 1996,
+      "venue": "American Journal of Physics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The mathematical universe",
+      "doi": null,
+      "year": 2008,
+      "venue": "Foundations of Physics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Students do not overcome conceptual difficulties after solving 1000 traditional problems",
+      "doi": null,
+      "year": 2002,
+      "venue": "American Journal of Physics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Power of Feedback",
+      "doi": null,
+      "year": 2007,
+      "venue": "Review of Educational Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Assessing Student Written Problem Solutions: A Problem-Solving Rubric with Application to Introductory Physics",
+      "doi": null,
+      "year": 2016,
+      "venue": "Physical Review Physics Education Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Comparison of Machine Learning Performance Using Analytic and Holistic Coding Approaches across Constructed Response Assessments Aligned to a Science Learning Progression",
+      "doi": null,
+      "year": 2021,
+      "venue": "Journal of Science Education and Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Assessing Student Teachers\u2019 Reflective Writing through Quantitative Content Analysis",
+      "doi": null,
+      "year": 2014,
+      "venue": "European Journal of Teacher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Prompt engineering as a new 21st century skill",
+      "doi": null,
+      "year": 2024,
+      "venue": "Frontiers in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Using ChatGPT for Teaching Physics",
+      "doi": null,
+      "year": 2024,
+      "venue": "The Physics Teacher",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Empowering Instructors with AI: Evaluating the Impact of an AI-driven Feedback Tool in Learning Analytics",
+      "doi": null,
+      "year": 2025,
+      "venue": "IEEE Transactions on Learning Technologies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "NotebookLM: An LLM with RAG for active learning and collaborative tutoring",
+      "doi": null,
+      "year": 2025,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Exploring generative AI assisted feedback writing for students\u2019 written responses to a physics conceptual question with prompt engineering and few-shot learning",
+      "doi": null,
+      "year": 2024,
+      "venue": "Physical Review Physics Education Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The effect of ChatGPT on students\u2019 learning performance, learning perception, and higher-order thinking: Insights from a meta-analysis",
+      "doi": null,
+      "year": 2025,
+      "venue": "Humanities and Social Sciences Communications",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Examining the effect of artificial intelligence in relation to students\u2019 academic achievement: A meta-analysis",
+      "doi": null,
+      "year": 2025,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "AI tutoring outperforms in-class active learning: An RCT introducing a novel research-based design in an authentic educational setting",
+      "doi": null,
+      "year": 2025,
+      "venue": "Scientific Reports",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Beware of Metacognitive Laziness: Effects of Generative Artificial Intelligence on Learning Motivation, Processes, and Performance",
+      "doi": null,
+      "year": 2025,
+      "venue": "British Journal of Educational Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Your Brain on ChatGPT: Accumulation of Cognitive Debt When Using an AI Assistant for Essay Writing Task",
+      "doi": null,
+      "year": 2025,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Generative ai without guardrails can harm learning: Evidence from high school mathematics",
+      "doi": null,
+      "year": 2025,
+      "venue": "Proceedings of the National Academy of Sciences of the United States of America",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Sycophantic ai decreases prosocial intentions and promotes dependence",
+      "doi": null,
+      "year": 2025,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Retrieval augmentation reduces hallucination in conversation",
+      "doi": null,
+      "year": 2021,
+      "venue": "arXiv preprint",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Unreflected Acceptance \u2013 Investigating the Negative Consequences of ChatGPT-assisted Problem Solving in Physics Education",
+      "doi": null,
+      "year": 2024,
+      "venue": "Frontiers in Artificial Intelligence and Applications",
+      "citation_level": 2,
+      "citation_context": "supports claim students may accept AI feedback uncritically"
+    },
+    {
+      "title": "When the Robotic Maths Tutor is Wrong - Can Children Identify Mistakes Generated by ChatGPT?",
+      "doi": null,
+      "year": 2024,
+      "venue": "2024 5th International Conference on Artificial Intelligence, Robotics and Control (AIRC)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "What large language models know and what people think they know",
+      "doi": null,
+      "year": 2025,
+      "venue": "Nature Machine Intelligence",
+      "citation_level": 2,
+      "citation_context": "explains polished language masking underlying AI errors"
+    },
+    {
+      "title": "GPT-4 technical report",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The boiling-frog problem of physics education",
+      "doi": null,
+      "year": 2025,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Evaluating GPT- and Reasoning-Based Large Language Models on Physics Olympiad Problems: Surpassing Human Performance and Implications for Educational Assessment",
+      "doi": null,
+      "year": 2025,
+      "venue": "Physical Review Physics Education Research",
+      "citation_level": 2,
+      "citation_context": "justifies selecting GPT-4o for advanced physics capability"
+    },
+    {
+      "title": "HiPhO: How far are (M)LLMs from humans in the latest high school physics Olympiad benchmark?",
+      "doi": null,
+      "year": 2025,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Using AI large language models for grading in education: A hands-on test for physics",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Grading assistance for a handwritten thermodynamics exam using artificial intelligence: An exploratory study",
+      "doi": null,
+      "year": 2024,
+      "venue": "Physical Review Physics Education Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Using large language models to probe cognitive constructs, augment data, and design instructional materials",
+      "doi": null,
+      "year": 2024,
+      "venue": "Machine Learning in Educational Sciences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Could an Artificial-Intelligence agent pass an introductory physics course?",
+      "doi": null,
+      "year": 2023,
+      "venue": "Physical Review Physics Education Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Feedback that clicks: Introductory physics students\u2019 valued features in AI feedback generated from self-crafted and engineered prompts",
+      "doi": null,
+      "year": 2025,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Toward Learning Progression Analytics \u2014 Developing Learning Environments for the Automated Analysis of Learning Using Evidence Centered Design",
+      "doi": null,
+      "year": 2022,
+      "venue": "Frontiers in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Multilingual Performance of a Multimodal Artificial Intelligence System on Multisubject Physics Concept Inventories",
+      "doi": null,
+      "year": 2025,
+      "venue": "Physical Review Physics Education Research",
+      "citation_level": 2,
+      "citation_context": "supports claim GPT-4o shows advanced physics understanding"
+    },
+    {
+      "title": "The technology acceptance model (tam): A meta-analytic structural equation modeling approach to explaining teachers\u2019 adoption of digital technology in education",
+      "doi": null,
+      "year": 2019,
+      "venue": "Computers & Education",
+      "citation_level": 2,
+      "citation_context": "frames perceived usefulness and correctness evaluation"
+    },
+    {
+      "title": "Mann-Whitney U test",
+      "doi": null,
+      "year": 2010,
+      "venue": "The Corsini Encyclopedia of Psychology",
+      "citation_level": 3,
+      "citation_context": "statistical test choice for ordinal Likert accuracy ratings"
+    },
+    {
+      "title": "Beyond final answers: Evaluating large language models for math tutoring",
+      "doi": null,
+      "year": 2025,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Student modeling approaches: A literature review for the last decade",
+      "doi": null,
+      "year": 2013,
+      "venue": "Expert Systems with Applications",
+      "citation_level": 2,
+      "citation_context": "basis for proposed student model extension"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

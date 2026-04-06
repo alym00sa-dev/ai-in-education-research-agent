@@ -1,0 +1,111 @@
+{
+  "title": "Reviewriter: AI-Generated Instructions For Peer Review Writing",
+  "doi": null,
+  "year": 2025,
+  "venue": null,
+  "url": "http://arxiv.org/abs/2506.04423v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Undergraduate",
+    "Graduate / Doctoral"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper investigates how generative AI can support students during peer review writing, particularly to help with writer\u2019s block and idea generation. The authors argue that while large language models have strong potential for educational writing support, there is limited evidence on how such systems should be designed for authentic learning settings and how students perceive them in practice.\n\nTo address this, the authors develop Reviewriter, a web-based tool that provides AI-generated inline writing instructions for peer review tasks in German. The system was designed using a student-centered process that combined a literature review with semi-structured interviews of 12 graduate students to derive user requirements and seven design principles. On the technical side, the authors fine-tuned three language models on a corpus of 11,925 German student-written peer reviews and selected German GPT-2 based on training loss, inference time, and human judgments of fluency and correctness. The tool offers multiple suggestions, keyboard-based acceptance/rejection, inline display of generated text, and word-count support.\n\nThe empirical evaluation involved 14 students from a public university in Europe, including 3 undergraduates and 11 graduate students, all native German speakers. Participants completed a 30-minute peer review writing task on a business model after a short introduction, then completed questionnaires and open-ended interviews. The setting appears to be a controlled evaluation session conducted either face-to-face or remotely, rather than a K-12 classroom implementation.\n\nThe study concludes that students generally perceived Reviewriter positively, especially in ease of use, ease of interaction, enjoyment, and excitement, with usefulness rated moderately positively. Qualitative feedback suggested that the system sometimes helped students overcome writer\u2019s block, generate new ideas, and speed up writing, but also revealed concerns about hallucinated, irrelevant, or ungrammatical suggestions and waiting time for generation. Overall, the paper presents a promising higher-education prototype and design study, but it does not provide direct evidence of learning gains or effectiveness in K-12 literacy contexts.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a small mixed-method pilot in higher education with n=14, no control/comparator group, no randomization, and mostly self-reported acceptance/usability outcomes rather than validated learning gains. It has a clear methodology but only limited causal credibility.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The study reports favorable user perceptions and some qualitative signs of benefit, but no direct learning effect sizes or rigorous achievement impacts are provided. Impact on substantive educational outcomes is therefore unclear rather than established.",
+  "interventions": [
+    {
+      "intervention": "AI Writing / Language Tool",
+      "confidence": 0.98,
+      "role": "primary",
+      "use_case": "LLM-assisted peer review writing tool ('Reviewriter') that generates inline German text suggestions/instructions to help higher-education students continue writing peer reviews and overcome writer's block."
+    },
+    {
+      "intervention": "Automated Feedback System",
+      "confidence": 0.62,
+      "role": "secondary",
+      "use_case": "Adaptive suggestion system embedded in a peer-review writing interface, providing next-sentence recommendations based on the student's ongoing text rather than scoring or full tutoring."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Literacy",
+      "confidence": 0.83,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The mixed-method pilot with 14 higher-education students examined AI-supported peer-review writing, a literacy-related writing outcome, but did not report direct pre/post writing-quality gains, standardized writing scores, or inferential statistics. Qualitative feedback suggested some students used suggestions to generate ideas and structure reviews, while others found outputs irrelevant or unusable; thus evidence on actual writing improvement is suggestive but inconclusive.",
+        "measure": "Peer-review writing process perceptions and self-reported usefulness for writing reviews; qualitative comments on idea generation and review composition",
+        "study_size": "n=14",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.92,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Students reported positive affective responses to Reviewriter in a pilot evaluation (n=14). Mean ratings on 1-7 scales were above neutral for perceived excitement (M=5.64, SD=1.15) and enjoyment (M=5.43, SD=1.16), and qualitative comments indicated the tool reduced feelings of being 'alone' while writing and helped with writer's block.",
+        "measure": "Post-use Likert scales for excitement and enjoyment; qualitative interview feedback on motivation/engagement",
+        "study_size": "n=14",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "SD=1.15 (excitement), SD=1.16 (enjoyment)"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.66,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The paper frames peer review writing as related to critical thinking and review structuring, and some participants reported that Reviewriter helped generate new ideas and support structured reviewing. However, no validated direct assessment of critical thinking, metacognition, or peer-feedback skill improvement was reported, so evidence for durable skill gains remains indirect and mixed.",
+        "measure": "Self-reported perceptions of improved reviewing/writing structure and qualitative comments about idea generation",
+        "study_size": "n=14",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.8,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "Qualitative findings suggested the tool sometimes improved writing efficiency by helping students continue when stuck, with some reporting faster review writing and support overcoming writer's block. At the same time, several participants complained that the 8-second delay for suggestions slowed the process, indicating mixed effects on productivity.",
+        "measure": "Qualitative feedback on speed, efficiency, and workflow during peer-review writing",
+        "study_size": "n=14",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "no_control_group",
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "blended",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "Europe",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

@@ -1,0 +1,80 @@
+{
+  "title": "AI-Based Feedback in Counselling Competence Training of Prospective Teachers",
+  "doi": null,
+  "year": 2025,
+  "venue": "ACM Conference (Conference\u201917)",
+  "url": "http://arxiv.org/abs/2505.03423v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Graduate / Doctoral"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper examines whether AI-based feedback can support the development of counselling competence in prospective teachers during training for teacher-parent conversations. The authors focus on whether AI can provide objective feedback on communicative behavior that is hard for human raters to measure reliably, especially in verbal, paraverbal, and nonverbal dimensions.\n\nThe intervention is an iterative four-day block seminar in which prospective primary school teachers first learn theory and practice of counselling communication, then conduct recorded simulated teacher-parent conversations. Their performances are evaluated through instructor feedback, AI-based feedback, and post-session interviews. The AI system uses transcription, speech features, and video-derived nonverbal features in NOVA/DISCOVER to generate collective and individual feedback visualizations such as tables, parallel coordinates, radar charts, and interactive video playback.\n\nThe study was conducted with 29 prospective teachers in elementary school pedagogy at the University of Augsburg in Germany, across four seminar offerings. The paper reports significant correlations between nonverbal/paraverbal features and expert-rated conversation quality, and students generally perceived the AI feedback positively, especially when video playback was combined with numerical summaries. The authors conclude that AI-based feedback has promise for teacher training, while noting that verbal annotations still need refinement and that larger datasets are needed for stronger generalization.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a qualitative, early-stage design and user-study paper with a small sample (n=29) and correlational modeling rather than a controlled impact evaluation. It provides useful evidence on feasibility and perceptions, but not strong causal evidence of learning gains.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The reported impact is promising but modest and largely indirect: students liked the feedback and transcription efficiency improved, yet no validated learning gains or robust effect sizes were demonstrated. The study suggests potential for teacher training support, but the impact on practice remains unclear.",
+  "interventions": [
+    {
+      "intervention": "Automated Feedback System",
+      "confidence": 0.98,
+      "role": "primary",
+      "use_case": "AI-based multimodal feedback for prospective teachers\u2019 simulated teacher-parent counseling, using transcription plus audio/video features to generate collective and individual coaching on verbal, paraverbal, and nonverbal communication."
+    },
+    {
+      "intervention": "Computer-Assisted Instruction (CAI)",
+      "confidence": 0.62,
+      "role": "secondary",
+      "use_case": "Simulation-based teacher training seminar with recorded role-play conversations, expert ratings, and interactive playback/visualizations in NOVA used as instructional support."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.86,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Prospective teachers reported that the AI-based feedback was helpful for reflection and improvement of counseling competence, especially when combining NOVA playback with tabular summaries and radar charts. The study is qualitative and does not report a causal effect size; however, students described the feedback as actionable for improving communication behaviors in simulated teacher-parent conversations (n=29).",
+        "measure": "Qualitative interview feedback on perceived usefulness and actionability of AI-based counseling feedback; expert-rated counseling helpfulness used as reference in visualizations",
+        "study_size": "n=29",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.72,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper reports that integrating WhisperX into transcription reduced interview transcription time by two-thirds, indicating a substantial workflow efficiency gain. This is an operational outcome rather than a learner outcome, and no statistical effect size or confidence interval is reported.",
+        "measure": "Transcription time required for interview processing",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "blended",
+  "teacher_training": "yes",
+  "implementation_fidelity": "medium",
+  "study_country": "Germany",
+  "study_region": "Europe",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

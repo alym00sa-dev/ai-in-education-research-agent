@@ -1,0 +1,102 @@
+{
+  "title": "Tutor CoPilot: A Human-AI Approach for Scaling Real-Time Expertise",
+  "doi": "10.21203/rs.3.rs-5363154/v1",
+  "year": 2024,
+  "venue": "not_reported",
+  "url": "https://doi.org/10.21203/rs.3.rs-5363154/v1",
+  "source_db": "openalex_search",
+  "populations": [
+    "Elementary (PreK-5th)",
+    "Middle School (6th-8th)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Randomized Controlled Trial (RCT)",
+  "extended_summary": "This paper addresses the problem of how to scale real-time expert guidance for novice tutors in K-12 mathematics. The authors argue that traditional professional development is expensive, time-consuming, and poorly matched to the immediate needs of tutors during live instruction, especially in under-resourced settings.\n\nThe intervention, Tutor CoPilot, is a human-AI system embedded in a virtual tutoring platform. When tutors activate the tool, it generates expert-like, strategy-specific suggestions in real time based on the ongoing conversation, lesson topic, and selected instructional goal. The system was built using a Bridge method that leverages expert think-aloud data to train language models to mimic expert pedagogical reasoning. Tutors can edit, regenerate, or choose among alternative suggestions.\n\nThe study is a preregistered randomized controlled trial with 900 tutors and 1,800 K-12 students in Title I schools in a large U.S. southern school district. The main analysis focuses on mathematics tutoring for students in grades 3-8, with outcomes including exit-ticket mastery, participation, student surveys, and tutor language. The authors find that access to Tutor CoPilot improves student mastery on exit tickets by 4 percentage points overall, with larger gains for students of lower-rated or less-experienced tutors. Treatment tutors also use more high-quality instructional strategies and less often give away answers. The paper concludes that human-AI systems can improve tutoring quality and student learning at low cost, though generalizability and longer-term effects remain uncertain.",
+  "quality_tier": "blue",
+  "quality_tier_rationale": "This is a preregistered randomized controlled trial with tutor-level randomization, a sizable sample, and clear counterfactual comparison between access to Tutor CoPilot and control tutoring. Although the paper is a preprint and some outcomes are proximal rather than standardized end-of-year tests, the causal design and direct empirical evidence support a blue-tier rating.",
+  "impact_tier": "green",
+  "impact_tier_rationale": "The intervention produced a modest but meaningful positive effect on a priority population, with a 4 percentage-point increase in exit-ticket mastery and larger gains for weaker tutors. The effect is practically important but below the threshold for blue-tier impact because the main reported effect size is smaller than 0.20 and longer-term standardized test gains were not significant.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "human-AI tutoring support tool that generates real-time, expert-like pedagogical suggestions for live K-12 math tutors during sessions"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 1.0,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "In an RCT with n=1,800 K-12 students (4,136 tutoring sessions), students whose tutors had access to Tutor CoPilot were 4 percentage points more likely to pass exit tickets than controls (62% to 66%, p<0.01). Conditional on attempting the exit ticket, treatment students were 3 percentage points more likely to pass, and the effect was larger for lower-rated tutors (9 p.p. gain; 56% to 65%) and less-experienced tutors (7 p.p. gain; 61% to 68%).",
+        "measure": "Exit ticket pass rate in live math tutoring sessions; conditional exit ticket pass rate",
+        "study_size": "n=1800 students; n=4136 sessions",
+        "effect_size": "0.04 (absolute percentage-point increase)",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.78,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Tutor CoPilot improved tutors' instructional strategies, with classifer-based analyses over 550,000+ messages showing treatment tutors were more likely to prompt student explanation and ask questions to guide thinking, and less likely to give away answers or solution strategies. The paper reports these strategy shifts as roughly 2 standard deviations more frequent on a log-odds scale for key high-quality strategies, indicating stronger facilitation of deeper reasoning and engagement.",
+        "measure": "NLP-classified tutoring message strategies (e.g., prompting explanation, asking guiding questions, giving away answers/solutions)",
+        "study_size": "n=4136 sessions; 550,000+ messages",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "approximately 2 SD on log-odds scale for some strategies"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.67,
+      "finding": {
+        "direction": "No Effect",
+        "finding_summary": "Student survey outcomes did not show statistically significant changes in perceived tutor care, belief that the tutor cared about understanding, or session ratings. The estimated treatment effects were small and statistically null across the survey items reported in Table 2, suggesting no clear effect on these self-reported social-emotional outcomes during the study window.",
+        "measure": "Student post-session survey ratings (e.g., tutor cared about understanding, tutor cared about performance, self-efficacy, session rating)",
+        "study_size": "n=1931-1952 survey responses",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.74,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The system was designed to scale real-time expertise at low cost, and the authors estimate Tutor CoPilot costs about $20 per tutor annually based on observed usage. The paper also implies workflow support benefits by reducing tutors' need to generate prompts themselves and by helping tutors respond more quickly with usable guidance, though no formal productivity effect size is reported.",
+        "measure": "Estimated annual per-tutor cost; tutor workflow support/usage observations",
+        "study_size": "n=900 tutors assigned; usage from 2,000+ Tutor CoPilot activations",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "short_duration",
+    "single_site",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "8",
+  "setting": "online",
+  "teacher_training": "yes",
+  "implementation_fidelity": "medium",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

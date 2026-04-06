@@ -1,0 +1,73 @@
+{
+  "title": "Interactive authoring of outcome-oriented lesson plans for immersive Virtual Reality training",
+  "doi": null,
+  "year": 2018,
+  "venue": "Conference acronym \u2019XX",
+  "url": "http://arxiv.org/abs/2505.01886v2",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Adult (non-academic)"
+  ],
+  "user_types": [
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses the difficulty subject matter experts and educators face when authoring effective lesson plans for immersive virtual reality (iVR) training, especially when creating instruction that is aligned to desired learning outcomes. The authors propose FlowTrainer, an LLM-assisted interactive workflow that applies Backward design so that users define learning outcomes first and then generate objectives, skills, assessment criteria, and learning activities to form a lesson plan.\n\nThe system combines a web-based editor with a graph-based interface and a library of reusable learning activities. Users can iteratively author, edit, and verify iVR lesson plans, with the current study implemented for a welding training use case. The intended users are subject matter experts and educators who may not have strong VR development expertise but need to create training scenarios for manufacturing instruction.\n\nThe paper reports a user study with 8 experienced welders who also had varying levels of VR and teaching experience. Compared with a baseline non-LLM version of the editor, FlowTrainer reduced perceived workload and time for authoring, and generally improved usability, particularly for more complex authoring tasks. The main conclusion is that the LLM-supported, backward-design workflow can make iVR lesson-plan authoring more flexible and cognitively accessible, supporting broader adoption of iVR training content creation.",
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "self_reported_measures",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "lab",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "content_generation",
+        "personalization_adaptation"
+      ],
+      "description": "An LLM-supported lesson-planning and instructional-design assistant that helps users generate and revise lesson plans, objectives, skills, assessment criteria, and learning activities.",
+      "use_case": "Used in FlowTrainer, a web-based editor for authorsing outcome-oriented lesson plans for immersive VR training. The system generated lesson-plan components from user-provided learning outcomes and supported iterative editing of the instructional flow.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In a user study with 8 experienced welders, the LLM-supported SystemB reduced the time and technical expertise required for authoring compared with the non-LLM baseline. The paper reports higher usability and lower perceived mental workload for SystemB in later sessions, along with shorter completion times for complex tasks, but does not report a formal between-system effect size.",
+          "measure": "System Usability Scale (SUS), NASA-TLX workload ratings, task completion time, subjective user feedback",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=8"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Sequence length increased with task complexity in both systems, indicating that users were able to author more detailed plans over time. The paper reports significant Friedman-test effects of task complexity on sequence length for SystemA (\u03c72 = 10.57, p = 0.0051) and SystemB (\u03c72 = 6.07, p = 0.0482), but no significant difference between systems in how complexity affected sequence length.",
+          "measure": "Sequence length distribution of authored lesson plans",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=8"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a small user study with mixed quantitative and qualitative measures rather than a large controlled trial or meta-analysis. The methodology is clear, but the evidence base is limited by n=8 and the absence of effect sizes for the main comparisons.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports practical improvements in usability and reduced workload/time for the LLM-supported system, but the magnitude of impact is not quantified in effect-size terms. The evidence suggests modest-to-clear operational benefit, yet the limited sample keeps the impact assessment cautious.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

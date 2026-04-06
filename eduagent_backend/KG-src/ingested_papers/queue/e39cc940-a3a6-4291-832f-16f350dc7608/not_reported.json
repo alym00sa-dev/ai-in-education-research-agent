@@ -1,0 +1,82 @@
+{
+  "title": "Personalized Recommendations in EdTech: Evidence from a Randomized Controlled Trial",
+  "doi": "not_reported",
+  "year": 2022,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2208.13940v2",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Elementary (PreK-5th)",
+    "K-12 (unspecified grade)"
+  ],
+  "user_types": [
+    "Student",
+    "School",
+    "Parent"
+  ],
+  "study_design": "Randomized Controlled Trial (RCT)",
+  "extended_summary": "This paper asks whether personalized content recommendations can improve engagement in an educational app, compared with the app\u2019s existing editorial curation system. The authors focus on a recommendation problem in digital education: whether matching learning content to individual user preferences increases consumption of educational material, and whether those gains differ across user subgroups.\n\nThe intervention is a personalized recommendation system built from historical interaction data using matrix factorization. The system replaces manual/editorial ranking in one section of the Freadom app (\u201cRecommended Story\u201d) and is evaluated in a randomized controlled trial. Users with at least 60 prior story interactions were randomized to treatment or control. Treatment users saw personalized story recommendations while control users continued to receive editor-selected stories. The app is used by children ages 3 to 12 in India, mainly through smartphones, and the content consists of short illustrated English-reading stories with quizzes.\n\nThe study finds that personalization substantially increases engagement in the recommended section and also raises overall app usage. Specifically, the personalized section sees about a 60% increase in total story engagement, alongside higher story completion and reading time; overall app engagement rises by about 14%. The paper also reports heterogeneity: users with longer histories, heavier engagement, and niche preferences benefit more than light or mainstream users. The authors conclude that personalization can meaningfully improve engagement in educational apps, especially when sufficient historical data are available to support accurate recommendations.",
+  "quality_tier": "blue",
+  "quality_tier_rationale": "This is a randomized controlled trial with a clear treatment/control contrast and pre-specified outcomes, making it strong causal evidence. Internal validity is good, though the paper studies engagement rather than learning achievement, which limits direct relevance to academic impact questions.",
+  "impact_tier": "green",
+  "impact_tier_rationale": "The intervention produced a modest-to-large increase in engagement outcomes, including a 14% rise in overall app usage and 60% higher engagement in the personalized section. However, because the study does not measure academic achievement, the educational impact is indirect and therefore best classified as green rather than blue.",
+  "interventions": [
+    {
+      "intervention": "Adaptive Learning Platform",
+      "confidence": 0.92,
+      "role": "primary",
+      "use_case": "Personalized content recommendations in a children's reading app, using matrix factorization to rank and re-rank stories for each user based on past engagement history."
+    },
+    {
+      "intervention": "Mobile / Microlearning App",
+      "confidence": 0.88,
+      "role": "secondary",
+      "use_case": "App-based delivery of short illustrated reading stories and quizzes in the Freadom mobile/web learning platform."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Literacy",
+      "confidence": 0.58,
+      "finding": {
+        "direction": "No Effect",
+        "finding_summary": "The paper does not directly measure learning or reading achievement outcomes, so it cannot claim an effect on literacy achievement. The closest literacy-related outcome is reading-time/engagement with story content in the Freadom app, which increased under personalization, but this is only a proxy and not evidence of achievement gains.",
+        "measure": "Reading-time/engagement with story content; no direct literacy achievement measure reported",
+        "study_size": "n=7750 randomized; 3023 app launchers analyzed; 525 viewed at least one Recommended Story",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Personalized recommendations substantially increased user engagement with the educational app. In the main randomized controlled trial (n=7750 randomized; analysis on app launchers), Total Story Engagement in the Recommended Story section rose by 60% (SE 17%), completed stories by 78% (SE 26%), and reading time by 87% (SE 25%). Overall app usage also increased: Total Story Engagement across all sections rose by 14% (SE 7%).",
+        "measure": "Total Story Engagement, completed stories, and reading time in Recommended Story section and across all app sections",
+        "study_size": "n=7750 randomized; 3023 app launchers analyzed",
+        "effect_size": "60% increase in Recommended Story engagement; 14% increase in all-sections engagement",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "short_duration",
+    "single_site",
+    "no_long_term_followup",
+    "non_representative_population",
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "2",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "medium",
+  "study_country": "India",
+  "study_region": "South Asia",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

@@ -1,0 +1,45 @@
+{
+  "title": "Consensus Sampling for Safer Generative AI",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2511.09493v1",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses the problem of making generative AI safer when individual model outputs may contain risks that are difficult or impossible to detect by inspection alone. The authors focus on threats such as steganography, hidden security vulnerabilities in code, and other misalignment risks, arguing that output-only inspection cannot reliably remove or identify such harms.\n\nThe proposed approach is consensus sampling: given multiple generative models, the algorithm samples from the mixture of their outputs and only accepts outputs where enough models assign sufficiently similar probability. If agreement is insufficient, the algorithm abstains. The method is architecture-agnostic and uses access to model probabilities rather than model internals.\n\nNo human participants, students, teachers, or classroom context are involved. The paper is theoretical and develops formal guarantees showing that the algorithm\u2019s risk is bounded relative to the safest subset of models, while abstention decreases as overlap among safe models increases. The authors also show that the method can limit information leakage and is robust to certain adversarial settings, but they emphasize important limitations, including the need for multiple safe models, possible abstention, and accumulation of risk over repeated use.",
+  "limitations": [
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "identified_tools": [
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "content_generation",
+        "feedback_evaluation"
+      ],
+      "description": "A generic generative AI / language model system that samples outputs from multiple models and aggregates them via consensus sampling to improve safety and reduce leakage risk.",
+      "use_case": "The paper proposes and analyzes a black-box consensus sampling procedure for aggregating multiple generative models; it is a theoretical safety framework rather than an empirical study of classroom use.",
+      "findings": []
+    }
+  ],
+  "verdict": "framework_only",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a theoretical / algorithmic paper with proofs, not an empirical education study. It does not evaluate a K\u201312 instructional coaching or lesson-feedback intervention, so there is no experimental evidence tier to rate beyond red.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "No K\u201312 outcome was measured and no effect size is reported. The paper addresses safety properties of model aggregation in general, not instructional impact, so educational impact is not demonstrated.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

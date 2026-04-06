@@ -1,0 +1,78 @@
+{
+  "title": "Generating In-Context, Personalized Feedback for Intelligent Tutors with Large Language Models",
+  "doi": "10.1007/s40593-025-00505-6",
+  "year": 2025,
+  "venue": "International Journal of Artificial Intelligence in Education",
+  "url": "https://doi.org/10.1007/s40593-025-00505-6",
+  "source_db": "openalex_search",
+  "populations": [
+    "Undergraduate",
+    "Adult (non-academic)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper investigates whether large language models (LLMs), specifically GPT-4, can be used inside intelligent tutoring systems to generate personalized corrective feedback for student math errors. The authors focus on three tasks: diagnosing the student\u2019s mistake, generating targeted feedback, and automatically evaluating whether the feedback is helpful and informative.\n\nAcross two studies, the researchers analyzed logged student transactions from the Apprentice Tutor platform in College Algebra and prompted GPT-4 with varying amounts of contextual information from the tutor interface, the student\u2019s answer, the correct answer, and skill estimates. They first built a codebook of common error types from the transaction data, then tested GPT-4\u2019s ability to identify each error and produce feedback tailored to that diagnosis. They also examined the tone and readability of the generated hints using automated text-analysis tools.\n\nThe population was adult math learners in Technical College System of Georgia College Algebra courses, using web-based intelligent tutors on topics such as factoring, radicals, logarithms, quadratic equations/functions, rational equations, and exponent rules. The main finding is that GPT-4 can diagnose errors with fairly high accuracy when enough contextual information is provided, but it struggles more with multi-error responses, wrong-field errors, and some complex multi-step problems. Feedback quality was mixed: most hints were targeted or general and positively toned, but a non-trivial share were too general, incorrect, or gave away the answer. The authors conclude that LLMs may be useful for scalable feedback authoring in ITSs, but only with strong contextual grounding and quality control.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed empirical study with a clear method, but it is not a causal impact study on learner achievement and does not use an RCT or QED comparing learning outcomes. The evidence is primarily diagnostic and descriptive, focused on model accuracy and feedback quality in an ITS setting.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper shows potentially useful accuracy for automating feedback authoring and diagnosis, but it does not demonstrate learning gains for students. The practical impact is plausible for tutors and developers, yet the student-level educational impact remains unclear from the reported evidence.",
+  "interventions": [
+    {
+      "intervention": "Intelligent Tutoring System (ITS)",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "Embedding GPT-4 into an existing college algebra intelligent tutoring system to diagnose student errors and generate individualized corrective hints from transaction data and problem context"
+    },
+    {
+      "intervention": "Automated Feedback System",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "LLM-generated personalized corrective feedback for math tutor steps, including error diagnosis, hint authoring, and automated helpfulness evaluation"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 1.0,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "GPT-4 diagnosed student math errors with 87.8% accuracy overall on n=1,144 incorrect tutor transactions after prompt refinement, with near-perfect recognition of correct answers (99%) but weaker performance on wrong-field errors and multi-error responses. The paper reports accuracy by error type rather than learning gains; it evaluates whether LLMs can reliably identify and support algebraic problem-solving steps in an ITS context.",
+        "measure": "Error diagnosis accuracy on incorrect student responses in College Algebra tutors",
+        "study_size": "n=1,144 incorrect transactions (from 6,926 total tutor transactions)",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 1.0,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper argues GPT-4 could reduce human tutor-author workload by scaling feedback creation and automating diagnosis/helpfulness evaluation, but it does not report a direct time-savings effect size. In the feedback analysis, 66% of hints were targeted, 22.3% were general, 7.1% gave the answer, and 4.8% were incorrect, suggesting promising but imperfect automation for authoring corrective hints.",
+        "measure": "Distribution of feedback quality categories; automated evaluation pass rate",
+        "study_size": "n=1,144 incorrect transactions for feedback generation; automated helpfulness evaluation not separately sample-sized",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "single_site",
+    "no_long_term_followup",
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

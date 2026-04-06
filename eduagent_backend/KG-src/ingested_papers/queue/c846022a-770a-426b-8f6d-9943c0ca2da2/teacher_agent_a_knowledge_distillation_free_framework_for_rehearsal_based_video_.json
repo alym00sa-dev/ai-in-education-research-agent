@@ -1,0 +1,29 @@
+{
+  "title": "Teacher Agent: A Knowledge Distillation-Free Framework for Rehearsal-based Video Incremental Learning",
+  "doi": null,
+  "year": 2023,
+  "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+  "url": "http://arxiv.org/abs/2306.00393v3",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses a machine learning problem rather than an educational intervention: how to reduce catastrophic forgetting in rehearsal-based video class-incremental learning without relying on a conventional teacher network for knowledge distillation. The authors argue that standard distillation-based rehearsal methods are computationally expensive for video models and can be misled by inaccurate predictions from the previous-stage teacher, especially as tasks accumulate.\n\nTo solve this, the paper proposes a knowledge distillation-free framework called Teacher Agent. The approach replaces the previous teacher model with a lightweight teacher generator that produces soft labels, together with a self-correction loss that helps the model review old knowledge. The framework also includes a unified sampler that selects a fixed number of key frames from stored videos, improving memory efficiency while preserving representative content.\n\nThe method is evaluated on four video action recognition benchmarks: Kinetics-incremental, Something-Something V1, UCF101, and HMDB51. Results show improved accuracy and reduced forgetting compared with prior rehearsal-based incremental learning methods such as iCaRL, BiC, and vCLIMB TC, while using substantially fewer FLOPs and lower-resolution video inputs. The authors conclude that the proposed teacher-agent strategy can effectively replace distillation in rehearsal-based video incremental learning and may also transfer to image class-incremental learning.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a peer-reviewed computer vision/machine learning methods paper on incremental video recognition, not an education intervention study. It does not evaluate a K-12 instructional technology or compare against human coaching, peer review, self-review, or usual classroom practice.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "There is no direct educational impact measured in K-12 settings, and no student learning, teacher practice, or institutional outcome evidence is reported. The paper\u2019s improvements are limited to video classification benchmarks and computational efficiency.",
+  "interventions": [],
+  "outcome_assignments": [],
+  "limitations": [
+    "not_reported"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

@@ -1,0 +1,85 @@
+{
+  "title": "Generating and Evaluating Tests for K-12 Students with Language Model Simulations: A Case Study on Sentence Reading Efficiency",
+  "doi": null,
+  "year": 2023,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2310.06837v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Elementary (PreK-5th)",
+    "Middle School (6th-8th)",
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses the problem of creating and validating parallel reading-assessment items for K-12 students more efficiently using large language models (LLMs). The authors focus on silent Sentence Reading Efficiency (SRE), a timed true/false sentence-reading task used to assess reading fluency and efficiency, and propose an item-response simulator that predicts how students will answer new items and how long they will take. The system uses GPT-4 to generate candidate sentences, then filters and calibrates them with a fine-tuned LLaMA-based simulator trained on prior student response data.\n\nThe intervention studied is not a reading instruction tool, but an AI-assisted assessment-generation pipeline. The paper evaluates whether AI-generated test forms can match a human-authored, expert-calibrated Lab form in terms of score distributions and item properties. It includes a crowdworker comparison and a school deployment with 234 students in grades 2-8 from a California public school, comparing human-generated items against GPT-generated items filtered by the simulator and reviewed by experts.\n\nThe main findings are that filtered AI-generated test forms closely match human-generated forms on total scores, with very high score correlations in both crowdworker (r=0.92) and school (r=0.93) evaluations. The simulator predicts item response time and accuracy better than simple readability metrics such as Flesch-Kincaid, though the evidence is strongest for response-time prediction rather than accuracy. Ambiguous AI-generated items reduce reliability and produce weaker agreement, showing the value of simulator-based filtering. The paper concludes that LLMs can support scalable generation and calibration of reading-assessment items, but human review remains necessary for classroom use.",
+  "limitations": [
+    "single_site",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup",
+    "non_representative_population"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "blended",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "medium",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "feedback_evaluation"
+      ],
+      "description": "OpenAI generative large language model system used to generate and evaluate educational text items.",
+      "use_case": "Used GPT-4 to generate true/false sentence items for a K-12 silent sentence reading efficiency test, and in some experiments used GPT-4 to filter items for safety/appropriateness and identify ambiguous items.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0016 Literacy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In a school student evaluation with 234 students in grades 2-8, the filtered GPT-generated AI test form produced total scores highly correlated with the human-generated Lab test form (r=0.93). The paper also reports that the AI and Lab forms matched closely in difficulty, and the AI test form outperformed Flesch Kincaid for predicting unseen item response time and difficulty.",
+          "measure": "Total test score correlation between filtered AI test form and human-generated Lab form; item prediction correlations for accuracy and median response time",
+          "effect_size": "r=0.93; item prediction r=0.316 (accuracy), r=0.509 (median RT)",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=234"
+        }
+      ]
+    },
+    {
+      "name": "LLaMA",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation"
+      ],
+      "description": "Meta open-weight large language model family used here as the base model for fine-tuning an item-response simulator.",
+      "use_case": "Fine-tuned as an item-response simulator to predict student responses and response times to unseen sentence items, and to evaluate/flag ambiguous items for reading assessment test construction.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0016 Literacy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The fine-tuned LLaMA-based item-response simulator showed moderate predictive performance on held-out items, with correlations of r=0.76 for predicted vs actual aggregate response probabilities and r=0.50 for predicted vs actual aggregate response times on the model evaluation set. In the school student study, the simulator outperformed Flesch Kincaid for predicting unseen item accuracy and median response time (Table 2).",
+          "measure": "Predicted vs actual aggregate response probabilities; predicted vs actual aggregate response times; prediction of unseen item accuracy and median RT",
+          "effect_size": "r=0.76; r=0.50; r=0.316 (accuracy); r=0.509 (median RT)",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=1962 training participants; held-out evaluation sample not_reported"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical study, but it is primarily about test-item generation/calibration rather than a randomized or quasi-experimental literacy intervention. The evidence is correlational/model-evaluation plus a school deployment, not a causal comparison of instruction.",
+  "impact_tier": "green",
+  "impact_tier_rationale": "The reported correlations are moderate to high, especially the AI vs. Lab score correlation (r=0.93), indicating meaningful but not instructional effect size evidence. However, the findings concern assessment item quality and prediction, not direct student literacy gains.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

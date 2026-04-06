@@ -1,0 +1,86 @@
+{
+  "title": "Beyond Answers: Large Language Model-Powered Tutoring System in Physics Education for Deep Learning and Precise Understanding",
+  "doi": null,
+  "year": 2024,
+  "venue": "ACM",
+  "url": "http://arxiv.org/abs/2406.10934v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Randomized Controlled Trial (RCT)",
+  "extended_summary": "This paper addresses the problem of how to provide effective personalized tutoring with large language models (LLMs) in physics education. The authors argue that generic LLM assistance can produce superficially correct answers without supporting deep conceptual understanding, especially for abstract and information-rich physics problems. To address this, they propose Physics-STAR, a prompting framework that structures LLM tutoring into three stages: knowledge explanation, error analysis, and review suggestion.\n\nThe study evaluated Physics-STAR in a controlled experiment with 12 high school sophomores in Shenzhen, China. Students were split into three groups: traditional teacher-led review, generic GPT-4o tutoring, and GPT-4o guided by Physics-STAR. Pre- and post-tests measured performance on conceptual, computational, and information-based physics questions about gravity and spaceflight. The Physics-STAR group performed best on the more demanding information-based items, while all groups improved similarly on conceptual and computational questions. The results suggest that prompt-structured LLM tutoring can better support reflective learning and error analysis than generic LLM use.\n\nOverall, the paper concludes that LLM-powered tutoring is most valuable when designed to support student-centered learning rather than direct answer provision. It emphasizes that personalized scaffolding, step-by-step guidance, and explicit error analysis can help students build deeper understanding and improve efficiency on complex problems. The paper does not focus on K-12 literacy or subgroup comparisons such as multilingual learners or students with disabilities.",
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "no_long_term_followup",
+    "non_representative_population",
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "classroom",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "China",
+  "study_region": "East Asia & Pacific",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "feedback_evaluation"
+      ],
+      "description": "OpenAI's GPT-family large language model used as a conversational tutoring/feedback system for generating explanations, analyzing errors, and suggesting review steps.",
+      "use_case": "Used as the general LLM baseline (GPT-4o) and also as the underlying model within the Physics-STAR prompting framework for high school physics tutoring.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0000 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In a controlled experiment with 12 high school sophomores (n=12), the generic LLM tutoring group using GPT-4o performed similarly to traditional teacher lecture on conceptual and computational questions, but showed only minimal improvement on information-based questions. The paper reports information-based post-test scores of M=2.5 for both General LLM tutoring and Teacher lecture, compared with M=5 for the Physics-STAR-guided GPT-4o group.",
+          "measure": "Pre-test/post-test multiple-choice physics performance on conceptual, computational, and information-based questions; completion time on each question type",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=12"
+        }
+      ]
+    },
+    {
+      "name": "ITS (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "tutoring_instruction",
+        "feedback_evaluation"
+      ],
+      "description": "An intelligent tutoring system archetype that provides personalized, adaptive instructional support through dialogue, explanation, error analysis, and review.",
+      "use_case": "The paper proposes Physics-STAR as an LLM-powered tutoring framework for personalized physics instruction; the system was compared against teacher lecture and generic LLM tutoring.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0000 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In a controlled experiment with 12 high school sophomores (n=12), Physics-STAR-guided GPT-4o produced the strongest gains on information-based physics questions. Post-test information-based scores were M=5 for Physics-STAR versus M=2.5 for both general LLM tutoring and teacher lecture, and the paper reports a more pronounced decrease in completion time for information-based questions under Physics-STAR.",
+          "measure": "Post-test scores and completion time on conceptual, computational, and information-based physics questions",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=12"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a small controlled experiment with only 12 students and no reported inferential statistics, effect sizes, or confidence intervals. The paper provides preliminary evidence rather than a well-powered or fully reported causal evaluation.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The observed benefit is promising and appears concentrated on information-based physics questions, but the study is very small and does not report effect sizes. The practical impact is therefore unclear/modest rather than clearly medium or large.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

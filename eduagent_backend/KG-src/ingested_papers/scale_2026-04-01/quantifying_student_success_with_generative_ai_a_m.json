@@ -1,0 +1,274 @@
+{
+  "title": "Quantifying Student Success with Generative AI: A Monte Carlo Simulation Informed by Systematic Review",
+  "doi": null,
+  "year": 2025,
+  "venue": null,
+  "url": "https://arxiv.org/abs/2507.01062",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate",
+    "Graduate / Doctoral"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Meta-Analysis / Systematic Review",
+  "extended_summary": "This paper addresses the methodological problem of how to quantify students\u2019 perceived success with generative AI tools in higher education when most existing studies report only survey summaries rather than raw learner-level data. The author asks how findings from a PRISMA-guided systematic literature review can be converted into a probabilistic, composite indicator of student success. The paper defines \u201csuccess\u201d operationally as students\u2019 self-evaluated success in using generative AI tools such as ChatGPT in educational settings, rather than objective academic performance or grades.\n\nThe study uses a hybrid approach: a systematic review of Scopus-indexed empirical studies on student perceptions of generative AI in higher education (2023\u20132025), followed by Monte Carlo simulation based on published item-level means and standard deviations. Nineteen empirical articles met the inclusion criteria, and six provided complete item-level Likert statistics suitable for modelling. From those, one 10-item usability instrument from a prior health sciences education study was selected as a canonical dataset. Its items were reorganized into three themes\u2014Ease of Use & Learnability, System Efficiency & Learning Burden, and Perceived Complexity & Integration\u2014and used to simulate 10,000 synthetic learners. Inverse-variance weighting and Bessel-corrected variance estimates were used to generate a composite perception-based \u201cSuccess Score.\u201d\n\nThe population and context are higher education students, drawn indirectly through the reviewed literature rather than through a newly collected participant sample in this paper. The paper discusses university students broadly, with variation across disciplines and levels of study noted in the reviewed evidence. The implementation context is not a real-world classroom intervention but a privacy-preserving modelling exercise using published summary statistics. The selected canonical input dataset came from higher education use of ChatGPT/GenAI, but this paper itself does not report a single live deployment setting, intervention duration, or teacher-mediated implementation.\n\nThe main conclusion is that the proposed simulation framework can transparently translate survey-based perception data into a reproducible composite measure of perceived student success with generative AI. Under the baseline inverse-variance weighting scheme, System Efficiency & Learning Burden had the largest influence on the simulated Success Score, while Ease of Use & Learnability and Perceived Complexity & Integration also contributed positively but less strongly. The author emphasizes that the resulting score is a perception-based proxy, not a direct measure of academic achievement, and argues that the framework is useful for benchmarking GenAI tools in higher education when individual-level data are unavailable.",
+  "limitations": [
+    "no_control_group",
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "other",
+        "prediction_analytics"
+      ],
+      "description": "OpenAI's generative AI chatbot/LLM used for conversational assistance and content generation.",
+      "use_case": "The paper does not evaluate ChatGPT outcomes directly in a new student experiment. It uses a 10-item usability instrument from Veras et al. (2024) on ChatGPT as the canonical input for a Monte Carlo simulation that models a perception-based student 'Success Score' from published summary statistics.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "review_synthesis",
+          "direction": "positive",
+          "finding_summary": "Using the ChatGPT usability instrument from Veras et al. (2024) as the canonical dataset, the simulation produced a tightly concentrated perception-based Success Score distribution with mean = 4.0666, SD = 0.0956, and IQR = 4.0032\u20134.1308 on a 1\u20135 scale, interpreted as generally favourable self-evaluations of success when using GenAI tools. This is a simulation-derived perception proxy rather than a direct academic performance measure.",
+          "measure": "Simulated perception-based Success Score on a 1\u20135 Likert-derived scale",
+          "effect_size": "mean=4.0666; SD=0.0956; IQR=4.0032\u20134.1308",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=10000 simulated"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "review_synthesis",
+          "direction": "positive",
+          "finding_summary": "In regression on the simulated data, System Efficiency & Learning Burden was the strongest contributor to the composite Success Score under inverse-variance weighting (beta = 0.7823, p < 0.001), compared with Ease of Use & Learnability (beta = 0.0856, p < 0.001) and Perceived Complexity & Integration (beta = 0.1381, p < 0.001). Model fit was R2 = 0.724 with F(3, 9996) = 8741, p < 0.001.",
+          "measure": "Regression coefficients linking usability themes to simulated Success Score",
+          "effect_size": "beta1=0.0856; beta2=0.7823; beta3=0.1381; R2=0.724; F(3,9996)=8741",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=10000 simulated"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a systematic-review-informed simulation paper using published summary statistics rather than a direct empirical comparison of student outcomes. The reported results are model-based and perception-focused, not causal estimates of learning gains.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports favorable simulated perception scores and strong model coefficients, but these are not direct effect sizes on academic outcomes. Impact on learning is therefore suggestive but unclear.",
+  "citations": [
+    {
+      "title": "Is it harmful or helpful? Examining the causes and consequences of generative AI usage among university students",
+      "doi": "10.1186/s41239-024-00444-7",
+      "year": 2024,
+      "venue": "International Journal of Educational Technology in Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Analysis of college students\u2019 attitudes toward the use of ChatGPT in their academic activities: effect of intent to use, verification of information and responsible use",
+      "doi": "10.1186/s40359-024-01764-z",
+      "year": 2024,
+      "venue": "BMC Psychology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Exploring ChatGPT\u2019s role in higher education: perspectives from Pakistani university students on academic integrity and ethical challenges",
+      "doi": null,
+      "year": 2025,
+      "venue": "Education Sciences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Foresight methodologies in responsible GenAI education: insights from the Intermedia-Lab at Complutense University Madrid",
+      "doi": null,
+      "year": 2024,
+      "venue": "Education Sciences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Empowering engineering students through artificial intelligence (AI): blended human\u2013AI creative ideation processes with ChatGPT",
+      "doi": "10.1002/cae.22817",
+      "year": 2025,
+      "venue": "Computer Applications in Engineering Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "An empirical evaluation of the system usability scale",
+      "doi": "10.1080/10447310802205776",
+      "year": 2008,
+      "venue": "International Journal of Human-Computer Interaction",
+      "citation_level": 2,
+      "citation_context": "heuristic SUS-equivalent benchmarking of simulated score"
+    },
+    {
+      "title": "Introduction to Meta-Analysis",
+      "doi": "10.1002/9780470743386",
+      "year": 2009,
+      "venue": "John Wiley & Sons",
+      "citation_level": 3,
+      "citation_context": "inverse-variance weighting and fixed-effect meta-analytic practice"
+    },
+    {
+      "title": "A quick and dirty usability scale",
+      "doi": null,
+      "year": 1996,
+      "venue": "Usability Evaluation in Industry",
+      "citation_level": 2,
+      "citation_context": "basis for SUS-equivalent rescaling interpretation"
+    },
+    {
+      "title": "Students\u2019 voices on generative AI: perceptions, benefits, and challenges in higher education",
+      "doi": "10.1186/s41239-023-00411-8",
+      "year": 2023,
+      "venue": "International Journal of Educational Technology in Higher Education",
+      "citation_level": 2,
+      "citation_context": "one of six item-level studies defining evidence base"
+    },
+    {
+      "title": "Understanding the perception of design students towards ChatGPT",
+      "doi": "10.1016/j.caeai.2024.100281",
+      "year": 2024,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 2,
+      "citation_context": "one of six item-level studies defining evidence base"
+    },
+    {
+      "title": "Exploring social and computer science students\u2019 perceptions of AI integration in (foreign) language instruction",
+      "doi": "10.1016/j.caeai.2024.100285",
+      "year": 2024,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 2,
+      "citation_context": "discipline differences and item-level evidence source"
+    },
+    {
+      "title": "The rapid rise of generative AI and its implications for academic integrity: students\u2019 perceptions and use of chatbots for assistance with assessments",
+      "doi": "10.1016/j.caeai.2024.100273",
+      "year": 2024,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 2,
+      "citation_context": "one of six item-level studies defining evidence base"
+    },
+    {
+      "title": "Quantifying student success with generative AI: a Monte Carlo simulation informed by systematic review",
+      "doi": "10.48550/arXiv.2507.01062",
+      "year": 2025,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Using ChatGPT for second language writing: experiences and perceptions of EFL learners in Thailand and Vietnam",
+      "doi": "10.1016/j.caeai.2024.100313",
+      "year": 2024,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A comparative study of student perceptions on generative AI in programming education across Sub-Saharan Africa",
+      "doi": "10.1016/j.caeo.2025.100245",
+      "year": 2025,
+      "venue": "Computers and Education Open",
+      "citation_level": 2,
+      "citation_context": "item-level evidence and programming-context support"
+    },
+    {
+      "title": "The PRISMA 2020 statement: an updated guideline for reporting systematic reviews",
+      "doi": "10.1136/bmj.n71",
+      "year": 2021,
+      "venue": "BMJ",
+      "citation_level": 3,
+      "citation_context": "systematic review reporting guideline followed"
+    },
+    {
+      "title": "Uncovering personalized L2 motivation and self-regulation in ChatGPT-assisted language learning: A hybrid PLS-SEM-ANN approach",
+      "doi": "10.1016/j.chbr.2024.100539",
+      "year": 2025,
+      "venue": "Computers in Human Behavior Reports",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Interactions with generative AI chatbots: unveiling dialogic dynamics, students\u2019 perceptions, and practical competencies in creative problem-solving",
+      "doi": "10.1186/s41239-025-00508-2",
+      "year": 2025,
+      "venue": "International Journal of Educational Technology in Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Perceptions and usage of AI chatbots among students in higher education across genders, academic levels and fields of study",
+      "doi": "10.1016/j.caeai.2024.100259",
+      "year": 2024,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 2,
+      "citation_context": "evidence for field-level differences moderator"
+    },
+    {
+      "title": "Would ChatGPT-facilitated programming mode impact college students\u2019 programming behaviors, performances, and perceptions? An empirical study",
+      "doi": "10.1186/s41239-024-00446-5",
+      "year": 2024,
+      "venue": "International Journal of Educational Technology in Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Assessing curriculum efficiency through Monte Carlo simulation",
+      "doi": "10.1177/1521025118776618",
+      "year": 2021,
+      "venue": "Journal of College Student Retention: Research, Theory & Practice",
+      "citation_level": 2,
+      "citation_context": "probabilistic decision modelling under uncertainty"
+    },
+    {
+      "title": "Students\u2019 perception of ChatGPT usage in education",
+      "doi": "10.14569/IJACSA.2024.0150143",
+      "year": 2024,
+      "venue": "International Journal of Advanced Computer Science and Applications",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A mixed methods crossover randomized controlled trial exploring the experiences, perceptions, and usability of artificial intelligence (ChatGPT) in health sciences education",
+      "doi": "10.1177/20552076241298485",
+      "year": 2024,
+      "venue": "Digital Health",
+      "citation_level": 3,
+      "citation_context": "canonical 10-item dataset used for simulation"
+    },
+    {
+      "title": "Writing with AI: what college students learned from utilizing ChatGPT for a writing assignment",
+      "doi": null,
+      "year": 2024,
+      "venue": "Education Sciences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "U.S. college students\u2019 acceptability and educational benefits of ChatGPT from a digital divide perspective",
+      "doi": "10.1016/j.caeai.2025.100385",
+      "year": 2025,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 2,
+      "citation_context": "equity disparities informing policy implications"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

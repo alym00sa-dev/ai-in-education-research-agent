@@ -1,0 +1,608 @@
+{
+  "title": "AI-Supported Data Analysis Boosts Student Motivation and Reduces Stress in Physics Education",
+  "doi": null,
+  "year": null,
+  "venue": null,
+  "url": "https://arxiv.org/abs/2412.20951",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate",
+    "Graduate / Doctoral"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Randomized Controlled Trial (RCT)",
+  "extended_summary": "This paper examines whether AI-supported data analysis can improve learning and emotional-motivational outcomes in physics education compared with a traditional Excel-based approach. The study is motivated by the growing use of large language models in education and the need for empirical evidence about whether AI tools actually improve student learning, especially in data-intensive physics tasks. The authors focus on three questions: whether students in each condition improve from pre-test to post-test, whether AI leads to greater learning gains than Excel, and whether the two tools differ in their effects on motivation, enjoyment, stress, and related emotional variables.\n\nThe intervention compared two ways of analyzing pendulum experiment data: a traditional Microsoft Excel workflow and an AI-supported custom chatbot called ExperiMentor, built on ChatGPT-4o. ExperiMentor was designed to guide students through data analysis using probing questions, contextual hints, formulas, and error-prevention support, while avoiding giving full solutions directly. Both groups completed the same string-pendulum and spring-pendulum evaluation tasks, worked on prepared computers, and took pre- and post-tests that measured conceptual understanding, data-analysis competence, and emotional-motivational responses. Participants were randomly assigned by seat choice to computers configured either with Excel or with the AI tool.\n\nThe study was conducted at the University of Cologne in Germany with 50 student teachers preparing for different school types. The sample included 35 Bachelor of Arts students and 15 Master of Education students, making the population primarily undergraduate and graduate pre-service educators in a university physics-education context. The intervention appears to have taken place in an in-person computer-based instructional/lab setting. Objective performance was assessed through multiple-choice items on pendulum physics and data evaluation, while emotional and motivational constructs were measured using Likert-scale surveys.\n\nThe main findings show that both groups improved, but the AI group showed larger within-group gains, especially in spring-pendulum and data-evaluation tasks. However, between-group comparisons did not show statistically significant differences in overall learning gains, suggesting that AI was not clearly superior to Excel in quantitative achievement over this short intervention. The strongest advantages of the AI condition were qualitative: students using ExperiMentor reported greater enjoyment, motivation, positive emotional experience, perceived method effectiveness, and lower stress, frustration, and uncertainty than students using Excel. The authors conclude that AI tools such as custom chatbots may not automatically produce stronger immediate learning gains than conventional tools, but they can create a more motivating and emotionally supportive learning environment for physics data analysis.",
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "self_reported_measures",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "lab",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Germany",
+  "study_region": "Europe",
+  "identified_tools": [
+    {
+      "name": "ExperiMentor",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "tutoring_instruction"
+      ],
+      "description": "A custom GPT chatbot built on ChatGPT for physics experimental data analysis using Python. It gives contextual hints, relevant formulas, probing questions, and error-prevention support while avoiding direct solution paths.",
+      "use_case": "Used by student teachers in a randomized pre-post control-group study to analyze string and spring pendulum datasets and support physics data analysis, compared against Microsoft Excel.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Scientific Reasoning",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Within the AI group, total performance improved significantly from pre-test M=7.64 (SD=3.43) to post-test M=9.92 (SD=2.96). The Wilcoxon signed-rank test was significant (p=5.8\u221910^-5) with a large effect size (Cohen\u2019s d=1.4537).",
+          "measure": "Pre-post total score across all physics concept and data analysis items",
+          "effect_size": "d=1.4537",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=25"
+        },
+        {
+          "outcome_category": "Academic \u2014 Scientific Reasoning",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "For the AI group, spring pendulum performance increased from M=1.40 (SD=1.29) to M=2.20 (SD=1.29), with a significant pre-post change (p=0.0039). The reported effect size was medium-to-large (Cohen\u2019s d=0.7407).",
+          "measure": "Pre-post spring pendulum category score",
+          "effect_size": "d=0.7407",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=25"
+        },
+        {
+          "outcome_category": "Academic \u2014 Scientific Reasoning",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The AI group showed significant gains in data evaluation, rising from M=3.00 (SD=1.61) to M=4.00 (SD=1.22). This pre-post change was significant (p=0.0009) with a large effect size (Cohen\u2019s d=0.9258).",
+          "measure": "Pre-post data evaluation category score",
+          "effect_size": "d=0.9258",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=25"
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Post-intervention, the AI group reported higher positive emotional learning experience than the Excel group (AI M=2.26 vs Excel M=1.74). The Wilcoxon rank-sum test showed a significant difference (p=0.0156) with a moderate effect size (d=0.75).",
+          "measure": "Positive Emotional Learning Experience construct",
+          "effect_size": "d=0.75",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=50"
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The AI group reported lower negative emotional learning experience than the Excel group (AI M=0.64 vs Excel M=1.56). This difference was highly significant (p<0.0001) with a very large negative effect size (d=-1.47), indicating less stress, uncertainty, and frustration with the AI-supported method.",
+          "measure": "Negative Emotional Learning Experience construct",
+          "effect_size": "d=-1.47",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=50"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Participants using the AI-supported method rated the method more favorably than Excel users on Perception of Methods (AI M=2.44 vs Excel M=1.68). The difference was highly significant (p<0.0001) with a very large effect size (d=1.35).",
+          "measure": "Perception of Methods construct",
+          "effect_size": "d=1.35",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=50"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The AI group rated Method Effectiveness higher than the Excel group (AI M=2.52 vs Excel M=1.88). This between-group difference was significant (p=0.0043) with a large effect size (d=0.95).",
+          "measure": "Method Effectiveness construct",
+          "effect_size": "d=0.95",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=50"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Motivation was higher in the AI group than in the Excel group after the intervention (AI M=2.28 vs Excel M=1.56). The Wilcoxon test indicated a highly significant difference (p=0.0003) with a very large effect size (d=1.17).",
+          "measure": "Motivation construct",
+          "effect_size": "d=1.17",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=50"
+        },
+        {
+          "outcome_category": "Academic \u2014 Scientific Reasoning",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "Between groups, overall learning gains did not differ significantly despite somewhat higher raw gains in the AI group. ANCOVA for total score was non-significant (p=0.3924), and the Hake index was low for both groups (AI g=0.0244; Excel g=0.0132).",
+          "measure": "Between-group difference in total learning gains",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=50"
+        },
+        {
+          "outcome_category": "Academic \u2014 Scientific Reasoning",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "Self-reported perceived learning gains did not significantly differ between AI and Excel conditions (AI M=1.38 vs Excel M=1.26). The Wilcoxon test was non-significant (p=0.6580) with a small effect size (d=0.2005).",
+          "measure": "Perceived Learning Gains construct",
+          "effect_size": "d=0.2005",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=50"
+        }
+      ]
+    },
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "tutoring_instruction"
+      ],
+      "description": "OpenAI\u2019s ChatGPT family of large language models used here as the base model underlying the custom GPT system.",
+      "use_case": "The paper states that ExperiMentor was developed based on ChatGPT-4o; ChatGPT is referenced as the underlying platform rather than separately evaluated as an independent intervention.",
+      "findings": []
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is an empirical randomized pre-post control-group study with n=50 and a comparison condition, but it is small-sample and reports some measurement limitations and non-normal data concerns. That places it below the strongest causal evidence tier.",
+  "impact_tier": "blue",
+  "impact_tier_rationale": "The paper reports several medium-to-large and very large effect sizes for motivation, emotional experience, perceived method quality, and within-group learning gains for the AI condition, even though between-group academic differences were not significant.",
+  "citations": [
+    {
+      "title": "Evolution and Revolution in Artificial Intelligence in Education",
+      "doi": null,
+      "year": 2016,
+      "venue": "International Journal of Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Schwierigkeitserzeugende Merkmale im Physikunterricht [Difficulty-Inducing Features in Physics Education]",
+      "doi": null,
+      "year": 2021,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "framing task difficulty features in physics education"
+    },
+    {
+      "title": "Exploring Opportunities and Challenges of Artificial Intelligence and Machine Learning in Higher Education Institutions",
+      "doi": null,
+      "year": 2021,
+      "venue": "Sustainability",
+      "citation_level": 2,
+      "citation_context": "supports tool perceptions affecting learner effort"
+    },
+    {
+      "title": "Innovatives Lernen mit Intelligenten Tutoriellen Systemen. Eine Analyse der bildungspolitischen Gelingensbedingungen [Innovative Learning with Intelligent Tutoring Systems. An Analysis of the Conditions for Educational Policy Success]",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Large language models\u2014Valuable tools that require a sensitive integration into teaching and learning physics",
+      "doi": null,
+      "year": 2024,
+      "venue": "The Physics Teacher",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Investigating ChatGPT-4\u2019s performance in solving physics problems and its potential implications for education",
+      "doi": null,
+      "year": 2024,
+      "venue": "Asia Pacific Education Review",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A SWOT analysis of ChatGPT: Implications for educational practice and research",
+      "doi": null,
+      "year": 2024,
+      "venue": "Innovations in Education and Teaching International",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Methoden zur Erfassung von Schwierigkeiten bei Sch\u00fclerexperimenten [Variety of Prerequisites in Science Education]",
+      "doi": null,
+      "year": 2015,
+      "venue": "Heterogenit\u00e4t und Diversit\u00e4t \u2013 Vielfalt der Voraussetzungen im naturwissenschaftlichen Unterricht. Tagungsband Jahrestagung in Bremen 2014",
+      "citation_level": 3,
+      "citation_context": "basis for capturing difficulties in student experiments"
+    },
+    {
+      "title": "Data Dialogue with ChatGPT. Using Code Interpreter to Simulate and Analyse Experimental Data",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Exploring the impact of artificial intelligence on teaching and learning in higher education",
+      "doi": null,
+      "year": 2017,
+      "venue": "Research and Practice in Technology Enhanced Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Large Language Models und ihre Potenziale im Bildungssystem. Impulspapier der St\u00e4ndigen Wissenschaftlichen Kommission (SWK) der Kultusministerkonferenz [Large Language Models and their potential in the education system. Impulse paper of the Standing Scientific Commission (SWK) of the Standing Conference of the Ministers of Education and Cultural Affairs]",
+      "doi": "10.25656/01:28303",
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Trustworthy artificial intelligence (AI) in education. Promises and challenges",
+      "doi": null,
+      "year": 2020,
+      "venue": "OECD Education Working Papers",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Artificial intelligence in Physics Education. A comprehensive literature review",
+      "doi": null,
+      "year": 2023,
+      "venue": "Journal of Physics: Conference Series",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Artificial Intelligence in Education: A Review",
+      "doi": null,
+      "year": 2020,
+      "venue": "IEEE Access",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Systematic review of research on artificial intelligence applications in higher education \u2013 where are the educators?",
+      "doi": null,
+      "year": 2019,
+      "venue": "International Journal of Educational Technology in Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Artificial Intelligence and Learning Analytics in Teacher Education: A Systematic Review",
+      "doi": null,
+      "year": 2022,
+      "venue": "Education Sciences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Teachers\u2019 Perceptions of Teaching Sustainable Artificial Intelligence. A Design Frame Perspective",
+      "doi": null,
+      "year": 2022,
+      "venue": "Sustainability",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Enhancing Physics Learning with ChatGPT, Bing Chat, and Bard as Agents-to-Think-With: A Comparative Case Study",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Educational data augmentation in physics education research using ChatGPT",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Exploring the potential of using ChatGPT in physics education",
+      "doi": null,
+      "year": 2023,
+      "venue": "Smart Learning Environments",
+      "citation_level": 2,
+      "citation_context": "supports AI motivating learners in physics education"
+    },
+    {
+      "title": "Utilizing AI for Physics Problem Solving: A Literature Review and ChatGPT Experience",
+      "doi": null,
+      "year": 2024,
+      "venue": "Jurnal Kependidikan Fisika",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Challenges and Opportunities of Moderating Usage of Large Language Models in Education",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT in education: Strategies for responsible implementation",
+      "doi": null,
+      "year": 2023,
+      "venue": "Contemporary Educational Technology",
+      "citation_level": 2,
+      "citation_context": "comparison claim that ChatGPT surpasses traditional tools like Excel"
+    },
+    {
+      "title": "A Study of Artificial Intelligence in Education System & Role of AI in Indian Education Sector",
+      "doi": null,
+      "year": 2022,
+      "venue": "International Journal of Scientific Research in Engineering and Management",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "What Is the Impact of ChatGPT on Education? A Rapid Review of the Literature",
+      "doi": null,
+      "year": 2023,
+      "venue": "Education Sciences",
+      "citation_level": 2,
+      "citation_context": "supports effectiveness of AI-driven learning methods"
+    },
+    {
+      "title": "ChatGPT in physics education: A pilot study on easy-to-implement activities",
+      "doi": null,
+      "year": 2023,
+      "venue": "Contemporary Educational Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "An Evaluation of the Impact of Artificial Intelligence on university Students' Learning",
+      "doi": null,
+      "year": 2024,
+      "venue": "JID",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT for good? On opportunities and challenges of large language models for education",
+      "doi": null,
+      "year": 2023,
+      "venue": "Learning and Individual Differences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Could an Artificial-Intelligence agent pass an introductory physics course?",
+      "doi": null,
+      "year": 2023,
+      "venue": "Physical Review Physics Education Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Students\u2019 perceptions of using ChatGPT in a physics class as a virtual tutor",
+      "doi": null,
+      "year": 2023,
+      "venue": "International Journal of Educational Technology in Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "How do physics students evaluate artificial intelligence responses on comprehension questions? A study on the perceived scientific accuracy and linguistic quality",
+      "doi": null,
+      "year": 2023,
+      "venue": "Physical Review Physics Education Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Unreflected Acceptance. Investigating the Negative Consequences of ChatGPT-Assisted Problem Solving in Physics Education",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Impact of Artificial Intelligence on student attitudes, engagement, and learning",
+      "doi": null,
+      "year": 2024,
+      "venue": "IRJMETS",
+      "citation_level": 2,
+      "citation_context": "supports improved learning outcomes and analytical engagement"
+    },
+    {
+      "title": "ChatGPT effects on cognitive skills of undergraduate students: Receiving instant responses from AI-based conversational large language models (LLMs)",
+      "doi": null,
+      "year": 2024,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Analysis of Chat GPT Usage Impact on Learning Motivation among Scout Students",
+      "doi": null,
+      "year": 2023,
+      "venue": "International Journal of Research Review",
+      "citation_level": 2,
+      "citation_context": "supports AI advantages for learning motivation"
+    },
+    {
+      "title": "An Introduction to Artificial Intelligence in Education",
+      "doi": null,
+      "year": 2021,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "grounds motivation as major factor in successful learning"
+    },
+    {
+      "title": "Aufbruch ins Unbekannte. Schule in Zeiten von k\u00fcnstlicher Intelligenz und ChatGPT [Into the Unknown. Schools in Times of Artificial Intelligence and ChatGPT]",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Angewandte Statistik. Methodensammlung mit R [Applied Statistics. Collection of Methods with R]",
+      "doi": null,
+      "year": 2016,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "statistical procedures used for data analysis"
+    },
+    {
+      "title": "Forschungsmethoden und Evaluation in den Sozial- und Humanwissenschaften [Research Methods and Evaluation in the Social and Human Sciences]",
+      "doi": null,
+      "year": 2016,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "research methods and evaluation procedures"
+    },
+    {
+      "title": "See Supplemental Material at [Link] for the tasks, tests and data tables",
+      "doi": null,
+      "year": null,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Kurzskala Technikbereitschaft [Short Scale for Technology Commitment ]",
+      "doi": null,
+      "year": 2016,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "source of technology readiness scale"
+    },
+    {
+      "title": "Grundlagen der Datenanalyse mit R [Basics of Data Analysis with R]",
+      "doi": null,
+      "year": 2014,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "guidance for data analysis with R"
+    },
+    {
+      "title": "Statistik f\u00fcr Human- und Sozialwissenschaftler [Statistics for Human and Social Scientists]",
+      "doi": null,
+      "year": 2010,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "statistical reference for analyses and interpretation"
+    },
+    {
+      "title": "Is It Really Robust?",
+      "doi": null,
+      "year": 2010,
+      "venue": "Methodology",
+      "citation_level": 3,
+      "citation_context": "justifies robustness considerations for statistical tests"
+    },
+    {
+      "title": "Consequences of Failure to Meet Assumptions Underlying the Fixed Effects Analyses of Variance and Covariance",
+      "doi": null,
+      "year": 1972,
+      "venue": "Review of Educational Research",
+      "citation_level": 3,
+      "citation_context": "supports ANCOVA assumption considerations"
+    },
+    {
+      "title": "Interactive-engagement versus traditional methods: A six-thousand-student survey of mechanics test data for introductory physics courses",
+      "doi": null,
+      "year": 1998,
+      "venue": "American Journal of Physics",
+      "citation_level": 3,
+      "citation_context": "source of Hake Index for learning gains"
+    },
+    {
+      "title": "Normalized gain. What is it and when and how should I use it?",
+      "doi": null,
+      "year": 2022,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "guidance on using normalized gain"
+    },
+    {
+      "title": "Lessons from the Physics Education Reform Effort",
+      "doi": null,
+      "year": 2002,
+      "venue": "Conservation Ecology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Why normalized gain should continue to be used in analyzing preinstruction and postinstruction scores on concept inventories",
+      "doi": null,
+      "year": 2020,
+      "venue": "Physical Review Physics Education Research",
+      "citation_level": 3,
+      "citation_context": "supports continued use of normalized gain"
+    },
+    {
+      "title": "Coefficient alpha and the internal structure of tests",
+      "doi": null,
+      "year": 1951,
+      "venue": "Psychometrika",
+      "citation_level": 3,
+      "citation_context": "basis for internal consistency reliability assessment"
+    },
+    {
+      "title": "Forschungsmethoden und Statistik f\u00fcr die Soziale Arbeit. Grundlagen und Anwendungen [Research Methods and Statistics for Social Work. Basics and Applications]",
+      "doi": null,
+      "year": 2021,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "methods/statistics reference for study analyses"
+    },
+    {
+      "title": "Not Just Novelty: A Longitudinal Study on Utility and Customization of an AI Workflow",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "supports discussion of novelty effects persisting over time"
+    },
+    {
+      "title": "Cognitive ease at a cost: LLMs reduce mental effort but compromise depth in student scientific inquiry",
+      "doi": null,
+      "year": 2024,
+      "venue": "Computers in Human Behavior",
+      "citation_level": 2,
+      "citation_context": "supports conclusion that chatbot answers may not deepen learning"
+    },
+    {
+      "title": "When TPACK meets artificial intelligence: Analyzing TPACK and AI-TPACK components through structural equation modelling",
+      "doi": null,
+      "year": 2024,
+      "venue": "Education and Information Technologies",
+      "citation_level": 2,
+      "citation_context": "supports integrating AI competencies into learning opportunities"
+    },
+    {
+      "title": "Exploring Teachers\u2019 Perceptions of Artificial Intelligence as a Tool to Support their Practice in Estonian K-12 Education",
+      "doi": null,
+      "year": 2022,
+      "venue": "International Journal of Artificial Intelligence in Education",
+      "citation_level": 2,
+      "citation_context": "supports human-AI synergy over exclusive digital solutions"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

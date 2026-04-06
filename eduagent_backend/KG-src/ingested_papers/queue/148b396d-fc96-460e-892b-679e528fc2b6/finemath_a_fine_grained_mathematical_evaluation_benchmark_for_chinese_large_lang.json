@@ -1,0 +1,70 @@
+{
+  "title": "FineMath: A Fine-Grained Mathematical Evaluation Benchmark for Chinese Large Language Models",
+  "doi": null,
+  "year": 2024,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2403.07747v2",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Elementary (PreK-5th)"
+  ],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses the need for a fine-grained benchmark to evaluate the mathematical reasoning abilities of Chinese large language models (LLMs), especially on elementary-school-level math word problems. The authors argue that prior datasets mainly reported overall accuracy or coarse grade-level results, which makes it difficult to identify which mathematical concepts and reasoning skills models have or have not mastered.\n\nTo address this, the paper introduces FineMath, a benchmark of 1,584 Chinese math word problems drawn from textbooks, workbooks, and the internet. The dataset is organized into 17 categories spanning elementary-school math concepts such as number and operations, measurement, data analysis and probability, algebra, geometry, and two special problem types. Each problem is also annotated by reasoning difficulty according to the number of steps required to solve it, and the original problems were transformed into multiple-choice format for easier automatic evaluation.\n\nThe benchmark is used to evaluate GPT-4, GPT-3.5-Turbo, and several Chinese LLMs, including ChatGLM2-6B, Qwen-7B-Chat, InternLM-Chat-7B, Baichuan models, and MathGLM variants. Results show that GPT-4 performs best overall, but performance drops as reasoning steps increase. The authors also show that prompt wording, answer format, and contamination from training data can substantially affect measured performance, and they recommend careful filtering and evaluation design when using the benchmark.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a benchmark/evaluation study with systematic experiments across multiple LLMs, but it is not a causal K-12 intervention study and does not use an RCT or QED for student outcomes. The paper is methodologically clear yet primarily assesses model performance rather than educational impact.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports substantial accuracy differences on math reasoning tasks, but these are model-evaluation results rather than learner outcome effects. Any educational impact is indirect and unclear for K-12 settings.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "Benchmark evaluation of Chinese large language models on elementary-school math word problems, including direct generation and multiple-choice answer selection to probe mathematical reasoning."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 1.0,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The paper evaluates mathematical reasoning/accuracy of multiple LLMs on FineMath (n=1,584). GPT-4 achieved 0.73 overall accuracy under direct generation, while GPT-3.5-Turbo reached 0.62; Chinese models ranged from 0.08 (Baichuan-7B) to 0.49 (MathGLM-10B) under Prompt 0. Performance declined as reasoning steps increased, with GPT-4 still above 0.60 even on 3+ step items, but lower-performing models dropping sharply.",
+        "measure": "Accuracy on fine-grained elementary-school math word problems; performance by concept category and number of reasoning steps",
+        "study_size": "n=1584",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.8,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The benchmark analysis shows that evaluation protocol materially changes measured performance. GPT-4's overall accuracy varied from 0.73 with direct generation to 0.59 and 0.58 under alternative prompts, and from 0.73 generation to 0.62 under multiple-choice option prediction; similar prompt/task-form sensitivity appeared across models.",
+        "measure": "Accuracy under different prompts and evaluation formats (generation vs multiple-choice option prediction)",
+        "study_size": "n=1584",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "single_site",
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "China",
+  "study_region": "East Asia & Pacific",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

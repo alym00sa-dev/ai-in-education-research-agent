@@ -1,0 +1,414 @@
+{
+  "title": "VTutor: An Animated Pedagogical Agent SDK that Provide Real Time Multi-Model Feedback",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "https://arxiv.org/abs/2505.06676",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Adult (non-academic)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses limitations in existing pedagogical agents for education, particularly their reliance on scripted dialogue, poor lip synchronization, unnatural facial animation, high latency, and the risk of uncanny-valley effects in highly realistic avatars. The authors propose VTutor, an open-source software development kit for building animated pedagogical agents that can deliver real-time, personalized feedback using large language models, text-to-speech systems, and browser-based avatar rendering.\n\nVTutor integrates LLM-generated text, converts it to speech through TTS services, and uses a Unity/WebGL pipeline with a lip-sync module to animate anime-style pedagogical agents in real time on web-based learning platforms. The system is designed to be lightweight, scalable, and easy for developers to embed through an iframe and SDK. Its character design intentionally uses stylized anime aesthetics to reduce discomfort associated with near-human visual realism while maintaining expressiveness and engagement.\n\nThe empirical evaluation compared VTutor against a SadTalker-based talking-head pedagogical agent. Fifty participants recruited through Prolific completed an online study in which they watched videos of the two agents, rated them on preference, synchronization accuracy, naturalness, emotional expression, and visual coherence, and provided open-ended comments. The sample consisted of adults aged 20 to 50, and the study was conducted online rather than in an actual classroom or school implementation.\n\nThe main findings show that VTutor was preferred significantly more often than the comparison system and received higher ratings on all measured dimensions. Qualitative feedback suggested that VTutor\u2019s stylized design reduced uncanny-valley concerns relative to the more realistic talking-head baseline, although some users still found aspects of its facial expressions unnatural. The authors conclude that VTutor is a promising, efficient, and scalable approach for AI-enhanced educational interaction, but note remaining limitations such as animation quality improvements and the relatively large initial WebGL package size.",
+  "limitations": [
+    "small_sample",
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "identified_tools": [
+    {
+      "name": "VTutor",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "language_speech"
+      ],
+      "description": "An open-source SDK for animated pedagogical agents that integrates LLM-generated text, text-to-speech, and real-time lip-synced avatar rendering in a browser/WebGL environment.",
+      "use_case": "Studied as an animated pedagogical agent framework providing real-time, personalized, multimodal tutor feedback and compared against SadTalker-generated talking-head agents on user perceptions.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In a user preference study with 50 participants, VTutor was preferred by 36 participants versus 14 for SadTalker. The preference difference was statistically significant, \u03c72(1, N = 50) = 9.68, p = .0019, with Cramer's V = .44.",
+          "measure": "General user preference between VTutor and SadTalker",
+          "effect_size": "Cramer's V = .44",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=50"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "VTutor received higher general preference ratings than SadTalker: M = 5.00 (SD = 1.75) versus M = 3.62 (SD = 1.51). The difference was significant, t = 4.2218, p = 0.0001, with Cohen's d = 0.8444.",
+          "measure": "General Preference Score (1-7 rating)",
+          "effect_size": "Cohen's d = 0.8444",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=50"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "VTutor outperformed SadTalker on perceived synchronization accuracy, with ratings of M = 4.58 (SD = 1.82) versus M = 3.66 (SD = 1.49). The difference was significant, t = 2.7642, p = 0.0068, with Cohen's d = 0.5528.",
+          "measure": "Sync Accuracy rating",
+          "effect_size": "Cohen's d = 0.5528",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=50"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "VTutor was rated as more natural than SadTalker, scoring M = 4.12 (SD = 2.04) versus M = 3.10 (SD = 1.67). This difference was significant, t = 2.7390, p = 0.0073, with Cohen's d = 0.5478.",
+          "measure": "Naturalness rating",
+          "effect_size": "Cohen's d = 0.5478",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=50"
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "VTutor showed higher ratings for emotional expression than SadTalker: M = 4.38 (SD = 1.94) versus M = 3.30 (SD = 1.58). The difference was significant, t = 3.0546, p = 0.0029, with Cohen's d = 0.6109.",
+          "measure": "Emotional Expression rating",
+          "effect_size": "Cohen's d = 0.6109",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=50"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "VTutor achieved higher visual coherence ratings than SadTalker, with M = 4.56 (SD = 1.64) compared with M = 3.64 (SD = 1.63). The difference was significant, t = 2.8142, p = 0.0059, with Cohen's d = 0.5628.",
+          "measure": "Visual Coherence rating",
+          "effect_size": "Cohen's d = 0.5628",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=50"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "For a 7-second animation, SadTalker required 143 seconds to generate the video on an NVIDIA Titan XP GPU, whereas VTutor produced the animation within one second in a browser environment. The paper presents this as evidence of substantially lower latency and greater real-time suitability for interactive pedagogical agents.",
+          "measure": "Animation generation time / latency for a 7-second clip",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    },
+    {
+      "name": "SadTalker",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "language_speech",
+        "other"
+      ],
+      "description": "A talking-head animation system for audio-driven single-image face animation used to generate pedagogical agent videos.",
+      "use_case": "Used as the comparison condition against VTutor, with the same agent design rendered as a SadTalker talking head for user evaluation.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "In the head-to-head preference comparison with VTutor, only 14 of 50 participants preferred SadTalker, compared with 36 preferring VTutor. The preference difference was significant, \u03c72(1, N = 50) = 9.68, p = .0019, with Cramer's V = .44.",
+          "measure": "General user preference between SadTalker and VTutor",
+          "effect_size": "Cramer's V = .44",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=50"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "SadTalker received lower general preference ratings than VTutor: M = 3.62 (SD = 1.51) versus M = 5.00 (SD = 1.75). The reported test showed a significant difference, t = 4.2218, p = 0.0001, with Cohen's d = 0.8444, favoring VTutor.",
+          "measure": "General Preference Score (1-7 rating)",
+          "effect_size": "Cohen's d = 0.8444",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=50"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "SadTalker scored lower on perceived synchronization accuracy than VTutor, with M = 3.66 (SD = 1.49) compared with M = 4.58 (SD = 1.82). The difference was significant, t = 2.7642, p = 0.0068, with Cohen's d = 0.5528, favoring VTutor.",
+          "measure": "Sync Accuracy rating",
+          "effect_size": "Cohen's d = 0.5528",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=50"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "SadTalker was rated lower on naturalness than VTutor, with M = 3.10 (SD = 1.67) versus M = 4.12 (SD = 2.04). The difference was significant, t = 2.7390, p = 0.0073, with Cohen's d = 0.5478, favoring VTutor.",
+          "measure": "Naturalness rating",
+          "effect_size": "Cohen's d = 0.5478",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=50"
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "SadTalker received lower emotional expression ratings than VTutor: M = 3.30 (SD = 1.58) versus M = 4.38 (SD = 1.94). The difference was significant, t = 3.0546, p = 0.0029, with Cohen's d = 0.6109, favoring VTutor.",
+          "measure": "Emotional Expression rating",
+          "effect_size": "Cohen's d = 0.6109",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=50"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "SadTalker scored lower on visual coherence than VTutor, with M = 3.64 (SD = 1.63) compared with M = 4.56 (SD = 1.64). The difference was significant, t = 2.8142, p = 0.0059, with Cohen's d = 0.5628, favoring VTutor.",
+          "measure": "Visual Coherence rating",
+          "effect_size": "Cohen's d = 0.5628",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=50"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "SadTalker required 143 seconds to generate a 7-second video on an NVIDIA Titan XP GPU, while VTutor produced the animation within one second in a browser environment. The paper frames this as substantially worse latency for real-time pedagogical agent use.",
+          "measure": "Animation generation time / latency for a 7-second clip",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical comparative user study with n=50 and reported statistical tests, but it uses convenience sampling and focuses on perceptual/usability outcomes rather than randomized learning outcome evaluation. It is stronger than anecdotal evidence but does not meet RCT/QED standards for higher tiers.",
+  "impact_tier": "blue",
+  "impact_tier_rationale": "Reported effects on user preference and perceived quality are moderate to large, with Cohen's d values around 0.55-0.84 and Cramer's V = 0.44. These indicate substantial positive impact on perceived interaction quality, although not on direct academic achievement.",
+  "citations": [
+    {
+      "title": "The effects of artificial intelligence applications in educational settings: Challenges and strategies",
+      "doi": null,
+      "year": 2024,
+      "venue": "Technological Forecasting and Social Change",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The effect of multiple replies for natural language generation chatbots",
+      "doi": null,
+      "year": 2022,
+      "venue": "CHI Conference on Human Factors in Computing Systems Extended Abstracts",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Gptutor: a chatgpt-powered programming tool for code explanation",
+      "doi": null,
+      "year": 2023,
+      "venue": "International Conference on Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Gptutor: Great personalized tutor with large language models for personalized learning content generation",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the Eleventh ACM Conference on Learning@ Scale",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A systematic review on prompt engineering in large language models for k-12 stem education",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv preprint",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Vtuber for streamers: Exploring the role of social presence in the visual representation of streamers",
+      "doi": null,
+      "year": 2024,
+      "venue": "Communication Studies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "In the shades of the uncanny valley: An experimental study of human\u2013chatbot interaction",
+      "doi": null,
+      "year": 2019,
+      "venue": "Future Generation Computer Systems",
+      "citation_level": 2,
+      "citation_context": "supports uncanny valley framing"
+    },
+    {
+      "title": "Cramify: The New Way to Cram \u2014 AI Study Guides & More",
+      "doi": null,
+      "year": 2025,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A systematic narrative review of agent persona on learning outcomes and design variables to enhance personification",
+      "doi": "10.1080/15391523.2020.1830894",
+      "year": 2021,
+      "venue": "Journal of Research on Technology in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Do pedagogical agents facilitate learner motivation and learning outcomes?: The role of the appeal of agent\u2019s appearance and voice",
+      "doi": "10.1027/1864-1105/a000011",
+      "year": 2010,
+      "venue": "Journal of Media Psychology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Demonstrating rigor using thematic analysis: A hybrid approach of inductive and deductive coding and theme development",
+      "doi": null,
+      "year": 2006,
+      "venue": "International journal of qualitative methods",
+      "citation_level": 3,
+      "citation_context": "thematic analysis approach for qualitative responses"
+    },
+    {
+      "title": "Vtuber concept review: The new frontier of virtual entertainment",
+      "doi": null,
+      "year": 2022,
+      "venue": "Proceedings of the 24th Symposium on Virtual and Augmented Reality",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "GitHub - hecomi/uLipSync: MFCC-based LipSync plug-in for Unity using Job System and Burst Compiler",
+      "doi": null,
+      "year": 2021,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "Unity lip-sync library used in system"
+    },
+    {
+      "title": "Heeyo",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Chatgpt for good? on opportunities and challenges of large language models for education",
+      "doi": null,
+      "year": 2023,
+      "venue": "Learning and individual differences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Mufin: A framework for automating multimodal feedback generation using generative artificial intelligence",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the Eleventh ACM Conference on Learning@ Scale",
+      "citation_level": 3,
+      "citation_context": "evaluation methodology described by this work"
+    },
+    {
+      "title": "A gender matching effect in learning with pedagogical agents in an immersive virtual reality science simulation",
+      "doi": "10.1111/jcal.12335",
+      "year": 2018,
+      "venue": "Journal of Computer Assisted Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Reliability and inter-rater reliability in qualitative research: Norms and guidelines for cscw and hci practice",
+      "doi": null,
+      "year": 2019,
+      "venue": "Proceedings of the ACM on Human-Computer Interaction",
+      "citation_level": 3,
+      "citation_context": "justifies no agreement scores in thematic analysis"
+    },
+    {
+      "title": "Ai-assisted knowledge assessment techniques for adaptive learning environments",
+      "doi": null,
+      "year": 2022,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Can virtual agents scale up mentoring?: insights from college students\u2019 experiences using the careerfair.ai platform at an american hispanic-serving institution",
+      "doi": null,
+      "year": 2023,
+      "venue": "International Conference on Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The birth of ijaied",
+      "doi": null,
+      "year": 2016,
+      "venue": "International journal of artificial intelligence in education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Pedagogical agents communicating and scaffolding students\u2019 learning: High school teachers\u2019 and students\u2019 perspectives",
+      "doi": null,
+      "year": 2024,
+      "venue": "Computers & Education",
+      "citation_level": 2,
+      "citation_context": "frames pedagogical agents as scaffolding support"
+    },
+    {
+      "title": "Enhancing llm-based feedback: Insights from intelligent tutoring systems and the learning sciences",
+      "doi": null,
+      "year": 2024,
+      "venue": "International Conference on Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "How do learners respond to pedagogical agents that deliver social-oriented non-task messages? impact on student learning, perceptions, and experiences",
+      "doi": "10.1016/j.chb.2011.09.010",
+      "year": 2012,
+      "venue": "Computers in Human Behavior",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Large language models for education: A survey and outlook",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv preprint",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Sadtalker: Learning realistic 3d motion coefficients for stylized audio-driven single image talking face animation",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition",
+      "citation_level": 3,
+      "citation_context": "comparison condition in user evaluation"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

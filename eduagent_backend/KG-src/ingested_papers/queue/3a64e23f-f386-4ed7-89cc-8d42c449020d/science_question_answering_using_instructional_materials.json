@@ -1,0 +1,57 @@
+{
+  "title": "Science Question Answering using Instructional Materials",
+  "doi": null,
+  "year": 2016,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/1602.04375v2",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Middle School (6th-8th)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses the problem of answering elementary science multiple-choice questions using students\u2019 instructional materials and external science knowledge resources. Rather than studying human learners, it proposes a machine learning framework for science question answering that can identify answer-supporting evidence in textbooks, curriculum structure, and related knowledge sources.\n\nThe core intervention is a latent structural SVM model that treats science QA as textual entailment. For each question-answer candidate pair, the model searches over a latent answer-entailing structure consisting of a textbook, chapter, section, sentence snippets, and word/multiword alignments. It also incorporates external knowledge bits from science dictionaries, study guides, flashcards, and semi-structured tables, and extends the approach to use review questions from textbooks and multi-task learning over question types. The evaluation is on 8th-grade science questions from the Allen AI Science Challenge, using CK-12 textbooks and associated resources.\n\nThe paper reports that the proposed LSSVM and multi-task variants outperform several retrieval, alignment, entailment, and neural baselines. Joint learning with review questions improves accuracy, handling negation helps on negation questions, and ablation shows that section selection, alignment, and external knowledge are especially important. Because this is a computational QA paper rather than a classroom intervention study, it does not provide evidence about student learning directly, but it is relevant as adjacent evidence on AI systems for science reasoning tasks.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed empirical machine learning study, but it is not a K-12 instructional intervention trial. It uses an offline benchmark with accuracy comparisons rather than a controlled educational design, so credibility/relevance to causal educational impact is limited.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The system shows a modest absolute accuracy gain over some baselines, but the metric is benchmark QA accuracy rather than student learning or reasoning outcomes. There is no evidence of classroom impact or effect sizes on K-12 learners, so educational impact is unclear.",
+  "interventions": [
+    {
+      "intervention": "Other",
+      "confidence": 0.95,
+      "role": "primary",
+      "use_case": "Structured science question answering over K-12 textbooks and domain resources using latent answer-entailing structure learning, including curriculum hierarchy retrieval, snippet selection, and word alignment to answer elementary science multiple-choice questions."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Scientific Reasoning",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper evaluates an AI system for answering 8th-grade science questions and reports that its latent-structure LSSVM variants outperform a range of baselines on held-out science QA accuracy. The best model (MTLSSVM(Qword, JT)) achieved 47.84% accuracy on the test set, compared with 31.26% for Lucene and 46.09% for a strong Lucene+LSSVM alignment baseline; the authors also report statistically significant gains from negation handling, multi-task learning, and joint training (paired t-test, p<0.05).",
+        "measure": "Multiple-choice science question answering accuracy on the Allen AI Science Challenge test set",
+        "study_size": "n=2500 questions total; train/dev/test split 1500/500/500",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

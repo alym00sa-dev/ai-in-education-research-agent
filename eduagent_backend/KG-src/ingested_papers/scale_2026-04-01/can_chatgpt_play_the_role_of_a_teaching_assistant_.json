@@ -1,0 +1,383 @@
+{
+  "title": "Can ChatGPT Play the Role of a Teaching Assistant in an Introductory Programming Course?",
+  "doi": null,
+  "year": 2024,
+  "venue": "Innovation and Technology in Computer Science Education (ITiCSE 2024)",
+  "url": "https://arxiv.org/abs/2312.07343",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper investigates whether ChatGPT can function as a virtual teaching assistant in an introductory programming (CS1) course. The authors focus on two core TA responsibilities: grading student code submissions and providing feedback on student code. The motivating problem is that large introductory programming courses require many human TAs, which creates workload and consistency challenges in grading and feedback.\n\nThe study evaluates OpenAI's GPT-3.5 model (text-davinci-003) using data from three take-home Python programming assignments. For grading, the authors compare ChatGPT's functionality scores against scores previously assigned by human TAs for 6,783 student code submissions. They also ask ChatGPT to assess code quality and compare those judgments with code quality metrics computed using the Radon package, especially Halstead effort and modularity. For feedback, they sample around 10 submissions per assignment, ask ChatGPT to generate improvement suggestions, and evaluate these suggestions both subjectively through expert student reviewers and objectively by implementing the suggestions and recalculating code quality metrics.\n\nThe population consisted of first-year undergraduate students in a CS1 course at IIIT Delhi in India, with the course enrolling approximately 650 students and supported by 32 highly proficient TAs. The context was a single institutional setting in which Python was the programming language of instruction. In addition to the student submissions, four strong undergraduate reviewers with TA experience evaluated the quality of ChatGPT-generated feedback.\n\nThe main conclusions are mixed. ChatGPT was not reliable enough to replace human TAs for grading: its correctness scores showed substantial deviation from TA scores, and its code quality judgments correlated weakly with tool-generated quality metrics. However, ChatGPT performed better as a feedback generator: most of its comments were judged to be minor or critical improvement suggestions rather than erroneous, and incorporating its suggestions often improved modularity and code structure, though not code correctness. The authors conclude that ChatGPT shows promise for instructional support and feedback, but is not yet dependable for grading student code submissions.",
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_control_group",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "India",
+  "study_region": "South Asia",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "tutoring_instruction"
+      ],
+      "description": "OpenAI's GPT-family conversational large language model used here as a virtual teaching assistant for programming coursework.",
+      "use_case": "Studied as a TA-like system in an introductory programming course to grade Python code submissions for correctness and quality, and to generate feedback/suggestions for improving student code.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "For grading code correctness, ChatGPT's scores showed substantial deviation from human TA grading across three assignments. Overall mean deviation was 5.35/20 for Assignment 1 with correlation 0.143, 5.47/16 for Assignment 2 with correlation 0.462, and 3.94/10 for Assignment 3 with correlation 0.59; the authors conclude ChatGPT was not reliable enough for grading correctness.",
+          "measure": "Deviation and Pearson correlation between ChatGPT-assigned functionality scores and TA-assigned scores on programming assignments",
+          "effect_size": "Correlation coefficients: 0.143, 0.462, 0.59",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=6783 student code submissions"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "For code quality grading, ChatGPT's assigned quality scores had near-zero correlation with Radon-derived quality metrics. Correlations with Halstead effort were -0.024, -0.04, and 0.16 across Assignments 1-3, and correlations with modularity were -0.012, 0.054, and 0.19, indicating poor alignment with computed code quality measures.",
+          "measure": "Pearson correlation between ChatGPT-assigned code quality scores and Radon package metrics (Halstead effort, modularity)",
+          "effect_size": "Correlations ranged from -0.04 to 0.19",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=6783 student code submissions"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In subjective evaluation of generated feedback, most comments were judged useful rather than erroneous. Across assignments, 70.77%-76.19% of comments were classified as minor enhancement feedback, 21.43%-21.65% as critical improvement feedback, and only 2.38%-4.62% as erroneous; four expert student reviewers performed the classification.",
+          "measure": "Reviewer classification of ChatGPT feedback into minor enhancement, critical improvement, erroneous, or none",
+          "effect_size": "Minor enhancement: 70.77%-76.19%; Critical: 21.43%-21.65%; Erroneous: 2.38%-4.62%",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=4 reviewers; approximately 10 submissions sampled from each assignment"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "When ChatGPT's suggestions were implemented, code modularity improved while correctness changed minimally. Average new/old modularity ratios were 1.12 for Assignment 1, 1.11 for Assignment 2, and 1.49 for Assignment 3, while effort-score ratios were 0.93, 1.33, and 0.93 respectively; the authors report no significant improvement in code correctness.",
+          "measure": "Ratio of modified-to-original code quality metrics after implementing ChatGPT feedback; regraded correctness of modified code",
+          "effect_size": "Modularity ratios: 1.12, 1.11, 1.49; Effort ratios: 0.93, 1.33, 0.93",
+          "confidence_interval": "not_reported",
+          "sample_size": "approximately 10 submissions per assignment"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical primary study with a clear experimental design and large archival dataset for grading comparisons, but it is not a randomized or quasi-experimental impact evaluation of student outcomes. Parts of the feedback analysis also rely on small samples and subjective review.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "Findings are mixed: ChatGPT performed poorly as a grader but showed useful feedback-generation potential, mainly improving code modularity rather than correctness. Reported effects are correlational/ratio-based and do not establish clear learning gains.",
+  "citations": [
+    {
+      "title": "Investigating the Potential of GPT-3 in Providing Feedback for Programming Assessments",
+      "doi": "10.1145/3587102.3588852",
+      "year": 2023,
+      "venue": "Proceedings of the 2023 Conference on Innovation and Technology in Computer Science Education V. 1 (ITiCSE 2023)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Programming Is Hard - Or at Least It Used to Be: Educational Opportunities and Challenges of AI Code Generation",
+      "doi": "10.1145/3545945.3569759",
+      "year": 2023,
+      "venue": "Proceedings of the 54th ACM Technical Symposium on Computer Science Education V. 1 (SIGCSE 2023)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "\u201cIt\u2019s not like Jarvis, but it\u2019s pretty close!\u201d - Examining ChatGPT\u2019s Usage among Undergraduate Students in Computer Science",
+      "doi": "10.1145/3636243.3636257",
+      "year": 2024,
+      "venue": "Proceedings of the 26th Australasian Computing Education Conference (ACE '24)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "GPT-3 vs Object Oriented Programming Assignments: An Experience Report",
+      "doi": "10.1145/3587102.3588814",
+      "year": 2023,
+      "venue": "Proceedings of the 2023 Conference on Innovation and Technology in Computer Science Education V. 1 (ITiCSE 2023)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "How ChatGPT Will Change Software Engineering Education",
+      "doi": "10.1145/3587102.3588815",
+      "year": 2023,
+      "venue": "Proceedings of the 2023 Conference on Innovation and Technology in Computer Science Education V. 1 (ITiCSE 2023)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Conversing with Copilot: Exploring Prompt Engineering for Solving CS1 Problems Using Natural Language",
+      "doi": "10.1145/3545945.3569823",
+      "year": 2023,
+      "venue": "Proceedings of the 54th ACM Technical Symposium on Computer Science Education V. 1 (SIGCSE 2023)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Concept-Based Automated Grading of CS-1 Programming Assignments",
+      "doi": "10.1145/3597926.3598049",
+      "year": 2023,
+      "venue": "Proceedings of the 32nd ACM SIGSOFT International Symposium on Software Testing and Analysis (ISSTA 2023)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Robots Are Coming: Exploring the Implications of OpenAI Codex on Introductory Programming",
+      "doi": "10.1145/3511861.3511863",
+      "year": 2022,
+      "venue": "Proceedings of the 24th Australasian Computing Education Conference (ACE '22)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Robots Are Coming: Exploring the Implications of OpenAI Codex on Introductory Programming",
+      "doi": "10.1145/3511861.3511863",
+      "year": 2022,
+      "venue": "Proceedings of the 24th Australasian Computing Education Conference (ACE '22)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "My AI Wants to Know If This Will Be on the Exam: Testing OpenAI\u2019s Codex on CS2 Programming Exercises",
+      "doi": "10.1145/3576123.3576134",
+      "year": 2023,
+      "venue": "Proceedings of the 25th Australasian Computing Education Conference (ACE '23)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Experiences with TA-Bot in CS1",
+      "doi": "10.1145/3576882.3617930",
+      "year": 2023,
+      "venue": "Proceedings of the ACM Conference on Global Computing Education Vol 1 (CompEd 2023)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Python",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "programming language used in analyzed CS1 assignments"
+    },
+    {
+      "title": "Elements of Software Science",
+      "doi": null,
+      "year": 1977,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "source of Halstead effort metric used for code quality"
+    },
+    {
+      "title": "Exploring the Responses of Large Language Models to Beginner Programmers\u2019 Help Requests",
+      "doi": "10.1145/3568813.3600139",
+      "year": 2023,
+      "venue": "Proceedings of the 2023 ACM Conference on International Computing Education Research V.1 (ICER 2023)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "AI-TA: Towards an Intelligent Question-Answer Teaching Assistant using Open-Source LLMs",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT in the Classroom: An Analysis of Its Strengths and Weaknesses for Solving Undergraduate Computer Science Questions",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "\"With Great Power Comes Great Responsibility!\": Student and Instructor Perspectives on the influence of LLMs on Undergraduate Engineering Education",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Radon",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "tool used to compute Halstead and modularity comparison metrics"
+    },
+    {
+      "title": "From \"Ban It Till We Understand It\" to \"Resistance is Futile\": How University Programming Instructors Plan to Adapt as More Students Use AI Code Generation and Explanation Tools such as ChatGPT and GitHub Copilot",
+      "doi": "10.1145/3568813.3600138",
+      "year": 2023,
+      "venue": "Proceedings of the 2023 ACM Conference on International Computing Education Research - Volume 1 (ICER 2023)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Learning from Teaching Assistants to Program with Subgoals: Exploring the Potential for AI Teaching Assistants",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Comparing Code Explanations Created by Students and Large Language Models",
+      "doi": "10.1145/3587102.3588785",
+      "year": 2023,
+      "venue": "Proceedings of the 2023 Conference on Innovation and Technology in Computer Science Education V. 1 (ITiCSE 2023)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Using Large Language Models to Enhance Programming Error Messages",
+      "doi": "10.1145/3545945.3569770",
+      "year": 2023,
+      "venue": "Proceedings of the 54th ACM Technical Symposium on Computer Science Education V. 1 (SIGCSE 2023)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Competition-level code generation with AlphaCode",
+      "doi": "10.1126/science.abq1158",
+      "year": null,
+      "venue": "Science",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Automatic Grading of Programming Assignments: An Approach Based on Formal Semantics",
+      "doi": "10.1109/ICSE-SEET.2019.00022",
+      "year": 2019,
+      "venue": "2019 IEEE/ACM 41st International Conference on Software Engineering: Software Engineering Education and Training (ICSE-SEET)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Experiences from Using Code Explanations Generated by Large Language Models in a Web Software Development E-Book",
+      "doi": "10.1145/3545945.3569785",
+      "year": 2023,
+      "venue": "Proceedings of the 54th ACM Technical Symposium on Computer Science Education V. 1 (SIGCSE 2023)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "On the Educational Impact of ChatGPT: Is Artificial Intelligence Ready to Obtain a University Degree?",
+      "doi": "10.1145/3587102.3588827",
+      "year": 2023,
+      "venue": "Proceedings of the 2023 Conference on Innovation and Technology in Computer Science Education V. 1 (ITiCSE 2023)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "GPT-4 as an Automatic Grader : The accuracy of grades set by GPT-4 on introductory programming assignments",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Introducing ChatGPT",
+      "doi": null,
+      "year": 2022,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "background source describing ChatGPT system under study"
+    },
+    {
+      "title": "OpenAI Codex",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT, Can You Generate Solutions for My Coding Exercises? An Evaluation on Its Effectiveness in an Undergraduate Java Programming Course.",
+      "doi": "10.1145/3587102.3588794",
+      "year": 2023,
+      "venue": "Proceedings of the 2023 Conference on Innovation and Technology in Computer Science Education V. 1 (ITiCSE 2023)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Evaluating the Performance of Code Generation Models for Solving Parsons Problems With Small Prompt Variations",
+      "doi": "10.1145/3587102.3588805",
+      "year": 2023,
+      "venue": "Proceedings of the 2023 Conference on Innovation and Technology in Computer Science Education V. 1 (ITiCSE 2023)",
+      "citation_level": 2,
+      "citation_context": "supports claim that small prompt changes alter ChatGPT responses"
+    },
+    {
+      "title": "Automatic Generation of Programming Exercises and Code Explanations Using Large Language Models",
+      "doi": "10.1145/3501385.3543957",
+      "year": 2022,
+      "venue": "Proceedings of the 2022 ACM Conference on International Computing Education Research - Volume 1 (ICER '22)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Can Generative Pre-Trained Transformers (GPT) Pass Assessments in Higher Education Programming Courses?",
+      "doi": "10.1145/3587102.3588792",
+      "year": 2023,
+      "venue": "Proceedings of the 2023 Conference on Innovation and Technology in Computer Science Education V. 1 (ITiCSE 2023)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Amazon CodeWhisperer",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Using GitHub Copilot to Solve Simple Programming Problems",
+      "doi": "10.1145/3545945.3569830",
+      "year": 2023,
+      "venue": "Proceedings of the 54th ACM Technical Symposium on Computer Science Education V. 1 (SIGCSE 2023)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Pearson correlation coefficient \u2014 Wikipedia, The Free Encyclopedia",
+      "doi": null,
+      "year": 2023,
+      "venue": "Wikipedia",
+      "citation_level": 3,
+      "citation_context": "reference for correlation coefficient used in analysis"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

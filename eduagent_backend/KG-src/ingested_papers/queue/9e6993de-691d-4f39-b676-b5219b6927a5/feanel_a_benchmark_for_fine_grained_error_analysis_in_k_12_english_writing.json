@@ -1,0 +1,81 @@
+{
+  "title": "FEANEL: A Benchmark for Fine-Grained Error Analysis in K-12 English Writing",
+  "doi": null,
+  "year": 2025,
+  "venue": null,
+  "url": "http://arxiv.org/abs/2511.22883v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Elementary (PreK-5th)",
+    "Middle School (6th-8th)",
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper addresses the problem of fine-grained error analysis for K-12 English writing and asks how well large language models can identify, classify, rate the severity of, and explain specific writing errors made by school-age learners. The authors argue that existing work in automated essay scoring and grammatical error correction does not provide sufficiently interpretable, pedagogically useful feedback at the level of individual learner errors. To support more rigorous evaluation, they introduce FEANEL, a benchmark focused on fine-grained error analysis for English learners.\n\nThe core contribution is a benchmark dataset and evaluation framework rather than a classroom intervention. FEANEL contains 1,000 student essays annotated by English education experts, including corrected versions, extracted edits, error types, severity ratings, and explanatory feedback. The authors also develop a 29-category error taxonomy and test a range of state-of-the-art large language models under zero-shot and one-shot prompting conditions to assess performance on three subtasks: error classification, severity rating, and explanation generation.\n\nThe population consists of K-12 learners writing English essays. The benchmark includes 500 essays from elementary students aged 9-11 collected through a global online education platform with primarily non-native speakers from around the world, and 500 essays representing secondary-level Chinese EFL learners aged roughly 12-18 drawn from the TECCL corpus. Annotation was performed by experienced English education experts, and additional English teachers not involved in dataset construction were used for a human comparison subset.\n\nThe main conclusion is that current LLMs show some promise but still fall well short of human teachers on this fine-grained educational feedback task. Model performance improves when prompts include richer instructions and examples, and some reasoning-oriented models perform better on classification, but all systems struggle with complex, compound errors and with generating pedagogically nuanced explanations. Overall, the paper concludes that fine-grained educational feedback remains a challenging area for LLMs and that FEANEL provides a useful benchmark for future research.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a benchmark/model-evaluation paper, not a direct K-12 intervention study measuring learner outcomes against a comparator. It is useful technical evidence about AI feedback quality, but it does not provide causal educational evidence for student impact.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper shows unclear practical impact for K-12 learners: models exhibit some capability and improve with prompting, but overall results reveal substantial gaps from human performance and no direct student outcome effects are estimated.",
+  "interventions": [
+    {
+      "intervention": "Automated Feedback System",
+      "confidence": 0.98,
+      "role": "primary",
+      "use_case": "Benchmarking large language models for fine-grained analysis of K-12 English writing errors, including error classification, severity rating, and explanatory feedback on student essays."
+    },
+    {
+      "intervention": "AI Writing / Language Tool",
+      "confidence": 0.9,
+      "role": "secondary",
+      "use_case": "LLMs are used as language-analysis tools to detect and explain grammatical and lexical errors in English learner writing rather than as interactive tutors."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Literacy",
+      "confidence": 0.86,
+      "finding": {
+        "direction": "Negative",
+        "finding_summary": "The paper evaluates LLM performance on a benchmark of 8,676 annotated writing errors from 1,000 K-12 English essays rather than student learning gains. Results show substantial performance gaps versus human teachers in fine-grained writing-error analysis: average zero-shot classification accuracy across models was 63.13% and average one-shot accuracy was 66.85%, while human performance on a subset reached 79.90%; explanation quality metrics were also well below human levels. These findings indicate current LLM-based feedback tools are not yet reliably accurate enough for high-stakes K-12 writing support without further improvement.",
+        "measure": "LLM benchmark performance on K-12 writing error analysis: classification accuracy, macro-F1, mean absolute error for severity, BLEU/METEOR/ROUGE for explanations",
+        "study_size": "1,000 essays; 8,676 annotated errors; human comparison on 500 elementary + 500 secondary errors",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.58,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The benchmark suggests LLMs have emerging utility for automating aspects of writing feedback, but current performance remains inconsistent and prompt-sensitive. More detailed prompting improved average classification accuracy from 63.13% to 66.85% and explanation metrics also increased, yet the models still lagged human teachers and struggled with rare and compound errors, limiting dependable efficiency gains in classroom deployment.",
+        "measure": "Automated feedback performance under different prompting conditions as a proxy for feasibility/efficiency of AI-assisted error analysis",
+        "study_size": "1,000 essays; 8,676 annotated errors",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "no_control_group",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "yes",
+  "implementation_fidelity": "high",
+  "study_country": "China",
+  "study_region": "East Asia & Pacific",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

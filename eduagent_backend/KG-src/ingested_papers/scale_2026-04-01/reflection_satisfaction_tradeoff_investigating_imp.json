@@ -1,0 +1,533 @@
+{
+  "title": "Reflection-Satisfaction Tradeoff: Investigating Impact of Reflection on Student Engagement with AI-Generated Programming Hints",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "https://arxiv.org/abs/2512.04630",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Graduate / Doctoral"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper examines how reflection prompts can be used alongside AI-generated programming hints in order to reduce unproductive reliance on generative AI and encourage more meaningful learning. The authors focus on a central question: whether adding reflection to the hint-seeking process changes students\u2019 engagement, satisfaction, performance, and the quality of their reflective thinking. They are particularly interested in a tradeoff between deeper reflection and students\u2019 immediate satisfaction with AI support.\n\nThe intervention was tested through two randomized field experiments embedded in an online introductory data science programming course. In Trial 1, students were randomly assigned to receive reflection prompts before receiving a hint, after receiving a hint, or no reflection prompt. The prompts also varied by self-regulated learning phase: planning, monitoring, or evaluation. In Trial 2, students were randomly assigned to receive either open-ended prompts or more directed prompts before hints. The system delivered personalized AI-generated debugging hints using GPT-4 within JupyterLab, and students could optionally rate hint helpfulness and write reflections.\n\nThe population consisted of students in two offerings of the same online Master\u2019s-level applied data science course at the University of Michigan in 2024. The course lasted four weeks and used Python programming assignments in Jupyter notebooks. Trial 1 involved 74 enrolled students, with 34 activating the support system; Trial 2 involved 102 enrolled students, with 98 activating it. The study was conducted in an authentic course setting where students could request AI hints while working on weekly assignments.\n\nThe main conclusion is that reflection prompts administered before hints, planning-focused prompts, and directed prompts all tended to produce higher-quality student reflections but lower satisfaction with the AI-generated hints. Immediate problem-solving performance did not differ meaningfully across conditions. The authors interpret this as evidence of a reflection-satisfaction tradeoff: designs that promote more effortful, self-regulated learning may reduce students\u2019 subjective satisfaction with AI help. They argue that educational AI systems should not be optimized only for user satisfaction, because doing so may undermine deeper learning goals.",
+  "limitations": [
+    "single_site",
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "4",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "personalization_adaptation"
+      ],
+      "description": "OpenAI GPT-family large language model used here to generate personalized debugging hints for programming tasks.",
+      "use_case": "A custom support system used GPT-4 to generate on-demand AI programming hints in a JupyterLab-based introductory data science course; in Trial 2, student reflections were also included in the prompt to improve hint relevance.",
+      "findings": [
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "In Trial 1, students receiving before-hint reflection prompts reported lower satisfaction with AI-generated hints (54.0%, 27/50 rated helpful) than after-hint reflection students (56.3%, 27/48) and control students (61.0%, 25/41), though differences were not statistically significant (\u03c72=0.46, p=0.796, df=2). In Trial 2, students in the Open Prompt condition rated hints more highly than those in the Directed Prompt condition, and this difference was statistically significant (\u03c72=5.71, p=0.017, df=1).",
+          "measure": "Hint helpfulness ratings / satisfaction with AI-generated hints",
+          "effect_size": "\u03c72=0.46 (Trial 1); \u03c72=5.71 (Trial 2)",
+          "confidence_interval": "not_reported",
+          "sample_size": "Trial 1 rated hints n=139; Trial 2 rated hints n=381"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Across trials, before-hint, planning-focused, and directed reflection prompts led students to produce higher-quality reflections while using AI-generated hints. In Trial 1, before-hint reflections were more substantive than after-hint reflections, and in Trial 2 directed prompts elicited higher-quality reflection than open prompts, indicating improved reflective engagement during AI-supported problem solving.",
+          "measure": "Quality of student written reflections coded for SRL phase and critical engagement",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "Trial 1 non-empty reflections n=53; Trial 2 coded responses up to n=400, total completed interactions n=411"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "Immediate programming performance did not differ across conditions in Trial 1. Immediate success rates after hint requests were 23.1% (12/52) for before-hint reflection, 18.8% (9/48) for after-hint reflection, and 22.0% (11/50) for control, with no significant difference (\u03c72=0.30, p=0.861, df=2); total submissions per student also did not differ significantly (F=1.36, p=0.271, df1=2, df2=31).",
+          "measure": "Immediate success rate on the submission following a hint request; total assignment submissions",
+          "effect_size": "\u03c72=0.30; F=1.36",
+          "confidence_interval": "not_reported",
+          "sample_size": "Immediate-success interactions n=150; students n=33 completed at least one interaction"
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "The paper reports a consistent inverse relationship between reflection quality and satisfaction with AI-generated hints: conditions that produced higher-quality reflections\u2014before-hint, planning, and directed prompts\u2014also produced lower hint satisfaction. The authors interpret this as a reflection-satisfaction tradeoff, suggesting that supports fostering deeper cognitive effort may reduce immediate user satisfaction.",
+          "measure": "Association between coded reflection quality and hint satisfaction ratings across experimental conditions",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "green",
+  "quality_tier_rationale": "The paper reports two randomized field experiments in an authentic course setting, which is stronger than observational evidence. However, participation was optional, some analyses were underpowered or lacked statistical significance, and several findings rely on coded qualitative outcomes rather than robust achievement effects.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The main academic outcome showed no significant immediate performance differences, while the clearest effects were on reflection quality and hint satisfaction, including a tradeoff between deeper reflection and lower satisfaction. Overall impact is meaningful but mixed and not quantified with standardized effect sizes.",
+  "citations": [
+    {
+      "title": "Toward meta-cognitive tutoring: A model of help seeking with a cognitive tutor",
+      "doi": null,
+      "year": 2006,
+      "venue": "International Journal of Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Training self-regulation: The effects of self-regulation training on learning and performance",
+      "doi": null,
+      "year": 2020,
+      "venue": "Learning and Instruction",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Constitutional ai: Harmlessness from ai feedback",
+      "doi": null,
+      "year": 2022,
+      "venue": "arXiv preprint arXiv:2212.08073",
+      "citation_level": 2,
+      "citation_context": "example of current AI preference alignment methods"
+    },
+    {
+      "title": "Using journal writing to enhance student teachers\u2019 reflectivity during field experience placements",
+      "doi": null,
+      "year": 1999,
+      "venue": "Teach. Teach.",
+      "citation_level": 2,
+      "citation_context": "supports higher- versus lower-level reflection distinctions"
+    },
+    {
+      "title": "Developing reflection on practice through journal writing: Impacts of variations in the focus and level of feedback",
+      "doi": null,
+      "year": 2002,
+      "venue": "Teach. Teach.",
+      "citation_level": 2,
+      "citation_context": "supports higher- versus lower-level reflection distinctions"
+    },
+    {
+      "title": "The Power of Feedback and Reflection: Testing an Oonline Scenario-based Learning Intervention for Sstudent Teachers",
+      "doi": null,
+      "year": 2021,
+      "venue": "Computers & Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Generative AI Can Harm Learning",
+      "doi": null,
+      "year": 2024,
+      "venue": "Available at SSRN 4895486",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Programming Is Hard - Or at Least It Used to Be: Educational Opportunities and Challenges of AI Code Generation",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the Technical Symposium on Computer Science Education (SIGCSE)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Making things hard on yourself, but in a good way: Creating desirable difficulties to enhance learning",
+      "doi": null,
+      "year": 2011,
+      "venue": "Psychology and the real world: Essays illustrating fundamental contributions to society",
+      "citation_level": 2,
+      "citation_context": "desirable difficulties frame pedagogical interpretation"
+    },
+    {
+      "title": "Memory and metamemory considerations in the training of human beings",
+      "doi": null,
+      "year": 1994,
+      "venue": "Metacognition: Knowing about Knowing",
+      "citation_level": 2,
+      "citation_context": "desirable difficulties and evaluation framing"
+    },
+    {
+      "title": "Self-regulation in the classroom: A perspective on assessment and intervention",
+      "doi": null,
+      "year": 2011,
+      "venue": "Applied Psychology",
+      "citation_level": 2,
+      "citation_context": "Dual Processing model for SRL framing"
+    },
+    {
+      "title": "Enhancing Learning through Self-Assessment",
+      "doi": null,
+      "year": 2013,
+      "venue": "Routledge",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "What is reflection in learning",
+      "doi": null,
+      "year": 1985,
+      "venue": "Reflection: Turning experience into learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A relationship study of student satisfaction with learning online and cognitive load: Initial results",
+      "doi": null,
+      "year": 2011,
+      "venue": "The Internet and Higher Education",
+      "citation_level": 2,
+      "citation_context": "links cognitive load to student satisfaction"
+    },
+    {
+      "title": "Thematic Analysis",
+      "doi": null,
+      "year": 2012,
+      "venue": "American Psychological Association",
+      "citation_level": 3,
+      "citation_context": "coding approach for qualitative reflection analysis"
+    },
+    {
+      "title": "Self-regulated learning strategies & academic achievement in online higher education learning environments: A systematic review",
+      "doi": null,
+      "year": 2015,
+      "venue": "Internet and Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The effort monitoring and regulation (emr) model: A systematic review of the literature",
+      "doi": null,
+      "year": 2020,
+      "venue": "Educational Psychology Review",
+      "citation_level": 2,
+      "citation_context": "reflection interpreted as effortful SRL process"
+    },
+    {
+      "title": "\u201cWe Should Not Be Like a Dinosaur\u201d\u2014Using AI Technologies to Provide Formative Feedback to Students",
+      "doi": null,
+      "year": 2025,
+      "venue": "Education Sciences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Investigating students\u2019 satisfaction with online collaborative learning: The role of cognitive load",
+      "doi": null,
+      "year": 2023,
+      "venue": "Computers & Education",
+      "citation_level": 2,
+      "citation_context": "supports cognitive load\u2013satisfaction relationship"
+    },
+    {
+      "title": "The Benefit of Reflection Prompts for Encouraging Learning with Hints in an Online Programming Course",
+      "doi": null,
+      "year": 2023,
+      "venue": "The Internet and Higher Education",
+      "citation_level": 3,
+      "citation_context": "prior study motivating reflection prompts with hints"
+    },
+    {
+      "title": "Correlation between learning motivation and satisfaction in synchronous on-the-job online training in the public sector",
+      "doi": null,
+      "year": 2022,
+      "venue": "Frontiers in Psychology",
+      "citation_level": 2,
+      "citation_context": "supports satisfaction declines with task difficulty"
+    },
+    {
+      "title": "Deep reinforcement learning from human preferences",
+      "doi": null,
+      "year": 2017,
+      "venue": "Advances in Neural Information Processing Systems",
+      "citation_level": 2,
+      "citation_context": "preference optimization methods in AI alignment"
+    },
+    {
+      "title": "Thematic analysis",
+      "doi": null,
+      "year": 2017,
+      "venue": "The Journal of Positive Psychology",
+      "citation_level": 3,
+      "citation_context": "coding approach for qualitative reflection analysis"
+    },
+    {
+      "title": "Scaffolding student reflection for experience-based learning: A framework",
+      "doi": null,
+      "year": 2012,
+      "venue": "Teaching in Higher Education",
+      "citation_level": 2,
+      "citation_context": "used to explain before-hint reflection benefits"
+    },
+    {
+      "title": "Prompting middle school science students for productive reflection: Generic and directed prompts",
+      "doi": null,
+      "year": 2003,
+      "venue": "The Journal of the Learning Sciences",
+      "citation_level": 2,
+      "citation_context": "conceptual basis for open versus directed prompts"
+    },
+    {
+      "title": "Scaffolding students\u2019 knowledge integration: Prompts for reflection in kie",
+      "doi": null,
+      "year": 2000,
+      "venue": "International Journal of Science Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Generative AI for Education (GAIED): Advances, Opportunities, and Challenges",
+      "doi": null,
+      "year": 2024,
+      "venue": "CoRR abs/2402.01580",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Desirable Characteristics for AI Teaching Assistants in Programming Education",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the Innovation and Technology in Computer Science Education (ITiCSE)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "How We Think",
+      "doi": null,
+      "year": 1997,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Fostering autonomous learning practices through reflective frameworks",
+      "doi": null,
+      "year": 2025,
+      "venue": "Journal of Learning Analytics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Reflecting differently. new dimensions: reflection-before-action and reflection-beyond-action",
+      "doi": null,
+      "year": 2017,
+      "venue": "International Practice Development Journal",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Using software testing to move students from trial-and-error to reflection-in-action",
+      "doi": null,
+      "year": 2004,
+      "venue": "Proceedings of the 35th SIGCSE technical symposium on Computer science education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Using software testing to move students from trial-and-error to reflection-in-action",
+      "doi": null,
+      "year": 2004,
+      "venue": "Proceedings of the 35th SIGCSE technical symposium on Computer science education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Interactions of metacognition with motivation and affect in self-regulated learning: The masrl model",
+      "doi": null,
+      "year": 2011,
+      "venue": "Educational Psychologist",
+      "citation_level": 2,
+      "citation_context": "MASRL framework for affective SRL interpretation"
+    },
+    {
+      "title": "Beware of Metacognitive Laziness: Effects of Generative Artificial Intelligence on Learning Motivation, Processes, and Performance",
+      "doi": null,
+      "year": 2025,
+      "venue": "British Journal of Educational Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Robots Are Coming: Exploring the Implications of OpenAI Codex on Introductory Programming",
+      "doi": null,
+      "year": 2022,
+      "venue": "Australasian Computing Education Conference (ACE)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Ai tools in society: Impacts on cognitive offloading and the future of critical thinking",
+      "doi": null,
+      "year": 2025,
+      "venue": "Societies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ANOVA: Repeated Measures",
+      "doi": null,
+      "year": 1992,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Not what you\u2019ve signed up for: Compromising real-world llm-integrated applications with indirect prompt injection",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv preprint arXiv:2302.12173",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Self-regulated learning in the digital age: A theoretical review",
+      "doi": null,
+      "year": 2011,
+      "venue": "Educational Psychologist",
+      "citation_level": 2,
+      "citation_context": "supports open prompts and autonomous learning framing"
+    },
+    {
+      "title": "Anthropic education report: How university students use claude",
+      "doi": null,
+      "year": 2025,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Overcoming misconceptions about desirable difficulties in learning",
+      "doi": null,
+      "year": 2023,
+      "venue": "Educational Psychology Review",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Applying the self-explanation principle to multimedia learning in a computer-based game-like environment",
+      "doi": "10.1016/j.chb.2010.03.025",
+      "year": 2010,
+      "venue": "Computers in Human Behavior",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Your Brain on Chatgpt: Accumulation of Cognitive Debt When Using an Ai Assistant for Essay Writing Task",
+      "doi": null,
+      "year": 2025,
+      "venue": "ArXiv Preprint ArXiv:2506.08872",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Computing krippendorff\u2019s alpha-reliability",
+      "doi": null,
+      "year": 2011,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "inter-rater reliability computation for coding"
+    },
+    {
+      "title": "Supporting Self-Reflection at Scale with Large Language Models: Insights from Randomized Field Experiments in Classrooms",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the Conference on Learning @ Scale, (L@S)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The impact of generative ai on critical thinking: Self-reported reductions in cognitive effort and confidence effects from a survey of knowledge workers",
+      "doi": null,
+      "year": 2025,
+      "venue": "Proceedings of the 2025 CHI conference on human factors in computing systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Using metacognitive prompts to enhance self-regulated learning and learning outcomes: A meta-analysis of experimental studies in computer-based learning environments",
+      "doi": null,
+      "year": 2022,
+      "venue": "Journal of Computer Assisted Learning",
+      "citation_level": 2,
+      "citation_context": "supports metacognitive prompt effectiveness claims"
+    },
+    {
+      "title": "Self-evaluation interventions: Impact on self-efficacy and performance in introductory programming",
+      "doi": null,
+      "year": 2021,
+      "venue": "ACM Transactions on Computing Education (TOCE)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Self-evaluation interventions: Impact on self-efficacy and performance in introductory programming: Impact on self-efficacy and performance in introductory programming",
+      "doi": null,
+      "year": 2021,
+      "venue": "ACM Trans. Comput. Educ.",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Investigating novices\u2019 in situ reflections on their programming process",
+      "doi": null,
+      "year": 2020,
+      "venue": "Proceedings of the 51st ACM technical symposium on computer science education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Enhancing Programming Education with Chatgpt: A Case Study on Student Perceptions and Interactions in a Python Course",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the Artificial Intelligence in Education (AIED)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Doing a Thematic Analysis: A Practical, Step-by-Step Guide for Learning and Teaching Scholars",
+      "doi": null,
+      "year": 2017,
+      "venue": "All Ireland Journal of Higher Education",
+      "citation_level": 3,
+      "citation_context": "practical guide for thematic coding procedure"
+    },
+    {
+      "title": "The effects of student engagement, student satisfaction, and perceived learning in online learning environments",
+      "doi": null,
+      "year": 2011,
+      "venue": "Online Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Reflection and Reflective Practice in Health Professions Education: a Systematic Review",
+      "doi": null,
+      "year": 2009,
+      "venue": "Advances in Health Sciences Education",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

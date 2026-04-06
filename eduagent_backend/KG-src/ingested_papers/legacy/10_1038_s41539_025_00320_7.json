@@ -1,0 +1,670 @@
+{
+  "title": "A systematic review of AI-driven intelligent tutoring systems (ITS) in K-12 education",
+  "doi": "10.1038/s41539-025-00320-7",
+  "year": 2025,
+  "venue": "npj Science of Learning",
+  "url": "https://www.nature.com/articles/s41539-025-00320-7",
+  "source_db": "backfill_v3",
+  "populations": [],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Meta-Analysis / Systematic Review",
+  "extended_summary": "This paper systematically reviews research on AI-driven intelligent tutoring systems (ITSs) in K-12 education to answer two questions: what experimental designs are being used to evaluate ITSs, and what effects ITSs have on students\u2019 learning and performance. The review responds to uncertainty in the field about whether ITSs truly improve academic outcomes in school-aged learners, especially given prior reviews that mixed K-12 with adult or professional learning contexts.\n\nThe intervention studied is AI-driven ITSs used across K-12 subjects, especially STEM and language learning. Across 28 studies (26 articles, with two articles containing two studies each), the review covers a range of ITS implementations compared against teacher-led instruction, non-intelligent tutoring systems, modified ITS versions, or no control group. The included studies used quasi-experimental methods with pre/post testing and varied substantially in intervention duration, from single class periods to 30 weeks.\n\nThe population comprised 4,597 K-12 students spanning elementary, middle, and high school settings, with most studies in middle and high school and in STEM subjects. Studies came from eight countries, with the largest concentration in the United States and several in Asia. Contexts included classroom-based, online, and blended implementations depending on the individual study, but the review emphasizes K-12 school settings overall.\n\nThe main conclusion is that ITSs generally show positive effects on K-12 student learning and performance, especially when compared with teacher-led instruction, though effects are weaker or mixed when ITSs are compared with non-intelligent digital tutoring systems. The authors also conclude that the evidence base is limited by short intervention durations, heterogeneous designs, and limited diversity and scale in many studies, and they call for larger, longer, and more ethically attentive research on ITS use in schools.",
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "no_control_group",
+    "non_representative_population",
+    "high_attrition",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "identified_tools": [
+    {
+      "name": "ITS",
+      "is_named_product": true,
+      "specificity": "category",
+      "category_key": [
+        "tutoring_instruction"
+      ],
+      "description": "Intelligent tutoring systems are AI-driven instructional systems that model learner knowledge or behavior to provide adaptive instruction, feedback, hints, or task sequencing.",
+      "use_case": "Systematic review of 28 K-12 studies (total N=4,597) evaluating intelligent tutoring systems across subjects including math, science, computer science, first language, and second language, with comparisons to teacher-led instruction, non-intelligent tutoring systems, modified ITS versions, or no control.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "review_synthesis",
+          "direction": "positive",
+          "finding_summary": "Across the 28 included studies, the review concludes that ITS effects on K-12 students\u2019 learning and performance were generally positive. However, these positive effects were weaker when ITS were compared against non-intelligent tutoring systems than when compared against teacher-led instruction or weaker comparators.",
+          "measure": "student learning and performance across reviewed K-12 studies",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=4597",
+          "study_count": 28
+        },
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "review_synthesis",
+          "direction": "positive",
+          "finding_summary": "In the subgroup of studies comparing ITS to teacher-led instruction, 7 of 8 studies reported statistically significant positive effects for ITS, with reported effects ranging from medium to large when effect sizes were available. One math study found no significant difference between ITS and paper-based/traditional graph instruction.",
+          "measure": "math performance in ITS-versus-teacher comparisons",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported",
+          "study_count": 8
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "review_synthesis",
+          "direction": "mixed",
+          "finding_summary": "In studies comparing ITS to non-intelligent tutoring systems, results were mixed and weaker than in teacher-comparison studies. Only one study in this category showed significant positive learning gains for ITS, while the others found no significant difference in learning gains between ITS and non-intelligent systems.",
+          "measure": "learning gains in ITS-versus-non-intelligent system comparisons",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported",
+          "study_count": null
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "review_synthesis",
+          "direction": "mixed",
+          "finding_summary": "Studies comparing an ITS to a modified ITS produced heterogeneous findings, making it difficult for the review to identify a general trend. Only three studies in this category reported effect sizes, and those were mostly small.",
+          "measure": "learning gains in ITS-versus-modified-ITS comparisons",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported",
+          "study_count": 3
+        }
+      ]
+    },
+    {
+      "name": "Duolingo",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "personalization_adaptation"
+      ],
+      "description": "A mobile language-learning application that personalizes instruction for each user.",
+      "use_case": "Mentioned in the review introduction as a well-known example of an intelligent tutoring system (ITS), illustrating personalized language learning. It is not one of the included review studies.",
+      "findings": []
+    },
+    {
+      "name": "GPT-4",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "language_speech"
+      ],
+      "description": "A large language model from OpenAI capable of generating advanced human-like outputs across modalities such as text, images, voice, and video.",
+      "use_case": "Mentioned in the background discussion as an example of a generative pre-trained transformer relevant to AI in education broadly. It is not discussed as an ITS evaluated in the included K-12 studies.",
+      "findings": []
+    },
+    {
+      "name": "Claude",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "language_speech"
+      ],
+      "description": "A large language model from Anthropic for generating human-like language outputs.",
+      "use_case": "Mentioned in the background as an example of a modern generative AI model alongside GPT-4 and Gemini. It is not part of the included ITS intervention studies.",
+      "findings": []
+    },
+    {
+      "name": "Gemini",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "language_speech"
+      ],
+      "description": "A large language model from Google for multimodal generative AI interactions.",
+      "use_case": "Mentioned in the review background as an example of current generative AI models. It is not evaluated in the included K-12 ITS studies.",
+      "findings": []
+    },
+    {
+      "name": "Cognitive Tutor",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "personalization_adaptation"
+      ],
+      "description": "An intelligent tutoring system for mathematics and related subjects that adapts instruction and problem selection to student learning progress.",
+      "use_case": "Discussed extensively in the review, both in background and included studies. The review cites Cognitive Tutor Algebra I (CTAI) as a large-scale example showing improved algebra proficiency after sustained implementation, especially in high school. Included studies also used Cognitive Tutor for geometry and mathematics personalization experiments, including diary/self-assessment supports and surface versus deep personalization.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "review_synthesis",
+          "direction": "positive",
+          "finding_summary": "The review reports that Cognitive Tutor Algebra I improved algebra proficiency after sustained implementation, with notable second-year gains in high school students compared with controls.",
+          "measure": "effect size",
+          "effect_size": "+0.20 SD",
+          "confidence_interval": "",
+          "sample_size": "",
+          "study_count": 1
+        },
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "review_synthesis",
+          "direction": "mixed",
+          "finding_summary": "Within included Cognitive Tutor studies, self-assessment supports improved reproduction-problem learning in one geometry study, progress-information redesign improved learning gains in another, and personalization features improved mathematics performance, especially when aligned with student interest engagement.",
+          "measure": "ANOVA/eta-squared/Cohen's d/beta",
+          "effect_size": "\u03b7\u00b2=0.040 on reproduction items; \u03b7\u00b2=0.078 for modified progress information; d=0.39, d=0.92, d=-0.43 depending on personalization condition; \u03b2=0.062",
+          "confidence_interval": "",
+          "sample_size": "122, 98, 56, 106, 150",
+          "study_count": 5
+        }
+      ]
+    },
+    {
+      "name": "Cognitive Tutor Algebra I",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "personalization_adaptation"
+      ],
+      "description": "A specific Cognitive Tutor implementation for Algebra I that provides individualized, multi-modal algebra instruction.",
+      "use_case": "Used in the review background as a prominent longitudinal example of an ITS evaluated in schools. The system provided individualized instruction using diagrams, equations, text, and real-world problem scenarios.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "review_synthesis",
+          "direction": "positive",
+          "finding_summary": "The review states that Cognitive Tutor Algebra I improved student algebra proficiency after sustained implementation, with notable benefits emerging in the second year and particularly in high schools; middle-school effects were similar in direction but non-significant.",
+          "measure": "effect size",
+          "effect_size": "+0.20 SD",
+          "confidence_interval": "",
+          "sample_size": "",
+          "study_count": 1
+        }
+      ]
+    },
+    {
+      "name": "Yixue Squirrel AI",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "personalization_adaptation"
+      ],
+      "description": "An AI-based intelligent tutoring system from Squirrel AI for adaptive instruction.",
+      "use_case": "Included in Cui et al. study [a] as an ITS for learning the Pythagorean theorem versus traditional offline teaching, and in Cui et al. study [b] as a language-learning ITS for basic English grammar compared with BOXFiSH. The review reports stronger learning gains for Yixue users in both contexts.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "review_synthesis",
+          "direction": "positive",
+          "finding_summary": "Compared with traditional offline teaching for the Pythagorean theorem, Yixue Squirrel AI produced significantly greater learning gains with a medium-sized effect.",
+          "measure": "Hedges's g; ANCOVA/partial eta-squared",
+          "effect_size": "g=0.68; partial \u03b7\u00b2=0.10",
+          "confidence_interval": "",
+          "sample_size": "163 total (90 ITS, 73 control)",
+          "study_count": 1
+        },
+        {
+          "outcome_category": "Academic \u2014 Language Fluency",
+          "finding_type": "review_synthesis",
+          "direction": "positive",
+          "finding_summary": "Compared with BOXFiSH for basic English grammar learning, Yixue users showed significantly greater learning gains, though both groups improved from pre-test to post-test.",
+          "measure": "mean learning gain difference",
+          "effect_size": "4.62 greater learning gains",
+          "confidence_interval": "",
+          "sample_size": "104 total (46 Yixue, 58 BOXFiSH)",
+          "study_count": 1
+        }
+      ]
+    },
+    {
+      "name": "iTutor",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "language_speech"
+      ],
+      "description": "An intelligent tutoring system designed to teach English as a foreign language.",
+      "use_case": "Included in Choi's study, where middle- and high-school students used iTutor for eight ninety-minute sessions over four weeks to learn English grammar, compared with traditional teacher-centered paper-based instruction.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Language Fluency",
+          "finding_type": "review_synthesis",
+          "direction": "positive",
+          "finding_summary": "The review reports a statistically significant benefit of iTutor over traditional instruction for English grammar learning, with differential effects by school level; middle school students benefited more than high school students.",
+          "measure": "two-way ANOVA; interaction p-value",
+          "effect_size": "F=234.344; interaction p=0.013",
+          "confidence_interval": "",
+          "sample_size": "124",
+          "study_count": 1
+        }
+      ]
+    },
+    {
+      "name": "We Write",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "feedback_evaluation"
+      ],
+      "description": "An intelligent tutoring system for writing instruction and planning support.",
+      "use_case": "Included in Wijekumar et al.'s study with 5th-grade students over six weeks to examine planning skills and writing quality relative to teacher-led instruction.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Literacy",
+          "finding_type": "review_synthesis",
+          "direction": "mixed",
+          "finding_summary": "The review reports that We Write significantly improved planning skills with a medium effect size, while effects on writing quality were small and not statistically significant; lower-initial-writing classes appeared to benefit more.",
+          "measure": "Cohen's d",
+          "effect_size": "d=0.77 for planning skills",
+          "confidence_interval": "",
+          "sample_size": "464",
+          "study_count": 1
+        }
+      ]
+    },
+    {
+      "name": "TECH8",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "personalization_adaptation"
+      ],
+      "description": "An intelligent tutoring system used for technology and science instruction.",
+      "use_case": "Included in Dolenc et al.'s study for learning the topic of gears in science/technology over two 45-minute sessions, with outcomes compared against national standardized test results.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Scientific Reasoning",
+          "finding_type": "review_synthesis",
+          "direction": "positive",
+          "finding_summary": "Students using TECH8 outperformed national benchmark results, with large effect sizes relative to the National Assessment of Knowledge comparison years.",
+          "measure": "Cohen's d",
+          "effect_size": "d=0.99 (2008 comparison); d=1.30 (2010 comparison)",
+          "confidence_interval": "",
+          "sample_size": "58",
+          "study_count": 1
+        }
+      ]
+    },
+    {
+      "name": "eDia",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "personalization_adaptation"
+      ],
+      "description": "An online educational platform used to deliver instructional sessions and practice activities.",
+      "use_case": "Included in \u00d6k\u00f6rdi et al.'s study, where third- and fourth-grade students combined classroom lessons with sessions on the eDia online platform for multiplication and division.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "review_synthesis",
+          "direction": "positive",
+          "finding_summary": "Students who completed more than half of the eDia online sessions improved by about one-third of a standard deviation, whereas control-group progress was about half that amount.",
+          "measure": "standard deviation gain",
+          "effect_size": "~0.33 SD improvement for participating intervention students",
+          "confidence_interval": "",
+          "sample_size": "810 analyzed",
+          "study_count": 1
+        }
+      ]
+    },
+    {
+      "name": "ALEKS",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "personalization_adaptation"
+      ],
+      "description": "Adaptive online learning platform for mathematics that assesses student knowledge and delivers individualized practice and instruction.",
+      "use_case": "Included in Nehring et al.'s study via the ALEKS PPL platform for 12th-grade mathematics across five schools, where students combined classroom lessons with ALEKS modules and repeated the ALEKS placement exam.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "review_synthesis",
+          "direction": "positive",
+          "finding_summary": "The review reports that students using ALEKS with classroom instruction significantly increased mathematics placement exam scores from October to May, while the control group showed no significant change.",
+          "measure": "mixed ANOVA; mean difference; Cohen's d",
+          "effect_size": "F(1,98)=19.16, \u03b7\u00b2=0.16; intervention Mdiff=13.55, d=0.87",
+          "confidence_interval": "95% CI [10.14, 16.96]",
+          "sample_size": "100",
+          "study_count": 1
+        }
+      ]
+    },
+    {
+      "name": "Mathtutor",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "feedback_evaluation"
+      ],
+      "description": "An intelligent tutoring system for mathematics instruction.",
+      "use_case": "Included in Borchers et al.'s study for 9th-grade mathematics on linear graphs, comparing learning and testing in paper versus tutor formats.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "review_synthesis",
+          "direction": "mixed",
+          "finding_summary": "The review reports significant learning gains in both Mathtutor and paper conditions, with no overall significant difference in gains between the ITS and paper formats, though effects varied by unit and were higher when test format matched practice format.",
+          "measure": "paired t-tests; ANOVA",
+          "effect_size": "ITS gain M=0.13 vs paper M=0.15; F(2,222)=5.28",
+          "confidence_interval": "",
+          "sample_size": "82",
+          "study_count": 1
+        }
+      ]
+    },
+    {
+      "name": "Rimac",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "personalization_adaptation"
+      ],
+      "description": "A tutoring system used for physics instruction, with adaptive and non-adaptive versions.",
+      "use_case": "Included in Jordan et al. and the Albacete et al. study summarized by Katz et al., where students used adaptive versus non-adaptive versions of Rimac for kinematics/physics problem solving.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Scientific Reasoning",
+          "finding_type": "review_synthesis",
+          "direction": "mixed",
+          "finding_summary": "The review reports no significant difference in learning gains between adaptive and non-adaptive versions of Rimac, though one study found that students in the adaptive condition learned significantly faster.",
+          "measure": "ANOVA; independent t-test",
+          "effect_size": "F(1,70)=1.770; t(71)=1.226",
+          "confidence_interval": "",
+          "sample_size": "72 and 73 across two studies",
+          "study_count": 2
+        }
+      ]
+    },
+    {
+      "name": "Guided and Adaptive Tutoring Tips (GATT)",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "feedback_evaluation"
+      ],
+      "description": "A guided tutoring component that provides step-by-step prompts and immediate personalized feedback.",
+      "use_case": "Included in Tang et al. as the adaptive support feature within MIATS for 10th-grade mathematics during winter-holiday training sessions.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "review_synthesis",
+          "direction": "positive",
+          "finding_summary": "Students using GATT within MIATS showed larger pre-post score improvement than controls receiving regular answer-based feedback, even though post-test differences between groups were not statistically significant.",
+          "measure": "pre-post percentage improvement; Cohen's d",
+          "effect_size": "treatment +15.50% vs control +5.13%; d=0.340 at post-test",
+          "confidence_interval": "",
+          "sample_size": "65 completers",
+          "study_count": 1
+        }
+      ]
+    },
+    {
+      "name": "Mathematics Intelligent Assessment and Tutoring System (MIATS)",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "feedback_evaluation"
+      ],
+      "description": "A mathematics tutoring and assessment system created by study authors, designed to provide intelligent guidance and feedback.",
+      "use_case": "Included in Tang et al.; the experimental group used MIATS with Guided and Adaptive Tutoring Tips for step-by-step prompts and immediate personalized feedback on incorrect pre-test items, while controls used a platform with regular correctness feedback only.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "review_synthesis",
+          "direction": "positive",
+          "finding_summary": "The review indicates that MIATS with adaptive tutoring support benefited the treatment group more than the regular-feedback control in pre-post progress, although the post-test between-group difference was not statistically significant.",
+          "measure": "pre-post gains; independent and paired t-tests; Cohen's d",
+          "effect_size": "+15.50% vs +5.13% improvement; d=0.340",
+          "confidence_interval": "",
+          "sample_size": "65 completers",
+          "study_count": 1
+        }
+      ]
+    },
+    {
+      "name": "ARGeoITS",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "personalization_adaptation"
+      ],
+      "description": "An intelligent tutoring system with augmented reality for geometry learning.",
+      "use_case": "Included in Uriarte-Portillo's study comparing ARGeoITS with a non-intelligent augmented reality system (ARGeo) for middle-school geometry learning.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "review_synthesis",
+          "direction": "positive",
+          "finding_summary": "Students using ARGeoITS achieved significantly higher post-test scores than those using the augmented-reality-only control system.",
+          "measure": "ANOVA",
+          "effect_size": "F(1,106)=4.752",
+          "confidence_interval": "",
+          "sample_size": "106",
+          "study_count": 1
+        }
+      ]
+    },
+    {
+      "name": "ARGeo",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "other"
+      ],
+      "description": "An augmented reality learning system for geometry without intelligent tutoring features.",
+      "use_case": "Used in Uriarte-Portillo's study as the non-intelligent comparison condition against ARGeoITS.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "review_synthesis",
+          "direction": "negative",
+          "finding_summary": "ARGeo served as the control condition and was associated with lower post-test achievement than ARGeoITS in the review's summary of the study.",
+          "measure": "ANOVA",
+          "effect_size": "F(1,106)=4.752",
+          "confidence_interval": "",
+          "sample_size": "106",
+          "study_count": 1
+        }
+      ]
+    },
+    {
+      "name": "BOXFiSH",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "language_speech"
+      ],
+      "description": "A language-learning application used for English grammar instruction.",
+      "use_case": "Included in Cui et al. study [b] as the comparison app against Yixue for teaching basic English grammar to foreign-language learners.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Language Fluency",
+          "finding_type": "review_synthesis",
+          "direction": "negative",
+          "finding_summary": "Both groups improved, but BOXFiSH users showed smaller learning gains than Yixue users in the English grammar study.",
+          "measure": "mean learning gain difference",
+          "effect_size": "control gains 4.62 lower than Yixue",
+          "confidence_interval": "",
+          "sample_size": "58 in BOXFiSH group",
+          "study_count": 1
+        }
+      ]
+    },
+    {
+      "name": "iSTART",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "feedback_evaluation"
+      ],
+      "description": "An intelligent tutoring system designed to support reading comprehension and self-explanation of complex text.",
+      "use_case": "Included in McCarthy et al.'s study, where high school science students used iSTART across three sessions to test metacognitive supports such as performance thresholds and self-assessment.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Literacy",
+          "finding_type": "review_synthesis",
+          "direction": "mixed",
+          "finding_summary": "The review reports that metacognitive support variations within iSTART did not influence performance, but iSTART training improved the quality of students' self-explanations without improving test performance.",
+          "measure": "reported group comparisons",
+          "effect_size": "",
+          "confidence_interval": "",
+          "sample_size": "234",
+          "study_count": 1
+        }
+      ]
+    },
+    {
+      "name": "Cognitive Tutor Authoring Tools",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "personalization_adaptation"
+      ],
+      "description": "An authoring environment used to build intelligent tutoring systems based on the Cognitive Tutor framework.",
+      "use_case": "Mentioned in Long and Aleven [a]/[b] as the platform used to build the experimental ITS variants for studies on progress information and student problem selection.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "review_synthesis",
+          "direction": "mixed",
+          "finding_summary": "ITS variants built with Cognitive Tutor Authoring Tools showed no significant differences in one study, but modified progress information improved learning gains in another study.",
+          "measure": "ANOVA/eta-squared",
+          "effect_size": "\u03b7\u00b2=0.078 in second study",
+          "confidence_interval": "",
+          "sample_size": "98 and 56",
+          "study_count": 2
+        }
+      ]
+    },
+    {
+      "name": "Lynnette",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "personalization_adaptation"
+      ],
+      "description": "An intelligent tutoring system used in middle-school mathematics instruction.",
+      "use_case": "Included in Holstein et al.'s study, where students used Lynnette alone or with teacher-support technologies (full or limited Lumilo glasses).",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "review_synthesis",
+          "direction": "positive",
+          "finding_summary": "The review reports that Lynnette combined with the full version of Lumilo yielded small positive performance advantages over Lynnette alone and over the limited Lumilo version.",
+          "measure": "effect size r",
+          "effect_size": "r=0.21 vs control; r=0.11 vs limited version",
+          "confidence_interval": "",
+          "sample_size": "286",
+          "study_count": 1
+        }
+      ]
+    },
+    {
+      "name": "Lumilo",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "prediction_analytics",
+        "feedback_evaluation"
+      ],
+      "description": "Smart glasses that provide teachers with real-time analytics and monitoring information about students working in an ITS.",
+      "use_case": "Included in Holstein et al.'s study as an add-on to Lynnette, in full and limited versions, to help teachers monitor student activity and progress in real time.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "review_synthesis",
+          "direction": "positive",
+          "finding_summary": "The full version of Lumilo was associated with small positive effects on student performance relative to Lynnette alone and relative to a limited Lumilo version.",
+          "measure": "effect size r",
+          "effect_size": "r=0.21 and r=0.11",
+          "confidence_interval": "",
+          "sample_size": "286",
+          "study_count": 1
+        }
+      ]
+    },
+    {
+      "name": "Learning Path",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "personalization_adaptation",
+        "feedback_evaluation"
+      ],
+      "description": "An app used to add goal-setting prompts and co-regulation support to an ITS learning platform.",
+      "use_case": "Included in Horvers et al.'s study as the app providing goal-setting prompts on top of an ITS for fraction simplification learning.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "review_synthesis",
+          "direction": "positive",
+          "finding_summary": "Students receiving Learning Path co-regulation prompts solved more problems and had higher accuracy than those using the ITS as usual.",
+          "measure": "ANCOVA; partial eta-squared",
+          "effect_size": "problems solved F(1,111)=4.26, partial \u03b7\u00b2=0.037; accuracy F(1,112)=45.68, partial \u03b7\u00b2=0.290",
+          "confidence_interval": "",
+          "sample_size": "114",
+          "study_count": 1
+        }
+      ]
+    },
+    {
+      "name": "ALEKS PPL",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "personalization_adaptation"
+      ],
+      "description": "The ALEKS Placement, Preparation and Learning platform for web-based adaptive mathematics learning and placement assessment.",
+      "use_case": "Specifically named in Nehring et al. as the ALEKS platform used in 12th-grade mathematics, with students completing the ALEKS PPL Mathematics Placement Exam before and after the intervention.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "review_synthesis",
+          "direction": "positive",
+          "finding_summary": "The review reports significant gains for students using ALEKS PPL alongside classroom instruction, while the control group showed no significant improvement.",
+          "measure": "mixed ANOVA; mean difference; Cohen's d",
+          "effect_size": "F(1,98)=19.16, \u03b7\u00b2=0.16; d=0.87",
+          "confidence_interval": "95% CI [10.14, 16.96]",
+          "sample_size": "100",
+          "study_count": 1
+        }
+      ]
+    }
+  ],
+  "verdict": "",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is a peer-reviewed systematic review focused on K-12 ITS studies, which strengthens the evidence base, but the included studies are predominantly quasi-experimental, highly heterogeneous, and often short in duration, with important credibility concerns across the underlying evidence.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The review finds generally positive effects of ITSs, particularly relative to teacher-led instruction, but effects are mixed or attenuated when compared with non-intelligent tutoring systems, and effect sizes are not consistently reported across studies, making overall impact modest or unclear.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": "Converted from kg_curator_v4 legacy extraction",
+  "_legacy_source": "/Users/alymoosa/Documents/A-Moosa-Dev/AI-EDU-Dev/eduagent/open_deep_research_v2/scripts/extraction_profiles_v3/a_systematic_review_of_ai_driven_intelligent_tutoring_systems_its_in_k_12_educat.json"
+}

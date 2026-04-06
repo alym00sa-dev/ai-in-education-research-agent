@@ -1,0 +1,55 @@
+{
+  "title": "Beyond Text-to-Text: An Overview of Multimodal and Generative Artificial Intelligence for Education Using Topic Modeling",
+  "doi": "10.1145/3672608.3707764",
+  "year": 2025,
+  "venue": "The 40th ACM/SIGAPP Symposium on Applied Computing (SAC \u201925)",
+  "url": "http://arxiv.org/abs/2409.16376v2",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Meta-Analysis / Systematic Review",
+  "extended_summary": "This paper maps the research landscape of multimodal and generative artificial intelligence (GenAI) in education. The authors ask what the high-level topic structure of educational GenAI research looks like, especially beyond the dominant text-to-text large language model literature. They argue that educational AI research has become heavily concentrated around tools such as ChatGPT, while other modalities like text-to-speech, speech-to-text, text-to-image, and text-to-video remain comparatively underexplored.\n\nTo answer this, the study conducts a large-scale literature search in Dimensions.ai, supplemented by Scopus and Web of Science, yielding 4,175 abstracts after filtering. The authors then apply BERTopic-based topic modeling using sentence-transformer embeddings, UMAP dimensionality reduction, HDBSCAN clustering, and c-TF-IDF topic labeling. Hyperparameters were searched over 5,000 random combinations, and the resulting topics were interpreted and merged into 38 final topics grouped into 14 thematic areas. No participants were recruited; the analysis is based entirely on published research abstracts.\n\nThe review identifies strong concentration in areas such as LLMs in education, text-to-speech for learning support, writing feedback, educational chatbots, automated question generation, assessment, and academic integrity. The authors conclude that the field is skewed toward text-centered GenAI and largely centered on higher education, with K\u201312 and multimodal applications receiving much less attention. They recommend broader investigation of multimodal foundation models and educationally focused AI systems, including applications that better support personalized learning, creativity, and accessibility, while also highlighting ethical, integrity, and policy concerns.",
+  "limitations": [
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "identified_tools": [
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "content_generation",
+        "feedback_evaluation"
+      ],
+      "description": "Generative artificial intelligence / large language model chatbots and multimodal foundation models used to produce text and other content modalities for educational contexts.",
+      "use_case": "This paper is a topic-modeling overview of the education literature on multimodal and generative AI; it does not evaluate a single tool experimentally, but maps which tools and use areas appear in the corpus. It reports that OpenAI ChatGPT is the most frequently mentioned named service, while the broader literature is dominated by text-to-text LLM use.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0001\u0013 Other",
+          "finding_type": "review_synthesis",
+          "direction": "mixed",
+          "finding_summary": "Across 4,175 education articles, the corpus was heavily concentrated on text-to-text LLMs, with OpenAI ChatGPT the most frequently mentioned named service. The authors note that multimodal capabilities such as text-to-speech, speech-to-text, and text-to-image were comparatively underexplored, indicating an uneven research landscape rather than a measured effectiveness result.",
+          "measure": "Topic modeling of titles/abstracts; keyword occurrence counts in the corpus",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=4175 articles"
+        }
+      ]
+    }
+  ],
+  "verdict": "archetype_only",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a systematic, topic-modeling overview rather than an intervention study. It synthesizes a large corpus, but it does not estimate causal effects or evaluate tool outcomes directly.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper has broad descriptive influence on the field by mapping where GenAI research is concentrated, but it does not report measurable learning gains or operational effects for a specific tool.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

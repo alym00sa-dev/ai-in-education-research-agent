@@ -1,0 +1,68 @@
+{
+  "title": "Online Preference-based Reinforcement Learning with Self-augmented Feedback from Large Language Model",
+  "doi": null,
+  "year": 2025,
+  "venue": "Proc. of the 24th International Conference on Autonomous Agents and Multiagent Systems (AAMAS 2025)",
+  "url": "http://arxiv.org/abs/2412.16878v1",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses a reinforcement learning problem: how to obtain preference feedback for online preference-based reinforcement learning (PbRL) when real-time human judgments are unavailable and the usual \u201cscripted teacher\u201d relies on privileged task rewards. The authors identify a specific failure mode of LLM-based feedback called query ambiguity, where large language models struggle to distinguish between poor or similarly suboptimal trajectories early in training.\n\nTo address this, the paper proposes RL-SaLLM-F, a framework that uses a large language model in two ways: first, to judge which of two replay-buffer trajectories is better; and second, to generate self-augmented imagined trajectories that better achieve the task goal. A double-check mechanism reverses the order of trajectory pairs to reduce label randomness, and only consistent labels are kept. The method trains a reward model from these LLM-produced labels and imagined trajectory pairs, then uses soft actor-critic for downstream policy learning.\n\nThe context is robotic manipulation in the MetaWorld benchmark, with state information converted into text descriptions for the LLM. The paper reports experiments on eight tasks such as button press, drawer open/close, door open/unlock, window open, handle pull, and reach. Across these tasks, RL-SaLLM-F performs comparably to or better than PEBBLE with scripted teacher feedback, while using no privileged rewards or human-in-the-loop feedback. The authors conclude that self-augmented LLM feedback is a practical direction for online PbRL, though label accuracy remains limited and improves with larger models like GPT-4o at substantially higher cost.",
+  "limitations": [
+    "short_duration",
+    "single_site",
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "lab",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "China",
+  "study_region": "East Asia & Pacific",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "content_generation"
+      ],
+      "description": "OpenAI GPT-family large language model used to judge preference between trajectory pairs and to generate self-augmented imagined trajectories for reinforcement learning feedback.",
+      "use_case": "The paper uses GPT-4o-mini as the main LLM feedback source and compares it with GPT-4o for trajectory preference labeling, double-checking labels, and generating imagined trajectories in online preference-based reinforcement learning.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Using GPT-4o-mini as the LLM feedback source in RL-SaLLM-F enabled online preference labeling and self-augmented trajectory generation without privileged rewards or real-time human feedback. The paper reports that this setup achieved comparable or better task success than the scripted-teacher baseline on MetaWorld tasks, while being lightweight and cost-effective.",
+          "measure": "Task success rate on MetaWorld robotic manipulation tasks; feedback cost and query time",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Academic \u0001 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "On the Drawer Open task, scaling from GPT-4o-mini to GPT-4o improved policy performance, trajectory quality, and label accuracy. The paper reports label accuracy of 80.1% for GPT-4o versus 73.9% for GPT-4o-mini, with GPT-4o also showing a higher equal-rate behavior (28.5% vs 0.8%) and better trajectory evaluation, but at much higher cost per query ($0.081 vs $0.004) and longer query time (10.0s vs 3.9s).",
+          "measure": "Label accuracy, equal rate, average cost per query, average time per query, and policy/trajectory performance on Drawer Open",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a primary empirical paper with a clear experimental setup, but it is not an education study and does not use an RCT/QED design in the K-12 sense. Evidence is still direct and quantitative, though not aligned to the education evidence hierarchy.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The reported improvements are meaningful within robotic RL, but the paper does not report standardized effect sizes and the outcomes are not directly educational. The practical gains are moderate and context-specific, so impact is unclear for the requested education-facing topic.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

@@ -1,0 +1,116 @@
+{
+  "title": "AGIEval: A Human-Centric Benchmark for Evaluating Foundation Models",
+  "doi": null,
+  "year": 2023,
+  "venue": null,
+  "url": "https://doi.org/10.48550/arxiv.2304.06364",
+  "source_db": "openalex_search",
+  "populations": [
+    "High School (9th-12th)",
+    "Undergraduate",
+    "Graduate / Doctoral",
+    "Adult (non-academic)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper introduces AGIEval, a benchmark for evaluating foundation models on human-centered standardized exams rather than on artificial NLP datasets. The authors argue that existing benchmarks do not adequately capture human-level cognition, reasoning, and real-world task performance. Their research question is how well recent large language models, including GPT-4, ChatGPT, Text-Davinci-003, and Vicuna, perform on official public exams that humans take for educational admission, qualification, and competition purposes.\n\nThe approach is benchmark construction plus empirical model evaluation. AGIEval includes 8,062 objective questions drawn from 20 tasks spanning SAT, LSAT, Chinese Gaokao subjects, lawyer qualification exams, Chinese civil service exams, GRE/GMAT-style math, and high school math competitions. The study evaluates models under zero-shot, few-shot, and chain-of-thought prompting conditions using quantitative metrics such as accuracy, exact match, and F1, and also includes qualitative human analysis of model errors across understanding, knowledge, reasoning, and calculation dimensions.\n\nThe populations represented are indirect exam-taking populations rather than recruited human participants in an intervention study. These include high school students taking Gaokao, SAT, AMC, and AIME; prospective law and graduate school applicants taking LSAT, GRE, and GMAT; and adults taking lawyer qualification and civil service examinations. The context is primarily an online/API-based evaluation environment comparing model outputs against exam answer keys; it is not an educational implementation with students receiving instruction or feedback.\n\nThe main conclusion is that GPT-4 substantially outperforms ChatGPT and Text-Davinci-003 on this benchmark and exceeds average human performance on some exams such as SAT, LSAT, and math competitions, though it still trails top human performance and struggles on tasks requiring complex reasoning or domain-specific knowledge. Chain-of-thought prompting helps in some settings, especially English math tasks, but can also degrade performance depending on task, language, and model. For the retrieval topic of secondary students using ChatGPT-generated feedback on student-authored drafts, this paper provides no direct evidence: there is no study of writing feedback on drafts, no subgroup or moderator analyses by student characteristics, no follow-up on unaided writing, and no measures of self-efficacy, confidence, metacognition, plagiarism, overreliance, or adverse effects.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a benchmark/model evaluation paper, not a K-12 intervention study. It includes no secondary-student sample, no ChatGPT feedback on student-authored drafts, no causal design about educational outcomes, and no subgroup or follow-up analyses relevant to the requested use case.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper shows strong model performance on some exam tasks, but it does not estimate educational impact on students or schools. For the requested topic\u2014grades 9-12 ChatGPT-generated feedback on student drafts\u2014the impact evidence is absent and therefore unclear rather than demonstrated positive or negative.",
+  "interventions": [
+    {
+      "intervention": "Other",
+      "confidence": 0.99,
+      "role": "primary",
+      "use_case": "Human-centric benchmark evaluation of foundation models (including ChatGPT and GPT-4) on standardized exam questions such as SAT, Gaokao, LSAT, math competitions, law, and civil service exams; not a classroom intervention, tutoring system, or student draft-feedback application."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Literacy",
+      "confidence": 0.78,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "On exam-based English/reading tasks, GPT-4 achieved high performance, including 88.8% on SAT-English in zero-shot and 92.5% on Gaokao-English in zero-shot CoT, outperforming average human performance on some tasks. However, performance was lower on some related variants such as SAT-English (without passage), and the study is a benchmark evaluation of model test performance rather than an educational intervention affecting student literacy outcomes.",
+        "measure": "Model accuracy on standardized English/reading exam items (e.g., SAT-English, Gaokao-English, LSAT-RC)",
+        "study_size": "n=206 SAT-English items; n=306 Gaokao-English items; n=260 LSAT-RC items",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Other"
+    },
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 0.88,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "GPT-4 showed strong but uneven mathematics performance: 95.0% on SAT-Math under zero-shot CoT and 73.2% on AQuA-RAT under zero-shot CoT, exceeding average human performance on some tasks. In contrast, all models struggled on harder reasoning-heavy math tasks such as MATH (GPT-4 47.7% zero-shot CoT) and Gaokao math cloze (GPT-4 15.3% zero-shot CoT), indicating persistent limitations for complex mathematical reasoning.",
+        "measure": "Model accuracy / exact match on standardized and competition math items (SAT-Math, AQuA-RAT, MATH, Gaokao Math)",
+        "study_size": "n=220 SAT-Math items; n=254 AQuA-RAT items; n=1000 MATH items; n=351 Gaokao Math-QA items; n=118 Gaokao Math-Cloze items",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Other"
+    },
+    {
+      "outcome": "Academic \u2014 Scientific Reasoning",
+      "confidence": 0.75,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "On science-related Gaokao subjects, GPT-4 outperformed other evaluated models but remained substantially below top human performance, with zero-shot CoT scores of 71.9% in biology, 52.2% in chemistry, and 45.5% in physics. The authors explicitly note persistent weaknesses on tasks requiring complex reasoning, variable substitution, and domain-specific scientific knowledge, especially in physics and chemistry.",
+        "measure": "Model accuracy on science exam items (Gaokao biology, chemistry, physics)",
+        "study_size": "n=210 biology items; n=207 chemistry items; n=200 physics items",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Other"
+    },
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.72,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "Across non-STEM/non-literacy subjects such as history, geography, law, logic, and civics-style reasoning tasks, GPT-4 generally outperformed ChatGPT and Text-Davinci-003, for example scoring 77.4% on Gaokao history and 76.9% on Gaokao geography in zero-shot. Yet the study reports continued deficits in law and complex analytical reasoning, with weaker performance on lawyer qualification tasks and LSAT analytical reasoning relative to top human benchmarks.",
+        "measure": "Model accuracy on standardized exam items in history, geography, law, logic, and analytical reasoning",
+        "study_size": "n=243 history items; n=199 geography items; n=1000 JEC-QA-KD items; n=1000 JEC-QA-CA items; n=651 LogiQA-en items; n=651 LogiQA-ch items; n=230 LSAT-AR items; n=510 LSAT-LR items",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Other"
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.56,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The qualitative analysis suggests current LLMs show strengths in understanding and simple deduction but notable weaknesses in strict logical deduction, counterfactual reasoning, and multi-hop reasoning. These findings concern model reasoning capabilities rather than student durable-skill development, and no evidence is provided on secondary students\u2019 critical thinking, metacognition, revision skill, or transfer after using AI feedback.",
+        "measure": "Human annotation of model outputs across understanding, knowledge, reasoning, and calculation dimensions",
+        "study_size": "100 error samples per task annotated",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Other"
+    }
+  ],
+  "limitations": [
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

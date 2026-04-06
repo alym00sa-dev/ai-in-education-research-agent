@@ -1,0 +1,64 @@
+{
+  "title": "A Large Language Model Approach to Educational Survey Feedback Analysis",
+  "doi": "10.1007/s40593-024-00414-0",
+  "year": 2025,
+  "venue": "International Journal of Artificial Intelligence in Education",
+  "url": "http://dx.doi.org/10.1007/s40593-024-00414-0",
+  "source_db": "eric_search",
+  "populations": [
+    "Graduate / Doctoral"
+  ],
+  "user_types": [
+    "Student",
+    "Educator",
+    "Administrator"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper examines whether large language models (LLMs), specifically GPT-4 and GPT-3.5, can support analysis of open-ended educational survey feedback. The authors focus on a practical problem in education: qualitative survey comments are valuable for identifying course strengths, weaknesses, and areas for improvement, but they are time-consuming to code manually and often difficult to analyze consistently at scale. The study asks whether modern LLMs can perform a broad set of common text-analysis tasks on such data with little or no labeled training data.\n\nThe approach treats survey analysis as a pipeline of natural-language-processing tasks, including multi-label classification, multi-class classification, binary classification, extraction, inductive thematic analysis, and sentiment analysis. The models were accessed through the OpenAI API using zero-shot prompting, zero-shot chain-of-thought reasoning, function calling for structured output, and prompt tuning based on inspection of model reasoning. The authors also developed a generalizable label set for course-feedback analysis and compared LLM outputs with human annotations and, in some cases, specialized baseline models.\n\nThe evaluation used 2,500 open-ended end-of-course survey comments drawn from 15 online biomedical science courses at a single educational program, with an additional development set for prompt refinement. The paper concludes that GPT-4 in particular can achieve human-level performance on several survey-analysis tasks and can produce useful reasoning traces that may help with confidence, debugging, and prompt improvement. The results suggest that LLMs can make qualitative survey analysis more accessible and scalable, though performance depends on careful prompting, task specification, and the quality of the label scheme.",
+  "limitations": [
+    "single_site",
+    "self_reported_measures",
+    "non_representative_population",
+    "no_long_term_followup",
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "content_generation"
+      ],
+      "description": "OpenAI's GPT family of large language models used for zero-shot text analysis, classification, extraction, thematic analysis, sentiment analysis, and structured JSON output via function calling.",
+      "use_case": "The paper evaluated GPT-3.5 and GPT-4 on educational survey feedback analysis tasks, including multi-label classification, binary and multi-class classification, extraction, inductive thematic analysis, and sentiment analysis; it also examined chain-of-thought reasoning and prompt engineering practices.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "On the multi-label classification task, GPT-4 achieved average Jaccard similarity of 80.60% when compared with human annotators across pairings, close to the 81.24% average Jaccard similarity among the four human raters. The paper reports that GPT-4 reached human-level performance on multiple tasks with effective prompting; exact per-task effect sizes were not reported.",
+          "measure": "Multi-label classification agreement using average Jaccard similarity coefficient",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=2,500 survey responses"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a primary empirical study with clear methods, but it is not an experimental intervention study in K-12 and relies on qualitative/mixed evaluation of LLM outputs rather than a controlled design. The evidence is useful but narrower in scope and setting than the strongest tiers.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The reported performance is strong and close to human agreement, but the paper does not report a numeric effect size meeting the stated threshold. The main practical impact is enabling efficient survey feedback analysis rather than demonstrating a clearly measured medium-or-large outcome. ",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": "via unpaywall"
+}

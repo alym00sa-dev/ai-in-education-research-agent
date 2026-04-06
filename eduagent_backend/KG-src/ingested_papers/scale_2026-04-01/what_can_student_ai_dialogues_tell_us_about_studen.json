@@ -1,0 +1,386 @@
+{
+  "title": "What Can Student-AI Dialogues Tell Us About Students\u2019 Self-Regulated Learning? An exploratory framework",
+  "doi": null,
+  "year": null,
+  "venue": null,
+  "url": "https://arxiv.org/abs/2601.11576",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper examines whether student-AI dialogue logs can serve as a valid, non-interruptive source for assessing students\u2019 self-regulated learning (SRL) in Human-AI Collaborative Learning environments. The authors argue that conventional SRL measures are increasingly inadequate in dialogue-centric learning settings: questionnaires interrupt learning and capture only general perceptions, while clickstream data becomes less informative when much of the learning activity occurs inside a conversational AI interface. The study therefore asks what dialogue patterns emerge in student-GenAI interactions, which of those patterns are associated with stronger or weaker SRL, and whether dialogue behavior differs between high- and low-SRL students.\n\nTo investigate this, the researchers collected 421 dialogue logs from students using a bespoke HAICL system supported by Doubao v1.6, and measured SRL using the Online Self-Regulated Learning Questionnaire (OSLQ). Using large language model embeddings and clustering, they identified 22 dialogue patterns spanning pre-class and post-class student questions and AI responses. They then computed alignment scores for each student across these patterns and analyzed associations with overall SRL and its subdimensions using Spearman correlations, followed by Mann-Whitney U tests comparing high- and low-SRL groups.\n\nThe study involved second-year undergraduate finance students enrolled in a mandatory introductory statistics course at a single university. The activity took place over four weeks during the middle of the semester. Students used the AI system weekly for two purposes: pre-class preparation and post-class review/planning. Before the study, participants received training on how to use the HAICL system. At the end of the period, they submitted complete AI dialogue logs and then completed the OSLQ. After excluding students who did not complete the questionnaire, analyses were based on 98 students.\n\nThe main conclusion is that student-AI dialogues contain meaningful behavioral indicators of SRL. Proactive dialogue patterns such as post-class systematic knowledge integration were positively associated with stronger SRL, while reactive patterns such as foundational conceptual difficulties and AI responses involving heavy scaffolding were negatively associated with SRL. Low-SRL students showed greater alignment with these reactive patterns than high-SRL students. Based on these findings, the authors propose the Dialogue-Based Human-AI Self-Regulated Learning (DHASRL) framework, intended to support real-time monitoring and scaffolding of SRL in AI-supported learning environments.",
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_control_group",
+    "self_reported_measures",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "4",
+  "setting": "online",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "China",
+  "study_region": "East Asia & Pacific",
+  "identified_tools": [
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "prediction_analytics",
+        "personalization_adaptation"
+      ],
+      "description": "A generative AI learning partner used within a bespoke Human-AI Collaborative Learning (HAICL) system to support dialogue-based learning interactions.",
+      "use_case": "University students in an introductory statistics course used a bespoke HAICL system supported by doubao v1.6 for pre-class preparation and post-class review; the study analyzed student-AI dialogue logs to infer self-regulated learning (SRL) patterns and proposed the DHASRL framework for real-time SRL monitoring/scaffolding.",
+      "findings": [
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "In 421 dialogue logs from 98 university students, several dialogue patterns were significantly associated with overall SRL and its subdimensions on the OSLQ. Proactive post-class systematic knowledge integration (PostQ_cluster5) was positively associated with overall SRL (r = .164) and goal setting (r = .293), whereas reactive/foundational and scaffolding-intensive patterns such as PreQ_cluster1 (r = -.190), PreR_cluster1 (r = -.191), PostR_cluster4 (r = -.220), and PostR_cluster5 (r = -.230) were negatively associated with overall SRL.",
+          "measure": "Online Self-Regulated Learning Questionnaire (OSLQ) total and subscale scores correlated with 22 dialogue pattern alignment scores",
+          "effect_size": "r=.164, r=.293, r=-.190, r=-.191, r=-.220, r=-.230",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=98"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "Median-split group comparisons showed that low-SRL students aligned significantly more with reactive dialogue patterns than high-SRL students. Specifically, the low-SRL group showed higher means for PreQ_cluster1 (.555 vs .520, p = .009), PostQ_cluster0 (.549 vs .525, p = .042), PreR_cluster0 (.608 vs .583, p = .042), PreR_cluster1 (.527 vs .495, p = .006), PostR_cluster2 (.603 vs .575, p = .029), PostR_cluster3 (.595 vs .570, p = .031), and PostR_cluster5 (.598 vs .559, p = .004).",
+          "measure": "Mann-Whitney U comparisons of dialogue pattern alignment scores between high- and low-SRL groups",
+          "effect_size": "p=.009; p=.042; p=.042; p=.006; p=.029; p=.031; p=.004",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=98"
+        }
+      ]
+    }
+  ],
+  "verdict": "genai_general",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an observational correlational study using dialogue logs and questionnaire scores, not a randomized or quasi-experimental evaluation of an intervention's causal effects. The analyses are systematic and include FDR correction, but the evidence remains associational.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "Reported associations with SRL are statistically significant but generally small in magnitude (roughly r=.13 to .29 in the positive direction, with several negative correlations). The paper demonstrates promising diagnostic utility for SRL tracing, but impact on learning outcomes is unclear and not causally tested.",
+  "citations": [
+    {
+      "title": "Testing the relationships of motivation, time management and career aspirations on graduate students\u2019 academic success",
+      "doi": "10.1108/JARHE-04-2020-0106",
+      "year": 2020,
+      "venue": "Journal of Applied Research in Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Measuring self-regulation in online and blended learning environments",
+      "doi": "10.1016/j.iheduc.2008.10.005",
+      "year": 2009,
+      "venue": "The Internet and Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Self-regulated learning strategies & academic achievement in online higher education learning environments: A systematic review",
+      "doi": "10.1016/j.iheduc.2015.04.007",
+      "year": 2015,
+      "venue": "The Internet and Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Time Management Strategies for Research Productivity",
+      "doi": "10.1177/0193945912451163",
+      "year": 2013,
+      "venue": "Western Journal of Nursing Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Students\u2019 voices on generative AI: Perceptions, benefits, and challenges in higher education",
+      "doi": null,
+      "year": 2023,
+      "venue": "International Journal of Educational Technology in Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Goal Setting to Increase Student Academic Performance",
+      "doi": "10.32674/jsard.v1i1.1908",
+      "year": 2016,
+      "venue": "Journal of School Administration Research and Development",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "What can online traces tell us about students\u2019 self-regulated learning? A systematic review of online trace data analysis",
+      "doi": "10.1016/j.compedu.2023.104828",
+      "year": 2023,
+      "venue": "Computers & Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Designing a recommender system to promote self-regulated learning in online contexts: A design-based study",
+      "doi": "10.1007/s10639-024-12867-w",
+      "year": 2025,
+      "venue": "Education and Information Technologies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Human\u2010AI collaboration: Designing artificial agents to facilitate socially shared regulation among learners",
+      "doi": "10.1111/bjet.13534",
+      "year": 2025,
+      "venue": "British Journal of Educational Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Towards investigating the validity of measurement of self-regulated learning based on trace data",
+      "doi": "10.1007/s11409-022-09291-1",
+      "year": 2022,
+      "venue": "Metacognition and Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Studying as Self-Regulated Learning",
+      "doi": "10.4324/9781410602350-19",
+      "year": 1998,
+      "venue": "Metacognition in Educational Theory and Practice",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Self-Regulation, Co-Regulation, and Shared Regulation in Collaborative Learning Environments",
+      "doi": "10.4324/9781315697048-6",
+      "year": 2017,
+      "venue": "Handbook of Self-Regulation of Learning and Performance",
+      "citation_level": 2,
+      "citation_context": "co-regulation theory for interpreting AI scaffolding dependency"
+    },
+    {
+      "title": "The Median Split: Robust, Refined, and Revived",
+      "doi": "10.2139/ssrn.2663369",
+      "year": 2015,
+      "venue": "Social Science Research Network",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Human and artificial intelligence collaboration for socially shared regulation in learning",
+      "doi": "10.1111/bjet.13325",
+      "year": 2023,
+      "venue": "British Journal of Educational Technology",
+      "citation_level": 2,
+      "citation_context": "HASRL conceptual model extended by DHASRL framework"
+    },
+    {
+      "title": "Effect of learners\u2019 autonomy on academic motivation and university students\u2019 grit",
+      "doi": "10.1007/s10639-023-11976-2",
+      "year": 2024,
+      "venue": "Education and Information Technologies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Academic Help Seeking as a Self-Regulated Learning Strategy",
+      "doi": "10.4324/9781315697048-27",
+      "year": 2017,
+      "venue": "Handbook of Self-Regulation of Learning and Performance",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT for good? On opportunities and challenges of large language models for education",
+      "doi": "10.1016/j.lindif.2023.102274",
+      "year": 2023,
+      "venue": "Learning and Individual Differences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Self-regulated learning strategies predict learner behavior and goal attainment in Massive Open Online Courses",
+      "doi": "10.1016/j.compedu.2016.10.001",
+      "year": 2017,
+      "venue": "Computers & Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Turning Real-Time Analytics into Adaptive Scaffolds for Self-Regulated Learning Using Generative Artificial Intelligence",
+      "doi": "10.1145/3706468.3706559",
+      "year": 2025,
+      "venue": "Proceedings of the 15th International Learning Analytics and Knowledge Conference",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Exploring characteristics of primary school students\u2019 self-regulated learning (SRL) behaviors in human-GenAI collaborative programming learning environments: Insights from a proposed framework",
+      "doi": "10.1016/j.compedu.2025.105453",
+      "year": 2026,
+      "venue": "Computers & Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "On the practice of dichotomization of quantitative variables",
+      "doi": "10.1037/1082-989X.7.1.19",
+      "year": 2002,
+      "venue": "Psychological Methods",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Nine Ways to Reduce Cognitive Load in Multimedia Learning",
+      "doi": "10.1207/S15326985EP3801_6",
+      "year": 2003,
+      "venue": "Educational Psychologist",
+      "citation_level": 2,
+      "citation_context": "cognitive load theory explaining excessive scaffolding as overload"
+    },
+    {
+      "title": "Using Instructional Discourse Analysis to Study the Scaffolding of Student Self-Regulation",
+      "doi": null,
+      "year": 2002,
+      "venue": "Using Qualitative Methods To Enrich Understandings of Self-regulated Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "What can moment-by-moment learning curves tell about students\u2019 self-regulated learning?",
+      "doi": null,
+      "year": 2021,
+      "venue": "Learning and Instruction",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A Conceptual Framework for Assessing Motivation and Self-Regulated Learning in College Students",
+      "doi": "10.1007/s10648-004-0006-x",
+      "year": 2004,
+      "venue": "Educational Psychology Review",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Towards reliable generative AI-driven scaffolding: Reducing hallucinations and enhancing quality in self-regulated learning support",
+      "doi": "10.1016/j.compedu.2025.105448",
+      "year": 2025,
+      "venue": "Computers & Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Implementing the self-regulated learning structured interview protocol with generative AI: A novel approach for evaluating students\u2019 SRL skills",
+      "doi": "10.1080/15391523.2025.2547176",
+      "year": 2025,
+      "venue": "Journal of Research on Technology in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Supporting goal setting in flipped classes",
+      "doi": "10.1080/10494820.2019.1707691",
+      "year": 2020,
+      "venue": "Interactive Learning Environments",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Tracking Patterns in Self-Regulated Learning Using Students\u2019 Self-Reports and Online Trace Data",
+      "doi": "10.14786/flr.v8i3.497",
+      "year": 2020,
+      "venue": "Frontline Learning Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Alternative assessment of strategy use with self-report instruments: A discussion",
+      "doi": "10.1007/s11409-011-9080-x",
+      "year": 2011,
+      "venue": "Metacognition and Learning",
+      "citation_level": 2,
+      "citation_context": "supports claim that low-SRL learners struggle with self-assessment"
+    },
+    {
+      "title": "How Does Cognitive Load Interact with Self-Regulated Learning? A Dynamic and Integrative Model",
+      "doi": "10.1007/s10648-023-09794-6",
+      "year": 2023,
+      "venue": "Educational Psychology Review",
+      "citation_level": 2,
+      "citation_context": "supports interpreting overload pattern in AI-supported learning"
+    },
+    {
+      "title": "Shadows in the Attention: Contextual Perturbation and Representation Drift in the Dynamics of Hallucination in LLMs",
+      "doi": "10.48550/ARXIV.2505.16894",
+      "year": 2025,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Promises and challenges of generative artificial intelligence for human learning",
+      "doi": "10.1038/s41562-024-02004-5",
+      "year": 2024,
+      "venue": "Nature Human Behaviour",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "GenAI Distortion: The Effect of GenAI Fluency and Positive Affect",
+      "doi": "10.48550/ARXIV.2404.17822",
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The effects of over-reliance on AI dialogue systems on students\u2019 cognitive abilities: A systematic review",
+      "doi": "10.1186/s40561-024-00316-7",
+      "year": 2024,
+      "venue": "Smart Learning Environments",
+      "citation_level": 2,
+      "citation_context": "supports claim that passive AI reliance reduces learner autonomy"
+    },
+    {
+      "title": "Synergizing Self-Regulation and Artificial-Intelligence Literacy Towards Future Human-AI Integrative Learning",
+      "doi": "10.48550/ARXIV.2504.07125",
+      "year": 2025,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A meta-analysis of the correlation between self-regulated learning strategies and academic performance in online and blended learning environments",
+      "doi": "10.1016/j.compedu.2025.105279",
+      "year": 2025,
+      "venue": "Computers & Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The relationship among motivation, self-monitoring, self-management, and learning strategies of MOOC learners",
+      "doi": "10.1007/s12528-021-09301-2",
+      "year": 2022,
+      "venue": "Journal of Computing in Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Becoming a Self-Regulated Learner: An Overview",
+      "doi": "10.1207/s15430421tip4102_2",
+      "year": 2002,
+      "venue": "Theory Into Practice",
+      "citation_level": 2,
+      "citation_context": "primary SRL cyclical phases grounding the framework"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

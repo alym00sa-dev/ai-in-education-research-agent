@@ -1,0 +1,559 @@
+{
+  "title": "Students\u2019 Feedback Requests and Interactions with the SCRIPT Chatbot: Do They Get What They Ask For?",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "https://arxiv.org/abs/2507.17258",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper examines how novice programming students interact with a generative AI chatbot and whether the feedback they receive matches what they ask for. The authors focus on a key design problem in AI-supported programming education: how to provide flexible, helpful, pedagogically guided assistance without simply giving away full solutions. Their research questions address students\u2019 interaction patterns with the tool, the alignment between student requests and chatbot responses, and the extent to which the chatbot follows its instructional constraints.\n\nThe intervention studied is SCRIPT, a web-based chatbot built on ChatGPT-4o-mini for introductory programming support. SCRIPT offers two modes of prompting: predefined closed prompts aligned with a programming feedback typology, and open-ended prompts where students can ask free-form questions. The system includes task descriptions and reference solutions in the prompt context, and it is designed to provide step-by-step guidance, examples, and code templates while avoiding full code solutions. The authors analyzed 241 chat sessions comprising 1,409 student prompts and 1,409 chatbot responses, using structured coding of feedback types and additional interaction categories, along with quantitative counts of matches, mismatches, correctness, and adherence to system constraints.\n\nThe study was conducted with 136 students in an introductory programming course for first-year computing students at Goethe University Frankfurt in Germany during winter term 2024/25. Students used SCRIPT voluntarily at home to solve three programming tasks over approximately one week, in an unsupervised, self-paced context connected to the course Moodle site. The participants were primarily undergraduate computer science students, and no prior programming experience was required.\n\nThe main conclusions are that students appeared to follow a recurring sequence of feedback needs, moving from understanding task constraints and concepts to next steps, debugging, evaluating correctness, and finally seeking correct solutions. SCRIPT\u2019s responses matched or over-matched students\u2019 requested feedback types in 75% of evaluated prompt-response pairs, and 81% of analyzed responses were judged fully correct. The chatbot generally adhered to pedagogical guardrails, but it sometimes provided multiple steps at once, completed templates over repeated interactions, or gave solutions earlier than intended. The authors conclude that combining structured and open prompting can support novice programmers effectively, while also highlighting the continuing challenge of balancing guidance, flexibility, and restriction in AI tutoring tools.",
+  "limitations": [
+    "short_duration",
+    "single_site",
+    "no_control_group",
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "1",
+  "setting": "online",
+  "teacher_training": "no",
+  "implementation_fidelity": "medium",
+  "study_country": "Germany",
+  "study_region": "Europe",
+  "identified_tools": [
+    {
+      "name": "SCRIPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "tutoring_instruction"
+      ],
+      "description": "A standalone web-based supportive chatbot for resolving introductory programming tasks, built on ChatGPT and designed for novice programmers with both predefined feedback prompts and open-ended interaction.",
+      "use_case": "Studied as a GenAI chatbot in an introductory programming course to support students solving programming exercises, focusing on the types of feedback students requested, how well responses matched those requests, and whether outputs adhered to pedagogical/system constraints.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In an experiment with 136 students, SCRIPT\u2019s responses aligned with students\u2019 requested feedback types in 75% of evaluated question-response pairs when direct matches and over-matches were combined (47% direct matches: 417/891 pairs; plus 255/891 over-matches). Mismatches occurred in 22% of pairs (195/891), and 25% of those mismatches (49/195) were direct-solution requests that SCRIPT was intentionally designed to reject.",
+          "measure": "Alignment between student feedback requests and SCRIPT response types across coded question-response pairs",
+          "effect_size": "75% alignment; 47% direct match; 22% mismatch",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=136; 891 question-response pairs"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Across 1,016 problem-related responses, SCRIPT\u2019s response correctness was high: 81% were fully correct, 14% partially correct, and 5% incorrect. Students also provided 151 thumbs ratings, of which 130 were positive and 21 negative, with positive comments emphasizing clear explanations and helpful guidance.",
+          "measure": "Coded correctness of chatbot responses and student ratings of responses",
+          "effect_size": "81% correct; 14% partially correct; 5% incorrect",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=1016 responses; 151 ratings"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Regarding adherence to pedagogical constraints, 51% of problem-related responses provided a single step as intended, while 21% included multiple steps but with an explicit next step and 28% included multiple steps. SCRIPT provided solutions in 42 of 100 direct correct-solution requests, generated 167 intended templates but also 95 completed templates, and directly corrected student code 34 times despite the constraint not to do so.",
+          "measure": "Adherence to system-prompt constraints for stepwise guidance, solution withholding, template generation, and code correction",
+          "effect_size": "51% single-step; 42/100 solutions given; 167 templates provided; 95 completed templates; 34 code corrections",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=1016 responses; 100 KCR requests"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Analysis of 241 chat sessions and 1,409 prompts showed students tended to follow a recurring feedback-seeking sequence: task constraints (KTC), concepts (KC), how to proceed (KH), mistakes (KM), performance/result checking (KP/KR), and then correct solution requests (KCR). The chatbot supported iterative help-seeking and clarification, but some students used repeated next-step requests to incrementally reconstruct solutions.",
+          "measure": "Observed student interaction patterns and feedback-seeking sequences in chat logs",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=136 students; 241 chat sessions; 1409 prompts"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical study of a specific named chatbot with substantial log data from 136 students, but it is primarily descriptive/qualitative coding and system-evaluation rather than an RCT or strong causal design on student learning gains.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports generally positive alignment and correctness metrics for the tool, but does not provide standardized effect sizes or direct evidence of improved academic achievement, so educational impact remains promising but unclear.",
+  "citations": [
+    {
+      "title": "Forgotten again: Addressing accessibility challenges of generative ai tools for people with disabilities",
+      "doi": "10.1145/3677045.3685493",
+      "year": 2024,
+      "venue": "Adjunct proceedings of the 2024 nordic conference on human-computer interaction",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Feedback-generation for programming exercises with gpt-4",
+      "doi": "10.1145/3649217.3653594",
+      "year": 2024,
+      "venue": "Association for Computing Machinery",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Open, small, rigmarole \u2013 evaluating llama 3.2 3b\u2019s feedback for programming exercises",
+      "doi": "10.48550/arXiv.2504.01054",
+      "year": 2025,
+      "venue": "International Journal of Engineering Pedagogy (iJEP)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Assessment accuracy of a large language model on programming assignments",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Experience report on using lantern in teaching relational query processing",
+      "doi": "10.1145/3641554.3701812",
+      "year": 2025,
+      "venue": "Proceedings of the 56th acm technical symposium on computer science education v. 1",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Sample size for qualitative research",
+      "doi": null,
+      "year": 2016,
+      "venue": "Qualitative market research: An international journal",
+      "citation_level": 2,
+      "citation_context": "supports representativeness despite single-course setting"
+    },
+    {
+      "title": "Some difficulties of learning to program",
+      "doi": "10.2190/3LFX-9RRF-67T8-UVK9",
+      "year": 1986,
+      "venue": "Journal of Educational Computing Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A presentation framework for programming in programing lectures",
+      "doi": null,
+      "year": 2016,
+      "venue": "Proc. educon",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Unlocking student potential with ta-bot: Timely submissions and improved code style",
+      "doi": "10.1145/3641554.3701955",
+      "year": 2025,
+      "venue": "Proceedings of the 56th acm technical symposium on computer science education v. 1",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Can ChatGPT Pass An Introductory Level Functional Language Programming Course?",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Transformative effects of chatgpt on modern education: Emerging era of ai chatbots",
+      "doi": "10.1016/j.iotcps.2023.06.002",
+      "year": 2024,
+      "venue": "Internet of Things and Cyber-Physical Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Evaluating the Application of Large Language Models to Generate Feedback in Programming Education",
+      "doi": "10.1109/EDUCON60312.2024.10578838",
+      "year": 2024,
+      "venue": "2024 IEEE Global Engineering Education Conference (EDUCON)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "That\u2019s not the feedback i need! \u2013 student engagement with genai feedback in the tutor kai.",
+      "doi": null,
+      "year": 2025,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Unlimited practice opportunities: Automated generation of comprehensive, personalized programming tasks",
+      "doi": "10.48550/arXiv.2503.11704",
+      "year": 2025,
+      "venue": "ITiCSE 2025",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Codeaid: Evaluating a classroom deployment of an llm-based programming assistant that balances student and educator needs",
+      "doi": "10.1145/3613904.3642773",
+      "year": 2024,
+      "venue": "Proceedings of the chi conference on human factors in computing systems",
+      "citation_level": 2,
+      "citation_context": "used in discussion on balancing direct AI responses"
+    },
+    {
+      "title": "Good-bye, teacher...",
+      "doi": null,
+      "year": 1968,
+      "venue": "Journal of applied behavior analysis",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A systematic literature review of automated feedback generation for programming exercises",
+      "doi": "10.1145/3231711",
+      "year": 2018,
+      "venue": "ACM Trans. Comput. Educ.",
+      "citation_level": 3,
+      "citation_context": "feedback typology adopted for coding requests and responses"
+    },
+    {
+      "title": "Kompetenzf\u00f6rderung in der programmierausbildung durch modellierung von kompetenzen und informativem feedback",
+      "doi": null,
+      "year": 2022,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Modeling programming competency: A qualitative analysis",
+      "doi": "10.1007/978-3-031-47148-3",
+      "year": 2024,
+      "venue": "Springer International Publishing",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Exploring the potential of large language models to generate formative programming feedback",
+      "doi": "10.1109/FIE58773.2023.10343457",
+      "year": 2024,
+      "venue": "2023 ieee frontiers in education conference (fie)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Large language models in introductory programming education: Chatgpt\u2019s performance and implications for assessments",
+      "doi": "10.48550/arXiv.2308.08572",
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Why We Need Open Data in Computer Science Education Research",
+      "doi": "10.1145/3587102.3588860",
+      "year": 2023,
+      "venue": "Proceedings of the 2023 conference on innovation and technology in computer science education v. 1",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The role of generative ai in software student collaboraition",
+      "doi": "10.1145/3724363.3729040",
+      "year": 2025,
+      "venue": "Association for Computing Machinery",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Using large language models to enhance programming error messages",
+      "doi": "10.1145/3545945.3569770",
+      "year": 2023,
+      "venue": "Proc. sigcse",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Codehelp: Using large language models with guardrails for scalable support in programming classes",
+      "doi": "10.1145/3631802.3631830",
+      "year": 2024,
+      "venue": "Proceedings of the 23rd koli calling international conference on computing education research",
+      "citation_level": 2,
+      "citation_context": "used in discussion on preventing full code solutions"
+    },
+    {
+      "title": "Teaching cs50 with ai: Leveraging generative artificial intelligence in computer science education",
+      "doi": "10.1145/3626252.3630938",
+      "year": 2024,
+      "venue": "Proceedings of the 55th acm technical symposium on computer science education v. 1",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Improving ai in cs50: Leveraging human feedback for better learning",
+      "doi": "10.1145/3641554.3701945",
+      "year": 2025,
+      "venue": "Proceedings of the 56th acm technical symposium on computer science education v. 1",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "You\u2019re (Not) My Type \u2013 Can LLMs Generate Feedback of Specific Types for Introductory Programming Tasks?",
+      "doi": "10.1111/jcal.13107",
+      "year": 2025,
+      "venue": "Journal of Computer Assisted Learning",
+      "citation_level": 3,
+      "citation_context": "closed prompts were based on this prior work"
+    },
+    {
+      "title": "Learning to Program is Easy",
+      "doi": "10.1145/2899415.2899432",
+      "year": 2016,
+      "venue": "Proc. ITiCSE",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Introductory Programming: A Systematic Literature Review",
+      "doi": "10.1145/3293881.3295779",
+      "year": 2018,
+      "venue": "Proc. ITiCSE",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Evaluating the effectiveness of llms in introductory computer science education: A semester-long field study",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Experiences from Using Code Explanations Generated by Large Language Models in a Web Software Development E-Book",
+      "doi": "10.1145/3545945.3569785",
+      "year": 2023,
+      "venue": "Proc. sigcse ts",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Informatives tutorielles feedback: Entwicklungs- und evaluationsprinzipien auf der basis instruktionspsychologischer erkenntnisse",
+      "doi": null,
+      "year": 2006,
+      "venue": "Waxmann Verlag",
+      "citation_level": 2,
+      "citation_context": "frames feedback presentation as modality and adaptation"
+    },
+    {
+      "title": "Feedback strategies for interactive learning tasks",
+      "doi": null,
+      "year": 2008,
+      "venue": "Handbook of research on educational communications and technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Sensai: Large language models as applied cybersecurity tutors",
+      "doi": "10.1145/3641554.3701801",
+      "year": 2025,
+      "venue": "Proceedings of the 56th acm technical symposium on computer science education v. 1",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Revisiting why students drop cs1",
+      "doi": "10.1145/2999541.2999552",
+      "year": 2016,
+      "venue": "Proc. koli calling",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Generating High-Precision Feedback for Programming Syntax Errors using Large Language Models",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The robots are here: Navigating the generative ai revolution in computing education",
+      "doi": "10.1145/3623762.3633499",
+      "year": 2023,
+      "venue": "Proceedings of the 2023 working group reports on innovation and technology in computer science education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Beyond the hype: A comprehensive review of current trends in generative ai research, teaching practices, and tools",
+      "doi": "10.1145/3689187.3709614",
+      "year": 2025,
+      "venue": "2024 working group reports on innovation and technology in computer science education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Compiler-integrated, conversational ai for debugging cs1 programs",
+      "doi": "10.1145/3641554.3701827",
+      "year": 2025,
+      "venue": "Proceedings of the 56th acm technical symposium on computer science education v. 1",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Llm-driven feedback for enhancing conceptual design learning in database systems courses",
+      "doi": "10.1145/3641554.3701940",
+      "year": 2025,
+      "venue": "Proceedings of the 56th acm technical symposium on computer science education v. 1",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Next-Step Hint Generation for Introductory Programming Using Large Language Models",
+      "doi": "10.1145/3636243.3636259",
+      "year": 2023,
+      "venue": "Proceedings of the 26th Australasian Computing Education Conference",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Management and the Worker",
+      "doi": null,
+      "year": 1939,
+      "venue": "Harvard University Press",
+      "citation_level": 2,
+      "citation_context": "supports Hawthorne-effect limitation about observed behavior"
+    },
+    {
+      "title": "Automatic generation of programming exercises and code explanations using large language models",
+      "doi": "10.1145/3501385.3543957",
+      "year": 2022,
+      "venue": "Proc. icer",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Large language models (gpt) struggle to answer multiple-choice questions about code",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "How novice programmers use and experience chatgpt when solving programming exercises in an introductory course",
+      "doi": "10.1109/FIE61694.2024.10893442",
+      "year": 2024,
+      "venue": "2024 ieee frontiers in education conference (fie)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Data: Students\u2019 feedback requests and interactions with the script chatbot - do they get what they ask for?",
+      "doi": "10.17605/OSF.IO/TG5R3",
+      "year": 2025,
+      "venue": "OSF",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Script - supportive chatbot for resolving introductory programming tasks",
+      "doi": "10.1145/3724389.3730786",
+      "year": 2025,
+      "venue": "Proceedings of the 30th acm conference on innovation and technology in computer science education v. 2",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Analyzing chat protocols of novice programmers solving introductory programming tasks with chatgpt",
+      "doi": "10.18420/delfi2024_05",
+      "year": 2024,
+      "venue": "Proc. delfi 2024",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Novice mistakes: Are the folk wisdoms correct?",
+      "doi": "10.1145/6138.6145",
+      "year": 1986,
+      "venue": "Communications of the ACM",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Models of mastery learning for computing education",
+      "doi": "10.1145/3641554.3701868",
+      "year": 2025,
+      "venue": "Proceedings of the 56th acm technical symposium on computer science education v. 1",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "dcc \u2013help: Transforming the role of the compiler by generating context-aware error explanations with large language models",
+      "doi": "10.1145/3626252.3630822",
+      "year": 2024,
+      "venue": "Proceedings of the 55th acm technical symposium on computer science education v. 1",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Using github copilot to solve simple programming problems",
+      "doi": "10.1145/3545945.3569830",
+      "year": 2023,
+      "venue": "Proceedings of the 54th acm technical symposium on computer science education v. 1",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The many ways of the Bracelet project",
+      "doi": null,
+      "year": 2007,
+      "venue": "BACIT",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Exploring how multiple levels of gpt-generated programming hints support or disappoint novices",
+      "doi": "10.1145/3613905.3650937",
+      "year": 2024,
+      "venue": "Extended abstracts of the 2024 chi conference on human factors in computing systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Bridging novice programmers and llms with interactivity",
+      "doi": "10.1145/3641554.3701867",
+      "year": 2025,
+      "venue": "Proceedings of the 56th acm technical symposium on computer science education v. 1",
+      "citation_level": 2,
+      "citation_context": "supports offering both closed and open prompt options"
+    },
+    {
+      "title": "Chatgpt user experience: Implications for education",
+      "doi": "http://dx.doi.org/10.2139/ssrn.4312418",
+      "year": 2022,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Repairing bugs in python assignments using large language models",
+      "doi": null,
+      "year": 2022,
+      "venue": "arXiv preprint arXiv:2209.14876",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

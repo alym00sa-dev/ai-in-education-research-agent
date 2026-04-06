@@ -1,0 +1,75 @@
+{
+  "title": "Automatic Generation of Inference Making Questions for Reading Comprehension Assessments",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2506.08260v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Elementary (PreK-5th)",
+    "Middle School (6th-8th)",
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses whether a generative AI system can automatically create reading comprehension assessment questions that target specific types of inference-making, an important component of reading comprehension. The authors are motivated by the need for scalable diagnostic reading assessments for school-age students, especially because inference-making difficulties can hinder comprehension and targeted instruction. The paper is not a causal study of student reading outcomes; instead, it is about assessment item generation and expert evaluation.\n\nThe intervention or approach studied is the use of GPT-4o with few-shot prompting, with and without chain-of-thought prompting, to generate multiple-choice reading comprehension questions for expository passages. The authors first develop a taxonomy of inference question types, validate it by annotating an operational item bank, then create a small public training set of example passages and questions. GPT-4o is prompted to generate bridging-inference questions for new passages, and three human experts evaluate the outputs for general item quality, inference-type accuracy, and reasoning quality.\n\nThe population and context are K-12 school-age students in grades 3-12 as the intended assessment population, but the empirical data in the paper come from generated items and expert raters rather than student participants. The assessment context is a reading comprehension diagnostic system related to ReadBasix and based on expository passages adapted from Simple English Wikipedia. The generated questions are intended for grade 3-12 educational assessment use, and the paper frames the work as potentially useful for educators providing targeted reading instruction and intervention.\n\nThe main conclusions are that GPT-4o can generate many reading comprehension questions that experts judged to be high quality for operational use, but the model is much less reliable at producing questions that accurately match the requested inference type. Increasing the number of examples helped somewhat, while chain-of-thought prompting did not clearly improve performance. The authors conclude that automatic item generation combined with human expert review is promising for scalable diagnostic reading comprehension assessment, but they do not evaluate effects on student learning or foundational reading outcomes.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical human-evaluation study of AI-generated assessment items, but it is not a randomized or quasi-experimental study of student outcomes. It provides descriptive evidence with inter-rater reliability data, fitting correlational/descriptive evidence rather than causal impact evidence.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper shows promising but mixed practical value: high item-quality rates for assessment generation, but limited control over targeted inference type and no demonstrated student learning impact. For the user's verification goal, this is a near-miss rather than direct causal evidence on K-12 foundational reading outcomes from generative AI.",
+  "interventions": [
+    {
+      "intervention": "Other",
+      "confidence": 0.99,
+      "role": "primary",
+      "use_case": "GPT-4o-based automatic generation of multiple-choice reading comprehension assessment items targeting inference types (pronominal bridging, text-connecting, gap-filling) for grade 3-12 diagnostic reading assessments."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Literacy",
+      "confidence": 0.87,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The paper evaluates whether GPT-4o can generate reading-comprehension assessment items suitable for grade 3-12 literacy contexts, not whether students' reading skills improve. Across 357 generated items, 93.8% were rated as good-quality for operational use, but only 42.6% accurately matched the requested inference type; in the best condition (standard_6), inference-type accuracy was 46.1%, and in the best overall quality condition (CoT_6), general item quality reached 96.7%. These are assessment-generation quality results rather than causal student learning outcomes on foundational reading skills.",
+        "measure": "Human expert ratings of generated reading-comprehension item quality, inference-type accuracy, and reasoning quality for literacy assessment items",
+        "study_size": "n=357 generated items",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.78,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The authors conclude that automatic item generation combined with human review offers a scalable route to producing diagnostic reading-comprehension assessment items. Empirically, 93.8% of 357 generated items were judged acceptable in general quality, suggesting the system can reduce manual item-authoring burden, although only 37.2% had adequate reasoning and 42.6% matched the intended inference type, so expert oversight remains necessary.",
+        "measure": "Proportion of generated items judged acceptable for operational use by human raters",
+        "study_size": "n=357 generated items",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "no_control_group",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

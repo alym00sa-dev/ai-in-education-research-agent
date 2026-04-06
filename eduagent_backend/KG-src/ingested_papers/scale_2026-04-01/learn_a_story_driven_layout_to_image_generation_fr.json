@@ -1,0 +1,287 @@
+{
+  "title": "LEARN: A Story-Driven Layout-to-Image Generation Framework for STEM Instruction",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "https://arxiv.org/abs/2508.11153",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Middle School (6th-8th)",
+    "High School (9th-12th)",
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses the problem of generating pedagogically useful visuals for STEM instruction using generative AI. The authors argue that existing text-to-image and layout-to-image systems are not well suited to education because they lack narrative continuity, spatial precision, and explicit alignment with instructional theories such as Cognitive Load Theory and Bloom\u2019s taxonomy. The paper asks whether a layout-aware, story-driven image generation framework can produce more coherent and educationally aligned STEM illustrations.\n\nThe proposed intervention is LEARN, a layout-conditioned diffusion framework that converts STEM concept prompts into structured visual layouts and then into generated images. It is trained using a curated and enriched BookCover dataset derived from a public book cover corpus, with added bounding boxes and semantic annotations created using CLIPSeg, SAM, and GPT-4o. The framework combines narrative encoding, a transformer-based layout generator, layout-to-image diffusion synthesis, contrastive visual-semantic alignment, and prompt modulation to improve spatial coherence, semantic consistency, and narrative flow in generated educational visuals.\n\nThe empirical context includes technical evaluations on RC-COCO and human evaluation of 50 STEM prompts rendered by LEARN, GLIGEN, and textbook figures. The user study involved 12 educators and 26 students aged 11\u201322, which maps to middle school, high school, and undergraduate populations. The acknowledgments mention participation organized through No.1 Senior Middle School of Shouguang, and the authors are affiliated with institutions in Japan and China, though the participant location is most directly tied to China. The study appears to involve both quantitative model benchmarking and human ratings of clarity, cognitive load, narrative flow, and concept alignment.\n\nThe main conclusions are that LEARN improves structural fidelity and educational usefulness relative to comparison systems. In benchmark experiments, it achieved the best FID and strong region-level alignment metrics after fine-tuning on the BookCover corpus. In the human study, LEARN outputs were rated 23% higher in clarity and 31% lower in perceived cognitive load, and 96% of participants reported stronger narrative flow and better concept alignment. The authors conclude that LEARN shows promise as a practical generative AI tool for STEM instruction, while also acknowledging limitations related to concept decomposition, classroom usability, and integration with more dynamic multimodal educational systems.",
+  "limitations": [
+    "small_sample",
+    "no_control_group",
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "China",
+  "study_region": "East Asia & Pacific",
+  "identified_tools": [
+    {
+      "name": "LEARN",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "tutoring_instruction"
+      ],
+      "description": "A layout-aware diffusion framework for generating story-driven, pedagogically aligned STEM illustrations from concept prompts using structured layouts, semantic alignment, and a curated BookCover dataset.",
+      "use_case": "Studied as a generative visual content system for STEM instruction that creates layout-guided, multi-frame illustrations intended to support conceptual progression, reduce cognitive load, and improve instructional clarity.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "On the RC-COCO benchmark after fine-tuning on the BookCover corpus, LEARN achieved FID=27.16, CropCLIP=27.92, and SAMIoU=81.52. Compared with ablations, removing layout embeddings worsened performance to FID=36.45, CropCLIP=24.63, and SAMIoU=76.36; removing alignment losses also reduced semantic and spatial quality.",
+          "measure": "RC-COCO image generation metrics: Fr\u00e9chet Inception Distance (FID), CropCLIP Score, SAMIoU",
+          "effect_size": "FID=27.16; CropCLIP=27.92; SAMIoU=81.52",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Against fine-tuned rich-context layout-to-image baselines, LEARN had the best FID at 27.16 versus GLIGEN's 27.95 and SDXL (Rich-Context)'s 27.41, while showing competitive but not best layout metrics. LEARN scored CropCLIP=27.92 and SAMIoU=81.52, compared with SDXL's CropCLIP=28.15 and SAMIoU=80.87.",
+          "measure": "Comparative RC-COCO generation metrics versus GLIGEN and SDXL (Rich-Context): FID, CropCLIP, SAMIoU",
+          "effect_size": "LEARN: FID=27.16, CropCLIP=27.92, SAMIoU=81.52",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Academic \u2014 Scientific Reasoning",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In a human study, 12 educators and 26 students evaluated 50 STEM prompts rendered by LEARN, GLIGEN, and textbook figures on a 5-point Likert scale. LEARN's outputs scored 23% higher in clarity, reduced perceived cognitive load by 31%, and 96% of participants reported stronger narrative flow and improved concept alignment.",
+          "measure": "Human ratings of clarity, perceived cognitive load, narrative flow, and concept alignment on 50 STEM prompts using a 5-point Likert scale",
+          "effect_size": "23% higher clarity; 31% lower perceived cognitive load; 96% reported stronger narrative flow and improved concept alignment",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=38"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "The paper reports benchmark experiments plus a small human study with educators and students, but it does not present an RCT or strong quasi-experimental design on student learning outcomes. Most evidence is model-evaluation and perception-based rather than causal educational impact evidence.",
+  "impact_tier": "green",
+  "impact_tier_rationale": "Reported human-study improvements are directionally positive and practically meaningful (23% higher clarity, 31% lower perceived cognitive load), but impacts are based on a small sample and non-standardized outcome measures rather than robust achievement effects.",
+  "citations": [
+    {
+      "title": "DeFT: A conceptual framework for considering learning with multiple representations",
+      "doi": null,
+      "year": 2006,
+      "venue": "Learning and Instruction",
+      "citation_level": 2,
+      "citation_context": "multiple representations framing for instructional visuals"
+    },
+    {
+      "title": "Flamingo: a Visual Language Model for Few-Shot Learning",
+      "doi": null,
+      "year": 2022,
+      "venue": "arXiv preprint arXiv:2204.14198",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The transfer of abstract principles governing complex adaptive systems",
+      "doi": null,
+      "year": 2003,
+      "venue": "Cognitive Psychology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Dreamartist++: Controllable one-shot text-to-image generation via positivenegative adapter",
+      "doi": null,
+      "year": 2022,
+      "venue": "arXiv preprint arXiv:2211.11337",
+      "citation_level": 3,
+      "citation_context": "PNPT variant used for prompt tuning"
+    },
+    {
+      "title": "A revision of Bloom\u2019s taxonomy: An overview",
+      "doi": null,
+      "year": 2002,
+      "venue": "Theory into Practice",
+      "citation_level": 2,
+      "citation_context": "cognitive progression aligned with Bloom's taxonomy"
+    },
+    {
+      "title": "Book Covers Dataset",
+      "doi": null,
+      "year": 2019,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "source dataset for BookCover corpus"
+    },
+    {
+      "title": "Rethinking the training and evaluation of rich-context layout-to-image generation",
+      "doi": null,
+      "year": 2024,
+      "venue": "Advances in Neural Information Processing Systems",
+      "citation_level": 3,
+      "citation_context": "rich-context SDXL baseline in experiments"
+    },
+    {
+      "title": "Inferring semantic layout for hierarchical text-to-image synthesis",
+      "doi": null,
+      "year": 2018,
+      "venue": "Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Likert scales: How to (ab) use them?",
+      "doi": null,
+      "year": 2004,
+      "venue": "Medical Education",
+      "citation_level": 3,
+      "citation_context": "5-point Likert scale for human study"
+    },
+    {
+      "title": "BLIP: Bootstrapping Language-Image Pre-training for Unified Vision-Language Understanding and Generation",
+      "doi": null,
+      "year": 2022,
+      "venue": "arXiv preprint arXiv:2201.12086",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Object-driven text-to-image synthesis via adversarial training",
+      "doi": null,
+      "year": 2019,
+      "venue": "Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Gligen: Open-set grounded text-to-image generation",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition",
+      "citation_level": 3,
+      "citation_context": "layout-conditioned diffusion backbone and baseline"
+    },
+    {
+      "title": "Image Segmentation Using Text and Image Prompts",
+      "doi": null,
+      "year": 2022,
+      "venue": "arXiv preprint arXiv:2112.10003",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Cambridge Handbook of Multimedia Learning",
+      "doi": null,
+      "year": 2005,
+      "venue": "Cambridge University Press",
+      "citation_level": 2,
+      "citation_context": "multimedia learning theory framing educational visuals"
+    },
+    {
+      "title": "Cognitive load theory and instructional design: Recent developments",
+      "doi": null,
+      "year": 2003,
+      "venue": "Educational Psychologist",
+      "citation_level": 2,
+      "citation_context": "cognitive load theory framing instructional support"
+    },
+    {
+      "title": "A dual coding approach to perception and cognition",
+      "doi": null,
+      "year": 2014,
+      "venue": "Modes of Perceiving and Processing Information",
+      "citation_level": 2,
+      "citation_context": "dual-coding basis for visual-verbal learning"
+    },
+    {
+      "title": "CM-GANs: Cross-modal generative adversarial networks for common representation learning",
+      "doi": null,
+      "year": 2019,
+      "venue": "ACM Transactions on Multimedia Computing, Communications, and Applications (TOMM)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Learning Transferable Visual Models From Natural Language Supervision",
+      "doi": null,
+      "year": 2021,
+      "venue": "arXiv preprint arXiv:2103.00020",
+      "citation_level": 3,
+      "citation_context": "CLIP encoder and alignment losses throughout pipeline"
+    },
+    {
+      "title": "Hierarchical text-conditional image generation with clip latents",
+      "doi": null,
+      "year": 2022,
+      "venue": "arXiv preprint arXiv:2204.06125",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "SAM 2: Segment Anything in Images and Videos",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv preprint arXiv:2408.00714",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Zero-Painter: Training-Free Layout Control for Text-to-Image Synthesis",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Photorealistic text-to-image diffusion models with deep language understanding",
+      "doi": null,
+      "year": 2022,
+      "venue": "Advances in Neural Information Processing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Cognitive load during problem solving: Effects on learning",
+      "doi": null,
+      "year": 1988,
+      "venue": "Cognitive Science",
+      "citation_level": 2,
+      "citation_context": "foundational cognitive load theory reference"
+    },
+    {
+      "title": "Text2Scene: Generating Compositional Scenes from Textual Descriptions",
+      "doi": null,
+      "year": 2019,
+      "venue": "IEEE Conference on Computer Vision and Pattern Recognition (CVPR)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Layoutdiffusion: Controllable diffusion model for layout-to-image generation",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition",
+      "citation_level": 3,
+      "citation_context": "regional layout diffusion baseline and attention design"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

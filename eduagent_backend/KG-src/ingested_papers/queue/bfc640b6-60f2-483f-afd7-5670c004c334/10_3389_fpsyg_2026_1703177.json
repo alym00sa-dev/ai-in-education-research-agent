@@ -1,0 +1,87 @@
+{
+  "title": "Impact of Generative AI-assisted programming on the computational thinking of high school students",
+  "doi": "10.3389/fpsyg.2026.1703177",
+  "year": 2026,
+  "venue": "Frontiers in Psychology",
+  "url": "https://doi.org/10.3389/fpsyg.2026.1703177",
+  "source_db": "openalex_search",
+  "populations": [
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper investigates whether Generative AI-assisted programming instruction can improve high school students\u2019 computational thinking, and how students perceive the use of Generative AI in programming classes. The authors position the study as addressing a gap in K-12 research, noting that most existing work on AI-assisted programming has focused on higher education rather than secondary school learners.\n\nThe intervention was an 8-week classroom teaching program embedded within a 12-week study timeline. Tenth-grade students in one intact class used a Chinese generative AI tool (iFlytek Spark) during Python programming lessons to ask about code meaning, syntax, and debugging, while a comparison class received traditional teacher-led support for the same content. The study used a convergent parallel mixed-methods design: quantitative pre/post computational thinking assessment with the Bebras CT Challenge, plus semi-structured interviews with 18 students from the experimental group.\n\nParticipants were 83 tenth-grade students from a single high school in Western China (42 experimental, 41 control), average age 15. The setting was a regular classroom context, with one 45-minute session per week during the intervention. The same instructor taught both groups, instructional content and time were synchronized, and the researchers monitored AI dialogue logs and teacher behavior to support implementation fidelity.\n\nThe main conclusion is that Generative AI-assisted programming was associated with greater gains in overall computational thinking than traditional instruction, especially for algorithmic modeling and abstraction/decomposition. However, it did not outperform traditional instruction on pattern recognition and evaluation. Interview findings suggest students valued the AI for personalized support, ease of use, and quick feedback, but also reported risks including overreliance and occasionally unclear answers. This is not a writing-feedback or motivation study, and it is explicitly described as a quasi-experimental classroom study rather than a randomized controlled trial.",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is a peer-reviewed quasi-experimental mixed-methods study in K-12 with pre/post comparison, baseline equivalence testing, and reported inferential statistics, but it is explicitly not a randomized controlled trial because intact classes were used without random assignment of individual students. Credibility is moderate rather than high due to quasi-experimental design, single-school sampling, small sample size, and lack of direct measures for motivation or writing.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports medium-to-large effects on computational thinking, but these effects are for programming-related durable skills rather than ChatGPT-based writing feedback, and the study population/intervention does not match the target synthesis question. For motivation and writing specifically, impact is unclear because motivation was only qualitatively described and writing was not studied at all.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.97,
+      "role": "primary",
+      "use_case": "Generative AI-assisted Python programming for high-school students using the iFlytek Spark conversational model to explain code, answer syntax questions, and support debugging during text-based programming lessons."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The study reports significant improvement in overall computational thinking for the experimental group using generative AI-assisted programming versus teacher-led instruction in a 12-week quasi-experiment with 83 tenth-grade students (experimental n=42, control n=41). Repeated-measures ANOVA showed a significant method-by-time interaction for overall computational thinking, F(1,81)=14.286, p<0.001, partial eta squared=0.150; gains were 12.65 points (95% CI 10.09 to 15.20) in the experimental group versus 5.73 points (95% CI 3.14 to 8.32) in controls on the Bebras CT Challenge.",
+        "measure": "Bebras CT Challenge overall computational thinking score and subdimensions (algorithmic modeling, pattern recognition and evaluation, abstraction and decomposition)",
+        "study_size": "n=83",
+        "effect_size": "partial eta squared=0.150 overall; partial eta squared=0.216 for algorithmic modeling; partial eta squared=0.120 for abstraction and decomposition",
+        "confidence_interval": "Overall gain EG 95% CI 10.09 to 15.20; CG 95% CI 3.14 to 8.32; algorithmic modeling EG 95% CI 2.97 to 5.45, CG 95% CI -1.23 to 1.28; abstraction/decomposition EG 95% CI 6.81 to 10.53, CG 95% CI 2.36 to 6.13",
+        "std_deviation": "Pre/post overall CT EG SD=9.65/7.66, CG SD=8.27/9.26; algorithmic modeling EG SD=3.77/3.01, CG SD=3.88/4.58; pattern recognition EG SD=4.32/4.33, CG SD=4.18/3.94; abstraction/decomposition EG SD=6.83/4.89, CG SD=5.37/5.16"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.65,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Motivation was not formally measured with a validated scale, but the discussion and interviews indicate students perceived that generative AI increased learning enthusiasm, initiative, and willingness to ask questions during programming. These findings are qualitative only, based on interview themes from 18 experimental-group students, and no experimental effect size for motivation is reported.",
+        "measure": "Semi-structured interview themes about enthusiasm, initiative, ease of use, and personalized support",
+        "study_size": "n=18 interviewees",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.56,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Students qualitatively reported that generative AI provided rapid responses and improved programming efficiency, especially for code explanation, syntax recall, and debugging. However, these are self-reported perceptions from interviews rather than objective timed productivity outcomes, and no quantitative efficiency statistics are provided.",
+        "measure": "Interview-based perceptions of response speed and learning/programming efficiency",
+        "study_size": "n=18 interviewees",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "8",
+  "setting": "classroom",
+  "teacher_training": "yes",
+  "implementation_fidelity": "high",
+  "study_country": "China",
+  "study_region": "East Asia & Pacific",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

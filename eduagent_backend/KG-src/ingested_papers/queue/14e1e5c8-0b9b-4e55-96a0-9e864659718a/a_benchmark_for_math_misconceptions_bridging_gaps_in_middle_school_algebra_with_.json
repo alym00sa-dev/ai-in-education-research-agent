@@ -1,0 +1,62 @@
+{
+  "title": "A Benchmark for Math Misconceptions: Bridging Gaps in Middle School Algebra with AI-Supported Instruction",
+  "doi": null,
+  "year": 2024,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2412.03765v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Middle School (6th-8th)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses the problem of identifying and diagnosing student misconceptions in middle school algebra, with the broader aim of supporting AI systems that can better assist math learning and teacher decision-making. The authors argue that existing math tutoring and educational AI systems often lack grounding in real, research-based misconceptions and may miss important topic-specific patterns in student errors.\n\nTo address this, the paper introduces a benchmark of 55 algebra misconceptions and common errors, each paired with four diagnostic examples for a total of 220 examples, compiled from 145 peer-reviewed and related academic sources. The benchmark is organized by algebra topic and evaluated using GPT-4 Turbo in two in-context learning experiments: one with random train/test splits across the full dataset and another with topic-constrained splits. The study also includes educator feedback from five middle school math teachers and follow-up expert review from two additional algebra educators, making it a mixed-methods design combining model evaluation with human judgment.\n\nThe population of interest is middle school learners in grades 6 through 8, especially in algebra-relevant topics, though the direct participants were educators rather than students. The teachers worked in U.S. public schools serving underserved populations, including one youth correctional facility context, and they had 4 to 10+ years of experience. Their feedback suggested the benchmark was clear and relevant, and most reported encountering the misconceptions in their classrooms.\n\nOverall, the paper concludes that GPT-4 Turbo can identify algebra misconceptions with moderate accuracy, improving substantially when testing is constrained by topic and when educator feedback is incorporated. The authors emphasize the value of topic-specific testing, human expertise, and multimodal support, and they position the benchmark as a resource for diagnostic tools, teacher support, and future AI-assisted math instruction.",
+  "limitations": [
+    "small_sample",
+    "non_representative_population",
+    "no_long_term_followup",
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "content_generation"
+      ],
+      "description": "OpenAI's GPT-family large language model chatbot/system used for generating and evaluating educational text-based outputs.",
+      "use_case": "GPT-4-turbo was used to diagnose middle school algebra misconceptions from question/answer pairs in an in-context learning benchmark, and the paper also discusses its potential use for teacher support and diagnostic feedback. Educators reviewed GPT-4 results and provided feedback on benchmark clarity and classroom relevance.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0014\u0010 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Using GPT-4-turbo on the algebra misconception benchmark, the model achieved precision of 0.526 and recall of 0.529 per misconception in Experiment 1 (all examples mixed). When testing examples were constrained within topic in Experiment 2, performance improved to precision 0.753 and recall 0.748 per misconception. After expert educator relabeling of some cases, accuracy rose to 65.45% in Experiment 1 and 83.91% in Experiment 2.",
+          "measure": "Precision and recall per misconception (MaE), plus expert-adjusted classification accuracy",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=5,500 iterations in Experiment 1; n=1,100 iterations in Experiment 2"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical mixed-methods study using repeated subsampling validation and educator feedback, but it is not a randomized controlled trial and the paper focuses on benchmark evaluation rather than a classroom intervention. The evidence is useful but methodologically limited for causal claims.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The reported classification performance is moderate to strong after topic constraint and expert adjustment, but no standardized effect size is reported. The impact is promising for diagnostic tooling, yet the study does not demonstrate downstream student learning effects.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

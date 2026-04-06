@@ -1,0 +1,75 @@
+{
+  "title": "Training LLM-based Tutors to Improve Student Learning Outcomes in Dialogues",
+  "doi": null,
+  "year": 2025,
+  "venue": "AIED 2025: The 26th International Conference on Artificial Intelligence in Education",
+  "url": "http://arxiv.org/abs/2503.06424v2",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses the problem of how to train large language model (LLM)-based tutors so that their dialogue moves better support student learning, rather than only imitating human tutor style or optimizing pedagogical rubrics in isolation. The authors argue that current LLM tutors may be suboptimal because they are not directly trained to maximize student success within a dialogue, and they may also encourage overreliance if they provide overly direct help.\n\nTo address this, the paper proposes a training pipeline that generates multiple candidate tutor utterances, scores them using two signals, and then fine-tunes an open-source LLM with direct preference optimization. The two signals are predicted next-turn student correctness from an LLM-based student model, and pedagogical quality assessed by GPT-4o using a rubric covering accuracy, progress, error identification, strategic hinting, withholding, and encouragement. The model is trained on the MathDial dialogue dataset, which contains mathematics tutoring dialogues based on GSM8K-style problems, with tutors role-played by crowdworkers and students simulated by GPT-3.5.\n\nThe study is an offline modeling and evaluation paper rather than a live classroom intervention. The resulting Llama 3.1 8B tutor improves predicted student correctness while maintaining high rubric scores, and human evaluation suggests it can outperform human tutor utterances and GPT-4o on the paper\u2019s metrics. The authors conclude that outcome-aware preference optimization can improve LLM tutoring behavior, but they emphasize that real-student evaluation is still needed to establish actual educational benefits.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed conference paper with a clear experimental pipeline, but it is not an RCT with real students. The main evidence is based on simulated student modeling and small human evaluations rather than direct learner outcomes, so credibility is limited for causal claims in K-12 settings.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports sizable improvements on proxy metrics for math tutoring quality, but not on actual student learning in classrooms. Because the intervention was not tested with real K-12 students, the practical impact remains promising but unclear.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "training an open-source LLM tutor (Llama 3.1 8B) to generate math tutoring dialogue utterances that maximize predicted next-turn student correctness while maintaining pedagogical quality"
+    },
+    {
+      "intervention": "Other",
+      "confidence": 0.64,
+      "role": "secondary",
+      "use_case": "LLM-based student modeling / simulated student prediction (LLMKT) used to score tutor utterances by likelihood of eliciting correct next student responses"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "On the MathDial math-dialogue benchmark, the DPO-trained tutor improved predicted student correctness substantially relative to baselines. The paper reports an average correctness score of 0.65 for DPO versus 0.49 for GPT-4o, 0.47 for distillation, 0.43 for the base Llama model, and 0.45 for human tutor utterances; in human evaluation, DPO also received the best correctness rank (1.75 vs 2.12 for human and 2.13 for GPT-4o, lower is better).",
+        "measure": "Predicted next-turn student correctness (LLMKT automated metric) and human-ranked likelihood of correct student response",
+        "study_size": "n=588 dialogues, 3,101 tutor turns (test set); human evaluation n=50 instances",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    },
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 0.9,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The DPO-trained tutor maintained very high pedagogical quality while improving student-outcome prediction. Automated rubric scores were 9.37 overall for DPO, essentially matching GPT-4o\u2019s 9.40 and exceeding human tutor utterances (6.97) and the base model (7.20); in human evaluation DPO scored 8.55 on the rubric versus 8.07 for GPT-4o and 7.36 for human tutors.",
+        "measure": "Pedagogical rubric scores for tutor utterances (accuracy, progress, error identification, hinting, withholding, encouraging, overall)",
+        "study_size": "n=588 dialogues, 3,101 tutor turns (test set); human evaluation n=50 instances",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup",
+    "non_representative_population"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

@@ -1,0 +1,69 @@
+{
+  "title": "Question Personalization in an Intelligent Tutoring System",
+  "doi": null,
+  "year": 2022,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2206.14145v1",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Randomized Controlled Trial (RCT)",
+  "extended_summary": "This paper examines whether personalizing the phrasing of questions in an intelligent tutoring system (ITS) can improve student learning outcomes. The authors focus on an aspect of personalization that had received little prior attention in dialogue-based ITS research: adapting the wording of questions to match a student\u2019s level of subject proficiency.\n\nThe intervention involved creating three versions of each question\u2014beginner, intermediate, and advanced\u2014using human expert rewriting. Easier variants were made more elaborative, while harder variants were shorter and removed non-essential explanations. The variants were then paired with a model that estimated each student\u2019s likelihood of success on the next exercise using prior platform interaction history, specifically topic success and topic skip features derived from anonymized student data.\n\nThe study was conducted on the Korbit dialogue-based STEM tutoring platform with over 400 students over a 2-month A/B test. Students were assigned to expected, non-expected, or control conditions based on whether the question variant matched the model\u2019s prediction of their proficiency level. Results showed that students receiving expected variants performed best on solution acceptance, ultimate failure rate, and skip rate, with statistically significant differences between expected and non-expected groups for solution acceptance and ultimate failure rate. The authors conclude that question phrasing personalization improves learning gains, especially for lower-proficiency students who benefit most from beginner-level variants.",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is a peer-reviewed experimental A/B test on a live ITS with an explicit comparison condition and student-level outcome data, which gives it reasonable causal credibility. There are some concerns about reporting completeness (no full effect sizes or confidence intervals, limited detail on randomization and statistical testing), so it does not meet blue-tier standards.",
+  "impact_tier": "green",
+  "impact_tier_rationale": "The study reports a modest-to-medium positive improvement in learning-related outcomes and engagement, especially for beginner students, with a 19% relative reduction in ultimate failure and 30% relative reduction in skip rate in the beginner subgroup. The effect appears meaningful for a priority population within an ITS context, but the absolute evidence base is limited to one platform-specific experiment.",
+  "interventions": [
+    {
+      "intervention": "Intelligent Tutoring System (ITS)",
+      "confidence": 0.98,
+      "role": "primary",
+      "use_case": "dialogue-based STEM tutoring on the Korbit platform with personalized question phrasing and difficulty variants matched to student proficiency"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Scientific Reasoning",
+      "confidence": 0.88,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "In a 2-month A/B test on over 400 students, personalized question phrasing matched to student proficiency improved learning-related performance in the ITS. The expected-variant group outperformed the non-expected group on solution acceptance (0.626 \u00b1 0.069 vs 0.468 \u00b1 0.083) and reduced ultimate failure rate (0.163 \u00b1 0.053 vs 0.295 \u00b1 0.076), with the expected vs non-expected differences reported as statistically significant at \u03b1 = 0.05.",
+        "measure": "Solution acceptance; ultimate failure rate; skip rate in a STEM intelligent tutoring system",
+        "study_size": "n=400+ (group sizes: expected n=190, non-expected n=139, control n=141)",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "reported as \u00b1 values: 0.069, 0.053, 0.044 for expected; 0.083, 0.076, 0.058 for non-expected; 0.081, 0.065, 0.054 for control"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.78,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The personalized question condition also improved engagement, as indicated by lower skip rates compared with the non-expected and control groups. For the overall sample, skip rate was 0.105 \u00b1 0.044 in the expected group versus 0.144 \u00b1 0.058 in the non-expected group and 0.121 \u00b1 0.054 in control; among beginner-variant students, the expected group showed a 30% relative reduction in skip rate versus control.",
+        "measure": "Skip rate as an engagement proxy",
+        "study_size": "n=400+ (group sizes: expected n=190, non-expected n=139, control n=141)",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "reported as \u00b1 values: 0.044, 0.058, 0.054"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "single_site",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "8",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "medium",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

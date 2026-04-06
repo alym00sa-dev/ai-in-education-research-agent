@@ -1,0 +1,53 @@
+{
+  "title": "A Multitask, Multilingual, Multimodal Evaluation of ChatGPT on Reasoning, Hallucination, and Interactivity",
+  "doi": null,
+  "year": 2023,
+  "venue": "Proceedings of the 13th International Joint Conference on Natural Language Processing and the 3rd Conference of the Asia-Pacific Chapter of the Association for Computational Linguistics (Volume 1: Long Papers)",
+  "url": "https://doi.org/10.18653/v1/2023.ijcnlp-main.45",
+  "source_db": "openalex_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper evaluates ChatGPT across multiple NLP and reasoning tasks to characterize its capabilities and limitations. The authors focus on zero-shot performance on a broad set of public benchmarks covering summarization, machine translation, sentiment analysis, question answering, dialogue, misinformation detection, multimodal generation, and several reasoning categories. The goal is not to test an educational intervention, but to provide a third-party benchmark of ChatGPT\u2019s general behavior and to compare it against prior zero-shot systems and fine-tuned task-specific baselines.\n\nThe intervention/approach studied is the use of ChatGPT itself as a general-purpose interactive LLM, with additional experiments on multi-turn prompting for summarization, translation post-editing, and SVG-based image generation. The evaluation uses small sampled subsets of existing datasets rather than a participant-based study. In the reasoning section, the paper explicitly notes that ChatGPT performs poorly on mathematical reasoning compared with other reasoning types, but this is only a benchmark evaluation, not a learner study.\n\nNo student, teacher, classroom, or school population is studied. The paper is conducted in an NLP benchmarking context and reports model outputs on public datasets, including math-relevant datasets such as MATH, but not as an educational intervention and not with grades 6\u20138 learners. The main conclusion is that ChatGPT is strong in many zero-shot settings and interactive prompt refinement can improve some outputs, but it remains unreliable for reasoning, especially mathematical reasoning, and is limited in low-resource language generation and factuality.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a peer-reviewed benchmark/evaluation paper, but it is not an empirical educational intervention study and has no K-12 counterfactual design. It does not meet the credibility criteria for evidence on classroom mathematics outcomes.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "There is no demonstrated educational impact on students, grades 6\u20138, or mathematics achievement. The paper only reports model benchmark performance, with the closest math result indicating weak reasoning rather than instructional benefit.",
+  "interventions": [
+    {
+      "intervention": "Other",
+      "confidence": 0.98,
+      "role": "primary",
+      "use_case": "Benchmark-style evaluation of ChatGPT (a conversational LLM) on reasoning, multilinguality, multimodality, and interactivity using public NLP datasets and prompt-based tasks; not an educational intervention for students."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 0.9,
+      "finding": {
+        "direction": "No Effect",
+        "finding_summary": "This paper is not a student-learning study and does not evaluate a mathematics intervention in grades 6\u20138. The closest math-related evidence is a benchmark finding that ChatGPT scored only 23.33% (7/30) on the MATH reasoning dataset, indicating weak mathematical reasoning in a non-educational evaluation.",
+        "measure": "Accuracy on the MATH reasoning dataset",
+        "study_size": "n=30",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Other"
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "lab",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

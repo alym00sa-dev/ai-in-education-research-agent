@@ -1,0 +1,85 @@
+{
+  "title": "Examining the Effect of Assessment Construct Characteristics on Machine Learning Scoring of Scientific Argumentation",
+  "doi": "10.1007/s40593-023-00385-8",
+  "year": 2024,
+  "venue": "International Journal of Artificial Intelligence in Education",
+  "url": "https://doi.org/10.1007/s40593-023-00385-8",
+  "source_db": "openalex_search",
+  "populations": [
+    "Middle School (6th-8th)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper investigates whether characteristics of science assessment tasks are associated with the accuracy of machine-learning (ML) scoring models for scientific argumentation responses. The authors focus on a practical question in automated assessment: when short constructed responses are scored by AI, do some kinds of items produce more reliable human-machine agreement than others? They examine three internal construct features of the assessment tasks\u2014complexity, diversity, and structure\u2014and test how these features relate to model performance.\n\nThe study uses 17 middle school scientific argumentation tasks aligned with a validated learning progression. Students from grades 5\u20138 in two California school districts completed the assessments after receiving instruction in scientific argumentation. The researchers trained separate ML scoring models for each item using 361 randomly selected responses per item, with the same preprocessing and model-development procedures across tasks. Human experts had already scored the student responses, allowing comparison of machine and human scores.\n\nResults show that ML scoring performance was generally good, but varied by item. Models performed best on simpler items that required less complex reasoning, fewer science learning dimensions, and lower levels of argumentation structure. Higher levels of complexity, diversity, and structure were each associated with lower Cohen\u2019s kappa values, indicating reduced agreement between machine and human scores. The paper concludes that assessment construct characteristics matter for automated scoring and that higher-order, multidimensional science argumentation tasks remain more difficult for current ML scoring approaches.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed correlational study with systematic item coding and model evaluation, but it is not an intervention trial and does not estimate causal effects on student learning. Evidence is strongest for associational validity of automated scoring performance.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper shows practically meaningful machine-scoring performance for simpler science argumentation items, but no student outcome gains are demonstrated. Its impact is therefore promising for assessment operations, yet unclear for direct educational outcomes.",
+  "interventions": [
+    {
+      "intervention": "Automated Feedback System",
+      "confidence": 0.8,
+      "role": "secondary",
+      "use_case": "machine-learning automated scoring of short written scientific argumentation responses to support scoring and potential formative feedback in K-12 science assessment"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Scientific Reasoning",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The study found that machine-scoring performance was substantial overall, with mean Cohen\u2019s kappa = 0.60 across 17 argumentation items scored from n=361 responses per item (accuracy mean = 0.79). However, performance declined as construct demands increased: higher Complexity, Diversity, and Structure were each associated with lower human-machine agreement (Spearman\u2019s rs = -0.752, -0.718, and -0.764, all p < .01).",
+        "measure": "Human-machine agreement on scoring scientific argumentation responses; Cohen\u2019s kappa, accuracy, Spearman correlation",
+        "study_size": "n=361 per item; 17 items; 932 students total",
+        "effect_size": "k=0.60 mean; rs=-0.752/-0.718/-0.764",
+        "confidence_interval": "not_reported",
+        "std_deviation": "SD=0.15 for Cohen\u2019s kappa"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.7,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The paper does not test student learning gains directly; instead, it evaluates automated scoring of science assessment items aligned to a learning progression. Results suggest the system can score lower-complexity items well, but scoring accuracy drops for more multidimensional or higher-level argumentation tasks, limiting its readiness for broader assessment use.",
+        "measure": "Automated scoring accuracy for science assessment items aligned to a learning progression",
+        "study_size": "n=17 items",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.72,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The study suggests automated scoring can efficiently evaluate constructed-response scientific argumentation at scale, reducing reliance on human scoring for large classroom assessments. While no time-savings estimate is reported, the models achieved mean accuracy of 0.79 and substantial mean kappa of 0.60, indicating practical potential for faster assessment turnaround.",
+        "measure": "Feasibility of machine scoring for large-scale assessment scoring",
+        "study_size": "n=17 items; n=361 responses per item",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "classroom",
+  "teacher_training": "yes",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

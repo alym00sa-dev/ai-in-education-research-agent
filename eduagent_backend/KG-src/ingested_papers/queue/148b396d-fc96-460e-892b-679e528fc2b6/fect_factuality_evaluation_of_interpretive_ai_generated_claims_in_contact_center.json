@@ -1,0 +1,54 @@
+{
+  "title": "FECT: Factuality Evaluation of Interpretive AI-Generated Claims in Contact Center Conversation Transcripts",
+  "doi": null,
+  "year": 2025,
+  "venue": "KDD workshop on Evaluation and Trustworthiness of Agentic and Generative AI Models (KDD\u201925)",
+  "url": "http://arxiv.org/abs/2508.00889v1",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses the problem of evaluating factuality and hallucinations in LLM-generated outputs that are interpretive rather than direct fact-retrieval, specifically in contact-center conversation analysis. The authors argue that standard fact-checking benchmarks are insufficient because many claims about conversations rely on implicit context, subjective interpretation, or inferred relations rather than explicit evidence in the source text.\n\nTo address this, they introduce FECT, a benchmark dataset for factuality evaluation of interpretive AI-generated claims over contact center transcripts. The paper proposes a 3D evaluation paradigm\u2014Decompose, Decouple, Detach\u2014for human annotation, which breaks claims into smaller units, separates concrete content from subjective interpretation, and verifies relations using explicit or implicit evidence. Claims that remain inherently ambiguous are excluded so that the benchmark has ground-truth labels.\n\nThe benchmark is built from synthetic contact-center conversations modeled after enterprise AI analyst use cases. Five experts in ML, AI, NLP, and linguistics labeled 410 claims, and the authors then evaluated several LLM-judges on the task. They find that aligning judges with the 3D paradigm improves performance, with reasoning models performing best overall and OpenAI o1 achieving the strongest F1 when paired with the 3D prompt and test-time compute. The main conclusion is that granular, linguistically informed evaluation procedures can improve both human agreement and automated factuality judgments for dialogue-based analytic claims.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed benchmark/method paper with a clear experimental setup, but not a K-12 instructional study or causal evaluation in an educational setting. Evidence is methodological and domain-specific rather than a rigorous intervention trial in schools.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "The paper does not evaluate student learning, teacher practice, or K-12 outcomes; it focuses on factuality evaluation for enterprise contact-center analytics. Any educational relevance is indirect, so the observed impact on the requested topic is effectively absent.",
+  "interventions": [
+    {
+      "intervention": "Other",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "benchmarking and evaluating LLM-judge factuality detection for analytical claims over contact center conversation transcripts; includes a 3D (Decompose-Decouple-Detach) human annotation paradigm and prompting scheme for hallucination/factuality assessment"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper shows that a structured 3D evaluation paradigm can improve factuality-judging reliability and efficiency for LLM-based claim verification over contact center conversations. Human inter-annotator agreement increased from Cohen\u2019s \u03ba=0.28 (unguided) to \u03ba=0.82 after excluding ambiguous items, and an o1-based LLM-judge reached mean F1=0.86 on the benchmark without fine-tuning or extensive prompt optimization (n=410 benchmark pairs; 10 runs per model/prompt).",
+        "measure": "Inter-annotator agreement (Cohen\u2019s kappa) and LLM-judge classification performance (F1) on factuality labels",
+        "study_size": "n=410 benchmark pairs; 5 human experts; 17 LLMs evaluated across 10 runs each",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "0.01-0.04 across models/prompt settings (reported as mean \u00b1 std)"
+      },
+      "intervention": "Other"
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_long_term_followup",
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Canada",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

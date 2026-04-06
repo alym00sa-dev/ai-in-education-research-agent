@@ -1,0 +1,286 @@
+{
+  "title": "Demystifying Instruction Mixing for Fine-tuning Large Language Models",
+  "doi": null,
+  "year": 2024,
+  "venue": null,
+  "url": "http://arxiv.org/abs/2312.10793v3",
+  "source_db": "arxiv_search",
+  "population": "not_reported",
+  "user_type": "Student",
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper investigates how different types of instruction-tuning data should be mixed when fine-tuning large language models (LLMs). The authors focus on a methodological question in AI model development: whether combining instruction datasets for NLP downstream tasks, coding, and general chat improves overall model performance, and how such mixtures affect different capabilities. The paper is not an education study; rather, it is a machine learning study about the behavior of LLMs under different fine-tuning data mixtures.\n\nThe intervention examined is instruction fine-tuning of LLaMA-2 7B and 13B models using three datasets: Alpaca for general chat-style instructions, CodeAlpaca for coding tasks, and P3 for NLP downstream tasks. The authors fine-tune models on all eight combinations of these datasets and evaluate them using zero-shot NLP benchmarks, HumanEval for code generation, and FLASK/GPT-4-based alignment assessments. They also test different mixing ratios and numbers of training instances to better understand how data composition influences outcomes.\n\nThe study population is not human learners, teachers, or schools; the units studied are AI models. Experiments were conducted in a computational environment using GPU-based training and benchmark evaluation rather than in classrooms or educational institutions. No educational implementation context, participant demographics, or teaching setting is reported.\n\nThe main conclusion is that different instruction types improve the capabilities most closely aligned with their content, but mixing all instruction types does not consistently improve every outcome. P3 improves NLP benchmark performance but can reduce conversational alignment, while CodeAlpaca improves coding and can also support chat-related alignment. General instruction data from Alpaca produces the strongest alignment gains. The authors also conclude that larger models can make better use of diverse instruction mixtures than smaller models, and that instruction ratio and data volume matter for performance.",
+  "limitations": [
+    "no_control_group",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "identified_tools": [
+    {
+      "name": "LLaMA 2",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "language_speech",
+        "content_generation"
+      ],
+      "description": "A named large language model family used as the base model for instruction fine-tuning and evaluation.",
+      "use_case": "The paper fine-tuned LLaMA-2 7B and 13B on different mixtures of instruction datasets (Alpaca, CodeAlpaca, and P3) to study how instruction mixing affects NLP benchmark performance, code generation, and alignment/chat skills.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "On zero-shot NLP benchmarks, instruction mixtures affected LLaMA 2 performance differently by dataset type and model size. For LLaMA-2-7B, P3-only tuning achieved the highest average NLP score (58.2 vs 54.6 baseline), while for LLaMA-2-13B, the CP mixture achieved the best average NLP score (61.9 vs 58.8 baseline). The paper reports that specialized instruction datasets improved performance in their target task areas, but combining all instruction types did not uniformly improve all tasks.",
+          "measure": "Zero-shot average across ARC, Winogrande, PIQA, MMLU, RACE, and HellaSwag",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "On code generation, LLaMA 2 improved most when trained with coding data, with gains depending on mixture and model size. For LLaMA-2-7B, AC reached HumanEval pass@1=17.5 and pass@10=25.0 versus C at 16.2 and 24.4 and baseline at 13.7 and 21.3; for LLaMA-2-13B, ACP performed best with pass@1=20.2 and pass@10=32.9 versus baseline 15.4 and 26.2. The authors conclude coding instructions improve coding proficiency and can also benefit broader capabilities.",
+          "measure": "HumanEval code generation pass@1 and pass@10",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "For alignment/chat ability assessed with FLASK and GPT-4 scoring, Alpaca-tuned LLaMA 2 showed the strongest standalone alignment results, while adding P3 reduced alignment. LLaMA-2-7B average alignment was 60.6 for A, 61.2 for AC, 45.8 for P, and 59.6 for ACP; LLaMA-2-13B average alignment was 64.0 for A, 65.6 for AC, 47.8 for P, and 61.4 for ACP. The paper states that mixing P3 caused a drop of -2.8 points (7B) and -3.6 points (13B) in alignment skills, whereas combining CodeAlpaca with general instructions improved alignment by +0.6 (7B) and +1.6 (13B).",
+          "measure": "FLASK alignment skill assessment average score across logical correctness, factuality, commonsense understanding, comprehension, completeness, insightfulness, readability, and conciseness",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=1,180"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "When varying instruction-mixing ratios for LLaMA-2-7B while holding Alpaca at 20K instances, both NLP benchmark average and HumanEval pass@1 first decreased, then increased, peaking at a specialized-instruction ratio of 1.5 before dropping slightly at 2.0. Performance also plateaued when the number of fine-tuning instances exceeded 10K per instruction type.",
+          "measure": "Performance sensitivity to instruction-mixing ratio and number of fine-tuning instances",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical ML benchmarking study with controlled experiments, but it is not an education intervention study and does not use RCT/QED causal designs on learners. Outcomes are model benchmark scores and GPT-4-based evaluations rather than student learning measures.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports clear performance differences across benchmark and alignment outcomes, but no standardized education effect sizes are provided and some effects are mixed or negative depending on instruction mixture. Impact is therefore evident but unclear in magnitude for education contexts.",
+  "citations": [
+    {
+      "title": "GPT4All: Training an assistant-style chatbot with large scale data distillation from GPT-3.5-Turbo",
+      "doi": null,
+      "year": 2023,
+      "venue": null
+    },
+    {
+      "title": "PIQA: Reasoning about physical commonsense in natural language",
+      "doi": null,
+      "year": 2020,
+      "venue": "Proceedings of the AAAI conference on Artificial Intelligence"
+    },
+    {
+      "title": "Code Alpaca: An instruction-following LLaMA model for code generation",
+      "doi": null,
+      "year": 2023,
+      "venue": null
+    },
+    {
+      "title": "Evaluating large language models trained on code",
+      "doi": null,
+      "year": 2021,
+      "venue": "arXiv preprint arXiv:2107.03374"
+    },
+    {
+      "title": "Vicuna: An open-source chatbot impressing GPT-4 with 90%* ChatGPT quality",
+      "doi": null,
+      "year": 2023,
+      "venue": null
+    },
+    {
+      "title": "Scaling instruction-finetuned language models",
+      "doi": null,
+      "year": 2022,
+      "venue": null
+    },
+    {
+      "title": "Think you have solved question answering? try Arc, the AI2 reasoning challenge",
+      "doi": null,
+      "year": 2018,
+      "venue": "arXiv preprint arXiv:1803.05457"
+    },
+    {
+      "title": "Free Dolly: Introducing the world\u2019s first truly open instruction-tuned LLM",
+      "doi": null,
+      "year": 2023,
+      "venue": null
+    },
+    {
+      "title": "Enhancing chat language models by scaling high-quality instructional conversations",
+      "doi": null,
+      "year": 2023,
+      "venue": null
+    },
+    {
+      "title": "How does GPT obtain its ability? tracing emergent abilities of language models to their sources",
+      "doi": null,
+      "year": 2022,
+      "venue": "Yao Fu\u2019s Notion"
+    },
+    {
+      "title": "Textbooks are all you need",
+      "doi": null,
+      "year": 2023,
+      "venue": null
+    },
+    {
+      "title": "Measuring massive multitask language understanding",
+      "doi": null,
+      "year": 2020,
+      "venue": "International Conference on Learning Representations"
+    },
+    {
+      "title": "RACE: Large-scale ReAding comprehension dataset from examinations",
+      "doi": null,
+      "year": 2017,
+      "venue": "Proceedings of the 2017 Conference on Empirical Methods in Natural Language Processing"
+    },
+    {
+      "title": "Bactrian-X: Multilingual replicable instruction-following models with low-rank adaptation",
+      "doi": null,
+      "year": 2023,
+      "venue": null
+    },
+    {
+      "title": "The Flan collection: Designing data and methods for effective instruction tuning",
+      "doi": null,
+      "year": 2023,
+      "venue": null
+    },
+    {
+      "title": "Cross-task generalization via natural language crowdsourcing instructions",
+      "doi": null,
+      "year": 2022,
+      "venue": "Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)"
+    },
+    {
+      "title": "Crosslingual generalization through multitask finetuning",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)"
+    },
+    {
+      "title": "Crosslingual generalization through multitask finetuning",
+      "doi": null,
+      "year": 2023,
+      "venue": null
+    },
+    {
+      "title": "Training language models to follow instructions with human feedback",
+      "doi": null,
+      "year": 2022,
+      "venue": "Advances in Neural Information Processing Systems"
+    },
+    {
+      "title": "Improving language understanding by generative pre-training",
+      "doi": null,
+      "year": 2018,
+      "venue": null
+    },
+    {
+      "title": "Winogrande: An adversarial Winograd schema challenge at scale",
+      "doi": null,
+      "year": 2021,
+      "venue": "Communications of the ACM"
+    },
+    {
+      "title": "Multitask prompted training enables zero-shot task generalization",
+      "doi": null,
+      "year": 2022,
+      "venue": "ICLR 2022-Tenth International Conference on Learning Representations"
+    },
+    {
+      "title": "Jais and Jais-chat: Arabic-centric foundation and instruction-tuned open generative large language models",
+      "doi": null,
+      "year": 2023,
+      "venue": null
+    },
+    {
+      "title": "Stanford Alpaca: An instruction-following LLaMA model",
+      "doi": null,
+      "year": 2023,
+      "venue": null
+    },
+    {
+      "title": "LLaMA 2: Open foundation and fine-tuned chat models",
+      "doi": null,
+      "year": 2023,
+      "venue": null
+    },
+    {
+      "title": "How far can camels go? exploring the state of instruction tuning on open resources",
+      "doi": null,
+      "year": 2023,
+      "venue": null
+    },
+    {
+      "title": "Self-instruct: Aligning language models with self-generated instructions",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)"
+    },
+    {
+      "title": "Super-NaturalInstructions: Generalization via declarative instructions on 1600+ NLP tasks",
+      "doi": null,
+      "year": 2022,
+      "venue": "Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing"
+    },
+    {
+      "title": "LaMini-LM: A diverse herd of distilled models from large-scale instructions",
+      "doi": null,
+      "year": 2023,
+      "venue": null
+    },
+    {
+      "title": "WizardLM: Empowering large language models to follow complex instructions",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv preprint arXiv:2304.12244"
+    },
+    {
+      "title": "FLASK: Fine-grained language model evaluation based on alignment skill sets",
+      "doi": null,
+      "year": 2023,
+      "venue": null
+    },
+    {
+      "title": "MAmmoTH: Building math generalist models through hybrid instruction tuning",
+      "doi": null,
+      "year": 2023,
+      "venue": null
+    },
+    {
+      "title": "HellaSwag: Can a machine really finish your sentence?",
+      "doi": null,
+      "year": 2019,
+      "venue": "Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

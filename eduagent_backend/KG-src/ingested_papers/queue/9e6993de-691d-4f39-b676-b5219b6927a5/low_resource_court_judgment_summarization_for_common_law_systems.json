@@ -1,0 +1,32 @@
+{
+  "title": "Low-Resource Court Judgment Summarization for Common Law Systems",
+  "doi": null,
+  "year": 2024,
+  "venue": null,
+  "url": "http://arxiv.org/abs/2403.04454v1",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses the problem of automatically summarizing long court judgment documents from multiple common law jurisdictions when labeled training data and computing resources are limited. The authors argue that legal practitioners and the public could benefit from concise, high-quality summaries of judgments, but existing datasets and methods are limited in jurisdictional coverage and often require more labeled data or computational capacity than is available. The work is not about K-12 education or literacy outcomes; it is a legal NLP paper focused on text summarization.\n\nThe authors introduce CLSum, which they describe as the first large-scale dataset for summarizing multi-jurisdictional common law court judgments, with subsets from Canada, Hong Kong SAR, the United Kingdom, and Australia. They study a two-stage summarization framework involving content selection followed by abstractive summary generation, and they compare multiple baseline methods including extractive methods, long-document sequence-to-sequence models, and large language models. They also propose an LLM-based data augmentation approach called knowledge-constrained rephrasing, designed to preserve legal terminology, and a legal-domain evaluation metric called LTScore that upweights legal terms and uses legal-domain fine-tuned models for scoring.\n\nThe empirical context is court judgment documents and summaries collected from public legal sources across multiple jurisdictions, rather than human participants in an educational or behavioral intervention. Experiments evaluate zero-shot and few-shot summarization performance under low-resource conditions. The findings suggest that LLM-based methods can perform competitively in few-shot and zero-shot settings, that knowledge-constrained data augmentation can help especially when training data are scarce, and that smaller fine-tuned models can sometimes match or exceed larger models when enough labeled data are available. The paper concludes that legal summarization performance can be improved through dataset construction, legal-knowledge-constrained augmentation, efficient long-document processing, and domain-aware evaluation.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This paper is a technical NLP study on legal document summarization, not an education intervention study. It reports benchmark and model-comparison results on a court judgment dataset rather than causal or quasi-experimental evidence involving K-12 learners, so it does not meet the education evidence framework criteria.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "The paper provides no evidence on K-12 literacy or any student outcomes, so there is no interpretable educational impact within the requested framework.",
+  "interventions": [],
+  "outcome_assignments": [],
+  "limitations": [
+    "no_control_group",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Hong Kong SAR, Canada, United Kingdom, Australia",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

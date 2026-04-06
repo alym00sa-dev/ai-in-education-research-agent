@@ -1,0 +1,82 @@
+{
+  "title": "AI-Powered Math Tutoring: Platform for Personalized and Adaptive Education",
+  "doi": null,
+  "year": 2025,
+  "venue": "not_reported",
+  "url": "http://arxiv.org/abs/2507.12484v1",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses the problem that many current AI tutoring systems, especially in mathematics, are overly reactive: they tend to provide direct answers rather than guiding learners through the reasoning steps needed for deep understanding. The authors ask how AI tutoring can move beyond simple answer generation to support structured, individualized, and tool-assisted learning experiences.\n\nTo address this, they propose a novel multi-agent AI tutoring platform built around GPT-4o and other language models. The system combines Socratic tutoring, dual-memory personalization, GraphRAG-based textbook retrieval, DAG-based course planning, and automated task generation. It is designed to adapt feedback to learner needs, identify weaknesses, generate personalized exercises, and support exam revision through structured learning paths.\n\nThe paper is primarily a system/architecture contribution rather than a student outcome study. The authors evaluate parts of the system offline using the MathDial dataset, showing that their pedagogically informed tutor prompt improves guided tutoring behavior relative to a base prompt and that their chosen model performs well on math problem-solving tasks. They conclude that the platform is promising for personalized STEM learning, but they explicitly note that real student evaluation is still needed to assess learning gains and usability.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed-style system paper with benchmark-based evaluation, but not a student outcome study. The evidence is primarily technical/diagnostic and lacks a controlled educational design with learner-level outcomes.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper suggests potentially useful improvements in guided math tutoring, but the reported evidence is limited to simulated dialogues and model benchmarks. Because no real learner gains are measured, the practical impact remains unclear and modest at this stage.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "multi-agent math tutoring with Socratic questioning, adaptive feedback, GraphRAG textbook retrieval, memory-based personalization, and generated practice exercises/courses"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper reports that the tutor prompt designed for guided tutoring significantly improved tutoring quality in simulated MathDial dialogues, yielding higher Success@K and lower Telling@K than the base prompt for both GPT-4o and GPT-4o-mini. This indicates better support for student self-explanation, metacognition, and guided discovery, but the paper does not report exact effect sizes or confidence intervals.",
+        "measure": "MathDial dialogue tutoring benchmark metrics: Success@K and Telling@K",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 0.9,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "For math problem-solving support, the authors benchmarked LLMs with SymPy tool access on the MathDial problem set and found o3-mini(high) and Claude 3.5 Sonnet achieved the highest accuracy at 90.00%, ahead of Gemini 2.0 Flash (88.67%), GPT-4o (78.67%), and GPT-4o-mini (77.33%). However, this is a component-selection benchmark rather than a student learning outcome study, and no CI or SD is reported.",
+        "measure": "MathDial problem-set accuracy with SymPy tool access",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.7,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The system was evaluated as a design and component-selection platform, showing that the guided tutor prompt and model benchmarking helped identify more effective components for tutoring and task generation. The paper suggests the architecture can streamline personalized course and exercise generation, but it does not quantify time savings or workload reductions with users.",
+        "measure": "Benchmark-based component selection for tutoring and task generation",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "no_control_group",
+    "single_site",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

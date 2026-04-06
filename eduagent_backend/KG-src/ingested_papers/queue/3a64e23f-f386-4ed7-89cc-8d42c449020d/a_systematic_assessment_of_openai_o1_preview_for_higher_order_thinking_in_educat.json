@@ -1,0 +1,89 @@
+{
+  "title": "A Systematic Assessment of OpenAI o1-Preview for Higher Order Thinking in Education",
+  "doi": null,
+  "year": 2024,
+  "venue": "arXiv",
+  "url": "https://doi.org/10.48550/arxiv.2410.21287",
+  "source_db": "openalex_search",
+  "populations": [
+    "Middle School (6th-8th)",
+    "Undergraduate",
+    "Graduate / Doctoral",
+    "Adult (non-academic)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Meta-Analysis / Systematic Review",
+  "extended_summary": "This paper examines whether OpenAI o1-preview can perform higher-order thinking tasks at or above human levels across a broad set of cognitive domains relevant to education. The central question is not about classroom intervention, but about the model\u2019s capabilities on established human assessment instruments for critical thinking, systems thinking, computational thinking, design thinking, metacognition, data literacy, creative thinking, abstract reasoning, spatial reasoning, quantitative reasoning, logical reasoning, analogical reasoning, collaborative thinking, and scientific reasoning.\n\nThe authors use a benchmarking approach, adapting existing tests and datasets such as the Ennis-Weir Critical Thinking Essay Test, biological systems thinking instruments, the Village of Abeesee, the Lake Urmia vignette, Bebras-style computational thinking tasks, Leetcode coding challenges, and other published measures. The paper evaluates o1-preview in a mostly zero-shot or one-shot setting, without prompting strategies such as chain-of-thought, and compares its performance against human results reported in prior studies. The populations referenced are mostly students at middle school, undergraduate, and graduate levels, along with some adult/expert comparison groups from the literature.\n\nThe main conclusion is that o1-preview often performs very strongly on higher-order thinking benchmarks and in many cases matches or exceeds human averages, especially for systems thinking, computational thinking, creative thinking, and scientific reasoning. However, the model is not uniformly superior: it underperforms on some abstract reasoning and quantitative reasoning tasks relative to human experts or trained students. The authors conclude that o1-preview has notable promise for education-oriented applications, but that human oversight remains important and that its strengths and weaknesses should shape future educational uses and assessment design.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a descriptive comparative evaluation of an LLM using existing benchmark instruments, not a randomized or quasi-experimental educational intervention study. It relies on literature-based human comparison values and model benchmark performance, with limited methodological transparency and no direct learner outcomes.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper suggests potentially strong effects for AI reasoning support, but it does not test classroom impact, learning gains, or causal effects on students. The evidence is therefore intriguing but indirect and of unclear practical impact for K-12 education.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "Evaluating OpenAI o1-preview as a text-only reasoning assistant for higher-order thinking tasks in education, including responding to critical thinking, systems thinking, computational thinking, creative thinking, and scientific reasoning prompts."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Durable Skills",
+      "confidence": 1.0,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "OpenAI o1-preview showed strong performance on multiple higher-order thinking assessments, including the Ennis-Weir Critical Thinking Essay Test, where it scored an average of 81.25% (mean score = 2.25/3 on scored paragraphs; sd = 0.43; n = 8 paragraphs) and exceeded the paper\u2019s cited human benchmark range of 37.5%-62.5%. The paper also reports superior or comparable performance on several other reasoning tasks, suggesting broad strengths in critical, systems, computational, creative, and scientific reasoning.",
+        "measure": "Higher-order thinking assessments, especially the Ennis-Weir Critical Thinking Essay Test (EWCTET)",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "0.43"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Academic \u2014 Scientific Reasoning",
+      "confidence": 0.8,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper reports that o1-preview outperformed humans on scientific reasoning tasks, with the abstract stating a 150% outperforming margin relative to humans in this category. The specific evaluation uses established scientific reasoning instruments, but the excerpt does not provide a single unified sample size, effect size, or confidence interval for the scientific reasoning comparison.",
+        "measure": "Scientific reasoning test(s) using established instruments",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 0.7,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "For quantitative reasoning, o1-preview underperformed humans in the paper\u2019s summary, with performance described as about 15%-20% below expert benchmarks on the FINAQ dataset. The paper positions this as weaker than its stronger results in other reasoning domains, indicating that o1-preview is not uniformly superior on math-related reasoning.",
+        "measure": "Quantitative reasoning benchmarks, including the FINAQ dataset",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

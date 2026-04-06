@@ -1,0 +1,54 @@
+{
+  "title": "Dual Active Learning for Reinforcement Learning from Human Feedback",
+  "doi": null,
+  "year": 2024,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2410.02504v2",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses a problem in reinforcement learning from human feedback (RLHF): how to efficiently learn a reward model and resulting policy when human feedback is costly, teachers differ in expertise, and the action space for language model completions is very large. The authors argue that existing RLHF approaches often assume homogeneous teachers or select either conversations or teachers, but not both, which can lead to suboptimal reward estimation and policy learning.\n\nThe proposed approach is a dual active learning algorithm that simultaneously selects the most informative conversations (prompt-completion pairs) and the most informative teachers. It formalizes the selection problem as a D-optimal design problem and extends standard preference models to allow teacher rationality to depend on context category. The learned reward model is then used to derive a pessimistic offline RL policy that is robust to distribution shift between collected data and the target policy.\n\nThe paper is primarily theoretical and simulation-based, but it also includes experiments on public LLM preference datasets (Anthropic and UltraFeedback) using synthetic teachers derived from other LLMs. The authors report that their method improves reward estimation accuracy and policy performance relative to conversation-only selection, teacher-only selection, active preference optimization, and random sampling. They conclude that jointly selecting conversations and teachers can substantially improve RLHF data efficiency and that pessimistic policy learning further reduces suboptimality risk.",
+  "limitations": [
+    "no_control_group",
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "identified_tools": [
+    {
+      "name": "Gemma",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "other"
+      ],
+      "description": "A Google open-weight large language model used as the pretrained model / feature extractor in the paper's LLM experiments.",
+      "use_case": "Used as the pretrained model (Gemma-7b-it) to derive the feature map \u03d5 by removing the last layer, and as the base model for reward estimation and policy evaluation on the Anthropic and UltraFeedback datasets.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The paper reports reward accuracy results for policies built on Gemma-based features, with the proposed method outperforming benchmark policies. On Anthropic and UltraFeedback, the proposed approach achieved higher reward accuracy across evaluated sample budgets and batch sizes, but the paper does not isolate Gemma itself as a treatment effect.",
+          "measure": "reward accuracy",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=40000 selected samples (32000 training / 8000 test split after a 4:1 ratio)"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is not an experimental study of an educational AI tool; it is a machine learning methods paper about RLHF with simulations and LLM benchmarks. The paper reports engineering performance metrics rather than education outcomes, so it does not meet evidence standards for the requested comparative teaching/planning topic.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "No teacher planning quality, instructional practice, or educational risk outcome is evaluated. The reported gains are on reward accuracy in LLM alignment, which is not directly interpretable as educational impact.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

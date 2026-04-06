@@ -1,0 +1,292 @@
+{
+  "title": "Exploring AI-Enabled Test Practice, Affect, and Test Outcomes in Language Assessment",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "https://arxiv.org/abs/2508.17108",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate",
+    "Graduate / Doctoral",
+    "Adult (non-academic)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper investigates whether repeated access to AI-enabled practice tests is associated with better outcomes in a high-stakes language assessment context. The authors focus on the Duolingo English Test (DET) and ask how the number of practice tests taken relates to official DET scores, test-taker affect such as confidence and preparedness, and whether test takers choose to share their scores for university admissions. The core motivation is that generative AI-based automated item generation (AIG) makes it possible to scale large item banks and produce many distinct practice tests, which may change how learners prepare for high-stakes exams.\n\nThe intervention or approach studied is not an experimental treatment but the real-world use of the DET\u2019s free AI-generated, computer-adaptive practice tests. These practice tests are built from AIG-created item pools with human review and are designed to familiarize users with the official exam format, item types, and scoring range. The study is a large-scale observational analysis of 25,969 first-time official DET test takers who completed a short post-test affect survey in September 2023 and had taken zero or more DET practice tests within the prior 60 days.\n\nThe population consists of DET test takers using the exam primarily for higher education admissions, including those seeking undergraduate and graduate study; the sample also includes a broader adult test-taking population. The context is an online, high-stakes English proficiency testing environment rather than a classroom. The authors compare official test scores, self-reported affect, and score-sharing behavior across groups defined by number of practice tests taken (0, 1, 2-3, 4-6, 7+).\n\nThe main conclusions are that taking 1-3 practice tests was associated with slightly higher official DET scores, more positive affect, and higher likelihood of score sharing, especially among those reporting confidence, preparedness, or having achieved their desired score. However, taking more than 3 practice tests was associated with lower performance on average, which the authors suggest may reflect washback effects, lower underlying proficiency, or use of practice tests for purposes beyond test familiarization. The paper emphasizes that these findings are correlational rather than causal, but argues that AI-supported test practice may be beneficial when used in moderation and raises important questions about best practices for AI-enhanced test readiness in high-stakes assessment.",
+  "limitations": [
+    "no_control_group",
+    "self_reported_measures",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "no",
+  "implementation_fidelity": "high",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "identified_tools": [
+    {
+      "name": "Duolingo",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "language_speech"
+      ],
+      "description": "Duolingo is a language-learning and assessment platform; in this paper it includes the Duolingo English Test (DET), an AI-driven high-stakes computer-adaptive English proficiency assessment with generative-AI-enabled automated item generation for practice-test item banks.",
+      "use_case": "The paper studied the DET's AIG-enabled practice tests, examining how the number of practice tests taken within 60 days before a first official DET attempt related to official DET scores, self-reported affect, and score-sharing for university admissions.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Language Fluency",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "In this large observational study, official DET performance varied by number of AIG-enabled practice tests taken (N=25,969). Mean DET scores were 108.5 for 0 practice tests (95% CI [107.8, 109.2]), 112.4 for 1 test ([111.8, 113.0]), 112.3 for 2\u20133 tests ([111.8, 112.8]), 111.1 for 4\u20136 tests ([110.5, 111.7]), and 108.6 for 7+ tests ([108.1, 109.1]); the authors report that 1\u20133 practice tests were associated with higher scores, while 4+ was associated with lower performance.",
+          "measure": "Official Duolingo English Test overall score by number of practice tests taken",
+          "effect_size": "not_reported",
+          "confidence_interval": "0 PT: [107.8, 109.2]; 1 PT: [111.8, 113.0]; 2\u20133 PT: [111.8, 112.8]; 4\u20136 PT: [110.5, 111.7]; 7+ PT: [108.1, 109.1]",
+          "sample_size": "n=25,969"
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Positive affect toward the official DET increased with more practice-test use: the paper states that higher proportions of test takers reported positive affect (achieved desired score, confidence, motivation, preparedness) as the number of practice tests increased, with the 7+ group consistently having the highest proportion reporting positive affect. Anxiety was similar across practice-test groups, and no significant relationship between anxiety and number of practice tests was found.",
+          "measure": "Post-test survey of affective perceptions: achieved desired score, confidence, motivation, preparedness, anxiety",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=25,969"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Score-sharing for university admissions was more likely among test takers with positive affect, especially among those taking 0\u20133 practice tests. For example, for the 'Achieved' item, share rates were 41.9% vs 32.2% (0 tests), 43.5% vs 31.9% (1 test), and 43.4% vs 33.6% (2\u20133 tests) for Agree vs Disagree, with non-overlapping 95% confidence intervals reported for these groups; similar patterns held for Confident and Prepared, and for Motivated in the 2\u20133 test group.",
+          "measure": "Proportion of test takers who shared DET scores for university admissions by affect and number of practice tests",
+          "effect_size": "not_reported",
+          "confidence_interval": "Achieved 0 PT Agree [40.3, 43.4] vs Disagree [28.6, 35.7]; 1 PT [42.1, 44.8] vs [29.1, 34.7]; 2\u20133 PT [42.1, 44.7] vs [30.7, 36.5]. Additional CIs reported in Table 5 for Confident, Motivated, Prepared, and Anxious.",
+          "sample_size": "n=25,969"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a large-scale empirical observational study, but the authors explicitly note that findings are not causal. There is no random assignment or quasi-experimental design, so the evidence is correlational.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports meaningful directional differences in scores, affect, and score-sharing, but no standardized effect sizes are provided and the design is observational. Impact therefore appears suggestive but unclear in magnitude.",
+  "citations": [
+    {
+      "title": "The interactive reading task: Transformer-based automatic item generation",
+      "doi": null,
+      "year": 2022,
+      "venue": "Frontiers in Artificial Intelligence",
+      "citation_level": 2,
+      "citation_context": "AIG-created DET item banks with human review"
+    },
+    {
+      "title": "Wheel-spinning: Students who fail to master a skill",
+      "doi": null,
+      "year": 2013,
+      "venue": "Artificial Intelligence in Education: 16th International Conference, AIED 2013",
+      "citation_level": 2,
+      "citation_context": "used to interpret repeated unsuccessful practice as wheel spinning"
+    },
+    {
+      "title": "Reducing listening test anxiety through various forms of listening support",
+      "doi": null,
+      "year": 2008,
+      "venue": "TESL-EJ",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Guidelines for fair test content: The Duolingo English Test example",
+      "doi": null,
+      "year": 2025,
+      "venue": "Duolingo Research Report DRR-25-02",
+      "citation_level": 3,
+      "citation_context": "human review process for fairness and bias checks"
+    },
+    {
+      "title": "Common European Framework of Reference for Languages: Learning, Teaching, Assessment \u2013 Companion Volume",
+      "doi": null,
+      "year": 2020,
+      "venue": "Council of Europe Publishing",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Beyond predictive accuracy: Fairness and bias in predicting test anxiety",
+      "doi": null,
+      "year": 2025,
+      "venue": "Proceedings of the International Conference on Artificial Intelligence and Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Question generation with large language models and generative ai",
+      "doi": null,
+      "year": 2025,
+      "venue": "Automatic Question Generation",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Washback to learning outcomes: A comparative study of ielts preparation and university pre-sessional language courses",
+      "doi": null,
+      "year": 2007,
+      "venue": "Assessment in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A scoping review of research on second language test preparation",
+      "doi": null,
+      "year": 2024,
+      "venue": "Language Testing",
+      "citation_level": 2,
+      "citation_context": "used to claim lack of prior AI-enhanced test preparation research"
+    },
+    {
+      "title": "Question generation via overgenerating transformations and ranking",
+      "doi": null,
+      "year": 2010,
+      "venue": "Technical Report CMU-LTI-10-008, Language Technologies Institute, Carnegie Mellon University",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Drawing on repeat test takers to study test preparation practices and their links to score gains",
+      "doi": null,
+      "year": 2020,
+      "venue": "Language Testing",
+      "citation_level": 2,
+      "citation_context": "supports washback and repeat-test preparation interpretation"
+    },
+    {
+      "title": "\u201cwe would like to see ourselves in the test:\u201d the experiences of francophone african english learners in high-stakes english proficiency testing",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Generating better items for cognitive assessments using large language models",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 18th workshop on innovative use of NLP for building educational applications (BEA 2023)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Writing motivation: A validation study of self-judgment and performance",
+      "doi": null,
+      "year": 2021,
+      "venue": "Assessing Writing",
+      "citation_level": 2,
+      "citation_context": "survey affect items informed by instructional-context affect research"
+    },
+    {
+      "title": "Investigating the relationship between test preparation and toefl ibt performance",
+      "doi": null,
+      "year": 2014,
+      "venue": "ETS Research Report Series",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Language muse\u2122: Automated linguistic activity generation for english language learners",
+      "doi": null,
+      "year": 2016,
+      "venue": "Proceedings of the Annual Meeting of the Association for Computational Linguistics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Issues of effectiveness and equity in the coaching controversy: Implications for educational and testing practice",
+      "doi": null,
+      "year": 1982,
+      "venue": "Educational Psychologist",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Validity and washback in language testing",
+      "doi": null,
+      "year": 1996,
+      "venue": "Language testing",
+      "citation_level": 2,
+      "citation_context": "defines washback effect framing test preparation discussion"
+    },
+    {
+      "title": "A computer-aided environment for generating multiple-choice test items",
+      "doi": null,
+      "year": 2006,
+      "venue": "Natural Language Engineering",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Towards suggesting actionable interventions for wheel-spinning students",
+      "doi": null,
+      "year": 2020,
+      "venue": "International Educational Data Mining Society",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Duolingo English Test: Technical manual",
+      "doi": null,
+      "year": 2025,
+      "venue": "Duolingo research report",
+      "citation_level": 3,
+      "citation_context": "source for practice test description and DET population comparison"
+    },
+    {
+      "title": "Test preparation: An international comparison of test takers\u2019 preferences",
+      "doi": null,
+      "year": 2021,
+      "venue": "Assessment in Education: Principles, Policy & Practice",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Effects of test preparation on the validity of a graduate admissions test",
+      "doi": null,
+      "year": 1985,
+      "venue": "Applied Psychological Measurement",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Effects of test familiarization on sat performance",
+      "doi": null,
+      "year": 1983,
+      "venue": "Journal of Educational Measurement",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The effects of test preparation on second-language listening test performance",
+      "doi": null,
+      "year": 2017,
+      "venue": "Language Assessment Quarterly",
+      "citation_level": 2,
+      "citation_context": "affective survey items reflect prior assessment affect research"
+    },
+    {
+      "title": "Does test preparation work? implications for score validity",
+      "doi": null,
+      "year": 2013,
+      "venue": "Language Assessment Quarterly",
+      "citation_level": 2,
+      "citation_context": "supports washback and score-improvement strategy interpretation"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

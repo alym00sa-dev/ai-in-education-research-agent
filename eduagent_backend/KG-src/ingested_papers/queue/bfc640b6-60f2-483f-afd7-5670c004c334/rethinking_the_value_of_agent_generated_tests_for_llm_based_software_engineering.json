@@ -1,0 +1,31 @@
+{
+  "title": "Rethinking the Value of Agent-Generated Tests for LLM-Based Software Engineering Agents",
+  "doi": null,
+  "year": 2026,
+  "venue": null,
+  "url": "http://arxiv.org/abs/2602.07900v1",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper examines whether tests written on the fly by large language model (LLM) software engineering agents actually help those agents solve repository-level software issues. The authors are motivated by the observation that many top-performing agents on SWE-bench write many new tests during problem solving, yet GPT-5.2 achieves comparable performance while writing almost none. The study asks three main questions: how often and when agents write tests, what kinds of feedback those tests provide, and whether changing test-writing behavior affects final task success.\n\nThe authors analyze agent trajectories on SWE-bench Verified using mini-SWE-agent, a lightweight bash-only scaffold that leaves testing decisions largely to the model. They study six state-of-the-art LLMs and extract agent-written Python test files from logged trajectories. First, they descriptively compare resolved and unresolved tasks in terms of test-writing frequency, timing, and execution intensity. Second, they characterize the content of these tests by counting assertions and value-revealing print statements and by categorizing assertion types. Third, they run controlled prompt interventions on four models to either encourage or discourage writing new tests, then compare resulting changes in issue resolution, API calls, and token usage.\n\nThe population is not an educational population; the units of analysis are autonomous LLM-based software engineering agents operating on 500 software issue-resolution tasks from SWE-bench Verified. The context is an automated software engineering benchmark environment rather than a school or classroom setting. The paper reports no students, teachers, or educational institutions.\n\nThe main conclusion is that agent-written tests are common for most models but appear to provide only marginal utility for final issue resolution. Across models, resolved and unresolved tasks show similar test-writing rates, and when tests are written they function mainly as observational feedback channels because value-revealing prints dominate formal assertions. Prompt interventions substantially changed whether agents wrote tests, but these large behavioral shifts produced only small changes in task success while sometimes causing large efficiency costs. Overall, the authors argue that current agent-written test practices consume substantial interaction budget without reliably improving software engineering outcomes.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This paper is an empirical study, but it is not about education, K-12 learners, writing feedback, or student outcomes. Relative to the requested education evidence framework, it provides no relevant educational intervention methodology or learner-sample evidence.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "The study reports no educational impacts on student writing, self-efficacy, or related school outcomes. For the target review question, it contributes no direct or adjacent evidence of impact.",
+  "interventions": [],
+  "outcome_assignments": [],
+  "limitations": [
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "lab",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

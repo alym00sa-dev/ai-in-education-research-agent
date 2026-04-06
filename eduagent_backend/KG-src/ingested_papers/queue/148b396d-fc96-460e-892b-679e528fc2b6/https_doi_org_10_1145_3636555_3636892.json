@@ -1,0 +1,90 @@
+{
+  "title": "Revealing Networks: Understanding Effective Teacher Practices in AI-Supported Classrooms using Transmodal Ordered Network Analysis",
+  "doi": "https://doi.org/10.1145/3636555.3636892",
+  "year": 2024,
+  "venue": "The 14th Learning Analytics and Knowledge Conference (LAK \u201924)",
+  "url": "http://arxiv.org/abs/2312.10826v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Middle School (6th-8th)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper asks how teacher practices in AI-supported classrooms relate to student learning in an intelligent tutoring system, and whether adding teacher-behavior data improves the ability to infer student learning rates. The authors focus on a mathematics tutoring context and use transmodal ordered network analysis (T/ONA) to jointly analyze in-tutor log data and out-of-tutor classroom behaviors.\n\nThe intervention or approach is not a new instructional program, but an analytic method that combines multiple data streams: tutor logs, classroom observation notes, and teacher position-sensor data. The study examines teacher screen alignment, teacher talk, student hand-raising, and tutor behaviors such as hint requests and correct attempts, then compares patterns for students with low versus high learning rates. It also analyzes student behavior before and after teacher visits.\n\nThe population was 85 seventh-grade students from five classes in a U.S. public school, taught by one experienced math teacher, working with the AI tutor Lynnette for linear equation solving during regular math class over three days. The analysis found that including teacher practices improved learning-rate inference, and that low- and high-learning-rate students showed different behavioral networks: low-rate students were more likely to request hints after teacher monitoring or talk, while high-rate students were more likely to produce correct attempts. After teacher visits, low-learning-rate students\u2019 behavior became more similar to high-learning-rate students, suggesting that early conceptual support and more substantive visits may improve effectiveness. The paper concludes that teacher-facing analytics could help teachers provide more effective support, especially for students who are struggling or disengaged.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed observational classroom study using multimodal learning analytics and nonexperimental comparisons, with qualitative replay plus statistical tests. It is methodologically strong for a case study, but it is not causal and is based on a single teacher/school context.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports meaningful associations and a notable model-fit improvement, but not a direct intervention effect or student achievement gain with an estimated standardized effect size. Impact is promising for teacher-facing analytics in a priority K-12 population, yet still indirect and context-limited.",
+  "interventions": [
+    {
+      "intervention": "Intelligent Tutoring System (ITS)",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "Classroom use of the Lynnette mathematics tutor for step-wise equation-solving practice with hints, error feedback, and mastery-oriented problem sets."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 0.97,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "In a 7th-grade classroom study (n=85 students across five classes), adding teacher practice features to tutor-log models significantly improved inference of student learning rates in the math tutor. The multimodal model including out-of-tutor interactions fit better than the tutor-log-only model (AIC=150.60 vs 158.30; \u0394AIC=7.70, t=12.76, 95% CI [7.06, 9.63], p<.001), and low-learning-rate students showed more hint use while high-learning-rate students showed more consecutive correct attempts.",
+        "measure": "Learning-rate inference from AI tutor log behavior; correct attempts, first correct attempts, and hint requests in equation-solving tutor",
+        "study_size": "n=85",
+        "effect_size": "not_reported",
+        "confidence_interval": "[7.06, 9.63] (for AIC decrease)",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Intelligent Tutoring System (ITS)"
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.83,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper suggests that teacher-facing analytics could make classroom practice with AI tutors more efficient by helping teachers identify students needing early conceptual support and by making effective teacher practices visible. Empirically, teacher monitoring and talking were associated with different subsequent student behaviors, and teacher visits were linked to more correct attempts afterward for low-learning-rate students, indicating a potentially more efficient orchestration of support.",
+        "measure": "Teacher practice patterns and downstream student behavior after teacher visits/monitoring",
+        "study_size": "n=85",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Intelligent Tutoring System (ITS)"
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.67,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The study reports evidence consistent with disengagement and tutor misuse among some lower-learning-rate students: hint requests were linked to idle behavior and tutor misuse, and teachers sometimes responded to suspected hint abuse during visits. However, the paper does not directly measure motivation or affect, so these are inferred behavioral indicators rather than a direct estimate of social-emotional change.",
+        "measure": "Idle behavior, tutor misuse, hint requests, and teacher responses during classroom tutoring",
+        "study_size": "n=85",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Intelligent Tutoring System (ITS)"
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "no_control_group",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "classroom",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

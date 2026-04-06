@@ -1,0 +1,50 @@
+{
+  "title": "VisScience: An Extensive Benchmark for Evaluating K12 Educational Multi-modal Scientific Reasoning",
+  "doi": null,
+  "year": 2024,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2409.13730v2",
+  "source_db": "arxiv_search",
+  "populations": [
+    "K-12 (unspecified grade)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses a gap in multimodal benchmark coverage for scientific reasoning in education. The authors note that existing evaluation sets for multimodal large language models (MLLMs) focus heavily on mathematics or general visual understanding and often underrepresent physics and chemistry. To address this, they introduce VisScience, a bilingual benchmark designed to evaluate K-12 multimodal scientific reasoning across mathematics, physics, and chemistry.\n\nVisScience contains 3,000 questions drawn from K-12 educational materials, with 1,000 questions each in mathematics, physics, and chemistry. The benchmark includes both text and images, spans 21 subjects, and assigns questions to five difficulty levels from basic to expert. The paper also describes a two-stage collection and annotation pipeline involving large-scale question gathering, manual screening, and LLM-assisted categorization to ensure coverage, clarity, and balanced difficulty.\n\nThe paper evaluates 25 representative MLLMs, including closed-source and open-source models, on Chinese and English versions of the benchmark. The main conclusion is that closed-source models generally outperform open-source models, with performance varying by discipline and subject. The authors also provide error analysis showing that reasoning errors are the most common failure mode, especially in physics and chemistry, suggesting that stronger conceptual reasoning and visual interpretation remain key challenges for current models.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a benchmark construction and model evaluation paper, not a student-outcome study. It is peer-reviewed in the sense of an academic preprint, but it does not provide intervention evidence, experimental control, or causal estimates relevant to K-12 educational impact.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "No educational intervention is implemented or evaluated with learners, so there is no demonstrated student impact. The reported accuracies are system benchmarking results, not evidence of effects on achievement, reasoning, or engagement.",
+  "interventions": [],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Scientific Reasoning",
+      "confidence": 0.98,
+      "finding": {
+        "direction": "No Effect",
+        "finding_summary": "This paper does not test an instructional intervention; it introduces VisScience, a benchmark for evaluating multimodal scientific reasoning in K-12 contexts. The reported results are descriptive benchmark accuracies for 25 models rather than causal effects. For example, the best closed-source model achieved 53.4% accuracy in mathematics, 38.2% in physics, and 47.0% in chemistry on the benchmark.",
+        "measure": "Benchmark accuracy on K-12 multimodal science questions (mathematics, physics, chemistry)",
+        "study_size": "n=3000 questions; 25 models evaluated",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

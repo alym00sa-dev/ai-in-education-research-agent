@@ -1,0 +1,53 @@
+{
+  "title": "Guardrails for avoiding harmful medical product recommendations and off-label promotion in generative AI models",
+  "doi": null,
+  "year": 2024,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2406.16455v1",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses the risk that general-purpose generative AI models may recommend medical products for off-label uses that are not approved by regulators and may therefore be unsafe or illegal to promote. The authors frame this as a public-health and regulatory problem, arguing that large multimodal models can learn unvetted product-indication associations from broad internet-scale training data.\n\nTo address the problem, the paper proposes a post-hoc detection approach for identifying potentially harmful off-label promotion in generative AI outputs. The method standardizes user queries, performs named entity recognition for drugs and diseases, matches entities against FDA labeling data, and then checks whether the model response contains a non-approved product-indication association that is phrased as a recommendation. The paper demonstrates the approach using Anthropic\u2019s Claude 3 Sonnet in a shopping-style scenario where a user submits an image of a product label and asks questions about it.\n\nThe experimental setup is synthetic rather than human-subject based: the authors generated 14,300 queries across 35 pharmaceuticals with known off-label uses and evaluated model responses against FDA-approved labeling. They report that 15.4% of responses contained off-label indications, and that their detector achieved good precision and recall on a human-annotated sample. The main conclusion is that generalist MLLMs can surface off-label medical recommendations, and that guardrails are needed to filter or block such outputs before they reach users.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed-style empirical/technical paper with a clear methodology, but it is not an educational impact study and does not use a randomized or causal design. The evidence is best characterized as descriptive and diagnostic rather than high-credibility outcome evaluation for learning.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "The paper does not measure educational achievement or learner outcomes, and its findings are about model safety/regulatory risk in medical product recommendations. There is no demonstrated positive educational impact, and the directly measured impact is negative in a non-education domain.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.9,
+      "role": "primary",
+      "use_case": "Evaluating a multimodal generative AI chatbot (Claude 3 Sonnet) used in a medical product question-answering setting, where users ask questions about product labels and the model generates textual recommendations."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Systemic / Institutional Impact",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Negative",
+        "finding_summary": "The paper finds that a multimodal GenAI system can generate potentially harmful off-label medical product recommendations, highlighting a regulatory and safety failure mode rather than a student-learning outcome. In 14,300 synthetic queries across 35 pharmaceuticals, 15.4% of responses were identified as containing off-label indications; the authors also report a detection method with precision 85.75%, recall 80.47%, and F1 83.02% on a 2,000-sample human-annotated evaluation.",
+        "measure": "Rate of off-label indications in model responses; precision/recall/F1 of off-label detection method",
+        "study_size": "n=14300 synthetic queries; n=2000 human-annotated sample",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    }
+  ],
+  "limitations": [
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

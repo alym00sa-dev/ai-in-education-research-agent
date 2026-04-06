@@ -1,0 +1,63 @@
+{
+  "title": "Designing AI Peers for Collaborative Mathematical Problem Solving with Middle School Students: A Participatory Design Study",
+  "doi": "https://doi.org/10.1145/3772318.3791138",
+  "year": 2026,
+  "venue": "CHI \u201926 (Proceedings of the 2026 CHI Conference on Human Factors in Computing Systems)",
+  "url": "http://arxiv.org/abs/2601.17962v2",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Middle School (6th-8th)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper asks how middle school students perceive and want to design generative AI peers for collaborative mathematical problem solving, rather than AI tutors. The authors focus on a gap in prior K-12 GenAI work: most systems have emphasized one-on-one tutoring, feedback, or teacher-facing support, while much less is known about AI participation as a peer inside small-group work.\n\nTo study this, the researchers ran a five-day summer camp with 24 rising grades 6\u20138 students at a public university in the United States. The camp combined collaborative math problem solving, direct experience with a web-based AI peer technology probe, and participatory design activities in which students sketched, discussed, and refined their ideal AI peers. Students experienced both human-only and AI-involved collaboration, first individually and then in small groups, using grade-aligned mathematics tasks in ratio/proportional reasoning, expressions and equations, and early functions/geometry.\n\nThe main findings show that students wanted an AI peer that supports co-agency rather than acting like a teacher: they preferred hints, checks, and gradual scaffolds over full solutions; wanted control over when the AI speaks and how much it says; and disliked behaviors that felt repetitive, overly directive, or emotionally inattentive. They also preferred a peer-like but expert tone and minimal persona exaggeration. The paper concludes that effective AI peers for middle-school mathematics should be scaffold-first, collaborative, socially attuned, and configurable to fit classroom norms.",
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "self_reported_measures",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "1",
+  "setting": "blended",
+  "teacher_training": "yes",
+  "implementation_fidelity": "medium",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "tutoring_instruction"
+      ],
+      "description": "OpenAI's GPT-family conversational AI model used for dialogue, reasoning, and content generation.",
+      "use_case": "The paper used GPT-4o as the LLM backbone powering the AI peer technology probe; it was also demonstrated to students as a commercial GenAI tool (e.g., ChatGPT) during the camp.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "In a five-day summer camp with N=24 middle-school students, the GPT-4o-powered AI peer probe reduced perceived temporal demand during collaborative math problem solving (M=5.67 vs 9.62; p=0.002; d=1.15) but increased physical demand (M=8.48 vs 4.90; p=0.014; d=1.14). Students also reported lower group social attraction (M=5.21 vs 6.50; p=0.029; d=0.94) and lower task coordination (M=4.76 vs 5.54; p=0.047; d=0.81) relative to human-only CPS.",
+          "measure": "NASA-TLX temporal demand and physical demand; GEQ attractions to group-social and group integration-task",
+          "effect_size": "d=1.15; d=1.14; d=0.94; d=0.81",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=22 for paired comparisons; N=24 enrolled"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a mixed-methods participatory design study with within-subject quantitative comparisons and qualitative analysis, not a randomized controlled trial. The evidence is informative but context-specific and exploratory.",
+  "impact_tier": "blue",
+  "impact_tier_rationale": "The reported effects on workload and group climate are large (all reported d values exceed 0.80), indicating substantial impact in the measured setting.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

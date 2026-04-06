@@ -1,0 +1,297 @@
+{
+  "title": "Teaching Introduction to Programming in the Times of AI: A Case Study of a Course Redesign",
+  "doi": null,
+  "year": 2025,
+  "venue": "Proceedings 12th Penhellenic Conference of Computer Science Education (PCCSE 2025)",
+  "url": "https://arxiv.org/abs/2508.06572",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper examines how the rise of generative AI and code-assistance tools is reshaping introductory programming education. The authors focus on the challenge that tools such as ChatGPT and GitHub Copilot can both support learning and undermine core learning goals by enabling students to generate assignment and project solutions without developing foundational programming and computational thinking skills. The paper asks how an existing introductory programming course should be redesigned so that learning outcomes, teaching activities, and assessment remain aligned in the presence of powerful AI tools.\n\nThe main approach is a case study-based course redesign proposal grounded in constructive alignment. The authors first review relevant literature on AI in programming education and then analyze an existing distance-learning introductory Python course at the Hellenic Open University. They test recent course assignments and one group project specification using ChatGPT o3-mini-high, showing that the model can successfully answer most assignment questions and can generate a substantial portion of a project solution with iterative prompting. Based on this analysis, they propose changes to course learning outcomes, tutorial topics, assignment design, AI-use disclosure requirements, and assessment practices such as oral checks and process-based project assessment.\n\nThe context is a single undergraduate distance-learning programming course in Greece, delivered over 38 weeks. The course includes five online tutorial sessions for groups of up to 25 students, four assignments, and a 20-week group project with groups of 4\u20135 students. No empirical intervention with students is reported; rather, the paper uses the existing course as a motivating example and evaluates AI capability against course tasks to identify vulnerabilities in the current design.\n\nThe authors conclude that current introductory programming courses, especially distance-learning formats with limited instructor interaction, are highly vulnerable to misuse of AI tools. They argue that core programming outcomes should remain, but courses should add explicit learning outcomes on AI capabilities, limitations, and ethics; redesign assignments to be partly AI-resistant and partly AI-compatible; require transparent disclosure of AI use; and adopt assessment methods that verify authentic understanding. They also acknowledge that the redesigned course has not yet been implemented, so the effectiveness of the proposal remains untested.",
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_control_group",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "38",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Greece",
+  "study_region": "Europe",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "feedback_evaluation"
+      ],
+      "description": "OpenAI's generative AI chatbot/LLM family used for natural-language interaction, code generation, explanation, debugging, and related programming assistance.",
+      "use_case": "The paper directly tested ChatGPT (specifically an OpenAI o3-mini-high model, normalized to ChatGPT) on actual introductory programming course assignments and a group project specification to evaluate how well it could generate solutions, refine code through iterative prompting, and assist with project-report writing.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "When tested on the course's 2024-2025 assignments, ChatGPT answered most questions correctly without follow-up prompts and achieved an overall score of 38.4 out of 40. The paper states this would place the model in the top 10% of a current group of 20 enrolled students, indicating strong performance on introductory programming assessment tasks.",
+          "measure": "Assignment performance score on course assignments",
+          "effect_size": "38.4/40",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=20 students (comparison group); AI tested on assignment set"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Despite high overall performance, ChatGPT failed on at least one apparently simple symbolic-expression exercise, returning an incorrect simplified expression. The authors also report that in some cases the model failed to consider associated templates or data files, such as not checking file character encoding, showing limits in edge cases and context handling.",
+          "measure": "Accuracy on specific assignment items and handling of supplementary files/templates",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "For the 'Memory Game' group project, ChatGPT generated more than 350 lines of code from a three-page specification, but the initial implementation had significant functional problems. After several iterative test-and-feedback cycles, the authors obtained a fully functional version of about 400 lines in approximately two hours, suggesting high productivity but also a need for repeated human debugging and refinement.",
+          "measure": "Project code generation quality and time to functional implementation",
+          "effect_size": "~350 initial lines; ~400 final lines; ~2 hours",
+          "confidence_interval": "not_reported",
+          "sample_size": "1 project case"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "The authors conclude that ChatGPT enables students to produce satisfactory responses to complex tasks rapidly while potentially bypassing core learning processes. They state that in completing the project with AI assistance, 'no Python programming was involved' and there was no discussion of architecture or functionality, leaving the code a 'black box' and threatening development of computational thinking and problem-solving skills.",
+          "measure": "Risk to development of core programming/computational thinking skills",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Systemic / Institutional Impact",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "The study found substantial vulnerability in the current distance-learning course design when confronted with ChatGPT's capabilities. The existing assignment and project structure was described as susceptible to AI-enabled workarounds that could undermine intended learning outcomes and academic integrity, motivating course redesign recommendations.",
+          "measure": "Course/assessment vulnerability to AI-enabled circumvention",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "1 course case study"
+        }
+      ]
+    },
+    {
+      "name": "GitHub Copilot",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "tutoring_instruction"
+      ],
+      "description": "An AI coding assistant integrated into the editor that suggests code completions, function implementations, and larger code snippets based on context and prompts.",
+      "use_case": "Discussed as an example AI programming assistant to be introduced in redesigned tutorials for demonstrating AI-generated code, inspection, and modification during introductory programming instruction.",
+      "findings": []
+    },
+    {
+      "name": "Claude",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation"
+      ],
+      "description": "Anthropic's generative AI/LLM family used for natural-language and code generation tasks.",
+      "use_case": "Mentioned in a comparative example on a single expression-simplification exercise, where Claude was one of several models producing an incorrect answer.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "On the example exercise asking to remove as many parentheses as possible from an expression, Claude 3.7 Sonnet produced an incorrect response ('a**(3/b) + 5a'). This is presented as an illustration that even state-of-the-art models can fail on seemingly simple programming-related symbolic tasks.",
+          "measure": "Correctness on a single expression-simplification exercise",
+          "effect_size": "incorrect on 1 example item",
+          "confidence_interval": "not_reported",
+          "sample_size": "1 item"
+        }
+      ]
+    },
+    {
+      "name": "Gemini",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation"
+      ],
+      "description": "Google's generative AI/LLM family used for natural-language and code generation tasks.",
+      "use_case": "Mentioned in a comparative example on a single expression-simplification exercise, where Gemini was one of several models producing an incorrect answer.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "On the same example expression-simplification exercise, Gemini-2 proposed an incorrect expression. The paper uses this example to show that contemporary LLMs may make errors even on simple introductory-programming-related tasks.",
+          "measure": "Correctness on a single expression-simplification exercise",
+          "effect_size": "incorrect on 1 example item",
+          "confidence_interval": "not_reported",
+          "sample_size": "1 item"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a case study with direct testing of AI tools on course assignments and one project, but it does not use an experimental comparison design, formal outcome evaluation with learners, or robust quantitative methodology. Findings are primarily descriptive and illustrative.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports strong task performance by ChatGPT (38.4/40 and top-10%-equivalent relative standing) and substantial implications for course design, but no standardized effect sizes or causal estimates are provided. Overall impact is consequential but empirically unclear.",
+  "citations": [
+    {
+      "title": "Enhancing teaching through constructive alignment",
+      "doi": null,
+      "year": 1996,
+      "venue": "Higher Education",
+      "citation_level": 2,
+      "citation_context": "constructive alignment framework structures course redesign"
+    },
+    {
+      "title": "The manifesto for teaching and learning in a time of generative AI: A critical collective stance to better navigate the future",
+      "doi": null,
+      "year": 2024,
+      "venue": "Open Praxis",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Application and impact of AI in education",
+      "doi": null,
+      "year": 2022,
+      "venue": "Educational Technology & Society",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Feedback to Students and Instructors of a Programming Course through a Large Language Model",
+      "doi": null,
+      "year": 2025,
+      "venue": "Proceedings 14th Panhellenic Conference iCT in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Assessing student perceptions and use of instructor versus AI-generated feedback",
+      "doi": null,
+      "year": 2024,
+      "venue": "British Journal of Educational Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Balancing AI assistance and student agency in introductory programming courses",
+      "doi": null,
+      "year": 2023,
+      "venue": "ACM Transactions on Computing Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Exploring the Connections Between the Use of an Automated Feedback System and Learning Behavior in a MOOC for Programming",
+      "doi": "10.1007/978-3-031-16290-9_9",
+      "year": 2022,
+      "venue": "EC-TEL 2022",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Teaching and learning computer programming using ChatGPT: A rapid review of literature amid the rise of generative AI technologies",
+      "doi": null,
+      "year": 2025,
+      "venue": "Education and Information Technologies",
+      "citation_level": 2,
+      "citation_context": "review summarized to motivate AI-related course redesign"
+    },
+    {
+      "title": "Grading massive open online courses using large language models",
+      "doi": null,
+      "year": 2025,
+      "venue": "Proceedings of the 31st International Conference on Computational Linguistics (COLING)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Guidelines for the evolving role of Generative AI in introductory programming based on emerging practice",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 2024 on Innovation and Technology in Computer Science Education",
+      "citation_level": 2,
+      "citation_context": "supports adding AI capabilities and ethics learning outcomes"
+    },
+    {
+      "title": "Design and evaluation of an ai-assisted grading tool for introductory programming assignments: An experience report",
+      "doi": null,
+      "year": 2025,
+      "venue": "Proceedings of the 56th ACM Technical Symposium on Computer Science Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Creating AI-Resistant Assignments, Activities, and Assessments (Designing Out)",
+      "doi": null,
+      "year": 2025,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "source for AI-resistant assignment design recommendations"
+    },
+    {
+      "title": "The robots are here: Navigating the generative AI revolution in computing education",
+      "doi": "10.1145/3587103.3594206",
+      "year": 2023,
+      "venue": "Proceedings of the 2023 Conference on Innovation and Technology in Computer Science Education (ITiCSE 2023)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Cognitive offloading",
+      "doi": null,
+      "year": 2016,
+      "venue": "Trends in Cognitive Sciences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "AI-assisted programming and AI literacy in computer science education",
+      "doi": null,
+      "year": 2024,
+      "venue": "Effective practices in AI literacy Education: Case studies and reflections",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Integration of Large Language Models in Computer Science Education: Challenges and opportunities",
+      "doi": null,
+      "year": 2023,
+      "venue": "British Journal of Educational Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Computational thinking",
+      "doi": null,
+      "year": 2006,
+      "venue": "Communications of the ACM",
+      "citation_level": 2,
+      "citation_context": "defines computational thinking as core course objective"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

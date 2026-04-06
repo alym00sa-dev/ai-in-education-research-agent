@@ -1,0 +1,30 @@
+{
+  "title": "DeepSeek LLM: Scaling Open-Source Language Models with Longtermism",
+  "doi": null,
+  "year": 2024,
+  "venue": "arXiv",
+  "url": "https://doi.org/10.48550/arxiv.2401.02954",
+  "source_db": "openalex_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses the problem of how to scale open-source large language models effectively, with a particular focus on scaling laws, training data quality, hyperparameter selection, alignment, and benchmark evaluation. The authors aim to understand how model size, data size, and compute budget should be balanced to improve performance in open-source LLMs, and they use those findings to develop the DeepSeek LLM family.\n\nThe approach studied is the design, training, and evaluation of DeepSeek LLM base and chat models, including 7B and 67B parameter-scale systems. The paper describes a 2-trillion-token multilingual pretraining corpus, model architecture choices, scaling-law experiments for batch size and learning rate, supervised fine-tuning, and direct preference optimization. It also reports extensive benchmark-based evaluations in English and Chinese, including reasoning, reading comprehension, mathematics, coding, safety, and open-ended dialogue tasks.\n\nThe paper does not study human learners, teachers, or K-12 instructional implementation. Its empirical work is centered on model training experiments and benchmark evaluations rather than educational interventions. No participant population, school context, instructional setting, or classroom comparator is reported.\n\nThe main conclusions are that DeepSeek's scaling-law analysis can guide efficient open-source model development; representing model scale with non-embedding FLOPs/token improves scaling predictions; and higher-quality training data shifts the optimal compute allocation toward larger models. The authors conclude that DeepSeek LLM 67B outperforms several open-source baselines and in some open-ended evaluations exceeds GPT-3.5, while also showing strong safety performance on their internal and external safety benchmarks.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a technical foundation-model paper on scaling open-source LLMs, not a K-12 education study. It does not report any direct educational intervention, learner sample, classroom implementation, or literacy outcome methodology relevant to the requested K-12 evidence base.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "No direct K-12 reading, literacy, motivation, or classroom impact is evaluated, so there is no education-intervention effect to score. Any benchmark gains are model-performance results, not evidence of student impact.",
+  "interventions": [],
+  "outcome_assignments": [],
+  "limitations": [
+    "non_representative_population",
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

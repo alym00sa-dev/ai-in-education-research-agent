@@ -1,0 +1,61 @@
+{
+  "title": "Can LLMs Grade Short-Answer Reading Comprehension Questions? An Empirical Study with a Novel Dataset",
+  "doi": null,
+  "year": 2023,
+  "venue": "not_reported",
+  "url": "http://arxiv.org/abs/2310.18373v2",
+  "source_db": "arxiv_search",
+  "populations": [
+    "K-12 (unspecified grade)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper asks whether generative large language models (LLMs) can accurately grade short-answer reading comprehension responses, with a focus on formative assessment. The authors frame automatic short-answer grading as a way to reduce teacher workload and make open-ended literacy assessment more feasible in real-world classrooms, especially in under-resourced settings.\n\nThe study introduces a new dataset of reading comprehension responses from students in Ghana and then evaluates several GPT models, including GPT-3.5 and GPT-4, on their ability to classify student answers as correct, incorrect, or partially correct. The model is given the passage, question, and student answer, and its predictions are compared against expert human ratings. The paper also tests simple prompting strategies such as zero-shot versus few-shot prompting and compares using the full story versus the relevant passage.\n\nParticipants were school-age students in Ghana, spanning ages 9 to 18, with both written and spoken reading comprehension responses included in the dataset. The core educational context is reading/literacy assessment rather than instruction, and the work is positioned as relevant to K-12 literacy evaluation in low- and middle-income country settings.\n\nThe main finding is that GPT-4, especially with few-shot prompting, achieved very strong agreement with human raters and in the 3-class setting reached QWK 0.92, exceeding the agreement level of expert raters on that metric. Performance was weaker on partially correct responses than on clearly correct or incorrect answers, and GPT-4 outperformed GPT-3.5 across conditions. The paper concludes that generative LLMs show promise for automating formative literacy assessment, though the results come from a single-country dataset and should be interpreted cautiously for broader deployment.",
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_long_term_followup",
+    "implementation_fidelity_not_reported",
+    "non_representative_population"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Ghana",
+  "study_region": "Sub-Saharan Africa",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation"
+      ],
+      "description": "OpenAI's GPT-family large language model/chatbot system used for natural-language prompting and classification/generation tasks.",
+      "use_case": "Used as an automatic short-answer grading model to score student reading comprehension responses against expert human raters in a Ghanaian dataset; compared GPT-4 and GPT-3.5 under zero-shot and few-shot prompts.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0001\u0012 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "GPT-4 with few-shot prompting achieved near-human agreement on the 3-class grading task, with QWK=0.92 on n=1,068 student responses. In the 2-class task it reached LWK=0.89, outperforming GPT-3.5 and matching or exceeding expert-human agreement on the 3-class metric.",
+          "measure": "Agreement with expert human raters on short-answer reading comprehension grading (QWK for 3-class; LWK for 2-class)",
+          "effect_size": "QWK=0.92; LWK=0.89",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=1,068"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a single empirical study, but it evaluates model agreement with human raters rather than a causal educational intervention. The methodology is clear, yet the paper does not test learner outcomes relative to business-as-usual or non-AI supports.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The reported agreement metrics are high, but they are not learner outcome effect sizes and do not directly demonstrate gains in reading achievement. The paper suggests operational usefulness for grading, not measured educational impact on students.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

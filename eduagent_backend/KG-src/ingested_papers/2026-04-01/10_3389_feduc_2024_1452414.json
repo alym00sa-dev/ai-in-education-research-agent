@@ -1,0 +1,562 @@
+{
+  "title": "Evaluating vision-capable chatbots in interpreting kinematics graphs: a comparative study of free and subscription-based models",
+  "doi": "10.3389/feduc.2024.1452414",
+  "year": 2024,
+  "venue": "Frontiers in Education",
+  "url": "https://doi.org/10.3389/feduc.2024.1452414",
+  "source_db": "openalex_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper investigates how well commercially available vision-capable large multimodal model (LMM) chatbots can interpret kinematics graphs, a foundational visual representation used in physics and more broadly in STEM and medical fields. The authors frame the problem as an educationally important one because these tools are increasingly promoted for tutoring and other educational uses, yet their actual ability to read and reason about graphical information is not well understood. The study asks whether subscription-based chatbots outperform free ones, whether some categories of graph-interpretation tasks are systematically easier or harder for chatbots, and how OpenAI\u2019s vision-capable models have changed over time.\n\nThe approach was a comparative benchmark study using the Test of Understanding Graphs in Kinematics (TUG-K), a 26-item multiple-choice concept inventory. Eight chatbots were tested: four freely available (Copilot, Gemini 1.0 Pro, Claude 3 Sonnet, and ChatGPT-4o) and four subscription-based or premium-access models (ChatGPT-4, Claude 3 Opus, Gemini 1.0 Ultra, and Gemini 1.5 Pro API). Each item was submitted 30 times to each model using screenshots of the test items, producing 780 responses per chatbot. The researchers coded final answer choices quantitatively and also examined performance patterns across item types and across versions of ChatGPT.\n\nThe study did not involve human learners as participants; instead, the chatbots themselves were the units being evaluated in an online testing context. The educational context is therefore indirect: the authors position the findings as relevant for STEM and medical education, especially for graph interpretation, tutoring, assessment, and accessibility applications. The work was conducted by researchers at Uppsala University in Sweden, but the evaluated systems were public AI tools rather than an institutional classroom intervention.\n\nThe main conclusion is that subscription-based access did not generally produce better performance. ChatGPT-4o, a freely available model, performed best overall and outperformed even subscription-based ChatGPT-4. OpenAI\u2019s models substantially outperformed the other chatbot families, while Gemini and Claude variants often performed near guessing level. Across task types, chatbots tended to do better on items relying more on linguistic reasoning than on items requiring stronger visual interpretation, and comparing areas under graphs was especially difficult. The authors caution that even the best-performing chatbot remained far from expert level and still made unpredictable errors, limiting its appropriateness for high-stakes educational uses such as grading, tutoring, or exam assistance.",
+  "limitations": [
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "identified_tools": [
+    {
+      "name": "Gemini",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "language_speech",
+        "other"
+      ],
+      "description": "Google\u2019s family of large multimodal chatbot models with vision capabilities for interpreting uploaded images and generating text responses.",
+      "use_case": "Evaluated on the Test of Understanding Graphs in Kinematics (TUG-K) to assess vision-capable chatbot performance in interpreting kinematics graphs; versions tested included Gemini 1.0 Pro, Gemini 1.0 Ultra, and Gemini 1.5 Pro API.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Scientific Reasoning",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Gemini models performed poorly overall on the TUG-K, with Gemini 1.0 Pro averaging 18.8% correct, Gemini 1.0 Ultra averaging 15.6% correct, and Gemini 1.5 Pro API averaging 34.7% correct across 26 items with 30 repetitions per item. Contrary to expectations, the subscription-based Gemini 1.0 Ultra performed worse than the freely available Gemini 1.0 Pro, while Gemini 1.5 Pro API improved over both but still trailed ChatGPT-4 (42.4%) and ChatGPT-4o (58.6%).",
+          "measure": "Percentage correct on the Test of Understanding Graphs in Kinematics (TUG-K)",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "780 responses per chatbot"
+        }
+      ]
+    },
+    {
+      "name": "Claude",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "language_speech",
+        "other"
+      ],
+      "description": "Anthropic\u2019s family of large multimodal chatbot models capable of processing image inputs and producing text responses.",
+      "use_case": "Evaluated on the TUG-K for visual interpretation of kinematics graphs; versions tested included Claude 3 Sonnet and Claude 3 Opus.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Scientific Reasoning",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Claude models showed low TUG-K performance overall, with Claude 3 Sonnet averaging 17.9% correct and Claude 3 Opus averaging 22.8% correct across 26 items with 30 repetitions each. The subscription-based Claude 3 Opus only marginally outperformed the freely available Claude 3 Sonnet, indicating little practical advantage for the premium version on this graph-interpretation task.",
+          "measure": "Percentage correct on the Test of Understanding Graphs in Kinematics (TUG-K)",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "780 responses per chatbot"
+        }
+      ]
+    },
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "language_speech",
+        "other"
+      ],
+      "description": "OpenAI\u2019s family of large language and multimodal chatbot models, including vision-capable versions that can interpret uploaded images and respond conversationally.",
+      "use_case": "Evaluated on the TUG-K to assess and compare vision-capable chatbot performance in interpreting kinematics graphs; versions included ChatGPT-4 and ChatGPT-4o, with additional comparison of ChatGPT-4 across October 2023, April 2024, and April 2024 with Advanced Data Analysis enabled.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Scientific Reasoning",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "OpenAI\u2019s chatbots outperformed all other tested chatbots on the TUG-K. ChatGPT-4 averaged 42.4% correct and ChatGPT-4o averaged 58.6% correct across 26 items with 30 repetitions per item, with ChatGPT-4o showing the best overall performance and exceeding ChatGPT-4 by 16.2 percentage points.",
+          "measure": "Percentage correct on the Test of Understanding Graphs in Kinematics (TUG-K)",
+          "effect_size": "16.2 percentage-point difference (ChatGPT-4o vs ChatGPT-4)",
+          "confidence_interval": "not_reported",
+          "sample_size": "780 responses per chatbot"
+        },
+        {
+          "outcome_category": "Academic \u2014 Scientific Reasoning",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Across OpenAI model updates, ChatGPT-4 performance changed only marginally overall from October 2023 to April 2024, increasing from 41.7% to 42.4% correct, though item-level performance both improved and worsened without a clear pattern. ChatGPT-4o then improved substantially to 58.6% correct, outperforming the April 2024 ChatGPT-4 on 17 of 26 items, including 5 items with gains greater than 50 percentage points.",
+          "measure": "Percentage correct on the Test of Understanding Graphs in Kinematics (TUG-K) across model versions",
+          "effect_size": "0.7 percentage-point difference (Oct 2023 vs Apr 2024 ChatGPT-4); 16.2 percentage-point difference (Apr 2024 ChatGPT-4 vs ChatGPT-4o)",
+          "confidence_interval": "not_reported",
+          "sample_size": "780 responses per version"
+        },
+        {
+          "outcome_category": "Academic \u2014 Scientific Reasoning",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "Enabling Advanced Data Analysis (ADA) in ChatGPT-4 did not improve overall TUG-K performance. ChatGPT-4 with ADA averaged 40.9% correct versus 42.4% without ADA, and ADA was used automatically in 70% of responses for 6 of 26 items but often ineffectively; 66.7% of responses that used ADA were coded as not answered (N).",
+          "measure": "Percentage correct on the Test of Understanding Graphs in Kinematics (TUG-K); proportion of ADA-used responses coded not answered",
+          "effect_size": "-1.5 percentage points (ADA vs no ADA)",
+          "confidence_interval": "not_reported",
+          "sample_size": "780 responses per version"
+        }
+      ]
+    },
+    {
+      "name": "Microsoft Copilot",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "language_speech",
+        "other"
+      ],
+      "description": "Microsoft\u2019s vision-capable chatbot interface built on GPT-family models for conversational responses to text and image inputs.",
+      "use_case": "Evaluated on the TUG-K as a freely available vision-capable chatbot to assess performance in interpreting kinematics graphs.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Scientific Reasoning",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "Microsoft Copilot performed only slightly above guessing on the TUG-K, averaging 25.8% correct across 26 items with 30 repetitions per item. Although based on GPT-4-family technology, it performed far below ChatGPT-4 (42.4%) and ChatGPT-4o (58.6%), which the authors attribute to differences in application-level adaptations such as fine-tuning and system prompts.",
+          "measure": "Percentage correct on the Test of Understanding Graphs in Kinematics (TUG-K)",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "780 responses"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an original empirical benchmark study comparing chatbot outputs on a concept inventory, but it is not an intervention study with student participants or causal educational design. The methodology is systematic and transparent, yet evidence is limited to tool performance on test items rather than demonstrated learner outcomes.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports substantial differences in chatbot task performance, especially favoring ChatGPT-4o, but does not estimate impact on actual students, teaching, or institutional outcomes. Educational implications are therefore suggestive rather than directly demonstrated.",
+  "citations": [
+    {
+      "title": "PhysPort assessments: test of understanding graphs in kinematics",
+      "doi": null,
+      "year": 2017,
+      "venue": "PhysPort",
+      "citation_level": 3,
+      "citation_context": "source of the TUG-K assessment used"
+    },
+    {
+      "title": "The impact of educational chatbot on student learning experience",
+      "doi": "10.1007/s10639-023-12166-w",
+      "year": 2024,
+      "venue": "Educ. Inf. Technol.",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Chatbots in practical science, technology, engineering, and mathematics (STEM) education: a literature review",
+      "doi": null,
+      "year": 2024,
+      "venue": "Global Perspectives on Micro-Learning and Micro-Credentials in Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Testing student interpretation of kinematics graphs",
+      "doi": "10.1119/1.17449",
+      "year": 1994,
+      "venue": "Am. J. Phys.",
+      "citation_level": 3,
+      "citation_context": "original development of the TUG-K"
+    },
+    {
+      "title": "Lecturing graphing: what features of lectures contribute to student difficulties in learning to interpret graph?",
+      "doi": "10.1007/BF02461643",
+      "year": 1998,
+      "venue": "Res. Sci. Educ.",
+      "citation_level": 2,
+      "citation_context": "background on students\u2019 graph-interpretation difficulties"
+    },
+    {
+      "title": "University students\u2019 graph interpretation and comprehension abilities",
+      "doi": "10.1080/19477503.2018.1480862",
+      "year": 2019,
+      "venue": "Investig. Math. Learn.",
+      "citation_level": 2,
+      "citation_context": "background on graph interpretation abilities"
+    },
+    {
+      "title": "Using an artificial intelligence chatbot in scientific inquiry: focusing on a guided-inquiry activity using inquirybot",
+      "doi": "10.1163/23641177-bja10062",
+      "year": 2023,
+      "venue": "Asia-Pac. Sci. Educ.",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "How is ChatGPT\u2019s behavior changing over time?",
+      "doi": "10.1162/99608f92.5317da47",
+      "year": 2024,
+      "venue": "Harvard Data Sci. Rev.",
+      "citation_level": 2,
+      "citation_context": "supports model variability across updates"
+    },
+    {
+      "title": "The impact of ChatGPT on higher education",
+      "doi": "10.3389/feduc.2023.1206936",
+      "year": 2023,
+      "venue": "Front. Educ.",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Exploring large language models as formative feedback tools in physics",
+      "doi": null,
+      "year": 2024,
+      "venue": "2024 Physics Education Research Conference Proceedings",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Concept inventories as a resource for teaching evolution",
+      "doi": "10.1186/s12052-018-0092-8",
+      "year": 2019,
+      "venue": "Evol.: Educ. Outreach",
+      "citation_level": 2,
+      "citation_context": "supports use of concept inventories in education"
+    },
+    {
+      "title": "Generative AI in education: a study of educators\u2019 awareness, sentiments, and influencing factors",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "AI-powered chatbots in medical education: potential applications and implications",
+      "doi": "10.7759/cureus.43271",
+      "year": 2023,
+      "venue": "Cureus",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Transformative effects of ChatGPT on modern education: emerging era of AI chatbots",
+      "doi": "10.1016/j.iotcps.2023.06.002",
+      "year": 2024,
+      "venue": "Internet Things Cyber-Phys. Syst.",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Available at: https://www.youtube.com/watch?v=K4pX1VAxaAI",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Challenges with graph interpretation: a review of the literature",
+      "doi": "10.1080/03057267.2011.605307",
+      "year": 2011,
+      "venue": "Stud. Sci. Educ.",
+      "citation_level": 2,
+      "citation_context": "framing prior literature on graph interpretation"
+    },
+    {
+      "title": "Chat bots to virtual tutors: an overview of chat GPT\u2019s role in the future of education",
+      "doi": "10.51847/TOuppjEDSX",
+      "year": 2024,
+      "venue": "Arch. Pharm. Pract.",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT as a tool for honing teachers\u2019 Socratic dialogue skills",
+      "doi": "10.1088/1361-6552/ad3d21",
+      "year": 2024,
+      "venue": "Phys. Educ.",
+      "citation_level": 2,
+      "citation_context": "supports claim ChatGPT became more cooperative"
+    },
+    {
+      "title": "Force concept inventory",
+      "doi": "10.1119/1.2343497",
+      "year": 1992,
+      "venue": "Phys. Teach.",
+      "citation_level": 2,
+      "citation_context": "example of established concept inventory"
+    },
+    {
+      "title": "Exploring multimodal large language models: a step forward in AI",
+      "doi": null,
+      "year": 2023,
+      "venue": "Medium",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "AI Tutoring Outperforms Active Learning",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Chatbots in education and research: a critical examination of ethical implications and solutions",
+      "doi": "10.3390/su15075614",
+      "year": 2023,
+      "venue": "Sustain. For.",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Performance of the pre-trained large language model GPT-4 on automated short answer grading",
+      "doi": "10.1007/s44163-024-00147-y",
+      "year": 2024,
+      "venue": "Discov. Artif. Intell.",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Unreflected acceptance -- investigating the negative consequences of ChatGPT-assisted problem solving in physics education",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The rise of ChatGPT: exploring its potential in medical education",
+      "doi": "10.1002/ase.2270",
+      "year": 2024,
+      "venue": "Anat. Sci. Educ.",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A review of integrating AI-based chatbots into flipped learning: new possibilities and challenges",
+      "doi": "10.3389/feduc.2023.1175715",
+      "year": 2023,
+      "venue": "Front. Educ.",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "An empirical study of catastrophic forgetting in large language models during continual fine-tuning",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "supports sensitivity to fine-tuning and updates"
+    },
+    {
+      "title": "Student difficulties in connecting graphs and physics: examples from kinematics",
+      "doi": "10.1119/1.15104",
+      "year": 1987,
+      "venue": "Am. J. Phys.",
+      "citation_level": 2,
+      "citation_context": "framing known difficulties with kinematics graphs"
+    },
+    {
+      "title": "ChatGPT in education: exploring opportunities for emerging economies to improve education with ChatGPT",
+      "doi": "10.2139/ssrn.4355758",
+      "year": 2023,
+      "venue": "SSRN J.",
+      "citation_level": 2,
+      "citation_context": "supports benefits for underserved communities"
+    },
+    {
+      "title": "Damilola Oluwaseun Ogundipe. Revolutionizing education through ai: a comprehensive review of enhancing learning experiences",
+      "doi": "10.51594/ijarss.v6i4.1011",
+      "year": 2024,
+      "venue": "Int. J. Appl. Res. Soc. Sci.",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "GPT-4 Technical Report",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Math problems with GPT-4o",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Introducing GPT-4o and more tools to ChatGPT free users",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The effect of Chatbots and AI on the self-efficacy, self-esteem, problem-solving and critical thinking of students",
+      "doi": "10.61838/hn.1.1.14",
+      "year": 2023,
+      "venue": "Health Nexus",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The EvoDevoCI: a concept inventory for gauging students\u2019 understanding of evolutionary developmental biology",
+      "doi": "10.1187/cbe.13-04-0079",
+      "year": 2013,
+      "venue": "CBE Life Sci. Educ.",
+      "citation_level": 2,
+      "citation_context": "example of concept inventory use"
+    },
+    {
+      "title": "How understanding large language models can inform the use of ChatGPT in physics education",
+      "doi": "10.1088/1361-6404/ad1420",
+      "year": 2024,
+      "venue": "Eur. J. Phys.",
+      "citation_level": 2,
+      "citation_context": "prompting context and role can improve results"
+    },
+    {
+      "title": "Performance of ChatGPT on the test of understanding graphs in kinematics",
+      "doi": "10.1103/PhysRevPhysEducRes.20.010109",
+      "year": 2024,
+      "venue": "Phys. Rev. Phys. Educ. Res.",
+      "citation_level": 3,
+      "citation_context": "prior comparison baseline on TUG-K"
+    },
+    {
+      "title": "Performance of freely available vision-capable chatbots on the test for understanding graphs in kinematics",
+      "doi": null,
+      "year": 2024,
+      "venue": "2024 Physics Education Research Conference Proceedings",
+      "citation_level": 2,
+      "citation_context": "conference precursor to current study"
+    },
+    {
+      "title": "Below average ChatGPT performance in medical microbiology exam compared to university students",
+      "doi": "10.3389/feduc.2023.1333415",
+      "year": 2023,
+      "venue": "Front. Educ.",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Privacy and data protection in ChatGPT and other AI Chatbots: strategies for securing user information",
+      "doi": "10.4018/IJSPPC.325475",
+      "year": 2023,
+      "venue": "Int. J. Secur. Privacy Perv. Comp.",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Community technology centers: narrowing the digital divide in low-income, urban communities",
+      "doi": "10.1111/0735-2166.00089",
+      "year": 2001,
+      "venue": "J. Urban Aff.",
+      "citation_level": 2,
+      "citation_context": "framing technological divide in underserved communities"
+    },
+    {
+      "title": "Nursing education in the age of artificial intelligence powered Chatbots (AI-Chatbots): are we ready yet?",
+      "doi": "10.1016/j.nedt.2023.105917",
+      "year": 2023,
+      "venue": "Nurse Educ. Today",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Enhancing STEM learning with ChatGPT and bing chat as objects to think with: a case study",
+      "doi": "10.29333/ejmste/13313",
+      "year": 2023,
+      "venue": "EURASIA J. Math. Sci. Tech. Ed.",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Examining the potential and pitfalls of ChatGPT in science and engineering problem-solving",
+      "doi": "10.3389/feduc.2023.1330486",
+      "year": 2024,
+      "venue": "Front. Educ.",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Scientific figures interpreted by ChatGPT: strengths in plot recognition and limits in color perception",
+      "doi": "10.1038/s41698-024-00576-z",
+      "year": 2024,
+      "venue": "NPJ Precis Onc.",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT: a revolutionary tool for teaching and learning mathematics",
+      "doi": "10.29333/ejmste/13272",
+      "year": 2023,
+      "venue": "EURASIA J. Math. Sci. Tech. Ed.",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Chain-of-thought prompting elicits reasoning in large language models",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "example of prompt engineering for reasoning tasks"
+    },
+    {
+      "title": "The ethical implications of using generative chatbots in higher education",
+      "doi": "10.3389/feduc.2023.1331607",
+      "year": 2024,
+      "venue": "Front. Educ.",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT in medical education: promoting learning or killing critical thinking?",
+      "doi": "10.21315/eimj2024.16.2.13",
+      "year": 2024,
+      "venue": "EIMJ",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The death of the short-form physics essay in the coming AI revolution",
+      "doi": "10.1088/1361-6552/acc5cf",
+      "year": 2023,
+      "venue": "Phys. Educ.",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT convincingly explains organic chemistry reaction mechanisms slightly inaccurately with high levels of explanation sophistication",
+      "doi": "10.1021/acs.jchemed.4c00235",
+      "year": 2024,
+      "venue": "J. Chem. Educ.",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Modifying the test of understanding graphs in kinematics",
+      "doi": "10.1103/PhysRevPhysEducRes.13.020111",
+      "year": 2017,
+      "venue": "Phys. Rev. Phys. Educ. Res.",
+      "citation_level": 3,
+      "citation_context": "source for modified TUG-K item structure"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": "via unpaywall"
+}

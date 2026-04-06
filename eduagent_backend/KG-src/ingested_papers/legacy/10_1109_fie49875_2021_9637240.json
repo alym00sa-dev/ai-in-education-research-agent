@@ -1,0 +1,546 @@
+{
+  "title": "A Systematic Review of Literature on the Effectiveness of Intelligent Tutoring Systems in STEM",
+  "doi": "10.1109/FIE49875.2021.9637240",
+  "year": 2021,
+  "venue": "2021 IEEE Frontiers in Education Conference (FIE)",
+  "url": "https://people.csail.mit.edu/dkao/pdf/feng2021its.pdf",
+  "source_db": "backfill_v3",
+  "populations": [],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Meta-Analysis / Systematic Review",
+  "extended_summary": "This paper addresses the question of how effective intelligent tutoring systems (ITS) are for supporting STEM learning, with particular attention to what kinds of learning they target, what scaffolding strategies they use, what learning theories inform their design, and what research designs and outcomes have been reported. The authors argue that prior ITS research has focused heavily on technical development while paying less attention to pedagogical grounding and fine-grained evidence about learning outcomes.\n\nThe intervention studied is not a single ITS but the broader class of intelligent tutoring systems used in STEM education. The authors conducted a systematic review of peer-reviewed English-language studies from the past 20 years, using databases including ERIC, PsycInfo, Springer Link, and Web of Science. Their inclusion criteria required STEM-focused ITS studies with empirical experimental designs, at least one treatment and one control group, specified scaffolding strategies and learning theories, and attention to conceptual learning, problem-solving, or model building. The final sample included 22 papers covering 21 ITS across domains such as physics, computer science, mathematics, biology, research methodology, database design, and urban science.\n\nThe populations represented in the reviewed studies were primarily students, especially college students (16 studies), with some high school and middle school populations and one study involving medical students. The review focused on classroom research, though the synthesized studies included both classroom and laboratory contexts. The authors found that most ITS were grounded in at least one learning theory and typically relied on learner modeling, dialogue, feedback, constraint-based modeling, or model tracing as scaffolding approaches.\n\nThe main conclusion is that ITS generally produce significant learning improvements in STEM, but the evidence is uneven and not yet sufficiently fine-grained regarding which pedagogical approaches best support conceptual learning, problem-solving, and especially model building. The review also concludes that ITS do not clearly match expert human tutors in effectiveness, and it recommends future work that more explicitly connects system design to established learning theories and pedagogical scaffolding methods so educators can better align ITS with instructional goals.",
+  "limitations": [
+    "non_representative_population",
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "classroom",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "ITS",
+      "is_named_product": true,
+      "specificity": "category",
+      "category_key": [
+        "tutoring_instruction"
+      ],
+      "description": "Intelligent tutoring systems are adaptive instructional systems that provide individualized tutoring through mechanisms such as step-by-step guidance, hints, feedback, scaffolding, and interactive problem-solving support.",
+      "use_case": "Systematic review of 22 peer-reviewed classroom studies published since 2000 on intelligent tutoring systems in STEM education, covering primarily college settings and multiple STEM domains, with comparisons against controls such as textbook reading, no-treatment, no-dialogue versions, or other instructional variants.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "review_synthesis",
+          "direction": "positive",
+          "finding_summary": "Across 22 reviewed studies, intelligent tutoring systems generally produced significant learning improvements, though reported outcomes ranged from no detectable learning impact to an effect size as high as 1.24. The review also notes there is no evidence that these learning gains equal those produced by expert human tutors.",
+          "measure": "learning outcomes/learning gains across STEM studies",
+          "effect_size": "up to 1.24",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported",
+          "study_count": 22
+        },
+        {
+          "outcome_category": "Academic \u2014 Scientific Reasoning",
+          "finding_type": "review_synthesis",
+          "direction": "mixed",
+          "finding_summary": "The review concludes that intelligent tutoring systems are beneficial as supplements for teaching STEM concepts, but finds limited fine-grained evidence regarding effectiveness for conceptual learning, problem-solving, and especially model building. Model-building support appears underdeveloped and difficult to distinguish from problem-solving in existing systems.",
+          "measure": "conceptual learning, problem-solving, and model-building outcomes in STEM",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported",
+          "study_count": 22
+        }
+      ]
+    },
+    {
+      "name": "AutoTutor",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "language_speech"
+      ],
+      "description": "A dialogue-based intelligent tutoring system that uses natural language interaction, agents, and latent semantic analysis to teach STEM and related conceptual content.",
+      "use_case": "This review discusses AutoTutor as a prototypical expectation-and-misconception-tailoring ITS using natural language dialogue. It is described as teaching STEM subjects such as physics through main questions, hints, and prompts, and is also noted to support multiple-agent trialogues. In the included studies, AutoTutor was used in physics and computer literacy with college students, including comparisons against reading textbooks, doing nothing, and variants with/without a talking-head agent.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Scientific Reasoning",
+          "finding_type": "review_synthesis",
+          "direction": "positive",
+          "finding_summary": "In the physics study summarized in the review, AutoTutor outperformed textbook reading and no-treatment control on conceptual learning.",
+          "measure": "effect size",
+          "effect_size": ".75 against pretest; .61 against control; 1.22 against reading textbook",
+          "confidence_interval": "",
+          "sample_size": "",
+          "study_count": 1
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "review_synthesis",
+          "direction": "positive",
+          "finding_summary": "In the computer literacy study, AutoTutor replicated prior positive findings, and the talking-head version showed slightly better benefit with higher proportions of correct responses.",
+          "measure": "proportion correct / qualitative summary",
+          "effect_size": "",
+          "confidence_interval": "",
+          "sample_size": "",
+          "study_count": 1
+        }
+      ]
+    },
+    {
+      "name": "KERMIT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "feedback_evaluation"
+      ],
+      "description": "A constraint-based intelligent tutoring system for database modeling and design.",
+      "use_case": "The review mentions KERMIT as an example of a constraint-based modeling ITS. It is used to illustrate how predefined logical constraints and feedback messages support learning from errors in interactive, activity-based topics such as database design.",
+      "findings": []
+    },
+    {
+      "name": "Cognitive Tutor",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "personalization_adaptation"
+      ],
+      "description": "A model-tracing intelligent tutoring system based on ACT-R that tracks student knowledge states and gives immediate feedback during problem solving.",
+      "use_case": "The review presents Cognitive Tutor as a well-known ACT-R-based model-tracing ITS. It is discussed both in prior meta-analytic background and in the included studies. The review notes that meta-analytic effect sizes decreased when Cognitive Tutor was included, likely because its evaluations were large-scale and used standardized tests. In Appendix A, Cognitive Tutor was used for mathematics problem solving in randomized experiments.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "review_synthesis",
+          "direction": "mixed",
+          "finding_summary": "The included mathematics study reported no evidence of impact for Cognitive Tutor, and two experiments showed negative effect sizes.",
+          "measure": "experimental impact / effect size direction",
+          "effect_size": "negative effect sizes in two experiments",
+          "confidence_interval": "",
+          "sample_size": "",
+          "study_count": 1
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "review_synthesis",
+          "direction": "negative",
+          "finding_summary": "The review reports that meta-analytic effect sizes decreased when Cognitive Tutor was included, likely due to large-scale evaluations and reliance on standardized test items.",
+          "measure": "meta-analytic effect size trend",
+          "effect_size": "",
+          "confidence_interval": "",
+          "sample_size": "",
+          "study_count": 1
+        }
+      ]
+    },
+    {
+      "name": "CIRCSIM-Tutor",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction"
+      ],
+      "description": "An intelligent tutoring system for physiology education targeting medical learners.",
+      "use_case": "The review mentions CIRCSIM-Tutor only in discussing overall target populations, noting it as the one tutoring system in the set aimed at professional medical students on physiology.",
+      "findings": []
+    },
+    {
+      "name": "Conceptual Helper",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "personalization_adaptation"
+      ],
+      "description": "A model-tracing intelligent tutor for fundamental physics concepts that uses probabilistic assessment to guide remediation.",
+      "use_case": "The review describes Conceptual Helper as a non-dialogue ITS using model tracing and probabilistic assessment to match student work against an expert solution model and guide remediation. In the included study, it was used for college students learning mechanics.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Scientific Reasoning",
+          "finding_type": "review_synthesis",
+          "direction": "positive",
+          "finding_summary": "Conceptual Helper improved learning of mechanics concepts relative to control in the summarized study.",
+          "measure": "effect size",
+          "effect_size": ".43-.63",
+          "confidence_interval": "",
+          "sample_size": "",
+          "study_count": 1
+        }
+      ]
+    },
+    {
+      "name": "Guru",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "language_speech"
+      ],
+      "description": "An agent-based intelligent tutoring system using latent semantic analysis and structured instructional components such as preview, lecture, summary, and concept maps.",
+      "use_case": "The review includes Guru as a biology ITS for conceptual learning with high school students. It was compared directly with human tutors in classroom-based educational research using pre-, post-, and delayed posttests.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Scientific Reasoning",
+          "finding_type": "review_synthesis",
+          "direction": "positive",
+          "finding_summary": "Guru produced learning gains against pretest, and its outcomes did not differ significantly from human tutoring; the pattern was replicated at delayed posttest relative to classroom-only learning.",
+          "measure": "effect size",
+          "effect_size": ".75 against immediate pretest",
+          "confidence_interval": "",
+          "sample_size": "",
+          "study_count": 1
+        }
+      ]
+    },
+    {
+      "name": "Operation ARIES!",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "language_speech"
+      ],
+      "description": "A game-based intelligent tutoring system with animated agents designed to teach research methodology and scientific reasoning concepts.",
+      "use_case": "The review lists Operation ARIES! as an ITS for research methodology that uses agents and latent semantic analysis in a game environment. It supports learning through critiquing case studies and question generation for college students.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Scientific Reasoning",
+          "finding_type": "review_synthesis",
+          "direction": "positive",
+          "finding_summary": "Across 11 core concepts, Operation ARIES! showed positive pre-post gains, ranging from small to moderate depending on the concept.",
+          "measure": "effect size",
+          "effect_size": "from .17 to .50; mean .34",
+          "confidence_interval": "",
+          "sample_size": "",
+          "study_count": 1
+        }
+      ]
+    },
+    {
+      "name": "Atlas-Andes",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "language_speech"
+      ],
+      "description": "A conceptual physics tutoring system that incorporates natural language dialogue support.",
+      "use_case": "The review includes Atlas-Andes as a physics ITS for conceptual learning with college students. It was studied under dialogue versus no-dialogue experimental conditions to assess the contribution of dialogue to learning.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Scientific Reasoning",
+          "finding_type": "review_synthesis",
+          "direction": "positive",
+          "finding_summary": "The review reports that dialogue in Atlas-Andes appeared to contribute substantially to learning gains.",
+          "measure": "effect size",
+          "effect_size": ".9",
+          "confidence_interval": "",
+          "sample_size": "",
+          "study_count": 1
+        }
+      ]
+    },
+    {
+      "name": "DeepTutor",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "language_speech"
+      ],
+      "description": "An online intelligent tutoring system with deep dialogue management, natural language understanding, and macro-adaptivity to promote deep learning.",
+      "use_case": "The review includes DeepTutor as a physics ITS for conceptual learning and problem solving among high school students. It is described as using self-explanation strategies, dialogue, feedback, and learning progressions, and was evaluated for whether learning progressions improve assistance and prediction of student knowledge.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Scientific Reasoning",
+          "finding_type": "review_synthesis",
+          "direction": "positive",
+          "finding_summary": "DeepTutor showed positive long-term learning gains in the summarized experiment.",
+          "measure": "learning gain",
+          "effect_size": ".43",
+          "confidence_interval": "",
+          "sample_size": "",
+          "study_count": 1
+        }
+      ]
+    },
+    {
+      "name": "Urban Science",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "other"
+      ],
+      "description": "An epistemic game environment with mentor assessment for learning urban science concepts and problem solving.",
+      "use_case": "The review includes Urban Science as the named environment used in a middle-school study of collaborative learning in a game setting with a mentor. It is discussed as supporting conceptual learning and problem solving through epistemic gaming.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Scientific Reasoning",
+          "finding_type": "review_synthesis",
+          "direction": "positive",
+          "finding_summary": "Students' post-interview epistemic frame density was significantly greater than pre-interview density after using Urban Science.",
+          "measure": "weighted density of interview frames",
+          "effect_size": "mean pre = 0.1, mean post = 4.4",
+          "confidence_interval": "",
+          "sample_size": "",
+          "study_count": 1
+        }
+      ]
+    },
+    {
+      "name": "CPP-Tutor",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "feedback_evaluation"
+      ],
+      "description": "An intelligent tutoring system integrated with a programming environment for learning C++ through logical modules and feedback loops.",
+      "use_case": "The review discusses CPP-Tutor as a computer programming ITS for college students focused on problem solving. It is described as using logical modules that trigger canned feedback when incorrect responses are detected.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "review_synthesis",
+          "direction": "positive",
+          "finding_summary": "CPP-Tutor improved posttest performance relative to control in the reported study.",
+          "measure": "posttest performance difference",
+          "effect_size": "10-17% better performance",
+          "confidence_interval": "",
+          "sample_size": "",
+          "study_count": 1
+        }
+      ]
+    },
+    {
+      "name": "Research Methods Tutor",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "language_speech"
+      ],
+      "description": "A dialogue-based intelligent tutoring system with agent and latent semantic analysis for teaching research methodology.",
+      "use_case": "The review includes Research Methods Tutor as a conceptual-learning ITS for college students. It is described as using natural language dialogue moves and was evaluated in a control-versus-test pre/post design.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Scientific Reasoning",
+          "finding_type": "review_synthesis",
+          "direction": "positive",
+          "finding_summary": "Research Methods Tutor produced a positive learning effect in the classroom evaluation summarized by the review.",
+          "measure": "effect size",
+          "effect_size": ".75",
+          "confidence_interval": "",
+          "sample_size": "",
+          "study_count": 1
+        }
+      ]
+    },
+    {
+      "name": "AnimalWatch",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "language_speech"
+      ],
+      "description": "An intelligent tutoring system for mathematics problem solving that uses agent-based natural language dialogue.",
+      "use_case": "The review includes AnimalWatch as a mathematics ITS for middle school students. It was evaluated under varying conditions, including small-group versus large-group learning, to examine mathematics achievement effects.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "review_synthesis",
+          "direction": "positive",
+          "finding_summary": "AnimalWatch produced significant improvements in mathematics learning, especially for lower-level students, although no effect size was reported.",
+          "measure": "qualitative significance summary",
+          "effect_size": "",
+          "confidence_interval": "",
+          "sample_size": "",
+          "study_count": 1
+        }
+      ]
+    },
+    {
+      "name": "Ms Lindquist",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "language_speech"
+      ],
+      "description": "An agent-based intelligent tutoring system for mathematics that uses natural language dialogue moves.",
+      "use_case": "The review includes Ms Lindquist as a middle-school mathematics ITS for problem solving. It was compared with a simpler computer-assisted learning condition.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "review_synthesis",
+          "direction": "positive",
+          "finding_summary": "Ms Lindquist was reported as significantly more effective than simple computer-assisted learning.",
+          "measure": "between-condition comparison",
+          "effect_size": "",
+          "confidence_interval": "",
+          "sample_size": "",
+          "study_count": 1
+        }
+      ]
+    },
+    {
+      "name": "iList",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "feedback_evaluation"
+      ],
+      "description": "A constraint-based intelligent tutoring system for computer science learning focused on linked lists that students can see and manipulate.",
+      "use_case": "The review includes iList as a computer science ITS for conceptual learning in college students. It is described as using constraint-based modeling, with domain knowledge represented as constraints, and was compared with both control and human tutors.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "review_synthesis",
+          "direction": "mixed",
+          "finding_summary": "iList performed better than control but worse than human tutors in the summarized evaluation.",
+          "measure": "comparative learning outcome",
+          "effect_size": "",
+          "confidence_interval": "",
+          "sample_size": "",
+          "study_count": 1
+        }
+      ]
+    },
+    {
+      "name": "ALEKS",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "personalization_adaptation"
+      ],
+      "description": "Adaptive online learning platform for mathematics that assesses student knowledge and delivers individualized practice and instruction.",
+      "use_case": "The review includes ALEKS as a mathematics ITS for college students. It is described as using adaptive questioning to assess student knowledge and mastery-learning techniques based on knowledge space theory. The included study examined mathematics learning and long-term retention.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "review_synthesis",
+          "direction": "positive",
+          "finding_summary": "Several assessments in the summarized study indicated that students using ALEKS improved on posttests and in learning retention.",
+          "measure": "multiple assessments / posttest and retention outcomes",
+          "effect_size": "",
+          "confidence_interval": "",
+          "sample_size": "",
+          "study_count": 1
+        }
+      ]
+    },
+    {
+      "name": "DEPTHS",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "personalization_adaptation"
+      ],
+      "description": "An intelligent tutoring system for computer science design patterns using adaptive navigation support and content/link-level adaptation.",
+      "use_case": "The review includes DEPTHS as a college-level computer science ITS for conceptual learning. It is described as providing direct guidance and link removal as forms of adaptive navigation support and was evaluated against two control groups.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "review_synthesis",
+          "direction": "positive",
+          "finding_summary": "DEPTHS was reported as significantly more effective than both control groups in the summarized study.",
+          "measure": "between-group comparison",
+          "effect_size": "",
+          "confidence_interval": "",
+          "sample_size": "",
+          "study_count": 1
+        }
+      ]
+    },
+    {
+      "name": "Pro-PELL",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "language_speech"
+      ],
+      "description": "A natural-language, agent-based intelligent tutoring system for computer science learning.",
+      "use_case": "The review includes Pro-PELL as a college-level computer science ITS supporting both conceptual learning and problem solving. It uses natural language dialogue moves and was evaluated with pre/post testing against a control condition.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "review_synthesis",
+          "direction": "positive",
+          "finding_summary": "Pro-PELL showed substantial positive effects on computer science learning in the summarized study.",
+          "measure": "effect size",
+          "effect_size": ".57 to 2.33",
+          "confidence_interval": "",
+          "sample_size": "",
+          "study_count": 1
+        }
+      ]
+    },
+    {
+      "name": "ViPS",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "personalization_adaptation"
+      ],
+      "description": "An intelligent learning system for physics education that builds student models by detecting misconceptions and prompting correction.",
+      "use_case": "The review discusses ViPS as a physics ITS for conceptual learning. It is specifically described as building student modeling from misconception detection and asking students to correct those misconceptions. The included study used three conditions with pre/post comparisons among college students.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Scientific Reasoning",
+          "finding_type": "review_synthesis",
+          "direction": "positive",
+          "finding_summary": "ViPS showed a positive effect in the summarized physics study, reported with eta-squared.",
+          "measure": "eta-squared",
+          "effect_size": ".28",
+          "confidence_interval": "",
+          "sample_size": "",
+          "study_count": 1
+        }
+      ]
+    },
+    {
+      "name": "DTEx-Sys",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "personalization_adaptation"
+      ],
+      "description": "A web-based intelligent authoring shell for computer science learning that supports test generation, student rating, progress tracking, and scaffolding by user domain knowledge.",
+      "use_case": "The review includes DTEx-Sys as a computer science ITS for conceptual learning with college students. It was evaluated in a three-condition design with pre/post testing.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "review_synthesis",
+          "direction": "positive",
+          "finding_summary": "DTEx-Sys had a reported positive educational effect in the summarized study.",
+          "measure": "effect size",
+          "effect_size": ".94",
+          "confidence_interval": "",
+          "sample_size": "",
+          "study_count": 1
+        }
+      ]
+    }
+  ],
+  "verdict": "",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is a peer-reviewed systematic review of 22 empirical ITS studies with explicit search procedures and inclusion criteria, which is stronger than a single primary study. However, it is not a formal meta-analysis with pooled effect estimates across all included studies, and the reviewed studies appear heterogeneous in design and context.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The review concludes that ITS generally improve learning, but impact is synthesized narratively and appears mixed across studies, with some null or negative findings and no single pooled estimate for the review itself. Because overall impact is positive but not precisely quantified at the review level, the impact is best classified as modest or unclear.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": "Converted from kg_curator_v4 legacy extraction",
+  "_legacy_source": "/Users/alymoosa/Documents/A-Moosa-Dev/AI-EDU-Dev/eduagent/open_deep_research_v2/scripts/extraction_profiles_v3/a_systematic_review_of_literature_on_the_effectiveness_of_intelligent_tutoring_s.json"
+}

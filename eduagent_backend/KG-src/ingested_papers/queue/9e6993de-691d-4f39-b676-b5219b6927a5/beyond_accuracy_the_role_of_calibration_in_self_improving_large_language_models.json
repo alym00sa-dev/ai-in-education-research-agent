@@ -1,0 +1,32 @@
+{
+  "title": "Beyond Accuracy: The Role of Calibration in Self-Improving Large Language Models",
+  "doi": null,
+  "year": 2025,
+  "venue": null,
+  "url": "http://arxiv.org/abs/2504.02902v1",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This preprint examines whether iterative self-improvement in large language models introduces bias in confidence estimation, especially overconfidence, and how calibration methods can be combined with self-improvement to improve reliability. The paper frames two main questions: whether self-improvement causes confidence-estimation bias, and what happens when calibration is applied before, after, or during repeated self-improvement steps.\n\nThe authors study three self-improvement paradigms: basic prompting, chain-of-thought prompting, and supervised fine-tuning. They evaluate these approaches using open-source LLMs (Llama-2-7b-chat-hf and DeepSeek-R1-Distill-Llama-8B) on the MMLU benchmark. They also test three ways of combining calibration with self-improvement: iterative calibration after each round, calibration before self-improvement, and calibration after multiple rounds of self-improvement. Outcomes are model accuracy and expected calibration error (ECE), with confidence distributions examined across rounds.\n\nThis is not an education study and includes no K-12 learners, teachers, or instructional writing context. The population is language models evaluated on a benchmark dataset rather than human participants in schools. No classroom implementation, teacher mediation, writing instruction, revision support, or feedback intervention for students is studied.\n\nThe main conclusion is that iterative self-improvement tends to increase overconfidence, reflected in worsening calibration and rising ECE across rounds, even when accuracy may sometimes improve. Applying calibration after self-improvement most effectively reduces ECE, while calibration before self-improvement can provide a stronger starting point for stronger models. Overall, the paper contributes methodological insight about reliability and calibration in self-improving LLMs, not evidence about generative AI writing support in K-12 education.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a preprint under review in computer science, not a K-12 education study. It contains no student participants, no educational writing intervention, and no school-based empirical design relevant to the requested evidence base.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "The paper reports model calibration and accuracy outcomes on MMLU benchmark tasks, not learner literacy or writing outcomes. It therefore provides no direct evidence of impact for K-12 generative AI writing, revision, or feedback interventions.",
+  "interventions": [],
+  "outcome_assignments": [],
+  "limitations": [
+    "no_control_group",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "lab",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

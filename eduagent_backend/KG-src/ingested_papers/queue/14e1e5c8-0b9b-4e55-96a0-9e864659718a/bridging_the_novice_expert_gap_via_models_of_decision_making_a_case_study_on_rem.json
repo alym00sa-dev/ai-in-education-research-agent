@@ -1,0 +1,95 @@
+{
+  "title": "Bridging the Novice-Expert Gap via Models of Decision-Making: A Case Study on Remediating Math Mistakes",
+  "doi": null,
+  "year": 2024,
+  "venue": "Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers)",
+  "url": "https://doi.org/10.18653/v1/2024.naacl-long.120",
+  "source_db": "openalex_search",
+  "populations": [
+    "Elementary (PreK-5th)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses the problem of how to scale high-quality tutoring responses when many tutoring systems rely on novice tutors who struggle to respond effectively to student math mistakes in real time. The authors ask whether large language models can be guided to better remediate mistakes by explicitly modeling the decision process used by expert teachers.\n\nThe intervention introduced is Bridge, a cognitive task analysis-based method that decomposes expert remediation into three steps: inferring the student\u2019s error, selecting a remediation strategy, and identifying the intention behind that strategy. The paper uses this framework to annotate 700 real tutoring conversations and to prompt/evaluate LLMs such as GPT-4 and Llama-2-70B on the task of generating better remediation responses. The work also includes human evaluation by teachers comparing generated responses under different decision-making conditions.\n\nThe population/context is 1st\u20135th grade students in Title I schools, drawn from real tutoring sessions delivered through an online tutoring provider serving a Southern U.S. school district. Experienced math teachers collaborated in developing the framework and annotations. The main conclusion is that embedding expert decision-making substantially improves LLM tutoring responses, especially when decisions are context-sensitive and aligned with expert reasoning, while random or absent decision guidance leads to weaker, more superficial feedback. The paper positions this as a promising step toward human-LLM tutoring systems that better support novice tutors and scalable instructional coaching.",
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_long_term_followup",
+    "non_representative_population"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "medium",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "feedback_evaluation"
+      ],
+      "description": "OpenAI GPT-family large language model chat system used for text generation and feedback-style responses.",
+      "use_case": "Evaluated GPT-4 and GPT-3.5-turbo on math mistake remediation, with and without expert-guided decision-making (Bridge).",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In human pairwise evaluations of remediation responses, GPT-4 with expert decisions was 76% more preferred than GPT-4 without decisions and 80% more useful. The paper also reports that expert decision-making significantly improved overall response quality for all models under a two-tailed t-test (p < 0.05).",
+          "measure": "Teacher pairwise ratings of prefer/useful/care/human-soundingness/overall response quality",
+          "effect_size": "76% more preferred; 80% more useful",
+          "confidence_interval": "not_reported",
+          "sample_size": "40 pairs per model, 3 annotators each (exact n of evaluated responses not otherwise reported)"
+        },
+        {
+          "outcome_category": "Academic \u0014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In the self decision-making condition, GPT-4 significantly outperformed its no-decision baseline on prefer and useful, with improvements up to +95%. However, random decision-making performed worse than expert decision-making and could even underperform no decision-making on some outcomes.",
+          "measure": "Teacher pairwise ratings of response quality under no, expert, self, and random decision-making conditions",
+          "effect_size": "up to +95%",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    },
+    {
+      "name": "LLaMA",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "feedback_evaluation"
+      ],
+      "description": "Meta's open-weight large language model family used here in a chat/instruction-tuned form for response generation.",
+      "use_case": "Evaluated Llama-2-70b-chat / Llama-2-70b-instruct on remediation of student math mistakes, both directly and with Bridge decision inputs.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In human evaluations, expert decision-making improved Llama-2 response quality over the no-decision baseline on prefer and useful, though the paper notes it did not improve care. The authors also report that self decision-making significantly outperformed the no-decision condition on prefer and useful.",
+          "measure": "Teacher pairwise ratings of response quality",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "40 pairs per model, 3 annotators each (exact n of evaluated responses not otherwise reported)"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a single empirical study with a human evaluation design, but it is not a randomized classroom intervention and the paper evaluates generated tutoring responses rather than student learning outcomes. The evidence is therefore useful but methodologically limited for causal claims about educational impact.",
+  "impact_tier": "green",
+  "impact_tier_rationale": "The reported response-quality improvements are substantial in relative terms (e.g., +76% preference for GPT-4 with expert decisions), but the outcomes are proxy measures from teacher ratings rather than direct student achievement. That makes the practical impact promising but still modest/indirect.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

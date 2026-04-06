@@ -1,0 +1,89 @@
+{
+  "title": "Should There be a Teacher In-the-Loop? A Study of Generative AI Personalized Tasks Middle School",
+  "doi": null,
+  "year": null,
+  "venue": null,
+  "url": "http://arxiv.org/abs/2602.15876v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Middle School (6th-8th)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper asks whether teachers should remain \u201cin the loop\u201d when using generative AI to personalize mathematics tasks for students, and how that affects the quality, realism, and efficiency of the personalization process. The authors focus on the tension between broad personalization that a teacher can manage and the smaller-grain, more individualized personalization that students may prefer.\n\nThe intervention involved 7 middle school mathematics teachers using ChatGPT (with GPT-4o) to modify existing Illustrative Mathematics problems so they better matched students\u2019 popular-culture interests. Teachers first received a 2-hour training on personalization, bias, readability, and cultural relevance, then completed two personalization cycles: one for Unit 4 (Proportional Relationships and Percentages) and one for Unit 6 (Expressions, Equations, and Inequalities). They worked in Zoom sessions while their prompting and screen activity were recorded, and 521 seventh-grade students completed the resulting personalized assignments in ASSISTments. Students then provided closed-ended ratings of interestingness and closeness to their interests, plus open-ended feedback on what they liked and how the tasks could be improved.\n\nThe study finds that teachers used ChatGPT in iterative ways that reflected tradeoffs among grain size, depth, and ownership. Teachers often prompted the model to add specific pop-culture references, improve realism, adjust numbers and quantities, and tailor tasks to age, location, or names. Students, however, tended to respond more positively to specific, fine-grained references than to broad categories, while showing relatively little concern for deeper realism issues. In terms of efficiency, personalizing a problem took about 4 minutes on average and required about 3 prompts; performance was best when teachers used roughly 3\u20135 prompts. Teachers did not become faster over time\u2014in fact, they used more prompts and took longer in Unit 6\u2014though student ratings improved after teachers reflected on feedback and revised their approach. The authors conclude that teacher-in-the-loop personalization supports professional learning and can improve task quality, but it remains time-consuming and may not be able to deliver the fine-grained personalization students prefer.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an exploratory qualitative-plus-correlational study with teacher and student feedback, prompt logs, and mixed-effects models, but no randomized control group for learning outcomes. It provides useful descriptive evidence, yet it does not meet strong causal or RCT standards.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The study shows modest-to-mixed impact on student interest ratings and no evidence of improved achievement, while teacher workload increased rather than decreased. The observed student-rating gains are small and mainly affect engagement-related outcomes, not general academic performance.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "Teacher-in-the-loop use of ChatGPT/GPT-4o to personalize middle school mathematics word problems to students\u2019 interests, with iterative prompting to adjust context, realism, readability, and mathematical clarity."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 0.85,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper\u2019s main academic outcome was students\u2019 ratings of the personalized math problems, not achievement test scores. Student ratings of interestingness and closeness to students\u2019 interests were significantly higher when teachers used 3\u20135 prompts to create a problem, with an estimated increase of about 0.24 points on a 5-point scale (B=0.240, SE=0.085, t=2.84, p=0.0073).",
+        "measure": "Student 1\u20135 ratings of problem interestingness and closeness to students\u2019 interests",
+        "study_size": "n=521 students; 52 problems with ratings",
+        "effect_size": "B=0.240",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.9,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "Students often found the personalized problems interesting when the popular culture reference matched their preferences, but many disliked them when the reference did not match. Average ratings were modest overall (interestingness M=2.46, SD=1.24; closeness M=2.53, SD=1.28), and Unit 6 problems were rated higher than Unit 4 (interestingness B=0.33, SE=0.095, p=0.0012).",
+        "measure": "Student survey ratings of interestingness and closeness to interests; open-ended feedback on whether the problem was interesting",
+        "study_size": "n=521 students",
+        "effect_size": "B=0.33",
+        "confidence_interval": "not_reported",
+        "std_deviation": "SD=1.24 (interestingness), SD=1.28 (closeness)"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Negative",
+        "finding_summary": "Teacher efficiency was not improved by using ChatGPT for personalization. Teachers took an average of 246 seconds per problem (SD=165.7) and 3.2 prompts per problem overall, with some teachers needing up to 6.6 prompts per problem and about 5.5 minutes per problem; time did not clearly decline over time, and in Unit 6 teachers actually used more prompts and more time than in Unit 4 (B=1.26 prompts, SE=0.41, p=0.0025; B=70.4 seconds, SE=29.6, p=0.0189).",
+        "measure": "Time spent creating each problem; number of prompts per problem",
+        "study_size": "n=7 teachers; 143 problems",
+        "effect_size": "B=1.26 (prompts), B=70.4 (seconds)",
+        "confidence_interval": "not_reported",
+        "std_deviation": "SD=2.6 prompts; SD=165.7 seconds"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "no_control_group",
+    "self_reported_measures",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "classroom",
+  "teacher_training": "yes",
+  "implementation_fidelity": "medium",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

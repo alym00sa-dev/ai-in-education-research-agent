@@ -1,0 +1,105 @@
+{
+  "title": "Implementing Learning Principles with a Personal AI Tutor: A Case Study",
+  "doi": null,
+  "year": 2023,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2309.13060v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Quasi-Experimental Design (QED)",
+  "extended_summary": "This paper examines whether a personal AI tutor can improve learning by operationalizing evidence-based learning principles such as personalization, retrieval practice, and spaced repetition. The authors also ask whether the system\u2019s internal model of student knowledge (\u201cgrasp\u201d) meaningfully predicts achievement, which would support the tutor\u2019s ability to personalize question selection over time.\n\nThe intervention was a mobile and web AI tutor app that generated microlearning questions from course materials using GPT-3 and then adapted practice based on a neural-network model of each student\u2019s performance history. The app selected questions intended to be appropriately challenging, and it presented a visual \u201clearnet\u201d showing concept mastery. The study took place over one semester in a university neuroscience course at UniDistance Suisse, with 51 students taking the final exam; 43 had app accounts and use varied widely. The main comparison was between active and inactive app users, with additional comparisons to a parallel course without the AI tutor and to Moodle quizzes.\n\nResults showed that students who used the AI tutor more actively earned higher final exam grades, and active users outperformed inactive peers by roughly 15 percentile points when compared with their performance in the parallel course. In contrast, greater engagement with Moodle quizzes did not show similarly consistent gains. The predicted grasp values were strongly correlated with exam grades among regular users, suggesting the model captured meaningful knowledge differences. The paper concludes that a personal AI tutor can support learning when grounded in learning sciences, though the authors note the evidence is not causal because the design lacked random assignment and an active control group.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a single-semester correlational case study with self-selection into usage and no random assignment or active control, so causal credibility is limited. The paper is empirical and reports quantitative analyses, but the design leaves major confounding concerns.",
+  "impact_tier": "green",
+  "impact_tier_rationale": "The reported effects on exam performance are medium-to-large in magnitude (e.g., d\u22480.69-0.73) and concern a relevant student population, but the evidence comes from a small, non-randomized sample. Impact is promising but not yet definitive for broader K-12 deployment.",
+  "interventions": [
+    {
+      "intervention": "Adaptive Learning Platform",
+      "confidence": 0.95,
+      "role": "primary",
+      "use_case": "personalized retrieval-practice and spaced-repetition app that adaptively selects microlearning questions based on a neural-network estimate of each student's grasp of course concepts"
+    },
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.7,
+      "role": "secondary",
+      "use_case": "GPT-3 was used to automatically generate microlearning questions from course materials before instructor review and validation"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Active users of the AI tutor achieved significantly higher final exam grades than inactive users in the neuroscience course (N=51). Across inactivity thresholds from 0 to 1000 answers, the active group averaged +0.71 grade points on a 1-6 scale, with mean Cohen's d=0.69 (SD=0.09) and all p-values below 0.06.",
+        "measure": "Final course exam grade (1-6 scale) comparing active vs inactive AI tutor use",
+        "study_size": "n=51",
+        "effect_size": "d=0.69",
+        "confidence_interval": "not_reported",
+        "std_deviation": "SD=0.09 for d across thresholds; grade SD not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.9,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "For students who took both the main course exam and the parallel neuroanatomy exam (n=47), active AI tutor users gained 18.1 more percentile points in the AI-tutor-supported course than inactive users relative to the parallel course. Active students improved by 12.4 percentile points while inactive students lost 5.7, with t(45)=2.33, p=0.025, and Cohen's d=0.73.",
+        "measure": "Percentile gain in exam ranking relative to parallel course without AI tutor",
+        "study_size": "n=47",
+        "effect_size": "d=0.73",
+        "confidence_interval": "not_reported",
+        "std_deviation": "SD1=SD2=25%"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.9,
+      "finding": {
+        "direction": "No Effect",
+        "finding_summary": "In contrast to the AI tutor, use of the parallel Moodle quizzes did not consistently improve students' percentile rankings relative to the parallel course. The paper reports fluctuating p-values and no clear statistically significant gain across thresholds, suggesting no reliable performance advantage from quiz engagement in this analysis.",
+        "measure": "Percentile gain in exam ranking relative to parallel course for Moodle quiz use",
+        "study_size": "n=47",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Computer-Assisted Instruction (CAI)"
+    },
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.85,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Among regular AI tutor users who engaged on at least 30 days (n=14), the model's integrated predicted grasp correlated strongly with final exam grade. The Pearson correlation was r=0.81 with p<0.001 and 95% CI [0.479, 0.936], indicating the system's predictions tracked performance closely.",
+        "measure": "Correlation between predicted grasp and final exam grade",
+        "study_size": "n=14",
+        "effect_size": "r=0.81",
+        "confidence_interval": "[0.479, 0.936]",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "medium",
+  "study_country": "Switzerland",
+  "study_region": "Europe",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

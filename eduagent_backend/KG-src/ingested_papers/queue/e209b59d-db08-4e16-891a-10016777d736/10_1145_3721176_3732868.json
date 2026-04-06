@@ -1,0 +1,64 @@
+{
+  "title": "CryptoEL: A Novel Experiential Learning Tool for Enhancing K-12 Cryptography Education",
+  "doi": "10.1145/3721176.3732868",
+  "year": 2025,
+  "venue": "Proceedings of the 56th ACM Technical Symposium on Computer Science Education V. 1 (SIGCSE 2025)",
+  "url": "http://arxiv.org/abs/2411.02143v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Middle School (6th-8th)",
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses the lack of age-appropriate, engaging K-12 resources for teaching modern cryptography. The authors argue that cryptography is important for students\u2019 digital security, but is often absent from school curricula and is typically taught through advanced mathematical or programming-heavy materials that are not well suited to younger learners.\n\nTo address this gap, the paper presents CryptoEL, a web-based educational tool built around Kolb\u2019s Experiential Learning cycle. The tool teaches three core topics\u2014hashing, symmetric cryptography, and asymmetric cryptography\u2014through realistic scenarios such as a university application portal, a chat application, and a login interface. Students interact with ideal and attacker simulations, reflect with AI-based conversation agents (\u201cCryptoCoach\u201d), watch explanatory videos, and complete simplified Python terminal exercises. The system was designed for independent learning with minimal instructor involvement and was open-sourced for classroom use.\n\nThe evaluation involved 51 middle and high school students in a 4-hour online workshop. Students completed pre- and post-surveys, concept quizzes, and Likert-scale feedback measures. Results showed high comprehension scores across all three cryptography topics and statistically significant gains from pre- to post-survey. Students also reported that the tool was engaging and beneficial, especially the visualizations, AI reflections, and hands-on terminal activities. The paper concludes that CryptoEL can effectively support early cryptography education, though some usability issues such as fast animations and lengthy AI responses were noted.",
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_control_group",
+    "self_reported_measures",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "medium",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "other",
+        "personalization_adaptation"
+      ],
+      "description": "OpenAI's GPT-based conversational AI chatbot system used for natural-language interaction and customized conversational assistance.",
+      "use_case": "Used as customized AI-based conversation agents ('CryptoCoach') for reflective observation in the cryptography learning tool, with separate models tailored to hashing, symmetric cryptography, and asymmetric cryptography.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0001 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The paper reports that the AI reflection stage using CryptoCoach was positively received by students as part of the overall tool. In the user study with n=51 middle and high school students, 73% of middle school students and 86% of high school students said they benefited from the AI-driven reflection stage.",
+          "measure": "Student-reported benefit from the AI-driven reflection stage",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=51"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a single preliminary user study with pre/post surveys and satisfaction feedback, not a controlled comparison. The evidence is mixed-methods and observational rather than a rigorous experimental design.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The reported outcomes are positive and fairly high in absolute terms, but no effect size is given and the study lacks a non-AI comparator for the AI component. Impact is therefore promising but unclear.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

@@ -1,0 +1,72 @@
+{
+  "title": "Intelligent Tutors Beyond K-12: An Observational Study of Adult Learner Engagement and Academic Impact",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv preprint",
+  "url": "http://arxiv.org/abs/2502.16613v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Adult (non-academic)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper asks whether an intelligent tutoring system designed for college algebra can support adult learners when use is voluntary and supplementary, rather than mandated as in many K-12 studies. The authors focus on both adoption/engagement patterns and whether tutor use is associated with measurable learning outcomes.\n\nThe intervention studied is Apprentice Tutors, a novel intelligent tutoring platform for college algebra. It provides adaptive problem selection using Bayesian Knowledge Tracing, real-time correctness feedback, multi-layered hints, and links to supporting resources. The system was deployed through Blackboard and Canvas as an optional resource, letting students decide whether and when to use it.\n\nThe study was conducted with adult learners enrolled in College Algebra at a 2-year state technical college in the United States. The authors analyzed tutor interaction logs, grades, and demographic data across a two-year deployment. They report that tutor users were more likely to be female, slightly older, and tended to use the system in the evenings and on Thursdays. Within the tutor, error rates decreased with practice, and tutor use was positively associated with Unit 1 assessment scores. Because the study is observational and voluntary, the authors caution that causality cannot be inferred, but they conclude that intelligent tutors appear to be a viable supplementary learning tool for adult learners.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed observational/quasi-experimental study with real usage and grade data, but without random assignment or a control group. The design supports correlational evidence only, with acknowledged selection effects and limited causal credibility.",
+  "impact_tier": "green",
+  "impact_tier_rationale": "The observed relationship is positive but modest: tutor transactions predicted higher grades with a small regression coefficient, and the authors describe the impact as slight. Because the population is adult technical-college learners and the findings are preliminary, the study suggests modest positive impact rather than strong effect.",
+  "interventions": [
+    {
+      "intervention": "Intelligent Tutoring System (ITS)",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "optional supplementary algebra tutoring for adult learners, with adaptive problem selection via Bayesian Knowledge Tracing, real-time correctness feedback, and multi-layer hints"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u0012 Mathematical Numeracy",
+      "confidence": 1.0,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper reports within-tutor learning gains for adult learners using Apprentice Tutors in College Algebra. In the tutor learning-curve analysis, error rates decreased significantly with additional practice opportunities (p<0.001); students started at an average error rate of about 65% on first attempts, and performance improved over repeated skills practice. The study is observational (n=3,510 enrolled; 520 tutor users; 214 Unit 1 users), so causality cannot be established.",
+        "measure": "Tutor-internal error rates / learning curve on algebra knowledge components; Unit 1 assessment grades",
+        "study_size": "n=3,510 enrolled; n=520 tutor users; n=214 Unit 1 tutor users",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Academic \u0012 Mathematical Numeracy",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Tutor use was associated with slightly higher Unit 1 assessment grades for adult learners. A linear regression using tutor transactions as the sole predictor found a significant positive association (estimate=0.26, SE=0.08, t=3.39, p<0.001), and the authors describe the grade difference as modest; no standardized effect size was reported.",
+        "measure": "Unit 1 course assessment grades / exam scores",
+        "study_size": "n=3,510 enrolled; n=520 tutor users; n=214 Unit 1 tutor users",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "0.08 (SE for regression coefficient)"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "single_site",
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "blended",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

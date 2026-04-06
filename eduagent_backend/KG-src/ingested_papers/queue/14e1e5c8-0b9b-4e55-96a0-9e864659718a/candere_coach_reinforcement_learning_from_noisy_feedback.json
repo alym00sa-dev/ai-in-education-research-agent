@@ -1,0 +1,59 @@
+{
+  "title": "CANDERE-COACH: Reinforcement Learning from Noisy Feedback",
+  "doi": null,
+  "year": 2024,
+  "venue": "arXiv preprint",
+  "url": "http://arxiv.org/abs/2409.15521v1",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses the problem of learning reinforcement learning policies from human-style binary feedback when that feedback is noisy. The authors argue that existing learning-from-feedback methods such as Deep COACH assume perfect teacher feedback, which is unrealistic in practice because human evaluative signals can be incomplete or incorrect due to cognitive load, distraction, or limited expertise.\n\nTo address this, the paper proposes CANDERE-COACH, a classifier-augmented noise-detecting and relabeling framework. The method trains a classifier to identify likely clean and noisy feedback from state-action-feedback tuples, filters low-loss samples as clean, and actively relabels suspected noisy samples by flipping binary labels. The approach is evaluated in simulated RL environments rather than in educational settings: Cart Pole, Lunar Lander, and MiniGrid DoorKey, with a scripted expert teacher that provides binary feedback at fixed intervals and injected symmetric noise levels up to 40%.\n\nThe experiments show that standard Deep COACH degrades substantially under noisy feedback, especially with limited feedback budgets, while CANDERE-COACH improves robustness and generally outperforms the baselines. The active relabeling component improves performance over the version without relabeling, and online classifier updates help adapt to state-distribution shifts. The paper concludes that the proposed denoising mechanism can enable feedback-based RL under noisy teacher signals and can also be plugged into Deep TAMER, but it remains a simulation-based algorithmic study rather than an empirical study of teachers, students, or classrooms.",
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "lab",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "identified_tools": [
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "tutoring_instruction",
+        "feedback_evaluation"
+      ],
+      "description": "A generic human-in-the-loop reinforcement learning feedback system where a teacher provides binary evaluative feedback to train an agent; in this paper, the system is CANDERE-COACH, a classifier-augmented noise-detecting and relabelling version of COACH for learning from noisy feedback.",
+      "use_case": "The paper proposes and evaluates CANDERE-COACH for RL agents learning from noisy teacher feedback, comparing it against Deep COACH, Deep COACH (Preload), and ablations, with scripted-teacher feedback in Cart Pole, Lunar Lander, and Minigrid Door Key.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Across three Gymnasium domains (Cart Pole, Lunar Lander, and Minigrid Door Key), CANDERE-COACH generally outperformed Deep COACH and Deep COACH (Preload) under noisy feedback, especially at 30% noise. The paper reports that CANDERE-COACH could learn successfully with up to 40% symmetric label noise, while baselines often failed or were unstable; no standardized effect sizes were reported.",
+          "measure": "Episodic return / accumulated reward during evaluation episodes",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "10 runs of different seeds; exact trial n not otherwise reported"
+        }
+      ]
+    }
+  ],
+  "verdict": "framework_only",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a theoretical/algorithmic RL paper with simulation experiments, not a K-12 instructional coaching study and not an education field trial. The paper does not evaluate a teacher-facing coaching or lesson-feedback product in classrooms.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "No educational practice, teacher behavior, or student outcome impact is measured. Reported gains are confined to simulated RL agent reward in benchmark environments, so there is no K-12 instructional impact evidence.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

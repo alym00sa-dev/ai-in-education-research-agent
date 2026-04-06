@@ -1,0 +1,32 @@
+{
+  "title": "Revisiting Entropy in Reinforcement Learning for Large Reasoning Models",
+  "doi": null,
+  "year": 2026,
+  "venue": null,
+  "url": "http://arxiv.org/abs/2511.05993v2",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper investigates entropy collapse during reinforcement learning with verifiable rewards (RLVR) for large language models. The authors study how model entropy changes during training, how those changes relate to response diversity, calibration, and benchmark performance, and what factors contribute to entropy collapse. The work is motivated by the concern that RLVR can push models toward premature convergence and reduced exploration, potentially limiting reasoning performance.\n\nThe paper studies RLVR training of large reasoning models, primarily Qwen2.5-Math-7B trained with GRPO on the DAPO-Math-17K dataset, and evaluates variants such as adaptive entropy regularization, clipping modifications, and a proposed method called Positive-Advantage Reweighting. The authors combine theoretical analysis with extensive computational experiments to argue that tokens with positive advantages are the main drivers of entropy collapse. Based on this, they introduce Positive-Advantage Reweighting, which dynamically adjusts loss weights for positive-advantage tokens to regulate entropy while maintaining competitive performance.\n\nThere is no K-12, literacy, classroom, teacher, or student population in this study. The context is machine learning experimentation on benchmark datasets in mathematical reasoning, coding, and instruction following, rather than an educational intervention. Experiments are conducted in an AI training/evaluation setting using benchmark tasks such as AIME, MATH500, LiveCodeBench, and IF-Eval.\n\nThe main conclusions are that entropy is strongly associated with response diversity and model calibration, but is not a consistent proxy for task performance across benchmarks. The authors identify clipping thresholds, off-policy updates, and training data diversity as key factors shaping entropy dynamics. They conclude that Positive-Advantage Reweighting can mitigate entropy collapse and preserve strong benchmark performance, though evidence is limited to mathematical-domain RLVR experiments rather than broader application domains.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a machine learning methods paper on reinforcement learning for large language models, not a K-12 education intervention study. It contains no student sample, no educational implementation, no direct literacy instruction context, and no credible causal or observational design relevant to schooling outcomes.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "The paper reports benchmark performance changes for math/coding/instruction-following LLMs, not learner outcomes in K-12 literacy. Therefore it provides no direct evidence of educational impact for the review thesis.",
+  "interventions": [],
+  "outcome_assignments": [],
+  "limitations": [
+    "no_control_group",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "lab",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

@@ -1,0 +1,40 @@
+{
+  "title": "EVALUATING CHATGPT AS A QUESTION ANSWERING SYSTEM: A COMPREHENSIVE ANALYSIS AND COMPARISON WITH EXISTING MODELS",
+  "doi": null,
+  "year": 2023,
+  "venue": null,
+  "url": "http://arxiv.org/abs/2312.07592v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Graduate / Doctoral"
+  ],
+  "user_types": [],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper evaluates ChatGPT (GPT-3.5 Turbo) as a question answering system and compares its performance with task-specific QA models. The central research question is whether ChatGPT can accurately answer questions by extracting answers from provided passages, and how its performance changes when no context is provided. The study also examines hallucination, prompt design, question type, and question complexity. It is not an education intervention study and does not examine reading instruction, literacy outcomes, or K-12 classroom causal effects.\n\nThe approach is a benchmark-based performance evaluation using established QA datasets: SQuAD 1.1, SQuAD 2.0, NewsQA, and PersianQuAD. The authors test prompt formats for answer extraction from passages, including a two-step prompt for datasets containing unanswerable questions. They compare ChatGPT\u2019s exact match, F1, recall, and precision with prior specialized models, and analyze results by question type (for example, what, who, why, how) and by lexical similarity between questions and answers.\n\nThe population is not a human participant sample in the educational sense; instead, the study uses existing English and Persian question-answering datasets. The authors are affiliated with the University of Isfahan, but the evaluated data come from benchmark corpora rather than school-based learners or teachers. There is no K-12 reading population, no classroom implementation, no tutoring program, and no school-supported literacy setting reported.\n\nThe main conclusion is that ChatGPT is a capable generative model but underperforms specialized QA systems on extractive question answering benchmarks. Performance improves when context is supplied, and prompt engineering can reduce some errors, especially for unanswerable questions. ChatGPT performs better on simpler factual questions than on more complex how/why questions, and it exhibits hallucinations when answers are absent from the provided context. For the targeted review topic, this paper is a clear non-applicable near-miss: it concerns generative AI evaluation, but provides no direct causal evidence on foundational reading outcomes in K-12 settings.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a preprint benchmark study of ChatGPT on QA datasets, not a K-12 causal evaluation and not an education intervention study. It provides no randomized or quasi-experimental evidence on student outcomes, and its relevance to K-12 foundational reading is indirect at best.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "The paper reports no direct educational impact on K-12 learners and no causal effects on foundational reading outcomes such as phonics, decoding, fluency, vocabulary, or comprehension. For the targeted verification question, this paper is a non-education near-miss that supports a negative finding rather than evidence of impact.",
+  "interventions": [
+    {
+      "intervention": "Other",
+      "confidence": 0.98,
+      "role": "primary",
+      "use_case": "Benchmarking ChatGPT (GPT-3.5 Turbo) as a general-purpose question answering system on English and Persian QA datasets, including context-based answer extraction, unanswerable-question handling, and hallucination analysis; not an educational deployment."
+    }
+  ],
+  "outcome_assignments": [],
+  "limitations": [
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

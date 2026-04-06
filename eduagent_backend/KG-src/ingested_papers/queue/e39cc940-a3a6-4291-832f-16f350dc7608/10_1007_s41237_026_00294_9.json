@@ -1,0 +1,91 @@
+{
+  "title": "Beyond prior knowledge: the predictive role of knowledge-building in tutor learning",
+  "doi": "10.1007/s41237-026-00294-9",
+  "year": 2026,
+  "venue": "Behaviormetrika",
+  "url": "https://doi.org/10.1007/s41237-026-00294-9",
+  "source_db": "openalex_search",
+  "populations": [
+    "Middle School (6th-8th)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper examines how knowledge-building during learning-by-teaching relates to middle school students\u2019 learning outcomes in algebra. The central question is whether students\u2019 elaborated responses to a teachable agent\u2019s follow-up questions predict gains in conceptual knowledge and procedural skill, and whether those gains are explained by prior knowledge or by the dialogic process itself.\n\nThe intervention is an online learning-by-teaching environment, APLUS, in which students tutor a virtual agent, SimStudent, to solve algebraic equations. The key instructional feature is ExpectAdapt, an LLM-based questioning framework that generates adaptive follow-up questions after students respond to static focal questions such as why a solution step should or should not be performed. The prompts use role prompting, few-shot demonstrations, extra context, and domain-specific mathematical assertions to elicit more elaborated, knowledge-building responses.\n\nThe study involved 23 middle school students in grades 6\u20138 from across the United States in a hybrid format over up to five days. Students completed pretests and posttests measuring procedural skill and conceptual knowledge, and their dialogue responses were classified as knowledge-building or knowledge-telling. Results showed that a higher proportion of knowledge-building responses was associated with higher post-test performance in both domains. Prior knowledge did not significantly predict knowledge-building overall, and low-prior students who produced more knowledge-building responses performed as well as high-prior peers on post-tests. The authors conclude that adaptive follow-up questioning can scaffold knowledge-building and may help narrow performance gaps, though the evidence is correlational rather than causal.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed correlational/path-analysis study with a small sample (n=23), no random assignment, and outcome analyses based on pre-post change plus associations between dialogue behavior and post-test scores. It provides useful evidence on mechanisms, but internal validity is limited relative to an RCT.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The study shows meaningful learning gains and moderate mechanistic effects, but the evidence is from a small single-group sample and the reported path coefficients are modest. The practical impact is promising but still unclear for broader K-12 implementation without stronger causal evidence.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.98,
+      "role": "primary",
+      "use_case": "LLM-driven teachable-agent questioning framework (ExpectAdapt) embedded in a learning-by-teaching algebra environment to generate adaptive follow-up questions, classify tutor responses, and elicit knowledge-building dialogue from middle school students."
+    },
+    {
+      "intervention": "Intelligent Tutoring System (ITS)",
+      "confidence": 0.86,
+      "role": "secondary",
+      "use_case": "SimStudent/APLUS teachable-agent tutoring environment for algebra equation solving with step-by-step guided problem solving, quizzes, and metacognitive scaffolds."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 0.97,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Middle school students (n=23) showed significant pre-to-post gains in both conceptual and procedural mathematics tests after interacting with the teachable-agent system. Mean conceptual test performance increased from 0.78\u00b10.18 to 0.90\u00b10.13 (paired t(22)=-4.47, p<0.001), and procedural skill increased from 0.70\u00b10.33 to 0.81\u00b10.27 (t(22)=-2.68, p<0.05).",
+        "measure": "Conceptual Knowledge Test (CKT) and Procedural Skill Test (PST) on algebra equation solving",
+        "study_size": "n=23",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "CKT pre/post SDs=0.18/0.13; PST pre/post SDs=0.33/0.27"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.9,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The proportion of knowledge-building responses to adaptive follow-up questions (%KBR) was a significant independent predictor of post-test outcomes. Path analysis showed %KBR predicted conceptual post-test performance (\u03b2=.138, p<0.05), and the authors report the association with procedural post-test scores as positive as well, indicating that elaborative reasoning during dialogue supported learning beyond prior performance.",
+        "measure": "Percentage of knowledge-building responses (%KBR) during tutor-tutee dialogue; post-test conceptual and procedural scores",
+        "study_size": "n=23",
+        "effect_size": "\u03b2=.138 for conceptual post-test; other path coefficients not fully reported in text",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.62,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The intervention appears to support engagement in productive teaching dialogue and sustained participation, especially for low-prior students, but this was not the primary outcome and was measured indirectly through interaction behavior rather than validated affective scales. The paper suggests adaptive questioning helped students persist in explanation-building and respond more deeply over time.",
+        "measure": "Dialogue participation/engagement inferred from adaptive follow-up question responses and %KBR",
+        "study_size": "n=23",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "1",
+  "setting": "blended",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "medium",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

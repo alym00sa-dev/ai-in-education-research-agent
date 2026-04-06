@@ -1,0 +1,42 @@
+{
+  "title": "Can ChatGPT Assess Human Personalities? A General Evaluation Framework",
+  "doi": "10.48550/arXiv.2303.01248",
+  "year": 2023,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2303.01248v3",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper asks whether large language models, especially ChatGPT, can be used to assess human personalities rather than only model their own personalities or biases. The authors frame this as a general evaluation problem and propose a framework for querying LLMs with MBTI-style personality items in a way that elicits clearer, less self-referential answers.\n\nTheir approach has three main components: unbiased prompts that randomize response-option order and average across repeated testings, subject-replaced queries that swap \"you\" for a target group such as men, women, or professions, and correctness-evaluated instructions that ask the model to judge whether statements are correct rather than whether it personally agrees. They then define three metrics for consistency, robustness to prompt-order perturbations, and fairness across genders.\n\nThe experiments evaluate InstructGPT, ChatGPT, and GPT-4 on general population groups and representative professions using the MBTI questionnaire. The results suggest that ChatGPT and GPT-4 can produce stable personality-type assignments for groups of people, often with higher consistency and fairness than InstructGPT, though they are still sensitive to prompt bias. The paper is exploratory and methodological rather than educational, and it concludes with cautions about misuse, bias, and the limited scientific validity of MBTI as a personality measure.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed empirical comparison study with a clearly described evaluation framework and repeated prompting experiments, but it is not a K-12 intervention study and does not use a randomized or educational design. The evidence is indirect for education and focuses on model behavior rather than learner outcomes.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "The paper reports no educational achievement effects, no middle school mathematics outcomes, and no intervention impact on students. Its findings are about LLM assessment behavior, consistency, robustness, and fairness in personality evaluation, so educational impact is absent for the requested topic.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.99,
+      "role": "primary",
+      "use_case": "Evaluates ChatGPT, GPT-4, and InstructGPT as general-purpose language models used to assess human personalities via rewritten MBTI questionnaire prompts, including subject-replaced queries and correctness-evaluated instructions."
+    }
+  ],
+  "outcome_assignments": [],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_control_group",
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Singapore",
+  "study_region": "East Asia & Pacific",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

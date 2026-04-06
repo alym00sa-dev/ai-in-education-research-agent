@@ -1,0 +1,80 @@
+{
+  "title": "Pedagogical Roles of Large Language Models in Computing Education: A Systematic Literature Review",
+  "doi": "10.21203/rs.3.rs-9107566/v1",
+  "year": 2026,
+  "venue": "not_reported",
+  "url": "https://doi.org/10.21203/rs.3.rs-9107566/v1",
+  "source_db": "openalex_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Meta-Analysis / Systematic Review",
+  "extended_summary": "This paper asks how large language model (LLM)-based tools support learning processes in computing education, what pedagogical strategies and guardrails they embed, what challenges arise when using them for deep learning rather than surface-level output generation, and what factors shape student usage patterns. The authors position the work as a systematic literature review intended to synthesize a fragmented body of evidence on LLMs in computing education.\n\nThe review followed Kitchenham and Charters\u2019 systematic review approach and searched ACM Digital Library, IEEE Xplore, and Scopus for studies published from 2022 to 2025. After screening 701 records, 46 primary studies were included. The reviewed studies focused on computing education contexts such as programming, software engineering, databases, visualization, robotics, and general computing learning processes. The paper is not an intervention study with a single participant group; rather, it synthesizes prior studies that used commercial systems such as ChatGPT, GitHub Copilot, Bard/Gemini, and a range of custom-built tutoring tools.\n\nThe review identifies five main mechanisms by which LLM tools support learning: adaptive scaffolding, formative feedback generation, personalized content, interactive pedagogical structures, and structured learning activities. Across the reviewed literature, the strongest design patterns involved solution withholding, guardrailed refusal, process-oriented guidance, and explanation adaptation, while direct instruction and learner-initiated help requests were more common than Socratic or discovery-based approaches. The authors conclude that LLMs can support conceptual understanding, reasoning, and engagement when paired with appropriate pedagogical design, but that overreliance on direct answers may undermine productive struggle, independent problem-solving, and equitable access to support.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a systematic literature review using a stated protocol and thematic analysis, but it does not report primary causal estimates or a meta-analysis. The evidence base is qualitative/synthesized from 46 studies, so it provides moderate descriptive credibility rather than high causal certainty.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper suggests potentially important pedagogical effects, especially for conceptual understanding, critical thinking, and scalable support, but no pooled effect sizes are provided. Because the findings are thematic and not quantified, the demonstrated impact remains modest/unclear at the evidence level.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "Systematic review of ChatGPT and custom large language model tutoring tools used as conversational learning support in computing education, including adaptive scaffolding, hinting, explanations, feedback, and teacher-assistant-like dialogue."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.93,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "Across 46 studies, LLM-based tools were reported to support deeper conceptual understanding, learning transfer, critical thinking, and iterative refinement of student thinking, especially when paired with scaffolding and structured dialogue. The review also notes negative effects when support is poorly designed or absent, including dependency, cognitive offloading, reduced self-efficacy, and skill atrophy; however, this is a thematic synthesis rather than a quantified effect estimate.",
+        "measure": "Thematic synthesis of reported learning-process outcomes (conceptual understanding, critical thinking, transfer, self-efficacy, dependency/cognitive offloading) across primary studies",
+        "study_size": "n=46 studies",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.78,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The review reports that adaptive scaffolding and supportive feedback can improve emotional states during learning, while insufficient support can increase frustration, confusion, and dependence. These are reported as qualitative and thematic findings across the synthesized studies, not as pooled numerical effects.",
+        "measure": "Reported student emotional states, frustration, confusion, engagement, and self-efficacy in primary studies",
+        "study_size": "n=46 studies",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.74,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "LLM tools were repeatedly described as providing on-demand support, quick information access, and automated generation of explanations, practice items, and feedback, reducing the need for human TA intervention. The review emphasizes that these tools can scale support in large computing classes, but does not report pooled quantitative effects on time or workload.",
+        "measure": "Reported efficiency of access to help, feedback generation, and support scalability",
+        "study_size": "n=46 studies",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

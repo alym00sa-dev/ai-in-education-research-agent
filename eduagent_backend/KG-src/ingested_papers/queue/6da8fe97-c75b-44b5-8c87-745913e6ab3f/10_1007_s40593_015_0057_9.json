@@ -1,0 +1,107 @@
+{
+  "title": "From Design to Implementation to Practice: a Learning by Teaching System: Betty\u2019s Brain",
+  "doi": "10.1007/s40593-015-0057-9",
+  "year": 2016,
+  "venue": "Int J Artif Intell Educ",
+  "url": "https://doi.org/10.1007/s40593-015-0057-9",
+  "source_db": "openalex_search",
+  "populations": [
+    "Middle School (6th-8th)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper reviews a decade of research on Betty\u2019s Brain, a computer-based learning environment built around the learning-by-teaching paradigm. The authors ask how the system\u2019s design evolved from an initial proof-of-concept into a classroom-oriented open-ended learning environment, and what the accumulated evidence reveals about student learning, task difficulties, and the role of scaffolding.\n\nBetty\u2019s Brain asks middle school students to learn science content by constructing causal maps and teaching that knowledge to a virtual agent, Betty. Students read hypertext resources, build and revise their causal maps, quiz Betty, inspect her answers, and use feedback from Betty and a mentor agent, Mr. Davis, to improve their models. The paper emphasizes how interface redesigns, conversational feedback, and later coherence analysis were used to better understand students\u2019 behavior and support more adaptive scaffolding.\n\nThe paper reports that the system can motivate students and support science learning, but also that many learners struggle with the interconnected tasks of reading, translating text into causal relations, using quiz feedback, and deciding how to revise their maps. More successful students showed higher coherence in their actions, better map accuracy, and stronger science gains. The authors conclude that open-ended learning environments need stronger task-specific and metacognitive scaffolds, and that behavioral analytics such as coherence analysis can help diagnose difficulty and guide support.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed overview/reflection paper synthesizing findings from multiple prior classroom and pull-out studies, but it is not itself a single controlled evaluation with a clearly reported experimental design in this article. Much of the evidence is descriptive, correlational, or drawn from previously published studies, so only one credibility criterion is clearly met.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports meaningful learning and engagement benefits for some students, but the effects are uneven and often not quantified with effect sizes in this article. Overall impact appears modest and context-specific rather than broadly demonstrated at a medium/large level.",
+  "interventions": [
+    {
+      "intervention": "Educational Game / Simulation",
+      "confidence": 0.88,
+      "role": "primary",
+      "use_case": "Teachable-agent learning-by-teaching environment (Betty\u2019s Brain) for middle school science, where students build causal maps, ask a virtual agent questions, and quiz the agent to learn domain content and monitor understanding."
+    },
+    {
+      "intervention": "Robot / Embodied Tutor",
+      "confidence": 0.55,
+      "role": "secondary",
+      "use_case": "Virtual pedagogical agent and mentor agent interaction (Betty and Mr. Davis) used as conversational support and feedback channels inside the learning environment."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Scientific Reasoning",
+      "confidence": 0.94,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "Across 10 years of classroom and pull-out studies, the Betty\u2019s Brain environment generally supported science learning, but student success varied substantially by how they used the system. The paper reports that more successful students showed significantly higher science learning gains and better causal map accuracy; in one 40-student study, 18 students made very little progress, while 22 taught a correct or nearly correct map, and 6 made meaningful progress.",
+        "measure": "Science learning gains; causal map accuracy / map scores; task performance in teaching Betty",
+        "study_size": "multiple studies; one cited classroom study n=40 and one clustering study n=98",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.92,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper argues that the learning-by-teaching design increased engagement and motivation, with students showing the prot\u00e9g\u00e9 effect and social responsibility toward Betty. However, many students also experienced frustration and disengagement when they could not interpret feedback or use the causal modeling tools effectively.",
+        "measure": "Engagement, motivation, frustration/disengagement observations, time disengaged",
+        "study_size": "multiple studies; one analysis reported 77% of feedback ignored and a clustering study with n=98",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.96,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "A major substantive focus of the paper is students\u2019 metacognitive and self-regulated learning behaviors in an open-ended environment. The authors report that more successful students used more systematic, coherent sequences of reading, editing, and quizzing, while struggling students often ignored feedback; in one video-based study, 77% of feedback from Betty and Mr. Davis was ignored.",
+        "measure": "Coherence metrics, sequence mining, metacognitive strategy use, feedback uptake",
+        "study_size": "one clustering study n=98; one video analysis study (n not reported); one cited study n=40",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.78,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The redesigned interface and coherence analysis framework improved the system\u2019s ability to track what students were doing and to support more targeted scaffolding decisions. The paper reports that coherence-analysis metrics predicted task performance and learning gains and distinguished behavior profiles beyond what learning gains or map correctness alone could capture, though no numeric effect sizes are given.",
+        "measure": "Predictive validity of coherence-analysis metrics; behavior profiling; support for scaffolding decisions",
+        "study_size": "n=98 for the clustering analysis; recent classroom study referenced in Segedy et al. 2015",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "classroom",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

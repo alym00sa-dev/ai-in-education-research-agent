@@ -1,0 +1,595 @@
+{
+  "title": "Personalized Learning Path Planning through Goal-Driven Learner State Modeling",
+  "doi": "10.1145/3774904.3792245",
+  "year": 2026,
+  "venue": "Proceedings of the ACM Web Conference 2026 (WWW '26)",
+  "url": "https://arxiv.org/abs/2510.13215",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses the problem of personalized learning path planning (PLPP): how to generate adaptive, goal-aligned sequences of learning activities for individual learners. The authors argue that while large language models can personalize content, they often make short-sighted decisions and do not explicitly model long-term learner development, motivation, or evolving goals. The paper therefore asks how to combine structured learner modeling with reinforcement learning so that a system can plan coherent learning paths that better reflect both cognitive and motivational learner states.\n\nThe proposed intervention is Pxplore, a framework that combines a reinforcement-based training paradigm with an LLM-driven educational architecture. The system defines a structured learner state model containing long-term objectives, short-term objectives, implicit motivations, and explicit motivations. It uses an automated reward function to convert progress on these abstract learner-state components into scalar rewards. Training proceeds in two stages: supervised fine-tuning on expert-labeled state-action pairs from a real-world learning platform, followed by Group Relative Policy Optimization (GRPO) to improve long-horizon planning. In deployment, the framework includes learner profiling from interaction traces, retrieval of candidate learning actions, policy-based path planning, and adaptive delivery that generates personalized narrative bridges and instructional content.\n\nThe empirical context includes data from a real-world learning platform with 300 learning sessions and 14,584 interaction turns, plus a real-world user study with 22 undergraduate students. In the user study, participants were randomly assigned to either the full Pxplore system or a retrieval-based baseline. All participants completed an introductory lesson, then proceeded to a next lesson chosen either by Pxplore or the baseline system, followed by tests and learner-experience surveys. The work appears to be situated at Tsinghua University in China, and the deployed system is an online learning platform.\n\nThe main conclusions are that Pxplore outperforms prompt-only LLM baselines, inference-guided LLMs, supervised fine-tuned baselines, and retrieval-only approaches on pedagogical alignment and action-ranking quality. In the real-world study, the Pxplore group showed larger pre/post knowledge gains and higher ratings for relevance, personalization, motivation, and satisfaction than the control group. The authors conclude that structured learner state modeling plus reinforcement learning can support more coherent, goal-driven, and personalized learning paths, though the user study is small and short-term.",
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "China",
+  "study_region": "East Asia & Pacific",
+  "identified_tools": [
+    {
+      "name": "Pxplore",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "personalization_adaptation",
+        "tutoring_instruction"
+      ],
+      "description": "An LLM-driven personalized learning path planning framework that models learner state, uses reinforcement learning (SFT + GRPO) to select next learning actions, and supports adaptive instructional delivery.",
+      "use_case": "Studied as a deployed personalized learning path planning system that profiles learners, plans goal-aligned next lessons/actions, and adaptively delivers content within an online learning platform.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In a controlled real-world user study, students using Pxplore showed larger pre/post knowledge gains than a retrieval-based baseline. Mean test scores increased from 61.81% pre-test to 90.09% post-test for the Pxplore group, a reported knowledge gain of +28.28%; the paper states this was greater than the control group's improvement, although the control group's exact scores were not numerically reported in text.",
+          "measure": "Pre-test and post-test learning assessment scores (multiple-choice and short-answer questions)",
+          "effect_size": "knowledge gain +28.28% (Pxplore group)",
+          "confidence_interval": "not_reported",
+          "sample_size": "N=22; n=11 experimental, n=11 control"
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Pxplore improved subjective learner experience relative to the retrieval-based baseline, with especially strong gains in Motivation and Satisfaction. The paper reports Motivation = 4.73 and Satisfaction = 4.64 for Pxplore, with additional reported advantages in Relevance (+0.36) and Personalization (+0.18) on 5-point Likert scales.",
+          "measure": "Learner experience survey ratings on 5-point Likert scales: Helpfulness, Diversity, Relevance, Personalization, Clarity, Motivation, Understanding, Satisfaction",
+          "effect_size": "Motivation=4.73; Satisfaction=4.64; Relevance +0.36; Personalization +0.18",
+          "confidence_interval": "not_reported",
+          "sample_size": "N=22; n=11 experimental, n=11 control"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In offline evaluation of the planning policy, Pxplore achieved the best pedagogical alignment among compared systems. The GRPO-trained Qwen-based Pxplore reached an overall alignment rate of 65.47%, compared with 62.68% for the SFT Qwen model and 58.48% for GPT-4o with inference-time guidance; total reward was 182.0.",
+          "measure": "Average pedagogical alignment rate and reward computation R(\u00b7) in offline planning evaluation",
+          "effect_size": "65.47% alignment; total reward=182.0",
+          "confidence_interval": "not_reported",
+          "sample_size": "test split derived from 300 sessions; exact evaluation n not separately reported"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Pxplore's profiling module outperformed a GPT-4o baseline in blind evaluation by human annotators and LLM judges. Reported improvements were largest in Interpretability and Explainability (+17.7%), followed by Interest Identification Accuracy (+6.26%) and Actionability and Utility (+6.63%), for an overall increase of +7.88%; human annotator agreement exceeded Pearson r > 0.8.",
+          "measure": "Profile quality ratings across Interest Identification Accuracy, Profile Completeness, Actionability and Utility, and Interpretability and Explainability",
+          "effect_size": "overall +7.88%; IE +17.7%; IIA +6.26%; AU +6.63%; Pearson r>0.8",
+          "confidence_interval": "not_reported",
+          "sample_size": "derived from curated dataset of 300 learning sessions; exact number of rated profiles not reported"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "For adaptive delivery, Pxplore's generated instructional content was rated higher than original materials across pedagogical dimensions. The largest gains were in Motivational Appeal (+17.2%), Personalization & Empathy (+14.9%), and Pedagogical Scaffolding (+12.4%), with an overall improvement of +10.7%; Conciseness & Efficiency improved only marginally (+3.1%).",
+          "measure": "Blind human and LLM-judge ratings of delivery quality across Contextual Coherence, Personalization & Empathy, Pedagogical Scaffolding, Conciseness & Efficiency, and Motivational Appeal",
+          "effect_size": "overall +10.7%; MA +17.2%; PE +14.9%; PS +12.4%; CE +3.1%",
+          "confidence_interval": "not_reported",
+          "sample_size": "exact number of rated items not_reported"
+        }
+      ]
+    },
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "other"
+      ],
+      "description": "OpenAI GPT-family large language models used here as baseline evaluators/generators rather than the core intervention.",
+      "use_case": "Used as baseline prompt-based and inference-guided planning models (via GPT-4o / 4o-mini), as a profile-generation baseline, and to help construct metadata and learner-state representations.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "As a planning baseline, ChatGPT-family models underperformed Pxplore on pedagogical alignment. GPT-4o achieved 52.52% average alignment and total reward 145.8 in prompt-based form, improving to 58.48% and reward 169.0 with inference-time learner-state guidance, but remaining below Pxplore's best result of 65.47%.",
+          "measure": "Average pedagogical alignment rate and reward computation R(\u00b7) in offline planning evaluation",
+          "effect_size": "GPT-4o: 52.52% and 145.8; GPT-4o infer-guided: 58.48% and 169.0",
+          "confidence_interval": "not_reported",
+          "sample_size": "test split derived from 300 sessions; exact evaluation n not separately reported"
+        }
+      ]
+    },
+    {
+      "name": "Qwen",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "other"
+      ],
+      "description": "Alibaba Qwen-family large language model used as the base model family within the Pxplore training pipeline and as a standalone baseline.",
+      "use_case": "Used both as a baseline LLM and as the underlying base model for SFT and GRPO-trained Pxplore variants in offline planning evaluation.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Qwen performance improved substantially when incorporated into the Pxplore training pipeline. Standalone Qwen3 achieved 39.73% average alignment and reward 116.0; Qwen SFT reached 62.68% and reward 178.0; Pxplore_Qwen3 achieved the best reported result at 65.47% alignment and reward 182.0.",
+          "measure": "Average pedagogical alignment rate and reward computation R(\u00b7) in offline planning evaluation",
+          "effect_size": "39.73% \u2192 62.68% \u2192 65.47%; reward 116.0 \u2192 178.0 \u2192 182.0",
+          "confidence_interval": "not_reported",
+          "sample_size": "test split derived from 300 sessions; exact evaluation n not separately reported"
+        }
+      ]
+    },
+    {
+      "name": "LLaMA",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "other"
+      ],
+      "description": "Meta LLaMA-family large language model used as a baseline model family and as the base model for a Pxplore-trained variant.",
+      "use_case": "Used both as a baseline LLM and as the underlying base model for SFT and GRPO-trained Pxplore variants in offline planning evaluation.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "LLaMA performance also improved within the Pxplore training paradigm. Standalone Llama3.1 achieved 43.17% average alignment and reward 120.0; Llama3.1 SFT reached 60.00% and reward 171.0; Pxplore_Llama3.1 achieved 63.48% alignment and reward 179.0.",
+          "measure": "Average pedagogical alignment rate and reward computation R(\u00b7) in offline planning evaluation",
+          "effect_size": "43.17% \u2192 60.00% \u2192 63.48%; reward 120.0 \u2192 171.0 \u2192 179.0",
+          "confidence_interval": "not_reported",
+          "sample_size": "test split derived from 300 sessions; exact evaluation n not separately reported"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "The paper includes empirical evaluations and a small controlled user study with random assignment, but the real-world sample is very small (N=22) and many reported outcomes are offline alignment metrics or human/LLM ratings rather than standardized educational measures. Effect estimates and uncertainty statistics are limited.",
+  "impact_tier": "green",
+  "impact_tier_rationale": "The reported effects are consistently positive, including a sizeable within-group test score gain (+28.28%) and improved learner experience, but the absence of standardized effect sizes and limited sample/reporting make the overall practical impact modest-to-promising rather than definitively large.",
+  "citations": [
+    {
+      "title": "Building Contextual Knowledge Graphs for Personalized Learning Recommendations Using Text Mining and Semantic Graph Completion",
+      "doi": "10.1109/ICALT58122.2023.00016",
+      "year": 2023,
+      "venue": "2023 IEEE International Conference on Advanced Learning Technologies (ICALT)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Knowledge graphs as context sources for llm-based explanations of learning recommendations",
+      "doi": null,
+      "year": 2024,
+      "venue": "2024 IEEE Global Engineering Education Conference (EDUCON)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Modeling students\u2019 perceptions of artificial intelligence assisted language learning",
+      "doi": null,
+      "year": 2025,
+      "venue": "Computer Assisted Language Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Claude 3.7 Sonnet System Card",
+      "doi": null,
+      "year": 2025,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "LLM system card for deployed model configuration"
+    },
+    {
+      "title": "A systematic review of research on personalized learning: Personalized by whom, to what, how, and for what purpose (s)?",
+      "doi": null,
+      "year": 2021,
+      "venue": "Educational Psychology Review",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Taxonomy of Educational Objectives: The Classification of Educational Goals, Handbook I: Cognitive Domain",
+      "doi": null,
+      "year": 1956,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "Bloom levels guide learner-state analysis and test design"
+    },
+    {
+      "title": "Empirical research on teacher competence in mathematics lesson planning: Recent developments",
+      "doi": null,
+      "year": 2024,
+      "venue": "ZDM\u2013Mathematics Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "When large language models meet personalization: Perspectives of challenges and opportunities",
+      "doi": null,
+      "year": 2024,
+      "venue": "World Wide Web",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Research on AI-driven personalized learning path planning and effectiveness under dual-system teaching mode",
+      "doi": "10.1145/3746469.3746471",
+      "year": 2025,
+      "venue": "EDCS \u201925",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Knowedu: A system to construct knowledge graph for education",
+      "doi": null,
+      "year": 2018,
+      "venue": "IEEE Access",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Achievement goal theory",
+      "doi": null,
+      "year": 2004,
+      "venue": "Sport psychology: Theory, applications and issues",
+      "citation_level": 2,
+      "citation_context": "goal-oriented motivation framework for learner objectives"
+    },
+    {
+      "title": "Llm agents for education: Advances and applications",
+      "doi": null,
+      "year": 2025,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Personalized recommendation system based on collaborative filtering for IoT scenarios",
+      "doi": null,
+      "year": 2020,
+      "venue": "IEEE Transactions on Services Computing",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Effects of artificial intelligence-powered virtual agents on learning outcomes in computer-based simulations: A meta-analysis",
+      "doi": null,
+      "year": 2024,
+      "venue": "Educational Psychology Review",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Exploring the benefits and challenges of AI-language learning tools",
+      "doi": null,
+      "year": 2023,
+      "venue": "International Journal of Social Sciences and Humanities Invention",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning",
+      "doi": null,
+      "year": 2025,
+      "venue": "arXiv",
+      "citation_level": 3,
+      "citation_context": "reasoning-focused RL training reference for model setup"
+    },
+    {
+      "title": "ChatGPT in education: an opportunity or a challenge for the future?",
+      "doi": null,
+      "year": 2023,
+      "venue": "TechTrends",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Constructing a personalized learning path using genetic algorithms approach",
+      "doi": null,
+      "year": 2021,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Reinforcement learning in education: A literature review",
+      "doi": null,
+      "year": 2023,
+      "venue": "Informatics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Utilizing Artificial Intelligence for Personalized Arabic Language Learning Plans",
+      "doi": null,
+      "year": 2024,
+      "venue": "International Journal of Post Axial: Futuristic Teaching and Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A survey on llm-as-a-judge",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_level": 2,
+      "citation_context": "supports automated LLM-based evaluation framing"
+    },
+    {
+      "title": "Personalized active learning for collaborative filtering",
+      "doi": null,
+      "year": 2008,
+      "venue": "Proceedings of the 31st annual international ACM SIGIR conference on Research and development in information retrieval",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Teaching plan generation and evaluation with GPT-4: Unleashing the potential of LLM in instructional design",
+      "doi": null,
+      "year": 2024,
+      "venue": "IEEE Transactions on Learning Technologies",
+      "citation_level": 2,
+      "citation_context": "instructional design framing for planning educational content"
+    },
+    {
+      "title": "Dynamic content generation in large language models with real-time constraints",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "AI-driven solutions for personalized knowledge dissemination and inclusive library user experiences",
+      "doi": null,
+      "year": 2023,
+      "venue": "International Journal of Engineering Research Updates",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Genrec: Large language model for generative recommendation",
+      "doi": null,
+      "year": 2024,
+      "venue": "European Conference on Information Retrieval",
+      "citation_level": 2,
+      "citation_context": "generative recommendation perspective for path planning"
+    },
+    {
+      "title": "Personalized education for all: The future of open universities",
+      "doi": null,
+      "year": 2024,
+      "venue": "Open Praxis",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Research on personalized learning path planning model based on knowledge network",
+      "doi": null,
+      "year": 2023,
+      "venue": "Neural Computing and Applications",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A Theory of Goal Setting & Task Performance",
+      "doi": null,
+      "year": 1990,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "goal-setting theory underpins long-term developmental goals"
+    },
+    {
+      "title": "Personalized education in the artificial intelligence era: what to expect next",
+      "doi": null,
+      "year": 2021,
+      "venue": "IEEE Signal Processing Magazine",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A scoping review of reinforcement learning in education",
+      "doi": null,
+      "year": 2024,
+      "venue": "Computers and Education Open",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Generative AI tools as educators\u2019 assistants: Designing and implementing inquiry-based lesson plans",
+      "doi": null,
+      "year": 2024,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Educational personalized learning path planning with large language models",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "GPT-4o System Card",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_level": 3,
+      "citation_context": "LLM system card for model selection and deployment"
+    },
+    {
+      "title": "The probabilistic relevance framework: BM25 and beyond",
+      "doi": null,
+      "year": 2009,
+      "venue": "Foundations and Trends\u00ae in Information Retrieval",
+      "citation_level": 3,
+      "citation_context": "retrieval-based baseline built on BM25 framework"
+    },
+    {
+      "title": "Improving the Validity of Automatically Generated Feedback via Reinforcement Learning",
+      "doi": null,
+      "year": 2024,
+      "venue": "Artificial Intelligence in Education",
+      "citation_level": 2,
+      "citation_context": "reinforcement learning for educational generation framing"
+    },
+    {
+      "title": "DeepSeek-Math: Pushing the Limits of Mathematical Reasoning in Open Language Models",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_level": 3,
+      "citation_context": "base model/report referenced for model training choice"
+    },
+    {
+      "title": "Multi-Modal LA in Personalized Education Using Deep Reinforcement Learning Based Approach",
+      "doi": "10.1109/ACCESS.2024.3388474",
+      "year": 2024,
+      "venue": "IEEE Access",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Reinforcement Learning for Education: Opportunities and Challenges",
+      "doi": null,
+      "year": 2021,
+      "venue": "arXiv",
+      "citation_level": 2,
+      "citation_context": "educational RL framing motivating proposed paradigm"
+    },
+    {
+      "title": "Qwen3 Technical Report",
+      "doi": null,
+      "year": 2025,
+      "venue": "arXiv",
+      "citation_level": 3,
+      "citation_context": "technical report for Qwen3-8B training backbone"
+    },
+    {
+      "title": "The integration of AI and machine learning in education and its potential to personalize and improve student learning experiences",
+      "doi": null,
+      "year": 2023,
+      "venue": "International Journal of Scientific Research in Engineering and Management",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "LearnMate: Enhancing Online Education with LLM-Powered Personalized Learning Plans and Support",
+      "doi": "10.1145/3706599.3719857",
+      "year": 2025,
+      "venue": "Proceedings of the Extended Abstracts of the CHI Conference on Human Factors in Computing Systems (CHI EA \u201925)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Llama-3.1-FoundationAI-SecurityLLM-8B-Instruct Technical Report",
+      "doi": null,
+      "year": 2025,
+      "venue": "arXiv",
+      "citation_level": 3,
+      "citation_context": "technical report for Llama-3.1 training backbone"
+    },
+    {
+      "title": "AI for education (AI4EDU): Advancing personalized education with LLM and adaptive learning",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 30th ACM SIGKDD Conference on Knowledge Discovery and Data Mining",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT: Challenges, opportunities, and implications for teacher education",
+      "doi": null,
+      "year": 2023,
+      "venue": "Contemporary Issues in Technology and Teacher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Personalized Learning Path Planning and Effect Verification of Music Education Information System Empowered By Artificial Intelligence",
+      "doi": "10.1145/3744367.3744437",
+      "year": 2025,
+      "venue": "Proceedings of the 2025 International Conference on Artificial Intelligence and Educational Systems (ICAIES \u201925)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A systematic review of reinforcement learning application in building energy-related occupant behavior simulation",
+      "doi": null,
+      "year": 2024,
+      "venue": "Energy and Buildings",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "From MOOC to MAIC: Reshaping Online Teaching and Learning through LLM-driven Agents",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Doubly constrained offline reinforcement learning for learning path recommendation",
+      "doi": "10.1016/j.knosys.2023.111242",
+      "year": 2024,
+      "venue": "Knowledge-Based Systems",
+      "citation_level": 3,
+      "citation_context": "offline RL baseline/comparison for learning path recommendation"
+    },
+    {
+      "title": "Pedagogical AI conversational agents in higher education: a conceptual framework and survey of the state of the art",
+      "doi": null,
+      "year": 2025,
+      "venue": "Educational technology research and development",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Learning path planning methods based on learning path variability and ant colony optimization",
+      "doi": null,
+      "year": 2024,
+      "venue": "Systems and Soft Computing",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A Comprehensive Review of Reinforcement Learning in Intelligent Allocation and Optimization of Educational Resources",
+      "doi": "10.70393/6a6374616d.323436",
+      "year": 2024,
+      "venue": "Journal of Economic Theory and Business Management",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A new paradigm of personalized education driven by multi-agent collaboration",
+      "doi": null,
+      "year": 2025,
+      "venue": "Academic Journal of Sociology and Management",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

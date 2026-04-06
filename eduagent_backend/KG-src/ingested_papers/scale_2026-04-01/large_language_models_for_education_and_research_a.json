@@ -1,0 +1,470 @@
+{
+  "title": "Large Language Models for Education and Research: An Empirical and User Survey-based Analysis",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "https://arxiv.org/abs/2512.08057",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate",
+    "Graduate / Doctoral",
+    "Adult (non-academic)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper investigates how two large language models, ChatGPT and DeepSeek, compare in education and research contexts. The authors argue that although both tools are increasingly used for tasks such as tutoring, lecture preparation, coding support, research assistance, and problem solving, prior work has not systematically compared them on both technical performance and user perceptions. The study therefore asks how the models differ in accuracy, efficiency, programming performance, and practical usefulness for academic and research activities.\n\nThe study combines three components: a background technology analysis of the two models, empirical task-based benchmarking, and a user survey. In the empirical component, ChatGPT and DeepSeek were tested on mathematics, language tasks, scientific problem solving, medical applications, and Codeforces programming problems. Their outputs were compared using task outcomes and text/code similarity metrics such as ROUGE, BLEU, and BERTScore, with some responses validated by subject-matter experts. The user survey gathered both rating-scale and open-ended responses about model effectiveness, reliability, usefulness for writing, coding, lecture preparation, literature summarization, and idea generation.\n\nThe participant context for the survey included a mix of undergraduates, postgraduates, doctoral students, academic staff, and independent researchers. Most respondents came from computer science and engineering-related disciplines, with smaller representation from AI, science, health, business, medicine, and agriculture. This places the study primarily in higher education and academic/professional research settings rather than in K-12 schooling. The paper does not describe a classroom intervention; instead, it examines existing use and perceptions of AI tools alongside experimental benchmarking tasks.\n\nThe main conclusions are that ChatGPT is generally perceived as stronger in fluency, creativity, educational relevance, writing support, summarization, and idea generation, while DeepSeek performs especially well in programming and structured reasoning tasks. In the experiments, both models handled math, language, science, and medical tasks well, but DeepSeek achieved stronger performance on the programming benchmark. Survey responses also highlighted limitations, including hallucinated or incorrect answers, weak referencing, calculation mistakes, slow responses, and concerns about overreliance on AI. Overall, the authors conclude that both systems have strong potential to support education and research, with complementary strengths that could be used responsibly in academic settings.",
+  "limitations": [
+    "small_sample",
+    "no_control_group",
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "tutoring_instruction"
+      ],
+      "description": "OpenAI's GPT-family conversational large language model used for text generation, explanation, coding assistance, and academic support tasks.",
+      "use_case": "Compared with DeepSeek in empirical tasks relevant to education and research, including mathematics problem solving, language tasks, scientific problem solving, medical diagnostic/reporting tasks, programming problems, and user-perceived usefulness for educational and research activities.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In mathematics, ChatGPT produced mathematically valid and complete step-by-step solutions to a classical Fourier series expansion problem, as reviewed by subject-matter experts. In language tasks, it also performed consistently well in grammar correction, paraphrasing, and abstractive summarization, evaluated against human-written references using ROUGE and BLEU, though no aggregate scores were reported.",
+          "measure": "Expert review of Fourier series solution validity; ROUGE and BLEU for grammar correction, paraphrasing, and abstractive summarization",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Academic \u2014 Scientific Reasoning",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "On structured physics, chemistry, and biology problem sets, ChatGPT was reported to perform well; a chemistry expert validated 100% correctness on the tested chemistry problems. The paper states this demonstrates utility in domain-specific reasoning when prompts are clear.",
+          "measure": "Expert-validated correctness on structured science problem sets",
+          "effect_size": "100% correctness on tested chemistry problems",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "For medical diagnostic and reporting tasks, ChatGPT achieved approximately 90% accuracy when benchmarked against gold-standard clinical references. The paper presents this as evidence of strong medically accurate output, though task counts are not given.",
+          "measure": "Accuracy against gold-standard clinical references on diagnostic/reporting tasks",
+          "effect_size": "approximately 90% accuracy",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "On a curated set of seven Codeforces problems (difficulty 800 to 2200), ChatGPT solved most problems but had failures due to wrong answers, time limit exceeded, and compile errors. Success counts were 5/5 on Problems A, B, F, and G; 4/5 on Problems C and D; and 3/5 on Problem E, with BLEU scores ranging from 0.10 to 0.34 and BERTScore from 0.71 to 0.77 versus human solutions.",
+          "measure": "Programming problem success/failure on Codeforces; BLEU and BERTScore similarity to human solutions",
+          "effect_size": "Problem A: 5/5, BLEU 0.34, BERT 0.77; Problem B: 5/5, BLEU 0.18, BERT 0.71; Problem C: 4/5, BLEU 0.12, BERT 0.71; Problem D: 4/5, BLEU 0.27, BERT 0.77; Problem E: 3/5, BLEU 0.10, BERT 0.72; Problem F: 5/5, BLEU 0.23, BERT 0.77; Problem G: 5/5, BLEU 0.14, BERT 0.72",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=35 generated solutions (7 problems x 5 attempts)"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In the user survey, ChatGPT was generally rated more favorably than DeepSeek on response accuracy, relevance to education, helpfulness in research, lecture preparation, and creative response. The modal ratings were 4 for ChatGPT in each of these categories, with participant shares of 45.8%, 58.3%, 41.7%, 36.4%, and 41.7%, respectively.",
+          "measure": "User ratings (1-5 scale) across educational/research support dimensions",
+          "effect_size": "Response Accuracy: rating 4 by 45.8%; Relevance to Education: rating 4 by 58.3%; Helpful in Research: rating 4 by 41.7%; Lecture Preparation: rating 4 by 36.4%; Creative Response: rating 4 by 41.7%",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Survey respondents preferred ChatGPT for multiple academic tasks: writing/proofreading assignments (17 preferred ChatGPT, 3 DeepSeek, 4 both), coding help/debugging (12 ChatGPT, 3 DeepSeek, 9 both), preparing lectures and teaching slides (13 ChatGPT, 2 DeepSeek, 8 both, 1 neither), literature summarization (18 ChatGPT, 1 DeepSeek, 5 both), and generating research ideas (14 ChatGPT, 0 DeepSeek, 9 both, 1 neither). Additionally, 58.3% identified ChatGPT as the most reliable tool for education and research.",
+          "measure": "Task preference counts and perceived reliability in survey",
+          "effect_size": "Writing/proofreading: 17 ChatGPT vs 3 DeepSeek vs 4 both; Coding/debugging: 12 vs 3 vs 9 both; Lectures/slides: 13 vs 2 vs 8 both vs 1 neither; Literature summarization: 18 vs 1 vs 5 both; Research ideas: 14 vs 0 vs 9 both vs 1 neither; Reliability: 58.3% ChatGPT",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=24 inferred from survey percentages and task counts"
+        }
+      ]
+    },
+    {
+      "name": "DeepSeek",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "feedback_evaluation"
+      ],
+      "description": "DeepSeek is a family of reasoning- and efficiency-focused large language models used for structured question answering, coding, mathematical reasoning, and technical assistance.",
+      "use_case": "Compared with ChatGPT in empirical tasks relevant to education and research, including mathematics problem solving, language tasks, scientific problem solving, medical diagnostic/reporting tasks, programming problems, and user-perceived usefulness for educational and research activities.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In mathematics, DeepSeek produced mathematically valid and complete step-by-step solutions to a classical Fourier series expansion problem, as reviewed by subject-matter experts. In language tasks, it also performed consistently well in grammar correction, paraphrasing, and abstractive summarization, evaluated against human-written references using ROUGE and BLEU, though no aggregate scores were reported.",
+          "measure": "Expert review of Fourier series solution validity; ROUGE and BLEU for grammar correction, paraphrasing, and abstractive summarization",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Academic \u2014 Scientific Reasoning",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "On structured physics, chemistry, and biology problem sets, DeepSeek was reported to perform well; a chemistry expert validated 100% correctness on the tested chemistry problems. The paper states this demonstrates utility in domain-specific reasoning when prompts are clear.",
+          "measure": "Expert-validated correctness on structured science problem sets",
+          "effect_size": "100% correctness on tested chemistry problems",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "For medical diagnostic and reporting tasks, DeepSeek achieved approximately 90% accuracy when benchmarked against gold-standard clinical references. The paper presents this as evidence of strong medically accurate output, though task counts are not given.",
+          "measure": "Accuracy against gold-standard clinical references on diagnostic/reporting tasks",
+          "effect_size": "approximately 90% accuracy",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "On the curated set of seven Codeforces problems (difficulty 800 to 2200), DeepSeek achieved a perfect success rate across all evaluated problems. Its solutions also aligned more closely with human baselines than ChatGPT's, with BLEU scores from 0.16 to 0.51 and BERTScore from 0.73 to 0.84; the paper also states DeepSeek achieved the highest ROUGE-L of 0.55 on the 800-rated task.",
+          "measure": "Programming problem success/failure on Codeforces; BLEU, BERTScore, and reported ROUGE-L similarity to human solutions",
+          "effect_size": "Problem A: 5/5, BLEU 0.51, BERT 0.84, ROUGE-L 0.55; Problem B: 5/5, BLEU 0.33, BERT 0.79; Problem C: 5/5, BLEU 0.16, BERT 0.78; Problem D: 5/5, BLEU 0.25, BERT 0.81; Problem E: 5/5, BLEU 0.23, BERT 0.73; Problem F: 5/5, BLEU 0.33, BERT 0.81; Problem G: 5/5, BLEU 0.18, BERT 0.73",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=35 generated solutions (7 problems x 5 attempts)"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "In the user survey, DeepSeek was generally rated below ChatGPT on response accuracy, relevance to education, helpfulness in research, lecture preparation, and creative response, with modal ratings of 3 in most of these categories. However, it was rated comparatively better for coding, where 50.0% of participants assigned it a rating of 4.",
+          "measure": "User ratings (1-5 scale) across educational/research support dimensions",
+          "effect_size": "Response Accuracy: rating 3 by 45.8%; Relevance to Education: rating 4 by 37.5%; Helpful in Research: rating 3 by 33.3%; Lecture Preparation: rating 3 by 45.5%; Creative Response: rating 3 by 45.8%; Coding: rating 4 by 50.0%",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Survey task preferences showed limited preference for DeepSeek alone on most academic tasks, but some relative strength in coding support and lecture preparation. Counts were writing/proofreading (3 preferred DeepSeek), coding help/debugging (3), preparing lectures/slides (2), literature summarization (1), and generating research ideas (0); 4.2% of respondents considered DeepSeek the most reliable tool, while 29.2% said reliability is task-dependent and 8.3% rated both tools equally.",
+          "measure": "Task preference counts and perceived reliability in survey",
+          "effect_size": "Writing/proofreading: 3 DeepSeek; Coding/debugging: 3; Lectures/slides: 2; Literature summarization: 1; Research ideas: 0; Reliability: 4.2% DeepSeek most reliable",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=24 inferred from survey percentages and task counts"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical comparative study with benchmarks and a user survey, but it does not report a randomized or quasi-experimental educational design, and key methodological details such as task sample sizes for several domains and survey sampling procedures are limited.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports generally positive performance and user perceptions, especially strong coding results for DeepSeek, but no standardized causal effect sizes on student learning outcomes are provided, so educational impact remains promising but unclear.",
+  "citations": [
+    {
+      "title": "An extensive benchmark study on biomedical text generation and mining with chatgpt",
+      "doi": null,
+      "year": 2023,
+      "venue": "Bioinformatics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Overcoming limitation in chat gpt with future knowledge [construct quadratic equation with higher order quadratic roots]",
+      "doi": null,
+      "year": 2023,
+      "venue": "Available at SSRN",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Palm: Scaling language modeling with pathways",
+      "doi": null,
+      "year": 2023,
+      "venue": "Journal of Machine Learning Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Chatting and cheating: Ensuring academic integrity in the era of chatgpt",
+      "doi": null,
+      "year": 2024,
+      "venue": "Innovations in Education and Teaching International",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Deepseekmoe: Towards ultimate expert specialization in mixture-of-experts language models",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv preprint arXiv:2401.06066",
+      "citation_level": 2,
+      "citation_context": "supports DeepSeek MoE architecture and efficiency description"
+    },
+    {
+      "title": "Auggpt: Leveraging chatgpt for text data augmentation",
+      "doi": null,
+      "year": 2025,
+      "venue": "IEEE Transactions on Big Data",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Mathematical capabilities of chatgpt",
+      "doi": null,
+      "year": 2023,
+      "venue": "Advances in Neural Information Processing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Evaluating mathematical reasoning across large language models: A fine-grained approach",
+      "doi": null,
+      "year": 2025,
+      "venue": "arXiv preprint arXiv:2503.10573",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Chatgpt and software testing education: Promises & perils",
+      "doi": null,
+      "year": 2023,
+      "venue": "2023 IEEE International Conference on Software Testing, Verification and Validation Workshops (ICSTW)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Chatgpt for solving engineering and math: Challenges for education",
+      "doi": null,
+      "year": 2024,
+      "venue": "International IOT, Electronics and Mechatronics Conference",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "When chatgpt gives incorrect answers: the impact of inaccurate information by generative ai on tourism decision-making",
+      "doi": null,
+      "year": 2025,
+      "venue": "Journal of Travel Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Exploring the performance of chatgpt for numerical solution of ordinary differential equations",
+      "doi": null,
+      "year": 2025,
+      "venue": "JOTSE",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Deepseek-v3 technical report",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv preprint arXiv:2412.19437",
+      "citation_level": 2,
+      "citation_context": "supports DeepSeek architecture evolution and technical capabilities"
+    },
+    {
+      "title": "Refining chatgpt-generated code: Characterizing and mitigating code quality issues",
+      "doi": null,
+      "year": 2024,
+      "venue": "ACM Transactions on Software Engineering and Methodology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Deepseek-vl: towards real-world vision-language understanding",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv preprint arXiv:2403.05525",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Usability analysis of text generation by chatgpt openai using system usability scale method",
+      "doi": null,
+      "year": 2023,
+      "venue": "Procedia Computer Science",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Effective chatgpt prompts in mathematical problem solving: Focusing on quadratic equations and quadratic functions",
+      "doi": null,
+      "year": 2023,
+      "venue": "Communications of Mathematical Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Training language models to follow instructions with human feedback",
+      "doi": null,
+      "year": 2022,
+      "venue": "Advances in Neural Information Processing Systems",
+      "citation_level": 2,
+      "citation_context": "basis for ChatGPT RLHF training description"
+    },
+    {
+      "title": "Chatgpt as a math questioner? evaluating chatgpt on generating pre-university math questions",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 39th ACM/SIGAPP Symposium on Applied Computing",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Deepseek models: A comprehensive survey of methods and applications",
+      "doi": null,
+      "year": 2025,
+      "venue": "Authorea Preprints",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Roberta-bilstm: A context-aware hybrid model for sentiment analysis",
+      "doi": "10.1109/TETCI.2025.3572150",
+      "year": 2025,
+      "venue": "IEEE Transactions on Emerging Topics in Computational Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Chatgpt and deepseek: Strengths, limitations, and the future of generative ai",
+      "doi": null,
+      "year": 2025,
+      "venue": "Authorea Preprints",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Chatgpt for education and research: Opportunities, threats, and strategies",
+      "doi": null,
+      "year": 2023,
+      "venue": "Applied Sciences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Multilingual program code classification using n-layered bi-lstm model with optimized hyperparameters",
+      "doi": "10.1109/TETCI.2023.3336920",
+      "year": 2024,
+      "venue": "IEEE Transactions on Emerging Topics in Computational Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A neural network based intelligent support model for program code completion",
+      "doi": null,
+      "year": 2020,
+      "venue": "Scientific Programming",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Solving simultaneous equations via a large language model (chatgpt): Help or hindrance?",
+      "doi": null,
+      "year": 2024,
+      "venue": "CIEC",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A comparative analysis of ai-generated physics: Deepseek-v3 vs. gpt in calculating the einstein tensor for the alcubierre warp drive metric",
+      "doi": null,
+      "year": null,
+      "venue": "GPT in Calculating the Einstein Tensor for the Alcubierre Warp Drive Metric",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Chatgpt generated text detection",
+      "doi": null,
+      "year": 2023,
+      "venue": "Unpublished",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Programming with ai: Evaluating chatgpt, gemini, alphacode, and github copilot for programmers",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 3rd International Conference on Computing Advancements",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Large language models encode clinical knowledge",
+      "doi": null,
+      "year": 2022,
+      "venue": "arXiv preprint arXiv:2212.13138",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Attention is all you need",
+      "doi": null,
+      "year": 2017,
+      "venue": "Advances in Neural Information Processing Systems",
+      "citation_level": 2,
+      "citation_context": "foundational transformer architecture underlying ChatGPT description"
+    },
+    {
+      "title": "Exploring the limits of chatgpt for query or aspect-based text summarization",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv preprint arXiv:2302.08081",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A method for the architecture of a medical vertical large language model based on deepseek r1",
+      "doi": null,
+      "year": 2025,
+      "venue": "arXiv preprint arXiv:2505.00025",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Large language models for transforming healthcare: A perspective on deepseek-r1",
+      "doi": null,
+      "year": 2025,
+      "venue": "MedComm\u2013Future Medicine",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Deepseek-coder-v2: Breaking the barrier of closed-source models in code intelligence",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv preprint arXiv:2406.11931",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

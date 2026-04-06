@@ -1,0 +1,167 @@
+{
+  "title": "Artificial Intelligence in Education: Computer-Assisted Learning and AI-guided Tutors",
+  "doi": "10.1007/s40797-025-00354-1",
+  "year": 2026,
+  "venue": "Italian Economic Journal",
+  "url": "https://link.springer.com/article/10.1007/s40797-025-00354-1",
+  "source_db": "backfill_v3",
+  "populations": [],
+  "user_types": [
+    "School"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper examines whether and under what conditions computer-assisted learning (CAL) and AI-guided tutoring can improve learning and reduce educational inequality. It addresses both the effectiveness of these technologies and the risk that unequal access, weak implementation, or poor pedagogical design may reinforce existing disparities. A central empirical question is how adoption of generative AI in education diffuses across unequal regional contexts.\n\nThe paper combines a narrative review of causal evidence on CAL and AI-guided tutors with new empirical evidence from Italy. The review synthesizes findings from prior randomized and quasi-experimental studies on math-focused CAL, AI tutors, and hybrid human-AI tutoring models. The original empirical component uses weekly region-level Google Trends data on ChatGPT searches in education and employment categories across all Italian regions, analyzed with regional fixed effects and economic controls, as a proxy for generative AI adoption in education.\n\nThe context is primarily K-12 education, but the paper spans multiple education levels and intervention types across countries, while the original analysis focuses on Italian regions and schools as the unit of interest rather than individual students or teachers. The Italian evidence highlights regional and socioeconomic differences in AI uptake, showing that higher-income regions adopted generative AI earlier, with some diffusion over time as infrastructure improved.\n\nThe main conclusion is that AI and CAL can generate meaningful learning gains, especially in mathematics, but their success depends heavily on curriculum alignment, interactive pedagogical design, teacher support, and equitable implementation. The Italian results suggest that digital divides in adoption remain substantial, so inclusive policy and targeted investment are necessary if AI in education is to narrow rather than widen educational inequality.",
+  "limitations": [
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Italy",
+  "study_region": "Europe",
+  "identified_tools": [
+    {
+      "name": "CAI",
+      "is_named_product": true,
+      "specificity": "category",
+      "category_key": [
+        "tutoring_instruction"
+      ],
+      "description": "Computer-assisted instruction systems that deliver digital lessons, practice, and feedback to support student learning, sometimes with adaptive features.",
+      "use_case": "Discussed as a broad class of computer-assisted learning programs reviewed across causal studies in education, with especially strong attention to mathematics and comparisons against business-as-usual instruction, traditional lessons, static digital content, and other tutoring models.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "review_synthesis",
+          "direction": "positive",
+          "finding_summary": "The paper reports that computer-assisted learning programs have demonstrated positive and significant impacts in mathematics. In the Escueta et al. (2020) review cited by the paper, 21 of 31 RCTs found statistically significant positive effects, and 16 of those 21 positive studies focused on mathematics programs.",
+          "measure": "math learning outcomes across reviewed RCTs",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported",
+          "study_count": 31
+        },
+        {
+          "outcome_category": "Academic \u2014 Literacy",
+          "finding_type": "review_synthesis",
+          "direction": "mixed",
+          "finding_summary": "The paper states that evidence for computer-assisted learning in reading and writing is less clear than in mathematics and requires more research. It also notes that some large real-world implementations of math/reading software showed no significant effect when implementation fidelity and curriculum alignment were weak.",
+          "measure": "reading and writing learning outcomes across reviewed studies",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported",
+          "study_count": null
+        }
+      ]
+    },
+    {
+      "name": "I Can Learn",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "personalization_adaptation"
+      ],
+      "description": "Interactive computer-based algebra instruction software for classroom use.",
+      "use_case": "Reviewed as an integrated algebra computer-assisted instruction program in regular lessons for urban students in Chicago; n=1,605 students in 142 classes across 10 schools; compared with regular instruction in a class-level RCT.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The paper reports positive effects on algebra test scores for students using I Can Learn. Reported impacts were +0.17 to +0.18 SD in the full sample, rising to +0.23 SD in the largest and most heterogeneous classes.",
+          "measure": "algebra test scores",
+          "effect_size": "+0.17\u20130.18 SD; up to +0.23 SD",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=1,605",
+          "study_count": null
+        }
+      ]
+    },
+    {
+      "name": "School of One",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "personalization_adaptation",
+        "tutoring_instruction"
+      ],
+      "description": "Personalized middle-school math program that rotates students through differentiated instructional modalities based on learner needs.",
+      "use_case": "Reviewed as a personalized math rotation model in middle schools in New York City; n=5,070 students across 8 schools; compared with control schools in an RCT.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "The paper reports no significant effect of School of One on math test scores. It also notes implementation challenges and variation in student dose across schools.",
+          "measure": "math test scores",
+          "effect_size": "n.s.",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=5,070",
+          "study_count": null
+        }
+      ]
+    },
+    {
+      "name": "Khan Academy",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "personalization_adaptation"
+      ],
+      "description": "Mastery-based online learning platform that provides instructional content, practice, progress tracking, and personalized pacing across subjects, including mathematics.",
+      "use_case": "Reviewed in two district-wide RCTs in Nashville and Arlington for primary and secondary mathematics; n=10,979 students taught by 224 teachers; used as mastery-based computer-assisted learning with weekly teacher coaching; compared with control classrooms without the intervention.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The paper reports significant improvements in mathematics achievement from use of Khan Academy combined with weekly teacher coaching. Effects ranged from +0.12 to +0.22 SD depending on weekly usage, with larger gains in classrooms averaging at least 35 minutes of weekly practice.",
+          "measure": "math achievement (STAAR)",
+          "effect_size": "+0.12\u20130.22 SD",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=10,979",
+          "study_count": null
+        }
+      ]
+    },
+    {
+      "name": "ALEKS",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "personalization_adaptation",
+        "tutoring_instruction"
+      ],
+      "description": "Adaptive online learning system that assesses knowledge states and delivers individualized instruction and practice, commonly in mathematics.",
+      "use_case": "Reviewed as the computer-assisted learning platform inside a hybrid 4-to-1 high-dosage tutoring model for 9th-grade students in public high schools in Chicago and New York City; n=3,906 students across 7 schools with 72 tutors; compared with control students not receiving the tutoring/computer-assisted intervention.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The paper reports that the hybrid tutoring model integrating ALEKS produced a treatment-on-the-treated effect of 0.23 SD in mathematics, with effects sustained after one year. It also reports a +0.24 point improvement in math GPA and a 22% reduction in math failure rates.",
+          "measure": "standardized math test scores, math GPA, math failure rates",
+          "effect_size": "TOT: +0.23 SD (math); +0.24 GPA; \u221222% math failures",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=3,906",
+          "study_count": null
+        }
+      ]
+    }
+  ],
+  "verdict": "",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "The paper includes a literature review plus an original observational analysis using region-level Google Trends data, rather than a direct experimental evaluation of an education intervention. Because the primary new evidence is correlational proxy-based adoption analysis, it does not meet blue/green causal evidence standards.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper argues that AI/CAL can have meaningful effects based on prior studies, but its own original empirical analysis focuses on adoption disparities rather than direct student learning impacts. Therefore, impact from this paper itself is indirect and unclear rather than clearly positive at a quantified threshold.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": "Converted from kg_curator_v4 legacy extraction",
+  "_legacy_source": "/Users/alymoosa/Documents/A-Moosa-Dev/AI-EDU-Dev/eduagent/open_deep_research_v2/scripts/extraction_profiles_v3/artificial_intelligence_in_education_computer_assisted_learning_and_ai_guided_tu.json"
+}

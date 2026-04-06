@@ -1,0 +1,33 @@
+{
+  "title": "Comparison of Methods That Combine Multiple Randomized Trials to Estimate Heterogeneous Treatment Effects: A Preprint",
+  "doi": null,
+  "year": 2023,
+  "venue": "arXiv preprint",
+  "url": "http://arxiv.org/abs/2303.16299v2",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Adult (non-academic)"
+  ],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses the problem of estimating heterogeneous treatment effects when data are available from multiple randomized controlled trials. The authors note that single trials are often underpowered to detect treatment effect heterogeneity and may not generalize well, so they compare methods for combining multiple RCTs to estimate conditional average treatment effects (CATEs) more flexibly than traditional meta-analysis.\n\nThe paper evaluates several single-study machine learning approaches\u2014S-learner, X-learner, and causal forest\u2014and then extends them to multi-trial settings through complete pooling, pooling with trial indicators, ensemble methods, IPD meta-analysis, and no-pooling approaches. These methods are assessed through extensive simulations under varying levels of cross-trial heterogeneity, nonlinear treatment effect structure, unequal trial sizes, covariate shift, and larger numbers of trials. The study also includes an applied example using four randomized trials of depression medications (duloxetine vs vortioxetine) in adults with major depressive disorder.\n\nThe main conclusion is that methods allowing trial-level heterogeneity generally outperform complete pooling when treatment effects differ across studies. In particular, pooling with trial indicators and ensemble forests performed consistently well, especially when combined with causal forests as the base learner. The causal forest was the most robust single-study method overall, while parametric approaches such as lasso-based ensembles and mixed-effects meta-analysis worked best only when their functional-form assumptions matched the true data-generating process. In the real depression dataset, methods broadly agreed on an overall positive treatment effect and suggested limited heterogeneity, with age emerging as a possible moderator.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a methods preprint on combining randomized trials to estimate heterogeneous treatment effects, not an education intervention study. It contains no empirical evaluation of a K-12 educational technology or learning outcome, so it does not fit the evidence tiers for intervention effectiveness.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "The paper has no direct educational impact results; its contribution is methodological and applied to depression trials, not schooling or AI-in-education outcomes. Therefore there is no measurable impact on the requested education-relevant population or outcomes.",
+  "interventions": [],
+  "outcome_assignments": [],
+  "limitations": [
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "8",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

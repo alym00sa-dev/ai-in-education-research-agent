@@ -1,0 +1,96 @@
+{
+  "title": "Exploring utilization of generative AI for research and education in data-driven materials science",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2504.08817v2",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Undergraduate",
+    "Graduate / Doctoral",
+    "Adult (non-academic)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Qualitative",
+  "extended_summary": "This paper documents early uses of generative AI in research and education within data-driven materials science. The authors ask how generative AI can support software learning, tutorial generation, and interface development for scientific tools. Rather than evaluating a formal educational intervention with controlled outcomes, the paper presents descriptive examples from a July 2024 hackathon (AIMHack2024) focused on integrating generative AI into materials science workflows.\n\nThe intervention consisted of three demonstration activities using generative AI tools such as ChatGPT and MyGPT: (1) AI-assisted trial use of ImageJ for image-based particle counting, including overlapping-object detection; (2) creation of an AI tutor for the Bayesian optimization package PHYSBO using MyGPT with official documentation and papers as source material; and (3) development of a Windows GUI executable for PHYSBO with AI assistance, including automated manual creation. The paper emphasizes that AI outputs required human verification and iterative refinement, especially when initial responses were inaccurate.\n\nThe context was a hackathon with approximately 30 participants from diverse backgrounds including students and industry researchers in materials science, information science, bioinformatics, and condensed matter physics. The educational setting was not K-12; participants ranged from students to adult researchers, and the activity appears to have been conducted in a workshop/hackathon format at institutions in Japan. The paper does not report a formal sampling frame, participant breakdown, or standardized learning assessments.\n\nThe main conclusion is that generative AI can substantially reduce the effort required to learn unfamiliar software, generate usable tutorials, and create simple GUI applications and manuals in scientific domains. However, the authors also conclude that AI responses are not consistently reliable and must be checked against documentation, literature, and actual software behavior. Overall, the paper is best understood as an illustrative descriptive report of exploratory practice rather than rigorous evidence of educational effectiveness.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a descriptive hackathon/report paper in higher education/research training rather than a K-12 empirical impact study. It lacks a clear causal design, validated outcome measures, statistical analysis, and direct literacy-relevant methodology.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper suggests potentially useful but unquantified positive effects on efficiency and learning support, with no reported effect sizes or rigorous evidence of impact. Impacts are promising but unclear and not directly tied to K-12 learner outcomes.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.93,
+      "role": "primary",
+      "use_case": "Use of ChatGPT/MyGPT as a conversational assistant to help learners and researchers learn unfamiliar materials-science software, generate tutorials for the PHYSBO Bayesian optimization package, and guide software operation through step-by-step instructions."
+    },
+    {
+      "intervention": "Computer-Assisted Instruction (CAI)",
+      "confidence": 0.62,
+      "role": "secondary",
+      "use_case": "Software-based instructional use of ImageJ and PHYSBO/GUI demonstrations as learning tools during a materials-science hackathon, with AI supporting access to tutorials and usage guidance."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.89,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper reports that generative AI reduced the effort and time required to learn unfamiliar software and generate user-facing materials such as tutorials, manuals, and GUI wrappers. Evidence is descriptive rather than experimental: approximately 30 hackathon participants observed or used AI-assisted workflows, and the authors state that several participants successfully used previously unfamiliar software, but no controlled comparison, effect size, or formal productivity metric is reported.",
+        "measure": "Descriptive reports of reduced workload, faster software onboarding, successful software use, and successful creation of tutorials/GUI/manuals",
+        "study_size": "approximately n=30 participants in hackathon",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.6,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "A central stated goal of the hackathon was to strengthen participants' ability to critically evaluate AI-generated content by checking outputs against literature, domain knowledge, and software execution. The authors describe this as fostering critical thinking and verification practices, but provide no direct pre/post assessment, quantified learning gain, or validated measure.",
+        "measure": "Qualitative emphasis on critical evaluation, verification, and technical problem-solving practices",
+        "study_size": "approximately n=30 participants in hackathon",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Academic \u2014 Scientific Reasoning",
+      "confidence": 0.51,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Within the domain of materials-science education, the paper presents examples where AI-supported tutorials enabled users to perform image analysis tasks and understand PHYSBO acquisition functions and hyperparameter optimization workflows. However, the evidence is based on demonstrations and successful execution examples rather than formal assessment of scientific reasoning outcomes.",
+        "measure": "Task completion in scientific software use; correct explanation of Bayesian optimization functions; executable tutorial performance",
+        "study_size": "approximately n=30 participants in hackathon; some demonstrations are single-case examples",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_control_group",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "blended",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Japan",
+  "study_region": "East Asia & Pacific",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

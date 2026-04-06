@@ -1,0 +1,66 @@
+{
+  "title": "Large language models encode clinical knowledge",
+  "doi": "10.1038/s41586-023-06291-2",
+  "year": 2023,
+  "venue": "Nature",
+  "url": "https://doi.org/10.1038/s41586-023-06291-2",
+  "source_db": "openalex_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper examines whether large language models (LLMs) can encode and use clinical knowledge effectively, and how to evaluate their safety and usefulness in medical question answering. The authors argue that existing benchmarks were too narrow and focused mainly on accuracy or automated text metrics, which are insufficient for real-world clinical use. To address this, they introduce MultiMedQA, a benchmark that combines six existing medical question-answering datasets with a newly curated consumer-health dataset, HealthSearchQA.\n\nThe study evaluates PaLM, Flan-PaLM, and an instruction prompt-tuned version called Med-PaLM on multiple-choice and long-form medical questions. The paper includes automated evaluation, selective prediction analysis, and human evaluation by clinicians and lay users across dimensions such as scientific consensus, correctness, completeness, harm, bias, helpfulness, and intent alignment. Although Flan-PaLM achieves state-of-the-art performance on several multiple-choice medical benchmarks, human evaluation shows important gaps in factual grounding, harmfulness, and bias. Med-PaLM improves substantially over Flan-PaLM and approaches clinician performance on several axes, but still does not match clinicians overall.\n\nThe paper\u2019s context is medical AI rather than K-12 education. No school-based participants, classrooms, teachers, or students were studied. The main conclusion is that LLMs show promise for medical question answering, but reliable deployment requires better grounding, uncertainty handling, fairness evaluation, and safety alignment. The paper also identifies risks such as hallucinated misinformation, outdated consensus, inappropriate content, and demographic bias, and calls for more robust evaluation frameworks and future research.",
+  "limitations": [
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "Gemini",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "content_generation"
+      ],
+      "description": "A Google large language model / foundation model family for natural language understanding and generation.",
+      "use_case": "The paper evaluates PaLM and its instruction-tuned variant Flan-PaLM, and introduces instruction prompt tuning to create Med-PaLM.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0000 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "On multiple-choice medical QA benchmarks, Flan-PaLM achieved state-of-the-art performance, including 67.6% accuracy on MedQA (USMLE-style questions), 57.6% on MedMCQA, and 79.0% on PubMedQA. The paper reports that this exceeded prior state of the art by more than 17% on MedQA.",
+          "measure": "Multiple-choice accuracy on MedQA, MedMCQA, PubMedQA, and MMLU clinical topics",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Academic \u0000 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Human evaluation found major limitations in Flan-PaLM long-form answers: 61.9% were judged aligned with scientific consensus, 16.1% contained inappropriate and/or incorrect content, 47.6% omitted important content, 29.7% were potentially harmful, and 7.9% contained biased information. Med-PaLM improved several of these outcomes, with 92.6% aligned with scientific consensus, 15.3% missing important content, 5.9% potentially harmful, and 0.8% biased, but 18.7% still contained inappropriate and/or incorrect content.",
+          "measure": "Clinician-rated scientific consensus, incorrect content, missing content, extent of possible harm, and bias on consumer medical questions",
+          "effect_size": "not_reported",
+          "confidence_interval": "95% bootstrap percentile interval reported, exact values not provided in text",
+          "sample_size": "n=140 questions"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a primary empirical study with human evaluation and benchmark testing, but not a randomized or quasi-experimental education study. The evidence is observational/benchmark-based and partly qualitative, so it does not meet higher experimental evidence criteria.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The reported benchmark gains are substantial on medical QA, but the paper is not about K-12 learning outcomes and does not report a standardized effect size for classroom impact. Human-rated harms and limitations are important, but overall impact on the requested K-12 literacy context is indirect.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

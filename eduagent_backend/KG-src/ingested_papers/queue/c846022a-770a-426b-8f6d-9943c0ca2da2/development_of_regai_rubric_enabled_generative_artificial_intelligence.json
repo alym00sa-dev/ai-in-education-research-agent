@@ -1,0 +1,74 @@
+{
+  "title": "Development of REGAI: Rubric Enabled Generative Artificial Intelligence",
+  "doi": null,
+  "year": null,
+  "venue": null,
+  "url": "http://arxiv.org/abs/2408.02811v1",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses the problem of using large language models for high-stakes text evaluation when their outputs can be inconsistent, poorly aligned with human judgment, or difficult to explain. The authors propose rubric enabled generative artificial intelligence (REGAI), a system intended to improve automated scoring and critique of unstructured text by combining rubrics, retrieval-augmented generation, human review, and iterative feedback.\n\nREGAI is described as a pipeline in which a rubric is generated or supplied, reviewed by a human expert, then used by a scoring LLM to produce an initial score and justification. A separate critiquing LLM reviews the score, identifies mismatches with the rubric, and prompts revisions until the output is acceptable. The system also uses a knowledge base of exemplar rubrics, scores, and critiques to support retrieval and continual improvement. The paper discusses possible applications in academic grading, hiring, performance evaluation, proposal screening, email prioritization, paper review, and legal transcript analysis.\n\nAlthough the paper is primarily a design and position piece, it includes a preliminary evaluation on 500 essays from the Hewlett Foundation Automated Essay Scoring dataset. The authors compare a single-critique REGAI configuration with a rubric-only baseline and report that the critique cycle reduces mean absolute error and improves quadratic-weighted kappa, while the rubric-only version shows slightly higher correlation with human scores. The main conclusion is that critique-based rubric alignment appears promising, but more empirical work is needed, especially with larger knowledge bases, multiple critique rounds, and broader domain testing.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed prototype/technical evaluation with a single dataset and no randomization or real K-12 deployment, so it provides only limited credibility evidence. The methodology is clear but exploratory, with substantial concerns about generalizability and overfitting from very few exemplars.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The observed gains are modest and mixed: the critique cycle improves MAE and QWK but not correlation, and the work is limited to offline essay scoring rather than classroom implementation. This suggests unclear but potentially useful impact for writing assessment workflows, not demonstrated student-level learning impact.",
+  "interventions": [
+    {
+      "intervention": "Automated Feedback System",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "rubric-enabled generative AI for automated scoring and critique of student writing, specifically essay evaluation with human-reviewed rubrics and iterative feedback"
+    },
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.67,
+      "role": "secondary",
+      "use_case": "LLM-based scoring and critiquing agents used in a human-in-the-loop critique cycle to refine rubric-based evaluation outputs"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Literacy",
+      "confidence": 1.0,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "In a proof-of-concept evaluation on the first 500 essays from Hewlett Foundation essay set 8, REGAI\u2019s single-critique configuration improved agreement with human scoring on some metrics but not others. Compared with a rubric-only LLM, the critique cycle reduced MAE from 7.86 to 4.37 and improved QWK from 0.26 to 0.49, but correlation with human scores was slightly lower (0.49 vs 0.55).",
+        "measure": "Automated essay scoring against human scores: correlation, mean absolute error (MAE), quadratic-weighted kappa (QWK), and score distribution",
+        "study_size": "n=500",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "5.56"
+      },
+      "intervention": "Automated Feedback System"
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.88,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper argues that REGAI could reduce grading workload and provide more specific, scalable feedback for large volumes of writing. In the reported essay-scoring experiment, the critique-cycle version more closely matched the human score distribution than the rubric-only version, suggesting improved practicality for semi-automated grading workflows.",
+        "measure": "Essay scoring performance and proposed grading workflow utility",
+        "study_size": "n=500",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "5.56"
+      },
+      "intervention": "Automated Feedback System"
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_long_term_followup",
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

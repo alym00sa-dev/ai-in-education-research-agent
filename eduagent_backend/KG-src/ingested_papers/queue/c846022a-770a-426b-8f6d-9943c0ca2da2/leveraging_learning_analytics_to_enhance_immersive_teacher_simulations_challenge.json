@@ -1,0 +1,93 @@
+{
+  "title": "Leveraging learning analytics to enhance immersive teacher simulations: Challenges and opportunities",
+  "doi": null,
+  "year": 2025,
+  "venue": "not_reported",
+  "url": "http://arxiv.org/abs/2601.08954v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Graduate / Doctoral"
+  ],
+  "user_types": [
+    "Educator"
+  ],
+  "study_design": "Qualitative",
+  "extended_summary": "This chapter examines how learning analytics can be used to improve immersive teacher simulations, with a focus on making teachers\u2019 discourse, behavior, and visual attention visible for reflection and feedback. Rather than evaluating a single instructional intervention in a K-12 classroom, the paper develops and illustrates a multimodal analytics approach for generative AI-enhanced simulation environments. It asks how analytics can support teacher learning by revealing cognitive processes, interaction patterns, and attention allocation during simulated teaching.\n\nThe intervention context is TeacherGen@i, a web-based VR simulation in which preservice teachers designed lesson scenarios and interacted with AI-driven student agents. The authors analyzed 33 simulation sessions from 33 preservice teachers enrolled in a Digital Education course at a university in South Korea. Data came from speech transcripts, timestamped interaction logs, and gaze tracking, and were processed using BERT-based Bloom\u2019s taxonomy classification, lag sequential analysis, and heatmap-based attention visualization.\n\nThe paper concludes that preservice teachers\u2019 talk was dominated by lower-order cognitive moves such as remembering and understanding, while sequential analyses revealed structured scaffolding and response patterns that can be surfaced through analytics dashboards. The chapter argues that multimodal dashboards can support reflective practice, professional vision, and iterative redesign of teaching, while also noting the importance of equity, accessibility, fairness, and privacy safeguards. However, it is primarily a conceptual and case-based demonstration of analytics design rather than a controlled effectiveness study, and it does not test whether outcomes differ by teacher experience, subject area, grade level, or school context in K-12 settings.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a qualitative/case-study chapter with descriptive multimodal analyses and no experimental comparison or causal identification. It is peer-reviewed academic work with a clear method, but the evidence base is exploratory rather than rigorously causal.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The chapter provides promising design implications for teacher-facing generative AI feedback, but it does not report measurable learning gains, subgroup effects, or implementation impacts. The practical influence is therefore suggestive and modest rather than demonstrated at scale.",
+  "interventions": [
+    {
+      "intervention": "Educational Game / Simulation",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "Generative AI-enhanced immersive teacher simulation (TeacherGen@i) for preservice teacher practice in a web-based VR classroom, with AI-driven student agents and post-session analytics/dashboard feedback."
+    },
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.84,
+      "role": "secondary",
+      "use_case": "Large-language-model-powered student agents that generate adaptive, unscripted classroom responses and personas during teacher simulation interactions."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.91,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The chapter reports that the multimodal analytics framework made preservice teachers' pedagogical reasoning, interaction sequencing, and visual attention observable within TeacherGen@i, supporting reflective practice and professional vision. Across 33 sessions (n=33 preservice teachers; 1,269 turns), the system surfaced lower-order questioning patterns and sequential scaffolding/feedback loops that can inform simulation-based improvement, but the paper does not report causal outcome effects or effect sizes.",
+        "measure": "Coded discourse patterns (Bloom taxonomy), lag sequential analysis of interaction flows, gaze heatmaps/dispersion, dashboard-based reflective interpretation",
+        "study_size": "n=33",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.66,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The chapter argues that automating transcription, discourse coding, sequential analysis, and gaze visualization can reduce researcher/instructor workload and make teacher feedback more scalable and timely. However, this is primarily a design/positioning claim supported by one case study (n=33) rather than a quantified efficiency evaluation, so no effect size is reported.",
+        "measure": "Prototype dashboard usability for post-session analysis; automated transcription/coding/visualization pipeline",
+        "study_size": "n=33",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.52,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The chapter suggests that immersive simulation plus analytics may support self-reflection, analytics literacy, and confidence-building for teacher candidates, but it does not directly measure motivation or self-efficacy in this study. Any positive effect is therefore inferential and based on the proposed use of the dashboard for formative reflection rather than on reported survey outcomes.",
+        "measure": "Reflective practice/self-regulated improvement via dashboard use",
+        "study_size": "n=33",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "yes",
+  "implementation_fidelity": "not_reported",
+  "study_country": "South Korea",
+  "study_region": "East Asia & Pacific",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

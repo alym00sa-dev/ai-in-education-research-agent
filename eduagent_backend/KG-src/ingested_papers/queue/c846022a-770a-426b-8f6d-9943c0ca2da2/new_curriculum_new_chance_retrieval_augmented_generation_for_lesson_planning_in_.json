@@ -1,0 +1,73 @@
+{
+  "title": "New Curriculum, New Chance \u2013 Retrieval Augmented Generation for Lesson Planning in Ugandan Secondary Schools. Prototype Quality Evaluation.",
+  "doi": null,
+  "year": 2024,
+  "venue": "Ndejje University Second Annual Research Dissemination Symposium 2024",
+  "url": "http://arxiv.org/abs/2408.07542v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Educator"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This working paper examines whether a retrieval-augmented generation (RAG) system can produce technically high-quality lesson plans for Ugandan secondary schools under the country\u2019s new competency-based curriculum. The authors frame the problem as one of weak or absent teacher lesson planning, especially in rural settings, combined with the increased burden created by curriculum reform and limited teacher time, materials, and training.\n\nTo address this, the team developed the NDU Lesson Plan Generator, a prototype built with Cohere LLM, sentence embeddings, and LangChain. The system retrieves content from government-accredited secondary school textbooks and generates lesson plans in the Ugandan government format. The prototype was trained on three Secondary 1 textbooks: History (and Political Education), Mathematics, and ICT. Twenty-four lesson plans were generated and then rated by three independent raters using an adapted Lesson Plan Analysis Protocol (LPAP) designed for East African competence-based curricula.\n\nThe paper reports that the generated lesson plans scored highly overall, averaging about 75\u201380%, which the authors interpret as \u201cvery good\u201d technical quality. They conclude that the RAG system can generate lesson plans that meet the technical standards needed for use in Ugandan classrooms and that its outputs compare favorably with human-written lesson plans in related LPAP-based studies. The authors also note an important limitation: the system can hallucinate when the textbook content is insufficient, so human review is still recommended.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a grey-literature working paper/prototype evaluation using a descriptive technical assessment of 24 generated lesson plans with three raters. It is not a controlled comparative trial in authentic classrooms, so causal evidence is limited.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The reported effect is promising but indirect: high LPAP scores and curriculum alignment suggest potential for reduced teacher workload and improved implementation, but there is no measured student learning or real-world adoption effect. The practical impact is therefore plausible but still unclear.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.95,
+      "role": "primary",
+      "use_case": "Retrieval-augmented generation system for automatically generating curriculum-aligned lesson plans from government-approved textbooks for Ugandan secondary school teachers."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.98,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The prototype was designed to reduce teacher workload by automating lesson-plan creation. In the evaluation of 24 generated lesson plans (n=24), the plans achieved an average LPAP score of 75-80%, suggesting the system can produce lesson plans efficiently while meeting technical quality criteria for direct classroom use.",
+        "measure": "Lesson Plan Analysis Protocol (LPAP) technical quality score; lesson-plan generation quality",
+        "study_size": "n=24",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Systemic / Institutional Impact",
+      "confidence": 0.78,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper argues that the RAG-based generator could support implementation of Uganda's new competency-based curriculum by producing aligned lesson plans from approved textbooks. This is presented as facilitating faster and more efficient curriculum rollout across secondary schools, though the study only directly evaluates prototype lesson-plan quality rather than downstream policy outcomes.",
+        "measure": "Alignment of generated lesson plans to new curriculum and government lesson-plan format",
+        "study_size": "n=24",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_long_term_followup",
+    "implementation_fidelity_not_reported",
+    "non_representative_population"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Uganda",
+  "study_region": "Sub-Saharan Africa",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

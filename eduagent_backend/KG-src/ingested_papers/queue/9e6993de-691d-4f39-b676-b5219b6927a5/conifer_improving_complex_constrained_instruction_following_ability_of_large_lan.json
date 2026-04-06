@@ -1,0 +1,29 @@
+{
+  "title": "Conifer: Improving Complex Constrained Instruction-Following Ability of Large Language Models",
+  "doi": null,
+  "year": 2024,
+  "venue": null,
+  "url": "http://arxiv.org/abs/2404.02823v1",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses a core large-language-model problem: open-source LLMs often fail to follow instructions that contain multiple, fine-grained, or interacting constraints. The authors focus on improving complex constrained instruction following rather than on education, literacy, writing instruction, or K-12 learning outcomes. Their motivating question is how to construct training data and learning procedures that make models better at handling difficult instructions with content, format, and numerical constraints.\n\nThe main intervention is the creation of a new synthetic instruction-tuning dataset called Conifer, produced with GPT-4. The dataset generation pipeline includes query reframing, constraint generation, recombination of constraints into increasingly difficult instructions, and two-stage filtering for quality control. The authors also propose a progressive learning scheme that structures data in an easy-to-hard multi-turn format and adds internal and external process feedback so models can learn not just final answers but also how to satisfy constraints.\n\nThe paper evaluates Conifer by fine-tuning Mistral-7B and LLaMA-2-13B models and comparing them with several open-source baselines on instruction-following benchmarks such as IFEval, FollowBench, and InFoBench, plus general alignment benchmarks like AlpacaEval and MT-Bench. No human learner population is studied; the subjects are language models, datasets, and benchmark tasks. The work is conducted by researchers at Alibaba Group in Beijing, China, but the experiments are model-benchmark evaluations rather than human-participant studies.\n\nThe main conclusion is that training with the Conifer dataset improves instruction-following performance, especially on difficult constraint-heavy tasks. The authors report that their 7B Conifer-DPO model outperforms other open-source 7B models and in some cases matches or exceeds much larger 70B models on selected benchmarks. Overall, the paper contributes a dataset-construction and training framework for constrained instruction following, but it does not provide evidence about educational interventions, writing feedback, or K-12 classroom use of generative AI.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This paper is an NLP/LLM methods paper on instruction-following benchmarks and synthetic dataset construction, not a K-12 education intervention study. It provides no educational sample, classroom implementation, learner outcomes, or education-specific empirical design relevant to the requested evidence framework.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "No K-12 educational impact is measured. Reported gains are only on LLM benchmark performance, so the paper does not provide evidence of impact on student writing, revision, feedback, literacy, or other educational outcomes.",
+  "interventions": [],
+  "outcome_assignments": [],
+  "limitations": [
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

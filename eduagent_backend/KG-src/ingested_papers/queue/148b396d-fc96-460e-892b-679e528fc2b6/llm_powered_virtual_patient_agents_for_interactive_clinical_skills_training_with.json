@@ -1,0 +1,88 @@
+{
+  "title": "LLM-Powered Virtual Patient Agents for Interactive Clinical Skills Training with Automated Feedback",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "",
+  "source_db": "openalex_search",
+  "populations": [
+    "Undergraduate",
+    "Graduate / Doctoral",
+    "Adult (non-academic)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses the challenge of providing scalable, realistic practice for Objective Structured Clinical Examinations (OSCEs) in medical education. The authors argue that traditional OSCE preparation is resource-intensive because it requires human standardized patients, expert examiners, and repeated individualized feedback. They propose a system that uses large language models (LLMs) to create both a virtual patient and a virtual tutor, aiming to support richer, more interactive clinical-skills training.\n\nThe intervention is a modular framework with a Unity-based frontend and an LLM-powered backend. The virtual patient can handle multimodal interaction through chat, speech, and predefined action spaces, allowing simulated movements and reactive behaviors in addition to text dialogue. The tutor agent can provide in-scenario hints, post-session summaries, and checklist-based OSCE scoring by analyzing the full interaction history rather than relying on keyword matching. The system is designed to be frontend-independent, so it could work with a virtual simulator or a physical robot.\n\nThe paper reports performance benchmarks for speech recognition and LLM response latency, along with a preliminary expert evaluation. Eighteen medical professionals, including physicians, medical assistants, and medical students, tested an upper-limb neurological examination scenario and rated the virtual patient and tutor favorably. Experts found the patient\u2019s chat especially realistic and the tutor\u2019s summaries and scores useful, while also noting room for improvement in more nuanced movement handling, multi-command understanding, and more sophisticated reactive behaviors. Overall, the paper concludes that LLM-driven patient simulation and automated feedback can make OSCE practice more accessible, personalized, and scalable, though current cloud-based models and prompt designs still limit realism and accessibility.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed system paper with a small preliminary expert evaluation and engineering benchmarks, but not a controlled learner-outcome study. Evidence is therefore qualitative/early-stage rather than high-credibility causal evidence.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper suggests potentially useful training and workflow efficiency benefits, but the reported outcomes are expert ratings and latency benchmarks rather than demonstrated learner gains. Impact on education is promising but still unclear and modest at this stage.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.98,
+      "role": "primary",
+      "use_case": "LLM-powered virtual tutor for OSCE clinical skills training that provides on-demand hints, formative guidance, post-session summaries, and checklist-based scoring from the full student-patient interaction"
+    },
+    {
+      "intervention": "Educational Game / Simulation",
+      "confidence": 0.95,
+      "role": "primary",
+      "use_case": "Unity-based virtual patient simulation for OSCE-style clinical skills practice, including text/voice dialogue, patient movements, and reactive clinical behaviors"
+    },
+    {
+      "intervention": "Robot / Embodied Tutor",
+      "confidence": 0.72,
+      "role": "secondary",
+      "use_case": "Framework is explicitly designed to be frontend-independent and compatible with a physical robot patient as an alternative to the virtual patient simulator"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.94,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "In a preliminary expert evaluation with n=18 medical professionals, the virtual patient and virtual tutor were both rated highly for OSCE training utility. The virtual patient averaged 4.38/5 (SD=0.74) and the tutor 4.33/5 (SD=0.71), suggesting the system was perceived as good to very good for clinical skills practice.",
+        "measure": "5-point Likert ratings of virtual patient fidelity and virtual tutor usefulness during an upper-limb neurological OSCE scenario",
+        "study_size": "n=18",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "VP SD=0.74; VT SD=0.71"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.91,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The system was designed and benchmarked for real-time use, with speech-to-text and LLM components selected to keep interaction latency low. Whisper-tiny achieved RTF=0.325 with WER=0.245, and Gemini-1.5-Flash averaged 2.07s (SD=0.27) per response, supporting low-latency interactive training.",
+        "measure": "Speech recognition real-time factor and word error rate; LLM response latency",
+        "study_size": "n=3 Whisper models; n=10 runs per LLM",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "LLM response time SD=0.27s; smaller model benchmark SD not fully reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "medium",
+  "study_country": "Germany",
+  "study_region": "Europe",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

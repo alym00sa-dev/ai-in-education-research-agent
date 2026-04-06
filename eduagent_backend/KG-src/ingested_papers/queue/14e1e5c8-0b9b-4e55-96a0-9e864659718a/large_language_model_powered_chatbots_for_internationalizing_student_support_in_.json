@@ -1,0 +1,72 @@
+{
+  "title": "LARGE LANGUAGE MODEL-POWERED CHATBOTS FOR INTERNATIONALIZING STUDENT SUPPORT IN HIGHER EDUCATION",
+  "doi": null,
+  "year": null,
+  "venue": null,
+  "url": "http://arxiv.org/abs/2403.14702v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper examines how large language model (LLM)-powered chatbots can be used to improve student support and internationalization in higher education. The authors frame the problem as helping international and Moroccan students access timely, relevant information and interact more easily with university services in a digitally transformed educational environment.\n\nThe intervention is a chatbot built with GPT-3.5-Turbo and GPT-4-Turbo, LangChain, OpenAI embeddings, and Chroma Vector Store. The system uses a retrieval-augmented design: official university webpages are manually collected, embedded into a local vector store, and used to ground responses. A second GPT-4-Turbo step acts as a verifier to reduce hallucinations and align responses with the source data. The chatbot also includes summary memory to support ongoing conversations and multilingual response capability.\n\nThe study population is Al Akhawayn University students, with survey evaluation conducted on 11 final evaluators (10 Moroccan and 1 international) who rated chatbot responses on quality, relevance, correctness, formality, and human-likeness. The paper reports generally strong evaluation scores and concludes that the chatbot can provide rich, relevant, and generally accurate support for international student inquiries. It also notes that hallucinations can still occur in unsupported areas and recommends larger-scale evaluation and broader datasets in future work.",
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "self_reported_measures",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Morocco",
+  "study_region": "Middle East & North Africa",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "feedback_evaluation",
+        "language_speech"
+      ],
+      "description": "OpenAI GPT-based large language model chatbot system used for conversational response generation, with prompting, memory, vector retrieval, and post-generation verification.",
+      "use_case": "Built and evaluated as a chatbot for international student support in higher education, using GPT-3.5-Turbo for initial responses and GPT-4-Turbo as a verifier/fact-checker.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The paper reports that the chatbot was capable of providing comprehensive responses, with a low error rate, real-time engagement, memory capabilities, and critical data access. It was described as effective for student support and information retrieval, though no controlled comparison or effect size was reported.",
+          "measure": "Survey ratings of chatbot response quality, relevance, correctness, formality, and human-likeness; qualitative testing of provocation-proofness and information retrieval",
+          "effect_size": "not_reported",
+          "confidence_interval": "[4.06\u20134.43] quality; [4.02\u20134.41] relevance; [4.18\u20134.47] correctness; [4.24\u20134.54] formality; [3.87\u20134.32] human-like",
+          "sample_size": "n=11 evaluators, 79 evaluations per metric"
+        },
+        {
+          "outcome_category": "Systemic / Institutional Impact",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The authors state that the chatbot could improve student engagement, information access, and support in higher education internationalization, and suggest it may be relatively low cost and easy to implement across universities. This is a claim based on the described prototype and survey feedback rather than a causal field study.",
+          "measure": "Student survey feedback and author interpretation of implementation implications",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=11 evaluators"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical prototype evaluation with survey-based testing, but it is not a controlled study, RCT, or field experiment. The evidence is qualitative/mixed-methods with limited participants and no causal design.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The reported ratings are generally high, but no standardized effect size is provided and the study lacks a comparison group. The impact appears favorable but remains unclear and modest in evidentiary strength.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

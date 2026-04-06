@@ -1,0 +1,81 @@
+{
+  "title": "Physics task development of prospective physics teachers using ChatGPT",
+  "doi": null,
+  "year": 2023,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2304.10014v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Undergraduate",
+    "Graduate / Doctoral"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Randomized Controlled Trial (RCT)",
+  "extended_summary": "This paper asks whether ChatGPT 3.5 can support prospective physics teachers in developing high-quality assessment tasks, and how tasks created with ChatGPT compare with tasks created using a conventional textbook. The authors focus on task quality, the kinds of revisions teacher candidates make to generated tasks, and participants\u2019 perceptions of ChatGPT\u2019s usability, usefulness, and output quality.\n\nIn a randomized controlled trial, 26 prospective physics teachers from Ludwig-Maximilians-University Munich were split into two groups. One group used ChatGPT 3.5 to create text-based physics tasks for four Newtonian mechanics concepts for 10th-grade German high school students; the control group used a standard high school physics textbook. Participants first completed prompt-familiarization examples, then created or adapted tasks. The study rated tasks on specificity, clarity, correctness, whether they were misleading, difficulty, contextualization, relevance to the target concept, and overall quality. Participants using ChatGPT also completed usability and usefulness surveys.\n\nThe findings show that ChatGPT-generated and textbook-supported tasks were similarly correct and appropriately difficult, but textbook-supported tasks were clearer and more often embedded in meaningful contexts. Both groups struggled with task specificity, suggesting that neither ChatGPT nor the textbook overcame the challenge of supplying enough information for a task to be solvable. Participants rated ChatGPT as easy to use, but its output quality only around neutral and somewhat problematic. The paper concludes that ChatGPT can support physics task development, but teacher prompts and pedagogical judgment remain important, especially for specificity and contextual quality.",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is a randomized controlled trial with a direct comparison group and blinded expert task ratings, which is strong evidence for this narrow context. There are some concerns about small sample size (n=26), single institution, and limited generalizability beyond prospective physics teachers in one topic area.",
+  "impact_tier": "green",
+  "impact_tier_rationale": "The study suggests modest benefits for using ChatGPT to support task creation, mainly comparable correctness but weaker context quality versus textbooks. The largest reported difference was moderate-to-large for context quality (d=1.04), but the practical impact is limited to teacher task authoring rather than direct student learning outcomes.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.98,
+      "role": "primary",
+      "use_case": "Using ChatGPT 3.5 to generate and revise physics assessment tasks for prospective teachers creating 10th-grade kinematics and Newton's laws questions"
+    },
+    {
+      "intervention": "Computer-Assisted Instruction (CAI)",
+      "confidence": 0.7,
+      "role": "secondary",
+      "use_case": "Using a digital high school physics textbook as a non-AI comparison resource for task creation and adaptation"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Scientific Reasoning",
+      "confidence": 0.9,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "In an RCT with 26 prospective physics teachers who produced 103 tasks, ChatGPT 3.5 yielded task correctness comparable to textbook-supported task creation, with no significant difference in correctness or adequacy of difficulty. However, textbook-supported tasks were significantly clearer (p=0.04, d=0.38) and more contextualized (p=6\u00d710^-5, d=1.04), while both groups struggled with task specificity.",
+        "measure": "Expert ratings of generated physics task quality: specificity, clarity, correctness, not misleading, adequate difficulty, context, relevance to target concept, overall quality",
+        "study_size": "n=26 prospective teachers; 103 tasks total (51 ChatGPT, 52 textbook)",
+        "effect_size": "d=0.38 and d=1.04 for clarity and context favoring textbook; other comparisons not reported as significant",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    },
+    {
+      "outcome": "Academic \u2014 Scientific Reasoning",
+      "confidence": 0.9,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "Compared with textbook-supported task creation, ChatGPT-generated tasks were equally correct and similarly difficult, but were less often embedded in meaningful context. The study reports no significant difference in correctness, specificity, misleading phrasing, or adequate difficulty, suggesting ChatGPT can support basic physics item generation but does not fully address higher-quality item design needs.",
+        "measure": "Expert ratings of task correctness, specificity, misleading phrasing, adequate difficulty, and context",
+        "study_size": "n=26 prospective teachers; 103 tasks total",
+        "effect_size": "d=0.38 and d=1.04 for clarity and context favoring textbook; other effect sizes not reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Computer-Assisted Instruction (CAI)"
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "yes",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Germany",
+  "study_region": "Europe",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

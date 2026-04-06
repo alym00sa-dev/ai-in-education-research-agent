@@ -1,0 +1,64 @@
+{
+  "title": "Generating Feedback-Ladders for Logical Errors in Programming using Large Language Models",
+  "doi": null,
+  "year": 2024,
+  "venue": "Educational Data Mining (EDM) 2024",
+  "url": "http://arxiv.org/abs/2405.00302v3",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Undergraduate",
+    "Graduate / Doctoral"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses the problem of generating useful automated feedback for logical errors in student programming assignments using large language models. The authors argue that existing feedback methods often either reveal too much of the solution, fail to account for student context, or provide only a single level of help. To address this, they propose a multi-level \"feedback-ladder\" that offers progressively more detailed feedback for the same buggy program.\n\nThe intervention studied is a GPT-4-based prompting method that generates five feedback levels: a correctness verdict, a failing test case, a high-level explanation of the bug, a location hint, and an edit suggestion. The approach is evaluated on introductory programming problems drawn from the CSEDM dataset, focusing on submissions without syntax errors but with logical mistakes. The feedback is intended to support teachers in choosing an appropriate level of hint for different students, or to gradually increase specificity if a student remains stuck.\n\nThe study uses a user study with 10 annotators drawn from students, CS instructors, and AI researchers. They rate generated feedback on relevance and effectiveness for low-, mid-, and high-scoring student submissions across five programming problems. The paper concludes that GPT-4 can generate reasonably relevant lower-level feedback, but quality declines at higher levels, especially for high-scoring submissions where the bugs are subtle. The authors suggest the method could still reduce teacher workload, but note that more personalization and better handling of subtle errors are needed.",
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "feedback_evaluation",
+        "personalization_adaptation"
+      ],
+      "description": "OpenAI's GPT family of large language models used to generate natural-language feedback from prompts.",
+      "use_case": "Used via the OpenAI API with model='gpt-4' to generate multilevel 'feedback-ladders' for buggy programming submissions.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0001 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "In a user study with 10 annotators evaluating 15 programming submissions, GPT-4-generated feedback ladders were judged to be highly relevant and effective at lower levels, but quality declined at higher levels. The paper reports that feedback quality was consistently better for low-level feedback than high-level feedback, and that generating good feedback was harder for higher-scoring submissions; no effect sizes or confidence intervals were reported.",
+          "measure": "Annotator ratings of relevance and effectiveness on a 5-point Likert scale",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=10 annotators; 15 programs (5 problems x 3 submissions)"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a primary user study with qualitative/mixed-methods evaluation of generated feedback, not a controlled instructional outcome study or meta-analysis. The paper reports inter-rater agreement and Likert ratings, but no causal effect sizes for learning outcomes.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The reported impact is mixed: lower-level feedback was rated relatively well, while higher-level feedback and higher-scoring submissions were harder to handle and often ineffective. No quantitative effect size is reported, so the practical impact on learning quality remains unclear.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

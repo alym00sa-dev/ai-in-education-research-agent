@@ -1,0 +1,73 @@
+{
+  "title": "CMATH: Can Your Language Model Pass Chinese Elementary School Math Test?",
+  "doi": null,
+  "year": 2023,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2306.16636v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Elementary (PreK-5th)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper introduces CMATH, a benchmark dataset of 1.7k Chinese elementary school math word problems drawn from real workbooks and exams. The motivating question is how the mathematical abilities of popular large language models correspond to elementary grade levels, and whether those models can handle arithmetic and reasoning tasks in a human-like, grade-specific way.\n\nThe study does not test an educational intervention; instead, it evaluates several general-purpose LLMs, including GPT-4, ChatGPT, and multiple open-source Chinese models, on the CMATH problems in a zero-shot setting. The dataset is annotated with grade level, answer, number of reasoning steps, and number of digits, allowing the authors to examine performance by grade and by problem complexity. They also create a small distractor dataset by adding irrelevant information to some problems to probe robustness.\n\nThe population context is Chinese elementary school math content, spanning grades 1 through 6. The main findings are that GPT-4 is the only model achieving at least 60% accuracy across all grades and the only one that remains robust under distractors. ChatGPT performs reasonably on lower grades but degrades on higher grades and is more easily misled by irrelevant information. The authors conclude that most current general-purpose LLMs still struggle with elementary math reasoning, especially as complexity increases.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed-style benchmark study with a clear methodology and systematic evaluation, but it is not an experimental K-12 intervention study and does not use causal identification or human learners. Evidence is therefore descriptive/correlational rather than rigorous causal evidence.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper shows clear performance differences among LLMs on a math benchmark, but it does not test instructional impact on students or report educational effect sizes. Its educational relevance is substantial for model evaluation, yet the direct K-12 impact is unclear.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.95,
+      "role": "primary",
+      "use_case": "Benchmarking general-purpose large language models on Chinese elementary-school math word problems, including zero-shot problem solving and robustness to distracting information."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 0.98,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "Across 1.7k CMATH problems, GPT-4 was the only model that achieved accuracy \u226560% in all six elementary grades; ChatGPT reached that threshold in grades 1-4, while other models generally failed. Accuracy declined with higher grade level, greater reasoning-step complexity, and greater arithmetic complexity; the paper does not report effect sizes, confidence intervals, or standard deviations.",
+        "measure": "Accuracy on elementary-school math word problems by grade, number of reasoning steps, and number of digits",
+        "study_size": "n=1700 (CMATH benchmark); distractor subset n=60",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.84,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The paper treats correct solving as a proxy for general reasoning and notes that performance drops as reasoning steps increase, suggesting weaker multi-step problem-solving in most models. GPT-4 remained robust to distractors, whereas other models were easily misled by irrelevant information; no formal effect sizes were reported.",
+        "measure": "Accuracy as a function of number of reasoning steps and robustness to distractor-augmented problems",
+        "study_size": "n=1700 overall; distractor robustness subset n=60",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "China",
+  "study_region": "East Asia & Pacific",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

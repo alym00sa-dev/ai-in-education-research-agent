@@ -1,0 +1,455 @@
+{
+  "title": "A Chain-of-Thought Prompting Approach with LLMs for Evaluating Students\u2019 Formative Assessment Responses in Science",
+  "doi": null,
+  "year": 2024,
+  "venue": "The Thirty-Eighth AAAI Conference on Artificial Intelligence (AAAI-24)",
+  "url": "https://doi.org/10.1609/aaai.v38i21.30364",
+  "source_db": "openalex_search",
+  "populations": [
+    "Middle School (6th-8th)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses how large language models can be used to score and explain students\u2019 open-ended formative assessment responses in K-12 science, a task that is difficult and time-consuming for teachers. The authors focus on middle school Earth Science short-answer assessments, where students must demonstrate conceptual understanding and scientific reasoning rather than produce highly structured answers. The study also examines whether chain-of-thought prompting and human-in-the-loop active learning can improve alignment between GPT-4 scoring and human scoring, while generating explanations that may be useful for feedback and rubric refinement.\n\nThe intervention studied is a GPT-4-based automated assessment pipeline that combines few-shot prompting, chain-of-thought reasoning, inter-rater-reliability-informed prompt construction, and one iteration of active learning. Human scorers first established consensus on a subset of responses, then these agreed examples and explanatory reasoning chains were inserted into prompts. The model was then used to score three formative assessment questions from the SPICE middle school Earth Science water runoff curriculum, and prompt examples were further refined based on observed model errors. The approach was evaluated against zero-shot, few-shot, and few-shot-with-CoT baselines using accuracy, macro F1, and quadratic weighted kappa.\n\nThe population consisted of 270 students from two Vanderbilt-approved SPICE studies at a public middle school in the Southeastern United States. The curriculum lasted three weeks and centered on redesigning a schoolyard to reduce water runoff under cost and accessibility constraints. The assessments targeted students\u2019 conceptual understanding of water runoff and conservation of matter. Teachers are also part of the broader use context because the system is intended to support teacher scoring, feedback, and rubric revision, and the paper additionally references anecdotal teacher interview feedback about the usefulness of model-generated explanations.\n\nThe main conclusion is that GPT-4, combined with chain-of-thought prompting and active learning, can achieve strong and in several cases near-human agreement for scoring middle school science formative assessments, while also producing explanations linked to rubric criteria. However, performance varied by question and subscore, and the method was vulnerable to overfitting, especially for simpler subtasks or ambiguous rubric/question formulations. The authors conclude that human-in-the-loop use is important, both to correct model weaknesses and to improve rubrics and question design. They also note ethical concerns related to privacy, bias, and hallucinations, and frame the work as a promising but still limited step toward practical classroom use.",
+  "limitations": [
+    "short_duration",
+    "single_site",
+    "no_control_group",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "3",
+  "setting": "classroom",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation"
+      ],
+      "description": "OpenAI's GPT-family large language model chatbot used for natural language generation and analysis tasks.",
+      "use_case": "Used as GPT-4 in a human-in-the-loop chain-of-thought prompting plus active learning pipeline to score middle school Earth Science short-answer formative assessments and generate rubric-linked explanations/feedback.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "GPT-4 mostly aligned with human scorers on automated scoring of three middle school Earth Science formative assessment questions from SPICE. Across 11 subscores and total scores, 9 reached 'strong' agreement or better at some stage (QWK >= 0.8), 4 reached 'almost perfect' agreement (QWK > 0.9), and all but one subscore achieved Macro F1 >= 0.90 at some point in the evaluation pipeline. The dataset came from 270 students, though missing/non-consenting data reduced usable responses.",
+          "measure": "Automated scoring agreement with human raters using Macro F1, accuracy, and Cohen's Quadratic Weighted Kappa (QWK) across question subscores and total scores",
+          "effect_size": "QWK up to 1.00; Macro F1 up to 1.00 depending on subscore/implementation",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=270"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "For Question 1 (Arrow Size), GPT-4 achieved moderate agreement even zero-shot (Acc=0.87, F1=0.84, QWK=0.68). With few-shot prompting, performance reached perfect test-set scoring (Acc=1.00, F1=1.00, QWK=1.00), while the full CoT+active learning approach achieved Acc=0.98, F1=0.97, QWK=0.95.",
+          "measure": "Test-set scoring performance for Q1 Arrow Size",
+          "effect_size": "Zero-shot QWK=0.68; Few-shot QWK=1.00; CoT+AL QWK=0.95",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "For Question 2, the full CoT+active learning method improved overall total-score agreement to Acc=0.85, F1=0.79, QWK=0.87, outperforming the zero-shot baseline on QWK (0.65). However, some scientific reasoning subscores worsened as CoT and active learning were added; for example, Q2 Arrow Direction Reasoning declined to F1=0.65 and QWK=0.30 under CoT+AL, and the authors report overfitting on ambiguous responses.",
+          "measure": "Test-set scoring performance for Q2 subscores and total score",
+          "effect_size": "Q2 Total Score QWK=0.87 with CoT+AL; Q2 Arrow Direction Reasoning QWK=0.30 with CoT+AL",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "For Question 3, the full method improved total-score agreement to Acc=0.81, F1=0.80, QWK=0.90. Some subscores achieved perfect agreement, including Q3 Arrow Size Reasoning with few-shot and with CoT+AL (Acc=1.00, F1=1.00, QWK=1.00), but Q3 Runoff Direction was overfit during active learning, dropping from QWK=0.84 with Few-Shot, CoT to 0.75 with CoT+AL.",
+          "measure": "Test-set scoring performance for Q3 subscores and total score",
+          "effect_size": "Q3 Total Score QWK=0.90; Q3 Arrow Size Reasoning QWK=1.00; Q3 Runoff Direction QWK fell to 0.75 after CoT+AL",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "In a disagreement analysis, the lead author reviewed 22 human-model scoring disagreements and agreed with the model in 3 cases (1 conceptual, 2 reasoning), suggesting some model judgments may surface rubric or human-scoring issues. The authors also found that CoT and active learning could overfit, with errors tied to keyword sensitivity, reused evidence across subscores, and inconsistent adherence to provided reasoning patterns.",
+          "measure": "Qualitative review of human-model scoring disagreements and error patterns",
+          "effect_size": "3 of 22 disagreements favored model judgment",
+          "confidence_interval": "not_reported",
+          "sample_size": "22 disagreements"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical evaluation of a specific tool use case, but it is not an RCT or QED on student learning outcomes. The study mainly assesses agreement with human scoring using held-out test data and qualitative error analysis.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper shows promising but mixed operational gains in automated assessment accuracy and explanation generation, with high agreement on several subscores but overfitting and weaker performance on some reasoning items. Impacts are substantial for scoring alignment in places, but they are task-specific and not linked to direct student outcome effects.",
+  "citations": [
+    {
+      "title": "Real-Time AI-Driven Assessment and Scaffolding that Improves Students\u2019 Mathematical Modeling during Science Investigations",
+      "doi": null,
+      "year": 2023,
+      "venue": "Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Handbook on Formative and Summative Evaluation of Student Learning",
+      "doi": null,
+      "year": 1971,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "background framing of formative assessment"
+    },
+    {
+      "title": "Language Models are Few-Shot Learners",
+      "doi": null,
+      "year": 2020,
+      "venue": "arXiv e-prints",
+      "citation_level": 2,
+      "citation_context": "few-shot prompting paradigm underpinning baselines"
+    },
+    {
+      "title": "Constructing grounded theory: A practical guide through qualitative analysis",
+      "doi": null,
+      "year": 2006,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "inductive coding approach for disagreement analysis"
+    },
+    {
+      "title": "A Principled Approach to NGSS-aligned Curriculum Development Integrating Science, Engineering, and Computation: A Pilot Study",
+      "doi": null,
+      "year": 2019,
+      "venue": "NARST Annual International Conference",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Formative assessment: an overview of history, theory and application",
+      "doi": null,
+      "year": 2023,
+      "venue": "International Encyclopedia of Education (Fourth Edition)",
+      "citation_level": 2,
+      "citation_context": "defines formative assessment framing"
+    },
+    {
+      "title": "Improving NLP model performance on small educational data sets using self-augmentation",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 15th International Conference on Computer Supported Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Improving automated evaluation of formative assessments with text data augmentation",
+      "doi": null,
+      "year": 2022,
+      "venue": "International Conference on Artificial Intelligence in Education",
+      "citation_level": 2,
+      "citation_context": "prior work on label balancing for performance gains"
+    },
+    {
+      "title": "Improving Automated Evaluation of Student Text Responses Using GPT-3.5 for Text Data Augmentation",
+      "doi": null,
+      "year": 2023,
+      "venue": "International Conference on Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A coefficient of agreement for nominal scales",
+      "doi": null,
+      "year": 1960,
+      "venue": "Educational and Psychological Measurement",
+      "citation_level": 2,
+      "citation_context": "contrasted with weighted kappa for ordinal scoring"
+    },
+    {
+      "title": "Weighted kappa: nominal scale agreement provision for scaled disagreement or partial credit",
+      "doi": null,
+      "year": 1968,
+      "venue": "Psychological Bulletin",
+      "citation_level": 3,
+      "citation_context": "quadratic weighted kappa evaluation metric"
+    },
+    {
+      "title": "BERT efficacy on scientific and medical datasets: a systematic literature review",
+      "doi": null,
+      "year": 2020,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Reducing the Cost: Cross-Prompt Pre-finetuning for Short Answer Scoring",
+      "doi": null,
+      "year": 2023,
+      "venue": "International Conference on Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Classroom-based STEM assessment: Contemporary issues and perspectives",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Doing qualitative research in education settings",
+      "doi": null,
+      "year": 2002,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "memoing procedure in qualitative review"
+    },
+    {
+      "title": "Harnessing technology to improve formative assessment of student conceptions in STEM: forging a national network",
+      "doi": null,
+      "year": 2011,
+      "venue": "CBE\u2014Life Sciences Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Using Teacher Dashboards to Customize Lesson Plans for a Problem-Based, Middle School STEM Curriculum",
+      "doi": null,
+      "year": 2023,
+      "venue": "LAK23: 13th International Learning Analytics and Knowledge Conference",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Coherence across conceptual and computational representations of students\u2019 scientific models",
+      "doi": null,
+      "year": 2021,
+      "venue": "The International Society of the Learning Sciences Annual Meeting 2021",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Giving Feedback on Interactive Student Programs with Meta-Exploration",
+      "doi": null,
+      "year": 2022,
+      "venue": "Advances in Neural Information Processing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Validation of automated scoring of science assessments",
+      "doi": null,
+      "year": 2016,
+      "venue": "Journal of Research in Science Teaching",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Validation of automated scoring for a formative assessment that employs scientific argumentation",
+      "doi": null,
+      "year": 2018,
+      "venue": "Educational Assessment",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Interrater reliability: the kappa statistic",
+      "doi": null,
+      "year": 2012,
+      "venue": "Biochemia Medica",
+      "citation_level": 2,
+      "citation_context": "agreement interpretation thresholds for QWK"
+    },
+    {
+      "title": "Rethinking the role of demonstrations: What makes in-context learning work?",
+      "doi": null,
+      "year": 2022,
+      "venue": "arXiv preprint",
+      "citation_level": 2,
+      "citation_context": "alternative label balancing strategy discussed"
+    },
+    {
+      "title": "Implications of Evidence-Centered Design for Educational Testing",
+      "doi": null,
+      "year": 2006,
+      "venue": "Educational Measurement: Issues and Practice",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Assessing the Quality of Multiple-Choice Questions Using GPT-4 and Rule-Based Methods",
+      "doi": null,
+      "year": 2023,
+      "venue": "European Conference on Technology Enhanced Learning",
+      "citation_level": 2,
+      "citation_context": "supports limitation that rule-based methods can outperform GPT-4"
+    },
+    {
+      "title": "Using Large Language Models to Provide Formative Feedback in Intelligent Textbooks",
+      "doi": null,
+      "year": 2023,
+      "venue": "International Conference on Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "On the stability of fine-tuning bert: Misconceptions, explanations, and strong baselines",
+      "doi": null,
+      "year": 2020,
+      "venue": "arXiv preprint",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Next Generation Science Standards: For States, By States",
+      "doi": null,
+      "year": 2013,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "curriculum and assessment alignment context"
+    },
+    {
+      "title": "GPT-4 Technical Report",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv e-prints",
+      "citation_level": 3,
+      "citation_context": "base model used for scoring experiments"
+    },
+    {
+      "title": "A survey of deep active learning",
+      "doi": null,
+      "year": 2021,
+      "venue": "ACM Computing Surveys",
+      "citation_level": 2,
+      "citation_context": "general active learning framework background"
+    },
+    {
+      "title": "A system for formative assessment and monitoring of students\u2019 progress",
+      "doi": null,
+      "year": 2014,
+      "venue": "Computers & Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "H-AES: Towards Automated Essay Scoring for Hindi",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv preprint",
+      "citation_level": 2,
+      "citation_context": "AES precedent for using QWK metric"
+    },
+    {
+      "title": "Using sampling to estimate and improve performance of automated scoring systems with guarantees",
+      "doi": null,
+      "year": 2022,
+      "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+      "citation_level": 2,
+      "citation_context": "AES precedent for using QWK metric"
+    },
+    {
+      "title": "Does informativeness matter? Active learning for educational dialogue act classification",
+      "doi": null,
+      "year": 2023,
+      "venue": "International Conference on Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Language Models Don\u2019t Always Say What They Think: Unfaithful Explanations in Chain-of-Thought Prompting",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv preprint",
+      "citation_level": 2,
+      "citation_context": "limitation of chain-of-thought faithfulness"
+    },
+    {
+      "title": "Technology-Mediated Teacher Noticing: A Goal for Classroom Practice, Tool Design, and Professional Development",
+      "doi": null,
+      "year": 2017,
+      "venue": "Proceedings of the 12th International Conference on Computer Supported Collaborative Learning (CSCL) 2017",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models",
+      "doi": null,
+      "year": 2022,
+      "venue": "arXiv e-prints",
+      "citation_level": 3,
+      "citation_context": "chain-of-thought prompting method used in pipeline"
+    },
+    {
+      "title": "A prompt pattern catalog to enhance prompt engineering with chatgpt",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv preprint",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "From Theory to Action: Developing and Evaluating Learning Analytics for Learning Design",
+      "doi": null,
+      "year": 2020,
+      "venue": "Proceedings of the Tenth International Conference on Learning Analytics & Knowledge",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Elementary teachers\u2019 perceptions of automated feedback and automated scoring: Transforming the teaching and learning of writing using automated writing evaluation",
+      "doi": null,
+      "year": 2021,
+      "venue": "Computers & Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Matching exemplar as next sentence prediction (mensp): Zero-shot prompt learning for automatic scoring in science education",
+      "doi": null,
+      "year": 2023,
+      "venue": "International Conference on Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Generalizable Automatic Short Answer Scoring via Prototypical Neural Network",
+      "doi": null,
+      "year": 2023,
+      "venue": "International Conference on Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A survey of large language models",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv preprint",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Red teaming chatgpt via jailbreaking: Bias, robustness, reliability and toxicity",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv preprint",
+      "citation_level": 2,
+      "citation_context": "ethical concerns about bias, robustness, and reliability"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": "via unpaywall"
+}

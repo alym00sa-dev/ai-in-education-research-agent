@@ -1,0 +1,391 @@
+{
+  "title": "Examining the Usage of Generative AI Models in Student Learning Activities for Software Programming",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "https://arxiv.org/abs/2511.13271",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper examines how access to generative AI, specifically ChatGPT, affects student learning in programming tasks, with a focus on both task performance and knowledge gains. The authors argue that prior work has largely emphasized whether AI can solve educational tasks or improve performance, while paying less attention to whether students actually learn the underlying concepts. Their research questions address students\u2019 perceptions of ChatGPT, its effect on programming task performance, its effect on conceptual understanding, and the ways students interact with the tool across different proficiency levels.\n\nThe study used a controlled 2\u00d72 between-subjects experiment comparing beginner versus intermediate undergraduate programmers, and ChatGPT access versus no-ChatGPT access. Twenty-four undergraduates from a Canadian university were recruited from introductory and intermediate programming courses and assigned into four groups of six. All participants watched a 10-minute instructional video on the Dynamic Sliding Window technique, then completed a 30-minute LeetCode-style programming task. Students in the treatment condition could use GPT-3.5-turbo only, while the comparison group could use conventional online resources such as documentation and Stack Overflow but not AI tools. The researchers collected code submissions, generated test-case performance results, survey responses, open-ended explanations of solutions and concepts, chat histories, and screen recordings.\n\nThe main findings show that ChatGPT substantially improved task performance for beginners, especially when they used it to generate complete solutions, but this did not consistently translate into stronger conceptual understanding. Intermediate students performed similarly with or without ChatGPT on the coding task, but those without ChatGPT generally demonstrated stronger understanding of both their solutions and the underlying concept. The qualitative analysis also showed that beginners tended to rely more heavily on complete-solution generation, whereas intermediates were more likely to use stepwise prompting. The authors conclude that generative AI can support task completion, but without guidance it may encourage over-reliance and weaker learning. They recommend that educators and students use GenAI as a structured learning aid rather than primarily as a problem-solving shortcut.",
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "lab",
+  "teacher_training": "no",
+  "implementation_fidelity": "medium",
+  "study_country": "Canada",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "feedback_evaluation"
+      ],
+      "description": "OpenAI's conversational large language model used for question answering, code generation, explanation, and programming assistance.",
+      "use_case": "Undergraduate beginners and intermediate programming students used ChatGPT (specifically GPT-3.5-turbo, normalized to ChatGPT) as the only external aid while solving a programming task on the dynamic sliding window technique; the study compared ChatGPT-assisted participants with peers using conventional online resources.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "ChatGPT access improved programming task performance for beginners. Beginner participants with ChatGPT passed an average of 410.7 tests versus 80.7 for beginners without ChatGPT, and this difference was reported as statistically significant (p = 0.015).",
+          "measure": "Programming task performance measured as number of passed test cases out of 500 on a coding task",
+          "effect_size": "p = 0.015",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=24"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "For intermediate students, ChatGPT did not improve task performance relative to conventional resources. Intermediate participants with ChatGPT averaged 291.0 passed tests, compared with 290.8 for intermediates without ChatGPT.",
+          "measure": "Programming task performance measured as number of passed test cases out of 500 on a coding task",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=24"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "ChatGPT-supported complete solution generation substantially increased task success but was not associated with stronger knowledge gains. Participants using Complete Solution Generation averaged 495 passed tests versus 206.7 for Stepwise Code Generation, a statistically significant difference (p = 0.032), yet only one of the 12 ChatGPT users who were analyzed for interaction strategy demonstrated strong understanding.",
+          "measure": "Programming task performance and coded knowledge-gain categories from post-study explanations",
+          "effect_size": "p = 0.032",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=12"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "ChatGPT use was associated with weaker solution understanding than conventional resources. Among beginners with ChatGPT, 4/6 showed weak solution understanding, while beginners without ChatGPT had only 1/6 rated weak; among intermediates with ChatGPT, 3/6 were partial and 3/6 weak, whereas intermediates without ChatGPT had 4/6 strong and 2/6 partial understanding.",
+          "measure": "Coded solution-understanding levels from open-ended post-study responses",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=24"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "For conceptual understanding, ChatGPT showed different patterns by proficiency. Intermediate students without ChatGPT showed stronger concept understanding (3/6 strong, 3/6 partial) than intermediates with ChatGPT (3/6 partial, 3/6 weak), while beginners with ChatGPT showed a slightly better distribution (1/6 strong, 2/6 partial, 3/6 weak) than beginners without ChatGPT (5/6 partial, 1/6 weak).",
+          "measure": "Coded concept-understanding levels from open-ended post-study responses",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=24"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is a controlled between-subjects experiment with a comparison condition and randomized blocks across proficiency and ChatGPT access, but the sample is small (n=24) and outcomes include researcher-coded understanding measures rather than standardized assessments.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper shows clear positive effects on task completion for beginners, but impacts on learning/knowledge gains are mixed or negative and no standardized effect sizes are reported, so overall educational impact is unclear.",
+  "citations": [
+    {
+      "title": "Evaluating large language models trained on code",
+      "doi": null,
+      "year": 2021,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Expectation vs. experience: Evaluating the usability of code generation tools powered by large language models",
+      "doi": "10.1145/3491101.3519665",
+      "year": 2022,
+      "venue": "Extended Abstracts of the 2022 CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Large language models encode clinical knowledge",
+      "doi": "10.1038/s41586-023-06291-2",
+      "year": 2023,
+      "venue": "Nature",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Chatgpt for good? on opportunities and challenges of large language models for education",
+      "doi": null,
+      "year": 2023,
+      "venue": "Learning and Individual Differences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Co-writing screenplays and theatre scripts with language models: Evaluation by industry professionals",
+      "doi": "10.1145/3544548.3581225",
+      "year": 2023,
+      "venue": "Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A recipe for arbitrary text style transfer with large language models",
+      "doi": null,
+      "year": 2022,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Generative disco: Text-to-video generation for music visualization",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Experiences with remote examination formats in light of gpt-4",
+      "doi": "10.1145/3593663.3593695",
+      "year": 2023,
+      "venue": "Proceedings of the 5th European Conference on Software Engineering Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Evaluating chatgpt: Generative ai in ux design and web development pedagogy",
+      "doi": "10.1145/3615335.3623035",
+      "year": 2023,
+      "venue": "Proceedings of the 41st ACM International Conference on Design of Communication",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "More than meets the ai: Evaluating the performance of gpt-4 on computer graphics assessment questions",
+      "doi": "10.1145/3636243.3636263",
+      "year": 2024,
+      "venue": "Proceedings of the 26th Australasian Computing Education Conference",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The robots are coming: Exploring the implications of openai codex on introductory programming",
+      "doi": "10.1145/3511861.3511863",
+      "year": 2022,
+      "venue": "Proceedings of the 24th Australasian Computing Education Conference",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "My ai wants to know if this will be on the exam: Testing openai\u2019s codex on cs2 programming exercises",
+      "doi": "10.1145/3576123.3576134",
+      "year": 2023,
+      "venue": "Proceedings of the 25th Australasian Computing Education Conference",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Teaching cs50 with ai: Leveraging generative artificial intelligence in computer science education",
+      "doi": "10.1145/3626252.3630938",
+      "year": 2024,
+      "venue": "Proceedings of the 55th ACM Technical Symposium on Computer Science Education V. 1",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Evaluating llm-generated worked examples in an introductory programming course",
+      "doi": "10.1145/3636243.3636252",
+      "year": 2024,
+      "venue": "Proceedings of the 26th Australasian Computing Education Conference",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Cheating in the age of generative ai: A high school survey study of cheating behaviors before and after the release of chatgpt",
+      "doi": null,
+      "year": 2024,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "My learnings from allowing large language models in introductory computer science classes",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "May we consult chatgpt in our human-computer interaction written exam? an experience report after a professor answered yes",
+      "doi": "10.1145/3638067.3638100",
+      "year": 2024,
+      "venue": "Proceedings of the XXII Brazilian Symposium on Human Factors in Computing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Kogi: A seamless integration of chatgpt into jupyter environments for programming education",
+      "doi": "10.1145/3622780.3623648",
+      "year": 2023,
+      "venue": "Proceedings of the 2023 ACM SIGPLAN International Symposium on SPLASH-E",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "How beginning programmers and code llms (mis)read each other",
+      "doi": "10.1145/3613904.3642706",
+      "year": 2024,
+      "venue": "Proceedings of the 2024 CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "An empirical study on usage and perceptions of llms in a software engineering project",
+      "doi": "10.1145/3643795.3648379",
+      "year": 2024,
+      "venue": "Proceedings of the 1st International Workshop on Large Language Models for Code",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Analysis of student-llm interaction in a software engineering project",
+      "doi": null,
+      "year": 2025,
+      "venue": "2025 IEEE/ACM International Workshop on Large Language Models for Code (LLM4Code)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Examining-the-usage-of-generative-ai-models-in-student-learning",
+      "doi": null,
+      "year": 2025,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "study repository and supporting artifact for this work"
+    },
+    {
+      "title": "Gpt-3 vs object oriented programming assignments: An experience report",
+      "doi": "10.1145/3587102.3588814",
+      "year": 2023,
+      "venue": "Proceedings of the 2023 Conference on Innovation and Technology in Computer Science Education V. 1",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Using large language models to enhance programming error messages",
+      "doi": "10.1145/3545945.3569770",
+      "year": 2023,
+      "venue": "Proceedings of the 54th ACM Technical Symposium on Computer Science Education V. 1",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Evaluating the performance of code generation models for solving parsons problems with small prompt variations",
+      "doi": "10.1145/3587102.3588805",
+      "year": 2023,
+      "venue": "Proceedings of the 2023 Conference on Innovation and Technology in Computer Science Education V. 1",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Github copilot ai pair programmer: Asset or liability?",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Promptly: Using prompt problems to teach learners how to effectively utilize ai code generators",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "motivates need for strategies for effective GenAI use"
+    },
+    {
+      "title": "How do programming students use generative ai?",
+      "doi": "10.1145/3715762",
+      "year": 2025,
+      "venue": "Proc. ACM Softw. Eng.",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "\u201cit\u2019s weird that it knows what i want\u201d: Usability and interactions with copilot for novice programmers",
+      "doi": "10.1145/3617367",
+      "year": 2023,
+      "venue": "ACM Transactions on Computer-Human Interaction",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Studying the effect of ai code generators on supporting novice learners in introductory programming",
+      "doi": "10.1145/3544548.3580919",
+      "year": 2023,
+      "venue": "Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Generative ai in programming education: Evaluating chatgpt\u2019s effect on computational thinking",
+      "doi": "10.1007/s42979-025-04051-9",
+      "year": 2025,
+      "venue": "SN Computer Science",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Outcomes, perceptions, and interaction strategies of novice programmers studying with chatgpt",
+      "doi": "10.1145/3719160.3736625",
+      "year": 2025,
+      "venue": "Proceedings of the 7th ACM Conference on Conversational User Interfaces",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Chatgpt vs. stack overflow: An exploratory comparison of programming assistance tools",
+      "doi": null,
+      "year": 2023,
+      "venue": "2023 IEEE 23rd International Conference on Software Quality, Reliability, and Security Companion (QRS-C)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Randoop - automatic unit test generation for java",
+      "doi": null,
+      "year": 2025,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "tool used to generate tests for evaluating solutions"
+    },
+    {
+      "title": "Openai - introducing chatgpt",
+      "doi": null,
+      "year": 2022,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "dates ChatGPT\u2019s public release for exposure-timing argument"
+    },
+    {
+      "title": "Combiner l\u2019analyse statique et la g\u00e9n\u00e9ration de tests pour une assurance qualit\u00e9 am\u00e9lior\u00e9e : Une exploration des probl\u00e8mes de compatibilit\u00e9 android",
+      "doi": null,
+      "year": 2025,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

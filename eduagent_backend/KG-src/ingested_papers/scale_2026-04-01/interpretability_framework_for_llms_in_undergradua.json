@@ -1,0 +1,511 @@
+{
+  "title": "Interpretability Framework for LLMs in Undergraduate Calculus",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "https://arxiv.org/abs/2510.17910",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses the problem of how to evaluate large language models (LLMs) in mathematics education beyond simple final-answer accuracy. The authors argue that correctness alone does not capture whether an LLM\u2019s reasoning is reliable, pedagogically sound, or conceptually valid, especially in undergraduate calculus where multistep symbolic reasoning is essential. To address this gap, they propose an interpretability framework designed to analyze how LLMs reason through calculus problems and to identify when apparently fluent solutions are actually conceptually flawed.\n\nThe proposed approach has two main components. First, a reasoning flow analysis decomposes LLM-generated solutions into stepwise operations, concepts, and cognitive complexity labels, producing a structured reasoning trace. Second, a prompt sensitivity ablation procedure perturbs parts of the input prompt and measures how much the model\u2019s output changes, using metrics such as robustness, phrase sensitivity, and reasoning complexity. The framework is applied to real Calculus I, II, and III university exams, and the authors also compare baseline zero-shot prompting with retrieval-augmented generation (RAG) and contextual retrieval setups.\n\nThe study context is undergraduate calculus at a U.S. institution, using aggregated class average scores from courses with approximately 50 students each and expert grading by mathematics faculty. The paper also involves educators as evaluators and sources of expert feedback on pedagogical alignment and model limitations. Gemma 3 was selected as the main model after comparison with LLaMA 2 and LLaVA-7B, and its exam responses were benchmarked against student averages across multiple calculus courses and exams.\n\nThe main conclusions are that LLMs can perform competitively on some undergraduate calculus assessments, sometimes matching or exceeding average student performance, but they remain brittle and can produce fluent yet conceptually incorrect reasoning. The framework revealed sensitivity to prompt phrasing, weaknesses in conceptual understanding, and cases where retrieval augmentation degraded rather than improved performance. The authors conclude that interpretability tools of this kind are necessary for transparent, responsible deployment of LLMs in STEM education, particularly for tutoring, feedback, and assessment contexts.",
+  "limitations": [
+    "single_site",
+    "no_control_group",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "Gemini",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "tutoring_instruction"
+      ],
+      "description": "Google's Gemini family large language model used for general-purpose text generation and problem solving.",
+      "use_case": "Used as the primary LLM ('Gemma 3' in the paper text appears to refer to the selected model) to solve undergraduate Calculus I-III exam questions, benchmark against student averages, and analyze reasoning with the proposed interpretability framework, including baseline, RAG, and contextual retrieval conditions.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "On course exams, the selected model achieved mixed performance relative to class averages. Reported scores were: Calculus I Exam 1 = 44/70 (62.9%) vs class average 88.8%; Exam 2 = 48/70 (94.2%) vs 82.1%; Final = 74/100 (74.0%) vs 73.0%; Calculus II Exam 1 = 49/60 (80.0%) vs 89.6%; Exam 2 = 52/60 (86.6%) vs 85.2%; Final = 72/90 (80.0%) vs 72.9%; Calculus III Exam 1 = 84/100 (84.0%) vs 78.0%; Exam 2 = 74/100 (74.0%) vs 80.3%; Final = 112/150 (74.6%) vs 71.3%.",
+          "measure": "Faculty-graded undergraduate calculus exam scores compared with class average percentages",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "approximately 50 students per course"
+        },
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "For consistency testing, the model was run five times on the same Calculus I Exam I and received the same mark, reported as 59, across all runs. The paper states outputs were consistent in formatting, solution approach, and mathematical notation usage.",
+          "measure": "Across-run consistency of graded exam score and output formatting on repeated administration of the same exam",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=5 runs"
+        },
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Retrieval augmentation had uneven effects. In Calculus I Exam I, baseline was 62.9%, improving to 70.0% with RAG and 65.7% with contextual retrieval; in Calculus II Exam I, baseline was 80.0%, RAG 81.7%, contextual retrieval 75.0%; in Calculus III Exam II, baseline was 74.0%, but RAG dropped to 52.0% and contextual retrieval to 64.0%, both below the student average of 80.3%.",
+          "measure": "Faculty-graded exam percentage under baseline, RAG, and contextual retrieval conditions",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    },
+    {
+      "name": "LLaMA",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "tutoring_instruction"
+      ],
+      "description": "Meta's LLaMA family large language model for general-purpose text generation and problem solving.",
+      "use_case": "Evaluated during baseline model selection on Calculus I Exam 1 for mathematical answering quality, consistency, and formatting compliance.",
+      "findings": []
+    },
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "feedback_evaluation",
+        "other"
+      ],
+      "description": "A generic LLM interpretability framework for analyzing model-generated mathematical reasoning via reasoning-flow decomposition and prompt ablation.",
+      "use_case": "The paper's main contribution is a post-hoc interpretability framework applied to LLM-generated undergraduate calculus solutions to diagnose conceptual flaws, prompt sensitivity, and robustness.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "Using the proposed framework on real Calculus I-III exams, the authors report that LLMs often produced syntactically fluent yet conceptually flawed solutions, and that reasoning patterns were sensitive to prompt phrasing and input variation. The paper also reports an example attention/ablation analysis where important prompt elements included '(-1, 4)' with impact 0.630, '\u2207f' with impact 0.562, and 'directional' with impact 0.477, illustrating sensitivity to specific input components.",
+          "measure": "Interpretability metrics including phrase sensitivity, robustness, reasoning complexity, and ablation-based impact scores",
+          "effect_size": "impact scores reported for example: 0.630, 0.562, 0.477",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical benchmark/framework paper using faculty-graded exam comparisons and repeated runs, but it does not report randomized or quasi-experimental causal designs, statistical testing, or full sample-level analytic detail. Evidence is therefore exploratory/descriptive rather than strong causal evidence.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "Reported impacts are mixed: the selected model sometimes exceeds class averages, sometimes underperforms, and retrieval augmentation can help or substantially hurt depending on exam context. No standardized effect sizes or confidence intervals are reported, so overall impact remains unclear.",
+  "citations": [
+    {
+      "title": "Human-Centric eXplainable AI in Education",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "FairAIED: Navigating Fairness, Bias, and Ethics in Educational AI Applications",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Explainable Generative AI (GenXAI): A Survey, Conceptualization, and Research Agenda",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Generative ai: A systematic review using topic modelling techniques",
+      "doi": null,
+      "year": 2024,
+      "venue": "Data and Information Management",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Fairness, accountability, transparency, and ethics (fate) in artificial intelligence (ai) and higher education: A systematic review",
+      "doi": null,
+      "year": 2023,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Peeking inside the black-box: A survey on explainable artificial intelligence (xai)",
+      "doi": "10.1109/ACCESS.2018.2870052",
+      "year": 2018,
+      "venue": "IEEE Access",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Large language models are interpretable learners",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv preprint arXiv:2406.17224",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Explanatory learner models: Why machine learning (alone) is not the answer",
+      "doi": null,
+      "year": 2019,
+      "venue": "British Journal of Educational Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Methods and standards for research on explainable artificial intelligence: Lessons from intelligent tutoring systems",
+      "doi": null,
+      "year": 2021,
+      "venue": "Applied AI Letters",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Explainable and Interpretable Models in Computer Vision and Machine Learning",
+      "doi": null,
+      "year": 2018,
+      "venue": "Springer",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Explainable ai: A review of machine learning interpretability methods",
+      "doi": null,
+      "year": 2020,
+      "venue": "Entropy",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Llama-lora neural prompt engineering: A deep tuning framework for automatically generating chinese text logical reasoning thinking chains",
+      "doi": null,
+      "year": 2024,
+      "venue": "Data Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Evaluating chatgpt: Strengths and limitations in nlp problem solving",
+      "doi": null,
+      "year": 2024,
+      "venue": "Highlights in Science, Engineering and Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Natural language reasoning, a survey",
+      "doi": null,
+      "year": 2024,
+      "venue": "ACM Computing Surveys",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Improving natural language inference using external knowledge in the science questions domain",
+      "doi": null,
+      "year": 2019,
+      "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Leveraging large language models to generate answer set programs",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv preprint arXiv:2307.07699",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Gsm-symbolic: Understanding the limitations of mathematical reasoning in large language models",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv preprint arXiv:2410.05229",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Error classification of large language models on math word problems: A dynamically adaptive framework",
+      "doi": null,
+      "year": 2025,
+      "venue": "arXiv preprint arXiv:2501.15581",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Llms can find mathematical reasoning mistakes by pedagogical chain-of-thought",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv preprint arXiv:2405.06705",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Metamath: Bootstrap your own mathematical questions for large language models",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv preprint arXiv:2309.12284",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Application of large language models in engineering education: A case study of system modeling and simulation courses",
+      "doi": null,
+      "year": 2024,
+      "venue": "International Journal of Mechanical Engineering Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The role of large language models in personalized learning: a systematic review of educational impact",
+      "doi": null,
+      "year": 2025,
+      "venue": "Discover Sustainability",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Students\u2019 use of large language models in engineering education: A case study on technology acceptance, perceptions, efficacy, and detection chances",
+      "doi": null,
+      "year": 2023,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Integrating large language models in bioinformatics education for medical students: opportunities and challenges",
+      "doi": null,
+      "year": 2024,
+      "venue": "Annals of Biomedical Engineering",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Large language models for education: A survey and outlook",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv preprint arXiv:2403.18105",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Retrieval-augmented generation for large language models: A survey",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv preprint arXiv:2312.10997",
+      "citation_level": 2,
+      "citation_context": "background framing for RAG augmentation strategy"
+    },
+    {
+      "title": "Context-guided dynamic retrieval for improving generation quality in rag models",
+      "doi": null,
+      "year": 2025,
+      "venue": "arXiv preprint arXiv:2504.19436",
+      "citation_level": 2,
+      "citation_context": "conceptual basis for contextual retrieval approach"
+    },
+    {
+      "title": "A survey on augmenting knowledge graphs (kgs) with large language models (llms): models, evaluation metrics, benchmarks, and challenges",
+      "doi": null,
+      "year": 2024,
+      "venue": "Discover Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A survey on rag with llms",
+      "doi": null,
+      "year": 2024,
+      "venue": "Procedia Computer Science",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Retrieval augmentation reduces hallucination in conversation",
+      "doi": null,
+      "year": 2021,
+      "venue": "arXiv preprint arXiv:2104.07567",
+      "citation_level": 2,
+      "citation_context": "supports claim that retrieval reduces hallucination"
+    },
+    {
+      "title": "Enhancing health information retrieval with rag by prioritizing topical relevance and factual accuracy",
+      "doi": null,
+      "year": 2025,
+      "venue": "Discover Computing",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Enhancing llm factual accuracy with rag to counter hallucinations: A case study on domain-specific queries in private knowledge-bases",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv preprint arXiv:2403.10446",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Retrieval-augmented generation to improve math question-answering: Trade-offs between groundedness and human preference",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 17th International Conference on Educational Data Mining",
+      "citation_level": 2,
+      "citation_context": "prior math QA comparison for retrieval augmentation"
+    },
+    {
+      "title": "Enhancing llms\u2019 math-ematical reasoning through retrieval-augmented generation in the cast-ing domain",
+      "doi": null,
+      "year": 2025,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Hallucination mitigation for retrieval-augmented large language models: a review",
+      "doi": null,
+      "year": 2025,
+      "venue": "Mathematics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Mitigating Hallucination in Large Language Model Code Generation for Higher Education: An Evaluation of Retrieval Augmented Generation",
+      "doi": null,
+      "year": 2024,
+      "venue": "KTH Royal Institute of Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Sbi-rag: Enhancing math word problem solving for students through schema-based instruction and retrieval-augmented generation",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv preprint arXiv:2410.13293",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Mmr: Math multi-step reasoning in medical dialogue generation",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 2024 5th International Symposium on Artificial Intelligence for Medicine Science",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Adaptive control of retrieval-augmented generation for large language models through reflective tags",
+      "doi": null,
+      "year": 2024,
+      "venue": "Electronics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Crp-rag: A retrieval-augmented generation framework for supporting complex logical reasoning and knowledge planning",
+      "doi": null,
+      "year": 2024,
+      "venue": "Electronics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Retrieval-augmented generation (rag): Advances and challenges",
+      "doi": null,
+      "year": null,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Performance analysis of chroma, qdrant, and faiss databases",
+      "doi": null,
+      "year": null,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "vector database selection for retrieval implementation"
+    },
+    {
+      "title": "Nomic embed: Training a reproducible long context text embedder",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv preprint arXiv:2402.01613",
+      "citation_level": 3,
+      "citation_context": "embedding model used for retrieval pipeline"
+    },
+    {
+      "title": "Gemma: Open models based on gemini research and technology",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv preprint arXiv:2403.08295",
+      "citation_level": 3,
+      "citation_context": "base LLM evaluated in experiments"
+    },
+    {
+      "title": "Yo\u2019llava: Your personalized language and vision assistant",
+      "doi": null,
+      "year": 2024,
+      "venue": "Advances in Neural Information Processing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Cognitive load theory",
+      "doi": null,
+      "year": 2010,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "educational theory framing interpretability framework"
+    },
+    {
+      "title": "Bloom\u2019s taxonomy",
+      "doi": null,
+      "year": 2010,
+      "venue": "Emerging perspectives on learning, teaching, and technology",
+      "citation_level": 2,
+      "citation_context": "pedagogical framing via Bloom taxonomy"
+    },
+    {
+      "title": "Metacognitive scaffolding in an innovative learning arrangement",
+      "doi": null,
+      "year": 2011,
+      "venue": "Instructional Science",
+      "citation_level": 2,
+      "citation_context": "metacognitive scaffolding framing for educational alignment"
+    },
+    {
+      "title": "A revision of bloom\u2019s taxonomy: An overview",
+      "doi": null,
+      "year": 2002,
+      "venue": "Theory into Practice",
+      "citation_level": 2,
+      "citation_context": "revised Bloom taxonomy for Apply and Analyze levels"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

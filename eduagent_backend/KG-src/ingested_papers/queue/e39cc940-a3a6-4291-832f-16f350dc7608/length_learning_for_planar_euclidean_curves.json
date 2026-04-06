@@ -1,0 +1,33 @@
+{
+  "title": "Length Learning for Planar Euclidean Curves",
+  "doi": null,
+  "year": 2021,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2102.01895v1",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses a geometry and machine learning question rather than an education question: whether a deep neural network can learn to reconstruct the arclength of planar Euclidean curves from examples. The authors frame curve length as a fundamental geometric property and argue that learning it from sampled points could help with noisy or discretized curve measurements.\n\nThe proposed approach, ArcLengthNet, is a simplified CNN-based model trained in a supervised manner on synthetic sine-wave curves. Each example consists of a 2D sampled curve represented by 200 points, with labels equal to the true curve length. The dataset includes random variation in amplitude, phase, translation, rotation, and curve splitting to reflect properties such as invariance and additivity. A simpler LSTM-based alternative is also evaluated for comparison.\n\nThe paper reports that the CNN-based ArcLengthNet outperforms the LSTM-based model on a held-out set, with lower mean squared error. The authors conclude that neural networks can reconstruct basic geometric axioms such as additivity, invariance to translation and rotation, monotonicity, and non-negativity for curve length, and suggest that similar methods might be useful for handwriting or other differential-geometry tasks.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a technical machine-learning paper about learning curve length from synthetic geometric data, not an education study. It does not evaluate a tutoring, instructional, or student-facing intervention, and there is no K-12 causal design relevant to the retrieval topic.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "The paper reports no educational outcomes, no student sample, and no measurable impact on learning or classroom practice. It is not evidence of ChatGPT or constrained LLM tutoring in middle school mathematics.",
+  "interventions": [],
+  "outcome_assignments": [],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "lab",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

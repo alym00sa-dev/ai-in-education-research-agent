@@ -1,0 +1,86 @@
+{
+  "title": "AI tutoring can safely and effectively support students: An exploratory RCT in UK classrooms",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2512.23633v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Randomized Controlled Trial (RCT)",
+  "extended_summary": "This paper evaluates whether a generative AI tutoring system, LearnLM, can safely and effectively support students in real classroom settings. The central question is whether an AI model fine-tuned for pedagogical dialogue can provide tutoring that matches or exceeds human tutoring, while still being safe for student use.\n\nThe study deployed LearnLM in the Eedi mathematics platform used by UK secondary schools. In the intervention, LearnLM generated draft tutoring messages in chat-based sessions, and expert human tutors supervised each message, approving, editing, or rewriting it before students saw it. The comparison conditions were static, pre-written hints and human tutor\u2013only sessions. The trial involved 165 students in Years 9 and 10 across five UK secondary schools, with 17 expert teachers acting as tutors.\n\nResults showed that interactive tutoring improved immediate remediation and misconception resolution relative to static hints, and LearnLM performed about as well as human tutors on those short-term outcomes. On the transfer outcome, students supported by LearnLM did somewhat better than those tutored by humans alone. Tutor interviews suggested that LearnLM was especially strong at generating Socratic questions, while human supervision remained important for pacing, tone, and social-emotional nuance. The paper concludes that responsibly supervised genAI tutoring may help scale individualized support in mathematics classrooms.",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is a well-designed exploratory randomized controlled trial with within-session randomization and Bayesian estimation, providing relatively strong causal evidence. However, it is exploratory, short-term, and partially reliant on platform-based outcomes rather than longer-term standardized assessments, so it falls short of blue-tier certainty.",
+  "impact_tier": "green",
+  "impact_tier_rationale": "The effect on durable learning transfer is modest in magnitude (+5.5 percentage points) but appears practically meaningful for a priority K-12 population in mathematics. The intervention also shows promise for scaling individualized tutoring, though the evidence is still preliminary and context-specific.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "generative AI tutoring integrated into a K-12 mathematics platform, where LearnLM drafts Socratic chat responses to students' incorrect answers and a human tutor supervises, edits, or approves each message before sending"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 1.0,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "In an exploratory RCT with n=165 students across five UK secondary schools, supervised LearnLM tutoring performed at least as well as human tutoring on immediate math learning outcomes and better on transfer. Students receiving LearnLM were more likely to solve the next-unit novel problem correctly than those with human tutors alone (66.2% vs 60.7%), a +5.5 percentage point difference with a 95% credible interval of [-1.4, +12.4].",
+        "measure": "performance on Eedi mathematics study-unit outcomes: second-attempt correctness, misconception resolution within unit, and correct response to the first question in the next unit (knowledge transfer)",
+        "study_size": "n=165",
+        "effect_size": "+5.5 percentage points on next-unit transfer vs human tutors; effect size not otherwise reported",
+        "confidence_interval": "[-1.4%, +12.4%]",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.73,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper treats next-unit problem solving as a measure of knowledge transfer, a durable skill proxy for applying learning to a new context. LearnLM outperformed human tutors on this transfer outcome: 66.2% of students solved the novel next-topic item correctly versus 60.7% with human tutoring alone, corresponding to a +5.5 percentage point advantage.",
+        "measure": "knowledge transfer to a new topic, operationalized as correctness on the first question of the next study unit",
+        "study_size": "n=165",
+        "effect_size": "+5.5 percentage points",
+        "confidence_interval": "[-1.4%, +12.4%]",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.82,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The study reports that supervising tutors found LearnLM made tutoring feel more fluid and efficient, especially because it helped them support multiple students at the same time. This was based on qualitative interviews and surveys (e.g., 82.4% of tutors selected 'supporting multiple students at the same time' as the most useful feature), but the authors note the RCT design did not rigorously measure throughput or efficiency.",
+        "measure": "tutor interviews, post-trial tutor survey item on most useful feature, and informal scalability observations",
+        "study_size": "n=17 tutors; interviews n=5",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "no_long_term_followup",
+    "non_representative_population"
+  ],
+  "duration_weeks": "7",
+  "setting": "classroom",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "high",
+  "study_country": "United Kingdom",
+  "study_region": "Europe",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

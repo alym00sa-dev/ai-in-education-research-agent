@@ -1,0 +1,377 @@
+{
+  "title": "The Robots are Here: Navigating the Generative AI Revolution in Computing Education",
+  "doi": "10.1145/3587103.3594206",
+  "year": 2023,
+  "venue": "Proceedings of the 2023 Conference on Innovation and Technology in Computer Science Education V. 2 (ITiCSE 2023)",
+  "url": "https://arxiv.org/abs/2310.00658",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate",
+    "Graduate / Doctoral",
+    "Adult (non-academic)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This working group report examines how large language models (LLMs) and generative AI are reshaping computing education. The paper addresses several related questions: what the existing research says about LLMs in computing education, how students and instructors currently perceive these tools, how educators are already adapting pedagogy and assessment, what ethical issues arise, and how well current models perform on computing education tasks. The goal is to provide a broad evidence-based overview of opportunities, risks, and emerging practices as generative AI becomes widely available in educational settings.\n\nThe paper uses multiple approaches rather than testing a single intervention. It includes a scoping review of 71 primary articles on LLMs in computing education, an international survey of computing students and instructors from 20 countries, in-depth interviews with 22 computing educators across five continents, an ethics analysis framed by the ACM Code of Ethics and university AI policies, and benchmarking/replication work evaluating LLM performance on computing education datasets. Across these components, the paper focuses on the use of tools such as ChatGPT, GPT models, Codex, and GitHub Copilot in programming and computer science teaching and assessment.\n\nThe populations and contexts span computing students, computing instructors, and educators working in higher education and related professional academic settings across multiple countries. The report is not limited to one classroom or institution; instead, it synthesizes literature and collects international perspectives from participants in diverse regions. The educational context is primarily computing education, especially introductory and higher education programming courses, with attention to pedagogy, assessment, academic integrity, and learner support.\n\nThe paper concludes that generative AI is already having a substantial impact on computing education and will continue to do so. It identifies major opportunities, such as personalized support, code explanations, reduced instructor workload, and new forms of assessment and learning activities, while also highlighting serious risks including over-reliance, inaccurate outputs, academic integrity challenges, bias, and inequitable benefits. The authors argue that educators and institutions should adapt thoughtfully rather than simply prohibit these tools, and they position the report as a focal resource for researchers and practitioners seeking to evaluate and integrate LLM-based tools in computing classrooms.",
+  "limitations": [
+    "no_control_group",
+    "self_reported_measures",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "identified_tools": [
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "tutoring_instruction",
+        "content_generation"
+      ],
+      "description": "Large language models and generative AI tools used in computing education, including code generation, explanation, feedback, and teaching-material creation systems.",
+      "use_case": "This working group report reviews 71 primary articles on LLMs/generative AI in computing education, surveys students and instructors, interviews educators, discusses ethics/policy, and benchmarks model performance across computing education datasets. It does not provide a per-tool causal evaluation of a single named product.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "review_synthesis",
+          "direction": "mixed",
+          "finding_summary": "Across 71 primary articles in computing education, LLMs were generally reported to perform at a level equivalent to or better than average students on code-generation tasks, but less well on other tasks such as multiple-choice questions, Parsons problems, and computational thinking tasks. The paper reports no pooled meta-analytic effect size or confidence interval.",
+          "measure": "Literature synthesis of LLM performance on computing education tasks (e.g., code generation, MCQs, Parsons problems, computational thinking tasks)",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "71 primary articles"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "review_synthesis",
+          "direction": "positive",
+          "finding_summary": "The review synthesis reports that LLMs can provide better code explanations than students and can explain answers to textbook questions in about half of cases. The paper does not report pooled effect sizes or confidence intervals for these outcomes.",
+          "measure": "Quality/usefulness of code explanations and textbook-answer explanations in reviewed studies",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "71 primary articles"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "review_synthesis",
+          "direction": "positive",
+          "finding_summary": "Reviewed studies suggest LLMs can reduce instructor workload by generating teaching materials, supporting grading-related tasks, and providing personalized help to struggling students. The paper presents this as a synthesis of prior work rather than a quantified pooled estimate.",
+          "measure": "Instructor workload reduction and automation of educational support tasks",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "71 primary articles"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "review_synthesis",
+          "direction": "mixed",
+          "finding_summary": "The report synthesizes evidence that AI code generators can improve novice programming productivity in some studies, citing one study where students using AI code generators performed significantly better with 1.15x progress, 0.59x errors, 1.8x higher correctness, and 0.57x time spent, but also notes risks of over-reliance, confusion, and unequal benefits favoring more knowledgeable students. No pooled effect size is reported.",
+          "measure": "Programming productivity, correctness, errors, time spent, and learning risks in human-AI programming contexts",
+          "effect_size": "1.15x progress; 0.59x errors; 1.8x higher correctness; 0.57x time spent (as cited from one reviewed study)",
+          "confidence_interval": "not_reported",
+          "sample_size": "71 primary articles"
+        },
+        {
+          "outcome_category": "Systemic / Institutional Impact",
+          "finding_type": "review_synthesis",
+          "direction": "mixed",
+          "finding_summary": "The paper concludes that generative AI poses substantial assessment and academic-integrity challenges because LLMs perform very well on common introductory programming assessments, while also creating opportunities to rethink assessment toward problem solving, code understanding, tracing, verification, and code review. These are synthesis conclusions rather than pooled quantitative estimates.",
+          "measure": "Implications for assessment design, academic integrity, and curriculum adaptation in computing education",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "71 primary articles"
+        }
+      ]
+    }
+  ],
+  "verdict": "archetype_only",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a scoping/working-group review with survey and interview components, not a meta-analysis or single causal impact study. It synthesizes a broad evidence base, but findings are largely narrative and heterogeneous rather than pooled quantitatively.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports substantial promise and substantial risks, with mixed directions across outcomes and no pooled effect sizes. Overall impact is important but quantitatively unclear at the aggregate level.",
+  "citations": [
+    {
+      "title": "Artificial intelligence",
+      "doi": null,
+      "year": null,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Authorship and contributorship",
+      "doi": null,
+      "year": null,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Best Practice Guidelines on Research Integrity and Publishing Ethics",
+      "doi": null,
+      "year": null,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Generative AI in Teaching and Learning Task Force (GENAI)",
+      "doi": null,
+      "year": null,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Guidance For the Use of Generative AI",
+      "doi": null,
+      "year": null,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Publishing Ethics | Elsevier Policy",
+      "doi": null,
+      "year": null,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Using ChatGPT or other generative AI tool on a marked assessment",
+      "doi": null,
+      "year": null,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "AAAI Code of Professional Ethics and Conduct",
+      "doi": null,
+      "year": 2019,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "ethics-policy principles compared against university AI policies"
+    },
+    {
+      "title": "IEEE Code of Ethics",
+      "doi": null,
+      "year": 2020,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "ethics-policy principles compared against university AI policies"
+    },
+    {
+      "title": "ACM Code of Ethics",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "explicit benchmark for reviewing AI-related integrity policies"
+    },
+    {
+      "title": "ACM Policy on Authorship",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "supports authorship stance for LLM-generated text"
+    },
+    {
+      "title": "AI and Teaching at Duke",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "AI Guidance",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Artificial Intelligence",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Student Academic Conduct Statute",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Student Academic Integrity Policy",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Teaching & Learning with ChatGPT: Opportunity or Quagmire? Part III",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Using Artificial Intelligence",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Computer Science Curricula 2013",
+      "doi": "10.1145/2534860",
+      "year": 2013,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "SynShine: Improved Fixing of Syntax Errors",
+      "doi": "10.1109/TSE.2022.3212635",
+      "year": 2023,
+      "venue": "IEEE Transactions on Software Engineering",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Socratic Questioning of Novice Debuggers: A Benchmark Dataset and Preliminary Evaluations",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 18th Workshop on Innovative Use of NLP for Building Educational Applications (BEA 2023)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Plagiarism in Programming Assessments: A Systematic Review",
+      "doi": "10.1145/3371156",
+      "year": 2019,
+      "venue": "ACM Trans. Comput. Educ.",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "An Analysis of Using Many Small Programs in CS1",
+      "doi": "10.1145/3287324.3287466",
+      "year": 2019,
+      "venue": "SIGCSE '19",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The centaur programmer \u2013 How Kasparov\u2019s Advanced Chess spans over to the software development of the future",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Generative AI Perceptions: A Survey to Measure the Perceptions of Faculty, Staff, and Students on Generative AI Tools in Academia",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Past, Present and Future of Computing Education Research: A Global Perspective",
+      "doi": null,
+      "year": 2023,
+      "venue": "Springer Nature",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Navigating a Black Box: Students\u2019 Experiences and Perceptions of Automated Hiring",
+      "doi": "10.1145/3568813.3600123",
+      "year": 2023,
+      "venue": "Proceedings of the 2023 ACM Conference on International Computing Education Research V.1",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Program synthesis with large language models",
+      "doi": null,
+      "year": 2021,
+      "venue": "arXiv preprint",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "StudentEval: A Benchmark of Student-Written Prompts for Large Language Models of Code",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv preprint",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Investigating the Potential of GPT-3 in Providing Feedback for Programming Assessments",
+      "doi": "10.1145/3587102.3588852",
+      "year": 2023,
+      "venue": "Proceedings of the 2023 Conference on Innovation and Technology in Computer Science Education V. 1",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Mind the Gap: The Illusion of Skill Acquisition in Computational Thinking",
+      "doi": "10.1145/3545945.3569749",
+      "year": 2023,
+      "venue": "Proceedings of the 54th ACM Technical Symposium on Computer Science Education V. 1",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Grounded copilot: How programmers interact with code-generating models",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the ACM on Programming Languages",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Artificial Intelligence in Education: What Is It, Where Is It Now, Where Is It Going",
+      "doi": null,
+      "year": 2017,
+      "venue": "Ireland\u2019s Yearbook of Education 2018",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Programming Is Hard - Or at Least It Used to Be: Educational Opportunities And Challenges of AI Code Generation",
+      "doi": null,
+      "year": 2023,
+      "venue": "SIGCSE '23",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

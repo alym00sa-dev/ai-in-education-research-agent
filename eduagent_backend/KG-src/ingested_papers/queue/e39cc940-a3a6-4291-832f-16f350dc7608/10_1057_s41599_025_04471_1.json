@@ -1,0 +1,86 @@
+{
+  "title": "LLM-based collaborative programming: impact on students\u2019 computational thinking and self-ef\ufb01cacy",
+  "doi": "10.1057/s41599-025-04471-1",
+  "year": 2025,
+  "venue": "Humanities and Social Sciences Communications",
+  "url": "https://doi.org/10.1057/s41599-025-04471-1",
+  "source_db": "openalex_search",
+  "populations": [
+    "Middle School (6th-8th)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Randomized Controlled Trial (RCT)",
+  "extended_summary": "This paper examines whether large language models (LLMs), including GPT-4, can improve middle school students\u2019 outcomes in collaborative programming compared with conventional collaborative programming without AI support. The main questions are whether LLM-supported collaboration improves computational thinking, self-efficacy, and cognitive load.\n\nThe intervention was an LLM-based collaborative programming framework that embedded GPT-4 as a scaffold during problem analysis, code development, debugging, and monitoring/evaluation. Students could interact with an adapted SpeechGPT platform and an online code assessment platform, while the teacher also provided instruction on using LLMs responsibly for programming support. The control group received standard collaborative programming instruction. The study used a randomized controlled trial with 82 sixth- and seventh-grade students in China over five weeks, with 12 programming sessions in C++.\n\nResults showed that the LLM-supported group performed significantly better on computational thinking than the control group and reported lower cognitive load. Self-efficacy did not differ significantly between groups, although both groups declined from pretest to posttest, with a smaller decline in the LLM group. Interview data suggested that students found LLM support helpful for interest, ease of learning, and problem solving, but also noted drawbacks such as misunderstanding prompts and network issues. Overall, the study concludes that LLMs can be effective scaffolds in middle school programming education, especially for reducing cognitive load and supporting computational thinking.",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is a peer-reviewed quasi-experimental study with random assignment to conditions, pre/post measures, and inferential analyses, but it is not a full RCT and relies on a single short intervention in one school context. Some methodological concerns remain, including limited duration, small sample size, and incomplete reporting of some statistics.",
+  "impact_tier": "green",
+  "impact_tier_rationale": "The study reports a modest-to-medium impact on a priority population (middle school students), with a small effect on computational thinking (\u03b72=0.04) and medium effects on cognitive load (d around 0.52-0.59). However, the lack of a self-efficacy improvement and the short intervention period keep the overall impact modest rather than large.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.95,
+      "role": "primary",
+      "use_case": "GPT-4-0314 used as a learning partner/scaffold in middle school collaborative programming, providing hints, code debugging support, problem analysis prompts, and feedback without giving full solutions."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.94,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "LLM-supported collaborative programming significantly improved students' computational thinking compared with conventional collaborative programming in a quasi-experiment with n=82 sixth- and seventh-grade students. The adjusted post-test means were 81.35 vs 73.08, with ANCOVA showing F=4.39, p<0.05 and a small effect size \u03b72=0.04; interviews also suggested better problem-solving and collaboration.",
+        "measure": "Computational thinking post-test (Bebras-based items) with ANCOVA-adjusted comparison",
+        "study_size": "n=82",
+        "effect_size": "\u03b72=0.04",
+        "confidence_interval": "not_reported",
+        "std_deviation": "Experimental SD=11.51; Control SD=11.86"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.83,
+      "finding": {
+        "direction": "No Effect",
+        "finding_summary": "Self-efficacy did not differ significantly between groups after the intervention. In the post-test, the experimental group mean was 3.41 (SD=0.83) and the control group mean was 3.26 (SD=0.92), with Mann\u2013Whitney U=756, p=0.43; both groups showed some decline from pre-test levels.",
+        "measure": "Programming self-efficacy post-test questionnaire",
+        "study_size": "n=82",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "Experimental SD=0.83; Control SD=0.92"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.89,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "LLM-supported collaborative programming reduced students' cognitive load relative to conventional collaborative programming. Total cognitive load was lower in the experimental group (M=3.96, SD=0.765) than the control group (M=4.39, SD=0.887), t=-2.20, p<0.05, d=-0.518; mental load was also lower (M=3.91 vs 4.38), t=-2.51, p<0.05, d=-0.592, while mental effort was not significantly different.",
+        "measure": "Cognitive load questionnaire; subscales mental load and mental effort",
+        "study_size": "n=82",
+        "effect_size": "d=-0.518 (total cognitive load); d=-0.592 (mental load)",
+        "confidence_interval": "not_reported",
+        "std_deviation": "Total load SDs: 0.765 vs 0.887; Mental load SDs: 0.713 vs 0.844; Mental effort SDs: 0.927 vs 1.037"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_long_term_followup",
+    "non_representative_population"
+  ],
+  "duration_weeks": "5",
+  "setting": "classroom",
+  "teacher_training": "yes",
+  "implementation_fidelity": "high",
+  "study_country": "China",
+  "study_region": "East Asia & Pacific",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

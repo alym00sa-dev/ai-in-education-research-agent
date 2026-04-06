@@ -1,0 +1,96 @@
+{
+  "title": "An Empirical Study to Understand How Students Use ChatGPT for Writing Essays",
+  "doi": null,
+  "year": 2025,
+  "venue": "not_reported",
+  "url": "http://arxiv.org/abs/2501.10551v4",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Undergraduate",
+    "Graduate / Doctoral"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper investigates how students actually use ChatGPT during essay writing, motivated by concern that large language models may reduce students\u2019 critical engagement with writing while also being difficult for educators to monitor. Rather than testing whether ChatGPT improves motivation or writing outcomes, the study asks descriptive questions about usage patterns: what kinds of prompts students submit, which student characteristics predict usage, how use appears in the resulting essays, and how use relates to students\u2019 perceptions of ownership and creative support.\n\nThe researchers built a custom online writing platform that embedded an in-house ChatGPT interface using the OpenAI GPT-3.5-turbo API. This system logged students\u2019 ChatGPT queries, responses, keystrokes, and copy-paste behavior while participants completed an ACT-style argumentative essay. The study combined qualitative coding of prompts into Planning, Translating, Reviewing, and All categories with quantitative analyses of query counts, pasted text, clustering of user types, and associations with survey measures such as Self-Efficacy for Writing (SEWS), Technology Acceptance Model (TAM), Perceived Ownership, and the Creativity Support Index.\n\nThe population was 77 college students in the United States, including undergraduate and graduate students recruited through university mailing lists and Prolific. The context was an online, one-session writing task lasting about 30 minutes, with no classroom teacher delivering instruction and no treatment/control comparison. The paper reports that students used ChatGPT in diverse ways, ranging from idea generation and proofreading to having the system generate all or most of the essay. The authors identify a \u201cvibe writing\u201d pattern in which students iteratively prompt ChatGPT to produce and revise text while contributing little original writing themselves.\n\nThe main conclusions are that ChatGPT use in essay writing is heterogeneous but often extensive, with many students delegating substantial portions of the writing process to the system. Students with higher writing self-efficacy tended to use ChatGPT less. Students who used ChatGPT only for ideation or review still reported levels of essay ownership comparable to those who did not use it, which the authors argue is important for educators concerned about authenticity and learning. This is not a randomized controlled trial, not a high-school study, and it does not report pre/post motivation or writing achievement statistics suitable for quantitative synthesis of ChatGPT writing-feedback effects.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a non-randomized observational/qualitative mixed-methods study with trace data from college students, not a randomized controlled trial. It has a clear methodology and empirical data, but it does not estimate causal effects of ChatGPT on writing or motivation in a high-school population.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper shows meaningful behavioral use patterns and possible risks to writing-process engagement, but it does not report credible causal impact estimates or effect sizes on academic outcomes. Therefore impact is unclear rather than demonstrated.",
+  "interventions": [
+    {
+      "intervention": "AI Writing / Language Tool",
+      "confidence": 0.98,
+      "role": "primary",
+      "use_case": "Students used an in-house ChatGPT interface (GPT-3.5-turbo) during a timed essay-writing task so researchers could log prompts, responses, copy/paste behavior, and keystroke traces to study how ChatGPT functioned as an ideation, drafting, editing, and ghostwriting tool in essay composition."
+    },
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.72,
+      "role": "secondary",
+      "use_case": "Conversational ChatGPT was studied as an open-ended dialogue agent that students queried for planning, reviewing, and full-text generation support during essay writing, though the paper is more centrally about writing assistance than tutoring."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Literacy",
+      "confidence": 0.88,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "In an online observational study of college students (n=77), the paper documents how ChatGPT was used during essay writing rather than testing causal learning gains. Students frequently delegated substantial writing to the model: 42/77 participants (54.5%) used 'All' queries spanning planning/translating/reviewing, and 15/77 (19.5%) submitted essays that were 100% written by ChatGPT; mean essay length was 382 words (SD=235). No randomized comparison, pre/post writing test, or standardized writing outcome effect size was reported, so this is not usable for quantitative synthesis of writing achievement effects.",
+        "measure": "Essay-writing process measures, query categories, proportion of AI-generated text in final essays, final essay word count",
+        "study_size": "n=77",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "SD=235 for essay word count"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.82,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The study examined writing self-efficacy (SEWS), perceived ownership, and Creativity Support Index perceptions in relation to ChatGPT usage among college students (n=77). The authors report that higher writing confidence predicted less frequent ChatGPT use and that students who used ChatGPT only for ideation or review reported a comparable sense of ownership to non-users, but no intervention effect size, randomized comparison, or full inferential statistics for motivation were reported in the provided text.",
+        "measure": "Self-Efficacy for Writing Scale (SEWS), perceived ownership questionnaire, Creativity Support Index (CSI)",
+        "study_size": "n=77",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.76,
+      "finding": {
+        "direction": "Negative",
+        "finding_summary": "The paper frames ChatGPT use as potentially displacing core writing-process skills such as idea generation, structuring, critical engagement, and revision, and the trace data show many students offloaded these functions to the model. Descriptively, over half the sample used full-process 'All' queries and nearly one-fifth submitted essays fully written by ChatGPT, suggesting likely substitution for independent critical writing processes, but no direct validated critical-thinking effect size was estimated.",
+        "measure": "Behavioral trace indicators of planning/translating/reviewing delegation; qualitative coding of prompts and use patterns",
+        "study_size": "n=77",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "no_control_group",
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

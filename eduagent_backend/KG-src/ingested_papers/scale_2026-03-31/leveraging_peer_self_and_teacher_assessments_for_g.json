@@ -1,0 +1,343 @@
+{
+  "title": "Leveraging Peer, Self, and Teacher Assessments for Generative AI-Enhanced Feedback",
+  "doi": null,
+  "year": 2026,
+  "venue": "arXiv",
+  "url": "https://arxiv.org/abs/2512.18306",
+  "source_db": "scale_stanford",
+  "population": "Undergraduate",
+  "user_type": "Student",
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper investigates how teacher, peer, and self-assessments align within a Generative AI\u2013enhanced feedback system for higher education, and how differences across these human evaluation sources can inform better AI-generated feedback. The central problem is that many GenAI feedback systems aggregate teacher and peer input as if all sources were equally reliable, while often ignoring self-assessment, despite known differences in bias, consistency, and evaluative perspective.\n\nThe study was conducted within the AICoFe (AI-based Collaborative Feedback) system, which supports rubric-based assessment of engineering students\u2019 oral presentations and is linked to the GePeTo generative AI model for feedback generation. The researchers analyzed 46 complete evaluation sets consisting of teacher rubric scores, two peer assessments, one self-assessment, and the teacher\u2019s independent overall grade. Using statistical analyses of agreement, correlation, and mean differences, the study examined how closely these sources matched and where systematic scoring biases appeared. Based on these findings, the authors propose an enhanced GenAI design that uses weighted integration of teacher, peer, and self inputs, along with bias detection and context-aware feedback generation.\n\nParticipants were 46 final-year undergraduate engineering students in a compulsory oral communication course at Universidad Aut\u00f3noma de Madrid in Spain. Presentations were delivered face-to-face in class, with two randomly assigned peers and the course teacher evaluating each presentation in real time using the same validated rubric; students later completed self-assessments while watching recordings of their presentations. The course context was authentic and classroom-embedded, focused on oral presentation skills in engineering education.\n\nThe main conclusions are that peer, self, and teacher assessments showed moderate to substantial agreement overall, and all rubric-based scores were significantly correlated with the teacher\u2019s overall grade, with teacher scores aligning most strongly and self-assessments the least. Students tended to rate themselves and peers slightly more leniently than the teacher did, while the teacher\u2019s detailed rubric scores were lower than her own holistic overall grades. The authors argue that these systematic differences should not be ignored in AI feedback systems; instead, they should be modeled explicitly so GenAI can produce more pedagogically valid, transparent, and human-centered feedback.",
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_control_group",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "classroom",
+  "teacher_training": "yes",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Spain",
+  "study_region": "Europe",
+  "identified_tools": [
+    {
+      "name": "AICoFe",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "content_generation"
+      ],
+      "description": "An AI-based Collaborative Feedback system developed at Universidad Autonoma de Madrid that integrates teacher, peer, and self-assessments using a rubric and uses a generative AI model to produce personalized feedback.",
+      "use_case": "Studied as the assessment and feedback platform for engineering students' oral presentations, collecting teacher, peer, and self-evaluations and informing an enhanced GenAI-based feedback design.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Across 46 full evaluation sets of engineering students\u2019 oral presentations, agreement among teacher, peer, and self-assessments in AICoFe was moderate to substantial by Gwet\u2019s AC2, despite weak weighted Cohen\u2019s kappa values. Pairwise AC2 ranged from 0.58 to 0.63, exact agreement ranged from 0.43 to 0.53, Kendall\u2019s W was 0.51 for teacher and peers and 0.46 when self-assessment was included, indicating meaningful but imperfect evaluator consistency.",
+          "measure": "Inter-rater agreement on rubric-based oral presentation scores (weighted Cohen\u2019s kappa, Gwet\u2019s AC2, exact agreement, Kendall\u2019s W)",
+          "effect_size": "\u03baw=0.22-0.30; AC2=0.58-0.63; Kendall\u2019s W=0.46-0.51",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=46"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Rubric-based scores collected through AICoFe were significantly associated with the teacher\u2019s independently assigned overall grade for oral presentations. Correlations were strongest for the teacher rubric mean (r=0.88, \u03c1=0.89), followed by the mean rubric score across all evaluators (r=0.85, \u03c1=0.86), peers rubric mean (r=0.69, \u03c1=0.68), and self-assessment rubric mean (r=0.59, \u03c1=0.67), with all reported as p<0.001.",
+          "measure": "Correlation between rubric-based scores and teacher\u2019s overall grade for oral presentations",
+          "effect_size": "r=0.59-0.88; \u03c1=0.67-0.89",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=46"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Bias analyses within AICoFe showed systematic scoring differences across evaluator sources. The teacher\u2019s rubric scores were significantly lower than peers\u2019 scores (mean difference -0.49, p=0.008) and lower than the teacher\u2019s own overall grade (mean difference -0.37, p<0.001), while self-assessments were significantly higher than teacher rubric scores (mean difference +0.36, p=0.037); other comparisons were not statistically significant.",
+          "measure": "Mean score differences across teacher, peer, self, and overall grade sources on a 0\u201310 scale",
+          "effect_size": "Mean differences: -0.49, -0.37, +0.36",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=46"
+        }
+      ]
+    },
+    {
+      "name": "GePeTo",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "feedback_evaluation"
+      ],
+      "description": "A generative AI-based personalized guidance and feedback model integrated within AICoFe to generate personalized feedback from rubric-based evaluation data.",
+      "use_case": "Discussed as the generative model within AICoFe and proposed for enhancement through weighted evaluator input aggregation, bias detection, and context-aware feedback generation; not directly empirically evaluated for outcome impact in this paper.",
+      "findings": []
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical primary study, but it is correlational/descriptive rather than an RCT or strong quasi-experiment. The paper analyzes evaluator agreement, correlations, and bias in one higher-education course with n=46.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports agreement and correlation metrics and proposes design improvements, but it does not test causal impact of the AI-generated feedback on student learning outcomes. As a result, impact is suggestive but unclear.",
+  "citations": [
+    {
+      "title": "Formative assessment and feedback for learning in higher education: A systematic review",
+      "doi": null,
+      "year": 2021,
+      "venue": "Review of Education"
+    },
+    {
+      "title": "Formative assessment and the design of instructional systems",
+      "doi": null,
+      "year": 1989,
+      "venue": "Instructional science"
+    },
+    {
+      "title": "Student responses to criteria-referenced self-assessment",
+      "doi": null,
+      "year": 2007,
+      "venue": "Assessment & evaluation in higher education"
+    },
+    {
+      "title": "Peer assessment",
+      "doi": null,
+      "year": 2009,
+      "venue": "Theory into practice"
+    },
+    {
+      "title": "Incorporating peer feedback in academic writing: a systematic review of benefits and challenges",
+      "doi": null,
+      "year": 2024,
+      "venue": "Frontiers in Psychology"
+    },
+    {
+      "title": "Harnessing generative ai to enhance feedback quality in peer evaluations within project-based learning contexts",
+      "doi": null,
+      "year": 2024,
+      "venue": "International Journal of Engineering Education"
+    },
+    {
+      "title": "Enhancing the Professional Development of Engineering Students through an AI-Based Collaborative Feedback System",
+      "doi": null,
+      "year": 2025,
+      "venue": "2025 IEEE Global Engineering Education Conference (EDUCON)"
+    },
+    {
+      "title": "A generative AI-based personalized guidance tool for enhancing the feedback to MOOC learners",
+      "doi": null,
+      "year": 2024,
+      "venue": "2024 IEEE Global Engineering Education Conference (EDUCON)"
+    },
+    {
+      "title": "Classroom assessment and pedagogy",
+      "doi": null,
+      "year": 2018,
+      "venue": "Assessment in education: Principles, policy & practice"
+    },
+    {
+      "title": "The past, present and future of educational assessment: A transdisciplinary perspective",
+      "doi": null,
+      "year": 2022,
+      "venue": "Frontiers in Education"
+    },
+    {
+      "title": "Teacher assessment literacy: A systematic review",
+      "doi": null,
+      "year": 2023,
+      "venue": "Frontiers in Education"
+    },
+    {
+      "title": "A critical review of the arguments against the use of rubrics",
+      "doi": null,
+      "year": 2020,
+      "venue": "Educational Research Review"
+    },
+    {
+      "title": "Appropriate criteria: Key to effective rubrics",
+      "doi": null,
+      "year": 2018,
+      "venue": "Frontiers in education"
+    },
+    {
+      "title": "The assessment cycle: A model for learning through peer assessment",
+      "doi": null,
+      "year": 2016,
+      "venue": "Assessment & Evaluation in Higher Education"
+    },
+    {
+      "title": "Student peer assessment in higher education: A meta-analysis comparing peer and teacher marks",
+      "doi": null,
+      "year": 2000,
+      "venue": "Review of educational research"
+    },
+    {
+      "title": "Peer assessment in the digital age: A meta-analysis comparing peer and teacher ratings",
+      "doi": null,
+      "year": 2016,
+      "venue": "Assessment & Evaluation in Higher Education"
+    },
+    {
+      "title": "Reciprocity as a source of bias in multiple peer assessment of group work",
+      "doi": null,
+      "year": 2001,
+      "venue": "Studies in Higher Education"
+    },
+    {
+      "title": "A review of bias in peer assessment",
+      "doi": null,
+      "year": 2018,
+      "venue": "2018 CoNECD-The Collaborative Network for Engineering and Computing Diversity Conference"
+    },
+    {
+      "title": "The reliability, validity, and utility of self-assessment",
+      "doi": null,
+      "year": 2006,
+      "venue": "Practical Assessment, Research & Evaluation"
+    },
+    {
+      "title": "Student self-assessment: a meta-review of five decades of research",
+      "doi": null,
+      "year": 2025,
+      "venue": "Assessment in Education: Principles, Policy & Practice"
+    },
+    {
+      "title": "Comparison of student self-assessment and teacher assessment of medical interview performance during bedside learning",
+      "doi": null,
+      "year": 2023,
+      "venue": "Fukushima Journal of Medical Science"
+    },
+    {
+      "title": "The promise and challenges of generative ai in education",
+      "doi": null,
+      "year": 2025,
+      "venue": "Behaviour & Information Technology"
+    },
+    {
+      "title": "Google gemini as a next generation ai educational tool: a review of emerging educational technology",
+      "doi": null,
+      "year": 2024,
+      "venue": "Smart Learning Environments"
+    },
+    {
+      "title": "Empowering equitable learning with llms: enhancing writing skills in low-resource contexts",
+      "doi": null,
+      "year": 2025,
+      "venue": "European Conference on Technology Enhanced Learning"
+    },
+    {
+      "title": "Empowering instructors with ai: Evaluating the impact of an ai-driven feedback tool in learning analytics",
+      "doi": null,
+      "year": 2025,
+      "venue": "IEEE Transactions on Learning Technologies"
+    },
+    {
+      "title": "Learning analytics dashboards: The past, the present and the future",
+      "doi": null,
+      "year": 2020,
+      "venue": "Proceedings of the tenth international conference on learning analytics & knowledge"
+    },
+    {
+      "title": "M2lads: A system for generating multimodal learning analytics dashboards",
+      "doi": null,
+      "year": 2023,
+      "venue": "2023 IEEE 47th Annual Computers, Software, and Applications Conference (COMPSAC)"
+    },
+    {
+      "title": "Vizchat: enhancing learning analytics dashboards with contextualised explanations using multimodal generative ai chatbots",
+      "doi": null,
+      "year": 2024,
+      "venue": "International conference on artificial intelligence in education"
+    },
+    {
+      "title": "Designing human-centered learning analytics and artificial intelligence in education solutions: a systematic literature review",
+      "doi": null,
+      "year": 2025,
+      "venue": "Behaviour & Information Technology"
+    },
+    {
+      "title": "A multimodal dataset of student oral presentations with sensors and evaluation data",
+      "doi": null,
+      "year": 2026,
+      "venue": "arXiv preprint arXiv:2601.07576"
+    },
+    {
+      "title": "Gwet\u2019s AC1 is not a substitute for Cohen\u2019s kappa\u2013A comparison of basic properties",
+      "doi": null,
+      "year": 2023,
+      "venue": "MethodsX"
+    },
+    {
+      "title": "An examination of using self-, peer-, and teacher-assessment in higher education: A case study in teacher education",
+      "doi": null,
+      "year": 2016,
+      "venue": "Higher Education Studies"
+    },
+    {
+      "title": "High agreement and high prevalence: the paradox of cohen\u2019s kappa",
+      "doi": null,
+      "year": 2017,
+      "venue": "The open nursing journal"
+    },
+    {
+      "title": "Unskilled and unaware of it: how difficulties in recognizing one\u2019s own incompetence lead to inflated self-assessments",
+      "doi": null,
+      "year": 1999,
+      "venue": "Journal of personality and social psychology"
+    },
+    {
+      "title": "The dunning\u2013kruger effect: On being ignorant of one\u2019s own ignorance",
+      "doi": null,
+      "year": 2011,
+      "venue": "Advances in experimental social psychology"
+    },
+    {
+      "title": "A comparative study on self, peer and teacher evaluation to evaluate clinical skills of nursing students",
+      "doi": null,
+      "year": 2012,
+      "venue": "Procedia-Social and Behavioral Sciences"
+    },
+    {
+      "title": "Self, peer and teacher assessments: What is the level of relationship between them?",
+      "doi": null,
+      "year": 2018,
+      "venue": "European Journal of Education Studies"
+    },
+    {
+      "title": "The influence of peer feedback on self-and peer-assessment of oral skills",
+      "doi": null,
+      "year": 2002,
+      "venue": "Language testing"
+    },
+    {
+      "title": "Rubrics vs. self-assessment scripts: effects on first year university students\u2019 self-regulation and performance/r\u00fabricas y guiones de autoevaluaci\u00f3n: efectos sobre la autorregulaci\u00f3n y el rendimiento de estudiantes universitarios de primer a\u00f1o",
+      "doi": null,
+      "year": 2014,
+      "venue": "Journal for the Study of Education and Development"
+    },
+    {
+      "title": "Mosaic-f: A framework for enhancing students\u2019 oral presentation skills through personalized feedback",
+      "doi": null,
+      "year": 2025,
+      "venue": "Proceedings of the Learning Analytics Summer Institute Spain 2025"
+    },
+    {
+      "title": "Enhancing online learning by integrating biosensors and multimodal learning analytics for detecting and predicting student behaviour: a review",
+      "doi": null,
+      "year": 2025,
+      "venue": "Behaviour & Information Technology"
+    },
+    {
+      "title": "Ai-based multimodal biometrics for detecting smartphone distractions: Application to online learning",
+      "doi": null,
+      "year": 2025,
+      "venue": "European Conference on Technology Enhanced Learning"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

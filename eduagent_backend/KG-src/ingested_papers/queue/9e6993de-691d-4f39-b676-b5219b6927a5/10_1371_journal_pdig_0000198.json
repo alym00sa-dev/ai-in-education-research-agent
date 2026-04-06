@@ -1,0 +1,73 @@
+{
+  "title": "Performance of ChatGPT on USMLE: Potential for AI-assisted medical education using large language models",
+  "doi": "10.1371/journal.pdig.0000198",
+  "year": 2023,
+  "venue": "PLOS Digital Health",
+  "url": "https://doi.org/10.1371/journal.pdig.0000198",
+  "source_db": "openalex_search",
+  "populations": [
+    "Graduate / Doctoral"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper examines whether ChatGPT, a general-purpose large language model, can answer questions from the United States Medical Licensing Examination (USMLE) at a level approaching human passing performance, and whether its explanations show qualities that might make it useful for medical education. The motivating problem is whether recent generative AI systems can demonstrate enough medical knowledge, reasoning consistency, and explanatory value to support learners in high-stakes professional education.\n\nThe authors evaluated ChatGPT on 350 publicly available USMLE sample questions drawn from Step 1, Step 2CK, and Step 3 after removing items requiring visual interpretation. Each question was presented in three formats: open-ended, multiple choice without forced justification, and multiple choice with forced justification. Physician adjudicators scored outputs for accuracy, concordance between answers and explanations, and the presence of novel, valid insights. This is not an intervention study with human learners; rather, it is a performance evaluation of the model using standardized exam items.\n\nThe context is medical education in the United States, specifically learners at different stages of training represented by USMLE target audiences: medical students and early postgraduate physicians. The paper discusses potential relevance to second-year medical students, fourth-year medical students, and PGY-1 residents, but no actual students were enrolled as participants. The model was tested in a controlled analytic setting using public exam materials and human expert review.\n\nThe main conclusion is that ChatGPT performed at or near the passing threshold on USMLE-style questions, with generally high concordance and frequent nonobvious insights in its explanations. The authors argue that these results suggest potential for AI-assisted medical education and possibly future clinical support. However, they also note important limits: the dataset was relatively small, the study did not test real learners or real educational outcomes, and further controlled and real-world studies would be needed to establish educational effectiveness. For the K-12 foundational reading verification topic, this paper is a clear near-miss: it concerns generative AI, but in medical exam performance rather than K-12 literacy, and it provides no causal evidence on reading outcomes.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "Peer-reviewed empirical study with a clear evaluation protocol, but it is not an RCT or strong quasi-experiment on learners. It benchmarks model performance on medical exam items and explanatory quality rather than estimating causal effects on educational outcomes.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper shows promising but indirect educational relevance through model accuracy and explanation quality, with no direct effect size on student learning or classroom outcomes. Impact on learners is therefore unclear and not established causally, especially outside medical education.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.8,
+      "role": "primary",
+      "use_case": "Evaluation of ChatGPT as a conversational large language model answering USMLE-style medical education questions and generating explanatory reasoning, with discussion of possible future use as an AI-assisted learning aid."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.85,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "This study found ChatGPT performed at or near the USMLE passing threshold on medical licensing exam questions, with accuracy varying by prompt format and exam step. Across 350 filtered text-only USMLE items, accuracy ranged from 52.4% to 75.0% when indeterminate responses were censored and from 36.1% to 61.5% when included; the paper frames this as potential for AI-assisted medical education rather than a direct learner-outcome effect. This is a performance benchmark of the model on assessment items, not causal evidence on student learning.",
+        "measure": "LLM accuracy, concordance, and insight on USMLE sample exam questions",
+        "study_size": "n=350 items",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.58,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The authors report that ChatGPT explanations showed high internal concordance (94.6% overall) and produced at least one significant insight in 88.9% of responses, suggesting possible usefulness for reasoning support in medical education. Mean density of insight on MC-J items was higher for accurately answered questions than inaccurate ones (0.458 vs 0.199, p<0.0001), but these are adjudicated properties of AI-generated explanations rather than measured improvements in human critical thinking or metacognition.",
+        "measure": "Physician-adjudicated concordance and insight density in AI explanations",
+        "study_size": "n=350 items overall; DOI analysis on MC-J entries only",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "single_site",
+    "no_control_group",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

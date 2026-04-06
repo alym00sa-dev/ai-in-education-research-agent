@@ -1,0 +1,192 @@
+{
+  "title": "CourseAssist: Pedagogically Appropriate AI Tutor for Computer Science Education",
+  "doi": null,
+  "year": 2024,
+  "venue": "SIGCSE '24",
+  "url": "https://arxiv.org/abs/2407.10246",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses how large language models can be adapted to better support learning in computer science courses while reducing risks such as student overreliance, inaccurate answers, and responses that conflict with course learning goals. The authors argue that generic systems like GPT-4 or ChatGPT are not sufficiently aligned with pedagogical needs in CS education, particularly when students use them for programming help. The study focuses on whether an LLM-based tutor can produce responses that are more useful, accurate, and pedagogically appropriate than a general-purpose baseline.\n\nThe intervention is CourseAssist, an AI tutoring system built by augmenting GPT-4 with retrieval-augmented generation, user intent classification, question decomposition, and retrieval of course-specific materials. These components are designed to steer the model toward course-aligned guidance and hints rather than direct answer-giving. The authors evaluated CourseAssist against GPT-4 using 50 anonymized question-answer pairs sampled from 185 Piazza posts in a programming languages course. A course instructor rated outputs from both systems on usefulness, accuracy, and pedagogical appropriateness using a 3-point scale, and experiments were run twice to reduce variability.\n\nThe study context is undergraduate computer science education at a large public R1 research university in the United States. The system was also reportedly deployed in six computer science courses reaching over 500 students, and the paper includes interviews with 20 student users about their experiences. This means the paper includes both quantitative comparative evaluation of generated answers and qualitative feedback from actual users in authentic course settings.\n\nThe main conclusion is that CourseAssist outperformed GPT-4 on all three human-evaluated criteria. Reported average scores were higher for CourseAssist than GPT-4, and the system achieved perfect pedagogical appropriateness in the reported evaluation. Student interviews further suggested that the tool improved access to course-specific help and shortened feedback loops on programming assignments. Overall, the paper concludes that carefully constrained and course-aligned LLM tutors may be more effective and educationally appropriate than generic AI assistants for computer science learning.",
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "CourseAssist",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "personalization_adaptation"
+      ],
+      "description": "An LLM-based tutoring system for computer science education that augments GPT-4 with retrieval-augmented generation, user intent classification, question decomposition, and course-content retrieval to produce course-aligned, pedagogically appropriate responses.",
+      "use_case": "Studied as a course-specific AI tutor for answering student questions from a programming languages course; evaluated on 50 Piazza question-answer pairs and also deployed across 6 computer science courses serving over 500 students, with interviews from 20 student users.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In a human evaluation of responses to 50 Piazza question-answer pairs from a programming languages course, CourseAssist outperformed the GPT-4 baseline on usefulness, receiving an average score of 0.91 versus 0.83 on a 0/0.5/1 rubric. Scores were assigned by a course instructor and averaged over two runs to account for response variability.",
+          "measure": "Instructor-rated usefulness of generated responses on a 3-point scale (0, 0.5, 1)",
+          "effect_size": "CourseAssist=0.91 vs GPT-4=0.83",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=50 QA pairs"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "CourseAssist achieved higher instructor-rated accuracy than the GPT-4 baseline on the same 50-question evaluation set, with an average score of 0.92 compared with 0.71. The paper reports scores as averages across two experimental runs.",
+          "measure": "Instructor-rated accuracy of generated responses on a 3-point scale (0, 0.5, 1)",
+          "effect_size": "CourseAssist=0.92 vs GPT-4=0.71",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=50 QA pairs"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "CourseAssist received a perfect average pedagogical appropriateness score of 1.00, compared with 0.82 for GPT-4, on 50 Piazza QA pairs. The authors state that every answer generated by CourseAssist was pedagogically appropriate due to user intent classification and post-processing steps.",
+          "measure": "Instructor-rated pedagogical appropriateness of generated responses on a 3-point scale (0, 0.5, 1)",
+          "effect_size": "CourseAssist=1.00 vs GPT-4=0.82",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=50 QA pairs"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The paper reports that interviews with 20 student users indicated that CourseAssist increased accessibility of course-specific tutoring help and shortened the feedback loop on programming assignments after deployment in 6 computer science courses reaching over 500 students. However, no quantitative effect size or validated survey measure is reported.",
+          "measure": "Student interview reports on accessibility of tutoring help and speed of feedback",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=20 interviewed students"
+        }
+      ]
+    },
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction"
+      ],
+      "description": "OpenAI's GPT-family conversational LLM used as a general-purpose baseline question-answering tutor.",
+      "use_case": "Used as the baseline comparator (via GPT-4) for answering 50 course-related questions from a programming languages course, with responses rated for usefulness, accuracy, and pedagogical appropriateness.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "As the baseline comparator on 50 Piazza question-answer pairs, GPT-4 received lower usefulness scores than CourseAssist, with an average instructor rating of 0.83 versus 0.91. Ratings used a 0/0.5/1 rubric and were averaged over two runs.",
+          "measure": "Instructor-rated usefulness of generated responses on a 3-point scale (0, 0.5, 1)",
+          "effect_size": "GPT-4=0.83 vs CourseAssist=0.91",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=50 QA pairs"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "GPT-4 scored lower on accuracy than CourseAssist in the 50-question human evaluation, receiving an average rating of 0.71 compared with 0.92 for CourseAssist. The paper does not report inferential statistics.",
+          "measure": "Instructor-rated accuracy of generated responses on a 3-point scale (0, 0.5, 1)",
+          "effect_size": "GPT-4=0.71 vs CourseAssist=0.92",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=50 QA pairs"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "GPT-4 was rated less pedagogically appropriate than CourseAssist, with an average score of 0.82 compared with 1.00 for CourseAssist on 50 Piazza QA pairs. The paper frames this as evidence that generic LLM responses may be less aligned with course learning goals.",
+          "measure": "Instructor-rated pedagogical appropriateness of generated responses on a 3-point scale (0, 0.5, 1)",
+          "effect_size": "GPT-4=0.82 vs CourseAssist=1.00",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=50 QA pairs"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical comparison with human-rated outcomes and some deployment/interview evidence, but it is not an RCT or strong quasi-experiment. The sample is limited to 50 QA pairs and 20 interviews, with no reported inferential statistics or validated outcome measures.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The reported differences in rubric scores favor CourseAssist and appear practically meaningful, but effect sizes, confidence intervals, and formal significance tests are not reported. Real-world deployment feedback is positive but qualitative and therefore impact remains somewhat unclear.",
+  "citations": [
+    {
+      "title": "Exploring the Responses of Large Language Models to Beginner Programmers\u2019 Help Requests",
+      "doi": "10.1145/3568813.3600139",
+      "year": 2023,
+      "venue": "Proceedings of the 2023 ACM Conference on International Computing Education Research - Volume 1",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "AI-TA: Towards an Intelligent Question-Answer Teaching Assistant using Open-Source LLMs",
+      "doi": "10.48550/arXiv.2311.02775",
+      "year": 2023,
+      "venue": "NeurIPS Workshop on Generative AI for Education (GAIED): NeurIPS 2023",
+      "citation_level": 3,
+      "citation_context": "supports choice of human evaluation over automatic metrics"
+    },
+    {
+      "title": "How Novices Use LLM-Based Code Generators to Solve CS1 Coding Tasks in a Self-Paced Learning Environment",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "CodeHelp: Using Large Language Models with Guardrails for Scalable Support in Programming Classes",
+      "doi": "10.1145/3631802.3631830",
+      "year": 2024,
+      "venue": "Proceedings of the 23rd Koli Calling International Conference on Computing Education Research",
+      "citation_level": 2,
+      "citation_context": "classroom tool contrasted with CourseAssist design"
+    },
+    {
+      "title": "Can Generative Pre-Trained Transformers (GPT) Pass Assessments in Higher Education Programming Courses?",
+      "doi": "10.1145/3587102.3588792",
+      "year": 2023,
+      "venue": "Proceedings of the 2023 Conference on Innovation and Technology in Computer Science Education V. 1",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Patterns of Student Help-Seeking When Using a Large Language Model-Powered Programming Assistant",
+      "doi": "10.1145/3636243.3636249",
+      "year": 2024,
+      "venue": "Proceedings of the 26th Australasian Computing Education Conference",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Investigating the Role of ChatGPT in Supporting Text-Based Programming Education for Students and Teachers",
+      "doi": null,
+      "year": 2023,
+      "venue": "Informatics in Schools. Beyond Bits and Bytes: Nurturing Informatics Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

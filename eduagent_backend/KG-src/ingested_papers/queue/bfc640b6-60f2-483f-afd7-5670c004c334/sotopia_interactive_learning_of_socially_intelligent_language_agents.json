@@ -1,0 +1,87 @@
+{
+  "title": "SOTOPIA-\u03c0: Interactive Learning of Socially Intelligent Language Agents",
+  "doi": null,
+  "year": 2024,
+  "venue": "not_reported",
+  "url": "https://doi.org/10.48550/arxiv.2403.08715",
+  "source_db": "openalex_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper investigates how to improve the social intelligence of large language model agents through interactive learning. The authors focus on whether language agents can learn to better complete social goals in multi-turn interactions, and whether ratings from a stronger model (GPT-4) can serve as a useful training signal. The work is situated in the SOTOPIA environment, a benchmark for social interaction tasks involving scenarios, character profiles, and private goals. The paper is not about education, student writing, or formative feedback on drafts, and it does not study secondary school populations.\n\nThe proposed approach, SOTOPIA-\u03c0, combines three steps: automatic generation of social tasks, collection of interaction data, and supervised fine-tuning of a base model using filtered examples. The authors use two training paradigms: behavior cloning from GPT-4-based expert agents and self-reinforcement from the model's own highly rated interactions. GPT-4 is also used to rate goal completion and filter positive examples for training. The base model is Mistral-7B, and the trained agents are evaluated against baselines using both GPT-4-based scoring and human judgments on several dimensions of social intelligence, including believability, relationship, knowledge, secrecy, social rules, financial/material benefits, and goal completion.\n\nNo human learner population is studied. The empirical context is an AI benchmark environment with language agents interacting in simulated social scenarios. Human annotators are involved only as evaluators of model outputs, not as learners or intervention recipients. The paper also includes a qualitative safety analysis on a harmful social scenario and reports MMLU benchmark results to assess whether fine-tuning harms general question-answering ability.\n\nThe main conclusions are that SOTOPIA-\u03c0 improves social goal completion and some broader social-intelligence dimensions for the trained language agents, with the strongest gains coming from behavior cloning followed by self-reinforcement. However, the authors also find that GPT-4-based evaluation increasingly overestimates performance relative to human ratings as models are optimized on GPT-4 feedback, raising concerns about evaluator bias. They further report that the approach appears to improve safety-related behavior in one analyzed task and does not substantially degrade general QA performance on MMLU.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This paper is not a K-12 education intervention study and provides no secondary-school comparative evidence on ChatGPT formative feedback for student writing. Although it is an empirical ML paper, relative to the requested K-12 evidence framework it lacks relevant educational participants, classroom implementation, and direct writing-feedback methodology.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper shows positive effects on simulated social-agent benchmark outcomes, but these impacts are outside the target educational domain and do not provide interpretable evidence for secondary writing-feedback interventions. Educational impact is therefore unclear rather than directly demonstrated.",
+  "interventions": [
+    {
+      "intervention": "Other",
+      "confidence": 0.99,
+      "role": "primary",
+      "use_case": "Interactive training and evaluation of socially intelligent language agents in simulated multi-turn social scenarios (SOTOPIA), using GPT-4 ratings to filter training interactions for behavior cloning and self-reinforcement."
+    },
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.62,
+      "role": "secondary",
+      "use_case": "General-purpose conversational LLM agents (GPT-4, GPT-3.5, Mistral-7B) role-play social interactions; not used for teaching or student feedback, but as dialogue agents and evaluators in a simulation environment."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.86,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper reports that SOTOPIA-\u03c0 improves simulated agents' social goal completion and several related social interaction dimensions in the SOTOPIA benchmark. On all social tasks, the best model (behavior cloning + self-reinforcement) improved GPT-4-rated GOAL from 5.07 to 7.62 and overall score from 2.33 to 3.44 relative to base Mistral-7B; on human-rated hard tasks, GOAL increased from 2.89 to 4.29 and overall score from 1.04 to 1.95. This is not an education study and does not measure student durable skills directly.",
+        "measure": "SOTOPIA-EVAL social interaction dimensions: goal completion, believability, relationship, social rules, overall social intelligence; human and GPT-4 ratings on Likert-type scales",
+        "study_size": "180 interaction datapoints on all tasks; 28 human-rated datapoints on hard tasks",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.58,
+      "finding": {
+        "direction": "No Effect",
+        "finding_summary": "The authors report that training for social interaction largely preserved general question-answering performance on MMLU. Base Mistral-7B scored 49.21, while the best combined model scored 48.57; the paper states these differences were not significant for the best model, suggesting no meaningful degradation in benchmark academic-style QA performance.",
+        "measure": "Massive Multitask Language Understanding (MMLU) benchmark accuracy",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.63,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "In a qualitative/custom safety-related social task, trained models showed higher engagement and more prosocial conflict-handling behavior than the base model. For example, when role-playing the prevention-focused character, BC+SR increased engagement from 22% to 100%, prevention rate from 11% to 100%, and number of alternative solutions from 0.2 to 2.9; however, this is based on a small non-educational task-specific analysis rather than student outcomes.",
+        "measure": "Custom task metrics: engagement rate, prevention rate, number of alternative solutions, toxic word counts",
+        "study_size": "9 examples per agent model per character role",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "lab",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

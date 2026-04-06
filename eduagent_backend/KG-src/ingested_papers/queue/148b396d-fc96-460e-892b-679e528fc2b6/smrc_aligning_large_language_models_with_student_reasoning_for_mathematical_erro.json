@@ -1,0 +1,92 @@
+{
+  "title": "SMRC: Aligning Large Language Models with Student Reasoning for Mathematical Error Correction",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2511.14684v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses a student-centered mathematical error-correction problem: how to adapt large language models (LLMs) so they do not merely produce a correct answer, but also preserve a student's original reasoning path when giving feedback. The authors argue that existing self-correction approaches are optimized for model-centric reasoning repair and are not well aligned with educational use cases, where teacher-like correction should support cognitive continuity and retain correct intermediate steps.\n\nTo solve this, they propose SMRC (Student Mathematical Reasoning Correction), a framework that combines a reward model with Monte Carlo Tree Search (MCTS). The reward model is trained using process-level supervision inferred from outcome labels via breadth-first search and reward backpropagation, and its scores guide MCTS to explore correction paths that balance correctness with retention of valid student steps. The paper also introduces MSEB (Multi-Solution Error Benchmark), a benchmark built from 158 authentic high-school student mathematics solution records, covering algebra, geometry, matrices, and trigonometry.\n\nThe empirical evaluation compares SMRC against direct correction, thought-preserving correction, self-refinement, and self-check baselines on ProcessBench, MR-GSM8K, and MSEB. Results show that SMRC generally achieves the best balance between answer accuracy and correct-step retention, with especially strong performance on MR-GSM8K and MSEB. The paper concludes that structured search plus process-supervised reward modeling can improve educationally aligned mathematical feedback, though the authors note that their reward allocation is still relatively uniform and could be refined in future work.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed technical/engineering paper with a benchmark and comparative experiments, but it is not a causal K-12 evaluation and does not use a randomized or quasi-experimental design with learner outcomes. Evidence is therefore useful but indirect for educational effectiveness claims.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The reported gains on mathematical correction metrics are meaningful, especially on MSEB (HM 51.8), but they are algorithmic benchmark improvements rather than demonstrated student learning gains. Impact on K-12 education is therefore promising but still unclear.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.96,
+      "role": "primary",
+      "use_case": "teacher-style mathematical error correction with large language models that preserve a student's original reasoning path while generating minimally corrected solutions via Monte Carlo Tree Search and process reward modeling"
+    },
+    {
+      "intervention": "Automated Feedback System",
+      "confidence": 0.93,
+      "role": "primary",
+      "use_case": "automated step-level feedback and correction on high school mathematics solutions, including preservation of correct steps, error localization, and corrective reasoning generation"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 0.98,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper reports that SMRC improves mathematical error correction performance on three benchmarks, including the K-12-relevant MSEB dataset. On MSEB, SMRC achieved ACC=40.1, CSRR=73.7, and HM=51.8, outperforming comparison methods such as Self-Check (ACC=27.2, CSRR=91.2, HM=41.9) and Self-Refine (ACC=35.2, CSRR=76.6, HM=48.1) on harmonic mean, indicating better balance of answer correctness and preservation of correct reasoning steps.",
+        "measure": "Reasoning accuracy (ACC), correct step retention rate (CSRR), harmonic mean (HM) on mathematical error-correction tasks",
+        "study_size": "n=158 for MSEB; additional evaluations on ProcessBench and MR-GSM8K not K-12",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "\u00b11.7 ACC, \u00b12.1 CSRR, \u00b11.1 HM on MSEB"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.86,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "A central contribution is preserving student reasoning processes, which is operationalized as CSRR rather than a direct learning gain measure. SMRC improves CSRR on MSEB to 73.7 while maintaining substantially higher accuracy than competing methods, suggesting stronger alignment with students' problem-solving strategies and more educationally coherent feedback.",
+        "measure": "Correct Step Retention Rate (CSRR), evaluated by comparing corrected solutions to students' originally correct reasoning steps",
+        "study_size": "n=158 for MSEB",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "\u00b12.1 on MSEB CSRR"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.74,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The method is presented as a structured search-and-feedback framework that reduces reliance on manual process annotation by generating reward signals from BFS and back-propagation. The paper does not report time-on-task for teachers or students, but it does show that the fine-tuned 14B reward model and MCTS framework outperform prompt-only reward models, implying improved automated correction efficiency.",
+        "measure": "Performance of reward-model construction and search-based correction pipeline; benchmark correction metrics (ACC/CSRR/HM) as proxies for automation quality",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_long_term_followup",
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "China",
+  "study_region": "East Asia & Pacific",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

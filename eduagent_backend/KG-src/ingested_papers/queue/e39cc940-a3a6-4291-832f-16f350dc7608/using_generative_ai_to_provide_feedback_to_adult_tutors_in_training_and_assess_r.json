@@ -1,0 +1,59 @@
+{
+  "title": "Using Generative AI to Provide Feedback to Adult Tutors in Training and Assess Real-life Performance",
+  "doi": null,
+  "year": 2024,
+  "venue": "not_reported",
+  "url": "https://doi.org/10.35542/osf.io/n9w4b",
+  "source_db": "openalex_search",
+  "populations": [
+    "Adult (non-academic)",
+    "Middle School (6th-8th)"
+  ],
+  "user_types": [
+    "Educator",
+    "Student"
+  ],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses the challenge of training and evaluating adult tutors at scale, especially when human review of tutoring practice is costly and difficult. The authors argue that generative AI, particularly large language models such as GPT-4, can support tutor professional development by providing immediate feedback during training activities and by assessing tutors' real-world tutoring performance from dialogue transcripts.\n\nThe intervention described is embedded in the PLUS (Personalized Learning Squared) tutoring platform. Tutors complete online, scenario-based lessons such as Giving Effective Praise, where they answer tutoring scenarios and then receive AI-generated explanatory feedback. The paper also describes using LLMs to score real tutor-student dialogues, including identifying whether tutors praise effort versus outcomes and whether they respond appropriately to student math errors. The authors discuss prompting strategies such as prompt chaining, chain-of-thought prompting, few-shot prompting, and self-consistency to improve reliability.\n\nThe population context is adult tutors in training and in-service remote math tutors working with middle school students. The paper reports that more than 300 college students have been trained as remote math tutors serving nearly 2,500 middle school students across the United States. The setting is online, with lessons and assessments conducted through the PLUS tutoring system.\n\nThe paper concludes that generative AI shows promise as a low-cost, scalable tool for tutor feedback and performance assessment, but it should complement rather than replace human tutoring. It emphasizes practical and ethical concerns, including transparency, bias, hallucination, and the need for human-in-the-loop review. The paper is primarily a methods and use-case paper rather than a controlled evaluation of learning outcomes.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a conceptual/practice-oriented paper with illustrative examples and references to prior conference work, not a controlled evaluation of the intervention in this paper. It is peer-reviewed and grounded in specific LLM prompting workflows, but the evidence presented here is mostly descriptive rather than causal.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper suggests potential efficiency benefits for tutor training and assessment, but it does not report a measured educational outcome or effect size in this article. Impact on learners is therefore unclear and appears modest at present.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.88,
+      "role": "primary",
+      "use_case": "Using GPT-4 and related LLMs to generate real-time explanatory feedback for adult tutors in scenario-based training lessons and to assess tutor performance from real-life tutoring transcripts."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.82,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper argues that LLMs can reduce the cost and time burden of tutor feedback and assessment compared with human evaluation. In the reported assessment use case, GPT-4 was able to evaluate 50 tutor-student dialogues with moderately high performance (F1 score reported qualitatively as moderately high), suggesting potential efficiency gains for scalable tutor coaching and monitoring.",
+        "measure": "Model performance on tutor dialogue assessment; workflow efficiency for feedback generation and evaluation",
+        "study_size": "n=50 dialogues (assessment example); program scale described as over 300 tutors and nearly 2,500 middle school students",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    }
+  ],
+  "limitations": [
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "yes",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

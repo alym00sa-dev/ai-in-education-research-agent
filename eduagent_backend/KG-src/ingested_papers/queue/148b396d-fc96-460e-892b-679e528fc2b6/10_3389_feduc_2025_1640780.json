@@ -1,0 +1,121 @@
+{
+  "title": "From principles to practice: a novel matrix for evaluating AI-powered learning platforms based on the UNESCO Ethical Impact Assessment tool",
+  "doi": "10.3389/feduc.2025.1640780",
+  "year": 2025,
+  "venue": "Frontiers in Education",
+  "url": "https://doi.org/10.3389/feduc.2025.1640780",
+  "source_db": "openalex_search",
+  "populations": [],
+  "user_types": [
+    "Student",
+    "Educator",
+    "Administrator",
+    "Parent",
+    "School"
+  ],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses the gap between high-level AI ethics principles and practical tools for evaluating AI-powered educational platforms, especially in culturally specific contexts such as Qatar and the wider Gulf region. The authors argue that existing frameworks like UNESCO\u2019s Ethical Impact Assessment (EIA) are valuable but need localization to account for Arabic language support, Islamic cultural alignment, curriculum fit, data governance, and implementation feasibility in regional education systems.\n\nTo operationalize this, the study develops the Gulf-AI Education Tool Evaluation Matrix (G-AIETM), a structured framework based on the UNESCO EIA tool. The matrix uses 18 indicators across five domains: ethical compliance, pedagogical effectiveness, technological readiness, cultural and linguistic relevance, and implementation/cost sustainability. It is applied to seven widely used AI-powered learning platforms, including Khanmigo, CENTURY Tech, MATHia, Knewton Alta, AltSchool, Querium, and Squirrel AI, using publicly available documentation and a 5-point Likert scoring scheme.\n\nThe paper is not a learner outcome study; rather, it is a comparative ethical evaluation and implementation analysis. It concludes that Khanmigo performs best overall and is the closest to deployment readiness in Qatar, but still needs substantial Arabic localization, cultural contextualization, and data residency compliance. The other platforms show varying levels of technical promise but generally require significant localization to meet Gulf educational and regulatory expectations. The study\u2019s main contribution is a replicable evaluation model for policymakers, educators, and developers seeking to assess AI tools for responsible deployment in Arabic-speaking, Islamic-majority K-12 and related educational settings.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed qualitative comparative framework paper based on desk review of public sources, not an experimental or quasi-experimental effectiveness study. It provides structured methodology, but credibility is limited for causal claims because no primary outcome data or internal platform access were used.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper suggests meaningful implementation guidance for AI adoption in K-12, especially around localization and governance, but it does not estimate learning gains or operational effect sizes. Its impact is therefore mainly indirect and institutional rather than demonstrated student-level impact.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.95,
+      "role": "primary",
+      "use_case": "Khanmigo as a GPT-powered tutoring assistant for K-12 learning, including adaptive questioning, formative feedback, educator dashboards, and lesson-planning support."
+    },
+    {
+      "intervention": "Adaptive Learning Platform",
+      "confidence": 0.95,
+      "role": "primary",
+      "use_case": "CENTURY Tech as an adaptive learning platform using learner interactions and analytics to personalize pathways and support teacher monitoring."
+    },
+    {
+      "intervention": "Intelligent Tutoring System (ITS)",
+      "confidence": 0.9,
+      "role": "primary",
+      "use_case": "MATHia as an AI-driven cognitive tutor for mathematics with step-by-step guidance and personalized problem-solving support."
+    },
+    {
+      "intervention": "Adaptive Learning Platform",
+      "confidence": 0.9,
+      "role": "primary",
+      "use_case": "Knewton Alta as analytics-driven adaptive courseware that personalizes pacing and learning pathways based on student performance."
+    },
+    {
+      "intervention": "Adaptive Learning Platform",
+      "confidence": 0.8,
+      "role": "primary",
+      "use_case": "AltSchool as a personalized learning platform emphasizing student agency and individualized learning pathways supported by technology."
+    },
+    {
+      "intervention": "Intelligent Tutoring System (ITS)",
+      "confidence": 0.75,
+      "role": "primary",
+      "use_case": "Querium as AI tutoring for STEM/test preparation with micro-step explanations and targeted skills mastery."
+    },
+    {
+      "intervention": "Adaptive Learning Platform",
+      "confidence": 0.95,
+      "role": "primary",
+      "use_case": "Squirrel AI as a fine-grained adaptive learning system using knowledge mapping and learner analytics for K-12 instruction."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Systemic / Institutional Impact",
+      "confidence": 0.97,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper found that Khanmigo was the strongest overall platform for Qatar-style deployment, scoring 74.4% and being categorized as 'Recommended with Minor Adaptation.' The study\u2019s main institutional finding is that implementation readiness depends heavily on localization conditions\u2014especially Arabic language integration, curriculum alignment, and data residency compliance\u2014rather than on AI capability alone.",
+        "measure": "G-AIETM normalized evaluation score across ethical, pedagogical, technological, cultural/linguistic, and sustainability domains",
+        "study_size": "n=7 platforms",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    },
+    {
+      "outcome": "Systemic / Institutional Impact",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "Across all seven platforms, the study found a consistent pattern: strong adaptive/technical features but major localization gaps for Arabic-speaking, Islamic-majority contexts. Platforms generally required substantial adaptation in language support, cultural sensitivity, and governance, with scores ranging from 52.2% to 74.4%.",
+        "measure": "G-AIETM normalized evaluation scores and qualitative readiness judgments",
+        "study_size": "n=7 platforms",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Adaptive Learning Platform"
+    },
+    {
+      "outcome": "Systemic / Institutional Impact",
+      "confidence": 0.9,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The evaluation highlighted that most platforms were limited not by core AI functions but by implementation conditions such as local compliance, data hosting, and public-sector scalability. Khanmigo was the closest to deployable, while CENTURY Tech, MATHia, Knewton Alta, AltSchool, Querium, and Squirrel AI were judged to need significant localization.",
+        "measure": "Comparative platform readiness classification ('Recommended with Minor Adaptation' vs 'Needs Significant Localization')",
+        "study_size": "n=7 platforms",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Intelligent Tutoring System (ITS)"
+    }
+  ],
+  "limitations": [
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Qatar",
+  "study_region": "Middle East & North Africa",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

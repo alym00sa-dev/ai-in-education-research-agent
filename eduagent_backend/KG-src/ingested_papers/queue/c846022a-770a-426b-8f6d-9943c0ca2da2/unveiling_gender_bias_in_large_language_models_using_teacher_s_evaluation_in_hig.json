@@ -1,0 +1,59 @@
+{
+  "title": "Unveiling Gender Bias in Large Language Models: Using Teacher\u2019s Evaluation in Higher Education As an Example",
+  "doi": null,
+  "year": 2024,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2409.09652v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper examines whether large language models generate gender-biased teacher evaluations in higher education. The central question is not about improving teaching through AI coaching, but about whether GPT-4 reproduces stereotypes when asked to write short student-style evaluations of instructors. The study is motivated by concerns that LLM-generated evaluative text may reflect and amplify societal bias, which could matter in settings where AI is used for performance reviews or instructional feedback.\n\nThe approach uses GPT-4 to generate 360 teacher evaluations from prompts that vary only by instructor gender and subject area. Two fictitious instructor names were used, and six university subjects were selected: Computer Science, Engineering, Economics, Foreign Languages, Psychology, and Education. The analysis combines several text-based methods: Odds Ratio analysis to find gender-associated adjectives, WEAT to test associations between words and gendered concepts, sentiment analysis to compare emotional tone, and contextual close reading of selected terms in Engineering.\n\nThe findings indicate consistent gendered patterns in the model\u2019s outputs. Female instructors were more often described with communal, supportive, and approachable language, while male instructors were more often linked to entertainment- and agentic-style descriptors and to intellectual praise in some contexts. Sentiment scores were slightly more positive for female instructors overall, but contextual analysis showed that female instructors could still receive subtly negative or limiting framing. The paper concludes that LLM-generated teacher evaluations reflect and may reinforce gender stereotypes, and that quantitative scores alone may miss context-dependent bias.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a qualitative/observational computational analysis of LLM outputs, not an intervention study or randomized evaluation. The methodology is systematic and multi-method, but it does not meet strong causal evidence criteria.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper suggests meaningful institutional risk from biased AI-generated teacher evaluations, but it does not estimate downstream real-world effect sizes on educator outcomes. The impact is therefore important but indirect and unclear in magnitude.",
+  "interventions": [
+    {
+      "intervention": "Other",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "Analyzing GPT-4-generated teacher evaluations in higher education for gender bias, using prompt-based generation of short student-perspective reviews across six university subjects."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Systemic / Institutional Impact",
+      "confidence": 0.96,
+      "finding": {
+        "direction": "Negative",
+        "finding_summary": "The paper finds that GPT-4-generated teacher evaluations reproduce gender stereotypes, with communal/supportive language used more often for female instructors and entertainment/agentic language used more often for male instructors. Across 360 generated evaluations (30 prompts \u00d7 12 prompt configurations), sentiment analysis also showed a statistically significant difference favoring female teachers overall (t=2.392, p=0.0378), but contextual analysis revealed negative or limiting uses of language for women that sentiment scores alone obscured.",
+        "measure": "Odds Ratio analysis of adjective use, WEAT association tests, TextBlob sentiment scores, and contextual qualitative analysis of generated teacher evaluations",
+        "study_size": "n=360 evaluations",
+        "effect_size": "t=2.392; p=0.0378",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Other"
+    }
+  ],
+  "limitations": [
+    "single_site",
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

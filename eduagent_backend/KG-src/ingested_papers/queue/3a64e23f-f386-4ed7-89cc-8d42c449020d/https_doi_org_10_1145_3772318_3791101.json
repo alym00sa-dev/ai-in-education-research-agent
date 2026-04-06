@@ -1,0 +1,75 @@
+{
+  "title": "PaperTrail: A Claim-Evidence Interface for Grounding Provenance in LLM-based Scholarly Q&A",
+  "doi": "https://doi.org/10.1145/3772318.3791101",
+  "year": 2026,
+  "venue": "Proceedings of the 2026 CHI Conference on Human Factors in Computing Systems (CHI \u201926)",
+  "url": "https://doi.org/10.1145/3772318.3791101",
+  "source_db": "openalex_search",
+  "populations": [
+    "Graduate / Doctoral"
+  ],
+  "user_types": [
+    "Adult (non-academic)"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses a reliability and trust calibration problem in LLM-based scholarly question-answering systems. The authors argue that existing provenance cues, such as coarse source citations, are insufficient for detecting subtle model errors like unsupported claims, omissions, and hallucinated or misleading evidence in academic contexts.\n\nTo address this, they introduce PaperTrail, an interface that decomposes both source papers and LLM answers into discrete claims and evidence, then matches them to reveal which answer claims are supported, unsupported, or omitted from the source literature. The system uses a three-stage backend: offline claim/evidence extraction from papers, real-time extraction from generated answers, and real-time claim-evidence matching to produce provenance indicators. The interface presents these matches through a multi-panel layout with claim coverage indicators and claim-level highlights.\n\nThe empirical evaluation is a within-subjects user study with 26 researchers working in a research organization. Participants completed two scholarly editing tasks: a multi-paper synthesis task and a devil\u2019s-advocate review task, using PaperTrail and a citation-based baseline. Results show that PaperTrail lowered participants\u2019 trust in LLM outputs compared with the baseline, indicating that granular provenance cues can make users more cautious. However, this reduced trust did not translate into meaningful behavioral changes in reliance: participants still tended to use the LLM-generated text because of time pressure and the cognitive burden of verification.\n\nOverall, the paper concludes that claim-evidence provenance can improve trust calibration in scholarly AI settings, but trust reduction alone is not enough to change reliance behavior. The authors argue that interface design must also reduce cognitive load and better fit researchers\u2019 workflows if provenance tools are to meaningfully affect how people use LLM-generated scholarly outputs.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed within-subjects HCI study with a modest sample (n=26), but it is not an RCT in an educational setting and the population is adult researchers rather than K-12 learners. The evidence is useful for understanding trust/reliance effects, but direct educational relevance and causal strength are limited.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The intervention reduced trust but did not change reliance behavior, and the study does not report a positive learning or efficiency effect of meaningful magnitude. Overall impact is unclear and, for the requested K-12 science-inquiry context, the findings are indirect and modest at best.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "LLM-based scholarly question-answering that answers user queries over source papers and generates/editable draft text, with claim-evidence provenance annotations and citation-style comparison baseline"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Negative",
+        "finding_summary": "In a within-subjects study with n=26 researchers, the PaperTrail interface significantly lowered participants\u2019 trust in LLM outputs compared with a baseline citation interface. However, this caution did not produce a corresponding behavioral change in reliance: participants still relied on LLM-generated scholarly edits to avoid the cognitively burdensome editing task.",
+        "measure": "Subjective trust ratings; behavioral reliance quantified via normalized Levenshtein edit distance between original LLM text and participant edits",
+        "study_size": "n=26",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.72,
+      "finding": {
+        "direction": "Negative",
+        "finding_summary": "The paper reports that granular claim-evidence provenance increased cognitive burden and cluttered the interface, reducing usability under time constraints. Although it improved caution and visibility into unsupported claims, participants did not translate that into more efficient verification behavior or meaningful changes in editing workflow.",
+        "measure": "Usability feedback; task performance and interaction burden during scholarly editing and QA",
+        "study_size": "n=26",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

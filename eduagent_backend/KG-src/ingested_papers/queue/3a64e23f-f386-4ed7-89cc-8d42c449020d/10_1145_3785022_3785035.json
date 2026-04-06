@@ -1,0 +1,87 @@
+{
+  "title": "AI Knows Best? The Paradox of Expertise, AI-Reliance, and Performance in Educational Tutoring Decision-Making Tasks",
+  "doi": "10.1145/3785022.3785035",
+  "year": 2026,
+  "venue": "LAK 2026: 16th International Learning Analytics and Knowledge Conference",
+  "url": "http://arxiv.org/abs/2509.16772v2",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Adult (non-academic)"
+  ],
+  "user_types": [
+    "Educator"
+  ],
+  "study_design": "Randomized Controlled Trial (RCT)",
+  "extended_summary": "This paper examines how people evaluate the correctness of tutor praise responses when assisted by AI-generated decision support. The central question is whether human-AI collaboration improves accuracy relative to humans working alone, and how explanation style affects performance, time, and reliance on AI. The authors focus on two explanation modalities: textual reasoning and inline highlighting.\n\nThe study uses 216 tutor-response examples drawn from a tutor training system. Ground-truth labels were created by two experienced tutors and a PhD learning scientist, and a GPT-4-based model produced labels and explanations. In the user study, 95 participants were recruited: 47 professionally trained tutors and 48 Prolific participants. Participants completed a counterbalanced online experiment with five conditions: no AI, AI label only, label plus reasoning, label plus highlighting, and label plus both reasoning and highlighting. They first received a training module on effective praise and then judged 20 items per condition.\n\nResults show that AI assistance improved human accuracy relative to no AI, but human-AI collaboration still underperformed the AI-only baseline. Novices from Prolific benefited more from AI because they tended to follow AI suggestions, while experienced tutors more often overrode correct AI advice, producing more under-reliance. Textual reasoning reduced under-reliance when the AI was correct but increased over-reliance when the AI was wrong; inline highlighting had little measurable effect. Neither explanation style improved overall accuracy, and both increased time spent. The paper concludes that explanation design in tutor-facing decision support should aim to better calibrate trust and reduce both over- and under-reliance.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed experimental study with counterbalanced within-subject conditions and clear statistical testing, but it is not a randomized field trial in K-12 classrooms and uses a simulated tutoring judgment task rather than actual instructional outcomes. The participants are mixed professionals and Prolific respondents, so ecological validity for K-12 tutoring support is limited.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The study shows statistically significant but task-specific effects, including modest accuracy gains from AI assistance and meaningful changes in reliance patterns, but it does not demonstrate student learning gains or classroom-level impact. The primary contribution is diagnostic evidence about human-AI decision support rather than direct educational impact.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.92,
+      "role": "primary",
+      "use_case": "LLM-generated decision support for evaluating tutor praise responses, including binary correctness labels plus textual reasoning and inline-highlight explanations shown to human tutors"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.88,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "AI assistance improved human decision accuracy versus no-AI baseline, but the human-AI team still underperformed the AI-only baseline (AI accuracy=0.8; human-AI conditions significantly better than no-AI, F(1,471)=6.83, p=.009, \u03b7p\u00b2=.014). Novices (Prolific) generally outperformed experienced tutors overall (overall accuracy 0.747 vs 0.712; t=-2.302, p=.0236), suggesting expertise did not translate into better judgment in this task.",
+        "measure": "Accuracy on tutoring decision-making judgments (correctly labeling tutor praise as effective/ineffective)",
+        "study_size": "n=95",
+        "effect_size": "\u03b7p\u00b2=.014; t-tests reported overall group difference d=0.470",
+        "confidence_interval": "not_reported",
+        "std_deviation": "Tutor overall SD=0.088; Prolific overall SD=0.057"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.9,
+      "finding": {
+        "direction": "Negative",
+        "finding_summary": "AI explanations increased time spent per task. Repeated-measures ANOVA showed significant main effects for inline highlighting (F(1,57)=25.74, p<.001, \u03b7p\u00b2=.311) and text reasoning (F(1,57)=19.12, p<.001, \u03b7p\u00b2=.251), with a significant interaction (F(1,57)=18.26, p=.001, \u03b7p\u00b2=.243), indicating the explanation features added processing time rather than reducing it.",
+        "measure": "Average time spent per task (seconds)",
+        "study_size": "n=95 total; time analysis after IQR filtering reported on n=58 for within-subject ANOVA",
+        "effect_size": "\u03b7p\u00b2=.311 (highlighting), \u03b7p\u00b2=.251 (reasoning), \u03b7p\u00b2=.243 (interaction)",
+        "confidence_interval": "not_reported",
+        "std_deviation": "Tutor no-label SD=3.95s; Prolific no-label SD=3.43s; other condition SDs reported in Table 2"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.86,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "Text reasoning changed reliance behavior in both directions: it reduced under-reliance when AI was correct (F(1,94)=8.71, p=.004, \u03b7p\u00b2=.085) but increased over-reliance when AI was wrong (F(1,94)=8.81, p=.004, \u03b7p\u00b2=.086). Inline highlighting had no significant effect on either under-reliance or over-reliance, suggesting that explanation quality influenced trust calibration more than visual salience alone.",
+        "measure": "Over-reliance and under-reliance rates in AI-assisted tutoring judgments",
+        "study_size": "n=95",
+        "effect_size": "\u03b7p\u00b2=.086 (over-reliance), \u03b7p\u00b2=.085 (under-reliance)",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "yes",
+  "implementation_fidelity": "medium",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

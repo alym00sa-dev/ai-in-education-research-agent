@@ -1,0 +1,93 @@
+{
+  "title": "MAGIC: Multi-Agent Argumentation and Grammar Integrated Critiquer",
+  "doi": null,
+  "year": 2026,
+  "venue": "EAAI 2026",
+  "url": "http://arxiv.org/abs/2506.13037v2",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Graduate / Doctoral"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper addresses the problem of automated essay scoring and automated essay feedback for argumentative writing, with a particular focus on moving beyond score prediction toward more interpretable, rubric-aligned feedback. The authors argue that prior work has concentrated heavily on pre-secondary and second-language datasets, leaving a gap for higher-level native and mixed L1/L2 argumentative writing. They also note that classroom usefulness depends on actionable feedback rather than numerical scores alone.\n\nTo address this, the paper introduces MAGIC, a multi-agent framework in which five specialized language-model agents independently evaluate prompt adherence, persuasiveness, organization, vocabulary, and grammar, and an orchestrator agent combines these trait-level judgments into a holistic score and consolidated feedback. The system is evaluated against a single-agent baseline using small open-weight LLMs. The study uses a collated dataset of 48 GRE practice essays with expert holistic scores and human feedback, and one author additionally annotated trait-level scores for all essays to support per-trait evaluation.\n\nThe population represented is GRE test-takers, described as most often post-secondary or university-level writers and a mix of L1 and L2 English writers. The context is not a live classroom intervention but an offline evaluation of model outputs on publicly available GRE practice essays and commentaries. Feedback quality is assessed through comparisons with human feedback using both an LLM judge and human annotation of feedback pairs.\n\nThe main conclusions are that MAGIC improves holistic scoring agreement over a single-agent baseline across tested models and produces feedback that the authors characterize as comparable to human feedback on several dimensions, including relevance, length, and lexical diversity. The paper also finds that the orchestrator approach outperforms simpler aggregation of trait scores. However, the work is based on a small, highly specific GRE dataset and does not test effects on student learning in real instructional settings.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical preprint/accepted conference paper with a clear methodology and benchmark-style comparison against human ratings, but it is not a K-12 classroom comparator study, not randomized, and does not measure student writing outcomes from use of the intervention. Evidence is primarily technical validation on 48 GRE essays.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper shows clear technical improvements in automated scoring/feedback quality, but impact on learners is indirect and unclear because no secondary-school students, classroom implementation, or writing-quality gains are studied. Effects are promising for system performance, not demonstrated educational impact.",
+  "interventions": [
+    {
+      "intervention": "Automated Feedback System",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "Multi-agent LLM system (MAGIC) for automated essay scoring and detailed feedback generation on GRE argumentative essays, evaluating prompt adherence, persuasiveness, organization, vocabulary, and grammar against human scoring/feedback."
+    },
+    {
+      "intervention": "AI Writing / Language Tool",
+      "confidence": 0.78,
+      "role": "secondary",
+      "use_case": "Baseline and comparator LLM-based essay evaluation/writing feedback tools generating holistic scores and feedback for argumentative writing, including single-agent Gemma and Llama models."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Literacy",
+      "confidence": 0.92,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "On 48 GRE essays, the MAGIC automated feedback/scoring system improved holistic essay-scoring agreement with human raters over single-agent LLM baselines. For Gemma 3 12B, QWK increased from 0.607 to 0.762 and RMSE fell from 1.263 to 0.994; for Gemma 3 27B, QWK increased from 0.613 to 0.766 and RMSE from 1.250 to 1.010; for Llama 3.1 8B, QWK increased from 0.605 to 0.731 and RMSE from 1.307 to 1.163. These are scoring/feedback-quality outcomes on postsecondary argumentative writing, not student learning gains from classroom use.",
+        "measure": "Quadratic Weighted Kappa (QWK) and RMSE for holistic essay scoring against human GRE scores; per-trait QWK for rubric dimensions T1-T5",
+        "study_size": "n=48 essays",
+        "effect_size": "QWK gain +0.126 to +0.155 depending on model; RMSE reduction 0.144 to 0.269",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.71,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper positions MAGIC as a way to reduce human grading burden by automating essay scoring and feedback generation, and empirically shows substantial agreement with human raters on 48 GRE essays. However, no direct teacher-time, cost, or workflow outcome is measured; the evidence is limited to system performance metrics and infrastructure reporting (one A100 GPU for 10 hours).",
+        "measure": "Proxy measures of grading/feedback automation performance rather than direct workload metrics",
+        "study_size": "n=48 essays",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.53,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The system targets argumentation-related dimensions such as persuasiveness, organization, and considering complexity of issues, which are adjacent to critical-thinking skills in writing. MAGIC feedback was judged by an LLM to outperform human feedback 69% of the time, but human adjudication preferred MAGIC only 52% of the time across criteria, and the study did not measure student critical-thinking improvement directly.",
+        "measure": "Feedback-quality judgments on argumentation-related criteria and rubric trait scoring; no direct student durable-skills assessment",
+        "study_size": "n=48 essay-feedback pairs",
+        "effect_size": "LLM judge preference 69% for MAGIC vs human; human adjudicator preference 52% for MAGIC averaged across criteria",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "no_control_group",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "lab",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

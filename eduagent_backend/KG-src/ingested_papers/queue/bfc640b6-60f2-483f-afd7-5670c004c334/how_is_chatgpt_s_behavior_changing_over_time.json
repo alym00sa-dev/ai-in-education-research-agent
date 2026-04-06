@@ -1,0 +1,32 @@
+{
+  "title": "How Is ChatGPT\u2019s Behavior Changing over Time?",
+  "doi": null,
+  "year": 2023,
+  "venue": "arXiv",
+  "url": "https://doi.org/10.48550/arxiv.2307.09009",
+  "source_db": "openalex_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper examines whether the behavior and performance of ChatGPT-related models change over time, focusing on the March 2023 and June 2023 versions of GPT-3.5 and GPT-4. The authors argue that opaque model updates make it difficult to reliably integrate these systems into workflows or reproduce prior results. They therefore monitor longitudinal drift across a diverse set of benchmark tasks, including math reasoning, sensitive-question answering, opinion surveys, multi-hop question answering with LangChain/HotpotQA, code generation, USMLE medical questions, and visual reasoning.\n\nThe approach is an observational benchmarking study rather than an educational intervention. The authors repeatedly query the two model versions using fixed prompts and compare outputs across time using task-specific metrics such as accuracy, exact match, response rate, directly executable code, verbosity, and answer mismatch. They also analyze changes in instruction-following behavior, especially chain-of-thought compliance and formatting adherence. The study context is API-based or online use of commercial LLM services, not a classroom or learner-facing deployment.\n\nNo student, teacher, or school participant population is studied, and the paper does not concern grades 9-12 writing, ChatGPT-generated feedback on student drafts, or secondary-school writing outcomes. Accordingly, the paper provides no evidence on subgroup effects by baseline writing proficiency, English learner status, disability, grade, gender, school achievement level, subject area, or genre. It also reports no follow-up or delayed posttest evidence on unaided writing, revision skill, self-efficacy, confidence, metacognition, authorial voice, plagiarism, or overreliance.\n\nThe main conclusion is that both GPT-3.5 and GPT-4 exhibited substantial short-term behavioral drift between March and June 2023, sometimes improving and sometimes worsening depending on the task. GPT-4 often became less willing to answer sensitive or subjective questions and less compliant with some instruction-following and formatting requirements, while GPT-3.5 showed different drift patterns. The authors conclude that continuous monitoring is necessary because the behavior of ostensibly the same LLM service can change meaningfully over short periods.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This paper is an AI systems evaluation of GPT-3.5/GPT-4 behavior drift across benchmark tasks, not an education study and not a K-12 draft-feedback intervention study. It includes no secondary-student sample, no classroom implementation, and no causal or quasi-experimental design relevant to educational outcomes.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "Educational impact cannot be established because the paper does not study student learning or writing outcomes. Its findings are only indirectly relevant by suggesting that ChatGPT behavior can drift over time, which may affect reliability of educational uses, but no direct K-12 impact is measured.",
+  "interventions": [],
+  "outcome_assignments": [],
+  "limitations": [
+    "no_control_group",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

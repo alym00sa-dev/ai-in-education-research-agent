@@ -1,0 +1,40 @@
+{
+  "title": "LEGO-PROVER: NEURAL THEOREM PROVING WITH GROWING LIBRARIES",
+  "doi": null,
+  "year": 2023,
+  "venue": "arXiv",
+  "url": "https://doi.org/10.48550/arxiv.2310.00656",
+  "source_db": "openalex_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper presents LEGO-Prover, a neural theorem-proving framework designed to improve large language model performance on formal mathematics by maintaining a growing library of reusable verified lemmas. The central problem addressed is that existing LLM-based provers often struggle with longer proofs and cannot effectively reuse previously proven intermediate results across problems.\n\nLEGO-Prover introduces two main components: a prover that decomposes a target theorem into subgoals, retrieves relevant lemmas from a vectorized skill library, and constructs proofs in a modular block-by-block style; and an evolver that generalizes or directly solves requested subgoals to create additional reusable skills. The system uses ChatGPT as the LLM, Isabelle as the proof verifier, and is evaluated on the miniF2F benchmark of competition mathematics formalized in Isabelle. The benchmark consists of high-school competition problems, but the paper is about theorem proving infrastructure rather than human learners.\n\nThe results show that LEGO-Prover improves pass rates over prior baselines, reaching 57.0% on miniF2F-valid and 50.0% on miniF2F-test, with the growing skill library contributing to gains over an ablation without the library. The authors conclude that modular proof construction and skill accumulation can make formal theorem proving more effective and bridge the gap between informal and formal mathematical reasoning.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed empirical systems paper, but it is not an education intervention study and does not use a randomized or quasi-experimental design with learner outcomes. Evidence is mainly algorithmic evaluation on theorem-proving benchmarks plus ablations and case analysis.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports moderate benchmark gains for automated theorem proving (e.g., pass rate 48.0% to 57.0% on miniF2F-valid), but this is not direct K-12 student learning impact. Any educational relevance is indirect and confined to formal mathematical reasoning infrastructure rather than classroom outcomes.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.86,
+      "role": "primary",
+      "use_case": "ChatGPT is used as the language model for automated theorem proving in mathematics, generating informal proofs, decomposing proofs into subgoals, formalizing Isabelle proofs, and evolving reusable lemmas/skills in a growing skill library."
+    }
+  ],
+  "outcome_assignments": [],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

@@ -1,0 +1,31 @@
+{
+  "title": "X-GridAgent: An LLM-Powered Agentic AI System for Assisting Power Grid Analysis",
+  "doi": null,
+  "year": 2025,
+  "venue": null,
+  "url": "http://arxiv.org/abs/2512.20789v1",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses the problem of automating complex power grid analysis, which traditionally requires substantial domain expertise, manual effort, and the use of multiple specialized software tools. The authors argue that standalone large language models are insufficient for such tasks because they lack domain-specific grounding and are not inherently reliable for precise engineering computations. The paper therefore asks how an LLM-powered agentic system can support trustworthy, interpretable, and flexible power system analysis through natural-language interaction.\n\nThe proposed intervention is X-GridAgent, an agentic AI system built around a three-layer hierarchical architecture consisting of planning, coordination, and action layers. The system integrates GPT-5 with domain-specific tools and databases via Model Context Protocol servers for retrieval, power flow, optimal power flow, contingency analysis, short-circuit analysis, topology analysis, editing grid parameters, and plotting. Two technical contributions are emphasized: an LLM-driven prompt refinement process with human feedback, and a schema-adaptive hybrid retrieval-augmented generation approach designed for structured power grid datasets. The paper includes system implementation details, illustrative workflows, and test cases showing how the agent decomposes user queries into executable task sequences and invokes professional power-system software to generate results.\n\nThe paper does not study students, teachers, or educational settings. Instead, the intended context is power grid analysis for engineers, researchers, system operators, and other stakeholders, using standard IEEE and Texas synthetic grid datasets plus ERCOT documentation. Empirical evaluation consists of system testing on 11 representative query types, including both simple and multi-step analytical tasks. The authors report that outputs were verified against manually obtained solutions and that each query succeeded across 30 repeated runs with temperature set to zero.\n\nThe main conclusion is that X-GridAgent can reliably automate a wide range of professional power-system analysis tasks through natural-language queries while maintaining interpretability by grounding computation in external domain tools. The authors present the system as a flexible and extensible foundation for future work rather than as a human-subjects evaluation. Because there is no educational population, no controlled comparison, and no participant-based outcome assessment, the paper is not directly relevant evidence for comparative effectiveness of ChatGPT-generated writing feedback in high school education.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This paper is not an education study and does not evaluate a K-12 learning intervention. It is a domain-specific systems paper on LLM-powered power grid analysis, with demonstration-style technical experiments rather than educational comparative-effectiveness methods.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports positive technical system performance for power grid analysis workflows, but it provides no evidence on student learning, writing outcomes, or secondary education populations. Relative to the requested K-12 evidence framework, impact on educational outcomes is therefore unclear and not established.",
+  "interventions": [],
+  "outcome_assignments": [],
+  "limitations": [
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "lab",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

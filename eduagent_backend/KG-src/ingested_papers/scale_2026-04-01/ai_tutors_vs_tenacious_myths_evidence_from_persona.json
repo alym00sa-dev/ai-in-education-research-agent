@@ -1,0 +1,375 @@
+{
+  "title": "AI Tutors vs. Tenacious Myths: Evidence from Personalised Dialogue Interventions in Education",
+  "doi": null,
+  "year": 2025,
+  "venue": null,
+  "url": "https://arxiv.org/abs/2506.09292",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Adult (non-academic)"
+  ],
+  "user_types": [
+    "Community"
+  ],
+  "study_design": "Randomized Controlled Trial (RCT)",
+  "extended_summary": "This paper investigates whether personalized AI dialogue can more effectively reduce stubborn misconceptions in psychology and education than traditional static corrective materials. The authors focus on common myths such as learning styles and the \u201c10% of the brain\u201d belief, arguing that these misconceptions are resistant to standard refutation because they are tied to intuitive thinking and confirmation bias. The study asks whether an AI tutor that engages participants in tailored back-and-forth conversation can produce stronger and more lasting belief change than either a textbook-style refutation passage or a neutral AI conversation.\n\nIn a preregistered experiment, 375 adults recruited via Prolific were randomly assigned to one of three conditions: (1) a personalized three-round AI dialogue using Claude 3.5 Sonnet that targeted each participant\u2019s strongest misconception, (2) a textbook-reading condition with a static refutation passage on the same misconception, or (3) a neutral AI dialogue control on unrelated topics. Participants first rated belief in 16 psychology misconceptions, then received an intervention tailored to their highest-rated misconception. Outcomes were measured immediately after the intervention, again after 10 days, and again after 2 months using repeated belief ratings and post-intervention self-reports of engagement and confidence.\n\nThe study was conducted online using Qualtrics and Prolific with English-fluent adults who had to endorse at least one misconception above a threshold to be eligible. The intervention context was not a formal school classroom; rather, it was an online experimental setting involving members of the general adult population. No teachers were involved in delivery. The AI conditions used live API-based conversational interaction, while the textbook condition used matched-length static reading passages.\n\nThe main finding is that personalized AI dialogue produced the largest immediate reduction in belief in the targeted misconception, outperforming both textbook reading and neutral AI dialogue. This advantage persisted at the 10-day follow-up but was no longer statistically distinguishable from textbook reading at 2 months, although both corrective conditions remained better than the neutral control. Both AI conditions also produced higher self-reported engagement and confidence than textbook reading. However, none of the interventions reduced non-targeted misconceptions, suggesting that the benefits were specific to the addressed belief rather than generalized critical thinking gains. The authors conclude that AI tutoring is promising for accelerating initial misconception correction, but that brief one-off interactions likely need reinforcement to sustain long-term advantages.",
+  "limitations": [
+    "short_duration",
+    "self_reported_measures",
+    "non_representative_population"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "identified_tools": [
+    {
+      "name": "Claude",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "personalization_adaptation"
+      ],
+      "description": "Anthropic's large language model family used as a conversational AI system for interactive dialogue.",
+      "use_case": "Claude was used via API in Qualtrics to deliver a three-round personalized misconception-refutation dialogue targeting each participant's strongest psychology misconception, and also to power a neutral AI dialogue control on unrelated topics.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In a preregistered randomized experiment, the personalized Claude-based misconception dialogue produced significantly lower immediate post-intervention belief in participants' strongest misconception than both neutral AI dialogue and textbook reading, controlling for pre-intervention belief. Post-intervention means were Misconception AI M=50.68 (SD=31.51), Neutral AI M=85.88 (SD=16.99), and Textbook Reading M=61.47 (SD=32.83); the Misconception AI vs Neutral AI mean difference was 36.55 (SE=3.43), 95% CI [29.80, 43.30], t(371)=10.65, p<.001, and Misconception AI vs Textbook difference was 9.77 (SE=3.43), 95% CI [3.02, 16.52], t(371)=2.85, p=.013.",
+          "measure": "Belief rating in highest-rated misconception on a 0-100 scale, immediately post-intervention",
+          "effect_size": "not_reported",
+          "confidence_interval": "95% CI [29.80, 43.30] and 95% CI [3.02, 16.52]",
+          "sample_size": "n=375"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "For participants with complete longitudinal data, the personalized Claude-based misconception dialogue maintained lower belief ratings than both comparison conditions at 10 days. At 10 days, Misconception AI was lower than Neutral AI by 29.1 points, 95% CI [19.52, 38.70], t(307)=-7.16, p<.001, and lower than Textbook Reading by 12.2 points, 95% CI [3.04, 21.30], t(307)=-3.14, p=.005.",
+          "measure": "Belief rating in highest-rated misconception at 10-day follow-up",
+          "effect_size": "not_reported",
+          "confidence_interval": "95% CI [19.52, 38.70] and 95% CI [3.04, 21.30]",
+          "sample_size": "n=complete-case sample, df=307"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "By 2 months, the personalized Claude-based misconception dialogue remained superior to Neutral AI but was no longer statistically different from Textbook Reading. Misconception AI differed from Neutral AI by 19.95 points, 95% CI [10.28, 29.60], t(307)=-4.86, p<.001, while the Misconception AI vs Textbook Reading contrast was -8.11 points, 95% CI [-17.3, 1.12], t(307)=-2.07, p\u2248.10.",
+          "measure": "Belief rating in highest-rated misconception at 2-month follow-up",
+          "effect_size": "not_reported",
+          "confidence_interval": "95% CI [10.28, 29.60] and 95% CI [-17.3, 1.12]",
+          "sample_size": "n=complete-case sample, df=307"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "The Claude-based misconception dialogue did not produce broader reductions in non-targeted misconceptions relative to textbook or neutral AI conditions. Repeated-measures ANCOVA found no significant main effect of Intervention Type, F(2, 307)=1.42, p=.24, no main effect of Time, F(2, 614)=2.24, p=.108, and no Condition \u00d7 Time interaction, F(4, 614)=1.52, p=.20.",
+          "measure": "Mean belief ratings for non-targeted misconceptions across post, 10-day, and 2-month assessments",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=complete-case sample, df=307"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Participants in both Claude-based AI dialogue conditions reported higher engagement than textbook reading. Misconception AI engagement was M=84.86 (SD=17.30) versus Textbook Reading M=75.36 (SD=21.19), mean difference=9.50, 95% CI [3.72, 15.28], p<.001; Neutral AI engagement was M=81.50 (SD=19.57) and also exceeded Textbook Reading by 6.14, 95% CI [0.36, 11.92], p=.034.",
+          "measure": "Self-reported engagement rating (0-100)",
+          "effect_size": "\u03b7\u00b2=.04",
+          "confidence_interval": "95% CI [3.72, 15.28] and 95% CI [0.36, 11.92]",
+          "sample_size": "n=375"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Participants in both Claude-based AI dialogue conditions reported higher confidence than textbook reading, though the personalized misconception dialogue was not significantly different from neutral AI dialogue. Misconception AI confidence was M=76.29 (SD=19.19) versus Textbook Reading M=63.29 (SD=21.22), mean difference=13.00, 95% CI [7.24, 18.76], p<.001; Neutral AI confidence was M=80.16 (SD=17.45), exceeding Textbook Reading by 16.87, 95% CI [11.11, 22.63], p<.001.",
+          "measure": "Self-reported confidence in explaining the discussed topics (0-100)",
+          "effect_size": "\u03b7\u00b2=.12",
+          "confidence_interval": "95% CI [7.24, 18.76] and 95% CI [11.11, 22.63]",
+          "sample_size": "n=375"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is a preregistered randomized experiment with a reasonably large sample (N=375) and follow-up measurement, which strengthens causal inference. However, it is a preprint not yet peer reviewed, and some reporting lacks standardized effect sizes, so it falls short of blue.",
+  "impact_tier": "green",
+  "impact_tier_rationale": "The paper reports clear positive immediate and short-term effects on targeted misconception belief reduction, with sizeable mean differences, but the advantage over textbook reading attenuates by 2 months and no generalized transfer was found. Because standardized effect sizes are not reported and durability is mixed, the impact is best rated as green rather than blue.",
+  "citations": [
+    {
+      "title": "Information Delivered by a Chatbot Has a Positive Impact on COVID-19 Vaccines Attitudes and Intentions",
+      "doi": "10.1037/xap0000400",
+      "year": 2023,
+      "venue": "Journal of Experimental Psychology: Applied",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Uniting the Tribes of Fluency to Form a Metacognitive Nation",
+      "doi": "10.1177/1088868309341564",
+      "year": 2009,
+      "venue": "Personality and Social Psychology Review",
+      "citation_level": 2,
+      "citation_context": "processing fluency explanation for AI\u2019s short-term persuasive advantage"
+    },
+    {
+      "title": "The use of the Rorschach Test in Switzerland 100 years after its publication: Results of a Swiss survey",
+      "doi": "10.1027/1192-5604/a000180",
+      "year": 2024,
+      "venue": "Rorschachiana",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Fake news, fast and slow: Deliberation reduces belief in false (but not true) news headlines",
+      "doi": "10.1037/xge0000729",
+      "year": 2020,
+      "venue": "Journal of Experimental Psychology: General",
+      "citation_level": 2,
+      "citation_context": "analytical thinking contrasted with passive acceptance of misinformation"
+    },
+    {
+      "title": "Test use and assessment practices of school psychologists in the United States: Findings from the 2017 National Survey",
+      "doi": "10.1016/j.jsp.2018.12.004",
+      "year": 2019,
+      "venue": "Journal of School Psychology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Misconceptions about psychology after taking introductory psychology",
+      "doi": "10.1037/stl0000374",
+      "year": 2023,
+      "venue": "Scholarship of Teaching and Learning in Psychology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The 2 sigma problem: The search for methods of group instruction as effective as one-to-one tutoring",
+      "doi": "10.3102/0013189X013006004",
+      "year": 1984,
+      "venue": "Educational Researcher",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The differential impact of abstract vs. concrete information on decisions",
+      "doi": "10.1111/j.1559-1816.1977.tb00750.x",
+      "year": 1977,
+      "venue": "Journal of Applied Social Psychology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Persuasive Power of Large Language Models",
+      "doi": "10.48550/arxiv.2312.15523",
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Debunking: A meta-analysis of the psychological efficacy of messages countering misinformation",
+      "doi": "10.1177/0956797617714579",
+      "year": 2017,
+      "venue": "Psychological Science",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Active-constructive-interactive: A conceptual framework for differentiating learning activities",
+      "doi": "10.1111/j.1756-8765.2008.01005.x",
+      "year": 2009,
+      "venue": "Topics in Cognitive Science",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Learning from human tutoring",
+      "doi": "10.1207/s15516709cog2504_1",
+      "year": 2001,
+      "venue": "Cognitive Science",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Durably reducing conspiracy beliefs through dialogues with AI",
+      "doi": "10.1126/science.adq1814",
+      "year": 2024,
+      "venue": "Science",
+      "citation_level": 3,
+      "citation_context": "adapted AI dialogue methodology and primary comparison framework"
+    },
+    {
+      "title": "Just the facts: How dialogues with AI reduce conspiracy beliefs",
+      "doi": "10.31234/osf.io/h7n8u_v2",
+      "year": 2025,
+      "venue": "PsyArXiv",
+      "citation_level": 2,
+      "citation_context": "mechanistic account that factual counterarguments drive AI belief change"
+    },
+    {
+      "title": "Is learning styles-based instruction effective? A comprehensive analysis of recent research on learning styles",
+      "doi": "10.1177/1477878515606621",
+      "year": 2015,
+      "venue": "Theory and Research in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The effectiveness of refutation text in confronting scientific misconceptions: A meta-analysis",
+      "doi": "10.1080/00461520.2024.2365628",
+      "year": 2024,
+      "venue": "Educational Psychologist",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Neuromyths in Education: Prevalence and Predictors of Misconceptions among Teachers",
+      "doi": "10.3389/fpsyg.2012.00429",
+      "year": 2012,
+      "venue": "Frontiers in Psychology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Personalized refutation texts best stimulate teachers\u2019 conceptual change about multimedia learning",
+      "doi": "10.1111/jcal.12671",
+      "year": 2022,
+      "venue": "Journal of Computer Assisted Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Measuring actual learning versus feeling of learning in response to being actively engaged in the classroom",
+      "doi": "10.1073/pnas.1821936116",
+      "year": 2019,
+      "venue": "Proceedings of the National Academy of Sciences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The psychological drivers of misinformation belief and its resistance to correction",
+      "doi": "10.1038/s44159-021-00006-y",
+      "year": 2022,
+      "venue": "Nature Reviews Psychology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Explicit warnings reduce but do not eliminate the continued influence of misinformation",
+      "doi": "10.3758/MC.38.8.1087",
+      "year": 2010,
+      "venue": "Memory & Cognition",
+      "citation_level": 2,
+      "citation_context": "used to explain decay and return of misconceptions over time"
+    },
+    {
+      "title": "The effectiveness of short-format refutational fact-checks",
+      "doi": "10.1111/bjop.12383",
+      "year": 2019,
+      "venue": "British Journal of Psychology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Dual-process theories of higher cognition: Advancing the debate",
+      "doi": "10.1177/1745691612460685",
+      "year": 2013,
+      "venue": "Perspectives on Psychological Science",
+      "citation_level": 2,
+      "citation_context": "dual-process account of intuitive misconceptions and correction"
+    },
+    {
+      "title": "Active learning increases student performance in science, engineering, and mathematics",
+      "doi": "10.1073/pnas.1319030111",
+      "year": 2014,
+      "venue": "Proceedings of the National Academy of Sciences",
+      "citation_level": 2,
+      "citation_context": "active cognitive processing benefits invoked to explain AI dialogue"
+    },
+    {
+      "title": "Artificial influence? Comparing AI and human persuasion in reducing belief certainty",
+      "doi": "10.31219/osf.io/2vh4k",
+      "year": 2024,
+      "venue": "OSF Preprints",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Promoting conceptual change in science: A comparative meta-analysis of instructional interventions from reading education and science education",
+      "doi": "10.2307/747886",
+      "year": 1993,
+      "venue": "Reading Research Quarterly",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Comparing the persuasiveness of role-playing large language models and human experts on polarized U.S. political issues",
+      "doi": "10.31219/osf.io/ey8db",
+      "year": 2023,
+      "venue": "OSF Preprints",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The power of feedback",
+      "doi": "10.3102/003465430298487",
+      "year": 2007,
+      "venue": "Review of Educational Research",
+      "citation_level": 2,
+      "citation_context": "immediate contingent feedback explains conversational tutoring benefits"
+    },
+    {
+      "title": "Combining anecdotal and statistical evidence in real-life discourse: Comprehension and persuasiveness",
+      "doi": "10.1080/0163853X.2017.1312195",
+      "year": 2018,
+      "venue": "Discourse Processes",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Neuroscience and education: myths and messages",
+      "doi": "10.1038/nrn3817",
+      "year": 2014,
+      "venue": "Nature Reviews Neuroscience",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Thinking, fast and slow",
+      "doi": null,
+      "year": 2011,
+      "venue": "Farrar, Straus and Giroux",
+      "citation_level": 2,
+      "citation_context": "fast versus slow thinking framework for misconception persistence"
+    },
+    {
+      "title": "AI tutoring outperforms active learning in a randomized controlled trial",
+      "doi": "10.48550/arXiv.2402.05408",
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Effectiveness of Intelligent Tutoring Systems: A Meta-Analytic Review",
+      "doi": "10.3102/0034654315581420",
+      "year": 2016,
+      "venue": "Review of Educational Research",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

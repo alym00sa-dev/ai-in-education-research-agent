@@ -1,0 +1,66 @@
+{
+  "title": "A mathematical model for the bullying dynamics in schools",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2501.04752v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "K-12 (unspecified grade)"
+  ],
+  "user_types": [
+    "Student",
+    "School",
+    "Parent"
+  ],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses the problem of bullying in schools and asks how bullying dynamics can be represented and controlled using a mathematical model. Rather than studying an educational technology intervention or an instructional program, the paper develops a compartmental framework that treats bullying as a contagion-like social process. The model is motivated by school-based bullying, peer conflict, teacher and parent intervention, and the possibility that bullying can escalate into more violent behavior.\n\nThe proposed approach divides individuals into four states: susceptible, bully, exposed to bullying, and violent. Transitions between states occur through social interaction and spontaneous recovery-like processes, with parameters representing recruitment into bullying, exposure to victimization, anti-bullying school control, family intervention, escalation to violence, and de-escalation. The model is analyzed both analytically, through differential equations and stability analysis, and numerically, including simulations on two-dimensional grids.\n\nThe paper\u2019s main conclusion is that bullying-free and endemic regimes can both occur, depending mainly on the relative strength of bullying contagion versus school control. In particular, bullying disappears when the contagion parameter is below the control parameter, while sustained bullying persists when contagion is stronger. The results suggest that effective anti-bullying school programs and parental actions can reduce or eliminate bullying, and that stronger intervention decreases the endemic level of bullying and violence.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a theoretical/mathematical modeling paper with no empirical design, no participant sample, and no intervention evaluation. It provides conceptual analysis rather than evidence meeting causal-inference criteria.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "The paper does not evaluate an actual educational technology or produce measurable student outcome impacts. Its implications for school bullying control are model-based and therefore not directly translatable into an effect size or impact estimate.",
+  "interventions": [],
+  "outcome_assignments": [
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "This is a theoretical compartmental model of bullying dynamics in schools, not an intervention study. It does not report empirical effect sizes or a sample; instead, it analytically and numerically shows that bullying can either die out or persist depending on parameters, especially the recruitment/contagion rate \u03b1 relative to the recovery/control rate \u03b3 (threshold at R0=\u03b1/\u03b3=1).",
+        "measure": "Model-derived equilibrium densities and stability of bullying-related compartments (S, B, E, V)",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Systemic / Institutional Impact",
+      "confidence": 0.91,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The paper argues that stronger school anti-bullying programs and parental intervention reduce the endemic level of bullying in the model, with the bullying-free equilibrium stable when \u03b1<\u03b3 and the endemic equilibrium stable when \u03b1>\u03b3. However, these are simulation/analytic results from a stylized model rather than observed program impacts, so no empirical effect size or sample is reported.",
+        "measure": "Analytical stability analysis and numerical simulations of anti-bullying control in a school system model",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Brazil",
+  "study_region": "Latin America & Caribbean",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

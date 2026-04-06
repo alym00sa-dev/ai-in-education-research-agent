@@ -1,0 +1,92 @@
+{
+  "title": "Interacting with educational chatbots: A systematic review",
+  "doi": "10.1007/s10639-022-11177-3",
+  "year": 2022,
+  "venue": "Education and Information Technologies",
+  "url": "https://doi.org/10.1007/s10639-022-11177-3",
+  "source_db": "openalex_search",
+  "populations": [],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Meta-Analysis / Systematic Review",
+  "extended_summary": "This paper addresses the growing use of educational chatbots and the lack of a comprehensive synthesis of how they are designed, deployed, and evaluated in education. The authors conduct a systematic review of 36 studies published between 2011 and 2021 to understand educational chatbots across seven dimensions: field of application, platform, educational role, interaction style, design principles, empirical evidence, and limitations.\n\nThe review focuses on chatbot-based educational interventions rather than a single implementation. Across the included studies, chatbots were mainly used in computer science, general education, language learning, and a smaller set of other subjects. Most systems were web-based and functioned as teaching agents or peer agents; most used chatbot-driven, flow-based interaction, while a smaller set used intent-based or user-driven conversation. The review also identifies design principles such as personalized learning, experiential learning, social dialog, collaborative learning, affective learning, learning by teaching, and scaffolding.\n\nThe paper concludes that educational chatbots often improve learning, engagement, and subjective satisfaction, especially in experimental studies, but the evidence base is limited by issues such as insufficient dataset training and weak reliance on usability heuristics. The authors argue that future work should better examine chatbot personality, localization, and other implementation features that may affect satisfaction and learning outcomes.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a systematic review, but the paper itself is a secondary synthesis rather than a primary experimental study. It summarizes heterogeneous studies with varying methods and without a full meta-analytic effect estimate, so credibility is moderate rather than high.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The review suggests generally positive effects on learning and engagement, but the evidence is heterogeneous and effect sizes are usually not reported in the review. The impact appears promising but still modest/unclear at the aggregate level for K-12 use.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "Systematic review of educational chatbots and conversational agents used as teaching agents, peer agents, teachable agents, and motivational agents in K-12 and broader education; includes scripted and AI-driven dialogue systems for tutoring, FAQ answering, scaffolding, and personalized learning support."
+    },
+    {
+      "intervention": "Intelligent Tutoring System (ITS)",
+      "confidence": 0.78,
+      "role": "secondary",
+      "use_case": "Review includes conversational pedagogical agents described as virtual tutors with adaptive feedback, step-by-step guidance, formative assessment, and personalized learning paths, overlapping with classical intelligent tutoring systems."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.8,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "Across 36 reviewed papers, the authors report that empirical evaluations of educational chatbots primarily point to improved learning outcomes and subjective satisfaction, with many studies using experiments or evaluation studies. Reported positive effects include improved learning in programming, math, and other subject areas, but the review also notes at least one study with no evidence for sustained engagement over 8 weeks.",
+        "measure": "Learning outcomes, post-tests, quizzes, subjective satisfaction, engagement, and interest in learning",
+        "study_size": "n=36 studies reviewed; individual experiments ranged from n=28 to n=1000",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.72,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The review finds that chatbot interventions were commonly associated with improved subjective satisfaction, engagement, and interest in learning, especially when chatbots used personalized, affective, or socially dialogic designs. However, the evidence is mixed because one longitudinal English-learning study reported declining interest in communicating with the chatbot over 8 weeks.",
+        "measure": "Engagement, interest in learning, subjective satisfaction",
+        "study_size": "n=36 studies reviewed; notable experiments included n=34, n=56, n=122, n=182",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.7,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The review reports several chatbot studies aimed at scaffolding, collaborative learning, and argumentation, with positive evidence in some experiments. For example, a chatbot-assisted writing study reported better formal argumentation quality, and other studies claimed improvements in collaboration and critical thinking processes through guided discussion and peer-agent support.",
+        "measure": "Formal argumentation quality, collaboration, critical thinking-related outcomes",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "no_control_group",
+    "self_reported_measures",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

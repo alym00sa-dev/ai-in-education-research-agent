@@ -1,0 +1,378 @@
+{
+  "title": "Intelligent Tutors Beyond K-12: An Observational Study of Adult Learner Engagement and Academic Impact",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2502.16613v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper examines whether intelligent tutoring systems, which have mostly been studied in K-12 settings, can also benefit adult learners in postsecondary education when use is voluntary rather than required. The authors focus on two questions: how optional tutor use relates to adult learners\u2019 academic outcomes, and what demographic or behavioral characteristics distinguish adults who choose to use intelligent tutors.\n\nThe intervention studied is the Apprentice Tutors platform, a set of adaptive College Algebra tutors integrated into Blackboard and Canvas via LTI at a state technical college. The tutors provided real-time correctness feedback, Bayesian Knowledge Tracing-based adaptive problem selection, multi-layered hints, progress tracking, tutorial videos, links to textbook and YouTube resources, and a bug/Q&A feature. The study analyzed two years of platform deployment data, combining tutor interaction logs with institutional grades and demographic records. Analyses included descriptive statistics, usage analyses, learning-curve modeling, and regression analysis.\n\nThe population was adult learners enrolled in College Algebra at a 2-year state technical college in the United States, many of whom balanced work with night, hybrid, in-person, or online study. The dataset included 3,510 students overall, with 520 students using the tutors at least once and 214 using them in Unit 1, which had the greatest tutor coverage. Tutor users were more likely to be female and slightly older than non-users, and usage was concentrated in evenings, late nights, and on Thursdays, suggesting that flexibility mattered for this learner population.\n\nThe main conclusion is that voluntary use of intelligent tutors appears promising for adult postsecondary learners. Students showed reduced error rates with more practice inside the tutors, and tutor use was positively associated with higher Unit 1 assessment scores outside the tutor. However, because the study was observational and lacked random assignment, the authors emphasize that these findings are preliminary and do not establish causality. They argue that intelligent tutors are a viable supplementary resource for adult learners and recommend future randomized studies and broader tutor coverage to test long-term and more generalizable effects.",
+  "limitations": [
+    "single_site",
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "blended",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "Apprentice Tutors",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "personalization_adaptation"
+      ],
+      "description": "A novel intelligent tutoring system platform for College Algebra that offers topic-specific tutors with adaptive problem selection using Bayesian Knowledge Tracing, real-time correctness feedback, multi-layer hints, progress tracking, and LMS integration via LTI.",
+      "use_case": "Studied as an optional supplemental tutoring resource for adult learners in a state technical college's College Algebra course, with analysis of voluntary usage, in-tutor learning, demographics, and associations with Unit 1 course assessment performance.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Within the tutor, student error rates decreased with increasing practice opportunities, indicating skill improvement over time. The paper reports that students initially had an average error rate of approximately 65% per skill on their first attempt, and the decrease in predicted error rate over practice was significant (p < 0.001); the plotted learning curve included a 95% confidence interval, but no standardized effect size was reported.",
+          "measure": "Predicted error rate across skill practice opportunities in tutor log data modeled with pyAFM/Additive Factors Model",
+          "effect_size": "not_reported",
+          "confidence_interval": "95% confidence interval shown in Figure 8; exact interval not reported",
+          "sample_size": "n=214"
+        },
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Tutor users achieved slightly higher mean grades on the Unit 1 assessment than non-tutor users, and the paper describes this as preliminary evidence that learning transferred outside the tutor. Because the study was observational, the authors explicitly state that causal inference cannot be made from this comparison; exact group means were not reported in the text, though Figure 9 shows 95% confidence intervals.",
+          "measure": "Unit 1 course assessment grades comparing tutor users vs. non-tutor users",
+          "effect_size": "not_reported",
+          "confidence_interval": "95% confidence intervals shown in Figure 9; exact interval not reported",
+          "sample_size": "n=3510"
+        },
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "A linear regression found a significant positive relationship between amount of tutor use and Unit 1 grade. The Transactions predictor had estimate = 0.26, error = 0.08, t = 3.39, p < 0.001, with intercept = 66.57 (error = 0.34, t = 193.59, p < 0.001), suggesting more tutor transactions were associated with higher grades, though the authors note tutor usage explained only a small proportion of grade variance.",
+          "measure": "Linear regression of Unit 1 assessment grade on number of tutor transactions",
+          "effect_size": "Transactions estimate = 0.26",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=214"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an observational quasi-experimental study using platform logs, demographics, and course grades, but without randomization or a true control design. The authors explicitly note that causal conclusions cannot be drawn, so the evidence quality is correlational rather than experimental.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "Findings are consistently positive but effect sizes are not standardized and the paper characterizes the grade relationship as modest, with tutor use accounting for only a small proportion of variance. Impact is therefore promising but unclear in magnitude.",
+  "citations": [
+    {
+      "title": "Toward Meta-Cognitive Tutoring: A Model of Help Seeking with a Cognitive Tutor",
+      "doi": "10.1007/978-3-540-30139-4_22",
+      "year": 2004,
+      "venue": "Intelligent Tutoring Systems: 7th International Conference, ITS 2004",
+      "citation_level": 3,
+      "citation_context": "observational ITS study design precedent"
+    },
+    {
+      "title": "Using thematic analysis in psychology",
+      "doi": "10.1191/1478088706qp063oa",
+      "year": 2006,
+      "venue": "Qualitative Research in Psychology",
+      "citation_level": 3,
+      "citation_context": "thematic analysis basis for prior tutor extension work"
+    },
+    {
+      "title": "Powerful Techniques for Teaching Adults",
+      "doi": null,
+      "year": 2013,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "AI in CAI: An artificial-intelligence approach to computer-assisted instruction",
+      "doi": "10.1109/TMMS.1970.299942",
+      "year": 1970,
+      "venue": "IEEE Transactions on Man-Machine Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Distributed practice in verbal recall tasks: A review and quantitative synthesis",
+      "doi": null,
+      "year": 2006,
+      "venue": "Psychological Bulletin",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Characteristics of adult learners with implications for online learning design",
+      "doi": null,
+      "year": 2008,
+      "venue": "AACE Journal",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "From Guidon to Neomycin and Heracles in Twenty Short Lessons",
+      "doi": "10.1609/aimag.v7i3.548",
+      "year": 1986,
+      "venue": "AI Magazine",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Learning Tools Interoperability (LTI)",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "LTI standard used for data integration"
+    },
+    {
+      "title": "Knowledge tracing: Modeling the acquisition of procedural knowledge",
+      "doi": "10.1007/BF01099821",
+      "year": 1995,
+      "venue": "User Modeling and User-Adapted Interaction",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Perceived usefulness, perceived ease of use, and user acceptance of information technology",
+      "doi": null,
+      "year": 1989,
+      "venue": "MIS Quarterly",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Gamification: Toward a definition",
+      "doi": null,
+      "year": 2011,
+      "venue": "Proceedings of the 2011 annual conference extended abstracts on Human factors in computing systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Self-directed learning: Toward a comprehensive model",
+      "doi": null,
+      "year": 1997,
+      "venue": "Adult Education Quarterly",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Intelligent Tutors for Adult Learners: An Analysis of Needs and Challenges",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_level": 2,
+      "citation_context": "prior needs analysis motivating tutor design and discussion"
+    },
+    {
+      "title": "Reframing the meaning of self-directed learning: An updated model",
+      "doi": null,
+      "year": 2012,
+      "venue": "Proceedings of the Adult Education Research Conference",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Motivation as a lens to understand online learners: Toward data-driven design with the OLEI scale",
+      "doi": null,
+      "year": 2015,
+      "venue": "ACM Transactions on Computer-Human Interaction",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Adult Learner: A Neglected Species",
+      "doi": null,
+      "year": 1984,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Adult Learner: The Definitive Classic in Adult Education and Human Resource Development",
+      "doi": null,
+      "year": 2015,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Intelligent Tutoring Goes To School in the Big City",
+      "doi": null,
+      "year": 1997,
+      "venue": "International Journal of Artificial Intelligence in Education",
+      "citation_level": 3,
+      "citation_context": "observational ITS methodology precedent"
+    },
+    {
+      "title": "Multiple agent designs in conversational intelligent tutoring systems",
+      "doi": null,
+      "year": 2020,
+      "venue": "Technology, Knowledge and Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Intelligent tutoring systems and learning outcomes: A meta-analysis",
+      "doi": null,
+      "year": 2014,
+      "venue": "Journal of Educational Psychology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Domain-General Tutor Authoring with Apprentice Learner Models",
+      "doi": "10.1007/s40593-020-00214-2",
+      "year": 2022,
+      "venue": "International Journal of Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Investigating the Impact of Slipping Parameters on Additive Factors Model Parameter Estimates",
+      "doi": "10.1007/s40593-024-00299-4",
+      "year": 2016,
+      "venue": "International Journal of Artificial Intelligence in Education",
+      "citation_level": 3,
+      "citation_context": "pyAFM and AFM learning-curve modeling source"
+    },
+    {
+      "title": "Andragogy and self-directed learning: Pillars of adult learning theory",
+      "doi": null,
+      "year": 2001,
+      "venue": "New Directions for Adult and Continuing Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Adult Learning: Linking Theory and Practice",
+      "doi": null,
+      "year": 2014,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Evaluation of a constraint-based tutor for a database language",
+      "doi": null,
+      "year": 1999,
+      "venue": "International Journal of Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Research on the Use of Khan Academy in Schools: Research Brief",
+      "doi": null,
+      "year": 2014,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Gender differences in perceptions and relationships among dominants of e-learning acceptance",
+      "doi": null,
+      "year": 2006,
+      "venue": "Computers in Human Behavior",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Intermediate Algebra, 2e",
+      "doi": null,
+      "year": 2020,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "course curriculum and tutor content source"
+    },
+    {
+      "title": "Effectiveness of Cognitive Tutor Algebra I at Scale",
+      "doi": "10.3102/0162373713507480",
+      "year": 2014,
+      "venue": "Educational Evaluation and Policy Analysis",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "To tutor or not to tutor: That is the question",
+      "doi": "10.1007/978-3-642-13388-6_49",
+      "year": 2010,
+      "venue": "Intelligent Tutoring Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Generalized Intelligent Framework for Tutoring (GIFT) as a tool for human factors professionals",
+      "doi": "10.1177/1541931214581147",
+      "year": 2014,
+      "venue": "Proceedings of the Human Factors and Ergonomics Society Annual Meeting",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The role of moderating factors in user technology acceptance",
+      "doi": null,
+      "year": 2006,
+      "venue": "International Journal of Human-Computer Studies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Relative Effectiveness of Human Tutoring, Intelligent Tutoring Systems, and Other Tutoring Systems",
+      "doi": "10.1080/00461520.2011.611369",
+      "year": 2011,
+      "venue": "Educational Psychologist",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The relative effectiveness of human tutoring, intelligent tutoring systems, and other tutoring systems",
+      "doi": null,
+      "year": 2011,
+      "venue": "Educational Psychologist",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Duolingo Effectiveness Study",
+      "doi": null,
+      "year": 2012,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Large-scale randomized controlled trial with 4th graders using intelligent tutoring of the structure strategy to improve nonfiction reading comprehension",
+      "doi": "10.1007/s11423-012-9263-4",
+      "year": 2012,
+      "venue": "Education Tech Research Dev",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Educational Media in Distance Education: Theory and Practice",
+      "doi": null,
+      "year": 2014,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

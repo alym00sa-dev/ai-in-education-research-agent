@@ -1,0 +1,142 @@
+{
+  "title": "Turning Language Model Training from Black Box into a Sandbox",
+  "doi": null,
+  "year": 2026,
+  "venue": "IEEE",
+  "url": "https://arxiv.org/abs/2601.21631",
+  "source_db": "scale_stanford",
+  "population": "Undergraduate",
+  "user_type": "Student",
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper examines how to make the mechanics of generative AI more understandable to learners, rather than limiting classroom engagement to prompting pre-trained language models. The authors argue that most educational uses of large language models obscure the role of training data and model training, which can leave students with anthropomorphic or otherwise misconceived explanations of how these systems work. The study asks whether a short hands-on experience training a small language model can shift students\u2019 explanations of incorrect or strange model outputs toward more accurate, data- and model-based reasoning.\n\nTo address this, the authors developed the Little Language Machine, a browser-based environment that allows learners to train a miniature transformer language model entirely on their own devices. Students can upload or select text corpora, choose model configurations, observe training loss and generated outputs in real time, and experiment with prompting and fine-tuning. The system is designed to make the full workflow of language model training visible, from data selection through training and generation, while remaining practical for educational use on typical student laptops and Chromebooks.\n\nThe intervention was implemented in a mandatory first-year Introduction to Computing (CS1) course at a Finnish university. The study reports that 162 students completed the full sequence of pre-test, homework activity, and post-test with consent. The intervention lasted one week and consisted of open-ended pre/post questions about why language models produce incorrect, implausible, or nonsensical text, along with a structured homework task using the tool. Student responses were analyzed qualitatively through inductive content analysis, and the authors also report quantitative shifts in category frequencies, including a statistically significant increase in explanations focused on training data.\n\nThe main conclusion is that even a brief hands-on model-training activity can move students away from misconceptions such as thinking language models search the web or simply mistranslate, and toward more disciplinary explanations emphasizing training data, model limitations, and stochastic generation. The authors conclude that transparent, trainable AI tools can support AI literacy in introductory computing education by helping students see language models as statistical systems shaped by data and training rather than as opaque black boxes.",
+  "limitations": [
+    "short_duration",
+    "single_site",
+    "no_control_group",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "1",
+  "setting": "blended",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Finland",
+  "study_region": "Europe",
+  "identified_tools": [
+    {
+      "name": "The Little Language Machine",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "language_speech",
+        "tutoring_instruction"
+      ],
+      "description": "A browser-native learning environment in which learners train a small transformer language model entirely on their own device, with visible data selection, training, evaluation, and text generation.",
+      "use_case": "Used in a first-year CS1 course as a one-week hands-on activity where students selected datasets, configured and trained miniature transformer models in-browser, observed output changes during training, and reflected on why language models produce incorrect or strange text.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In 162 students who completed the pre-test, intervention, and post-test, explanations shifted from anthropomorphic or misconceived accounts toward data- and model-based reasoning after using The Little Language Machine. The proportion attributing incorrect output to training data increased from 13% to 38%, a statistically significant change (two-proportion z = 5.09, p < .001).",
+          "measure": "Open-ended pre/post explanations coded into conceptual categories; proportion attributing incorrect output to training data",
+          "effect_size": "z = 5.09, p < .001",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=162"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Misconceptions that language models 'search the web' or 'mistranslate from English to Finnish' decreased substantially after the intervention. Mentions of these misconceptions fell from 37 in the pre-test to 10 in the post-test among the 162 matched participants.",
+          "measure": "Coded frequency of misconception categories in open-ended pre/post responses",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=162"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical pre/post intervention study with qualitative content analysis and a statistical test, but it does not report randomization, a control group, or stronger causal design features. The evidence is promising yet methodologically limited compared with RCTs or rigorous QEDs.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports statistically significant conceptual shifts, but does not provide standardized effect sizes or broader academic achievement outcomes. Impact appears positive but remains unclear in magnitude.",
+  "citations": [
+    {
+      "title": "AI literacy in K-12 and higher education in the wake of generative AI: An integrative review",
+      "doi": "10.1145/3702652.3744217",
+      "year": 2025,
+      "venue": "Proceedings of the 2025 ACM Conference on International Computing Education Research V.1"
+    },
+    {
+      "title": "Teaching AI to K-12 learners: Lessons, issues, and guidance",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of ACM Computer Science Education (SIGCSE) 2024 Conference"
+    },
+    {
+      "title": "Youth as designers of artificial intelligence and machine learning technologies: What do we know about the opportunities and challenges of K-12 students creating their own applications?",
+      "doi": null,
+      "year": 2025,
+      "venue": "Proceedings of the 19th International Conference of the Learning Sciences"
+    },
+    {
+      "title": "Towards transformative AI education through cross-boundary co-design",
+      "doi": null,
+      "year": 2025,
+      "venue": "Proceedings of the International Conference on Smart Learning Environments"
+    },
+    {
+      "title": "Radical-transformative agency: Continuities and contrasts with relational agency and implications for education",
+      "doi": null,
+      "year": 2019,
+      "venue": "Frontiers in Education"
+    },
+    {
+      "title": "Critical artificial intelligence literacy: A scoping review and framework synthesis",
+      "doi": null,
+      "year": 2025,
+      "venue": "International Journal of Child-Computer Interaction"
+    },
+    {
+      "title": "Transformative agency \u2013 the next step towards children\u2019s computational empowerment",
+      "doi": "10.1145/3628516.3655806",
+      "year": 2024,
+      "venue": "Proceedings of the 23rd Annual ACM Interaction Design and Children Conference"
+    },
+    {
+      "title": "Teachable machine: Approachable web-based tool for exploring machine learning classification",
+      "doi": "10.1145/3334480.3382839",
+      "year": 2020,
+      "venue": "The 2020 CHI Conference on Human Factors in Computing Systems"
+    },
+    {
+      "title": "Children\u2019s AI design platform for making and deploying ML-driven apps",
+      "doi": null,
+      "year": 2024,
+      "venue": null
+    },
+    {
+      "title": "nanoGPT",
+      "doi": null,
+      "year": 2023,
+      "venue": null
+    },
+    {
+      "title": "The Finnish Code of Conduct for Research Integrity and Procedures for Handling Alleged Violations of Research Integrity in Finland",
+      "doi": null,
+      "year": 2023,
+      "venue": "Publications of the Finnish National Board on Research Integrity"
+    },
+    {
+      "title": "The qualitative content analysis process",
+      "doi": null,
+      "year": 2008,
+      "venue": "Journal of advanced nursing"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

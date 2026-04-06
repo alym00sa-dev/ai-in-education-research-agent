@@ -1,0 +1,154 @@
+{
+  "title": "HESEIA: A community-based dataset for evaluating social biases in large language models, co-designed in real school settings in Latin America",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2505.24712v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses the lack of community-grounded, context-sensitive benchmarks for evaluating social bias in large language models (LLMs). The authors argue that existing bias datasets are often crowdsourced, centered on dominant cultures, and insufficiently representative of the lived experiences of educators and students in Latin America.\n\nTo address this, they developed HESEIA, a Spanish-language dataset of 46,499 stereotype-bearing sentences co-created in a professional development course for high-school teachers. The course combined in-person classes, asynchronous activities, and classroom-based lesson-plan implementation. Teachers used minimal-pair and other participatory methods to generate and validate examples drawn from their school subjects and local communities, and students in those teachers\u2019 classes contributed under teacher supervision. The course also included educator reflection on AI bias, data governance, and lesson-plan co-design, with optional use of a web tool (EDIA) or paper-based alternatives.\n\nThe study involved 370 high-school teachers from 189 Latin American schools and 5,370 students ages 13\u201319, with teachers\u2019 experience and school context varying across urban, peri-urban, and rural settings. The dataset was organized by school subject and demographic axis, with substantial intersectionality across gender, socioeconomic status, geography, age, and other categories. The authors also tested several LLMs on the resulting dataset and found that HESEIA elicited more 'don't know' responses and fewer stereotype rejections than comparison datasets, suggesting that current models are less able to recognize or reject locally grounded stereotypes.\n\nOverall, the paper concludes that participatory, educator-centered dataset creation can reveal forms of bias that are missed by standard benchmarks and can support more contextually valid evaluation of LLM social bias in educational settings.",
+  "limitations": [
+    "non_representative_population",
+    "high_attrition",
+    "no_long_term_followup",
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "6",
+  "setting": "classroom",
+  "teacher_training": "yes",
+  "implementation_fidelity": "medium",
+  "study_country": "Argentina",
+  "study_region": "Latin America & Caribbean",
+  "identified_tools": [
+    {
+      "name": "Gemini",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "other"
+      ],
+      "description": "A Google generative AI / large language model chatbot family used for text generation and evaluation tasks.",
+      "use_case": "The paper reports experiments where Gemini-1.5-Flash was queried on stereotype datasets, including HESEIA, to assess whether it recognized and rejected stereotypes.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0014 Other",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "In Experiment 1, Gemini-1.5-Flash had a 52.75% rate on HESEIA, representing the proportion of responses indicating the model failed to recognize the sentence as a stereotype. In Experiment 2, Gemini-1.5-Flash had a 44.24% rate on HESEIA for failing to reject stereotypes among those it first identified as stereotypical. The paper compares these proportions across datasets but does not report inferential statistics or effect sizes.",
+          "measure": "Proportion of responses indicating failure to recognize stereotypes (Exp. 1) and failure to reject stereotypes (Exp. 2)",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=46,499 (dataset size); model-query count not_reported"
+        }
+      ]
+    },
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "other"
+      ],
+      "description": "OpenAI generative AI / large language model chatbot family used for text generation and evaluation tasks.",
+      "use_case": "The paper reports experiments where GPT-4o-Mini was queried on stereotype datasets, including HESEIA, to assess whether it recognized and rejected stereotypes.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0014 Other",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "In Experiment 1, GPT-4o-Mini had a 36.56% rate on HESEIA, indicating the proportion of responses where the model failed to recognize the sentence as a stereotype. In Experiment 2, GPT-4o-Mini had a 57.07% rate on HESEIA for failing to reject stereotypes among those identified as stereotypical. The paper reports comparative proportions only, with no effect sizes or confidence intervals.",
+          "measure": "Proportion of responses indicating failure to recognize stereotypes (Exp. 1) and failure to reject stereotypes (Exp. 2)",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=46,499 (dataset size); model-query count not_reported"
+        }
+      ]
+    },
+    {
+      "name": "LLaMA",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "other"
+      ],
+      "description": "Meta large language model family used for text generation and evaluation tasks.",
+      "use_case": "The paper reports experiments where LLaMA3.1-8B was queried on stereotype datasets, including HESEIA, to assess whether it recognized and rejected stereotypes.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0014 Other",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "In Experiment 1, LLaMA3.1-8B had a 51.64% rate on HESEIA, indicating the proportion of responses where the model failed to recognize the sentence as a stereotype. In Experiment 2, LLaMA3.1-8B had a 22.85% rate on HESEIA for failing to reject stereotypes among those identified as stereotypical. The paper states that HESEIA elicited the highest proportions across models, but does not report inferential tests or effect sizes.",
+          "measure": "Proportion of responses indicating failure to recognize stereotypes (Exp. 1) and failure to reject stereotypes (Exp. 2)",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=46,499 (dataset size); model-query count not_reported"
+        }
+      ]
+    },
+    {
+      "name": "Mistral",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "other"
+      ],
+      "description": "Mistral AI large language model family used for text generation and evaluation tasks.",
+      "use_case": "The paper reports experiments where Mistral-7B was queried on stereotype datasets, including HESEIA, to assess whether it recognized and rejected stereotypes.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0014 Other",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "In Experiment 1, Mistral-7B had a 35.28% rate on HESEIA, indicating the proportion of responses where the model failed to recognize the sentence as a stereotype. In Experiment 2, Mistral-7B had a 96.70% rate on HESEIA for failing to reject stereotypes among those identified as stereotypical. The paper presents these as comparative proportions across datasets and models, without reporting effect sizes or confidence intervals.",
+          "measure": "Proportion of responses indicating failure to recognize stereotypes (Exp. 1) and failure to reject stereotypes (Exp. 2)",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=46,499 (dataset size); model-query count not_reported"
+        }
+      ]
+    },
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "content_generation",
+        "other"
+      ],
+      "description": "Generic generative AI / large language model chatbot use in educational settings, without a specific named product beyond examples of language models.",
+      "use_case": "The paper studies generative AI in the context of a professional development course for high-school teachers, using ChatGPT-like language models and EDIA to explore bias and stereotypes in school subjects and real school settings.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The professional development course involved 370 high-school teachers from 189 Latin American schools and 5,370 students, and it produced the HESEIA dataset with 46,499 sentences. The paper reports that teachers\u2019 pre/post responses shifted toward stronger disagreement with statements expressing automation and societal bias in AI; all five items showed statistically significant paired t-test differences, but no t statistics, p values, or effect sizes are reported in the excerpt.",
+          "measure": "Teacher pre/post Likert agreement with five statements about AI societal bias and automation bias",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=245 teachers completing both tests; n=370 teachers in course; n=5,370 students"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a primary empirical study with a structured professional development intervention and model evaluation, but the excerpt does not provide inferential statistics or effect sizes for the reported outcomes. The design is mixed-methods and participatory rather than a tightly controlled causal study.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports substantial participation and clear descriptive changes in teacher perceptions, but effect sizes are not provided and the outcomes are not directly tied to a tested instructional outcome with quantified magnitude. The model-comparison results are descriptive proportions only, so impact is suggestive rather than clearly established.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

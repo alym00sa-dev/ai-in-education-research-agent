@@ -1,0 +1,106 @@
+{
+  "title": "Personalized Auto-Grading and Feedback System for Constructive Geometry Tasks Using Large Language Models on an Online Math Platform",
+  "doi": null,
+  "year": 2025,
+  "venue": null,
+  "url": "http://arxiv.org/abs/2509.25529v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Middle School (6th-8th)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper examines whether a large language model (LLM)-based auto-grading and feedback system can support middle school students\u2019 learning in constructive geometry tasks on an online math platform. The authors focus on a gap in mathematics education technology: providing scalable, individualized feedback for open-ended and construction-based geometry work, where answer-only grading is insufficient. Their system uses GPT-4 for grading open-ended explanations and generating adaptive feedback, while deterministic rules grade closed-ended and geometry-construction responses.\n\nThe intervention was implemented on Algeomath, a Korean web-based dynamic geometry platform, and centered on a six-stage sequence of circumcenter/circumcircle tasks. Students completed closed-ended items, written explanations, and dynamic geometry construction tasks, with up to three retries per item and feedback that became progressively more explicit across attempts. The field study involved 79 middle-school students in four classes in South Korea. Outcomes included agreement between LLM and teacher judgments, feedback quality ratings by an expert, and student response patterns across attempts.\n\nThe study found strong alignment with teacher grading for rule-based items and substantial agreement for open-ended explanations, though the LLM was more reliable at identifying correct answers than incorrect ones. Expert ratings suggested that feedback was generally usable but sometimes suffered from answer leakage, imprecise terminology, or overly generic prompts. Student data showed that many initially incorrect answers were corrected after feedback, especially on simpler items, but evidence for longer-term transfer to later questions was weak and not statistically significant. Overall, the paper concludes that LLMs can support scalable formative assessment in mathematics, but feedback design, terminology handling, and prevention of solution leakage need improvement.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a field study/pilot with 79 middle-school students, combining descriptive analytics, qualitative review, and non-randomized comparisons rather than a controlled experiment. It provides useful implementation evidence, but causal claims about learning impact are limited by the design and by the absence of a direct counterfactual.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports meaningful short-term gains in task completion and moderate grading reliability, but the learning impact is modest and not clearly causal. Transfer effects were not statistically significant, so the overall educational impact is promising but still unclear.",
+  "interventions": [
+    {
+      "intervention": "Automated Feedback System",
+      "confidence": 0.98,
+      "role": "primary",
+      "use_case": "LLM-assisted auto-grading and personalized formative feedback for constructive geometry tasks on an online math platform, with up to four attempts and adaptive hints based on student response history."
+    },
+    {
+      "intervention": "Computer-Assisted Instruction (CAI)",
+      "confidence": 0.76,
+      "role": "secondary",
+      "use_case": "Dynamic geometry platform (Algeomath) delivering interactive constructive geometry tasks, embedded prompts, and automated evaluation during middle-school math practice."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 0.92,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The system supported short-term correction and completion of middle-school geometry tasks, with an overall post-feedback conversion rate of 36.7% (260/708) across initially incorrect responses. In the iterative learning analysis, cumulative success rose from about 0.60 on the first attempt to about 0.73 on the second and about 0.80 by the fourth, suggesting feedback helped procedural performance on constructive geometry items.",
+        "measure": "Attempt-level correctness on constructive geometry tasks; post-feedback conversion rate; cumulative learning curves by attempt",
+        "study_size": "n=79 students",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.87,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The paper examined conceptual understanding through open-ended explanation tasks and expert ratings of whether feedback supported correct mathematical reasoning. Grading agreement with teachers was substantial overall for open-ended items (agreement rate 0.866, Cohen\u2019s \u03ba=0.737 across n=878 responses), but concept-level transfer to later questions was not clearly demonstrated (all p>0.05), indicating clear short-term gains but unclear longer-term transfer.",
+        "measure": "Teacher agreement on open-ended explanation grading; expert rubric ratings of feedback quality; transfer to later target questions",
+        "study_size": "n=79 students; n=878 open-ended responses",
+        "effect_size": "\u03ba=0.737",
+        "confidence_interval": "not_reported",
+        "std_deviation": "SD=1.779 (pooled feedback guidance score)"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.62,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The iterative feedback design was associated with more precise, conceptually grounded revisions in student explanations, such as moving from vague responses to accurate references to equidistance. However, the evidence for broader metacognitive transfer was limited because later-question transfer tests were not statistically significant (e.g., Q10 p=0.547, Q11 p=0.643, Q18 p=0.624).",
+        "measure": "Iterative answer refinement quality; transfer tests across subsequent questions",
+        "study_size": "n=79 students",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The LLM-based grading system achieved substantial agreement with teacher judgments on open-ended responses (overall agreement 0.866, Cohen\u2019s \u03ba=0.737, n=878), and rule-based grading for closed-ended/CGT items reached 100% agreement. This indicates strong potential for scalable formative assessment with reduced teacher grading burden, although some items still required refinement.",
+        "measure": "Agreement with teacher grading; Cohen\u2019s kappa; item-level grading reliability",
+        "study_size": "n=878 open-ended responses; n=79 students",
+        "effect_size": "\u03ba=0.737",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "medium",
+  "study_country": "South Korea",
+  "study_region": "East Asia & Pacific",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

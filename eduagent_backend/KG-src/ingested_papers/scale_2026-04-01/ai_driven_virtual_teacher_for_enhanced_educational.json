@@ -1,0 +1,311 @@
+{
+  "title": "AI-Driven Virtual Teacher for Enhanced Educational Efficiency: Leveraging Large Pretrained Models for Autonomous Error Analysis and Correction",
+  "doi": null,
+  "year": 2025,
+  "venue": "AAAI",
+  "url": "https://arxiv.org/abs/2409.09403",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Elementary (PreK-5th)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses whether large language models and multimodal large models can be used to build an autonomous virtual teacher that analyzes students\u2019 math errors and provides targeted corrective guidance. The authors argue that traditional error analysis in education is labor-intensive, hard to scale, and often limited in generalizability. They focus specifically on elementary mathematics, where understanding the cause of a student\u2019s mistake\u2014not just marking an answer wrong\u2014is important for improving learning efficiency.\n\nThe intervention is the VATE system (Virtual AI Teacher for Enhanced Educational Efficiency), deployed on the Squirrel AI learning platform. VATE uses student draft images, problem content, correct solutions, and student incorrect answers to perform error analysis through a dual-stream multimodal/LLM pipeline. It also includes an error pool to reuse previously analyzed common errors and a multi-round dialogue system that guides students toward correcting their own mistakes rather than simply giving answers. The system was deployed at scale in Squirrel AI learning machines and evaluated using expert review of generated error analyses, platform usage data, dialogue quality analyses, and a satisfaction survey of sales and educational personnel.\n\nThe population studied was primarily elementary school students using Squirrel AI for mathematics learning, with evidence drawn from large-scale real-world usage: over 100,000 usage records, representative samples from over 200K usage samples, and statistical analysis on 5,600 students. The deployment context was an online learning platform used across 35 provinces and 338 cities in China. The paper also includes survey feedback from Squirrel AI personnel with educational experience who assessed the system\u2019s practical value and user reception.\n\nThe main conclusions are that VATE can perform useful automated error analysis at scale, achieving 78.3% expert-approved accuracy on selected difficult cases and improving student learning indicators after use. Students who used the system showed lower error rates on related knowledge points, improved accuracy, and fewer repeated video reviews, with better outcomes when dialogue quality was moderate and effective. The authors conclude that AI-driven error analysis and guided dialogue can improve learning efficiency in elementary math and offer a scalable, cost-effective educational support tool, though they also note remaining errors due to draft misinterpretation and imperfect model reasoning.",
+  "limitations": [
+    "no_control_group",
+    "self_reported_measures",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "China",
+  "study_region": "East Asia & Pacific",
+  "identified_tools": [
+    {
+      "name": "Yixue Squirrel AI",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "tutoring_instruction"
+      ],
+      "description": "Squirrel AI's deployed Virtual AI Teacher system (VATE), an AI-powered error analysis and tutoring component on the Squirrel AI learning platform that uses multimodal and large language models plus an error pool to diagnose math errors from student drafts and provide guided corrective dialogue.",
+      "use_case": "Studied as a deployed elementary mathematics intervention on the Squirrel AI platform to analyze student errors from draft images, provide error-cause feedback, and conduct multi-round guided dialogue for correction and learning support.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In expert evaluation of VATE's error analysis on 420 selected high-error math questions drawn from over 200K usage samples, 78.3% of samples passed expert review on a binary success criterion. The authors note these were challenging, cleaned samples and report that generated recommendations were also well received by experts.",
+          "measure": "Expert-rated success of error analysis and recommendations on selected math questions",
+          "effect_size": "78.3% accuracy/pass rate",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=420 questions"
+        },
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In an analysis of learning data from 5,600 students, students who used VATE but did not immediately correct the target item still showed better subsequent knowledge-point outcomes than non-users: NIACT 4.18 vs 4.96, NQCT 9.59 vs 9.99, ARCT 0.59 vs 0.52, and NVRS 0.30 vs 0.39. The paper summarizes this as a 15% decrease in error rate on related knowledge points after using the system.",
+          "measure": "Knowledge-point learning metrics: NIACT, NQCT, ARCT, NVRS",
+          "effect_size": "NIACT 4.18 vs 4.96; NQCT 9.59 vs 9.99; ARCT 0.59 vs 0.52; NVRS 0.30 vs 0.39; reported 15% error-rate decrease",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=5,600 students"
+        },
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Among students whose interaction with VATE was effective, outcomes were stronger than for non-users: NIACT 3.12 vs 4.96, NQCT 7.39 vs 9.99, ARCT 0.62 vs 0.52, and NVRS 0.15 vs 0.39. The paper states that the error rate on relevant knowledge points dropped by 37% compared to students who did not use the system, and NVRS decreased by 61.5%.",
+          "measure": "Knowledge-point learning metrics after effective dialogue: NIACT, NQCT, ARCT, NVRS",
+          "effect_size": "NIACT 3.12 vs 4.96; NQCT 7.39 vs 9.99; ARCT 0.62 vs 0.52; NVRS 0.15 vs 0.39; reported 37% error-rate decrease and 61.5% NVRS decrease",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=5,600 students"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "For foundational learning sessions, dialogue with VATE was associated with fewer repeated learning cycles per knowledge point than no dialogue. Average repeated-learning counts were 9.81 with no dialogue, 7.19/6.23 for too-short dialogue (ineffective/effective), 6.54/5.85 for moderate dialogue, and 6.46/5.83 for too-long dialogue; the paper states learning efficiency can improve by up to 40.5% in the optimal scenario.",
+          "measure": "Average number of repeated learning sessions per knowledge point",
+          "effect_size": "No dialogue 9.81; too short 7.19 and 6.23; moderate 6.54 and 5.85; too long 6.46 and 5.83; reported up to 40.5% improvement",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Systemic / Institutional Impact",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "A satisfaction survey of Squirrel AI sales-related personnel found strong positive reception to the deployed system. Error-correction effectiveness was rated 8.36/10, overall rating 8.58/10, and recommendation value 8.47/10; the paper also reports that nearly 60% believed it effectively prevented uncivil learning behaviors and over 66% acknowledged scalability across disciplines and grade levels.",
+          "measure": "Personnel satisfaction survey ratings and endorsement percentages",
+          "effect_size": "Error correction 8.36/10; overall 8.58/10; recommendation 8.47/10; ~60% behavior-control endorsement; >66% scalability endorsement",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    },
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "language_speech",
+        "feedback_evaluation"
+      ],
+      "description": "OpenAI GPT-family large language models used here as the backbone model family powering parts of the VATE system.",
+      "use_case": "Referenced as the underlying LLM family; the paper reports deployment efficiency when VATE is powered by GPT-4o.",
+      "findings": []
+    },
+    {
+      "name": "Qwen",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "language_speech",
+        "feedback_evaluation"
+      ],
+      "description": "Alibaba's Qwen family of large language models, referenced in the paper as a relevant math-capable model family.",
+      "use_case": "Mentioned in related work via Qwen2-Math as background context for math-capable LLMs; not directly evaluated as an educational intervention in the paper.",
+      "findings": []
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical deployment paper with expert evaluation, usage analytics, and survey results, but it does not report a randomized or quasi-experimental causal design. The learning-outcome evidence is observational/comparative, so credibility is below RCT/QED standards.",
+  "impact_tier": "green",
+  "impact_tier_rationale": "Reported outcome differences are consistently positive and practically meaningful, including a stated 37% drop in relevant error rate for effective users and up to 40.5% improvement in learning efficiency. However, effects are not reported as standardized causal effect sizes and come from observational analyses, so impact is best rated as modest-to-promising rather than definitive.",
+  "citations": [
+    {
+      "title": "Mathematics: Identifying and addressing student errors",
+      "doi": null,
+      "year": 2016,
+      "venue": "The Iris Center",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Diagnostic models for procedural bugs in basic mathematical skills",
+      "doi": null,
+      "year": 1978,
+      "venue": "Cognitive Science",
+      "citation_level": 3,
+      "citation_context": "rule-based error pool matching approach"
+    },
+    {
+      "title": "Language models are few-shot learners",
+      "doi": null,
+      "year": 2020,
+      "venue": "NeurIPS",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Vicuna: An open-source chatbot impressing gpt-4 with 90%* chatgpt quality",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Automatic diagnosis of students\u2019 misconceptions in k-8 mathematics",
+      "doi": null,
+      "year": 2018,
+      "venue": "Proceedings of the 2018 CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "MME-Survey: A Comprehensive Survey on Evaluation of Multimodal LLMs",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv preprint",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Analysis of students\u2019 error in solving mathematical word problems in geometry",
+      "doi": null,
+      "year": 2019,
+      "venue": "Journal of Physics: Conference Series",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Applying machine learning techniques to rule generation in intelligent tutoring systems",
+      "doi": null,
+      "year": 2004,
+      "venue": "International Conference on Intelligent Tutoring Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Mistral 7B",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv preprint",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Bringing generative AI to adaptive learning in education",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv preprint",
+      "citation_level": 2,
+      "citation_context": "future adaptive learning recommendation framing"
+    },
+    {
+      "title": "Evaluating Mathematical Reasoning of Large Language Models: A Focus on Error Identification and Correction",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv preprint",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Gpt-4 technical report",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Error analysis of mathematical problems on TIMSS: A case of Indonesian secondary students",
+      "doi": null,
+      "year": 2018,
+      "venue": "IOP Conference Series: Materials Science and Engineering",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Mapping to declarative knowledge for word problem solving",
+      "doi": null,
+      "year": 2018,
+      "venue": "Transactions of the Association for Computational Linguistics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Llama: Open and efficient foundation language models",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv preprint",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Large language models for education: A survey and outlook",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv preprint",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Educational question mining at scale: Prediction, analysis and personalization",
+      "doi": null,
+      "year": 2021,
+      "venue": "Proceedings of the AAAI Conference on Artificial Intelligence (AAAI\u201921)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "AI for Education (AI4EDU): Advancing Personalized Education with LLM and Adaptive Learning",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 30th ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD\u201924)",
+      "citation_level": 2,
+      "citation_context": "future adaptive learning recommendation framing"
+    },
+    {
+      "title": "Foundation Models for Education: Promises and Prospects",
+      "doi": null,
+      "year": 2024,
+      "venue": "IEEE Intelligent Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A survey on multimodal large language models",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv preprint",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Beyond LLaVA-HD: Diving into High-Resolution Large Multimodal Models",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv preprint",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "MME-RealWorld: Could Your Multimodal LLM Challenge High-Resolution Real-World Scenarios that are Difficult for Humans?",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv preprint",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Solving challenging math word problems using gpt-4 code interpreter with code-based self-verification",
+      "doi": null,
+      "year": 2024,
+      "venue": "The Twelfth International Conference on Learning Representations (ICLR)",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

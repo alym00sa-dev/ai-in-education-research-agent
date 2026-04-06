@@ -1,0 +1,71 @@
+{
+  "title": "AI prediction leads people to forgo guaranteed rewards",
+  "doi": null,
+  "year": 2026,
+  "venue": "not_reported",
+  "url": "http://arxiv.org/abs/2603.28944v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Adult (non-academic)"
+  ],
+  "user_types": [],
+  "study_design": "Randomized Controlled Trial (RCT)",
+  "extended_summary": "This paper investigates whether merely framing a decision as being predicted by AI changes how people choose, even when the AI provides no recommendation and the prediction itself is never revealed at the moment of choice. The authors ask whether perceived predictive authority can alter decision-making in ways beyond standard persuasion or incentive effects. They frame this phenomenon as \"predictive binding,\" in which people may treat an AI prediction as linked to their own anticipated action and therefore align their choice with what they believe the system expects.\n\nAcross four preregistered online experiments, participants completed Newcomb\u2019s paradox-inspired choice tasks in which they could either take a guaranteed reward or choose an option that sometimes yielded a larger payoff depending on a prior prediction. Study 1 compared AI framing with a random mechanism; Study 2 tested robustness across interactive and non-interactive interfaces, including an LLM-based chatbot interaction using GPT-4.1; Study 3 generalized the paradigm to vignette scenarios involving job interviews, mobile data coupons, and freelancing tasks; and Study 4 examined repeated exposure across five rounds with fixed AI prediction policies. Participants were adults recruited online through Prolific in the United States. The studies found that AI framing substantially increased the likelihood of forgoing the guaranteed reward, that participants perceived AI predictions as more accurate than random chance, and that the effect persisted even after repeated predictive failures. The authors conclude that AI prediction can reshape how people decide, not just what they decide, and that this influence can emerge without direct recommendation, coercion, or verified predictive accuracy.",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is a set of preregistered controlled experiments with a fixed-effect meta-analysis across studies, which is strong causal evidence. However, it is not a field trial in an educational setting and the main task is a stylized behavioral paradigm rather than a direct educational intervention, so relevance/credibility for education-specific claims is limited.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The observed behavioral shift is meaningful in magnitude for the experimental task, but it concerns a non-educational decision paradigm and does not demonstrate impact on learning outcomes or schooling systems. For education-facing generative AI, the implications are indirect and therefore the practical impact tier is modest/unclear.",
+  "interventions": [
+    {
+      "intervention": "Other",
+      "confidence": 0.99,
+      "role": "primary",
+      "use_case": "experimental use of AI-prediction framing in a Newcomb's-paradox decision task, including an LLM-based chatbot interaction variant (GPT-4.1) to study perceived predictive authority rather than tutoring or feedback"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Systemic / Institutional Impact",
+      "confidence": 0.9,
+      "finding": {
+        "direction": "Negative",
+        "finding_summary": "Across four preregistered online studies (total n=1,305), AI-prediction framing led participants to forgo a guaranteed reward more often, indicating that perceived predictive authority can constrain decision-making. In Studies 1-2, one-boxing rose from 26.0% in the random condition to 41.0%-45.0% in AI conditions, with a fixed-effect meta-analytic odds ratio of 3.39 (95% CI 2.45-4.70) for forgoing the guaranteed reward and earnings reduced by 10.7%-42.9%.",
+        "measure": "Choice to forgo guaranteed reward / one-boxing rate; realized earnings",
+        "study_size": "n=1,305 total; Study 1 n=200; Study 2 n=601; Study 3 n=303; Study 4 n=201",
+        "effect_size": "OR=3.39",
+        "confidence_interval": "95% CI [2.45, 4.70]",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.72,
+      "finding": {
+        "direction": "Negative",
+        "finding_summary": "The paper shows that AI prediction can reduce objective payoffs by altering user choices, which is relevant to efficiency in decision processes. In the incentivized task, the shift toward one-boxing reduced earnings by 10.7%-42.9% relative to the two-box baseline, and the effect persisted even after repeated predictive failures in Study 4 (final one-boxing 30.6% vs 15.3% baseline random condition).",
+        "measure": "Realized earnings; proportion of one-boxing across repeated rounds",
+        "study_size": "Study 4 n=201; Studies 1-2 meta-analysis n=801",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "short_duration",
+    "self_reported_measures",
+    "non_representative_population",
+    "no_long_term_followup",
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "medium",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

@@ -1,0 +1,67 @@
+{
+  "title": "FEANEL: A Benchmark for Fine-Grained Error Analysis in K-12 English Writing",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2511.22883v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Elementary (PreK-5th)",
+    "Middle School (6th-8th)",
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper addresses the underexplored problem of fine-grained error analysis for K-12 English writing, particularly whether large language models can provide detailed, pedagogically meaningful feedback on student writing errors. Rather than studying writing-quality improvement outcomes, the paper introduces a benchmark for evaluating AI systems on their ability to identify, classify, rate the severity of, and explain specific errors in student essays. The authors argue that existing work in automated essay scoring and grammatical error correction is often too coarse or surface-level for educational use.\n\nThe main contribution is the FEANEL benchmark, a dataset of 1,000 essays written by elementary and secondary school students, with expert annotations for 8,676 writing errors. Each error is labeled using a 29-type taxonomy co-developed with language education experts, along with a severity rating and an explanatory feedback statement. The authors then evaluate a range of state-of-the-art large language models, including GPT-4o, o1, o3, Gemini-2.5, Claude-3.7, DeepSeek-R1, Qwen, Llama, and Mistral, under different prompting conditions to assess classification accuracy, severity rating, and explanation quality.\n\nThe population consists of K-12 English learners, including 500 essays from elementary students aged 9-11 and 500 essays from secondary students aged roughly 12-18. Essays came from a global online education platform and the TECCL corpus of Chinese EFL learners\u2019 writing, so the study context is English as a foreign language writing rather than native-speaker school writing. Expert annotators with teaching experience performed data cleaning, correction, and error annotation; additional English teachers completed a human benchmark on a subset of items.\n\nThe main conclusion is that current LLMs still show substantial weaknesses in fine-grained educational feedback for K-12 writing. Although stronger models and richer prompts improve performance, none consistently matches human teachers, especially for nuanced error classification and pedagogically appropriate explanations. The paper concludes that FEANEL exposes important gaps in LLM educational readiness and provides a useful benchmark for future AI systems aimed at interpretable writing feedback.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical benchmark/model-evaluation paper with clear methods and expert annotation, but it is not a student-outcome causal study and does not directly compare feedback conditions in secondary classrooms. It offers credible technical evaluation evidence, yet only partially aligns with the requested intervention-comparator question.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper does not report direct effects on student writing quality, revised drafts, or independent writing performance. Its results show mixed/limited model capability, so practical educational impact remains unclear rather than demonstrated.",
+  "interventions": [
+    {
+      "intervention": "Automated Feedback System",
+      "confidence": 0.97,
+      "role": "primary",
+      "use_case": "Benchmarking LLM-generated fine-grained error analysis for K-12 English essays, including error classification, severity rating, and explanatory feedback on student writing."
+    },
+    {
+      "intervention": "AI Writing / Language Tool",
+      "confidence": 0.94,
+      "role": "secondary",
+      "use_case": "Evaluating large language models as English writing error-analysis and feedback tools for K-12/EFL student essays rather than as interactive tutors."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Literacy",
+      "confidence": 0.76,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The paper evaluates LLM performance on writing-feedback subtasks rather than student writing improvement. On the FEANEL benchmark of 1,000 K-12 essays (8,676 annotated errors total; 500 secondary essays with 5,671 errors), LLMs showed substantial limitations in fine-grained writing error analysis: classification accuracy ranged roughly from 57.44 to 72.06 in zero-shot and 57.81 to 76.26 in one-shot settings, while human teachers reached 79.90 accuracy on a 1,000-error subset. Explanation quality and severity scoring also lagged human performance, indicating current LLM feedback is not yet consistently pedagogically reliable for secondary writing support.",
+        "measure": "Benchmark performance on writing-feedback tasks: error classification accuracy and macro-F1, severity-rating MAE, and explanation BLEU/METEOR/ROUGE on K-12 English essays",
+        "study_size": "1,000 essays; 8,676 annotated errors total; secondary subset 500 essays with 5,671 errors; human comparison on 1,000 sampled errors",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "no_control_group",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "yes",
+  "implementation_fidelity": "high",
+  "study_country": "China",
+  "study_region": "East Asia & Pacific",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

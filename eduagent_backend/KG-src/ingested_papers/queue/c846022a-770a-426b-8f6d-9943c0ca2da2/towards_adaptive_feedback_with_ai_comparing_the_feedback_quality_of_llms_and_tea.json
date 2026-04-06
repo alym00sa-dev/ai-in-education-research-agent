@@ -1,0 +1,74 @@
+{
+  "title": "Towards Adaptive Feedback with AI: Comparing the Feedback Quality of LLMs and Teachers on Experimentation Protocols",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2502.12842v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Middle School (6th-8th)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper examines whether large language models (LLMs) can generate feedback on students\u2019 science experimentation protocols that is comparable in quality to feedback written by human teachers and science education experts. The authors focus on a core challenge in formative assessment: providing timely, adaptive, and pedagogically useful feedback that helps students understand their mistakes and improve their experimental reasoning.\n\nThe intervention/approach is an LLM-based feedback agent built with a zero-shot prompting strategy. The model, GPT-3.5, was prompted to act as a science teacher and generate feedback for specific errors detected in student-written experimentation protocols. The feedback was evaluated using a multidimensional rubric covering Feed Up, Feed Back, Feed Forward, Constructive Tone, Linguistic Clarity, and Technical Terminology. Four expert raters blinded and shuffled the outputs from the LLM, 11 teachers, and 5 science education experts.\n\nThe study used authentic student work from 37 German secondary school students in grades 6\u20138 who completed two science experimentation tasks. The main finding is that the LLM\u2019s overall feedback quality was similar to that of teachers and experts, but it performed worse on the Feed Back dimension, meaning it was less effective at identifying and explaining the specific error in context. The authors conclude that LLMs are promising for scalable classroom feedback, but human expertise remains important for contextual understanding, and a hybrid teacher-plus-AI approach may be best.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a small comparative, blinded-rater study with a clear methodology, but it is not an RCT and does not measure downstream student learning outcomes. It provides useful construct-valid evidence on feedback quality, but generalizability is limited by the small sample and single subject context.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The findings suggest potential for comparable feedback quality and some efficiency benefits, but the study does not report medium or large learner outcome gains. Impact is therefore promising but unclear for actual K-12 classroom practice.",
+  "interventions": [
+    {
+      "intervention": "Automated Feedback System",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "LLM-generated formative feedback on middle school students' experimentation protocols, including detection of protocol errors and generation of Feed Up, Feed Back, and Feed Forward comments in science inquiry"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Scientific Reasoning",
+      "confidence": 0.98,
+      "finding": {
+        "direction": "No Effect",
+        "finding_summary": "The study found no significant difference in overall feedback quality between the LLM agent and human teachers/experts when evaluated on student experimentation protocols from grades 6-8 (n=40 protocols, 109 errors). Mean overall ratings were similar across groups: LLM 3.784 (SD=1.238), teachers 3.805 (SD=1.266), experts 3.831 (SD=1.287) on a 5-point scale.",
+        "measure": "Blinded human ratings of feedback quality on six dimensions for feedback written on science experimentation protocols (Feed Up, Feed Back, Feed Forward, Constructive Tone, Linguistic Clarity, Technical Terminology)",
+        "study_size": "n=40 protocols; 109 errors; 4 raters",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "LLM SD=1.238; Teacher SD=1.266; Expert SD=1.287"
+      },
+      "intervention": "Automated Feedback System"
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.9,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper argues the LLM agent can provide immediate, scalable feedback and may reduce educator workload, with generated feedback typically around 50 words and suitable for classroom use. While not tested as a workload intervention in a field trial, the results suggest practical efficiency advantages relative to expert-written feedback, which was substantially longer.",
+        "measure": "Feedback length and feasibility for classroom use; qualitative discussion of scalability and teacher workload reduction",
+        "study_size": "n=40 protocols; 3 feedback sources",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Automated Feedback System"
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "classroom",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Germany",
+  "study_region": "Europe",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

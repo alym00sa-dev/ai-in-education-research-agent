@@ -1,0 +1,87 @@
+{
+  "title": "Democracy, Complexity, and Science: Exploring Structural Sources of National Scientific Performance",
+  "doi": null,
+  "year": null,
+  "venue": "Science and Public Policy",
+  "url": "http://arxiv.org/abs/1909.04468v4",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper examines whether democratic governance is associated with stronger national scientific performance, and whether different forms of complexity moderate that relationship. The central problem is a long-standing theoretical claim in science policy and sociology of science: that democracy is more compatible with scientific advancement than authoritarian governance. To test this, the authors use longitudinal country-level data rather than an educational intervention or classroom study.\n\nThe study combines panel data from 124 countries over roughly 2007\u20132017 with measures from V-Dem (five democracy indices), bibliometric indicators from Elsevier/Scopus (fractional field-weighted citation impact and publication volume), and country-level complexity measures from the MIT Observatory of Economic Complexity, KOF globalization data, and international co-authorship intensity. The design is an observational two-way fixed-effects regression analysis with robustness checks.\n\nThe results indicate that higher democracy scores are positively associated with national scientific performance across all five democracy indices. Economic complexity positively moderates the democracy-science relationship, while globalization and international collaboration show significant negative interaction effects in the combined model. The paper concludes that democracy and internal complexity appear jointly supportive of scientific performance, but that external complexity may disproportionately benefit less democratic countries through access to global scientific networks. No K-12 population, instructional setting, or AI tool intervention is studied.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed observational panel study using two-way fixed effects with robustness checks, but it is correlational rather than experimental and cannot rule out reverse causality or omitted time-varying confounding. The design supports associative inference only, which fits a yellow evidence tier.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports statistically significant associations at the country level, including one modest positive interaction (about 0.05-0.06) and negative interaction effects for external complexity. However, it does not evaluate a K-12 intervention or direct student outcomes, so its practical educational impact for the retrieval topic is unclear and indirect.",
+  "interventions": [],
+  "outcome_assignments": [
+    {
+      "outcome": "Systemic / Institutional Impact",
+      "confidence": 0.98,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Using two-way fixed effects panel models on 124 countries (N=1188 country-years), the study finds that higher democratic governance is associated with higher national scientific performance. Across five democracy indices, coefficients were positive and statistically significant, with estimates ranging from 0.153 to 0.267 on fractional field-weighted citation impact (Frac_FWCI).",
+        "measure": "National scientific performance measured by Elsevier/Scopus fractional field-weighted citation impact (Frac_FWCI)",
+        "study_size": "n=1188 country-years; 124 countries",
+        "effect_size": "coefficients 0.153 to 0.267 (standardized models for democracy indices not reported as standardized effect sizes)",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Systemic / Institutional Impact",
+      "confidence": 0.92,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "Economic complexity positively moderated the democracy-science relationship. In the interaction model, polyarchy \u00d7 economic complexity was positive and significant (e.g., 0.064* in Model 2; 0.047* in Model 7), indicating that more economically complex countries showed a stronger positive association between democracy and scientific performance.",
+        "measure": "National scientific performance (Frac_FWCI) with interaction between democracy and economic complexity",
+        "study_size": "n=831 to n=1188 country-years depending on model; up to 124 countries",
+        "effect_size": "interaction coefficients 0.047 to 0.064",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Systemic / Institutional Impact",
+      "confidence": 0.84,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "Globalization did not support the hypothesized positive moderation. The polyarchy \u00d7 globalization interaction was negative and significant in the full model (e.g., -0.063* in Model 4; -0.063* or similar negative estimate in Model 7), suggesting that less democratic countries may have benefited more from globalization in terms of scientific performance.",
+        "measure": "National scientific performance (Frac_FWCI) with interaction between democracy and globalization index",
+        "study_size": "n=1167 to n=1188 country-years depending on model; up to 124 countries",
+        "effect_size": "interaction coefficients approximately -0.063 to -0.024, with significant negative effect in the full model",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Systemic / Institutional Impact",
+      "confidence": 0.84,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "International collaboration also failed to show the expected positive moderation. The polyarchy \u00d7 collaboration intensity interaction was negative and significant (e.g., -0.089*** in Model 6; -0.074*** in Model 7), implying that greater international co-publication was associated with stronger gains in scientific performance for less democratic countries rather than for more democratic ones.",
+        "measure": "National scientific performance (Frac_FWCI) with interaction between democracy and international collaboration intensity",
+        "study_size": "n=1188 country-years; 124 countries",
+        "effect_size": "interaction coefficients -0.089 to -0.074",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

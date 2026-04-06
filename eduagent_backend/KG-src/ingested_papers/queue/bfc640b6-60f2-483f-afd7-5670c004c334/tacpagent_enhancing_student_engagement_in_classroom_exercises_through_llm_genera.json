@@ -1,0 +1,94 @@
+{
+  "title": "TacpAgent: Enhancing Student Engagement in Classroom Exercises Through LLM-Generated Feedback",
+  "doi": null,
+  "year": 2026,
+  "venue": "Proceedings of the AAAI Conference on Artificial Intelligence (AAAI-26)",
+  "url": "https://doi.org/10.1609/aaai.v40i48.42127",
+  "source_db": "openalex_search",
+  "populations": [
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Quasi-Experimental Design (QED)",
+  "extended_summary": "This paper examines whether an LLM-based classroom practice agent can improve student learning outcomes and classroom engagement compared with traditional paper-based exercises. The authors focus on a common classroom problem: students often do not receive timely, personalized formative feedback during routine exercises, especially in large classes. The study asks whether TacpAgent can improve academic performance and classroom engagement relative to business-as-usual exercise practices.\n\nTacpAgent is a generative AI system built on the DeepSeek-V3 API. Teachers prepare a question bank with reference answers, textbook chapter tags, and knowledge point labels. Students answer questions in the system, provide a brief written explanation of their reasoning, and rate their confidence. The system then generates guided feedback, including correctness checks, reflective prompts, and recommendations for relevant textbook sections. Students may revise answers or continue interacting with the system. The comparison condition used the same teacher, same course content, same exercise pool, and the same amount of practice time, but relied on traditional paper-based exercises with teacher and peer discussion plus textbook support rather than AI-generated feedback.\n\nThe study involved 87 first-year high school students in two parallel classes taking an Information Technology 1 course at a single high school in East Asia. One class (n=49) used TacpAgent and the other (n=38) used traditional paper-based exercises over a three-month period, with bi-weekly classroom exercise sessions. All sessions were conducted in a computer lab, and both classes were taught by the same teacher. Outcomes included pre/post course exam performance and pre/post classroom engagement measured with a four-dimension engagement scale.\n\nThe authors report that the TacpAgent group outperformed the control group on post-test learning outcomes after controlling for pre-test scores (F=18.516, p<0.001, \u03b72=.181). The experimental group also showed significant gains in emotional, behavioral, and cognitive engagement, whereas the control group improved only in cognitive engagement; neither group showed a significant change in disengagement. The paper concludes that LLM-generated guided feedback, combined with confidence ratings and self-explanations, may support scalable and personalized formative assessment in everyday high school classroom practice. However, the authors also note that the intervention bundled several features at once, making it difficult to isolate which component drove the effects.",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is a quasi-experimental K-12 classroom study with a comparison group, baseline equivalence on pre-test scores, standardized instruction across groups, and appropriate statistical controls (ANCOVA/nonparametric tests). However, it is not randomized, uses only two classes from one school, and the intervention bundles several features (AI feedback, interactivity, textbook linking, metacognitive prompts), limiting causal precision.",
+  "impact_tier": "green",
+  "impact_tier_rationale": "The academic outcome shows a meaningful positive effect with partial \u03b7\u00b2=0.181, which is a modest-to-moderate impact, and engagement outcomes are also positive though without standardized effect sizes. Because effects are promising but come from a small, localized quasi-experiment with bundled treatment components, the overall impact tier is green rather than blue.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.95,
+      "role": "primary",
+      "use_case": "TacpAgent, a DeepSeek-based classroom practice agent for high school Information Technology exercises, generates immediate personalized guided feedback from students\u2019 answers, confidence ratings, and written rationales, recommends textbook sections, and allows follow-up interaction during problem-solving."
+    },
+    {
+      "intervention": "Computer-Assisted Instruction (CAI)",
+      "confidence": 0.55,
+      "role": "secondary",
+      "use_case": "Computer-lab delivered classroom exercise workflow supporting practice delivery and AI-mediated feedback during regular bi-weekly lessons; the digital environment structures question access, submission, and review compared with paper worksheets."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.92,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "In a three-month quasi-experiment with two first-year high school classes (N=87), students using TacpAgent scored higher on the post-test in the Information Technology 1 course than students using traditional paper-based exercises. ANCOVA controlling for pre-test scores found a significant group effect, F(1,84)=18.516, p<0.001, partial \u03b7\u00b2=0.181; post-test means were 31.39 (SD=6.36) for the experimental group versus 27.18 (SD=7.23) for the control group.",
+        "measure": "Course exam scores (pre-test and post-test) on Information Technology 1 knowledge and skills",
+        "study_size": "n=87",
+        "effect_size": "partial \u03b7\u00b2=0.181",
+        "confidence_interval": "not_reported",
+        "std_deviation": "Experimental SD=6.36; Control SD=7.23"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "TacpAgent improved multiple engagement dimensions relative to baseline, especially emotional and behavioral engagement, whereas the control group showed no significant change in those dimensions. In the experimental group, Wilcoxon tests showed emotional engagement increased from median 20.0 to 23.0 (z=4.666, p<0.001) and behavioral engagement from 29.0 to 33.0 (z=4.333, p<0.001); disengagement did not significantly change (z=0.68, p=0.494).",
+        "measure": "Classroom Engagement Inventory dimensions: emotional engagement, behavioral engagement, cognitive engagement, disengagement",
+        "study_size": "n=87",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.62,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The study reports improved cognitive engagement for students using TacpAgent, which the authors interpret as reflecting deeper cognitive processing and metacognitive reflection prompted by confidence ratings and self-explanations. In the experimental group, cognitive engagement increased from median 26.0 to 32.0 (z=2.778, p=0.005), while the control group also showed a smaller significant increase from 29.5 to 32.0 (z=2.015, p=0.044).",
+        "measure": "Cognitive engagement subscale of the Classroom Engagement Inventory; metacognitive/self-reflective workflow embedded in practice",
+        "study_size": "n=87",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "self_reported_measures",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "12",
+  "setting": "lab",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "high",
+  "study_country": "not_reported",
+  "study_region": "East Asia & Pacific",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

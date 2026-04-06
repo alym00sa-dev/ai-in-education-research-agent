@@ -1,0 +1,86 @@
+{
+  "title": "AI-Mediated Feedback Improves Student Revisions: A Randomized Trial with FeedbackWriter in a Large Undergraduate Course",
+  "doi": "10.1145/3772318.3791121",
+  "year": 2026,
+  "venue": "Proceedings of the 2026 CHI Conference on Human Factors in Computing Systems (CHI '26)",
+  "url": "http://arxiv.org/abs/2602.16820v2",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Randomized Controlled Trial (RCT)",
+  "extended_summary": "This paper investigates whether AI-mediated feedback can improve students\u2019 writing revisions compared with traditional human-only feedback. The authors focus on a key gap in prior work: most studies of AI writing feedback either compare AI to weak baselines such as no feedback or canned comments, or evaluate feedback quality without measuring downstream student outcomes. The paper also explicitly situates itself in response to concerns about AI errors in educational feedback, especially for knowledge-intensive essays where factual and conceptual accuracy matter.\n\nThe intervention is FeedbackWriter, a system that generates rubric-aligned AI feedback suggestions for teaching assistants (TAs) while preserving human oversight. For each rubric item, the system highlights relevant essay sentences, makes a provisional rubric judgment, and drafts either praise or constructive guidance. TAs can adopt, edit, or dismiss suggestions, and student-facing feedback is never sent automatically. The comparison condition used a visually matched non-AI baseline tool with the same rubrics and historic feedback resources but without AI suggestions. The study used a randomized, counterbalanced design in a large introductory economics course: 354 undergraduate students and 11 TAs at the University of Michigan. Students completed two writing assignments over one semester, submitting first drafts, receiving feedback, revising, and then completing final drafts; an optional post-test measured short-term learning.\n\nThe main quantitative finding is that students who received AI-mediated feedback produced higher-quality revised drafts than those receiving human-only feedback, with an estimated 5 percentage-point advantage and a reported Cohen's d of 0.50. The paper states that this is roughly equivalent to moving a student from the 50th to the 70th percentile. The effect was larger when TAs adopted more AI-suggested constructive feedback. The authors also report that higher-quality revisions were associated with higher post-test performance, but there was no direct statistically significant difference between conditions on post-test scores. Automated analyses further suggested that AI-mediated feedback had more actionable and independence-supporting properties than human-only feedback.\n\nFor the verification topic described in your prompt, this paper is not the alleged implausible high-school ChatGPT motivation RCT with around 25+25 students, 12 weeks, or a d near 19. It is an undergraduate economics study with N=354, conducted in 2025 and published in 2026. The motivation variable here is not a student motivation outcome scale; instead, the paper includes a provisional TA first-draft score as a covariate labeled a \u201cMotivational Factor,\u201d reflecting the possibility that lower initial scores might motivate revision. The study is genuinely randomized at the TA-section level with condition reversal across two assignments, and the reported effect size on revision quality (d=0.50) is plausible and tied to a 5 percentage-point adjusted difference, not to percentage-change miscalculation. On the basis of topic relevance, this paper should be excluded from a quantitative synthesis focused specifically on ChatGPT-based writing feedback in high school, though it may be relevant to broader syntheses of AI-mediated writing feedback in postsecondary settings.",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is a peer-reviewed randomized trial with a substantial sample and clear intervention/comparison conditions, but it has important concerns for causal estimation and synthesis relevance: a cross-over-by-assignment design, undergraduate rather than high-school population, reliance on LLM-based scoring for the primary writing outcome, and incomplete reporting of variance details/CIs for main effects. It is stronger than a correlational study but does not fully meet the standard for blue-tier credibility.",
+  "impact_tier": "blue",
+  "impact_tier_rationale": "For the primary writing revision outcome, the reported effect is moderate (Cohen\u2019s d = 0.50), which meets the blue-tier threshold for impact magnitude. However, this impact applies to undergraduate economics essay revision quality, not to secondary-school ChatGPT writing feedback or student motivation.",
+  "interventions": [
+    {
+      "intervention": "Automated Feedback System",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "LLM-assisted essay feedback for undergraduate economics writing assignments, where teaching assistants review, edit, adopt, or reject AI-generated rubric-aligned feedback suggestions in the FeedbackWriter system."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Literacy",
+      "confidence": 0.94,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "In a randomized cross-over trial in a large undergraduate economics course, students receiving AI-mediated feedback produced higher-quality revised essays than those receiving human-only feedback. The mixed-effects model estimated a 5 percentage-point advantage for the AI-mediated condition on final draft quality after controlling for first-draft quality, assignment, and TA score, reported as Cohen\u2019s d = 0.50; descriptive statistics shown for the AI condition were first draft M=0.47, SD=0.13 and final draft M=0.69, SD=0.17, with average improvement 0.23, SD=0.16. This is a writing/revision outcome in knowledge-intensive essays, not a motivation study, and the sample was undergraduate students, not a 25+25 high-school ChatGPT trial.",
+        "measure": "Final draft essay quality / revision quality scored with an LLM-based rubric scorer on knowledge-intensive economics essays",
+        "study_size": "N=354 students; 1,366 essays",
+        "effect_size": "d=0.50",
+        "confidence_interval": "not_reported",
+        "std_deviation": "AI condition first draft SD=0.13; final draft SD=0.17; average improvement SD=0.16"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.7,
+      "finding": {
+        "direction": "No Effect",
+        "finding_summary": "The paper reports that higher-quality revised drafts were associated with higher learning as measured by a post-test administered after revision, but there was no statistically significant difference between AI-mediated feedback and human-only feedback on post-test scores. Post-tests were completed by 262 students for Assignment 1 and 305 students for Assignment 2, with no significant difference in participation rates between conditions.",
+        "measure": "Post-test scores on economics knowledge components covered in the writing assignment",
+        "study_size": "Assignment 1 post-test n=262; Assignment 2 post-test n=305",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.76,
+      "finding": {
+        "direction": "No Effect",
+        "finding_summary": "Although FeedbackWriter was intended to support TA feedback production, the paper notes that TAs spent comparable time grading in both the AI-mediated and baseline conditions. Thus, the intervention improved revision quality but did not reduce grading time in this deployment.",
+        "measure": "Per-essay grading time estimated from system logs; TA workflow efficiency",
+        "study_size": "11 TAs; essays graded within N=354-student course",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "single_site",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "12",
+  "setting": "classroom",
+  "teacher_training": "yes",
+  "implementation_fidelity": "high",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

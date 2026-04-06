@@ -1,0 +1,84 @@
+{
+  "title": "Towards Adaptive Feedback with AI: Comparing the Feedback Quality of LLMs and Teachers on Experimentation Protocols",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2502.12842v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Middle School (6th-8th)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses whether large language models (LLMs) can generate educational feedback for science experimentation protocols that is comparable in quality to feedback written by human teachers and science education experts. The motivation is the growing interest in generative AI for adaptive feedback, paired with concerns that AI feedback may lack contextual understanding and pedagogical validity.\n\nThe authors developed an LLM feedback agent using GPT-3.5 and a zero-shot prompting approach. The system was given student experiment tasks, the relevant protocol section, and a defined error type, then instructed to generate structured feedback. Its outputs were compared with feedback written by 11 biology pre- and in-service teachers and 5 science education experts on 40 student protocols containing 109 identified errors. Four blinded raters with science education expertise evaluated each feedback text on six dimensions: Feed Up, Feed Back, Feed Forward, Constructive Tone, Linguistic Clarity, and Technical Terminology, along with feedback length.\n\nThe study found no significant difference in overall feedback quality between the LLM, teachers, and experts. The LLM performed similarly well on most language-related and some content-related dimensions, but it scored significantly worse on Feed Back, indicating weaker ability to explain errors in context. The authors conclude that LLMs can support classroom feedback generation, especially for forward-looking guidance and concise language, but that human oversight remains important because current models still struggle with contextual diagnosis of student mistakes.",
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup",
+    "non_representative_population"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "classroom",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Germany",
+  "study_region": "Europe",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "content_generation"
+      ],
+      "description": "OpenAI GPT-family large language model chatbot used to generate educational feedback from prompts.",
+      "use_case": "Used as the LLM feedback agent (GPT-3.5-turbo-0125) to generate feedback on students\u2019 experimentation protocols and compared against teacher and expert feedback.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0019 Other",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "The LLM agent\u2019s feedback quality did not differ significantly from teacher or expert feedback on the overall six-dimension rating average. Mean overall scores were 3.784 (SD=1.238) for the LLM agent, 3.805 (SD=1.266) for teachers, and 3.831 (SD=1.287) for experts, with no significant difference reported.",
+          "measure": "Overall feedback quality score averaged across Feed Up, Feed Back, Feed Forward, Constructive Tone, Linguistic Clarity, and Technical Terminology",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=40 protocols; 109 student errors; 3 feedback sources"
+        },
+        {
+          "outcome_category": "Academic \u0019 Other",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "The LLM agent performed significantly worse than teachers and experts on the Feed Back dimension, which assessed whether feedback described the error in the context of the current situation. The paper reports mean scores of 3.05 (SD=1.37) for the LLM agent versus 3.52 (SD=1.32) for teachers and 3.62 (SD=1.31) for experts, indicating a specific weakness in contextual error explanation.",
+          "measure": "Feed Back rating on 5-point Likert scale",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=40 protocols; 109 student errors; 3 feedback sources"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The LLM agent produced feedback at a length that was similar to teachers and shorter than experts, which the authors interpreted as more suitable for grade 6-8 students. The agent\u2019s feedback was often around 50 words despite a 100-word prompt, aligning more closely with teacher-length feedback than with the much longer expert texts.",
+          "measure": "Word count / feedback length",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a primary comparative study using blinded human ratings, but it is observational/mixed-methods rather than a randomized causal design. The evidence is therefore useful but not at the highest causal confidence tier.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports no overall difference in quality and no effect sizes, with one specific dimension showing a small disadvantage for the LLM. Without a reported effect size or clear causal intervention, the practical impact is promising but still modest/unclear.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

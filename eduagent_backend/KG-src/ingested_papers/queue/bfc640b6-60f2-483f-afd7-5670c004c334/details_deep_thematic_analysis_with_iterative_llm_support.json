@@ -1,0 +1,74 @@
+{
+  "title": "DeTAILS: Deep Thematic Analysis with Iterative LLM Support",
+  "doi": null,
+  "year": 2018,
+  "venue": "not_reported",
+  "url": "http://arxiv.org/abs/2510.17575v2",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Graduate / Doctoral",
+    "Adult (non-academic)"
+  ],
+  "user_types": [],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses the challenge of scaling thematic analysis in qualitative research while preserving researcher agency, reflexivity, and trust. The authors argue that thematic analysis, especially reflexive thematic analysis, is valuable but labor-intensive and difficult to apply to large text corpora such as Reddit discussions. They investigate whether large language models can support qualitative researchers through an interactive workflow without replacing human interpretive judgment.\n\nThe intervention studied is DeTAILS, a desktop toolkit that integrates LLM support across multiple phases of thematic analysis: background research, concept development, initial coding, codebook refinement, code clustering, theme generation, and report export. The system uses a human-in-the-loop design in which researchers can inspect, edit, reject, and refine AI-generated suggestions at each stage. It also includes safeguards such as quote verification against source text to reduce hallucinated outputs. The workflow is inspired by Braun and Clarke\u2019s framework but operationalized in a more codebook-oriented and semi-structured form.\n\nThe evaluation involved 18 qualitative researchers with varying expertise levels, including master\u2019s students, PhD candidates, a postdoc, a product analyst, an assistant professor, and a junior consultant. Participants used DeTAILS to analyze Reddit data relevant to their own interests, first on a subset of 30 discussion threads and then by inspecting precomputed full-month subreddit analyses. Sessions lasted about 2 to 2.25 hours and were conducted mostly remotely, using a MacBook Air running the tool with Gemini via Google Vertex AI. The study collected both quantitative data (e.g., F1 alignment scores, time logs, workload and usability surveys) and qualitative interview data.\n\nThe main conclusions are that DeTAILS substantially accelerated qualitative coding and theme development, produced outputs that often aligned closely with participant refinements, and was perceived as useful and manageable. Participants valued the transparency, editability, and collaborative feel of the system, often treating it as a junior partner or second opinion rather than an autonomous analyst. At the same time, they emphasized that human oversight remained essential because AI outputs could lack nuance, encourage over-trust, and shift reflexivity toward verifying AI rather than interrogating one\u2019s own assumptions. The authors conclude that LLMs can effectively scaffold codebook-style qualitative workflows, but deeper reflexive qualitative inquiry still depends on human interpretation and ethical judgment.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical mixed-methods usability/evaluation study with quantitative and qualitative data, but it is not a K-12 education impact study and does not use a controlled or quasi-experimental design on student learning outcomes. It provides credible descriptive evidence about adult researcher workflow support, not comparative causal evidence for educational effectiveness.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports positive productivity and usability effects for qualitative researchers, but impact is outside the target educational writing-feedback context and effect magnitudes are either unclear or not directly comparable to student learning outcomes. For the retrieved topic on ChatGPT writing feedback in grades 9\u201312, this is only distant adjacent evidence with unclear practical impact.",
+  "interventions": [
+    {
+      "intervention": "Other",
+      "confidence": 0.98,
+      "role": "primary",
+      "use_case": "LLM-supported qualitative data analysis toolkit (DeTAILS) that helps adult researchers generate, refine, cluster, and synthesize thematic codes for Reddit and text corpora through iterative human\u2013AI workflows."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.94,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "In a mixed-methods evaluation with 18 qualitative researchers, DeTAILS was associated with reduced workload, faster task completion, and high perceived usefulness for thematic analysis workflows. Quantitatively, participants reported overall NASA-TLX workload of 26.3/100 (SD=12.4), perceived usefulness averaging 4.21/5, and strong phase-level alignment between system outputs and participant refinements (e.g., weighted F1=0.86 for related concepts, 0.98 for concept outline, 0.90 for initial coding, 0.97 for global coding; macro F1=0.90 for reviewing codes, 1.00 for generating themes).",
+        "measure": "NASA-TLX workload, Perceived Usefulness scale, AttrakDiff usability ratings, time-on-task by workflow phase, F1 alignment between LLM outputs and participant refinements",
+        "study_size": "n=18",
+        "effect_size": "partial eta squared=0.57 for phase differences in time; other effect sizes not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "Overall workload SD=12.4; Related Concepts SD=0.13; Concept Outline SD=0.03; Initial Coding SD=0.17; Global Coding SD=0.04; Reviewing Codes SD=0.20"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.62,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "Qualitative findings suggest the system supported some forms of researcher reflection, verification, and co-interpretation, but participants emphasized that interpretive authority and deeper reflexivity remained human responsibilities. The paper argues DeTAILS scaffolded checking and refinement more than the deeper self-critical reflexivity central to reflexive thematic analysis; no standardized skill gains or effect sizes were reported.",
+        "measure": "Post-session semi-structured interviews about researcher agency, reflexivity, trust, co-interpretation, and analytic practice",
+        "study_size": "n=18",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "no_control_group",
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "lab",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Canada",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

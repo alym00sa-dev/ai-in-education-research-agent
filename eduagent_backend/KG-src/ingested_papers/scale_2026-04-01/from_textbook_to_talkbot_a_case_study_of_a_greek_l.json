@@ -1,0 +1,141 @@
+{
+  "title": "From Textbook to Talkbot: A Case Study of a Greek-Language RAG-Based Chatbot in Higher Education",
+  "doi": null,
+  "year": 2025,
+  "venue": "The Barcelona Conference on Education 2025",
+  "url": "https://arxiv.org/abs/2601.14265",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Qualitative",
+  "extended_summary": "This paper investigates how a Greek-language AI chatbot based on Retrieval-Augmented Generation (RAG) can be designed and evaluated for use in higher education. The main problem addressed is how to make chatbot responses more reliable, accurate, and pedagogically aligned in a linguistically complex language such as Greek, while reducing common large language model issues such as hallucinations and misinformation. The study also asks how different text chunking strategies and retrieval depths affect chatbot response quality.\n\nThe intervention was a RAG-based chatbot built from course materials in two higher education domains: Family Psychology and Sports Medicine. The system used a Greek sentence-transformer model for semantic retrieval and Gemini Flash 2.0 for response generation. Six chunking strategies were compared, including fixed-length character-based chunking and paragraph-based chunking, with retrieval settings of Top-K = 20 for both domains and Top-K = 50 additionally for Sports Medicine. Evaluation focused on three criteria: content accuracy, completeness, and clarity. Domain experts who were also course educators generated five questions per domain and rated chatbot responses on a five-point Likert scale.\n\nThe context was higher education in Greece, using Greek-language instructional materials from the International Hellenic University and the Aristotle University of Thessaloniki. The intended users were students seeking academic support and educators using the chatbot to help generate instructional resources. However, the evaluation did not involve direct student use in classrooms; instead, expert instructors assessed system outputs across the two course domains.\n\nThe main conclusion is that chatbot performance depended on the interaction between chunking strategy, retrieval depth, and subject domain. In Family Psychology, sentence-based paragraph chunking performed best overall, while in the more complex Sports Medicine corpus, paragraph-preserving chunking combined with deeper retrieval (Top-K = 50) produced the strongest results, especially for content accuracy. The authors conclude that there is no universally optimal RAG configuration and that domain-aware optimization is essential. They argue that RAG-based chatbots show promise for supporting teaching and learning in higher education, particularly in language-specific contexts such as Greek.",
+  "limitations": [
+    "single_site",
+    "no_control_group",
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Greece",
+  "study_region": "Europe",
+  "identified_tools": [
+    {
+      "name": "Gemini",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "content_generation"
+      ],
+      "description": "Google's Gemini family large language model used here as the generator component in a retrieval-augmented chatbot system.",
+      "use_case": "Gemini Flash 2.0 was used as the generator in a Greek-language RAG chatbot grounded in course materials from Family Psychology and Sports Medicine; the study evaluated how chunking strategy and retrieval depth affected response quality on content accuracy, completeness, and clarity.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In the Family Psychology domain (Top-K=20), the RAG chatbot achieved its best overall performance with sentence-based paragraph chunking (Model 5), with the highest overall mean score of 4.13 on expert ratings. Model 5 also achieved the highest Content Accuracy (4.40) and Clarity (4.30), while Model 4 had the highest Completeness (3.90).",
+          "measure": "Expert Likert ratings (1-5) of content accuracy, completeness, and clarity for chatbot responses in the Family Psychology course",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "5 domain questions; 2 response versions per question; 6 chunking models"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "In the Sports Medicine domain at Top-K=20, performance differences across chunking models were modest, with Model 2 showing the highest average score (3.03). Clarity was the strongest criterion overall under shallow retrieval, suggesting responses were relatively readable but less fully accurate or complete in this technical domain.",
+          "measure": "Expert Likert ratings (1-5) of content accuracy, completeness, and clarity for chatbot responses in the Sports Medicine course at Top-K=20",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "5 domain questions; 2 response versions per question; 6 chunking models"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In the Sports Medicine domain, increasing retrieval depth from Top-K=20 to Top-K=50 improved performance across all criteria. Under Top-K=50, the newline-paragraph chunking strategy (Model 6) achieved the highest overall average score (4.00) and the highest Content Accuracy (4.50), while Model 6 and Model 1 tied for highest Completeness; Model 5 had the highest Clarity.",
+          "measure": "Expert Likert ratings (1-5) of content accuracy, completeness, and clarity for chatbot responses in the Sports Medicine course at Top-K=50",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "5 domain questions; 2 response versions per question; 6 chunking models"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical case study with expert-rated outputs, but it does not report a randomized or quasi-experimental design with student outcome measures. The evidence is based on small-scale descriptive evaluation of chatbot response quality across prompts and configurations.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "Results are generally positive for response quality, especially with domain-appropriate chunking and deeper retrieval, but impact is based on expert ratings rather than direct learner outcomes and no standardized effect sizes are reported.",
+  "citations": [
+    {
+      "title": "A survey on RAG with LLMs",
+      "doi": null,
+      "year": 2024,
+      "venue": "Procedia Computer Science",
+      "citation_level": 2,
+      "citation_context": "supports claim that RAG reduces hallucinations and misinformation"
+    },
+    {
+      "title": "Retrieval-Augmented Generation (RAG): Advances and challenges",
+      "doi": "10.7546/pecr.83.25.03",
+      "year": 2025,
+      "venue": "Problems of Engineering Cybernetics and Robotics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Introduction to AI chatbots",
+      "doi": "10.17577/ijertv9is070143",
+      "year": 2020,
+      "venue": "International Journal of Engineering Research and Technology",
+      "citation_level": 2,
+      "citation_context": "provides chatbot category typology used in introduction"
+    },
+    {
+      "title": "ChatGPT for good? On opportunities and challenges of large language models for education",
+      "doi": null,
+      "year": 2023,
+      "venue": "Learning and Individual Differences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Retrieval-augmented generation for knowledge-intensive NLP tasks",
+      "doi": null,
+      "year": 2020,
+      "venue": "Advances in Neural Information Processing Systems",
+      "citation_level": 2,
+      "citation_context": "defines RAG framework and core retriever-generator architecture"
+    },
+    {
+      "title": "NLP for the Greek language: A brief survey",
+      "doi": "10.1145/3411408.3411410",
+      "year": 2020,
+      "venue": "Proceedings of the 11th Hellenic Conference on Artificial Intelligence (SETN 2020)",
+      "citation_level": 2,
+      "citation_context": "grounds Greek NLP challenges motivating tailored chunking approach"
+    },
+    {
+      "title": "Artificial intelligence in education: A systematic literature review",
+      "doi": "10.1016/j.eswa.2024.124167",
+      "year": 2024,
+      "venue": "Expert Systems with Applications",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

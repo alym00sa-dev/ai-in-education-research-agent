@@ -1,0 +1,117 @@
+{
+  "title": "Interacting with educational chatbots: A systematic review",
+  "doi": "10.1007/s10639-022-11177-3",
+  "year": 2022,
+  "venue": "Education and Information Technologies",
+  "url": "https://doi.org/10.1007/s10639-022-11177-3",
+  "source_db": "openalex_search",
+  "populations": [],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Meta-Analysis / Systematic Review",
+  "extended_summary": "This paper addresses the growing use of educational chatbots and the need to systematically synthesize evidence about how they are designed, deployed, and evaluated in education. The authors argue that prior reviews focused mainly on learning outcomes or broad benefits, but did not sufficiently examine interaction style, platform, educational role, design principles, empirical evidence, and limitations.\n\nTo answer these questions, the study systematically reviewed 36 papers published between 2011 and 2021. The review covered chatbots used in educational settings across multiple fields, with most studies involving computer science and general education, and smaller numbers in language learning, mathematics, engineering, and other domains. The reviewed systems were mostly web-based, with some mobile and desktop deployments, and the chatbot roles included teaching agents, peer agents, teachable agents, and motivational agents.\n\nThe review concludes that educational chatbots are typically chatbot-driven rather than user-driven, often using flow-based or intent-based interaction. Common design principles include personalized learning, experiential learning, social dialog, collaborative learning, affective learning, learning by teaching, and scaffolding. Empirical studies generally report improved learning, engagement, interest, or satisfaction, although the authors also note limitations such as inadequate training data, weak reliance on usability heuristics, and gaps in design and implementation reporting.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a systematic review of 36 prior studies with transparent search and screening procedures, but it is not a single causal study and the underlying evidence is heterogeneous in design and measurement. The review synthesizes mostly experiments, questionnaires, and evaluation studies, but does not itself establish a uniform causal estimate.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper suggests generally positive educational effects, but reported impacts are mostly qualitative or statistically significant without standardized effect sizes, and some findings are mixed. Overall impact appears promising but modest/unclear at the meta level for general school settings.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.87,
+      "role": "primary",
+      "use_case": "Systematic review of educational chatbots/conversational agents used as teaching, peer, teachable, and motivational agents across school and higher-ed learning contexts."
+    },
+    {
+      "intervention": "Intelligent Tutoring System (ITS)",
+      "confidence": 0.73,
+      "role": "secondary",
+      "use_case": "Review includes chatbot systems explicitly described as intelligent tutoring systems, including web-based tutoring agents that present questions, feedback, and adaptive learning paths."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Literacy",
+      "confidence": 0.58,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Across reviewed studies, educational chatbots generally improved language-learning outcomes and related language practice, with several experiments reporting better learning or feedback quality. The review notes one foreign-language study where interest in communicating with the chatbot declined over an 8-week period, indicating that effects were not uniformly positive.",
+        "measure": "Language learning outcomes, post-tests, and engagement in foreign-language chatbot studies",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    },
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 0.55,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The review includes mathematics-oriented chatbots, including a teachable-agent math system, and reports improved learning in the cited experimental evidence. One listed experiment with the teachable agent (n=183) found statistically significant improvement (p < 0.001) on learning outcomes.",
+        "measure": "Math learning outcomes / post-test performance",
+        "study_size": "n=183",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Intelligent Tutoring System (ITS)"
+    },
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.78,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Most reviewed chatbot studies reported improved learning outcomes across computer science, general education, and other subjects. Examples include experiments with n=1000 (p=0.01), n=182 (p < 0.001), n=55 (p < 0.05), and n=126 (p=0.65, still reported as improved learning in the review\u2019s summary table), indicating generally favorable academic effects but with some inconsistency across studies.",
+        "measure": "Learning outcomes, post-tests, quiz performance, and task completion in computer science/general education contexts",
+        "study_size": "multiple studies; largest cited n=1000",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Intelligent Tutoring System (ITS)"
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.86,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The review found that chatbots often improved subjective satisfaction, engagement, motivation, and interest in learning. Several experiments reported statistically significant gains in engagement (e.g., n=56, p < 0.0001) and interest (e.g., n=28, p < 0.001), while one longitudinal study found declining interest over 8 weeks, suggesting mixed effects over time.",
+        "measure": "Engagement, interest in learning, subjective satisfaction, motivation surveys",
+        "study_size": "multiple studies; examples include n=56, n=28, n=34, n=122",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.62,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The review reports benefits for skills such as argumentation, collaboration, and reflective learning, especially in chatbot-supported collaborative and adaptive writing tasks. For example, one study on adaptive tutoring for writing found students produced more convincing texts and better formal argumentation quality, although the review does not provide a standardized effect size.",
+        "measure": "Argumentation quality, collaboration in group discussion, reflective learning outcomes",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    }
+  ],
+  "limitations": [
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

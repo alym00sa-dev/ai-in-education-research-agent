@@ -1,0 +1,57 @@
+{
+  "title": "UIILD: A Unified Interpretable Intelligent Learning Diagnosis Framework for Intelligent Tutoring Systems",
+  "doi": null,
+  "year": 2023,
+  "venue": "not_reported",
+  "url": "http://arxiv.org/abs/2207.03122v3",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses the problem of learning diagnosis in intelligent tutoring systems, where the goal is to estimate learners\u2019 knowledge mastery and predict their future performance. The authors argue that existing psychometric methods are interpretable but limited in modeling power, while deep learning methods are accurate but opaque. To address this tradeoff, they propose UIILD, a unified interpretable intelligent learning diagnosis framework that combines multiple psychometric models with deep feature learning and attention-based prediction.\n\nThe framework first performs initial diagnosis using one or more psychometric models to extract interpretable learner and exercise parameters. It then encodes these parameters with stacked autoencoders, models learner-resource interactions, fuses shallow psychometric features with deep learned features, and applies an attention mechanism plus convolutional prediction network to forecast correctness and provide explanations. Two concrete instantiations are presented: LDM-ID, which combines IRT and DINA, and LDM-HMI, which combines Ho-DINA, MIRT, and IRT.\n\nThe paper evaluates these mechanisms on two real-world online-learning datasets and one offline university classroom dataset (CL21), along with a synthetic dataset. The empirical results show improved prediction accuracy and stability over a range of baselines, including psychometric and deep learning models, while also yielding interpretable parameters and feature weights useful for personalized tutoring and resource recommendation in intelligent tutoring systems.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical model-comparison paper using real and synthetic datasets with cross-validation, but it is not a randomized educational intervention study and does not evaluate learner outcomes in a controlled causal design. The main evidence is predictive-performance benchmarking and interpretability analysis within ITS data, which supports technical validity more than causal impact.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The reported gains are modest to moderate for prediction accuracy (about 5% AUC improvement and 7% RMSE reduction), but the paper does not demonstrate downstream educational impact on learner achievement or behavior. The contribution is primarily methodological, with unclear direct impact on general educational outcomes.",
+  "interventions": [
+    {
+      "intervention": "Intelligent Tutoring System (ITS)",
+      "confidence": 0.98,
+      "role": "primary",
+      "use_case": "interpretable learning diagnosis within an intelligent tutoring system, combining psychometric student/exercise parameters with deep feature extraction to predict learner performance and support personalized tutoring/resource recommendation"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper reports that the proposed UIILD framework and its two implementations (LDM-ID and LDM-HMI) improve learning performance prediction on three datasets, including two real-world datasets (Math1, n=4,209 learners/63,135 responses; CL21, n=93 learners/3,348 responses) and one synthetic dataset (n=2,000 learners/100,000 responses). The authors state that AUC improved by about 5% and RMSE decreased by about 7% relative to baselines, indicating better prediction of students\u2019 answer correctness and knowledge diagnosis, though exact baseline-specific values are not fully reported in the excerpt.",
+        "measure": "AUC and RMSE for predicting correctness of learner responses / learning performance",
+        "study_size": "n=4209 (Math1), n=93 (CL21), n=2000 (Synthetic-5)",
+        "effect_size": "AUC +~5%; RMSE -~7% (relative)",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Intelligent Tutoring System (ITS)"
+    }
+  ],
+  "limitations": [
+    "single_site",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "blended",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "China",
+  "study_region": "East Asia & Pacific",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

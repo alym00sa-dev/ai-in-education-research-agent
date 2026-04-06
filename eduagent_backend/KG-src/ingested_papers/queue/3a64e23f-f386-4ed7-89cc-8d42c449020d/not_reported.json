@@ -1,0 +1,38 @@
+{
+  "title": "On the Undecidability of Artificial Intelligence Alignment: Machines that Halt",
+  "doi": "not_reported",
+  "year": 2024,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2408.08995v1",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses the computational question of whether an arbitrary AI system can be proven aligned with a given judge function. The authors argue that the inner alignment problem is undecidable in general, using Rice\u2019s theorem and a reduction from the Halting Problem. They frame alignment as a property of a model\u2019s input-output behavior and show that no general computable verifier can decide it for arbitrary AI systems.\n\nRather than presenting an empirical intervention, the paper proposes a theoretical shift in how safe AI should be built: alignment should be guaranteed by architecture, not imposed after the fact on arbitrary models. The paper discusses an enumerable class of systems constructed from a finite set of aligned operations, and gives examples centered on feed-forward neural networks, recurrent networks unrolled for finite steps, output masking, and halting constraints imposed through architectural design or external loop bounds.\n\nThe work does not study a K-12 educational population or any human participants. Its context is formal AI theory and machine learning architecture, not an educational setting. The main conclusion is that general alignment verification is impossible for arbitrary AI systems, but decidable and checkable subclasses can be created if the system is designed to always halt and remain within a constrained architectural class. This does not solve alignment itself, but it narrows the problem to tractable verification of restricted models.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a theoretical position paper/research note about undecidability in AI alignment, not an empirical K-12 education study. It contains no experimental design, no student sample, and no measured educational outcomes.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "There is no reported educational intervention effect on learners or classrooms. The paper has no measurable impact estimate for K-12 science reasoning or inquiry outcomes.",
+  "interventions": [
+    {
+      "intervention": "Other",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "theoretical/computational analysis of AI alignment and halting decidability in arbitrary AI systems; no educational technology intervention is evaluated"
+    }
+  ],
+  "outcome_assignments": [],
+  "limitations": [
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

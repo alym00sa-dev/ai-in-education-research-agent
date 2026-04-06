@@ -1,0 +1,113 @@
+{
+  "title": "Exploring the frontiers of LLMs in psychological applications: a comprehensive review",
+  "doi": "10.1007/s10462-025-11297-5",
+  "year": 2025,
+  "venue": "Artificial Intelligence Review",
+  "url": "https://doi.org/10.1007/s10462-025-11297-5",
+  "source_db": "openalex_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Meta-Analysis / Systematic Review",
+  "extended_summary": "This paper is a comprehensive review of large language models (LLMs) in psychological applications. It asks how LLMs are being used across major areas of psychology, what capabilities they exhibit in tasks related to cognition, assessment, intervention, and social interaction, and what technical and ethical risks accompany their use. The review is organized around four psychological domains: cognitive and behavioral, clinical and counseling, educational and developmental, and social and cultural psychology.\n\nRather than studying a single intervention with participants, the paper synthesizes 47 studies published from 2020 to 2024. These studies include experiments using GPT-3, GPT-3.5, GPT-4, LLaMA, Claude, Bard, and related systems for tasks such as reasoning, decision-making, emotional intelligence, mental health evaluation, counseling support, lesson planning, learning support, stimulus generation, and social simulation. The review also highlights LLM use as a research tool for literature review, hypothesis generation, experimental design, and data analysis.\n\nThe paper concludes that LLMs show promising utility in psychology, including strong performance on some cognitive tasks, useful support for mental health and education, and potential as research assistants. However, it stresses important limitations and risks, including bias, safety concerns, privacy issues, overclaiming human-like capabilities, and the need for careful ethical use and interpretability. Overall, the paper argues for responsible integration of LLMs into psychological research and practice.",
+  "limitations": [
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "feedback_evaluation"
+      ],
+      "description": "OpenAI\u2019s GPT-based conversational LLM system used for dialogue, text generation, and analysis tasks.",
+      "use_case": "This systematic review examined multiple GPT/ChatGPT-family studies in psychological applications, including educational uses such as lesson planning and learning support, but did not report a single dedicated intervention study on teacher planning quality or instructional practice.",
+      "findings": []
+    },
+    {
+      "name": "Gemini",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "content_generation"
+      ],
+      "description": "Google\u2019s conversational large language model family, formerly Bard, used for text generation, reasoning, and evaluative tasks.",
+      "use_case": "The review included Gemini/Bard in comparisons for psychological assessment and educational applications, but did not isolate a teacher-planning or instructional-practice intervention outcome for Gemini specifically.",
+      "findings": []
+    },
+    {
+      "name": "Claude",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "content_generation"
+      ],
+      "description": "Anthropic\u2019s conversational large language model family used for text generation, reasoning, and safety-aligned assistance.",
+      "use_case": "The review mentioned Claude in comparative psychological and assessment studies, but it was not studied here as a standalone teacher planning or coaching tool.",
+      "findings": []
+    },
+    {
+      "name": "LLaMA",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "prediction_analytics"
+      ],
+      "description": "Meta\u2019s open-weight large language model family used for text generation and downstream fine-tuning.",
+      "use_case": "The review discussed LLaMA and fine-tuned LLaMA in psychological research and educational contexts, but not in a teacher lesson-plan feedback study.",
+      "findings": []
+    },
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "content_generation",
+        "feedback_evaluation"
+      ],
+      "description": "Generic generative AI/LLM chatbot systems used for text generation, feedback, summarization, and conversational assistance when no specific product is named.",
+      "use_case": "The paper is a broad systematic review of LLMs in psychology and education, including generic use of LLMs for learning support, lesson planning, and coaching-related functions.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0014 Other",
+          "finding_type": "review_synthesis",
+          "direction": "mixed",
+          "finding_summary": "Across the reviewed literature, LLMs were presented as potentially useful for education and learning applications, including lesson planning support, personalized learning, and motivating feedback. However, the review also emphasized risks such as superficial, inconsistent, contradictory responses and the potential for users to overestimate their knowledge.",
+          "measure": "reviewed evidence on educational and learning applications; reported risks/benefits in included studies",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "47 studies reviewed"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "review_synthesis",
+          "direction": "positive",
+          "finding_summary": "The review reports that LLMs can improve workflow efficiency in research and education-related tasks, including generating materials, summarizing text, and supporting teachers and researchers. It cites a national survey noting that 40% of US teachers used GPT weekly for lesson planning within 3 months of release, indicating rapid uptake rather than experimental effect estimates.",
+          "measure": "reported adoption and productivity/efficiency claims in included studies",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    }
+  ],
+  "verdict": "archetype_only",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a systematic review synthesizing heterogeneous studies rather than a single well-controlled intervention study. The paper provides narrative evidence and some descriptive statistics, but it does not report a focused causal estimate for teacher planning quality or instructional practice.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The review suggests potentially meaningful educational and workflow benefits, including lesson-planning support and efficiency gains, but the paper does not provide a direct effect size for the target outcomes. The risk discussion also indicates that impacts may be mixed and context-dependent.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

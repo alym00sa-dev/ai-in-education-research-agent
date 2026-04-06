@@ -1,0 +1,69 @@
+{
+  "title": "Improving Controllability of Educational Question Generation by Keyword Provision",
+  "doi": null,
+  "year": 2022,
+  "venue": "AAAI (arXiv preprint)",
+  "url": "http://arxiv.org/abs/2112.01012v1",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses two practical issues in educational question generation (QG): improving the quality of generated questions for exam-like reading assessment, and increasing controllability so that users can guide the direction of generation. The authors argue that existing QG systems are often trained on factoid QA datasets and therefore tend to generate simpler questions that are not ideal for educational assessment, and they also lack a mechanism for steering the specific question that is produced.\n\nTo address the quality issue, the paper experiments with pre-trained language models for exam-like QG on the EQG-RACE dataset, comparing masked-language-model generation and seq2seq generation using BERT, RoBERTa, DeBERTa, and BART. The best model, DeBERTa-QG, improves BLEU-4 from 11.96 to 20.19 over the prior state of the art. To address controllability, the paper proposes Controllable Question Generation (CQG) via a Keyword Provision Question Generation (KPQG) model, where users provide keywords in addition to passage and answer, and the model is trained to generate questions that include those keywords.\n\nThe work is conducted on the EQG-RACE educational question generation benchmark derived from the RACE exam-style reading comprehension dataset, with additional human evaluation on 300 randomly selected test examples and 30 evaluators who supplied keywords and rated fluency, expectedness, and answerability. The main conclusion is that pre-trained language models substantially improve educational QG quality, and keyword provision improves controllability and makes generated questions closer to user expectations without harming fluency. The paper positions the approach as more practical for educational question generation systems, though it remains a model-development and evaluation study rather than a classroom intervention study.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed conference-style system paper with experiments and human evaluation, but it is not a randomized educational impact study and does not test classroom learning outcomes. The evidence is primarily intrinsic NLP evaluation plus small-scale human judgments, so methodological credibility for educational effectiveness is limited.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The reported gains are sizable on automatic QG metrics and positive on human preference/controllability ratings, but they are indirect proxies rather than learner outcomes. No direct student achievement or classroom implementation effects are reported, so educational impact remains modest and uncertain.",
+  "interventions": [
+    {
+      "intervention": "Other",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "controllable educational question generation from reading passages and answers using keyword guidance; compares keyword-provision question generation (KPQG) against baseline question generation models and evaluates exam-like question generation quality"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Literacy",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper reports improved question-generation quality for educational reading practice, especially with pre-trained language models and keyword-controlled generation. On the EQG-RACE dataset (n=19,430 total instances: train=17,445, dev=1,035, test=950), DeBERTa-QG improved BLEU-4 from 11.96 to 20.19 versus the prior state of the art, and KPQG increased human-rated expectedness and answerability relative to baseline QG.",
+        "measure": "Question generation quality on EQG-RACE using BLEU-1/2/3/4, ROUGE-L, METEOR; human ratings of fluency, expectedness, and answerability",
+        "study_size": "n=19,430 dataset instances; human evaluation n=300 passages, 30 evaluators",
+        "effect_size": "BLEU-4: 11.96 to 20.19 (absolute +8.23); human ratings: expectedness 0.86 to 1.37, answerability 1.20 to 1.44",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.75,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The system is presented as a tool to help teachers prepare reading-comprehension assessments more efficiently and with better controllability. Although no direct teacher-time outcome was measured, the paper argues that keyword-guided generation can reduce the burden of manually steering question wording and direction, and human evaluators judged KPQG more aligned with user expectations.",
+        "measure": "Human evaluation of expectedness and answerability; qualitative case studies of controllable question generation",
+        "study_size": "n=300 passages, 30 evaluators",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Taiwan",
+  "study_region": "East Asia & Pacific",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

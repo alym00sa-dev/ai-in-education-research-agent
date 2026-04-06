@@ -1,0 +1,108 @@
+{
+  "title": "E-EVAL: A Comprehensive Chinese K-12 Education Evaluation Benchmark for Large Language Models",
+  "doi": null,
+  "year": 2024,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2401.15927v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Elementary (PreK-5th)",
+    "Middle School (6th-8th)",
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper introduces E-EVAL, a new benchmark for evaluating large language models (LLMs) in Chinese K-12 education. The authors argue that existing benchmarks do not adequately cover the elementary, middle, and high school levels in China, especially with respect to culturally specific content and the often-overlooked primary school domain. The central problem is not intervention effectiveness in a classroom, but the lack of a comprehensive evaluation suite for educational LLM capability in Chinese K-12 settings.\n\nE-EVAL contains 4,351 multiple-choice questions across 23 subjects spanning primary school, middle school, and high school, with subjects grouped into arts and science. The benchmark was built from homework, practice questions, and mock exams collected from regional sources in PDFs and Word documents, then manually cleaned and checked for accuracy, formula correctness, and answer balance. The paper evaluates 15 LLMs, including open-source and commercial systems, under zero-shot, few-shot-answer-only, and few-shot-chain-of-thought prompts.\n\nThe evaluation is conducted on Chinese K-12 content, with results reported separately for arts and science and for primary, middle, and high school levels. The authors find that Chinese-dominant models generally outperform English-dominant models on this benchmark, but still struggle on complex science and mathematics questions. They also report that models tend to do better on arts than science, and that performance on primary school items is sometimes worse than on middle school items, suggesting weaknesses in simple foundational knowledge. The paper concludes that E-EVAL can serve as a useful tool for tracking progress in LLMs for Chinese K-12 educational applications.",
+  "limitations": [
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "China",
+  "study_region": "East Asia & Pacific",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "language_speech",
+        "content_generation"
+      ],
+      "description": "OpenAI\u2019s conversational large language model product used for dialogue-based text generation and question answering.",
+      "use_case": "Evaluated as one of 15 LLMs on the E-EVAL Chinese K-12 benchmark across zero-shot, few-shot-answer-only, and few-shot-chain-of-thought prompting.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "On E-EVAL, ChatGPT achieved 54.6% average accuracy overall. It scored 60.5% on arts and 46.8% on science, and its results varied by prompt setting (54.5% zero-shot, 56.9% five-shot-ao, 52.3% five-shot-cot).",
+          "measure": "Accuracy on E-EVAL multiple-choice benchmark",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=4351 (benchmark total); model evaluation across 23 subjects"
+        }
+      ]
+    },
+    {
+      "name": "Qwen",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "language_speech",
+        "content_generation"
+      ],
+      "description": "Alibaba\u2019s Qwen family of large language models, used as a general-purpose LLM for text understanding and generation.",
+      "use_case": "Evaluated on E-EVAL in zero-shot, five-shot-answer-only, and five-shot-chain-of-thought settings; the paper reports both Qwen-72B and Qwen-7B variants but normalizes them to the Qwen family.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Qwen models obtained the strongest overall performance in the benchmark, with Qwen-72B-Chat reaching 88.9% average accuracy. The paper reports 92.5% on arts and 84.0% on science, and prompt-dependent scores of 89.0% zero-shot, 88.7% five-shot-ao, and 88.8% five-shot-cot.",
+          "measure": "Accuracy on E-EVAL multiple-choice benchmark",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=4351 (benchmark total); model evaluation across 23 subjects"
+        }
+      ]
+    },
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "language_speech",
+        "content_generation"
+      ],
+      "description": "Generic large language model chatbot capability used as a category-level educational AI tool.",
+      "use_case": "The paper benchmarks multiple LLMs on Chinese K-12 subject questions to assess educational performance and prompting effects rather than a single named educational product.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Across the evaluated LLMs, Chinese-dominant models generally outperformed English-dominant models on Chinese K-12 questions, and arts subjects were easier than science subjects. The paper also reports that few-shot prompting usually helped, while chain-of-thought prompting often reduced overall performance except on more complex science questions.",
+          "measure": "Accuracy on E-EVAL by model, subject category, and prompting strategy",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=4351 (benchmark total); 15 models evaluated"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a benchmark paper rather than a pedagogical intervention study. It provides descriptive model accuracy comparisons on a test suite, but not a controlled educational evaluation with student outcomes.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The reported accuracy differences are substantial for model benchmarking, but they do not translate into directly measured student learning impact. The paper\u2019s educational relevance is important, yet the evidence is about evaluation performance rather than instructional effect.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

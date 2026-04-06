@@ -1,0 +1,73 @@
+{
+  "title": "Discovering the curriculum with AI: A proof-of-concept demonstration with an intelligent tutoring system for teaching project selection",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2406.04082v2",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Adult (non-academic)"
+  ],
+  "user_types": [
+    "Community"
+  ],
+  "study_design": "Randomized Controlled Trial (RCT)",
+  "extended_summary": "This paper asks whether AI can be used to automatically discover and teach effective decision strategies in a real-world problem domain, rather than only in toy tasks. The authors focus on project selection: choosing among candidate projects when information is incomplete, noisy, costly to obtain, and drawn from multiple advisors with different reliabilities. They frame this as a resource-rational metareasoning problem and aim to derive near-optimal information-gathering strategies that can then be taught to people.\n\nTo address this, the paper introduces MGPS, a new strategy-discovery algorithm that extends prior metareasoning methods to handle discrete advisor ratings, multiple experts, different information costs, and criterion weighting. The discovered strategy is then embedded in an intelligent tutor, MGPS Tutor, which gives learners practice and feedback on which information requests are optimal. The tutor was tested in an online experiment with 301 adult participants on Prolific, using a project-selection task modeled on a real case from an Iranian financial institution. Participants were randomly assigned to a no-tutor condition, a dummy tutor control, or the MGPS tutor condition.\n\nThe main findings are that participants who used MGPS Tutor achieved significantly higher resource-rationality scores and higher click agreement with the target strategy than both control groups. The discovered strategy also outperformed PO-UCT on a computational benchmark, while being substantially more efficient for real-time tutoring. The authors conclude that automatic strategy discovery can be used to build intelligent tutoring systems for realistic decision-making skills, though they note that the approach still requires accurate environment modeling and has not yet been validated in a real-world field deployment.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed-style empirical training experiment plus benchmark comparison, but it is not a randomized controlled trial in an educational setting and the main human study is a proof-of-concept with a specialized decision task rather than a classroom intervention. The evidence is therefore best treated as correlational/experimental proof-of-concept rather than high-credibility efficacy evidence for schooling.",
+  "impact_tier": "green",
+  "impact_tier_rationale": "The human training effects are modest to moderate (e.g., d=.31 to .58) and show clear improvement in a priority durable skill, but the study is confined to an online adult sample and a narrow decision-making task. The practical impact is promising yet indirect for education, especially outside MBA-style or executive decision contexts.",
+  "interventions": [
+    {
+      "intervention": "Intelligent Tutoring System (ITS)",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "An intelligent cognitive tutor (MGPS Tutor) that teaches a discovered project-selection strategy via practice trials, pedagogically chosen choice sets, and binary feedback on information-request decisions."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Participants trained with the MGPS Tutor learned significantly better project-selection strategies than both control groups. In the training experiment (n=301), MGPS Tutor improved normalized RR-score relative to No tutor (d=0.35, p<.0001) and Dummy tutor (d=0.31, p=0.0002), and increased click agreement with the near-optimal strategy (d=0.58 vs No tutor; d=0.56 vs Dummy tutor).",
+        "measure": "Resource-rationality score (RR-score) and click agreement with the near-optimal project-selection strategy",
+        "study_size": "n=301",
+        "effect_size": "d=0.35 to 0.58",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.72,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper shows that the MGPS strategy discovery method is computationally efficient enough for real-time tutoring feedback, and substantially faster than PO-UCT at comparable performance levels. On 5000 benchmark instances, MGPS achieved RR-score 0.9942 with runtime 0.9079 s, versus PO-UCT 1000 steps RR-score 0.8681 with 2.3567 s and PO-UCT 5000 steps RR-score 0.9054 with 10.8913 s.",
+        "measure": "Normalized RR-score and runtime per decision problem",
+        "study_size": "n=5000 benchmark instances",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "short_duration",
+    "single_site",
+    "non_representative_population",
+    "no_long_term_followup",
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United Kingdom",
+  "study_region": "Europe",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

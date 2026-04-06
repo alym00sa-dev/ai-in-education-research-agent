@@ -1,0 +1,107 @@
+{
+  "title": "Personalized Knowledge Transfer Through Generative AI: Contextualizing Learning to Individual Career Goals",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2508.04070v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Undergraduate",
+    "Graduate / Doctoral"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper examines whether generative AI can improve learning when it personalizes instructional content to learners\u2019 individual career goals. The central question is whether career-aligned scenarios make digital learning more engaging, more satisfying, and more efficient than standard non-personalized content.\n\nThe intervention was implemented in Syntea, IU International University of Applied Sciences\u2019 AI-powered learning assistant. In a between-subjects A/B test, learners were randomly assigned either to a career-goal condition, where scenarios and prompts were adapted to self-reported professional aspirations, or to a traditional condition with standard content on the same academic topics. The study was conducted as a controlled field experiment over six weeks and combined learning analytics, academic performance data, NPS-based satisfaction ratings, and open-ended learner feedback.\n\nThe sample included 4,003 distance-learning students from IU, spanning bachelor\u2019s and master\u2019s programs across multiple disciplines. For quantitative analysis, the authors restricted some outcomes to learners who completed at least five sessions, and academic efficiency outcomes were analyzed on a further subsample of learners who had completed their courses during the study window. The context was an online university learning platform used for exam preparation and study support.\n\nResults showed modest benefits for personalization: the career-goal group reported slightly longer sessions, somewhat more sessions per learner, significantly higher satisfaction, and shorter study duration, although the engagement and efficiency differences were not statistically significant. Exam scores were nearly identical across groups. Qualitative feedback suggested that learners found the personalized content motivating, relevant, and more connected to their future work, while some requested tighter alignment with exam content and noted occasional technical issues.",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is a large between-subjects randomized A/B field experiment with a relevant non-AI baseline and substantial sample size, which supports stronger causal inference than correlational work. However, the paper is a preprint with some analytic limitations (e.g., subsample restriction to learners with 5+ sessions, mostly simple t-tests, and no reported confidence intervals), so it does not meet blue-tier standards.",
+  "impact_tier": "green",
+  "impact_tier_rationale": "The main positive effect is small: satisfaction improved with d=-0.161, while engagement and study-duration differences were modest and not statistically significant. The intervention appears to have a limited but meaningful positive impact on learner experience rather than a large academic achievement effect.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.95,
+      "role": "primary",
+      "use_case": "Generative AI-powered conversational learning assistant (Syntea) that dynamically personalizes learning scenarios, prompts, and examples to learners' self-reported career goals in higher education."
+    },
+    {
+      "intervention": "Adaptive Learning Platform",
+      "confidence": 0.82,
+      "role": "secondary",
+      "use_case": "University learning platform with prompt- and scenario-level personalization that delivers standard versus career-goal-tailored content in a between-subjects A/B test."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Career-goal personalization increased learner satisfaction on the Net Promoter Score. In the quantitative subsample (n=1,052 learners with at least 5 sessions), the personalized group reported higher NPS than the traditional group (M=9.02 vs 8.84), a statistically significant difference with a small effect (d=-0.161; t(942)=-2.448, p=.0145).",
+        "measure": "Net Promoter Score (NPS) after each session",
+        "study_size": "n=1,052 (quantitative analysis subsample); full study n=4,003",
+        "effect_size": "d=-0.161",
+        "confidence_interval": "not_reported",
+        "std_deviation": "SD=1.10 (career goal), SD=1.11 (traditional)"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.9,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Learners in the career-goal group showed slightly higher engagement, including longer mean and median session duration and more sessions per learner, though these differences were not statistically significant. In the quantitative sample (n=1,052), mean session duration was 1,457.89 seconds versus 1,385.75 seconds in control, and mean sessions per learner was 14.18 versus 13.05; successful sessions were slightly lower in the personalized group (80.81% vs 82.41%).",
+        "measure": "Session duration, sessions per learner, and successful-session rate from interaction logs",
+        "study_size": "n=1,052 (quantitative analysis subsample); full study n=4,003",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "SD session duration=1,186.46 (career goal), 1,352.12 (traditional); SD sessions/learner=11.62 vs 10.24"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.86,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The personalized condition reduced average study duration, suggesting a modest efficiency gain, but the effect was not statistically significant. Among the academic-performance subsample (career goal n=241; traditional n=584), study duration was 148.66 days versus 160.74 days in control, a 7.51% reduction, while exam results were nearly identical (78.46% vs 77.73%; t(514.88)=-0.851, p=.3955).",
+        "measure": "Study duration (days from enrollment to exam completion) and exam results (%)",
+        "study_size": "n=825 for study-efficiency analysis (241 career goal, 584 traditional)",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    },
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.8,
+      "finding": {
+        "direction": "No Effect",
+        "finding_summary": "Academic performance, as measured by exam scores, did not materially differ between personalized and traditional conditions. In the study-efficiency subsample (n=825), exam results were 78.46% in the career-goal group and 77.73% in the traditional group, a negligible 0.94% difference that was not statistically significant (t(514.88)=-0.851, p=.3955).",
+        "measure": "Exam results (%)",
+        "study_size": "n=825 (career goal n=241; traditional n=584)",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    }
+  ],
+  "limitations": [
+    "single_site",
+    "non_representative_population",
+    "no_long_term_followup",
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "6",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "medium",
+  "study_country": "Germany",
+  "study_region": "Europe",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

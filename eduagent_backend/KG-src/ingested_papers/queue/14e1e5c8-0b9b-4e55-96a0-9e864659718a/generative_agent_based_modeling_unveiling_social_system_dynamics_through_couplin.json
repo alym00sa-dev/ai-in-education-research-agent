@@ -1,0 +1,46 @@
+{
+  "title": "Generative Agent-Based Modeling: Unveiling Social System Dynamics through Coupling Mechanistic Models with Generative Artificial Intelligence",
+  "doi": null,
+  "year": 2023,
+  "venue": "not_reported",
+  "url": "http://arxiv.org/abs/2309.11456v1",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper introduces Generative Agent-Based Modeling (GABM), a modeling approach that couples a mechanistic model of interactions with a large language model to represent agent decision-making. The main question is how generative AI can be integrated into simulation models of social systems so that human behavior emerges from LLM-informed reasoning rather than from hand-coded decision rules.\n\nThe paper is primarily methodological and pedagogical. It uses ChatGPT (GPT-3.5-Turbo) as the LLM and presents a simple office-based diffusion model in which 20 workers choose daily between green and blue shirts. Each agent receives prompt-based information about the social context, prior choices, and persona traits, then generates a response that drives the simulation. The authors systematically vary personas, prompt wording, temperature, and initial conditions to study sensitivity and reproducibility.\n\nThe paper concludes that GABMs can produce plausible path-dependent social dynamics and that persona definitions and prompt design materially affect outputs. It argues that the approach can reduce reliance on manually specified behavioral rules and may help model more realistic decision-making, but it also highlights risks such as prompt sensitivity, bias from training data, and reproducibility issues. The paper does not study a K\u201312 educational intervention; its educational contribution is as a tutorial example for modelers.",
+  "limitations": [
+    "short_duration",
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "tutoring_instruction"
+      ],
+      "description": "OpenAI\u2019s large language model chatbot used for generating and reasoning over natural-language prompts.",
+      "use_case": "Used as the LLM in a generative agent-based model (GABM) to simulate individual agents\u2019 decisions in a norm-diffusion toy model; specifically GPT-3.5-Turbo was used via the OpenAI API.",
+      "findings": []
+    }
+  ],
+  "verdict": "framework_only",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a conceptual/methodological paper that introduces and illustrates a modeling framework rather than evaluating an AI tool in an educational intervention study. It does not present K\u201312 empirical evidence or causal estimates.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "No educational outcome is measured, and no effect sizes or student/teacher impact results are reported. The paper only provides a proof-of-concept simulation and sensitivity discussion. ",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

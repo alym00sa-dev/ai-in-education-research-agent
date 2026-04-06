@@ -1,0 +1,86 @@
+{
+  "title": "Large Language Models (GPT) for automating feedback on programming assignments",
+  "doi": null,
+  "year": 2023,
+  "venue": "Proceedings of the 31st International Conference on Computers in Education",
+  "url": "https://learninganalytics.upenn.edu/ryanbaker/ICCE-2023-Pankiewicz.pdf",
+  "source_db": "backfill_v3",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Randomized Controlled Trial (RCT)",
+  "extended_summary": "This paper examines whether large language model-generated feedback can improve students\u2019 work on programming assignments in an automated assessment environment. The authors focus on a core challenge in computer science education: providing personalized, constructive feedback on code is difficult because students can make many different kinds of syntax and logic errors, and there are multiple valid ways to solve a task. The study asks whether GPT-generated hints can improve performance, change how students use platform feedback, affect time to solve problems, and influence student affect.\n\nThe intervention was the integration of OpenAI\u2019s GPT-3.5 via API into the RunCode platform to automatically generate personalized hints after incorrect programming submissions. Students in the experimental condition received GPT-generated explanations and debugging guidance for 38 of 46 object-oriented programming tasks, while the control group received only the platform\u2019s standard feedback based on compiler and unit test results. For 8 more difficult transfer tasks, GPT hints were withheld from the experimental group to test downstream effects after prior exposure to GPT support.\n\nThe population consisted of second-semester computer science undergraduates at Warsaw University of Life Sciences in Poland taking a required object-oriented programming course in C#. A total of 132 consenting students were randomly assigned to control and experimental groups, though 93 submitted at least one solution during the 9-week study window. The intervention took place in an online automated coding environment already familiar to students, and platform use was voluntary and did not count toward course grades.\n\nStudents generally rated GPT hints as useful. Compared with controls, students with GPT access used the platform\u2019s regular feedback less often yet showed better cumulative success rates on tasks where GPT hints were available. On later tasks without GPT hints, the experimental group solved assignments faster but was initially less likely to solve them correctly, suggesting some short-term over-reliance on GPT feedback before adapting. GPT hint availability did not significantly affect reported affective states. Overall, the findings suggest that LLM-generated feedback can support programming performance, while also raising implementation questions about dependency and generalizability.",
+  "quality_tier": "green",
+  "impact_tier": "yellow",
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "self_reported_measures",
+    "non_representative_population",
+    "high_attrition",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "9",
+  "setting": "online",
+  "teacher_training": "no",
+  "implementation_fidelity": "medium",
+  "study_country": "Poland",
+  "study_region": "Europe",
+  "extraction_status": "full_text",
+  "extraction_note": "Retrieved from KG corpus",
+  "interventions": [
+    {
+      "intervention": "ChatGPT",
+      "confidence": 0.9,
+      "role": "primary",
+      "use_case": ""
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.8,
+      "finding": {
+        "direction": "positive",
+        "finding_summary": "Students in the experimental group performed better on the 38 tasks where GPT hints were available, with a higher percentage of successful submissions across cumulative attempts than the control group. A linear mixed-effects model found a significant main effect of group, t(13)=5.38, p<0.001, while the group-by-attempt interaction was not significant, t(13)=-0.172, p=0.866.",
+        "measure": "percentage of successful programming submissions across cumulative attempts on tasks with GPT hints enabled",
+        "study_size": "n=93 active submitters",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      }
+    },
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.8,
+      "finding": {
+        "direction": "mixed",
+        "finding_summary": "On the 8 harder tasks where GPT hints were no longer available, the control group outperformed the experimental group during the first six attempts, but correctness rates were comparable from the seventh attempt onward. The linear mixed-effects model showed a significant group-by-attempt interaction, t(13)=7.13, p<0.001, indicating different performance trajectories between groups.",
+        "measure": "percentage of successful programming submissions across cumulative attempts on later tasks without GPT hints",
+        "study_size": "n=93 active submitters",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      }
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.8,
+      "finding": {
+        "direction": "null",
+        "finding_summary": "When GPT hints were available, group assignment was not a significant predictor of time needed to solve tasks. Rank-based regression showed no significant difference between conditions, t(89)=-0.24, p=0.811.",
+        "measure": "time needed to successfully solve assignments when GPT hints were available",
+        "study_size": "n=1,784 successful submissions",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      }
+    }
+  ],
+  "authors": "",
+  "_kg_source": true
+}

@@ -1,0 +1,78 @@
+{
+  "title": "DMP_AI: An AI-Aided K-12 System for Teaching and Learning in Diverse Schools",
+  "doi": null,
+  "year": 2024,
+  "venue": "not_reported",
+  "url": "http://arxiv.org/abs/2412.03292v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Elementary (PreK-5th)",
+    "Middle School (6th-8th)",
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator",
+    "Administrator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses the challenge of applying AI effectively in K-12 education across diverse primary and secondary school settings. The authors argue that, although AI has promise for personalization, prediction, and decision support, real-world K-12 deployment remains limited and complicated by privacy concerns, heterogeneous school data, and uneven user understanding of AI.\n\nTo address these issues, the paper presents DMP_AI (Data Management Platform_Artificial Intelligence), an AI-aided educational system that integrates data mining, natural language processing, machine learning, learning analytics, and federated learning. The system includes five modules: student academic performance prediction and intervention, an early warning system, individualized education plan (IEP) analytics, talented student prediction and identification, and cross-school personalized electives recommendation. The paper describes the design of these modules and the privacy-preserving, cross-school data infrastructure supporting them.\n\nThe system was piloted in eight local Hong Kong schools, including three primary schools and five secondary schools, with feedback collected from 33 users via a 10-item survey. Results were generally positive: users rated the interface and usefulness favorably, and they expressed interest in continued use. However, respondents reported weaker gains in understanding AI, and the talented-student module received comparatively lower ratings, likely due to unfamiliarity with AI-based identification and heterogeneous data across schools. The authors conclude that DMP_AI is feasible and promising, but that continued training, explanation, and ethical attention to bias and transparency are needed for sustainable adoption.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed implementation/pilot study with survey-based feedback and descriptive reporting, but not a controlled design. Evidence is largely qualitative/correlational and focused on feasibility and user perceptions rather than causal outcome effects.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper suggests modest positive institutional impact through successful deployment and acceptable user experience, but it does not provide strong evidence of learning gains or large-scale effects. Reported benefits are mainly feasibility and usability, with unresolved implementation challenges limiting impact strength.",
+  "interventions": [
+    {
+      "intervention": "Predictive Analytics / Early Warning",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "AI-aided K-12 data management platform for student academic performance prediction, behavior prediction, early warning alerts, talented-student identification, IEP analytics, and cross-school elective recommendation"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.84,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The system was piloted in eight local schools (n=33 survey respondents) and users reported generally positive perceptions of usability, helpfulness, and willingness to continue using it. Average ratings were above 3.0 on a 5-point scale for most items, including overall satisfaction with module performance (3.03 overall), perceived helpfulness (3.54 overall), and intent to continue using the module (3.51 overall).",
+        "measure": "User experience survey ratings on 10 Likert-scale items covering performance, interface, usability, helpfulness, and future use",
+        "study_size": "n=33",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Systemic / Institutional Impact",
+      "confidence": 0.9,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The paper reports successful real-world implementation of an AI-aided K-12 platform across eight schools, indicating institutional feasibility and strong user acceptability. However, it also identifies persistent implementation challenges, especially heterogeneity of school data, privacy constraints, and the need for ongoing training to improve users' understanding of AI (mean 2.89/5 on understanding AI).",
+        "measure": "Cross-school deployment feasibility, user experience survey, and qualitative implementation reflections",
+        "study_size": "n=33 survey respondents; 8 schools piloted",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_control_group",
+    "self_reported_measures",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "blended",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "medium",
+  "study_country": "Hong Kong",
+  "study_region": "East Asia & Pacific",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

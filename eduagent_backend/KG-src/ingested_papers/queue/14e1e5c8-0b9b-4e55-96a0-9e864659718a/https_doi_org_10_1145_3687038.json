@@ -1,0 +1,103 @@
+{
+  "title": "Impact of Guidance and Interaction Strategies for LLM Use on Learner Performance and Perception",
+  "doi": "https://doi.org/10.1145/3687038",
+  "year": 2024,
+  "venue": "Proc. ACM Hum.-Comput. Interact. (CSCW2)",
+  "url": "https://doi.org/10.48550/arxiv.2310.13712",
+  "source_db": "openalex_search",
+  "populations": [
+    "Undergraduate",
+    "Adult (non-academic)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Randomized Controlled Trial (RCT)",
+  "extended_summary": "This paper asks how different guidance strategies shape the way learners interact with large language models (LLMs), and how those strategies affect performance, confidence, trust, and self-perception while using an LLM tutor. The authors focus on whether students should be given direct instructions, example-based guidance, metacognitive prompts, or a workflow that requires solving first and refining with the LLM afterward.\n\nThe intervention is a set of four guidance strategies: list-based suggestions, example-based instruction, metacognitive questioning, and solve-then-refine. In addition, the authors compared a prompted versus unprompted GPT-3 chatbot in the online study. In the classroom deployment, the model was also constrained by a system prompt telling it to act as a database instructor, give brainstorming help only, and never provide SQL solutions directly. The study examined how these design choices changed the content of students\u2019 first queries, assignment performance, and perceptions of the chatbot.\n\nThe paper reports two studies. Study 1 was a formative classroom study in a third-year undergraduate database course at a North American university (N=145 students who completed the assignment), and Study 2 was a controlled online experiment on Prolific with adults solving math problems (N=356). The results show that structured guidance reduced unrelated queries and verbatim copy-pasting, while the solve-then-refine workflow shifted students toward clarification-seeking and self-first problem solving. However, the interventions did not reliably improve task performance overall in the controlled study; confidence in using LLMs rose briefly after guidance but often fell after actual task use, and trust in LLM responses declined after experience with the system. The authors conclude that guidance can shape interaction quality and learner behavior, but it does not automatically improve outcomes and may also reveal risks such as overconfidence, shallow engagement, or reduced trust after use.",
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "self_reported_measures",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "12",
+  "setting": "blended",
+  "teacher_training": "yes",
+  "implementation_fidelity": "medium",
+  "study_country": "Canada",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "feedback_evaluation"
+      ],
+      "description": "A GPT-family large language model chatbot used as a dialogue-based support system / tutoring assistant. In this paper it is configured via system prompts to behave as a database instructor or K-12 math teacher and provide guided, open-ended help rather than direct answers.",
+      "use_case": "Used as the LLM tutor in two studies: (1) a classroom database assignment support chatbot based on GPT-3, and (2) a controlled math-problem-solving chatbot with prompted vs. unprompted variants.",
+      "findings": [
+        {
+          "outcome_category": "Academic \t7 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "In Study 1 (n=145), the prompted database tutor was used under four guidance conditions. The paper reports that G4 (solve then refine with LLM) may not have helped homework performance as much as the other guidance strategies, while Study 2 (n=356) found no significant performance difference between prompted and unprompted LLMs (Kruskal-Wallis \u0003d 0.13, p=1; Mann-Whitney W=15025, p=0.37).",
+          "measure": "Homework score / task accuracy in assignment and math problems",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=145; n=356"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In Study 1, structured guidance reduced unrelated student queries and reduced copy-pasting of assignment questions into the chatbot. The paper reports that absence of G1, G3, and G4 led to more unrelated questions, while G1, G2, and G4 reduced the likelihood of verbatim assignment-question copy-pasting.",
+          "measure": "First-query category distribution and occurrence of verbatim question copy-pasting",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=138 chatbot users within n=145"
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Across Study 2, confidence in using LLMs increased after guidance but dropped after completing the task (mean 4.51 initial, 5.19 after guidance, 4.57 after use; Friedman \u0003d 72.82, p<0.001). Trust in LLM responses also declined after task experience (mean 4.36 initial to 3.49 post-task; Friedman \u0003d 80.31, p<0.001).",
+          "measure": "Confidence in using LLMs and trust in LLM responses across stages",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=356"
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "The paper reports negligible or non-significant change in self-confidence / confidence in one's own answers. In Study 2, confidence in math-solving ability was stable from pre- to post-task (mean 5.04 to 5.16, p=0.079). In Study 1, changes in self-confidence were negligible across conditions.",
+          "measure": "Self-confidence in topic / math-solving ability",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=145; n=356"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "The paper reports that pre-prompting the model changed the interaction environment but did not improve overall task performance. Exploratory analysis suggested that examples (G2) and metacognitive questioning (G3) appeared to improve performance when paired with an unprompted LLM, with G2 yielding 68.13%\u0000.68% versus 58.09%\u0000.32% with a prompted LLM.",
+          "measure": "Performance across prompted vs. unprompted LLM conditions",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=356"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is an empirical randomized classroom study plus a controlled online experiment, but it is not a single fully powered RCT for the main classroom outcomes and includes exploratory subgroup analyses. The methodology is still reasonably strong and directly observes actual student-LLM interactions.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports several statistically significant attitude and interaction-pattern changes, but the core performance effects are null or small and no standardized effect sizes are reported. Overall impact on learning outcomes is unclear/modest rather than clearly large.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

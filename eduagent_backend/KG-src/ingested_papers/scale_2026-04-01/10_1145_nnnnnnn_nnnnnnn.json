@@ -1,0 +1,671 @@
+{
+  "title": "SRLAgent: Enhancing Self-Regulated Learning Skills through Gamification and LLM Assistance",
+  "doi": "10.1145/nnnnnnn.nnnnnnn",
+  "year": 2025,
+  "venue": "Proceedings of Preprint",
+  "url": "https://arxiv.org/abs/2506.09968",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper investigates how to improve self-regulated learning (SRL) skills among college students, especially freshmen who struggle with goal-setting, time management, maintaining study routines, and reflection. The authors argue that existing SRL interventions and educational technologies often provide static support, limited personalization, and insufficient engagement. To better understand student needs, they first conducted a formative mixed-methods study with 59 university students using surveys and semi-structured interviews.\n\nBased on these findings, the authors developed SRLAgent, a gamified Minecraft-based learning environment augmented with large language model (LLM) support. The system is grounded in Zimmerman\u2019s three-phase SRL model\u2014forethought, performance, and reflection\u2014and includes planning support, real-time monitoring, specialized tutoring agents, and reflection prompts. Students interact with learning materials, quizzes, writing tasks, and conversational AI agents within a virtual campus environment. The system is designed to scaffold goal-setting, strategic learning, time management, and reflective practice while maintaining engagement through game mechanics.\n\nThe empirical evaluation used a between-subjects experiment with 45 Chinese college freshmen at a university in China. Participants were randomly assigned to one of three conditions: traditional multimedia learning, a baseline Minecraft SRLAgent version without SRL-specific features, or the full SRLAgent system. The intervention focused on learning about LLM agents in a one-hour lab study including pretest, tutorial, learning session, and post-test. Outcomes included self-regulated learning skills, knowledge test performance, engagement, and trust in AI.\n\nThe main findings indicate that the full SRLAgent condition produced a significant pre-post improvement in self-reported SRL skills, whereas the other two conditions did not. However, learning outcome gains on the knowledge test did not significantly differ between SRLAgent and the baseline system without SRL features. Engagement and trust in AI showed descriptive trends favoring SRLAgent, but these differences were not statistically significant. Overall, the paper concludes that embedding SRL scaffolding and real-time LLM assistance in a gamified environment can strengthen students\u2019 self-regulation, though stronger evidence is still needed for effects on content learning, engagement, and trust.",
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "lab",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "China",
+  "study_region": "East Asia & Pacific",
+  "identified_tools": [
+    {
+      "name": "SRLAgent",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "personalization_adaptation",
+        "feedback_evaluation"
+      ],
+      "description": "An LLM-assisted, Minecraft-based gamified learning system designed to support self-regulated learning through planning, monitoring, tutoring, and reflection agents.",
+      "use_case": "Studied as a college learning environment for teaching the concept of 'LLM agents' while scaffolding self-regulated learning via goal-setting, real-time feedback, time management, and reflection features.",
+      "findings": [
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In the SRLAgent condition, self-regulated learning scores increased significantly from pretest (M=5.66, SD=.67) to post-test (M=5.92, SD=.65), with t(15)=4.41, p<.001, Cohen\u2019s d=.234. No significant pre-post SRL gains were observed in the SRLAgent-without-SRL-features group or the multimedia learning group.",
+          "measure": "Academic Self-Regulated Learning Questionnaire (18-item ASLQ-derived SRL score, 7-point Likert scale)",
+          "effect_size": "Cohen\u2019s d = 0.234",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=16"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "For learning outcomes on LLM agent content, the SRLAgent group showed descriptive pre-post gains (M diff=1.69, SD=1.40), but post-intervention performance did not differ significantly from the SRLAgent-without-SRL-features group, t(28)=1.59, p=.123. All groups showed gains, with the largest descriptive improvement in the SRLAgent-without-SRL-features group (M diff=2.53, SD=2.56).",
+          "measure": "12-item Hugging Face LLM Agent tutorial final test (multiple-choice knowledge test)",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=16"
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Participants using SRLAgent reported higher average engagement scores (M=4.17, SD=.45) than those using the baseline SRLAgent without SRL features (M=3.80, SD=.82), but the difference was not statistically significant, t(28)=1.59, p=.123. The paper interprets this as a descriptive trend suggesting potentially higher engagement with SRL scaffolding and adaptive feedback.",
+          "measure": "User Engagement Scale (UES), 30-item post-test engagement score",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=30"
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "Within the SRLAgent group, trust in the AI system increased modestly from pretest (M=4.66, SD=.73) to post-test (M=4.91, SD=.80), but this change was not statistically significant, t(15)=1.62, p=.127. A one-way ANOVA on post-test trust across conditions was also non-significant, F(2,42)=1.21, p=.310, though descriptive means favored SRLAgent over multimedia learning and SRLAgent without SRL features.",
+          "measure": "12-item Jian Trust Scale adapted for AI systems",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=16"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is an empirical between-subjects randomized comparison with pre/post measurement and two baselines, which is stronger than descriptive or correlational work. However, the sample is small (N=45 total) and reported evidence is limited to a single short-duration study in higher education, so some concerns remain.",
+  "impact_tier": "green",
+  "impact_tier_rationale": "The strongest reported effect is a statistically significant positive improvement in SRL skills for SRLAgent with Cohen\u2019s d=0.234, which meets the medium-impact threshold used here. Other outcomes were descriptive or non-significant, so overall impact is positive but modest and somewhat mixed.",
+  "citations": [
+    {
+      "title": "Large language models in medical education: opportunities, challenges, and future directions",
+      "doi": null,
+      "year": 2023,
+      "venue": "JMIR Medical Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Tools designed to support self-regulated learning in online learning environments: A systematic review",
+      "doi": null,
+      "year": 2022,
+      "venue": "IEEE Transactions on Learning Technologies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Claude",
+      "doi": null,
+      "year": null,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "How do college freshmen view the academic differences between high school and college",
+      "doi": null,
+      "year": 2006,
+      "venue": "annual meeting of the Midwestern Psychological Association, Chicago, IL",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Using Reflective Journals and the Workshop Approach in University Classes To Develop Students\u2019 Self-Regulated Learning",
+      "doi": null,
+      "year": 1994,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Does training on self-regulated learning facilitate students\u2019 learning with hypermedia?",
+      "doi": null,
+      "year": 2004,
+      "venue": "Journal of Educational Psychology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Education in the era of generative artificial intelligence (AI): Understanding the potential benefits of ChatGPT in promoting teaching and learning",
+      "doi": null,
+      "year": 2023,
+      "venue": "Journal of AI",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Effects of a self-regulated learning course on the academic performance and graduation rate of college students in an academic support program",
+      "doi": null,
+      "year": 2008,
+      "venue": "Journal of College Reading and Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Improving student creativity with gamification and virtual worlds",
+      "doi": null,
+      "year": 2013,
+      "venue": "Proceedings of the First International Conference on Gameful Design, Research, and Applications",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Applying a web-based training to foster self-regulated learning\u2014Effects of an intervention for large numbers of participants",
+      "doi": null,
+      "year": 2016,
+      "venue": "The Internet and Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Comparing online and blended learner\u2019s self-regulated learning strategies and academic performance",
+      "doi": null,
+      "year": 2017,
+      "venue": "The Internet and Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Self-regulated learning strategies & academic achievement in online higher education learning environments: A systematic review",
+      "doi": null,
+      "year": 2015,
+      "venue": "The Internet and Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Language models are few-shot learners",
+      "doi": null,
+      "year": 2020,
+      "venue": "Advances in Neural Information Processing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Charting the motivation, self-efficacy beliefs, language learning strategies, and achievement of multilingual university students learning Arabic as a foreign language",
+      "doi": null,
+      "year": 2023,
+      "venue": "Asian-Pacific Journal of Second and Foreign Language Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Web-based reading annotation system with an attention-based self-regulated learning mechanism for promoting reading performance",
+      "doi": null,
+      "year": 2014,
+      "venue": "British Journal of Educational Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Rethinking college readiness",
+      "doi": null,
+      "year": 2008,
+      "venue": "New Directions for Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Study habits, skills, and attitudes: The third pillar supporting collegiate academic performance",
+      "doi": null,
+      "year": 2008,
+      "venue": "Perspectives on Psychological Science",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Effects of interactivity and instructional scaffolding on learning: Self-regulation in online video-based environments",
+      "doi": null,
+      "year": 2014,
+      "venue": "Computers & Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The relation between self-regulated learning and academic achievement across childhood and adolescence: A meta-analysis",
+      "doi": null,
+      "year": 2016,
+      "venue": "Educational Psychology Review",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "From game design elements to gamefulness: defining\" gamification\"",
+      "doi": null,
+      "year": 2011,
+      "venue": "Proceedings of the 15th International Academic MindTrek Conference: Envisioning Future Media Environments",
+      "citation_level": 2,
+      "citation_context": "defines gamification concept for system framing"
+    },
+    {
+      "title": "Components of fostering self-regulated learning among students. A meta-analysis on intervention studies at primary and secondary school level",
+      "doi": "10.1007/s11409-008-9029-x",
+      "year": 2008,
+      "venue": "Metacognition and Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Overconfidence produces underachievement: Inaccurate self evaluations undermine students\u2019 learning and retention",
+      "doi": null,
+      "year": 2012,
+      "venue": "Learning and Instruction",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The effect of self-regulated learning strategies on academic achievement: A meta-analysis study",
+      "doi": null,
+      "year": 2017,
+      "venue": "Eurasian Journal of Educational Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Introducing Gemini: our largest and most capable AI model",
+      "doi": null,
+      "year": null,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Leveraging student planning in game-based learning environments for self-regulated learning analytics",
+      "doi": null,
+      "year": 2024,
+      "venue": "Journal of Educational Psychology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Does gamification work?\u2013a literature review of empirical studies on gamification",
+      "doi": null,
+      "year": 2014,
+      "venue": "2014 47th Hawaii International Conference on System Sciences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Programmatic intervention research: Illustrations from the evolution of self-regulated strategy development",
+      "doi": null,
+      "year": 1999,
+      "venue": "Learning Disability Quarterly",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Artificial intelligence image recognition using self-regulation learning strategies: effects on vocabulary acquisition, learning anxiety, and learning behaviours of English language learners",
+      "doi": null,
+      "year": 2024,
+      "venue": "Interactive Learning Environments",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "New frontiers: Regulating learning in CSCL",
+      "doi": null,
+      "year": 2013,
+      "venue": "Educational Psychologist",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Foundations for an empirically determined scale of trust in automated systems",
+      "doi": null,
+      "year": 2000,
+      "venue": "International Journal of Cognitive Ergonomics",
+      "citation_level": 3,
+      "citation_context": "source of AI trust questionnaire items"
+    },
+    {
+      "title": "ChatGPT for good? On opportunities and challenges of large language models for education",
+      "doi": null,
+      "year": 2023,
+      "venue": "Learning and Individual Differences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Not just fun, but serious strategies: Using meta-cognitive strategies in game-based learning",
+      "doi": null,
+      "year": 2009,
+      "venue": "Computers & Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Exploring LLM-based Chatbot for Language Learning and Cultivation of Growth Mindset",
+      "doi": "10.1145/3613905.3648628",
+      "year": 2024,
+      "venue": "Extended Abstracts of the CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Promotion of self-regulated learning in classrooms: Investigating frequency, quality, and consequences for student performance",
+      "doi": null,
+      "year": 2010,
+      "venue": "Metacognition and Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Knowledge-Learning-Instruction framework: Bridging the science-practice chasm to enhance robust student learning",
+      "doi": null,
+      "year": 2012,
+      "venue": "Cognitive Science",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The rise of motivational information systems: A review of gamification research",
+      "doi": null,
+      "year": 2019,
+      "venue": "International Journal of Information Management",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Developing a theory of gamified learning: Linking serious games and gamification of learning",
+      "doi": null,
+      "year": 2014,
+      "venue": "Simulation & Gaming",
+      "citation_level": 2,
+      "citation_context": "theoretical basis linking gamification to learning outcomes"
+    },
+    {
+      "title": "Training self-regulated learning in the classroom: Development and evaluation of learning materials to train self-regulated learning during regular mathematics lessons at primary school",
+      "doi": null,
+      "year": 2012,
+      "venue": "Education Research International",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "What makes a good study day? An intraindividual study on university students\u2019 time investment by means of time-series analyses",
+      "doi": null,
+      "year": 2019,
+      "venue": "Learning and Instruction",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Gamification of education and learning: A review of empirical literature",
+      "doi": null,
+      "year": 2018,
+      "venue": "GamiFIN",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "What makes a good student? How emotions, self-regulated learning, and motivation contribute to academic achievement",
+      "doi": null,
+      "year": 2014,
+      "venue": "Journal of Educational Psychology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The concept of hybrid human-AI regulation: Exemplifying how to support young learners\u2019 self-regulated learning",
+      "doi": null,
+      "year": 2022,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 2,
+      "citation_context": "frames AI as support for self-regulated learning"
+    },
+    {
+      "title": "Measuring self-regulated learning and the role of AI: Five years of research using multimodal multichannel data",
+      "doi": null,
+      "year": 2023,
+      "venue": "Computers in Human Behavior",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Development and validation of academic self-regulated learning questionnaire (ASLQ)",
+      "doi": null,
+      "year": 2022,
+      "venue": "International Journal of Behavioral Sciences",
+      "citation_level": 3,
+      "citation_context": "source of SRL skills questionnaire"
+    },
+    {
+      "title": "Empowering student self-regulated learning and science education through ChatGPT: A pioneering pilot study",
+      "doi": null,
+      "year": 2024,
+      "venue": "British Journal of Educational Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A recipe for meaningful gamification",
+      "doi": null,
+      "year": 2015,
+      "venue": "Gamification in Education and Business",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The development and evaluation of a survey to measure user engagement",
+      "doi": null,
+      "year": 2010,
+      "venue": "Journal of the American Society for Information Science and Technology",
+      "citation_level": 3,
+      "citation_context": "basis for user engagement survey"
+    },
+    {
+      "title": "Tailored gamification in education: A literature review and future agenda",
+      "doi": null,
+      "year": 2023,
+      "venue": "Education and Information Technologies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT for teaching, learning and research: Prospects and challenges",
+      "doi": null,
+      "year": 2023,
+      "venue": "Glob Acad J Humanit Soc Sci",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT",
+      "doi": null,
+      "year": null,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "You\u2019ve got AI friend in me: LLMs as collaborative learning partners",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Classroom applications of research on self-regulated learning",
+      "doi": null,
+      "year": 2003,
+      "venue": "Educational Psychology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The control-value theory of achievement emotions: Assumptions, corollaries, and implications for educational research and practice",
+      "doi": null,
+      "year": 2006,
+      "venue": "Educational Psychology Review",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A conceptual framework for assessing motivation and self-regulated learning in college students",
+      "doi": null,
+      "year": 2004,
+      "venue": "Educational Psychology Review",
+      "citation_level": 2,
+      "citation_context": "conceptualizes SRL constructs in college learning"
+    },
+    {
+      "title": "Unpacking the intertemporal impact of self-regulation in a blended mathematics environment",
+      "doi": null,
+      "year": 2019,
+      "venue": "Computers in Human Behavior",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Understanding, evaluating, and supporting self-regulated learning using learning analytics",
+      "doi": null,
+      "year": 2015,
+      "venue": "Journal of Learning Analytics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "To Trust or Distrust Trust Measures: Validating Questionnaires for Trust in AI",
+      "doi": null,
+      "year": 2025,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Promoting self-regulation in science education: Metacognition as part of a broader perspective on learning",
+      "doi": null,
+      "year": 2006,
+      "venue": "Research in Science Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Goal and self-evaluative influences during children\u2019s cognitive skill learning",
+      "doi": null,
+      "year": 1996,
+      "venue": "American Educational Research Journal",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Handbook of self-regulation of learning and performance",
+      "doi": null,
+      "year": 2011,
+      "venue": "Taylor & Francis",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Gamification in theory and action: A survey",
+      "doi": null,
+      "year": 2015,
+      "venue": "International Journal of Human-Computer Studies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A comparative study of learning patterns of secondary school, high school and college students",
+      "doi": "10.1016/j.stueduc.2020.100958",
+      "year": 2021,
+      "venue": "Studies in Educational Evaluation",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Enhancing llm-based feedback: Insights from intelligent tutoring systems and the learning sciences",
+      "doi": null,
+      "year": 2024,
+      "venue": "International Conference on Artificial Intelligence in Education",
+      "citation_level": 2,
+      "citation_context": "informs personalized feedback design for LLM tutoring"
+    },
+    {
+      "title": "Self-regulated learning training programs enhance university students\u2019 academic performance, self-regulated learning strategies, and motivation: A meta-analysis",
+      "doi": null,
+      "year": 2021,
+      "venue": "Contemporary Educational Psychology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Transitions from High School to College",
+      "doi": null,
+      "year": 2013,
+      "venue": "The Future of Children",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Relationships among boredom proneness, sensation seeking and smartphone addiction among Chinese college students: Mediating roles of pastime, flow experience and self-regulation",
+      "doi": null,
+      "year": 2020,
+      "venue": "Technology in Society",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "AI for education (AI4EDU): Advancing personalized education with LLM and adaptive learning",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 30th ACM SIGKDD Conference on Knowledge Discovery and Data Mining",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Synthesizing research evidence on self-regulated learning and academic achievement in online and blended learning environments: A scoping review",
+      "doi": null,
+      "year": 2023,
+      "venue": "Educational Research Review",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Gamification in education: Why, where, when, and how?\u2014A systematic review",
+      "doi": null,
+      "year": 2024,
+      "venue": "Games and Culture",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Simulating classroom education with llm-empowered agents",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv preprint arXiv:2406.19226",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Becoming a self-regulated learner: An overview",
+      "doi": null,
+      "year": 2002,
+      "venue": "Theory into Practice",
+      "citation_level": 2,
+      "citation_context": "Zimmerman SRL model guides forethought-performance-reflection design"
+    },
+    {
+      "title": "Toward an integrated model of student learning in the college classroom",
+      "doi": null,
+      "year": 2017,
+      "venue": "Educational Psychology Review",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

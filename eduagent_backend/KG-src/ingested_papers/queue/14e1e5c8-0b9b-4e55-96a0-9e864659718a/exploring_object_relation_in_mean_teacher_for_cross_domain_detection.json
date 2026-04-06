@@ -1,0 +1,75 @@
+{
+  "title": "Exploring Object Relation in Mean Teacher for Cross-Domain Detection",
+  "doi": null,
+  "year": 2019,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/1904.11245v2",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses the problem of unsupervised domain adaptation for object detection under domain shift, where a detector trained on labeled source images performs poorly on unlabeled target images. The authors focus on cross-domain detection scenarios such as synthetic-to-real transfer and weather variation, and ask how the Mean Teacher consistency-based paradigm can be adapted to improve detection performance.\n\nThe proposed method, Mean Teacher with Object Relations (MTOR), extends Faster R-CNN with a teacher-student framework. For unlabeled target images, the model uses two augmented views and enforces three forms of consistency: region-level consistency between teacher and student predictions, inter-graph consistency between relational graphs built from region similarities, and intra-graph consistency to encourage same-class regions within the student graph to be more similar. The method is trained end-to-end with supervised detection loss on labeled source images and consistency losses on target images.\n\nExperiments are conducted on Cityscapes to Foggy Cityscapes, SIM10k to Cityscapes, and the Syn2Real benchmark (synthetic CAD-rendered images to real COCO/YTBB images). MTOR outperforms prior domain adaptation baselines and improves mean average precision across transfers, with the authors attributing gains to the combination of region-level and graph-structured consistency. However, the paper is about computer vision domain adaptation rather than education, so it does not involve educational populations, teachers, or instructional interventions.",
+  "limitations": [
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "identified_tools": [
+    {
+      "name": "CAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "other"
+      ],
+      "description": "Computer vision / object detection research paradigm using a teacher-student consistency framework for unsupervised domain adaptation.",
+      "use_case": "The paper proposes Mean Teacher with Object Relations (MTOR), a teacher-student domain adaptation method for cross-domain object detection, building on Faster R-CNN and consistency regularization.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0013 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "On Foggy Cityscapes for C \u001a F transfer, MTOR achieved 35.1% mAP, which was 3.1 percentage points higher than DA [4] and better than the region-level-only variant MTORR (34.2%). The paper reports that adding inter-graph and intra-graph consistency improved performance over region-level consistency alone.",
+          "measure": "mean Average Precision (mAP) on Foggy Cityscapes validation set",
+          "effect_size": "+3.1 mAP points vs. DA",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Academic \u0013 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "On SIM10k \u001a Cityscapes (M \u001a C), MTOR achieved 46.6% AP for car, compared with 41.9% for DA [4]. The authors attribute the gain to region-level consistency plus graph-structured consistencies.",
+          "measure": "Average Precision (AP) for car on Cityscapes validation set",
+          "effect_size": "+4.7 AP points vs. DA",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Academic \u0013 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "On the Syn2Real detection dataset for S \u001a Y transfer, MTOR achieved 22.8% mAP on the official YTBB test set, exceeding DA [4] at 19.6% and Source-only at 18.1%. The paper describes this as state-of-the-art single-model performance for the setting.",
+          "measure": "mean Average Precision (mAP) on official testing set (YTBB)",
+          "effect_size": "+3.2 mAP points vs. DA; +4.7 vs. Source-only",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    }
+  ],
+  "verdict": "archetype_only",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is a peer-reviewed empirical computer vision paper with a clear experimental design and comparative evaluation, but it is not an education study and does not evaluate an educational AI tool. The evidence is strong for the reported object detection task, though not directly applicable to the requested teacher-planning domain.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "The paper reports meaningful improvements in mAP/AP for object detection, but it has no relevance to teacher planning quality, instructional practice, or education-specific AI coaching/feedback. For the stated research topic, the practical impact is effectively absent.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

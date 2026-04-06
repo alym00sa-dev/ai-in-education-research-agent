@@ -1,0 +1,461 @@
+{
+  "title": "Challenges and Opportunities of Moderating Usage of Large Language Models in Education",
+  "doi": null,
+  "year": 2023,
+  "venue": null,
+  "url": "https://arxiv.org/abs/2312.14969",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper examines how large language models, specifically ChatGPT, can be moderated for educational use to reduce overreliance and encourage students\u2019 reflection and critical thinking. The authors focus on a known concern in education: when students have unrestricted access to LLMs, they may copy answers without engaging deeply with the task. The study asks whether modifying how ChatGPT responds can improve students\u2019 interaction strategies and support better learning-related behaviors while solving physics problems.\n\nTo investigate this, the authors developed two moderated ChatGPT-based tools: a Multi-Response Bot that provides three different candidate answers, and a Hint Bot that provides hints instead of direct solutions. These were compared against two baseline conditions: unrestricted ChatGPT access via a Classic Bot and an internet Search Engine. In a between-subject online experiment, 40 students were randomly assigned to one of the four conditions and completed a pretest plus two challenging free-response physics problems. The researchers analyzed both objective performance scores and qualitative interaction logs, coding behaviors such as copy-paste use, reflection, preprocessing/priming strategies, and use of the tools as substitutes for calculators or translators.\n\nParticipants were students with prior physics knowledge, many studying physics or other STEM fields, and the study appears to have been conducted in Germany through institutions including DFKI, RPTU Kaiserslautern-Landau, and LMU Munich. The study took place fully online on researcher-hosted websites. Students had approximately 30 minutes total, including an 8-item pretest, tutorials for the assigned tool, and two timed physics questions. Performance was scored by physics experts, while usability and perceived correctness/quality of the tools were also collected.\n\nThe main findings were that moderated LLM use changed interaction behavior in desirable ways, especially by reducing unreflected copy-and-paste usage compared with unmoderated ChatGPT. The Multi-Response Bot produced reflection rates and performance closest to the search engine condition, while the Hint Bot led to more attempts to manipulate the tool and lower performance. However, no statistically significant differences in final performance were found across conditions, and chatbot usability was significantly worse than the search engine. The authors conclude that moderation of LLM outputs is a promising direction for educational AI design, but that effectiveness depends heavily on interface design, usability, and alignment with student expectations.",
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "no",
+  "implementation_fidelity": "medium",
+  "study_country": "Germany",
+  "study_region": "Europe",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "personalization_adaptation"
+      ],
+      "description": "OpenAI's large language model chatbot used for conversational question answering and assistance.",
+      "use_case": "Students used ChatGPT-based tools to answer two free-response physics problems. The paper studied unmoderated ChatGPT access ('Classic Bot') and two moderated ChatGPT variants: a Multi-Response Bot that returned three alternative answers and a Hint Bot that provided hints instead of direct solutions.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Scientific Reasoning",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "In a between-subject study with N=40 students, performance on two physics free-text questions differed descriptively by condition but not significantly after aligned-rank-transform ANOVA. Mean main-test scores were Search Engine 2.5 (SD=1.38, n=12), Multi-Response Bot 2.3 (SD=2.21, n=10), Classic Bot 1.62 (SD=1.77, n=8), and Hint Bot 1.1 (SD=0.57, n=10), indicating moderated ChatGPT could approach search-engine performance descriptively while unmoderated ChatGPT and hint-only support performed worse.",
+          "measure": "Physics main-test score on two free-text questions scored by raters (0-8 points, with theoretical bonus on question 2)",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=40"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Moderated ChatGPT conditions showed less non-reflective use than unmoderated ChatGPT. Non-reflection strategies accounted for 21.2% of Multi-Response Bot queries and 22.7% of Hint Bot queries versus 46.7% for Classic Bot; reflection strategies were 50.0% for Multi-Response Bot and 38.6% for Hint Bot versus 33.3% for Classic Bot, although internet search still had the highest reflection share at 57.5%.",
+          "measure": "Coded interaction strategies from prompts/query logs: non-reflection, preprocessing, reflection, tool substitute",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=40"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "ChatGPT-based interfaces had lower usability than the search-engine baseline, and waiting times were longer for moderated bots. SUS/UMUX-Lite-derived usability means were 47.3 (SD=17.4) for Multi-Response Bot, 55.4 (SD=12.5) for Hint Bot, and 48.0 (SD=18.8) for Classic Bot versus 73.0 (SD=13.1) for Search Engine; a one-way ANOVA found a significant main effect, F(3,36)=6.7, p<0.01, with significant pairwise differences between Search Engine and Multi-Response Bot and between Search Engine and Classic Bot.",
+          "measure": "Usability (UMUX-Lite converted to SUS), response/wait time",
+          "effect_size": "F(3,36)=6.7",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=40"
+        },
+        {
+          "outcome_category": "Academic \u2014 Scientific Reasoning",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "Participants rated ChatGPT-based outputs as less correct than search results in some cases. Correctness ratings showed a significant main effect of tool type, F(3,36)=3.8, p<0.05; Search Engine was rated 77.2 (SD=16.5) versus 48.6 (SD=21.3) for Multi-Response Bot, with a significant pairwise difference, while no significant differences were found for answer-quality ratings.",
+          "measure": "Participant ratings of tool answer correctness and quality on 0-100 scales",
+          "effect_size": "F(3,36)=3.8",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=40"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical between-subject user study with random assignment and reported sample sizes, but it is small (N=40) and does not report strong causal effect estimates or significant learning gains between conditions. The evidence is stronger than opinion work but below rigorous large-scale RCT/QED standards.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "Findings suggest potentially beneficial changes in reflective behavior from moderated ChatGPT use, but academic performance differences were not statistically significant and usability drawbacks were substantial. Overall impact is mixed and unclear rather than clearly positive.",
+  "citations": [
+    {
+      "title": "The effect of internet on students studies: a review",
+      "doi": null,
+      "year": 2022,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Developing energy and momentum conceptual survey (EMCS) with four-tier diagnostic test items",
+      "doi": null,
+      "year": 2017,
+      "venue": "AIP Conference Proceedings",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Scaffolding practices that enhance mathematics learning",
+      "doi": null,
+      "year": 2006,
+      "venue": "Journal of Mathematics Teacher Education",
+      "citation_level": 2,
+      "citation_context": "scaffolding cited as educational technique fostering reflection and learning"
+    },
+    {
+      "title": "ChatGPT in physics education: A pilot study on easy-to-implement activities",
+      "doi": null,
+      "year": 2023,
+      "venue": "Contemporary Educational Technology",
+      "citation_level": 2,
+      "citation_context": "multiple answers prompt critical evaluation and reflection"
+    },
+    {
+      "title": "ChatGPT: So gut hat die KI das bayerische Abitur bestanden",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "SUS-A quick and dirty usability scale",
+      "doi": null,
+      "year": 1996,
+      "venue": "Usability evaluation in industry",
+      "citation_level": 3,
+      "citation_context": "SUS score calculated from UMUX-Lite responses"
+    },
+    {
+      "title": "Bert: Pre-training of deep bidirectional transformers for language understanding",
+      "doi": null,
+      "year": 2018,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Palm-e: An embodied multimodal language model",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT and the frustrated Socrates",
+      "doi": null,
+      "year": 2023,
+      "venue": "Physics Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Freudbot: An investigation of chatbot technology in distance education",
+      "doi": null,
+      "year": 2005,
+      "venue": "EdMedia+ Innovate Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "5 Ways to interpret a SUS score",
+      "doi": null,
+      "year": 2019,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "used to interpret chatbot and search-engine SUS scores"
+    },
+    {
+      "title": "LEIFIphysik",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Scaling laws for neural language models",
+      "doi": null,
+      "year": 2020,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Large language models effectively leverage document-level context for literary translation, but critical errors persist",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Chatgpt for programming numerical methods",
+      "doi": null,
+      "year": 2023,
+      "venue": "Journal of Machine Learning for Modeling and Computing",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT for good? On opportunities and challenges of large language models for education",
+      "doi": null,
+      "year": 2023,
+      "venue": "Learning and Individual Differences",
+      "citation_level": 2,
+      "citation_context": "frames opportunities and challenges of LLMs in education"
+    },
+    {
+      "title": "Educational data augmentation in physics education research using ChatGPT",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Unreflected Acceptance \u2013 Investigating the Negative Consequences of ChatGPT-Assisted Problem Solving in Physics Education",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "prior study motivating moderated versus unmoderated ChatGPT conditions"
+    },
+    {
+      "title": "Physics task development of prospective physics teachers using ChatGPT",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Interacting with educational chatbots: A systematic review",
+      "doi": null,
+      "year": 2023,
+      "venue": "Education and Information Technologies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The measurement of observer agreement for categorical data",
+      "doi": null,
+      "year": 1977,
+      "venue": "biometrics",
+      "citation_level": 3,
+      "citation_context": "used for interpreting inter-rater agreement statistics"
+    },
+    {
+      "title": "ScienceOlympiaden",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "UMUX-LITE: when there\u2019s no time for the SUS",
+      "doi": null,
+      "year": 2013,
+      "venue": "Proceedings of the SIGCHI conference on human factors in computing systems",
+      "citation_level": 3,
+      "citation_context": "UMUX-Lite questionnaire used for usability assessment"
+    },
+    {
+      "title": "Validation and structural analysis of the kinematics concept test",
+      "doi": null,
+      "year": 2017,
+      "venue": "Physical Review Physics Education Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "GitHub Copilot AI pair programmer: Asset or Liability?",
+      "doi": "10.1016/j.jss.2023.111734",
+      "year": 2023,
+      "venue": "Journal of Systems and Software",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Introducing ChatGPT",
+      "doi": null,
+      "year": 2022,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "GPT-4 technical report",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "underlying GPT-4 system used to implement chatbot conditions"
+    },
+    {
+      "title": "Continued Progress: Promising Evidence on Personalized Learning",
+      "doi": null,
+      "year": 2015,
+      "venue": "Rand Corporation",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Rediscovering the use of chatbots in education: A systematic literature review",
+      "doi": null,
+      "year": 2020,
+      "venue": "Computer Applications in Engineering Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Improving language understanding by generative pre-training",
+      "doi": null,
+      "year": 2018,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Multiple-Choice Question Generation: Towards an Automated Assessment Framework",
+      "doi": null,
+      "year": 2022,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT fever spreads to US workplace, sounding alarm for some",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Quizbot: A dialogue-based adaptive learning system for factual knowledge",
+      "doi": null,
+      "year": 2019,
+      "venue": "Proceedings of the 2019 CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "War of the chatbots: Bard, Bing Chat, ChatGPT, Ernie and beyond. The new AI gold rush and its impact on higher education",
+      "doi": null,
+      "year": 2023,
+      "venue": "Journal of Applied Learning and Teaching",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Enhancing Physics Learning with ChatGPT, Bing Chat, and Bard as Agents-to-Think-With: A Comparative Case Study",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Llama 2: Open foundation and fine-tuned chat models",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "What Should Data Science Education Do with Large Language Models?",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT (We need to talk)",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Attention is all you need",
+      "doi": null,
+      "year": 2017,
+      "venue": "Advances in neural information processing systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Document-level machine translation with large language models",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Advances in apparent conceptual physics reasoning in ChatGPT-4",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "AI and the FCI: Can ChatGPT project an understanding of introductory physics?",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Aligned Rank Transform for Nonparametric Factorial Analyses Using Only Anova Procedures",
+      "doi": "10.1145/1978942.1978963",
+      "year": 2011,
+      "venue": "Proceedings of the SIGCHI Conference on Human Factors in Computing Systems (CHI \u201911)",
+      "citation_level": 3,
+      "citation_context": "nonparametric factorial analysis method used in statistics"
+    },
+    {
+      "title": "Are we there yet?-a systematic literature review on chatbots in education",
+      "doi": null,
+      "year": 2021,
+      "venue": "Frontiers in artificial intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Wordcraft: story writing with large language models",
+      "doi": null,
+      "year": 2022,
+      "venue": "27th International Conference on Intelligent User Interfaces",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Greaselm: Graph reasoning enhanced language models for question answering",
+      "doi": null,
+      "year": 2022,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

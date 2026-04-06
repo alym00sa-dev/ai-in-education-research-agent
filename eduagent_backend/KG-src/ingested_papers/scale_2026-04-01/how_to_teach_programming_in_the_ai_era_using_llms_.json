@@ -1,0 +1,399 @@
+{
+  "title": "How to Teach Programming in the AI Era? Using LLMs as a Teachable Agent for Debugging",
+  "doi": null,
+  "year": 2024,
+  "venue": null,
+  "url": "https://arxiv.org/abs/2310.05292",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate",
+    "Graduate / Doctoral"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper examines how programming education should adapt in the era of large language models (LLMs), focusing specifically on whether students can be taught to better evaluate and debug AI-generated code. The authors argue that, as LLMs become common \"AI pair programmers,\" students need explicit training in debugging and hypothesis construction rather than only relying on writing code themselves. The central research question is whether students\u2019 debugging skills can be improved through explicit, scaffolded practice with low instructor preparation cost.\n\nTo address this, the paper introduces HypoCompass, an LLM-augmented intelligent tutoring system for debugging. In HypoCompass, novice learners role-play as teaching assistants who help LLM-simulated student agents debug buggy code. The system is designed to train two targeted skills: constructing comprehensive hypotheses about possible bugs through test-suite creation, and constructing accurate hypotheses about the cause of observed failures by selecting explanations for bugs. LLMs generate practice materials such as buggy programs, bug explanations, fixes, hints, and immediate feedback, while students focus on the core reasoning tasks rather than code completion. The paper also evaluates the LLM material-generation pipeline itself, showing that it can produce usable instructional materials more efficiently than human teaching assistants.\n\nThe learning study involved 19 novice programming learners recruited from four US public and private institutions, including undergraduate and graduate students. Participants completed a pre-survey, pre-test, interaction with HypoCompass, post-test, and post-survey in an approximately one-hour lab-style user study. Quantitatively, students improved their pre- to post-test debugging performance by 11.7% and reduced completion time by 13.6%, with especially strong gains in accurate hypothesis construction. Qualitatively, students reported that the system was engaging, enjoyable, less frustrating than conventional debugging practice, and confidence-building. The paper also includes an LLM evaluation study showing that HypoCompass could generate complete practice sets with high success rates and substantially less time than human material creation.\n\nThe main conclusion is that HypoCompass is a promising approach for teaching debugging in the AI era by using LLMs not simply to provide answers, but as imperfect teachable agents that students learn to evaluate. The authors conclude that the system can both reduce instructor workload in generating debugging materials and improve novice learners\u2019 debugging skills, confidence, and engagement. They note, however, that the evidence is based on small, short-term, in-lab studies and that future classroom deployments with controlled comparisons are needed.",
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "no_control_group",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "lab",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "HypoCompass",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "content_generation"
+      ],
+      "description": "An LLM-augmented teachable-agent debugging tutor for introductory programming that simulates novice students with buggy code and supports learners in hypothesis construction through test design, bug explanation selection, hints, and immediate feedback.",
+      "use_case": "Studied as an interactive system for training CS1 novices on debugging, especially comprehensive and accurate hypothesis construction, while using LLMs to generate buggy programs, explanations, fixes, and hints.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In a learning evaluation with 19 novices, students' pre-test to post-test scores significantly improved by 11.7% after using HypoCompass (p = 0.033 < 0.05). The paper reports this as evidence that the system improved transferable debugging skills, using human-generated bugs in the tests rather than the same bugs seen in practice.",
+          "measure": "Pre-test to post-test debugging assessment score",
+          "effect_size": "11.7% improvement",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=19"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Students' pre-test to post-test completion time significantly decreased by 13.6% after interacting with HypoCompass (p = 0.003). The authors interpret this as improved debugging proficiency and efficiency on the aligned assessment.",
+          "measure": "Pre-test to post-test test completion time",
+          "effect_size": "13.6% reduction",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=19"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "For comprehensive hypothesis construction (LO1), the paper reports a 6.1% score improvement and a 23.6% reduction in completion time from pre- to post-test. These analyses are descriptive breakdowns by learning objective; no separate significance test is reported for LO1.",
+          "measure": "LO1 score and time on comprehensive hypothesis construction items",
+          "effect_size": "6.1% score improvement; 23.6% time reduction",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=19"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "For accurate hypothesis construction (LO2), the paper reports a 15.8% score improvement and a 9.0% reduction in completion time from pre- to post-test. These breakdowns suggest larger learning gains on LO2 than LO1, though the authors note possible confounding with problem difficulty.",
+          "measure": "LO2 score and time on accurate hypothesis construction items",
+          "effect_size": "15.8% score improvement; 9.0% time reduction",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=19"
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "A Wilcoxon signed-rank test showed a significant 15% increase in self-rated confidence in debugging after using HypoCompass (p = 0.007). Participants also rated the tool as significantly more engaging (6.0/7), fun (6.0/7), and less frustrating (2.5/7) than their conventional way of learning debugging and testing (p < 0.005 for each).",
+          "measure": "Self-rated debugging confidence and experience ratings (engaging, fun, frustrating)",
+          "effect_size": "15% increase in confidence; engagement=6.0/7; fun=6.0/7; frustration=2.5/7",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=19"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In the LLM evaluation study, expert inspections across 6 practice problems and 145 buggy programs found that HypoCompass achieved a 90% success rate in generating and validating a complete set of materials. A complete set could be produced with only about 15 minutes of labeling and editing, and the LLM-assisted workflow was reported as 4.67 times less time-intensive than human TA generation.",
+          "measure": "Instructional material generation success rate and time/instructor overhead",
+          "effect_size": "90% success rate; 4.67x less time than human TAs",
+          "confidence_interval": "not_reported",
+          "sample_size": "6 practice problems; 145 buggy programs"
+        }
+      ]
+    },
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "language_speech"
+      ],
+      "description": "OpenAI GPT-family large language models used for text and code generation.",
+      "use_case": "Used within HypoCompass's material-generation pipeline: gpt-3.5-turbo generated most materials and GPT-4 generated bug explanations/fix instructions; evaluated for quality and efficiency of producing hints, buggy code, explanations, and fixes.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Using OpenAI models in the generation pipeline, the system produced high-quality materials with strong reported success rates: test case description hints 98.36% (61 outputs), test case category hints 94.44% (18 outputs), bug explanation and fix 91.72% (145 outputs), and bug fix 86.15% (195 outputs). The authors report that a complete set of practice materials could be generated with a 90% success rate and about 15 minutes of human labeling/editing.",
+          "measure": "Success rate of AI-generated instructional materials",
+          "effect_size": "98.36%; 94.44%; 91.72%; 86.15%; complete set 90%",
+          "confidence_interval": "not_reported",
+          "sample_size": "61, 18, 145, and 195 outputs; 6 practice problems"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Compared with two experienced human CS TAs, the LLM-assisted workflow required substantially less time to produce one set of practice materials. Human TA generation took around 60 minutes plus 11 minutes evaluation, whereas the paper states LLM-based generation and editing required 4.67 times less time.",
+          "measure": "Time to generate one set of instructional materials",
+          "effect_size": "4.67x less time than human TAs",
+          "confidence_interval": "not_reported",
+          "sample_size": "2 human TAs; 1 set each"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Prompt engineering improved generation quality within the OpenAI-based pipeline. Reframing local bug fixing as a translation task reduced over-fixing errors by 70%, and hierarchical prompt disentanglement for bug explanation/fix instruction improved success rates by over 40%.",
+          "measure": "Generation error rate and prompt success rate",
+          "effect_size": "70% reduction in over-fixing errors; over 40% improvement in success rates",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "The paper includes an empirical pre-post study with n=19 and a separate system-generation evaluation, but it lacks a randomized or controlled comparison condition for learning outcomes. Evidence is promising yet based on a small in-lab single-group design with some qualitative/self-report measures.",
+  "impact_tier": "green",
+  "impact_tier_rationale": "Reported learning gains are modest but statistically significant, including an 11.7% score improvement and 13.6% time reduction, plus a 15% confidence increase. However, standardized effect sizes are not reported, so impact is best classified as modest rather than clearly large.",
+  "citations": [
+    {
+      "title": "Reusing bugged source code to support novice programmers in debugging tasks",
+      "doi": "10.1145/3355616",
+      "year": 2019,
+      "venue": "ACM Transactions on Computing Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Programming is hard-or at least it used to be: Educational opportunities and challenges of ai code generation",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 54th ACM Technical Symposium on Computer Science Education V. 1",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Pedagogical agents for learning by teaching: Teachable agents",
+      "doi": null,
+      "year": 2007,
+      "venue": "Educational Technology Research and Development",
+      "citation_level": 2,
+      "citation_context": "teachable agent setup supports learning-by-teaching framing"
+    },
+    {
+      "title": "Github copilot ai pair programmer: Asset or liability?",
+      "doi": "10.48550/ARXIV.2206.15331",
+      "year": 2023,
+      "venue": "Journal of Systems and Software",
+      "citation_level": 3,
+      "citation_context": "source of six evaluation problems for generation study"
+    },
+    {
+      "title": "Implications of integrating test-driven development into CS1/CS2 curricula",
+      "doi": null,
+      "year": 2009,
+      "venue": "SIGCSE Bulletin",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "GitHub copilot x: The AI-powered developer experience",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Comparing test quality measures for assessing student-written tests",
+      "doi": null,
+      "year": 2014,
+      "venue": "Companion Proceedings of the 36th International Conference on Software Engineering",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Do student programmers all tend to write the same software tests?",
+      "doi": null,
+      "year": 2014,
+      "venue": "Proceedings of the 2014 Conference on Innovation & Technology in Computer Science Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Peak: Secrets from the new science of expertise",
+      "doi": null,
+      "year": 2016,
+      "venue": "Random House",
+      "citation_level": 2,
+      "citation_context": "supports deliberate practice rationale for tutor design"
+    },
+    {
+      "title": "Debugging from the student perspective",
+      "doi": null,
+      "year": 2010,
+      "venue": "IEEE Transactions on Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Predictability and surprise in large generative models",
+      "doi": null,
+      "year": 2022,
+      "venue": "Proceedings of the 2022 ACM Conference on Fairness, Accountability, and Transparency",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The search for meaning: Inferential strategic reading comprehension in programming",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 2023 ACM Conference on International Computing Education Research (ICER '23)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Debugging reinvented: asking and answering why and why not questions about program behavior",
+      "doi": null,
+      "year": 2008,
+      "venue": "Proceedings of the 30th International Conference on Software Engineering",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Hierarchical agglomerative clustering procedure",
+      "doi": null,
+      "year": 1979,
+      "venue": "Pattern Recognition",
+      "citation_level": 3,
+      "citation_context": "clustering reference test cases with agglomerative hierarchical clustering"
+    },
+    {
+      "title": "Ladebug: an online tool to help novice programmers improve their debugging skills",
+      "doi": null,
+      "year": 2018,
+      "venue": "Proceedings of the 23rd Annual ACM Conference on Innovation and Technology in Computer Science Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Is AI the better programming partner? Human-Human pair programming vs. Human-AI pAIr programming",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv preprint",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Generating diverse code explanations using the gpt-3 large language model",
+      "doi": null,
+      "year": 2022,
+      "venue": "Proceedings of the 2022 ACM Conference on International Computing Education Research-Volume 2",
+      "citation_level": 3,
+      "citation_context": "over-generate-then-select strategy for diverse materials"
+    },
+    {
+      "title": "GPTeach: Interactive TA training with GPT-based students",
+      "doi": "10.1145/3573051.3593393",
+      "year": 2023,
+      "venue": "Proceedings of the Tenth ACM Conference on Learning @ Scale",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Debugging: A review of the literature from an educational perspective",
+      "doi": null,
+      "year": 2008,
+      "venue": "Computer Science Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Reading between the lines: Modeling user behavior and costs in ai-assisted programming",
+      "doi": null,
+      "year": 2022,
+      "venue": "arXiv preprint",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Why don\u2019t schools teach debugging?",
+      "doi": null,
+      "year": 2014,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Thrilled by your progress! large language models (gpt-4) no longer struggle to pass assessments in higher education programming courses",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv preprint",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "What and how you explain matters: Inquisitive teachable agent scaffolds knowledge-building for tutor learning",
+      "doi": null,
+      "year": 2023,
+      "venue": "International Conference on Artificial Intelligence in Education",
+      "citation_level": 2,
+      "citation_context": "supports reflective explanation in teachable agent interaction"
+    },
+    {
+      "title": "Towards Human-Like educational question generation with large language models",
+      "doi": null,
+      "year": 2022,
+      "venue": "Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Analysis of a process for introductory debugging",
+      "doi": null,
+      "year": 2021,
+      "venue": "Proceedings of the 23rd Australasian Computing Education Conference",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Understanding by Design",
+      "doi": null,
+      "year": 2005,
+      "venue": "ASCD",
+      "citation_level": 3,
+      "citation_context": "backward design used to create aligned assessment"
+    },
+    {
+      "title": "AI chains: Transparent and controllable Human-AI interaction by chaining large language model prompts",
+      "doi": null,
+      "year": 2022,
+      "venue": "Proceedings of the 2022 CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 3,
+      "citation_context": "LLM-chains decompose multi-step generation tasks"
+    },
+    {
+      "title": "Adaptive chameleon or stubborn sloth: Unraveling the behavior of large language models in knowledge clashes",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "motivates prompt formulation to avoid conflicting tasks"
+    },
+    {
+      "title": "Cognitive process during program debugging",
+      "doi": null,
+      "year": 2004,
+      "venue": "Proceedings of the Third IEEE International Conference on Cognitive Informatics, 2004",
+      "citation_level": 2,
+      "citation_context": "student flow aligned with cognitive model of debugging"
+    },
+    {
+      "title": "Why programs fail: A guide to systematic debugging",
+      "doi": null,
+      "year": 2009,
+      "venue": "Morgan Kaufmann",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

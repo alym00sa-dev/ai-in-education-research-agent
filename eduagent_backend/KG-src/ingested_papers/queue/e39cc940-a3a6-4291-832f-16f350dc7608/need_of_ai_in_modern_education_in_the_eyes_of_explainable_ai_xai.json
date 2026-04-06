@@ -1,0 +1,55 @@
+{
+  "title": "Need of AI in Modern Education: in the Eyes of Explainable AI (xAI)",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2408.00025v3",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Adult (non-academic)"
+  ],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This book chapter argues that artificial intelligence is increasingly central to modern education, but that complex AI systems can be opaque, biased, and potentially harmful when used in high-stakes decisions. The paper frames the problem around the need for explainability, transparency, and fairness in educational AI, especially where socioeconomic factors such as parental income may affect access to educational opportunities.\n\nTo explore these issues, the authors analyze the Adult Census Income dataset using an XGBoost classifier and then apply several post-hoc explainability methods, including permutation importance, SHAP, LIME, global surrogate decision trees, and FairML. The study is not an intervention in a school setting; rather, it is a technical demonstration of how different explanation tools can reveal or miss patterns of feature importance and bias. The authors also compare the stability of LIME with SHAP and use fairness auditing to examine sensitive attributes.\n\nThe context is educational policy and AI governance rather than direct classroom use. Although the dataset is from adult income prediction, the authors interpret income as a proxy for parental resources that may shape educational access for children. The main conclusion is that standard feature-importance methods may fail to uncover unfairness, while fairness-focused analysis reveals strong dependence on sensitive attributes such as race, nationality, and sex. The chapter concludes that AI in education must be designed and audited for transparency, equity, and bias mitigation, and that explainability alone is not sufficient to ensure fairness.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a book chapter / narrative methodology piece with a small reproduced example, not a controlled empirical education study. It does not present a rigorous experimental design, and the core claims are based on interpretive analysis of a public dataset rather than a peer-reviewed causal evaluation in education.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper\u2019s practical impact is mainly conceptual: it highlights potential bias and transparency issues in AI systems that could affect educational access, but it does not demonstrate measured improvements or harms in a K-12 intervention. Its influence on policy discussions is plausible but empirically modest and indirect.",
+  "interventions": [
+    {
+      "intervention": "Other",
+      "confidence": 0.99,
+      "role": "primary",
+      "use_case": "Explainable AI / post-hoc model interpretation and fairness auditing applied to an XGBoost classifier on Adult Census Income data, using LIME, KernelSHAP, permutation importance, decision trees as surrogates, and FairML to inspect feature importance and bias relevant to educational access."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Systemic / Institutional Impact",
+      "confidence": 0.96,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The chapter argues that AI could support more transparent and equitable education policy, but its own analysis of an income-prediction model suggests serious fairness problems. Using Adult Census data with XGBoost, SHAP, LIME, and FairML, it reports that some explanation methods reveal feature importance while FairML exposes dependence on sensitive attributes such as race, nationality, and sex, implying institutional bias rather than clear educational benefit.",
+        "measure": "Model explanation outputs and fairness/bias diagnostics on Adult Census Income classification (feature importance, SHAP/LIME attributions, FairML sensitivity to protected attributes)",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Other"
+    }
+  ],
+  "limitations": [
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

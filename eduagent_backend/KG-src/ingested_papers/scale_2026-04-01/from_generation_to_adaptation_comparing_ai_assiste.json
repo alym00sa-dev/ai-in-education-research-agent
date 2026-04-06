@@ -1,0 +1,214 @@
+{
+  "title": "From Generation to Adaptation: Comparing AI-Assisted Strategies in High School Programming Education",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "https://arxiv.org/abs/2506.15955",
+  "source_db": "scale_stanford",
+  "populations": [
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Qualitative",
+  "extended_summary": "This paper examines how large language model coding agents (LCAs) can be integrated effectively into high school programming education for novice learners. The central question is whether students are better supported when using AI to generate projects from abstract specifications from scratch, or when using AI to adapt existing small working code examples. The study is motivated by the observation that novice coders often struggle to prompt, debug, and integrate AI-generated code into coherent applications without additional instructional support.\n\nThe intervention compared two pedagogical strategies across two coding sessions. In Phase 1, students used Claude 3.7 Sonnet via Windsurf to generate WeChat Mini Program code from their own project ideas using a From-Scratch approach. In Phase 2, after limited success, students instead selected existing Minimal Functional Units (MFUs) from the official WeChat Mini Program example library and used the LCA to analyze, modify, and extend those examples. The instructor also guided students toward more structured, multi-step prompting, creating what the authors describe as a dual-scaffolding model: technical scaffolding through MFUs and pedagogical scaffolding through prompting support.\n\nThe population consisted of five novice students in Grades 10-12 at a private high school in Shanghai, China, all of whom had completed AP Computer Science A but had no prior WeChat Mini Program development experience. The study took place during two evening coding sessions in April 2025, each lasting about three hours, in the context of preparation for a WeChat Mini Program competition. Data were drawn primarily from instructor field notes about student behaviors, challenges, and whether teams reached a minimum viable product (MVP).\n\nThe main conclusion is that the MFU-based adaptation strategy was substantially more effective than from-scratch generation for these novice high school coders. MVP completion improved from 20% in the first phase to 100% in the second phase, alongside fewer debugging requests, faster implementation, greater confidence, and more structured student-AI interaction. The authors argue that successful educational use of coding agents depends less on raw AI capability than on instructional design that aligns AI strengths with novice learners' needs. They present the findings as exploratory and heuristic rather than broadly generalizable.",
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "China",
+  "study_region": "East Asia & Pacific",
+  "identified_tools": [
+    {
+      "name": "Claude",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "tutoring_instruction"
+      ],
+      "description": "Anthropic's large language model assistant used here as a coding agent for generating, modifying, and explaining code.",
+      "use_case": "Students used Claude via Windsurf to build WeChat Mini Programs in two modes: first generating code from abstract project specifications ('From-Scratch'), then adapting official WeChat Mini Program Minimal Functional Units (MFUs) with structured prompts ('MFU-based').",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In this exploratory case study, novice high school students using Claude in a From-Scratch approach achieved MVP completion in only 1 of 5 projects (20%), whereas using Claude with an MFU-based adaptation approach led to MVP completion in 5 of 5 projects (100%). The paper attributes the improvement to better alignment between Claude's strengths in pattern modification and the scaffolded instructional design, but reports no inferential statistics or standardized learning measures.",
+          "measure": "Minimum Viable Product (MVP) completion rate for WeChat Mini Program projects",
+          "effect_size": "20% vs. 100% MVP completion",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=5"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Instructor notes indicated that during the MFU-based phase, students formulated more structured, multi-step prompts referencing specific code components, demonstrating more advanced interaction with Claude than in the From-Scratch phase. This was reported qualitatively as an improvement in strategic prompting and human-AI collaboration, without a formal rubric or effect size.",
+          "measure": "Prompting strategy sophistication / structured prompting behavior",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=5"
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The MFU-based approach was associated with greater student confidence and more optimistic attitudes throughout the coding session compared with the From-Scratch phase. These affective improvements were based on instructor observations only, with no validated self-efficacy or motivation scales reported.",
+          "measure": "Observed confidence and optimism during coding sessions",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=5"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Compared with the From-Scratch condition, the MFU-based use of Claude resulted in fewer debugging help requests and faster feature implementation according to instructor field notes. The paper presents this as qualitative evidence that scaffolded code adaptation improved efficiency, but provides no timing data or statistical analysis.",
+          "measure": "Debugging help requests and implementation speed",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=5"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an exploratory qualitative case study with a very small sample (n=5), sequential within-context comparison, and primarily instructor field notes rather than validated outcome measures. It provides suggestive primary evidence but lacks controls, randomization, and statistical testing.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The reported practical difference in MVP completion (20% to 100%) is large, but the evidence base is too small and methodologically limited to support a high-confidence impact rating. Other outcomes are qualitative and lack standardized measurement.",
+  "citations": [
+    {
+      "title": "Programming Is Hard \u2013 Or at Least It Used to Be: Educational Opportunities And Challenges of AI Code Generation",
+      "doi": null,
+      "year": 2022,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "LLM Agents for Education: Advances and Applications",
+      "doi": null,
+      "year": 2025,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Performance, Workload, Emotion, and Self-Efficacy of Novice Programmers Using AI Code Generation",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 2024 on Innovation and Technology in Computer Science Education V. 1 (ITiCSE 2024)",
+      "citation_level": 2,
+      "citation_context": "novice programmers need pedagogical support with AI code generation"
+    },
+    {
+      "title": "Co-Designing a Real-Time Classroom Orchestration Tool to Support Teacher\u2013AI Complementarity",
+      "doi": null,
+      "year": 2019,
+      "venue": "Journal of Learning Analytics",
+      "citation_level": 2,
+      "citation_context": "teacher as AI collaboration orchestrator"
+    },
+    {
+      "title": "Deeper insights into retrieval-augmented generation: the role of sufficient context",
+      "doi": null,
+      "year": 2025,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "LLMs perform better with relevant code context"
+    },
+    {
+      "title": "Studying the effect of AI Code Generators on Supporting Novice Learners in Introductory Programming",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 2,
+      "citation_context": "AI boosts performance without clear learning gains"
+    },
+    {
+      "title": "Types of teacher-AI collaboration in K-12 classroom instruction: Chinese teachers\u2019 perspective",
+      "doi": null,
+      "year": 2024,
+      "venue": "Education and Information Technologies",
+      "citation_level": 2,
+      "citation_context": "teacher-AI collaboration models inform teacher role shift"
+    },
+    {
+      "title": "Bringing Generative AI to Adaptive Learning in Education",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "From idea to app",
+      "doi": null,
+      "year": 2025,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Effect of Metacognitive Scaffolding for Learning by Teaching a Teachable Agent",
+      "doi": null,
+      "year": 2020,
+      "venue": "International Journal of Artificial Intelligence in Education",
+      "citation_level": 2,
+      "citation_context": "metacognitive scaffolds outperform content-focused scaffolds"
+    },
+    {
+      "title": "Guideline for Trustworthy Artificial Intelligence \u2013 AI Assessment Catalog",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Artificial intelligence in teaching and teacher professional development: A systematic review",
+      "doi": null,
+      "year": 2025,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The effects of artificial intelligence-based interactive scaffolding on secondary students\u2019 speaking performance, goal setting, self-evaluation, and motivation in informal digital learning of english",
+      "doi": null,
+      "year": 2025,
+      "venue": "Interactive Learning Environments",
+      "citation_level": 2,
+      "citation_context": "supports advantages of AI-mediated process scaffolding"
+    },
+    {
+      "title": "A Prompt Pattern Catalog to Enhance Prompt Engineering with ChatGPT",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A Review of Artificial Intelligence (AI) in Education from 2010 to 2020",
+      "doi": null,
+      "year": 2021,
+      "venue": "Complexity",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

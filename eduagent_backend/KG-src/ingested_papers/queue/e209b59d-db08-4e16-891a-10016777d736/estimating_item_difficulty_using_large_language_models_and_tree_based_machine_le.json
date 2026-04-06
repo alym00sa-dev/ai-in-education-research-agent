@@ -1,0 +1,58 @@
+{
+  "title": "Estimating Item Difficulty Using Large Language Models and Tree-Based Machine Learning Algorithms",
+  "doi": null,
+  "year": null,
+  "venue": null,
+  "url": "http://arxiv.org/abs/2504.08804v2",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Elementary (PreK-5th)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper examines whether large language models can estimate the difficulty of assessment items using only item content and metadata, rather than requiring time-consuming field testing with students. The authors frame item difficulty estimation as a practical problem in educational assessment, especially for K-5 mathematics and reading items where calibration is needed for adaptive testing and item development.\n\nThe study evaluates two GPT-4o-based approaches on 5,170 vertically scaled K-5 math and reading items from Edmentum\u2019s Exact Path Diagnostic. In the first approach, GPT-4o directly predicts a difficulty rating for each item in a zero-shot prompt and those estimates are then aligned to Rasch difficulty values. In the second approach, GPT-4o is used to extract cognitively and linguistically grounded features, which are then entered into random forest and gradient boosting models alongside item metadata. The authors compare both approaches against grade-level dummy regressors, TF-IDF baselines, and metadata-only models.\n\nThe findings suggest that direct LLM judgments can moderately approximate item difficulty, but performance is uneven across grades and is weaker for some early-grade items. The feature-based pipeline performs better overall, especially for reading, and generally outperforms the non-AI baselines. The paper concludes that LLMs may help streamline item development and pre-screening, but structured feature extraction is more effective than asking the model for a single holistic difficulty judgment.",
+  "limitations": [
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "content_generation"
+      ],
+      "description": "OpenAI GPT family large language model used for zero-shot analysis, feature extraction, and text generation tasks.",
+      "use_case": "Used as GPT-4o to estimate the difficulty of K-5 math and reading assessment items directly from item content and to extract structured item features for downstream predictive models.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Using direct GPT-based estimation, the model predicted Rasch item difficulty for K-5 math and reading items better than a grade-specific dummy regressor overall. For math, holdout performance was RMSE=0.91 and MAE=0.72 versus benchmarks of 1.01 and 0.81, with r=.83 across grades; for reading, RMSE=0.86 and MAE=0.69 versus 1.04 and 0.84, with r=.81.",
+          "measure": "Holdout-set item difficulty prediction error and Pearson correlation against Rasch-calibrated difficulty",
+          "effect_size": "r=.83 (math), r=.81 (reading)",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=5170 items total; n=1200 holdout"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a single observational model-evaluation study using precalibrated assessment items, not an experimental design with student outcomes. Evidence is useful but limited to correlational prediction of item difficulty.",
+  "impact_tier": "green",
+  "impact_tier_rationale": "The reported correlations are strong and error reductions are modest but meaningful versus baselines, especially on reading and upper grades. However, the outcome is item-difficulty estimation rather than direct instructional impact.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

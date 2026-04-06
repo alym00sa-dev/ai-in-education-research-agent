@@ -1,0 +1,45 @@
+{
+  "title": "Stacking interventions for equitable outcomes",
+  "doi": null,
+  "year": 2022,
+  "venue": "arXiv preprint",
+  "url": "http://arxiv.org/abs/2110.04163v2",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses the problem of updating predictive risk scores when the scores themselves influence behavior and interventions. The author argues that in many domains, including health care, a risk model can become biased after it is used to trigger actions, because those actions change the outcomes that later model versions are trained on. The paper proposes an alternative updating strategy called \"stacked interventions,\" designed to preserve calibration while avoiding the paradox of performative prediction.\n\nThe method repeatedly releases a sequence of risk scores, each intended to be interpreted by expert agents as the expected risk after successive interventions. Rather than trying to identify the exact causal effect of each intervention, the algorithm only assumes that interventions are generally well-intentioned and move risk toward an acceptable level. The framework is presented for both deterministic and probabilistic interventions, and the paper proves convergence-style results under assumptions of no drift, oracle risk estimation, and later relaxed settings with estimation error and drift.\n\nNo human participants, classrooms, or K-12 settings are studied empirically. The paper is theoretical, with supporting simulation examples and illustrative applications to existing health risk scores such as QRISK and SPARRA. The main conclusion is that stacked interventions can, under stated assumptions, lead to equitable distribution of outcome risk and safer model updating without requiring explicit identification of intervention effects. The author also notes practical drawbacks, including the need to distribute multiple scores and retrain users to apply them in sequence.",
+  "limitations": [
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "identified_tools": [
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "prediction_analytics",
+        "other"
+      ],
+      "description": "A generic predictive risk-score updating and intervention-stacking algorithm, not a generative AI product. It uses a sequence of risk scores to guide expert interventions over time in order to adjust outcome risk toward an acceptable level.",
+      "use_case": "The paper proposes and analyzes this algorithm theoretically, then illustrates it via simulation and discusses potential implementations for updating clinical risk scores such as QRISK and SPARRA.",
+      "findings": []
+    }
+  ],
+  "verdict": "framework_only",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a theoretical/method paper with simulations, not an empirical evaluation of an AI tool in classrooms or any K-12 setting. It does not report a study design, sample, or outcome effects for a tool.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper has clear methodological relevance for predictive-risk systems, but it is not a classroom intervention study and reports no effect sizes on educational outcomes. Impact on K-12 literacy practice is therefore indirect and unclear.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

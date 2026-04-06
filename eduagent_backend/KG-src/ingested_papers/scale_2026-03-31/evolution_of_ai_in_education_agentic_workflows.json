@@ -1,0 +1,55 @@
+{
+  "title": "Evolution of AI in Education: Agentic Workflows",
+  "doi": null,
+  "year": 2025,
+  "venue": null,
+  "url": "https://arxiv.org/abs/2504.20082",
+  "source_db": "scale_stanford",
+  "population": "not_reported",
+  "user_type": "Student",
+  "study_design": "Meta-Analysis / Systematic Review",
+  "extended_summary": "This paper examines how AI agents and agentic workflows are evolving in education, with the goal of providing a structured way to understand their pedagogical roles, benefits, and challenges. The authors argue that while large language models have enabled important educational applications, they remain limited by static knowledge, weaker adaptability, and constrained reasoning. To address this, the paper proposes a taxonomy of agentic AI in education based on four major paradigms: reflection, planning, tool use, and multi-agent collaboration, and reviews how each paradigm can support educational tasks such as tutoring, assessment, feedback, simulation, and adaptive learning.\n\nMethodologically, the paper reports a structured literature review following PRISMA 2020 guidelines. The authors searched Google Scholar, Scopus, Web of Science, and the ACM Digital Library, retrieved 888 records, deduplicated to 378, and ultimately included 93 studies in the final synthesis. The review analyzes conceptual foundations, educational applications, advantages, and implementation challenges for each paradigm. In addition to the review, the paper presents a proof-of-concept multi-agent system for automated essay scoring (MASS), intended to demonstrate how agentic architectures can be operationalized in an educational assessment context.\n\nThe paper does not study a clearly defined human participant sample; instead, its empirical component centers on system design and preliminary performance results for automated essay scoring, while the broader contribution is synthesis and conceptual framing. Educational contexts discussed in the review include intelligent tutoring systems, automated grading, collaborative learning environments, educational simulations, and personalized learning systems, but no single learner population or instructional setting is the focus of the paper.\n\nThe main conclusion is that agentic AI has strong potential to transform education by improving adaptability, consistency, and task performance beyond stand-alone LLMs, especially for complex educational workflows. The authors report that their multi-agent essay scoring framework showed improved consistency and reliability relative to stand-alone LLMs in preliminary results. At the same time, they emphasize that important issues remain unresolved, including interpretability, trustworthiness, bias, privacy, computational cost, and the need for further research on how agentic systems function across different educational populations and pedagogical contexts.",
+  "limitations": [
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "identified_tools": [
+    {
+      "name": "Multi-agent System for Automated Essay Scoring (MASS)",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation"
+      ],
+      "description": "A proof-of-concept multi-agent framework for automated essay scoring that uses collaborating AI agents to assess written work.",
+      "use_case": "Presented in this paper as an illustrative educational application of agentic workflows for automated essay scoring, compared conceptually against stand-alone LLM scoring.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Literacy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The paper reports preliminary results indicating that the proposed multi-agent system for automated essay scoring achieved improved consistency and reliability in evaluating written work compared to stand-alone LLMs. However, no quantitative effect sizes, confidence intervals, sample size, or detailed evaluation metrics are reported in the provided text.",
+          "measure": "Consistency and reliability of automated essay scoring compared to stand-alone LLMs",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is primarily a conceptual/review paper with a proof-of-concept application, but the provided text does not report sufficient empirical design details, sample information, or quantitative results for the MASS evaluation.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper claims improved consistency and reliability for the multi-agent essay scoring system versus stand-alone LLMs, but impact magnitude is unclear because no effect sizes or detailed outcome data are reported.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

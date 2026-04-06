@@ -1,0 +1,76 @@
+{
+  "title": "Classroom AI: Large Language Models as Grade-Specific Teachers",
+  "doi": null,
+  "year": 2026,
+  "venue": "npj Artificial Intelligence",
+  "url": "http://arxiv.org/abs/2601.06225v2",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Elementary (PreK-5th)",
+    "Middle School (6th-8th)",
+    "High School (9th-12th)",
+    "Undergraduate",
+    "Graduate / Doctoral",
+    "Adult (non-academic)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses the problem that large language models (LLMs) often fail to produce explanations matched to students\u2019 reading and comprehension levels, even when explicitly prompted to do so. The authors focus on a classroom-facing use case: generating open-ended educational answers that are age-appropriate across multiple grade bands, rather than simplifying source text for summarization or paraphrasing tasks.\n\nThe proposed intervention is a fine-tuning framework for LLMs that generates grade-specific educational responses for six levels spanning lower elementary through adult education. The method combines synthetic question generation across eight K-12 curriculum fields, prompt-based answer generation at multiple readability targets, and an integrated grading scheme built from seven readability metrics to label training data. The authors then fine-tune grade-specific models and compare them against prompt-based baselines on multiple datasets including ScienceQA, ELI5_Category, Natural Questions, and synthetic question sets.\n\nThe evaluation includes automated readability/compatibility metrics, accuracy checks, and human studies with 208 participants, plus a GPT-4o-based survey analysis. Results show that the fine-tuned models substantially improve alignment with intended grade levels while preserving factual accuracy. The paper concludes that grade-specific LLM fine-tuning can support more comprehensible educational assistance, especially for younger learners, and may help address teacher shortages by complementing classroom instruction.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed empirical model-evaluation study, but it is not a classroom trial or causal study of student learning outcomes. The evidence rests on benchmark performance and human judgments of readability/comprehensibility rather than randomized educational impact on K-12 learners.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper suggests potentially meaningful benefits for educational text accessibility, with a large improvement in grade-level alignment (35.64 percentage points), but it does not measure student learning gains in authentic instruction. Impact on actual K-12 outcomes is therefore plausible but unproven.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "Fine-tuning large language models to generate grade-specific educational explanations and answers for open-ended student questions across K-12 and adult levels."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Literacy",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper finds substantially improved grade-level alignment/readability of LLM-generated educational text after finetuning, compared with prompt-based methods. Across four datasets and six grade levels, the authors report an average 35.64 percentage point increase in target-grade success rate, with human raters (n=208) showing strong agreement with model outputs (Kendall\u2019s \u03c4=0.76).",
+        "measure": "Readability/grade-level alignment metrics (Flesch Reading Ease, FKGL, CLI, Linsear Write, Gunning Fog, Dale-Chall, Spache, and held-out ARI); human judgments of answer comprehensibility",
+        "study_size": "n=208 human participants; model evaluation on 4 datasets (sample sizes reported in paper, including DSQ n=10,876; DSQ2 n=10,427; DELI n=12,000; DNQ n=24,000)",
+        "effect_size": "35.64 percentage point increase; Kendall\u2019s \u03c4=0.76",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.9,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The finetuned models preserve factual correctness while adapting explanations to grade level, with accuracy on ScienceQA remaining comparable to the base model. The paper reports minimal performance degradation on the multiple-choice accuracy task (DSQ), indicating the grade-specific adaptation does not materially harm content accuracy.",
+        "measure": "Multiple-choice accuracy on ScienceQA (DSQ)",
+        "study_size": "n=10,876 (DSQ sample)",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "no_long_term_followup",
+    "implementation_fidelity_not_reported",
+    "non_representative_population"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Republic of Korea, United States, and England",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

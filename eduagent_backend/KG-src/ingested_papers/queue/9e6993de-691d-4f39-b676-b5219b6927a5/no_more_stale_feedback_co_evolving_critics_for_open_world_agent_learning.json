@@ -1,0 +1,29 @@
+{
+  "title": "No More Stale Feedback: Co-Evolving Critics for Open-World Agent Learning",
+  "doi": null,
+  "year": 2026,
+  "venue": null,
+  "url": "http://arxiv.org/abs/2601.06794v1",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses a machine learning problem in critique-guided reinforcement learning for large language model agents: critics that provide natural-language feedback often become \"stale\" as the policy improves during on-policy training. The authors argue that static or frozen critics fail to adapt to shifting failure patterns, reducing the usefulness of feedback over time and limiting sample efficiency and long-horizon task performance.\n\nTo address this, the paper introduces ECHO (Evolving Critic for Hindsight-Guided Optimization), a framework in which the policy model and critic model are updated together in a synchronized co-evolutionary loop. The critic generates multiple score-aware diagnoses of an initial trajectory, the policy uses these critiques to produce refined trajectories, and both models are updated using group-relative policy optimization. The method also includes a saturation-aware reward shaping mechanism intended to value small but important improvements near the performance ceiling.\n\nThe study is not an education study and does not involve human learners, teachers, or K-12 instructional contexts. Instead, it evaluates LLM agents in open-world benchmark environments including WebShop, ALFWorld, SciWorld, and DeepSearch, using Qwen backbone models and comparisons against GRPO and several proprietary and open-source language models.\n\nThe main conclusion is that synchronized critic-policy co-evolution improves training stability and benchmark performance relative to standard GRPO and frozen-critic variants. The authors also conclude that failure patterns drift over training, making adaptive critics important, and that saturation-aware reward shaping helps especially with near-ceiling \"last-mile\" refinements. However, the framework depends heavily on the quality and calibration of the external reward model used to score trajectories and induced improvements.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is not a K-12 education study and does not evaluate an educational intervention, learners, classrooms, or writing instruction. It is a technical AI methods paper on reinforcement learning for LLM agents in open-world benchmark environments.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "The paper reports improvements on agent benchmark task success, not student learning, writing, revision, feedback, or K-12 instructional outcomes. Therefore it provides no direct evidence relevant to educational impact claims about generative AI for K-12 writing.",
+  "interventions": [],
+  "outcome_assignments": [],
+  "limitations": [
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "lab",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

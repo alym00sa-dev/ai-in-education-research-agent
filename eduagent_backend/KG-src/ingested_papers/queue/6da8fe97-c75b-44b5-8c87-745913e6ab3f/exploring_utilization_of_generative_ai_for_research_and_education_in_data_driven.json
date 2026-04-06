@@ -1,0 +1,87 @@
+{
+  "title": "Exploring utilization of generative AI for research and education in data-driven materials science",
+  "doi": null,
+  "year": 2025,
+  "venue": "not_reported",
+  "url": "http://arxiv.org/abs/2504.08817v2",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Graduate / Doctoral",
+    "Adult (non-academic)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper examines how generative AI, especially ChatGPT and MyGPT, can be used to reduce the effort required for learning software, creating tutorials, and building simple GUI tools in data-driven materials science. The motivating question is not a formal educational efficacy test, but rather whether generative AI can practically support research and education workflows that typically require manual reading, trial-and-error, and documentation writing.\n\nThe intervention is an AI-enabled hackathon (AIMHack2024) in which about 30 participants from multiple technical backgrounds used generative AI in three tasks: assisted trial use of ImageJ for object counting, construction of an AI tutor for the PHYSBO Bayesian optimization package, and development of a GUI-based Windows executable from Python scripts. The participants were students and researchers in materials science, computational science, bioinformatics, and physics, working in a Japanese research setting. The paper reports that AI-generated instructions were often useful but could be inaccurate unless supported by structured source documents such as official manuals and PDFs.\n\nOverall, the authors conclude that generative AI can substantially lower the barrier to learning unfamiliar software and generating user-facing documentation, but human verification remains necessary because the model may produce plausible yet incorrect responses. They argue that AI-assisted software tutorials, code adaptation, and GUI creation are promising for research and educational contexts, and may become increasingly important as tools for materials science and similar technical domains.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed qualitative/hackathon-based demonstration study with descriptive examples, not a controlled experiment or meta-analysis. The paper provides useful implementation evidence, but it lacks rigorous causal design, standardized measures, or comparative statistical testing.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper suggests practical productivity and learning benefits, but the evidence is mostly anecdotal and limited to a small workshop context. Reported effects are promising but unclear in magnitude and generalizability, so the broader impact remains modest/uncertain.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.95,
+      "role": "primary",
+      "use_case": "Using ChatGPT/MyGPT as a conversational tutor and documentation assistant for learning unfamiliar software (ImageJ, PHYSBO), generating step-by-step tutorials, answering usage questions, and producing GUI-related instructions and manuals."
+    },
+    {
+      "intervention": "Computer-Assisted Instruction (CAI)",
+      "confidence": 0.7,
+      "role": "secondary",
+      "use_case": "AI-assisted software trial use of ImageJ for guided learning through prompted step-by-step workflow instructions to complete object-counting tasks."
+    },
+    {
+      "intervention": "Automated Feedback System",
+      "confidence": 0.7,
+      "role": "secondary",
+      "use_case": "Evaluating whether AI-generated tutorials and code outputs are accurate and executable, including iterative correction of incorrect acquisition-function explanations and GUI code changes."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper reports that generative AI reduced the effort required to learn unfamiliar software and to create tutorials, GUI wrappers, and manuals. In the PHYSBO/MyGPT case, providing structured PDFs improved accuracy substantially, and the generated Keras-optimization tutorial executed successfully and achieved accuracy of 0.9742, suggesting practical gains in development efficiency rather than a controlled causal estimate.",
+        "measure": "Task completion / usability of AI-generated tutorials, manuals, and GUI code; successful execution of generated hyperparameter optimization code and software trials",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.8,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "A central claim is that generative AI helped participants critically evaluate AI-generated content by cross-checking outputs against documentation and running the software. The paper presents this as fostering critical thinking and verification skills, but it is based on workshop observations rather than a quantified pre-post measure.",
+        "measure": "Observed participant ability to verify AI outputs against manuals, literature, and software behavior",
+        "study_size": "approximately n=30 workshop participants",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "blended",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Japan",
+  "study_region": "East Asia & Pacific",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

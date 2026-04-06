@@ -1,0 +1,628 @@
+{
+  "title": "Building Bridges \u2013 AI Custom Chatbots as Mediators between Mathematics and Physics",
+  "doi": null,
+  "year": null,
+  "venue": null,
+  "url": "https://arxiv.org/abs/2412.15747",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Middle School (6th-8th)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Randomized Controlled Trial (RCT)",
+  "extended_summary": "This paper investigates whether AI-generated learning materials created with a custom chatbot can improve students\u2019 learning experience and performance in the transition between mathematics and physics. The authors focus on a common challenge in physics education: students often struggle to transfer mathematical understanding into physical contexts, especially when working with multiple representations such as graphs, tables, and formulas. The study asks how AI-generated explanations affect emotions, situational interest, cognitive load, self-efficacy, and performance on proportional relationships.\n\nThe intervention was a custom GPT built with OpenAI\u2019s GPT-4o and configured to produce age-appropriate, motivating, and factually aligned explanations of proportional relationships across mathematical and physical representations. In a randomized controlled design, the experimental group received a textbook overview plus an AI-generated explanation, while the control group received the same topic overview plus conventional textbook examples. To avoid confounding from digital delivery, both groups used paper-based materials only, and the learning phase lasted 15 minutes. Outcomes included self-report scales for emotions, situational interest, cognitive load, and self-efficacy, followed by a 30-minute performance test on proportional relationships in a physics context.\n\nParticipants were 214 sixth-grade students at secondary schools in Germany. The topic had not previously been taught in class. Students were randomly assigned to experimental or control conditions, and the groups were checked for comparability using prior mathematics grade and subject-specific interest in mathematics. The study was conducted in a school-based field setting focused on early secondary learners working at the mathematics\u2013physics interface.\n\nThe main findings were that AI-generated explanations significantly increased positive-activating emotions, situational interest, and self-efficacy, while significantly reducing both intrinsic and extrinsic cognitive load. However, the effect on learning performance was mixed and overall inconclusive: there was no significant difference in total test score, though a few individual subtasks favored one group or the other. The authors conclude that custom chatbot-generated explanations can improve the quality of the learning experience, but stronger evidence is still needed to determine whether they reliably improve academic performance or transfer of knowledge over time.",
+  "limitations": [
+    "short_duration",
+    "self_reported_measures",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "classroom",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Germany",
+  "study_region": "Europe",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "content_generation"
+      ],
+      "description": "OpenAI's GPT-family chatbot product, including custom GPTs built on OpenAI models for tailored instructional support and content generation.",
+      "use_case": "A custom GPT configured in OpenAI based on GPT-4.0 was used to generate age-appropriate explanations of proportional relationships across graphs, tables, and formulas for sixth-grade mathematics/physics learning materials; students received these AI-generated explanations on paper instead of textbook examples.",
+      "findings": [
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In a randomized controlled study with N = 214 sixth-grade students, the experimental group receiving AI-generated explanations showed significantly higher positive-activating emotions than the textbook control group (p = 0.00093, d = 0.48). The emotion measure covered pleasure and satisfaction.",
+          "measure": "Positive-activating emotions (pleasure, satisfaction)",
+          "effect_size": "d = 0.48",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=214"
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "No statistically significant group difference was found for negative-deactivating emotions after the learning phase (p = 0.391), although the authors note a trend toward more negative emotions in the control group. The measured emotions were boredom, frustration, and uncertainty.",
+          "measure": "Negative-deactivating emotions (boredom, frustration, uncertainty)",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=214"
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Situational interest was significantly higher in the AI-generated explanation group than in the textbook group (p = 0.00223, d = 0.45) in the randomized study of N = 214 students. The authors interpret this as a more engaging learning experience.",
+          "measure": "Situational interest",
+          "effect_size": "d = 0.45",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=214"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Students learning with AI-generated explanations reported significantly lower intrinsic cognitive load than students using textbook materials (p = 0.00060, d = 0.47) in the N = 214 RCT. This indicates the AI materials reduced perceived task complexity during learning.",
+          "measure": "Intrinsic cognitive load (ICL)",
+          "effect_size": "d = 0.47",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=214"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Students in the AI explanation condition reported significantly lower extrinsic cognitive load than controls (p = 0.0001, d = 0.59) in the randomized study with N = 214. This was the largest reported effect among the cognitive/affective outcomes.",
+          "measure": "Extrinsic cognitive load (ECL)",
+          "effect_size": "d = 0.59",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=214"
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Self-efficacy for solving a topic-related task was significantly higher in the experimental group using AI-generated explanations than in the textbook group (p = 0.00001, d = 0.63) in the N = 214 trial. The authors conclude the chatbot explanations fostered students' confidence.",
+          "measure": "Self-efficacy expectation",
+          "effect_size": "d = 0.63",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=214"
+        },
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "For the overall performance test on proportional relationships in mathematical and physical contexts, no significant difference was found between the AI-generated explanation group and the textbook group (p = 0.750) in the N = 214 randomized study. The authors therefore conclude the overall learning-outcome effect was unclear.",
+          "measure": "Overall performance test score on proportional relationships / transfer to physics context",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=214"
+        },
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "At the subtask level, results were mixed: no significant differences were found for subtask A (p = 0.133) or D (p = 0.251), the AI group scored significantly higher on subtask C (p = 0.022, d = 0.32), while the control group scored significantly higher on value 3 (p = 0.016, d = 0.33) and value 5 (p = 0.038, d = 0.29) within subtask B; the overall subtask B score was not significant (p = 0.403). This suggests no clear consistent advantage for AI-generated explanations on immediate achievement.",
+          "measure": "Performance test subtasks A-D and selected subtask B values; subtask C involved calculating the constant of proportionality",
+          "effect_size": "d = 0.32; d = 0.33; d = 0.29",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=214"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is a randomized controlled study with a relatively large sample (N = 214), which strengthens causal inference. However, it is a short-duration field study using paper-delivered AI-generated materials rather than live chatbot interaction, and the paper notes limitations in generalizability and implementation scope.",
+  "impact_tier": "blue",
+  "impact_tier_rationale": "Several reported effects are positive and in the small-to-medium range, including positive emotions (d = 0.48), situational interest (d = 0.45), intrinsic cognitive load (d = 0.47), extrinsic cognitive load (d = 0.59), and self-efficacy (d = 0.63). Academic performance effects were mixed/null overall, but the strongest observed impacts on learner experience exceed the 0.20 threshold.",
+  "citations": [
+    {
+      "title": "Large language models\u2014Valuable tools that require a sensitive integration into teaching and learning physics",
+      "doi": null,
+      "year": 2024,
+      "venue": "The Physics Teacher",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Revolutionizing education with AI: Exploring the transformative potential of ChatGPT",
+      "doi": null,
+      "year": 2023,
+      "venue": "Contemporary Educational Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT for good? On opportunities and challenges of large language models for education",
+      "doi": null,
+      "year": 2023,
+      "venue": "Learning and Individual Differences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Are Large Multimodal Foundation Models all we need? On Opportunities and Challenges of these Models in Education",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Generative K\u00fcnstliche Intelligenz in Unterricht und Unterrichtsforschung \u2013 Chancen und Herausforderungen [Generative artificial intelligence in teaching and education research - opportunities and challenges]",
+      "doi": null,
+      "year": 2024,
+      "venue": "Unterrichtswissenschaft",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Using ChatGPT for teaching physics",
+      "doi": null,
+      "year": 2024,
+      "venue": "The Physics Teacher",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Exploring the potential of using ChatGPT in physics education",
+      "doi": null,
+      "year": 2023,
+      "venue": "Smart Learning Environments",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Human-like problem-solving abilities in large language models using ChatGPT",
+      "doi": null,
+      "year": 2023,
+      "venue": "Frontiers in Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Correcting Students\u2019 Misconceptions in Physics Using Experiments Designed by ChatGPT",
+      "doi": null,
+      "year": 2024,
+      "venue": "European Journal of Contemporary Education and E-Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A SWOT analysis of ChatGPT: Implications for educational practice and research",
+      "doi": null,
+      "year": 2024,
+      "venue": "Innovations in Education and Teaching International",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Unreflected Acceptance \u2013 Investigating the Negative Consequences of ChatGPT-Assisted Problem Solving in Physics Education",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "How do physics students evaluate artificial intelligence responses on comprehension questions? A study on the perceived scientific accuracy and linguistic quality of ChatGPT",
+      "doi": "10.1103/PhysRevPhysEducRes.19.010142",
+      "year": 2023,
+      "venue": "Physical Review Physics Education Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Investigating graphical representations of slope and derivative without a physics context",
+      "doi": "10.1103/PhysRevSTPER.8.023101",
+      "year": 2012,
+      "venue": "Physical Review Special Topics - Physics Education Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Functions, Graphs, and Graphing: Tasks, Learning, and Teaching",
+      "doi": null,
+      "year": 1990,
+      "venue": "Review of Educational Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Student Understanding Of The Physics And Mathematics Of Process Variables In P\u2010V Diagrams",
+      "doi": null,
+      "year": 2007,
+      "venue": "AIP Conference Proceedings",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Persistence, context, and visual strategy of graph understanding: Gaze patterns reveal student difficulties in interpreting graphs",
+      "doi": "10.1103/PhysRevPhysEducRes.19.020142",
+      "year": 2023,
+      "venue": "Physical Review Physics Education Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Language of Physics, Language of Math: Disciplinary Culture and Dynamic Epistemology",
+      "doi": null,
+      "year": 2015,
+      "venue": "Science & Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Verst\u00e4ndnisprobleme von Sch\u00fclerinnen und Sch\u00fclern beim Verbinden von Physik und Mathematik [Students' comprehension problems when combining physics and mathematics]",
+      "doi": null,
+      "year": 2016,
+      "venue": "Zeitschrift f\u00fcr Didaktik der Naturwissenschaften",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Education Research Highlights in Mathematics, Science and Technology 2018",
+      "doi": null,
+      "year": 2018,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Teaching and Learning Science through Multiple Representations: Intuitions and Executive Functions",
+      "doi": null,
+      "year": 2020,
+      "venue": "CBE\u2014Life Sciences Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Multiple Representations in Physics Education",
+      "doi": null,
+      "year": 2017,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Analyzing problem solving using math in physics: Epistemological framing via warrants",
+      "doi": null,
+      "year": 2009,
+      "venue": "Phys. Rev. ST Phys. Educ. Res.",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Mathematical competencies and the role of mathematics in physics education: A trend analysis of TIMSS Advanced 1995 and 2008",
+      "doi": null,
+      "year": 2013,
+      "venue": "ADNO",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Artificial Intelligence in Education: A Review",
+      "doi": null,
+      "year": 2020,
+      "venue": "IEEE Access",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Artificial intelligence in Physics Education: a comprehensive literature review",
+      "doi": null,
+      "year": 2023,
+      "venue": "Journal of Physics: Conference Series",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Analysing the Role of ChatGPT in Improving Student Productivity in Higher Education",
+      "doi": null,
+      "year": 2023,
+      "venue": "Journal on Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Do AI chatbots improve students learning outcomes? Evidence from a meta-analysis",
+      "doi": null,
+      "year": 2024,
+      "venue": "British Journal of Educational Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The influence of ChatGPT on student engagement: A systematic review and future research agenda",
+      "doi": null,
+      "year": 2024,
+      "venue": "Computers & Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The effectiveness of using chatbot-based environment on learning process, students\u2019 performances and perceptions: A mixed exploratory study",
+      "doi": null,
+      "year": 2024,
+      "venue": "Education and Information Technologies",
+      "citation_level": 2,
+      "citation_context": "prior finding matched for positive emotions"
+    },
+    {
+      "title": "Levering AI to enhance students\u2019 conceptual understanding and confidence in mathematics",
+      "doi": null,
+      "year": 2024,
+      "venue": "Journal of Computer Assisted Learning",
+      "citation_level": 2,
+      "citation_context": "supports self-efficacy finding in mathematics"
+    },
+    {
+      "title": "Making a revolution in physics learning in high schools with ChatGPT: A case study in UAE",
+      "doi": null,
+      "year": 2024,
+      "venue": "Eurasia Journal of Mathematics, Science and Technology Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT: Revolutionizing student achievement in the electronic magnetism unit for eleventh-grade students in Emirates schools",
+      "doi": null,
+      "year": 2023,
+      "venue": "Contemporary Educational Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Cognitive ease at a cost: LLMs reduce mental effort but compromise depth in student scientific inquiry",
+      "doi": null,
+      "year": 2024,
+      "venue": "Computers in Human Behavior",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "LLMs in Physics and Mathematics Education and Problem Solving: Assessment of ChatGPT-4 Level and Suggestions for Improvement",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Students\u2019 perceptions of using ChatGPT in a physics class as a virtual tutor",
+      "doi": null,
+      "year": 2023,
+      "venue": "International Journal of Educational Technology in Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Educational data augmentation in physics education research using ChatGPT",
+      "doi": "10.1103/PhysRevPhysEducRes.19.020150",
+      "year": 2023,
+      "venue": "Physical Review Physics Education Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Could an artificial-intelligence agent pass an introductory physics course?",
+      "doi": "10.1103/PhysRevPhysEducRes.19.010132",
+      "year": 2023,
+      "venue": "Physical Review Physics Education Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Advances in apparent conceptual physics reasoning in ChatGPT-4",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Performance of ChatGPT on the test of understanding graphs in kinematics",
+      "doi": "10.1103/PhysRevPhysEducRes.20.010109",
+      "year": 2024,
+      "venue": "Physical Review Physics Education Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Evaluating vision-capable chatbots in interpreting kinematics graphs: a comparative study of free and subscription-based models",
+      "doi": null,
+      "year": 2024,
+      "venue": "Frontiers in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Genie-on-demand: A custom AI chatbot for enhancing learning performance, self-efficacy, and technology acceptance in occupational health and safety for engineering education",
+      "doi": null,
+      "year": 2024,
+      "venue": "Computer Applications in Engineering Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Tailoring Chatbots for Higher Education: Some Insights and Experiences",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+      "doi": null,
+      "year": 2020,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Mathematik - neue Wege 7 [Mathematics - new approaches 7]",
+      "doi": null,
+      "year": 2020,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "source of textbook control learning materials"
+    },
+    {
+      "title": "Dokumentation der Erhebungs- und Auswertungsinstrumente zur schweizerisch-deutschen Videostudie. \"Unterrichtsqualit\u00e4t, Lernverhalten und mathematisches Verst\u00e4ndnis\". 1. Befragungsinstrumente [Documentation of the survey and evaluation instruments for the Swiss-German video study. \u201cTeaching quality, learning behavior and mathematical understanding\u201d. 1. survey instruments]",
+      "doi": null,
+      "year": 2005,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "interest in mathematics scale source"
+    },
+    {
+      "title": "Investigating Dynamic Visualizations of Multiple Representations Using Mobile Video Analysis in Physics Lessons",
+      "doi": null,
+      "year": 2020,
+      "venue": "Zeitschrift f\u00fcr Didaktik der Naturwissenschaften",
+      "citation_level": 3,
+      "citation_context": "adapted item source for situational interest"
+    },
+    {
+      "title": "Academic emotions in students\u2019 self-regulated learning and achievement : a program of qualitative and quantitative research",
+      "doi": null,
+      "year": 2002,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "theoretical basis for academic emotions construct"
+    },
+    {
+      "title": "Measuring emotions in students\u2019 learning performance : The achievement emotions questionnaire (AEQ)",
+      "doi": null,
+      "year": 2011,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "source of emotion measurement items"
+    },
+    {
+      "title": "Measuring Situational Interest in Academic Domains",
+      "doi": null,
+      "year": 2010,
+      "venue": "Educational and Psychological Measurement",
+      "citation_level": 3,
+      "citation_context": "situational interest scale source"
+    },
+    {
+      "title": "Development of an instrument for measuring different types of cognitive load",
+      "doi": null,
+      "year": 2013,
+      "venue": "Behavior Research Methods",
+      "citation_level": 3,
+      "citation_context": "cognitive load instrument source"
+    },
+    {
+      "title": "Self-efficacy: The exercise of control",
+      "doi": null,
+      "year": 1997,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "conceptual basis for self-efficacy construct"
+    },
+    {
+      "title": "Skalen zur Erfassung von Lehrer- und Sch\u00fclermerkmalen: Dokumentation der psychometrischen Verfahren im Rahmen der wissenschaftlichen Begleitung des Modellversuchs Selbstwirksame Schulen [Scales for recording teacher and student characteristics: Documentation of psychometric procedures as part of the scientific monitoring of the pilot project Self-Effective Schools]",
+      "doi": null,
+      "year": 1999,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "self-efficacy scale source"
+    },
+    {
+      "title": "Skalen zur Erfassung von Lehrer- und Sch\u00fclermerkmalen [Scales for recording teacher and student characteristics]",
+      "doi": null,
+      "year": 1999,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "self-efficacy item adaptation source"
+    },
+    {
+      "title": "R: A Language and Environment for Statistical Computing",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "software for Shapiro-Wilk and Mann-Whitney tests"
+    },
+    {
+      "title": "psych: Procedures for Psychological, Psychometric, and Personality Research",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "software for Cohen's d and reliability analysis"
+    },
+    {
+      "title": "Coefficient alpha and the internal structure of tests",
+      "doi": null,
+      "year": 1951,
+      "venue": "Psychometrika",
+      "citation_level": 3,
+      "citation_context": "basis for Cronbach's alpha reliability assessment"
+    },
+    {
+      "title": "Forschungsmethoden und Statistik f\u00fcr die Soziale Arbeit: Grundlagen und Anwendungen [Research methods and statistics for social work: basics and applications]",
+      "doi": null,
+      "year": 2021,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "threshold interpretation for Cronbach's alpha"
+    },
+    {
+      "title": "irr: Various Coefficients of Interrater Reliability and Agreement",
+      "doi": null,
+      "year": 2019,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "software for weighted kappa computation"
+    },
+    {
+      "title": "A Coefficient of Agreement for Nominal Scales",
+      "doi": null,
+      "year": 1960,
+      "venue": "Educational and Psychological Measurement",
+      "citation_level": 3,
+      "citation_context": "methodological basis for Cohen's kappa"
+    },
+    {
+      "title": "Weighted kappa: nominal scale agreement with provision for scaled disagreement or partial credit",
+      "doi": null,
+      "year": 1968,
+      "venue": "Psychological bulletin",
+      "citation_level": 3,
+      "citation_context": "basis for weighted kappa with quadratic weights"
+    },
+    {
+      "title": "Forschungsmethoden und Evaluation in den Sozial- und Humanwissenschaften [Research methods and evaluation in the social and human sciences]",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "benchmark for interpreting kappa agreement"
+    },
+    {
+      "title": "See Supplemental Material at [URL will be inserted by publisher] for learning material, performance test, scales/items, results of data analysis",
+      "doi": null,
+      "year": null,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "supplement contains materials, instruments, and analysis details"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

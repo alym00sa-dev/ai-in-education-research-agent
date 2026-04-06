@@ -1,0 +1,367 @@
+{
+  "title": "On the Role and Impact of GenAI Tools in Software Engineering Education",
+  "doi": null,
+  "year": 2026,
+  "venue": "IEEE/ACM ICSE Software Engineering Education and Training (ICSE SEET \u201926)",
+  "url": "https://arxiv.org/abs/2512.04256",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper examines how generative AI tools such as ChatGPT, GitHub Copilot, and Gemini are affecting software engineering education. The central question is how undergraduate software engineering students experience and perceive these tools in their coursework, specifically in terms of usage contexts, perceived benefits, challenges, ethical concerns, and instructional expectations. The study builds on a prior qualitative framework of GenAI usage and challenges, seeking to validate and extend it with a larger sample and additional attention to ethics and pedagogy.\n\nThe authors studied students\u2019 use of GenAI through an online survey that combined Likert-scale questions with open-ended responses. The survey covered six areas: student background, contexts of GenAI use, perceived benefits, perceived challenges, ethical perspectives, and instructional expectations. This approach allowed the researchers to quantify patterns of use while also collecting qualitative examples of how students describe successful and frustrating experiences with GenAI in software engineering tasks.\n\nThe population consisted of 130 undergraduate software engineering students from two universities: Virginia Commonwealth University in the United States and the University of Calgary in Canada. Participants were enrolled in upper-level software engineering courses and were surveyed early in the semester. The context is higher education software engineering instruction, with students reporting on their use of GenAI tools for concept learning, coding support, debugging, brainstorming, and assignment work.\n\nThe main findings are that students most commonly use GenAI for incremental learning and advanced implementation tasks, and they perceive benefits such as brainstorming support, clearer examples, concept application, and increased confidence when beginning tasks. At the same time, students report important challenges, especially around inaccurate or misleading outputs, lack of rationale in AI responses, and difficulty adapting outputs to assignment needs. They also express ethical concerns about fairness, misuse, and peer pressure, while strongly calling for clearer institutional policies, more instructor guidance, formal training, and assignment redesign to account for the presence of GenAI in software engineering education.",
+  "limitations": [
+    "no_control_group",
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Canada; United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "tutoring_instruction",
+        "content_generation"
+      ],
+      "description": "Generative AI tools used by students for explanation, brainstorming, code generation, debugging, and concept support in software engineering coursework.",
+      "use_case": "Surveyed as a broad category of GenAI tools used by undergraduate software engineering students across coursework contexts such as basic concept learning, concept refinement, starting coding tasks, and code optimization/debugging.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "In a survey of undergraduate software engineering students, more than 75% agreed they use GenAI tools to gain a basic understanding of new SE concepts and to refine concepts they partially understand, with mean responses around 3.9 on 5-point Likert items (Q6-Q7). Students also reported benefits for concept comprehension and examples: 64% agreed GenAI helps them understand how to apply SE concepts in practice (Q12), and 72% agreed it provides clear examples that improve understanding (Q13).",
+          "measure": "Self-reported Likert-scale perceptions of concept learning, concept refinement, concept application, and clear examples",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=130"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Students reported GenAI supports brainstorming and confidence at the start of coding-related work, with 67% agreeing it helps brainstorm and outline implementation steps (Q11) and strong agreement that it boosts confidence when starting a coding task (Q14). However, there was no clear pattern for using GenAI to get started with coding assignments: responses to Q8 were split across disagreement (31%), neutral (34%), and agreement (35%), with a mean of 3.0.",
+          "measure": "Self-reported Likert-scale perceptions of brainstorming support, confidence boost, and start-coding help",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=130"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Students reported greater use of GenAI for advanced implementation than for project initiation. In Q9, 58% agreed they use GenAI to optimize, refactor, or debug production-level code, while use for initial coding support showed no consensus in Q8; qualitative responses described use for fixing bugs, creating test cases, and adding documentation.",
+          "measure": "Self-reported Likert-scale use of GenAI for code optimization/refactoring/debugging and starting coding assignments",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=130"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "Students reported recurring challenges related to GenAI output quality and usability. While most did not report severe prompt-communication problems (67% disagreed with Q17; mean=2.3), more than one-third selected neutral on items about learning-style mismatch, missing rationales, response adaptation, and wrong concepts (Q18-Q20, Q22), and qualitative responses described hallucinated code, lack of rationale, and confusion when using unfamiliar technologies.",
+          "measure": "Self-reported Likert-scale challenge items and open-ended reports of confusion/frustration",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=130"
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "GenAI use was often associated with frustration or confusion during assignments. Only 25% agreed they were generally satisfied rather than frustrated/confused when using GenAI for study-related work, and 86 students provided open-ended examples of confusion or frustration, commonly citing repeated incorrect answers and unclear explanations.",
+          "measure": "Self-reported frustration/confusion during assignments (Q21) and open-ended challenge descriptions (Q15)",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=130"
+        },
+        {
+          "outcome_category": "Systemic / Institutional Impact",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Students reported substantial ethical and instructional concerns around GenAI use in coursework. Seventy percent agreed instructors had clearly communicated acceptable AI-use policies (Q24), 52% were concerned that some students may gain an unfair advantage (Q26), 78% believed using GenAI output without understanding it is ethically problematic (Q27), and support for clear institutional policies was high with a mean response of 3.9 on Q29.",
+          "measure": "Self-reported Likert-scale ethical perceptions, fairness concerns, and support for institutional policy",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=130"
+        },
+        {
+          "outcome_category": "Systemic / Institutional Impact",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Students perceived GenAI as reshaping software engineering instruction and supported course redesign. More than 70% agreed tools like ChatGPT and Copilot are changing how SE should be taught (Q31), 79% agreed assignment design should adapt to the presence of AI tools (Q36), and students expressed strong interest in more guidance and formal training on responsible use (Q32, Q35).",
+          "measure": "Self-reported Likert-scale instructional expectations regarding teaching changes, guidance, training, and assignment adaptation",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=130"
+        }
+      ]
+    },
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "content_generation"
+      ],
+      "description": "OpenAI's ChatGPT family of generative AI chatbots used for natural-language explanations, coding help, brainstorming, and example generation.",
+      "use_case": "Mentioned as one of the GenAI tools students had used for coursework and as the most popular tool among surveyed students; also cited in instructional-expectation items as an example of AI tools changing SE teaching.",
+      "findings": []
+    },
+    {
+      "name": "Gemini",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "content_generation"
+      ],
+      "description": "Google's Gemini family of generative AI models and chat assistants used for conversational support and content/code generation.",
+      "use_case": "Mentioned as one of the GenAI tools students had used for coursework; not analyzed separately in results.",
+      "findings": []
+    },
+    {
+      "name": "GitHub Copilot",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "feedback_evaluation"
+      ],
+      "description": "An AI coding assistant that provides code completion and programming support within development workflows.",
+      "use_case": "Mentioned as one of the GenAI tools students had used for coursework and in the framing of software engineering education; not evaluated separately in this survey's reported results.",
+      "findings": []
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical mixed-methods survey study with descriptive statistics and qualitative responses from 130 students across two universities, but it is non-experimental and based on self-reported perceptions rather than causal outcome measures.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports mixed perceived benefits and challenges without effect sizes or objective learning gains. Impacts are consequential but largely unclear in magnitude and based on attitudes, self-reports, and usage perceptions rather than measured achievement outcomes.",
+  "citations": [
+    {
+      "title": "Programming is Hard\u2014or At Least It Used to Be: Educational Opportunities and Challenges of AI Code Generation",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 54th ACM Technical Symposium on Computer Science Education (SIGCSE)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "On the Opportunities and Risks of Foundation Models",
+      "doi": null,
+      "year": 2021,
+      "venue": "arXiv preprint arXiv:2108.07258",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Insights from the Frontline: GenAI Utilization Among Software Engineering Students",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv preprint arXiv:2412.15624",
+      "citation_level": 3,
+      "citation_context": "usage/challenge framework structures RQ1\u2013RQ3 and survey design"
+    },
+    {
+      "title": "ChatGPT, students and higher education: Artificial intelligence poses risks to academic integrity",
+      "doi": null,
+      "year": 2023,
+      "venue": "Journal of Higher Education Policy and Management",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Computing Education in the Era of Generative AI",
+      "doi": null,
+      "year": 2024,
+      "venue": "Communications of the ACM",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Student use of AI code generators in programming courses: Patterns, perceptions, and implications",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 2023 ACM Conference on International Computing Education Research (ICER)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Robots are coming for the coders: Observations on programming student use of AI code generation",
+      "doi": null,
+      "year": 2022,
+      "venue": "Proceedings of the 2022 ACM Conference on International Computing Education Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Instructors on the Frontline: Attitudes and Reactions to GenAI in Computing Education",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the ACM on Human-Computer Interaction",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Generative AI and Computing Education: Opportunities, Risks, and Responsibilities",
+      "doi": null,
+      "year": 2023,
+      "venue": "ACM Inroads",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT for good? On opportunities and challenges of large language models for education",
+      "doi": null,
+      "year": 2023,
+      "venue": "Learning and Individual Differences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Personal opinion surveys",
+      "doi": null,
+      "year": 2008,
+      "venue": "Guide to advanced empirical software engineering",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "More Than Calculators: Why Large Language Models Threaten Public Education",
+      "doi": null,
+      "year": 2024,
+      "venue": "Communications of the ACM",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "From \u201cBan It Till We Understand It\u201d to \u201cResistance Is Futile\u201d: How University Programming Instructors Plan to Adapt to AI Code Generation Tools",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 2023 ACM Conference on International Computing Education Research (ICER)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The impact of ChatGPT on student learning: Opportunities and challenges",
+      "doi": null,
+      "year": 2023,
+      "venue": "IEEE Transactions on Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A Large-Scale Survey on the Usability of AI Programming Assistants: Successes and Challenges",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 46th IEEE/ACM International Conference on Software Engineering",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT and academic integrity: Concerns and strategies for education",
+      "doi": null,
+      "year": 2023,
+      "venue": "Journal of University Teaching & Learning Practice",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "An empirical study of AI-assisted code completion tools for Python",
+      "doi": null,
+      "year": 2022,
+      "venue": "Proceedings of the 44th International Conference on Software Engineering",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Legal and Ethical Landscape of Using Generative AI in Education",
+      "doi": null,
+      "year": 2023,
+      "venue": "Journal of Educational Technology Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Robots Are Here: Navigating the Generative AI Revolution in Computing Education",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 2023 Working Group Reports on Innovation and Technology in Computer Science Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Empirical standards for software engineering research",
+      "doi": null,
+      "year": 2020,
+      "venue": "arXiv preprint arXiv:2010.03525",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT: Bullshit spewer or the end of traditional assessments in higher education?",
+      "doi": null,
+      "year": 2023,
+      "venue": "Journal of Applied Learning & Teaching",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Expectation vs. experience: Evaluating the usability of GitHub Copilot",
+      "doi": null,
+      "year": 2022,
+      "venue": "Proceedings of the 2022 CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Towards Adapting Computer Science Courses to AI Assistants\u2019 Capabilities",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv preprint arXiv:2306.03289",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A Prompt Pattern Catalog to Enhance Prompt Engineering with ChatGPT",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv preprint arXiv:2302.11382",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Experimentation in Software Engineering",
+      "doi": null,
+      "year": 2012,
+      "venue": "Springer",
+      "citation_level": 2,
+      "citation_context": "threats-to-validity framework adopted for study validity discussion"
+    },
+    {
+      "title": "Productivity assessment of neural code completion",
+      "doi": null,
+      "year": 2022,
+      "venue": "Proceedings of the 31st ACM SIGSOFT International Symposium on Software Testing and Analysis",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

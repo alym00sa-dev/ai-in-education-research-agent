@@ -1,0 +1,377 @@
+{
+  "title": "Encouraging Responsible Use of Generative AI in Education: A Reward-Based Learning Approach",
+  "doi": null,
+  "year": 2024,
+  "venue": null,
+  "url": "https://arxiv.org/abs/2407.15022",
+  "source_db": "scale_stanford",
+  "populations": [],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses a growing concern in education: students' use of generative AI tools such as ChatGPT to obtain immediate answers to homework and assignments without engaging in the underlying learning process. The authors argue that direct-answer AI tools may weaken foundational understanding, reduce productive cognitive effort, and undermine structured learning, especially in mathematics. In response, the paper proposes an approach intended to encourage responsible AI use by shifting students away from answer-seeking and toward step-by-step concept development.\n\nThe intervention introduced is MEGA (Math Explorer & Guidance Assistant), a multimodal chatbot built on OpenAI's GPT-4o model. Students can submit math problems either as text or images. Rather than directly solving the original problem, MEGA first identifies the problem type, then presents a similar but simpler problem with step-by-step explanation, followed by a related challenge problem. Only after the learner successfully solves the challenge problem does the system reveal the solution to the original question as a reward. The system is framed as a reward-based learning mechanism designed to reinforce concepts, promote engagement, and support responsible AI-assisted study habits.\n\nThe paper does not report a human-subjects evaluation with a defined participant sample. Instead, it illustrates the system through example interactions for text-based and image-based math queries and reports performance across 70 math questions spanning categories such as linear equations, quadratic equations, factorials, coordinate geometry, triangle classification, and trigonometry. The context is educational mathematics problem-solving, but no specific grade band, institution, or classroom deployment is described.\n\nThe main conclusion is that a generative AI system can be designed to support conceptual reinforcement instead of shortcut answer retrieval. The authors conclude that MEGA's indirect, reward-based approach offers a promising way to foster active engagement and more responsible AI use in education. They also suggest the approach could be extended beyond mathematics and enhanced with gamified features such as badges, points, and leaderboards, though these future directions remain conceptual rather than empirically validated.",
+  "limitations": [
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "identified_tools": [
+    {
+      "name": "MEGA",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "personalization_adaptation"
+      ],
+      "description": "Math Explorer & Guidance Assistant (MEGA) is a multimodal LLM-based math chatbot that uses OpenAI GPT-4o to accept text or image math inputs and guide learners through indirect, step-by-step conceptual reinforcement with a reward-based release of the original solution.",
+      "use_case": "The paper presents MEGA as a math learning assistant that gives students analogous practice problems and only reveals the solution to the original problem after they successfully solve a related challenge problem.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "The paper reports descriptive accuracy rates for MEGA across 70 math questions by problem category and input type, rather than a comparative learning-outcomes study. Accuracy was higher for text than image input across categories: linear equations 85% vs 65%, quadratic equations 75% vs 60%, coordinate geometry 65% vs 55%, factorial 80% vs 70%, triangle classification by angles 75% vs 67%, and trigonometry 64% vs 60%.",
+          "measure": "Problem-solving accuracy on 70 math questions by category and input type (text vs image)",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=70"
+        }
+      ]
+    },
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction"
+      ],
+      "description": "OpenAI's ChatGPT is a generative AI chatbot based on GPT-family large language models that provides direct responses to user queries.",
+      "use_case": "ChatGPT is discussed as the contrast condition/problematic baseline that can provide immediate answers to student math questions and potentially bypass structured learning; it is not empirically evaluated in a controlled comparison.",
+      "findings": []
+    },
+    {
+      "name": "Gemini",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction"
+      ],
+      "description": "Google's Gemini is a generative AI chatbot/LLM assistant for conversational question answering.",
+      "use_case": "Gemini is mentioned in the introduction as an example of a generative AI tool offering instant responses; it is not directly studied.",
+      "findings": []
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is primarily a system/prototype paper with illustrative interactions and descriptive accuracy summaries, but no clear experimental evaluation of student outcomes, no control group, and no rigorous study design details.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper suggests potentially useful performance on math problem handling, but impact on learning is unclear because no effect sizes, comparative intervention results, or direct student outcome evidence are reported.",
+  "citations": [
+    {
+      "title": "Artificial Intelligence (AI) Student Assistants in the Classroom: Designing Chatbots to Support Student Success",
+      "doi": null,
+      "year": 2023,
+      "venue": "Information Systems Frontiers",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Chatting and Cheating: Ensuring Academic Integrity in the Era of ChatGPT",
+      "doi": null,
+      "year": 2023,
+      "venue": "Innovations in Education and Teaching International",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The education of ChatGPT: The panicked reaction around cheating in school doesn\u2019t tell the whole story. Meet the teachers who think AI could actually make learning better",
+      "doi": null,
+      "year": 2023,
+      "venue": "MIT Technology Review",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Opportunities and Challenges of ChatGPT in Academia: A Conceptual Analysis",
+      "doi": null,
+      "year": 2023,
+      "venue": "Authorea",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Engineering Education in the Era of ChatGPT: Promise and Pitfalls of Generative AI for Education",
+      "doi": "10.36227/techrxiv.21789434.v1",
+      "year": 2022,
+      "venue": "TechRxiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Opportunities and Challenges in Using AI Chatbots in Higher Education",
+      "doi": "10.1145/3371647.3371659",
+      "year": 2019,
+      "venue": "Proceedings of the 2019 3rd International Conference on Education and E-Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT for good? On opportunities and challenges of large language models for education",
+      "doi": "10.1016/j.lindif.2023.102274",
+      "year": 2023,
+      "venue": "Learning and Individual Differences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT in Education: Strategies for Responsible Implementations",
+      "doi": "10.30935/cedtech/13036",
+      "year": 2023,
+      "venue": "Contemporary Educational Technology",
+      "citation_level": 2,
+      "citation_context": "supports responsible AI use framing"
+    },
+    {
+      "title": "Don't Ban ChatGPT in Schools, Teach With It",
+      "doi": null,
+      "year": 2023,
+      "venue": "International New York Times",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Integrating Artificial Intelligence in Higher Education: Empirical Insights from Students about Using ChatGPT",
+      "doi": null,
+      "year": 2023,
+      "venue": "International Journal of Information and Education Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Perceptions of Primary School Teacher Education Students to the Use of ChatGPT to Support Learning in the Digital Era",
+      "doi": null,
+      "year": 2024,
+      "venue": "International Journal of Information and Education Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Increasing Elementary and High School Student Motivation through the Use of Extrinsic and Intrinsic Rewards",
+      "doi": null,
+      "year": 2008,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "grounds reward-based learning motivation claim"
+    },
+    {
+      "title": "The Role of Motivation in Learning",
+      "doi": null,
+      "year": null,
+      "venue": "The Education Hub",
+      "citation_level": 2,
+      "citation_context": "supports motivation rationale for rewards"
+    },
+    {
+      "title": "Enhancing Learning Motivation in Elementary Schools: The Impact and Role of Rewards",
+      "doi": "10.35335/jiph.v12i1.27",
+      "year": 2023,
+      "venue": "IEEE Journal of Innovative Pedagogy in Higher Education",
+      "citation_level": 2,
+      "citation_context": "supports positive effects of reward-based learning"
+    },
+    {
+      "title": "OpenAI GPT-4o",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "core model used in MEGA system"
+    },
+    {
+      "title": "Why problem-based learning? A case study of institutional change in undergraduate education",
+      "doi": null,
+      "year": null,
+      "venue": "The Power of Problem-Based Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Problem-based Learning: A Catalyst for Teacher and Student Motivation in K-12 Schools",
+      "doi": null,
+      "year": 2023,
+      "venue": "2023 IEEE International Conference on Teaching, Assessment and Learning for Engineering (TALE)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Problem-Based Learning Model",
+      "doi": "10.1109/EITT.2019.00042",
+      "year": 2019,
+      "venue": "2019 Eighth International Conference on Educational Innovation through Technology (EITT)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Enhancing mathematics education through AI Chatbots in a Flipped Learning Environment",
+      "doi": "10.1109/WEEF-GEDC59520.2023.10343838",
+      "year": 2023,
+      "venue": "2023 World Engineering Education Forum - Global Engineering Deans Council (WEEF-GEDC)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Chatbots and Flipped Learning: Enhancing Student Engagement and Learning Outcomes through Personalised Support and Collaboration",
+      "doi": null,
+      "year": null,
+      "venue": "IJORER: International Journal of Recent Educational Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Does the flipped classroom improve student learning and satisfaction? A systematic review and meta-analysis",
+      "doi": "10.1177/2332858419870489",
+      "year": 2019,
+      "venue": "AERA Open",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Large Language Model-Driven Classroom Flipping: Empowering Student-Centric Peer Questioning with Flipped Interaction",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Math Word Problem Solver Based on Text-to-Text Transformer Model",
+      "doi": null,
+      "year": 2021,
+      "venue": "2021 IEEE International Conference on Engineering, Technology & Education (TALE)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Solving Arithmetic Word Problems with a Templatebased Multi-Task Deep Neural Network (T-MTDNN)",
+      "doi": null,
+      "year": 2020,
+      "venue": "2020 IEEE International Conference on Big Data and Smart Computing (BigComp)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "TM-generation model: a template-based method for automatically solving mathematical word problems",
+      "doi": "10.1007/s11227-021-03855-9",
+      "year": 2021,
+      "venue": "Journal of Supercomputing",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Enhancing Math Word Problem Solving Through Salient Clue Prioritization: A Joint Token-Phrase-Level Feature Integration Approach",
+      "doi": "10.1109/IALP61005.2023.10337252",
+      "year": 2023,
+      "venue": "2023 International Conference on Asian Language Processing (IALP)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Photomath",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Socratic",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Sizzle",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Airmath",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Math",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Mathway",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Symbolab",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Math AI Homework Solver",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Studyx.ai",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Mathpapa",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Snapxam",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

@@ -1,0 +1,336 @@
+{
+  "title": "Learning From Failure: Integrating Negative Examples when Fine-tuning Large Language Models as Agents",
+  "doi": null,
+  "year": 2024,
+  "venue": null,
+  "url": "http://arxiv.org/abs/2402.11651v2",
+  "source_db": "arxiv_search",
+  "population": "not_reported",
+  "user_type": "Student",
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper examines whether large language models (LLMs) used as agents can improve by learning not only from successful interaction trajectories but also from failed ones. Prior agent-tuning work typically keeps only successful trajectories when fine-tuning smaller models, discarding failed attempts as unusable. The authors argue that these negative examples contain useful information and ask two main questions: whether LLMs can learn from failed trajectories, and how such data should be incorporated to improve agent performance.\n\nTo address this, the paper proposes Negative-Aware Training (NAT), a fine-tuning approach in which both successful and unsuccessful trajectories are retained, but each is explicitly marked with prompts indicating whether the model should generate a correct or incorrect solution. The method is evaluated on agent-style tasks including mathematical reasoning, multi-hop question answering, and strategic question answering. Trajectories are generated with GPT-3.5 interacting with tools such as a calculator and search engine, then used to fine-tune LLaMA-2 chat models. The study compares NAT against two baselines: standard fine-tuning on positive trajectories only, and negative-unaware training that mixes positive and negative trajectories without labels.\n\nThe paper is not an education study with human learners; instead, the evaluated \"population\" is AI models on benchmark tasks. Therefore, no human participant group, classroom, or school context is reported. Experiments are conducted in an online computational environment using benchmark datasets such as GSM8K, HotpotQA, and StrategyQA. The work is relevant to AI in education mainly because it concerns improving reasoning-oriented AI systems that could potentially be used in educational settings.\n\nThe main conclusion is that negative trajectories can be useful during agent fine-tuning when the model is explicitly informed about their status. NAT generally outperforms training on positive examples alone and also outperforms naively mixing positive and negative examples. The authors further conclude that the quality of negative examples matters, that gains are especially notable in low-resource settings, and that NAT appears to improve reasoning/planning while reducing the harm caused by action errors relative to simple mixing. They also note limitations, including dependence on ground-truth labels and lack of experiments on more diverse or stronger models.",
+  "limitations": [
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "identified_tools": [
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "tutoring_instruction",
+        "language_speech"
+      ],
+      "description": "Large language models used as agents that reason, generate action trajectories, and interact with tools such as calculators and search engines; the paper studies a training paradigm for fine-tuning such LLM agents rather than a single commercial product.",
+      "use_case": "The paper studies negative-aware training (NAT) for fine-tuning LLaMA-2-based LLM agents using both successful and unsuccessful trajectories on math reasoning and question-answering tasks, with GPT-3.5 used to generate training trajectories.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "On math tasks, NAT improved average accuracy over positive-only fine-tuning across multiple LLaMA-2 settings. For LLaMA-2-7B with 2k positive examples, average accuracy increased from 55.90 (Vanilla) to 64.64 (NAT), an 8.74-point gain; with 5k positives, it increased from 64.17 to 67.42. For LLaMA-2-13B, average accuracy rose from 65.18 to 67.74 with 2k positives and from 70.76 to 71.28 with 5k positives.",
+          "measure": "Average accuracy across GSM8K, ASDiv, SVAMP, and MultiArith",
+          "effect_size": "8.74 percentage-point gain (7B, 2k positives); 3.25 points (7B, 5k); 2.56 points (13B, 2k); 0.52 points (13B, 5k)",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "On HotpotQA, NAT improved question answering performance over positive-only training, and a fine-grained variant (NAT-2) improved further. NAT-2 raised 7B performance from EM 27.44 / F1 36.41 (Vanilla) to EM 29.76 / F1 42.51, and 13B performance from EM 27.04 / F1 36.95 to EM 29.60 / F1 43.29; results were reported as mean scores over 5 runs.",
+          "measure": "Exact Match (EM) and F1 on HotpotQA",
+          "effect_size": "7B: +2.32 EM, +6.10 F1; 13B: +2.56 EM, +6.34 F1 (NAT-2 vs Vanilla)",
+          "confidence_interval": "not_reported",
+          "sample_size": "5 runs; training examples described as 500 positive examples and up to 2k negative examples"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "On StrategyQA, NAT outperformed both positive-only training and negative-unaware training. With 1000 positive samples and 500 negative samples, NAT achieved 65.80 on 7B versus 55.40 for Vanilla and 62.40 for NUT; on 13B, NAT achieved 64.60 versus 53.40 for Vanilla and 61.80 for NUT.",
+          "measure": "StrategyQA accuracy",
+          "effect_size": "7B: +10.40 points vs Vanilla, +3.40 vs NUT; 13B: +11.20 vs Vanilla, +2.80 vs NUT",
+          "confidence_interval": "not_reported",
+          "sample_size": "training set: 1000 positive samples and 500 negative samples; evaluation n not_reported"
+        },
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "The quality of negative trajectories strongly affected outcomes. With LLaMA-2-7B and 10k negative samples, high-quality negatives improved average math accuracy from 55.90 to 64.64 in the 2k-positive setting and from 64.17 to 67.42 in the 5k-positive setting, whereas low-quality negatives reduced performance to 52.74 and 57.97 respectively.",
+          "measure": "Average accuracy across GSM8K, ASDiv, SVAMP, and MultiArith under different negative-data quality conditions",
+          "effect_size": "2k positives: +8.74 with high-quality negatives vs -3.16 with low-quality negatives; 5k positives: +3.25 with high-quality negatives vs -6.20 with low-quality negatives",
+          "confidence_interval": "not_reported",
+          "sample_size": "10k negative samples; 2k or 5k positive samples"
+        },
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In Chain-of-Thought fine-tuning on math tasks, NAT also improved performance relative to positive-only and negative-unaware training. Using LLaMA-2-7B with 2k positive samples and 1.6k negative samples, average accuracy increased from 52.69 (Vanilla) to 59.37 (NAT), compared with 58.45 for NUT.",
+          "measure": "Average accuracy across GSM8K, ASDiv, SVAMP, and MultiArith under CoT prompting",
+          "effect_size": "6.68 percentage-point gain vs Vanilla; 0.92 vs NUT",
+          "confidence_interval": "not_reported",
+          "sample_size": "2k positive samples and 1.6k negative samples"
+        }
+      ]
+    }
+  ],
+  "verdict": "genai_general",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical AI-methods paper with benchmark evaluations, but it is not an education intervention study with student participants, randomized assignment, or classroom implementation. Evidence comes from task-performance experiments on datasets rather than K-12 learner outcomes.",
+  "impact_tier": "blue",
+  "impact_tier_rationale": "Reported benchmark gains are often large in magnitude, including +8.74 percentage points on average math accuracy and roughly +6 F1 on HotpotQA. However, impacts are on benchmark task performance, not directly on student learning outcomes.",
+  "citations": [
+    {
+      "title": "Gpt-4 technical report",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv preprint arXiv:2303.08774"
+    },
+    {
+      "title": "Language models are few-shot learners",
+      "doi": null,
+      "year": 2020,
+      "venue": "Advances in Neural Information Processing Systems"
+    },
+    {
+      "title": "Fireact: Toward language agent fine-tuning",
+      "doi": null,
+      "year": 2023,
+      "venue": "ArXiv"
+    },
+    {
+      "title": "Agent-flan: Designing data and methods of effective agent tuning for large language models",
+      "doi": null,
+      "year": 2024,
+      "venue": "ArXiv"
+    },
+    {
+      "title": "Training verifiers to solve math word problems",
+      "doi": null,
+      "year": 2021,
+      "venue": "arXiv preprint arXiv:2110.14168"
+    },
+    {
+      "title": "Did aristotle use a laptop? a question answering benchmark with implicit reasoning strategies",
+      "doi": null,
+      "year": 2021,
+      "venue": "Transactions of the Association for Computational Linguistics"
+    },
+    {
+      "title": "Autogpt",
+      "doi": null,
+      "year": 2024,
+      "venue": null
+    },
+    {
+      "title": "Baseball: an automatic question-answerer",
+      "doi": null,
+      "year": 1961,
+      "venue": "Papers presented at the May 9-11, 1961, western joint IRE-AIEE-ACM computer conference"
+    },
+    {
+      "title": "Dense passage retrieval for open-domain question answering",
+      "doi": null,
+      "year": 2020,
+      "venue": "Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP)"
+    },
+    {
+      "title": "MAWPS: A math word problem repository",
+      "doi": null,
+      "year": 2016,
+      "venue": "Proceedings of the 2016 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies"
+    },
+    {
+      "title": "Turning dust into gold: Distilling complex reasoning capabilities from llms by leveraging negative data",
+      "doi": null,
+      "year": 2023,
+      "venue": "AAAI 2024"
+    },
+    {
+      "title": "From llm to conversational agent: A memory enhanced architecture with fine-tuning of large language models",
+      "doi": null,
+      "year": 2024,
+      "venue": "ArXiv"
+    },
+    {
+      "title": "Pre-train, prompt, and predict: A systematic survey of prompting methods in natural language processing",
+      "doi": null,
+      "year": 2023,
+      "venue": "ACM Computing Surveys"
+    },
+    {
+      "title": "Agentbench: Evaluating llms as agents",
+      "doi": null,
+      "year": 2023,
+      "venue": "ArXiv"
+    },
+    {
+      "title": "Self-refine: Iterative refinement with self-feedback",
+      "doi": null,
+      "year": 2023,
+      "venue": "ArXiv"
+    },
+    {
+      "title": "Sympy: symbolic computing in python",
+      "doi": null,
+      "year": 2017,
+      "venue": "PeerJ Computer Science"
+    },
+    {
+      "title": "A diverse corpus for evaluating and developing english math word problem solvers",
+      "doi": null,
+      "year": 2020,
+      "venue": "Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics"
+    },
+    {
+      "title": "Are NLP models really able to solve simple math word problems?",
+      "doi": null,
+      "year": 2021,
+      "venue": "Proceedings of the 2021 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies"
+    },
+    {
+      "title": "Autoact: Automatic agent learning from scratch via self-planning",
+      "doi": null,
+      "year": 2024,
+      "venue": "ArXiv"
+    },
+    {
+      "title": "Zero: Memory optimizations toward training trillion parameter models",
+      "doi": null,
+      "year": 2019,
+      "venue": "SC20: International Conference for High Performance Computing, Networking, Storage and Analysis"
+    },
+    {
+      "title": "Solving general arithmetic word problems",
+      "doi": null,
+      "year": 2015,
+      "venue": "Proceedings of the 2015 Conference on Empirical Methods in Natural Language Processing, EMNLP 2015"
+    },
+    {
+      "title": "Identifying the risks of lm agents with an lm-emulated sandbox",
+      "doi": null,
+      "year": 2023,
+      "venue": "ArXiv"
+    },
+    {
+      "title": "Quantifying language models\u2019 sensitivity to spurious features in prompt design or: How i learned to start worrying about prompt formatting",
+      "doi": null,
+      "year": 2024,
+      "venue": "International Conference on Learning Representations"
+    },
+    {
+      "title": "Reflexion: Language agents with verbal reinforcement learning",
+      "doi": null,
+      "year": 2023,
+      "venue": null
+    },
+    {
+      "title": "Mpnet: Masked and permuted pre-training for language understanding",
+      "doi": null,
+      "year": 2020,
+      "venue": "arXiv preprint arXiv:2004.09297"
+    },
+    {
+      "title": "Cognitive architectures for language agents",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv preprint arXiv:2309.02427"
+    },
+    {
+      "title": "Llama 2: Open foundation and fine-tuned chat models",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv preprint arXiv:2307.09288"
+    },
+    {
+      "title": "Chain-of-thought prompting elicits reasoning in large language models",
+      "doi": null,
+      "year": 2022,
+      "venue": "Advances in Neural Information Processing Systems"
+    },
+    {
+      "title": "Eliza\u2014a computer program for the study of natural language communication between man and machine",
+      "doi": null,
+      "year": 1966,
+      "venue": "Communications of the ACM"
+    },
+    {
+      "title": "Intelligent agents",
+      "doi": null,
+      "year": 1999,
+      "venue": "Multiagent systems: A modern approach to distributed artificial intelligence"
+    },
+    {
+      "title": "Auto-gen: Enabling next-gen llm applications via multi-agent conversation framework",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv preprint arXiv:2308.08155"
+    },
+    {
+      "title": "HotpotQA: A dataset for diverse, explainable multi-hop question answering",
+      "doi": null,
+      "year": 2018,
+      "venue": "Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing"
+    },
+    {
+      "title": "ReAct: Synergizing reasoning and acting in language models",
+      "doi": null,
+      "year": 2023,
+      "venue": "International Conference on Learning Representations (ICLR)"
+    },
+    {
+      "title": "Lumos: Learning agents with unified data, modular design, and open-source llms",
+      "doi": null,
+      "year": 2023,
+      "venue": "ArXiv"
+    },
+    {
+      "title": "Babyagi",
+      "doi": null,
+      "year": 2024,
+      "venue": null
+    },
+    {
+      "title": "Agenttuning: Enabling generalized agent abilities for llms",
+      "doi": null,
+      "year": 2023,
+      "venue": "ArXiv"
+    },
+    {
+      "title": "Agentohana: Design unified data and training pipeline for effective agent learning",
+      "doi": null,
+      "year": 2024,
+      "venue": "ArXiv"
+    },
+    {
+      "title": "Expel: Llm agents are experiential learners",
+      "doi": null,
+      "year": 2023,
+      "venue": "ArXiv"
+    },
+    {
+      "title": "Judging llm-as-a-judge with mt-bench and chatbot arena",
+      "doi": null,
+      "year": 2023,
+      "venue": null
+    },
+    {
+      "title": "Enhancing the general agent capabilities of low-parameter llms through tuning and multi-branch reasoning",
+      "doi": null,
+      "year": 2024,
+      "venue": "ArXiv"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

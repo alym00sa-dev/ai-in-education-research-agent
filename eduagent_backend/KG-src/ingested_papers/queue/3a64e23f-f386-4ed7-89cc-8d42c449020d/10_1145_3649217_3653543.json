@@ -1,0 +1,88 @@
+{
+  "title": "Iris: An AI-Driven Virtual Tutor For Computer Science Education",
+  "doi": "10.1145/3649217.3653543",
+  "year": 2024,
+  "venue": "Proceedings of the 2024 Innovation and Technology in Computer Science Education V. 1 (ITiCSE 2024)",
+  "url": "http://arxiv.org/abs/2405.08008v2",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper addresses the challenge of providing scalable, personalized support for students in large computer science courses. The authors present Iris, a chat-based virtual tutor integrated into the Artemis learning platform, designed to help students with programming exercises through context-aware, calibrated assistance. Rather than giving complete solutions, Iris is prompted to provide subtle hints, counter-questions, and best-practice guidance so that students can continue solving problems independently.\n\nTechnically, Iris uses GPT-3.5-Turbo with a structured interaction pipeline: it first assesses whether a question is relevant, then selects likely relevant code files, generates a response using the exercise description, student submission context, automated feedback, and chat history, and finally performs a self-check to reduce responses that violate the tutoring constraints. The study evaluates Iris through an online survey of users in three CS1-level undergraduate courses at the Technical University of Munich. Students who had used Iris at least ten times were retained for analysis, and their perceptions were measured with Likert-scale questions about usefulness, comfort, and reliance.\n\nResults suggest that students generally view Iris positively. Many reported that it understands their questions, provides helpful guidance, increases engagement, and improves understanding of programming concepts. Students also felt very comfortable asking Iris questions they might hesitate to ask human tutors, although they did not view it as a replacement for human support. The authors conclude that Iris is a promising supplementary tool for programming education, but they emphasize that the current evidence is based on subjective perceptions rather than objective learning gains and call for future controlled studies with comparison groups and pre/post testing.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed survey study with a clear methodology, but it is qualitative/correlational and relies on self-reported perceptions rather than experimental comparison or objective learning measures. It does not meet RCT/QED criteria and has selection bias toward heavier users.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports positive perceptions of usefulness and engagement, but no objective learning effect size is provided and the outcomes are subjective. Impact on learning is therefore plausible but unclear, with no demonstrated medium or large effect.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "chat-based virtual tutor integrated into Artemis for CS1 programming exercises, providing context-aware hints, counter-questions, and guarded responses instead of full solutions"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.9,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "This paper reports students' perceived impact of Iris on programming learning rather than objective achievement. In the survey of students who used Iris at least 10 times (reported analysis sample n=121; 221 total engaged users), 50% agreed that Iris improved their understanding of programming concepts, while 22% disagreed and 28% were neutral. The study did not report test scores, effect sizes, or confidence intervals.",
+        "measure": "Likert-scale survey item on perceived improvement in understanding of programming concepts",
+        "study_size": "n=121 analyzed survey respondents; n=221 engaged users",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.92,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Students reported strong comfort and trust in using Iris: 92% agreed they felt comfortable asking questions without being judged, and 62% felt safe asking questions they would not ask a tutor or professor. Engagement was also perceived positively, with 60% agreeing that interacting with Iris makes the learning process more engaging, though motivation was more mixed (37% agree, 40% neutral, 23% disagree).",
+        "measure": "Likert-scale survey items on comfort, safety, engagement, and motivation",
+        "study_size": "n=121 analyzed survey respondents",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.78,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The study suggests Iris may support independent problem-solving, but only indirectly through subjective perceptions. For reliance, 43% of respondents felt programming exercises would be more challenging without Iris, while 27% felt exam tasks would be difficult without it and 41% disagreed, indicating moderate reliance for routine work but less dependence in exam contexts.",
+        "measure": "Likert-scale survey items on perceived difficulty solving programming tasks without Iris",
+        "study_size": "n=121 analyzed survey respondents",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_control_group",
+    "self_reported_measures",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Germany",
+  "study_region": "Europe",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

@@ -1,0 +1,106 @@
+{
+  "title": "The Effects of Generative AI Agents and Scaffolding on Enhancing Students\u2019 Comprehension of Visual Learning Analytics",
+  "doi": null,
+  "year": 2024,
+  "venue": null,
+  "url": "http://arxiv.org/abs/2409.11645v2",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Randomized Controlled Trial (RCT)",
+  "extended_summary": "This paper examines whether generative AI agents can improve students\u2019 comprehension of visual learning analytics (VLA), especially compared with a conventional scaffolding approach based on data storytelling. The core research question is whether passive GenAI agents that answer student questions, or proactive GenAI agents that guide learners with scaffolding prompts, improve students\u2019 effectiveness and efficiency in interpreting complex educational data visualisations, and whether any gains persist after the support is removed.\n\nThe intervention was a three-arm randomized controlled trial comparing (1) standalone data storytelling, (2) passive GenAI agents, and (3) proactive GenAI agents. The GenAI system used multimodal large language models with retrieval-augmented generation and agentic design. Passive agents responded to user queries, while proactive agents additionally asked guiding questions and provided structured feedback. Participants completed pre-intervention, intervention, and post-intervention VLA comprehension tasks involving bar charts, sociograms, and ward maps from a healthcare simulation context, followed by objective multiple-choice assessment questions measuring comprehension accuracy and time efficiency.\n\nThe study involved 117 higher education students with healthcare, medical, or nursing backgrounds, recruited online via Prolific. The experiment was conducted through Qualtrics integrated with a custom website, so the setting was online rather than a classroom or school-supported K-12 environment. This is therefore not direct evidence for foundational reading outcomes, K-12 learners, or English language arts instruction; it is adjacent evidence about GenAI-supported comprehension of data visualisations in higher education.\n\nThe main conclusion is that proactive GenAI agents outperformed both passive agents and standalone data storytelling in improving VLA comprehension, with benefits reportedly persisting into a post-intervention phase after support was removed. Passive GenAI performed similarly to standalone scaffolding. The paper argues that proactive, scaffolded GenAI may support genuine learning rather than only temporary task performance, but the evidence is confined to higher education learners interpreting visual analytics in a healthcare simulation context.",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is a randomized controlled trial, which is stronger than correlational evidence, but it is not directly relevant to the target K-12 foundational reading question: the sample is higher education students and the outcome is visual learning analytics comprehension in a healthcare simulation context, not reading outcomes. The provided text also lacks sufficient reporting of effect sizes and other details needed for top-tier causal evidence classification.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports positive effects for proactive GenAI agents on comprehension and efficiency, but the magnitude is unclear because effect sizes are not reported in the provided text. Impact is also outside the target population and domain, so it should be treated as adjacent, not direct evidence for K-12 foundational reading.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "Passive and proactive generative AI conversational agents (GPT-4o with RAG) used to help students interpret complex visual learning analytics; proactive agents additionally ask scaffolded guiding questions and provide feedback."
+    },
+    {
+      "intervention": "Computer-Assisted Instruction (CAI)",
+      "confidence": 0.74,
+      "role": "secondary",
+      "use_case": "Standalone data-storytelling scaffolds embedded in visualizations used as a non-AI instructional comparator to support comprehension of visual learning analytics."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "In a randomized controlled trial with 117 higher-education participants, proactive GenAI agents significantly improved students\u2019 comprehension of visual learning analytics compared with both passive GenAI agents and standalone data-storytelling scaffolds, and these benefits persisted into the post-intervention phase after support was removed. Outcomes were based on corrected scores from six multiple-choice comprehension questions per phase covering knowledge and comprehension of healthcare-simulation visualizations; exact between-group effect sizes and confidence intervals were not reported in the provided text.",
+        "measure": "Corrected comprehension scores on 6 multiple-choice VLA knowledge/comprehension items across pre-, intervention, and post phases",
+        "study_size": "n=117",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.83,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The study reports that proactive GenAI agents improved efficiency in extracting insights from visual learning analytics relative to passive GenAI agents and standalone scaffolding, with efficiency operationalized as success time per correct answer. The paper states proactive agents reduced the time required for insight extraction and that gains persisted post-intervention, but no numeric effect size, standard deviation, or confidence interval is reported in the provided excerpt.",
+        "measure": "Success time (time spent answering six evaluation questions divided by correct score) for VLA insight extraction",
+        "study_size": "n=117",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    },
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.72,
+      "finding": {
+        "direction": "No Effect",
+        "finding_summary": "Passive GenAI agents produced comprehension improvements that were comparable to standalone scaffolding during and after the intervention, indicating no clear advantage over the non-AI comparator on the main learning outcome. The study used a randomized design with 117 higher-education participants, but the provided text does not report exact pairwise effect sizes or confidence intervals for the passive-versus-scaffolding comparison.",
+        "measure": "Corrected comprehension scores on 6 multiple-choice VLA knowledge/comprehension items",
+        "study_size": "n=117",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    },
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.68,
+      "finding": {
+        "direction": "No Effect",
+        "finding_summary": "Standalone data-storytelling scaffolding yielded improvements comparable to passive GenAI agents but was outperformed by proactive GenAI agents on VLA comprehension and persistence of learning. This comparator condition functions as a non-AI instructional scaffold rather than a generative-AI intervention; exact effect sizes are not reported in the provided text.",
+        "measure": "Corrected comprehension scores on 6 multiple-choice VLA knowledge/comprehension items",
+        "study_size": "n=117",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Computer-Assisted Instruction (CAI)"
+    }
+  ],
+  "limitations": [
+    "short_duration",
+    "single_site",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

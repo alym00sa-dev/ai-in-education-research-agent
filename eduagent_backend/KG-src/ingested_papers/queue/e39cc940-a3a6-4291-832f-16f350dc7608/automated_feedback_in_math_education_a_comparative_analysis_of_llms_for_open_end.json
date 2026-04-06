@@ -1,0 +1,75 @@
+{
+  "title": "Automated Feedback in Math Education: A Comparative Analysis of LLMs for Open-Ended Responses",
+  "doi": null,
+  "year": 2024,
+  "venue": "arXiv",
+  "url": "https://doi.org/10.48550/arxiv.2411.08910",
+  "source_db": "openalex_search",
+  "populations": [
+    "Middle School (6th-8th)",
+    "Graduate / Doctoral"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper investigates whether large language models can improve automated scoring and feedback for open-ended middle school mathematics responses. The authors compare three approaches: a fine-tuned open-source LLM (GOAT, based on Mistral/Llama), a prior similarity-based method (SBERT-Canberra), and GPT-4 used in a zero-shot prompting setup. The central question is whether an LLM fine-tuned on teacher-scored student work can outperform an established non-generative benchmark for scoring, and how its feedback quality compares with GPT-4.\n\nThe study uses data from an online learning platform containing student responses to open-ended math problems, teacher-assigned scores, and teacher-written feedback. After preprocessing, the authors train and test on 50 random problems with about 5,000 total student responses, focused on middle-school math and the Illustrative Mathematics scoring rubric. GOAT and SBERT are trained or adapted on historical teacher data, while GPT-4 receives only the problem, student answer, and rubric. Quantitative scoring metrics include AUC, RMSE, and Cohen\u2019s kappa; qualitative feedback quality is judged by two experienced teachers using criteria for accuracy, relevance, motivation, and overall preference.\n\nResults show that GOAT outperforms SBERT-Canberra and GPT-4 on scoring accuracy, indicating that a fine-tuned LLM can better match teacher grading than the prior benchmark. However, GPT-4 produces feedback that teachers judge as more accurate, relevant, motivating, and preferable overall. The authors conclude that task-specific fine-tuning is promising for auto-scoring, but high-quality general-purpose LLMs remain stronger for generating feedback. They also argue that better teacher feedback data and more refined training could improve future open-source models.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed comparative evaluation with a clear train/test protocol and human ratings, but it is not a randomized educational trial and lacks causal learner-outcome evidence. The study is primarily an algorithmic/qualitative benchmark rather than a rigorous classroom efficacy study.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The system shows moderate promise for scoring automation and teacher assistance, especially GOAT's scoring gains over SBERT, but the work does not demonstrate direct student learning gains. Impact is therefore plausible but still unclear and limited to benchmarking and workflow support.",
+  "interventions": [
+    {
+      "intervention": "Automated Feedback System",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "automated scoring and qualitative feedback generation for middle school students' open-ended mathematics responses using fine-tuned Mistral/LLM, SBERT-Canberra, and GPT-4 comparisons"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 1.0,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The paper evaluates how well three systems predict teacher scores on middle-school open-response math items. GOAT performed best on scoring accuracy (AUC=0.697, RMSE=1.119, Kappa=0.422; n=1,000 test entries), outperforming SBERT-Canberra (AUC=0.662, RMSE=1.364, Kappa=0.362) and GPT-4 (AUC=0.639, RMSE=1.16, Kappa=0.266).",
+        "measure": "Teacher score prediction on open-ended middle school math responses; AUC, RMSE, and Cohen's kappa versus teacher-assigned scores",
+        "study_size": "n=1000",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Automated Feedback System"
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 1.0,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The paper also assesses whether LLM-based feedback can support teacher workflow by generating usable feedback on student math responses. Human raters preferred GPT-4 most often (77.5%) over GOAT and SBERT (12% each), while GOAT outperformed SBERT on relevance and accuracy, suggesting promise for reducing teacher workload but not yet replacing human review.",
+        "measure": "Human evaluator ratings of feedback accuracy, relevance, motivation, and model preference",
+        "study_size": "n=100 sampled student answers for feedback evaluation",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "Automated Feedback System"
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_long_term_followup",
+    "implementation_fidelity_not_reported",
+    "non_representative_population"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

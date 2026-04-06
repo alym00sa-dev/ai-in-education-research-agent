@@ -1,0 +1,81 @@
+{
+  "title": "Examining the Influence of Varied Levels of Domain Knowledge Base Inclusion in GPT-based Intelligent Tutors",
+  "doi": null,
+  "year": 2024,
+  "venue": "not_reported",
+  "url": "http://arxiv.org/abs/2309.12367v2",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Undergraduate",
+    "Graduate / Doctoral"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper investigates whether adding a knowledge base (KB) to GPT-4-based intelligent tutoring systems can improve the quality and reliability of educational responses. The authors focus on a core concern with large language models in education: they can produce fluent but inaccurate answers, which may undermine their usefulness as tutors. The study compares three tutor configurations that differ only in how much curriculum information they can access: no KB access, partial KB access, and full KB access.\n\nThe intervention is a KB-integrated tutoring architecture that lets educators provide lesson content at different levels of granularity, from just the lesson subject to topic descriptions and full lecture material. The system uses GPT-4 to generate tutor responses, rank student answers, and produce feedback, while the full KB version also uses keyword generation and a Haystack-based retrieval pipeline to locate relevant lecture subtopics. The evaluated content was an artificial intelligence curriculum, specifically a lecture on the history of AI, with questions designed from that material.\n\nThe study involved four university students who had previously completed AI coursework and two professional AI curriculum experts. Students answered questions with intentionally varied accuracy, and then both the GPT-based tutors and the human experts assessed those answers. Students then judged which assessor response was more teacher-like, more understanding of the student, and more helpful. The authors report that KB access improved GPT-4 tutor accuracy relative to no KB access, and it also increased student preference for GPT-generated feedback on two pedagogical dimensions: speaking like a teacher and understanding the student. However, human experts still outperformed the tutors on overall accuracy and remained preferred for being helpful to students.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a small preliminary comparative study with asynchronous, manually collected responses and no random assignment of students to conditions. It is peer-reviewed conference paper-like work, but the design has major threats to internal validity and relies on a very small sample (n=4 students, n=2 experts).",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The observed gains from knowledge-base access are modest and context-specific, and no standardized learning outcome or robust effect size is reported. The study suggests possible improvement in tutor accuracy and perceived pedagogy, but the overall impact on student learning remains unclear.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "GPT-4-based intelligent tutor that assesses student answers to AI curriculum questions, generates teacher-like feedback, and is tested with no, partial, and full knowledge-base access."
+    },
+    {
+      "intervention": "Other",
+      "confidence": 0.88,
+      "role": "secondary",
+      "use_case": "Knowledge-base augmentation / retrieval layer for the GPT-4 tutor, including lesson subject, topic description, and lecture transcript retrieval via Haystack and keyword generation to constrain tutor responses."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper finds that adding knowledge-base access improved the GPT-4 tutor\u2019s answer accuracy on an AI-curriculum assessment. Accuracy increased from 67% with no KB access to 77% with partial KB access and 74% with full KB access, compared with 87% for human domain experts; agreement with expected answers was also higher for experts (63%) than for ITSs (43%).",
+        "measure": "Assessment accuracy and agreement on AI curriculum question answers",
+        "study_size": "n=4 students, n=2 domain experts, 3 GPT-4 tutor variants",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Student raters preferred KB-augmented GPT-4 responses more often on pedagogical dimensions than no-KB responses. Relative to the no-KB tutor, partial KB access increased preference for GPT-4 by 17.15% for 'talking like a teacher,' 10.00% for 'understanding the student,' and 12.86% for 'helpful to the student'; full KB access increased these by 11.43%, 10.00%, and 8.58%, respectively.",
+        "measure": "Student preference rankings of assessor replies on talking like a teacher, understanding the student, and helpfulness",
+        "study_size": "n=4 students providing rankings; 3 GPT-4 tutor variants",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_long_term_followup",
+    "non_representative_population",
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

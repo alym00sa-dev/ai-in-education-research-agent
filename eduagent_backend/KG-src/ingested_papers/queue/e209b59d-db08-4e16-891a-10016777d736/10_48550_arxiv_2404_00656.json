@@ -1,0 +1,67 @@
+{
+  "title": "WavLLM: Towards Robust and Adaptive Speech Large Language Model",
+  "doi": "10.48550/arXiv.2404.00656",
+  "year": 2024,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2404.00656v3",
+  "source_db": "arxiv_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper presents WavLLM, a speech large language model designed to improve robust speech understanding, instruction following, and generalization across diverse speech tasks. The central problem addressed is that prior speech LLMs struggle with unseen or complex prompts and lack effective chain-of-thought-style decomposition for multi-step speech tasks.\n\nThe proposed system combines two frozen speech encoders, Whisper for semantic content and WavLM for acoustic/speaker information, with a LLaMA-2-7B-chat language model. The authors introduce a two-stage curriculum learning strategy: first, mixed single-task training on ASR, speech translation, speaker verification, emotion recognition, and speech question answering; second, advanced multi-task training on composite prompts that require completing multiple tasks sequentially. A prompt-aware LoRA adapter is added in the second stage to adapt the LoRA scaling to different instructions.\n\nThe evaluation uses speech benchmarks and in-house multi-task datasets, including spoken query answering, zero-shot English listening comprehension, independent multi-task instructions, and chain-of-thought tasks. Across these benchmarks, WavLLM is reported to outperform open-source baselines such as SALMONN and Qwen-Audio-Chat on many tasks, with especially strong gains in multi-task instruction following and CoT-style speech processing. The paper concludes that curriculum learning plus prompt-adaptive LoRA improves robustness and generalization for speech LLMs.",
+  "limitations": [
+    "no_control_group",
+    "small_sample",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "identified_tools": [
+    {
+      "name": "LLaMA",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "language_speech",
+        "content_generation"
+      ],
+      "description": "A family of large language models from Meta, used here as the LLaMA-2-7B-chat backbone for speech-language instruction following.",
+      "use_case": "Served as the core LLM backbone in WavLLM, with LoRA-based adaptation for speech understanding, instruction following, and multi-task dialogue.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The paper reports that WavLLM, built on LLaMA-2-7B-chat, outperformed baseline speech-LLM systems on several speech understanding and instruction-following tasks. For zero-shot English listening comprehension (SQA), it achieved 67.55% accuracy versus 25.50%-59.30% for baselines; for multi-task instruction following (II-tasks), it achieved 62.44% accuracy and 92.50% IFR.",
+          "measure": "SQA accuracy; II-task accuracy and instruction-following rate (IFR)",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Academic \u0014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The advanced multi-task training stage improved performance over mixed single-task training. On II-tasks, accuracy increased from 22.92 to 62.44 and IFR from 26.25 to 92.50; on CoT-based Gigaword summarization/translation, R-1 improved from 14.7 to 16.5 and BERTScore from 69.71 to 70.60.",
+          "measure": "II-task accuracy/IFR; CoT summarization metrics (R-1, R-2, R-L, BERTScore)",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is an empirical model paper, but the requested K-12 reading/literacy evidence is not the paper's focus; it evaluates a speech LLM on benchmark speech and dialogue tasks rather than an education intervention study. No randomized or quasi-experimental classroom design is reported.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The reported gains are large on the paper's own benchmark tasks, but they are not education outcomes for K-12 literacy instruction and do not include effect sizes, sample sizes, or direct student learning measures. Impact for the requested topic is therefore unclear.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

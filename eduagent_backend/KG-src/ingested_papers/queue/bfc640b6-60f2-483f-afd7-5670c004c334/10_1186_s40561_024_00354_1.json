@@ -1,0 +1,49 @@
+{
+  "title": "Harnessing large language models to develop research-based learning assistants for formative feedback",
+  "doi": "10.1186/s40561-024-00354-1",
+  "year": 2024,
+  "venue": "Smart Learning Environments",
+  "url": "https://doi.org/10.1186/s40561-024-00354-1",
+  "source_db": "openalex_search",
+  "populations": [
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses how large language models (LLMs) can be used to provide research-based formative feedback that supports self-regulated learning (SRL). The authors argue that while formative feedback is known to support cognition, metacognition, and motivation, simply exposing students to general-purpose chatbots such as ChatGPT is not sufficient for effective learning. The paper therefore focuses on how educational theory can be translated into structured prompting approaches so that LLM feedback aligns with established principles from formative assessment and SRL research.\n\nThe paper introduces LEAP (Learning with AI about Physics), a web-based platform that allows teachers to create tasks, provide correct answers, and pre-specify prompts that guide the LLM\u2019s feedback behavior. The central contribution is a three-part prompt design framework consisting of a condition, a consequence, and a refinement. Using this approach, teachers can configure the system to generate different kinds of feedback scaffolds, including sense-making, elaboration, self-explanation, partial task-solution support, metacognitive prompts, and motivational prompts. The paper also describes the system architecture and gives an illustrative Newton\u2019s cradle physics example showing how GPT-generated feedback changes based on the prompt type.\n\nThe context is secondary school physics, with repeated references to high school and secondary school students, but the paper does not report a formal participant sample or an empirical intervention study. Teachers are intended users for authoring tasks and prompts, and students are intended users for receiving AI-generated feedback through the platform. The implementation context is an online platform, but details such as duration, teacher training, and fidelity of delivery are not empirically reported.\n\nThe main conclusion is that LLMs can potentially be harnessed for more pedagogically grounded formative feedback when teachers pre-structure the prompts and constrain the interaction through a platform like LEAP. The authors position LEAP as a research prototyping environment and a practical tool for future empirical study rather than as a validated intervention with demonstrated causal effects. They explicitly note that additional empirical research is needed to verify the effectiveness, accuracy, and educational impact of LLM-generated formative feedback on student outcomes.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a commentary/design paper describing the LEAP platform and illustrating sample prompts and outputs. It does not report an RCT, quasi-experiment, or other empirical study with participants, assignment, outcome data, or statistical results.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper makes forward-looking claims about potential benefits, but provides no direct impact estimates or measured student outcomes. Impact is therefore unclear rather than demonstrated as positive or negative.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.95,
+      "role": "primary",
+      "use_case": "LEAP platform using GPT-4o/GPT-4 Turbo to deliver teacher-preprompted formative feedback and conversational scaffolds during secondary-school physics problem solving, aimed at supporting self-regulated learning."
+    },
+    {
+      "intervention": "Automated Feedback System",
+      "confidence": 0.79,
+      "role": "secondary",
+      "use_case": "Automated generation of formative feedback on student physics responses, with teacher-specified prompts, correct answers, and adjustable feedback complexity levels."
+    }
+  ],
+  "outcome_assignments": [],
+  "limitations": [
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Germany",
+  "study_region": "Europe",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

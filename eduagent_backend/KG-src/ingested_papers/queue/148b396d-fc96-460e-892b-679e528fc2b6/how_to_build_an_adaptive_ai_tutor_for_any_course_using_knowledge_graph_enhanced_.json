@@ -1,0 +1,64 @@
+{
+  "title": "How to Build an Adaptive AI Tutor for Any Course Using Knowledge Graph-Enhanced Retrieval-Augmented Generation (KG-RAG)",
+  "doi": null,
+  "year": null,
+  "venue": null,
+  "url": "http://arxiv.org/abs/2311.17696v7",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Randomized Controlled Trial (RCT)",
+  "extended_summary": "This paper addresses a core problem in AI tutoring systems: large language models can produce factually incorrect answers and often fail to preserve conceptual relationships between course ideas. The authors argue that standard retrieval-augmented generation (RAG), while improving factual grounding, still relies mainly on semantic similarity and therefore can miss the structured links that matter in education.\n\nTo address this, the paper proposes KG-RAG, an adaptive AI tutor framework that combines a large language model (DeepSeek-V3), retrieval-augmented generation, and a knowledge graph built from course materials. The knowledge graph is constructed by automatically extracting entities and relationships from lecture content and then validating them with a domain expert. During question answering, the system expands retrieval through graph traversal so that responses include related concepts as well as directly relevant text.\n\nThe empirical study involved 76 first-year university students with no prior finance coursework. Students were randomly assigned to either a standard RAG tutor or the KG-RAG tutor, used the system during a 45-minute session after a 3-hour self-study period, and then completed a multiple-choice assessment. The KG-RAG group scored significantly higher than the RAG group, and student feedback also suggested improved relevance, usability, and understanding. The paper concludes that knowledge-graph-enhanced retrieval can improve the completeness, precision, and relational coherence of AI tutor responses, leading to better learning outcomes in higher education settings.",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is a controlled experiment with random assignment to KG-RAG versus standard RAG, which supports causal inference, but it is a small single-site study with a narrow finance-course context and limited evidence of broader external validity. The paper also includes user feedback, but the main learning outcome evidence comes from one modest RCT-like comparison.",
+  "impact_tier": "blue",
+  "impact_tier_rationale": "The reported learning gain is large for the general student sample (Cohen's d=0.86), well above the threshold for blue impact. Although the setting is specific, the magnitude suggests substantial potential educational impact if replicated.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "Knowledge graph-enhanced retrieval-augmented generation tutoring system for university course Q&A, using DeepSeek-V3 to answer student questions with structured course knowledge and context-aware explanations."
+    },
+    {
+      "intervention": "Intelligent Tutoring System (ITS)",
+      "confidence": 0.9,
+      "role": "primary",
+      "use_case": "Adaptive AI tutor architecture that combines LLM generation, RAG, and knowledge-graph retrieval to deliver personalized instructional responses and support self-study."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Other",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "In a controlled experiment with n=76 first-year university students, KG-RAG produced higher post-interaction assessment scores than standard RAG. The KG-RAG group scored M=6.37 (SD=1.92) versus M=4.71 (SD=1.93) on a 10-point quiz, with t=-3.75, p=0.00035, and a large effect size (Cohen's d=0.86).",
+        "measure": "10-point multiple-choice assessment of finance course knowledge after a 3-hour self-study period and 45-minute tutoring session",
+        "study_size": "n=76",
+        "effect_size": "d=0.86",
+        "confidence_interval": "not_reported",
+        "std_deviation": "KG-RAG SD=1.92; RAG SD=1.93"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_long_term_followup",
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "blended",
+  "teacher_training": "yes",
+  "implementation_fidelity": "medium",
+  "study_country": "Hong Kong",
+  "study_region": "East Asia & Pacific",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

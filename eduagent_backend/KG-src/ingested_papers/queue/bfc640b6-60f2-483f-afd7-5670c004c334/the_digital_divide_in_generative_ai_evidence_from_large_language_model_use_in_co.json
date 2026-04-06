@@ -1,0 +1,72 @@
+{
+  "title": "The Digital Divide in Generative AI: Evidence from Large Language Model Use in College Admissions Essays",
+  "doi": null,
+  "year": 2026,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2602.17791v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper investigates how large language model (LLM) use in college admissions essays changed after the public release of ChatGPT, whether adoption differed by socioeconomic status, and how estimated LLM use related to admissions outcomes. The motivating problem is equity: LLMs may expand access to writing support for students with fewer traditional resources, but they may also produce unequal benefits or penalties in high-stakes evaluation contexts.\n\nThe authors analyze a large de-identified longitudinal dataset of 81,663 applications submitted to a selective U.S. university from 2020 to 2024. Rather than experimentally assigning students to use AI, they estimate essay-level LLM involvement using a detector trained on historical human essays and synthetic GPT-4o-generated essays. They then examine changes in linguistic features over time, compare estimated LLM usage across socioeconomic groups using fee-waiver status as a proxy for SES, and model associations between estimated LLM use and admissions outcomes with regression and difference-in-differences analyses.\n\nThe population studied is high school students applying to college in the United States, specifically applicants to a highly selective engineering-focused university. The context is not classroom instruction or formative feedback; it is a high-stakes college admissions writing setting. The paper reports that estimated LLM use rose sharply in 2024 across all groups, with disproportionately larger increases among lower-SES applicants. Essays also showed post-2023 convergence in surface-level linguistic features, suggesting increasing homogenization of writing.\n\nThe main conclusion is that broader access to LLM-based writing assistance did not translate into equitable outcomes. Estimated LLM use was associated with lower predicted admission odds for all applicants, but the negative association was substantially stronger for lower-SES applicants, even after controlling for academic credentials and stylometric features. The authors interpret this as evidence of a shift from inequality in access to writing support toward inequality in returns from AI-assisted writing, while emphasizing that the observational design does not establish causality.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "Large-scale and methodologically detailed, but fundamentally observational/correlational with inferred rather than observed LLM use, substantial causal threats, and no controlled comparison of ChatGPT feedback against alternative feedback conditions. It offers adjacent evidence, not direct comparative effectiveness evidence for grades 9-12 writing feedback.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "The clearest reported empirical impacts are negative at the institutional level: estimated LLM-assisted writing is associated with lower admission odds, especially for lower-SES applicants. The paper does not demonstrate positive effects on student writing outcomes and instead raises equity concerns about adverse downstream consequences.",
+  "interventions": [
+    {
+      "intervention": "AI Writing / Language Tool",
+      "confidence": 0.94,
+      "role": "primary",
+      "use_case": "LLM-assisted writing for U.S. college admissions essays, including brainstorming, drafting, paraphrasing, and editing support inferred from stylometric detection rather than directly observed tool logs."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Literacy",
+      "confidence": 0.58,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "This paper does not run a controlled comparison of ChatGPT feedback versus teacher/peer/automated feedback on student writing quality. Instead, in a large observational admissions-essay dataset (N=81,663 applications; post-GPT subsample N=17,654), estimated LLM use was associated with convergence in surface-level writing features and, among detectable LLM users, lower-SES applicants showed shorter essays and lower lexical diversity than higher-SES applicants (e.g., MTLD 90.88 vs. 95.78; t=-11.13, p<.001; Yule's K 112.00 vs. 108.42; t=9.07, p<.001). The paper therefore provides only adjacent evidence that AI-assisted writing changes observable literacy features, not direct evidence that ChatGPT formative feedback improves overall writing quality in secondary classrooms.",
+        "measure": "Stylometric and linguistic essay features: token/word counts, type counts, TTR, Maas TTR, MTLD, HDD, Yule's K, average word length, average sentence length, readability-based complexity",
+        "study_size": "N=81,663 overall; post-GPT subsample n=17,654; detectable LLM-user SES comparison n=10,626 (higher SES n=7,377; lower SES n=3,249)",
+        "effect_size": "Cohen's d=0.15 for SES difference in estimated LLM usage; otherwise not_reported",
+        "confidence_interval": "95% CIs shown graphically for trend figures; table CIs for literacy-feature contrasts not_reported",
+        "std_deviation": "Examples reported: estimated alpha SD=0.119 (higher SES) and 0.169 (lower SES); MTLD SD=21.39 and 19.79; Yule's K SD=18.67 and 18.84"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Systemic / Institutional Impact",
+      "confidence": 0.97,
+      "finding": {
+        "direction": "Negative",
+        "finding_summary": "In this observational study of selective-university admissions essays, estimated LLM use rose sharply in 2024 and was associated with worse evaluative outcomes, especially for lower-SES applicants. In the post-GPT interaction model (n=17,654), higher-SES applicants showed a negative association between estimated LLM use and admission odds (beta=-0.922, OR=0.398, p<.001), and the penalty was significantly larger for lower-SES applicants (interaction beta=-1.028, OR=0.358, p=.023), yielding a combined lower-SES association of beta=-1.949, OR=0.142; the DiD model on n=30,488 also found the SES admissions gap widened post-GPT (beta=-0.170, OR=0.844, 95% CI [0.727, 0.979], p=.025).",
+        "measure": "Institutional evaluative outcomes: admission decision / predicted admission probability from logistic and difference-in-differences models using estimated LLM usage in admissions essays",
+        "study_size": "N=81,663 overall; DiD model n=30,488; post-GPT interaction model n=17,654",
+        "effect_size": "OR=0.398 for estimated LLM use among higher SES; interaction OR=0.358; total lower-SES OR=0.142; DiD OR=0.844",
+        "confidence_interval": "Higher-SES estimated LLM use OR 95% CI [0.264, 0.600]; interaction 95% CI [0.147, 0.868]; lower-SES total association 95% CI [0.065, 0.313]; DiD 95% CI [0.727, 0.979]",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "single_site",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

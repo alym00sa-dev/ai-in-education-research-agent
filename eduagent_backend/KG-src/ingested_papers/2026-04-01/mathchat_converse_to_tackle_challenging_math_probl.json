@@ -1,0 +1,139 @@
+{
+  "title": "MATHCHAT: CONVERSE TO TACKLE CHALLENGING MATH PROBLEMS WITH LLM AGENTS",
+  "doi": null,
+  "year": 2024,
+  "venue": "ICLR 2024 Workshop on LLM Agents",
+  "url": "https://doi.org/10.48550/arxiv.2306.01337",
+  "source_db": "openalex_search",
+  "populations": [
+    "High School (9th-12th)",
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses whether large language model (LLM) agents can solve challenging mathematics problems more effectively through conversational interaction and tool use. The authors focus on difficult natural-language math problems and argue that multi-turn dialogue, combined with external computation, may better support decomposition, debugging, and iterative refinement than single-shot prompting. The paper introduces MathChat, a conversational framework in which an LLM agent collaborates with a user proxy agent that manages prompts, executes tools such as Python, returns results or errors, and guides the dialogue until a final boxed answer is produced.\n\nThe intervention studied is the MathChat framework itself. MathChat combines an LLM agent (GPT-4 in the reported experiments) with a user proxy agent that extracts code, executes it, handles recurrent errors, and prompts the LLM to continue or revise reasoning. The framework incorporates prompting strategies for choosing among direct reasoning, direct code-based solution, or step-by-step reasoning with tool use. The authors evaluate MathChat on level-5 problems from the MATH dataset, focusing on six non-geometry categories and comparing performance against zero-shot vanilla prompting, Program of Thoughts, and Program Synthesis prompting.\n\nThe population and context are not human participants in an educational intervention; instead, the benchmark problems are drawn largely from challenging high school competition mathematics, which the paper notes are difficult even for college students. Accordingly, the educational context is best understood as an AI evaluation setting using high school\u2013level and some undergraduate-relevant mathematics content rather than a classroom implementation with learners or teachers.\n\nThe main conclusion is that MathChat improves GPT-4\u2019s performance on difficult competition-style math problems relative to the comparison prompting methods. On the evaluated subset of the MATH dataset, MathChat outperformed vanilla prompting and improved over prior tool-using prompting methods by about 6 percentage points overall, with especially strong gains in Algebra and competitive performance across categories. The authors conclude that conversational, tool-augmented LLM-agent collaboration is a promising approach for complex math problem solving, while also emphasizing that difficult mathematics remains challenging for current LLMs and that future work should further improve planning, error correction, and specialization.",
+  "limitations": [
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "identified_tools": [
+    {
+      "name": "MathChat",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "language_speech"
+      ],
+      "description": "A conversational math problem-solving framework in which an LLM agent collaborates with a user proxy agent that executes tools such as Python during multi-turn dialogue.",
+      "use_case": "Studied as a framework for solving difficult high-school competition math problems from the MATH dataset using GPT-4 plus a user proxy agent with Python execution.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "On 1,192 level-5 MATH problems (excluding Geometry), MathChat achieved 44.71% total accuracy, outperforming vanilla GPT-4 prompting (28.69%), Program of Thoughts (37.67%), and Program Synthesis prompting (39.60%). The paper states MathChat further improved previous tool-using prompting methods by around 6% overall.",
+          "measure": "Problem-solving accuracy on level-5 MATH dataset problems",
+          "effect_size": "44.71% accuracy; +5.11 percentage points vs PS; +7.04 percentage points vs PoT; +16.02 percentage points vs vanilla",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=1192"
+        },
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "By category, MathChat reached 59.93% accuracy in Algebra, 52.03% in Counting & Probability, 17.85% in Intermediate Algebra, 60.39% in Number Theory, 60.10% in Prealgebra, and 19.26% in Precalculus. The paper highlights that MathChat improved Algebra accuracy by around 15% over other methods and solved more than half of problems in several categories.",
+          "measure": "Category-level problem-solving accuracy on MATH dataset",
+          "effect_size": "Algebra 59.93%; C.Prob 52.03%; I.Alg 17.85%; N.Theory 60.39%; Prealg 60.10%; Precalc 19.26%",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=1192"
+        },
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In an additional evaluation using 50 sampled problems from each of 6 categories (300 total), default-prompt MathChat solved 134/300 problems, outperforming MathChat with Python only (118/300), MathChat with Python+Wolfram Alpha (127/300), PoT (103/300), PS (110/300), and vanilla prompting (79/300). This supports the framework's extensibility while showing the default MathChat prompt performed best overall.",
+          "measure": "Correctly solved sampled MATH problems under alternative prompt/tool configurations",
+          "effect_size": "134/300 (44.7%) vs 127/300, 118/300, 110/300, 103/300, 79/300",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=300"
+        }
+      ]
+    },
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "language_speech"
+      ],
+      "description": "OpenAI GPT-family large language model used here as the LLM agent within a conversational math problem-solving setup.",
+      "use_case": "GPT-4 was the underlying LLM evaluated across MathChat, vanilla prompting, Program of Thoughts, and Program Synthesis conditions on competition-level math problems.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "With vanilla prompting, GPT-4 achieved 28.69% total accuracy on 1,192 level-5 MATH problems. Using Python-based prompting improved GPT-4's performance: Program of Thoughts reached 37.67% and Program Synthesis reached 39.60%, showing gains of about 10 percentage points over vanilla prompting.",
+          "measure": "Problem-solving accuracy on level-5 MATH dataset problems under different prompting/tool-use conditions",
+          "effect_size": "Vanilla 28.69%; PoT 37.67%; PS 39.60%",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=1192"
+        },
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "GPT-4's performance varied substantially by category and prompting method. Vanilla prompting was especially weak in Intermediate Algebra (2.86%) and Precalculus (7.41%), while tool-using approaches improved these to 17.50-20.36% and 16.30-18.52%, respectively; however, PoT and PS showed little improvement or lower accuracy than vanilla in Algebra and Prealgebra.",
+          "measure": "Category-level MATH accuracy for GPT-4 under vanilla, PoT, and PS prompting",
+          "effect_size": "Vanilla: Algebra 46.58%, C.Prob 25.20%, I.Alg 2.86%, N.Theory 28.57%, Prealg 54.92%, Precalc 7.41%; PoT: 42.67%, 50.41%, 17.50%, 54.55%, 52.33%, 16.30%; PS: 43.32%, 44.71%, 20.36%, 61.03%, 55.96%, 18.52%",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=1192"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical benchmark study of AI math-solving performance, but it is not a student learning intervention and does not use an RCT or quasi-experimental design with learners. Outcomes are task accuracy on a benchmark dataset rather than educational outcomes in authentic instructional settings.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports clear positive performance gains on benchmark math problem solving, especially for MathChat over comparison prompts, but impact is measured as accuracy differences rather than standardized educational effect sizes or student outcomes. Thus impact is positive but educational significance remains unclear.",
+  "citations": [
+    {
+      "title": "Program of Thoughts Prompting: Disentangling Computation from Reasoning for Numerical Reasoning Tasks",
+      "doi": null,
+      "year": 2022,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "baseline prompting method and prompt adapted in experiments"
+    },
+    {
+      "title": "A neural network solves, explains, and generates university math problems by program synthesis and few-shot learning at human level",
+      "doi": null,
+      "year": 2022,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "program synthesis baseline prompt used in evaluation"
+    },
+    {
+      "title": "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models",
+      "doi": null,
+      "year": 2022,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "used to frame reasoning-length discussion in failure analysis"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

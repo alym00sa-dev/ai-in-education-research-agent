@@ -1,0 +1,131 @@
+{
+  "title": "A Systematic Review on Prompt Engineering in Large Language Models for K-12 STEM Education",
+  "doi": null,
+  "year": 2024,
+  "venue": "not_reported",
+  "url": "http://arxiv.org/abs/2410.11123v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Elementary (PreK-5th)",
+    "Middle School (6th-8th)",
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Meta-Analysis / Systematic Review",
+  "extended_summary": "This paper examines how prompt engineering has been used with large language models (LLMs) in K-12 STEM education. The authors note that although LLMs such as GPT-4 and ChatGPT are increasingly used for tutoring, problem solving, feedback generation, lesson planning, and assessment, there was no comprehensive review focused specifically on prompt engineering in K-12 STEM settings. To address this gap, they conducted a PRISMA-based systematic review of empirical studies published from 2021 through January 25, 2024.\n\nThe review screened 2,654 papers and included 30 studies. Across these studies, the authors catalogued prompt strategies such as simple prompting, role-assigned prompting, zero-shot, few-shot, chain-of-thought, retrieval-augmented generation, and structured output formatting. The reviewed work covered K-12 STEM subjects including math, physics, chemistry, biology, computer science, and related interdisciplinary areas, with most evidence coming from elementary, middle, and high school contexts.\n\nThe paper concludes that advanced prompting strategies often improve LLM performance relative to simple prompting, but gains depend heavily on task, model, and prompt design. GPT-series models dominated the literature, though some smaller fine-tuned models performed better in specific contexts. However, the review finds limited real-world validation, substantial variability in evaluation methods, and major reproducibility issues because many papers do not fully share prompts or implementation details. The authors also emphasize limitations such as prompt sensitivity, poor generalizability across tasks, difficulty handling visual content, and the need for more rigorous classroom-based studies.",
+  "limitations": [
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "blended",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "feedback_evaluation",
+        "tutoring_instruction"
+      ],
+      "description": "OpenAI's GPT-based large language model chatbot system used for generating, explaining, evaluating, and interacting with educational content.",
+      "use_case": "The paper systematically reviewed K-12 STEM studies that used ChatGPT/GPT-series models with prompt engineering for problem solving, lesson planning, feedback generation, grading, tutoring, and chatbot-based student interactions.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0000 Other",
+          "finding_type": "review_synthesis",
+          "direction": "mixed",
+          "finding_summary": "Across 30 reviewed studies, GPT-series models (including ChatGPT/GPT-3.5/GPT-4) were the dominant tools used in K-12 STEM prompt-engineering research. The review reports that GPT-4 generally performed strongly, but smaller fine-tuned models sometimes outperformed larger GPT-series models in specific tasks, and real-world validation was limited to only 2 student studies (n=53 and n=70).",
+          "measure": "Review synthesis of model performance, task outcomes, and real-world validation frequency",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=30 studies"
+        },
+        {
+          "outcome_category": "Academic \u0000 Other",
+          "finding_type": "review_synthesis",
+          "direction": "negative",
+          "finding_summary": "The review identifies several limitations for ChatGPT/GPT-series use in K-12 STEM classrooms, including sensitivity to prompt wording, non-deterministic outputs, limited generalizability across tasks, difficulty handling visual content, and a need for substantial human review and iteration. It also notes that many studies lacked accessible prompts and standardized benchmarks, hindering reproducibility and comparability.",
+          "measure": "Reported limitations, risks, and reproducibility issues across reviewed studies",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=30 studies"
+        }
+      ]
+    },
+    {
+      "name": "LLaMA",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "tutoring_instruction"
+      ],
+      "description": "Meta's LLaMA-family large language models, including open-weight and fine-tuned variants used for text generation and educational support.",
+      "use_case": "The review included studies using LLaMA, LLaMA-2, and fine-tuned derivatives for K-12 STEM tasks such as question answering, physics problem solving, dataset generation, and tutoring-related interactions.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0000 Other",
+          "finding_type": "review_synthesis",
+          "direction": "mixed",
+          "finding_summary": "The review reports that smaller fine-tuned LLaMA-based models sometimes outperformed larger GPT-series models in specific educational contexts. For example, an EduChat system built from a fine-tuned LLaMA 13B model outperformed other LLaMA 13B variants but was still less effective than GPT-4, while another fine-tuned smaller model reportedly outperformed GPT-3 in teacher-simulation tasks.",
+          "measure": "Review synthesis of comparative model performance in cited studies",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=multiple studies"
+        }
+      ]
+    },
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "content_generation",
+        "feedback_evaluation",
+        "tutoring_instruction"
+      ],
+      "description": "Generic generative AI / large language model chatbot systems without a single named product specified.",
+      "use_case": "The paper reviewed generic LLM-based systems and prompt-engineering approaches for K-12 STEM classroom uses such as tutoring, feedback, grading, content generation, and student interaction.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0000 Other",
+          "finding_type": "review_synthesis",
+          "direction": "mixed",
+          "finding_summary": "The review concludes that LLM prompt engineering can improve educational outputs, especially when using few-shot or chain-of-thought prompting, but empirical validation in authentic K-12 settings remains sparse. Only 2 studies included direct classroom/student validation, and many papers relied on custom indicators or subjective evaluation rather than standardized benchmarks.",
+          "measure": "Review synthesis of effectiveness and validation practices across included studies",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=30 studies"
+        },
+        {
+          "outcome_category": "Systemic / Institutional Impact",
+          "finding_type": "review_synthesis",
+          "direction": "negative",
+          "finding_summary": "The paper reports that limited prompt transparency, inconsistent evaluation methods, and the non-deterministic nature of LLM outputs reduce reproducibility and hinder classroom adoption. It also flags ethical and methodological concerns, including bias, privacy, and the evolving role of educators when integrating AI tools.",
+          "measure": "Review synthesis of implementation limitations, ethical concerns, and reproducibility issues",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=30 studies"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a systematic review, not a primary causal study. The evidence is useful for mapping tools, uses, and limitations, but the paper aggregates heterogeneous studies with mostly non-randomized or non-classroom evaluations.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The review suggests meaningful classroom relevance for LLM prompt engineering, but reported effects are not pooled into comparable effect sizes and authentic K-12 validation is limited. Overall impact appears promising but still uncertain.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

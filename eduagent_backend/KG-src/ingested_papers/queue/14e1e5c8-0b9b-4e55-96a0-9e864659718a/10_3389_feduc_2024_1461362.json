@@ -1,0 +1,102 @@
+{
+  "title": "Embracing LLM Feedback: the role of feedback providers and provider information for feedback effectiveness",
+  "doi": "10.3389/feduc.2024.1461362",
+  "year": 2024,
+  "venue": "Frontiers in Education",
+  "url": "https://doi.org/10.3389/feduc.2024.1461362",
+  "source_db": "openalex_search",
+  "populations": [
+    "Graduate / Doctoral"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Randomized Controlled Trial (RCT)",
+  "extended_summary": "This paper examines whether learners\u2019 perceptions of feedback change depending on whether the feedback is attributed to a large language model (LLM) or to a human educator, and whether additional information about the feedback provider improves those perceptions. The central problem is that AI-generated feedback is increasingly used in education, but it is unclear how learners judge its trustworthiness, fairness, and usefulness compared with human feedback, and whether simple provider information can mitigate bias or improve acceptance.\n\nThe study used a 2\u00d72 between-subjects experiment in which 169 German-speaking student teachers evaluated a fictional feedback interaction. Participants were randomly assigned to receive feedback from either an educator or an LLM, with or without accompanying provider-information. The provider-information for the LLM was a brief textual explanation adapted from global xAI-style explanations, while the human-provider information described the educator\u2019s expertise. Outcomes were measured using self-report scales for trustworthiness and feedback message perceptions, and the authors also explored feedback literacy as a learner characteristic.\n\nResults showed that provider-information improved overall feedback message perceptions and especially affective reactions, but it did not directly increase trustworthiness overall. The LLM was generally perceived as more trustworthy than the educator, but provider-information changed this pattern for some subscales: it eliminated differences in perceived expertise and reversed fairness judgments in favor of the LLM when information was present. Higher feedback literacy was associated with better feedback message perceptions but lower trust in the provider, suggesting that more feedback-literate learners focus more on the feedback content than on the source. The authors conclude that provider-information can shape how AI- or human-generated feedback is received, but its effects depend on the provider and the content of the explanation.",
+  "limitations": [
+    "small_sample",
+    "no_long_term_followup",
+    "self_reported_measures",
+    "non_representative_population"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Germany",
+  "study_region": "Europe",
+  "identified_tools": [
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "feedback_evaluation",
+        "content_generation"
+      ],
+      "description": "A generic large language model / AI chatbot that generates written feedback on student work.",
+      "use_case": "Used as the feedback provider in a 2x2 between-subjects experiment comparing feedback from an LLM versus an educator, with or without provider-information. The paper used a screenshot oriented on ChatGPT, but did not evaluate a specific named model as the intervention.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0014\u0011Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Participants rated feedback from the LLM more positively on trustworthiness than feedback from the educator. Overall trustworthiness was higher for the LLM (beta=0.58, p<=0.001), including expertise (beta=0.74, p<=0.001), benevolence (beta=0.62, p<=0.001), and integrity (beta=0.39, p<=0.05).",
+          "measure": "Muenster Epistemic Trustworthiness Inventory (METI): overall trustworthiness, expertise, benevolence, integrity",
+          "effect_size": "beta=0.58 overall; beta=0.74 expertise; beta=0.62 benevolence; beta=0.39 integrity",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=169"
+        },
+        {
+          "outcome_category": "Academic \u0014\u0011Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The presence of provider-information improved feedback message perceptions overall (beta=0.53, p<=0.05) and affective reactions to the feedback (beta=0.79, p<=0.01). The effect was small according to the authors.",
+          "measure": "Feedback Perceptions Questionnaire (FPQ): overall score and affect subscale",
+          "effect_size": "beta=0.53 overall; beta=0.79 affect",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=169"
+        },
+        {
+          "outcome_category": "Academic \u0014\u0011Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Provider-information changed how the LLM was evaluated relative to the educator. Without provider-information, the LLM was rated as less fair than the educator (t=2.52, p<=0.05, d=0.53), but with provider-information this difference disappeared (t=-0.44, p=0.66, d=0.09).",
+          "measure": "FPQ fairness subscale",
+          "effect_size": "d=0.53 without provider-information; d=0.09 with provider-information",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=169"
+        },
+        {
+          "outcome_category": "Academic \u0014\u0011Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Without provider-information, the LLM was perceived as more trustworthy on expertise than the educator (MLLM=3.34, MEducator=2.19, t=-4.46, p<=0.001, d=0.94). When provider-information was provided, this difference disappeared (MLLM=2.62, MEducator=2.31, t=-1.29, p=0.201, d=0.28).",
+          "measure": "METI expertise subscale",
+          "effect_size": "d=0.94 without provider-information; d=0.28 with provider-information",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=169"
+        },
+        {
+          "outcome_category": "Academic \u0014\u0011Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Exploratory analyses showed that higher feedback literacy was associated with better feedback message perceptions (F(1,167)=10.61, p<=0.01, R2=0.05) but lower perceived trustworthiness of the feedback provider (F(1,167)=8.22, p<=0.01, R2=0.04).",
+          "measure": "Feedback message perceptions and provider trustworthiness",
+          "effect_size": "R2=0.05 and R2=0.04",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=169"
+        }
+      ]
+    }
+  ],
+  "verdict": "genai_general",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a single randomized between-subjects survey experiment, but the tool is a generic LLM/chatbot rather than a named product. The design is controlled, yet outcomes are perceptual and not direct learning gains.",
+  "impact_tier": "green",
+  "impact_tier_rationale": "Reported effects on trustworthiness and feedback perceptions are small-to-moderate in places (e.g., d=0.53, beta=0.79), so the practical impact is modest rather than large. The study focuses on user perceptions, not achievement or instructional outcomes.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

@@ -1,0 +1,445 @@
+{
+  "title": "Supporting Productivity Skill Development in College Students through Social Robot Coaching: A Proof-of-Concept",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "https://arxiv.org/abs/2512.01105",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper addresses the problem of how to support college students who struggle with productivity-related skills such as time management and task prioritization. The authors argue that common supports like productivity apps and self-help books are limited because they are either not educational, not personalized, or not scalable, while human coaching can be effective but resource-intensive. The study asks whether a socially assistive robot (SAR) can serve as a scalable educational coach for productivity skill development in higher education.\n\nThe intervention is a proof-of-concept robotic coaching system built around QTrobot and GPT-4. Students interact through a text chat interface while the robot responds with speech and gestures. The system begins with an introductory conversation to identify students\u2019 productivity challenges and preferences, then recommends and delivers six lessons on time management and task prioritization strategies: time blocking, time tracking, task breakdown, the Eisenhower matrix, the ABCDE method, and Eat That Frog. A dashboard tracks progress, mood, time spent, self-reported confidence, engagement, and personalized productivity insights.\n\nThe study was conducted with 15 undergraduate students aged 18\u201324 who were screened for challenges in time management or plan management using the Executive Skills Questionnaire-Revised. Sessions took place in a meeting room at the local institute, with each session lasting about 60 minutes. Data collection included quantitative usability and Likert-scale ratings as well as qualitative open-ended feedback about the interface, dashboard, and robot coaching experience.\n\nThe main conclusions are that the SAR-based coaching system showed promising usability, engagement, and perceived relevance for productivity support. Participants rated the system highly on usability (SUS = 79.2) and generally found the lessons helpful, especially for task prioritization. Many appreciated the robot\u2019s social presence, personalization options, and dashboard-based feedback. However, this was an early proof-of-concept evaluation without a control group, using a small and somewhat skewed sample, so the findings mainly support feasibility and user acceptance rather than strong causal claims about learning effectiveness.",
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "single_site",
+    "no_control_group",
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "lab",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United Arab Emirates",
+  "study_region": "Middle East & North Africa",
+  "identified_tools": [
+    {
+      "name": "QTrobot",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "personalization_adaptation"
+      ],
+      "description": "A socially assistive robot platform by LuxAI that supports speech, gestures, and facial expressions for human-robot interaction.",
+      "use_case": "Used as the embodied productivity coach delivering six lessons on time management and task prioritization to college students through a chat-and-speech interface, with dashboard-based progress and reflection features.",
+      "findings": [
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Participants reported the coaching was helpful for productivity-related soft skills, especially task prioritization and time management. Coaching helpfulness for task prioritization was rated Mean=4.53\u00b10.88 and for time management Mean=4.00\u00b10.73 on 5-point Likert scales; 73% rated task-prioritization coaching as very helpful, while 67% rated time-management coaching as somewhat helpful and 20% very helpful.",
+          "measure": "Participant ratings of coaching helpfulness for task prioritization and time management on 5-point Likert scales",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=15"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Lesson relevance was rated positively, suggesting the robot-delivered instruction aligned with participants' needs. Lesson relevance was Mean=4.40\u00b11.02 on a 5-point Likert scale; 9 of 15 participants strongly agreed the lessons were relevant, 5 somewhat agreed, and 1 somewhat disagreed.",
+          "measure": "Participant ratings of lesson relevance on a 5-point Likert scale",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=15"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The system demonstrated high usability in this proof-of-concept evaluation. The System Usability Scale score was 79.2, above the benchmark average of 68 and corresponding to an 'A-' grade; interface usability was also rated Mean=4.87\u00b10.34.",
+          "measure": "System Usability Scale (SUS) and interface usability ratings",
+          "effect_size": "SUS=79.2",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=15"
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Participants reported positive overall experience and engagement with the robot-based coaching system. Average ratings were 4.3 out of 5 for overall experience and 4.2 out of 5 for engagement; additionally, 60% felt the robot helped them stay engaged throughout the session.",
+          "measure": "Post-experiment ratings of overall experience, engagement, and robot contribution to engagement",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=15"
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Perceptions of the robot's contribution were positive overall but varied across participants. Robot contribution to coaching effectiveness was rated Mean=3.40\u00b11.50 and contribution to coaching engagement Mean=3.67\u00b11.53 on 5-point Likert scales; 53% somewhat or strongly agreed its presence made coaching more effective, while some participants found speech or gestures distracting.",
+          "measure": "Participant ratings of robot contribution to coaching effectiveness and engagement on 5-point Likert scales",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=15"
+        }
+      ]
+    },
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "personalization_adaptation"
+      ],
+      "description": "OpenAI GPT-family large language model used for generating conversational responses and personalized analyses.",
+      "use_case": "Used via prompt engineering on GPT-4 to power the robot's productivity-coaching dialogue, tailor lesson sequencing and examples, classify mood, and generate personalized productivity insights.",
+      "findings": [
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The GPT-4-powered coaching content was perceived as relevant and helpful for productivity skill development. Participants rated lesson relevance at Mean=4.40\u00b11.02, coaching helpfulness for time management at Mean=4.00\u00b10.73, and coaching helpfulness for task prioritization at Mean=4.53\u00b10.88.",
+          "measure": "Participant ratings of lesson relevance and coaching helpfulness for time management and task prioritization",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=15"
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Participants reported that the LLM-based coaching felt personalized and context-aware, citing examples where the system adapted explanations to their background and goals. Overall experience averaged 4.3 out of 5 and engagement 4.2 out of 5.",
+          "measure": "Post-experiment ratings and qualitative feedback on personalization, overall experience, and engagement",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=15"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "The GPT-4-based system supported a highly usable coaching workflow overall, but some interaction limitations remained. The overall SUS score was 79.2, yet some participants described the advice as too theoretical and reported fatigue from typing responses, which reduced engagement.",
+          "measure": "System Usability Scale (SUS) and qualitative feedback on interaction quality",
+          "effect_size": "SUS=79.2",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=15"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a proof-of-concept study with 15 participants using post-session surveys, descriptive statistics, and qualitative feedback, but no control group, randomization, or pre/post causal outcome design. The evidence is therefore mixed-methods/usability-oriented rather than rigorous causal evaluation.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "Results are positive on usability, engagement, and perceived helpfulness, but no standardized learning gains or causal effect sizes are reported. Impact appears promising but remains unclear in magnitude.",
+  "citations": [
+    {
+      "title": "Predictors of mental health and academic outcomes in first-year university students: Identifying prevention and early-intervention targets",
+      "doi": null,
+      "year": 2020,
+      "venue": "BJPsych Open",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Academic stress and mental well-being in college students: Correlations, affected groups, and covid-19",
+      "doi": null,
+      "year": 2022,
+      "venue": "Frontiers in Psychology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The impact of stress on students in secondary school and higher education",
+      "doi": null,
+      "year": 2020,
+      "venue": "International Journal of Adolescence and Youth",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Mental disorders among college students in the world health organization world mental health surveys",
+      "doi": null,
+      "year": 2016,
+      "venue": "Psychological Medicine",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Overcoming mental health challenges in higher education: a narrative review",
+      "doi": null,
+      "year": 2024,
+      "venue": "Frontiers in Psychology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Breaking down barriers: academic obstacles of first-generation students at research universities",
+      "doi": null,
+      "year": 2012,
+      "venue": "Learning Assistance Review",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Gender differences in stress response: Role of developmental and biological determinants",
+      "doi": null,
+      "year": 2011,
+      "venue": "Industrial Psychiatry Journal",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Minority stress in nonbinary students in higher education: The role of campus climate and belongingness",
+      "doi": null,
+      "year": 2020,
+      "venue": "Psychology of Sexual Orientation and Gender Diversity",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The limitations of app-based productivity tools",
+      "doi": null,
+      "year": null,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Connected workplace",
+      "doi": null,
+      "year": 2018,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Do self-help books help?",
+      "doi": null,
+      "year": 2008,
+      "venue": "Journal of Happiness Studies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Self-help: Shattering the myths",
+      "doi": null,
+      "year": 2001,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Self-help treatment books and the commercialization of psychotherapy",
+      "doi": null,
+      "year": 1987,
+      "venue": "American Psychologist",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Academic success centers at us universities as an effective factor in ensuring the quality of higher education",
+      "doi": null,
+      "year": 2024,
+      "venue": "Visegrad Journal on Human Rights",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Students\u2019 experiences of academic coaching in norway: a pilot study",
+      "doi": null,
+      "year": 2022,
+      "venue": "International Journal of Mentoring and Coaching in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "College academic coaching can increase college success and later earnings",
+      "doi": null,
+      "year": 2022,
+      "venue": "Employment Research Newsletter",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Keep me in, coach: The short-and long-term effects of targeted academic coaching",
+      "doi": null,
+      "year": 2023,
+      "venue": "Working Paper Series",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Defining socially assistive robotics",
+      "doi": null,
+      "year": 2005,
+      "venue": "9th International Conference on Rehabilitation Robotics (ICORR 2005)",
+      "citation_level": 2,
+      "citation_context": "defines socially assistive robotics paradigm"
+    },
+    {
+      "title": "A study companion for productivity: Exploring the role of a social robot for college students with adhd",
+      "doi": null,
+      "year": 2025,
+      "venue": "Proceedings of the 2025 ACM/IEEE International Conference on Human-Robot Interaction",
+      "citation_level": 2,
+      "citation_context": "prior SAR productivity coaching for college students"
+    },
+    {
+      "title": "A robotic positive psychology coach to improve college students\u2019 wellbeing",
+      "doi": null,
+      "year": 2020,
+      "venue": "2020 29th IEEE International Conference on Robot and Human Interactive Communication (RO-MAN)",
+      "citation_level": 2,
+      "citation_context": "prior robotic coaching for student wellbeing"
+    },
+    {
+      "title": "The effectiveness of social robots in stress management interventions for university students",
+      "doi": null,
+      "year": 2023,
+      "venue": "International Conference on Social Robotics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The positive effects of verbal encouragement in mathematics education using a social robot",
+      "doi": null,
+      "year": 2014,
+      "venue": "2014 IEEE Integrated STEM Education Conference",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Design and evaluation of a socially assistive robot schoolwork companion for college students with adhd",
+      "doi": "10.1145/3610977.3634929",
+      "year": 2024,
+      "venue": "Proceedings of the 2024 ACM/IEEE International Conference on Human-Robot Interaction",
+      "citation_level": 2,
+      "citation_context": "comparison point for SAR support to college students"
+    },
+    {
+      "title": "Developing autonomous robot-mediated behavior coaching sessions with haru",
+      "doi": "10.1145/3610978.3640583",
+      "year": 2024,
+      "venue": "Companion of the 2024 ACM/IEEE International Conference on Human-Robot Interaction",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Design of a robotic coach for motor, social and cognitive skills training toward applications with asd children",
+      "doi": null,
+      "year": 2021,
+      "venue": "IEEE Transactions on Neural Systems and Rehabilitation Engineering",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Prompt engineering in large language models",
+      "doi": null,
+      "year": 2023,
+      "venue": "International Conference on Data Intelligence and Cognitive Informatics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Prompt engineering an llm into roleplaying a management coach: a short guide by and for non-nlp experts",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 6th ACM Conference on Conversational User Interfaces",
+      "citation_level": 2,
+      "citation_context": "informs LLM coaching prompt design"
+    },
+    {
+      "title": "Designing a large language model-based coaching intervention for lifestyle behavior change",
+      "doi": null,
+      "year": 2024,
+      "venue": "International Conference on Design Science Research in Information Systems and Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Steve: Llm powered chatbot for career progression",
+      "doi": null,
+      "year": 2025,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Planglow: Personalized study planning with an explainable and controllable llm-driven system",
+      "doi": null,
+      "year": 2025,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Understanding the role of large language models in personalizing and scaffolding strategies to combat academic procrastination",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 2024 CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 2,
+      "citation_context": "motivates LLM personalization for procrastination support"
+    },
+    {
+      "title": "Research: We\u2019re not very self-aware, especially at work",
+      "doi": null,
+      "year": 2015,
+      "venue": "Harvard Business Review",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Developing self-awareness: Learning processes for self-and interpersonal growth",
+      "doi": null,
+      "year": 2023,
+      "venue": "Annual Review of Organizational Psychology and Organizational Behavior",
+      "citation_level": 2,
+      "citation_context": "grounds self-awareness as coaching outcome"
+    },
+    {
+      "title": "Does your mindfulness benefit others? a systematic review and meta-analysis of the link between mindfulness and prosocial behaviour",
+      "doi": null,
+      "year": 2019,
+      "venue": "British Journal of Psychology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Refinement and psychometric evaluation of the executive skills questionnaire-revised",
+      "doi": null,
+      "year": 2020,
+      "venue": "Contemporary School Psychology",
+      "citation_level": 3,
+      "citation_context": "ESQ-R used for participant screening"
+    },
+    {
+      "title": "Sus-a quick and dirty usability scale",
+      "doi": null,
+      "year": 1996,
+      "venue": "Usability evaluation in industry",
+      "citation_level": 3,
+      "citation_context": "SUS used in post-experiment questionnaire"
+    },
+    {
+      "title": "Item benchmarks for the system usability scale",
+      "doi": null,
+      "year": 2018,
+      "venue": "Journal of Usability Studies",
+      "citation_level": 2,
+      "citation_context": "benchmarking SUS score as A- grade"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

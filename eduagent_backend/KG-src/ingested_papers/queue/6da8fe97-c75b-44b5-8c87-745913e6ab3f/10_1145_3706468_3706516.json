@@ -1,0 +1,109 @@
+{
+  "title": "Combining Large Language Models with Tutoring System Intelligence: A Case Study in Caregiver Homework Support",
+  "doi": "10.1145/3706468.3706516",
+  "year": 2025,
+  "venue": "LAK 2025 (Proceedings of the 15th International Learning Analytics and Knowledge Conference)",
+  "url": "http://arxiv.org/abs/2412.11995v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Middle School (6th-8th)"
+  ],
+  "user_types": [
+    "Parent",
+    "Student"
+  ],
+  "study_design": "Qualitative",
+  "extended_summary": "This paper addresses how large language models (LLMs) can be combined with intelligent tutoring system data to support caregivers who help children with math homework. The authors focus on a practical problem in learning analytics: caregivers often want to help but lack confidence or up-to-date knowledge of school math curricula, and existing support tools do not provide timely, context-sensitive instructional guidance.\n\nThe intervention is the Caregiver Conversational Support Tool (CCST), embedded in a middle school equation-solving tutoring system (Lynnette). CCST uses real-time problem-solving context from the tutoring system\u2014such as whether the student used hints, whether the latest attempt was correct, the current equation, prior chat messages, and suggested next steps\u2014to prompt an open-source Llama 3 model to generate three caregiver message recommendations. The researchers iteratively engineered prompts and then evaluated the tool through a prototyping study with ten middle school caregivers, including in-person workshop sessions and remote Zoom interviews. The study used thematic analysis of interview and annotation data to understand caregiver perceptions of the generated conversational support.\n\nFindings suggest that caregivers valued content-level support more than motivational support. They especially liked recommendations that prompted students to explain their thinking, because these helped caregivers understand student metacognition and potential knowledge gaps. Caregivers also appreciated that the system incorporated live contextual information, but they found many generated messages too long and sometimes too slow for real-time use. The authors conclude that LLMs can be made more useful for hybrid tutoring when combined with tutoring-system intelligence and tutoring best-practice examples, but that message length, latency, tone, and personalization remain important design tradeoffs.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a qualitative prototyping/case study with a small convenience sample and no controlled comparison of student outcomes. It provides useful design evidence, but credibility for causal claims is limited by the absence of experimental evaluation.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper suggests potentially useful support for hybrid tutoring, but it reports no measurable learning gains and only qualitative perceptions from caregivers. The practical impact is promising yet unclear, with notable tradeoffs in latency and message length.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.98,
+      "role": "primary",
+      "use_case": "LLM-generated conversational recommendations for middle school caregivers supporting a child\u2019s math homework in an ITS, using real-time problem-solving context (accuracy, hint use, next steps) and tutoring-practice examples to generate messages."
+    },
+    {
+      "intervention": "Intelligent Tutoring System (ITS)",
+      "confidence": 0.93,
+      "role": "secondary",
+      "use_case": "Equation-solving tutoring system (Lynnette) providing adaptive step feedback, hinting, and solution-path context that is used to condition caregiver chat recommendations."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.91,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "Caregivers reported that the generated messages were most valuable when they prompted student self-explanation and metacognition, helping caregivers better understand their child\u2019s reasoning and knowledge gaps. In the qualitative sample of n=10 caregivers, five explicitly preferred prompts that elicited thought processes, and the authors report these metacognitive prompts were seen as especially useful for supporting constructive homework help.",
+        "measure": "Caregiver interview themes about metacognitive support and self-explanation prompts",
+        "study_size": "n=10 caregivers",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 0.86,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The tool was perceived as improving the quality of math support by giving caregivers content-level guidance aligned to the live equation-solving context, rather than generic encouragement. The paper does not report student achievement gains, but in design evaluation with n=10 caregivers, six preferred content-focused recommendations and the authors report that context-based prompting produced mathematically relevant, non-hallucinated advice for equation solving.",
+        "measure": "Caregiver perceptions of math-content support and contextual relevance of generated messages",
+        "study_size": "n=10 caregivers",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.77,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "Caregivers had mixed views on motivational/praise-oriented messages: some found them encouraging and appropriately gentle, while others judged them artificial, unnecessary, or poorly aligned with how they normally support homework. In the caregiver sample, six preferred content-level support over motivational support, two liked both, and one preferred to handle motivation independently.",
+        "measure": "Caregiver interview themes about motivational support, praise, tone, and message usability",
+        "study_size": "n=10 caregivers",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.7,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "The system was viewed as feasible but somewhat burdensome in real-time use because message generation could be slow and recommendations were often too long to process quickly during live tutoring. The authors report average latency of about 25 seconds, with 2 of 6 caregivers finding generation slow and 6 of 9 caregivers finding messages too long.",
+        "measure": "Caregiver judgments of latency, message length, and usability during prototyping interviews",
+        "study_size": "n=10 caregivers",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_control_group",
+    "non_representative_population",
+    "no_long_term_followup",
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "blended",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

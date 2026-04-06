@@ -1,0 +1,72 @@
+{
+  "title": "Beyond Words: Infusing Conversational Agents with Human-like Typing Behaviors",
+  "doi": "10.1145/3640794.3665560",
+  "year": 2024,
+  "venue": "Proceedings of the ACM Conversational User Interfaces 2024 (CUI \u201924)",
+  "url": "http://arxiv.org/abs/2510.08912v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Adult (non-academic)"
+  ],
+  "user_types": [],
+  "study_design": "Mixed-Methods",
+  "extended_summary": "This paper investigates whether adding human-like typing behaviors to a ChatGPT-based conversational agent changes how users perceive the agent\u2019s naturalness, human-likeness, competence, friendliness, and trustworthiness. The authors note that ChatGPT responds quickly and fluently, which can make it feel less like a human interlocutor. They therefore explore whether visualized hesitation and self-editing behaviors during typing could make the system seem more natural and engaging.\n\nThe intervention is a design framework and prototype platform that uses the OpenAI API / GPT-3.5 to generate content, then presents it with three typing styles: a baseline agent, an agent with hesitation delays, and an agent with both hesitation and self-editing (deletions, insertions, and modifications). The study is a within-subject pilot user experiment in which participants chatted casually with each of the three agents about everyday topics such as hobbies, then completed questionnaires and open-ended feedback.\n\nThe sample consisted of 11 adult participants aged 18\u201334 recruited online via snowball sampling; they interacted with the agents on PC or mobile in an online setting. Results suggested that hesitation alone was not beneficial, but the combination of hesitation and self-editing was generally preferred and perceived as more natural, human-like, competent, and friendly, though differences were not statistically significant. Qualitative feedback also showed that typing behavior influenced perceptions, but content quality and contextual coherence from the underlying model strongly shaped user judgments as well.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a peer-reviewed pilot user study with a within-subject design, but it is small (n=11 analyzed), exploratory, and focused on subjective perceptions rather than robust causal inference. The paper itself reports that observed differences were not statistically significant, so the evidence is suggestive rather than strong.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The study suggests modest positive effects on perceived naturalness and engagement for a modified ChatGPT interface, but the effects are small, non-significant, and not about learning outcomes. It has unclear direct educational impact, especially for middle school mathematics achievement.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "ChatGPT/GPT-3.5 used as the core conversational agent in a user study, with the output presentation manipulated to simulate human-like typing behaviors such as hesitation and self-editing."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "In a within-subject pilot with n=11 participants (33 agent-level observations), the red agent (hesitation + self-editing) was preferred over the baseline and hesitation-only agents for perceived naturalness, human-likeness, competence, and friendliness, but these differences were not statistically significant. By contrast, the hesitation-only agent was rated lowest on naturalness (M=2.272, SD=1.272) and human-likeness (M=1.727, SD=1.103), while the baseline was fastest on response time (M=4.550, SD=0.688).",
+        "measure": "Likert-scale perceptions of naturalness, human-likeness, competence, friendliness, satisfaction, response time; user preference and interaction duration",
+        "study_size": "n=11",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "SDs reported for several ratings; e.g., response time SD=0.688 (blue), 1.401 (red), 1.036 (green)"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.88,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "User engagement differed across agent types: participants interacted longest with the red agent (M=238.73 s, SD=224.22) and entered more words and sentences, while the green agent elicited the least engagement (word entries M=49.10, SD=27.95; sentence entries M=7.0, SD=4.03; duration M=161.60 s, SD=102.31). The relationship between agent and user word counts was positively correlated overall (linear model Y=0.67X+6.81, R2=0.79), suggesting conversational behavior influenced participation, but this was an exploratory descriptive finding rather than a causal effect estimate.",
+        "measure": "Interaction duration, user word count, user sentence count, agent-user word count correlation",
+        "study_size": "n=11",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "SDs reported for duration and entries; e.g., red duration SD=224.22, green duration SD=102.31"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    }
+  ],
+  "limitations": [
+    "small_sample",
+    "short_duration",
+    "no_long_term_followup",
+    "self_reported_measures",
+    "non_representative_population",
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

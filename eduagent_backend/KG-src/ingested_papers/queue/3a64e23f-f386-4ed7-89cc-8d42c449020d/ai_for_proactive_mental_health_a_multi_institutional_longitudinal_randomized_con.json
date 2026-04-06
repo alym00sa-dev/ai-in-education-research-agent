@@ -1,0 +1,71 @@
+{
+  "title": "AI for Proactive Mental Health: A Multi-Institutional, Longitudinal, Randomized Controlled Trial",
+  "doi": null,
+  "year": 2026,
+  "venue": "not_reported",
+  "url": "http://arxiv.org/abs/2601.11530v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Randomized Controlled Trial (RCT)",
+  "extended_summary": "This paper investigates whether a generative AI-powered mobile app can provide proactive, strengths-based mental health support for college students. The motivation is that many existing digital mental health tools are deficit-oriented and reactive, focusing on symptom reduction after problems emerge. The authors ask whether a personalized, interactive AI intervention can instead improve well-being outcomes such as positive affect, resilience, belonging, mindfulness, and flourishing.\n\nThe intervention was the Flourish mobile app, which includes an AI chatbot (\u201cSunnie\u201d), personalized science-based activity recommendations, weekly insights, reminders, and gamified engagement features. The system uses generative AI and multiple LLM workflows to adapt in real time to users\u2019 mood, goals, and context, with built-in safety and crisis escalation procedures. The app emphasizes strengths-based support through brief check-ins, reflective dialogue, and activities grounded in psychology and behavioral science.\n\nThe study was a six-week, preregistered randomized controlled trial conducted in Fall 2024 across three U.S. postsecondary institutions: Chapman University, the University of Washington, and Foothill College. The sample consisted of 486 undergraduate students who were randomly assigned to access the app or a waitlist control. Outcomes were measured via repeated self-report surveys across four waves. The intervention improved several well-being outcomes, including positive affect, social connectedness, resilience, mindfulness, and flourishing, but did not significantly affect negative affect, depression, anxiety, stress, or academic self-efficacy. The authors conclude that purpose-built generative AI may support scalable preventive well-being interventions, though the evidence is preliminary and stronger causal inference would require active comparison conditions and further study.",
+  "quality_tier": "green",
+  "quality_tier_rationale": "This is a preregistered randomized controlled trial with longitudinal repeated measures, multi-institutional sampling, and intent-to-treat analysis, which is strong causal evidence. Some concerns remain because it used a waitlist rather than an active control, relied partly on self-reported engagement, and studied college students rather than K-12 learners.",
+  "impact_tier": "green",
+  "impact_tier_rationale": "The app showed modest but statistically significant improvements on several well-being outcomes, with effect sizes around \u03b2\u22480.04 and d\u22480.23-0.33 for positive affect at later waves. The impact is promising but modest, and it is not directly relevant to K-12 scientific reasoning or inquiry.",
+  "interventions": [
+    {
+      "intervention": "Mobile / Microlearning App",
+      "confidence": 0.95,
+      "role": "primary",
+      "use_case": "a generative AI-powered well-being mobile app delivering brief check-ins, conversational coaching, personalized science-based activities, and weekly insights through the Sunnie chatbot"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.98,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "In a 6-week preregistered RCT with undergraduate students (n=486), access to the Flourish app produced significant gains in positive affect and broader well-being-related skills. The app also improved resilience (b=0.11, p=.047) and buffered against declines in mindfulness and flourishing, suggesting stronger short-term regulation and coping-related skills relative to waitlist control.",
+        "measure": "Positive affect (Subcomponents of Affect Scale), resilience (Brief Resilience Scale), mindfulness (MAAS), flourishing (Flourishing Scale)",
+        "study_size": "n=486",
+        "effect_size": "b=0.22 for positive affect interaction; b=0.11 for resilience; b=0.19 for mindfulness; b=0.19 for flourishing",
+        "confidence_interval": "not_reported",
+        "std_deviation": "SDs reported descriptively; app use 3.49 days/week (SD=3.46)"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Systemic / Institutional Impact",
+      "confidence": 0.74,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The intervention was designed and tested as a scalable, cross-institutional preventive support model across three campuses, with the authors arguing it could extend well-being support beyond traditional counseling capacity. However, the study did not directly measure institutional outcomes such as retention, service utilization, or policy change, so evidence here is indirect and conceptual rather than outcome-based.",
+        "measure": "Cross-institutional RCT implementation and participation/retention in three U.S. institutions",
+        "study_size": "n=486",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "self_reported_measures",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "6",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "medium",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

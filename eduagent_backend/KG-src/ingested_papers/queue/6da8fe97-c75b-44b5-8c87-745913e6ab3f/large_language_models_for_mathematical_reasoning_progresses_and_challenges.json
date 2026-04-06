@@ -1,0 +1,55 @@
+{
+  "title": "Large Language Models for Mathematical Reasoning: Progresses and Challenges",
+  "doi": null,
+  "year": 2024,
+  "venue": "Proceedings of the 18th Conference of the European Chapter of the Association for Computational Linguistics: Student Research Workshop",
+  "url": "https://doi.org/10.18653/v1/2024.eacl-srw.17",
+  "source_db": "openalex_search",
+  "populations": [],
+  "user_types": [],
+  "study_design": "Meta-Analysis / Systematic Review",
+  "extended_summary": "This paper is a survey of large language model (LLM) research for mathematical reasoning. It asks what kinds of mathematical problems have been studied, what datasets are used, what prompting and fine-tuning methods have been proposed, and what factors and challenges affect LLM performance on math tasks. The paper is not an intervention study in education; rather, it synthesizes prior work across arithmetic, math word problems, geometry, automated theorem proving, and math reasoning in visual contexts.\n\nThe survey reviews multiple approaches for using LLMs on math, including prompting frozen models such as ChatGPT and GPT-4, adding strategies like chain-of-thought, self-consistency, code-based verification, and external tools, and fine-tuning models on math datasets or synthetic data. It also discusses robustness, dataset bias, pretraining effects, tokenization, and model scale, along with educational implications such as how LLMs might support or mis-handle student learning needs.\n\nThe authors conclude that despite rapid progress, current LLMs remain brittle and data-driven, with limited generalization across datasets and problem types. They argue that future work should move beyond pure accuracy toward more human-centric educational design, better robustness, and attention to learner understanding and usability.",
+  "quality_tier": "red",
+  "quality_tier_rationale": "This is a narrative survey/conceptual review rather than an empirical study, so it does not provide direct causal evidence on ChatGPT improving middle school mathematics achievement. It is peer-reviewed, but it lacks a controlled design, primary outcome data, or an estimation strategy relevant to the requested topic.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "The paper provides no measured effect on student achievement, only a synthesis of prior work and discussion of opportunities/challenges. Because there is no direct impact estimate for middle school math outcomes, the impact tier is red.",
+  "interventions": [
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.95,
+      "role": "primary",
+      "use_case": "Survey of ChatGPT and other LLMs used for mathematical reasoning and math-word-problem solving, including chat-based tutoring, prompt-based solving, and conversational math assistance."
+    },
+    {
+      "intervention": "Automated Feedback System",
+      "confidence": 0.7,
+      "role": "secondary",
+      "use_case": "Discusses LLM-generated hints, step-by-step explanations, verifiable reasoning, and feedback-like support for math learning rather than full tutoring."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Mathematical Numeracy",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Mixed",
+        "finding_summary": "This is a survey paper, not a direct experiment on middle school mathematics achievement, so it does not report a new causal estimate for ChatGPT on student outcomes. It summarizes prior studies showing ChatGPT/LLMs can solve arithmetic and math word problems to varying degrees, but also notes brittleness, sensitivity to prompting, and weaker performance on more complex problems; no study-level effect size or sample size is reported for a middle-school achievement outcome.",
+        "measure": "N/A; literature synthesis of math problem-solving performance across benchmarks and prior studies",
+        "study_size": "not_reported",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": "LLM-based Tutoring / Conversational AI"
+    }
+  ],
+  "limitations": [],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

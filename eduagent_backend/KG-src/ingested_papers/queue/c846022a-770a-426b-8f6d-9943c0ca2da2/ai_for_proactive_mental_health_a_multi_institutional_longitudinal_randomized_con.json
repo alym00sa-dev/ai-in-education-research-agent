@@ -1,0 +1,105 @@
+{
+  "title": "AI for Proactive Mental Health: A Multi-Institutional, Longitudinal, Randomized Controlled Trial",
+  "doi": null,
+  "year": 2025,
+  "venue": "not_reported",
+  "url": "http://arxiv.org/abs/2601.11530v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Randomized Controlled Trial (RCT)",
+  "extended_summary": "This paper addresses whether a generative AI system can provide proactive, strengths-based mental health support that improves well-being at scale for young adults, rather than waiting to treat symptoms after they emerge. The authors argue that most AI mental health tools are reactive and deficit-focused, and test whether a purpose-built app can instead promote resilience, belonging, mindfulness, and flourishing.\n\nThe intervention was the Flourish mobile app, which includes an AI chatbot (\u201cSunnie\u201d), brief emotion check-ins, personalized science-based recommendations, gamification, weekly insight summaries, and safety monitoring. The app was designed around a closed-loop personalization framework and a STAR model (Science-based, Timely, Action-oriented, Real-life-focused) to encourage emotionally intelligent conversations and real-world well-being activities.\n\nThe study was a six-week randomized controlled trial conducted in Fall 2024 across three U.S. higher-education institutions: Chapman University, the University of Washington, and Foothill College. A total of 486 undergraduate students were randomized to receive app access or waitlist control, and outcomes were measured through repeated self-report surveys across four waves. The treatment group showed higher positive affect, greater resilience, belonging, and closeness to campus, as well as better mindfulness and flourishing over time, while negative affect, depression, anxiety, and stress did not significantly change. The authors conclude that generative AI can deliver scalable preventive well-being support, though the evidence is preliminary and the design cannot isolate which app components drove the effects.",
+  "quality_tier": "blue",
+  "quality_tier_rationale": "This is a preregistered, longitudinal randomized controlled trial with multi-site recruitment, intent-to-treat analysis, validated measures, and appropriate mixed-effects modeling. There are some credibility caveats (waitlist rather than active control, self-reported app engagement, potential conflicts of interest), but the overall design is strong for causal inference.",
+  "impact_tier": "green",
+  "impact_tier_rationale": "The intervention produced modest but statistically significant improvements in several well-being outcomes, with effect sizes mostly in the small range (e.g., d=0.33 for positive affect; \u03b2\u22480.03-0.05 for other outcomes). This suggests meaningful but not large impact, especially for a general/college population rather than a clearly prioritized K-12 group.",
+  "interventions": [
+    {
+      "intervention": "Mobile / Microlearning App",
+      "confidence": 1.0,
+      "role": "primary",
+      "use_case": "generative AI-powered well-being mobile app (Flourish) delivering brief check-ins, conversational coaching, science-based activities, weekly insights, and gamified reinforcement for students"
+    },
+    {
+      "intervention": "LLM-based Tutoring / Conversational AI",
+      "confidence": 0.95,
+      "role": "secondary",
+      "use_case": "AI-powered well-being chatbot (Sunnie) that engages users in multi-turn conversations, offers emotionally intelligent feedback, and recommends coping and social-connection activities"
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.98,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "In a 6-week multi-institutional RCT with undergraduate students (n=486), access to the Flourish generative-AI app improved several well-being outcomes relative to waitlist control. Positive affect increased by Week 4 and Week 6 (e.g., Week 6 d=0.33; Condition \u00d7 Time b=0.22, p=.020), and resilience, mindfulness, and flourishing also showed significant positive Condition \u00d7 Time effects (b\u22480.11-0.20, p<.05).",
+        "measure": "Positive/negative affect, loneliness, belonging, resilience, mindfulness, flourishing, depression, anxiety, stress, academic self-efficacy",
+        "study_size": "n=486",
+        "effect_size": "d=0.33 for positive affect at Week 6; \u03b2\u22480.03-0.05 across other significant outcomes",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.95,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The intervention improved social well-being outcomes over time. Loneliness decreased more in the treatment group than in control (Condition \u00d7 Time b=-0.05, p=.038, \u03b2=-0.03), while belonging increased (b=0.06, p=.030, \u03b2=0.04) and closeness to school showed a marginal positive trend (b=0.04, p=.070).",
+        "measure": "UCLA 3-item Loneliness Scale, campus belonging, closeness to school/university",
+        "study_size": "n=486",
+        "effect_size": "\u03b2=-0.03 for loneliness; \u03b2=0.04 for belonging",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Social-Emotional Skills",
+      "confidence": 0.9,
+      "finding": {
+        "direction": "No Effect",
+        "finding_summary": "The study found no statistically significant effect on negative affect or its subcomponents. The Condition \u00d7 Time interaction was non-significant for aggregated negative affect (b=0.0008, p=.933) and for depression, anxiety, and anger (all p>.516), suggesting the app\u2019s benefits were concentrated on positive rather than deficit-oriented well-being.",
+        "measure": "Negative affect, depression, anxiety, anger",
+        "study_size": "n=486",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Durable Skills",
+      "confidence": 0.72,
+      "finding": {
+        "direction": "No Effect",
+        "finding_summary": "Academic self-efficacy was assessed as an additional outcome, but the authors report no statistically significant change (p\u2265.462). The paper does not provide an effect size for this null finding, and the main discussion emphasizes that the short, light-touch intervention was not primarily designed to shift academic outcomes.",
+        "measure": "Academic self-efficacy",
+        "study_size": "n=486",
+        "effect_size": "not_reported",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "self_reported_measures",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "6",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "medium",
+  "study_country": "United States",
+  "study_region": "North America",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

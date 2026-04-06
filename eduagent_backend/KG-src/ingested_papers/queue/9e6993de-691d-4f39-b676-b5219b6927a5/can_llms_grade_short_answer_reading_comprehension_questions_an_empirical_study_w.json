@@ -1,0 +1,75 @@
+{
+  "title": "Can LLMs Grade Short-Answer Reading Comprehension Questions? An Empirical Study with a Novel Dataset",
+  "doi": null,
+  "year": 2023,
+  "venue": null,
+  "url": "http://arxiv.org/abs/2310.18373v2",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Elementary (PreK-5th)",
+    "Middle School (6th-8th)",
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "This paper investigates whether generative large language models can accurately grade short-answer reading comprehension responses, addressing a practical problem in formative literacy assessment: open-ended questions are informative but burdensome for teachers to score consistently and quickly. The study also introduces a new short-answer reading comprehension dataset from Ghana, motivated by the lack of publicly available datasets from low- and middle-income countries and the need to test AI systems beyond the high-income contexts on which they are often developed and benchmarked.\n\nThe approach was an empirical evaluation of several prompting configurations of GPT-3.5 and GPT-4 for automated short-answer grading. Models were given a passage, a reading comprehension question, and a student answer, then asked to classify the answer as correct/incorrect or incorrect/partially correct/correct. The authors compared zero-shot and few-shot prompting and assessed agreement with expert human ratings using F1 and weighted kappa metrics. The work did not test effects on student literacy learning; instead, it tested the grading performance, reliability, and possible demographic bias of the models.\n\nThe population consisted of 162 students in Ghana ages 9 to 18, with 130 students completing written reading comprehension assessments and 48 providing spoken responses. Students completed reading tasks based on released 2016 PrePIRLS items, including a 400-word fictional story followed by short-answer comprehension questions. Responses were transcribed and scored by human raters to create ground-truth labels. The context is literacy assessment in an LMIC setting, with particular relevance to formative reading comprehension assessment.\n\nThe main conclusion is that GPT-4, especially with few-shot prompting, achieved very strong agreement with human raters and near-parity with expert grading, including QWK of 0.92 on the 3-class task and LWK of 0.89 on the 2-class task. GPT-4 outperformed GPT-3.5, and few-shot prompting modestly improved performance. The authors found weaker performance on partially correct answers and observed very high but not perfect repeatability across reruns. They did not detect statistically significant differences in misclassification by gender or English-at-home status, though they caution that the sample was limited. Overall, the paper concludes that generative LLMs show strong promise for grading short-answer formative literacy assessments, especially in low-stakes settings, but generalizability and practical deployment constraints remain important concerns.",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is an empirical benchmarking study with a clear methodology and real student data, but it is not a causal or quasi-experimental evaluation of student learning outcomes versus a comparator condition. It supports validity and feasibility of an AI assessment tool rather than causal impact on K-12 literacy achievement.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper shows strong operational promise and scoring accuracy, but it does not estimate effects on students' literacy outcomes, engagement, or achievement relative to business-as-usual or non-AI alternatives. As a result, educational impact is promising but unclear.",
+  "interventions": [
+    {
+      "intervention": "Automated Feedback System",
+      "confidence": 0.96,
+      "role": "primary",
+      "use_case": "Generative LLMs (GPT-3.5, GPT-4) automatically grade K-12 students' short-answer reading comprehension responses for formative literacy assessment, compared against expert human raters."
+    }
+  ],
+  "outcome_assignments": [
+    {
+      "outcome": "Academic \u2014 Literacy",
+      "confidence": 0.78,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "On a novel Ghanaian dataset of short-answer reading comprehension responses from secondary-age students, GPT-4 with few-shot prompting achieved near-human scoring performance for literacy assessment: QWK=0.92 on the 3-class rubric and LWK=0.89 on the 2-class rubric, with average F1=0.88-0.95 depending on task. The study size was 1,068 student responses from 162 students (130 completing the written assessment), and the model matched or slightly exceeded expert-human agreement on the 3-class task (human QWK=0.91), suggesting strong validity for automated scoring of reading-comprehension items rather than direct gains in student literacy.",
+        "measure": "Agreement and classification accuracy of LLM grading on short-answer reading comprehension items versus expert human ratings (QWK, LWK, precision, recall, F1)",
+        "study_size": "162 students; 1,068 responses",
+        "effect_size": "QWK=0.92; LWK=0.89; F1=0.88-0.95",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    },
+    {
+      "outcome": "Operational Efficiency",
+      "confidence": 0.84,
+      "finding": {
+        "direction": "Positive",
+        "finding_summary": "The paper provides evidence that GPT-4 can automate grading of open-ended formative reading-comprehension responses with near-expert accuracy using minimal prompt engineering, implying reduced teacher marking burden and greater feasibility of using short-answer formative assessment at scale. This efficiency finding is indirect but empirically grounded in high agreement with human raters across 1,068 responses, with GPT-4 few-shot reaching QWK=0.92 and LWK=0.89.",
+        "measure": "Automated grading performance as a proxy for feasibility and teacher workload reduction in formative assessment",
+        "study_size": "162 students; 1,068 responses",
+        "effect_size": "QWK=0.92; LWK=0.89",
+        "confidence_interval": "not_reported",
+        "std_deviation": "not_reported"
+      },
+      "intervention": null
+    }
+  ],
+  "limitations": [
+    "single_site",
+    "no_control_group",
+    "non_representative_population",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "Ghana",
+  "study_region": "Sub-Saharan Africa",
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

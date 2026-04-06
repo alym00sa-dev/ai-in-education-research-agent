@@ -1,0 +1,64 @@
+{
+  "title": "Automatic Generation of Inference Making Questions for Reading Comprehension Assessments",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2506.08260v1",
+  "source_db": "arxiv_search",
+  "populations": [
+    "Elementary (PreK-5th)",
+    "Middle School (6th-8th)",
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "This paper addresses the need for scalable generation of diagnostic reading comprehension questions that target specific kinds of inference making. The authors argue that existing reading comprehension assessments often treat inference as a single construct, even though bridging inferences, pronoun resolution, text-connecting relations, and gap-filling inferences reflect different reading processes relevant to instruction and diagnosis.\n\nThe study develops a taxonomy of inference question types for multiple-choice reading comprehension assessments and validates it against an operational in-house item bank of grade 3-12 reading questions. The paper then uses GPT-4o to generate new reading comprehension items for expository passages adapted from Simple English Wikipedia, comparing standard few-shot prompting with chain-of-thought prompting and varying the number of training examples. Human experts evaluated generated items for general quality, correctness of the intended inference type, and quality of the model's reasoning.\n\nThe main finding is that GPT-4o can generate many acceptable-grade reading comprehension questions for grades 3-12, but it often fails to target the intended inference type precisely. More training examples improved item quality somewhat, but chain-of-thought prompting did not clearly outperform standard prompting. Gap-filling items were easiest to generate, text-connecting items were hardest, and the overall distribution of generated item types roughly resembled the distribution in the operational item bank. The paper concludes that LLM-based item generation may be promising for diagnostic assessment, but human review remains necessary to ensure valid inference-type targeting and operational quality.",
+  "limitations": [
+    "small_sample",
+    "single_site",
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "online",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation",
+        "feedback_evaluation"
+      ],
+      "description": "OpenAI GPT-family large language model used for generating and evaluating text-based content.",
+      "use_case": "Used as GPT-4o to automatically generate multiple-choice reading-comprehension questions targeting pronominal bridging, text-connecting, and gap-filling inference types for grades 3-12 diagnostic assessment items.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u0014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "In a human evaluation of 357 GPT-4o-generated items, 93.8% were judged good-quality and suitable for operational use in grade 3-12 contexts. However, only 42.6% of generated questions matched the requested inference type, and only 37.2% had adequate reasoning overall, indicating strong item quality but weak type-control and reasoning fidelity.",
+          "measure": "Human ratings of general item quality, inference-type accuracy, and reasoning quality",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=357"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a single study of automated item generation with human ratings, not a randomized or quasi-experimental study of student reading outcomes. Evidence is useful for tool evaluation but does not establish instructional effectiveness.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports high operational item-quality rates, but the key instructionally relevant outcome is inference-type accuracy, which is only 42.6% overall. No effect size is reported and there is no demonstrated student learning impact.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}
