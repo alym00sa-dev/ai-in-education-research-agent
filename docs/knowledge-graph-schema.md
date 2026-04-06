@@ -8,19 +8,21 @@
 
 | Property                  | Type         | Notes                                                              |
 |---------------------------|--------------|--------------------------------------------------------------------|
-| paper_id                  | string       | DOI when available, otherwise hash of title + year                 |
-| title                     | string       |                                                                    |
-| doi                       | string       |                                                                    |
+| title                     | string       | merge key when DOI is absent                                       |
+| doi                       | string       | primary merge key when available                                   |
 | year                      | int          |                                                                    |
 | venue                     | string       |                                                                    |
 | url                       | string       |                                                                    |
 | source_db                 | string       | e.g. openalex, eric, arxiv, crossref, semantic_scholar             |
-| population                | string       | e.g. Elementary, Undergraduate                                     |
-| user_type                 | string       | Student, Educator, Administrator, Parent, School, Community        |
+| populations               | string[]     | e.g. ["Elementary", "Undergraduate"]                               |
+| user_types                | string[]     | e.g. ["Student", "Educator"]                                       |
 | study_design              | string       | RCT, Meta-Analysis, Quasi-Experimental, etc.                       |
 | extended_summary          | string       | 2–3 paragraph narrative                                            |
+| verdict                   | string       | named_tool_found / genai_general / archetype_only / framework_only / no_tool |
 | quality_tier              | string       | blue / green / yellow / red (K-12 Evidence Framework)              |
+| quality_tier_rationale    | string       | explanation for quality tier assignment                            |
 | impact_tier               | string       | blue / green / yellow / red                                        |
+| impact_tier_rationale     | string       | explanation for impact tier assignment                             |
 | extraction_status         | string       | full_text or legacy                                                |
 | session_id                | string       | which pipeline run wrote it                                        |
 | added_date                | ISO datetime |                                                                    |
@@ -28,12 +30,12 @@
 | duration_weeks            | string       | int or "not_reported"                                              |
 | setting                   | string       | classroom / lab / online / blended / not_reported                  |
 | teacher_training          | string       | yes / no / not_reported                                            |
-| implementation_fidelity   | string       | high / medium / low / not_reported             on                    |
+| implementation_fidelity   | string       | high / medium / low / not_reported                                 |
 | study_country             | string       | country where study was conducted                                  |
 | study_region              | string       | UN geoscheme region — see Geographic Vocabulary below              |
 | eta                       | float        | CCM fitness score — PageRank proxy for citation influence          |
 | cluster_id                | int          | K-means cluster assignment from fastRP embedding (k=15)            |
-| field_momentum            | float        | fraction of in-edges from 2024+ papers in this paper's cluster    |
+| field_momentum            | float        | fraction of in-edges from 2024+ papers in this paper's cluster     |
 | sb_coef                   | float        | Ke et al. (2015) sleeping beauty coefficient                       |
 | is_sleeping_beauty        | boolean      | true if sb_coef ≥ 1.0 (late-recognition pattern)                  |
 | ccm_run_date              | ISO datetime | date CCM trainer last computed scores for this paper               |
@@ -42,30 +44,18 @@
 
 ### Intervention
 
-Pre-seeded stable taxonomy — never created by the pipeline, only mapped to. Covers the full spectrum from AI-powered to technology-enabled interventions.
+LLM-identified at extraction time. The pipeline merges Intervention nodes dynamically — specific named products (e.g. ChatGPT, ALEKS, Duolingo) are created on first encounter; generic archetypes (e.g. "GenAI (General)", "ITS (General)") serve as catch-alls for heterogeneous or unspecified tools. `specificity` and `is_named_product` track the granularity of each node.
 
-| Property        | Type    | Notes                                               |
-|-----------------|---------|-----------------------------------------------------|
-| intervention_id | string  | slugified tag, e.g. "intelligent_tutoring_system"   |
-| name            | string  | canonical label                                     |
-| description     | string  | short definition for coding consistency             |
-| is_ai_powered   | boolean | true = AI-powered; false = technology-enabled only  |
-
-**Seed list:**
-
-| Name | is_ai_powered | Description |
-|---|---|---|
-| Intelligent Tutoring System (ITS) | true | Classical rule/model-based systems that adapt instruction through student modelling (e.g. ASSISTments, Cognitive Tutor) |
-| LLM-based Tutoring / Conversational AI | true | Modern GenAI tutors, chatbots, AI course assistants (post-2022) |
-| Adaptive Learning Platform | true | Systems that personalise content sequencing and pacing without dialogue-based tutoring |
-| Automated Feedback System | true | AI that evaluates and comments on student work (essays, code, math) without acting as a tutor |
-| AI Writing / Language Tool | true | Specifically targets writing production and language fluency — EFL assistants, grammar AI, speech tools |
-| Robot / Embodied Tutor | true | Physical or avatar-based robotic tutoring systems |
-| Predictive Analytics / Early Warning | true | AI that analyses student behaviour/performance data to flag risk and trigger intervention |
-| Computer-Assisted Instruction (CAI) | false | Software-delivered instruction, minimally adaptive or non-adaptive — captures pre-AI evidence base |
-| Educational Game / Simulation | false | Game-based learning and simulations with a technology component |
-| Mobile / Microlearning App | false | App-based, bite-sized delivery |
-| Other | false | Catch-all — flagged for periodic review; if 5+ papers accumulate, consider new node |
+| Property        | Type     | Notes                                                                                                                              |
+|-----------------|----------|------------------------------------------------------------------------------------------------------------------------------------|
+| intervention_id | string   | slugified name, e.g. "chatgpt", "its_general"                                                                                      |
+| name            | string   | canonical label                                                                                                                    |
+| method_id       | string   | same as intervention_id (slug)                                                                                                     |
+| specificity     | string   | "named_tool" = specific named product; "category" = generic archetype                                                             |
+| category_key    | string[] | functional roles: tutoring_instruction, feedback_evaluation, content_generation, personalization_adaptation, prediction_analytics, language_speech, other |
+| description     | string   | what the tool IS at product/system level (not study-specific)                                                                      |
+| is_ai_powered   | boolean  | true = AI-powered; false = technology-enabled only                                                                                 |
+| is_named_product| boolean  | true = specific named product; false = generic archetype                                                                           |
 
 ---
 
@@ -73,16 +63,19 @@ Pre-seeded stable taxonomy — never created by the pipeline, only mapped to. Co
 
 Optional for papers with `study_design = Framework / Theoretical`. Required for all empirical and review papers.
 
-| Property            | Type   | Notes                                      |
-|---------------------|--------|--------------------------------------------|
-| finding_id          | string | hash of title + outcome                    |
-| direction           | string | Positive / Negative / No Effect / Mixed    |
-| finding_summary     | string | 2–3 sentence narrative with effect sizes   |
-| measure             | string | what was measured                          |
-| study_size          | string | e.g. n=312                                 |
-| effect_size         | string | e.g. d=0.42                                |
-| confidence_interval | string |                                            |
-| std_deviation       | string |                                            |
+| Property            | Type   | Notes                                                                                     |
+|---------------------|--------|-------------------------------------------------------------------------------------------|
+| finding_id          | string | hash of title + outcome + intervention + index (guarantees uniqueness in comparison papers) |
+| outcome_category    | string | one of 9 fixed outcome categories (mirrors Outcome node name)                             |
+| finding_type        | string | primary (RCT/QED) / pooled_meta (meta-analysis aggregate) / review_synthesis              |
+| direction           | string | positive / negative / null / mixed                                                        |
+| finding_summary     | string | 2–3 sentence narrative with exact effect sizes and sample sizes                           |
+| measure             | string | what was measured, e.g. "standardized test scores"                                        |
+| sample_size         | string | e.g. n=312; "not_reported" if unavailable                                                 |
+| effect_size         | string | e.g. d=0.42; "not_reported" if unavailable                                                |
+| confidence_interval | string | e.g. [0.21, 0.63]; "not_reported" if unavailable                                         |
+| study_count         | string | number of studies pooled (meta-analyses only); "not_reported" otherwise                   |
+| source_paper        | string | title of the paper this finding was extracted from                                        |
 
 ---
 
@@ -220,7 +213,7 @@ The Citation Connector Agent (`src/nodes/citation_connector.py`) reads CCM score
 
 | Decision | Resolution |
 |---|---|
-| AIMethod node management | Option C — renamed to `Intervention`, pre-seeded stable taxonomy, mapped via LLM same as Outcome; controlled growth via `Other` catch-all |
+| AIMethod node management | Option C — renamed to `Intervention`, LLM-identified dynamically at extraction; named products merged on first encounter; generic archetypes (e.g. "GenAI (General)", "ITS (General)") serve as catch-alls; `is_named_product` and `specificity` track granularity |
 | Intervention assignment | `InterventionAssignment` model with `intervention`, `confidence` (≥0.5 threshold), `role` (primary/secondary), `use_case` (free-text HOW) |
 | Intervention use_case tagging | Free-text only — no separate tag field. Use_case enables gap detection queries; can be vector-clustered later. No redundant tag. |
 | Limitations tracking | Option B — structured array on Paper with controlled vocabulary |
