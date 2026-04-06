@@ -76,22 +76,26 @@ function loadDiskRuns() {
         } catch {}
       }
 
-      // Use folder birthtime as createdAt (actual run start time)
-      const folderStat = fs.statSync(folderPath);
-      const createdAt = folderStat.birthtimeMs || folderStat.mtimeMs;
+      // Parse timestamps from filenames: folder = YYYYMMDD_HHMMSS (start), report = same (end)
+      function parseFilenameTs(name) {
+        const m = name.match(/(\d{8})_(\d{6})/);
+        if (!m) return null;
+        const [, date, time] = m;
+        return new Date(
+          `${date.slice(0,4)}-${date.slice(4,6)}-${date.slice(6,8)}T${time.slice(0,2)}:${time.slice(2,4)}:${time.slice(4,6)}`
+        ).getTime();
+      }
 
-      // Estimate elapsed from folder birth → report file mtime
+      const createdAt = parseFilenameTs(folder) || fs.statSync(folderPath).birthtimeMs;
+      const reportEndTs = parseFilenameTs(reportFile);
+
       let elapsed;
-      try {
-        const reportStat = fs.statSync(path.join(folderPath, reportFile));
-        const ms = reportStat.mtimeMs - createdAt;
-        if (ms > 0) {
-          const totalSec = Math.round(ms / 1000);
-          const m = Math.floor(totalSec / 60);
-          const s = totalSec % 60;
-          elapsed = m > 0 ? `${m}m ${s}s` : `${s}s`;
-        }
-      } catch {}
+      if (createdAt && reportEndTs && reportEndTs > createdAt) {
+        const totalSec = Math.round((reportEndTs - createdAt) / 1000);
+        const m = Math.floor(totalSec / 60);
+        const s = totalSec % 60;
+        elapsed = m > 0 ? `${m}m ${s}s` : `${s}s`;
+      }
 
       seen.add(folder);
       runs.push({
