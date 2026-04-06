@@ -78,3 +78,9 @@ In production, `RENDER_URL` points to the deployed Render backend and `LANGGRAPH
 ## Deployment
 
 See [docs/deployment-guide.md](docs/deployment-guide.md) for Render (backend) and Vercel (frontend) deployment steps.
+
+---
+
+## EduViz (Archived)
+
+The knowledge graph visualization code is in `archive_eduviz_code/`. It will not render even if run locally due to a schema migration. The viz code expects `ImplementationObjective` nodes and separate `Population`, `UserType`, and `StudyDesign` nodes connected via relationships — the current schema replaced `ImplementationObjective` with `Intervention` and stores `populations`, `user_types`, and `study_design` as direct properties on `Paper` nodes. The `Outcome` node also changed from an `id` property to a `name` property. To revive the visualizations, the Cypher queries in `archive_eduviz_code/research_assistant_viz/src/evidence_map.py` and `kg_extractor.py` would need to be updated to match the current schema.
