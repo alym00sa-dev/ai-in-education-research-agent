@@ -151,7 +151,12 @@ function AgentPageInner() {
                 marginBottom: "-1px",
               }}
             >
-              {tab === "deep-research" ? "Deep Research" : "Graph Traversal"}
+              {tab === "deep-research" ? "Deep Research" : (
+                <>
+                  Graph Traversal
+                  <span style={{ fontSize: "10px", fontWeight: 600, color: "var(--text-muted)", marginLeft: "6px", letterSpacing: "0.05em" }}>BETA</span>
+                </>
+              )}
             </button>
           ))}
         </div>
