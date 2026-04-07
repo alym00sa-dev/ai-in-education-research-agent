@@ -9,9 +9,11 @@ Each user message:
 Graph name: "graph_traversal" (registered in langgraph.json)
 """
 
+import asyncio
 import logging
 import os
 import sys
+import time
 
 # Allow imports from deep-research-src (configuration, etc.)
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "deep-research-src"))
@@ -39,9 +41,10 @@ class GraphChatState(MessagesState):
 
 # ── Cypher generation ─────────────────────────────────────────────────────────
 
-class CypherQuery(BaseModel):
-    cypher: str = Field(description="The Cypher query to execute against Neo4j")
-    description: str = Field(description="One sentence describing what this query retrieves")
+class CypherQueries(BaseModel):
+    specific: str = Field(description="Narrow query: exact intervention names (from the list), study design filter, outcome category — most precise")
+    medium: str = Field(description="Moderate query: broader name patterns, is_ai_powered flag, or outcome category families — catches near misses")
+    broad: str = Field(description="Widest fallback: topic keywords in toLower(p.extended_summary) CONTAINS, minimal filters — ensures results even when specific/medium miss")
 
 
 _SCHEMA = """
@@ -178,6 +181,44 @@ ORDER BY p.quality_tier ASC, p.year DESC
 LIMIT 15
 ```
 
+Q: What is the most recent research around GenAI in education?
+```cypher
+MATCH (p:Paper)-[:EVALUATES]->(i:Intervention)
+WHERE i.is_ai_powered = true
+  AND p.quality_tier <> 'red'
+OPTIONAL MATCH (p)-[:REPORTS_FINDING]->(f:EmpiricalFinding)
+WITH p, collect(DISTINCT i.name) AS interventions, collect(f)[0..3] AS findings
+RETURN p, interventions, findings
+ORDER BY p.year DESC
+LIMIT 15
+```
+
+Q: What effect sizes exist around GenAI use and literacy outcomes?
+```cypher
+MATCH (p:Paper)-[:EVALUATES]->(i:Intervention)
+WHERE i.is_ai_powered = true
+  AND p.quality_tier <> 'red'
+OPTIONAL MATCH (p)-[:REPORTS_FINDING]->(f:EmpiricalFinding)
+  WHERE f.outcome_category CONTAINS 'Literacy' OR f.outcome_category CONTAINS 'Language'
+WITH p, collect(DISTINCT i.name) AS interventions, collect(f)[0..3] AS findings
+RETURN p, interventions, findings
+ORDER BY p.quality_tier ASC, p.year DESC
+LIMIT 15
+```
+
+Q: What does the corpus say about GenAI and math?
+```cypher
+MATCH (p:Paper)-[:EVALUATES]->(i:Intervention)
+WHERE i.is_ai_powered = true
+  AND p.quality_tier <> 'red'
+OPTIONAL MATCH (p)-[:REPORTS_FINDING]->(f:EmpiricalFinding)
+  WHERE f.outcome_category CONTAINS 'Mathematical'
+WITH p, collect(DISTINCT i.name) AS interventions, collect(f)[0..3] AS findings
+RETURN p, interventions, findings
+ORDER BY p.quality_tier ASC, p.year DESC
+LIMIT 15
+```
+
 Q: What are the most influential papers in the corpus?
 ```cypher
 MATCH (p:Paper)
@@ -203,6 +244,44 @@ WHERE p.quality_tier <> 'red'
 RETURN o.name AS outcome, count(DISTINCT p) AS papers, count(f) AS findings
 ORDER BY papers DESC
 ```
+
+## 3-query structure example
+
+Q: What research exists on AI tools for student writing improvement?
+
+specific:
+```cypher
+MATCH (p:Paper)-[:EVALUATES]->(i:Intervention)
+WHERE i.is_ai_powered = true AND p.quality_tier <> 'red'
+OPTIONAL MATCH (p)-[:REPORTS_FINDING]->(f:EmpiricalFinding)
+  WHERE f.outcome_category CONTAINS 'Literacy'
+WITH p, collect(DISTINCT i.name) AS interventions, collect(f)[0..3] AS findings
+WHERE size(findings) > 0
+RETURN p, interventions, findings
+ORDER BY p.quality_tier ASC, p.year DESC LIMIT 15
+```
+
+medium:
+```cypher
+MATCH (p:Paper)-[:FOCUSES_ON_OUTCOME]->(o:Outcome)
+WHERE p.quality_tier <> 'red' AND o.name CONTAINS 'Literacy'
+OPTIONAL MATCH (p)-[:EVALUATES]->(i:Intervention)
+OPTIONAL MATCH (p)-[:REPORTS_FINDING]->(f:EmpiricalFinding)
+WITH p, collect(DISTINCT i.name) AS interventions, collect(f)[0..3] AS findings
+RETURN p, interventions, findings
+ORDER BY p.quality_tier ASC, p.year DESC LIMIT 15
+```
+
+broad:
+```cypher
+MATCH (p:Paper)-[:EVALUATES]->(i:Intervention)
+WHERE p.quality_tier <> 'red'
+  AND (toLower(p.extended_summary) CONTAINS 'writing' OR toLower(p.extended_summary) CONTAINS 'literacy')
+OPTIONAL MATCH (p)-[:REPORTS_FINDING]->(f:EmpiricalFinding)
+WITH p, collect(DISTINCT i.name) AS interventions, collect(f)[0..3] AS findings
+RETURN p, interventions, findings
+ORDER BY p.quality_tier ASC, p.year DESC LIMIT 15
+```
 """
 
 _CYPHER_SYSTEM = f"""You are a Neo4j Cypher expert for an AI-in-education research corpus.
@@ -214,13 +293,17 @@ Given a user question, write a Cypher query to retrieve the most relevant data.
 {_FEW_SHOT}
 
 ## Rules
+- You must always generate THREE queries: specific (narrow), medium (moderate), broad (widest fallback)
 - Use CONTAINS (not =) for fuzzy string matching on names/titles
 - Always filter out red quality papers: AND p.quality_tier <> 'red'
 - Use toLower() for case-insensitive matching
 - LIMIT 15 for paper lists; no limit needed for counts/aggregations
-- For topic-based searches (reading, math, etc.) use extended_summary or outcome_category — NOT populations
-- populations is only for grade/group filters (elementary, high school, undergraduate)
-- When the question mentions "K-12" as context (e.g. "ChatGPT in K-12"), do NOT add a populations filter — K-12 here means the domain, not that you should filter papers to only those with K-12 populations tags
+- For topic-based searches (reading, math, writing, etc.) the broad query MUST use toLower(p.extended_summary) CONTAINS — this is the most reliable fallback
+- populations is only for grade/group filters (elementary, high school, undergraduate) — NOT for topic searches
+- When the question mentions "K-12" as context (e.g. "ChatGPT in K-12"), do NOT add a populations filter — K-12 here means the domain, not a population filter
+- For GenAI / generative AI concept queries, use `i.is_ai_powered = true` — do NOT search for a literal "genai" string. The corpus has no intervention named "genai"; AI-powered tools include ChatGPT, GenAI (General), LLM-based Tutoring, and others
+- Use the exact intervention names from the list provided — never guess or invent a name
+- For "most recent" queries, ORDER BY p.year DESC
 - When the question asks for counts or stats, return counts not paper lists
 - Always include OPTIONAL MATCH for relationships that may not exist on every paper
 - Return p, interventions, findings for paper lists so the synthesizer has full context
@@ -243,6 +326,36 @@ def _neo4j_session():
     except Exception as e:
         log.warning(f"[graph_traversal] Neo4j connection failed: {e}")
         return None, None
+
+
+# ── Intervention name cache ────────────────────────────────────────────────────
+
+_INTERVENTION_CACHE: list[str] = []
+_INTERVENTION_CACHE_TS: float = 0.0
+_INTERVENTION_CACHE_TTL = 3600  # 1 hour
+
+
+def _get_intervention_names() -> list[str]:
+    """Fetch all Intervention.name values from Neo4j; cached for 1 hour."""
+    global _INTERVENTION_CACHE, _INTERVENTION_CACHE_TS
+    if _INTERVENTION_CACHE and (time.time() - _INTERVENTION_CACHE_TS) < _INTERVENTION_CACHE_TTL:
+        return _INTERVENTION_CACHE
+    driver, db = _neo4j_session()
+    if db is None:
+        return []
+    try:
+        rows = list(db.run("MATCH (i:Intervention) RETURN i.name AS name ORDER BY i.name"))
+        names = [r["name"] for r in rows if r["name"]]
+        _INTERVENTION_CACHE = names
+        _INTERVENTION_CACHE_TS = time.time()
+        return names
+    except Exception as e:
+        log.warning(f"[graph_traversal] Failed to fetch intervention names: {e}")
+        return []
+    finally:
+        db.close()
+        if driver:
+            driver.close()
 
 
 # ── Execute Cypher and format results ─────────────────────────────────────────
@@ -316,6 +429,61 @@ def _format_paper_rows(rows: list) -> str:
     return "\n\n".join(lines)
 
 
+# ── Run multiple queries, merge and deduplicate results ───────────────────────
+
+def _run_queries(queries: list[str]) -> tuple[str, int]:
+    """Execute up to 3 Cypher queries, merge paper results deduplicating by doi/title."""
+    driver, db = _neo4j_session()
+    if db is None:
+        return "The knowledge graph is not currently available.", 0
+    try:
+        seen: set[str] = set()
+        merged_rows: list = []
+        is_paper_query: bool | None = None
+
+        for cypher in queries:
+            if not cypher.strip():
+                continue
+            try:
+                rows = list(db.run(cypher))
+                if not rows:
+                    continue
+                first = dict(rows[0])
+                if is_paper_query is None:
+                    is_paper_query = "p" in first
+                if is_paper_query:
+                    for row in rows:
+                        d = dict(row)
+                        p = dict(d.get("p") or {})
+                        key = p.get("doi") or p.get("title", "")
+                        if key and key not in seen:
+                            seen.add(key)
+                            merged_rows.append(row)
+                else:
+                    # Aggregate query — use first query's results only
+                    merged_rows = rows
+                    break
+            except Exception as e:
+                log.warning(f"[graph_traversal] Query failed: {e}")
+                continue
+
+        if not merged_rows:
+            return "No results found.", 0
+
+        if is_paper_query:
+            return _format_paper_rows(merged_rows), len(merged_rows)
+        else:
+            lines = []
+            for row in merged_rows:
+                d = dict(row)
+                lines.append("  " + " | ".join(f"{k}: {v}" for k, v in d.items()))
+            return "\n".join(lines), len(merged_rows)
+    finally:
+        db.close()
+        if driver:
+            driver.close()
+
+
 # ── Synthesis prompt ───────────────────────────────────────────────────────────
 
 _SYNTH_SYSTEM = """You are a research corpus assistant for an AI-in-education knowledge base of 230+ peer-reviewed papers (2023+).
@@ -340,7 +508,7 @@ Answer based on these results."""
 # ── Main graph node ────────────────────────────────────────────────────────────
 
 async def graph_chat(state: GraphChatState, config: RunnableConfig) -> dict:
-    """Single-node: generate Cypher → execute Neo4j → synthesize response."""
+    """Single-node: fetch intervention names → generate 3 Cypher queries → execute + merge → retry on 0 → synthesize."""
     from configuration import Configuration
     configurable = Configuration.from_runnable_config(config)
     model_name = getattr(configurable, "model", None) or _DEFAULT_MODEL
@@ -352,53 +520,77 @@ async def graph_chat(state: GraphChatState, config: RunnableConfig) -> dict:
     if not user_message:
         return {"messages": [AIMessage(content="Please ask a question about the research corpus.")]}
 
-    # Step 1 — generate Cypher
-    cypher_llm = init_chat_model(model=_CYPHER_MODEL, temperature=0).with_structured_output(CypherQuery)
+    # Step 1 — fetch live intervention names (cached 1h) and inject into prompt
+    intervention_names = await asyncio.get_event_loop().run_in_executor(None, _get_intervention_names)
+    if intervention_names:
+        names_block = "\n".join(f'  - "{n}"' for n in intervention_names)
+        cypher_system = (
+            _CYPHER_SYSTEM
+            + f"\n\n## All intervention names currently in the graph (use these exact strings with CONTAINS — do not guess):\n{names_block}"
+        )
+    else:
+        cypher_system = _CYPHER_SYSTEM
+
+    # Step 2 — generate 3 Cypher queries: specific → medium → broad
+    cypher_llm = init_chat_model(model=_CYPHER_MODEL, temperature=0).with_structured_output(CypherQueries)
+    queries: list[str] = []
     try:
-        cypher_result: CypherQuery = await cypher_llm.ainvoke([
-            SystemMessage(content=_CYPHER_SYSTEM),
+        result: CypherQueries = await cypher_llm.ainvoke([
+            SystemMessage(content=cypher_system),
             HumanMessage(content=user_message),
         ])
-        cypher = cypher_result.cypher.strip()
-        log.info(f"[graph_traversal] Cypher: {cypher[:200]}")
+        queries = [q.strip() for q in [result.specific, result.medium, result.broad] if q.strip()]
+        for i, q in enumerate(queries, 1):
+            log.info(f"[graph_traversal] Query {i}: {q[:150]}")
     except Exception as e:
         log.warning(f"[graph_traversal] Cypher generation failed: {e}")
-        cypher = ""
 
-    # Step 2 — execute query (run sync Neo4j driver in thread to avoid blocking the async event loop)
+    # Step 3 — execute all 3, merge and deduplicate
     corpus_data = "The knowledge graph is not currently available."
     result_count = 0
 
-    if cypher:
-        import asyncio
-
-        def _run_query():
-            driver, db = _neo4j_session()
-            if db is None:
-                return "The knowledge graph is not currently available.", 0
-            try:
-                return _execute_and_format(db, cypher)
-            except Exception as e:
-                log.warning(f"[graph_traversal] Query failed: {e}")
-                return f"Query error: {e}", 0
-            finally:
-                db.close()
-                if driver:
-                    driver.close()
-
+    if queries:
         try:
-            corpus_data, result_count = await asyncio.get_event_loop().run_in_executor(None, _run_query)
+            corpus_data, result_count = await asyncio.get_event_loop().run_in_executor(
+                None, _run_queries, queries
+            )
         except Exception as e:
             corpus_data = f"Query error: {e}"
             log.warning(f"[graph_traversal] Executor failed: {e}")
 
-    log.info(f"[graph_traversal] Results: {result_count} rows")
+    log.info(f"[graph_traversal] Results after 3 queries: {result_count} rows")
 
-    # Step 3 — synthesize response
+    # Step 4 — retry with relaxed queries if still 0 results
+    if result_count == 0 and queries:
+        log.info("[graph_traversal] 0 results — retrying with broadened queries")
+        retry_message = (
+            f"{user_message}\n\n"
+            f"The previous 3 queries returned 0 results. Generate broader fallback queries:\n"
+            f"- Use toLower(p.extended_summary) CONTAINS with topic keywords and synonyms\n"
+            f"- Remove study_design and population filters entirely\n"
+            f"- Keep only p.quality_tier <> 'red'\n"
+            f"- Try adjacent concepts (e.g. 'reading' → 'literacy', 'math' → 'numeracy')"
+        )
+        try:
+            retry_result: CypherQueries = await cypher_llm.ainvoke([
+                SystemMessage(content=cypher_system),
+                HumanMessage(content=retry_message),
+            ])
+            retry_queries = [q.strip() for q in [retry_result.specific, retry_result.medium, retry_result.broad] if q.strip()]
+            if retry_queries:
+                corpus_data, result_count = await asyncio.get_event_loop().run_in_executor(
+                    None, _run_queries, retry_queries
+                )
+                log.info(f"[graph_traversal] Retry results: {result_count} rows")
+                queries = retry_queries
+        except Exception as e:
+            log.warning(f"[graph_traversal] Retry failed: {e}")
+
+    # Step 5 — synthesize response
     synth_llm = init_chat_model(model=model_name)
     response = await synth_llm.ainvoke([
         SystemMessage(content=_SYNTH_SYSTEM),
-        *messages[:-1],  # prior conversation context
+        *messages[:-1],
         HumanMessage(content=_SYNTH_HUMAN.format(
             question=user_message,
             corpus_data=corpus_data,
@@ -407,7 +599,7 @@ async def graph_chat(state: GraphChatState, config: RunnableConfig) -> dict:
 
     return {
         "messages": [AIMessage(content=str(response.content))],
-        "last_cypher": cypher,
+        "last_cypher": queries[0] if queries else "",
         "last_result_count": result_count,
     }
 
