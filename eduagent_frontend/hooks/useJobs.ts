@@ -10,7 +10,18 @@ export function useJobs() {
   useEffect(() => {
     try {
       const stored = localStorage.getItem(STORAGE_KEY);
-      if (stored) setJobs(JSON.parse(stored));
+      if (stored) {
+        const parsed: Job[] = JSON.parse(stored);
+        const STALE_MS = 45 * 60 * 1000; // 45 minutes
+        const now = Date.now();
+        const cleaned = parsed.map((j) =>
+          j.status === "running" && now - (j.createdAt ?? 0) > STALE_MS
+            ? { ...j, status: "failed" as const, error: "Run timed out — the connection was lost." }
+            : j
+        );
+        setJobs(cleaned);
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(cleaned));
+      }
     } catch {}
   }, []);
 

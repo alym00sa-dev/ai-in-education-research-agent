@@ -311,11 +311,20 @@ function ReportContent({ job }: { job: Job }) {
           ul: ({ children }) => <ul className="mb-4 space-y-1.5 pl-5">{children}</ul>,
           ol: ({ children }) => <ol className="mb-4 space-y-1.5 pl-5 list-decimal">{children}</ol>,
           li: ({ children }) => <li className="text-base leading-relaxed list-disc" style={{ color: "var(--text-secondary)" }}>{children}</li>,
-          a: ({ href, children }) => (
-            <a href={href} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2" style={{ color: "var(--indigo)" }}>
-              {children}
-            </a>
-          ),
+          a: ({ href, children }) => {
+            const isAnchor = href?.startsWith("#");
+            return (
+              <a
+                href={href}
+                target={isAnchor ? undefined : "_blank"}
+                rel={isAnchor ? undefined : "noopener noreferrer"}
+                className="underline underline-offset-2"
+                style={{ color: "var(--indigo)" }}
+              >
+                {children}
+              </a>
+            );
+          },
           strong: ({ children }) => <strong style={{ color: "var(--text-primary)", fontWeight: 600 }}>{children}</strong>,
           blockquote: ({ children }) => (
             <blockquote className="border-l-2 pl-4 italic my-4" style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}>{children}</blockquote>
