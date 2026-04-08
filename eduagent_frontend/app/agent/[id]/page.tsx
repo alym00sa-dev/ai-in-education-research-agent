@@ -166,15 +166,16 @@ export default function SessionPage() {
         {/* TOC — fixed left */}
         {job.report && <TocPanel report={job.report} />}
 
-        {/* Report — centred with room for the two side panels */}
-        <div className="mx-auto lg:ml-52 lg:mr-48">
+        {/* Report — centred with room for the TOC panel */}
+        <div className="mx-auto lg:ml-52">
           <ReportContent job={job} />
         </div>
 
-        {/* Downloads panel — fixed right */}
+        {/* Downloads panel — hidden for now
         <div className="hidden lg:block fixed top-24 right-5 z-20">
           <DownloadsPanel job={job} />
         </div>
+        */}
       </div>
     </div>
   );

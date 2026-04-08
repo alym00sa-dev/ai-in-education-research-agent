@@ -294,7 +294,9 @@ function SessionRow({
         className="px-3 py-2.5 text-xs hidden sm:table-cell whitespace-nowrap"
         style={{ color: "var(--text-muted)" }}
       >
-        {job.elapsed ?? "—"}
+        {job.elapsed ?? (job.completedAt && job.createdAt
+          ? (() => { const s = Math.floor((job.completedAt! - job.createdAt) / 1000); const m = Math.floor(s / 60); return m > 0 ? `${m}m ${s % 60}s` : `${s}s`; })()
+          : "—")}
       </td>
 
       {/* Type */}
