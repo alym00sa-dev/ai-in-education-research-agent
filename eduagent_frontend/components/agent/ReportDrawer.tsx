@@ -23,45 +23,11 @@ function useElapsed(startMs: number | undefined): string {
   return m > 0 ? `${m}m ${s}s` : `${s}s`;
 }
 
-function useRunLog(jobId: string | null): string[] {
-  const [lines, setLines] = useState<string[]>([]);
-  useEffect(() => {
-    if (!jobId) { setLines([]); return; }
-    setLines([]);
-    const ctrl = new AbortController();
-    (async () => {
-      try {
-        const res = await fetch(`/api/run-log?id=${jobId}`, { signal: ctrl.signal });
-        if (!res.ok || !res.body) return;
-        const reader = res.body.getReader();
-        const dec = new TextDecoder();
-        let buf = "";
-        while (true) {
-          const { done, value } = await reader.read();
-          if (done) break;
-          buf += dec.decode(value, { stream: true });
-          const parts = buf.split("\n");
-          buf = parts.pop() ?? "";
-          for (const part of parts) {
-            const t = part.trim();
-            if (!t.startsWith("data: ")) continue;
-            try {
-              const { line } = JSON.parse(t.slice(6));
-              if (line) setLines(prev => [...prev, line]);
-            } catch {}
-          }
-        }
-      } catch {}
-    })();
-    return () => ctrl.abort();
-  }, [jobId]);
-  return lines;
-}
 
 export default function ReportDrawer({ job, onClose, onCancel }: ReportDrawerProps) {
   const bottomRef = useRef<HTMLDivElement>(null);
   const elapsed = useElapsed(job?.createdAt);
-  const logLines = useRunLog(job?.id ?? null);
+  const logLines = (job?.statusLog ?? []).map((s) => s.text);
 
   useEffect(() => {
     const handler = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
