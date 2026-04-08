@@ -62,19 +62,35 @@ export function useResearch(onUpdate: (id: string, patch: Partial<Job>) => void)
 
     pushStatus("Connecting to research pipeline...", "node");
 
+    const RENDER_URL = process.env.NEXT_PUBLIC_RENDER_API_URL || "http://127.0.0.1:2024";
 
     try {
-      const res = await fetch("/api/research/stream", {
+      // Step 1: create thread + get stream payload from Vercel (fast, no timeout concern)
+      const initRes = await fetch("/api/research/stream", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ query, config, jobId }),
         signal: abortRef.current.signal,
       });
+      if (!initRes.ok) throw new Error(`Init failed: ${initRes.status}`);
+      const { thread_id, streamPayload } = await initRes.json();
+
+      pushStatus("Pipeline thread created — connecting stream...", "node");
+
+      // Step 2: stream directly from Render, bypassing Vercel's execution time limit
+      const res = await fetch(
+        `${RENDER_URL}/threads/${thread_id}/runs/stream`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(streamPayload),
+          signal: abortRef.current.signal,
+        }
+      );
 
       if (!res.ok || !res.body) throw new Error(`Stream failed: ${res.status}`);
 
       pushStatus("Stream connected — pipeline starting", "node");
-
 
       const reader = res.body.getReader();
       const decoder = new TextDecoder();

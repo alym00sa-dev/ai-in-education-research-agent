@@ -1,8 +1,5 @@
 import { NextRequest } from "next/server";
 
-export const runtime = "edge";
-export const maxDuration = 300; // 5 minutes — Pro plan required for > 10s
-
 const RENDER_URL = process.env.RENDER_API_URL || "http://127.0.0.1:2024";
 
 // Fast mode: GPT 5.4 Mini for research nodes
@@ -17,16 +14,16 @@ const REPORT_MODEL = "openai:gpt-5.4-2026-03-05";
 
 const RESEARCH_ITERATIONS = 3;
 
+// This route creates a LangGraph thread and returns the thread_id + stream payload.
+// The browser then connects directly to Render to stream — bypassing Vercel's
+// execution time limits entirely.
 export async function POST(req: NextRequest) {
   const { query, config, jobId } = await req.json();
 
-  // Append keywords to query content if provided
   const keywords = (config.keywords ?? "").trim();
-  const messageContent = keywords
-    ? `${query}\nKeywords: ${keywords}`
-    : query;
+  const messageContent = keywords ? `${query}\nKeywords: ${keywords}` : query;
 
-  // Create thread
+  // Create thread on the LangGraph backend
   const threadRes = await fetch(`${RENDER_URL}/threads`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -39,12 +36,11 @@ export async function POST(req: NextRequest) {
 
   const mainModel = SPEED_MODEL_MAP[config.model] ?? SPEED_MODEL_MAP["gpt-5.4-mini"];
 
-  const payload = {
+  const streamPayload = {
     assistant_id: "agent",
     input: { messages: [{ role: "user", content: messageContent }] },
     stream_mode: ["values", "updates", "custom"],
     config: {
-      // Must match run_pipeline.py CONFIG exactly
       recursion_limit: 200,
       configurable: {
         model: mainModel,
@@ -62,21 +58,5 @@ export async function POST(req: NextRequest) {
     },
   };
 
-  const upstream = await fetch(`${RENDER_URL}/threads/${thread_id}/runs/stream`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(payload),
-  });
-
-  if (!upstream.ok || !upstream.body) {
-    return new Response("Upstream stream failed", { status: 502 });
-  }
-
-  return new Response(upstream.body, {
-    headers: {
-      "Content-Type": "text/event-stream",
-      "Cache-Control": "no-cache",
-      "X-Accel-Buffering": "no",
-    },
-  });
+  return Response.json({ thread_id, streamPayload });
 }

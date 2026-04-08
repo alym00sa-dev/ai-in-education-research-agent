@@ -43,11 +43,18 @@ def _write(path: str, start: float, msg: str) -> None:
 
 
 def log(msg: str, session_id: str = "") -> None:
-    """Write msg to stdout AND the session run.log (if session_id is known)."""
+    """Write msg to stdout AND the session run.log (if session_id is known).
+    Also dispatches a custom SSE event when running inside LangGraph Cloud."""
     print(msg, flush=True)
     if session_id and session_id in _sessions:
         path, start = _sessions[session_id]
         _write(path, start, msg)
+    # Emit through the SSE stream when inside a LangGraph execution context
+    try:
+        from langchain_core.callbacks.manager import dispatch_custom_event
+        dispatch_custom_event("log", {"message": msg})
+    except Exception:
+        pass
 
 
 def total_elapsed_str(session_id: str) -> str:
