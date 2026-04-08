@@ -1,6 +1,7 @@
 import { NextRequest } from "next/server";
 
-export const maxDuration = 300; // 5 minutes — increase if needed for slow runs
+export const runtime = "edge";
+export const maxDuration = 300; // 5 minutes — Pro plan required for > 10s
 
 const RENDER_URL = process.env.RENDER_API_URL || "http://127.0.0.1:2024";
 
