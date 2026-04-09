@@ -6,7 +6,7 @@ import { Inbox, Loader2, RotateCcw, Trash2 } from "lucide-react";
 
 interface JobsFeedProps {
   jobs: Job[];
-  activeJobId: string | null;
+  activeJobIds: Set<string>;
   selectedJobId: string | null;
   onSelect: (job: Job) => void;
   onRerun: (job: Job) => void;
@@ -26,7 +26,7 @@ function getJobType(taskType: string): string {
 
 export default function JobsFeed({
   jobs,
-  activeJobId,
+  activeJobIds,
   selectedJobId,
   onSelect,
   onRerun,
@@ -81,7 +81,7 @@ export default function JobsFeed({
                 key={job.id}
                 job={job}
                 isSelected={
-                  job.id === selectedJobId || job.id === activeJobId
+                  job.id === selectedJobId || activeJobIds.has(job.id)
                 }
                 onClick={() => onSelect(job)}
               />

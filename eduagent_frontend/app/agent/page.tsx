@@ -27,7 +27,8 @@ function AgentPageInner() {
   const searchParams = useSearchParams();
   const initialTab = searchParams.get("tab") === "graph-traversal" ? "graph-traversal" : "deep-research";
   const [agentTab, setAgentTab] = useState<AgentTab>(initialTab as AgentTab);
-  const [runningJob, setRunningJob] = useState<Job | null>(null);
+  const [runningJobs, setRunningJobs] = useState<Map<string, Job>>(new Map());
+  const [drawerJobId, setDrawerJobId] = useState<string | null>(null);
 
   const { sessions: graphSessions, addSession: addGraphSession, removeSession: removeGraphSession } = useGraphSessions();
 
@@ -65,22 +66,25 @@ function AgentPageInner() {
   const handleUpdate = useCallback(
     (id: string, patch: Partial<Job>) => {
       updateJob(id, patch);
-      setRunningJob((prev) => (prev?.id === id ? { ...prev, ...patch } : prev));
+      setRunningJobs((prev) => {
+        if (!prev.has(id)) return prev;
+        const updated = new Map(prev);
+        const merged = { ...prev.get(id)!, ...patch };
+        // If job finished, remove from running map and navigate
+        if (merged.status === "complete" || merged.status === "failed") {
+          updated.delete(id);
+          setDrawerJobId((d) => (d === id ? null : d));
+          router.push(`/agent/${id}`);
+        } else {
+          updated.set(id, merged);
+        }
+        return updated;
+      });
     },
-    [updateJob]
+    [updateJob, router]
   );
 
-  const { activeJobId, startResearch, cancel } = useResearch(handleUpdate);
-
-  // Auto-navigate to full session page when job completes or fails
-  useEffect(() => {
-    if (!runningJob) return;
-    if (runningJob.status === "complete" || runningJob.status === "failed") {
-      const id = runningJob.id;
-      setRunningJob(null);
-      router.push(`/agent/${id}`);
-    }
-  }, [runningJob?.status]);
+  const { activeJobIds, startResearch, cancel } = useResearch(handleUpdate);
 
   const handleSubmit = useCallback(
     (query: string, config: ResearchConfig) => {
@@ -92,7 +96,8 @@ function AgentPageInner() {
         createdAt: Date.now(),
       };
       addJob(job);
-      setRunningJob(job);
+      setRunningJobs((prev) => new Map([...prev, [job.id, job]]));
+      setDrawerJobId(job.id);
       startResearch(job.id, query, config);
     },
     [addJob, startResearch]
@@ -101,7 +106,7 @@ function AgentPageInner() {
   const handleSelect = useCallback(
     (job: Job) => {
       if (job.status === "running") {
-        setRunningJob(job);
+        setDrawerJobId(job.id);
       } else {
         router.push(`/agent/${job.id}`);
       }
@@ -162,7 +167,7 @@ function AgentPageInner() {
         </div>
 
         {agentTab === "deep-research" && (
-          <QueryBar onSubmit={handleSubmit} isRunning={!!activeJobId} />
+          <QueryBar onSubmit={handleSubmit} isRunning={false} />
         )}
         {agentTab === "graph-traversal" && (
           <GraphTraversalQueryBar
@@ -191,8 +196,8 @@ function AgentPageInner() {
           ) : (
             <JobsFeed
               jobs={allJobs}
-              activeJobId={activeJobId}
-              selectedJobId={runningJob?.id ?? null}
+              activeJobIds={activeJobIds}
+              selectedJobId={drawerJobId}
               onSelect={handleSelect}
               onRerun={handleRerun}
               onDelete={handleDelete}
@@ -208,13 +213,13 @@ function AgentPageInner() {
         )}
       </div>
 
-      {/* Drawer only for the live running job */}
+      {/* Drawer shows whichever running job was last clicked/started */}
       <ReportDrawer
-        job={runningJob?.status === "running" ? runningJob : null}
-        onClose={() => setRunningJob(null)}
+        job={drawerJobId ? (runningJobs.get(drawerJobId) ?? null) : null}
+        onClose={() => setDrawerJobId(null)}
         onCancel={() => {
-          cancel();
-          setRunningJob(null);
+          if (drawerJobId) cancel(drawerJobId);
+          setDrawerJobId(null);
         }}
       />
     </div>

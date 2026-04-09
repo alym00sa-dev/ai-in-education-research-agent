@@ -40,12 +40,13 @@ const TOOL_LABELS: Record<string, string> = {
 };
 
 export function useResearch(onUpdate: (id: string, patch: Partial<Job>) => void) {
-  const [activeJobId, setActiveJobId] = useState<string | null>(null);
-  const abortRef = useRef<AbortController | null>(null);
+  const [activeJobIds, setActiveJobIds] = useState<Set<string>>(new Set());
+  const abortRefs = useRef<Map<string, AbortController>>(new Map());
 
   const startResearch = useCallback(async (jobId: string, query: string, config: ResearchConfig) => {
-    setActiveJobId(jobId);
-    abortRef.current = new AbortController();
+    const controller = new AbortController();
+    abortRefs.current.set(jobId, controller);
+    setActiveJobIds((prev) => new Set([...prev, jobId]));
 
     const jobStart = Date.now();
     const elapsed = () => Date.now() - jobStart;
@@ -70,7 +71,7 @@ export function useResearch(onUpdate: (id: string, patch: Partial<Job>) => void)
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ query, config, jobId }),
-        signal: abortRef.current.signal,
+        signal: controller.signal,
       });
       if (!initRes.ok) throw new Error(`Init failed: ${initRes.status}`);
       const { thread_id, streamPayload } = await initRes.json();
@@ -84,7 +85,7 @@ export function useResearch(onUpdate: (id: string, patch: Partial<Job>) => void)
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(streamPayload),
-          signal: abortRef.current.signal,
+          signal: controller.signal,
         }
       );
 
@@ -281,15 +282,16 @@ export function useResearch(onUpdate: (id: string, patch: Partial<Job>) => void)
         onUpdate(jobId, { status: "failed", error: (err as Error).message, statusLog: [...statusLog] });
       }
     } finally {
-      setActiveJobId(null);
+      abortRefs.current.delete(jobId);
+      setActiveJobIds((prev) => { const next = new Set(prev); next.delete(jobId); return next; });
     }
   }, [onUpdate]);
 
-  const cancel = useCallback(() => {
-    abortRef.current?.abort();
+  const cancel = useCallback((jobId: string) => {
+    abortRefs.current.get(jobId)?.abort();
   }, []);
 
-  return { activeJobId, startResearch, cancel };
+  return { activeJobIds, startResearch, cancel };
 }
 
 function _extractSources(state: Record<string, unknown>) {
