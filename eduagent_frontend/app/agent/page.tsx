@@ -70,11 +70,21 @@ function AgentPageInner() {
         if (!prev.has(id)) return prev;
         const updated = new Map(prev);
         const merged = { ...prev.get(id)!, ...patch };
-        // If job finished, remove from running map and navigate
         if (merged.status === "complete" || merged.status === "failed") {
           updated.delete(id);
-          setDrawerJobId((d) => (d === id ? null : d));
-          router.push(`/agent/${id}`);
+          // Only navigate on completion, and only if this job was open in the drawer.
+          // Failed/cancelled jobs just disappear from the active list — no navigation.
+          if (merged.status === "complete") {
+            setDrawerJobId((d) => {
+              if (d === id) {
+                router.push(`/agent/${id}`);
+                return null;
+              }
+              return d;
+            });
+          } else {
+            setDrawerJobId((d) => (d === id ? null : d));
+          }
         } else {
           updated.set(id, merged);
         }
