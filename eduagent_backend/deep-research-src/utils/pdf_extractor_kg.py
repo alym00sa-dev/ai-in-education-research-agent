@@ -592,7 +592,7 @@ async def _extract_citations(
     """Call 3 — bibliography extraction."""
     model = init_chat_model(
         model=model_name,
-        max_tokens=4096,
+        max_tokens=8192,
         api_key=_get_api_key(model_name),
         tags=["langsmith:nostream"],
     ).with_structured_output(PaperCitationExtract)
@@ -607,7 +607,8 @@ async def _extract_citations(
 
 
 async def _extract_kg_taxonomy(
-    text: str, research_topic: str, model_name: str
+    text: str, research_topic: str, model_name: str,
+    known_interventions: list[str] | None = None,
 ) -> PaperKGExtract:
     """Call 2 — tool identification, per-tool findings, evidence tiers."""
     model = init_chat_model(
@@ -617,7 +618,14 @@ async def _extract_kg_taxonomy(
         tags=["langsmith:nostream"],
     ).with_structured_output(PaperKGExtract)
 
-    known_tools_str = "\n".join(f"- {t}" for t in _KNOWN_TOOLS)
+    combined = list(_KNOWN_TOOLS)
+    if known_interventions:
+        existing_set = {t.lower() for t in combined}
+        for name in known_interventions:
+            if name.lower() not in existing_set:
+                combined.append(name)
+                existing_set.add(name.lower())
+    known_tools_str = "\n".join(f"- {t}" for t in combined)
     llm_family_str = "\n".join(
         f"- {name}: {variants}" for name, variants in _LLM_FAMILY_TABLE.items()
     )
@@ -639,6 +647,7 @@ async def _extract_profile_v2(
     metadata_model: str,
     taxonomy_model: str,
     extract_citations: bool = True,
+    known_interventions: list[str] | None = None,
 ) -> PaperProfileV2:
     """Run extraction calls in parallel and merge into a PaperProfileV2.
 
@@ -648,14 +657,14 @@ async def _extract_profile_v2(
     if extract_citations:
         meta, taxonomy, citation_extract = await asyncio.gather(
             _extract_metadata(text, research_topic, metadata_model),
-            _extract_kg_taxonomy(text, research_topic, taxonomy_model),
+            _extract_kg_taxonomy(text, research_topic, taxonomy_model, known_interventions),
             _extract_citations(text, taxonomy_model),
         )
         citations = citation_extract.citations
     else:
         meta, taxonomy = await asyncio.gather(
             _extract_metadata(text, research_topic, metadata_model),
-            _extract_kg_taxonomy(text, research_topic, taxonomy_model),
+            _extract_kg_taxonomy(text, research_topic, taxonomy_model, known_interventions),
         )
         citations = []
 
@@ -699,6 +708,7 @@ async def extract_paper_profile_v2(
     metadata_model: str = _DEFAULT_MODEL,
     taxonomy_model: str = _DEFAULT_MODEL,
     extract_citations: bool = True,
+    known_interventions: list[str] | None = None,
 ) -> PaperProfileV2:
     """Attempt full-text extraction for one paper. Returns PaperProfileV2.
 
@@ -789,6 +799,7 @@ async def extract_paper_profile_v2(
         profile = await _extract_profile_v2(
             text_for_extraction, research_topic, metadata_model, taxonomy_model,
             extract_citations=extract_citations,
+            known_interventions=known_interventions,
         )
         profile.extraction_status = extraction_status
         profile.extraction_note = extraction_note

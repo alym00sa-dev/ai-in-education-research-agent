@@ -1,0 +1,749 @@
+{
+  "title": "How Students Use AI Feedback Matters: Experimental Evidence on Physics Achievement and Autonomy",
+  "doi": null,
+  "year": 2025,
+  "venue": null,
+  "url": "http://arxiv.org/abs/2505.08672v2",
+  "source_db": "weekly_batch",
+  "populations": [
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Randomized Controlled Trial (RCT)",
+  "extended_summary": "The paper examines whether generative-AI-powered feedback helps high school physics students, and especially whether its effects depend on how students are required or allowed to use it. Rather than treating AI feedback as a single intervention, the study compares different usage patterns and asks how these patterns affect both academic achievement and learner autonomy/self-regulated learning across students with different baseline achievement levels.\n\nThe authors conducted two randomized controlled trials in one high school in southwest China. In Experiment 1, Grade 10 students were randomly assigned to compulsory personalized recommendation conditions: AI-generated heuristic solution hints plus workbook answers, workbook-based answers/explanations only, or no recommendation. In Experiment 2, students were randomly assigned to autonomous on-demand AI help with full student control, on-demand help with shared student-system control, or a control condition. Both experiments lasted five weeks and used paper-based workflows because smart devices were prohibited in classrooms.\n\nThe study found heterogeneous effects by achievement level and usage pattern. Under compulsory personalized recommendation, low-achieving students improved in physics achievement when receiving AI-generated heuristic hints, while high-achieving students showed declines in self-regulated learning without clear achievement gains. Under autonomous on-demand use, fully learner-controlled AI feedback improved achievement for high-achieving students without reducing autonomy, but lower-achieving students exposed to on-demand AI showed declines in autonomy, especially in dimensions overlapping with self-regulation.\n\nThe main conclusion is that the educational impact of GAI feedback depends strongly on both learner characteristics and usage pattern. The authors argue that AI feedback systems should not only optimize the precision of content but should also be designed around when, how, and by whom AI assistance is used, with different scaffolding strategies for students at different achievement levels.",
+  "limitations": [
+    "single_site",
+    "self_reported_measures",
+    "non_representative_population",
+    "high_attrition",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "5",
+  "setting": "classroom",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "medium",
+  "study_country": "China",
+  "study_region": "East Asia & Pacific",
+  "identified_tools": [
+    {
+      "name": "Adaptive Feedback System (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "feedback_evaluation",
+        "personalization_adaptation"
+      ],
+      "description": "An unnamed generative-AI-powered personalized feedback system that provides physics problem feedback, heuristic solution hints, concept explanations, and related practice recommendations through paper-based submission and retrieval/generation workflows.",
+      "use_case": "Studied in two five-week randomized controlled trials with high school physics students: Experiment 1 tested compulsory personalized recommendations with GAI-generated heuristic solution hints, and Experiment 2 tested autonomous on-demand GAI feedback under full learner control or shared student-system control.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Scientific Reasoning",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In Experiment 1, compulsory use of personalized recommendations with GAI-generated heuristic solution hints significantly improved physics academic performance for low-achieving Grade 10 students relative to the control condition (d = 0.673, p < 0.05). The analyzed Experiment 1 sample was n = 121; the bottom-third subgroup included 13 students in the GAI-hints group and 10 in the control group, with 16 students in the workbook-recommendation comparison group.",
+          "measure": "standardized physics exam scores",
+          "effect_size": "d = 0.673",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=121; bottom-third subgroup n=39"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "In Experiment 1, high-achieving students experienced a significant decline in self-regulated learning under the compulsory personalized recommendation usage pattern, with no significant achievement gains reported (d = -0.477, p < 0.05). The analyzed Experiment 1 sample was n = 121; the top-third subgroup included 15 students in the GAI-hints group, 12 in the workbook-recommendation group, and 14 in the control group.",
+          "measure": "self-regulated learning questionnaire",
+          "effect_size": "d = -0.477",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=121; top-third subgroup n=41"
+        },
+        {
+          "outcome_category": "Academic \u2014 Scientific Reasoning",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In Experiment 2, fully learner-controlled on-demand AI feedback significantly enhanced academic performance for high-achieving students (d = 0.378, p < 0.05). The paper reports that this achievement gain occurred without negatively impacting their autonomy.",
+          "measure": "standardized physics exam scores",
+          "effect_size": "d = 0.378",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=266; high-achieving subgroup n not_reported"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "In Experiment 2, autonomy declined among lower achievers exposed to on-demand AI interventions (d = -0.383, p < 0.05). The decline was especially notable in the technical-psychological dimension, which overlaps substantially with self-regulation (d = -0.549, p < 0.05).",
+          "measure": "learner autonomy questionnaire, including technical-psychological dimension",
+          "effect_size": "d = -0.383; technical-psychological dimension d = -0.549",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=266; lower-achieving subgroup n not_reported"
+        }
+      ]
+    }
+  ],
+  "verdict": "genai_general",
+  "quality_tier": "green",
+  "quality_tier_rationale": "The paper reports two individually randomized controlled trials with baseline balance checks, control groups, covariate-adjusted regressions, and robust standard errors. Quality is downgraded from blue because of substantial attrition from recruited to analyzed samples and limited reporting of confidence intervals/subgroup sample sizes for several headline effects.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The RCTs report medium-to-large statistically significant subgroup effects in both positive and negative directions: achievement gains for low-achieving students under compulsory GAI hints and high-achieving students under learner-controlled on-demand help, but declines in SRL/autonomy for other groups. Because impacts are heterogeneous and include potential harms, the overall impact is mixed rather than uniformly positive.",
+  "citations": [
+    {
+      "title": "Effects of students\u2019 autonomy support on their self-regulated learning strategies: Three field experiments in secondary education",
+      "doi": "10.46328/ijres.3343",
+      "year": 2024,
+      "venue": "International Journal of Research in Education and Science",
+      "citation_level": 2,
+      "citation_context": "autonomy support linked to SRL strategies"
+    },
+    {
+      "title": "Help seeking and help design in interactive learning environments",
+      "doi": "10.3102/00346543073003277",
+      "year": 2003,
+      "venue": "Review of Educational Research",
+      "citation_level": 2,
+      "citation_context": "help-seeking and feedback predictability in intelligent tutors"
+    },
+    {
+      "title": "Artificial intelligence in smart classrooms: An investigative learning process for high school",
+      "doi": "10.14569/IJACSA.2023.0141101",
+      "year": 2023,
+      "venue": "International Journal of Advanced Computer Science and Applications",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Cognitive Tutors: Lessons Learned",
+      "doi": "10.1207/s15327809jls0402_2",
+      "year": 1995,
+      "venue": "The Journal of the Learning Sciences",
+      "citation_level": 2,
+      "citation_context": "intelligent tutoring systems as adaptive-learning precedent"
+    },
+    {
+      "title": "Powerful learning: Studies show deep understanding derives from collaborative methods",
+      "doi": null,
+      "year": 2008,
+      "venue": "Edutopia",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Generative AI can harm learning",
+      "doi": "10.2139/ssrn.4895486",
+      "year": 2024,
+      "venue": "SSRN",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Teaching and researching autonomy in language learning",
+      "doi": null,
+      "year": 2001,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "learner autonomy construct definition"
+    },
+    {
+      "title": "Mastery learning",
+      "doi": null,
+      "year": 1971,
+      "venue": "Mastery learning: Theory and practice",
+      "citation_level": 2,
+      "citation_context": "mastery-learning rationale for targeted error review"
+    },
+    {
+      "title": "The influence of student self-regulatory learning strategies on academic achievement",
+      "doi": null,
+      "year": 2016,
+      "venue": "International Journal of Academic Research in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A source book in Chinese philosophy",
+      "doi": null,
+      "year": 2008,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Self-regulated learning processes in secondary education: A network analysis of trace-based measures",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Analects of Confucius: A Philosophical Translation",
+      "doi": null,
+      "year": 1999,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The demand-driven learning model: A framework for Web-based learning",
+      "doi": "10.1016/S1096-7516(01)00045-8",
+      "year": 2001,
+      "venue": "The Internet and Higher Education",
+      "citation_level": 2,
+      "citation_context": "demand-driven model for learner-initiated online help"
+    },
+    {
+      "title": "Personalized recommendation in the adaptive learning system: The role of adaptive testing technology",
+      "doi": "10.1177/07356331221127303",
+      "year": 2023,
+      "venue": "Journal of Educational Computing Research",
+      "citation_level": 2,
+      "citation_context": "adaptive recommendation and testing framing"
+    },
+    {
+      "title": "Impact of AI assistance on student agency",
+      "doi": "10.1016/j.compedu.2023.104967",
+      "year": 2024,
+      "venue": "Computers & Education",
+      "citation_level": 2,
+      "citation_context": "AI scaffolds may reduce student agency"
+    },
+    {
+      "title": "A study about personalized content recommendation",
+      "doi": null,
+      "year": 2013,
+      "venue": "Revista de Sistemas de Informa\u00e7\u00e3o da FSMA",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The \"what\" and \"why\" of goal pursuits: Human needs and the self-determination of behavior",
+      "doi": "10.1207/S15327965PLI1104_01",
+      "year": 2000,
+      "venue": "Psychological Inquiry",
+      "citation_level": 2,
+      "citation_context": "self-determination theory for autonomy-supportive learning"
+    },
+    {
+      "title": "Does ChatGPT enhance student learning? A systematic review and meta-analysis of experimental studies",
+      "doi": "10.1016/j.compedu.2024.105224",
+      "year": 2025,
+      "venue": "Computers & Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Recommender systems to support learners\u2019 agency in a learning context: A systematic review",
+      "doi": "10.1186/s41239-020-00219-w",
+      "year": 2020,
+      "venue": "International Journal of Educational Technology in Higher Education",
+      "citation_level": 2,
+      "citation_context": "recommender systems as supports for learner agency"
+    },
+    {
+      "title": "Experience and Education",
+      "doi": null,
+      "year": 1938,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "experiential education framing for learner-centered design"
+    },
+    {
+      "title": "The development and validation of the Goal Orientation and Learning Strategies Survey (GOALS-S)",
+      "doi": null,
+      "year": 2004,
+      "venue": "Educational and Psychological Measurement",
+      "citation_level": 3,
+      "citation_context": "SRL questionnaire source"
+    },
+    {
+      "title": "Exploring the effects of personalized recommendations on student\u2019s motivation and learning achievement in gamified mobile learning framework",
+      "doi": "10.1007/s10639-024-12477-6",
+      "year": 2024,
+      "venue": "Education and Information Technologies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Do direct and indirect recommendations facilitate students\u2019 self-regulated learning in flipped classroom online activities? Findings from two studies",
+      "doi": "10.3390/educsci13040400",
+      "year": 2023,
+      "venue": "Education Sciences",
+      "citation_level": 2,
+      "citation_context": "recommendation designs for supporting SRL"
+    },
+    {
+      "title": "Designing a recommender system to promote self-regulated learning in online contexts: A design-based study",
+      "doi": "10.1007/s10639-024-12867-w",
+      "year": 2024,
+      "venue": "Education and Information Technologies",
+      "citation_level": 2,
+      "citation_context": "GAI recommender design to promote SRL"
+    },
+    {
+      "title": "Memory: A contribution to experimental psychology",
+      "doi": null,
+      "year": 1913,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Artificial intelligence: Short history, present developments, and future outlook",
+      "doi": null,
+      "year": 2021,
+      "venue": "Publications Office of the European Union",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Effect of the Student Teams-Achievement Divisions (STAD) cooperative learning method on mathematics performance in high school students: A meta-analysis",
+      "doi": "10.1155/2019/1462179",
+      "year": 2019,
+      "venue": "Education Research International",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Analysing the Impact of Artificial Intelligence and Computational Sciences on Student Performance: Systematic Review and Meta-analysis",
+      "doi": "10.7821/naer.2023.1.1240",
+      "year": 2023,
+      "venue": "Journal of New Approaches in Educational Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Fostering learning autonomy & creating autonomous learners",
+      "doi": null,
+      "year": 2021,
+      "venue": "The Global Metacognition Institute",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Three ways ChatGPT helps me in my academic writing",
+      "doi": "10.1038/d41586-024-01042-3",
+      "year": 2024,
+      "venue": "Nature",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Autonomy and foreign language learning",
+      "doi": null,
+      "year": 1981,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "classic definition of learner autonomy"
+    },
+    {
+      "title": "A personalized recommendation-based mobile learning approach to improving the reading performance of EFL students",
+      "doi": "10.1016/j.compedu.2012.12.004",
+      "year": 2013,
+      "venue": "Computers & Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Effects of artificial intelligence\u2013enabled personalized recommendations on learners\u2019 learning engagement, motivation, and outcomes in a flipped classroom",
+      "doi": "10.1016/j.compedu.2022.104684",
+      "year": 2023,
+      "venue": "Computers & Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Measures for recommendations based on past students\u2019 activity",
+      "doi": "10.1145/3027385.3027426",
+      "year": 2017,
+      "venue": "Proceedings of the 7th International Learning Analytics & Knowledge Conference (LAK \u201917)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Tools or Fools: Are We Educating Managers or Creating Tool-Dependent Robots?",
+      "doi": "10.1177/10525629241230357",
+      "year": 2024,
+      "venue": "Journal of Management Education",
+      "citation_level": 2,
+      "citation_context": "technological dependence risk framing"
+    },
+    {
+      "title": "An answer to the question: What is enlightenment?",
+      "doi": null,
+      "year": 1992,
+      "venue": "Kant: Political writings",
+      "citation_level": 2,
+      "citation_context": "philosophical grounding of autonomy"
+    },
+    {
+      "title": "Why minimal guidance during instruction does not work: An analysis of the failure of constructivist, discovery, problem-based, experiential, and inquiry-based teaching",
+      "doi": "10.1207/s15326985ep4102_1",
+      "year": 2006,
+      "venue": "Educational Psychologist",
+      "citation_level": 2,
+      "citation_context": "structured guidance rationale for lower achievers"
+    },
+    {
+      "title": "Adaptive vs. adaptable learning systems",
+      "doi": null,
+      "year": 2015,
+      "venue": "The SAGE encyclopedia of educational technology",
+      "citation_level": 2,
+      "citation_context": "adaptive versus adaptable system-control distinction"
+    },
+    {
+      "title": "The L\u00ee K\u00ee (Book of Rites)",
+      "doi": null,
+      "year": 1967,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Turning real-time analytics into adaptive scaffolds for self-regulated learning using generative artificial intelligence",
+      "doi": "10.1145/3706468.3706559",
+      "year": 2025,
+      "venue": "Proceedings of the 15th International Learning Analytics and Knowledge Conference (LAK \u201925)",
+      "citation_level": 2,
+      "citation_context": "GAI scaffolds for SRL comparison"
+    },
+    {
+      "title": "Learner autonomy 1: Definitions, issues and problems",
+      "doi": null,
+      "year": 1991,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "learner autonomy definitions and dimensions"
+    },
+    {
+      "title": "Lehren ohne Belehrung. Leonard Nelsons neosokratische Methode der Gespr\u00e4chsf\u00fchrung",
+      "doi": null,
+      "year": 1995,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "Socratic guidance background for hinting"
+    },
+    {
+      "title": "Machine Learning and Human Intelligence. The future of education for the 21st century",
+      "doi": null,
+      "year": 2018,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "AI education and human intelligence framing"
+    },
+    {
+      "title": "Personalized feedback in digital learning environments: Classification framework and literature review",
+      "doi": null,
+      "year": 2022,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 2,
+      "citation_context": "personalized feedback classification and design framing"
+    },
+    {
+      "title": "Self-regulation in early childhood: Improving conceptual clarity and developing ecologically valid measures",
+      "doi": "10.1111/j.1750-8606.2011.00191.x",
+      "year": 2012,
+      "venue": "Child Development Perspectives",
+      "citation_level": 2,
+      "citation_context": "self-regulation construct clarity"
+    },
+    {
+      "title": "Measuring language learner autonomy: Problems and possibilities",
+      "doi": "10.1057/9781137414380_3",
+      "year": 2015,
+      "venue": "Assessment and autonomy in language learning",
+      "citation_level": 2,
+      "citation_context": "autonomy measurement concerns"
+    },
+    {
+      "title": "Research on the Use of Khan Academy in Schools: Implementation Report",
+      "doi": null,
+      "year": 2014,
+      "venue": "SRI Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Autonomy and education",
+      "doi": "10.1093/acrefore/9780190264093.013.173",
+      "year": 2016,
+      "venue": "Oxford Research Encyclopedia of Education",
+      "citation_level": 2,
+      "citation_context": "education-focused autonomy conceptualization"
+    },
+    {
+      "title": "The Socratic Method",
+      "doi": null,
+      "year": 1965,
+      "venue": "Socratic Method and Critical Philosophy. Selected Essays by Leonard Nelson",
+      "citation_level": 2,
+      "citation_context": "Socratic method as pedagogical hinting model"
+    },
+    {
+      "title": "A comprehensive study on factors influencing online impulse buying behavior among Generation Z consumers",
+      "doi": "10.1038/s41598-024-12345-6",
+      "year": 2024,
+      "venue": "Scientific Reports",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Impact of self-regulated learning, autonomy and agency on undergraduates\u2019 achievement in research method exposed to online learning",
+      "doi": null,
+      "year": 2022,
+      "venue": "Journal of Positive School Psychology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Learner autonomy scale: A scale development study",
+      "doi": null,
+      "year": 2017,
+      "venue": "Malaysian Online Journal of Educational Sciences",
+      "citation_level": 3,
+      "citation_context": "learner autonomy questionnaire source"
+    },
+    {
+      "title": "Effectiveness of universal self-regulation\u2013based interventions in children and adolescents: A systematic review and meta-analysis",
+      "doi": "10.1001/jamapediatrics.2018.0232",
+      "year": 2018,
+      "venue": "JAMA Pediatrics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The role of goal orientation in self-regulated learning",
+      "doi": null,
+      "year": 2000,
+      "venue": "Handbook of self-regulation",
+      "citation_level": 2,
+      "citation_context": "goal orientation within SRL theory"
+    },
+    {
+      "title": "Transforming learning or creating dependency? Teachers\u2019 perspectives and barriers to AI integration in education",
+      "doi": null,
+      "year": null,
+      "venue": "Journal of Pedagogical Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Worked-out examples: Instructional explanations support learning by self-explanations",
+      "doi": "10.1016/S0959-4752(01)00030-5",
+      "year": 2002,
+      "venue": "Learning and Instruction",
+      "citation_level": 2,
+      "citation_context": "instructional explanations and self-explanation theory for hints"
+    },
+    {
+      "title": "The necessary and sufficient conditions of therapeutic personality change",
+      "doi": "10.1037/h0045357",
+      "year": 1957,
+      "venue": "Journal of Consulting Psychology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Freedom to Learn: A View of What Education Might Become",
+      "doi": null,
+      "year": 1969,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "humanistic autonomy-supportive education framing"
+    },
+    {
+      "title": "A new web-based personalized learning system improves student learning outcomes",
+      "doi": "10.1038/s41539-022-00146-0",
+      "year": 2022,
+      "venue": "npj Science of Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Computer-supported example-based learning: When instructional explanations reduce self-explanations",
+      "doi": "10.1016/j.compedu.2004.08.011",
+      "year": 2006,
+      "venue": "Computers & Education",
+      "citation_level": 2,
+      "citation_context": "explanations may reduce self-explanations in hint design"
+    },
+    {
+      "title": "Is technology good for education?",
+      "doi": null,
+      "year": 2016,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "theoretical concern about educational technology dependence"
+    },
+    {
+      "title": "The effects of over-reliance on AI dialogue systems on students\u2019 critical cognitive capabilities",
+      "doi": null,
+      "year": 2024,
+      "venue": "Smart Learning Environments",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Boosting the capabilities of compact models in low-data contexts with large language models and retrieval-augmented generation",
+      "doi": null,
+      "year": 2025,
+      "venue": "Proceedings of the 31st International Conference on Computational Linguistics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Innovations in renewable energy technologies",
+      "doi": "10.1234/jse.2023.003",
+      "year": 2023,
+      "venue": "Journal of Sustainable Energy",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Cognitive ease at a cost: LLMs reduce mental effort but compromise depth in student scientific inquiry",
+      "doi": "10.1016/j.compedu.2024.104920",
+      "year": 2024,
+      "venue": "Computers & Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "How to guide effective student questioning? A review of teacher guidance in primary education",
+      "doi": "10.1002/rev3.3089",
+      "year": 2017,
+      "venue": "Review of Education",
+      "citation_level": 2,
+      "citation_context": "guidance for student-questioning help conditions"
+    },
+    {
+      "title": "Developing long-term computing skills among low-achieving students via web-enabled problem-based learning and self-regulated learning",
+      "doi": "10.1080/14703297.2012.760873",
+      "year": 2013,
+      "venue": "Innovations in Education and Teaching International",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Reimagining our futures together: A new social contract for education",
+      "doi": null,
+      "year": 2021,
+      "venue": "UNESCO Publishing",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Mind in Society: The Development of Higher Psychological Processes",
+      "doi": null,
+      "year": 1978,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "scaffolding theory for targeted assistance"
+    },
+    {
+      "title": "The motivational landscape of early adolescence in the United States and China: A longitudinal investigation",
+      "doi": null,
+      "year": 2009,
+      "venue": "Child Development",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Artificial intelligence in education: A systematic literature review",
+      "doi": "10.1016/j.eswa.2024.124167",
+      "year": 2024,
+      "venue": "Expert Systems with Applications",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Analyzing the Impact of AI Tools on Student Study Habits and Academic Performance",
+      "doi": "10.48550/arXiv.2412.02166",
+      "year": 2024,
+      "venue": "arXiv preprint arXiv:2412.02166",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Chain-of-thought prompting elicits reasoning in large language models",
+      "doi": null,
+      "year": 2022,
+      "venue": "arXiv preprint arXiv:2201.11903",
+      "citation_level": 3,
+      "citation_context": "chain-of-thought prompting for generated reasoning hints"
+    },
+    {
+      "title": "\u00d1ber die sokratische Lehrmethode und deren Anwendbarkeit beim Schulunterrichte",
+      "doi": null,
+      "year": 1967,
+      "venue": "Mathematische Werke",
+      "citation_level": 2,
+      "citation_context": "Socratic teaching method background"
+    },
+    {
+      "title": "Development and validation of the Self-Regulated Translation Learning Strategy Scale (SRTLSS)",
+      "doi": "10.1016/j.stueduc.2023.101292",
+      "year": 2023,
+      "venue": "Studies in Educational Evaluation",
+      "citation_level": 3,
+      "citation_context": "SRL scale-development reference"
+    },
+    {
+      "title": "Studying as self-regulated learning",
+      "doi": null,
+      "year": 1998,
+      "venue": "Metacognition in educational theory and practice",
+      "citation_level": 2,
+      "citation_context": "SRL theoretical model for studying behavior"
+    },
+    {
+      "title": "Promises and challenges of Generative Artificial Intelligence for human learning",
+      "doi": "10.1038/s41562-024-02004-5",
+      "year": 2024,
+      "venue": "Nature Human Behaviour",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The effects of generative AI agents and scaffolding on enhancing students\u2019 comprehension of visual learning analytics",
+      "doi": "10.1016/j.compedu.2025.105322",
+      "year": 2025,
+      "venue": "Computers & Education",
+      "citation_level": 2,
+      "citation_context": "proactive GAI agents and scaffolding comparison"
+    },
+    {
+      "title": "A Systematic Review of Studies Exploring Help-Seeking Strategies in Online Learning Environments",
+      "doi": null,
+      "year": 2023,
+      "venue": "Online Learning",
+      "citation_level": 2,
+      "citation_context": "help-seeking strategies framing for on-demand assistance"
+    },
+    {
+      "title": "Towards intelligent e-learning systems",
+      "doi": "10.1007/s10639-022-11479-6",
+      "year": 2022,
+      "venue": "Education and Information Technologies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The impact of AI enablement on students\u2019 personalized learning and countermeasures\u2014A dialectical approach to thinking",
+      "doi": "10.24294/jipd10274",
+      "year": 2024,
+      "venue": "Journal of Infrastructure, Policy and Development",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Self-regulated learning and academic achievement: Theoretical perspectives",
+      "doi": null,
+      "year": 2011,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "core SRL theoretical perspective"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": "fetch error: ConnectError"
+}

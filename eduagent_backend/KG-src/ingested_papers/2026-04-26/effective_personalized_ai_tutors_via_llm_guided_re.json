@@ -1,0 +1,777 @@
+{
+  "title": "Effective Personalized AI Tutors via LLM-Guided Reinforcement Learning",
+  "doi": null,
+  "year": null,
+  "venue": null,
+  "url": "6423358",
+  "source_db": "direct_ingest",
+  "populations": [
+    "High School (9th-12th)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Randomized Controlled Trial (RCT)",
+  "extended_summary": "The paper addresses whether generative AI chatbot tutors can improve learning more effectively when they do more than reactively answer student questions. The authors argue that students often struggle to self-regulate learning and may not ask questions that produce productive learning, so AI tutors should proactively guide practice by selecting appropriately challenging problems based on evidence of each student\u2019s current mastery and engagement.\n\nThe intervention is a GenAI tutoring platform for Python learning that combines lecture materials, auto-graded practice problems, an LLM-based chatbot tutor, and a reinforcement-learning problem-sequencing algorithm. The algorithm uses rich behavioral traces, including code edits, submissions, and student-chatbot conversations, to estimate a continuous student knowledge state and adaptively choose the next practice problem difficulty. The control group received the same course materials and chatbot tutor but followed a fixed easy-to-hard practice sequence.\n\nThe study was conducted as a randomized controlled trial in partnership with the Taipei City Government and the American Institute in Taiwan. It involved high school students across 10 high schools in Taipei, Taiwan, participating in an approximately five-month \u201cAI for Python Learning\u201d certification program. The main analytic sample included 770 students, with students individually randomized to adaptive personalized sequencing or fixed sequencing.\n\nThe authors find that personalized problem sequencing improved unassisted final exam performance by about 0.15 standard deviations relative to the fixed-sequence control condition, with larger gains for students with no prior Python experience and for lower-tier schools. Mediation analyses suggest the gains were driven primarily by increased engagement, including time on task and number of attempts, rather than by completing more problems. The paper concludes that integrating AI tutoring with proactive, data-driven practice sequencing can improve learning outcomes without increasing instruction time or teacher workload.",
+  "limitations": [
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "20",
+  "setting": "blended",
+  "teacher_training": "yes",
+  "implementation_fidelity": "high",
+  "study_country": "Taiwan",
+  "study_region": "East Asia & Pacific",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "tutoring_instruction",
+        "personalization_adaptation"
+      ],
+      "description": "OpenAI\u2019s ChatGPT/GPT model family used within an unnamed web-based GenAI Python tutoring platform. The platform combined a ChatGPT-powered chatbot tutor with LLM-derived behavioral signals and a reinforcement-learning/POMDP problem sequencing system.",
+      "use_case": "GPT-4o powered the embedded GenAI chatbot tutor available during Python practice; the system also used GPT-4o for RAG-based practice problem generation and to derive behavioral signals from student-platform interactions for adaptive problem sequencing. The RCT compared adaptive personalized problem sequencing against fixed sequencing while holding the ChatGPT-based tutor constant across arms.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In an RCT with 770 high school students, students assigned to personalized adaptive problem sequencing within the GenAI tutoring platform outperformed students assigned to a fixed problem sequence on an in-person written Python certification exam. The estimated effect was 0.156 SD without controls, and 0.150 SD with baseline covariates plus school and grade-level fixed effects; both were reported as p < 0.05.",
+          "measure": "Standardized score on final in-person written Python certification exam, completed without AI assistance",
+          "effect_size": "0.156 SD unadjusted; 0.150 SD adjusted",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=770 unadjusted; n=716 adjusted"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Treatment effects differed by prior Python skill. Students who self-identified as first-time learners or beginners benefited more from personalization, with a 0.215 SD gain (p = 0.012), while students with intermediate or proficient prior Python skill had a negligible estimated effect of 0.008 SD (p = 0.941).",
+          "measure": "Standardized final Python certification exam score by prior Python skill subgroup",
+          "effect_size": "Beginners: 0.215 SD; prior Python skill: 0.008 SD",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "Treatment effects were positive in both school-tier subgroups but larger in lower-tier schools. The estimated effect was 0.173 SD for lower-tier schools (p = 0.045) and 0.039 SD for higher-tier schools (p = 0.752).",
+          "measure": "Standardized final Python certification exam score by school-tier subgroup",
+          "effect_size": "Lower-tier schools: 0.173 SD; higher-tier schools: 0.039 SD",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Students in the adaptive sequencing treatment group had significantly higher LLM-as-a-judge chat quality scores than control students. The paper reports that the treatment group used the same GenAI chatbot tutor in more productive ways, such as explanation-seeking and iterative debugging rather than answer-seeking, with p < 0.001.",
+          "measure": "Chat quality score on a 1\u201310 scale based on LLM-as-a-judge ratings of student-chatbot conversation history",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "null",
+          "finding_summary": "The number of completed practice questions was nearly identical across treatment and control groups. The reported two-sided t-test found no significant difference in completion rates (p = 0.905), suggesting that gains were not driven by completing more problems.",
+          "measure": "Number of completed practice problems",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Mediation analyses suggested that engagement mediated the academic performance gains. The reported average causal mediation effects were 0.185 SD through total time spent on the platform and 0.149 SD through total number of attempts, both p < 0.001, while direct effects were small and statistically insignificant.",
+          "measure": "Engagement mediators: total time spent on the platform and total number of attempts",
+          "effect_size": "ACME = 0.185 SD via totalTime; ACME = 0.149 SD via totalAttempt",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    },
+    {
+      "name": "Claude",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation"
+      ],
+      "description": "Anthropic\u2019s Claude model family used as a secondary LLM in the platform\u2019s problem-generation pipeline.",
+      "use_case": "Claude was used to iteratively revise generated Python practice problems, solutions, or test cases when a Python validation script detected failures. Teaching assistants then reviewed validated problems before deployment; Claude was not separately evaluated for student outcomes.",
+      "findings": []
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "blue",
+  "quality_tier_rationale": "The paper reports a large field RCT with individual-level randomization across 10 high schools, n=770 analyzed students, a pre-registered design, balance checks, robustness checks, and an in-person unassisted final exam outcome. The treatment contrast isolates adaptive problem sequencing because both groups received the same instructional content and GenAI chatbot tutor.",
+  "impact_tier": "green",
+  "impact_tier_rationale": "The primary randomized estimate was positive and statistically significant but modest in size: adaptive sequencing improved final exam performance by 0.150\u20130.156 SD. Some subgroup estimates exceeded 0.20 SD, but the overall main effect falls in the 0.05\u20130.20 range.",
+  "citations": [
+    {
+      "title": "ChatGPT has entered the classroom: how LLMs could transform education",
+      "doi": "10.1038/d41586-023-03507-3",
+      "year": 2023,
+      "venue": "Nature",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Generative AI can harm learning",
+      "doi": "10.1073/pnas.2422633122",
+      "year": 2025,
+      "venue": "Proceedings of the National Academy of Sciences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Title not specified in provided bibliography",
+      "doi": null,
+      "year": 2025,
+      "venue": "Humanities and Social Sciences Communications",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Title not specified in provided bibliography",
+      "doi": null,
+      "year": 2024,
+      "venue": "International Journal of Educational Technology in Higher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT for good? On opportunities and challenges of large language models for education",
+      "doi": "10.1016/j.lindif.2023.102274",
+      "year": 2023,
+      "venue": "Learning and Individual Differences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Title not specified in provided bibliography",
+      "doi": null,
+      "year": 2024,
+      "venue": "Journal of Research in Technical Careers",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "GPTs are GPTs: Labor market impact potential of LLMs",
+      "doi": "10.1126/science.adj0998",
+      "year": 2024,
+      "venue": "Science",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The impact of artificial intelligence on workers\u2019 skills: Upskilling and reskilling in organisations",
+      "doi": null,
+      "year": 2023,
+      "venue": "Informing Science",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Technology and child development: Evidence from the One Laptop per Child program",
+      "doi": "10.1257/app.20150385",
+      "year": 2017,
+      "venue": "American Economic Journal: Applied Economics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Title not specified in provided bibliography",
+      "doi": null,
+      "year": 2023,
+      "venue": "Advances in Mobile Learning Educational Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Title not specified in provided bibliography",
+      "doi": null,
+      "year": 2018,
+      "venue": "International Journal of Education in Mathematics, Science and Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Title not specified in provided bibliography",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 55th ACM Technical Symposium on Computer Science Education V. 1",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Title not specified in provided bibliography",
+      "doi": null,
+      "year": 2024,
+      "venue": "Annenberg Institute for School Reform at Brown University",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Title not specified in provided bibliography",
+      "doi": null,
+      "year": 2024,
+      "venue": "Studies in Applied Linguistics and TESOL",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Title not specified in provided bibliography",
+      "doi": null,
+      "year": 2025,
+      "venue": "International Conference on Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Title not specified in provided bibliography",
+      "doi": null,
+      "year": 2025,
+      "venue": "Scientific Reports",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Title not specified in provided bibliography",
+      "doi": null,
+      "year": 2025,
+      "venue": "arXiv preprint arXiv:2507.16252",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Solving olympiad geometry without human demonstrations",
+      "doi": "10.1038/s41586-023-06747-5",
+      "year": 2024,
+      "venue": "Nature",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Title not specified in provided bibliography",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv preprint arXiv:2403.02795",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Title not specified in provided bibliography",
+      "doi": null,
+      "year": 2025,
+      "venue": "Available at SSRN 5230565",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Productive struggle in middle school mathematics classrooms",
+      "doi": "10.1007/s10857-014-9286-3",
+      "year": 2015,
+      "venue": "Journal of Mathematics Teacher Education",
+      "citation_level": 2,
+      "citation_context": "Supports productive-struggle framing of adaptive practice difficulty"
+    },
+    {
+      "title": "Incentive-compatible human-ai collaboration via adversarial tasks",
+      "doi": null,
+      "year": 2026,
+      "venue": "Working paper, University of Pennsylvania, The Wharton School",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Self-regulated learning: Beliefs, techniques, and illusions",
+      "doi": "10.1146/annurev-psych-113011-143823",
+      "year": 2013,
+      "venue": "Annual Review of Psychology",
+      "citation_level": 2,
+      "citation_context": "Grounds learning-science framing about effective student study and engagement"
+    },
+    {
+      "title": "Metacomprehension: A brief history and how to improve its accuracy",
+      "doi": "10.1111/j.1467-8721.2007.00509.x",
+      "year": 2007,
+      "venue": "Current Directions in Psychological Science",
+      "citation_level": 2,
+      "citation_context": "Grounds metacognitive learning and practice-engagement framing"
+    },
+    {
+      "title": "Title not specified in provided bibliography",
+      "doi": null,
+      "year": 2025,
+      "venue": "Available at SSRN 5604932",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Learning for mastery",
+      "doi": null,
+      "year": 1968,
+      "venue": "Evaluation Comment",
+      "citation_level": 2,
+      "citation_context": "Frames mastery learning and personalized pacing benefits"
+    },
+    {
+      "title": "Effectiveness of mastery learning programs: A meta-analysis",
+      "doi": "10.3102/00346543060002265",
+      "year": 1990,
+      "venue": "Review of Educational Research",
+      "citation_level": 2,
+      "citation_context": "Evidence base for mastery-learning effects"
+    },
+    {
+      "title": "Making things hard on yourself, but in a good way: Creating desirable difficulties to enhance learning",
+      "doi": null,
+      "year": 2011,
+      "venue": "Psychology and the Real World: Essays Illustrating Fundamental Contributions to Society",
+      "citation_level": 2,
+      "citation_context": "Grounds desirable-difficulties rationale for challenging practice sequencing"
+    },
+    {
+      "title": "Mind in society: The development of higher psychological processes",
+      "doi": null,
+      "year": 1978,
+      "venue": "Harvard University Press",
+      "citation_level": 2,
+      "citation_context": "Frames zone-of-proximal-development rationale for adaptive difficulty"
+    },
+    {
+      "title": "Productive failure",
+      "doi": "10.1080/07370000802212669",
+      "year": 2008,
+      "venue": "Cognition and Instruction",
+      "citation_level": 2,
+      "citation_context": "Supports productive-failure/productive-struggle framing"
+    },
+    {
+      "title": "A meta-analysis of outcome studies of Keller\u2019s personalized system of instruction",
+      "doi": "10.1037/0003-066X.34.4.307",
+      "year": 1979,
+      "venue": "American Psychologist",
+      "citation_level": 2,
+      "citation_context": "Evidence base for personalized systems of instruction"
+    },
+    {
+      "title": "Mastery learning: Applying the theory",
+      "doi": null,
+      "year": 1986,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "Supports mastery-learning theoretical framing"
+    },
+    {
+      "title": "Mastery learning reconsidered",
+      "doi": "10.3102/00346543057002175",
+      "year": 1987,
+      "venue": "Review of Educational Research",
+      "citation_level": 2,
+      "citation_context": "Supports mastery-learning framing and limitations"
+    },
+    {
+      "title": "Online optimization of teaching sequences with multi-armed bandits",
+      "doi": null,
+      "year": 2015,
+      "venue": "Journal of Educational Data Mining",
+      "citation_level": 2,
+      "citation_context": "Prior adaptive sequencing method using bandit optimization"
+    },
+    {
+      "title": "Faster teaching via POMDP planning",
+      "doi": "10.1111/cogs.12290",
+      "year": 2016,
+      "venue": "Cognitive Science",
+      "citation_level": 3,
+      "citation_context": "POMDP planning precedent for instructional sequencing"
+    },
+    {
+      "title": "Title not specified in provided bibliography",
+      "doi": null,
+      "year": 2018,
+      "venue": "Proceedings of the 26th Conference on User Modeling, Adaptation and Personalization",
+      "citation_level": 2,
+      "citation_context": "Prior adaptive instructional policy for tutoring systems"
+    },
+    {
+      "title": "Title not specified in provided bibliography",
+      "doi": null,
+      "year": 2018,
+      "venue": "Proceedings of the 26th Conference on User Modeling, Adaptation and Personalization (UMAP)",
+      "citation_level": 2,
+      "citation_context": "Prior content-sequencing approach for educational adaptation"
+    },
+    {
+      "title": "Knowledge tracing: Modeling the acquisition of procedural knowledge",
+      "doi": "10.1007/BF01099821",
+      "year": 1994,
+      "venue": "User Modeling and User-Adapted Interaction",
+      "citation_level": 3,
+      "citation_context": "Bayesian knowledge tracing baseline contrasted in POMDP design"
+    },
+    {
+      "title": "Title not specified in provided bibliography",
+      "doi": null,
+      "year": 2024,
+      "venue": "User Modeling and User-Adapted Interaction",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Monte Carlo POMDPs",
+      "doi": null,
+      "year": 1999,
+      "venue": "Advances in Neural Information Processing Systems",
+      "citation_level": 3,
+      "citation_context": "Supports Monte Carlo methods for POMDP solution"
+    },
+    {
+      "title": "Model predictive control: Theory and practice\u2014a survey",
+      "doi": "10.1016/0005-1098(89)90002-2",
+      "year": 1989,
+      "venue": "Automatica",
+      "citation_level": 3,
+      "citation_context": "Foundational reference for model predictive control planning"
+    },
+    {
+      "title": "Equivalent years of schooling: A metric to communicate learning gains in concrete terms",
+      "doi": null,
+      "year": 2019,
+      "venue": "World Bank",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "How much does education improve intelligence? A meta-analysis",
+      "doi": "10.1177/0956797618774253",
+      "year": 2018,
+      "venue": "Psychological Science",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Title not specified in provided bibliography",
+      "doi": null,
+      "year": 2020,
+      "venue": "Journal of Computer Assisted Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "MOOC completion and retention in the context of student intent",
+      "doi": null,
+      "year": 2014,
+      "venue": "EDUCAUSE Review (Online)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The law of attrition",
+      "doi": "10.2196/jmir.7.1.e11",
+      "year": 2005,
+      "venue": "Journal of Medical Internet Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Retrieval-augmented generation for knowledge-intensive NLP tasks",
+      "doi": null,
+      "year": 2020,
+      "venue": "Advances in Neural Information Processing Systems",
+      "citation_level": 3,
+      "citation_context": "Basis for RAG practice-problem generation pipeline"
+    },
+    {
+      "title": "Planning and acting in partially observable stochastic domains",
+      "doi": "10.1016/S0004-3702(98)00023-X",
+      "year": 1998,
+      "venue": "Artificial Intelligence",
+      "citation_level": 3,
+      "citation_context": "Foundational POMDP formulation for adaptive sequencing"
+    },
+    {
+      "title": "A tutorial on particle filters for online nonlinear/non-Gaussian Bayesian tracking",
+      "doi": "10.1109/78.978374",
+      "year": 2002,
+      "venue": "IEEE Transactions on Signal Processing",
+      "citation_level": 3,
+      "citation_context": "Particle-filter belief updating for POMDP state estimation"
+    },
+    {
+      "title": "Where\u2019s the reward? A review of reinforcement learning for instructional sequencing",
+      "doi": "10.1007/s40593-019-00187-x",
+      "year": 2019,
+      "venue": "International Journal of Artificial Intelligence in Education",
+      "citation_level": 2,
+      "citation_context": "Frames reinforcement learning for instructional sequencing"
+    },
+    {
+      "title": "Judging LLM-as-a-judge with MT-Bench and Chatbot Arena",
+      "doi": null,
+      "year": 2023,
+      "venue": "Advances in Neural Information Processing Systems",
+      "citation_level": 3,
+      "citation_context": "Supports LLM-as-judge style evaluation of student artifacts"
+    },
+    {
+      "title": "A general approach to causal mediation analysis",
+      "doi": "10.1037/a0020761",
+      "year": 2010,
+      "venue": "Psychological Methods",
+      "citation_level": 3,
+      "citation_context": "Methodological basis for mediation analysis"
+    },
+    {
+      "title": "A model of school learning",
+      "doi": null,
+      "year": 1963,
+      "venue": "Teachers College Record",
+      "citation_level": 2,
+      "citation_context": "Conceptual model connecting learning, time, and aptitude"
+    },
+    {
+      "title": "The complexity of Markov decision processes",
+      "doi": "10.1287/moor.12.3.441",
+      "year": 1987,
+      "venue": "Mathematics of Operations Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "On-line policy improvement using Monte-Carlo search",
+      "doi": null,
+      "year": 1996,
+      "venue": "Advances in Neural Information Processing Systems",
+      "citation_level": 3,
+      "citation_context": "Monte Carlo rollout planning for policy improvement"
+    },
+    {
+      "title": "Proximal policy optimization algorithms",
+      "doi": null,
+      "year": 2017,
+      "venue": "arXiv preprint arXiv:1707.06347",
+      "citation_level": 3,
+      "citation_context": "Simulation/baseline reinforcement-learning algorithm"
+    },
+    {
+      "title": "Introduction to bivariate and multivariate analysis",
+      "doi": null,
+      "year": 1980,
+      "venue": "Scott, Foresman",
+      "citation_level": 3,
+      "citation_context": "Method for decomposing multivariate explanatory importance"
+    },
+    {
+      "title": "Title not specified in provided bibliography",
+      "doi": null,
+      "year": 2018,
+      "venue": "International Educational Data Mining Society",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Title not specified in provided bibliography",
+      "doi": null,
+      "year": 2016,
+      "venue": "Proceedings of the Sixth International Conference on Learning Analytics & Knowledge",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Sequencing in intelligent tutoring systems based on online learning recommenders",
+      "doi": null,
+      "year": 2017,
+      "venue": "Ph.D. thesis",
+      "citation_level": 2,
+      "citation_context": "Prior dissertation on sequencing in intelligent tutoring systems"
+    },
+    {
+      "title": "Title not specified in provided bibliography",
+      "doi": null,
+      "year": 2017,
+      "venue": "International Educational Data Mining Society",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Title not specified in provided bibliography",
+      "doi": null,
+      "year": 2016,
+      "venue": "Proceedings of the 2016 Conference on User Modeling Adaptation and Personalization",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Title not specified in provided bibliography",
+      "doi": null,
+      "year": 2018,
+      "venue": "International Conference on Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Title not specified in provided bibliography",
+      "doi": null,
+      "year": 2015,
+      "venue": "International Conference on Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ADVISOR: A machine learning architecture for intelligent tutor construction",
+      "doi": null,
+      "year": 2000,
+      "venue": "AAAI/IAAI",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Intelligent tutoring goes to school in the big city",
+      "doi": null,
+      "year": 1997,
+      "venue": "International Journal of Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Effectiveness of Cognitive Tutor Algebra I at scale",
+      "doi": "10.3102/0162373713507480",
+      "year": 2014,
+      "venue": "Educational Evaluation and Policy Analysis",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Title not specified in provided bibliography",
+      "doi": null,
+      "year": 2022,
+      "venue": "International Conference on Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "What evidence matters? A randomized field trial of Cognitive Tutor Algebra I",
+      "doi": null,
+      "year": 2007,
+      "venue": "Frontiers in Artificial Intelligence and Applications",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Comparative effectiveness of Carnegie Learning\u2019s Cognitive Tutor Algebra I curriculum: A report of a randomized experiment in the Maui School District",
+      "doi": null,
+      "year": 2007,
+      "venue": "Grantee Submission",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "An experiment to evaluate the efficacy of Cognitive Tutor Geometry",
+      "doi": null,
+      "year": 2010,
+      "venue": "Journal of Research on Educational Effectiveness",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Online mathematics homework increases student achievement",
+      "doi": "10.1177/2332858416673968",
+      "year": 2016,
+      "venue": "AERA Open",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Title not specified in provided bibliography",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv preprint arXiv:2402.01669",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Title not specified in provided bibliography",
+      "doi": "10.1007/s40593-021-00265-y",
+      "year": 2022,
+      "venue": "International Journal of Artificial Intelligence in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Reinforcement learning for the adaptive scheduling of educational activities",
+      "doi": "10.1145/3313831.3376518",
+      "year": 2020,
+      "venue": "Proceedings of the 2020 CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 2,
+      "citation_context": "Related reinforcement-learning system for adaptive activity scheduling"
+    },
+    {
+      "title": "Offline policy evaluation across representations with applications to educational games",
+      "doi": null,
+      "year": 2014,
+      "venue": "AAMAS",
+      "citation_level": 2,
+      "citation_context": "Related policy-learning approach in educational games"
+    },
+    {
+      "title": "Title not specified in provided bibliography",
+      "doi": null,
+      "year": 2023,
+      "venue": "European Conference on Technology Enhanced Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Title not specified in provided bibliography",
+      "doi": null,
+      "year": 2022,
+      "venue": "Proceedings of the Ninth ACM Conference on Learning@ Scale",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Title not specified in provided bibliography",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Title not specified in provided bibliography",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 17th International Conference on Educational Data Mining",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Title not specified in provided bibliography",
+      "doi": null,
+      "year": 2025,
+      "venue": "Innovations for Poverty Action",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Intelligent tutoring systems and learning outcomes: A meta-analysis",
+      "doi": "10.1037/a0037123",
+      "year": 2014,
+      "venue": "Journal of Educational Psychology",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

@@ -1,0 +1,720 @@
+{
+  "title": "Practicing with Language Models Cultivates Human Empathic Communication",
+  "doi": null,
+  "year": 2026,
+  "venue": "arXiv",
+  "url": "https://arxiv.org/abs/2603.15245",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Adult (non-academic)"
+  ],
+  "user_types": [],
+  "study_design": "Randomized Controlled Trial (RCT)",
+  "extended_summary": "The paper addresses whether large language models can help people improve empathic communication rather than replacing human empathy with AI-generated support. Prior work suggests LLMs can generate empathic responses that are often rated highly, but people feel less supported when they know a response comes from AI. The authors therefore ask whether LLMs can serve as practice partners and coaches to help humans better express empathy in text-based conversations.\n\nThe intervention was Lend an Ear, an online role-playing platform where participants practiced offering empathic support to LLM conversational partners describing workplace or personal troubles, such as job loss, being passed over for promotion, feeling undervalued at work, a parent\u2019s cancer diagnosis, or bereavement. In a preregistered randomized experiment, 968 U.S. adults recruited through Prolific were assigned to one of four conditions: no feedback, short instructional videos, personalized feedback from an AI coach, or combined video plus AI coaching. Participants completed three text conversations, and their responses were evaluated on preregistered empathic communication dimensions such as encouraging elaboration, validating emotions, demonstrating understanding, avoiding unsolicited advice, avoiding self-oriented responses, and avoiding dismissive language.\n\nThe study found that personalized LLM feedback substantially improved expressed empathic communication compared with both control and video-only instruction. AI coaching increased prescriptive empathic behaviors and reduced several misattuned behaviors, especially unsolicited advice and dismissing emotions. The authors also found a disconnect between self-reported empathy or perceived empathic performance and actual expressed empathy, suggesting that people may feel empathy but lack the communicative skill to convey it effectively.\n\nA second preregistered experiment with independent human raters showed that conversations scored more highly by LLM evaluators were also preferred by humans as more empathic, supporting the validity of the evaluation framework. Overall, the paper concludes that empathic communication can be treated as a learnable communicative skill and that brief, scalable LLM-based coaching can improve how people express empathy in controlled online practice settings.",
+  "limitations": [
+    "short_duration",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "0",
+  "setting": "online",
+  "teacher_training": "no",
+  "implementation_fidelity": "high",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "tutoring_instruction"
+      ],
+      "description": "OpenAI GPT-family large language model; in this paper GPT-4o was used to implement an LLM communication coach, LLM role-playing conversational partners, and LLM-based evaluation of empathic communication.",
+      "use_case": "Used within the custom Lend an Ear platform so participants could practice empathic support in text conversations with LLM role-playing partners, receive personalized LLM-generated coaching feedback after conversations, and have their empathic communication scored on preregistered dimensions.",
+      "findings": [
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In the preregistered randomized experiment with n=968 participants, personalized feedback from the AI coach produced a 0.98 SD increase, described as a 2.9-point gain, in overall empathic communication performance. Reliable improvement occurred for 21.6% of participants in the AI Coach condition versus 2.9% in control, with reliable decline of 0.4% versus 1.6%, respectively; combined training showed 26.3% reliable improvement.",
+          "measure": "Overall empathy score calculated as the sum of prescriptive behavior ratings minus proscriptive behavior ratings",
+          "effect_size": "0.98 SD increase; 2.9-point gain; reliable improvement 21.6% in AI Coach vs 2.9% in control",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=968; Control N=245, AI Coach N=231, Combined N=247"
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Personalized feedback from the AI coach significantly improved LLM-evaluated encouraging elaboration relative to control, \u03b2=0.648, p<0.001. Combined training produced a comparable gain, \u03b2=0.621, p<0.001, while video instruction had a smaller effect, \u03b2=0.218, p<0.05; AI coach and combined training significantly outperformed video instruction on this prescriptive behavior.",
+          "measure": "LLM-evaluated encouraging elaboration",
+          "effect_size": "AI Coach \u03b2=0.648, p<0.001; Combined \u03b2=0.621, p<0.001; Video \u03b2=0.218, p<0.05",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=968"
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Personalized feedback from the AI coach significantly improved LLM-evaluated validating emotions relative to control, \u03b2=0.475, p<0.001. Combined training also improved validating emotions, \u03b2=0.613, p<0.001, and video instruction had a smaller significant effect, \u03b2=0.239, p<0.001.",
+          "measure": "LLM-evaluated validating emotions",
+          "effect_size": "AI Coach \u03b2=0.475, p<0.001; Combined \u03b2=0.613, p<0.001; Video \u03b2=0.239, p<0.001",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=968"
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Personalized feedback from the AI coach significantly improved LLM-evaluated demonstrating understanding relative to control, \u03b2=0.459, p<0.001. Combined training improved this outcome, \u03b2=0.573, p<0.001, and video instruction also improved it with a smaller effect, \u03b2=0.247, p<0.001.",
+          "measure": "LLM-evaluated demonstrating understanding",
+          "effect_size": "AI Coach \u03b2=0.459, p<0.001; Combined \u03b2=0.573, p<0.001; Video \u03b2=0.247, p<0.001",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=968"
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Personalized feedback from the AI coach significantly reduced LLM-evaluated unsolicited advice giving relative to control, \u03b2=-0.679, p<0.001. Combined training produced a larger reduction, \u03b2=-1.038, p<0.001, while video instruction increased advice giving, \u03b2=0.205, p<0.05; pairwise comparison showed combined training reduced advice giving more than AI coach alone, difference=0.30 SD, z=3.27, p=0.002.",
+          "measure": "LLM-evaluated advice giving",
+          "effect_size": "AI Coach \u03b2=-0.679, p<0.001; Combined \u03b2=-1.038, p<0.001; Video \u03b2=0.205, p<0.05",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=968"
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Personalized feedback from the AI coach significantly reduced LLM-evaluated dismissing emotions relative to control, \u03b2=-0.451, p<0.001. Combined training also reduced dismissing emotions, \u03b2=-0.656, p<0.001, as did video instruction, \u03b2=-0.325, p<0.001.",
+          "measure": "LLM-evaluated dismissing emotions",
+          "effect_size": "AI Coach \u03b2=-0.451, p<0.001; Combined \u03b2=-0.656, p<0.001; Video \u03b2=-0.325, p<0.001",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=968"
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Personalized feedback from the AI coach significantly reduced LLM-evaluated self-oriented responses relative to control, \u03b2=-0.213, p<0.05. The text reports significant AI coach reduction for this proscriptive behavior, while the combined-training reduction is not reported as significant for self-oriented responses.",
+          "measure": "LLM-evaluated self-oriented responses",
+          "effect_size": "AI Coach \u03b2=-0.213, p<0.05",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=968"
+        },
+        {
+          "outcome_category": "Social-Emotional Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In a second preregistered experiment, 150 Prolific participants made two-alternative forced-choice judgments over 150 conversations sampled from the Lend an Ear dataset. Human raters increasingly preferred conversations with higher LLM empathy scores as the score gap widened; logistic regression showed OR=1.155, 95% CI [1.12, 1.19], and Bradley-Terry human-preference rankings correlated with LLM scores, Spearman \u03c1=0.75, and LLM Elo ratings, Spearman \u03c1=0.85, both p<0.001.",
+          "measure": "Human preference agreement with LLM empathy scores and LLM Elo rankings",
+          "effect_size": "OR=1.155; Spearman \u03c1=0.75 with LLM empathy scores; Spearman \u03c1=0.85 with Elo ratings; p<0.001",
+          "confidence_interval": "95% CI [1.12, 1.19] for OR",
+          "sample_size": "150 Prolific participants; 150 conversations"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "green",
+  "quality_tier_rationale": "The paper reports a preregistered randomized experiment with random assignment to control, video, AI coach, and combined conditions, plus a second preregistered human-rating validation experiment. Credibility concerns include reliance on automated LLM scoring for primary outcomes, a short-term/proximal outcome, an adult Prolific sample rather than K-12 learners, and preprint status.",
+  "impact_tier": "blue",
+  "impact_tier_rationale": "The reported intervention effects were medium-to-large, including a 0.98 SD gain in overall empathic communication performance for the AI coach condition and standardized effects above 0.20 on all six preregistered communication dimensions. Effects were beneficial for both increasing prescriptive empathic behaviors and reducing proscriptive behaviors.",
+  "citations": [
+    {
+      "title": "Communicating Social Support",
+      "doi": null,
+      "year": 2004,
+      "venue": "Cambridge University Press",
+      "citation_level": 2,
+      "citation_context": "foundational framing for social support communication"
+    },
+    {
+      "title": "Addressing empathic failures",
+      "doi": null,
+      "year": 2015,
+      "venue": "Current Directions in Psychological Science",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Human\u2013AI collaboration enables more empathic conversations in text-based peer-to-peer mental health support",
+      "doi": null,
+      "year": 2023,
+      "venue": "Nature Machine Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "AI can help people feel heard, but an AI label diminishes this impact",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the National Academy of Sciences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The efficacy of empathy training: A meta-analysis of randomized controlled trials",
+      "doi": null,
+      "year": 2016,
+      "venue": "Journal of Counseling Psychology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Examining the effects of role play practice in enhancing clinical skills to assess and manage suicide risk",
+      "doi": null,
+      "year": 2020,
+      "venue": "Journal of Mental Health",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Empathy training for resident physicians: A randomized controlled trial of a neuroscience-informed curriculum",
+      "doi": null,
+      "year": 2012,
+      "venue": "Journal of General Internal Medicine",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The 7 Habits of Highly Effective People",
+      "doi": null,
+      "year": 1989,
+      "venue": "Simon & Schuster",
+      "citation_level": 2,
+      "citation_context": "instructional framing for effective empathic listening"
+    },
+    {
+      "title": "A model of empathic communication in the medical interview",
+      "doi": null,
+      "year": 1997,
+      "venue": "JAMA",
+      "citation_level": 2,
+      "citation_context": "model for defining empathic communication behaviors"
+    },
+    {
+      "title": "Examining empathy in medical encounters: An observational study using the empathic communication coding system",
+      "doi": null,
+      "year": 2005,
+      "venue": "Health Communication",
+      "citation_level": 2,
+      "citation_context": "coding-system precedent for empathic communication dimensions"
+    },
+    {
+      "title": "Addressing the empathy deficit: Beliefs about the malleability of empathy predict effortful responses when empathy is challenging",
+      "doi": null,
+      "year": 2014,
+      "venue": "Journal of Personality and Social Psychology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Development and validation of the active empathetic listening scale",
+      "doi": null,
+      "year": 2006,
+      "venue": "Psychology & Marketing",
+      "citation_level": 2,
+      "citation_context": "active empathic listening construct informs measured behaviors"
+    },
+    {
+      "title": "A computational approach to understanding empathy expressed in text-based mental health support",
+      "doi": null,
+      "year": 2020,
+      "venue": "Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP)",
+      "citation_level": 2,
+      "citation_context": "text-based empathy framework informs communication measurement"
+    },
+    {
+      "title": "When large language models are reliable for judging empathic communication",
+      "doi": null,
+      "year": 2026,
+      "venue": "Nature Machine Intelligence",
+      "citation_level": 3,
+      "citation_context": "LLM judging protocol for empathic communication"
+    },
+    {
+      "title": "Comparing physician and artificial intelligence chatbot responses to patient questions posted to a public social media forum",
+      "doi": null,
+      "year": 2023,
+      "venue": "JAMA Internal Medicine",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Large language models and empathy: Systematic review",
+      "doi": null,
+      "year": 2024,
+      "venue": "Journal of Medical Internet Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "In praise of empathic AI",
+      "doi": null,
+      "year": 2024,
+      "venue": "Trends in Cognitive Sciences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Skill but not effort drive GPT overperformance over humans in cognitive reframing of negative scenarios",
+      "doi": null,
+      "year": null,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Third-party evaluators perceive AI as more compassionate than expert humans",
+      "doi": null,
+      "year": 2025,
+      "venue": "Communications Psychology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Comparing the value of perceived human versus AI-generated empathy",
+      "doi": null,
+      "year": 2025,
+      "venue": "Nature Human Behaviour",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "AI will never convey the essence of human empathy",
+      "doi": null,
+      "year": 2023,
+      "venue": "Nature Human Behaviour",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Is a random human peer better than a highly supportive chatbot in reducing loneliness over time?",
+      "doi": null,
+      "year": 2026,
+      "venue": "Journal of Experimental Social Psychology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "AI tutoring outperforms in-class active learning: An RCT introducing a novel research-based design in an authentic educational setting",
+      "doi": null,
+      "year": 2025,
+      "venue": "Scientific Reports",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A personal health large language model for sleep and fitness coaching",
+      "doi": null,
+      "year": 2025,
+      "venue": "Nature Medicine",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Loneliness in the United States: A 2018 national panel survey of demographic, structural, cognitive, and behavioral characteristics",
+      "doi": null,
+      "year": 2019,
+      "venue": "American Journal of Health Promotion",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The prevalence of loneliness across 113 countries: Systematic review and meta-analysis",
+      "doi": null,
+      "year": 2022,
+      "venue": "BMJ",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Bridging the empathy perception gap fosters social connection",
+      "doi": null,
+      "year": 2025,
+      "venue": "Nature Human Behaviour",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "From listening to leading: Toward an understanding of supervisor listening within the framework of leader-member exchange theory",
+      "doi": null,
+      "year": 2017,
+      "venue": "International Journal of Business Communication",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Ethical leadership, internal job satisfaction and OCB: The moderating role of leader empathy in emerging industries",
+      "doi": null,
+      "year": 2024,
+      "venue": "Humanities and Social Sciences Communications",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The effects of remote work on collaboration among information workers",
+      "doi": null,
+      "year": 2022,
+      "venue": "Nature Human Behaviour",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Social need fulfillment model for human\u2013AI relationships",
+      "doi": null,
+      "year": 2024,
+      "venue": null,
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Human/AI relationships: Challenges, downsides, and impacts on human/human relationships",
+      "doi": null,
+      "year": 2024,
+      "venue": "AI and Ethics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "People choose to receive human empathy despite rating AI empathy higher",
+      "doi": null,
+      "year": 2026,
+      "venue": "Communications Psychology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Investigating affective use and emotional well-being on ChatGPT",
+      "doi": null,
+      "year": 2025,
+      "venue": "arXiv preprint arXiv:2504.03888",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The experience of empathy in everyday life",
+      "doi": null,
+      "year": 2021,
+      "venue": "Psychological Science",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Expressing stigma and inappropriate responses prevents LLMs from safely replacing mental health providers",
+      "doi": null,
+      "year": 2025,
+      "venue": "Proceedings of the 2025 ACM Conference on Fairness, Accountability, and Transparency",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Perspective mistaking: Accurately understanding the mind of another requires getting perspective, not taking perspective",
+      "doi": "10.1037/pspa0000115",
+      "year": 2018,
+      "venue": "Journal of Personality and Social Psychology",
+      "citation_level": 2,
+      "citation_context": "perspective-getting principle informs empathy instruction"
+    },
+    {
+      "title": "Motivational interviewing treatment integrity coding manual 4.1 (MITI 4.1)",
+      "doi": null,
+      "year": 2014,
+      "venue": "Unpublished manual",
+      "citation_level": 2,
+      "citation_context": "motivational-interviewing coding criteria inform communication ratings"
+    },
+    {
+      "title": "Measuring compassionate healthcare with the 12-item Schwartz Center Compassionate Care Scale",
+      "doi": null,
+      "year": 2019,
+      "venue": "PLOS ONE",
+      "citation_level": 2,
+      "citation_context": "compassionate-care measure informs empathic communication rubric"
+    },
+    {
+      "title": "Dialectical behavior therapy",
+      "doi": null,
+      "year": 2016,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "validation concepts inform the empathy-training rubric"
+    },
+    {
+      "title": "On Becoming a Person: A Therapist\u2019s View of Psychotherapy",
+      "doi": null,
+      "year": 1961,
+      "venue": "Houghton Mifflin",
+      "citation_level": 2,
+      "citation_context": "person-centered therapeutic stance grounds empathy instruction"
+    },
+    {
+      "title": "The active-empathic listening scale (AELS): Conceptualization and evidence of validity within the interpersonal domain",
+      "doi": null,
+      "year": 2011,
+      "venue": "Communication Quarterly",
+      "citation_level": 2,
+      "citation_context": "active-empathic listening validity supports measured construct"
+    },
+    {
+      "title": "The consultation and relational empathy (CARE) measure: Development and preliminary validation and reliability of an empathy-based consultation process measure",
+      "doi": null,
+      "year": 2004,
+      "venue": "Family Practice",
+      "citation_level": 2,
+      "citation_context": "consultation empathy measure informs evaluation rubric"
+    },
+    {
+      "title": "Social perspective-taking performance: Construct, measurement, and relations with academic performance and engagement",
+      "doi": null,
+      "year": 2018,
+      "venue": "Journal of Applied Developmental Psychology",
+      "citation_level": 2,
+      "citation_context": "social perspective-taking construct informs empathy dimensions"
+    },
+    {
+      "title": "The Cambridge Handbook of Personal Relationships",
+      "doi": null,
+      "year": 2018,
+      "venue": "Cambridge University Press",
+      "citation_level": 2,
+      "citation_context": "personal-relationships handbook grounds interpersonal empathy framing"
+    },
+    {
+      "title": "Normative context of advice as social support",
+      "doi": "10.1111/j.1468-2958.1997.tb00406.x",
+      "year": 1997,
+      "venue": "Human Communication Research",
+      "citation_level": 2,
+      "citation_context": "advice-as-support norms inform proscriptive advice-giving dimension"
+    },
+    {
+      "title": "The relative effectiveness of active listening in initial interactions",
+      "doi": "10.1080/10904018.2013.813234",
+      "year": 2014,
+      "venue": "International Journal of Listening",
+      "citation_level": 2,
+      "citation_context": "active-listening evidence informs training content"
+    },
+    {
+      "title": "Putting the person into person-centered and immediate emotional support",
+      "doi": "10.1177/0093650204263436",
+      "year": 2004,
+      "venue": "Communication Research",
+      "citation_level": 2,
+      "citation_context": "person-centered support construct informs communication dimensions"
+    },
+    {
+      "title": "The relational compassion scale: Development and validation of a new self rated scale for the assessment of self-other compassion",
+      "doi": null,
+      "year": 2008,
+      "venue": "University of Glasgow",
+      "citation_level": 2,
+      "citation_context": "self-other compassion scale informs empathic communication rubric"
+    },
+    {
+      "title": "The effectiveness of empathy training in health care: A meta-analysis of training content and methods",
+      "doi": null,
+      "year": 2022,
+      "venue": "International Journal of Medical Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "\u201cBest practice\u201d for patient-centered communication: A narrative review",
+      "doi": null,
+      "year": 2013,
+      "venue": "Journal of Graduate Medical Education",
+      "citation_level": 2,
+      "citation_context": "patient-centered communication practices inform empathy instruction"
+    },
+    {
+      "title": "The effect of empathy training on the empathic skills of nurses",
+      "doi": null,
+      "year": 2016,
+      "venue": "Iranian Red Crescent Medical Journal",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Large language models produce responses perceived to be empathic",
+      "doi": null,
+      "year": 2024,
+      "venue": "2024 12th International Conference on Affective Computing and Intelligent Interaction (ACII)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Social skill training with large language models",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv preprint arXiv:2404.04204",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ConflictLens: LLM-based conflict resolution training in romantic relationship",
+      "doi": null,
+      "year": 2025,
+      "venue": "Adjunct Proceedings of the 38th Annual ACM Symposium on User Interface Software and Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Exploring the use of large language model-driven chatbots in virtual reality to train autistic individuals in job communication skills",
+      "doi": null,
+      "year": 2024,
+      "venue": "Extended Abstracts of the CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Negotiation backtable bots: Using GenAI to improve multiparty negotiation instruction",
+      "doi": null,
+      "year": 2025,
+      "venue": "Negotiation Journal",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Does AI coaching prepare us for workplace negotiations?",
+      "doi": null,
+      "year": 2025,
+      "venue": "arXiv preprint arXiv:2509.22545",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Can LLM-simulated practice and feedback upskill human counselors? A randomized study with 90+ novice counselors",
+      "doi": null,
+      "year": 2025,
+      "venue": "arXiv preprint arXiv:2505.02428",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Are empathy and concern psychologically distinct?",
+      "doi": null,
+      "year": 2016,
+      "venue": "Emotion",
+      "citation_level": 2,
+      "citation_context": "empathy-versus-concern distinction informs participant empathy measures"
+    },
+    {
+      "title": "Development and validation of the single item trait empathy scale (SITES)",
+      "doi": null,
+      "year": 2018,
+      "venue": "Journal of Research in Personality",
+      "citation_level": 3,
+      "citation_context": "single-item trait empathy measure used for participant assessment"
+    },
+    {
+      "title": "Teaching empathy: A framework rooted in social cognitive neuroscience and social justice",
+      "doi": null,
+      "year": 2011,
+      "venue": "Journal of Social Work Education",
+      "citation_level": 2,
+      "citation_context": "empathy teaching framework informs training rationale"
+    },
+    {
+      "title": "Reactance to recommendations: When unsolicited advice yields contrary responses",
+      "doi": null,
+      "year": 2004,
+      "venue": "Marketing Science",
+      "citation_level": 2,
+      "citation_context": "reactance to advice grounds proscriptive advice-giving concerns"
+    },
+    {
+      "title": "What counts as effective emotional support",
+      "doi": null,
+      "year": 2008,
+      "venue": "Studies in Applied Interpersonal Communication",
+      "citation_level": 2,
+      "citation_context": "effective emotional support theory informs empathy rubric"
+    },
+    {
+      "title": "Person-centered therapy (Rogerian therapy)",
+      "doi": null,
+      "year": 2023,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "Rogerian therapy principles inform person-centered training"
+    },
+    {
+      "title": "The phrasal lexicon",
+      "doi": null,
+      "year": 1975,
+      "venue": "Theoretical Issues in Natural Language Processing",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Managing the flow of ideas: A local management approach to message design",
+      "doi": null,
+      "year": 1995,
+      "venue": "Annals of the International Communication Association",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Semi-automated content analysis of pharmacist-patient interactions using the theme machine document-clustering system",
+      "doi": null,
+      "year": 2001,
+      "venue": "Progress in Communication Sciences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Use sparse autoencoders to discover unknown concepts, not to act on known concepts",
+      "doi": null,
+      "year": 2025,
+      "venue": "arXiv preprint arXiv:2506.23845",
+      "citation_level": 3,
+      "citation_context": "sparse-autoencoder concept-discovery method for exploratory analyses"
+    },
+    {
+      "title": "Discovering and steering interpretable concepts in large generative music models",
+      "doi": null,
+      "year": null,
+      "venue": "AI for Music Workshop",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The neuroscience of empathy: Progress, pitfalls and promise",
+      "doi": null,
+      "year": 2012,
+      "venue": "Nature Neuroscience",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "How individual differences in empathy predict moments of empathy in everyday life",
+      "doi": null,
+      "year": 2025,
+      "venue": "Personality and Social Psychology Bulletin",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Silhouettes: A graphical aid to the interpretation and validation of cluster analysis",
+      "doi": null,
+      "year": 1987,
+      "venue": "Journal of Computational and Applied Mathematics",
+      "citation_level": 3,
+      "citation_context": "silhouette statistic used to validate cluster analysis"
+    },
+    {
+      "title": "Clinical significance: A statistical approach to defining meaningful change in psychotherapy research",
+      "doi": null,
+      "year": 1992,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "statistical criterion for clinically meaningful change"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

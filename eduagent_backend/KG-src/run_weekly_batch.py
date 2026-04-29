@@ -22,6 +22,7 @@ import asyncio
 import json
 import logging
 import os
+import re
 import shutil
 import subprocess
 import sys
@@ -78,11 +79,37 @@ async def extract_queued_papers(dry_run: bool) -> list[Path]:
         log.info("[DRY RUN] Skipping extraction.")
         return []
 
+    # ── Neo4j preflight: load existing paper keys + intervention names ─────────
+    existing_dois: set[str] = set()
+    existing_titles: set[str] = set()
+    existing_interventions: list[str] = []
+    try:
+        from neo4j import GraphDatabase as _GDB
+        _driver = _GDB.driver(
+            os.getenv("NEO4J_URI"),
+            auth=(os.getenv("NEO4J_USER", "neo4j"), os.getenv("NEO4J_PASSWORD")),
+        )
+        with _driver.session(database=os.getenv("NEO4J_DATABASE", "neo4j")) as db:
+            for record in db.run("MATCH (p:Paper) RETURN p.doi AS doi, p.title AS title"):
+                if record["doi"]:
+                    existing_dois.add(record["doi"].strip().lower())
+                if record["title"]:
+                    existing_titles.add(re.sub(r"\s+", " ", record["title"].lower())[:80])
+            existing_interventions = [
+                r["name"] for r in db.run("MATCH (i:Intervention) RETURN i.name AS name") if r["name"]
+            ]
+        _driver.close()
+        log.info(
+            f"[Neo4j preflight] {len(existing_dois)} paper DOIs, "
+            f"{len(existing_titles)} paper titles, "
+            f"{len(existing_interventions)} interventions loaded."
+        )
+    except Exception as e:
+        log.warning(f"[Neo4j preflight] Could not connect — dedup/intervention list unavailable: {e}")
+
     NEW_PAPERS_DIR.mkdir(parents=True, exist_ok=True)
 
-    model = os.getenv("WEEKLY_BATCH_MODEL", "openai:gpt-5.4-mini-2026-03-17")
-    written: list[Path] = []
-    skipped = 0
+    model = os.getenv("WEEKLY_BATCH_MODEL", "openai:gpt-5.5-2026-04-23")
 
     async def process_one(paper_path: Path):
         try:
@@ -96,19 +123,42 @@ async def extract_queued_papers(dry_run: bool) -> list[Path]:
                 log.warning(f"  [skip] No URL for '{title[:60]}' — cannot re-extract.")
                 return None
 
+            # ── Dedup: skip if paper is already in the KG ──────────────────────
+            doi_key   = doi.strip().lower()
+            title_key = re.sub(r"\s+", " ", title.lower())[:80]
+            if (doi_key and doi_key in existing_dois) or title_key in existing_titles:
+                log.info(f"  [duplicate] '{title[:60]}' already in KG — skipping.")
+                return None
+
             log.info(f"  → Extracting: '{title[:70]}'")
             profile = await extract_paper_profile_v2(
-                block=f"Title: {title}\nDOI: {doi}\nURL: {url}",
+                paper_block=f"Title: {title}\nDOI: {doi}\nURL: {url}",
                 pdf_url=url,
                 abstract_url=url,
                 research_topic=topic,
-                tool_name="weekly_batch",
+                source_db="weekly_batch",
                 metadata_model=model,
                 taxonomy_model=model,
+                known_interventions=existing_interventions,
             )
 
             if profile.extraction_status != "full_text":
                 log.info(f"  [abstract-only] '{title[:60]}' — {profile.extraction_note}")
+                return None
+
+            # ── Quality filters (matching ingest_papers.py guards) ──────────────
+            if profile.year is not None and profile.year < 2023:
+                log.info(f"  [year] '{title[:60]}' year={profile.year} < 2023 — skipping.")
+                return None
+
+            if profile.verdict == "no_tool":
+                log.info(f"  [verdict] '{title[:60]}' verdict=no_tool — skipping.")
+                return None
+
+            if profile.verdict == "framework_only" and (
+                profile.quality_tier == "red" or profile.study_design == "Qualitative"
+            ):
+                log.info(f"  [verdict] '{title[:60]}' framework_only+{profile.quality_tier} — skipping.")
                 return None
 
             slug = re.sub(r"[^a-z0-9]+", "_", (doi or title).lower()).strip("_")[:80]
@@ -121,7 +171,6 @@ async def extract_queued_papers(dry_run: bool) -> list[Path]:
             log.error(f"  [error] {paper_path.name}: {e}")
             return None
 
-    import re
     results = await asyncio.gather(*[process_one(p) for p in all_papers])
     written = [r for r in results if r is not None]
     skipped = len(all_papers) - len(written)

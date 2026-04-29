@@ -1,0 +1,278 @@
+{
+  "title": "Generating Reading Comprehension Exercises with Large Language Models for Educational Applications",
+  "doi": null,
+  "year": 2025,
+  "venue": "arXiv",
+  "url": "http://arxiv.org/abs/2511.18860v1",
+  "source_db": "weekly_batch",
+  "populations": [],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Framework / Theoretical",
+  "extended_summary": "The paper addresses the problem of automatically generating English reading comprehension exercises for educational use. The authors argue that although large language models have been widely explored for instructional support, writing correction, and question generation, relatively less work has focused on scalable generation of complete reading comprehension materials, including passages, questions, answer options, and explanations.\n\nThe proposed approach is Reading Comprehension Exercise Generation (RCEG), a framework that fine-tunes large language models for this task. RCEG uses supervised fine-tuning, reward modeling, and PPO-based reinforcement learning, followed by post-processing modules based on Dynamic Attribute Graphs and a GeDi-derived toxicity classifier to guide generation and filter outputs. The system is trained and evaluated using constructed datasets based on RACE, Gaokao English examinations, Postgraduate English Entrance Examinations, and API-generated samples. The authors also implement a Gradio interface intended for use by students and teachers.\n\nNo classroom deployment or direct learner study is reported. The evaluation is primarily a computational model evaluation using automatic NLP metrics such as BLEU, ROUGE, perplexity, FreeEval reasoning scores, and toxicity-related filtering/perplexity checks. The context is English reading comprehension exercise generation rather than an implemented instructional intervention with measured student learning outcomes.\n\nThe main conclusion is that RCEG and its RCEG-SP variants improve generation quality relative to baseline models across several automatic metrics. The authors report gains in lexical similarity, reasoning-related benchmark performance for some models, lower perplexity, and improved robustness under toxic or adversarial inputs. They conclude that RCEG is a scalable and effective framework for producing learner-adapted reading comprehension materials, while noting future directions such as multi-turn dialogue generation, domain adaptation, and real-world classroom deployment.",
+  "limitations": [
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "lab",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "identified_tools": [
+    {
+      "name": "Reading Comprehension Exercise Generation (RCEG)",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "content_generation"
+      ],
+      "description": "Reading Comprehension Exercise Generation (RCEG) is a named research framework that uses fine-tuned large language models, reward optimization, DATG-based controlled generation, and GeDi-based filtering to automatically generate English reading comprehension passages, questions, answer options, and explanations.",
+      "use_case": "The paper studies RCEG as an automated system for generating personalized English reading comprehension exercises, including articles, questions, answer options, and explanations, for educational applications.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In text similarity evaluation, RCEG-SP variants trained with SFT and PPO generally improved BLEU and ROUGE scores over baseline models. For example, RCEG-SPQwen2.5-3B achieved BLEU-4=27.23, ROUGE-1=22.12, ROUGE-2=6.01, and ROUGE-L=15.11, compared with Qwen2.5-3B scores of BLEU-4=24.24, ROUGE-1=21.80, ROUGE-2=5.93, and ROUGE-L=14.82; RCEG-SPLlama-3.2-3B achieved BLEU-4=27.53 versus Llama-3.2-3B BLEU-4=1.36. Sample size for the evaluation set was not reported.",
+          "measure": "BLEU-4, ROUGE-1, ROUGE-2, and ROUGE-L text similarity metrics",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "mixed",
+          "finding_summary": "On the FreeEval zero-shot reasoning benchmark, RCEG-SP variants showed notable gains on HotpotQA and HellaSwag but mixed results on ARC and ReClor. For example, Qwen2.5-3B improved from 71.15 to 93.34 on HotpotQA and from 31.21 to 33.62 on HellaSwag, while Qwen2.5-1.5B declined from 64.24 to 54.69 on ARC and from 47.53 to 35.53 on ReClor. Sample size was not reported.",
+          "measure": "FreeEval zero-shot reasoning scores on ARC, ReClor, HotpotQA, and HellaSwag",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        },
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "For toxicity robustness and fluency, full RCEG variants with DATG and GeDi post-processing consistently reduced perplexity across SFT-TEST, ToxicRandom, and ToxicTop datasets. For example, Qwen2.5-1.5B decreased from 17.30 to 9.16 on SFT-TEST, from 31.35 to 28.27 on ToxicRandom, and from 37.76 to 29.59 on ToxicTop; Llama-3.2-3B decreased from 15.02 to 8.10, 31.75 to 29.61, and 35.74 to 26.21 on the same datasets. Sample size was not reported.",
+          "measure": "Perplexity on SFT-TEST, ToxicRandom, and ToxicTop datasets",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "This is a primary experimental benchmark evaluation of a proposed LLM-based generation framework with clear datasets and metrics, but it is not an RCT or QED and does not evaluate student learning outcomes.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports improvements on automatic generation metrics (BLEU, ROUGE, FreeEval scores, and perplexity), but it does not report learner outcomes, effect sizes, confidence intervals, or classroom impact. Educational impact is therefore promising but unclear.",
+  "citations": [
+    {
+      "title": "Transforming assessment: The impacts and implications of large language models and generative AI",
+      "doi": null,
+      "year": 2024,
+      "venue": "Educational Measurement: Issues and Practice",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A systematic review of AI, VR, and LLM applications in special education: Opportunities, challenges, and future directions",
+      "doi": null,
+      "year": 2025,
+      "venue": "Education and Information Technologies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT for good? On opportunities and challenges of large language models for education",
+      "doi": null,
+      "year": 2023,
+      "venue": "Learning and Individual Differences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Large language models for education: A survey and outlook",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv preprint arXiv:2403.18105",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Automatic item generation unleashed: An evaluation of a large-scale deployment of item models",
+      "doi": null,
+      "year": 2018,
+      "venue": "Artificial Intelligence in Education: 19th International Conference (AIED)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The interactive reading task: Transformer-based automatic item generation",
+      "doi": null,
+      "year": 2022,
+      "venue": "Frontiers in Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Automatic story and item generation for reading comprehension assessments with transformers",
+      "doi": null,
+      "year": 2022,
+      "venue": "International Journal of Assessment Tools in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Controlled text generation for large language model with dynamic attribute graphs",
+      "doi": null,
+      "year": 2024,
+      "venue": "Findings of the Association for Computational Linguistics (ACL)",
+      "citation_level": 3,
+      "citation_context": "DATG post-hoc controlled generation module adopted"
+    },
+    {
+      "title": "GeDi: Generative discriminator guided sequence generation",
+      "doi": null,
+      "year": 2021,
+      "venue": "Findings of the Association for Computational Linguistics (ACL)",
+      "citation_level": 3,
+      "citation_context": "GeDi toxic classifier used for discriminative filtering"
+    },
+    {
+      "title": "Hidden Markov models",
+      "doi": null,
+      "year": 1996,
+      "venue": "Current Opinion in Structural Biology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A maximum entropy approach to natural language processing",
+      "doi": null,
+      "year": 1996,
+      "venue": "Computational Linguistics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "An introduction to conditional random fields",
+      "doi": null,
+      "year": 2012,
+      "venue": "Foundations and Trends\u00ae in Machine Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The survey: Text generation models in deep learning",
+      "doi": null,
+      "year": 2022,
+      "venue": "Journal of King Saud University-Computer and Information Sciences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Pre-trained language models for text generation: A survey",
+      "doi": null,
+      "year": 2024,
+      "venue": "ACM Computing Surveys",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Sequence to sequence learning with neural networks",
+      "doi": null,
+      "year": 2014,
+      "venue": "Advances in Neural Information Processing Systems (NIPS)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Attention is all you need",
+      "doi": null,
+      "year": 2017,
+      "venue": "Advances in Neural Information Processing Systems (NIPS)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A survey of large language models",
+      "doi": null,
+      "year": 2023,
+      "venue": "arXiv preprint arXiv:2303.18223",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "AGReE: A system for generating automated grammar reading exercises",
+      "doi": null,
+      "year": 2022,
+      "venue": "Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing (EMNLP)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Automated distractor generation for fill-in-the-blank items using a prompt-based learning approach",
+      "doi": null,
+      "year": 2023,
+      "venue": "Psychological Testing and Assessment Modeling",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Evaluating reading comprehension exercises generated by LLMs: A showcase of ChatGPT in education applications",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 18th workshop on innovative use of NLP for Building Educational Applications (BEA)",
+      "citation_level": 3,
+      "citation_context": "GPT2 finetune baseline comparison from prior work"
+    },
+    {
+      "title": "RACE: Large-scale reading comprehension dataset from examinations",
+      "doi": null,
+      "year": 2017,
+      "venue": "Proceedings of the 2017 Conference on Empirical Methods in Natural Language Processing (EMNLP)",
+      "citation_level": 3,
+      "citation_context": "RACE dataset used as SFT data foundation"
+    },
+    {
+      "title": "LlamaFactory: Unified efficient fine-tuning of 100+ language models",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (ACL)",
+      "citation_level": 3,
+      "citation_context": "LLaMA-Factory framework used for all training procedures"
+    },
+    {
+      "title": "BLEU: A method for automatic evaluation of machine translation",
+      "doi": null,
+      "year": 2002,
+      "venue": "Proceedings of the 40th annual meeting of the Association for Computational Linguistics (ACL)",
+      "citation_level": 3,
+      "citation_context": "BLEU used as automatic text similarity metric"
+    },
+    {
+      "title": "ROUGE: A package for automatic evaluation of summaries",
+      "doi": null,
+      "year": 2004,
+      "venue": "Text Summarization Branches Out",
+      "citation_level": 3,
+      "citation_context": "ROUGE used as automatic text similarity metric"
+    },
+    {
+      "title": "FreeEval: A modular framework for trustworthy and efficient evaluation of large language models",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing (EMNLP)",
+      "citation_level": 3,
+      "citation_context": "FreeEval used for reasoning quality evaluation"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": "fetch error: ConnectError"
+}

@@ -1,0 +1,331 @@
+{
+  "title": "The Economics of Algorithmic Personalization: Evidence from an Educational Technology Platform",
+  "doi": null,
+  "year": 2026,
+  "venue": "NBER Working Paper Series",
+  "url": "w34950",
+  "source_db": "direct_ingest",
+  "populations": [
+    "Elementary (PreK-5th)",
+    "Middle School (6th-8th)"
+  ],
+  "user_types": [
+    "Student",
+    "Parent",
+    "School"
+  ],
+  "study_design": "Randomized Controlled Trial (RCT)",
+  "extended_summary": "This paper asks whether algorithmic personalization can improve engagement in educational technology, and whether effects found in an experiment persist or change when the algorithm is deployed at scale. The authors focus on the Freadom English-learning app in India, where low retention and limited engagement are central challenges for children\u2019s reading practice. The study is especially concerned with whether recommendation systems developed for large entertainment platforms can work in a moderate-scale educational app and whether scaled algorithmic interventions show the usual \u201cvoltage drop\u201d seen in policy scale-ups.\n\nThe intervention is a collaborative-filtering recommendation system that personalizes story recommendations based on users\u2019 prior interactions. Freadom previously relied on editorially curated recommendations. The authors set an eligibility threshold of 60 prior story interactions, both because prediction accuracy improved after that point and because the threshold enabled a regression discontinuity design during scaled deployment. They first ran a randomized controlled trial with 7,750 eligible users for two weeks, assigning treatment users to personalized recommendations in the Recommended Story section while control users continued receiving editorial recommendations. They then studied five months of scaled deployment using the 60-interaction threshold as a regression discontinuity.\n\nThe population was Indian children aged 3\u201312 using Freadom to learn to read in English. Users accessed the app through school partnerships, parent downloads, and paid subscriptions. Outcomes were based on objective app-log measures of engagement, including story engagement, stories completed, reading time, and completion of more difficult stories; the study did not directly measure learning outcomes such as test scores.\n\nThe RCT found that personalization increased engagement in the personalized section by about 60% and app-wide engagement by about 14%, suggesting that users increased overall app use rather than merely shifting time away from other sections. During scaled deployment, regression discontinuity estimates were larger than the RCT benchmark, suggesting that algorithmic interventions may improve with scale as more data accumulate. However, benefits were front-loaded and diminished as users exhausted the best-matched stories, indicating that limited content inventory can become a binding constraint on sustained personalization gains.",
+  "limitations": [
+    "non_representative_population",
+    "high_attrition",
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "20",
+  "setting": "online",
+  "teacher_training": "no",
+  "implementation_fidelity": "not_reported",
+  "study_country": "India",
+  "study_region": "South Asia",
+  "identified_tools": [
+    {
+      "name": "Freadom",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "personalization_adaptation"
+      ],
+      "description": "Freadom is a mobile and web English-learning application for children; in this study it incorporated a custom collaborative-filtering recommendation system to personalize story recommendations.",
+      "use_case": "The paper studied personalized story recommendations for Indian children aged 3\u201312 learning English. Users with at least 60 prior story interactions received collaborative-filtering recommendations in Freadom\u2019s Recommended Story section, compared with editorial curation in an RCT and then evaluated during scaled deployment using an eligibility-threshold RDD.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Literacy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In the randomized controlled trial, personalized recommendations increased app-wide Total Story Engagement by ATE=0.522, equal to 13.767% of the control mean, with SE=0.27. The paper reports 7,750 randomized users, and Table 5 reports 1,376 treated observations and 1,430 control observations for this outcome.",
+          "measure": "Total Story Engagement across all app sections",
+          "effect_size": "ATE=0.522; 13.767% of control baseline; SE=0.27",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=7,750 randomized; Table 5: treated n=1,376, control n=1,430"
+        },
+        {
+          "outcome_category": "Academic \u2014 Literacy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Personalized recommendations increased app-wide Stories Completed by ATE=0.359, equal to 18.979% of the control mean, with SE=0.16. The effect was statistically significant at p<0.05 in Table 5.",
+          "measure": "Stories completed across all app sections",
+          "effect_size": "ATE=0.359; 18.979% of control baseline; SE=0.16",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=7,750 randomized; Table 5: treated n=1,376, control n=1,430"
+        },
+        {
+          "outcome_category": "Academic \u2014 Literacy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Within the Recommended Story section where personalization was deployed, personalized recommendations increased Total Story Engagement by ATE=0.171, equal to 60.265% of the control mean, with SE=0.052. The effect was statistically significant at p<0.01 in Table 5.",
+          "measure": "Total Story Engagement in the Recommended Story section",
+          "effect_size": "ATE=0.171; 60.265% of control baseline; SE=0.052",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=7,750 randomized; Table 5: treated n=1,376, control n=1,430"
+        },
+        {
+          "outcome_category": "Academic \u2014 Literacy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Within the Recommended Story section, personalized recommendations increased Stories Completed by ATE=0.119, equal to 77.478% of the control mean, with SE=0.037. The effect was statistically significant at p<0.01 in Table 5.",
+          "measure": "Stories completed in the Recommended Story section",
+          "effect_size": "ATE=0.119; 77.478% of control baseline; SE=0.037",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=7,750 randomized; Table 5: treated n=1,376, control n=1,430"
+        },
+        {
+          "outcome_category": "Academic \u2014 Literacy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Personalized recommendations increased app-wide Total Reading Time by ATE=2.501, equal to 19.781% of the control mean, with SE=1.104. The paper interprets this as evidence that engagement gains also increased a learning-related input rather than merely shifting users to easier or shorter content.",
+          "measure": "Total Reading Time across all app sections",
+          "effect_size": "ATE=2.501; 19.781% of control baseline; SE=1.104",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=7,750 randomized; Table 6: treated n=1,376, control n=1,430"
+        },
+        {
+          "outcome_category": "Academic \u2014 Literacy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Personalized recommendations increased the Number of Difficult Stories completed app-wide by ATE=0.369, equal to 19.713% of the control mean, with SE=0.16. Difficult stories were defined as stories whose assigned grade level exceeded the user\u2019s grade level.",
+          "measure": "Number of Difficult Stories completed across all app sections",
+          "effect_size": "ATE=0.369; 19.713% of control baseline; SE=0.16",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=7,750 randomized; Table 6: treated n=1,376, control n=1,430"
+        },
+        {
+          "outcome_category": "Academic \u2014 Literacy",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "During five months of scaled deployment, regression discontinuity estimates for users around the 60-interaction eligibility threshold exceeded the RCT benchmark by a factor of 2.5, with p<0.001. The paper reports that gains were front-loaded, concentrated in users\u2019 first weeks of exposure, and diminished thereafter as high-quality content matches were exhausted.",
+          "measure": "User engagement during scaled deployment, estimated using the 60-interaction eligibility-threshold regression discontinuity design",
+          "effect_size": "RDD estimates exceeded RCT benchmark by a factor of 2.5; p<0.001",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "green",
+  "quality_tier_rationale": "The paper reports a large randomized controlled trial plus a regression discontinuity design during scaled deployment, with validation checks and pre-registration noted. Some caution remains because the main outcomes are behavioral engagement measures, and the analysis sample reported for active users differs from the full randomized sample.",
+  "impact_tier": "green",
+  "impact_tier_rationale": "The intervention produced positive engagement effects, including a 14% app-wide increase in Total Story Engagement and a 60% increase within the personalized section in the RCT. Impact is not rated blue because the paper explicitly measures engagement and learning inputs rather than direct learning outcomes such as test scores.",
+  "citations": [
+    {
+      "title": "Finite population causal standard errors",
+      "doi": null,
+      "year": 2014,
+      "venue": "National Bureau of Economic Research",
+      "citation_level": 3,
+      "citation_context": "finite-population standard errors for causal estimates"
+    },
+    {
+      "title": "Adam: A method for stochastic optimization",
+      "doi": null,
+      "year": 2014,
+      "venue": "arXiv preprint arXiv:1412.6980",
+      "citation_level": 3,
+      "citation_context": "optimizer used for stochastic recommendation-model training"
+    },
+    {
+      "title": "2017 Klein Lecture: The science of using science: Toward an understanding of the threats to scalability",
+      "doi": null,
+      "year": 2020,
+      "venue": "International Economic Review",
+      "citation_level": 2,
+      "citation_context": "scalability threats and voltage-drop framing"
+    },
+    {
+      "title": "Understanding scaling laws for recommendation models",
+      "doi": null,
+      "year": 2022,
+      "venue": "arXiv preprint arXiv:2208.08489",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Personalized recommendation system for Stones2Milestones: Pre-analysis plan",
+      "doi": null,
+      "year": 2021,
+      "venue": null,
+      "citation_level": 3,
+      "citation_context": "pre-analysis plan for the randomized experiment"
+    },
+    {
+      "title": "From proof of concept to scalable policies: Challenges and solutions, with an application",
+      "doi": null,
+      "year": 2017,
+      "venue": "Journal of Economic Perspectives",
+      "citation_level": 2,
+      "citation_context": "proof-of-concept to scale-up framing"
+    },
+    {
+      "title": "Lessons from the Netflix Prize challenge",
+      "doi": null,
+      "year": 2007,
+      "venue": "ACM SIGKDD Explorations Newsletter",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The human perils of scaling smart technologies: Evidence from field experiments",
+      "doi": null,
+      "year": 2022,
+      "venue": "National Bureau of Economic Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The consumer welfare effects of online ads: Evidence from a nine-year experiment",
+      "doi": null,
+      "year": 2025,
+      "venue": "American Economic Review: Insights",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "An evaluation of the performance of regression discontinuity design on PROGRESA",
+      "doi": null,
+      "year": 2004,
+      "venue": "World Bank Publications",
+      "citation_level": 3,
+      "citation_context": "benchmarking regression-discontinuity validity against experiments"
+    },
+    {
+      "title": "Randomization inference in the regression discontinuity design: An application to party advantages in the US Senate",
+      "doi": null,
+      "year": 2015,
+      "venue": "Journal of Causal Inference",
+      "citation_level": 3,
+      "citation_context": "local-randomization RDD estimator and randomization inference"
+    },
+    {
+      "title": "rdlocrand: Local randomization methods for RD designs",
+      "doi": null,
+      "year": 2018,
+      "venue": "R package",
+      "citation_level": 3,
+      "citation_context": "software implementing local-randomization RDD methods"
+    },
+    {
+      "title": "The internal and external validity of the regression discontinuity design: A meta-analysis of 15 within-study comparisons",
+      "doi": null,
+      "year": 2018,
+      "venue": "Journal of Policy Analysis and Management",
+      "citation_level": 3,
+      "citation_context": "within-study comparisons supporting RDD validation approach"
+    },
+    {
+      "title": "Pitfalls of long-term online controlled experiments",
+      "doi": null,
+      "year": 2016,
+      "venue": "2016 IEEE International Conference on Big Data (Big Data)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Effects of the ISIS recommender system for navigation support in self-organized learning networks",
+      "doi": null,
+      "year": 2008,
+      "venue": "Journal of Educational Technology and Society",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Upgrading education with technology: Insights from experimental research",
+      "doi": null,
+      "year": 2020,
+      "venue": "Journal of Economic Literature",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Netflix recommender system: Algorithms, business value, and innovation",
+      "doi": null,
+      "year": 2015,
+      "venue": "ACM Transactions on Management Information Systems (TMIS)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Testing the accuracy of regression discontinuity analysis using experimental benchmarks",
+      "doi": null,
+      "year": 2009,
+      "venue": "Political Analysis",
+      "citation_level": 3,
+      "citation_context": "experimental benchmarks for assessing RDD accuracy"
+    },
+    {
+      "title": "The unreasonable effectiveness of data",
+      "doi": null,
+      "year": 2009,
+      "venue": "IEEE Intelligent Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The engagement-diversity connection: Evidence from a field experiment on Spotify",
+      "doi": null,
+      "year": 2020,
+      "venue": "Proceedings of the 21st ACM Conference on Economics and Computation",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Causal inference in statistics, social, and biomedical sciences",
+      "doi": null,
+      "year": 2015,
+      "venue": "Cambridge University Press",
+      "citation_level": 3,
+      "citation_context": "causal-inference framework and potential-outcomes notation"
+    },
+    {
+      "title": "Ghost ads: Improving the economics of measuring online ad effectiveness",
+      "doi": null,
+      "year": 2017,
+      "venue": "Journal of Marketing Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Matrix factorization techniques for recommender systems",
+      "doi": null,
+      "year": 2009,
+      "venue": "Computer",
+      "citation_level": 3,
+      "citation_context": "matrix-factorization basis for collaborative filtering algorithm"
+    },
+    {
+      "title": "Improving educational delivery in K-12 schools with personalization: Evidence from a randomized field experiment in India",
+      "doi": null,
+      "year": 2024,
+      "venue": "Available at SSRN",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Amazon.com recommendations: Item-to-item collaborative filtering",
+      "doi": null,
+      "year": 2003,
+      "venue": "IEEE Internet Computing",
+      "citation_level": 3,
+      "citation_context": "item-to-item collaborative-filtering recommendation design"
+    },
+    {
+      "title": "The voltage effect: How to make good ideas great and great ideas scale",
+      "doi": null,
+      "year": 2022,
+      "venue": null,
+      "citation_level": 2,
+      "citation_context": "voltage-effect framing for scale-up interpretation"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}
