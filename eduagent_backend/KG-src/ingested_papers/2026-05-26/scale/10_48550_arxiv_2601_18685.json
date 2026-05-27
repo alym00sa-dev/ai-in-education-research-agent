@@ -1,0 +1,632 @@
+{
+  "title": "LLAMA LIMA: A Living Meta-Analysis on the Effects of Generative AI on Learning Mathematics (Version 3, 05/26)",
+  "doi": "10.48550/arXiv.2601.18685",
+  "year": 2026,
+  "venue": "arXiv",
+  "url": "https://arxiv.org/abs/2601.18685",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Elementary (PreK-5th)",
+    "Middle School (6th-8th)",
+    "High School (9th-12th)",
+    "Undergraduate",
+    "Adult (non-academic)"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Meta-Analysis / Systematic Review",
+  "extended_summary": "This paper addresses the rapidly changing evidence base on whether generative AI tools improve mathematics learning. Because generative AI technologies and related studies are evolving quickly, the authors argue that conventional static reviews risk becoming outdated. They therefore present LLAMA LIMA, a versioned living meta-analysis designed to be repeatedly updated as new experimental and quasi-experimental evidence becomes available.\n\nThe approach is a living systematic review and meta-analysis following PRISMA-LSR guidance. For Version 3, the authors searched SCOPUS and SCOPUS Preprints through April 1, 2026, and included studies that used generative AI in a mathematics-learning intervention with a non-generative-AI control group and mathematics performance outcomes. The analysis included 24 studies, 58 effect sizes, and 3,800 participants. Effects were synthesized with a Bayesian multilevel meta-regression model, and moderators included educational level, mathematical content, AI purpose, intervention characteristics, integration mode, assessment type, publication type, and research setting.\n\nThe included evidence spans multiple learner levels, including primary/lower secondary, secondary, post-secondary/tertiary, and adult learners, across varied mathematics education contexts. The paper does not report a single country, setting, or intervention duration because it aggregates multiple primary studies. Some interventions used generative AI as a mathematics expert, tutor, instructor, or teacher-support tool.\n\nThe pooled effect of generative AI interventions on mathematics learning was positive but uncertain, with Hedges\u2019 g = 0.40 and a 95% credible interval of [0.14, 0.67]. Moderator analyses found moderate evidence that generative AI was more beneficial when it supplemented regular instruction than when it replaced teachers. Evidence for most other moderators remained limited. The authors conclude that generative AI may support mathematics learning, especially when integrated with teacher-led instruction, but the evidence base is still small, heterogeneous, and in need of continued updating.",
+  "limitations": [
+    "implementation_fidelity_not_reported"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "identified_tools": [
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "tutoring_instruction",
+        "content_generation"
+      ],
+      "description": "Generative AI systems, including large-language-model-based tools and custom AI supports, used to generate mathematical explanations, feedback, solutions, tutoring support, instructional materials, or related learning assistance.",
+      "use_case": "The paper synthesized experimental and quasi-experimental studies comparing mathematics learning interventions that used generative AI with control conditions that did not use generative AI.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Mathematical Numeracy",
+          "finding_type": "pooled_meta",
+          "direction": "positive",
+          "finding_summary": "Across 24 studies, 58 effect sizes, and exactly n=3,800 participants, generative AI\u2013based instructional interventions had a positive pooled effect on mathematics learning outcomes (Hedges\u2019 g=0.40, 95% CrI [0.14, 0.67]). Publication-bias assessment found weak evidence against publication bias (BF=0.29; posterior probability=.22), with a model-averaged median effect of g=0.33, 95% CrI [0.00, 0.61]. Moderator analyses found moderate evidence that supplementing regular instruction produced larger effects (g=0.65) than replacing teachers (g=0.16), BF10=8.72.",
+          "measure": "Mathematics learning outcomes / mathematics performance, analyzed as standardized mean differences using Hedges\u2019 g",
+          "effect_size": "Hedges\u2019 g = 0.40",
+          "confidence_interval": "95% credible interval [0.14, 0.67]",
+          "sample_size": "n=3,800; 24 studies; 58 effect sizes"
+        }
+      ]
+    }
+  ],
+  "verdict": "archetype_only",
+  "quality_tier": "blue",
+  "quality_tier_rationale": "This is a quantitative living meta-analysis following PRISMA-LSR procedures, synthesizing 24 experimental or quasi-experimental studies with 58 effect sizes and n=3,800 participants. The paper is a preprint and notes limited evidence and heterogeneity, but the design is still a formal meta-analysis.",
+  "impact_tier": "blue",
+  "impact_tier_rationale": "The pooled effect of generative AI\u2013based mathematics interventions was medium and positive (Hedges\u2019 g=0.40, 95% CrI [0.14, 0.67]), exceeding the \u22650.20 threshold. A publication-bias-adjusted model also remained positive (g=0.33, 95% CrI [0.00, 0.61]).",
+  "citations": [
+    {
+      "title": "Extension of the PRISMA 2020 statement for living systematic reviews (PRISMA-LSR): checklist and explanation",
+      "doi": "10.1136/bmj-2024-079183",
+      "year": 2024,
+      "venue": "BMJ",
+      "citation_level": 3,
+      "citation_context": "PRISMA-LSR guidance for versioned living review reporting"
+    },
+    {
+      "title": "RoBMA: An R package for robust Bayesian meta-analyses",
+      "doi": null,
+      "year": 2020,
+      "venue": "CRAN",
+      "citation_level": 3,
+      "citation_context": "RoBMA package used for publication-bias analysis"
+    },
+    {
+      "title": "Robust Bayesian Multilevel Meta-Analysis: Adjusting for Publication Bias in the Presence of Dependent Effect Sizes",
+      "doi": "10.31234/osf.io/9tgp2_v1",
+      "year": 2025,
+      "venue": "PsyArXiv",
+      "citation_level": 3,
+      "citation_context": "publication-bias model used for dependent effect sizes"
+    },
+    {
+      "title": "Adjusting for publication bias reveals no evidence for the effect of chatgpt on students\u2019 learning performance, learning perception, and higher-order thinking",
+      "doi": null,
+      "year": 2025,
+      "venue": "PsyArXiv",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Generative AI without guardrails can harm learning: Evidence from high school mathematics",
+      "doi": null,
+      "year": 2025,
+      "venue": "Proceedings of the National Academy of Sciences",
+      "citation_level": 3,
+      "citation_context": "included study in meta-analysis dataset"
+    },
+    {
+      "title": "Artificial Intelligence in Elementary Math Education: Analyzing Impact on Students Achievements",
+      "doi": null,
+      "year": 2024,
+      "venue": "International Conference on Digital Transformation in Education and Artificial Intelligence Application",
+      "citation_level": 3,
+      "citation_context": "included study in meta-analysis dataset"
+    },
+    {
+      "title": "Introduction to Meta-Analysis",
+      "doi": null,
+      "year": 2009,
+      "venue": "Wiley",
+      "citation_level": 3,
+      "citation_context": "effect-size and meta-analysis procedures"
+    },
+    {
+      "title": "ChatGPT as a reflection tool to promote the lesson planning competencies of pre-service teachers",
+      "doi": null,
+      "year": 2024,
+      "venue": "Proceedings of the 17th ERME Topic Conference MEDA4",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "brms: An R Package for Bayesian Multilevel Models Using Stan",
+      "doi": "10.18637/jss.v080.i01",
+      "year": 2017,
+      "venue": "Journal of Statistical Software",
+      "citation_level": 3,
+      "citation_context": "brms package used for Bayesian multilevel meta-analysis"
+    },
+    {
+      "title": "Levering AI to enhance students' conceptual understanding and confidence in mathematics",
+      "doi": null,
+      "year": 2024,
+      "venue": "Journal of computer assisted learning",
+      "citation_level": 3,
+      "citation_context": "included study in meta-analysis dataset"
+    },
+    {
+      "title": "Facilitating student learning with a chatbot in an online math learning platform",
+      "doi": null,
+      "year": 2024,
+      "venue": "Journal of Educational Computing Research",
+      "citation_level": 3,
+      "citation_context": "included study in meta-analysis dataset"
+    },
+    {
+      "title": "Systematic literature review on opportunities, challenges, and future research recommendations of artificial intelligence in education",
+      "doi": null,
+      "year": 2023,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT in didactical tetrahedron, does it make an exception? A case study in mathematics teaching and learning",
+      "doi": null,
+      "year": 2024,
+      "venue": "Frontiers in Education",
+      "citation_level": 3,
+      "citation_context": "included study in meta-analysis dataset"
+    },
+    {
+      "title": "Does ChatGPT enhance student learning? A systematic review and meta-analysis of experimental studies",
+      "doi": "10.1016/j.compedu.2024.105224",
+      "year": 2025,
+      "venue": "Computers & Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Effect of Using MatGPT on Mathematical Proficiency among Undergraduate Students",
+      "doi": null,
+      "year": 2025,
+      "venue": "International Journal of Information and Education Technology",
+      "citation_level": 3,
+      "citation_context": "included study in meta-analysis dataset"
+    },
+    {
+      "title": "Living systematic reviews: an emerging opportunity to narrow the evidence-practice gap",
+      "doi": "10.1371/journal.pmed.1001603",
+      "year": 2014,
+      "venue": "PLoS Med",
+      "citation_level": 2,
+      "citation_context": "living systematic review concept for living evidence synthesis"
+    },
+    {
+      "title": "Integrating Chat-GPT in the Classroom: A Study on Linear Algebra Learning in Higher Education",
+      "doi": null,
+      "year": 2025,
+      "venue": "International Journal of Information and Education Technology",
+      "citation_level": 3,
+      "citation_context": "included study in meta-analysis dataset"
+    },
+    {
+      "title": "Generative Artificial Intelligence in Secondary STEM Education in the Light of Human Flourishing: A Scoping Literature Review",
+      "doi": "10.21203/rs.3.rs-6923010/v1",
+      "year": 2025,
+      "venue": "Research Square",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Impact of Generative AI on student learning achievement in secondary STEM education: A meta-analysis",
+      "doi": null,
+      "year": 2025,
+      "venue": "Proceedings of the 17th International Conference on Technology in Mathematics Teaching",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Pre-Service Teachers and ChatGPT in Multistrategy Problem-Solving: Implications for Mathematics Teaching in Primary Schools",
+      "doi": null,
+      "year": 2024,
+      "venue": "International Electronic Journal of Mathematics Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The promise and challenges of generative AI in education",
+      "doi": null,
+      "year": 2025,
+      "venue": "Behaviour & Information Technology",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "bridgesampling: An R package for estimating normalizing constants",
+      "doi": null,
+      "year": 2020,
+      "venue": "Journal of Statistical Software",
+      "citation_level": 3,
+      "citation_context": "bridgesampling used to estimate Bayes factors"
+    },
+    {
+      "title": "Doing Meta-Analysis With R: A Hands-On Guide",
+      "doi": null,
+      "year": 2021,
+      "venue": "Chapman & Hall/CRC Press",
+      "citation_level": 3,
+      "citation_context": "R meta-analysis guidance for analytic workflow"
+    },
+    {
+      "title": "Visible learning for teachers: Maximizing impact on learning",
+      "doi": null,
+      "year": 2012,
+      "venue": "Routledge",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Visible learning and the science of how we learn",
+      "doi": null,
+      "year": 2014,
+      "venue": "Routledge",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Effective and scalable math support: Experimental evidence on the impact of an AI-math tutor in Ghana",
+      "doi": null,
+      "year": 2024,
+      "venue": "International Conference on Artificial Intelligence in Education",
+      "citation_level": 3,
+      "citation_context": "included study in meta-analysis dataset"
+    },
+    {
+      "title": "The potential of digital tools to enhance mathematics and science learning in secondary schools: A context-specific meta-analysis",
+      "doi": "10.1016/j.compedu.2020.103897",
+      "year": 2020,
+      "venue": "Computers & Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Artificial intelligence in education promises and implications for teaching and learning",
+      "doi": null,
+      "year": 2019,
+      "venue": "Center for Curriculum Redesign",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Are Lesson Plans Created by ChatGPT More Effective? An Experimental Study",
+      "doi": "10.46328/ijte.607",
+      "year": 2024,
+      "venue": "International Journal of Technology in Education",
+      "citation_level": 3,
+      "citation_context": "included study in meta-analysis dataset"
+    },
+    {
+      "title": "ChatGPT for good? On opportunities and challenges of large language models for education",
+      "doi": "10.1016/j.lindif.2023.102274",
+      "year": 2023,
+      "venue": "Learning and Individual Differences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Effects of collaboration scripts and heuristic worked examples on the acquisition of mathematical argumentation skills of teacher students with different levels of prior achievement",
+      "doi": "10.1016/j.learninstruc.2014.01.003",
+      "year": 2014,
+      "venue": "Learning and Instruction",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Ai-based learning assistants: enhancing math learning for migrant students in German schools",
+      "doi": null,
+      "year": 2024,
+      "venue": "2024 IEEE Conference on Artificial Intelligence (CAI)",
+      "citation_level": 3,
+      "citation_context": "included study in meta-analysis dataset"
+    },
+    {
+      "title": "Augmenting learning environments using AI custom chatbots: Effects on learning performance, cognitive load, and affective variables",
+      "doi": null,
+      "year": 2025,
+      "venue": "Physical Review Physics Education Research",
+      "citation_level": 3,
+      "citation_context": "included study in meta-analysis dataset"
+    },
+    {
+      "title": "Bayesian cognitive modeling: A practical course",
+      "doi": null,
+      "year": 2014,
+      "venue": "Cambridge university press",
+      "citation_level": 3,
+      "citation_context": "Bayesian modeling guidance for priors and Bayes factors"
+    },
+    {
+      "title": "Writing Chinese characters and mathematics achievement: a study with Chinese-American undergraduates",
+      "doi": "10.1007/BF03217096",
+      "year": 2001,
+      "venue": "Mathematics Edcuation Research Journal",
+      "citation_level": 3,
+      "citation_context": "included study in meta-analysis dataset"
+    },
+    {
+      "title": "Practical Meta-Analysis",
+      "doi": null,
+      "year": 2000,
+      "venue": "Sage",
+      "citation_level": 3,
+      "citation_context": "effect-size computation and meta-analysis guidance"
+    },
+    {
+      "title": "Can Generative Artificial Intelligence Effectively Enhance Students\u2019 Mathematics Learning Outcomes?\u2014A Meta-Analysis of Empirical Studies from 2023 to 2025",
+      "doi": null,
+      "year": 2026,
+      "venue": "Education Sciences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "BrickSmart: Leveraging Generative AI to Support Children's Spatial Language Learning in Family Block Play",
+      "doi": null,
+      "year": 2025,
+      "venue": "Proceedings of the 2025 CHI Conference on Human Factors in Computing Systems",
+      "citation_level": 3,
+      "citation_context": "included study in meta-analysis dataset"
+    },
+    {
+      "title": "A Meta-Analysis of the Impact of Generative Artificial Intelligence on Learning Outcomes",
+      "doi": null,
+      "year": 2025,
+      "venue": "Journal of Computer Assisted Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A Polya-Aligned Prompting Protocol for ChatGPT Scaffolding: Evidence from Eighth-Grade Systems-of-Linear-Equations Problem Solving",
+      "doi": null,
+      "year": 2026,
+      "venue": "International Journal of Environment, Engineering and Education",
+      "citation_level": 3,
+      "citation_context": "included study in meta-analysis dataset"
+    },
+    {
+      "title": "Dosage Response in Intensive Mathematics Interventions for Early Elementary Students With or At-Risk for Mathematics Learning Disability",
+      "doi": null,
+      "year": 2025,
+      "venue": "Educational Psychology Review",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Principles and standards for mathematics",
+      "doi": null,
+      "year": 2000,
+      "venue": "NCTM",
+      "citation_level": 3,
+      "citation_context": "NCTM categories used to code mathematical content areas"
+    },
+    {
+      "title": "Opportunities, challenges and school strategies for integrating generative AI in education",
+      "doi": null,
+      "year": 2025,
+      "venue": "Computers and Education: Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT-generated help produces learning gains equivalent to human tutor-authored help on mathematics skills",
+      "doi": null,
+      "year": 2024,
+      "venue": "PLoS ONE",
+      "citation_level": 3,
+      "citation_context": "included study in meta-analysis dataset"
+    },
+    {
+      "title": "A Scoping Survey of ChatGPT in Mathematics Education",
+      "doi": "10.1007/s40751-025-00172-1",
+      "year": 2025,
+      "venue": "Digital Experiences in Mathematics Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Chatbots put to the test in math and logic problems: A comparison and assessment of ChatGPT-3.5, ChatGPT-4, and Google Bard",
+      "doi": null,
+      "year": 2023,
+      "venue": "Ai",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Learning mechanisms explaining learning with digital tools in educational settings: A cognitive process framework",
+      "doi": null,
+      "year": 2024,
+      "venue": "Educational Psychology Review",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Enhancing Enthusiasm for STEM Education with AI: Domain-Specific Chatbot as Personalized Learning Assistant",
+      "doi": "10.1016/j.caeo.2025.100315",
+      "year": 2025,
+      "venue": "Computers and Education Open",
+      "citation_level": 3,
+      "citation_context": "included study in meta-analysis dataset"
+    },
+    {
+      "title": "The cognitive perspective on learning: Ten cornerstone findings",
+      "doi": null,
+      "year": 2010,
+      "venue": "The nature of learning: Using research to inspire practice",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Learning to think mathematically: Problem solving, metacognition, and sense making in mathematics",
+      "doi": null,
+      "year": 2016,
+      "venue": "Journal of education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Prompt the problem\u2013investigating the mathematics educational quality of AI-supported problem solving by comparing prompt techniques",
+      "doi": null,
+      "year": 2024,
+      "venue": "Frontiers in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Remediation of Mathematics Knowledge in Engineering Students Through an AI-Based Selfstudy Educational Intervention",
+      "doi": null,
+      "year": 2025,
+      "venue": "2025 IEEE Global Engineering Education Conference (EDUCON)",
+      "citation_level": 3,
+      "citation_context": "included study in meta-analysis dataset"
+    },
+    {
+      "title": "When LLMs hallucinate: Examining the effects of erroneous feedback in math tutoring systems",
+      "doi": null,
+      "year": 2025,
+      "venue": "Proceedings of the Twelfth ACM Conference on Learning@ Scale",
+      "citation_level": 3,
+      "citation_context": "included study in meta-analysis dataset"
+    },
+    {
+      "title": "On the Effectiveness of Prompt-Moderated LLMs for Math Tutoring at the Tertiary Level",
+      "doi": null,
+      "year": 2025,
+      "venue": "Findings of the Association for Computational Linguistics: EMNLP 2025",
+      "citation_level": 3,
+      "citation_context": "included study in meta-analysis dataset"
+    },
+    {
+      "title": "Large Language Models Don't Make Sense of Word Problems. A Scoping Review from a Mathematics Education Perspective",
+      "doi": null,
+      "year": 2025,
+      "venue": "arXiv preprint arXiv:2506.24006",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Investigating the effect of artificial intelligence in education (AIEd) on learning achievement: A meta-analysis and research synthesis",
+      "doi": null,
+      "year": 2025,
+      "venue": "Information Development",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT in school mathematics education: A systematic review of opportunities, challenges, and pedagogical implications",
+      "doi": null,
+      "year": 2026,
+      "venue": "Teaching and Teacher Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT\u2019s performance in university admissions tests in mathematics",
+      "doi": null,
+      "year": 2024,
+      "venue": "International Electronic Journal of Mathematics Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "International standard classification of education (ISCED) 2011",
+      "doi": null,
+      "year": 2012,
+      "venue": "UNESCO",
+      "citation_level": 3,
+      "citation_context": "ISCED categories used to code educational level"
+    },
+    {
+      "title": "Contextualized and personalized math word problem generation in authentic contexts using generative pre-trained transformer and its influences on geometry learning",
+      "doi": "10.1177/07356331241249225",
+      "year": 2024,
+      "venue": "Journal of Educational Computing Research",
+      "citation_level": 3,
+      "citation_context": "included study in meta-analysis dataset"
+    },
+    {
+      "title": "Conducting Meta-Analyses in R with the metafor Package",
+      "doi": "10.18637/jss.v036.i03",
+      "year": 2010,
+      "venue": "Journal of Statistical Software",
+      "citation_level": 3,
+      "citation_context": "metafor package used in meta-analytic computations"
+    },
+    {
+      "title": "The impact of ChatGPT-based learning statistics on undergraduates\u2019 statistical reasoning and attitudes toward statistics",
+      "doi": null,
+      "year": 2024,
+      "venue": "Eurasia Journal of Mathematics, Science and Technology Education",
+      "citation_level": 3,
+      "citation_context": "included study in meta-analysis dataset"
+    },
+    {
+      "title": "The implications of generative artificial intelligence for mathematics education",
+      "doi": null,
+      "year": 2025,
+      "venue": "School Science and Mathematics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The effect of ChatGPT on students\u2019 learning performance, learning perception, and higher-order thinking: insights from a meta-analysis",
+      "doi": "10.1057/s41599-025-04787-y",
+      "year": 2025,
+      "venue": "Humanities and Social Sciences Communications",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Retraction Note: The effect of ChatGPT on students\u2019 learning performance, learning perception, and higher-order thinking: insights from a meta-analysis",
+      "doi": "10.1057/s41599-026-07310-z",
+      "year": 2026,
+      "venue": "Humanities and Social Sciences Communications",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "ChatGPT: A revolutionary tool for teaching and learning mathematics",
+      "doi": null,
+      "year": 2023,
+      "venue": "Eurasia Journal of Mathematics, Science and Technology Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Promoting self-regulation progress and knowledge construction in blended learning via ChatGPT-based learning aid",
+      "doi": null,
+      "year": 2024,
+      "venue": "Journal of Educational Computing Research",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The Research on the Construction of Primary School Mathematics Human-Machine Collaborative Precise Review Class Mode",
+      "doi": null,
+      "year": 2025,
+      "venue": "International Conference on Technology in Education",
+      "citation_level": 3,
+      "citation_context": "included study in meta-analysis dataset"
+    },
+    {
+      "title": "Development of a generative AI-powered teachable agent for middle school mathematics learning: A design-based research study",
+      "doi": null,
+      "year": 2025,
+      "venue": "British Journal of Educational Technology",
+      "citation_level": 3,
+      "citation_context": "included study in meta-analysis dataset"
+    },
+    {
+      "title": "Evaluating the impact of generative AI in mathematics education: A comparative study in Vietnamese high schools",
+      "doi": "10.1155/hbe2/8886206",
+      "year": 2025,
+      "venue": "Human Behavior and Emerging Technologies",
+      "citation_level": 3,
+      "citation_context": "included study in meta-analysis dataset"
+    },
+    {
+      "title": "Exploring the impact of generative artificial intelligence on students\u2019 learning outcomes: A meta-analysis",
+      "doi": null,
+      "year": 2025,
+      "venue": "Education and Information Technologies",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

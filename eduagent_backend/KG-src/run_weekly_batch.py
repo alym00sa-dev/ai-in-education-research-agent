@@ -1,20 +1,21 @@
-"""run_weekly_batch.py — Weekly KG update pipeline (B9).
+"""run_weekly_batch.py — Weekly KG update pipeline.
 
 Flow:
-  1. Find all queued paper JSONs in scripts/ingested_papers/queue/
-     (written by kg_write node after each research run)
-  2. Re-extract each paper using pdf_extractor_kg (3-call KG extraction:
-     metadata + tool taxonomy + citations) using the url from the queued profile
-  3. Save PaperProfileV2 JSONs to ingested_papers/{YYYY-MM-DD}/
-  4. Run citation_chaser on new papers + existing merged network
-  5. Retrain CCM on the updated network
-  6. Write new papers to Neo4j with --skip-wipe (upsert only)
-  7. Archive processed queue dirs with date stamp
+  1a. Run ingest_papers.py batch 1 → ingested_papers/{YYYY-MM-DD}/papers/
+  1b. Run ingest_papers.py batch 2 → ingested_papers/{YYYY-MM-DD}/papers/ (same dir)
+  1c. Run ingest_scale.py        → ingested_papers/{YYYY-MM-DD}/scale/
+  2.  Run citation_chaser on both dirs together → merged/
+  3.  Retrain CCM on the updated network
+  4.  Write new papers to Neo4j with --skip-wipe (upsert only)
+
+NOTE: the legacy kg_write queue step (extract_queued_papers) is preserved
+below but no longer invoked from main(). To re-enable, uncomment the call
+in main().
 
 Usage:
-    python scripts/run_weekly_batch.py
-    python scripts/run_weekly_batch.py --dry-run
-    python scripts/run_weekly_batch.py --skip-extraction  # if already extracted
+    python KG-src/run_weekly_batch.py
+    python KG-src/run_weekly_batch.py --dry-run
+    python KG-src/run_weekly_batch.py --skip-ingest  # skip search + scale, run downstream only
 """
 
 import argparse
@@ -43,8 +44,10 @@ QUEUE_DIR    = INGEST_BASE / "queue"
 MERGED_DIR   = INGEST_BASE / "merged"
 ARCHIVE_DIR  = INGEST_BASE / "archive"
 
-TODAY = date.today().isoformat()  # e.g. "2026-04-07"
-NEW_PAPERS_DIR = INGEST_BASE / TODAY
+TODAY = date.today().isoformat()  # e.g. "2026-05-05"
+NEW_PAPERS_DIR = INGEST_BASE / TODAY            # base for today's batch
+PAPERS_DIR     = NEW_PAPERS_DIR / "papers"      # ingest_papers.py output
+SCALE_DIR      = NEW_PAPERS_DIR / "scale"       # ingest_scale.py output
 
 logging.basicConfig(
     level=logging.INFO,
@@ -179,18 +182,62 @@ async def extract_queued_papers(dry_run: bool) -> list[Path]:
     return written
 
 
+# ── Step 1a/b: Run ingest_papers.py (both batches) ────────────────────────────
+
+def run_ingest_papers(dry_run: bool):
+    for batch in (1, 2):
+        log.info(f"[Step 1a] Running ingest_papers.py --batch {batch} → {PAPERS_DIR}")
+        cmd = [
+            sys.executable,
+            str(SCRIPTS_DIR / "ingest_papers.py"),
+            "--batch", str(batch),
+            "--output-dir", str(PAPERS_DIR),
+        ]
+        if dry_run:
+            cmd += ["--max-queries", "2"]
+        result = subprocess.run(cmd, cwd=str(REPO_ROOT))
+        if result.returncode != 0:
+            log.error(f"[Step 1a] ingest_papers batch {batch} failed — aborting batch.")
+            sys.exit(1)
+    log.info("[Step 1a] ingest_papers complete (batches 1 + 2).")
+
+
+# ── Step 1c: Run ingest_scale.py ───────────────────────────────────────────────
+
+def run_ingest_scale(dry_run: bool):
+    log.info(f"[Step 1b] Running ingest_scale.py → {SCALE_DIR}")
+    cmd = [
+        sys.executable,
+        str(SCRIPTS_DIR / "ingest_scale.py"),
+        "--output-dir", str(SCALE_DIR),
+    ]
+    if dry_run:
+        cmd.append("--dry-run")
+    result = subprocess.run(cmd, cwd=str(REPO_ROOT))
+    if result.returncode != 0:
+        log.error("[Step 1b] ingest_scale failed — aborting batch.")
+        sys.exit(1)
+    log.info("[Step 1b] ingest_scale complete.")
+
+
 # ── Step 3: Run citation_chaser on new papers ──────────────────────────────────
 
+def _active_input_dirs() -> list[Path]:
+    """Return the subset of {PAPERS_DIR, SCALE_DIR} that exist and contain JSON."""
+    return [d for d in (PAPERS_DIR, SCALE_DIR) if d.exists() and any(d.glob("*.json"))]
+
+
 def run_citation_chaser(dry_run: bool):
-    if not NEW_PAPERS_DIR.exists() or not any(NEW_PAPERS_DIR.glob("*.json")):
+    dirs = _active_input_dirs()
+    if not dirs:
         log.info("[Step 3] No new papers to chase citations for — skipping.")
         return
 
-    log.info(f"[Step 3] Running citation_chaser on {NEW_PAPERS_DIR} ...")
+    log.info(f"[Step 3] Running citation_chaser on {[str(d) for d in dirs]} ...")
     cmd = [
         sys.executable,
         str(SCRIPTS_DIR / "citation_chaser.py"),
-        "--papers-dir", str(NEW_PAPERS_DIR),
+        "--papers-dir", *[str(d) for d in dirs],
         "--output-dir", str(MERGED_DIR),
         "--incremental",
     ]
@@ -231,18 +278,19 @@ def run_ccm_trainer(dry_run: bool):
 # ── Step 5: Write to Neo4j ─────────────────────────────────────────────────────
 
 def run_neo4j_writer(dry_run: bool):
-    if not NEW_PAPERS_DIR.exists() or not any(NEW_PAPERS_DIR.glob("*.json")):
+    dirs = _active_input_dirs()
+    if not dirs:
         log.info("[Step 5] No new papers to write to Neo4j — skipping.")
         return
 
     chase_network = MERGED_DIR / "_chase_network.json"
 
-    log.info("[Step 5] Writing new papers to Neo4j (--skip-wipe) ...")
+    log.info(f"[Step 5] Writing {len(dirs)} dir(s) to Neo4j (--skip-wipe) ...")
     cmd = [
         sys.executable,
         str(SCRIPTS_DIR / "neo4j_writer.py"),
         "--skip-wipe",
-        "--papers-dirs", str(NEW_PAPERS_DIR),
+        "--papers-dirs", *[str(d) for d in dirs],
     ]
     if chase_network.exists():
         cmd += ["--chase-network", str(chase_network)]
@@ -282,24 +330,29 @@ def archive_queue(dry_run: bool):
 # ── Main ───────────────────────────────────────────────────────────────────────
 
 async def main():
-    parser = argparse.ArgumentParser(description="Weekly KG update batch (B9)")
+    parser = argparse.ArgumentParser(description="Weekly KG update batch")
     parser.add_argument("--dry-run", action="store_true", help="Log actions without executing them")
-    parser.add_argument("--skip-extraction", action="store_true", help="Skip re-extraction, use existing NEW_PAPERS_DIR")
+    parser.add_argument("--skip-ingest", action="store_true", help="Skip ingest_papers + ingest_scale (run downstream only)")
     args = parser.parse_args()
 
     log.info(f"{'='*60}")
     log.info(f"Weekly KG Batch — {TODAY}{' [DRY RUN]' if args.dry_run else ''}")
     log.info(f"{'='*60}")
 
-    if not args.skip_extraction:
-        await extract_queued_papers(args.dry_run)
+    # Legacy queue extraction — the kg_write queue is no longer the primary
+    # ingestion source. Re-enable by uncommenting if needed.
+    # await extract_queued_papers(args.dry_run)
+
+    if not args.skip_ingest:
+        run_ingest_papers(args.dry_run)
+        run_ingest_scale(args.dry_run)
     else:
-        log.info("[Step 1-2] Skipping extraction (--skip-extraction).")
+        log.info("[Step 1] Skipping ingest_papers + ingest_scale (--skip-ingest).")
 
     run_citation_chaser(args.dry_run)
     run_ccm_trainer(args.dry_run)
     run_neo4j_writer(args.dry_run)
-    archive_queue(args.dry_run)
+    # archive_queue(args.dry_run)  # disabled — no queue to archive
 
     log.info(f"{'='*60}")
     log.info("Weekly batch complete.")

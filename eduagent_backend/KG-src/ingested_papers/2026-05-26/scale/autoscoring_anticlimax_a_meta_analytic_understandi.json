@@ -1,0 +1,82 @@
+{
+  "title": "Autoscoring Anticlimax: A Meta-analytic Understanding of AI\u2019s Short-answer Shortcomings and Wording Weaknesses",
+  "doi": null,
+  "year": 2026,
+  "venue": "arXiv",
+  "url": "https://arxiv.org/abs/2603.04820",
+  "source_db": "scale_stanford",
+  "populations": [
+    "K-12 (unspecified grade)"
+  ],
+  "user_types": [
+    "Student"
+  ],
+  "study_design": "Meta-Analysis / Systematic Review",
+  "extended_summary": "This paper addresses why large language models continue to perform poorly on automated short-answer scoring, especially for rubric-based evaluation of children\u2019s written responses. The author focuses on the gap between the strong general-language performance of modern LLMs and their weaker reliability when asked to assign human-aligned scores to short constructed responses in educational assessment.\n\nThe study conducts a systematic review and meta-analysis of LLM short-answer scoring studies, analyzing 890 reported results using mixed-effects meta-regression. The main outcome is Quadratic Weighted Kappa agreement between automated scores and human scores. Predictors include model architecture, tokenizer family and vocabulary size, model size, item type, and human-rater agreement. The paper also includes illustrative experiments showing sensitivity to wording/tokenization and a racial-bias example in ChatGPT scoring of a third-grade essay.\n\nThe context is K-12 student writing, especially short-answer responses from children in automated assessment datasets such as ASAP-SAS. The principal user role represented is students, whose written work is scored by automated systems.\n\nThe paper concludes that LLM scoring difficulty does not mirror human scoring difficulty: items easy for human raters can still be difficult for LLMs. Decoder-only/GPT-style models underperform encoder-based approaches on average, meaning-dependent reading items reduce scoring reliability, and tokenizer vocabulary size shows diminishing returns. The author argues that effective educational autoscoring will require assessment-specific model designs, stronger validity evidence, uncertainty reporting, and robustness checks rather than simply scaling LLMs or refining prompts.",
+  "limitations": [
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "identified_tools": [
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "feedback_evaluation",
+        "language_speech"
+      ],
+      "description": "Large language model-based automated short-answer scoring systems that assign rubric-based scores to child-written constructed responses.",
+      "use_case": "Meta-analysis of LLM-based automated scoring of short, child-written responses, examining agreement with human scores and moderators including architecture, tokenizer family, vocabulary size, model size, item type, and human benchmark QWK.",
+      "findings": [
+        {
+          "outcome_category": "Operational Efficiency",
+          "finding_type": "pooled_meta",
+          "direction": "mixed",
+          "finding_summary": "The meta-analysis modeled N=890 observed agreement coefficients from LLM short-answer scoring studies on 10 rubric-scored items. Meaning-dependent reading items lowered agreement with humans, with read item=-0.21, and GPT-style decoder architectures underperformed, with gpt-style=-0.37; model size was modestly positive, logsize=0.06, while human-rater item difficulty was not associated with LLM performance, QWKhum=0.00.",
+          "measure": "Quadratic Weighted Kappa agreement between automated scores and human scores, Fisher-z transformed",
+          "effect_size": "Bayesian Model 6 coefficients on Fisher-z QWK scale: read item=-0.21; gpt-style=-0.37; |vocab|2=-0.06; logsize=0.06; QWKhum=0.00",
+          "confidence_interval": "95% credible intervals reported as: read item [-0.37, -0.03], gpt-style [-0.58, -0.14], |vocab|2 [-0.11, -0.00], logsize [0.03, 0.10], QWKhum [-0.27, 0.28]",
+          "sample_size": "N=890 observed agreement coefficients; J=10 items"
+        }
+      ]
+    },
+    {
+      "name": "ChatGPT",
+      "is_named_product": true,
+      "specificity": "named_tool",
+      "category_key": [
+        "feedback_evaluation",
+        "language_speech"
+      ],
+      "description": "OpenAI GPT/ChatGPT large language model used through the chat interface to score and provide feedback on student writing.",
+      "use_case": "Used in an experiment to illustrate racial bias in automated scoring and feedback for a 3rd-grade essay, comparing identical prompts differing only by the racial descriptor assigned to the student.",
+      "findings": [
+        {
+          "outcome_category": "Systemic / Institutional Impact",
+          "finding_type": "primary",
+          "direction": "negative",
+          "finding_summary": "In the paper\u2019s illustrative bias experiment, ChatGPT scored identical student work differently when the prompt changed one word from \u201cWhite\u201d to \u201cBlack.\u201d The \u201cWhite\u201d student received 1 out of 2, while the \u201cBlack\u201d student received 0 out of 2, along with harsher feedback language for the Black-student condition.",
+          "measure": "Assigned short-answer/writing score and generated feedback under race-label perturbation",
+          "effect_size": "Score difference: 'White' student=1 out of 2; 'Black' student=0 out of 2",
+          "confidence_interval": "not_reported",
+          "sample_size": "not_reported"
+        }
+      ]
+    }
+  ],
+  "verdict": "named_tool_found",
+  "quality_tier": "blue",
+  "quality_tier_rationale": "The main evidence is a systematic-review-based meta-analysis of 890 short-answer scoring results using mixed-effects meta-regression and Bayesian robustness modeling. The paper also includes a smaller illustrative ChatGPT bias experiment, but the overall quality tier is driven by the meta-analysis.",
+  "impact_tier": "red",
+  "impact_tier_rationale": "The reported evidence is largely negative for educational deployment: LLM short-answer scoring showed systematic reliability weaknesses, GPT-style decoders underperformed encoder-based approaches, and the ChatGPT example showed race-sensitive scoring of identical student work. The paper does not report positive student learning impacts.",
+  "citations": [],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}

@@ -1,0 +1,184 @@
+{
+  "title": "Early Warning System for Student Dropout Risk Using Behavioral Analytics, Explainable AI, and Hybrid Machine Learning Models",
+  "doi": "10.22214/ijraset.2026.82568",
+  "year": 2026,
+  "venue": "International Journal for Research in Applied Science & Engineering Technology (IJRASET)",
+  "url": "https://www.semanticscholar.org/paper/03a0af332029f241983c2f3c37f9116565e6b5ea",
+  "source_db": "semantic_scholar_search",
+  "populations": [
+    "Undergraduate"
+  ],
+  "user_types": [
+    "Student",
+    "Educator",
+    "Administrator"
+  ],
+  "study_design": "Observational / Correlational",
+  "extended_summary": "The paper addresses student dropout and academic underperformance in higher education, arguing that traditional attendance-based monitoring systems do not provide sufficiently early or interpretable warning signals for identifying students at risk. It frames dropout risk as a problem requiring real-time behavioral analytics, predictive modeling, and explainable decision support so that institutions can intervene before students disengage or fail academically.\n\nThe proposed intervention is an AI-driven Early Warning System that combines attendance data, behavioral indicators, academic performance data, and IoT-based data collection. The system uses Random Forest, XGBoost, and LSTM models, with a hybrid model combining ensemble learning and temporal analysis. It also incorporates SHAP-based Explainable AI to identify which features drive risk predictions and a dynamic risk scoring mechanism that classifies students as low, medium, or high risk.\n\nThe empirical evaluation uses a dataset of 320 higher education students and 38,400 records, including attendance percentage, absence streaks, engagement score, and academic marks. The context is described broadly as higher education and smart educational environments, but the paper does not report a specific institution, country, course, duration of implementation, or training for educators.\n\nThe main conclusion is that the proposed hybrid model achieved 94% prediction accuracy, outperforming Random Forest, XGBoost, and LSTM individually. The authors report that attendance had the strongest influence on dropout risk, followed by engagement and academic performance, and argue that the system can support early intervention, improve student retention, and enhance data-driven academic decision-making. They note limitations related to data quality, limited generalization across institutions, and privacy and ethical concerns.",
+  "limitations": [
+    "no_control_group",
+    "implementation_fidelity_not_reported",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "not_reported",
+  "setting": "not_reported",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "not_reported",
+  "study_country": "not_reported",
+  "study_region": "not_reported",
+  "identified_tools": [
+    {
+      "name": "Early Warning System (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "prediction_analytics"
+      ],
+      "description": "A generic AI-driven student dropout early warning system that uses behavioral analytics, attendance, academic data, hybrid machine-learning models, and explainable AI to classify students into dropout-risk categories.",
+      "use_case": "The paper proposed and evaluated a hybrid machine-learning early warning system using attendance percentage, absence streak, engagement score, and academic marks to classify higher-education students as low, medium, or high dropout risk, with SHAP used to explain predictions.",
+      "findings": [
+        {
+          "outcome_category": "Systemic / Institutional Impact",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Using a dataset of 320 students and 38,400 records, the proposed hybrid Early Warning System achieved 94% prediction accuracy, 93% precision, and 92% recall for classifying students into dropout-risk categories. It outperformed the individual Random Forest model with 91% accuracy, XGBoost with 93% accuracy, and LSTM with 92% accuracy.",
+          "measure": "Dropout-risk prediction accuracy, precision, and recall",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=320 students; 38,400 records"
+        },
+        {
+          "outcome_category": "Systemic / Institutional Impact",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "The paper reports that SHAP explainability identified attendance as the highest-impact factor in dropout-risk predictions, followed by engagement and academic performance. Students with attendance below 65% were described as having a significantly higher probability of dropout risk, though no statistical test or effect size was reported.",
+          "measure": "SHAP feature importance and dropout-risk factor ranking",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "n=320 students; 38,400 records"
+        }
+      ]
+    }
+  ],
+  "verdict": "archetype_only",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "The study reports an experimental machine-learning evaluation on a dataset of 320 students and 38,400 records, comparing model accuracy, precision, and recall. However, it is not an RCT or QED and provides limited methodological detail about validation design, dataset provenance, or generalizability.",
+  "impact_tier": "yellow",
+  "impact_tier_rationale": "The paper reports predictive performance improvements for a proposed dropout-risk early warning system, but does not report effect sizes or measured causal impacts on student retention, dropout reduction, or academic outcomes. Impact on student outcomes is therefore unclear.",
+  "citations": [
+    {
+      "title": "Educational Data Mining and Learning Analytics",
+      "doi": null,
+      "year": 2020,
+      "venue": "IEEE Transactions on Learning Technologies",
+      "citation_level": 2,
+      "citation_context": "grounds educational data mining and learning analytics framing"
+    },
+    {
+      "title": "Data Mining in Education",
+      "doi": null,
+      "year": 2019,
+      "venue": "Wiley",
+      "citation_level": 2,
+      "citation_context": "background for data mining in education"
+    },
+    {
+      "title": "Language Models are Few-Shot Learners",
+      "doi": null,
+      "year": 2020,
+      "venue": "Proc. NeurIPS",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A Unified Approach to Interpreting Model Predictions (SHAP)",
+      "doi": null,
+      "year": 2017,
+      "venue": "Proc. NIPS",
+      "citation_level": 3,
+      "citation_context": "SHAP method for explaining model predictions"
+    },
+    {
+      "title": "XGBoost: A Scalable Tree Boosting System",
+      "doi": null,
+      "year": 2016,
+      "venue": "Proc. ACM SIGKDD",
+      "citation_level": 3,
+      "citation_context": "XGBoost model used in prediction layer"
+    },
+    {
+      "title": "Long Short-Term Memory",
+      "doi": null,
+      "year": 1997,
+      "venue": "Neural Computation",
+      "citation_level": 3,
+      "citation_context": "LSTM model used for temporal student behavior"
+    },
+    {
+      "title": "Internet of Things in Smart Education Systems",
+      "doi": null,
+      "year": 2022,
+      "venue": "International Journal of Computer Applications",
+      "citation_level": 2,
+      "citation_context": "supports IoT-enabled smart education framing"
+    },
+    {
+      "title": "Educational Data Mining: A Review of the State of the Art",
+      "doi": null,
+      "year": 2012,
+      "venue": "Springer",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Learning Analytics: The Emergence of a Discipline",
+      "doi": null,
+      "year": 2013,
+      "venue": "American Behavioral Scientist",
+      "citation_level": 2,
+      "citation_context": "frames learning analytics as a discipline"
+    },
+    {
+      "title": "Artificial Intelligence in Smart Education Systems",
+      "doi": null,
+      "year": 2023,
+      "venue": "IEEE Access",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Applications of Deep Learning in Education",
+      "doi": null,
+      "year": 2021,
+      "venue": "Journal of Educational Technology",
+      "citation_level": 2,
+      "citation_context": "grounds deep learning applications in education"
+    },
+    {
+      "title": "Predictive Analytics in Education",
+      "doi": null,
+      "year": 2022,
+      "venue": "Elsevier",
+      "citation_level": 2,
+      "citation_context": "frames predictive analytics for educational intervention"
+    },
+    {
+      "title": "AI-Based Student Performance Prediction Using Deep Learning",
+      "doi": null,
+      "year": 2023,
+      "venue": "IEEE Access",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Explainable AI in Education Systems",
+      "doi": null,
+      "year": 2022,
+      "venue": "Springer",
+      "citation_level": 2,
+      "citation_context": "grounds explainable AI use in education systems"
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": "via unpaywall"
+}

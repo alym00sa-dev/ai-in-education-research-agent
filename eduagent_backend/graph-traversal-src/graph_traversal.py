@@ -310,9 +310,61 @@ Given a user question, write a Cypher query to retrieve the most relevant data.
 """
 
 
+# ── AuraDB auto-resume ────────────────────────────────────────────────────────
+
+_NEO4J_HEALTHY_UNTIL: float = 0.0  # epoch seconds; skip connectivity probe before this
+
+
+def _aura_resume_and_wait(max_wait: int = 30) -> bool:
+    """Call the Neo4j AuraDB Management API to resume a paused instance.
+    Returns True if the instance reaches 'running' within max_wait seconds."""
+    client_id = os.environ.get("AURA_CLIENT_ID")
+    client_secret = os.environ.get("AURA_CLIENT_SECRET")
+    instance_id = os.environ.get("AURA_INSTANCE_ID")
+    if not all([client_id, client_secret, instance_id]):
+        log.info("[graph_traversal] AURA credentials not set — skipping auto-resume")
+        return False
+    try:
+        import httpx
+        token_resp = httpx.post(
+            "https://api.neo4j.io/oauth/token",
+            data={"grant_type": "client_credentials"},
+            auth=(client_id, client_secret),
+            timeout=10,
+        )
+        token_resp.raise_for_status()
+        token = token_resp.json()["access_token"]
+        headers = {"Authorization": f"Bearer {token}"}
+
+        instance_url = f"https://api.neo4j.io/v1/instances/{instance_id}"
+        status = httpx.get(instance_url, headers=headers, timeout=10).json().get("data", {}).get("status", "")
+        log.info(f"[graph_traversal] AuraDB instance status: {status}")
+
+        if status == "running":
+            return True
+        if status == "paused":
+            log.info("[graph_traversal] Instance paused — sending resume request")
+            httpx.post(f"{instance_url}/resume", headers=headers, timeout=10)
+
+        deadline = time.time() + max_wait
+        while time.time() < deadline:
+            time.sleep(5)
+            resp = httpx.get(instance_url, headers=headers, timeout=10)
+            if resp.is_success:
+                status = resp.json().get("data", {}).get("status", "")
+                log.info(f"[graph_traversal] AuraDB poll: {status}")
+                if status == "running":
+                    return True
+        return False
+    except Exception as e:
+        log.warning(f"[graph_traversal] AuraDB resume error: {e}")
+        return False
+
+
 # ── Neo4j connection ───────────────────────────────────────────────────────────
 
 def _neo4j_session():
+    global _NEO4J_HEALTHY_UNTIL
     if not os.environ.get("NEO4J_URI"):
         return None, None
     try:
@@ -322,9 +374,15 @@ def _neo4j_session():
             auth=(os.environ.get("NEO4J_USER", "neo4j"), os.environ["NEO4J_PASSWORD"]),
         )
         database = os.environ.get("NEO4J_DATABASE", "neo4j")
-        return driver, driver.session(database=database)
+        session = driver.session(database=database)
+        # Probe connectivity unless recently verified
+        if time.time() > _NEO4J_HEALTHY_UNTIL:
+            session.run("RETURN 1").consume()
+            _NEO4J_HEALTHY_UNTIL = time.time() + 300  # trust for 5 minutes
+        return driver, session
     except Exception as e:
         log.warning(f"[graph_traversal] Neo4j connection failed: {e}")
+        _NEO4J_HEALTHY_UNTIL = 0.0
         return None, None
 
 
@@ -435,7 +493,14 @@ def _run_queries(queries: list[str]) -> tuple[str, int]:
     """Execute up to 3 Cypher queries, merge paper results deduplicating by doi/title."""
     driver, db = _neo4j_session()
     if db is None:
-        return "The knowledge graph is not currently available.", 0
+        log.info("[graph_traversal] Neo4j unavailable — attempting AuraDB auto-resume")
+        if _aura_resume_and_wait(max_wait=30):
+            driver, db = _neo4j_session()
+    if db is None:
+        return (
+            "The knowledge graph is waking up from a paused state — this usually takes "
+            "about 60 seconds. Please ask your question again in a moment."
+        ), 0
     try:
         seen: set[str] = set()
         merged_rows: list = []

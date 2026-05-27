@@ -1,0 +1,819 @@
+{
+  "title": "Advancing Problem-Based Learning in Biomedical Engineering in the Era of Generative AI",
+  "doi": null,
+  "year": 2026,
+  "venue": null,
+  "url": "https://arxiv.org/abs/2503.16558",
+  "source_db": "scale_stanford",
+  "populations": [
+    "Undergraduate",
+    "Graduate / Doctoral"
+  ],
+  "user_types": [
+    "Student",
+    "Educator"
+  ],
+  "study_design": "Quasi-Experimental Design (QED)",
+  "extended_summary": "The paper addresses the challenge of teaching biomedical artificial intelligence in ways that are authentic, scalable, and responsible. Traditional problem-based learning (PBL) is well suited to biomedical engineering because it emphasizes real-world problem solving, teamwork, and interdisciplinary reasoning, but it is resource-intensive and difficult to keep current in rapidly changing AI domains. The paper asks whether a modular PBL framework augmented with guarded generative AI support can improve biomedical AI education while preserving critical thinking and ethical practice.\n\nThe intervention is a modularized PBL+AI curriculum in which student teams work through biomedical AI problem briefs, literature inquiry, project proposals, prototype development, model cards, final reports, and demonstrations. Generative AI tools are positioned as supports for literature navigation, knowledge summarization, coding assistance, debugging, reflection, and formative feedback, not as replacements for student reasoning. The framework includes explicit guardrails: approved-tool restrictions, privacy protections, AI-use disclosure, validation of AI outputs, source anchoring, code provenance marking, and equitable tool access.\n\nThe study was implemented over three academic years, 2021\u20132023, in biomedical AI-related courses at Georgia Tech and Emory University: Biomedical Health Informatics and Medical Image Processing at the graduate level, and Biostatistics at the undergraduate level. A total of 248 students participated, including 156 graduate students and 92 undergraduates, organized into 62 interdisciplinary teams. Outcomes were compared with historical pre-integration offerings from 2016\u20132017 and 2020, using grade distributions, peer evaluations, project deliverables, and student-authored publications as evidence.\n\nThe paper reports that AI-supported PBL cohorts showed higher proportions of A grades and fewer low grades than historical control cohorts, with the pattern remaining after excluding the pandemic-affected period. Student teams also produced 16 peer-reviewed publications, and peer evaluations indicated strong teamwork. The authors conclude that guarded GenAI integration can make PBL more scalable and implementation-focused in biomedical AI education, while noting that causal attribution is limited by the non-randomized historical design and the lack of student-level pre/post and long-term measures.",
+  "limitations": [
+    "single_site",
+    "non_representative_population",
+    "no_long_term_followup"
+  ],
+  "duration_weeks": "13",
+  "setting": "classroom / lab",
+  "teacher_training": "not_reported",
+  "implementation_fidelity": "medium",
+  "study_country": "United States",
+  "study_region": "North America",
+  "identified_tools": [
+    {
+      "name": "GenAI (General)",
+      "is_named_product": false,
+      "specificity": "category",
+      "category_key": [
+        "content_generation",
+        "tutoring_instruction"
+      ],
+      "description": "Generic generative AI / large-language-model assistants used as learning scaffolds for knowledge summarization, literature navigation, coding support, reflection prompts, formative feedback, and personalized guidance.",
+      "use_case": "In biomedical engineering PBL courses, students used institutionally approved generative AI tools under guardrails for literature navigation and synthesis, coding initialization/optimization/debugging, reflection prompts, model-card and error-analysis support, and formative feedback while solving real biomedical AI problems.",
+      "findings": [
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "In historical cohort comparisons, AI-supported PBL offerings had higher A-rates than control offerings. Including the COVID-19 year, A-rates were 39.1% in Control vs. 66.4% in Intervention (\u0394=+27.3 points; Welch t=4.28, p=0.042); excluding the COVID-19 year, A-rates were 39.1% vs. 67.4% (\u0394=+28.3 points; Welch t=4.36, p=0.0367).",
+          "measure": "Proportion of A grades (A-rate)",
+          "effect_size": "\u0394=+27.3 percentage points including COVID-19 year; \u0394=+28.3 percentage points excluding COVID-19 year",
+          "confidence_interval": "95% CI for \u0394 [+2.23, +52.43]; excluding COVID-19 year: 95% CI [+3.85, +52.71]; OLS 95% CI [+12.01, +42.66]",
+          "sample_size": "Intervention n=248; control n=not_reported"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "AI-supported PBL offerings had fewer low grades than historical controls. Including the COVID-19 year, low-grade rates were 22.4% in Control vs. 6.1% in Intervention (\u0394=-16.3 points; Welch t=-5.24, p=0.0076); excluding the COVID-19 year, rates were 22.4% vs. 4.25% (\u0394=-18.12 points; Welch t=-6.93, p=0.0118).",
+          "measure": "Proportion of low grades (C or D/F)",
+          "effect_size": "\u0394=-16.3 percentage points including COVID-19 year; \u0394=-18.12 percentage points excluding COVID-19 year",
+          "confidence_interval": "95% CI for \u0394 [-25.18, -7.42]; excluding COVID-19 year: 95% CI [-27.66, -8.58]; OLS 95% CI [-23.76, -8.84]",
+          "sample_size": "Intervention n=248; control n=not_reported"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Mean GPA increased from 3.38 in Control offerings to 3.69 in Intervention offerings, but the difference was not statistically significant (\u0394=+0.31; Welch t=2.30, p=0.142; 95% CI [-0.245, 0.865]). After excluding the COVID-19 year, GPA differences were directionally similar but still not significant (\u0394=+0.325, p=0.130).",
+          "measure": "Mean GPA",
+          "effect_size": "\u0394=+0.31 GPA including COVID-19 year; \u0394=+0.325 excluding COVID-19 year",
+          "confidence_interval": "95% CI [-0.245, 0.865] including COVID-19 year; excluding COVID-19 year CI not_reported",
+          "sample_size": "Intervention n=248; control n=not_reported"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "A 2 \u00d7 4 contingency analysis of year-averaged grade percentages across A/B/C/D\u2013F indicated distinct grade profiles between Control and Intervention periods. The reported test was \u03c72(3)=22.30, p=0.0001, with Cram\u00e9r\u2019s V\u22480.33.",
+          "measure": "Overall grade distribution across A/B/C/D\u2013F categories",
+          "effect_size": "Cram\u00e9r\u2019s V\u22480.33",
+          "confidence_interval": "not_reported",
+          "sample_size": "Intervention n=248; control n=not_reported"
+        },
+        {
+          "outcome_category": "Academic \u2014 Scientific Reasoning",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "During the 2021\u20132023 intervention period, student teams produced sixteen peer-reviewed publications in technical conferences addressing biomedical-AI problems. The paper presents this as evidence of high problem-solving productivity under implementation-focused, AI-supported PBL.",
+          "measure": "Student-authored peer-reviewed publications",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "Intervention n=248"
+        },
+        {
+          "outcome_category": "Durable Skills",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Peer evaluations were consistently high across the intervention courses. BHI peer evaluations ranged from 89.80% to 94.60%, MIP ranged from 88.80% to 90.60%, and undergraduate Biostatistics reported 94.24% in 2022 and 92.62% in 2023.",
+          "measure": "Peer evaluations of individual contributions, teamwork, and professionalism",
+          "effect_size": "not_reported",
+          "confidence_interval": "not_reported",
+          "sample_size": "Intervention n=248"
+        },
+        {
+          "outcome_category": "Academic \u2014 Other",
+          "finding_type": "primary",
+          "direction": "positive",
+          "finding_summary": "Within the AI-supported PBL context, exploratory student-level OLS analysis found that more coding experience was associated with higher performance. The reported slope was \u03b2=+1.88 points per year of coding experience, 95% CI [+0.30, +3.46], p=0.022.",
+          "measure": "Association between years of coding experience and score",
+          "effect_size": "OLS slope \u03b2=+1.88 points per year of coding experience",
+          "confidence_interval": "95% CI [+0.30, +3.46]",
+          "sample_size": "not_reported"
+        }
+      ]
+    }
+  ],
+  "verdict": "genai_general",
+  "quality_tier": "yellow",
+  "quality_tier_rationale": "The study used a historical, non-randomized pre/post cohort comparison with descriptive and inferential analyses, not an RCT. The authors note attribution limitations, incomplete legacy enrollment data, and absence of student-level pre/post concept measures or rater-reliability estimates.",
+  "impact_tier": "blue",
+  "impact_tier_rationale": "Reported impacts were positive and practically large for grade distributions, including A-rate increases of about +27 to +28 percentage points, low-grade decreases of about -16 to -18 percentage points, and an overall grade-profile effect of Cram\u00e9r\u2019s V\u22480.33. GPA gains were positive but not statistically significant.",
+  "citations": [
+    {
+      "title": "Cognitive and learning sciences in biomedical and health instructional design: A review with lessons for biomedical informatics education",
+      "doi": null,
+      "year": 2009,
+      "venue": "Journal of Biomedical Informatics",
+      "citation_level": 2,
+      "citation_context": "biomedical instructional design frames learning-science rationale"
+    },
+    {
+      "title": "Calls for reform of medical education by the Carnegie Foundation for the Advancement of Teaching: 1910 and 2010",
+      "doi": null,
+      "year": 2010,
+      "venue": "Academic Medicine",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Overview of problem-based learning: Definitions and distinctions",
+      "doi": null,
+      "year": 2015,
+      "venue": "Essential Readings in Problem-Based Learning: Exploring and Extending the Legacy of Howard S. Barrows",
+      "citation_level": 2,
+      "citation_context": "PBL definitions used to frame intervention"
+    },
+    {
+      "title": "Problem based learning: An instructional model and its constructivist framework",
+      "doi": null,
+      "year": 1995,
+      "venue": "Educational Technology",
+      "citation_level": 2,
+      "citation_context": "constructivist PBL instructional model grounding framework"
+    },
+    {
+      "title": "2019 Bernard M. Gordon Prize awarded to Georgia Tech and Emory University educators",
+      "doi": null,
+      "year": 2019,
+      "venue": "WHC Department of Biomedical Engineering news",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Problem-based learning: What and how do students learn?",
+      "doi": null,
+      "year": 2004,
+      "venue": "Educational Psychology Review",
+      "citation_level": 2,
+      "citation_context": "PBL learning mechanisms support framework rationale"
+    },
+    {
+      "title": "Design principles for problem-driven learning laboratories in biomedical engineering education",
+      "doi": null,
+      "year": 2010,
+      "venue": "Annals of Biomedical Engineering",
+      "citation_level": 3,
+      "citation_context": "problem-driven BME laboratory design principles inform course structure"
+    },
+    {
+      "title": "Fifty years of biomedical engineering undergraduate education",
+      "doi": null,
+      "year": 2020,
+      "venue": "Annals of Biomedical Engineering",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Problem-based learning applied to medical education",
+      "doi": null,
+      "year": 2000,
+      "venue": "Southern Illinois University School of Medicine",
+      "citation_level": 3,
+      "citation_context": "foundational PBL model shaping instructional cycle"
+    },
+    {
+      "title": "Identifying opportunities for collaborations in international engineering education research on problem-and project-based learning",
+      "doi": null,
+      "year": 2010,
+      "venue": "Interdisciplinary Journal of Problem-Based Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Large language models in biomedicine and health: current research landscape and future directions",
+      "doi": null,
+      "year": 2024,
+      "venue": "Journal of the American Medical Informatics Association",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Use of large language models as artificial intelligence tools in academic research and publishing among global clinical researchers",
+      "doi": null,
+      "year": 2024,
+      "venue": "Scientific Reports",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A survey of large language models for healthcare: from data, technology, and applications to accountability and ethics",
+      "doi": null,
+      "year": 2025,
+      "venue": "Information Fusion",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Integrating artificial intelligence into biomedical science curricula: advancing healthcare education",
+      "doi": null,
+      "year": 2024,
+      "venue": "Clinics and Practice",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Neural networks and artificial intelligence for biomedical engineering",
+      "doi": null,
+      "year": 1999,
+      "venue": "John Wiley & Sons",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The biomedical applications of artificial intelligence: an overview of decades of research",
+      "doi": null,
+      "year": 2024,
+      "venue": "Journal of Drug Targeting",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The role of AI in hospitals and clinics: transforming healthcare in the 21st century",
+      "doi": null,
+      "year": 2024,
+      "venue": "Bioengineering",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Artificial intelligence for clinical prediction: exploring key domains and essential functions",
+      "doi": null,
+      "year": 2024,
+      "venue": "Computer Methods and Programs in Biomedicine Update",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The cases for and against artificial intelligence in the medical school curriculum",
+      "doi": null,
+      "year": 2022,
+      "venue": "Radiology: Artificial Intelligence",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Biomedical informatics training at Stanford in the 21st century",
+      "doi": null,
+      "year": 2007,
+      "venue": "Journal of Biomedical Informatics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Advancing applied technology education in biomedicine through undergraduate-led cohort-based training programs",
+      "doi": null,
+      "year": 2024,
+      "venue": "INTED2024 Proceedings",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Problem-based learning in biomedical engineering: Bridging the gap in teaching basic medical sciences",
+      "doi": null,
+      "year": 2024,
+      "venue": "2024 IEEE Global Engineering Education Conference (EDUCON)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Problem based learning for training in statistics and artificial intelligence to biomedical engineers",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 15th International Conference on Education Technology and Computers",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Large language models in medical education: opportunities, challenges, and future directions",
+      "doi": null,
+      "year": 2023,
+      "venue": "JMIR Medical Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "LLaVA-Med: Training a large language-and-vision assistant for biomedicine in one day",
+      "doi": null,
+      "year": 2023,
+      "venue": "Advances in Neural Information Processing Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Project-based learning pedagogy: Bridging theory and practice for real-world impact",
+      "doi": null,
+      "year": 2025,
+      "venue": "International Journal of Research and Innovation in Social Science",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Generative artificial intelligence and large language models in primary care medical education",
+      "doi": null,
+      "year": 2024,
+      "venue": "Family Medicine",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "New directions for medical education: problem-based learning and community-oriented medical education",
+      "doi": null,
+      "year": 2012,
+      "venue": "Springer Science & Business Media",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Interprofessional education and collaboration: an evidence-based approach to optimizing health care",
+      "doi": null,
+      "year": 2020,
+      "venue": "Human Kinetics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Problem based learning",
+      "doi": null,
+      "year": 2003,
+      "venue": "BMJ",
+      "citation_level": 2,
+      "citation_context": "PBL process description informs instructional model"
+    },
+    {
+      "title": "AMEE medical education guide no. 15: Problem-based learning: a practical guide",
+      "doi": null,
+      "year": 1999,
+      "venue": "Medical Teacher",
+      "citation_level": 3,
+      "citation_context": "practical PBL guidance shapes course implementation"
+    },
+    {
+      "title": "Problem-based learning: An approach to medical education",
+      "doi": null,
+      "year": 1980,
+      "venue": "Springer Publishing Company",
+      "citation_level": 3,
+      "citation_context": "original PBL approach underlying instructional design"
+    },
+    {
+      "title": "Online graduate certificate in data science for the chemical industry",
+      "doi": null,
+      "year": 2022,
+      "venue": "Chemical Engineering Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Engineering design thinking, teaching, and learning",
+      "doi": null,
+      "year": 2005,
+      "venue": "Journal of Engineering Education",
+      "citation_level": 2,
+      "citation_context": "engineering design thinking grounds technical specialty PBL framing"
+    },
+    {
+      "title": "Uncertainty-aware ensemble learning models for out-of-distribution medical imaging analysis",
+      "doi": null,
+      "year": 2023,
+      "venue": "2023 IEEE International Conference on Bioinformatics and Biomedicine (BIBM)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Model confidence calibration for reliable COVID-19 early screening via audio signal analysis",
+      "doi": null,
+      "year": 2023,
+      "venue": "Proceedings of the 14th ACM International Conference on Bioinformatics, Computational Biology, and Health Informatics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Identification of single-cell RNA sequencing molecular signatures for COVID-19 infection severity classification",
+      "doi": null,
+      "year": 2023,
+      "venue": "2023 IEEE International Conference on Bioinformatics and Biomedicine (BIBM)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Interpretable evaluation of diabetic retinopathy grade regarding eye color fundus images",
+      "doi": null,
+      "year": 2022,
+      "venue": "2022 IEEE 22nd International Conference on Bioinformatics and Bioengineering (BIBE)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Attention-based automated chest CT image segmentation method of COVID-19 lung infection",
+      "doi": null,
+      "year": 2022,
+      "venue": "2022 IEEE 22nd International Conference on Bioinformatics and Bioengineering (BIBE)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Multi-modal deep learning models for Alzheimer's disease prediction using MRI and EHR",
+      "doi": null,
+      "year": 2022,
+      "venue": "2022 IEEE 22nd International Conference on Bioinformatics and Bioengineering (BIBE)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Development of machine learning regression model for COVID-19 drug target prediction",
+      "doi": null,
+      "year": 2022,
+      "venue": "2022 IEEE International Conference on Bioinformatics and Biomedicine (BIBM)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Identification of COVID-19 severity and associated genetic biomarkers based on scRNA-seq data",
+      "doi": null,
+      "year": 2022,
+      "venue": "Proceedings of the 13th ACM International Conference on Bioinformatics, Computational Biology and Health Informatics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Respiratory markers significantly enhance anxiety detection using multimodal physiological sensing",
+      "doi": null,
+      "year": 2021,
+      "venue": "2021 IEEE EMBS International Conference on Biomedical and Health Informatics (BHI)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Improving heart transplant rejection classification training using progressive generative adversarial networks",
+      "doi": null,
+      "year": 2021,
+      "venue": "2021 IEEE EMBS International Conference on Biomedical and Health Informatics (BHI)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Rare heart transplant rejection classification using diffusion-based synthetic image augmentation",
+      "doi": null,
+      "year": 2023,
+      "venue": "2023 IEEE EMBS International Conference on Biomedical and Health Informatics (BHI)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Personalized COVID-19 early detection using wearable data based on self-reported records",
+      "doi": null,
+      "year": 2023,
+      "venue": "2023 IEEE International Conference on Bioinformatics and Biomedicine (BIBM)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A novel local ablation approach for explaining multimodal classifiers",
+      "doi": null,
+      "year": 2021,
+      "venue": "2021 IEEE 21st International Conference on Bioinformatics and Bioengineering (BIBE)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A gradient-based approach for explaining multimodal deep learning classifiers",
+      "doi": null,
+      "year": 2021,
+      "venue": "2021 IEEE 21st International Conference on Bioinformatics and Bioengineering (BIBE)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Explainable sleep stage classification with multimodal electrophysiology time-series",
+      "doi": null,
+      "year": 2021,
+      "venue": "2021 43rd Annual International Conference of the IEEE Engineering in Medicine & Biology Society (EMBC)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "An expansion for automated cardiac anomaly detection frameworks with multimodal missing data imputation",
+      "doi": null,
+      "year": 2021,
+      "venue": "2021 IEEE EMBS International Conference on Biomedical and Health Informatics (BHI)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Enhancing student reading performance through a personalized two-tier problem-based learning approach with generative artificial intelligence",
+      "doi": null,
+      "year": 2025,
+      "venue": "Humanities and Social Sciences Communications",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Integrating mobile learning and problem-based learning in improving students action competence in problem-solving and critical thinking skills",
+      "doi": null,
+      "year": 2025,
+      "venue": "Humanities and Social Sciences Communications",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Using PBL and agile to teach artificial intelligence to undergraduate computing students",
+      "doi": null,
+      "year": 2023,
+      "venue": "IEEE Access",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The effectiveness of training teachers in problem-based learning implementation on students' outcomes: a mixed-method study",
+      "doi": null,
+      "year": 2024,
+      "venue": "Humanities and Social Sciences Communications",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Active learning increases student performance in science, engineering, and mathematics",
+      "doi": null,
+      "year": 2014,
+      "venue": "Proceedings of the National Academy of Sciences",
+      "citation_level": 2,
+      "citation_context": "active-learning evidence supports expected outcome gains"
+    },
+    {
+      "title": "Problem-based learning: Future challenges for educational practice and research",
+      "doi": null,
+      "year": 2005,
+      "venue": "Medical Education",
+      "citation_level": 2,
+      "citation_context": "future PBL challenges frame limitations and research needs"
+    },
+    {
+      "title": "Large language models in healthcare and medical domain: A review",
+      "doi": null,
+      "year": 2024,
+      "venue": "Informatics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Which curriculum components do medical students find most helpful for evaluating AI outputs?",
+      "doi": null,
+      "year": 2025,
+      "venue": "BMC Medical Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "On the opportunities and risks of foundation models",
+      "doi": null,
+      "year": 2021,
+      "venue": "arXiv preprint arXiv:2108.07258",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Visual large language models for generalized and specialized applications",
+      "doi": null,
+      "year": 2025,
+      "venue": "arXiv preprint arXiv:2501.02765",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The influence of scaffolding for computational thinking on cognitive load and problem-solving skills in collaborative programming",
+      "doi": null,
+      "year": 2025,
+      "venue": "Education and Information Technologies",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "An online professional development framework for in-service teachers challenges and opportunities of learning and teaching programming",
+      "doi": null,
+      "year": 2024,
+      "venue": "Norwegian University of Science and Technology (NTNU)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Teacher's perceptions of using an artificial intelligence-based educational tool for scientific writing",
+      "doi": null,
+      "year": 2022,
+      "venue": "Frontiers in Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Integrating generative AI in higher education: Challenges, opportunities, and innovations in assessment practices within electrical engineering",
+      "doi": null,
+      "year": 2024,
+      "venue": "Education Research and Perspectives (Online)",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A comprehensive exploration of personalized learning in smart education: From student modeling to personalized recommendations",
+      "doi": null,
+      "year": 2024,
+      "venue": "arXiv preprint arXiv:2402.01666",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Tool learning with foundation models",
+      "doi": null,
+      "year": 2024,
+      "venue": "ACM Computing Surveys",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Timely need for navigating the potential and downsides of LLMs in healthcare and biomedicine",
+      "doi": null,
+      "year": 2024,
+      "venue": "Briefings in Bioinformatics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Retrieval-augmented generation for generative artificial intelligence in health care",
+      "doi": null,
+      "year": 2025,
+      "venue": "npj Health Systems",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Artificial intelligence in medical education: a cross-sectional needs assessment",
+      "doi": null,
+      "year": 2022,
+      "venue": "BMC Medical Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "AI in medical education: medical student perception, curriculum recommendations and design suggestions",
+      "doi": null,
+      "year": 2023,
+      "venue": "BMC Medical Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Artificial intelligence in medical education-perception among medical students",
+      "doi": null,
+      "year": 2024,
+      "venue": "BMC Medical Education",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Fair and equitable AI in biomedical research and healthcare: Social science perspectives",
+      "doi": null,
+      "year": 2023,
+      "venue": "Artificial Intelligence in Medicine",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Issues and limitations on the road to fair and inclusive AI solutions for biomedical challenges",
+      "doi": null,
+      "year": 2025,
+      "venue": "Sensors",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Integrating artificial intelligence into biomedical science curricula: advancing healthcare education",
+      "doi": null,
+      "year": 2024,
+      "venue": "Clinics and Practice",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Biomedical ethical aspects towards the implementation of artificial intelligence in medical education",
+      "doi": null,
+      "year": 2023,
+      "venue": "Medical Science Educator",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Developing institutional level AI policies and practices: A framework",
+      "doi": null,
+      "year": 2023,
+      "venue": "WCET Frontiers",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "The advancement of artificial intelligence in biomedical research and health innovation: challenges and opportunities in emerging economies",
+      "doi": null,
+      "year": 2024,
+      "venue": "Globalization and Health",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "What disease does this patient have? a large-scale open domain question answering dataset from medical exams",
+      "doi": null,
+      "year": 2021,
+      "venue": "Applied Sciences",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "MedMCQA: A large-scale multi-subject multi-choice dataset for medical domain question answering",
+      "doi": null,
+      "year": 2022,
+      "venue": "Conference on Health, Inference, and Learning",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Measuring massive multitask language understanding",
+      "doi": null,
+      "year": 2020,
+      "venue": "arXiv preprint arXiv:2009.03300",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "PubMedQA: A dataset for biomedical research question answering",
+      "doi": null,
+      "year": 2019,
+      "venue": "arXiv preprint arXiv:1909.06146",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "An overview of the BioASQ large-scale biomedical semantic indexing and question answering competition",
+      "doi": null,
+      "year": 2015,
+      "venue": "BMC Bioinformatics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "Head-QA: A healthcare dataset for complex reasoning",
+      "doi": null,
+      "year": 2019,
+      "venue": "Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "MedDialog: Two large-scale medical dialogue datasets (2020)",
+      "doi": null,
+      "year": 2020,
+      "venue": "arXiv preprint arXiv:2004.03329",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "PathVQA: 30000+ questions for medical visual question answering",
+      "doi": null,
+      "year": 2020,
+      "venue": "arXiv preprint arXiv:2003.10286",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "A dataset of clinically generated visual questions and answers about radiology images",
+      "doi": null,
+      "year": 2018,
+      "venue": "Scientific Data",
+      "citation_level": 1,
+      "citation_context": null
+    },
+    {
+      "title": "SLAKE: A semantically-labeled knowledge-enhanced dataset for medical visual question answering",
+      "doi": null,
+      "year": 2021,
+      "venue": "2021 IEEE 18th International Symposium on Biomedical Imaging (ISBI)",
+      "citation_level": 1,
+      "citation_context": null
+    }
+  ],
+  "extraction_status": "full_text",
+  "extraction_note": ""
+}
